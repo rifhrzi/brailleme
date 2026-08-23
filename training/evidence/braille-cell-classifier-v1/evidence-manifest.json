@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "model": {
+    "version": "0.2.0-candidate.1",
+    "sha256": "9e07b5c56e2e4107a116370c6f0a2203ec83afe4b2e42d099b1780e75e72d7dc",
+    "status": "unverified_candidate"
+  },
+  "trainingRun": {
+    "executedAt": "2026-08-22",
+    "codeCellsSha256": "c0dc23bfddbaa79632649cf44a96d4d5a791c8be210894f997b0f4b385d5794f",
+    "currentNotebookSha256": "542af604fa822d6d54031385da0c67453ce4f187ce5bc3231d7db3ed13f45930",
+    "gitCommit": null,
+    "environment": "Python 3.12.14, TensorFlow 2.20.0, Keras 3.15.1"
+  },
+  "evidenceFiles": {
+    "artifact_hashes.json": "4188559fbdb5b0a56ddc54daf563629a260d4dd34a12de044d10fbac13c40717",
+    "dataset_profile.json": "026100c2117ab8a6d9cd97ba739eac29619afa1d29c6b671d9cc0d495ec45841",
+    "split_profile.json": "584eaf9e19d8ae586d0ed452715e226fa2dbe13b2d1058cdba8661cf15bb896e",
+    "environment.json": "aa1f1cdbb18aabe7820f314d4d84d89328279a6b7a9eab6111980ba620140e31",
+    "training_metadata.json": "c0ab9011c57b798a7b89589c977b15d6f14faf07441d1da284d2205846dfb7f2",
+    "evaluation_report.json": "b2f3f16dfe7a507a7d469035496242b41740e28e3ea9bb93c4429f2d8b92e4a3",
+    "golden_parity.json": "534c54a4d703c3620294d9a812253a7d9266a5521eebb4a32f3b20e0b1d14291",
+    "augmentation_diagnostic_classification_report.json": "737d6a88f6e4aab50644f5e51e6f809d4772f9b493255d989b694dd211886112",
+    "holdout_manifest_validation.json": "55caa2f31be61077faa45f7a894deedf004100f261287c053a05b5ef01abe0fb",
+    "exact_duplicate_groups.json": "d1ac42d30e69c332712b7bd674f378e9238f9e994b9910fd8fbc686e6c31c8a8",
+    "training_requirements.txt": "176d9baf10b2247a72bf8e20c84585aadef1332b3ebc841c4d5ad5239a1bc83f"
+  },
+  "observedResults": {
+    "developmentMetricRole": "diagnostic_only",
+    "sourceFamilyIndependent": false,
+    "diagnosticAccuracy": 0.9551282051282052,
+    "diagnosticMacroF1": 0.9537673404457421,
+    "goldenConversionParityPassed": true,
+    "physicalHoldoutAvailable": false,
+    "negativeCorpusAvailable": false,
+    "nativeDeviceBenchmarkAvailable": false
+  },
+  "acceptanceCriteria": {
+    "physicalHoldout": {
+      "minimumSampleCount": 260,
+      "minimumSamplesPerClass": 10,
+      "minimumAccuracy": 0.9,
+      "minimumMacroF1": 0.9,
+      "minimumPerClassRecall": 0.8
+    },
+    "negativeCorpus": {
+      "minimumSceneCount": 12,
+      "maximumFalseAcceptCount": 0,
+      "confidenceThreshold": 0.9
+    },
+    "nativeRuntime": {
+      "minimumPhysicalDeviceCount": 2,
+      "minimumPreviewFps": 24,
+      "maximumP95StableLatencyMs": 2000,
+      "minimumSoakMinutes": 10,
+      "maximumCrashCount": 0,
+      "maximumAnrCount": 0,
+      "maximumFalseUtteranceCount": 0
+    }
+  },
+  "requiredReleaseEvidence": {
+    "deviceValidationFile": "training/evidence/braille-cell-classifier-v1/device-validation.json",
+    "deviceValidationSha256": null
+  },
+  "releaseDecision": {
+    "status": "blocked",
+    "reason": "Kandidat dapat dipakai untuk preview/internal, tetapi belum memiliki physical holdout independen, negative corpus, native camera parity, atau benchmark perangkat."
+  }
+}

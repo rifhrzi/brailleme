@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "modelSha256": "9e07b5c56e2e4107a116370c6f0a2203ec83afe4b2e42d099b1780e75e72d7dc",
+  "gitCommit": "replace-with-40-character-commit-sha",
+  "easBuildId": "replace-with-eas-build-id",
+  "aabSha256": "replace-with-aab-sha256",
+  "testedAt": "YYYY-MM-DDTHH:mm:ssZ",
+  "testers": [
+    "replace-with-reviewer-name"
+  ],
+  "devices": [
+    {
+      "id": "manufacturer-model-api-level-1",
+      "manufacturer": "replace",
+      "model": "replace",
+      "androidApi": 36
+    },
+    {
+      "id": "manufacturer-model-api-level-2",
+      "manufacturer": "replace",
+      "model": "replace",
+      "androidApi": 35
+    }
+  ],
+  "nativeGoldenParity": {
+    "sampleCount": 26,
+    "top1MatchRate": 1
+  },
+  "runtime": {
+    "minimumPreviewFps": 24,
+    "p95StableLatencyMs": 2000,
+    "soakMinutes": 10,
+    "crashCount": 0,
+    "anrCount": 0,
+    "falseUtteranceCount": 0
+  },
+  "offline": {
+    "airplaneModePassed": false,
+    "coldStartPassed": false
+  },
+  "accessibility": {
+    "talkBackPassed": false,
+    "fontScale200Passed": false,
+    "nonVisualRecoveryPassed": false
+  },
+  "notes": "Attach raw logs and checklist locations without including sensitive camera images."
+}

@@ -1,0 +1,59 @@
+name: Quality
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  quality:
+    name: Source and Android export
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+
+      - name: Set up Node.js
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Check Expo dependency compatibility
+        run: npm run expo:dependencies:check
+
+      - name: Run Expo project diagnostics
+        run: npm run doctor
+
+      - name: Verify release configuration
+        run: npm run release:config:verify
+
+      - name: Audit production dependencies
+        run: npm run audit:dependencies
+
+      - name: Verify model assets
+        run: npm run model:verify
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Test with coverage
+        run: npm run test:coverage
+
+      - name: Export Android bundle
+        run: npm run export:android
+        env:
+          APP_ENV: production

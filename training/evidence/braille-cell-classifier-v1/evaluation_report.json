@@ -1,0 +1,43 @@
+{
+  "release_status": "blocked",
+  "development_evaluation": {
+    "sample_count": 312,
+    "accuracy": 0.9551282051282052,
+    "macro_precision": 0.9590729783037476,
+    "macro_recall": 0.9551282051282051,
+    "macro_f1": 0.9537673404457421,
+    "role": "diagnostic_only",
+    "split_strategy": "augmentation_diagnostic_fallback",
+    "source_family_independent": false,
+    "caveat": "Dataset hanya memiliki satu source family per kelas. Train dan diagnostic berbagi sumber dasar; semua metrik diagnostic bersifat optimistis dan tidak boleh digunakan sebagai bukti generalisasi atau akurasi produk."
+  },
+  "physical_holdout": null,
+  "holdout_manifest_present": false,
+  "holdout_manifest_validation": {
+    "path": "\\kaggle\\input\\braille-physical-holdout\\holdout_manifest.csv",
+    "present": false,
+    "valid": false,
+    "row_count": 0,
+    "errors": []
+  },
+  "negative_guardrail": null,
+  "keras_tflite_golden_parity": {
+    "purpose": "keras_tflite_conversion_parity_only",
+    "not_an_independent_accuracy_evaluation": true,
+    "sample_count": 26,
+    "one_sample_per_class": true,
+    "keras_expected_label_match_rate": 1.0,
+    "tflite_expected_label_match_rate": 1.0,
+    "top1_match_rate": 1.0,
+    "max_absolute_probability_difference": 9.022187441587448e-10,
+    "tolerance": 0.0001,
+    "passed": true
+  },
+  "release_blockers": [
+    "Dataset development hanya memiliki satu source family per kelas; augmentation diagnostic tidak membuktikan generalisasi.",
+    "Independent physical holdout belum tersedia.",
+    "Holdout manifest/provenance belum tersedia atau belum valid.",
+    "Negative/non-Braille corpus belum tersedia.",
+    "Benchmark kamera, latency, FPS, soak, dan ground truth perangkat harus dilakukan di aplikasi."
+  ]
+}

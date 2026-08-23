@@ -1,0 +1,59 @@
+{
+  "expo": {
+    "name": "BrailleMe",
+    "slug": "brailleme",
+    "version": "0.1.0",
+    "icon": "./assets/icon.png",
+    "orientation": "default",
+    "scheme": "brailleme",
+    "platforms": [
+      "android"
+    ],
+    "userInterfaceStyle": "light",
+    "android": {
+      "package": "com.brailleme.app",
+      "versionCode": 1,
+      "backgroundColor": "#F5F7FA",
+      "userInterfaceStyle": "light",
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "monochromeImage": "./assets/monochrome-icon.png",
+        "backgroundColor": "#0B57D0"
+      },
+      "permissions": [
+        "android.permission.CAMERA"
+      ],
+      "predictiveBackGestureEnabled": true
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "minSdkVersion": 29,
+            "compileSdkVersion": 36,
+            "targetSdkVersion": 36,
+            "buildToolsVersion": "36.0.0"
+          }
+        }
+      ],
+      [
+        "expo-splash-screen",
+        {
+          "backgroundColor": "#F5F7FA",
+          "android": {
+            "drawable": {
+              "icon": "./assets/splashscreen_logo.xml"
+            }
+          }
+        }
+      ],
+      "expo-asset",
+      "expo-font"
+    ],
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}

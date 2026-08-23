@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "artifact": {
+    "name": "braille-cell-classifier",
+    "version": "0.1.0-candidate.1",
+    "sourceModelVersion": null,
+    "status": "unverified_candidate",
+    "format": "tflite",
+    "file": "braille_model.tflite",
+    "sha256": "096d2822321732fd8e0e46fd6ca53e8569cc533f81a5593827d439f1a51f18f5",
+    "sizeBytes": 979488,
+    "tfliteIdentifier": "TFL3",
+    "tfliteSchemaVersion": 3,
+    "converterDescription": "TOCO Converted."
+  },
+  "intendedUse": "Klasifikasi satu crop sel Braille yang sudah dilokalisasi dan disegmentasi.",
+  "notIntendedFor": [
+    "Seluruh frame kamera",
+    "Satu baris Braille yang belum disegmentasi",
+    "Satu halaman dokumen"
+  ],
+  "inputs": [
+    {
+      "index": 0,
+      "name": "conv2d_input",
+      "shape": [1, 28, 28, 3],
+      "layout": "NHWC",
+      "dtype": "float32",
+      "channelOrder": null,
+      "expectedValueRange": null,
+      "normalization": null,
+      "tensorQuantizationMetadata": {
+        "min": [0],
+        "max": [255],
+        "scale": [],
+        "zeroPoint": []
+      }
+    }
+  ],
+  "outputs": [
+    {
+      "index": 0,
+      "name": "Identity",
+      "shape": [1, 26],
+      "dtype": "float32",
+      "activation": "softmax",
+      "labelsFile": "label.json"
+    }
+  ],
+  "classCount": 26,
+  "operatorFamilies": [
+    "CONV_2D",
+    "MAX_POOL_2D",
+    "FULLY_CONNECTED",
+    "SOFTMAX"
+  ],
+  "runtime": {
+    "cpu": "not_benchmarked",
+    "gpu": "not_benchmarked"
+  },
+  "provenance": {
+    "datasetVersion": null,
+    "trainingCodeVersion": null,
+    "license": null,
+    "evaluationReport": null
+  },
+  "verification": {
+    "tensorContractInspected": true,
+    "labelCountMatchesOutput": true,
+    "labelOrderConfirmedAgainstTrainingCode": false,
+    "preprocessingConfirmedAgainstTrainingCode": false,
+    "goldenSampleParityPassed": false,
+    "deviceBenchmarkPassed": false
+  }
+}

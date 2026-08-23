@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 2,
+  "artifact": {
+    "name": "braille-cell-classifier",
+    "version": "0.2.0-candidate.1",
+    "sourceModelVersion": "final-refit-20260822",
+    "status": "unverified_candidate",
+    "format": "tflite",
+    "file": "braille_model.tflite",
+    "sha256": "9e07b5c56e2e4107a116370c6f0a2203ec83afe4b2e42d099b1780e75e72d7dc",
+    "sizeBytes": 981768,
+    "tfliteIdentifier": "TFL3",
+    "tfliteSchemaVersion": 3,
+    "converterDescription": "TensorFlow Lite Converter 2.20.0"
+  },
+  "intendedUse": "Klasifikasi satu crop sel Braille A-Z yang sudah dilokalisasi dan disegmentasi.",
+  "notIntendedFor": [
+    "Seluruh frame kamera",
+    "Lebih dari satu sel Braille",
+    "Satu baris Braille yang belum disegmentasi",
+    "Satu halaman dokumen",
+    "Keputusan medis, hukum, finansial, ujian, atau keselamatan"
+  ],
+  "inputs": [
+    {
+      "index": 0,
+      "name": "serving_default_braille_input:0",
+      "shape": [1, 28, 28, 3],
+      "layout": "NHWC",
+      "dtype": "float32",
+      "channelOrder": "RGB",
+      "expectedValueRange": [0, 1],
+      "normalization": "pixel / 255.0",
+      "resizeInterpolation": "bilinear",
+      "tensorQuantizationMetadata": {
+        "scale": [],
+        "zeroPoint": []
+      }
+    }
+  ],
+  "outputs": [
+    {
+      "index": 0,
+      "name": "StatefulPartitionedCall_1:0",
+      "shape": [1, 26],
+      "dtype": "float32",
+      "activation": "softmax",
+      "labelsFile": "label.json"
+    }
+  ],
+  "classCount": 26,
+  "operatorFamilies": [
+    "CONV_2D",
+    "MAX_POOL_2D",
+    "SHAPE",
+    "STRIDED_SLICE",
+    "PACK",
+    "RESHAPE",
+    "FULLY_CONNECTED",
+    "SOFTMAX"
+  ],
+  "runtime": {
+    "cpu": "not_benchmarked_on_physical_device",
+    "gpu": "not_used"
+  },
+  "provenance": {
+    "dataset": "shanks0465/braille-character-dataset",
+    "datasetVersionId": 853989,
+    "datasetLicense": "CC BY 4.0",
+    "trainingCodeCellsSha256": "c0dc23bfddbaa79632649cf44a96d4d5a791c8be210894f997b0f4b385d5794f",
+    "trainingNotebook": "training/notebooks/braille-image-classifier-using-neural-networks.ipynb",
+    "evidenceManifest": "training/evidence/braille-cell-classifier-v1/evidence-manifest.json",
+    "evaluationReport": "training/evidence/braille-cell-classifier-v1/evaluation_report.json"
+  },
+  "verification": {
+    "tensorContractInspected": true,
+    "labelCountMatchesOutput": true,
+    "labelOrderConfirmedAgainstTrainingCode": true,
+    "preprocessingConfirmedAgainstTrainingCode": true,
+    "kerasTfliteConversionParityPassed": true,
+    "nativeCameraGoldenParityPassed": false,
+    "independentPhysicalHoldoutPassed": false,
+    "negativeCorpusPassed": false,
+    "deviceBenchmarkPassed": false
+  }
+}
