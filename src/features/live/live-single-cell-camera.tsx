@@ -20,13 +20,12 @@ import { createSynchronizable } from 'react-native-worklets';
 import {
   BRAILLE_DECODER_VERSION,
   BRAILLE_LABELS,
-  BRAILLE_MODEL_INPUT_HEIGHT,
   BRAILLE_MODEL_INPUT_SCALE,
-  BRAILLE_MODEL_INPUT_WIDTH,
   BRAILLE_MODEL_VERSION,
   INITIAL_PREDICTION_STATE,
   advancePredictionStabilizer,
   assertBrailleModelInputLength,
+  centerCropAndResizeBrailleImage,
   convertRawPixelsToRgbTensor,
   decodeProbabilities,
   getFrameQualityIssue,
@@ -65,8 +64,8 @@ const TARGET_RESOLUTION = { width: 640, height: 480 };
 const CAMERA_CONSTRAINTS = [{ fps: 30 }];
 const INFERENCE_INTERVAL_MS = 200;
 const RESULT_POLL_INTERVAL_MS = INFERENCE_INTERVAL_MS;
-const CENTER_CROP_FRACTION = 0.55;
 const DEVICE_SEARCH_NOTICE_DELAY_MS = 10_000;
+const DEVICE_SEARCH_FAILURE_DELAY_MS = 20_000;
 // Pipeline ini memotong area target, bukan mendeteksi bounding box Braille.
 // Jangan mengirim kotak semu yang tidak sesuai dengan koordinat frame aktual.
 const NO_DETECTED_BOXES = Object.freeze([]);
@@ -94,12 +93,13 @@ function LiveSingleCellCamera({
   torchEnabled,
 }: LiveSingleCellCameraProps) {
   const device = useCameraDevice('back');
+  const deviceRef = useRef(device);
   const resultChannel = useMemo(
     () => createSynchronizable<WorkletMessage>(INITIAL_MESSAGE),
     [],
   );
   const workletActive = useMemo(() => createSynchronizable(false), []);
-  const workletFailed = useMemo(() => createSynchronizable(false), []);
+  const failedGeneration = useMemo(() => createSynchronizable(-1), []);
   const lastProcessedAt = useMemo(() => createSynchronizable(0), []);
   const lastMessageSequenceRef = useRef(0);
   const stabilizerRef = useRef<PredictionStabilizerState>(
@@ -113,6 +113,10 @@ function LiveSingleCellCamera({
   const [cameraStarted, setCameraStarted] = useState(false);
   const [processingFailed, setProcessingFailed] = useState(false);
   const [deviceSearchTimedOut, setDeviceSearchTimedOut] = useState(false);
+
+  useEffect(() => {
+    deviceRef.current = device;
+  }, [device]);
 
   useEffect(() => {
     scanner.setTorchAvailable(device?.hasTorch === true);
@@ -129,24 +133,24 @@ function LiveSingleCellCamera({
 
   useEffect(() => {
     fatalErrorRef.current = false;
-    workletFailed.setBlocking(false);
+    failedGeneration.setBlocking(-1);
     lastMessageSequenceRef.current = 0;
     stabilizerRef.current = INITIAL_PREDICTION_STATE;
-  }, [sessionId, workletFailed]);
+  }, [failedGeneration, sessionId]);
 
   useEffect(() => {
     stabilizerRef.current = INITIAL_PREDICTION_STATE;
     lastMessageSequenceRef.current = 0;
     lastProcessedAt.setBlocking(0);
-    if (!workletFailed.getBlocking()) {
-      resultChannel.setBlocking({
-        ...INITIAL_MESSAGE,
-        generation: resetToken,
-        sessionId,
-      });
-    }
+    failedGeneration.setBlocking(-1);
+    resultChannel.setBlocking({
+      ...INITIAL_MESSAGE,
+      generation: resetToken,
+      sessionId,
+    });
     if (resetToken > 0 && cameraActiveRef.current) {
       scanner.publish(sessionId, {
+        scanEpoch: resetToken,
         timestampMs: performance.now(),
         status: 'searching',
         boxes: NO_DETECTED_BOXES,
@@ -160,7 +164,7 @@ function LiveSingleCellCamera({
     resultChannel,
     scanner,
     sessionId,
-    workletFailed,
+    failedGeneration,
   ]);
 
   useFocusEffect(
@@ -194,6 +198,7 @@ function LiveSingleCellCamera({
     stabilizerRef.current = INITIAL_PREDICTION_STATE;
     if (cameraActive) {
       scanner.publish(sessionId, {
+        scanEpoch: resetToken,
         timestampMs: performance.now(),
         status: 'searching',
         boxes: NO_DETECTED_BOXES,
@@ -202,7 +207,7 @@ function LiveSingleCellCamera({
       });
     }
     return () => workletActive.setBlocking(false);
-  }, [cameraActive, scanner, sessionId, workletActive]);
+  }, [cameraActive, resetToken, scanner, sessionId, workletActive]);
 
   const publishQualityIssue = useCallback(
     (
@@ -213,6 +218,7 @@ function LiveSingleCellCamera({
     ) => {
       stabilizerRef.current = INITIAL_PREDICTION_STATE;
       scanner.publish(originatingSessionId, {
+        scanEpoch: resetToken,
         timestampMs,
         status: 'quality_issue',
         reason,
@@ -222,7 +228,7 @@ function LiveSingleCellCamera({
         modelVersion: BRAILLE_MODEL_VERSION,
       });
     },
-    [scanner],
+    [resetToken, scanner],
   );
 
   const onProcessingError = useCallback(
@@ -235,12 +241,10 @@ function LiveSingleCellCamera({
         return;
       }
       fatalErrorRef.current = true;
-      if (__DEV__) {
-        console.warn(`[BrailleMe scanner] ${_message}`);
-      }
       cameraActiveRef.current = false;
       stabilizerRef.current = INITIAL_PREDICTION_STATE;
       scanner.publish(originatingSessionId, {
+        scanEpoch: resetToken,
         timestampMs: performance.now(),
         status: 'error',
         boxes: NO_DETECTED_BOXES,
@@ -251,7 +255,7 @@ function LiveSingleCellCamera({
         setProcessingFailed(true);
       }
     },
-    [scanner, sessionId],
+    [resetToken, scanner, sessionId],
   );
 
   const onInference = useCallback(
@@ -315,6 +319,7 @@ function LiveSingleCellCamera({
 
       const text = label.toUpperCase();
       scanner.publish(originatingSessionId, {
+        scanEpoch: resetToken,
         timestampMs,
         status: outcome.status,
         text,
@@ -324,7 +329,7 @@ function LiveSingleCellCamera({
         modelVersion: BRAILLE_MODEL_VERSION,
       });
     },
-    [onProcessingError, publishQualityIssue, scanner, sessionId],
+    [onProcessingError, publishQualityIssue, resetToken, scanner, sessionId],
   );
 
   useEffect(() => {
@@ -347,10 +352,10 @@ function LiveSingleCellCamera({
       if (message.sessionId !== sessionId) {
         return;
       }
-      if (message.kind === 'error') {
-        onProcessingError(message.sessionId, message.message);
-      } else if (message.generation !== resetToken) {
+      if (message.generation !== resetToken) {
         return;
+      } else if (message.kind === 'error') {
+        onProcessingError(message.sessionId, message.message);
       } else if (message.kind === 'quality' && message.reason) {
         publishQualityIssue(
           message.sessionId,
@@ -402,7 +407,7 @@ function LiveSingleCellCamera({
         if (!workletActive.getBlocking()) {
           return;
         }
-        if (workletFailed.getBlocking()) {
+        if (failedGeneration.getBlocking() === resetToken) {
           return;
         }
         const previousTimestampMs = lastProcessedAt.getBlocking();
@@ -417,29 +422,9 @@ function LiveSingleCellCamera({
         frame.dispose();
         frameNeedsDispose = false;
 
-        stage = 'menghitung crop tengah';
-        const cropSize = Math.max(
-          1,
-          Math.floor(
-            Math.min(sourceImage.width, sourceImage.height) *
-              CENTER_CROP_FRACTION,
-          ),
-        );
-        const startX = Math.floor((sourceImage.width - cropSize) / 2);
-        const startY = Math.floor((sourceImage.height - cropSize) / 2);
-
-        stage = 'memotong gambar';
-        croppedImage = sourceImage.crop(
-          startX,
-          startY,
-          startX + cropSize,
-          startY + cropSize,
-        );
-        stage = 'mengubah ukuran gambar';
-        resizedImage = croppedImage.resize(
-          BRAILLE_MODEL_INPUT_WIDTH,
-          BRAILLE_MODEL_INPUT_HEIGHT,
-        );
+        stage = 'memotong dan mengubah ukuran gambar';
+        ({ croppedImage, resizedImage } =
+          centerCropAndResizeBrailleImage(sourceImage));
 
         stage = 'membaca piksel gambar';
         const rawPixels = resizedImage.toRawPixelData(false);
@@ -498,7 +483,7 @@ function LiveSingleCellCamera({
           reason: '',
         });
       } catch (error) {
-        workletFailed.setBlocking(true);
+        failedGeneration.setBlocking(resetToken);
         resultChannel.setBlocking({
           sequence: timestampMs,
           generation: resetToken,
@@ -546,11 +531,19 @@ function LiveSingleCellCamera({
     const noticeTimeout = setTimeout(() => {
       setDeviceSearchTimedOut(true);
     }, DEVICE_SEARCH_NOTICE_DELAY_MS);
+    const failureTimeout = setTimeout(() => {
+      if (deviceRef.current || !cameraActiveRef.current) {
+        return;
+      }
+      setDeviceSearchTimedOut(true);
+      onProcessingError(sessionId, 'Kamera belakang tidak ditemukan.');
+    }, DEVICE_SEARCH_FAILURE_DELAY_MS);
     return () => {
       clearTimeout(resetTimeout);
       clearTimeout(noticeTimeout);
+      clearTimeout(failureTimeout);
     };
-  }, [cameraActive, device]);
+  }, [cameraActive, device, onProcessingError, sessionId]);
 
   if (!device) {
     return (
@@ -578,6 +571,7 @@ function LiveSingleCellCamera({
           : {})}
         device={device}
         constraints={CAMERA_CONSTRAINTS}
+        implementationMode="compatible"
         isActive={cameraActive}
         onError={(error) => onProcessingError(sessionId, error.message)}
         onStarted={() => {
@@ -589,8 +583,10 @@ function LiveSingleCellCamera({
         resizeMode="cover"
         style={StyleSheet.absoluteFill}
       />
-      <View style={styles.targetArea}>
-        <Text style={styles.targetLabel}>SATU SEL</Text>
+      <View style={styles.targetOuter}>
+        <View style={styles.targetArea}>
+          <Text style={styles.targetLabel}>SATU SEL</Text>
+        </View>
       </View>
     </View>
   );
@@ -607,7 +603,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     overflow: 'hidden',
-    backgroundColor: colors.primaryContainer,
+    backgroundColor: colors.inverseSurface,
     borderCurve: 'continuous',
     borderRadius: radii.lg,
   },
@@ -615,31 +611,38 @@ const styles = StyleSheet.create({
     minHeight: 220,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: colors.primaryContainer,
+    backgroundColor: colors.inverseSurface,
     borderCurve: 'continuous',
     borderRadius: radii.lg,
     padding: spacing.xl,
   },
   previewText: {
     ...typography.body,
-    color: colors.text,
+    color: colors.inverseOnSurface,
     textAlign: 'center',
   },
-  targetArea: {
-    width: '55%',
+  targetOuter: {
+    width: '58%',
     aspectRatio: 1,
+    borderColor: colors.inverseOnSurface,
+    borderRadius: radii.lg,
+    borderWidth: 4,
+    padding: 4,
+  },
+  targetArea: {
+    flex: 1,
     alignItems: 'center',
     justifyContent: 'flex-end',
     backgroundColor: 'transparent',
     borderColor: colors.primary,
     borderRadius: radii.md,
-    borderStyle: 'dashed',
-    borderWidth: 3,
+    borderStyle: 'solid',
+    borderWidth: 4,
     padding: spacing.sm,
   },
   targetLabel: {
     ...typography.labelCaps,
-    backgroundColor: 'rgba(16, 42, 67, 0.92)',
+    backgroundColor: 'rgba(16, 42, 67, 0.94)',
     borderRadius: radii.sm,
     color: colors.onPrimary,
     fontWeight: '700',

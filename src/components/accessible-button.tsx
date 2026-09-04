@@ -35,6 +35,7 @@ export type AccessibleButtonProps = Omit<
 > & {
   label: string;
   accessibilityLabel?: string | undefined;
+  accessibilityState?: PressableProps['accessibilityState'];
   variant?: AccessibleButtonVariant | undefined;
   disabled?: boolean | undefined;
   style?: StyleProp<ViewStyle>;
@@ -42,6 +43,7 @@ export type AccessibleButtonProps = Omit<
 
 export function AccessibleButton({
   accessibilityLabel,
+  accessibilityState,
   disabled = false,
   label,
   onBlur,
@@ -57,7 +59,7 @@ export function AccessibleButton({
       {...pressableProps}
       accessibilityLabel={accessibilityLabel ?? label}
       accessibilityRole="button"
-      accessibilityState={{ disabled }}
+      accessibilityState={{ ...accessibilityState, disabled }}
       accessible
       disabled={disabled}
       onBlur={(event) => {

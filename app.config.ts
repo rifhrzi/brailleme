@@ -16,18 +16,12 @@ const standaloneBlockedPermissions = [
 export default ({ config }: ConfigContext) => {
   const buildProfile = process.env.EAS_BUILD_PROFILE;
   const appEnvironment =
-    process.env.APP_ENV === "production" ||
-    buildProfile === "production" ||
-    buildProfile === "production-experimental"
+    process.env.APP_ENV === "production" || buildProfile === "production"
       ? "production"
       : process.env.APP_ENV === "preview" ||
           buildProfile === "preview"
         ? "preview"
         : "development";
-  const allowUnverifiedModel =
-    appEnvironment === "production" &&
-    buildProfile === "production-experimental" &&
-    process.env.ALLOW_UNVERIFIED_MODEL === "true";
   const isStandaloneBuild =
     appEnvironment === "preview" || appEnvironment === "production";
 
@@ -36,7 +30,6 @@ export default ({ config }: ConfigContext) => {
     extra: {
       ...config.extra,
       appEnvironment,
-      allowUnverifiedModel,
     },
     android: {
       ...config.android,

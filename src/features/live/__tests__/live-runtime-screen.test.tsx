@@ -1,6 +1,10 @@
 import { render, screen, userEvent } from '@testing-library/react-native';
 
 import LiveRuntimeScreen from '@/features/live/live-runtime-screen';
+import {
+  INITIAL_WORD_DRAFT_STATE,
+  wordDraftReducer,
+} from '@/features/live/word-draft';
 
 const mockModel = { id: 'validated-model' };
 const mockRetry = jest.fn();
@@ -100,18 +104,31 @@ describe('LiveRuntimeScreen', () => {
 
   it('menghubungkan model, sesi, reset, dan torch ke kamera setelah siap', async () => {
     mockModelState = { status: 'ready', model: mockModel };
+    const onWordDraftChange = jest.fn();
+    const wordDraft = wordDraftReducer(INITIAL_WORD_DRAFT_STATE, {
+      type: 'commit_letter',
+      evidenceKey: 'runtime-session:0:A',
+      letter: 'A',
+    });
     const services = jest.requireMock<{
       cameraPermissionPort: { id: string };
       scannerPort: { id: string };
     }>('@/services');
 
-    await render(<LiveRuntimeScreen />);
+    await render(
+      <LiveRuntimeScreen
+        onWordDraftChange={onWordDraftChange}
+        wordDraft={wordDraft}
+      />,
+    );
 
     expect(screen.getByTestId('live-screen-view')).toBeOnTheScreen();
     expect(mockLiveScreenView).toHaveBeenLastCalledWith(
       expect.objectContaining({
         cameraPermission: services.cameraPermissionPort,
+        onWordDraftChange,
         scanner: services.scannerPort,
+        wordDraft,
       }),
     );
     expect(mockCameraProps).toEqual({

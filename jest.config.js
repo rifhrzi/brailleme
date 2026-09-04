@@ -7,7 +7,7 @@ module.exports = {
     '!src/**/__tests__/**',
     '!src/**/index.{ts,tsx}',
     '!src/**/*.d.ts',
-    '!src/types/alpha-preferences.ts',
+    '!src/types/app-preferences.ts',
     '!src/types/runtime.ts',
     '!src/services/ports.ts',
   ],

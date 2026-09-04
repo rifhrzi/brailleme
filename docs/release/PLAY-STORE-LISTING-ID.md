@@ -1,4 +1,4 @@
-# Draft Listing Google Play — Bahasa Indonesia
+# Draft Listing Google Play - Bahasa Indonesia
 
 ## Nama aplikasi
 
@@ -6,21 +6,22 @@ BrailleMe
 
 ## Deskripsi singkat
 
-Periksa kandidat satu huruf Braille secara offline dengan panduan aksesibel.
+Susun satu kata Braille secara offline, satu sel untuk setiap huruf.
 
 ## Deskripsi lengkap
 
-BrailleMe membantu pengguna memeriksa kandidat satu huruf Braille A-Z melalui kamera Android. Tempatkan tepat satu sel Braille di area bidik, tahan posisi, lalu aplikasi menampilkan kandidat yang stabil dan dapat membacakannya melalui suara lokal perangkat.
+BrailleMe membantu pengguna menyusun satu kata dari sel Braille A-Z melalui kamera Android. Tempatkan satu sel di area bidik, tunggu sampai huruf terdeteksi stabil, periksa hasilnya, lalu tambahkan huruf tersebut ke kata. Ulangi langkah ini untuk setiap huruf dan bacakan kata melalui suara lokal perangkat.
 
-Aplikasi dirancang untuk bekerja offline. Gambar kamera dan teks hasil tidak disimpan atau dikirim ke server. Navigasi, status, kontrol suara, haptik, serta pesan pemulihan dirancang agar dapat digunakan bersama TalkBack.
+Aplikasi dirancang untuk bekerja offline. Frame kamera, huruf hasil pemindaian, dan kata yang sedang disusun tidak disimpan atau dikirim ke server. Navigasi, status, kontrol suara, haptik, serta pesan pemulihan dirancang agar dapat digunakan bersama TalkBack.
 
-BrailleMe saat ini hanya mengklasifikasikan satu sel yang sudah ditempatkan dengan tepat. Aplikasi belum membaca kata, spasi, baris, halaman, atau dokumen. Kandidat dapat salah dan harus diverifikasi manusia. Jangan gunakan hasil tanpa verifikasi untuk keputusan medis, hukum, finansial, ujian, keselamatan, atau keputusan penting lainnya.
+BrailleMe memproses satu sel Braille pada satu waktu dan dapat menyusun satu kata hingga 12 huruf. Aplikasi tidak memindai seluruh kata, spasi, baris, halaman, atau dokumen dalam satu gambar. Setiap huruf dapat keliru dan harus diperiksa dengan sumber Braille tepercaya. Jangan gunakan hasil tanpa verifikasi untuk keputusan medis, hukum, finansial, ujian, keselamatan, atau keputusan penting lainnya.
 
-## Release notes kandidat pertama
+## Catatan rilis pertama
 
-- Pemindaian offline untuk satu sel Braille A-Z.
-- Quality gate untuk cahaya dan kontras.
-- Kandidat stabil, kontrol suara lokal, dan haptik.
+- Penyusunan satu kata hingga 12 huruf dari pemindaian sel Braille A-Z.
+- Koreksi melalui pindai ulang, hapus huruf terakhir, dan hapus kata.
+- Quality gate untuk cahaya, kontras, keyakinan, dan kestabilan hasil.
+- Pembacaan kata dengan suara lokal dan umpan balik haptik.
 - Dukungan TalkBack, font besar, dan pemulihan nonvisual.
 - Kebijakan privasi tersedia di dalam aplikasi.
 
@@ -29,19 +30,20 @@ BrailleMe saat ini hanya mengklasifikasikan satu sel yang sudah ditempatkan deng
 - Data dikumpulkan: tidak ada.
 - Data dibagikan: tidak ada.
 - Pemrosesan kamera: sementara dan hanya di perangkat.
+- Penyimpanan hasil huruf/kata: tidak ada.
 - Akun pengguna: tidak ada.
 - Iklan: tidak ada.
-- Analytics/telemetry: tidak ada.
-- Penghapusan data: Reset preferensi di aplikasi atau uninstall.
+- Analitik/telemetri: tidak ada.
+- Penghapusan data: reset preferensi di aplikasi atau uninstall.
 
 Deklarasi ini harus dibandingkan lagi dengan AAB final dan seluruh SDK transitif sebelum dikirim.
 
-## Informasi yang masih harus diisi pemilik akun
+## Informasi yang wajib dilengkapi pemilik akun
 
-- URL privacy policy HTTPS: `TODO`
-- Email dukungan publik: `TODO`
-- Situs web: `TODO`
-- Kategori aplikasi: `TODO`
-- Negara distribusi dan harga: `TODO`
-- Target audience/content rating: `TODO`
-- Feature graphic 1024×500 dan screenshot dari AAB final: `TODO`
+- URL privacy policy HTTPS: **belum tersedia**
+- Email dukungan publik: **belum diisi**
+- Situs web: **belum diisi**
+- Kategori aplikasi: **belum dipilih**
+- Negara distribusi dan harga: **belum dipilih**
+- Target audience/content rating: **belum diisi**
+- Feature graphic 1024 x 500 dan screenshot dari AAB final: **belum tersedia**

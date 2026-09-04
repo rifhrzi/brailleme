@@ -4,23 +4,38 @@ import {
   loadTensorflowModel,
   type TensorflowModel,
 } from 'react-native-fast-tflite';
+import { loadImage, type Image } from 'react-native-nitro-image';
 
-import {
-  ALLOW_UNVERIFIED_MODEL_IN_PRODUCTION,
-  IS_PRODUCTION_BUILD,
-} from '@/config';
+import { IS_PRODUCTION_BUILD } from '@/config';
 import {
   BRAILLE_MODEL_INPUT_CHANNELS,
   BRAILLE_MODEL_INPUT_HEIGHT,
   BRAILLE_MODEL_INPUT_LENGTH,
   BRAILLE_MODEL_INPUT_WIDTH,
+  BRAILLE_MODEL_INPUT_SCALE,
   BRAILLE_MODEL_OUTPUT_LENGTH,
   BRAILLE_MODEL_RELEASE_VERIFIED,
+  BRAILLE_MODEL_VERSION,
+  BRAILLE_NATIVE_SELF_TEST_EXPECTED_INDEX,
+  BRAILLE_NATIVE_SELF_TEST_EXPECTED_LABEL,
+  BRAILLE_NATIVE_SELF_TEST_MIN_CONFIDENCE,
 } from '@/ml/braille-model-contract';
+import {
+  assertBrailleModelInputLength,
+  centerCropAndResizeBrailleImage,
+  convertRawPixelsToRgbTensor,
+} from '@/ml/frame-preprocessing';
+import { decodeProbabilities } from '@/ml/prediction-stabilizer';
+import { assertBrailleModelRuntimeAllowed } from '@/ml/braille-model-runtime-policy';
+
+export { assertBrailleModelRuntimeAllowed } from '@/ml/braille-model-runtime-policy';
 
 // Metro membutuhkan literal require agar model ikut dipaketkan sebagai aset.
 // eslint-disable-next-line @typescript-eslint/no-require-imports
-const BRAILLE_MODEL_ASSET = require('../../assets/models/braille-cell-classifier-v1/braille_model.tflite');
+const BRAILLE_MODEL_ASSET = require('../../assets/models/braille-cell-classifier-v2/braille_model.tflite');
+// Fixture 51x51 menempatkan crop 28x28 tepat di tengah untuk menguji helper
+// crop, decoder NitroImage, channel-order, normalisasi, dan runSync native.
+const BRAILLE_NATIVE_SELF_TEST_ASSET = require('../../assets/models/braille-cell-classifier-v2/native-self-test-v.png');
 
 export type BrailleModelState =
   | { readonly status: 'loading'; readonly model?: never; readonly error?: never }
@@ -57,15 +72,76 @@ function disposeBrailleModel(model: TensorflowModel) {
   }
 }
 
-export function assertBrailleModelRuntimeAllowed(
-  isProductionBuild: boolean,
-  releaseVerified: boolean,
-  allowUnverifiedModel = false,
-) {
-  if (isProductionBuild && !releaseVerified && !allowUnverifiedModel) {
-    throw new Error(
-      'Build produksi menolak classifier yang belum terverifikasi.',
+function disposeNativeImage(image: Image | undefined) {
+  try {
+    image?.dispose();
+  } catch {
+    // Semua resource lain tetap harus dibersihkan bila satu dispose gagal.
+  }
+}
+
+type NativePostCropSelfTestResult = {
+  readonly confidence: number;
+  readonly label: string;
+  readonly pixelFormat: string;
+};
+
+async function runNativePostCropSelfTest(
+  model: TensorflowModel,
+  fixtureUri: string,
+): Promise<NativePostCropSelfTestResult> {
+  let sourceImage: Image | undefined;
+  let croppedImage: Image | undefined;
+  let resizedImage: Image | undefined;
+
+  try {
+    sourceImage = await loadImage({ filePath: fixtureUri });
+    ({ croppedImage, resizedImage } =
+      centerCropAndResizeBrailleImage(sourceImage));
+    const rawPixels = resizedImage.toRawPixelData(false);
+    const preprocessed = convertRawPixelsToRgbTensor(
+      rawPixels,
+      BRAILLE_MODEL_INPUT_SCALE,
     );
+    assertBrailleModelInputLength(preprocessed.tensor);
+
+    const [outputBuffer] = model.runSync([preprocessed.tensor.buffer]);
+    if (!outputBuffer) {
+      throw new Error('Self-test native tidak menghasilkan tensor output.');
+    }
+    if (
+      outputBuffer.byteLength !==
+      BRAILLE_MODEL_OUTPUT_LENGTH * Float32Array.BYTES_PER_ELEMENT
+    ) {
+      throw new Error('Ukuran tensor output self-test native tidak cocok.');
+    }
+
+    const prediction = decodeProbabilities(new Float32Array(outputBuffer));
+    if (!prediction) {
+      throw new Error('Probabilitas self-test native tidak valid.');
+    }
+    if (prediction.index !== BRAILLE_NATIVE_SELF_TEST_EXPECTED_INDEX) {
+      throw new Error(
+        `Self-test native memprediksi indeks ${prediction.index}, bukan ${BRAILLE_NATIVE_SELF_TEST_EXPECTED_INDEX}.`,
+      );
+    }
+    if (prediction.confidence < BRAILLE_NATIVE_SELF_TEST_MIN_CONFIDENCE) {
+      throw new Error(
+        `Confidence self-test native ${prediction.confidence.toFixed(6)} di bawah ${BRAILLE_NATIVE_SELF_TEST_MIN_CONFIDENCE.toFixed(2)}.`,
+      );
+    }
+
+    return {
+      confidence: prediction.confidence,
+      label: BRAILLE_NATIVE_SELF_TEST_EXPECTED_LABEL,
+      pixelFormat: rawPixels.pixelFormat,
+    };
+  } finally {
+    disposeNativeImage(resizedImage);
+    if (croppedImage !== resizedImage) disposeNativeImage(croppedImage);
+    if (sourceImage !== croppedImage && sourceImage !== resizedImage) {
+      disposeNativeImage(sourceImage);
+    }
   }
 }
 
@@ -73,13 +149,19 @@ async function loadAndValidateBrailleModel(): Promise<TensorflowModel> {
   assertBrailleModelRuntimeAllowed(
     IS_PRODUCTION_BUILD,
     BRAILLE_MODEL_RELEASE_VERIFIED,
-    ALLOW_UNVERIFIED_MODEL_IN_PRODUCTION,
   );
 
-  const [asset] = await Asset.loadAsync(BRAILLE_MODEL_ASSET);
+  const [asset, nativeSelfTestAsset] = await Asset.loadAsync([
+    BRAILLE_MODEL_ASSET,
+    BRAILLE_NATIVE_SELF_TEST_ASSET,
+  ]);
   const localUri = asset?.localUri;
+  const nativeSelfTestUri = nativeSelfTestAsset?.localUri;
 
-  if (!localUri?.startsWith('file://')) {
+  if (
+    !localUri?.startsWith('file://') ||
+    !nativeSelfTestUri?.startsWith('file://')
+  ) {
     throw new Error('Aset model tidak tersedia sebagai file lokal.');
   }
 
@@ -139,6 +221,21 @@ async function loadAndValidateBrailleModel(): Promise<TensorflowModel> {
       probabilitySum > 1.01
     ) {
       throw new Error('Self-test Softmax model gagal.');
+    }
+
+    const nativeSelfTest = await runNativePostCropSelfTest(
+      model,
+      nativeSelfTestUri,
+    );
+    if (__DEV__ && process.env.NODE_ENV !== 'test') {
+      console.info(
+        'BRAILLE_NATIVE_POST_CROP_SELF_TEST',
+        JSON.stringify({
+          ...nativeSelfTest,
+          modelVersion: BRAILLE_MODEL_VERSION,
+          passed: true,
+        }),
+      );
     }
 
     return model;

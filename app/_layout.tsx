@@ -13,6 +13,7 @@ import { useEffect, useState } from 'react';
 import { Pressable, StyleSheet } from 'react-native';
 
 import { colors, fonts } from '@/theme';
+import { useReduceMotionEnabled } from '@/accessibility/use-accessibility-preferences';
 
 void SplashScreen.preventAutoHideAsync();
 
@@ -45,6 +46,7 @@ function LocalizedHeaderBackButton({ onPress }: { onPress: () => void }) {
 }
 
 export default function RootLayout() {
+  const reduceMotionEnabled = useReduceMotionEnabled();
   const [fontsLoaded, fontError] = useFonts({
     HankenGrotesk_600SemiBold,
     HankenGrotesk_700Bold,
@@ -69,7 +71,7 @@ export default function RootLayout() {
       <StatusBar style="dark" />
       <Stack
         screenOptions={({ navigation }) => ({
-          animation: 'simple_push',
+          animation: reduceMotionEnabled ? 'none' : 'simple_push',
           contentStyle: { backgroundColor: colors.canvas },
           headerBackButtonDisplayMode: 'minimal',
           headerLeft: (props) =>
@@ -86,17 +88,10 @@ export default function RootLayout() {
           },
         })}
       >
-        <Stack.Screen name="index" options={{ title: 'BrailleMe' }} />
+        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
         <Stack.Screen name="onboarding" options={{ title: 'Tentang BrailleMe' }} />
-        <Stack.Screen name="live" options={{ title: 'Pindai Satu Sel' }} />
-        <Stack.Screen
-          name="model-probe"
-          options={{ title: 'Uji Model Satu Sel' }}
-        />
-        <Stack.Screen name="settings" options={{ title: 'Pengaturan' }} />
         <Stack.Screen name="help" options={{ title: 'Bantuan' }} />
         <Stack.Screen name="privacy" options={{ title: 'Privasi' }} />
-        <Stack.Screen name="debug" options={{ title: 'Diagnostik' }} />
         <Stack.Screen name="+not-found" options={{ title: 'Halaman tidak ditemukan' }} />
       </Stack>
     </>

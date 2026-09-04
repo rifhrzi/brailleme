@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "model": {
+    "version": "0.3.0-candidate.1",
+    "sha256": "7a41942cf330c9558884385221deb69f282adfd8d39be00a257c75ec9572c318"
+  },
+  "external_test": {
+    "source": "AngelinaDataset uploaded/test.txt",
+    "page_count": 50,
+    "sample_count": 9625,
+    "top1_accuracy": 0.9311168831168831,
+    "macro_f1_all_26_classes": 0.8534704665444255,
+    "coverage_at_0_90": 0.7274805194805195,
+    "accepted_accuracy_at_0_90": 0.9930019994287347,
+    "pages_below_75_percent": 3,
+    "minimum_page_accuracy": 0.6,
+    "class_v_support": 9,
+    "class_v_recall": 0.1111111111111111,
+    "class_y_support": 0
+  },
+  "keras_tflite_golden_parity": {
+    "passed": true,
+    "sample_count": 26,
+    "top1_match_count": 26,
+    "maximum_absolute_probability_delta": 2.980232238769531e-7,
+    "maximum_allowed_absolute_probability_delta": 0.0001
+  },
+  "native_post_crop_fixture": {
+    "passed": true,
+    "device": "Android 16 API 36 x86_64 emulator",
+    "fixture_count": 1,
+    "expected_label": "v",
+    "actual_label": "v",
+    "confidence": 0.9999980926513672,
+    "raw_pixel_format": "BGRA",
+    "scope": "Native decode, shared post-conversion crop/resize, preprocessing, and TFLite runSync; excludes camera YUV parity."
+  },
+  "physical_holdout": null,
+  "holdout_manifest_validation": {
+    "valid": false,
+    "reason": "Independent physical holdout is not available."
+  },
+  "negative_guardrail": null,
+  "public_negative_guardrail": {
+    "source": "AngelinaDataset not_braille/train.txt",
+    "scene_count": 44,
+    "confidence_threshold": 0.9,
+    "false_accept_count": 1,
+    "false_accept_rate": 0.022727272727272728,
+    "passed_release_criterion": false,
+    "false_accept": {
+      "source_image": "not_braille/misc/memuar-5.jpg",
+      "predicted_label": "c",
+      "confidence": 0.9014171957969666
+    }
+  },
+  "limitations": [
+    "The 99.40% epoch-selection validation is not source-family independent and may be optimistic.",
+    "The external test contains no Y examples and only nine V examples.",
+    "The uploaded/test split has informed this promotion and must not be reused as a pristine promotion holdout for a future candidate.",
+    "Angelina evaluation uses annotation-derived crops instead of the native camera center crop.",
+    "AngelinaDataset has no explicit root license at the pinned revision.",
+    "Physical-camera parity, independent native-camera negative-corpus release testing, and device benchmarking are pending."
+  ]
+}

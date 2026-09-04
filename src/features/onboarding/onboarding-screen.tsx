@@ -3,7 +3,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 import { AccessibleButton, Screen, SectionCard } from '@/components';
-import { updateAlphaPreferences } from '@/storage';
+import { updateAppPreferences } from '@/storage';
 import { colors, spacing, typography } from '@/theme';
 
 export default function OnboardingScreen() {
@@ -12,7 +12,7 @@ export default function OnboardingScreen() {
   const isReview = review === '1';
 
   const completeOnboarding = () => {
-    updateAlphaPreferences({ onboardingCompleted: true });
+    updateAppPreferences({ onboardingCompleted: true });
     if (isReview && router.canGoBack()) {
       router.back();
       return;
@@ -30,34 +30,38 @@ export default function OnboardingScreen() {
           Tiga hal penting sebelum mulai.
         </Text>
 
-        <SectionCard title="Kemampuan saat ini">
+        <SectionCard title="Susun satu kata" variant="plain">
           <Text selectable style={styles.body}>
-            Pemindai kamera satu sel tersedia untuk kandidat huruf A sampai Z.
-            Ia belum dapat membaca kata, spasi, atau satu baris Braille.
+            BrailleMe menyusun satu kata dengan memindai satu sel untuk setiap
+            huruf A sampai Z. Tambahkan huruf yang sudah stabil, lalu lanjutkan
+            ke sel berikutnya. Aplikasi tidak membaca seluruh baris sekaligus.
           </Text>
         </SectionCard>
 
-        <SectionCard title="Privasi dan offline">
+        <SectionCard title="Privasi dan offline" variant="plain">
           <Text selectable style={styles.body}>
-            Gambar dan teks hasil tidak disimpan atau dikirim ke cloud. Hanya
-            preferensi aplikasi yang tersimpan di perangkat.
+            Gambar, huruf, dan kata hasil pemindaian tidak disimpan atau dikirim
+            ke cloud. Hanya preferensi aplikasi yang tersimpan di perangkat.
           </Text>
         </SectionCard>
 
-        <SectionCard title="Batas dan verifikasi">
+        <SectionCard title="Periksa setiap hasil" variant="plain">
           <Text selectable style={styles.body}>
-            Kandidat model dapat salah dan bukan hasil terverifikasi. Periksa
-            bersama manusia sebelum memakai huruf untuk keputusan penting.
+            Setiap huruf dapat salah. Cocokkan kata dengan sumber Braille atau
+            minta bantuan orang yang memahaminya sebelum memakai hasil untuk
+            keputusan penting.
           </Text>
         </SectionCard>
       </Screen>
 
       <SafeAreaView edges={['bottom']} style={styles.footer}>
-        <AccessibleButton
-          label={isReview ? 'Selesai' : 'Buka Beranda'}
-          onPress={completeOnboarding}
-          variant="action"
-        />
+        <View style={styles.footerContent} testID="onboarding-footer-content">
+          <AccessibleButton
+            label={isReview ? 'Selesai' : 'Buka Beranda'}
+            onPress={completeOnboarding}
+            variant="action"
+          />
+        </View>
       </SafeAreaView>
     </View>
   );
@@ -86,5 +90,10 @@ const styles = StyleSheet.create({
     paddingBottom: spacing.lg,
     paddingHorizontal: spacing.lg,
     paddingTop: spacing.md,
+  },
+  footerContent: {
+    width: '100%',
+    maxWidth: 760,
+    alignSelf: 'center',
   },
 });

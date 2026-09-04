@@ -43,16 +43,21 @@ describe('kontrak model Braille', () => {
 
   it('menjaga runtime fail-closed selama manifest masih kandidat', () => {
     expect(BRAILLE_MODEL_RELEASE_VERIFIED).toBe(false);
-    expect(BRAILLE_MODEL_REQUIRED_VERIFICATION_KEYS).toHaveLength(9);
+    expect(BRAILLE_MODEL_REQUIRED_VERIFICATION_KEYS).toHaveLength(11);
     expect(Object.isFrozen(BRAILLE_MODEL_REQUIRED_VERIFICATION_KEYS)).toBe(true);
   });
 
   it('menolak manifest verified yang mengganti bukti wajib dengan placeholder', () => {
     const manifestModule =
-      '../../../assets/models/braille-cell-classifier-v1/manifest.json';
+      '../../../assets/models/braille-cell-classifier-v2/manifest.json';
     jest.resetModules();
     jest.doMock(manifestModule, () => ({
       artifact: { status: 'verified', version: '1.0.0' },
+      nativeSelfTest: {
+        expectedClassIndex: 21,
+        expectedLabel: 'v',
+        minimumConfidence: 0.99,
+      },
       verification: { placeholder: true },
     }));
 
@@ -69,7 +74,7 @@ describe('kontrak model Braille', () => {
 
   it('gagal cepat bila jumlah label aset tidak sama dengan output model', () => {
     const labelsModule =
-      '../../../assets/models/braille-cell-classifier-v1/label.json';
+      '../../../assets/models/braille-cell-classifier-v2/label.json';
     jest.resetModules();
     jest.doMock(labelsModule, () => ['a']);
 
@@ -85,7 +90,7 @@ describe('kontrak model Braille', () => {
 
   it('gagal cepat bila urutan label aset berbeda dari kontrak a-z', () => {
     const labelsModule =
-      '../../../assets/models/braille-cell-classifier-v1/label.json';
+      '../../../assets/models/braille-cell-classifier-v2/label.json';
     jest.resetModules();
     jest.doMock(labelsModule, () =>
       'abcdefghijklmnopqrstuvwxyz'.split('').reverse(),

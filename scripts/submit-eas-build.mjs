@@ -16,13 +16,11 @@ const mode = process.argv[2];
 const buildId = process.env.EAS_BUILD_ID;
 const modeConfig =
   mode === "internal"
-    ? { buildProfile: "preview", submitProfile: "internal" }
-    : mode === "production-experimental"
-      ? {
-          buildProfile: "production-experimental",
-          submitProfile: "production",
-          releaseClass: "unverified-model-exception",
-        }
+    ? {
+        buildProfile: "preview",
+        submitProfile: "internal",
+        releaseClass: "internal-preview",
+      }
     : mode === "production"
       ? {
           buildProfile: "production",
@@ -48,7 +46,7 @@ function run(command, args, options = {}) {
 }
 
 if (!modeConfig) {
-  fail("mode harus internal, production, atau production-experimental");
+  fail("mode harus internal atau production");
 }
 if (
   typeof buildId !== "string" ||
@@ -136,7 +134,7 @@ const modelManifestPath = resolve(
   projectRoot,
   "assets",
   "models",
-  "braille-cell-classifier-v1",
+  "braille-cell-classifier-v2",
   "manifest.json",
 );
 if (!existsSync(modelManifestPath)) fail("manifest model aktif tidak ditemukan");
@@ -149,7 +147,7 @@ const attestation = {
     version: modelManifest.artifact?.version,
     sha256: modelManifest.artifact?.sha256,
     status: modelManifest.artifact?.status,
-    releaseClass: modeConfig.releaseClass ?? "internal-preview",
+    releaseClass: modeConfig.releaseClass,
   },
   eas: {
     projectId,

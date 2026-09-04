@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "role": "external_public_offline_benchmark",
+  "dataset": {
+    "repository": "https://github.com/IlyaOvodov/AngelinaDataset",
+    "revision": "e13038d483bb58e17046d640e078dc4768276e9b",
+    "sourcePageCount": 290,
+    "includedAzCellCount": 69056,
+    "excludedNonAzCellCount": 16207,
+    "licenseStatus": "no_explicit_license_file_observed_at_repository_root"
+  },
+  "model": {
+    "version": "0.2.0-candidate.1",
+    "sha256": "9e07b5c56e2e4107a116370c6f0a2203ec83afe4b2e42d099b1780e75e72d7dc"
+  },
+  "preprocessing": {
+    "source": "normalized Angelina ground-truth bounding boxes",
+    "crop": "square centered on annotation with scale 1.25",
+    "resize": "28x28 bilinear",
+    "channelOrder": "RGB",
+    "normalization": "pixel/255"
+  },
+  "metrics": {
+    "top1Accuracy": 0.2226453892493049,
+    "macroF1": 0.15678387186995085,
+    "minimumPerClassRecall": 0.0,
+    "confidenceThreshold": 0.9,
+    "acceptedCount": 44,
+    "coverageAtThreshold": 0.0006371640407784986,
+    "acceptedAccuracy": 0.7727272727272727,
+    "internal75PercentTargetPassed": false
+  },
+  "negativeGuardrail": {
+    "sceneCount": 44,
+    "falseAcceptCountAt090": 0,
+    "note": "One center crop per public non-Braille image; not native-camera evidence."
+  },
+  "decision": {
+    "status": "failed_internal_target",
+    "productionEvidence": false,
+    "nativeCameraAccuracyClaimAllowed": false
+  }
+}

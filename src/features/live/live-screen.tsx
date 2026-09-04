@@ -16,6 +16,14 @@ import {
   SectionCard,
   StatusAnnouncer,
 } from '@/components';
+import {
+  INITIAL_WORD_DRAFT_STATE,
+  MAX_WORD_LENGTH,
+  getWordText,
+  wordDraftReducer,
+  type WordDraftAction,
+  type WordDraftState,
+} from '@/features/live/word-draft';
 import { PROVISIONAL_MIN_CONFIDENCE } from '@/ml/prediction-stabilizer';
 import {
   cameraPermissionPort,
@@ -25,7 +33,7 @@ import {
   type ScannerPort,
   type TtsPort,
 } from '@/services';
-import { useAlphaPreferences } from '@/storage';
+import { useAppPreferences } from '@/storage';
 import {
   colors,
   minimumTouchTarget,
@@ -46,6 +54,8 @@ type LiveScreenViewProps = {
   scanner?: ScannerPort;
   cameraPermission?: CameraPermissionPort;
   tts?: TtsPort;
+  wordDraft?: WordDraftState | undefined;
+  onWordDraftChange?: ((nextDraft: WordDraftState) => void) | undefined;
   renderScannerPreview?: (props: ScannerPreviewProps) => ReactNode;
 };
 
@@ -133,6 +143,7 @@ function getValidatedStableText(event: LiveScanEvent | null) {
 
   if (
     !text ||
+    !/^[A-Z]$/.test(text) ||
     confidence === undefined ||
     !Number.isFinite(confidence) ||
     confidence < PROVISIONAL_MIN_CONFIDENCE ||
@@ -161,7 +172,7 @@ function areLiveScanEventsEquivalentForUi(
     return getValidatedStableText(current) === getValidatedStableText(next);
   }
 
-  // Timestamp, confidence kandidat, dan metadata model tidak ditampilkan oleh
+  // Timestamp, confidence hasil sementara, dan metadata pemindai tidak ditampilkan oleh
   // layar. Mengabaikannya mencegah subtree kamera dirender ulang tiap frame.
   return true;
 }
@@ -175,7 +186,7 @@ function presentEvent(
     if (initializing) {
       return {
         title: 'Menyiapkan pemindai',
-        guidance: 'Memeriksa kamera, model, dan suara lokal.',
+        guidance: 'Memeriksa kamera, pemindai, dan suara lokal.',
         tone: 'neutral',
       };
     }
@@ -211,17 +222,17 @@ function presentEvent(
             tone: 'warning',
           };
     case 'candidate':
-      return { title: 'Memeriksa kandidat', tone: 'neutral' };
+      return { title: 'Memastikan huruf', tone: 'neutral' };
     case 'stable':
       return getValidatedStableText(event)
         ? {
-            title: 'Kandidat satu sel stabil',
+            title: 'Huruf terdeteksi',
             guidance: 'Verifikasi huruf terhadap sumber Braille sebelum digunakan.',
             tone: 'success',
           }
         : {
             title: 'Belum dapat dipastikan',
-            guidance: 'Kandidat belum dapat ditampilkan. Pindai kembali.',
+            guidance: 'Huruf belum dapat ditampilkan. Pindai kembali.',
             tone: 'warning',
           };
     case 'unsupported':
@@ -241,12 +252,20 @@ function presentEvent(
 
 export function LiveScreenView({
   cameraPermission = cameraPermissionPort,
+  onWordDraftChange,
   renderScannerPreview,
   scanner = scannerPort,
   tts = ttsPort,
+  wordDraft: controlledWordDraft,
 }: LiveScreenViewProps) {
   const router = useRouter();
-  const preferences = useAlphaPreferences();
+  const preferences = useAppPreferences();
+  const startingWordDraft =
+    controlledWordDraft ?? INITIAL_WORD_DRAFT_STATE;
+  const startingWordText = getWordText(startingWordDraft);
+  const startingWordSpeechKey = startingWordText
+    ? `${startingWordDraft.revision}:${startingWordText}`
+    : '';
   const startedRef = useRef(false);
   const startPendingRef = useRef(false);
   const acceptsEventsRef = useRef(false);
@@ -254,7 +273,9 @@ export function LiveScreenView({
   const startAttemptRef = useRef(0);
   const permissionRequestSequenceRef = useRef(0);
   const ttsRequestSequenceRef = useRef(0);
+  const speechActionSequenceRef = useRef(0);
   const activeSessionIdRef = useRef('');
+  const scannerResetTokenRef = useRef(0);
   const retryInFlightRef = useRef(false);
   const finishInFlightRef = useRef(false);
   const pauseInFlightRef = useRef(false);
@@ -262,9 +283,14 @@ export function LiveScreenView({
   const scannerCommandQueueRef = useRef<Promise<void>>(Promise.resolve());
   const activeSpeechRef = useRef(false);
   const hapticKeysRef = useRef(new Set<string>());
-  const currentStableKeyRef = useRef('');
+  const currentWordTextRef = useRef(startingWordText);
+  const currentWordSpeechKeyRef = useRef(startingWordSpeechKey);
+  const previousWordSpeechKeyRef = useRef(startingWordSpeechKey);
+  const lastStableTextRef = useRef('');
+  const stableResultSequenceRef = useRef(0);
   const eventRef = useRef<LiveScanEvent | null>(null);
   const invalidEventDetectedRef = useRef(false);
+  const wordDraftRef = useRef<WordDraftState>(startingWordDraft);
   const [permission, setPermission] =
     useState<CameraPermissionSnapshot>(defaultPermission);
   const [scannerAvailability, setScannerAvailability] =
@@ -277,6 +303,11 @@ export function LiveScreenView({
   const [scanActive, setScanActive] = useState(false);
   const [activeSessionId, setActiveSessionId] = useState('');
   const [scannerResetToken, setScannerResetToken] = useState(0);
+  const [stableResultSequence, setStableResultSequence] = useState(0);
+  const [localWordDraft, setLocalWordDraft] = useState<WordDraftState>(
+    startingWordDraft,
+  );
+  const wordDraft = controlledWordDraft ?? localWordDraft;
   const [torchEnabled, setTorchEnabled] = useState(false);
   const [torchAvailable, setTorchAvailable] = useState(
     scanner.getCapabilities?.().torchAvailable ?? true,
@@ -301,6 +332,38 @@ export function LiveScreenView({
     },
     [],
   );
+
+  const applyWordAction = useCallback(
+    (action: WordDraftAction) => {
+      const nextDraft = wordDraftReducer(wordDraftRef.current, action);
+      if (nextDraft === wordDraftRef.current) {
+        return null;
+      }
+      wordDraftRef.current = nextDraft;
+      const nextWordText = getWordText(nextDraft);
+      currentWordTextRef.current = nextWordText;
+      currentWordSpeechKeyRef.current = nextWordText
+        ? `${nextDraft.revision}:${nextWordText}`
+        : '';
+      setLocalWordDraft(nextDraft);
+      onWordDraftChange?.(nextDraft);
+      return nextDraft;
+    },
+    [onWordDraftChange],
+  );
+
+  const invalidateCandidate = useCallback((advanceEpoch = true) => {
+    lastStableTextRef.current = '';
+    eventRef.current = null;
+    invalidEventDetectedRef.current = false;
+    setEvent(null);
+    setInvalidEventDetected(false);
+    if (advanceEpoch) {
+      const nextEpoch = scannerResetTokenRef.current + 1;
+      scannerResetTokenRef.current = nextEpoch;
+      setScannerResetToken(nextEpoch);
+    }
+  }, []);
 
   const leaveLive = useCallback(() => {
     if (router.canGoBack()) {
@@ -331,6 +394,7 @@ export function LiveScreenView({
       const permissionRequest = ++permissionRequestSequenceRef.current;
       const ttsRequest = ++ttsRequestSequenceRef.current;
       if (nextState !== 'active') {
+        invalidateCandidate();
         if (activeSpeechRef.current) {
           activeSpeechRef.current = false;
           setSpeaking(false);
@@ -371,7 +435,7 @@ export function LiveScreenView({
       ttsRequestSequenceRef.current += 1;
       subscription.remove();
     };
-  }, [cameraPermission, tts]);
+  }, [cameraPermission, invalidateCandidate, tts]);
 
   useEffect(() => {
     let active = true;
@@ -384,8 +448,16 @@ export function LiveScreenView({
         return;
       }
 
+      // Session dan epoch diperiksa sebelum payload lain agar event lama tidak
+      // dapat mengubah UI, termasuk bila payload lama itu sendiri rusak.
+      if (nextEvent.sessionId !== activeSessionIdRef.current) {
+        return;
+      }
+      if (nextEvent.scanEpoch !== scannerResetTokenRef.current) {
+        return;
+      }
+
       if (!isValidLiveScanEvent(nextEvent)) {
-        currentStableKeyRef.current = '';
         eventRef.current = null;
         setEvent(null);
         if (!invalidEventDetectedRef.current) {
@@ -402,32 +474,29 @@ export function LiveScreenView({
         return;
       }
 
-      if (nextEvent.sessionId !== activeSessionIdRef.current) {
-        return;
-      }
-
       if (invalidEventDetectedRef.current) {
         invalidEventDetectedRef.current = false;
         setInvalidEventDetected(false);
       }
       const nextStableText = getValidatedStableText(nextEvent);
-      const nextStableKey = nextStableText
-        ? `${nextEvent.sessionId}:${nextStableText}`
-        : '';
-      if (currentStableKeyRef.current !== nextStableKey) {
-        currentStableKeyRef.current = nextStableKey;
-        if (activeSpeechRef.current) {
-          activeSpeechRef.current = false;
-          void tts.stop().catch(() => undefined);
-        }
-        setSpeaking(false);
-        setHasSpoken(false);
+      if (
+        nextStableText &&
+        lastStableTextRef.current !== nextStableText
+      ) {
+        stableResultSequenceRef.current += 1;
+        lastStableTextRef.current = nextStableText;
+        setStableResultSequence(stableResultSequenceRef.current);
       }
       if (nextEvent.status === 'error') {
         acceptsEventsRef.current = false;
         setScanActive(false);
         setPaused(false);
         setTorchEnabled(false);
+        if (activeSpeechRef.current) {
+          activeSpeechRef.current = false;
+          setSpeaking(false);
+          void tts.stop().catch(() => undefined);
+        }
       }
       if (!areLiveScanEventsEquivalentForUi(eventRef.current, nextEvent)) {
         eventRef.current = nextEvent;
@@ -486,7 +555,9 @@ export function LiveScreenView({
           acceptsEventsRef.current = started;
           setScanActive(started);
           if (started) {
-            currentStableKeyRef.current = '';
+            lastStableTextRef.current = '';
+            stableResultSequenceRef.current = 0;
+            setStableResultSequence(0);
             hapticKeysRef.current.clear();
             eventRef.current = null;
             setEvent(null);
@@ -561,7 +632,7 @@ export function LiveScreenView({
       return {
         title: 'Pemindai satu sel belum tersedia',
         guidance:
-          'Komponen kamera atau model belum dapat digunakan. Tidak ada hasil yang dibuat.',
+          'Komponen pemindai belum dapat digunakan. Tidak ada hasil yang dibuat.',
         tone: 'error' as const,
       };
     }
@@ -575,7 +646,7 @@ export function LiveScreenView({
     if (invalidEventDetected) {
       return {
         title: 'Belum dapat dipastikan',
-        guidance: 'Kandidat belum dapat ditampilkan. Pindai kembali.',
+        guidance: 'Huruf belum dapat ditampilkan. Pindai kembali.',
         tone: 'warning' as const,
       };
     }
@@ -589,12 +660,19 @@ export function LiveScreenView({
     scannerAvailability,
   ]);
   const stableText = getValidatedStableText(event);
-  const speechStableKey = stableText
-    ? `${event?.sessionId ?? 'unknown'}:${stableText}`
+  const candidateEvidenceKey = stableText && event
+    ? `${event.sessionId}:${event.scanEpoch}:${event.timestampMs}:${stableText}`
     : '';
   const stableKey = stableText
-    ? `${event?.sessionId ?? 'unknown'}:${scannerResetToken}:${stableText}`
+    ? `${event?.sessionId ?? 'unknown'}:${event?.scanEpoch ?? scannerResetToken}:${stableResultSequence}:${stableText}`
     : '';
+  const wordText = getWordText(wordDraft);
+  const wordSpeechKey = wordText
+    ? `${wordDraft.revision}:${wordText}`
+    : '';
+  const wordIsFull = wordDraft.letters.length >= MAX_WORD_LENGTH;
+  const canAddStableLetter =
+    Boolean(stableText && candidateEvidenceKey) && !wordIsFull;
   const scannerReady = scannerAvailability.available;
   const canRequestCameraPermission =
     permission.status !== 'granted' &&
@@ -627,13 +705,13 @@ export function LiveScreenView({
             : 'Izinkan akses kamera untuk mulai memindai.'
           : 'Pemindaian belum dapat dimulai.';
   const canSpeak =
-    Boolean(stableText) &&
+    Boolean(wordText) &&
     ttsAvailability.status === 'available' &&
     ttsAvailability.localVoiceAvailable &&
     !preferences.muted &&
     preferences.speechVolume > 0;
-  const voiceDisabledMessage = !stableText
-    ? 'Bacakan tersedia setelah kandidat huruf stabil.'
+  const voiceDisabledMessage = !wordText
+    ? 'Bacakan tersedia setelah minimal satu huruf ditambahkan ke kata.'
     : preferences.muted
       ? 'Suara aplikasi sedang dibisukan.'
       : preferences.speechVolume <= 0
@@ -643,7 +721,7 @@ export function LiveScreenView({
           ? ttsAvailability.message.trim() ||
             'Suara Bahasa Indonesia lokal belum tersedia.'
           : '';
-  const shouldOfferVoiceSettings = Boolean(stableText) && !canSpeak;
+  const shouldOfferVoiceSettings = Boolean(wordText) && !canSpeak;
 
   useEffect(() => {
     if (!tts.subscribePlayback) {
@@ -654,8 +732,14 @@ export function LiveScreenView({
       if (!mountedRef.current) {
         return;
       }
+      if (playback.text && playback.text !== currentWordTextRef.current) {
+        return;
+      }
       if (playback.status === 'speaking') {
-        if (stableText && playback.text === stableText) {
+        if (
+          currentWordTextRef.current &&
+          playback.text === currentWordTextRef.current
+        ) {
           activeSpeechRef.current = true;
           setSpeaking(true);
         }
@@ -670,7 +754,22 @@ export function LiveScreenView({
         setActionMessage('Pembacaan selesai.');
       }
     });
-  }, [stableText, tts]);
+  }, [tts]);
+
+  useEffect(() => {
+    const previousKey = previousWordSpeechKeyRef.current;
+    previousWordSpeechKeyRef.current = wordSpeechKey;
+    if (!previousKey || previousKey === wordSpeechKey) {
+      return;
+    }
+
+    setHasSpoken(false);
+    if (activeSpeechRef.current) {
+      activeSpeechRef.current = false;
+      setSpeaking(false);
+      void tts.stop().catch(() => undefined);
+    }
+  }, [tts, wordSpeechKey]);
 
   useEffect(() => {
     if (
@@ -699,6 +798,7 @@ export function LiveScreenView({
     setActiveSessionId('');
     const startAttempt = ++startAttemptRef.current;
     setActionMessage('Memeriksa kembali pemindaian.');
+    invalidateCandidate();
 
     try {
       if (activeSpeechRef.current) {
@@ -764,7 +864,6 @@ export function LiveScreenView({
         setScanActive(started);
 
         if (started) {
-          currentStableKeyRef.current = '';
           hapticKeysRef.current.clear();
           eventRef.current = null;
           setEvent(null);
@@ -890,21 +989,74 @@ export function LiveScreenView({
     }
   };
 
-  const speak = async () => {
-    if (!stableText) {
+  const addStableLetter = () => {
+    if (!stableText || !candidateEvidenceKey || !canAddStableLetter) {
       return;
     }
-    const requestedStableKey = speechStableKey;
+    const nextDraft = applyWordAction({
+      type: 'commit_letter',
+      evidenceKey: candidateEvidenceKey,
+      letter: stableText,
+    });
+    if (!nextDraft) {
+      return;
+    }
+
+    const nextWord = getWordText(nextDraft);
+    invalidateCandidate();
+    setActionMessage(
+      `Huruf ${stableText} ditambahkan. Kata sekarang ${nextWord}. Pindai huruf berikutnya.`,
+    );
+  };
+
+  const removeLastLetter = () => {
+    const currentLetters = wordDraftRef.current.letters;
+    const removedLetter = currentLetters[currentLetters.length - 1];
+    const nextDraft = applyWordAction({ type: 'remove_last_letter' });
+    if (!nextDraft || !removedLetter) {
+      return;
+    }
+    const nextWord = getWordText(nextDraft);
+    setActionMessage(
+      nextWord
+        ? `Huruf ${removedLetter} dihapus. Kata sekarang ${nextWord}.`
+        : `Huruf ${removedLetter} dihapus. Kata sekarang kosong.`,
+    );
+  };
+
+  const clearWord = () => {
+    const nextDraft = applyWordAction({ type: 'clear_word' });
+    if (!nextDraft) {
+      return;
+    }
+    invalidateCandidate();
+    setActionMessage('Kata dihapus. Mulai lagi dari huruf pertama.');
+  };
+
+  const rescanCurrentCell = () => {
+    invalidateCandidate();
+    setActionMessage('Hasil huruf dibersihkan. Pindai ulang sel saat ini.');
+  };
+
+  const speak = async () => {
+    if (!wordText) {
+      return;
+    }
+    const requestedWordKey = wordSpeechKey;
+    const speechAction = ++speechActionSequenceRef.current;
     try {
-      const result = await tts.speak(stableText, {
+      const result = await tts.speak(wordText, {
         rate: preferences.speechRate,
         volume: preferences.speechVolume,
       });
       if (
         !mountedRef.current ||
-        currentStableKeyRef.current !== requestedStableKey
+        currentWordSpeechKeyRef.current !== requestedWordKey ||
+        speechAction !== speechActionSequenceRef.current
       ) {
-        if (result.ok) {
+        // Hanya request terbaru boleh menghentikan audio. Request yang lebih
+        // lama tidak boleh mengantrekan stop setelah pembacaan baru dimulai.
+        if (result.ok && speechAction === speechActionSequenceRef.current) {
           void tts.stop().catch(() => undefined);
         }
         return;
@@ -918,10 +1070,14 @@ export function LiveScreenView({
       }
       setHasSpoken(result.ok);
       setActionMessage(
-        result.ok ? 'Membacakan hasil.' : 'Suara tidak tersedia.',
+        result.ok ? 'Membacakan kata.' : 'Suara tidak tersedia.',
       );
     } catch {
-      if (mountedRef.current) {
+      if (
+        mountedRef.current &&
+        speechAction === speechActionSequenceRef.current &&
+        currentWordSpeechKeyRef.current === requestedWordKey
+      ) {
         activeSpeechRef.current = false;
         setSpeaking(false);
         setActionMessage('Suara tidak tersedia.');
@@ -930,9 +1086,13 @@ export function LiveScreenView({
   };
 
   const stopSpeaking = async () => {
+    const speechAction = ++speechActionSequenceRef.current;
     try {
       const result = await tts.stop();
-      if (mountedRef.current) {
+      if (
+        mountedRef.current &&
+        speechAction === speechActionSequenceRef.current
+      ) {
         if (result.ok) {
           activeSpeechRef.current = false;
           setSpeaking(false);
@@ -942,24 +1102,32 @@ export function LiveScreenView({
         }
       }
     } catch {
-      if (mountedRef.current) {
+      if (
+        mountedRef.current &&
+        speechAction === speechActionSequenceRef.current
+      ) {
         setActionMessage('Suara tidak dapat dihentikan.');
       }
     }
   };
 
   const repeat = async () => {
-    if (!speechStableKey) {
+    if (!wordText || !wordSpeechKey) {
       return;
     }
-    const requestedStableKey = speechStableKey;
+    const requestedWordKey = wordSpeechKey;
+    const speechAction = ++speechActionSequenceRef.current;
     try {
-      const result = await tts.repeat();
+      const result = await tts.speak(wordText, {
+        rate: preferences.speechRate,
+        volume: preferences.speechVolume,
+      });
       if (
         !mountedRef.current ||
-        currentStableKeyRef.current !== requestedStableKey
+        currentWordSpeechKeyRef.current !== requestedWordKey ||
+        speechAction !== speechActionSequenceRef.current
       ) {
-        if (result.ok) {
+        if (result.ok && speechAction === speechActionSequenceRef.current) {
           void tts.stop().catch(() => undefined);
         }
         return;
@@ -972,13 +1140,17 @@ export function LiveScreenView({
         setSpeaking(false);
       }
       setActionMessage(
-        result.ok ? 'Mengulangi hasil.' : 'Hasil tidak dapat diulangi.',
+        result.ok ? 'Mengulangi kata.' : 'Kata tidak dapat diulangi.',
       );
     } catch {
-      if (mountedRef.current) {
+      if (
+        mountedRef.current &&
+        speechAction === speechActionSequenceRef.current &&
+        currentWordSpeechKeyRef.current === requestedWordKey
+      ) {
         activeSpeechRef.current = false;
         setSpeaking(false);
-        setActionMessage('Hasil tidak dapat diulangi.');
+        setActionMessage('Kata tidak dapat diulangi.');
       }
     }
   };
@@ -999,6 +1171,11 @@ export function LiveScreenView({
     startedRef.current = false;
     startPendingRef.current = false;
     activeSpeechRef.current = false;
+    wordDraftRef.current = INITIAL_WORD_DRAFT_STATE;
+    currentWordTextRef.current = '';
+    currentWordSpeechKeyRef.current = '';
+    setLocalWordDraft(INITIAL_WORD_DRAFT_STATE);
+    onWordDraftChange?.(INITIAL_WORD_DRAFT_STATE);
     setRetrying(false);
     setScanActive(false);
     setSpeaking(false);
@@ -1017,31 +1194,17 @@ export function LiveScreenView({
     leaveLive();
   };
 
-  const clearResult = async () => {
-    if (activeSpeechRef.current) {
-      await tts.stop().catch(() => undefined);
-      activeSpeechRef.current = false;
-    }
-    eventRef.current = null;
-    setEvent(null);
-    invalidEventDetectedRef.current = false;
-    setInvalidEventDetected(false);
-    currentStableKeyRef.current = '';
-    hapticKeysRef.current.clear();
-    setSpeaking(false);
-    setHasSpoken(false);
-    setScannerResetToken((current) => current + 1);
-    setActionMessage('Hasil dibersihkan dari layar.');
-  };
-
   return (
     <Screen testID="live-screen">
+      <Text accessibilityRole="header" selectable style={styles.screenTitle}>
+        Susun satu kata
+      </Text>
       <StatusAnnouncer
         guidance={presentation.guidance ?? ''}
         stableAnnouncement={
           stableText
-            ? `Kandidat huruf Braille ${stableText} stabil. Verifikasi hasil sebelum digunakan.`
-            : 'Kandidat satu sel stabil. Verifikasi hasil sebelum digunakan.'
+            ? `Huruf Braille ${stableText} terdeteksi. Periksa hasil sebelum digunakan.`
+            : 'Huruf terdeteksi. Periksa hasil sebelum digunakan.'
         }
         stableKey={stableKey}
         status={event?.status === 'stable' && !stableText ? 'error' : event?.status ?? 'error'}
@@ -1068,13 +1231,6 @@ export function LiveScreenView({
             </View>
           )
         : null}
-
-      {scanActive ? (
-        <Text accessibilityRole="alert" selectable style={styles.warningText}>
-          Eksperimental: pindai tepat satu sel A sampai Z. Kandidat dapat salah
-          dan belum mendukung kata, spasi, atau satu baris.
-        </Text>
-      ) : null}
 
       {!needsRecovery ? (
         <View
@@ -1103,22 +1259,85 @@ export function LiveScreenView({
       ) : null}
 
       {scanActive ? (
-        stableText ? (
-          <SectionCard title="Kandidat terakhir">
-            <Text accessibilityLabel={`Kandidat huruf Braille: ${stableText}`} selectable style={styles.result}>
-              {stableText}
+        <SectionCard
+          description="Susun satu kata, satu sel per huruf. Periksa huruf sebelum menambahkannya."
+          style={styles.workspaceCard}
+          title="Huruf dan kata"
+        >
+          <View style={styles.workspaceResults}>
+            <View
+              style={[
+                styles.workspaceResultGroup,
+                styles.candidateResultGroup,
+              ]}
+            >
+              <Text selectable style={styles.workspaceLabel}>
+                HURUF TERDETEKSI
+              </Text>
+              {stableText ? (
+                <Text
+                  accessibilityLabel={`Huruf Braille terdeteksi: ${stableText}`}
+                  selectable
+                  style={styles.candidateResult}
+                >
+                  {stableText}
+                </Text>
+              ) : (
+                <Text selectable style={styles.candidateEmpty}>
+                  Belum ada huruf stabil.
+                </Text>
+              )}
+            </View>
+            <View style={[styles.workspaceResultGroup, styles.wordResultGroup]}>
+              <Text selectable style={styles.workspaceLabel}>
+                KATA {wordDraft.letters.length} DARI {MAX_WORD_LENGTH}
+              </Text>
+              <Text
+                accessibilityLabel={
+                  wordText ? `Kata tersusun: ${wordText}` : 'Kata masih kosong'
+                }
+                selectable
+                style={styles.wordResult}
+              >
+                {wordText || '-'}
+              </Text>
+            </View>
+          </View>
+          <View style={styles.primaryActions}>
+            <AccessibleButton
+              accessibilityHint={
+                wordIsFull
+                  ? `Kata sudah mencapai batas ${MAX_WORD_LENGTH} huruf`
+                  : stableText
+                    ? `Menambahkan huruf ${stableText} ke kata, lalu memindai sel berikutnya`
+                    : 'Tersedia setelah satu huruf terdeteksi stabil'
+              }
+              disabled={!canAddStableLetter}
+              label="Tambah huruf"
+              onPress={addStableLetter}
+              style={styles.controlButton}
+              variant="action"
+            />
+            <AccessibleButton
+              accessibilityHint={
+                canSpeak
+                  ? 'Membacakan kata tersusun menggunakan suara lokal'
+                  : voiceDisabledMessage
+              }
+              disabled={!canSpeak}
+              label="Bacakan"
+              onPress={() => void speak()}
+              style={styles.controlButton}
+              variant="secondary"
+            />
+          </View>
+          {wordIsFull ? (
+            <Text accessibilityRole="alert" selectable style={styles.body}>
+              Batas {MAX_WORD_LENGTH} huruf tercapai. Hapus satu huruf untuk
+              melanjutkan.
             </Text>
-          </SectionCard>
-        ) : (
-          <SectionCard
-            description="Huruf akan muncul setelah gambar cukup jelas dan hasil stabil."
-            title="Kandidat terakhir"
-          >
-            <Text selectable style={styles.body}>
-              Belum ada kandidat.
-            </Text>
-          </SectionCard>
-        )
+          ) : null}
+        </SectionCard>
       ) : null}
 
       {needsRecovery ? (
@@ -1177,63 +1396,74 @@ export function LiveScreenView({
         </SectionCard>
       ) : null}
 
-      {scanActive ? <SectionCard title="Kontrol suara">
-        <View style={styles.actions}>
-          <AccessibleButton
-            accessibilityHint={
-              canSpeak
-                ? 'Membacakan hasil stabil menggunakan suara lokal'
-                : voiceDisabledMessage
-            }
-            disabled={!canSpeak}
-            label="Bacakan"
-            onPress={() => void speak()}
-            variant="action"
-          />
-          <AccessibleButton
-            disabled={!speaking}
-            label="Hentikan suara"
-            onPress={() => void stopSpeaking()}
-            variant="secondary"
-          />
-          <AccessibleButton
-            disabled={!canSpeak || !hasSpoken}
-            label="Ulangi"
-            onPress={() => void repeat()}
-            variant="secondary"
-          />
-          <AccessibleButton
-            disabled={!event}
-            label="Bersihkan"
-            onPress={() => void clearResult()}
-            variant="secondary"
-          />
-          {voiceDisabledMessage ? (
-            <Text
-              accessibilityLiveRegion="polite"
-              selectable
-              style={styles.body}
-            >
-              {voiceDisabledMessage}
-            </Text>
-          ) : null}
-          {shouldOfferVoiceSettings ? (
+      {scanActive ? (
+        <SectionCard title="Koreksi dan suara" variant="plain">
+          <View style={styles.controlActions}>
             <AccessibleButton
-              accessibilityHint="Membuka pengaturan suara dan pemeriksaan suara lokal"
-              label="Buka pengaturan suara"
-              onPress={() => router.push('/settings')}
+              accessibilityHint="Membuang hasil huruf saat ini dan memulai pemindaian baru"
+              label="Pindai ulang sel"
+              onPress={rescanCurrentCell}
+              style={styles.controlButton}
               variant="secondary"
             />
-          ) : null}
-        </View>
-      </SectionCard> : null}
+            <AccessibleButton
+              accessibilityHint="Menghapus huruf terakhir dari kata tersusun"
+              disabled={!wordText}
+              label="Hapus huruf terakhir"
+              onPress={removeLastLetter}
+              style={styles.controlButton}
+              variant="secondary"
+            />
+            <AccessibleButton
+              accessibilityHint="Menghapus semua huruf dari kata tersusun"
+              disabled={!wordText}
+              label="Hapus kata"
+              onPress={clearWord}
+              style={styles.controlButton}
+              variant="danger"
+            />
+            <AccessibleButton
+              disabled={!speaking}
+              label="Hentikan suara"
+              onPress={() => void stopSpeaking()}
+              style={styles.controlButton}
+              variant="secondary"
+            />
+            <AccessibleButton
+              disabled={!canSpeak || !hasSpoken}
+              label="Ulangi"
+              onPress={() => void repeat()}
+              style={styles.controlButton}
+              variant="secondary"
+            />
+            {wordText && voiceDisabledMessage ? (
+              <Text
+                selectable
+                style={[styles.body, styles.controlMessage]}
+              >
+                {voiceDisabledMessage}
+              </Text>
+            ) : null}
+            {shouldOfferVoiceSettings ? (
+              <AccessibleButton
+                accessibilityHint="Membuka pengaturan suara dan pemeriksaan suara lokal"
+                label="Buka pengaturan suara"
+                onPress={() => router.push('/settings')}
+                style={styles.controlButton}
+                variant="secondary"
+              />
+            ) : null}
+          </View>
+        </SectionCard>
+      ) : null}
 
-      {scanActive ? <SectionCard title="Kontrol pemindaian">
-        <View style={styles.actions}>
+      {scanActive ? <SectionCard title="Kontrol pemindaian" variant="plain">
+        <View style={styles.controlActions}>
           <AccessibleButton
             disabled={!scanActive}
             label={paused ? 'Lanjut' : 'Jeda'}
             onPress={() => void togglePause()}
+            style={styles.controlButton}
             variant="secondary"
           />
           <View style={styles.switchRow}>
@@ -1272,8 +1502,9 @@ export function LiveScreenView({
 
       {actionMessage ? (
         <Text
-          accessibilityLiveRegion="polite"
-          accessibilityRole="alert"
+          accessibilityLiveRegion={
+            actionMessage === 'Membacakan kata.' ? 'none' : 'polite'
+          }
           selectable
           style={styles.actionMessage}
         >
@@ -1293,11 +1524,15 @@ export function LiveScreenView({
 }
 
 const styles = StyleSheet.create({
+  screenTitle: {
+    ...typography.displayLargeMobile,
+    color: colors.text,
+  },
   preview: {
     minHeight: 220,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: colors.primaryContainer,
+    backgroundColor: colors.inverseSurface,
     borderCurve: 'continuous',
     borderRadius: radii.lg,
     padding: spacing.xl,
@@ -1307,7 +1542,7 @@ const styles = StyleSheet.create({
     minHeight: 88,
     alignItems: 'center',
     justifyContent: 'center',
-    borderColor: colors.outline,
+    borderColor: colors.inverseOnSurface,
     borderRadius: radii.default,
     borderStyle: 'dashed',
     borderWidth: 2,
@@ -1315,7 +1550,7 @@ const styles = StyleSheet.create({
   },
   previewText: {
     ...typography.body,
-    color: colors.text,
+    color: colors.inverseOnSurface,
     textAlign: 'center',
   },
   statusPanel: {
@@ -1332,17 +1567,79 @@ const styles = StyleSheet.create({
     ...typography.body,
     color: colors.text,
   },
-  warningText: {
-    ...typography.body,
-    color: colors.secondary,
-    fontWeight: '700',
+  workspaceCard: {
+    backgroundColor: colors.surfaceContainerLowest,
+    borderColor: colors.primary,
   },
-  result: {
-    ...typography.title,
+  workspaceResults: {
+    gap: spacing.xs,
+  },
+  workspaceResultGroup: {
+    minHeight: 104,
+    flexGrow: 1,
+    justifyContent: 'space-between',
+    gap: spacing.xs,
+    backgroundColor: colors.primaryContainer,
+    borderRadius: radii.md,
+    padding: spacing.md,
+  },
+  candidateResultGroup: {
+    width: '100%',
+    minHeight: 80,
+    flexBasis: 'auto',
+    flexGrow: 0,
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  wordResultGroup: {
+    width: '100%',
+    flexBasis: 'auto',
+  },
+  workspaceLabel: {
+    ...typography.labelCaps,
+    flexShrink: 1,
+    color: colors.onPrimaryContainer,
+  },
+  candidateResult: {
+    fontFamily: typography.title.fontFamily,
+    fontSize: 48,
+    fontWeight: '700',
+    lineHeight: 56,
     color: colors.text,
+  },
+  candidateEmpty: {
+    ...typography.body,
+    flexShrink: 1,
+    color: colors.text,
+    textAlign: 'right',
+  },
+  wordResult: {
+    ...typography.displayLargeMobile,
+    color: colors.text,
+    flexShrink: 1,
+    letterSpacing: 2,
+    minHeight: minimumTouchTarget,
+  },
+  primaryActions: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    gap: spacing.sm,
   },
   actions: {
     gap: spacing.sm,
+  },
+  controlActions: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    gap: spacing.sm,
+  },
+  controlButton: {
+    minWidth: 132,
+    flexGrow: 1,
+    flexBasis: 148,
+  },
+  controlMessage: {
+    width: '100%',
   },
   switchRow: {
     minHeight: minimumTouchTarget,

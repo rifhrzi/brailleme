@@ -18,7 +18,7 @@ export type StatusAnnouncerProps = {
   throttleMs?: number | undefined;
 };
 
-const MINIMUM_GUIDANCE_INTERVAL_MS = 1_000;
+const MINIMUM_GUIDANCE_INTERVAL_MS = 3_000;
 const STABLE_WITHOUT_KEY = '__stable_without_key__';
 
 function normalizeGuidance(guidance: string | undefined) {
@@ -43,7 +43,7 @@ function buildAnnouncement(
 
 export function StatusAnnouncer({
   guidance,
-  stableAnnouncement = 'Kandidat stabil. Periksa hasil di layar.',
+  stableAnnouncement = 'Huruf terdeteksi. Periksa hasil di layar.',
   stableKey,
   status,
   throttleMs = MINIMUM_GUIDANCE_INTERVAL_MS,
@@ -80,7 +80,7 @@ export function StatusAnnouncer({
         announcedStableKeysRef.current.add(normalizedStableKey);
         AccessibilityInfo.announceForAccessibility(
           normalizeGuidance(stableAnnouncement) ||
-            'Kandidat stabil. Periksa hasil di layar.',
+            'Huruf terdeteksi. Periksa hasil di layar.',
         );
       }
 

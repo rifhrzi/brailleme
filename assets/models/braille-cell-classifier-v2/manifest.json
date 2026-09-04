@@ -1,0 +1,129 @@
+{
+  "schemaVersion": 2,
+  "artifact": {
+    "name": "braille-cell-classifier",
+    "version": "0.3.0-candidate.1",
+    "sourceModelVersion": "angelina-mixed-seed42-20260904",
+    "status": "unverified_candidate",
+    "format": "tflite",
+    "file": "braille_model.tflite",
+    "sha256": "7a41942cf330c9558884385221deb69f282adfd8d39be00a257c75ec9572c318",
+    "sizeBytes": 982368,
+    "tfliteIdentifier": "TFL3",
+    "tfliteSchemaVersion": 3,
+    "converterDescription": "TensorFlow Lite Converter 2.20.0"
+  },
+  "intendedUse": "Klasifikasi satu crop sel Braille A-Z yang sudah dilokalisasi dan disegmentasi.",
+  "notIntendedFor": [
+    "Seluruh frame kamera",
+    "Lebih dari satu sel Braille",
+    "Satu baris Braille yang belum disegmentasi",
+    "Satu halaman dokumen",
+    "Keputusan medis, hukum, finansial, ujian, atau keselamatan"
+  ],
+  "inputs": [
+    {
+      "index": 0,
+      "name": "serving_default_braille_input:0",
+      "shape": [1, 28, 28, 3],
+      "layout": "NHWC",
+      "dtype": "float32",
+      "channelOrder": "RGB",
+      "expectedValueRange": [0, 1],
+      "normalization": "pixel / 255.0",
+      "resizeInterpolation": "bilinear",
+      "tensorQuantizationMetadata": {
+        "scale": [],
+        "zeroPoint": []
+      }
+    }
+  ],
+  "outputs": [
+    {
+      "index": 0,
+      "name": "StatefulPartitionedCall_1:0",
+      "shape": [1, 26],
+      "dtype": "float32",
+      "activation": "softmax",
+      "labelsFile": "label.json"
+    }
+  ],
+  "classCount": 26,
+  "operatorFamilies": [
+    "CONV_2D",
+    "MAX_POOL_2D",
+    "SHAPE",
+    "STRIDED_SLICE",
+    "PACK",
+    "RESHAPE",
+    "FULLY_CONNECTED",
+    "SOFTMAX"
+  ],
+  "runtime": {
+    "cpu": "android_emulator_post_crop_self_test_passed_physical_pending",
+    "gpu": "not_used"
+  },
+  "nativeSelfTest": {
+    "file": "native-self-test-v.png",
+    "sha256": "08e20f52ef72517734e5595e9fd8b2222467a3248bf6c9f477ce564817b76901",
+    "canvasSize": [51, 51],
+    "centerCellBox": [11, 11, 28, 28],
+    "expectedLabel": "v",
+    "expectedClassIndex": 21,
+    "minimumConfidence": 0.99,
+    "referenceTfliteConfidence": 0.9999980926513672,
+    "source": {
+      "dataset": "shanks0465/braille-character-dataset",
+      "datasetVersionId": 853989,
+      "file": "v1.JPG13dim.jpg",
+      "fileSha256": "fda97b29c561edf74ba04f99185d2235219625576ddc604c28bb0cff3ff085e6",
+      "license": "CC BY 4.0",
+      "transformation": "Decode RGB, resize bilinear to 28x28, place at (11,11) on a white 51x51 PNG canvas"
+    }
+  },
+  "provenance": {
+    "datasets": [
+      {
+        "name": "AngelinaDataset",
+        "repository": "https://github.com/IlyaOvodov/AngelinaDataset",
+        "revision": "e13038d483bb58e17046d640e078dc4768276e9b",
+        "trainingSplits": ["books/train.txt", "handwritten/train.txt"],
+        "validationSplits": ["books/val.txt", "handwritten/val.txt"],
+        "externalTestSplits": ["uploaded/test.txt"],
+        "licenseStatus": "no_explicit_license_file_observed_at_repository_root",
+        "redistributionRightsConfirmed": false
+      },
+      {
+        "name": "shanks0465/braille-character-dataset",
+        "datasetVersionId": 853989,
+        "license": "CC BY 4.0",
+        "redistributionRightsConfirmed": true
+      }
+    ],
+    "trainingSources": [
+      {
+        "path": "training/evidence/braille-cell-classifier-v2/training-source/train_angelina_candidate.py",
+        "sha256": "a1f0773fae363069d80df1620f4547540a19bae4bc6efe14a95c8dcbf9a4e35e"
+      },
+      {
+        "path": "training/evidence/braille-cell-classifier-v2/training-source/benchmark_angelina.py",
+        "sha256": "8debc0aaea846306daf14eae15b56565e0ca287fa919a5bb2de05c9cbd57199a"
+      }
+    ],
+    "evidenceManifest": "training/evidence/braille-cell-classifier-v2/evidence-manifest.json",
+    "evaluationReport": "training/evidence/braille-cell-classifier-v2/evaluation_report.json"
+  },
+  "verification": {
+    "tensorContractInspected": true,
+    "labelCountMatchesOutput": true,
+    "labelOrderConfirmedAgainstTrainingCode": true,
+    "preprocessingConfirmedAgainstTrainingCode": true,
+    "kerasTfliteConversionParityPassed": true,
+    "nativePostCropFixturePassed": true,
+    "nativeCameraGoldenParityPassed": false,
+    "independentPhysicalHoldoutPassed": false,
+    "negativeCorpusPassed": false,
+    "deviceBenchmarkPassed": false,
+    "datasetRedistributionRightsConfirmed": false
+  }
+}

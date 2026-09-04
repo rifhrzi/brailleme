@@ -61,7 +61,7 @@ const styles = StyleSheet.create({
     gap: spacing.md,
     borderColor: colors.outlineVariant,
     borderCurve: 'continuous',
-    borderRadius: radii.lg,
+    borderRadius: radii.xl,
     borderWidth: 1,
     padding: spacing.lg,
   },
@@ -78,9 +78,9 @@ const styles = StyleSheet.create({
   },
   title: {
     ...typography.heading,
-    color: colors.text,
-    fontSize: 20,
-    lineHeight: 28,
+    color: colors.primary,
+    fontSize: 22,
+    lineHeight: 30,
   },
   description: {
     ...typography.body,

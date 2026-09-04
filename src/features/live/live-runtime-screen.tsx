@@ -4,6 +4,7 @@ import { StyleSheet, Text, View } from 'react-native';
 
 import { AccessibleButton, Screen, SectionCard } from '@/components';
 import LiveSingleCellCamera from '@/features/live/live-single-cell-camera';
+import type { WordDraftState } from '@/features/live/word-draft';
 import {
   LiveScreenView,
   type ScannerPreviewProps,
@@ -12,7 +13,15 @@ import { useBrailleModel } from '@/ml';
 import { cameraPermissionPort, scannerPort } from '@/services';
 import { spacing, typography } from '@/theme';
 
-export default function LiveRuntimeScreen() {
+type LiveRuntimeScreenProps = {
+  readonly onWordDraftChange?: ((nextDraft: WordDraftState) => void) | undefined;
+  readonly wordDraft?: WordDraftState | undefined;
+};
+
+export default function LiveRuntimeScreen({
+  onWordDraftChange,
+  wordDraft,
+}: LiveRuntimeScreenProps = {}) {
   const router = useRouter();
   const modelState = useBrailleModel();
   const leaveLive = useCallback(() => {
@@ -85,8 +94,10 @@ export default function LiveRuntimeScreen() {
   return (
     <LiveScreenView
       cameraPermission={cameraPermissionPort}
+      onWordDraftChange={onWordDraftChange}
       renderScannerPreview={renderScannerPreview}
       scanner={scannerPort}
+      wordDraft={wordDraft}
     />
   );
 }

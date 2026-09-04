@@ -10,6 +10,12 @@ import * as Haptics from 'expo-haptics';
 import { AppState, type AppStateStatus } from 'react-native';
 
 import { LiveScreenView } from '@/features/live/live-screen';
+import {
+  INITIAL_WORD_DRAFT_STATE,
+  MAX_WORD_LENGTH,
+  wordDraftReducer,
+  type WordDraftState,
+} from '@/features/live/word-draft';
 import type {
   CameraPermissionPort,
   LiveScanListener,
@@ -18,7 +24,7 @@ import type {
   TtsPlaybackListener,
   TtsPort,
 } from '@/services';
-import { resetAlphaPreferences, updateAlphaPreferences } from '@/storage';
+import { resetAppPreferences, updateAppPreferences } from '@/storage';
 import type { LiveScanEvent, ScanStatus } from '@/types';
 
 // Announcement timing memiliki suite tersendiri; suite ini fokus pada presentasi
@@ -116,8 +122,9 @@ function createEvent(
   overrides: Partial<LiveScanEvent> = {},
 ): LiveScanEvent {
   return {
-    schemaVersion: 1,
+    schemaVersion: 2,
     sessionId: 'test-session',
+    scanEpoch: 0,
     timestampMs: 1_786_128_000_000,
     status,
     boxes: [],
@@ -127,7 +134,13 @@ function createEvent(
   };
 }
 
-async function renderReadyLive() {
+async function renderReadyLive({
+  onWordDraftChange,
+  wordDraft,
+}: {
+  onWordDraftChange?: ((nextDraft: WordDraftState) => void) | undefined;
+  wordDraft?: WordDraftState | undefined;
+} = {}) {
   const scanner = createScannerHarness();
   const cameraPermission = createGrantedPermission();
   const tts = createAvailableTts();
@@ -135,8 +148,10 @@ async function renderReadyLive() {
   const view = await render(
     <LiveScreenView
       cameraPermission={cameraPermission}
+      onWordDraftChange={onWordDraftChange}
       scanner={scanner.port}
       tts={tts}
+      wordDraft={wordDraft}
     />,
   );
   await waitFor(() => {
@@ -146,9 +161,28 @@ async function renderReadyLive() {
   return { cameraPermission, scanner, tts, unmount: view.unmount };
 }
 
+async function emitStableAndAdd(
+  scanner: ScannerHarness,
+  user: ReturnType<typeof userEvent.setup>,
+  letter: string,
+  scanEpoch = 0,
+) {
+  await act(() => {
+    scanner.emit(
+      createEvent('stable', {
+        confidence: 0.95,
+        scanEpoch,
+        text: letter,
+        timestampMs: 1_786_128_000_000 + scanEpoch,
+      }),
+    );
+  });
+  await user.press(screen.getByRole('button', { name: 'Tambah huruf' }));
+}
+
 describe('Pindai Live', () => {
   beforeEach(() => {
-    resetAlphaPreferences();
+    resetAppPreferences();
   });
 
   it('menampilkan status persiapan lalu mencari setelah scanner aktif', async () => {
@@ -188,11 +222,18 @@ describe('Pindai Live', () => {
         screen.getByRole('summary', { name: /Mencari satu sel Braille/i }),
       ).toBeOnTheScreen();
     });
+    expect(
+      screen.getByRole('header', { name: 'Susun satu kata' }),
+    ).toBeOnTheScreen();
+    expect(
+      screen.getByText(/Susun satu kata, satu sel per huruf/i),
+    ).toBeOnTheScreen();
   });
 
   it('tetap memulai scanner ketika pemeriksaan suara gagal', async () => {
     const scanner = createScannerHarness();
     const tts = createAvailableTts();
+    const user = userEvent.setup();
     tts.getAvailability = jest.fn(async () => {
       throw new Error('TTS tidak merespons.');
     });
@@ -210,9 +251,7 @@ describe('Pindai Live', () => {
       screen.getByRole('summary', { name: /Mencari satu sel Braille/i }),
     ).toBeOnTheScreen();
 
-    await act(() => {
-      scanner.emit(createEvent('stable', { text: 'A' }));
-    });
+    await emitStableAndAdd(scanner, user, 'A');
     expect(
       screen.getByText('Status suara lokal tidak dapat diperiksa.'),
     ).toBeOnTheScreen();
@@ -237,13 +276,13 @@ describe('Pindai Live', () => {
     },
     {
       status: 'candidate',
-      overrides: { text: 'TEBAKAN KANDIDAT' },
-      accessibleName: /Memeriksa kandidat/i,
+      overrides: { text: 'A' },
+      accessibleName: /Memastikan huruf/i,
     },
     {
       status: 'stable',
-      overrides: { text: 'ABC', confidence: 0.91 },
-      accessibleName: /Kandidat satu sel stabil.*Verifikasi huruf/i,
+      overrides: { text: 'A', confidence: 0.91 },
+      accessibleName: /Huruf terdeteksi.*Verifikasi huruf/i,
     },
     {
       status: 'unsupported',
@@ -277,16 +316,18 @@ describe('Pindai Live', () => {
 
       if (status === 'stable') {
         expect(
-          screen.getByLabelText('Kandidat huruf Braille: ABC'),
+          screen.getByLabelText('Huruf Braille terdeteksi: A'),
         ).toBeOnTheScreen();
         expect(screen.queryByText(/Keyakinan 91 persen/i)).toBeNull();
         expect(
-          screen.getByRole('button', { name: 'Bacakan' }),
+          screen.getByRole('button', { name: 'Tambah huruf' }),
         ).toBeEnabled();
+        expect(
+          screen.getByRole('button', { name: 'Bacakan' }),
+        ).toBeDisabled();
       } else if (status !== 'error') {
-        expect(screen.getByText('Belum ada kandidat.')).toBeOnTheScreen();
-        expect(screen.queryByLabelText(/^Kandidat huruf Braille:/)).toBeNull();
-        expect(screen.queryByText('TEBAKAN KANDIDAT')).toBeNull();
+        expect(screen.getByText('Belum ada huruf stabil.')).toBeOnTheScreen();
+        expect(screen.queryByLabelText(/^Huruf Braille terdeteksi:/)).toBeNull();
         expect(
           screen.getByRole('button', { name: 'Bacakan' }),
         ).toBeDisabled();
@@ -296,7 +337,7 @@ describe('Pindai Live', () => {
         expect(screen.getByRole('button', { name: 'Coba lagi' })).toBeEnabled();
         expect(screen.queryByRole('button', { name: 'Jeda' })).toBeNull();
         expect(screen.queryByRole('switch', { name: 'Senter' })).toBeNull();
-        expect(screen.queryByText('Belum ada kandidat.')).toBeNull();
+        expect(screen.queryByText('Belum ada huruf stabil.')).toBeNull();
       }
     },
     10_000,
@@ -311,13 +352,13 @@ describe('Pindai Live', () => {
 
     expect(
       screen.getByRole('summary', {
-        name: /Belum dapat dipastikan.*Kandidat belum dapat ditampilkan/i,
+        name: /Belum dapat dipastikan.*Huruf belum dapat ditampilkan/i,
       }),
     ).toBeOnTheScreen();
     expect(
-      screen.queryByRole('summary', { name: /Kandidat satu sel stabil/i }),
+      screen.queryByRole('summary', { name: /Huruf terdeteksi/i }),
     ).toBeNull();
-    expect(screen.getByText('Belum ada kandidat.')).toBeOnTheScreen();
+    expect(screen.getByText('Belum ada huruf stabil.')).toBeOnTheScreen();
     expect(
       screen.getByRole('button', { name: 'Bacakan' }),
     ).toBeDisabled();
@@ -336,7 +377,7 @@ describe('Pindai Live', () => {
       );
     });
 
-    expect(screen.getByText('Belum ada kandidat.')).toBeOnTheScreen();
+    expect(screen.getByText('Belum ada huruf stabil.')).toBeOnTheScreen();
     expect(screen.queryByText('HASIL LAMA')).toBeNull();
     expect(screen.getByRole('button', { name: 'Bacakan' })).toBeDisabled();
     expect(tts.speak).not.toHaveBeenCalled();
@@ -354,10 +395,10 @@ describe('Pindai Live', () => {
       const event =
         confidence === undefined
           ? ({
-              ...createEvent('stable', { text: 'ABC' }),
+              ...createEvent('stable', { text: 'A' }),
               confidence: undefined,
             } as unknown as LiveScanEvent)
-          : createEvent('stable', { text: 'ABC', confidence });
+          : createEvent('stable', { text: 'A', confidence });
 
       await act(() => {
         scanner.emit(event);
@@ -365,10 +406,10 @@ describe('Pindai Live', () => {
 
       expect(
         screen.getByRole('summary', {
-          name: /Belum dapat dipastikan.*Kandidat belum dapat ditampilkan/i,
+          name: /Belum dapat dipastikan.*Huruf belum dapat ditampilkan/i,
         }),
       ).toBeOnTheScreen();
-      expect(screen.queryByLabelText('Kandidat huruf Braille: ABC')).toBeNull();
+      expect(screen.queryByLabelText('Huruf Braille terdeteksi: A')).toBeNull();
       expect(
         screen.getByRole('button', { name: 'Bacakan' }),
       ).toBeDisabled();
@@ -391,9 +432,9 @@ describe('Pindai Live', () => {
       screen.getByRole('button', { name: 'Bacakan' }),
     ).toBeDisabled();
 
-    await act(() => {
-      scanner.emit(createEvent('stable', { text: 'ABC', confidence: 0.95 }));
-    });
+    await emitStableAndAdd(scanner, user, 'A');
+    await emitStableAndAdd(scanner, user, 'B', 1);
+    await emitStableAndAdd(scanner, user, 'C', 2);
     await user.press(screen.getByRole('button', { name: 'Bacakan' }));
 
     expect(tts.speak).toHaveBeenCalledWith('ABC', {
@@ -429,14 +470,141 @@ describe('Pindai Live', () => {
       screen.getByRole('switch', { name: 'Senter' }),
     ).toBeEnabled();
 
-    await user.press(screen.getByRole('button', { name: 'Bersihkan' }));
-    expect(screen.getByText('Belum ada kandidat.')).toBeOnTheScreen();
+    await user.press(screen.getByRole('button', { name: 'Pindai ulang sel' }));
+    expect(screen.getByText('Belum ada huruf stabil.')).toBeOnTheScreen();
     expect(
-      screen.getByRole('button', { name: 'Bersihkan' }),
-    ).toBeDisabled();
+      screen.getByLabelText('Kata tersusun: ABC'),
+    ).toBeOnTheScreen();
   });
 
-  it('mengumumkan dan menghaptikkan hasil yang sama lagi setelah dibersihkan', async () => {
+  it('menambahkan kandidat hanya sekali dan menerima huruf berulang pada epoch berikutnya', async () => {
+    const user = userEvent.setup();
+    const scanner = createScannerHarness();
+    const renderScannerPreview = jest.fn(() => null);
+
+    await render(
+      <LiveScreenView
+        cameraPermission={createGrantedPermission()}
+        renderScannerPreview={renderScannerPreview}
+        scanner={scanner.port}
+        tts={createAvailableTts()}
+      />,
+    );
+    await waitFor(() => expect(scanner.port.start).toHaveBeenCalledTimes(1));
+
+    await act(() => {
+      scanner.emit(createEvent('stable', { text: 'A' }));
+    });
+    const addButton = screen.getByRole('button', { name: 'Tambah huruf' });
+    await fireEvent.press(addButton);
+    await fireEvent.press(addButton);
+
+    await waitFor(() => {
+      expect(screen.getByLabelText('Kata tersusun: A')).toBeOnTheScreen();
+    });
+    await waitFor(() => {
+      expect(renderScannerPreview).toHaveBeenLastCalledWith(
+        expect.objectContaining({ resetToken: 1 }),
+      );
+    });
+
+    await act(() => {
+      scanner.emit(
+        createEvent('stable', {
+          scanEpoch: 0,
+          text: 'B',
+          timestampMs: 1_786_128_000_100,
+        }),
+      );
+    });
+    expect(screen.queryByLabelText('Huruf Braille terdeteksi: B')).toBeNull();
+
+    await act(() => {
+      scanner.emit(
+        createEvent('stable', {
+          scanEpoch: 1,
+          text: 'A',
+          timestampMs: 1_786_128_000_200,
+        }),
+      );
+    });
+    await user.press(screen.getByRole('button', { name: 'Tambah huruf' }));
+
+    expect(screen.getByLabelText('Kata tersusun: AA')).toBeOnTheScreen();
+    expect(renderScannerPreview).toHaveBeenLastCalledWith(
+      expect.objectContaining({ resetToken: 2 }),
+    );
+  });
+
+  it('menjelaskan batas kata kepada TalkBack sebelum hint kandidat stabil', async () => {
+    const scanner = createScannerHarness();
+    let fullWordDraft = INITIAL_WORD_DRAFT_STATE;
+    for (let index = 0; index < MAX_WORD_LENGTH; index += 1) {
+      fullWordDraft = wordDraftReducer(fullWordDraft, {
+        type: 'commit_letter',
+        evidenceKey: `full-word:${index}`,
+        letter: 'A',
+      });
+    }
+
+    await render(
+      <LiveScreenView
+        cameraPermission={createGrantedPermission()}
+        onWordDraftChange={jest.fn()}
+        scanner={scanner.port}
+        tts={createAvailableTts()}
+        wordDraft={fullWordDraft}
+      />,
+    );
+    await waitFor(() => expect(scanner.port.start).toHaveBeenCalledTimes(1));
+    await act(() => {
+      scanner.emit(createEvent('stable', { text: 'B' }));
+    });
+
+    const addButton = screen.getByRole('button', { name: 'Tambah huruf' });
+    expect(addButton).toBeDisabled();
+    expect(addButton.props.accessibilityHint).toBe(
+      `Kata sudah mencapai batas ${MAX_WORD_LENGTH} huruf`,
+    );
+  });
+
+  it('mendukung hapus huruf, hapus kata, dan pindai ulang tanpa mengubah draft', async () => {
+    const user = userEvent.setup();
+    const onWordDraftChange = jest.fn();
+    const { scanner } = await renderReadyLive({ onWordDraftChange });
+
+    await emitStableAndAdd(scanner, user, 'A');
+    await emitStableAndAdd(scanner, user, 'B', 1);
+    await user.press(
+      screen.getByRole('button', { name: 'Hapus huruf terakhir' }),
+    );
+    expect(screen.getByLabelText('Kata tersusun: A')).toBeOnTheScreen();
+
+    await act(() => {
+      scanner.emit(createEvent('stable', { scanEpoch: 2, text: 'C' }));
+    });
+    await user.press(screen.getByRole('button', { name: 'Pindai ulang sel' }));
+    expect(screen.getByLabelText('Kata tersusun: A')).toBeOnTheScreen();
+    expect(screen.getByText('Belum ada huruf stabil.')).toBeOnTheScreen();
+
+    await act(() => {
+      scanner.emit(createEvent('stable', { scanEpoch: 2, text: 'C' }));
+    });
+    expect(screen.queryByLabelText('Huruf Braille terdeteksi: C')).toBeNull();
+
+    onWordDraftChange.mockClear();
+    await user.press(screen.getByRole('button', { name: 'Hapus kata' }));
+    expect(screen.getByLabelText('Kata masih kosong')).toBeOnTheScreen();
+    expect(onWordDraftChange).toHaveBeenCalledWith(
+      expect.objectContaining({ letters: [] }),
+    );
+    expect(
+      screen.getByRole('button', { name: 'Hapus huruf terakhir' }),
+    ).toBeDisabled();
+    expect(screen.getByRole('button', { name: 'Hapus kata' })).toBeDisabled();
+  });
+
+  it('mengumumkan dan menghaptikkan hasil yang sama lagi setelah dipindai ulang', async () => {
     const user = userEvent.setup();
     const { scanner } = await renderReadyLive();
     const components = jest.requireMock<{
@@ -451,14 +619,14 @@ describe('Pindai Live', () => {
     });
     expect(components.StatusAnnouncer.mock.lastCall?.[0]).toEqual(
       expect.objectContaining({
-        stableAnnouncement: expect.stringContaining('huruf Braille A'),
-        stableKey: 'test-session:0:A',
+        stableAnnouncement: expect.stringMatching(/huruf Braille A/i),
+        stableKey: 'test-session:0:1:A',
       }),
     );
 
-    await user.press(screen.getByRole('button', { name: 'Bersihkan' }));
+    await user.press(screen.getByRole('button', { name: 'Pindai ulang sel' }));
     await act(() => {
-      scanner.emit(createEvent('stable', { text: 'A' }));
+      scanner.emit(createEvent('stable', { scanEpoch: 1, text: 'A' }));
     });
 
     await waitFor(() => {
@@ -466,23 +634,60 @@ describe('Pindai Live', () => {
     });
     expect(components.StatusAnnouncer.mock.lastCall?.[0]).toEqual(
       expect.objectContaining({
-        stableAnnouncement: expect.stringContaining('huruf Braille A'),
-        stableKey: 'test-session:1:A',
+        stableAnnouncement: expect.stringMatching(/huruf Braille A/i),
+        stableKey: 'test-session:1:2:A',
       }),
     );
   });
 
+  it('mengumumkan dan menghaptikkan urutan A ke B ke A tanpa mengulang frame sama', async () => {
+    const { scanner } = await renderReadyLive();
+    const components = jest.requireMock<{
+      StatusAnnouncer: jest.Mock;
+    }>('@/components');
+
+    await act(() => {
+      scanner.emit(createEvent('stable', { text: 'A' }));
+    });
+    await waitFor(() => {
+      expect(Haptics.notificationAsync).toHaveBeenCalledTimes(1);
+    });
+
+    await act(() => {
+      scanner.emit(createEvent('stable', { text: 'A', timestampMs: 2 }));
+    });
+    expect(Haptics.notificationAsync).toHaveBeenCalledTimes(1);
+
+    await act(() => {
+      scanner.emit(createEvent('stable', { text: 'B', timestampMs: 3 }));
+    });
+    await waitFor(() => {
+      expect(Haptics.notificationAsync).toHaveBeenCalledTimes(2);
+    });
+    expect(components.StatusAnnouncer.mock.lastCall?.[0]).toEqual(
+      expect.objectContaining({ stableKey: 'test-session:0:2:B' }),
+    );
+
+    await act(() => {
+      scanner.emit(createEvent('stable', { text: 'A', timestampMs: 4 }));
+    });
+    await waitFor(() => {
+      expect(Haptics.notificationAsync).toHaveBeenCalledTimes(3);
+    });
+    expect(components.StatusAnnouncer.mock.lastCall?.[0]).toEqual(
+      expect.objectContaining({ stableKey: 'test-session:0:3:A' }),
+    );
+  });
+
   it('menjelaskan ketika suara dibisukan dan menyediakan jalan ke Pengaturan', async () => {
-    updateAlphaPreferences({ muted: true });
+    updateAppPreferences({ muted: true });
     const { scanner } = await renderReadyLive();
     const routerModule = jest.requireMock<{
       __router: { push: jest.Mock };
     }>('expo-router');
     const user = userEvent.setup();
 
-    await act(() => {
-      scanner.emit(createEvent('stable', { text: 'A' }));
-    });
+    await emitStableAndAdd(scanner, user, 'A');
 
     expect(
       screen.getByText('Suara aplikasi sedang dibisukan.'),
@@ -515,9 +720,7 @@ describe('Pindai Live', () => {
       />,
     );
     await waitFor(() => expect(scanner.port.start).toHaveBeenCalledTimes(1));
-    await act(() => {
-      scanner.emit(createEvent('stable', { text: 'A' }));
-    });
+    await emitStableAndAdd(scanner, user, 'A');
 
     await user.press(screen.getByRole('button', { name: 'Bacakan' }));
     expect(
@@ -546,12 +749,15 @@ describe('Pindai Live', () => {
     expect(screen.getByText('Suara gagal dibacakan.')).toBeOnTheScreen();
   });
 
-  it('menghentikan repeat yang selesai setelah kandidat berubah', async () => {
+  it('menghentikan repeat lama yang selesai setelah kata berubah', async () => {
     const user = userEvent.setup();
     const scanner = createScannerHarness();
     const tts = createAvailableTts();
     const deferredRepeat = createDeferred<typeof OK_RESULT>();
-    tts.repeat = jest.fn(() => deferredRepeat.promise);
+    tts.speak = jest
+      .fn()
+      .mockResolvedValueOnce(OK_RESULT)
+      .mockReturnValueOnce(deferredRepeat.promise);
 
     await render(
       <LiveScreenView
@@ -561,15 +767,11 @@ describe('Pindai Live', () => {
       />,
     );
     await waitFor(() => expect(scanner.port.start).toHaveBeenCalledTimes(1));
-    await act(() => {
-      scanner.emit(createEvent('stable', { text: 'A' }));
-    });
+    await emitStableAndAdd(scanner, user, 'A');
     await user.press(screen.getByRole('button', { name: 'Bacakan' }));
     await user.press(screen.getByRole('button', { name: 'Ulangi' }));
 
-    await act(() => {
-      scanner.emit(createEvent('stable', { text: 'B' }));
-    });
+    await emitStableAndAdd(scanner, user, 'B', 1);
     (tts.stop as jest.Mock).mockClear();
 
     await act(() => {
@@ -577,7 +779,103 @@ describe('Pindai Live', () => {
     });
 
     await waitFor(() => expect(tts.stop).toHaveBeenCalledTimes(1));
-    expect(screen.queryByText('Mengulangi hasil.')).toBeNull();
+    expect(screen.queryByText('Mengulangi kata.')).toBeNull();
+  });
+
+  it('tidak membiarkan request lama menghentikan pembacaan kata terbaru', async () => {
+    const user = userEvent.setup();
+    const scanner = createScannerHarness();
+    const tts = createAvailableTts();
+    const oldSpeech = createDeferred<typeof OK_RESULT>();
+    const newSpeech = createDeferred<typeof OK_RESULT>();
+    tts.speak = jest
+      .fn()
+      .mockReturnValueOnce(oldSpeech.promise)
+      .mockReturnValueOnce(newSpeech.promise);
+
+    await render(
+      <LiveScreenView
+        cameraPermission={createGrantedPermission()}
+        scanner={scanner.port}
+        tts={tts}
+      />,
+    );
+    await waitFor(() => expect(scanner.port.start).toHaveBeenCalledTimes(1));
+
+    await emitStableAndAdd(scanner, user, 'A');
+    await user.press(screen.getByRole('button', { name: 'Bacakan' }));
+    await emitStableAndAdd(scanner, user, 'B', 1);
+    await user.press(screen.getByRole('button', { name: 'Bacakan' }));
+    (tts.stop as jest.Mock).mockClear();
+
+    await act(() => {
+      oldSpeech.resolve(OK_RESULT);
+    });
+    expect(tts.stop).not.toHaveBeenCalled();
+
+    await act(() => {
+      newSpeech.resolve(OK_RESULT);
+    });
+    await waitFor(() => {
+      expect(screen.getByText('Membacakan kata.')).toBeOnTheScreen();
+    });
+    expect(tts.stop).not.toHaveBeenCalled();
+    expect(tts.speak).toHaveBeenNthCalledWith(
+      2,
+      'AB',
+      expect.objectContaining({ rate: 1, volume: 1 }),
+    );
+  });
+
+  it('mengabaikan lifecycle playback kata lama setelah draft berubah', async () => {
+    const user = userEvent.setup();
+    const scanner = createScannerHarness();
+    const tts = createAvailableTts();
+    let playbackListener: TtsPlaybackListener | undefined;
+    tts.subscribePlayback = jest.fn((listener) => {
+      playbackListener = listener;
+      return jest.fn();
+    });
+
+    await render(
+      <LiveScreenView
+        cameraPermission={createGrantedPermission()}
+        scanner={scanner.port}
+        tts={tts}
+      />,
+    );
+    await waitFor(() => expect(scanner.port.start).toHaveBeenCalledTimes(1));
+    await emitStableAndAdd(scanner, user, 'A');
+
+    await act(() => {
+      playbackListener?.({ status: 'speaking', text: 'A' });
+    });
+    expect(
+      screen.getByRole('button', { name: 'Hentikan suara' }),
+    ).toBeEnabled();
+
+    await emitStableAndAdd(scanner, user, 'B', 1);
+    await act(() => {
+      playbackListener?.({
+        status: 'error',
+        message: 'Error kata lama.',
+        text: 'A',
+      });
+      playbackListener?.({ status: 'speaking', text: 'AB' });
+      playbackListener?.({ status: 'idle', reason: 'done', text: 'A' });
+    });
+
+    expect(screen.queryByText('Error kata lama.')).toBeNull();
+    expect(
+      screen.getByRole('button', { name: 'Hentikan suara' }),
+    ).toBeEnabled();
+
+    await act(() => {
+      playbackListener?.({ status: 'idle', reason: 'done', text: 'AB' });
+    });
+    expect(
+      screen.getByRole('button', { name: 'Hentikan suara' }),
+    ).toBeDisabled();
   });
 
   it('mengirim sesi aktif, jeda, dan senter ke preview kamera', async () => {
@@ -631,7 +929,7 @@ describe('Pindai Live', () => {
     await act(() => {
       scanner.emit(createEvent('stable', { text: 'A', confidence: 0.97 }));
     });
-    await user.press(screen.getByRole('button', { name: 'Bersihkan' }));
+    await user.press(screen.getByRole('button', { name: 'Pindai ulang sel' }));
     await waitFor(() => {
       expect(renderScannerPreview).toHaveBeenLastCalledWith({
         active: true,
@@ -732,9 +1030,8 @@ describe('Pindai Live', () => {
         />,
       );
       await waitFor(() => expect(scanner.port.start).toHaveBeenCalledTimes(1));
-      await act(() => {
-        scanner.emit(createEvent('stable', { text: 'A', confidence: 0.97 }));
-      });
+      const user = userEvent.setup();
+      await emitStableAndAdd(scanner, user, 'A');
       await waitFor(() => {
         expect(
           screen.getByRole('button', { name: 'Bacakan' }),
@@ -875,9 +1172,7 @@ describe('Pindai Live', () => {
 
     try {
       const { scanner, tts } = await renderReadyLive();
-      await act(() => {
-        scanner.emit(createEvent('stable', { text: 'A', confidence: 0.97 }));
-      });
+      await emitStableAndAdd(scanner, user, 'A');
       await user.press(screen.getByRole('button', { name: 'Bacakan' }));
 
       await act(() => {
@@ -888,6 +1183,8 @@ describe('Pindai Live', () => {
       expect(
         screen.getByRole('button', { name: 'Hentikan suara' }),
       ).toBeDisabled();
+      expect(screen.getByLabelText('Kata tersusun: A')).toBeOnTheScreen();
+      expect(screen.getByText('Belum ada huruf stabil.')).toBeOnTheScreen();
     } finally {
       AppState.addEventListener = originalAddEventListener;
     }
@@ -935,43 +1232,35 @@ describe('Pindai Live', () => {
     ).not.toBeChecked();
   });
 
-  it('menghentikan suara aktif saat hasil dibersihkan', async () => {
+  it('menghentikan suara aktif saat kata dihapus', async () => {
     const user = userEvent.setup();
     const { scanner, tts } = await renderReadyLive();
 
-    await act(() => {
-      scanner.emit(createEvent('stable', { text: 'ABC' }));
-    });
+    await emitStableAndAdd(scanner, user, 'A');
     await user.press(screen.getByRole('button', { name: 'Bacakan' }));
-    await user.press(screen.getByRole('button', { name: 'Bersihkan' }));
+    await user.press(screen.getByRole('button', { name: 'Hapus kata' }));
 
-    expect(tts.stop).toHaveBeenCalledTimes(1);
+    await waitFor(() => expect(tts.stop).toHaveBeenCalledTimes(1));
     expect(
       screen.getByRole('button', { name: 'Hentikan suara' }),
     ).toBeDisabled();
-    expect(screen.getByText('Belum ada kandidat.')).toBeOnTheScreen();
+    expect(screen.getByText('Belum ada huruf stabil.')).toBeOnTheScreen();
+    expect(screen.getByLabelText('Kata masih kosong')).toBeOnTheScreen();
   });
 
-  it('menghentikan suara lama saat hasil berubah dan layar ditutup', async () => {
+  it('menghentikan suara lama saat kata berubah dan layar ditutup', async () => {
     const user = userEvent.setup();
     const { scanner, tts, unmount } = await renderReadyLive();
 
-    await act(() => {
-      scanner.emit(createEvent('stable', { text: 'ABC' }));
-    });
+    await emitStableAndAdd(scanner, user, 'A');
     await user.press(screen.getByRole('button', { name: 'Bacakan' }));
 
-    await act(() => {
-      scanner.emit(createEvent('searching'));
-    });
-    expect(tts.stop).toHaveBeenCalledTimes(1);
+    await emitStableAndAdd(scanner, user, 'B', 1);
+    await waitFor(() => expect(tts.stop).toHaveBeenCalledTimes(1));
     expect(
       screen.getByRole('button', { name: 'Hentikan suara' }),
     ).toBeDisabled();
 
-    await act(() => {
-      scanner.emit(createEvent('stable', { text: 'DEF' }));
-    });
     await user.press(screen.getByRole('button', { name: 'Bacakan' }));
     await waitFor(() => {
       expect(tts.speak).toHaveBeenCalledTimes(2);
@@ -985,15 +1274,15 @@ describe('Pindai Live', () => {
 
   it('mengakhiri sesi satu kali tanpa menunggu native TTS yang lambat', async () => {
     const user = userEvent.setup();
-    const { scanner, tts } = await renderReadyLive();
+    const onWordDraftChange = jest.fn();
+    const { scanner, tts } = await renderReadyLive({ onWordDraftChange });
     const routerModule = jest.requireMock<{
       __router: { back: jest.Mock };
     }>('expo-router');
     tts.stop = jest.fn(() => new Promise<never>(() => undefined));
 
-    await act(() => {
-      scanner.emit(createEvent('stable', { text: 'A' }));
-    });
+    await emitStableAndAdd(scanner, user, 'A');
+    onWordDraftChange.mockClear();
     await user.press(screen.getByRole('button', { name: 'Bacakan' }));
     const finishButton = screen.getByRole('button', {
       name: 'Akhiri pemindaian',
@@ -1003,6 +1292,9 @@ describe('Pindai Live', () => {
 
     expect(routerModule.__router.back).toHaveBeenCalledTimes(1);
     expect(tts.stop).toHaveBeenCalledTimes(1);
+    expect(onWordDraftChange).toHaveBeenCalledWith(
+      INITIAL_WORD_DRAFT_STATE,
+    );
     await waitFor(() => expect(scanner.port.stop).toHaveBeenCalledTimes(1));
   });
 
@@ -1087,16 +1379,14 @@ describe('Pindai Live', () => {
     const user = userEvent.setup();
     const { scanner } = await renderReadyLive();
 
-    await act(() => {
-      scanner.emit(createEvent('stable', { text: 'ABC' }));
-    });
+    await emitStableAndAdd(scanner, user, 'A');
     await fireEvent(
       screen.getByRole('switch', { name: 'Senter' }),
       'valueChange',
       true,
     );
     await act(() => {
-      scanner.emit(createEvent('error'));
+      scanner.emit(createEvent('error', { scanEpoch: 1 }));
     });
 
     expect(screen.queryByRole('button', { name: 'Jeda' })).toBeNull();
@@ -1116,7 +1406,8 @@ describe('Pindai Live', () => {
     });
     expect(screen.getByRole('button', { name: 'Jeda' })).toBeOnTheScreen();
     expect(screen.getByRole('switch', { name: 'Senter' })).not.toBeChecked();
-    expect(screen.getByText('Belum ada kandidat.')).toBeOnTheScreen();
+    expect(screen.getByText('Belum ada huruf stabil.')).toBeOnTheScreen();
+    expect(screen.getByLabelText('Kata tersusun: A')).toBeOnTheScreen();
     expect(
       screen.queryByRole('header', { name: 'Pemindaian bermasalah' }),
     ).toBeNull();
@@ -1206,12 +1497,9 @@ describe('Pindai Live', () => {
     expect(
       screen.getByRole('header', { name: 'Kamera belum siap' }),
     ).toBeOnTheScreen();
-    expect(screen.queryByText('Belum ada kandidat.')).toBeNull();
-    expect(screen.queryByLabelText(/^Kandidat huruf Braille:/)).toBeNull();
+    expect(screen.queryByText('Belum ada huruf stabil.')).toBeNull();
+    expect(screen.queryByLabelText(/^Huruf Braille terdeteksi:/)).toBeNull();
     expect(screen.queryByText(/Keyakinan \d+ persen/)).toBeNull();
-    expect(screen.queryByText(/technical alpha/i)).toBeNull();
-    expect(screen.queryByText(/frontend/i)).toBeNull();
-    expect(screen.queryByText('id-latin-6dot-alpha-v0')).toBeNull();
     expect(screen.queryByRole('button', { name: 'Bacakan' })).toBeNull();
     expect(screen.queryByRole('button', { name: 'Jeda' })).toBeNull();
     expect(screen.queryByRole('switch', { name: 'Senter' })).toBeNull();

@@ -3,7 +3,7 @@
     "name": "BrailleMe",
     "slug": "brailleme",
     "version": "0.1.0",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/icon-brand.png",
     "orientation": "default",
     "scheme": "brailleme",
     "platforms": [
@@ -18,7 +18,7 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "monochromeImage": "./assets/monochrome-icon.png",
-        "backgroundColor": "#0B57D0"
+        "backgroundColor": "#006B63"
       },
       "permissions": [
         "android.permission.CAMERA"
@@ -50,7 +50,8 @@
         }
       ],
       "expo-asset",
-      "expo-font"
+      "expo-font",
+      "expo-sqlite"
     ],
     "experiments": {
       "typedRoutes": true

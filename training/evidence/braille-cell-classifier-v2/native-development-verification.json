@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 1,
+  "executedAt": "2026-09-04T11:44:00+07:00",
+  "status": "passed_for_local_android_development",
+  "productionEvidence": false,
+  "source": {
+    "workspaceHadUncommittedChanges": true,
+    "stagingPath": "C:\\bm-native-v2-20260904-1125",
+    "gitCommit": "7245aeeb48514040a106e756172e592855ac1401",
+    "runtimeSourceSha256": {
+      "src/ml/braille-model-loader.ts": "47aac15332646e15f749760f38a2e019c47a778444a1696aeb1ddd71354963d6",
+      "src/ml/frame-preprocessing.ts": "e200f69e08ee1426430116d26e951359fa1dadbecf3631af06c926f9d718cfb0",
+      "src/features/live/live-single-cell-camera.tsx": "39895f4798a0e9997a43b97187f12c4347ae21366eb4ae52cf25c1eda8dc030f",
+      "src/ml/braille-model-contract.ts": "032d896d2a99246053e690d39e1f3818f95b865acf891695c12cddd8987f0bea"
+    },
+    "postRunSourceNote": "After the run, the loader changed only by removal of an unused eslint-disable comment and the contract changed only by renaming the post-crop verification key from parity to fixture. The preprocessing helper and camera runtime listed here remain byte-identical."
+  },
+  "build": {
+    "variant": "debug",
+    "applicationId": "com.brailleme.app",
+    "jdk": "17.0.20+8",
+    "compileSdk": 36,
+    "targetSdk": 36,
+    "minimumSdk": 29,
+    "apkSha256": "237add4a144feee63db27c6bdf5a571bde5e88b7e7cd5f815cd0615eec0e3502",
+    "apkSizeBytes": 146251903
+  },
+  "device": {
+    "physical": false,
+    "serial": "emulator-5554",
+    "manufacturer": "Google",
+    "model": "sdk_gphone64_x86_64",
+    "androidRelease": "16",
+    "apiLevel": 36,
+    "abi": "x86_64",
+    "backCamera": "emulated"
+  },
+  "loadedAssets": {
+    "model": {
+      "cacheFile": "ExponentAsset-8040090f14e2753d66455f6997d5c428.tflite",
+      "sizeBytes": 982368,
+      "sha256": "7a41942cf330c9558884385221deb69f282adfd8d39be00a257c75ec9572c318"
+    },
+    "nativeSelfTestFixture": {
+      "cacheFile": "ExponentAsset-d139febcf741fff57c4b2fb28d2f3455.png",
+      "sizeBytes": 1529,
+      "sha256": "08e20f52ef72517734e5595e9fd8b2222467a3248bf6c9f477ce564817b76901"
+    }
+  },
+  "nativePostCropFixture": {
+    "passed": true,
+    "pipeline": [
+      "Expo Asset local file",
+      "NitroImage native PNG decode",
+      "shared center crop 55%",
+      "NitroImage native resize 28x28",
+      "toRawPixelData(false)",
+      "BGRA to RGB float32",
+      "pixel / 255.0",
+      "react-native-fast-tflite runSync"
+    ],
+    "fixtureCanvas": [51, 51],
+    "cropCoordinates": [11, 11, 39, 39],
+    "rawPixelFormat": "BGRA",
+    "expectedLabel": "v",
+    "actualLabel": "v",
+    "actualConfidence": 0.9999980926513672,
+    "minimumConfidence": 0.99,
+    "runtimeMarker": "BRAILLE_NATIVE_POST_CROP_SELF_TEST",
+    "runtimeLog": "native-logcat-self-test.txt"
+  },
+  "cameraRuntimeSmoke": {
+    "passed": true,
+    "cameraClientActive": true,
+    "previewStream": {
+      "consumer": "SurfaceTexture",
+      "resolution": [1024, 768]
+    },
+    "analysisStream": {
+      "consumer": "ImageReader",
+      "resolution": [640, 480],
+      "pixelFormat": "YUV_420_888"
+    },
+    "sampleDurationSeconds": 10.1561129,
+    "previewFramesBefore": 3356,
+    "previewFramesAfter": 3649,
+    "analysisFramesBefore": 3356,
+    "analysisFramesAfter": 3649,
+    "observedStreamFps": 28.8496202124732,
+    "screenshot": "native-emulator-scan.png",
+    "screenshotSha256": "7410ef85698e8ea2ad0c1defc010111ff058fb101ea22257e8a50f3b790fd0c6"
+  },
+  "limitations": [
+    "The deterministic golden fixture starts after frame-to-image conversion; it does not prove YUV camera conversion parity.",
+    "The camera scene is synthetic emulator output, not a physical Braille sample.",
+    "This run is not an independent physical holdout, negative-corpus pass, device benchmark, soak test, or accessibility test.",
+    "The debug build fetched JavaScript and assets from local Metro; it is not a distributable APK or production artifact."
+  ]
+}

@@ -15,6 +15,51 @@ export type PreprocessedFrame = {
 
 type RawPixelData = ReturnType<Image['toRawPixelData']>;
 
+export const BRAILLE_CENTER_CROP_FRACTION = 0.55;
+
+export type PreparedBrailleImage = {
+  readonly croppedImage: Image;
+  readonly resizedImage: Image;
+};
+
+/** Memakai crop tengah yang sama untuk frame kamera dan self-test native. */
+export function centerCropAndResizeBrailleImage(
+  sourceImage: Image,
+): PreparedBrailleImage {
+  'worklet';
+
+  const cropSize = Math.max(
+    1,
+    Math.floor(
+      Math.min(sourceImage.width, sourceImage.height) *
+        BRAILLE_CENTER_CROP_FRACTION,
+    ),
+  );
+  const startX = Math.floor((sourceImage.width - cropSize) / 2);
+  const startY = Math.floor((sourceImage.height - cropSize) / 2);
+  const croppedImage = sourceImage.crop(
+    startX,
+    startY,
+    startX + cropSize,
+    startY + cropSize,
+  );
+
+  try {
+    return {
+      croppedImage,
+      resizedImage: croppedImage.resize(
+        BRAILLE_MODEL_INPUT_WIDTH,
+        BRAILLE_MODEL_INPUT_HEIGHT,
+      ),
+    };
+  } catch (error) {
+    try {
+      croppedImage.dispose();
+    } catch {}
+    throw error;
+  }
+}
+
 /** Mengubah pixel native menjadi tensor RGB interleaved (NHWC). */
 export function convertRawPixelsToRgbTensor(
   raw: RawPixelData,

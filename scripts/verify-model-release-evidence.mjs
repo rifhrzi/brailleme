@@ -9,7 +9,7 @@ const modelDirectory = resolve(
   projectRoot,
   "assets",
   "models",
-  "braille-cell-classifier-v1",
+  "braille-cell-classifier-v2",
 );
 
 function readJson(path) {
@@ -46,10 +46,12 @@ const requiredVerificationKeys = [
   "labelOrderConfirmedAgainstTrainingCode",
   "preprocessingConfirmedAgainstTrainingCode",
   "kerasTfliteConversionParityPassed",
+  "nativePostCropFixturePassed",
   "nativeCameraGoldenParityPassed",
   "independentPhysicalHoldoutPassed",
   "negativeCorpusPassed",
   "deviceBenchmarkPassed",
+  "datasetRedistributionRightsConfirmed",
 ];
 
 function addBlocker(condition, message) {
@@ -101,6 +103,27 @@ addBlocker(
   `verification belum lulus: ${incompleteChecks.join(", ")}`,
 );
 
+const provenanceDatasets = manifest.provenance?.datasets;
+addBlocker(
+  Array.isArray(provenanceDatasets) && provenanceDatasets.length > 0,
+  "provenance dataset model belum tersedia",
+);
+if (Array.isArray(provenanceDatasets)) {
+  for (const dataset of provenanceDatasets) {
+    addBlocker(
+      dataset?.redistributionRightsConfirmed === true,
+      `hak redistribusi dataset belum dikonfirmasi: ${dataset?.name ?? "unknown"}`,
+    );
+  }
+  addBlocker(
+    verification?.datasetRedistributionRightsConfirmed ===
+      provenanceDatasets.every(
+        (dataset) => dataset?.redistributionRightsConfirmed === true,
+      ),
+    "flag hak redistribusi tidak konsisten dengan provenance dataset",
+  );
+}
+
 addBlocker(
   evidenceManifest.model?.sha256 === manifest.artifact?.sha256,
   "SHA model pada evidence manifest berbeda dari manifest aplikasi",
@@ -109,12 +132,6 @@ addBlocker(
   evidenceManifest.model?.version === manifest.artifact?.version,
   "versi model pada evidence manifest berbeda dari manifest aplikasi",
 );
-addBlocker(
-  evidenceManifest.trainingRun?.codeCellsSha256 ===
-    manifest.provenance?.trainingCodeCellsSha256,
-  "fingerprint code cell training tidak konsisten",
-);
-
 for (const [name, expectedHash] of Object.entries(
   evidenceManifest.evidenceFiles ?? {},
 )) {
@@ -131,26 +148,152 @@ for (const [name, expectedHash] of Object.entries(
   addBlocker(sha256(path) === expectedHash, `hash evidence tidak cocok: ${name}`);
 }
 
-const notebookPath = resolveProjectPath(
-  manifest.provenance?.trainingNotebook,
-  "provenance.trainingNotebook",
-);
-const notebook = readJson(notebookPath);
-const codeCellSources = notebook.cells
-  .filter((cell) => cell.cell_type === "code")
-  .map((cell) =>
-    Array.isArray(cell.source) ? cell.source.join("") : cell.source,
+const trainingSources = manifest.provenance?.trainingSources;
+if (Array.isArray(trainingSources) && trainingSources.length > 0) {
+  const evidenceSources = evidenceManifest.trainingRun?.sourceFiles;
+  addBlocker(
+    Array.isArray(evidenceSources) &&
+      evidenceSources.length === trainingSources.length,
+    "daftar source training pada evidence tidak konsisten",
   );
-const codeCellHash = createHash("sha256")
-  .update(JSON.stringify(codeCellSources))
-  .digest("hex");
+  for (const source of trainingSources) {
+    const sourcePath = resolveProjectPath(source?.path, "trainingSources.path");
+    const evidenceSource = Array.isArray(evidenceSources)
+      ? evidenceSources.find((item) => item?.path === source?.path)
+      : undefined;
+    addBlocker(
+      typeof source?.sha256 === "string" && source.sha256 === evidenceSource?.sha256,
+      `hash source training tidak konsisten: ${source?.path ?? "missing"}`,
+    );
+    addBlocker(
+      typeof source?.sha256 === "string" && sha256(sourcePath) === source.sha256,
+      `source training berubah: ${source?.path ?? "missing"}`,
+    );
+  }
+} else {
+  addBlocker(
+    evidenceManifest.trainingRun?.codeCellsSha256 ===
+      manifest.provenance?.trainingCodeCellsSha256,
+    "fingerprint code cell training tidak konsisten",
+  );
+  const notebookPath = resolveProjectPath(
+    manifest.provenance?.trainingNotebook,
+    "provenance.trainingNotebook",
+  );
+  const notebook = readJson(notebookPath);
+  const codeCellSources = notebook.cells
+    .filter((cell) => cell.cell_type === "code")
+    .map((cell) =>
+      Array.isArray(cell.source) ? cell.source.join("") : cell.source,
+    );
+  const codeCellHash = createHash("sha256")
+    .update(JSON.stringify(codeCellSources))
+    .digest("hex");
+  addBlocker(
+    codeCellHash === evidenceManifest.trainingRun?.codeCellsSha256,
+    "code cell notebook berubah dari training run yang dipromosikan",
+  );
+}
+
+const trainingReportPath = resolveProjectPath(
+  evidenceManifest.trainingRun?.reportFile,
+  "trainingRun.reportFile",
+);
+addBlocker(existsSync(trainingReportPath), "training report belum tersedia");
+if (existsSync(trainingReportPath)) {
+  addBlocker(
+    sha256(trainingReportPath) === evidenceManifest.trainingRun?.reportSha256,
+    "hash training report tidak cocok",
+  );
+  const trainingReport = readJson(trainingReportPath);
+  addBlocker(
+    trainingReport.artifact?.tflite_sha256 === manifest.artifact?.sha256,
+    "training report memakai model yang berbeda",
+  );
+}
+
+const evaluationSources = evidenceManifest.evaluationRun?.sourceFiles;
 addBlocker(
-  codeCellHash === evidenceManifest.trainingRun?.codeCellsSha256,
-  "code cell notebook berubah dari training run yang dipromosikan",
+  Array.isArray(evaluationSources) && evaluationSources.length > 0,
+  "source evaluator final belum tersedia",
+);
+if (Array.isArray(evaluationSources)) {
+  for (const source of evaluationSources) {
+    const sourcePath = resolveProjectPath(source?.path, "evaluationRun.sourceFiles.path");
+    addBlocker(
+      typeof source?.sha256 === "string" && sha256(sourcePath) === source.sha256,
+      `source evaluator berubah: ${source?.path ?? "missing"}`,
+    );
+  }
+}
+const evaluationRequirementsPath = resolveProjectPath(
+  evidenceManifest.evaluationRun?.requirementsFile,
+  "evaluationRun.requirementsFile",
+);
+addBlocker(
+  existsSync(evaluationRequirementsPath),
+  "dependency evaluator final belum tersedia",
+);
+const externalEvaluationPath = resolveProjectPath(
+  evidenceManifest.evaluationRun?.outputFile,
+  "evaluationRun.outputFile",
+);
+addBlocker(
+  existsSync(externalEvaluationPath),
+  "output evaluator final belum tersedia",
 );
 
 const evidenceFiles = evidenceManifest.evidenceFiles ?? {};
 const evaluation = readJson(resolve(evidenceDirectory, "evaluation_report.json"));
+const nativeDevelopmentEvidenceName = "native-development-verification.json";
+const nativeDevelopmentEvidencePath = resolve(
+  evidenceDirectory,
+  nativeDevelopmentEvidenceName,
+);
+const nativeDevelopmentEvidenceIsBound =
+  typeof evidenceFiles[nativeDevelopmentEvidenceName] === "string" &&
+  existsSync(nativeDevelopmentEvidencePath);
+addBlocker(
+  nativeDevelopmentEvidenceIsBound,
+  "bukti self-test native post-crop belum diikat",
+);
+if (nativeDevelopmentEvidenceIsBound) {
+  const nativeDevelopment = readJson(nativeDevelopmentEvidencePath);
+  const nativeFixture = nativeDevelopment.nativePostCropFixture;
+  const evaluationFixture = evaluation.native_post_crop_fixture;
+  addBlocker(
+    nativeDevelopment.productionEvidence === false,
+    "bukti native development salah diklasifikasikan sebagai production evidence",
+  );
+  addBlocker(
+    nativeDevelopment.loadedAssets?.model?.sha256 === manifest.artifact?.sha256,
+    "self-test native memuat model yang berbeda",
+  );
+  addBlocker(
+    nativeDevelopment.loadedAssets?.nativeSelfTestFixture?.sha256 ===
+      manifest.nativeSelfTest?.sha256,
+    "self-test native memuat fixture yang berbeda",
+  );
+  addBlocker(nativeFixture?.passed === true, "fixture native post-crop belum lulus");
+  addBlocker(
+    nativeFixture?.expectedLabel === manifest.nativeSelfTest?.expectedLabel &&
+      nativeFixture?.actualLabel === manifest.nativeSelfTest?.expectedLabel,
+    "label fixture native post-crop tidak cocok",
+  );
+  addBlocker(
+    finiteAtLeast(
+      nativeFixture?.actualConfidence,
+      manifest.nativeSelfTest?.minimumConfidence,
+    ),
+    "confidence fixture native post-crop di bawah ambang",
+  );
+  addBlocker(
+    evaluationFixture?.passed === nativeFixture?.passed &&
+      evaluationFixture?.actual_label === nativeFixture?.actualLabel &&
+      evaluationFixture?.confidence === nativeFixture?.actualConfidence,
+    "ringkasan fixture native tidak konsisten dengan bukti runtime",
+  );
+}
 const criteria = evidenceManifest.acceptanceCriteria ?? {};
 const holdoutCriteria = criteria.physicalHoldout ?? {};
 const holdout = evaluation.physical_holdout;
@@ -219,6 +362,10 @@ addBlocker(
   evaluation.keras_tflite_golden_parity?.passed === true &&
     evaluation.keras_tflite_golden_parity?.sample_count >= 26,
   "golden conversion parity A-Z belum lulus",
+);
+addBlocker(
+  evaluation.native_post_crop_fixture?.passed === true,
+  "self-test native post-crop belum lulus",
 );
 
 const expectedCommit = evidenceManifest.trainingRun?.gitCommit;

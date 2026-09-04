@@ -1,0 +1,209 @@
+{
+  "schema_version": 1,
+  "generated_at_utc": "2026-09-04T04:56:32.112236+00:00",
+  "dataset": {
+    "dataset_repository": "https://github.com/IlyaOvodov/AngelinaDataset",
+    "dataset_revision": "e13038d483bb58e17046d640e078dc4768276e9b",
+    "splits": [
+      "uploaded/test.txt"
+    ],
+    "source_page_count": 50,
+    "source_page_counts_by_split": {
+      "uploaded/test.txt": 50
+    },
+    "annotation_count": 13013,
+    "included_a_z_cell_count": 9625,
+    "excluded_non_a_z_cell_count": 3388,
+    "excluded_mask_counts": {
+      "2": 189,
+      "4": 56,
+      "6": 15,
+      "8": 18,
+      "12": 12,
+      "16": 1,
+      "18": 211,
+      "20": 1,
+      "22": 52,
+      "24": 169,
+      "28": 43,
+      "32": 20,
+      "33": 46,
+      "34": 14,
+      "35": 40,
+      "36": 299,
+      "38": 22,
+      "40": 21,
+      "42": 19,
+      "43": 251,
+      "44": 2,
+      "46": 210,
+      "47": 152,
+      "48": 28,
+      "49": 87,
+      "50": 345,
+      "51": 60,
+      "52": 21,
+      "54": 119,
+      "55": 9,
+      "56": 58,
+      "57": 2,
+      "59": 3,
+      "60": 503,
+      "62": 176,
+      "63": 114
+    },
+    "class_counts": {
+      "a": 986,
+      "b": 322,
+      "c": 123,
+      "d": 365,
+      "e": 868,
+      "f": 105,
+      "g": 193,
+      "h": 158,
+      "i": 748,
+      "j": 213,
+      "k": 363,
+      "l": 439,
+      "m": 322,
+      "n": 608,
+      "o": 939,
+      "p": 281,
+      "q": 159,
+      "r": 471,
+      "s": 475,
+      "t": 612,
+      "u": 240,
+      "v": 9,
+      "w": 405,
+      "x": 68,
+      "y": 0,
+      "z": 153
+    },
+    "missing_classes": [
+      "y"
+    ],
+    "annotation_error_count": 0,
+    "duplicate_record_count": 0,
+    "license_status": "no_explicit_license_file_observed_at_repository_root",
+    "intended_role": "held_aside_public_test"
+  },
+  "model": {
+    "path": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\assets\\models\\braille-cell-classifier-v2\\braille_model.tflite",
+    "sha256": "7a41942cf330c9558884385221deb69f282adfd8d39be00a257c75ec9572c318",
+    "labels": [
+      "a",
+      "b",
+      "c",
+      "d",
+      "e",
+      "f",
+      "g",
+      "h",
+      "i",
+      "j",
+      "k",
+      "l",
+      "m",
+      "n",
+      "o",
+      "p",
+      "q",
+      "r",
+      "s",
+      "t",
+      "u",
+      "v",
+      "w",
+      "x",
+      "y",
+      "z"
+    ],
+    "input": "1x28x28x3 float32 RGB, pixel/255"
+  },
+  "preprocessing": {
+    "cell_source": "Angelina normalized annotation bounding box",
+    "cell_crop": "square around annotation center",
+    "cell_crop_scale": 1.25,
+    "resize": "28x28 bilinear",
+    "channel_order": "RGB",
+    "normalization": "pixel/255",
+    "negative_crop": "center square 0.55"
+  },
+  "metrics": {
+    "sample_count": 9625,
+    "source_page_count": 50,
+    "top1_accuracy": 0.9311168831168831,
+    "macro_precision": 0.8577632476870609,
+    "macro_recall": 0.8557443591320977,
+    "macro_f1": 0.8534704665444255,
+    "minimum_per_class_recall": 0.0,
+    "confidence_threshold": 0.9,
+    "accepted_count": 7002,
+    "coverage_at_threshold": 0.7274805194805195,
+    "accepted_accuracy": 0.9930019994287347,
+    "internal_top1_accuracy_target": 0.75,
+    "internal_target_passed": true
+  },
+  "metrics_by_partition": {
+    "uploaded/test.txt": {
+      "sample_count": 9625,
+      "source_page_count": 50,
+      "supported_class_count": 25,
+      "missing_classes": [
+        "y"
+      ],
+      "top1_accuracy": 0.9311168831168831,
+      "macro_f1_all_26_classes": 0.8534704665444255,
+      "minimum_supported_class_recall": 0.1111111111111111,
+      "accepted_count": 7002,
+      "coverage_at_0_90": 0.7274805194805195,
+      "accepted_accuracy": 0.9930019994287347
+    }
+  },
+  "page_accuracy": {
+    "page_count": 50,
+    "internal_top1_accuracy_target": 0.75,
+    "pages_below_target_count": 3,
+    "minimum_page_accuracy": 0.6,
+    "pages_below_target": [
+      {
+        "source_image": "uploaded/test2/0fefa93494664df3b677a9b36ac4660f.labeled.jpg",
+        "sample_count": 75,
+        "correct_count": 45,
+        "top1_accuracy": 0.6
+      },
+      {
+        "source_image": "uploaded/test2/51540f5a38b84ed4b92367897569c565.labeled.jpg",
+        "sample_count": 208,
+        "correct_count": 148,
+        "top1_accuracy": 0.7115384615384616
+      },
+      {
+        "source_image": "uploaded/test2/eda9f16c8aca4aa3ad6ca74116dbbe72.labeled.jpg",
+        "sample_count": 366,
+        "correct_count": 265,
+        "top1_accuracy": 0.7240437158469946
+      }
+    ]
+  },
+  "negative_guardrail": {
+    "scene_count": 44,
+    "confidence_threshold": 0.9,
+    "false_accept_count": 1,
+    "false_accept_rate": 0.022727272727272728,
+    "note": "Satu center crop per gambar non-Braille; ini guardrail publik/offline, bukan negative corpus kamera native."
+  },
+  "interpretation": {
+    "target_scope": "external_public_offline_character benchmark",
+    "passes_internal_75_percent_target": true,
+    "production_release_evidence": false,
+    "native_camera_accuracy_claim_allowed": false,
+    "caveats": [
+      "Subset uploaded/test tidak dipakai untuk training atau pemilihan epoch kandidat Angelina.",
+      "Crop berasal dari anotasi ground-truth, bukan deteksi ROI kamera aplikasi.",
+      "Angelina tidak memiliki LICENSE eksplisit pada root revision yang dipin.",
+      "Benchmark ini tidak menggantikan physical holdout atau native-camera parity."
+    ]
+  }
+}

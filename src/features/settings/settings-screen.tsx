@@ -6,9 +6,9 @@ import { Alert, AppState, StyleSheet, Switch, Text, View } from 'react-native';
 import { AccessibleButton, Screen, SectionCard, SettingRow } from '@/components';
 import { ttsPort } from '@/services';
 import {
-  resetAlphaPreferences,
-  updateAlphaPreferences,
-  useAlphaPreferences,
+  resetAppPreferences,
+  updateAppPreferences,
+  useAppPreferences,
 } from '@/storage';
 import {
   colors,
@@ -32,7 +32,7 @@ function clampStep(value: number, minimum: number, maximum: number) {
 
 export default function SettingsScreen() {
   const router = useRouter();
-  const preferences = useAlphaPreferences();
+  const preferences = useAppPreferences();
   const [voiceAvailability, setVoiceAvailability] =
     useState<TtsAvailability | null>(null);
   const [actionStatus, setActionStatus] = useState('');
@@ -77,7 +77,7 @@ export default function SettingsScreen() {
 
   const changeRate = (next: number) => {
     const speechRate = clampStep(next, RATE_MIN, RATE_MAX);
-    updateAlphaPreferences({
+    updateAppPreferences({
       speechRate,
     });
     setActionStatus(
@@ -87,7 +87,7 @@ export default function SettingsScreen() {
 
   const changeVolume = (next: number) => {
     const speechVolume = clampStep(next, VOLUME_MIN, VOLUME_MAX);
-    updateAlphaPreferences({
+    updateAppPreferences({
       speechVolume,
     });
     setActionStatus(`Volume suara ${Math.round(speechVolume * 100)} persen.`);
@@ -109,14 +109,14 @@ export default function SettingsScreen() {
   const requestResetPreferences = () => {
     Alert.alert(
       'Reset semua preferensi?',
-      'Pengenalan, suara, haptik, dan menu diagnostik akan kembali ke nilai awal.',
+      'Pengenalan, suara, dan getaran akan kembali ke nilai awal.',
       [
         { text: 'Batal', style: 'cancel' },
         {
           text: 'Reset',
           style: 'destructive',
           onPress: () => {
-            resetAlphaPreferences();
+            resetAppPreferences();
             setActionStatus('Preferensi dikembalikan ke nilai awal.');
           },
         },
@@ -126,12 +126,15 @@ export default function SettingsScreen() {
 
   return (
     <Screen testID="settings-screen">
+      <Text accessibilityRole="header" selectable style={styles.title}>
+        Pengaturan
+      </Text>
       <Text selectable style={styles.intro}>
-        Atur cara BrailleMe membacakan hasil. Preferensi disimpan hanya pada
-        perangkat.
+        Atur cara BrailleMe membacakan hasil dan memberi getaran. Preferensi
+        disimpan hanya pada perangkat.
       </Text>
 
-      <SectionCard title="Suara">
+      <SectionCard title="Suara" variant="plain">
         <SettingRow
           description="Hasil hanya dibaca setelah pengguna menekan Bacakan."
           label="Mode membaca"
@@ -158,7 +161,7 @@ export default function SettingsScreen() {
           }
         >
           <AccessibleButton
-            accessibilityHint="Membuka layar Text-to-Speech milik Android"
+            accessibilityHint="Membuka pengaturan pembaca teks Android"
             accessibilityLabel="Buka pengaturan suara Android"
             label="Pengaturan suara Android"
             onPress={() => void openTtsSettings()}
@@ -264,7 +267,7 @@ export default function SettingsScreen() {
           </View>
         </SettingRow>
         <SettingRow
-          description="Mematikan suara aplikasi tanpa mengubah haptik."
+          description="Mematikan suara aplikasi tanpa mengubah getaran."
           label="Bisukan suara"
           value={preferences.muted ? 'Aktif' : 'Tidak aktif'}
         >
@@ -274,7 +277,7 @@ export default function SettingsScreen() {
             accessibilityState={{ checked: preferences.muted }}
             hitSlop={8}
             onValueChange={(muted) => {
-              updateAlphaPreferences({ muted });
+              updateAppPreferences({ muted });
             }}
             style={styles.switch}
             testID="mute-switch"
@@ -288,19 +291,19 @@ export default function SettingsScreen() {
         </SettingRow>
       </SectionCard>
 
-      <SectionCard title="Haptik">
+      <SectionCard title="Getaran" variant="plain">
         <SettingRow
           description="Dapat dimatikan tanpa menghilangkan informasi visual atau teks."
-          label="Umpan balik haptik"
+          label="Umpan balik getaran"
           value={preferences.hapticsEnabled ? 'Aktif' : 'Tidak aktif'}
         >
           <Switch
-            accessibilityLabel="Umpan balik haptik"
+            accessibilityLabel="Umpan balik getaran"
             accessibilityRole="switch"
             accessibilityState={{ checked: preferences.hapticsEnabled }}
             hitSlop={8}
             onValueChange={(hapticsEnabled) => {
-              updateAlphaPreferences({ hapticsEnabled });
+              updateAppPreferences({ hapticsEnabled });
             }}
             style={styles.switch}
             testID="haptics-switch"
@@ -318,50 +321,42 @@ export default function SettingsScreen() {
         </SettingRow>
       </SectionCard>
 
-      {__DEV__ ? (
-        <SectionCard title="Diagnostik">
-          <SettingRow
-            description="Tampilkan informasi teknis untuk pengujian pada layar terpisah."
-            label="Menu diagnostik"
-            value={preferences.debugMenuEnabled ? 'Aktif' : 'Tidak aktif'}
-          >
-            <Switch
-              accessibilityLabel="Aktifkan menu diagnostik"
-              accessibilityRole="switch"
-              accessibilityState={{ checked: preferences.debugMenuEnabled }}
-              hitSlop={8}
-              onValueChange={(debugMenuEnabled) => {
-                updateAlphaPreferences({ debugMenuEnabled });
-              }}
-              style={styles.switch}
-              testID="debug-menu-switch"
-              thumbColor={
-                preferences.debugMenuEnabled
-                  ? colors.primary
-                  : colors.surfaceContainerLowest
-              }
-              trackColor={{
-                false: colors.outline,
-                true: colors.primary,
-              }}
-              value={preferences.debugMenuEnabled}
-            />
-          </SettingRow>
-          {preferences.debugMenuEnabled ? (
-            <AccessibleButton
-              accessibilityHint="Membuka informasi teknis khusus pengujian"
-              label="Buka menu diagnostik"
-              onPress={() => router.push('/debug')}
-              variant="secondary"
-            />
-          ) : null}
-        </SectionCard>
-      ) : null}
+      <SectionCard title="Aksesibilitas" variant="plain">
+        <View
+          accessibilityLabel="Navigasi dengan TalkBack. Gunakan tiga tab di bagian bawah dengan urutan Beranda, Pindai, lalu Pengaturan."
+          accessible
+          style={styles.accessibilityNote}
+        >
+          <Text accessible={false} style={styles.accessibilityTitle}>
+            Navigasi dengan TalkBack
+          </Text>
+          <Text accessible={false} style={styles.accessibilityCopy}>
+            Gunakan tiga tab di bagian bawah untuk berpindah halaman. Urutan
+            fokusnya adalah Beranda, Pindai, lalu Pengaturan.
+          </Text>
+        </View>
+      </SectionCard>
+
+      <SectionCard title="Bantuan dan privasi" variant="plain">
+        <View style={styles.helpActions}>
+          <AccessibleButton
+            accessibilityHint="Membuka panduan pemindaian dan batas penggunaan"
+            label="Buka bantuan"
+            onPress={() => router.push('/help')}
+            variant="navigation"
+          />
+          <AccessibleButton
+            accessibilityHint="Membuka kebijakan privasi BrailleMe"
+            label="Buka privasi"
+            onPress={() => router.push('/privacy')}
+            variant="navigation"
+          />
+        </View>
+      </SectionCard>
 
       {actionStatus ? (
         <Text
           accessibilityLiveRegion="polite"
-          accessibilityRole="alert"
           selectable
           style={styles.status}
         >
@@ -370,16 +365,20 @@ export default function SettingsScreen() {
       ) : null}
 
       <AccessibleButton
-        accessibilityHint="Mengembalikan pengenalan, suara, haptik, dan menu diagnostik ke nilai awal"
-        label="Reset preferensi"
+        accessibilityHint="Mengembalikan pengenalan, suara, dan getaran ke nilai awal"
+        label="Kembalikan pengaturan awal"
         onPress={requestResetPreferences}
-        variant="danger"
+        variant="secondary"
       />
     </Screen>
   );
 }
 
 const styles = StyleSheet.create({
+  title: {
+    ...typography.displayLargeMobile,
+    color: colors.text,
+  },
   intro: {
     ...typography.bodyLarge,
     color: colors.textSecondary,
@@ -407,6 +406,24 @@ const styles = StyleSheet.create({
     flex: 1,
     minWidth: 0,
     paddingHorizontal: spacing.md,
+  },
+  accessibilityNote: {
+    gap: spacing.xs,
+    backgroundColor: colors.primaryContainer,
+    borderCurve: 'continuous',
+    borderRadius: radii.lg,
+    padding: spacing.lg,
+  },
+  accessibilityTitle: {
+    ...typography.label,
+    color: colors.onPrimaryContainer,
+  },
+  accessibilityCopy: {
+    ...typography.body,
+    color: colors.onPrimaryContainer,
+  },
+  helpActions: {
+    gap: spacing.sm,
   },
   status: {
     ...typography.body,

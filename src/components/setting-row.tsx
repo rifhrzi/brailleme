@@ -90,6 +90,8 @@ const styles = StyleSheet.create({
     minHeight: minimumTouchTarget,
     alignItems: 'stretch',
     gap: spacing.md,
+    borderBottomColor: colors.outlineVariant,
+    borderBottomWidth: StyleSheet.hairlineWidth,
     paddingVertical: spacing.md,
   },
   copy: {

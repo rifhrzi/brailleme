@@ -1,0 +1,110 @@
+{
+  "schemaVersion": 1,
+  "model": {
+    "version": "0.3.0-candidate.1",
+    "sha256": "7a41942cf330c9558884385221deb69f282adfd8d39be00a257c75ec9572c318",
+    "status": "unverified_candidate"
+  },
+  "trainingRun": {
+    "executedAt": "2026-09-04",
+    "sourceFiles": [
+      {
+        "path": "training/evidence/braille-cell-classifier-v2/training-source/train_angelina_candidate.py",
+        "sha256": "a1f0773fae363069d80df1620f4547540a19bae4bc6efe14a95c8dcbf9a4e35e"
+      },
+      {
+        "path": "training/evidence/braille-cell-classifier-v2/training-source/benchmark_angelina.py",
+        "sha256": "8debc0aaea846306daf14eae15b56565e0ca287fa919a5bb2de05c9cbd57199a"
+      }
+    ],
+    "gitCommit": null,
+    "environment": "Python 3.12.14, TensorFlow 2.20.0, Keras 3.15.1, NumPy 2.0.2, scikit-learn 1.6.1, Pillow 12.3.0",
+    "reportFile": "training/evidence/braille-cell-classifier-v2/training-output/training_report.json",
+    "reportSha256": "bc69b5c87047e8a2c7cdf60f0231de9690605197eb82e2fdc4abfdd8d3b6549e"
+  },
+  "evaluationRun": {
+    "executedAtUtc": "2026-09-04T04:56:32.112236+00:00",
+    "datasetRevision": "e13038d483bb58e17046d640e078dc4768276e9b",
+    "splits": ["uploaded/test.txt"],
+    "sourceFiles": [
+      {
+        "path": "training/evidence/braille-cell-classifier-v2/evaluation-source/benchmark_angelina.py",
+        "sha256": "6c7d63c8b5c461fec73e415b46df74d15c0bca455cc9f411c5fb6edd5d353353"
+      }
+    ],
+    "requirementsFile": "training/evidence/braille-cell-classifier-v2/training-source/training_requirements.txt",
+    "outputFile": "training/evidence/braille-cell-classifier-v2/angelina_external_benchmark.json"
+  },
+  "evidenceFiles": {
+    "artifact_hashes.json": "0ea6cddb7d838b92e2902083e6ac673d8168f37ffeec2139cf7dda6f2134a92e",
+    "preprocessing_contract.json": "ccf80eb7f79ea1407e986f4b5b80e1e6f5b4d01e5fa2945d7d35eaa3492a63c5",
+    "evaluation_report.json": "0b1a97b111c0a4089c38614b6db5149ba5f8382ca980c60bf2145bae3c03e972",
+    "keras_tflite_parity.json": "51f3952566dd25403b03bf107ba5658dcd34a517f7dfe9a0d503292b066659be",
+    "angelina_external_benchmark.json": "5126690ccbd3c71968c7bbc5b71792f942d302bd15813b384afc5976be22a325",
+    "angelina_classification_report.json": "45feec5717f76704439e1c5e227a6d01998ca4405e157f7b631b5014f449037d",
+    "angelina_negative_predictions.csv": "bd9324a46b1c3411e327fb1cf5ba48c0cf10fc6a7fcb9d9b6e257ad79efd1e10",
+    "angelina_page_accuracy_summary.json": "2a2272809e7b23eddf1cb416d044b049f9d6a39a0fbd659c66553ff12d6ef9bb",
+    "native-development-verification.json": "989da7aa3a30bac907a7a1103fef61b3e2399425efa5def8aaf9c4f88089c791",
+    "native-emulator-scan.png": "7410ef85698e8ea2ad0c1defc010111ff058fb101ea22257e8a50f3b790fd0c6",
+    "native-logcat-self-test.txt": "788a71d797218122ce3c444f6aa489d1c557d48f28ad6d738c8ed34ce99e627b",
+    "split_independence_audit.json": "5700322624018d476e8c75e7c33ca5d3635d4c591c7f85cd0e9e80052c0537cd",
+    "evaluation-source/benchmark_angelina.py": "6c7d63c8b5c461fec73e415b46df74d15c0bca455cc9f411c5fb6edd5d353353",
+    "training-source/train_angelina_candidate.py": "a1f0773fae363069d80df1620f4547540a19bae4bc6efe14a95c8dcbf9a4e35e",
+    "training-source/benchmark_angelina.py": "8debc0aaea846306daf14eae15b56565e0ca287fa919a5bb2de05c9cbd57199a",
+    "training-source/training_requirements.txt": "cb370a7e373df6440ddb4e5f56efb23661e17cac847d17ba49953644aab9730b",
+    "training-output/training_report.json": "bc69b5c87047e8a2c7cdf60f0231de9690605197eb82e2fdc4abfdd8d3b6549e"
+  },
+  "observedResults": {
+    "developmentMetricRole": "internal_external_public_test_not_production_release",
+    "externalTestSeparatedFromTrainingSplits": true,
+    "externalTestSampleCount": 9625,
+    "externalTestTop1Accuracy": 0.9311168831168831,
+    "externalTestMacroF1All26Classes": 0.8534704665444255,
+    "externalTestPassedInternal75PercentTarget": true,
+    "externalTestMissingClasses": ["y"],
+    "externalTestPagesBelow75Percent": 3,
+    "externalTestMinimumPageAccuracy": 0.6,
+    "epochSelectionValidationAccuracy": 0.9940461423964276,
+    "epochSelectionValidationSourceFamilyIndependent": false,
+    "externalTestReusableAsPristineFuturePromotionHoldout": false,
+    "kerasTfliteGoldenParityPassed": true,
+    "nativePostCropFixturePassed": true,
+    "nativeCameraGoldenParityAvailable": false,
+    "physicalHoldoutAvailable": false,
+    "negativeCorpusAvailable": false,
+    "publicNegativeGuardrailPassed": false,
+    "nativeDeviceBenchmarkAvailable": false,
+    "datasetRedistributionRightsConfirmed": false
+  },
+  "acceptanceCriteria": {
+    "physicalHoldout": {
+      "minimumSampleCount": 260,
+      "minimumSamplesPerClass": 10,
+      "minimumAccuracy": 0.9,
+      "minimumMacroF1": 0.9,
+      "minimumPerClassRecall": 0.8
+    },
+    "negativeCorpus": {
+      "minimumSceneCount": 12,
+      "maximumFalseAcceptCount": 0,
+      "confidenceThreshold": 0.9
+    },
+    "nativeRuntime": {
+      "minimumPhysicalDeviceCount": 2,
+      "minimumPreviewFps": 24,
+      "maximumP95StableLatencyMs": 2000,
+      "minimumSoakMinutes": 10,
+      "maximumCrashCount": 0,
+      "maximumAnrCount": 0,
+      "maximumFalseUtteranceCount": 0
+    }
+  },
+  "requiredReleaseEvidence": {
+    "deviceValidationFile": "training/evidence/braille-cell-classifier-v2/device-validation.json",
+    "deviceValidationSha256": null
+  },
+  "releaseDecision": {
+    "status": "blocked",
+    "reason": "Kandidat aktif untuk pengembangan lokal dan lolos self-test native post-crop, tetapi belum memiliki hak redistribusi dataset yang terkonfirmasi, physical holdout independen, native-camera golden parity, negative corpus yang lulus, atau benchmark perangkat fisik."
+  }
+}

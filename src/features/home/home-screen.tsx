@@ -3,32 +3,63 @@ import { useEffect, useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
 import { AccessibleButton, Screen, SectionCard } from '@/components';
-import { scannerPort } from '@/services';
-import { useAlphaPreferences } from '@/storage';
-import { colors, radii, spacing, typography } from '@/theme';
-import type { ScannerAvailability } from '@/types';
+import { scanReadinessPort } from '@/services/scan-readiness-port';
+import { useAppPreferences } from '@/storage';
+import {
+  colors,
+  minimumTouchTarget,
+  radii,
+  spacing,
+  typography,
+} from '@/theme';
+import type { ScanReadiness } from '@/types';
+
+function GuideRow({ number, text }: { number: number; text: string }) {
+  return (
+    <View
+      accessibilityLabel={`${number}. ${text}`}
+      accessible
+      style={styles.guideRow}
+    >
+      <View accessible={false} style={styles.guideNumber}>
+        <Text
+          accessible={false}
+          maxFontSizeMultiplier={1.25}
+          style={styles.guideNumberText}
+        >
+          {number}
+        </Text>
+      </View>
+      <Text accessible={false} style={styles.guideText}>
+        {text}
+      </Text>
+    </View>
+  );
+}
+
+const BRAILLE_B_PATTERN = [true, false, true, false, false, false] as const;
 
 export default function HomeScreen() {
   const router = useRouter();
-  const preferences = useAlphaPreferences();
-  const [scannerAvailability, setScannerAvailability] =
-    useState<ScannerAvailability | null>(null);
+  const preferences = useAppPreferences();
+  const [scanReadiness, setScanReadiness] =
+    useState<ScanReadiness | null>(null);
 
   useEffect(() => {
     let active = true;
 
-    void scannerPort
+    void scanReadinessPort
       .getAvailability()
       .then((availability) => {
         if (active) {
-          setScannerAvailability(availability);
+          setScanReadiness(availability);
         }
       })
       .catch(() => {
         if (active) {
-          setScannerAvailability({
+          setScanReadiness({
             available: false,
-            reason: 'native_scanner_not_installed',
+            reason: 'scanner_not_available',
             message: 'Status pemindai tidak dapat diperiksa.',
           });
         }
@@ -43,125 +74,187 @@ export default function HomeScreen() {
     return <Redirect href="/onboarding" />;
   }
 
+  const scannerReady = scanReadiness?.available === true;
+  const statusTitle = scannerReady
+    ? 'Siap menyusun kata'
+    : scanReadiness === null
+      ? 'Memeriksa pemindai'
+      : 'Pemindai belum siap';
+  const statusDescription = scannerReady
+    ? 'Pindai setiap huruf satu sel pada satu waktu, lalu susun hingga menjadi satu kata.'
+    : scanReadiness === null
+      ? 'Sedang memeriksa komponen pemindai di perangkat ini.'
+      : scanReadiness.message;
+
   return (
     <Screen testID="home-screen">
+      <View style={styles.brandRow}>
+        <View
+          accessibilityElementsHidden
+          accessible={false}
+          style={styles.brandMark}
+        >
+          {BRAILLE_B_PATTERN.map((filled, index) => (
+            <View
+              key={index}
+              style={[styles.brandDot, !filled && styles.brandDotOutline]}
+            />
+          ))}
+        </View>
+        <View style={styles.brandCopy}>
+          <Text accessible={false} style={styles.brandName}>
+            BrailleMe
+          </Text>
+          <Text
+            accessibilityLabel="Bekerja offline di perangkat"
+            style={styles.offlineLabel}
+          >
+            OFFLINE DI PERANGKAT
+          </Text>
+        </View>
+      </View>
+
       <View style={styles.hero}>
-        <Text accessible={false} style={styles.eyebrow}>
-          PRIBADI · OFFLINE
-        </Text>
         <Text accessibilityRole="header" selectable style={styles.title}>
-          Periksa Braille dengan lebih tenang
+          Susun satu kata Braille
         </Text>
         <Text selectable style={styles.intro}>
-          Navigasi, status, hasil teks, dan kontrol suara dirancang sederhana
-          serta mudah digunakan dengan pembaca layar.
+          Pindai satu sel untuk setiap huruf, konfirmasi hasilnya, lalu bacakan
+          kata yang sudah tersusun. Semua pemrosesan tetap offline.
         </Text>
       </View>
 
-      <SectionCard
-        description={
-          scannerAvailability === null
-            ? 'Sedang memeriksa komponen pemindai di perangkat ini.'
-            : scannerAvailability.available
-              ? 'Fitur pemindai satu sel dikonfigurasi. Kamera dan model diperiksa ketika layar pemindai dibuka. Hasil masih eksperimental dan wajib diverifikasi.'
-              : 'Komponen pemindai satu sel tidak dapat dimuat. Buka status untuk melihat penjelasan.'
-        }
-        title={
-          scannerAvailability?.available
-            ? 'Pemindai satu sel dikonfigurasi'
-            : scannerAvailability === null
-              ? 'Memeriksa pemindai'
-              : 'Pemindai belum tersedia'
-        }
-      >
+      <View style={styles.scanPanel}>
         <View
-          accessibilityLabel={
-            scannerAvailability?.available
-              ? 'Status fitur pemindai satu sel eksperimental dikonfigurasi; kamera dan model diperiksa saat dibuka'
-              : scannerAvailability === null
-                ? 'Status sedang diperiksa'
-                : 'Status belum tersedia'
-          }
+          accessibilityLabel={`${statusTitle}. ${statusDescription}`}
+          accessibilityLiveRegion="polite"
           accessible
           style={styles.statusRow}
         >
           <View
             accessible={false}
             style={[
-              styles.statusDot,
-              scannerAvailability?.available
+              styles.statusIcon,
+              scannerReady
                 ? styles.statusReady
-                : styles.statusUnavailable,
+                : scanReadiness === null
+                  ? styles.statusChecking
+                  : styles.statusUnavailable,
             ]}
-          />
-          <Text accessible={false} style={styles.statusLabel}>
-            {scannerAvailability?.available
-              ? 'Siap diperiksa, eksperimental'
-              : scannerAvailability === null
-                ? 'Memeriksa'
-                : 'Belum tersedia'}
-          </Text>
+          >
+            <Text
+              accessible={false}
+              maxFontSizeMultiplier={1.25}
+              style={styles.statusIconText}
+            >
+              {scannerReady ? 'OK' : scanReadiness === null ? '...' : '!'}
+            </Text>
+          </View>
+          <View accessible={false} style={styles.statusCopy}>
+            <Text accessible={false} style={styles.statusTitle}>
+              {statusTitle}
+            </Text>
+            <Text accessible={false} style={styles.statusDescription}>
+              {statusDescription}
+            </Text>
+          </View>
         </View>
         <AccessibleButton
-          accessibilityHint="Membuka layar pemindai dan rincian statusnya"
-          disabled={scannerAvailability === null}
+          accessibilityHint="Membuka pemindai untuk menyusun satu kata, satu sel per huruf"
+          disabled={scanReadiness === null}
           label={
-            scannerAvailability === null
+            scanReadiness === null
               ? 'Memeriksa pemindai'
-              : scannerAvailability.available
-                ? 'Pindai satu sel'
+              : scannerReady
+                ? 'Mulai susun kata'
                 : 'Lihat status pemindai'
           }
-          onPress={() => router.push('/live')}
+          onPress={() => router.replace('/live')}
           style={styles.primaryAction}
-          variant={scannerAvailability?.available ? 'action' : 'secondary'}
+          variant={scannerReady ? 'action' : 'secondary'}
         />
+        <Text selectable style={styles.disclaimer}>
+          Setiap huruf tetap perlu diperiksa terhadap sumber Braille.
+        </Text>
+      </View>
+
+      <SectionCard title="Sebelum memindai" variant="plain">
+        <View style={styles.guideList}>
+          <GuideRow number={1} text="Letakkan sel pertama di dalam bingkai." />
+          <GuideRow
+            number={2}
+            text="Tunggu huruf stabil, lalu tambahkan ke kata."
+          />
+          <GuideRow
+            number={3}
+            text="Ulangi per sel dan periksa kata sebelum digunakan."
+          />
+        </View>
       </SectionCard>
 
-      <View style={styles.navigationGroup}>
-        <Text accessibilityRole="header" style={styles.sectionTitle}>
-          Akses cepat
-        </Text>
-        <View style={styles.actions}>
-          <AccessibleButton
-            accessibilityHint="Mengatur suara, haptik, dan opsi aplikasi"
-            label="Pengaturan"
-            onPress={() => router.push('/settings')}
-            variant="navigation"
-          />
+      <SectionCard title="Bantuan dan privasi" variant="plain">
+        <View style={styles.links}>
           <AccessibleButton
             accessibilityHint="Membuka panduan dan batas penggunaan"
             label="Bantuan"
             onPress={() => router.push('/help')}
             variant="navigation"
           />
+          <AccessibleButton
+            accessibilityHint="Membuka kebijakan privasi lengkap"
+            label="Privasi"
+            onPress={() => router.push('/privacy')}
+            variant="navigation"
+          />
         </View>
-      </View>
-
-      <SectionCard title="Privasi" variant="plain">
-        <Text selectable style={styles.body}>
-          Gambar dan teks hasil tidak disimpan. Hanya preferensi aplikasi yang
-          tersimpan pada perangkat.
+        <Text selectable style={styles.privacyCopy}>
+          Gambar dan hasil pemindaian tidak disimpan. Hanya preferensi aplikasi
+          yang tersimpan pada perangkat.
         </Text>
-        <AccessibleButton
-          accessibilityHint="Membuka kebijakan privasi lengkap"
-          label="Kebijakan privasi"
-          onPress={() => router.push('/privacy')}
-          variant="secondary"
-        />
       </SectionCard>
     </Screen>
   );
 }
 
 const styles = StyleSheet.create({
-  hero: {
-    gap: spacing.sm,
-    paddingBottom: spacing.xs,
+  brandRow: {
+    minHeight: minimumTouchTarget,
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: spacing.md,
   },
-  eyebrow: {
+  brandMark: {
+    width: 25,
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    gap: 5,
+  },
+  brandDot: {
+    width: 10,
+    height: 10,
+    backgroundColor: colors.primary,
+    borderColor: colors.primary,
+    borderRadius: radii.pill,
+    borderWidth: 2,
+  },
+  brandDotOutline: {
+    backgroundColor: 'transparent',
+  },
+  brandCopy: {
+    flex: 1,
+    gap: 2,
+  },
+  brandName: {
+    ...typography.headlineMedium,
+    color: colors.text,
+    fontFamily: typography.title.fontFamily,
+  },
+  offlineLabel: {
     ...typography.labelCaps,
     color: colors.primary,
+  },
+  hero: {
+    gap: spacing.sm,
   },
   title: {
     ...typography.displayLargeMobile,
@@ -171,48 +264,98 @@ const styles = StyleSheet.create({
     ...typography.bodyLarge,
     color: colors.textSecondary,
   },
-  body: {
-    ...typography.body,
-    color: colors.text,
-  },
-  actions: {
-    gap: spacing.sm,
-  },
-  primaryAction: {
-    minHeight: 56,
-  },
-  navigationGroup: {
-    gap: spacing.sm,
-  },
-  sectionTitle: {
-    ...typography.headlineMedium,
-    color: colors.text,
+  scanPanel: {
+    gap: spacing.md,
+    backgroundColor: colors.surfaceContainerLowest,
+    borderColor: colors.outlineVariant,
+    borderCurve: 'continuous',
+    borderRadius: radii.xl,
+    borderWidth: 1,
+    padding: spacing.lg,
   },
   statusRow: {
-    minHeight: 32,
+    minHeight: minimumTouchTarget,
     flexDirection: 'row',
-    alignItems: 'center',
-    alignSelf: 'flex-start',
-    gap: spacing.xs,
-    backgroundColor: colors.surfaceContainerLow,
-    borderRadius: radii.pill,
-    paddingHorizontal: spacing.sm,
-    paddingVertical: spacing.xs,
+    alignItems: 'flex-start',
+    gap: spacing.md,
   },
-  statusDot: {
-    width: 10,
-    height: 10,
+  statusIcon: {
+    width: 40,
+    height: 40,
+    alignItems: 'center',
+    justifyContent: 'center',
     borderRadius: radii.pill,
   },
   statusReady: {
     backgroundColor: colors.success,
   },
+  statusChecking: {
+    backgroundColor: colors.primary,
+  },
   statusUnavailable: {
     backgroundColor: colors.warning,
   },
-  statusLabel: {
-    ...typography.supporting,
+  statusIconText: {
+    ...typography.label,
+    color: colors.onPrimary,
+  },
+  statusCopy: {
+    flex: 1,
+    gap: spacing.xxs,
+  },
+  statusTitle: {
+    ...typography.label,
     color: colors.text,
+  },
+  statusDescription: {
+    ...typography.supporting,
+    color: colors.textSecondary,
+  },
+  primaryAction: {
+    minHeight: 60,
+  },
+  disclaimer: {
+    ...typography.supporting,
+    color: colors.secondary,
     fontFamily: typography.label.fontFamily,
+  },
+  guideList: {
+    borderBottomColor: colors.outlineVariant,
+    borderTopColor: colors.outlineVariant,
+    borderBottomWidth: 1,
+    borderTopWidth: 1,
+  },
+  guideRow: {
+    minHeight: 64,
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: spacing.md,
+    borderBottomColor: colors.outlineVariant,
+    borderBottomWidth: StyleSheet.hairlineWidth,
+    paddingVertical: spacing.sm,
+  },
+  guideNumber: {
+    width: 32,
+    height: 32,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: colors.primaryContainer,
+    borderRadius: radii.pill,
+  },
+  guideNumberText: {
+    ...typography.label,
+    color: colors.onPrimaryContainer,
+  },
+  guideText: {
+    ...typography.body,
+    flex: 1,
+    color: colors.text,
+  },
+  links: {
+    gap: spacing.sm,
+  },
+  privacyCopy: {
+    ...typography.supporting,
+    color: colors.textSecondary,
   },
 });

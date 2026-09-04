@@ -133,7 +133,7 @@ export class SingleCellScannerPort implements ScannerPort {
 
     const event: LiveScanEvent = {
       ...payload,
-      schemaVersion: 1,
+      schemaVersion: 2,
       sessionId: expectedSessionId,
     };
     // Pertahankan validasi di batas port selain validasi defensif milik UI.

@@ -31,7 +31,7 @@ export const colors = {
   warning: '#725B00',
   warningContainer: '#FFF1B8',
 
-  // Compatibility aliases used throughout the current alpha UI.
+  // Compatibility aliases used by existing feature styles.
   canvas: '#F5F7FA',
   accent: '#006B63',
   border: '#BCCCDC',

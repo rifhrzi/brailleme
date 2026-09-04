@@ -1,30 +1,26 @@
-import { render, screen, userEvent } from '@testing-library/react-native';
+import { act, render, screen, userEvent } from '@testing-library/react-native';
+import { useEffect } from 'react';
+import { Text } from 'react-native';
 
-import DebugRoute from '../../../app/debug';
 import LiveRoute, {
   ErrorBoundary as LiveErrorBoundary,
   LiveRouteView,
-} from '../../../app/live';
-import ModelProbeRoute, {
-  ErrorBoundary as ModelProbeErrorBoundary,
-} from '../../../app/model-probe';
+  type LiveRuntimeRenderProps,
+} from '../../../app/(tabs)/live';
 import {
-  resetAlphaPreferences,
-  updateAlphaPreferences,
+  INITIAL_WORD_DRAFT_STATE,
+  getWordText,
+  wordDraftReducer,
+} from '@/features/live/word-draft';
+import {
+  resetAppPreferences,
+  updateAppPreferences,
 } from '@/storage';
 import { minimumTouchTarget } from '@/theme';
 
-const runtimeGlobals = globalThis as typeof globalThis & { __DEV__: boolean };
-const originalDev = runtimeGlobals.__DEV__;
-
 describe('guard dan pemulihan route', () => {
   beforeEach(() => {
-    runtimeGlobals.__DEV__ = originalDev;
-    resetAlphaPreferences();
-  });
-
-  afterAll(() => {
-    runtimeGlobals.__DEV__ = originalDev;
+    resetAppPreferences();
   });
 
   it('mengalihkan deep link pemindai ke pengenalan sebelum disetujui', async () => {
@@ -37,7 +33,7 @@ describe('guard dan pemulihan route', () => {
 
   it('memerlukan penekanan eksplisit pada setiap mount sebelum runtime kamera dimuat', async () => {
     const user = userEvent.setup();
-    updateAlphaPreferences({ onboardingCompleted: true });
+    updateAppPreferences({ onboardingCompleted: true });
 
     const renderRuntime = jest.fn(() => null);
     const firstMount = await render(
@@ -47,10 +43,10 @@ describe('guard dan pemulihan route', () => {
     expect(renderRuntime).not.toHaveBeenCalled();
 
     const activationButton = screen.getByRole('button', {
-      name: 'Aktifkan kamera dan mulai',
+      name: 'Aktifkan kamera',
     });
     expect(activationButton.props.accessibilityHint).toBe(
-      'Membuka kamera dan memulai pemrosesan satu sel di perangkat',
+      'Membuka kamera dan mulai menyusun kata satu sel per huruf',
     );
     expect(activationButton).toHaveStyle({
       minHeight: minimumTouchTarget,
@@ -68,28 +64,87 @@ describe('guard dan pemulihan route', () => {
     expect(renderRuntime).not.toHaveBeenCalled();
   });
 
-  it('mengalihkan deep link uji model ke pengenalan sebelum disetujui', async () => {
-    await render(<ModelProbeRoute />);
+  it('menutup runtime dan meminta aktivasi ulang ketika tab Pindai kehilangan fokus', async () => {
+    const user = userEvent.setup();
+    const runtimeUnmounted = jest.fn();
+    const routerModule = jest.requireMock<{
+      __setRouteFocused(focused: boolean): void;
+    }>('expo-router');
+    updateAppPreferences({ onboardingCompleted: true });
 
-    expect(screen.getByTestId('expo-router-redirect')).toHaveAccessibilityValue({
-      text: '/onboarding',
+    function RuntimeProbe() {
+      useEffect(() => runtimeUnmounted, []);
+      return <Text>Runtime kamera aktif</Text>;
+    }
+
+    await render(<LiveRouteView renderRuntime={() => <RuntimeProbe />} />);
+    await user.press(
+      screen.getByRole('button', { name: 'Aktifkan kamera' }),
+    );
+    expect(screen.getByText('Runtime kamera aktif')).toBeOnTheScreen();
+
+    await act(async () => {
+      routerModule.__setRouteFocused(false);
+      await Promise.resolve();
     });
+
+    expect(runtimeUnmounted).toHaveBeenCalledTimes(1);
+    expect(screen.getByTestId('live-activation-gate')).toBeOnTheScreen();
+    expect(screen.queryByText('Runtime kamera aktif')).toBeNull();
+
+    await act(async () => {
+      routerModule.__setRouteFocused(true);
+      await Promise.resolve();
+    });
+    expect(screen.getByTestId('live-activation-gate')).toBeOnTheScreen();
   });
 
-  it('menutup route internal pada build produksi', async () => {
-    runtimeGlobals.__DEV__ = false;
-    updateAlphaPreferences({ onboardingCompleted: true });
+  it('mempertahankan draft kata di memori saat runtime kamera di-unmount karena blur', async () => {
+    const user = userEvent.setup();
+    const routerModule = jest.requireMock<{
+      __setRouteFocused(focused: boolean): void;
+    }>('expo-router');
+    let latestRuntimeProps: LiveRuntimeRenderProps | undefined;
+    updateAppPreferences({ onboardingCompleted: true });
 
-    const modelProbe = await render(<ModelProbeRoute />);
-    expect(screen.getByTestId('expo-router-redirect')).toHaveAccessibilityValue({
-      text: '/',
+    const renderRuntime = jest.fn((props: LiveRuntimeRenderProps) => {
+      latestRuntimeProps = props;
+      return <Text>Kata sementara: {getWordText(props.wordDraft) || 'kosong'}</Text>;
     });
-    await modelProbe.unmount();
 
-    await render(<DebugRoute />);
-    expect(screen.getByTestId('expo-router-redirect')).toHaveAccessibilityValue({
-      text: '/settings',
+    await render(<LiveRouteView renderRuntime={renderRuntime} />);
+    await user.press(
+      screen.getByRole('button', { name: 'Aktifkan kamera' }),
+    );
+
+    const draftA = wordDraftReducer(INITIAL_WORD_DRAFT_STATE, {
+      type: 'commit_letter',
+      evidenceKey: 'session-1:epoch-0:A',
+      letter: 'A',
     });
+    await act(() => {
+      if (!latestRuntimeProps) {
+        throw new Error('Runtime belum dirender.');
+      }
+      latestRuntimeProps.onWordDraftChange(draftA);
+    });
+    expect(screen.getByText('Kata sementara: A')).toBeOnTheScreen();
+
+    await act(async () => {
+      routerModule.__setRouteFocused(false);
+      await Promise.resolve();
+    });
+    expect(screen.getByTestId('live-activation-gate')).toBeOnTheScreen();
+    expect(screen.queryByText('Kata sementara: A')).toBeNull();
+
+    await act(async () => {
+      routerModule.__setRouteFocused(true);
+      await Promise.resolve();
+    });
+    await user.press(
+      screen.getByRole('button', { name: 'Aktifkan kamera' }),
+    );
+    expect(screen.getByText('Kata sementara: A')).toBeOnTheScreen();
   });
 
   it('menyediakan pemulihan aman ketika route pemindai gagal', async () => {
@@ -114,18 +169,4 @@ describe('guard dan pemulihan route', () => {
     expect(routerModule.__router.replace).toHaveBeenCalledWith('/');
   });
 
-  it('menyediakan pemulihan aman ketika route uji model gagal', async () => {
-    const retry = jest.fn();
-    const user = userEvent.setup();
-
-    await render(
-      <ModelProbeErrorBoundary error={new Error('native')} retry={retry} />,
-    );
-
-    expect(
-      screen.getByRole('header', { name: 'Uji model tidak dapat dibuka' }),
-    ).toBeOnTheScreen();
-    await user.press(screen.getByRole('button', { name: 'Coba lagi' }));
-    expect(retry).toHaveBeenCalledTimes(1);
-  });
 });

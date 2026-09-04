@@ -1,5 +1,5 @@
-import labelsJson from '../../assets/models/braille-cell-classifier-v1/label.json';
-import modelManifestJson from '../../assets/models/braille-cell-classifier-v1/manifest.json';
+import labelsJson from '../../assets/models/braille-cell-classifier-v2/label.json';
+import modelManifestJson from '../../assets/models/braille-cell-classifier-v2/manifest.json';
 
 export const BRAILLE_MODEL_REQUIRED_VERIFICATION_KEYS = Object.freeze([
   'tensorContractInspected',
@@ -7,16 +7,23 @@ export const BRAILLE_MODEL_REQUIRED_VERIFICATION_KEYS = Object.freeze([
   'labelOrderConfirmedAgainstTrainingCode',
   'preprocessingConfirmedAgainstTrainingCode',
   'kerasTfliteConversionParityPassed',
+  'nativePostCropFixturePassed',
   'nativeCameraGoldenParityPassed',
   'independentPhysicalHoldoutPassed',
   'negativeCorpusPassed',
   'deviceBenchmarkPassed',
+  'datasetRedistributionRightsConfirmed',
 ] as const);
 
 type ModelReleaseManifest = {
   readonly artifact?: {
     readonly status?: string;
     readonly version?: string;
+  };
+  readonly nativeSelfTest?: {
+    readonly expectedClassIndex?: number;
+    readonly expectedLabel?: string;
+    readonly minimumConfidence?: number;
   };
   readonly verification?: Readonly<Record<string, boolean>>;
 };
@@ -58,7 +65,7 @@ export const BRAILLE_MODEL_RELEASE_VERIFIED =
     (key) => modelVerification?.[key] === true,
   );
 
-/** Kontrak preprocessing yang dikonfirmasi terhadap notebook training kandidat aktif. */
+/** Kontrak preprocessing yang dikonfirmasi terhadap script training kandidat aktif. */
 export const BRAILLE_MODEL_INPUT_SCALE = 'zero_to_one' as const;
 
 export type BrailleInputScale =
@@ -74,3 +81,28 @@ if (BRAILLE_LABELS.length !== BRAILLE_MODEL_OUTPUT_LENGTH) {
 if (BRAILLE_LABELS.join('') !== EXPECTED_BRAILLE_LABELS) {
   throw new Error('Urutan label Braille tidak sesuai dengan kontrak decoder.');
 }
+
+const nativeSelfTest = modelReleaseManifest.nativeSelfTest;
+const nativeSelfTestIndex = nativeSelfTest?.expectedClassIndex;
+const nativeSelfTestLabel = nativeSelfTest?.expectedLabel;
+const nativeSelfTestMinimumConfidence = nativeSelfTest?.minimumConfidence;
+
+if (
+  !Number.isInteger(nativeSelfTestIndex) ||
+  nativeSelfTestIndex === undefined ||
+  nativeSelfTestIndex < 0 ||
+  nativeSelfTestIndex >= BRAILLE_MODEL_OUTPUT_LENGTH ||
+  typeof nativeSelfTestLabel !== 'string' ||
+  BRAILLE_LABELS[nativeSelfTestIndex] !== nativeSelfTestLabel ||
+  typeof nativeSelfTestMinimumConfidence !== 'number' ||
+  !Number.isFinite(nativeSelfTestMinimumConfidence) ||
+  nativeSelfTestMinimumConfidence < 0 ||
+  nativeSelfTestMinimumConfidence > 1
+) {
+  throw new Error('Kontrak self-test native model tidak valid.');
+}
+
+export const BRAILLE_NATIVE_SELF_TEST_EXPECTED_INDEX = nativeSelfTestIndex;
+export const BRAILLE_NATIVE_SELF_TEST_EXPECTED_LABEL = nativeSelfTestLabel;
+export const BRAILLE_NATIVE_SELF_TEST_MIN_CONFIDENCE =
+  nativeSelfTestMinimumConfidence;

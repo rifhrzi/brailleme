@@ -1,4 +1,4 @@
-/** Status wire contract yang dikunci oleh PRD Technical Alpha. */
+/** Kontrak status yang dikirim scanner ke antarmuka Live. */
 export type ScanStatus =
   | "searching"
   | "quality_issue"
@@ -7,7 +7,7 @@ export type ScanStatus =
   | "unsupported"
   | "error";
 
-/** Alasan quality gate yang dikunci oleh PRD Technical Alpha. */
+/** Alasan quality gate yang dapat dipulihkan oleh pengguna. */
 export type QualityReason =
   | "blur"
   | "dark"
@@ -31,8 +31,10 @@ export interface NormalizedBox {
 
 /** DTO kecil dari batas scanner native ke React. */
 export interface LiveScanEvent {
-  readonly schemaVersion: 1;
+  readonly schemaVersion: 2;
   readonly sessionId: string;
+  /** Epoch satu sel untuk menolak hasil lama setelah commit atau pindai ulang. */
+  readonly scanEpoch: number;
   readonly timestampMs: number;
   readonly status: ScanStatus;
   readonly reason?: QualityReason;
@@ -97,9 +99,12 @@ export function isValidLiveScanEvent(value: unknown): value is LiveScanEvent {
   }
 
   if (
-    value.schemaVersion !== 1 ||
+    value.schemaVersion !== 2 ||
     typeof value.sessionId !== 'string' ||
     value.sessionId.trim().length === 0 ||
+    typeof value.scanEpoch !== 'number' ||
+    !Number.isSafeInteger(value.scanEpoch) ||
+    value.scanEpoch < 0 ||
     typeof value.timestampMs !== 'number' ||
     !Number.isFinite(value.timestampMs) ||
     value.timestampMs < 0 ||
@@ -121,6 +126,12 @@ export function isValidLiveScanEvent(value: unknown): value is LiveScanEvent {
     return false;
   }
   if (value.text !== undefined && typeof value.text !== 'string') {
+    return false;
+  }
+  if (
+    (value.status === 'candidate' || value.status === 'stable') &&
+    (typeof value.text !== 'string' || !/^[A-Z]$/.test(value.text))
+  ) {
     return false;
   }
   if (

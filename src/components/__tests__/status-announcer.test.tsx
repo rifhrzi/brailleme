@@ -38,13 +38,13 @@ describe('StatusAnnouncer', () => {
     );
 
     await act(() => {
-      jest.advanceTimersByTime(1_000);
+      jest.advanceTimersByTime(3_000);
     });
 
     expect(announceSpy).toHaveBeenCalledTimes(1);
   });
 
-  it('announces only changed guidance at intervals of at least one second', async () => {
+  it('announces only changed guidance at intervals of at least three seconds', async () => {
     const { rerender } = await render(
       <StatusAnnouncer
         status="quality_issue"
@@ -64,7 +64,7 @@ describe('StatusAnnouncer', () => {
     );
 
     await act(() => {
-      jest.advanceTimersByTime(999);
+      jest.advanceTimersByTime(2_999);
     });
     expect(announceSpy).toHaveBeenCalledTimes(1);
 
@@ -81,7 +81,7 @@ describe('StatusAnnouncer', () => {
       />,
     );
     await act(() => {
-      jest.advanceTimersByTime(1_000);
+      jest.advanceTimersByTime(3_000);
     });
 
     expect(announceSpy).toHaveBeenCalledTimes(2);
@@ -112,7 +112,7 @@ describe('StatusAnnouncer', () => {
 
     expect(announceSpy).toHaveBeenCalledTimes(1);
     expect(announceSpy).toHaveBeenLastCalledWith(
-      'Kandidat stabil. Periksa hasil di layar.',
+      'Huruf terdeteksi. Periksa hasil di layar.',
     );
 
     await rerender(<StatusAnnouncer status="candidate" />);
@@ -130,7 +130,7 @@ describe('StatusAnnouncer', () => {
 
     expect(announceSpy).toHaveBeenCalledTimes(2);
     expect(announceSpy).toHaveBeenLastCalledWith(
-      'Kandidat stabil. Periksa hasil di layar.',
+      'Huruf terdeteksi. Periksa hasil di layar.',
     );
   });
 
@@ -138,14 +138,14 @@ describe('StatusAnnouncer', () => {
     await render(
       <StatusAnnouncer
         status="stable"
-        stableAnnouncement="Kandidat satu sel stabil. Verifikasi hasil."
+        stableAnnouncement="Huruf satu sel terdeteksi. Periksa hasil."
         stableKey="private-result"
-        title="Kandidat huruf A"
+        title="Huruf A"
       />,
     );
 
     expect(announceSpy).toHaveBeenCalledWith(
-      'Kandidat satu sel stabil. Verifikasi hasil.',
+      'Huruf satu sel terdeteksi. Periksa hasil.',
     );
   });
 });

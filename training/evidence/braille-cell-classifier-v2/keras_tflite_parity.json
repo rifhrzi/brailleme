@@ -1,0 +1,311 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Keras-to-TFLite conversion parity for the promoted candidate",
+  "preprocessing": {
+    "resize": [
+      28,
+      28
+    ],
+    "resizeInterpolation": "Pillow bilinear",
+    "channelOrder": "RGB",
+    "dtype": "float32",
+    "normalization": "pixel / 255.0"
+  },
+  "artifacts": {
+    "kerasSha256": "8410d8694a41f1536ef29ae5bf9b63d60f9254e879f035dfa5c6270734cd1b20",
+    "tfliteSha256": "7a41942cf330c9558884385221deb69f282adfd8d39be00a257c75ec9572c318"
+  },
+  "sampleCount": 26,
+  "top1MatchCount": 26,
+  "maximumAllowedAbsoluteProbabilityDelta": 0.0001,
+  "maximumObservedAbsoluteProbabilityDelta": 2.980232238769531e-07,
+  "passed": true,
+  "samples": [
+    {
+      "fixtureLabel": "a",
+      "fixtureFile": "a1.JPG0dim.jpg",
+      "fixtureSha256": "dabf0e3a3f2eaeb45a1b7093e0416aabd005e8dae956de28edf568627e592359",
+      "kerasTop1": "a",
+      "tfliteTop1": "a",
+      "top1Match": true,
+      "kerasConfidence": 0.9099791049957275,
+      "tfliteConfidence": 0.9099791049957275,
+      "maximumAbsoluteProbabilityDelta": 4.470348358154297e-08
+    },
+    {
+      "fixtureLabel": "b",
+      "fixtureFile": "b1.JPG0dim.jpg",
+      "fixtureSha256": "ac925da39e20bdacf8557d35d28797cf6f6f9acffaa434d15f608d2c05ef7ed6",
+      "kerasTop1": "b",
+      "tfliteTop1": "b",
+      "top1Match": true,
+      "kerasConfidence": 0.9946205615997314,
+      "tfliteConfidence": 0.9946205615997314,
+      "maximumAbsoluteProbabilityDelta": 9.080395102500916e-09
+    },
+    {
+      "fixtureLabel": "c",
+      "fixtureFile": "c1.JPG0dim.jpg",
+      "fixtureSha256": "c8fa573fbf1c0a62d2279d1452f364a225fbba942760955e47efd6a4b0843e6b",
+      "kerasTop1": "c",
+      "tfliteTop1": "c",
+      "top1Match": true,
+      "kerasConfidence": 0.9982290863990784,
+      "tfliteConfidence": 0.9982290863990784,
+      "maximumAbsoluteProbabilityDelta": 2.2118911147117615e-09
+    },
+    {
+      "fixtureLabel": "d",
+      "fixtureFile": "d1.JPG0dim.jpg",
+      "fixtureSha256": "8509601a6b070e8dc4709d6f41c36f21bd44ec091e34f6fa670a768977c7a22f",
+      "kerasTop1": "d",
+      "tfliteTop1": "d",
+      "top1Match": true,
+      "kerasConfidence": 0.9653322696685791,
+      "tfliteConfidence": 0.9653325080871582,
+      "maximumAbsoluteProbabilityDelta": 2.384185791015625e-07
+    },
+    {
+      "fixtureLabel": "e",
+      "fixtureFile": "e1.JPG0dim.jpg",
+      "fixtureSha256": "46f1f8d10ddc0997ad800756578f551c12da4a46ebaf7934243cefc9fe0af91b",
+      "kerasTop1": "e",
+      "tfliteTop1": "e",
+      "top1Match": true,
+      "kerasConfidence": 0.999754011631012,
+      "tfliteConfidence": 0.999754011631012,
+      "maximumAbsoluteProbabilityDelta": 1.1641532182693481e-09
+    },
+    {
+      "fixtureLabel": "f",
+      "fixtureFile": "f1.JPG0dim.jpg",
+      "fixtureSha256": "dd5defdc099ea8b3cdd28db8dd8c32ec39e36836b1458c9cd15ae74f16d9362b",
+      "kerasTop1": "f",
+      "tfliteTop1": "f",
+      "top1Match": true,
+      "kerasConfidence": 0.9996517896652222,
+      "tfliteConfidence": 0.9996517896652222,
+      "maximumAbsoluteProbabilityDelta": 2.6193447411060333e-10
+    },
+    {
+      "fixtureLabel": "g",
+      "fixtureFile": "g1.JPG0dim.jpg",
+      "fixtureSha256": "2636ff560639340d116150413d49e8e0a699d5b7278852b1f9111350d5d7fd88",
+      "kerasTop1": "g",
+      "tfliteTop1": "g",
+      "top1Match": true,
+      "kerasConfidence": 0.9996802806854248,
+      "tfliteConfidence": 0.9996802806854248,
+      "maximumAbsoluteProbabilityDelta": 7.275957614183426e-10
+    },
+    {
+      "fixtureLabel": "h",
+      "fixtureFile": "h1.JPG0dim.jpg",
+      "fixtureSha256": "f2ef9ed8a5c84fdcd52c3f1145c111ca99a8df86ef853d6222ee477cb1d46b78",
+      "kerasTop1": "h",
+      "tfliteTop1": "h",
+      "top1Match": true,
+      "kerasConfidence": 0.9999758005142212,
+      "tfliteConfidence": 0.9999758005142212,
+      "maximumAbsoluteProbabilityDelta": 4.001776687800884e-11
+    },
+    {
+      "fixtureLabel": "i",
+      "fixtureFile": "i1.JPG0dim.jpg",
+      "fixtureSha256": "68a4c49383007b8f69e5c4ca580134edd383b17857b5a6fa622dd700c6709aa0",
+      "kerasTop1": "i",
+      "tfliteTop1": "i",
+      "top1Match": true,
+      "kerasConfidence": 0.9855266809463501,
+      "tfliteConfidence": 0.9855266809463501,
+      "maximumAbsoluteProbabilityDelta": 4.0978193283081055e-08
+    },
+    {
+      "fixtureLabel": "j",
+      "fixtureFile": "j1.JPG0dim.jpg",
+      "fixtureSha256": "ea9312a16919891f601aeb9e834a563ea5fa7ec5952d9fcf93c9f8d586f7e7cd",
+      "kerasTop1": "j",
+      "tfliteTop1": "j",
+      "top1Match": true,
+      "kerasConfidence": 0.9992546439170837,
+      "tfliteConfidence": 0.9992546439170837,
+      "maximumAbsoluteProbabilityDelta": 2.0954757928848267e-09
+    },
+    {
+      "fixtureLabel": "k",
+      "fixtureFile": "k1.JPG0dim.jpg",
+      "fixtureSha256": "63cf30419c3f2f65f0d7f50fbb82f6613992a039b01e3c8d3096aa6cbd01c2b7",
+      "kerasTop1": "k",
+      "tfliteTop1": "k",
+      "top1Match": true,
+      "kerasConfidence": 0.9974409341812134,
+      "tfliteConfidence": 0.9974409341812134,
+      "maximumAbsoluteProbabilityDelta": 4.773028194904327e-09
+    },
+    {
+      "fixtureLabel": "l",
+      "fixtureFile": "l1.JPG0dim.jpg",
+      "fixtureSha256": "96dbee1a1d7f28ab2104fd28c8d72645453e21dbdb7e472f48445103663b9f1b",
+      "kerasTop1": "l",
+      "tfliteTop1": "l",
+      "top1Match": true,
+      "kerasConfidence": 0.9485266804695129,
+      "tfliteConfidence": 0.9485266208648682,
+      "maximumAbsoluteProbabilityDelta": 5.960464477539063e-08
+    },
+    {
+      "fixtureLabel": "m",
+      "fixtureFile": "m1.JPG0dim.jpg",
+      "fixtureSha256": "14cfd4853f0ec04b493a90b27389af448116c25e83fa7375563aecec2cd7103c",
+      "kerasTop1": "m",
+      "tfliteTop1": "m",
+      "top1Match": true,
+      "kerasConfidence": 0.9535717368125916,
+      "tfliteConfidence": 0.9535717368125916,
+      "maximumAbsoluteProbabilityDelta": 3.5390257835388184e-08
+    },
+    {
+      "fixtureLabel": "n",
+      "fixtureFile": "n1.JPG0dim.jpg",
+      "fixtureSha256": "5aa77f577ddc7cdfd7c4f382089ace2c056daa983510f3e53fe24766d2a45d8e",
+      "kerasTop1": "n",
+      "tfliteTop1": "n",
+      "top1Match": true,
+      "kerasConfidence": 0.9909451007843018,
+      "tfliteConfidence": 0.9909451007843018,
+      "maximumAbsoluteProbabilityDelta": 3.259629011154175e-09
+    },
+    {
+      "fixtureLabel": "o",
+      "fixtureFile": "o1.JPG0dim.jpg",
+      "fixtureSha256": "8217e07aab727d3c4171d5871fa73896813e8d2dea921ffb8318c5f9f6537634",
+      "kerasTop1": "o",
+      "tfliteTop1": "o",
+      "top1Match": true,
+      "kerasConfidence": 0.9967775940895081,
+      "tfliteConfidence": 0.9967775940895081,
+      "maximumAbsoluteProbabilityDelta": 1.8044374883174896e-09
+    },
+    {
+      "fixtureLabel": "p",
+      "fixtureFile": "p1.JPG0dim.jpg",
+      "fixtureSha256": "4e11a196aa649812de11c8ae8dc65a2c2f05814b11d66dab3aafa7e375774cc1",
+      "kerasTop1": "p",
+      "tfliteTop1": "p",
+      "top1Match": true,
+      "kerasConfidence": 0.8958044648170471,
+      "tfliteConfidence": 0.8958044052124023,
+      "maximumAbsoluteProbabilityDelta": 1.6391277313232422e-07
+    },
+    {
+      "fixtureLabel": "q",
+      "fixtureFile": "q1.JPG0dim.jpg",
+      "fixtureSha256": "326ac35e32243a2d5e857b4ca91a73e73691b6fb5ae65611fd7af0b221a28fdb",
+      "kerasTop1": "q",
+      "tfliteTop1": "q",
+      "top1Match": true,
+      "kerasConfidence": 0.9524846076965332,
+      "tfliteConfidence": 0.9524846076965332,
+      "maximumAbsoluteProbabilityDelta": 3.725290298461914e-09
+    },
+    {
+      "fixtureLabel": "r",
+      "fixtureFile": "r1.JPG0dim.jpg",
+      "fixtureSha256": "e363ae191c0af728ff4ad7cab9462ab2c079d7e8662d2d90ecaa65b7a1ef2264",
+      "kerasTop1": "r",
+      "tfliteTop1": "r",
+      "top1Match": true,
+      "kerasConfidence": 0.9591498970985413,
+      "tfliteConfidence": 0.9591498970985413,
+      "maximumAbsoluteProbabilityDelta": 3.725290298461914e-08
+    },
+    {
+      "fixtureLabel": "s",
+      "fixtureFile": "s1.JPG0dim.jpg",
+      "fixtureSha256": "7bb050f86117964a32d02fbd807dc92bff94bccaef543ce5b5e7529cc9c10bef",
+      "kerasTop1": "s",
+      "tfliteTop1": "s",
+      "top1Match": true,
+      "kerasConfidence": 0.8590431809425354,
+      "tfliteConfidence": 0.8590428829193115,
+      "maximumAbsoluteProbabilityDelta": 2.980232238769531e-07
+    },
+    {
+      "fixtureLabel": "t",
+      "fixtureFile": "t1.JPG0dim.jpg",
+      "fixtureSha256": "2c5d5584b70a5e5be05673a855137cc2f0fab66514748b883e4cf5d65ee5aaf3",
+      "kerasTop1": "t",
+      "tfliteTop1": "t",
+      "top1Match": true,
+      "kerasConfidence": 0.8878495097160339,
+      "tfliteConfidence": 0.8878493905067444,
+      "maximumAbsoluteProbabilityDelta": 1.1920928955078125e-07
+    },
+    {
+      "fixtureLabel": "u",
+      "fixtureFile": "u1.JPG0dim.jpg",
+      "fixtureSha256": "73eb11137681ff87ac81c322a83a0f7ee89c8cf4707ea9a650e9db4b0eeed5c2",
+      "kerasTop1": "u",
+      "tfliteTop1": "u",
+      "top1Match": true,
+      "kerasConfidence": 0.9894441962242126,
+      "tfliteConfidence": 0.9894441962242126,
+      "maximumAbsoluteProbabilityDelta": 8.847564458847046e-09
+    },
+    {
+      "fixtureLabel": "v",
+      "fixtureFile": "v1.JPG0dim.jpg",
+      "fixtureSha256": "26d8266de34da63f7053888834c47d87ca07b95900ad5c484741c1ef1c2f3d27",
+      "kerasTop1": "v",
+      "tfliteTop1": "v",
+      "top1Match": true,
+      "kerasConfidence": 0.9999521970748901,
+      "tfliteConfidence": 0.9999521970748901,
+      "maximumAbsoluteProbabilityDelta": 3.2741809263825417e-11
+    },
+    {
+      "fixtureLabel": "w",
+      "fixtureFile": "w1.JPG0dim.jpg",
+      "fixtureSha256": "1012279e446a54688356d5927df41b9684e06eeffeb6959ab07b654f080167d8",
+      "kerasTop1": "w",
+      "tfliteTop1": "w",
+      "top1Match": true,
+      "kerasConfidence": 0.9511735439300537,
+      "tfliteConfidence": 0.9511735439300537,
+      "maximumAbsoluteProbabilityDelta": 4.842877388000488e-08
+    },
+    {
+      "fixtureLabel": "x",
+      "fixtureFile": "x1.JPG0dim.jpg",
+      "fixtureSha256": "860839e49ea4aab48df6a07d33ad227a7ffffe8b74b6d4e139a3883fb4e690e1",
+      "kerasTop1": "x",
+      "tfliteTop1": "x",
+      "top1Match": true,
+      "kerasConfidence": 0.9998691082000732,
+      "tfliteConfidence": 0.9998691082000732,
+      "maximumAbsoluteProbabilityDelta": 1.1641532182693481e-10
+    },
+    {
+      "fixtureLabel": "y",
+      "fixtureFile": "y1.JPG0dim.jpg",
+      "fixtureSha256": "4a4324fae8192fe080037f86825fcbaec0c30683fbcfe59a0728235221457eb5",
+      "kerasTop1": "y",
+      "tfliteTop1": "y",
+      "top1Match": true,
+      "kerasConfidence": 0.9939454197883606,
+      "tfliteConfidence": 0.9939454197883606,
+      "maximumAbsoluteProbabilityDelta": 6.111804395914078e-10
+    },
+    {
+      "fixtureLabel": "z",
+      "fixtureFile": "z1.JPG0dim.jpg",
+      "fixtureSha256": "3760fcb7f36f98a3579f8d7560486b3b26a25fd18b132641642bd0abed29a0d5",
+      "kerasTop1": "z",
+      "tfliteTop1": "z",
+      "top1Match": true,
+      "kerasConfidence": 0.9822863936424255,
+      "tfliteConfidence": 0.9822863936424255,
+      "maximumAbsoluteProbabilityDelta": 7.450580596923828e-09
+    }
+  ]
+}

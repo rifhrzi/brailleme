@@ -4,6 +4,7 @@ import {
   loadTensorflowModel,
   type TensorflowModel,
 } from 'react-native-fast-tflite';
+import { loadImage, type Image } from 'react-native-nitro-image';
 
 import {
   BRAILLE_MODEL_INPUT_CHANNELS,
@@ -27,8 +28,12 @@ jest.mock('react-native-fast-tflite', () => ({
   loadTensorflowModel: jest.fn(),
 }));
 
+jest.mock('react-native-nitro-image', () => ({
+  loadImage: jest.fn(),
+}));
+
 jest.mock(
-  '../../../assets/models/braille-cell-classifier-v1/braille_model.tflite',
+  '../../../assets/models/braille-cell-classifier-v2/braille_model.tflite',
   () => 101,
 );
 
@@ -37,10 +42,12 @@ const loadAssetMock = Asset.loadAsync as jest.MockedFunction<
 >;
 const loadTensorflowModelMock =
   loadTensorflowModel as jest.MockedFunction<typeof loadTensorflowModel>;
+const loadImageMock = loadImage as jest.MockedFunction<typeof loadImage>;
 
 type FakeModel = TensorflowModel & {
   readonly dispose: jest.Mock<void, []>;
   readonly run: jest.Mock<Promise<ArrayBuffer[]>, [ArrayBuffer[]]>;
+  readonly runSync: jest.Mock<ArrayBuffer[], [ArrayBuffer[]]>;
 };
 
 type TensorMetadata = TensorflowModel['inputs'][number];
@@ -68,6 +75,13 @@ function validProbabilityBuffer(): ArrayBuffer {
   return probabilities.buffer;
 }
 
+function validNativeProbabilityBuffer(): ArrayBuffer {
+  const probabilities = new Float32Array(BRAILLE_MODEL_OUTPUT_LENGTH);
+  probabilities[21] = 0.999998;
+  probabilities[2] = 0.000002;
+  return probabilities.buffer;
+}
+
 function probabilityBuffer(values: readonly number[]): ArrayBuffer {
   const probabilities = new Float32Array(BRAILLE_MODEL_OUTPUT_LENGTH);
   probabilities.set(values);
@@ -80,20 +94,51 @@ function createModel({
   run = jest.fn<Promise<ArrayBuffer[]>, [ArrayBuffer[]]>(async () => [
     validProbabilityBuffer(),
   ]),
+  runSync = jest.fn<ArrayBuffer[], [ArrayBuffer[]]>(() => [
+    validNativeProbabilityBuffer(),
+  ]),
   dispose = jest.fn<void, []>(),
 }: {
   readonly inputs?: TensorMetadata[];
   readonly outputs?: TensorMetadata[];
   readonly run?: jest.Mock<Promise<ArrayBuffer[]>, [ArrayBuffer[]]>;
+  readonly runSync?: jest.Mock<ArrayBuffer[], [ArrayBuffer[]]>;
   readonly dispose?: jest.Mock<void, []>;
 } = {}): FakeModel {
   return {
     inputs,
     outputs,
     run,
-    runSync: jest.fn(),
+    runSync,
     dispose,
   } as unknown as FakeModel;
+}
+
+function createNativeImagePipeline() {
+  const bytes = new Uint8Array(28 * 28 * 4);
+  for (let index = 0; index < 28 * 28; index += 1) {
+    bytes.set([30, 20, 10, 255], index * 4);
+  }
+  const resized = {
+    dispose: jest.fn(),
+    toRawPixelData: jest.fn(() => ({
+      buffer: bytes.buffer,
+      width: 28,
+      height: 28,
+      pixelFormat: 'BGRA' as const,
+    })),
+  } as unknown as Image;
+  const cropped = {
+    dispose: jest.fn(),
+    resize: jest.fn(() => resized),
+  } as unknown as Image;
+  const source = {
+    width: 51,
+    height: 51,
+    crop: jest.fn(() => cropped),
+    dispose: jest.fn(),
+  } as unknown as Image;
+  return { cropped, resized, source };
 }
 
 function deferred<T>() {
@@ -120,10 +165,15 @@ async function expectErrorState(expectedMessage: string) {
 }
 
 describe('useBrailleModel', () => {
+  let nativeImages: ReturnType<typeof createNativeImagePipeline>;
+
   beforeEach(() => {
+    nativeImages = createNativeImagePipeline();
     loadAssetMock.mockResolvedValue([
       { localUri: 'file:///data/user/0/app/cache/braille_model.tflite' },
+      { localUri: 'file:///data/user/0/app/cache/native-self-test-v.png' },
     ] as Awaited<ReturnType<typeof Asset.loadAsync>>);
+    loadImageMock.mockResolvedValue(nativeImages.source);
   });
 
   it('memuat aset lokal, memvalidasi model, dan masuk ke state ready', async () => {
@@ -160,6 +210,20 @@ describe('useBrailleModel', () => {
     });
     await waitFor(() => expect(hook.result.current.status).toBe('ready'));
     expect(hook.result.current).toEqual({ status: 'ready', model });
+    expect(nativeImages.source.crop).toHaveBeenCalledWith(11, 11, 39, 39);
+    expect(nativeImages.cropped.resize).toHaveBeenCalledWith(28, 28);
+    expect(model.runSync).toHaveBeenCalledTimes(1);
+    const [nativeInput] = model.runSync.mock.calls[0]?.[0] ?? [];
+    if (!nativeInput) {
+      throw new Error('Self-test native tidak menerima tensor input.');
+    }
+    const nativeValues = new Float32Array(nativeInput);
+    expect(nativeValues[0]).toBeCloseTo(10 / 255, 7);
+    expect(nativeValues[1]).toBeCloseTo(20 / 255, 7);
+    expect(nativeValues[2]).toBeCloseTo(30 / 255, 7);
+    expect(nativeImages.resized.dispose).toHaveBeenCalledTimes(1);
+    expect(nativeImages.cropped.dispose).toHaveBeenCalledTimes(1);
+    expect(nativeImages.source.dispose).toHaveBeenCalledTimes(1);
 
     await hook.unmount();
     expect(model.dispose).toHaveBeenCalledTimes(1);
@@ -167,8 +231,21 @@ describe('useBrailleModel', () => {
 
   it.each([
     ['tidak mengembalikan aset', []],
-    ['tidak memiliki localUri', [{}]],
-    ['mengembalikan URI non-lokal', [{ localUri: 'https://example.test/model.tflite' }]],
+    ['tidak memiliki localUri', [{}, {}]],
+    [
+      'mengembalikan URI model non-lokal',
+      [
+        { localUri: 'https://example.test/model.tflite' },
+        { localUri: 'file:///native-self-test-v.png' },
+      ],
+    ],
+    [
+      'mengembalikan URI fixture non-lokal',
+      [
+        { localUri: 'file:///braille_model.tflite' },
+        { localUri: 'https://example.test/native-self-test-v.png' },
+      ],
+    ],
   ])('menolak aset yang %s', async (_caseName, assets) => {
     loadAssetMock.mockResolvedValue(
       assets as Awaited<ReturnType<typeof Asset.loadAsync>>,
@@ -428,12 +505,6 @@ describe('assertBrailleModelRuntimeAllowed', () => {
   ])('mengizinkan %s', (_caseName, isProduction, releaseVerified) => {
     expect(() =>
       assertBrailleModelRuntimeAllowed(isProduction, releaseVerified),
-    ).not.toThrow();
-  });
-
-  it('mengizinkan model kandidat hanya dengan override produksi eksplisit', () => {
-    expect(() =>
-      assertBrailleModelRuntimeAllowed(true, false, true),
     ).not.toThrow();
   });
 });

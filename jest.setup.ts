@@ -59,6 +59,12 @@ jest.mock('expo-router', () => {
     replace: jest.fn(),
   };
   let localSearchParams: Record<string, string | undefined> = {};
+  let routeFocused = true;
+  const focusRecords = new Set<{
+    active: boolean;
+    cleanup: (() => void) | undefined;
+    effect: () => void | (() => void);
+  }>();
 
   function Redirect({ href }: { href: unknown }) {
     return React.createElement(View, {
@@ -76,12 +82,72 @@ jest.mock('expo-router', () => {
     return null;
   };
 
+  function Tabs({
+    children,
+    screenOptions,
+  }: {
+    children?: React.ReactNode;
+    screenOptions?: {
+      animation?: string;
+      tabBarStyle?: React.ComponentProps<typeof View>['style'];
+    };
+  }) {
+    return React.createElement(
+      View,
+      {
+        accessibilityValue: { text: screenOptions?.animation },
+        style: screenOptions?.tabBarStyle,
+        testID: 'expo-router-tabs',
+      },
+      children,
+    );
+  }
+
+  Tabs.Screen = function Screen({
+    name,
+    options,
+  }: {
+    name: string;
+    options?: {
+      tabBarAccessibilityLabel?: string;
+      tabBarButtonTestID?: string;
+      title?: string;
+    };
+  }) {
+    return React.createElement(View, {
+      accessibilityLabel: options?.tabBarAccessibilityLabel ?? options?.title,
+      accessibilityRole: 'tab',
+      accessibilityValue: { text: name },
+      testID: options?.tabBarButtonTestID,
+    });
+  };
+
+  function useFocusEffect(effect: () => void | (() => void)) {
+    React.useEffect(() => {
+      const record = {
+        active: false,
+        cleanup: undefined as (() => void) | undefined,
+        effect,
+      };
+      if (routeFocused) {
+        record.cleanup = effect() || undefined;
+        record.active = true;
+      }
+      focusRecords.add(record);
+      return () => {
+        if (record.active) {
+          record.cleanup?.();
+        }
+        focusRecords.delete(record);
+      };
+    }, [effect]);
+  }
+
   return {
     Redirect,
     Stack,
-    useFocusEffect(effect: () => void | (() => void)) {
-      React.useEffect(effect, [effect]);
-    },
+    Tabs,
+    useFocusEffect,
     useLocalSearchParams: () => localSearchParams,
     useRouter: () => router,
     __router: router,
@@ -91,6 +157,20 @@ jest.mock('expo-router', () => {
       router.push.mockReset();
       router.replace.mockReset();
       localSearchParams = {};
+      routeFocused = true;
+    },
+    __setRouteFocused: (focused: boolean) => {
+      routeFocused = focused;
+      for (const record of focusRecords) {
+        if (focused && !record.active) {
+          record.cleanup = record.effect() || undefined;
+          record.active = true;
+        } else if (!focused && record.active) {
+          record.cleanup?.();
+          record.cleanup = undefined;
+          record.active = false;
+        }
+      }
     },
     __setLocalSearchParams: (
       nextParams: Record<string, string | undefined>,

@@ -1,4 +1,4 @@
-# Dependency Risk Review — 22 Agustus 2026
+# Dependency Risk Review — 27 Agustus 2026
 
 Status: **menunggu persetujuan release owner**. Dokumen ini bukan persetujuan otomatis.
 
@@ -37,11 +37,11 @@ Release owner harus memilih salah satu sebelum GO:
    kedaluwarsa di bawah; atau
 2. menunda release sampai versi Expo/EAS yang kompatibel menutup advisori.
 
-- Keputusan: `TODO`
-- Disetujui oleh: `TODO`
-- Tanggal: `TODO`
-- Kedaluwarsa/review ulang paling lambat: `2026-09-22`
-- Catatan: `TODO`
+- Keputusan: **belum disetujui; status produksi tetap NO-GO**
+- Disetujui oleh: **belum ada release owner yang tercatat**
+- Tanggal: **belum berlaku**
+- Kedaluwarsa/review ulang paling lambat: `2026-09-27`
+- Catatan: audit terakhir tetap menemukan 11 moderate pada jalur production dan 4 high pada tooling development; persetujuan tertulis serta audit ulang exact-build masih wajib.
 
 Audit harus dijalankan ulang setelah setiap perubahan lockfile dan tepat sebelum
 build kandidat final.

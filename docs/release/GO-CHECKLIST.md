@@ -2,13 +2,13 @@
 
 Keputusan GO hanya boleh diberikan untuk satu commit, model, dan AAB yang sama. Isi bukti; jangan mencentang berdasarkan rencana atau hasil emulator saja.
 
-Profile `production-experimental` boleh membawa pemindai kandidat ke AAB store sebagai pengecualian deadline, tetapi tidak mengubah status checklist ini menjadi GO. Status model, keterbatasan, dan bukti yang belum tersedia harus tetap dicatat dengan jujur.
+Build production selalu fail-closed: model harus berstatus `verified` dan seluruh evidence gate wajib lulus. Tidak ada profile pengecualian untuk model kandidat.
 
 ## Identitas kandidat
 
 - [ ] Git commit SHA: `________________________________________`
-- [ ] Model version: `0.2.0-candidate.1`
-- [ ] Model SHA-256: `9e07b5c56e2e4107a116370c6f0a2203ec83afe4b2e42d099b1780e75e72d7dc`
+- [ ] Model version: `0.3.0-candidate.1`
+- [ ] Model SHA-256: `7a41942cf330c9558884385221deb69f282adfd8d39be00a257c75ec9572c318`
 - [ ] EAS build ID: `________________________________________`
 - [ ] AAB SHA-256: `________________________________________`
 - [ ] Attestation exact-build: `artifacts/release/________________________.json`
@@ -26,12 +26,12 @@ Profile `production-experimental` boleh membawa pemindai kandidat ke AAB store s
 - [ ] `npm run release:config:verify`
 - [ ] `npm run model:verify`
 - [ ] `npm run release:model:verify`
-- [ ] Jika memakai pengecualian deadline: `npm run release:experimental:verify` dan risk acceptance cocok dengan model SHA yang sama.
 - [ ] `npm run export:android` dengan `APP_ENV=production`
 - [ ] `DEPENDENCY-RISK-REVIEW.md` sudah diperbarui dan disetujui release owner.
 
 ## Model dan physical holdout
 
+- [ ] Hak penggunaan dan redistribusi seluruh dataset training dikonfirmasi tertulis.
 - [ ] Minimum 260 sampel holdout fisik independen, minimum 10 per kelas A-Z.
 - [ ] Holdout berasal dari sesi/sumber yang tidak pernah dipakai training atau tuning.
 - [ ] Akurasi dan macro-F1 masing-masing minimal 90%.
@@ -43,6 +43,9 @@ Profile `production-experimental` boleh membawa pemindai kandidat ke AAB store s
 ## Perangkat dan aksesibilitas
 
 - [ ] Minimum dua perangkat fisik target dan versi Android dicatat.
+- [ ] Satu kata end-to-end lulus untuk 1-12 huruf, termasuk huruf berulang.
+- [ ] Tambah huruf idempoten; hasil lama tidak dapat masuk setelah pindai ulang atau pergantian sesi.
+- [ ] Hapus huruf terakhir, hapus kata, pindai ulang, pembacaan kata, dan interupsi TTS lulus.
 - [ ] Preview minimum 24 FPS dan p95 ROI-layak-ke-stabil maksimum 2 detik.
 - [ ] Soak kamera minimum 10 menit tanpa crash, ANR, stall, atau false utterance.
 - [ ] Fresh install, izin grant/deny/permanent deny/revoke, background, lock, dan reboot lulus.
@@ -60,13 +63,13 @@ Profile `production-experimental` boleh membawa pemindai kandidat ke AAB store s
 - [ ] Merged manifest hanya memuat izin yang disetujui; backup/debuggable/network diperiksa ulang.
 - [ ] Privacy policy memiliki URL HTTPS aktif dan dapat diakses tanpa login.
 - [ ] Data safety, ads, app access, target audience, content rating, kategori, negara, harga, dan kontak selesai.
-- [ ] Store listing Indonesia, ikon 512×512, feature graphic 1024×500, screenshot aktual, dan release notes selesai.
+- [ ] Store listing Indonesia, ikon 512 x 512, feature graphic 1024 x 500, screenshot aktual, dan release notes selesai.
 - [ ] Play pre-launch report tidak memiliki error yang belum diselesaikan.
 - [ ] Jika akun personal baru terpengaruh, closed test 12 tester selama 14 hari telah selesai.
 
 ## Keputusan
 
-- [ ] Product owner menyetujui keterbatasan: hanya satu sel A-Z, bukan kata/baris/halaman.
+- [ ] Product owner menyetujui keterbatasan: input satu sel A-Z per langkah, output maksimum satu kata; bukan pemindaian kata/baris/halaman sekaligus.
 - [ ] Accessibility reviewer menyetujui bukti TalkBack/perangkat.
 - [ ] Model reviewer menyetujui holdout dan negative corpus.
 - [ ] Release owner menyetujui signing, policy, dan staged rollout.

@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
     maxWidth: 760,
     alignSelf: 'center',
     gap: spacing.lg,
-    paddingBottom: spacing.section,
-    paddingTop: spacing.xl,
+    paddingBottom: spacing.xxl,
+    paddingTop: spacing.lg,
   },
 });

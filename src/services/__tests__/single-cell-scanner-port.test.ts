@@ -7,6 +7,7 @@ function createPayload(
   overrides: Partial<ScannerPayload> = {},
 ): ScannerPayload {
   return {
+    scanEpoch: 0,
     timestampMs: 1_786_214_400_000,
     status: 'searching',
     boxes: [],
@@ -41,13 +42,13 @@ describe('SingleCellScannerPort', () => {
       text: 'A',
       confidence: 0.94,
       boxes: [{ x: 0.25, y: 0.25, width: 0.5, height: 0.5 }],
-      modelVersion: 'braille-cell-classifier-v0',
+      modelVersion: 'test-model-version',
     });
 
     expect(port.publish(sessionId, payload)).toBe(true);
     expect(listener).toHaveBeenCalledTimes(1);
     expect(listener).toHaveBeenLastCalledWith({
-      schemaVersion: 1,
+      schemaVersion: 2,
       sessionId,
       ...payload,
     });
@@ -81,7 +82,7 @@ describe('SingleCellScannerPort', () => {
     ).toBe(true);
     expect(listener).toHaveBeenCalledWith(
       expect.objectContaining({
-        schemaVersion: 1,
+        schemaVersion: 2,
         sessionId,
         status: 'stable',
         text: 'B',
@@ -181,7 +182,9 @@ describe('SingleCellScannerPort', () => {
 
     const invalidPayloads = [
       createPayload({ timestampMs: Number.NaN }),
+      createPayload({ scanEpoch: -1 }),
       createPayload({ confidence: 1.01 }),
+      createPayload({ status: 'stable', text: 'AB', confidence: 0.99 }),
       createPayload({
         boxes: [{ x: 0.75, y: 0.25, width: 0.5, height: 0.5 }],
       }),

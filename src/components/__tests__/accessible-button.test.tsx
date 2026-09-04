@@ -36,4 +36,23 @@ describe('AccessibleButton', () => {
     expect(onBlur).toHaveBeenCalledTimes(1);
     expect(button).toHaveStyle({ borderColor: colors.outline });
   });
+
+  it('menggabungkan state pemanggil dengan state disabled yang sebenarnya', async () => {
+    await render(
+      <AccessibleButton
+        accessibilityState={{ busy: true, disabled: false, expanded: true }}
+        disabled
+        label="Memuat"
+        onPress={jest.fn()}
+      />,
+    );
+
+    expect(
+      screen.getByRole('button', { name: 'Memuat' }).props.accessibilityState,
+    ).toEqual({
+      busy: true,
+      disabled: true,
+      expanded: true,
+    });
+  });
 });

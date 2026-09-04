@@ -8,10 +8,10 @@ import HelpScreen from '@/features/help/help-screen';
 import HomeScreen from '@/features/home/home-screen';
 import OnboardingScreen from '@/features/onboarding/onboarding-screen';
 import {
-  ALPHA_PREFERENCES_STORAGE_KEY,
-  getAlphaPreferences,
-  resetAlphaPreferences,
-  updateAlphaPreferences,
+  APP_PREFERENCES_STORAGE_KEY,
+  getAppPreferences,
+  resetAppPreferences,
+  updateAppPreferences,
 } from '@/storage';
 
 type RouterMock = {
@@ -32,7 +32,7 @@ function getExpoRouterMock() {
 
 describe('alur onboarding', () => {
   beforeEach(() => {
-    resetAlphaPreferences();
+    resetAppPreferences();
   });
 
   it('mengalihkan first-run dari Beranda ke onboarding', async () => {
@@ -53,20 +53,30 @@ describe('alur onboarding', () => {
       screen.getByRole('button', { name: 'Buka Beranda' }),
     );
 
-    expect(getAlphaPreferences().onboardingCompleted).toBe(true);
+    expect(getAppPreferences().onboardingCompleted).toBe(true);
     expect(__router.replace).toHaveBeenCalledWith('/');
     expect(
       JSON.parse(
-        globalThis.localStorage.getItem(ALPHA_PREFERENCES_STORAGE_KEY) ?? '{}',
+        globalThis.localStorage.getItem(APP_PREFERENCES_STORAGE_KEY) ?? '{}',
       ),
     ).toMatchObject({ onboardingCompleted: true });
+  });
+
+  it('membatasi lebar aksi footer pada layar besar', async () => {
+    await render(<OnboardingScreen />);
+
+    expect(screen.getByTestId('onboarding-footer-content')).toHaveStyle({
+      width: '100%',
+      maxWidth: 760,
+      alignSelf: 'center',
+    });
   });
 
   it('membuka kembali onboarding dari Bantuan dalam mode review', async () => {
     const user = userEvent.setup();
     const { __router } = getExpoRouterMock();
 
-    updateAlphaPreferences({ onboardingCompleted: true });
+    updateAppPreferences({ onboardingCompleted: true });
     await render(<HelpScreen />);
     await user.press(
       screen.getByRole('button', { name: 'Buka kembali pengenalan' }),
@@ -83,7 +93,7 @@ describe('alur onboarding', () => {
     const routerModule = getExpoRouterMock();
     routerModule.__setLocalSearchParams({ review: '1' });
 
-    updateAlphaPreferences({ onboardingCompleted: true });
+    updateAppPreferences({ onboardingCompleted: true });
     await render(<OnboardingScreen />);
 
     await user.press(screen.getByRole('button', { name: 'Selesai' }));
@@ -96,7 +106,6 @@ describe('alur onboarding', () => {
     await render(<OnboardingScreen />);
 
     for (const implementationTerm of [
-      /technical alpha/i,
       /frontend/i,
       /milestone/i,
       /adapter/i,
@@ -110,11 +119,10 @@ describe('alur onboarding', () => {
     await render(<HelpScreen />);
 
     expect(
-      screen.getByRole('header', { name: 'Mulai dari Pindai Satu Sel' }),
+      screen.getByRole('header', { name: 'Susun kata, satu sel per huruf' }),
     ).toBeOnTheScreen();
     expect(screen.queryByText(/proofreader/i)).toBeNull();
     for (const implementationTerm of [
-      /technical alpha/i,
       /frontend/i,
       /milestone/i,
       /adapter/i,
@@ -125,26 +133,23 @@ describe('alur onboarding', () => {
   });
 
   it('menampilkan hanya tiga tujuan utama Beranda setelah onboarding', async () => {
-    updateAlphaPreferences({ onboardingCompleted: true });
+    updateAppPreferences({ onboardingCompleted: true });
     await render(<HomeScreen />);
 
-    expect(screen.getByText(/Periksa Braille/i)).toBeOnTheScreen();
+    expect(screen.getByText(/Susun satu kata Braille/i)).toBeOnTheScreen();
     expect(
-      await screen.findByRole('button', { name: 'Pindai satu sel' }),
+      await screen.findByRole('button', { name: 'Mulai susun kata' }),
     ).toBeOnTheScreen();
+    expect(screen.getByText('Siap menyusun kata')).toBeOnTheScreen();
     expect(
-      screen.getByRole('header', { name: 'Pemindai satu sel dikonfigurasi' }),
+      screen.getByText(/Pindai setiap huruf satu sel pada satu waktu/i),
     ).toBeOnTheScreen();
-    expect(
-      screen.getByText(/Kamera dan model diperiksa ketika layar pemindai dibuka/i),
-    ).toBeOnTheScreen();
-    expect(screen.getByRole('button', { name: 'Pengaturan' })).toBeOnTheScreen();
     expect(screen.getByRole('button', { name: 'Bantuan' })).toBeOnTheScreen();
+    expect(screen.getByRole('button', { name: 'Privasi' })).toBeOnTheScreen();
     expect(screen.queryByRole('button', { name: /Uji model/i })).toBeNull();
     expect(screen.queryByRole('button', { name: /Dokumen/i })).toBeNull();
     expect(screen.queryByText('Kesiapan offline')).toBeNull();
     expect(screen.queryByText('Model pemindai')).toBeNull();
-    expect(screen.queryByText(/technical alpha/i)).toBeNull();
     expect(screen.queryByText(/frontend/i)).toBeNull();
   });
 });

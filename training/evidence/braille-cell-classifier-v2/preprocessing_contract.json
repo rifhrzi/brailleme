@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "status": "confirmed_post_crop_contract",
+  "training": {
+    "sources": [
+      "training/evidence/braille-cell-classifier-v2/training-source/train_angelina_candidate.py",
+      "training/evidence/braille-cell-classifier-v2/training-source/benchmark_angelina.py"
+    ],
+    "decodedChannelOrder": "RGB",
+    "resize": [28, 28],
+    "resizeInterpolation": "bilinear",
+    "dtype": "float32",
+    "normalization": "pixel / 255.0",
+    "layout": "NHWC"
+  },
+  "application": {
+    "cameraSource": "upright YUV frame converted by HybridFrameConverter",
+    "localization": "center square at 55% of the shorter frame edge",
+    "resize": [28, 28],
+    "nativeRawFormats": [
+      "ARGB",
+      "BGRA",
+      "ABGR",
+      "RGBA",
+      "XRGB",
+      "BGRX",
+      "XBGR",
+      "RGBX",
+      "RGB",
+      "BGR"
+    ],
+    "outputChannelOrder": "RGB",
+    "dtype": "float32",
+    "normalization": "pixel / 255.0",
+    "layout": "NHWC"
+  },
+  "comparison": {
+    "postCropTensorContractMatches": true,
+    "annotationCropMatchesRuntimeLocalization": false,
+    "reason": "Angelina evaluation starts from annotation boxes, while the app relies on the user placing one cell inside the center guide. Camera localization therefore still needs physical validation."
+  }
+}

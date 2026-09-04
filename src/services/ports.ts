@@ -2,7 +2,7 @@ import type {
   CameraPermissionSnapshot,
   LiveScanEvent,
   PortResult,
-  ReadinessSnapshot,
+  ScanReadiness,
   ScannerStartResult,
   ScannerAvailability,
   TtsAvailability,
@@ -44,6 +44,11 @@ export interface ScannerPort {
   subscribeCapabilities?(listener: ScannerCapabilitiesListener): () => void;
 }
 
+/** Kesiapan ringan jalur pemindaian tanpa memuat runtime kamera atau TFLite. */
+export interface ScanReadinessPort {
+  getAvailability(): Promise<ScanReadiness>;
+}
+
 /** Izin kamera dipisahkan agar UI tidak bergantung pada library kamera. */
 export interface CameraPermissionPort {
   getStatus(): Promise<CameraPermissionSnapshot>;
@@ -62,9 +67,4 @@ export interface TtsPort {
   openTtsSettings(): Promise<PortResult>;
   /** Opsional untuk adapter yang dapat melaporkan lifecycle utterance native. */
   subscribePlayback?(listener: TtsPlaybackListener): () => void;
-}
-
-/** Menggabungkan kesiapan model, kamera, dan TTS untuk presentasi UI. */
-export interface ReadinessPort {
-  check(): Promise<ReadinessSnapshot>;
 }

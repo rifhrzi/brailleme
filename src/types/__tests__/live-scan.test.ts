@@ -1,11 +1,12 @@
 import { isValidLiveScanEvent } from '@/types';
 
 const VALID_EVENT = {
-  schemaVersion: 1,
+  schemaVersion: 2,
   sessionId: 'session-1',
+  scanEpoch: 0,
   timestampMs: 1_786_128_000_000,
   status: 'stable',
-  text: 'ABC',
+  text: 'A',
   confidence: 0.95,
   boxes: [{ x: 0.1, y: 0.2, width: 0.3, height: 0.4 }],
   decoderVersion: 'decoder-v1',
@@ -19,14 +20,19 @@ describe('validasi event Live', () => {
 
   it.each([
     null,
-    { ...VALID_EVENT, schemaVersion: 2 },
+    { ...VALID_EVENT, schemaVersion: 1 },
     { ...VALID_EVENT, sessionId: '  ' },
+    { ...VALID_EVENT, scanEpoch: -1 },
+    { ...VALID_EVENT, scanEpoch: 1.5 },
     { ...VALID_EVENT, timestampMs: Number.NaN },
     { ...VALID_EVENT, status: 'ready' },
     { ...VALID_EVENT, confidence: Number.POSITIVE_INFINITY },
     { ...VALID_EVENT, confidence: 1.1 },
     { ...VALID_EVENT, boxes: [{ x: 0.8, y: 0, width: 0.3, height: 1 }] },
     { ...VALID_EVENT, decoderVersion: '' },
+    { ...VALID_EVENT, text: 'ABC' },
+    { ...VALID_EVENT, text: 'a' },
+    { ...VALID_EVENT, text: '?' },
   ])('menolak payload native yang tidak valid', (event) => {
     expect(isValidLiveScanEvent(event)).toBe(false);
   });

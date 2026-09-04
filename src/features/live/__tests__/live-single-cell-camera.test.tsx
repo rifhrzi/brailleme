@@ -194,6 +194,7 @@ describe('LiveSingleCellCamera bridge', () => {
     await act(() => jest.advanceTimersByTime(200));
     expect(listener).toHaveBeenCalledWith(
       expect.objectContaining({
+        scanEpoch: 0,
         sessionId,
         status: 'candidate',
         text: 'A',
@@ -203,7 +204,6 @@ describe('LiveSingleCellCamera bridge', () => {
   });
 
   it('mengubah output model malformed menjadi error dan tetap membersihkan resource', async () => {
-    const warning = jest.spyOn(console, 'warn').mockImplementation(() => undefined);
     const malformedOutput = new Float32Array([0.7, 0.3]);
     const { listener, sessionId, view } = await setupCamera(
       createModel(malformedOutput),
@@ -219,9 +219,6 @@ describe('LiveSingleCellCamera bridge', () => {
     expect(listener).not.toHaveBeenCalledWith(
       expect.objectContaining({ status: 'candidate' }),
     );
-    expect(warning).toHaveBeenCalledWith(
-      expect.stringContaining('Model menghasilkan probabilitas tidak valid'),
-    );
     expect(resources.frame.dispose).toHaveBeenCalledTimes(1);
     expect(resources.resizedImage.dispose).toHaveBeenCalledTimes(1);
     expect(resources.croppedImage.dispose).toHaveBeenCalledTimes(1);
@@ -230,7 +227,6 @@ describe('LiveSingleCellCamera bridge', () => {
   });
 
   it('menolak dimensi raw native malformed sebelum memanggil model', async () => {
-    const warning = jest.spyOn(console, 'warn').mockImplementation(() => undefined);
     const model = createModel();
     const { listener, sessionId, view } = await setupCamera(model);
     const resources = createFrameResources();
@@ -248,9 +244,6 @@ describe('LiveSingleCellCamera bridge', () => {
     expect(listener).toHaveBeenCalledWith(
       expect.objectContaining({ sessionId, status: 'error' }),
     );
-    expect(warning).toHaveBeenCalledWith(
-      expect.stringContaining('Dimensi pixel kamera harus tepat 28 x 28'),
-    );
     expect(resources.frame.dispose).toHaveBeenCalledTimes(1);
     expect(resources.resizedImage.dispose).toHaveBeenCalledTimes(1);
     expect(resources.croppedImage.dispose).toHaveBeenCalledTimes(1);
@@ -259,7 +252,6 @@ describe('LiveSingleCellCamera bridge', () => {
   });
 
   it('melatch error pemrosesan agar frame berikutnya tidak menimpa status', async () => {
-    const warning = jest.spyOn(console, 'warn').mockImplementation(() => undefined);
     const malformed = new Float32Array([0.7, 0.3]);
     const valid = new Float32Array(26);
     valid[0] = 0.95;
@@ -278,7 +270,6 @@ describe('LiveSingleCellCamera bridge', () => {
     expect(listener).toHaveBeenCalledWith(
       expect.objectContaining({ sessionId, status: 'error' }),
     );
-    expect(warning).toHaveBeenCalledTimes(1);
     listener.mockClear();
 
     mockNow = 1_300;
@@ -326,7 +317,7 @@ describe('LiveSingleCellCamera bridge', () => {
     await act(() => jest.advanceTimersByTime(200));
 
     expect(listener).toHaveBeenCalledWith(
-      expect.objectContaining({ sessionId, status: 'candidate' }),
+      expect.objectContaining({ scanEpoch: 1, sessionId, status: 'candidate' }),
     );
     expect(listener).not.toHaveBeenCalledWith(
       expect.objectContaining({ status: 'stable' }),
@@ -406,6 +397,7 @@ describe('LiveSingleCellCamera bridge', () => {
     );
     expect(mockCameraProps?.torchMode).toBeUndefined();
     expect(mockCameraProps?.constraints).toEqual([{ fps: 30 }]);
+    expect(mockCameraProps?.implementationMode).toBe('compatible');
     await view.unmount();
   });
 
@@ -437,7 +429,6 @@ describe('LiveSingleCellCamera bridge', () => {
   it('mempertahankan error worklet walau frame valid datang sebelum polling', async () => {
     const malformed = new Float32Array([0.7, 0.3]);
     const model = createModel(malformed);
-    const warning = jest.spyOn(console, 'warn').mockImplementation(() => undefined);
     const { listener, sessionId, view } = await setupCamera(model);
 
     processFrame(createFrameResources().frame);
@@ -449,7 +440,6 @@ describe('LiveSingleCellCamera bridge', () => {
     expect(listener).toHaveBeenCalledWith(
       expect.objectContaining({ sessionId, status: 'error' }),
     );
-    expect(warning).toHaveBeenCalledTimes(1);
     await view.unmount();
   });
 
@@ -480,7 +470,56 @@ describe('LiveSingleCellCamera bridge', () => {
     await view.unmount();
   });
 
-  it('timeout pencarian kamera hanya memberi status lambat, bukan error fatal', async () => {
+  it('menolak error generation lama tanpa mematikan generation baru', async () => {
+    const malformed = new Float32Array([0.7, 0.3]);
+    const valid = new Float32Array(26);
+    valid[0] = 0.95;
+    valid[1] = 0.05;
+    const model = {
+      runSync: jest
+        .fn()
+        .mockReturnValueOnce([malformed.buffer])
+        .mockReturnValue([valid.buffer]),
+    } as unknown as TensorflowModel;
+    const { listener, scanner, sessionId, view } = await setupCamera(model);
+    const oldFrameCallback = mockFrameCallback;
+
+    await view.rerender(
+      <LiveSingleCellCamera
+        active
+        model={model}
+        resetToken={1}
+        scanner={scanner}
+        sessionId={sessionId}
+        torchEnabled={false}
+      />,
+    );
+    listener.mockClear();
+
+    mockNow = 1_300;
+    oldFrameCallback?.(createFrameResources().frame);
+    await act(() => jest.advanceTimersByTime(200));
+    expect(listener).not.toHaveBeenCalledWith(
+      expect.objectContaining({ status: 'error' }),
+    );
+
+    mockNow = 1_600;
+    processFrame(createFrameResources().frame);
+    await act(() => jest.advanceTimersByTime(200));
+
+    expect(model.runSync).toHaveBeenCalledTimes(2);
+    expect(listener).toHaveBeenCalledWith(
+      expect.objectContaining({
+        scanEpoch: 1,
+        sessionId,
+        status: 'candidate',
+        text: 'A',
+      }),
+    );
+    await view.unmount();
+  });
+
+  it('memberi waktu tambahan untuk kamera lambat sebelum menyatakan error', async () => {
     mockCameraDevice = undefined;
     const { listener, scanner, sessionId, view } = await setupCamera();
 
@@ -493,32 +532,7 @@ describe('LiveSingleCellCamera bridge', () => {
       expect.objectContaining({ status: 'error' }),
     );
 
-    await view.rerender(
-      <LiveSingleCellCamera
-        active={false}
-        model={createModel()}
-        resetToken={1}
-        scanner={scanner}
-        sessionId={sessionId}
-        torchEnabled={false}
-      />,
-    );
-    expect(view.getByText('Menyiapkan kamera belakang.')).toBeOnTheScreen();
-    await view.rerender(
-      <LiveSingleCellCamera
-        active
-        model={createModel()}
-        resetToken={1}
-        scanner={scanner}
-        sessionId={sessionId}
-        torchEnabled={false}
-      />,
-    );
-    await act(() => jest.advanceTimersByTime(10_000));
-    expect(
-      view.getByText(/Kamera belakang masih disiapkan/i),
-    ).toBeOnTheScreen();
-
+    await act(() => jest.advanceTimersByTime(5_000));
     mockCameraDevice = { hasTorch: true, id: 'late-back-camera' };
     await view.rerender(
       <LiveSingleCellCamera
@@ -535,22 +549,30 @@ describe('LiveSingleCellCamera bridge', () => {
         includeHiddenElements: true,
       }),
     ).toBeOnTheScreen();
-
-    await act(() => {
-      (mockCameraProps?.onStarted as (() => void) | undefined)?.();
-    });
-    mockCameraDevice = undefined;
-    await view.rerender(
-      <LiveSingleCellCamera
-        active
-        model={createModel()}
-        resetToken={1}
-        scanner={scanner}
-        sessionId={sessionId}
-        torchEnabled={false}
-      />,
+    await act(() => jest.advanceTimersByTime(10_000));
+    expect(listener).not.toHaveBeenCalledWith(
+      expect.objectContaining({ status: 'error' }),
     );
-    expect(view.getByText('Menyiapkan kamera belakang.')).toBeOnTheScreen();
+    await view.unmount();
+  });
+
+  it('menerbitkan error sesi yang dapat dipulihkan bila kamera belakang tetap tidak ada', async () => {
+    mockCameraDevice = undefined;
+    const { listener, sessionId, view } = await setupCamera(
+      createModel(),
+      false,
+      3,
+    );
+
+    await act(() => jest.advanceTimersByTime(20_000));
+
+    expect(listener).toHaveBeenCalledWith(
+      expect.objectContaining({
+        scanEpoch: 3,
+        sessionId,
+        status: 'error',
+      }),
+    );
     await view.unmount();
   });
 

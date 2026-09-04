@@ -9,14 +9,11 @@ import { Alert, AppState } from 'react-native';
 import SettingsScreen from '@/features/settings/settings-screen';
 import { ttsPort } from '@/services';
 import {
-  ALPHA_PREFERENCES_STORAGE_KEY,
-  getAlphaPreferences,
-  resetAlphaPreferences,
-  updateAlphaPreferences,
+  APP_PREFERENCES_STORAGE_KEY,
+  getAppPreferences,
+  resetAppPreferences,
+  updateAppPreferences,
 } from '@/storage';
-
-const runtimeGlobals = globalThis as typeof globalThis & { __DEV__: boolean };
-const originalDev = runtimeGlobals.__DEV__;
 
 function deferred<T>() {
   let resolve!: (value: T) => void;
@@ -31,12 +28,7 @@ function deferred<T>() {
 
 describe('Pengaturan', () => {
   beforeEach(() => {
-    runtimeGlobals.__DEV__ = originalDev;
-    resetAlphaPreferences();
-  });
-
-  afterAll(() => {
-    runtimeGlobals.__DEV__ = originalDev;
+    resetAppPreferences();
   });
 
   it('menampilkan default yang bersih dan semantik kontrol', async () => {
@@ -61,18 +53,10 @@ describe('Pengaturan', () => {
       screen.getByRole('switch', { name: 'Bisukan suara' }),
     ).not.toBeChecked();
     expect(
-      screen.getByRole('switch', { name: 'Umpan balik haptik' }),
+      screen.getByRole('switch', { name: 'Umpan balik getaran' }),
     ).toBeChecked();
-    expect(
-      screen.getByRole('switch', { name: 'Aktifkan menu diagnostik' }),
-    ).not.toBeChecked();
-    expect(
-      screen.queryByRole('button', { name: 'Buka menu diagnostik' }),
-    ).toBeNull();
-
     expect(screen.queryByRole('adjustable', { name: /Profil/i })).toBeNull();
-    expect(screen.queryByText('id-latin-6dot-alpha-v0')).toBeNull();
-    expect(screen.queryByText(/technical alpha/i)).toBeNull();
+    expect(screen.queryByText('id-latin-6dot-v1')).toBeNull();
     expect(screen.queryByText(/frontend/i)).toBeNull();
     expect(screen.queryByText(/model pemindai/i)).toBeNull();
     expect(screen.queryByText(/auto[- ]?speak/i)).toBeNull();
@@ -92,47 +76,6 @@ describe('Pengaturan', () => {
     }
   });
 
-  it('mengaktifkan menu diagnostik, mempersistensikannya, dan membuka route debug', async () => {
-    const user = userEvent.setup();
-    const routerModule = jest.requireMock<{
-      __router: { push: jest.Mock };
-    }>('expo-router');
-    await render(<SettingsScreen />);
-
-    await fireEvent(
-      screen.getByRole('switch', { name: 'Aktifkan menu diagnostik' }),
-      'valueChange',
-      true,
-    );
-
-    expect(getAlphaPreferences().debugMenuEnabled).toBe(true);
-    expect(
-      JSON.parse(
-        globalThis.localStorage.getItem(ALPHA_PREFERENCES_STORAGE_KEY) ?? '{}',
-      ),
-    ).toMatchObject({ debugMenuEnabled: true });
-
-    await user.press(
-      screen.getByRole('button', { name: 'Buka menu diagnostik' }),
-    );
-    expect(routerModule.__router.push).toHaveBeenCalledWith('/debug');
-  });
-
-  it('menyembunyikan menu diagnostik pada build produksi', async () => {
-    runtimeGlobals.__DEV__ = false;
-    updateAlphaPreferences({ debugMenuEnabled: true });
-
-    await render(<SettingsScreen />);
-
-    expect(screen.queryByText('Diagnostik')).toBeNull();
-    expect(
-      screen.queryByRole('switch', { name: 'Aktifkan menu diagnostik' }),
-    ).toBeNull();
-    expect(
-      screen.queryByRole('button', { name: 'Buka menu diagnostik' }),
-    ).toBeNull();
-  });
-
   it('mengubah rate, volume, mute, dan haptik lalu mempersistensikannya', async () => {
     const user = userEvent.setup();
     await render(<SettingsScreen />);
@@ -149,7 +92,7 @@ describe('Pengaturan', () => {
       true,
     );
     await fireEvent(
-      screen.getByRole('switch', { name: 'Umpan balik haptik' }),
+      screen.getByRole('switch', { name: 'Umpan balik getaran' }),
       'valueChange',
       false,
     );
@@ -164,10 +107,10 @@ describe('Pengaturan', () => {
       screen.getByRole('switch', { name: 'Bisukan suara' }),
     ).toBeChecked();
     expect(
-      screen.getByRole('switch', { name: 'Umpan balik haptik' }),
+      screen.getByRole('switch', { name: 'Umpan balik getaran' }),
     ).not.toBeChecked();
 
-    expect(getAlphaPreferences()).toMatchObject({
+    expect(getAppPreferences()).toMatchObject({
       speechRate: 1.1,
       speechVolume: 0.9,
       muted: true,
@@ -175,7 +118,7 @@ describe('Pengaturan', () => {
     });
     expect(
       JSON.parse(
-        globalThis.localStorage.getItem(ALPHA_PREFERENCES_STORAGE_KEY) ?? '{}',
+        globalThis.localStorage.getItem(APP_PREFERENCES_STORAGE_KEY) ?? '{}',
       ),
     ).toMatchObject({
       speechRate: 1.1,
@@ -199,7 +142,7 @@ describe('Pengaturan', () => {
       0.54,
     );
 
-    expect(getAlphaPreferences()).toMatchObject({
+    expect(getAppPreferences()).toMatchObject({
       speechRate: 1.3,
       speechVolume: 0.5,
     });
@@ -212,39 +155,35 @@ describe('Pengaturan', () => {
         buttons?.find((button) => button.style === 'destructive')?.onPress?.();
       },
     );
-    updateAlphaPreferences({
+    updateAppPreferences({
       onboardingCompleted: true,
       speechRate: 1.8,
       speechVolume: 0.3,
       muted: true,
       hapticsEnabled: false,
-      debugMenuEnabled: true,
     });
     await render(<SettingsScreen />);
 
     await user.press(
-      screen.getByRole('button', { name: 'Reset preferensi' }),
+      screen.getByRole('button', { name: 'Kembalikan pengaturan awal' }),
     );
 
-    expect(getAlphaPreferences()).toEqual({
-      schemaVersion: 2,
+    expect(getAppPreferences()).toEqual({
+      schemaVersion: 4,
       onboardingCompleted: false,
-      profile: 'id-latin-6dot-alpha-v0',
+      profile: 'id-latin-6dot-v1',
       speechMode: 'press',
       speechRate: 1,
       speechVolume: 1,
       muted: false,
       hapticsEnabled: true,
-      debugMenuEnabled: false,
     });
     expect(
-      screen.getByRole('alert', {
-        name: 'Preferensi dikembalikan ke nilai awal.',
-      }),
+      screen.getByText('Preferensi dikembalikan ke nilai awal.'),
     ).toBeOnTheScreen();
     expect(alertSpy).toHaveBeenCalledWith(
       'Reset semua preferensi?',
-      expect.any(String),
+      'Pengenalan, suara, dan getaran akan kembali ke nilai awal.',
       expect.any(Array),
     );
   });
@@ -265,9 +204,7 @@ describe('Pengaturan', () => {
       intentLauncher.ActivityAction.TTS_SETTINGS,
     );
     expect(
-      screen.getByRole('alert', {
-        name: 'Pengaturan suara Android dibuka.',
-      }),
+      screen.getByText('Pengaturan suara Android dibuka.'),
     ).toBeOnTheScreen();
   });
 

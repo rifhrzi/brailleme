@@ -25,6 +25,14 @@ export type ScannerAvailability =
       readonly message: string;
     };
 
+export type ScanReadiness =
+  | { readonly available: true }
+  | {
+      readonly available: false;
+      readonly reason: 'model_not_available' | 'scanner_not_available';
+      readonly message: string;
+    };
+
 export type CameraPermissionStatus =
   | "granted"
   | "undetermined"
@@ -48,22 +56,4 @@ export interface TtsAvailability {
 export interface TtsSpeakOptions {
   readonly rate: number;
   readonly volume: number;
-}
-
-export type ReadinessComponent = "model" | "camera" | "tts";
-export type ReadinessStatus = "ready" | "needs_attention" | "unavailable";
-export type OverallReadinessStatus = "ready" | "not_ready";
-
-export interface ReadinessItem {
-  readonly component: ReadinessComponent;
-  readonly status: ReadinessStatus;
-  readonly message: string;
-}
-
-export interface ReadinessSnapshot {
-  readonly status: OverallReadinessStatus;
-  readonly model: ReadinessItem;
-  readonly camera: ReadinessItem;
-  readonly tts: ReadinessItem;
-  readonly checkedAtMs: number;
 }

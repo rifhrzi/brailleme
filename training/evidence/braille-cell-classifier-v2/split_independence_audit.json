@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "dataset": {
+    "repository": "https://github.com/IlyaOvodov/AngelinaDataset",
+    "revision": "e13038d483bb58e17046d640e078dc4768276e9b",
+    "checkoutCleanAtAudit": true
+  },
+  "population": {
+    "train": {
+      "pageCount": 191,
+      "angelinaAzCellCount": 47338,
+      "kaggleCellCount": 1560,
+      "fitSampleCount": 48898
+    },
+    "validation": {
+      "pageCount": 49,
+      "azCellCount": 12093
+    },
+    "uploadedTest": {
+      "pageCount": 50,
+      "azCellCount": 9625
+    }
+  },
+  "exactOverlap": {
+    "comparisonPairs": ["train-validation", "train-test", "validation-test"],
+    "resolvedPathOverlapCountPerPair": 0,
+    "sourceImageSha256OverlapCountPerPair": 0,
+    "normalizedBasenameOverlapCountPerPair": 0,
+    "exactAnnotationSequenceOverlapCountPerPair": 0,
+    "exactAnnotationMultisetOverlapCountPerPair": 0,
+    "duplicateSourceImageSha256WithinEachSplit": 0
+  },
+  "sourceFamily": {
+    "definition": "upstream partition plus the immediate subfolder of each split entry",
+    "trainValidation": {
+      "booksTrainFamilyCount": 7,
+      "booksValidationFamilyCount": 6,
+      "booksValidationFamiliesOverlappingTrain": 6,
+      "handwrittenTrainFamilyCount": 3,
+      "handwrittenValidationFamilyCount": 2,
+      "handwrittenValidationFamiliesOverlappingTrain": 2,
+      "aggregateOverlappingFamilyCount": 8,
+      "validationPagesInOverlappingFamilies": 49,
+      "validationCellsInOverlappingFamilies": 12093,
+      "sourceFamilyIndependent": false
+    },
+    "trainTestOverlapCount": 0,
+    "validationTestOverlapCount": 0
+  },
+  "nearDuplicateHeuristic": {
+    "method": "grayscale 63-bit pHash plus 64-bit dHash across source pages, followed by manual inspection of candidates",
+    "candidateRequiresBothHashesWithinThreshold": true,
+    "strictThreshold": {
+      "maximumPhashHamming": 4,
+      "maximumDhashHamming": 4,
+      "trainValidationRawPhashCandidatePairs": 10,
+      "trainValidationBothHashesCandidatePairs": 2,
+      "trainTestBothHashesCandidatePairs": 0,
+      "validationTestBothHashesCandidatePairs": 0,
+      "confirmedSamePageCount": 0
+    },
+    "looseThreshold": {
+      "maximumPhashHamming": 8,
+      "maximumDhashHamming": 8,
+      "trainTestRawPhashCandidatePairs": 5,
+      "validationTestRawPhashCandidatePairs": 1,
+      "trainTestBothHashesCandidatePairs": 1,
+      "confirmedSamePageCount": 0
+    },
+    "maximumAnnotationFiveGramJaccard": {
+      "trainValidation": 0.2699,
+      "trainTest": 0.0313,
+      "validationTest": 0.0496
+    },
+    "conclusion": "no_confirmed_near_duplicate"
+  },
+  "decisionImpact": {
+    "epochSelectionValidationRole": "within_family_diagnostic_only",
+    "uploadedTestUsedForCurrentPromotion": true,
+    "uploadedTestReusableAsPristineFuturePromotionHoldout": false
+  },
+  "limitations": [
+    "No user, device, or capture-session identifiers are available, so source independence of uploaded/test cannot be proven.",
+    "Perceptual hashing is a heuristic screen, not a forensic guarantee that near-duplicates are absent."
+  ]
+}

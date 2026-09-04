@@ -9,7 +9,7 @@ const modelDirectory = resolve(
   "..",
   "assets",
   "models",
-  "braille-cell-classifier-v1",
+  "braille-cell-classifier-v2",
 );
 const manifest = JSON.parse(
   readFileSync(resolve(modelDirectory, "manifest.json"), "utf8"),
@@ -18,6 +18,9 @@ const labels = JSON.parse(
   readFileSync(resolve(modelDirectory, manifest.outputs[0].labelsFile), "utf8"),
 );
 const model = readFileSync(resolve(modelDirectory, manifest.artifact.file));
+const nativeSelfTest = readFileSync(
+  resolve(modelDirectory, manifest.nativeSelfTest.file),
+);
 const view = new DataView(model.buffer, model.byteOffset, model.byteLength);
 const decoder = new TextDecoder();
 
@@ -85,6 +88,11 @@ assert.equal(
   createHash("sha256").update(model).digest("hex"),
   manifest.artifact.sha256,
 );
+assert.equal(
+  createHash("sha256").update(nativeSelfTest).digest("hex"),
+  manifest.nativeSelfTest.sha256,
+  "Hash fixture self-test native tidak cocok.",
+);
 
 const root = uint32(0);
 assert.equal(
@@ -116,6 +124,24 @@ assert.deepEqual(
   labels,
   [..."abcdefghijklmnopqrstuvwxyz"],
   "Urutan label harus tepat a-z sesuai kontrak decoder.",
+);
+assert.deepEqual(manifest.inputs[0].shape, [1, 28, 28, 3]);
+assert.equal(manifest.inputs[0].layout, "NHWC");
+assert.equal(manifest.inputs[0].dtype, "float32");
+assert.equal(manifest.inputs[0].channelOrder, "RGB");
+assert.deepEqual(manifest.inputs[0].expectedValueRange, [0, 1]);
+assert.equal(manifest.inputs[0].normalization, "pixel / 255.0");
+assert.equal(manifest.inputs[0].resizeInterpolation, "bilinear");
+assert.equal(
+  labels[manifest.nativeSelfTest.expectedClassIndex],
+  manifest.nativeSelfTest.expectedLabel,
+  "Label fixture self-test native tidak cocok.",
+);
+assert.ok(
+  Number.isFinite(manifest.nativeSelfTest.minimumConfidence) &&
+    manifest.nativeSelfTest.minimumConfidence >= 0 &&
+    manifest.nativeSelfTest.minimumConfidence <= 1,
+  "Ambang confidence fixture self-test native tidak valid.",
 );
 
 console.log(

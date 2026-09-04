@@ -10,22 +10,29 @@ export default function HelpScreen() {
   return (
     <Screen testID="help-screen">
       <Text selectable style={styles.intro}>
-        Temukan status fitur, cara memeriksa hasil, dan langkah jika ada masalah.
+        Ikuti langkah berikut untuk menyusun satu kata dan memulihkan pemindai
+        jika ada masalah.
       </Text>
 
-      <SectionCard title="Mulai dari Pindai Satu Sel">
+      <SectionCard title="Susun kata, satu sel per huruf" variant="plain">
         <Text selectable style={styles.body}>
-          Buka Pindai Satu Sel, izinkan kamera, lalu tempatkan tepat satu huruf
-          Braille timbul di tengah kotak. Tahan posisi sampai kandidat stabil.
-          Model ini belum dapat membaca kata, spasi, atau satu baris.
+          Buka Pindai, izinkan kamera, lalu tempatkan sel Braille pertama di
+          tengah kotak. Tahan posisi sampai huruf stabil, periksa hasilnya, dan
+          pilih Tambah huruf. Ulangi untuk sel berikutnya sampai satu kata
+          selesai.
+        </Text>
+        <Text selectable style={styles.body}>
+          Gunakan Hapus huruf terakhir untuk koreksi. Pemindai menyusun kata
+          secara berurutan; aplikasi tidak membaca seluruh baris sekaligus dan
+          tidak menebak spasi.
         </Text>
       </SectionCard>
 
-      <SectionCard title="Risiko penggunaan">
+      <SectionCard title="Periksa sebelum digunakan" variant="plain">
         <Text selectable style={styles.body}>
-          Kandidat stabil tetap dapat salah. Jangan gunakan kandidat tanpa
-          verifikasi manusia untuk konteks medis, hukum, finansial, ujian,
-          keselamatan, atau keputusan penting lainnya.
+          Huruf yang stabil dan kata yang tersusun tetap dapat salah. Jangan
+          gunakan hasil tanpa verifikasi manusia untuk konteks medis, hukum,
+          finansial, ujian, keselamatan, atau keputusan penting lainnya.
         </Text>
         <Text selectable style={styles.body}>
           Periksa hasil bersama orang yang memahami sumbernya atau pemeriksa
@@ -33,7 +40,7 @@ export default function HelpScreen() {
         </Text>
       </SectionCard>
 
-      <SectionCard title="Jika kamera atau suara bermasalah">
+      <SectionCard title="Jika kamera atau suara bermasalah" variant="plain">
         <Text selectable style={styles.body}>
           Periksa izin kamera di pengaturan aplikasi. Untuk suara, buka
           Pengaturan lalu pilih Pengaturan suara Android dan pastikan suara
@@ -42,8 +49,8 @@ export default function HelpScreen() {
       </SectionCard>
 
       <Text selectable style={styles.privacy}>
-        Privasi: gambar dan teks hasil tidak disimpan; hanya preferensi yang
-        tersimpan pada perangkat.
+        Privasi: gambar, huruf, dan kata hasil pemindaian tidak disimpan; hanya
+        preferensi aplikasi yang tersimpan pada perangkat.
       </Text>
 
       <AccessibleButton

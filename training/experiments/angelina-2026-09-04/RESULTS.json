@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "status": "active_internal_unverified_candidate_not_for_redistribution",
+  "dataset": {
+    "repository": "https://github.com/IlyaOvodov/AngelinaDataset",
+    "revision": "e13038d483bb58e17046d640e078dc4768276e9b",
+    "trainingSplits": ["books/train.txt", "handwritten/train.txt"],
+    "validationSplits": ["books/val.txt", "handwritten/val.txt"],
+    "externalTestSplits": ["uploaded/test.txt"],
+    "externalTestPageCount": 50,
+    "externalTestAzCellCount": 9625,
+    "licenseStatus": "no_explicit_license_file_observed_at_repository_root"
+  },
+  "training": {
+    "seed": 42,
+    "epochs": 12,
+    "batchSize": 64,
+    "sources": [
+      "Angelina upstream training partitions",
+      "shanks0465/braille-character-dataset version 853989"
+    ]
+  },
+  "baseline": {
+    "modelSha256": "9e07b5c56e2e4107a116370c6f0a2203ec83afe4b2e42d099b1780e75e72d7dc",
+    "top1AccuracyAllAngelina": 0.2226453892493049
+  },
+  "candidate": {
+    "tfliteSha256": "7a41942cf330c9558884385221deb69f282adfd8d39be00a257c75ec9572c318",
+    "withinFamilyEpochSelectionValidationAccuracy": 0.9940461423964276,
+    "validationSourceFamilyIndependent": false,
+    "externalTestTop1Accuracy": 0.9311168831168831,
+    "externalTestMacroF1All26Classes": 0.8534704665444255,
+    "externalTestCoverageAt090": 0.7274805194805195,
+    "externalTestAcceptedAccuracy": 0.9930019994287347,
+    "externalTestVSupport": 9,
+    "externalTestVRecall": 0.1111111111111111,
+    "externalTestYSupport": 0,
+    "externalTestPagesBelow75Percent": 3,
+    "externalTestMinimumPageAccuracy": 0.6,
+    "publicNegativeSceneCount": 44,
+    "publicNegativeFalseAcceptCount": 1,
+    "internal75PercentTargetPassed": true
+  },
+  "decision": {
+    "promotedToApplication": true,
+    "activeModelVersion": "0.3.0-candidate.1",
+    "activeModelPath": "assets/models/braille-cell-classifier-v2",
+    "nativePostCropEmulatorSelfTestPassed": true,
+    "productionEvidence": false,
+    "blockers": [
+      "Angelina has no explicit root LICENSE at the pinned revision.",
+      "External test has no Y samples and only 9 V samples.",
+      "Epoch-selection validation shares source families with training and may be optimistic.",
+      "uploaded/test has now informed promotion and is not a pristine holdout for a future candidate.",
+      "The public negative guardrail has 1 false accept in 44 scenes.",
+      "Evaluation uses ground-truth annotation crops, not the native camera ROI.",
+      "Native camera parity and physical-device validation remain unavailable."
+    ]
+  }
+}

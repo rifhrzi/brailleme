@@ -5,6 +5,7 @@ import {
 } from '@/ml/braille-model-contract';
 import {
   assertBrailleModelInputLength,
+  centerCropAndResizeBrailleImage,
   convertRawPixelsToRgbTensor,
 } from '@/ml/frame-preprocessing';
 
@@ -42,6 +43,48 @@ function createAlternatingRgbPixels(): Uint8Array {
   }
   return bytes;
 }
+
+describe('centerCropAndResizeBrailleImage', () => {
+  it('memakai crop tengah 55% yang identik dengan fixture native 51x51', () => {
+    const resized = { dispose: jest.fn() };
+    const cropped = {
+      dispose: jest.fn(),
+      resize: jest.fn(() => resized),
+    };
+    const source = {
+      width: 51,
+      height: 51,
+      crop: jest.fn(() => cropped),
+    } as unknown as Parameters<typeof centerCropAndResizeBrailleImage>[0];
+
+    expect(centerCropAndResizeBrailleImage(source)).toEqual({
+      croppedImage: cropped,
+      resizedImage: resized,
+    });
+    expect(source.crop).toHaveBeenCalledWith(11, 11, 39, 39);
+    expect(cropped.resize).toHaveBeenCalledWith(28, 28);
+  });
+
+  it('membersihkan crop bila resize native gagal', () => {
+    const cropped = {
+      dispose: jest.fn(),
+      resize: jest.fn(() => {
+        throw new Error('Resize gagal.');
+      }),
+    };
+    const source = {
+      width: 640,
+      height: 480,
+      crop: jest.fn(() => cropped),
+    } as unknown as Parameters<typeof centerCropAndResizeBrailleImage>[0];
+
+    expect(() => centerCropAndResizeBrailleImage(source)).toThrow(
+      'Resize gagal.',
+    );
+    expect(source.crop).toHaveBeenCalledWith(188, 108, 452, 372);
+    expect(cropped.dispose).toHaveBeenCalledTimes(1);
+  });
+});
 
 describe('convertRawPixelsToRgbTensor', () => {
   it.each<readonly [RawPixels['pixelFormat'], readonly number[]]>([

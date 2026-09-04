@@ -2,7 +2,7 @@ import { spawnSync } from "node:child_process";
 import { createRequire } from "node:module";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
-import { readFileSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
 
 const require = createRequire(import.meta.url);
 const projectRoot = dirname(dirname(fileURLToPath(import.meta.url)));
@@ -27,7 +27,6 @@ function loadExpoConfig(
   buildProfile,
   {
     appEnvironment = buildProfile,
-    allowUnverifiedModel = false,
     type = "public",
   } = {},
 ) {
@@ -41,7 +40,6 @@ function loadExpoConfig(
         ...process.env,
         APP_ENV: appEnvironment,
         EAS_BUILD_PROFILE: buildProfile,
-        ALLOW_UNVERIFIED_MODEL: allowUnverifiedModel ? "true" : "false",
       },
     },
   );
@@ -56,22 +54,10 @@ function loadExpoConfig(
 const developmentConfig = loadExpoConfig("development");
 const previewConfig = loadExpoConfig("preview");
 const productionConfig = loadExpoConfig("production");
-const experimentalProductionConfig = loadExpoConfig(
-  "production-experimental",
-  { appEnvironment: "production", allowUnverifiedModel: true },
-);
 const previewIntrospection = loadExpoConfig("preview", { type: "introspect" });
 const productionIntrospection = loadExpoConfig("production", {
   type: "introspect",
 });
-const experimentalProductionIntrospection = loadExpoConfig(
-  "production-experimental",
-  {
-    appEnvironment: "production",
-    allowUnverifiedModel: true,
-    type: "introspect",
-  },
-);
 const easConfig = JSON.parse(
   readFileSync(join(projectRoot, "eas.json"), "utf8"),
 );
@@ -98,6 +84,33 @@ const qualityWorkflow = readFileSync(
   "utf8",
 );
 
+for (const removedPath of [
+  "app/debug.tsx",
+  "app/model-probe.tsx",
+  "src/features/debug/debug-screen.tsx",
+  "src/features/debug/__tests__/debug-screen.test.tsx",
+  "src/features/model-probe/model-probe-screen.tsx",
+  "src/config/feature-flags.ts",
+  "src/types/alpha-preferences.ts",
+  "src/storage/alpha-preferences-schema.ts",
+  "src/storage/alpha-preferences-store.ts",
+  "assets/icon.png",
+  "assets/models/braille-cell-classifier-v0/braille_model.tflite",
+  "assets/models/braille-cell-classifier-v0/label.json",
+  "assets/models/braille-cell-classifier-v0/manifest.json",
+  "scripts/verify-experimental-model-release.mjs",
+  "docs/release/EXPERIMENTAL-MODEL-RISK-ACCEPTANCE.json",
+  "BrailleMe/PRD - BrailleMe.md",
+  "BrailleMe/Roadmap - BrailleMe - Technical Alpha.canvas",
+  "artifacts/development-build-report.md",
+  "artifacts/readiness-audit-2026-08-20.md",
+]) {
+  assert(
+    !existsSync(join(projectRoot, removedPath)),
+    `Obsolete development artifact must stay removed: ${removedPath}`,
+  );
+}
+
 assert(
   developmentConfig.android?.allowBackup === false,
   "Android backup must be disabled in development",
@@ -109,10 +122,6 @@ assert(
 assert(
   productionConfig.android?.allowBackup === false,
   "Android backup must be disabled in production",
-);
-assert(
-  experimentalProductionConfig.android?.allowBackup === false,
-  "Android backup must be disabled in experimental production",
 );
 assert(
   !developmentConfig.android?.blockedPermissions?.includes(
@@ -129,12 +138,6 @@ for (const permission of expectedBlockedPermissions) {
     productionConfig.android?.blockedPermissions?.includes(permission),
     `Production must block ${permission}`,
   );
-  assert(
-    experimentalProductionConfig.android?.blockedPermissions?.includes(
-      permission,
-    ),
-    `Experimental production must block ${permission}`,
-  );
 }
 const previewManifest =
   previewIntrospection._internal?.modResults?.android?.manifest?.manifest;
@@ -143,11 +146,6 @@ const productionManifest =
 for (const [buildName, manifest] of [
   ["Preview", previewManifest],
   ["Production", productionManifest],
-  [
-    "Experimental production",
-    experimentalProductionIntrospection._internal?.modResults?.android?.manifest
-      ?.manifest,
-  ],
 ]) {
   const manifestPermissions = manifest?.["uses-permission"] ?? [];
   for (const permission of expectedBlockedPermissions) {
@@ -181,31 +179,29 @@ assert(
   "Production must retain CAMERA",
 );
 assert(
-  experimentalProductionConfig.android?.permissions?.includes(
-    "android.permission.CAMERA",
-  ),
-  "Experimental production must retain CAMERA",
-);
-assert(
   productionConfig.orientation === "default",
   "Production orientation must remain unlocked",
 );
 assert(
   developmentConfig.extra?.appEnvironment === "development" &&
     previewConfig.extra?.appEnvironment === "preview" &&
-    productionConfig.extra?.appEnvironment === "production" &&
-    experimentalProductionConfig.extra?.appEnvironment === "production" &&
-    productionConfig.extra?.allowUnverifiedModel === false &&
-    experimentalProductionConfig.extra?.allowUnverifiedModel === true,
+    productionConfig.extra?.appEnvironment === "production",
   "Runtime appEnvironment must identify every build profile",
 );
 assert(
-  productionConfig.icon === "./assets/icon.png" &&
+  !Object.prototype.hasOwnProperty.call(
+    productionConfig.extra ?? {},
+    "allowUnverifiedModel",
+  ),
+  "Production runtime config must not expose an unverified-model override",
+);
+assert(
+  productionConfig.icon === "./assets/icon-brand.png" &&
     productionConfig.android?.adaptiveIcon?.foregroundImage ===
       "./assets/adaptive-icon.png" &&
     productionConfig.android?.adaptiveIcon?.monochromeImage ===
       "./assets/monochrome-icon.png" &&
-    productionConfig.android?.adaptiveIcon?.backgroundColor === "#0B57D0",
+    productionConfig.android?.adaptiveIcon?.backgroundColor === "#006B63",
   "Production launcher and adaptive icons must use the approved BrailleMe assets",
 );
 assert(
@@ -237,7 +233,6 @@ for (const scriptName of [
   "build:dev:android",
   "build:preview:android",
   "build:production:android",
-  "build:production-experimental:android",
 ]) {
   const script = packageConfig.scripts?.[scriptName] ?? "";
   assert(
@@ -253,22 +248,34 @@ assert(
     packageConfig.scripts?.["submit:production:android"]?.endsWith(
       "node scripts/submit-eas-build.mjs production",
     ) &&
-    packageConfig.scripts?.["submit:production-experimental:android"]?.endsWith(
-      "node scripts/submit-eas-build.mjs production-experimental",
-    ) &&
     submitWrapper.includes('"--id",') &&
     !submitWrapper.includes('"--latest"') &&
     submitWrapper.includes("build.gitCommitHash !== currentCommit") &&
     submitWrapper.includes("build.project?.id !== projectId"),
   "Submissions must bind an exact EAS build ID, project, and source commit",
 );
+const packageScripts = packageConfig.scripts ?? {};
 assert(
-  packageConfig.scripts?.["release:experimental:verify"]?.includes(
-    "release:model:experimental:verify",
+  !Object.prototype.hasOwnProperty.call(
+    easConfig.build ?? {},
+    "production-experimental",
   ) &&
-    easBuildVerifier.includes("buildProfile === 'production-experimental'") &&
-    easBuildVerifier.includes("'release:experimental:verify'"),
-  "Experimental production must use its explicit risk-acceptance gate",
+    !Object.prototype.hasOwnProperty.call(
+      packageScripts,
+      "build:production-experimental:android",
+    ) &&
+    !Object.prototype.hasOwnProperty.call(
+      packageScripts,
+      "submit:production-experimental:android",
+    ) &&
+    !Object.prototype.hasOwnProperty.call(
+      packageScripts,
+      "release:experimental:verify",
+    ) &&
+    !JSON.stringify(easConfig).includes("ALLOW_UNVERIFIED_MODEL") &&
+    !submitWrapper.includes("production-experimental") &&
+    !easBuildVerifier.includes("release:experimental"),
+  "Release configuration must not expose an unverified production path",
 );
 assert(
   packageConfig.scripts?.doctor === "node scripts/run-expo-doctor.mjs" &&
@@ -307,18 +314,11 @@ assert(
   easConfig.build?.production?.android?.buildType === "app-bundle" &&
     easConfig.build?.production?.distribution === "store" &&
     easConfig.build?.production?.env?.APP_ENV === "production" &&
-    easConfig.build?.production?.env?.ALLOW_UNVERIFIED_MODEL !== "true",
+    !Object.prototype.hasOwnProperty.call(
+      easConfig.build?.production?.env ?? {},
+      "ALLOW_UNVERIFIED_MODEL",
+    ),
   "Production must be a store-distributed AAB",
-);
-assert(
-  easConfig.build?.["production-experimental"]?.android?.buildType ===
-      "app-bundle" &&
-    easConfig.build?.["production-experimental"]?.distribution === "store" &&
-    easConfig.build?.["production-experimental"]?.env?.APP_ENV ===
-      "production" &&
-    easConfig.build?.["production-experimental"]?.env
-      ?.ALLOW_UNVERIFIED_MODEL === "true",
-  "Experimental production must be an explicit store AAB override",
 );
 assert(
   easConfig.build?.development?.env?.APP_ENV === "development",
@@ -338,5 +338,5 @@ assert(
 );
 
 console.log(
-  "Release config valid: preview APK, verified production AAB, explicit experimental production AAB, least-privilege permissions, pinned tooling, and draft submits.",
+  "Release config valid: preview APK, fail-closed verified production AAB, least-privilege permissions, pinned tooling, and draft submits.",
 );
