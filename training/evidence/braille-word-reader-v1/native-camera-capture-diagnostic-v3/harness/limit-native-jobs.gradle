@@ -1,0 +1,11 @@
+gradle.beforeProject { project ->
+  ['com.android.library', 'com.android.application'].each { pluginName ->
+    project.pluginManager.withPlugin(pluginName) {
+      project.android.defaultConfig.externalNativeBuild.cmake.arguments(
+        '-DCMAKE_JOB_POOLS=word_geometry_compile=1;word_geometry_link=1',
+        '-DCMAKE_JOB_POOL_COMPILE=word_geometry_compile',
+        '-DCMAKE_JOB_POOL_LINK=word_geometry_link'
+      )
+    }
+  }
+}

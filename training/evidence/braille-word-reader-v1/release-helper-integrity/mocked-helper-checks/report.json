@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "created_at_utc": "2026-09-05T20:10:56.430026+00:00",
+  "status": "passed_focused_helper_integrity_tests",
+  "scope": "Temporary files and mocked git/npm/Python calls only. No actual source checks, model validation, staging of the app, APK build, emulator, signing invocation or model inference was run.",
+  "unit_tests": {
+    "total": 11,
+    "passed": 11,
+    "command": "C:/bm-envs/angelina-benchmark/Scripts/python.exe .braille-training-work/word-scan-v1-20260905/test_release_helper_integrity.py"
+  },
+  "powershell_flow": {
+    "passed": true,
+    "snapshot_invocations": 2,
+    "mocked_checks": 6,
+    "command": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File .braille-training-work/word-scan-v1-20260905/test-verify-source.ps1"
+  },
+  "changes": [
+    "Before/after source inventories plus verification id and check-result hashes; staging rejects file content/set changes and stale verification proof.",
+    "Checks and snapshot evidence must remain unchanged during staging; every copied file retains its checked hash.",
+    "Local fixture bytes must match manifest SHA256 before RGBA comparison.",
+    "Require expo-modules-core and expo-sqlite in all four ABIs, alongside the previous12 libraries."
+  ],
+  "source_files": [
+    {
+      "file": "verify-source.ps1",
+      "sha256": "ef5ed8028cfd0cc24cf221e1d8e6ad2cb22e8a83091e8ec118efde587c8722c5",
+      "sizeBytes": 1990
+    },
+    {
+      "file": "stage_source.py",
+      "sha256": "843027b373e767a2b083f091fc44fa9f39113c1cf0ec5c5c2011ad25818da8fa",
+      "sizeBytes": 7890
+    },
+    {
+      "file": "verify_apk.py",
+      "sha256": "088e706ebebf76b57e8f6a2b3ca28f143fd595d60ed730acde7be697a48f2331",
+      "sizeBytes": 7511
+    },
+    {
+      "file": "test_release_helper_integrity.py",
+      "sha256": "11109484fa688318d4eadb9e2574b0e5b413a513679aca1d76db302b7249c7ce",
+      "sizeBytes": 6534
+    },
+    {
+      "file": "test-verify-source.ps1",
+      "sha256": "4f114abbe7a5b9a383e01f105ceae443fe34babe88e67e1563700def36e58dc7",
+      "sizeBytes": 2449
+    }
+  ],
+  "main_apk_built": false,
+  "main_model_promoted": false
+}

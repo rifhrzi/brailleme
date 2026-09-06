@@ -1,0 +1,56 @@
+{
+  "scope": "Independent CPU-only review of immutable private horizontal-aspect prototype; no real image corpus/model/training or protocol change",
+  "status": "passed",
+  "started_utc": "2026-09-05T22:01:44.269903+00:00",
+  "completed_utc": "2026-09-05T22:01:49.837006+00:00",
+  "tests": 10,
+  "failures": 0,
+  "errors": 0,
+  "checks": {
+    "balanced_patches": {
+      "epochs": 3,
+      "batches": 9,
+      "original_off_pixels_targets_order_exact": true,
+      "negative_indices_once_per_epoch": 3,
+      "geometry_only_centers_observed": 5,
+      "unknown_not_promoted": true,
+      "validation_enabled_flag_inert": true
+    },
+    "independent_geometry": {
+      "cases": 126,
+      "masks": 63,
+      "endpoint_factors": [
+        0.55,
+        1.25
+      ],
+      "max_point_error_px": 3.410605131648481e-13,
+      "all_stage_survival_and": true
+    },
+    "source_identity": {
+      "originals_run25_and_active_exact": 21,
+      "indexed_payloads_exact": 31,
+      "unrelated_ast_exact": true
+    }
+  },
+  "prototype_report": {
+    "path": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\horizontal-aspect-prototype-v1\\proof-report.json",
+    "sha256": "7df89ed1f3be63849d893d3119a5f1105183e8141da9b4cbf0de6b3d7a41d4a6"
+  },
+  "prototype_index": {
+    "path": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\horizontal-aspect-prototype-v1\\index.json",
+    "sha256": "c53b382af5777c38ef46f7ee34ea44226cbe5e9fa8bca799fde48505b6f039b3"
+  },
+  "audit_source": {
+    "path": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\audit_horizontal_aspect_independent.py",
+    "sha256": "5f0d7f40bd333059e02156f9a9ee7aa35de3b55a34b6e67ae2884fa1c31f2193"
+  },
+  "log_sha256": "bcadb47499022b29bb3bbc6fab3a7bb7f3e20cee3e9c68c55a371745e3e2ecdf",
+  "backend_modules_imported": [],
+  "limitations": [
+    "Private profile only: illumination true; camera/polarity/half-turn/mirror/vertical false. No CLI/config adoption guard yet.",
+    "Per-record factor repeats within a dataset epoch for oversampled records; existing image RNG remains per batch.",
+    "Factor affects only existing 0.85 affine gate. Relative x/y range is 0.55..1.25; existing zoom 0.8..1.7 means effective x scale 0.44..2.125.",
+    "Unknown regions can overlap soft Gaussian shoulders of nearby known targets, per unchanged target priority; unknown slots themselves never create a target.",
+    "Synthetic CPU proof does not establish useful accuracy, real-paper dot visibility after heavy shrink/blur, or optimizer/runtime behavior."
+  ]
+}

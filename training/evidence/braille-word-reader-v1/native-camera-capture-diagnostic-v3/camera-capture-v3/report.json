@@ -1,0 +1,1999 @@
+{
+  "schema_version": 1,
+  "scope": "isolated_camera_geometry_not_main_apk_or_recognition_evidence",
+  "analyzer_sha256": "864a75faae68e12e14c4f95c6e8126cd7a1ede837989e47c990133fefdd6fb4f",
+  "feed_manifest_sha256": "02d0d7c1e8a94b1875dafb3585dbf1e6680d3d73df10206aa9a388b3df8384fa",
+  "capture_count": 8,
+  "passed_count": 6,
+  "records": [
+    {
+      "capture": {
+        "id": "photo4by3-view1by1-1788626714688-1",
+        "case": "photo4by3-view1by1",
+        "target": {
+          "width": 1920,
+          "height": 1440
+        },
+        "orientationSource": "interface",
+        "window": {
+          "width": 411.42857142857144,
+          "height": 914.2857142857143
+        },
+        "density": 2.625,
+        "preview": {
+          "widthDp": 387.42857142857144,
+          "heightDp": 387.42857142857144,
+          "width": 1017,
+          "height": 1017,
+          "resolution": {
+            "width": 1280,
+            "height": 960
+          },
+          "path": "/data/user/0/com.brailleme.geometrydiagnostic/cache/nitro_image_2739058565065941799.png"
+        },
+        "guide": {
+          "x": 0.3,
+          "y": 0.3,
+          "width": 0.4,
+          "height": 0.4
+        },
+        "guidePoints": [
+          {
+            "x": 448,
+            "y": 671.9998779296875
+          },
+          {
+            "x": 448,
+            "y": 287.99993896484375
+          },
+          {
+            "x": 832,
+            "y": 287.99993896484375
+          },
+          {
+            "x": 832,
+            "y": 671.9998779296875
+          }
+        ],
+        "fullPoints": [
+          {
+            "x": 160,
+            "y": 959.9998779296875
+          },
+          {
+            "x": 160,
+            "y": 0
+          },
+          {
+            "x": 1120,
+            "y": 0
+          },
+          {
+            "x": 1120,
+            "y": 959.9998779296875
+          }
+        ],
+        "geometry": {
+          "width": 1280,
+          "height": 960,
+          "sensorToBuffer": [
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            1
+          ],
+          "rotationDegrees": 90,
+          "isMirrored": false,
+          "cropRect": [
+            0,
+            0,
+            1280,
+            960
+          ]
+        },
+        "jpegPath": "/data/user/0/com.brailleme.geometrydiagnostic/cache/VisionCamera_3948926679954432335.jpg",
+        "photo": {
+          "width": 960,
+          "height": 1280,
+          "path": "/data/user/0/com.brailleme.geometrydiagnostic/cache/nitro_image_3678797371403525646.png"
+        }
+      },
+      "roi": {
+        "x": 0.30000012715657554,
+        "y": 0.35,
+        "width": 0.3999999364217122,
+        "height": 0.3
+      },
+      "roi_independent_corner_check": {
+        "expected_pixels_xyxy": [
+          288.0000854492188,
+          448.0,
+          672.0000366210937,
+          832.0
+        ],
+        "actual_pixels_xyxy": [
+          288.0001220703125,
+          448.0,
+          672.0000610351562,
+          831.9999999999999
+        ],
+        "max_absolute_corner_error_pixels": 3.662109372726263e-05
+      },
+      "checks": [
+        {
+          "id": "red",
+          "preview_centroid": [
+            424.25865209471766,
+            396.1120218579235
+          ],
+          "photo_centroid": [
+            400.38729508196724,
+            533.9446721311475
+          ],
+          "predicted_photo_centroid": [
+            400.4802147168639,
+            533.9110530812256
+          ],
+          "error_photo_pixels": 0.09881446790311094,
+          "preview_color_pixels": 1098,
+          "photo_color_pixels": 976,
+          "passed": true,
+          "inside_preview_guide": true,
+          "inside_photo_roi": true,
+          "guide_membership_matches": true
+        },
+        {
+          "id": "magenta",
+          "preview_centroid": [
+            612.3766519823788,
+            396.0797356828194
+          ],
+          "photo_centroid": [
+            578.0449101796407,
+            533.9790419161677
+          ],
+          "predicted_photo_centroid": [
+            578.0547053053906,
+            533.8805764557587
+          ],
+          "error_photo_pixels": 0.09895145972652261,
+          "preview_color_pixels": 1135,
+          "photo_color_pixels": 1002,
+          "passed": true,
+          "inside_preview_guide": true,
+          "inside_photo_roi": true,
+          "guide_membership_matches": true
+        },
+        {
+          "id": "cyan",
+          "preview_centroid": [
+            612.4078138718174,
+            621.9266900790167
+          ],
+          "photo_centroid": [
+            578.0769612711023,
+            746.9786494538232
+          ],
+          "predicted_photo_centroid": [
+            578.0841206545126,
+            747.0694419624936
+          ],
+          "error_photo_pixels": 0.09107434546276635,
+          "preview_color_pixels": 1139,
+          "photo_color_pixels": 1007,
+          "passed": true,
+          "inside_preview_guide": true,
+          "inside_photo_roi": true,
+          "guide_membership_matches": true
+        },
+        {
+          "id": "blue",
+          "preview_centroid": [
+            424.2003610108303,
+            621.9440433212997
+          ],
+          "photo_centroid": [
+            400.4158215010142,
+            746.9918864097363
+          ],
+          "predicted_photo_centroid": [
+            400.42519069187244,
+            747.0858226041767
+          ],
+          "error_photo_pixels": 0.09440227943902352,
+          "preview_color_pixels": 1108,
+          "photo_color_pixels": 986,
+          "passed": true,
+          "inside_preview_guide": true,
+          "inside_photo_roi": true,
+          "guide_membership_matches": true
+        }
+      ],
+      "failure": null,
+      "jpeg_vs_nitro": {
+        "encoded_size": [
+          1280,
+          960
+        ],
+        "exif_orientation": 6,
+        "upright_size": [
+          960,
+          1280
+        ],
+        "same_dimensions_as_nitro": true,
+        "mean_absolute_rgb_difference": 0.0,
+        "max_absolute_rgb_difference": 0,
+        "claim": "JPEG plane bytes saved by Photo.saveToTemporaryFileAsync (EXIF metadata attached, no pixel crop/re-encode in installed source); independently decoded and EXIF-oriented with Pillow."
+      },
+      "passed": true,
+      "files": {
+        "imageproxy.jpg": {
+          "sha256": "80104ede5ef80ddf08eb7c60a51cb367b515902a972f1dafed2dd2c2c177eb86",
+          "bytes": 87902
+        },
+        "mapped-roi.png": {
+          "sha256": "19adbd7a5145cb685460adfbca781318a19039db6641fe6d1b26013e0bb58030",
+          "bytes": 14188
+        },
+        "photo-review.png": {
+          "sha256": "a9f8178940d37921aa9230fe9fc8dacabb2ad2eb74d9217bffa81b14d4d91d3e",
+          "bytes": 35757
+        },
+        "photo.png": {
+          "sha256": "a9f537446525701d239a72cfd51e8b008f2904c5088a30f6c1d5ac7435394340",
+          "bytes": 35035
+        },
+        "preview.png": {
+          "sha256": "b08e451449ff89d321ae3003dc3b452cbaf47d4e88ceab53d22efa46701d8f7f",
+          "bytes": 59248
+        }
+      }
+    },
+    {
+      "capture": {
+        "id": "photo16by9-view1by1-1788626729848-1",
+        "case": "photo16by9-view1by1",
+        "target": {
+          "width": 1920,
+          "height": 1080
+        },
+        "orientationSource": "interface",
+        "window": {
+          "width": 411.42857142857144,
+          "height": 914.2857142857143
+        },
+        "density": 2.625,
+        "preview": {
+          "widthDp": 387.42857142857144,
+          "heightDp": 387.42857142857144,
+          "width": 1017,
+          "height": 1017,
+          "resolution": {
+            "width": 1280,
+            "height": 960
+          },
+          "path": "/data/user/0/com.brailleme.geometrydiagnostic/cache/nitro_image_3054780440407581843.png"
+        },
+        "guide": {
+          "x": 0.3,
+          "y": 0.3,
+          "width": 0.4,
+          "height": 0.4
+        },
+        "guidePoints": [
+          {
+            "x": 448,
+            "y": 671.9998779296875
+          },
+          {
+            "x": 448,
+            "y": 287.99993896484375
+          },
+          {
+            "x": 832,
+            "y": 287.99993896484375
+          },
+          {
+            "x": 832,
+            "y": 671.9998779296875
+          }
+        ],
+        "fullPoints": [
+          {
+            "x": 160,
+            "y": 959.9998779296875
+          },
+          {
+            "x": 160,
+            "y": 0
+          },
+          {
+            "x": 1120,
+            "y": 0
+          },
+          {
+            "x": 1120,
+            "y": 959.9998779296875
+          }
+        ],
+        "geometry": {
+          "width": 1280,
+          "height": 720,
+          "sensorToBuffer": [
+            1,
+            0,
+            0,
+            0,
+            1,
+            -120,
+            0,
+            0,
+            1
+          ],
+          "rotationDegrees": 90,
+          "isMirrored": false,
+          "cropRect": [
+            0,
+            0,
+            1280,
+            720
+          ]
+        },
+        "jpegPath": "/data/user/0/com.brailleme.geometrydiagnostic/cache/VisionCamera_6844866052262639851.jpg",
+        "photo": {
+          "width": 720,
+          "height": 1280,
+          "path": "/data/user/0/com.brailleme.geometrydiagnostic/cache/nitro_image_9210569991472272374.png"
+        }
+      },
+      "roi": {
+        "x": 0.23333350287543403,
+        "y": 0.35,
+        "width": 0.533333248562283,
+        "height": 0.3
+      },
+      "roi_independent_corner_check": {
+        "expected_pixels_xyxy": [
+          168.00008544921877,
+          448.0,
+          552.0000366210937,
+          832.0
+        ],
+        "actual_pixels_xyxy": [
+          168.0001220703125,
+          448.0,
+          552.0000610351562,
+          831.9999999999999
+        ],
+        "max_absolute_corner_error_pixels": 3.662109372726263e-05
+      },
+      "checks": [
+        {
+          "id": "red",
+          "preview_centroid": [
+            424.25865209471766,
+            396.1120218579235
+          ],
+          "photo_centroid": [
+            400.38729508196724,
+            533.9446721311475
+          ],
+          "predicted_photo_centroid": [
+            280.4802147168639,
+            533.9110530812256
+          ],
+          "error_photo_pixels": 119.90708507808816,
+          "preview_color_pixels": 1098,
+          "photo_color_pixels": 976,
+          "passed": false,
+          "inside_preview_guide": true,
+          "inside_photo_roi": true,
+          "guide_membership_matches": true
+        },
+        {
+          "id": "magenta",
+          "preview_centroid": [
+            612.3766519823788,
+            396.0797356828194
+          ],
+          "photo_centroid": [
+            578.0449101796407,
+            533.9790419161677
+          ],
+          "predicted_photo_centroid": [
+            458.0547053053906,
+            533.8805764557587
+          ],
+          "error_photo_pixels": 119.9902452752365,
+          "preview_color_pixels": 1135,
+          "photo_color_pixels": 1002,
+          "passed": false,
+          "inside_preview_guide": true,
+          "inside_photo_roi": false,
+          "guide_membership_matches": false
+        },
+        {
+          "id": "cyan",
+          "preview_centroid": [
+            612.4078138718174,
+            621.9266900790167
+          ],
+          "photo_centroid": [
+            578.0769612711023,
+            746.9786494538232
+          ],
+          "predicted_photo_centroid": [
+            458.0841206545126,
+            747.0694419624936
+          ],
+          "error_photo_pixels": 119.99287496563252,
+          "preview_color_pixels": 1139,
+          "photo_color_pixels": 1007,
+          "passed": false,
+          "inside_preview_guide": true,
+          "inside_photo_roi": false,
+          "guide_membership_matches": false
+        },
+        {
+          "id": "blue",
+          "preview_centroid": [
+            424.2003610108303,
+            621.9440433212997
+          ],
+          "photo_centroid": [
+            400.4158215010142,
+            746.9918864097363
+          ],
+          "predicted_photo_centroid": [
+            280.42519069187244,
+            747.0858226041767
+          ],
+          "error_photo_pixels": 119.99066757870956,
+          "preview_color_pixels": 1108,
+          "photo_color_pixels": 986,
+          "passed": false,
+          "inside_preview_guide": true,
+          "inside_photo_roi": true,
+          "guide_membership_matches": true
+        }
+      ],
+      "failure": null,
+      "jpeg_vs_nitro": {
+        "encoded_size": [
+          1280,
+          720
+        ],
+        "exif_orientation": 6,
+        "upright_size": [
+          720,
+          1280
+        ],
+        "same_dimensions_as_nitro": true,
+        "mean_absolute_rgb_difference": 0.0,
+        "max_absolute_rgb_difference": 0,
+        "claim": "JPEG plane bytes saved by Photo.saveToTemporaryFileAsync (EXIF metadata attached, no pixel crop/re-encode in installed source); independently decoded and EXIF-oriented with Pillow."
+      },
+      "passed": false,
+      "files": {
+        "imageproxy.jpg": {
+          "sha256": "d644bb3a329557bce4d1b850c023a1eae9879ed5aa5602cf5fc8c44aa58b07cf",
+          "bytes": 70714
+        },
+        "mapped-roi.png": {
+          "sha256": "ed19e314938fd41bc00623dad9a3954b7a8e54964758d93f22b8ae95e35c7b5f",
+          "bytes": 8867
+        },
+        "photo-review.png": {
+          "sha256": "5c19dc1a566a2e7dda551776d6181802d36b55caf69d6f1b03cd50a7a573baee",
+          "bytes": 34323
+        },
+        "photo.png": {
+          "sha256": "ddc4d7c1d150b627fd436ca8326c4bee685e1f9c8e4db37612de10a8c44cae9b",
+          "bytes": 33579
+        },
+        "preview.png": {
+          "sha256": "b08e451449ff89d321ae3003dc3b452cbaf47d4e88ceab53d22efa46701d8f7f",
+          "bytes": 59248
+        }
+      }
+    },
+    {
+      "capture": {
+        "id": "photo4by3-view1by1-1788626745439-1",
+        "case": "photo4by3-view1by1",
+        "target": {
+          "width": 1920,
+          "height": 1440
+        },
+        "orientationSource": "interface",
+        "window": {
+          "width": 914.2857142857143,
+          "height": 411.42857142857144
+        },
+        "density": 2.625,
+        "preview": {
+          "widthDp": 231.42857142857144,
+          "heightDp": 231.42857142857144,
+          "width": 608,
+          "height": 607,
+          "resolution": {
+            "width": 1280,
+            "height": 960
+          },
+          "path": "/data/user/0/com.brailleme.geometrydiagnostic/cache/nitro_image_6255478407480024425.png"
+        },
+        "guide": {
+          "x": 0.3,
+          "y": 0.3,
+          "width": 0.4,
+          "height": 0.4
+        },
+        "guidePoints": [
+          {
+            "x": 447.44647216796875,
+            "y": 288.2372131347656
+          },
+          {
+            "x": 831.7626953125,
+            "y": 288.2372131347656
+          },
+          {
+            "x": 831.7626953125,
+            "y": 672.5535278320312
+          },
+          {
+            "x": 447.44647216796875,
+            "y": 672.5535278320312
+          }
+        ],
+        "fullPoints": [
+          {
+            "x": 159.20924377441406,
+            "y": 0
+          },
+          {
+            "x": 1120,
+            "y": 0
+          },
+          {
+            "x": 1120,
+            "y": 960.790771484375
+          },
+          {
+            "x": 159.20924377441406,
+            "y": 960.790771484375
+          }
+        ],
+        "geometry": {
+          "width": 1280,
+          "height": 960,
+          "sensorToBuffer": [
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            1
+          ],
+          "rotationDegrees": 0,
+          "isMirrored": false,
+          "cropRect": [
+            0,
+            0,
+            1280,
+            960
+          ]
+        },
+        "jpegPath": "/data/user/0/com.brailleme.geometrydiagnostic/cache/VisionCamera_8906256318450177301.jpg",
+        "photo": {
+          "width": 1280,
+          "height": 960,
+          "path": "/data/user/0/com.brailleme.geometrydiagnostic/cache/nitro_image_4334964550037601537.png"
+        }
+      },
+      "roi": {
+        "x": 0.3495675563812256,
+        "y": 0.3002470970153809,
+        "width": 0.300247049331665,
+        "height": 0.4003294944763184
+      },
+      "roi_independent_corner_check": {
+        "expected_pixels_xyxy": [
+          447.4464706420898,
+          288.2372314453125,
+          831.7627731323242,
+          672.5535400390625
+        ],
+        "actual_pixels_xyxy": [
+          447.44647216796875,
+          288.2372131347656,
+          831.7626953125,
+          672.5535278320312
+        ],
+        "max_absolute_corner_error_pixels": 7.781982424148737e-05
+      },
+      "checks": [
+        {
+          "id": "red",
+          "preview_centroid": [
+            236.88242894056847,
+            353.85142118863047
+          ],
+          "photo_centroid": [
+            533.9446721311475,
+            559.6127049180328
+          ],
+          "predicted_photo_centroid": [
+            533.5422175217207,
+            560.0942009137839
+          ],
+          "error_photo_pixels": 0.6275413186183262,
+          "preview_color_pixels": 387,
+          "photo_color_pixels": 976,
+          "passed": true,
+          "inside_preview_guide": true,
+          "inside_photo_roi": true,
+          "guide_membership_matches": true
+        },
+        {
+          "id": "magenta",
+          "preview_centroid": [
+            236.81219512195122,
+            241.39756097560976
+          ],
+          "photo_centroid": [
+            533.9790419161677,
+            381.95508982035926
+          ],
+          "predicted_photo_centroid": [
+            533.4312306735268,
+            382.0964560860009
+          ],
+          "error_photo_pixels": 0.5657575263531757,
+          "preview_color_pixels": 410,
+          "photo_color_pixels": 1002,
+          "passed": true,
+          "inside_preview_guide": true,
+          "inside_photo_roi": true,
+          "guide_membership_matches": true
+        },
+        {
+          "id": "cyan",
+          "preview_centroid": [
+            371.59046454767724,
+            241.44865525672373
+          ],
+          "photo_centroid": [
+            746.9786494538232,
+            381.9230387288977
+          ],
+          "predicted_photo_centroid": [
+            746.4143152201043,
+            382.1773307380106
+          ],
+          "error_photo_pixels": 0.6189810604903601,
+          "preview_color_pixels": 409,
+          "photo_color_pixels": 1007,
+          "passed": true,
+          "inside_preview_guide": true,
+          "inside_photo_roi": true,
+          "guide_membership_matches": true
+        },
+        {
+          "id": "blue",
+          "preview_centroid": [
+            371.6173469387755,
+            353.90816326530614
+          ],
+          "photo_centroid": [
+            746.9918864097363,
+            559.5841784989858
+          ],
+          "predicted_photo_centroid": [
+            746.4567960636444,
+            560.1840151866419
+          ],
+          "error_photo_pixels": 0.8038194637720997,
+          "preview_color_pixels": 392,
+          "photo_color_pixels": 986,
+          "passed": true,
+          "inside_preview_guide": true,
+          "inside_photo_roi": true,
+          "guide_membership_matches": true
+        }
+      ],
+      "failure": null,
+      "jpeg_vs_nitro": {
+        "encoded_size": [
+          1280,
+          960
+        ],
+        "exif_orientation": 1,
+        "upright_size": [
+          1280,
+          960
+        ],
+        "same_dimensions_as_nitro": true,
+        "mean_absolute_rgb_difference": 0.0,
+        "max_absolute_rgb_difference": 0,
+        "claim": "JPEG plane bytes saved by Photo.saveToTemporaryFileAsync (EXIF metadata attached, no pixel crop/re-encode in installed source); independently decoded and EXIF-oriented with Pillow."
+      },
+      "passed": true,
+      "files": {
+        "imageproxy.jpg": {
+          "sha256": "43afd9bc5820eee7e900e9f5c7dae2bd68a9a5aa5cf24b901e9afc14c469447d",
+          "bytes": 87902
+        },
+        "mapped-roi.png": {
+          "sha256": "4ac08c8403ad2b4c66c5a73260b0d6b156b04a63a9a32599339b85011e9b7324",
+          "bytes": 14199
+        },
+        "photo-review.png": {
+          "sha256": "446d7a1e283bfd11871c2cb12fdba9cc84ea51f2dd88d446faff95727114e592",
+          "bytes": 37342
+        },
+        "photo.png": {
+          "sha256": "bf9e57b08bd686a90aa43b20282f0da1aec91ecfdebdea1d7ee8472a89a1982e",
+          "bytes": 36420
+        },
+        "preview.png": {
+          "sha256": "1664fe979f52f16b3128341a38439fb93eaf9b0435c57d8d688078855c7b45d8",
+          "bytes": 30269
+        }
+      }
+    },
+    {
+      "capture": {
+        "id": "photo16by9-view1by1-1788626762107-1",
+        "case": "photo16by9-view1by1",
+        "target": {
+          "width": 1920,
+          "height": 1080
+        },
+        "orientationSource": "interface",
+        "window": {
+          "width": 914.2857142857143,
+          "height": 411.42857142857144
+        },
+        "density": 2.625,
+        "preview": {
+          "widthDp": 231.42857142857144,
+          "heightDp": 231.42857142857144,
+          "width": 608,
+          "height": 607,
+          "resolution": {
+            "width": 1280,
+            "height": 960
+          },
+          "path": "/data/user/0/com.brailleme.geometrydiagnostic/cache/nitro_image_3749812322521339935.png"
+        },
+        "guide": {
+          "x": 0.3,
+          "y": 0.3,
+          "width": 0.4,
+          "height": 0.4
+        },
+        "guidePoints": [
+          {
+            "x": 447.44647216796875,
+            "y": 288.2372131347656
+          },
+          {
+            "x": 831.7626953125,
+            "y": 288.2372131347656
+          },
+          {
+            "x": 831.7626953125,
+            "y": 672.5535278320312
+          },
+          {
+            "x": 447.44647216796875,
+            "y": 672.5535278320312
+          }
+        ],
+        "fullPoints": [
+          {
+            "x": 159.20924377441406,
+            "y": 0
+          },
+          {
+            "x": 1120,
+            "y": 0
+          },
+          {
+            "x": 1120,
+            "y": 960.790771484375
+          },
+          {
+            "x": 159.20924377441406,
+            "y": 960.790771484375
+          }
+        ],
+        "geometry": {
+          "width": 1280,
+          "height": 720,
+          "sensorToBuffer": [
+            1,
+            0,
+            0,
+            0,
+            1,
+            -120,
+            0,
+            0,
+            1
+          ],
+          "rotationDegrees": 0,
+          "isMirrored": false,
+          "cropRect": [
+            0,
+            0,
+            1280,
+            720
+          ]
+        },
+        "jpegPath": "/data/user/0/com.brailleme.geometrydiagnostic/cache/VisionCamera_2206568700431209858.jpg",
+        "photo": {
+          "width": 1280,
+          "height": 720,
+          "path": "/data/user/0/com.brailleme.geometrydiagnostic/cache/nitro_image_5193337504559852801.png"
+        }
+      },
+      "roi": {
+        "x": 0.3495675563812256,
+        "y": 0.23366279602050782,
+        "width": 0.300247049331665,
+        "height": 0.5337726593017578
+      },
+      "roi_independent_corner_check": {
+        "expected_pixels_xyxy": [
+          447.4464706420898,
+          168.2372314453125,
+          831.7627731323242,
+          552.5535400390625
+        ],
+        "actual_pixels_xyxy": [
+          447.44647216796875,
+          168.23721313476562,
+          831.7626953125,
+          552.5535278320311
+        ],
+        "max_absolute_corner_error_pixels": 7.781982424148737e-05
+      },
+      "checks": [
+        {
+          "id": "red",
+          "preview_centroid": [
+            236.88242894056847,
+            353.85142118863047
+          ],
+          "photo_centroid": [
+            533.9446721311475,
+            319.61270491803276
+          ],
+          "predicted_photo_centroid": [
+            533.5422175217207,
+            440.0942009137839
+          ],
+          "error_photo_pixels": 120.48216817059212,
+          "preview_color_pixels": 387,
+          "photo_color_pixels": 976,
+          "passed": false,
+          "inside_preview_guide": true,
+          "inside_photo_roi": true,
+          "guide_membership_matches": true
+        },
+        {
+          "id": "magenta",
+          "preview_centroid": [
+            236.81219512195122,
+            241.39756097560976
+          ],
+          "photo_centroid": [
+            533.9790419161677,
+            141.9550898203593
+          ],
+          "predicted_photo_centroid": [
+            533.4312306735268,
+            262.0964560860009
+          ],
+          "error_photo_pixels": 120.14261519266431,
+          "preview_color_pixels": 410,
+          "photo_color_pixels": 1002,
+          "passed": false,
+          "inside_preview_guide": true,
+          "inside_photo_roi": false,
+          "guide_membership_matches": false
+        },
+        {
+          "id": "cyan",
+          "preview_centroid": [
+            371.59046454767724,
+            241.44865525672373
+          ],
+          "photo_centroid": [
+            746.9786494538232,
+            141.92303872889772
+          ],
+          "predicted_photo_centroid": [
+            746.4143152201043,
+            262.1773307380106
+          ],
+          "error_photo_pixels": 120.25561616714762,
+          "preview_color_pixels": 409,
+          "photo_color_pixels": 1007,
+          "passed": false,
+          "inside_preview_guide": true,
+          "inside_photo_roi": false,
+          "guide_membership_matches": false
+        },
+        {
+          "id": "blue",
+          "preview_centroid": [
+            371.6173469387755,
+            353.90816326530614
+          ],
+          "photo_centroid": [
+            746.9918864097363,
+            319.5841784989858
+          ],
+          "predicted_photo_centroid": [
+            746.4567960636444,
+            440.1840151866419
+          ],
+          "error_photo_pixels": 120.6010237550569,
+          "preview_color_pixels": 392,
+          "photo_color_pixels": 986,
+          "passed": false,
+          "inside_preview_guide": true,
+          "inside_photo_roi": true,
+          "guide_membership_matches": true
+        }
+      ],
+      "failure": null,
+      "jpeg_vs_nitro": {
+        "encoded_size": [
+          1280,
+          720
+        ],
+        "exif_orientation": 1,
+        "upright_size": [
+          1280,
+          720
+        ],
+        "same_dimensions_as_nitro": true,
+        "mean_absolute_rgb_difference": 0.0,
+        "max_absolute_rgb_difference": 0,
+        "claim": "JPEG plane bytes saved by Photo.saveToTemporaryFileAsync (EXIF metadata attached, no pixel crop/re-encode in installed source); independently decoded and EXIF-oriented with Pillow."
+      },
+      "passed": false,
+      "files": {
+        "imageproxy.jpg": {
+          "sha256": "11fb65d865d2e65f247656758ed887d9aeb483755901d0b0a1e6fd1e2e2d2984",
+          "bytes": 70714
+        },
+        "mapped-roi.png": {
+          "sha256": "79bc6af425541e15c8169d8f976d7466cac27d683d4cdbc4899dbe1167144d56",
+          "bytes": 8914
+        },
+        "photo-review.png": {
+          "sha256": "22e12318e5d05239d0faf6e30fce5941732dc2b111c616d15c9af15a0b7c5247",
+          "bytes": 35079
+        },
+        "photo.png": {
+          "sha256": "41ef5f79db7e564882ff4ed501a950b12fcbcbb9596d7a7141f7e0aab8623dfd",
+          "bytes": 34041
+        },
+        "preview.png": {
+          "sha256": "1664fe979f52f16b3128341a38439fb93eaf9b0435c57d8d688078855c7b45d8",
+          "bytes": 30269
+        }
+      }
+    },
+    {
+      "capture": {
+        "id": "photo4by3-view2by1-1788626778916-1",
+        "case": "photo4by3-view2by1",
+        "target": {
+          "width": 1920,
+          "height": 1440
+        },
+        "orientationSource": "interface",
+        "window": {
+          "width": 914.2857142857143,
+          "height": 411.42857142857144
+        },
+        "density": 2.625,
+        "preview": {
+          "widthDp": 462.8571428571429,
+          "heightDp": 231.42857142857144,
+          "width": 1215,
+          "height": 607,
+          "resolution": {
+            "width": 1280,
+            "height": 960
+          },
+          "path": "/data/user/0/com.brailleme.geometrydiagnostic/cache/nitro_image_4914418103802436678.png"
+        },
+        "guide": {
+          "x": 0.3,
+          "y": 0.3,
+          "width": 0.4,
+          "height": 0.4
+        },
+        "guidePoints": [
+          {
+            "x": 384,
+            "y": 352.26336669921875
+          },
+          {
+            "x": 896,
+            "y": 352.26336669921875
+          },
+          {
+            "x": 896,
+            "y": 608.2633666992188
+          },
+          {
+            "x": 384,
+            "y": 608.2633666992188
+          }
+        ],
+        "fullPoints": [
+          {
+            "x": 0,
+            "y": 160.26336669921875
+          },
+          {
+            "x": 1280,
+            "y": 160.26336669921875
+          },
+          {
+            "x": 1280,
+            "y": 800.2633666992188
+          },
+          {
+            "x": 0,
+            "y": 800.2633666992188
+          }
+        ],
+        "geometry": {
+          "width": 1280,
+          "height": 960,
+          "sensorToBuffer": [
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            1
+          ],
+          "rotationDegrees": 0,
+          "isMirrored": false,
+          "cropRect": [
+            0,
+            0,
+            1280,
+            960
+          ]
+        },
+        "jpegPath": "/data/user/0/com.brailleme.geometrydiagnostic/cache/VisionCamera_8812607961972983973.jpg",
+        "photo": {
+          "width": 1280,
+          "height": 960,
+          "path": "/data/user/0/com.brailleme.geometrydiagnostic/cache/nitro_image_2771190302305310729.png"
+        }
+      },
+      "roi": {
+        "x": 0.3,
+        "y": 0.36694100697835286,
+        "width": 0.4,
+        "height": 0.26666666666666666
+      },
+      "roi_independent_corner_check": {
+        "expected_pixels_xyxy": [
+          383.99999999999994,
+          352.26336669921875,
+          896.0,
+          608.2633666992188
+        ],
+        "actual_pixels_xyxy": [
+          384.0,
+          352.26336669921875,
+          896.0,
+          608.2633666992188
+        ],
+        "max_absolute_corner_error_pixels": 5.684341886080802e-14
+      },
+      "checks": [
+        {
+          "id": "red",
+          "preview_centroid": [
+            506.75141562853906,
+            378.95753114382785
+          ],
+          "photo_centroid": [
+            533.9446721311475,
+            559.6127049180328
+          ],
+          "predicted_photo_centroid": [
+            533.8615736662798,
+            559.8232018426286
+          ],
+          "error_photo_pixels": 0.22630578898393558,
+          "preview_color_pixels": 883,
+          "photo_color_pixels": 976,
+          "passed": true,
+          "inside_preview_guide": true,
+          "inside_photo_roi": true,
+          "guide_membership_matches": true
+        },
+        {
+          "id": "magenta",
+          "preview_centroid": [
+            506.78368017524645,
+            210.3893756845564
+          ],
+          "photo_centroid": [
+            533.9790419161677,
+            381.95508982035926
+          ],
+          "predicted_photo_centroid": [
+            533.895564299848,
+            382.0907150321942
+          ],
+          "error_photo_pixels": 0.15925674400694154,
+          "preview_color_pixels": 913,
+          "photo_color_pixels": 1002,
+          "passed": true,
+          "inside_preview_guide": true,
+          "inside_photo_roi": true,
+          "guide_membership_matches": true
+        },
+        {
+          "id": "cyan",
+          "preview_centroid": [
+            709.063596491228,
+            210.31469298245614
+          ],
+          "photo_centroid": [
+            746.9786494538232,
+            381.9230387288977
+          ],
+          "predicted_photo_centroid": [
+            746.9970399249153,
+            382.01197215024337
+          ],
+          "error_photo_pixels": 0.09081499248048051,
+          "preview_color_pixels": 912,
+          "photo_color_pixels": 1007,
+          "passed": true,
+          "inside_preview_guide": true,
+          "inside_photo_roi": true,
+          "guide_membership_matches": true
+        },
+        {
+          "id": "blue",
+          "preview_centroid": [
+            709.097533632287,
+            379.01008968609864
+          ],
+          "photo_centroid": [
+            746.9918864097363,
+            559.5841784989858
+          ],
+          "predicted_photo_centroid": [
+            747.0327926331912,
+            559.8786177685814
+          ],
+          "error_photo_pixels": 0.29726722422316465,
+          "preview_color_pixels": 892,
+          "photo_color_pixels": 986,
+          "passed": true,
+          "inside_preview_guide": true,
+          "inside_photo_roi": true,
+          "guide_membership_matches": true
+        }
+      ],
+      "failure": null,
+      "jpeg_vs_nitro": {
+        "encoded_size": [
+          1280,
+          960
+        ],
+        "exif_orientation": 1,
+        "upright_size": [
+          1280,
+          960
+        ],
+        "same_dimensions_as_nitro": true,
+        "mean_absolute_rgb_difference": 0.0,
+        "max_absolute_rgb_difference": 0,
+        "claim": "JPEG plane bytes saved by Photo.saveToTemporaryFileAsync (EXIF metadata attached, no pixel crop/re-encode in installed source); independently decoded and EXIF-oriented with Pillow."
+      },
+      "passed": true,
+      "files": {
+        "imageproxy.jpg": {
+          "sha256": "ea6e5bd61ea93fabe9c9da2ae853247d96587f0980da103ea5a6e5cf5c5ef74b",
+          "bytes": 87902
+        },
+        "mapped-roi.png": {
+          "sha256": "e48d38bfd6e331987750a995b5693cb6ff553ce6c819c128cdda6e0395f70341",
+          "bytes": 13567
+        },
+        "photo-review.png": {
+          "sha256": "b49e9fab46f078f9b04c2046d355e50aa5bf00af9533359a0eba3391acd66323",
+          "bytes": 37123
+        },
+        "photo.png": {
+          "sha256": "bf9e57b08bd686a90aa43b20282f0da1aec91ecfdebdea1d7ee8472a89a1982e",
+          "bytes": 36420
+        },
+        "preview.png": {
+          "sha256": "625f8d2052c69c02f5f7013c516dec4d7eff24ba9072edca391300101b6ca0a8",
+          "bytes": 45991
+        }
+      }
+    },
+    {
+      "capture": {
+        "id": "photo4by3-view2by1-1788626797322-2",
+        "case": "photo4by3-view2by1",
+        "target": {
+          "width": 1920,
+          "height": 1440
+        },
+        "orientationSource": "interface",
+        "window": {
+          "width": 411.42857142857144,
+          "height": 914.2857142857143
+        },
+        "density": 2.625,
+        "preview": {
+          "widthDp": 387.42857142857144,
+          "heightDp": 193.71428571428572,
+          "width": 1017,
+          "height": 508,
+          "resolution": {
+            "width": 1280,
+            "height": 960
+          },
+          "path": "/data/user/0/com.brailleme.geometrydiagnostic/cache/nitro_image_5239059368716820793.png"
+        },
+        "guide": {
+          "x": 0.3,
+          "y": 0.3,
+          "width": 0.4,
+          "height": 0.4
+        },
+        "guidePoints": [
+          {
+            "x": 544.2359619140625,
+            "y": 671.9998779296875
+          },
+          {
+            "x": 544.2359619140625,
+            "y": 287.99993896484375
+          },
+          {
+            "x": 736.2359619140625,
+            "y": 287.99993896484375
+          },
+          {
+            "x": 736.2359619140625,
+            "y": 671.9998779296875
+          }
+        ],
+        "fullPoints": [
+          {
+            "x": 400.2359924316406,
+            "y": 959.9998779296875
+          },
+          {
+            "x": 400.2359924316406,
+            "y": 0
+          },
+          {
+            "x": 880.2359619140625,
+            "y": 0
+          },
+          {
+            "x": 880.2359619140625,
+            "y": 959.9998779296875
+          }
+        ],
+        "geometry": {
+          "width": 1280,
+          "height": 960,
+          "sensorToBuffer": [
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            1
+          ],
+          "rotationDegrees": 90,
+          "isMirrored": false,
+          "cropRect": [
+            0,
+            0,
+            1280,
+            960
+          ]
+        },
+        "jpegPath": "/data/user/0/com.brailleme.geometrydiagnostic/cache/VisionCamera_4044861172442965734.jpg",
+        "photo": {
+          "width": 960,
+          "height": 1280,
+          "path": "/data/user/0/com.brailleme.geometrydiagnostic/cache/nitro_image_8604259411689286535.png"
+        }
+      },
+      "roi": {
+        "x": 0.30000012715657554,
+        "y": 0.4251843452453613,
+        "width": 0.3999999364217122,
+        "height": 0.15
+      },
+      "roi_independent_corner_check": {
+        "expected_pixels_xyxy": [
+          288.0000854492188,
+          544.235983276367,
+          672.0000366210937,
+          736.235971069336
+        ],
+        "actual_pixels_xyxy": [
+          288.0001220703125,
+          544.2359619140625,
+          672.0000610351562,
+          736.2359619140625
+        ],
+        "max_absolute_corner_error_pixels": 3.662109372726263e-05
+      },
+      "checks": [
+        {
+          "id": "red",
+          "preview_centroid": [
+            424.2881278538813,
+            141.51826484018264
+          ],
+          "photo_centroid": [
+            400.38729508196724,
+            533.9446721311475
+          ],
+          "predicted_photo_centroid": [
+            400.5080384387901,
+            533.954029448359
+          ],
+          "error_photo_pixels": 0.12110539873287662,
+          "preview_color_pixels": 1095,
+          "photo_color_pixels": 976,
+          "passed": true,
+          "inside_preview_guide": false,
+          "inside_photo_roi": false,
+          "guide_membership_matches": true
+        },
+        {
+          "id": "magenta",
+          "preview_centroid": [
+            612.3333333333334,
+            141.58771929824562
+          ],
+          "photo_centroid": [
+            578.0449101796407,
+            533.9790419161677
+          ],
+          "predicted_photo_centroid": [
+            578.0138145504292,
+            534.0196557037737
+          ],
+          "error_photo_pixels": 0.05115093254050223,
+          "preview_color_pixels": 1140,
+          "photo_color_pixels": 1002,
+          "passed": true,
+          "inside_preview_guide": false,
+          "inside_photo_roi": false,
+          "guide_membership_matches": true
+        },
+        {
+          "id": "cyan",
+          "preview_centroid": [
+            612.379295154185,
+            367.4779735682819
+          ],
+          "photo_centroid": [
+            578.0769612711023,
+            746.9786494538232
+          ],
+          "predicted_photo_centroid": [
+            578.0572003345069,
+            747.4592524675413
+          ],
+          "error_photo_pixels": 0.4810090970138262,
+          "preview_color_pixels": 1135,
+          "photo_color_pixels": 1007,
+          "passed": true,
+          "inside_preview_guide": false,
+          "inside_photo_roi": false,
+          "guide_membership_matches": true
+        },
+        {
+          "id": "blue",
+          "preview_centroid": [
+            424.25956284153006,
+            367.41712204007285
+          ],
+          "photo_centroid": [
+            400.4158215010142,
+            746.9918864097363
+          ],
+          "predicted_photo_centroid": [
+            400.4810744187604,
+            747.4017549642276
+          ],
+          "error_photo_pixels": 0.41503033050035604,
+          "preview_color_pixels": 1098,
+          "photo_color_pixels": 986,
+          "passed": true,
+          "inside_preview_guide": false,
+          "inside_photo_roi": false,
+          "guide_membership_matches": true
+        }
+      ],
+      "failure": null,
+      "jpeg_vs_nitro": {
+        "encoded_size": [
+          1280,
+          960
+        ],
+        "exif_orientation": 6,
+        "upright_size": [
+          960,
+          1280
+        ],
+        "same_dimensions_as_nitro": true,
+        "mean_absolute_rgb_difference": 0.0,
+        "max_absolute_rgb_difference": 0,
+        "claim": "JPEG plane bytes saved by Photo.saveToTemporaryFileAsync (EXIF metadata attached, no pixel crop/re-encode in installed source); independently decoded and EXIF-oriented with Pillow."
+      },
+      "passed": true,
+      "files": {
+        "imageproxy.jpg": {
+          "sha256": "b6f34b903d62ded0cf55b71a31c15941f6f042bf15a9bf1560471d31aa91d250",
+          "bytes": 87902
+        },
+        "mapped-roi.png": {
+          "sha256": "4722a136bf3539476ee4bba0ebd1757c92b00d5597295a835b154a47ed0f10d0",
+          "bytes": 4795
+        },
+        "photo-review.png": {
+          "sha256": "ac3ed1228c41cbd6416e2a5d07eb4599f1adf3d44cf71e03dcd1434d23dcbe7e",
+          "bytes": 34598
+        },
+        "photo.png": {
+          "sha256": "a9f537446525701d239a72cfd51e8b008f2904c5088a30f6c1d5ac7435394340",
+          "bytes": 35035
+        },
+        "preview.png": {
+          "sha256": "4b7b7ea30535d7217ea4d1c9786c34da5d46a85d51df46551fc9551bbfb23c45",
+          "bytes": 28350
+        }
+      }
+    },
+    {
+      "capture": {
+        "id": "photo4by3-view1by1-1788626818812-1",
+        "case": "photo4by3-view1by1",
+        "target": {
+          "width": 1920,
+          "height": 1440
+        },
+        "orientationSource": "interface",
+        "window": {
+          "width": 411.42857142857144,
+          "height": 914.2857142857143
+        },
+        "density": 2.625,
+        "preview": {
+          "widthDp": 387.42857142857144,
+          "heightDp": 387.42857142857144,
+          "width": 1017,
+          "height": 1017,
+          "resolution": {
+            "width": 1280,
+            "height": 960
+          },
+          "path": "/data/user/0/com.brailleme.geometrydiagnostic/cache/nitro_image_3586365032391734463.png"
+        },
+        "guide": {
+          "x": 0.3,
+          "y": 0.3,
+          "width": 0.4,
+          "height": 0.4
+        },
+        "guidePoints": [
+          {
+            "x": 832,
+            "y": 287.9999694824219
+          },
+          {
+            "x": 832,
+            "y": 671.9999389648438
+          },
+          {
+            "x": 448,
+            "y": 671.9999389648438
+          },
+          {
+            "x": 448,
+            "y": 287.9999694824219
+          }
+        ],
+        "fullPoints": [
+          {
+            "x": 1120,
+            "y": 0
+          },
+          {
+            "x": 1120,
+            "y": 959.9998779296875
+          },
+          {
+            "x": 160.00006103515625,
+            "y": 959.9998779296875
+          },
+          {
+            "x": 160.00006103515625,
+            "y": 0
+          }
+        ],
+        "geometry": {
+          "width": 1280,
+          "height": 960,
+          "sensorToBuffer": [
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            1
+          ],
+          "rotationDegrees": 270,
+          "isMirrored": false,
+          "cropRect": [
+            0,
+            0,
+            1280,
+            960
+          ]
+        },
+        "jpegPath": "/data/user/0/com.brailleme.geometrydiagnostic/cache/VisionCamera_5622803697933881615.jpg",
+        "photo": {
+          "width": 960,
+          "height": 1280,
+          "path": "/data/user/0/com.brailleme.geometrydiagnostic/cache/nitro_image_6548584157498181071.png"
+        }
+      },
+      "roi": {
+        "x": 0.2999999682108561,
+        "y": 0.35,
+        "width": 0.3999999682108561,
+        "height": 0.3
+      },
+      "roi_independent_corner_check": {
+        "expected_pixels_xyxy": [
+          287.9999633789062,
+          447.9999816894532,
+          671.9999145507812,
+          831.9999572753906
+        ],
+        "actual_pixels_xyxy": [
+          287.9999694824219,
+          448.0,
+          671.9999389648438,
+          831.9999999999999
+        ],
+        "max_absolute_corner_error_pixels": 4.2724609329525265e-05
+      },
+      "checks": [
+        {
+          "id": "red",
+          "preview_centroid": [
+            592.7413479052823,
+            620.8879781420765
+          ],
+          "photo_centroid": [
+            559.6127049180328,
+            746.0553278688525
+          ],
+          "predicted_photo_centroid": [
+            559.5197852831361,
+            746.0889096562424
+          ],
+          "error_photo_pixels": 0.09880179651018604,
+          "preview_color_pixels": 1098,
+          "photo_color_pixels": 976,
+          "passed": true,
+          "inside_preview_guide": true,
+          "inside_photo_roi": true,
+          "guide_membership_matches": true
+        },
+        {
+          "id": "magenta",
+          "preview_centroid": [
+            404.62334801762114,
+            620.9202643171806
+          ],
+          "photo_centroid": [
+            381.95508982035926,
+            746.0209580838323
+          ],
+          "predicted_photo_centroid": [
+            381.9452946946094,
+            746.1193862797719
+          ],
+          "error_photo_pixels": 0.09891437835008374,
+          "preview_color_pixels": 1135,
+          "photo_color_pixels": 1002,
+          "passed": true,
+          "inside_preview_guide": true,
+          "inside_photo_roi": true,
+          "guide_membership_matches": true
+        },
+        {
+          "id": "cyan",
+          "preview_centroid": [
+            404.57719298245615,
+            395.0675438596491
+          ],
+          "photo_centroid": [
+            381.9230387288977,
+            533.0213505461768
+          ],
+          "predicted_photo_centroid": [
+            381.90172652536233,
+            532.925091437811
+          ],
+          "error_photo_pixels": 0.09859019202184548,
+          "preview_color_pixels": 1140,
+          "photo_color_pixels": 1007,
+          "passed": true,
+          "inside_preview_guide": true,
+          "inside_photo_roi": true,
+          "guide_membership_matches": true
+        },
+        {
+          "id": "blue",
+          "preview_centroid": [
+            592.7996389891697,
+            395.05595667870034
+          ],
+          "photo_centroid": [
+            559.5841784989858,
+            533.0081135902637
+          ],
+          "predicted_photo_centroid": [
+            559.5748093081277,
+            532.9141536865784
+          ],
+          "error_photo_pixels": 0.09442587165547132,
+          "preview_color_pixels": 1108,
+          "photo_color_pixels": 986,
+          "passed": true,
+          "inside_preview_guide": true,
+          "inside_photo_roi": true,
+          "guide_membership_matches": true
+        }
+      ],
+      "failure": null,
+      "jpeg_vs_nitro": {
+        "encoded_size": [
+          1280,
+          960
+        ],
+        "exif_orientation": 8,
+        "upright_size": [
+          960,
+          1280
+        ],
+        "same_dimensions_as_nitro": true,
+        "mean_absolute_rgb_difference": 0.0,
+        "max_absolute_rgb_difference": 0,
+        "claim": "JPEG plane bytes saved by Photo.saveToTemporaryFileAsync (EXIF metadata attached, no pixel crop/re-encode in installed source); independently decoded and EXIF-oriented with Pillow."
+      },
+      "passed": true,
+      "files": {
+        "imageproxy.jpg": {
+          "sha256": "8beb700e7f4f81e5547602e0d8aa9573ed2935230058a0d601938aeebafd1d6d",
+          "bytes": 87902
+        },
+        "mapped-roi.png": {
+          "sha256": "d45e1cf124f435ebf301d0c6becac821a4b2b1f0afb7ca7c959b109f8960c37e",
+          "bytes": 14239
+        },
+        "photo-review.png": {
+          "sha256": "0251a176554ba859b215a63eaa480b7652c793d0f9b41e56a1db99630a88ec87",
+          "bytes": 35684
+        },
+        "photo.png": {
+          "sha256": "fed615b4f2e502a9783ce1101efaefaddc597a6f2a15ed64d4da2eead90246bb",
+          "bytes": 35005
+        },
+        "preview.png": {
+          "sha256": "f5fdc1252b007ff567127926a49c5b2f68405d23167b99324d7338501a86a61b",
+          "bytes": 57552
+        }
+      }
+    },
+    {
+      "capture": {
+        "id": "photo4by3-view1by1-1788626835424-2",
+        "case": "photo4by3-view1by1",
+        "target": {
+          "width": 1920,
+          "height": 1440
+        },
+        "orientationSource": "interface",
+        "window": {
+          "width": 914.2857142857143,
+          "height": 411.42857142857144
+        },
+        "density": 2.625,
+        "preview": {
+          "widthDp": 231.42857142857144,
+          "heightDp": 231.42857142857144,
+          "width": 608,
+          "height": 607,
+          "resolution": {
+            "width": 1280,
+            "height": 960
+          },
+          "path": "/data/user/0/com.brailleme.geometrydiagnostic/cache/nitro_image_7114890897908259192.png"
+        },
+        "guide": {
+          "x": 0.3,
+          "y": 0.3,
+          "width": 0.4,
+          "height": 0.4
+        },
+        "guidePoints": [
+          {
+            "x": 832.553466796875,
+            "y": 671.7628173828125
+          },
+          {
+            "x": 448.2371826171875,
+            "y": 671.7628173828125
+          },
+          {
+            "x": 448.2371826171875,
+            "y": 287.44647216796875
+          },
+          {
+            "x": 832.553466796875,
+            "y": 287.44647216796875
+          }
+        ],
+        "fullPoints": [
+          {
+            "x": 1120.7906494140625,
+            "y": 960
+          },
+          {
+            "x": 159.99993896484375,
+            "y": 960
+          },
+          {
+            "x": 159.99993896484375,
+            "y": -0.790771484375
+          },
+          {
+            "x": 1120.7906494140625,
+            "y": -0.790771484375
+          }
+        ],
+        "geometry": {
+          "width": 1280,
+          "height": 960,
+          "sensorToBuffer": [
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            1
+          ],
+          "rotationDegrees": 180,
+          "isMirrored": false,
+          "cropRect": [
+            0,
+            0,
+            1280,
+            960
+          ]
+        },
+        "jpegPath": "/data/user/0/com.brailleme.geometrydiagnostic/cache/VisionCamera_8448105415270781918.jpg",
+        "photo": {
+          "width": 1280,
+          "height": 960,
+          "path": "/data/user/0/com.brailleme.geometrydiagnostic/cache/nitro_image_6545581239229476773.png"
+        }
+      },
+      "roi": {
+        "x": 0.3495676040649414,
+        "y": 0.30024706522623695,
+        "width": 0.3002470970153809,
+        "height": 0.40032952626546225
+      },
+      "roi_independent_corner_check": {
+        "expected_pixels_xyxy": [
+          447.44656372070324,
+          288.23723144531243,
+          831.7628479003906,
+          672.5535400390625
+        ],
+        "actual_pixels_xyxy": [
+          447.446533203125,
+          288.2371826171875,
+          831.7628173828126,
+          672.5535278320312
+        ],
+        "max_absolute_corner_error_pixels": 4.88281249317879e-05
+      },
+      "checks": [
+        {
+          "id": "red",
+          "preview_centroid": [
+            371.1175710594315,
+            253.1485788113695
+          ],
+          "photo_centroid": [
+            746.0553278688525,
+            400.38729508196724
+          ],
+          "predicted_photo_centroid": [
+            745.6671051227461,
+            400.69657057059123
+          ],
+          "error_photo_pixels": 0.4963549420102631,
+          "preview_color_pixels": 387,
+          "photo_color_pixels": 976,
+          "passed": true,
+          "inside_preview_guide": true,
+          "inside_photo_roi": true,
+          "guide_membership_matches": true
+        },
+        {
+          "id": "magenta",
+          "preview_centroid": [
+            371.1748166259169,
+            365.62713936430316
+          ],
+          "photo_centroid": [
+            746.0209580838323,
+            578.0449101796407
+          ],
+          "predicted_photo_centroid": [
+            745.7575673077685,
+            578.7334123648334
+          ],
+          "error_photo_pixels": 0.7371634553683165,
+          "preview_color_pixels": 409,
+          "photo_color_pixels": 1002,
+          "passed": true,
+          "inside_preview_guide": true,
+          "inside_photo_roi": true,
+          "guide_membership_matches": true
+        },
+        {
+          "id": "cyan",
+          "preview_centroid": [
+            236.40953545232273,
+            365.5513447432763
+          ],
+          "photo_centroid": [
+            533.0213505461768,
+            578.0769612711023
+          ],
+          "predicted_photo_centroid": [
+            532.795017566541,
+            578.6134407463642
+          ],
+          "error_photo_pixels": 0.5822687051938321,
+          "preview_color_pixels": 409,
+          "photo_color_pixels": 1007,
+          "passed": true,
+          "inside_preview_guide": true,
+          "inside_photo_roi": true,
+          "guide_membership_matches": true
+        },
+        {
+          "id": "blue",
+          "preview_centroid": [
+            236.3826530612245,
+            253.09183673469389
+          ],
+          "photo_centroid": [
+            533.0081135902637,
+            400.4158215010142
+          ],
+          "predicted_photo_centroid": [
+            532.7525367250248,
+            400.606756297733
+          ],
+          "error_photo_pixels": 0.31902293121876585,
+          "preview_color_pixels": 392,
+          "photo_color_pixels": 986,
+          "passed": true,
+          "inside_preview_guide": true,
+          "inside_photo_roi": true,
+          "guide_membership_matches": true
+        }
+      ],
+      "failure": null,
+      "jpeg_vs_nitro": {
+        "encoded_size": [
+          1280,
+          960
+        ],
+        "exif_orientation": 3,
+        "upright_size": [
+          1280,
+          960
+        ],
+        "same_dimensions_as_nitro": true,
+        "mean_absolute_rgb_difference": 0.0,
+        "max_absolute_rgb_difference": 0,
+        "claim": "JPEG plane bytes saved by Photo.saveToTemporaryFileAsync (EXIF metadata attached, no pixel crop/re-encode in installed source); independently decoded and EXIF-oriented with Pillow."
+      },
+      "passed": true,
+      "files": {
+        "imageproxy.jpg": {
+          "sha256": "d11b3e939fa2ec1b16da5141fa0b88027c584fd0ff15acdbf53a6b7251fe060b",
+          "bytes": 87902
+        },
+        "mapped-roi.png": {
+          "sha256": "43466a5b9ec1e56ee845ca7018da2df296859c49adc21121eb28564c0ba2cf94",
+          "bytes": 14360
+        },
+        "photo-review.png": {
+          "sha256": "f7ab5b114f7be4430ac2e2acb4383d16b6a6908ee75c8686ec5669fd9d9cb23a",
+          "bytes": 37377
+        },
+        "photo.png": {
+          "sha256": "e2ee0a75bfca5471869846daa21504fb8939b70a021d3dc9edbdf59a283ee5ce",
+          "bytes": 36508
+        },
+        "preview.png": {
+          "sha256": "902e8cea585229418b2680c204d12d7847b01a6957c454955671ac81ed7f5737",
+          "bytes": 28427
+        }
+      }
+    }
+  ],
+  "limits": [
+    "Synthetic emulator imagefile feed only; no physical-camera or main-app smoke claim.",
+    "Orientation source is interface for deterministic adb portrait/landscape changes.",
+    "Reported negotiated stream dimensions determine aspect coverage, not requested target dimensions."
+  ]
+}

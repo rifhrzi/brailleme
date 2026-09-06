@@ -1,0 +1,248 @@
+{
+  "created_at_utc": "2026-09-06T07:26:26.776394+00:00",
+  "status": "source_and_pixel_bound_bookkeeping_correction",
+  "corrected_file": "COMPLETED-HANDOFF.json",
+  "corrected_file_sha256": "c33eca7d6df083076b0921dd4c7391101b294f1081803e16547c335e23ca5208",
+  "corrected_field": "new_model_invocations.rejection14",
+  "before": 14,
+  "after": 12,
+  "scope": "All six invocation-count fields in the immutable completed handoff are checked. Fresh Lite405/negative44/legacy66 always invoke before quality; the actual helper asserts its515 counter and exits0. Repeats12 invoke; two of the14 rejection fixtures bypass at the existing quality gate, leaving12 invocations. Cached607 outputs are decoded with zero new model invocations. All fixture metrics and gates are unchanged. No backend or model is loaded by these audits.",
+  "diagnostics": {
+    "repetition-diagnostics.json": {
+      "evaluated": 12,
+      "inferred": 12,
+      "quality_bypassed": 0
+    },
+    "rejection-diagnostics.json": {
+      "evaluated": 14,
+      "inferred": 12,
+      "quality_bypassed": 2
+    }
+  },
+  "correct_total_new_model_invocations": 539,
+  "source_sha256": {
+    "training\\scripts\\word_benchmark.py": "ad7d4f3a35a8d0dd3a530dfeb8f849fde585e97cadcde5fcb043950bedd05988",
+    "training/scripts/word_diagnostics.py": "8ed39776c629e642d51eb11ea499959a961d6cb4b4339a579d748716d7e87943",
+    ".braille-training-work\\word-scan-v1-20260905\\evaluate_position_v26_retry.py": "55d62bc806ec7bde2923cf404d65a76315d83b545e6ccfea0aa0435aaaf0fb83"
+  },
+  "fixture_quality_audit": {
+    "repetition-diagnostics.json": {
+      "fixture_sha256": "bdf89716ab644baa8f7e0a47c90f058e5da5ccfb594c9403070760f86819c41c",
+      "result_sha256": "b1a81f7301720bc5607086722146ed1e639fdd7097ea656939aa4289c9c8cbdc",
+      "rows": [
+        {
+          "image": "style-01-a.png",
+          "sha256": "02ed58685472075fefc1d483ac4d60de66e7170abe2dc76c78b437de06a37ae2",
+          "quality_reason": "",
+          "model_invoke_branch_taken": true
+        },
+        {
+          "image": "style-01-mama.png",
+          "sha256": "3f63c02b07c2831311f3b89c225df4563d59b770d1d887e93c5c5d071a0dc23e",
+          "quality_reason": "",
+          "model_invoke_branch_taken": true
+        },
+        {
+          "image": "style-01-kakak.png",
+          "sha256": "0702636f4f2e304c3e3343952b82f9615ad27c6057444696c120a442617c5906",
+          "quality_reason": "",
+          "model_invoke_branch_taken": true
+        },
+        {
+          "image": "style-01-mamamamamama.png",
+          "sha256": "074bb0cb13e40eb3ceeb205fff7054db58d6580940f49e39b214bcb622f81b1e",
+          "quality_reason": "",
+          "model_invoke_branch_taken": true
+        },
+        {
+          "image": "style-02-a.png",
+          "sha256": "5d2ddbc3b9e6f06fd25634e1184aaf2767e15cc7bdb855925477dd2df0da83b9",
+          "quality_reason": "",
+          "model_invoke_branch_taken": true
+        },
+        {
+          "image": "style-02-mama.png",
+          "sha256": "5ea5b887d6ca8781d2b29768dacaf70573394050b459c6eacecf5855f1c4d6c9",
+          "quality_reason": "",
+          "model_invoke_branch_taken": true
+        },
+        {
+          "image": "style-02-kakak.png",
+          "sha256": "a7b60749ad392ba65fbec5dcb86ea95e903f23879beb19f0ab6be63a2aed070e",
+          "quality_reason": "",
+          "model_invoke_branch_taken": true
+        },
+        {
+          "image": "style-02-mamamamamama.png",
+          "sha256": "e4760171663c5fd97fee4a88165f381b020bb9e3fe2f3fc5dd9ceec2cf3e6d35",
+          "quality_reason": "",
+          "model_invoke_branch_taken": true
+        },
+        {
+          "image": "style-03-a.png",
+          "sha256": "a0c883ae90f5db274108c852d4cd9623b09fd72a63148fb992bbf4111fae83ae",
+          "quality_reason": "",
+          "model_invoke_branch_taken": true
+        },
+        {
+          "image": "style-03-mama.png",
+          "sha256": "0fd726717847159c1f36c89bd7a9e6fb8bb4cb2d5ad10b9d92d6be219c5cd6e7",
+          "quality_reason": "",
+          "model_invoke_branch_taken": true
+        },
+        {
+          "image": "style-03-kakak.png",
+          "sha256": "9787a170ae059cc8c19ef3a5e1b17428002c4f77e794014e7015d605affc2fb7",
+          "quality_reason": "",
+          "model_invoke_branch_taken": true
+        },
+        {
+          "image": "style-03-mamamamamama.png",
+          "sha256": "3e3d2a43a8de16257adcc6b83caad322ccd23587aa823a59d5ec34ec55fc59ff",
+          "quality_reason": "",
+          "model_invoke_branch_taken": true
+        }
+      ]
+    },
+    "rejection-diagnostics.json": {
+      "fixture_sha256": "4d92222c0fe73691efaeeba278252741b739cd04491121abb5ab579e25170f89",
+      "result_sha256": "7a15241e0c03de9627c8c5a3788a13f4cb9aee55dc715f0384c24faaa3aaa9d8",
+      "rows": [
+        {
+          "image": "unsupported_pattern-01.png",
+          "sha256": "c2671b221999c8bf1877f9eb881177ce66f6873351c9ffb54f2a13a39012dc7b",
+          "quality_reason": "",
+          "model_invoke_branch_taken": true
+        },
+        {
+          "image": "unsupported_pattern-02.png",
+          "sha256": "6358fe104765542d8d0b43635e758197c5d12274cfe44f6eddba25c53891c8c3",
+          "quality_reason": "",
+          "model_invoke_branch_taken": true
+        },
+        {
+          "image": "unsupported_pattern-03.png",
+          "sha256": "52ec357d1852e3abbb67acf6b204c7b810a208ef035d3328fa05b479ff45924c",
+          "quality_reason": "",
+          "model_invoke_branch_taken": true
+        },
+        {
+          "image": "multiple_rows-01.png",
+          "sha256": "a9c3902c771f59017504786dd911dd7fc470d7ed4b722bc33d4b0a58e99e4072",
+          "quality_reason": "",
+          "model_invoke_branch_taken": true
+        },
+        {
+          "image": "multiple_rows-02.png",
+          "sha256": "327ffb1018f6061a07ccf52c6f187e66352b704244cea688fa2ded13a3cf65de",
+          "quality_reason": "",
+          "model_invoke_branch_taken": true
+        },
+        {
+          "image": "multiple_rows-03.png",
+          "sha256": "36c10481b4bf9c0449de1dd2af20de292c83eea1be179b0dd3953099ee1f9e96",
+          "quality_reason": "",
+          "model_invoke_branch_taken": true
+        },
+        {
+          "image": "selection_cut-01.png",
+          "sha256": "9190ab6666e45d3ec851dd58121608a41d89be50798937b6b21c9f3a10a775fc",
+          "quality_reason": "",
+          "model_invoke_branch_taken": true
+        },
+        {
+          "image": "selection_cut-02.png",
+          "sha256": "c4d3ba863713a1c7786371990cf301efcd51430c5cfc4a0e5aee395ec0842cfc",
+          "quality_reason": "",
+          "model_invoke_branch_taken": true
+        },
+        {
+          "image": "selection_cut-03.png",
+          "sha256": "fd405298a41e6c79a05150e3792a5dbc4d52b30328dbf9c0ce0e1afe8e55a777",
+          "quality_reason": "",
+          "model_invoke_branch_taken": true
+        },
+        {
+          "image": "over_limit-01.png",
+          "sha256": "454bc5525f13aa0b66760526bfa177b949bec9242f25590a1496ee23ed058b12",
+          "quality_reason": "",
+          "model_invoke_branch_taken": true
+        },
+        {
+          "image": "over_limit-02.png",
+          "sha256": "92a9dd08b7925f14f50f04cba919a95636b5978c747c5dbec6bd26aa1159b2be",
+          "quality_reason": "",
+          "model_invoke_branch_taken": true
+        },
+        {
+          "image": "over_limit-03.png",
+          "sha256": "d80980039ef7cc745f8b55b488901a5a144985d4d2abe9ef57a122d83e9921fd",
+          "quality_reason": "",
+          "model_invoke_branch_taken": true
+        },
+        {
+          "image": "blank-white.png",
+          "sha256": "bd7d1ee432aa0e505a0ab048b3f0d31b744d4ed3fe91fca102ff3ef7d00d033e",
+          "quality_reason": "glare",
+          "model_invoke_branch_taken": false
+        },
+        {
+          "image": "blank-gray.png",
+          "sha256": "18e69fb42540c95b7a9efa9efb41d7a1e52fdb8680e61097e08426a8d9665303",
+          "quality_reason": "low_confidence",
+          "model_invoke_branch_taken": false
+        }
+      ]
+    }
+  },
+  "backend_modules_imported": [],
+  "previous_narrow_erratum_sha256": "a8522ad849db5d1322882f1dcee57101cec03955a411a5f83cde22e6326de8d2",
+  "verified_invocation_counts": {
+    "whole607": {
+      "fixtures_evaluated": 607,
+      "new_model_invocations": 0,
+      "source": "historically bound raw outputs reused"
+    },
+    "lite405": {
+      "fixtures_evaluated": 405,
+      "new_model_invocations": 405,
+      "source": "one unconditional invoke per record before quality, fresh helper counter"
+    },
+    "negative44": {
+      "fixtures_evaluated": 44,
+      "new_model_invocations": 44,
+      "source": "infer invokes before quality, fresh helper counter"
+    },
+    "legacy66": {
+      "fixtures_evaluated": 66,
+      "new_model_invocations": 66,
+      "source": "infer invokes before quality, fresh helper counter"
+    },
+    "repetition12": {
+      "fixtures_evaluated": 12,
+      "new_model_invocations": 12,
+      "source": "all twelve actual frozen pixels pass pre-inference quality"
+    },
+    "rejection14": {
+      "fixtures_evaluated": 14,
+      "new_model_invocations": 12,
+      "source": "two blank pixels fail pre-inference quality; the other twelve pass"
+    }
+  },
+  "actual_refresh_helper_sha256": "55d62bc806ec7bde2923cf404d65a76315d83b545e6ccfea0aa0435aaaf0fb83",
+  "actual_refresh_process_result_sha256": "b689f7d959c899038da0fdfa952b9d551c14cfa5c8f357ff2c154ce128cd3360",
+  "actual_refresh_log_sha256": "868acfcd41e57297ef2dddccb2fcc352095c5309cad6be8eb846a0822d3373a8",
+  "refresh_counter_assertion": "len(negatives) == 44 and len(legacy) == 66 and (calls == 405 + 44 + 66)",
+  "source_branch_checks": {
+    "parity_invokes_before_quality": true,
+    "negative_and_legacy_infer_invokes_before_quality": true,
+    "actual_helper_count_assertion": 515,
+    "actual_helper_exit_code": 0
+  },
+  "supporting_report_sha256": {
+    "public-benchmark.json": "53b97677aea261af1174a5f70edc81affbf272ca32f7611ae3df688638209944",
+    "decoder-parity-v2.json": "d40ed2edbdbac65b7df0fe603d180f5fcf0ea2ef04a6fb53cf05f14605a5b0c7",
+    "cached-word-replay.json": "3009469908dd1e691921e04c47a38390495c5b92f472b08a9954aea65b92eadf"
+  },
+  "validation_fixture_sha256": "e2ab968f7c4dcf7e774181fde687e1321f58d20567528af4b21fd03ff5a3e625"
+}

@@ -3,18 +3,18 @@ import { useCallback } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
 import { AccessibleButton, Screen, SectionCard } from '@/components';
-import LiveSingleCellCamera from '@/features/live/live-single-cell-camera';
+import WordPhotoCamera, {
+  type WordPhotoPreviewProps,
+} from '@/features/live/word-photo-camera';
+import WordScanScreen from '@/features/live/word-scan-screen';
 import type { WordDraftState } from '@/features/live/word-draft';
-import {
-  LiveScreenView,
-  type ScannerPreviewProps,
-} from '@/features/live/live-screen';
-import { useBrailleModel } from '@/ml';
-import { cameraPermissionPort, scannerPort } from '@/services';
+import { useWordModel } from '@/ml/word-model-loader';
+import { cameraPermissionPort } from '@/services';
 import { spacing, typography } from '@/theme';
 
 type LiveRuntimeScreenProps = {
-  readonly onWordDraftChange?: ((nextDraft: WordDraftState) => void) | undefined;
+  readonly onWordDraftChange?:
+    ((nextDraft: WordDraftState) => void) | undefined;
   readonly wordDraft?: WordDraftState | undefined;
 };
 
@@ -23,7 +23,7 @@ export default function LiveRuntimeScreen({
   wordDraft,
 }: LiveRuntimeScreenProps = {}) {
   const router = useRouter();
-  const modelState = useBrailleModel();
+  const modelState = useWordModel();
   const leaveLive = useCallback(() => {
     if (router.canGoBack()) {
       router.back();
@@ -32,16 +32,15 @@ export default function LiveRuntimeScreen({
     router.replace('/');
   }, [router]);
   const renderScannerPreview = useCallback(
-    ({ active, resetToken, sessionId, torchEnabled }: ScannerPreviewProps) =>
+    (props: WordPhotoPreviewProps) =>
       modelState.status === 'ready' ? (
-        <LiveSingleCellCamera
-          active={active}
-          key={sessionId}
+        <WordPhotoCamera
+          {...props}
+          key={props.sessionId}
           model={modelState.model}
-          resetToken={resetToken}
-          scanner={scannerPort}
-          sessionId={sessionId}
-          torchEnabled={torchEnabled}
+          thresholds={modelState.thresholds}
+          modelVersion={modelState.modelVersion}
+          acquireModel={modelState.acquireModel}
         />
       ) : null,
     [modelState],
@@ -50,8 +49,12 @@ export default function LiveRuntimeScreen({
   if (modelState.status === 'loading') {
     return (
       <Screen testID="live-model-loading">
-        <SectionCard title="Menyiapkan pemindai satu sel">
-          <Text accessibilityLiveRegion="polite" selectable style={typography.body}>
+        <SectionCard title="Menyiapkan pemindai kata">
+          <Text
+            accessibilityLiveRegion="polite"
+            selectable
+            style={typography.body}
+          >
             Menyiapkan pemindai sebelum kamera dinyalakan.
           </Text>
         </SectionCard>
@@ -92,11 +95,10 @@ export default function LiveRuntimeScreen({
   }
 
   return (
-    <LiveScreenView
+    <WordScanScreen
       cameraPermission={cameraPermissionPort}
       onWordDraftChange={onWordDraftChange}
-      renderScannerPreview={renderScannerPreview}
-      scanner={scannerPort}
+      renderCamera={renderScannerPreview}
       wordDraft={wordDraft}
     />
   );

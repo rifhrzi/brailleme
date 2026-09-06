@@ -7,8 +7,8 @@ Build production selalu fail-closed: model harus berstatus `verified` dan seluru
 ## Identitas kandidat
 
 - [ ] Git commit SHA: `________________________________________`
-- [ ] Model version: `0.3.0-candidate.1`
-- [ ] Model SHA-256: `7a41942cf330c9558884385221deb69f282adfd8d39be00a257c75ec9572c318`
+- [ ] Model kata version: `________________________________________`
+- [ ] Model kata SHA-256: `________________________________________`
 - [ ] EAS build ID: `________________________________________`
 - [ ] AAB SHA-256: `________________________________________`
 - [ ] Attestation exact-build: `artifacts/release/________________________.json`
@@ -31,6 +31,12 @@ Build production selalu fail-closed: model harus berstatus `verified` dan seluru
 
 ## Model dan physical holdout
 
+- [ ] Benchmark publik blok lengkap: akurasi kata utuh ≥75% (penolakan dihitung gagal), ketepatan hasil diterima ≥95%; keduanya dilaporkan menurut panjang 1–12 huruf, dengan panjang tanpa sampel dinyatakan jelas.
+- [ ] Batas kata/sel benchmark diperiksa sebelum inferensi; split menurut sumber dan pemilihan checkpoint/ambang hanya pada validation dibuktikan.
+- [ ] Seluruh 66 blok eksperimen lama dilaporkan sebagai regresi; bukan otomatis bukti batas kata lengkap.
+- [ ] Seluruh 44 negatif publik menghasilkan nol kata diterima; data ini tidak dinyatakan sebagai holdout independen.
+- [ ] Kesetaraan backend training–Keras TensorFlow–TFLite serta crop, orientasi, resize, urutan kanal, dan pemetaan kotak Android diuji pada artefak yang sama.
+
 - [ ] Hak penggunaan dan redistribusi seluruh dataset training dikonfirmasi tertulis.
 - [ ] Minimum 260 sampel holdout fisik independen, minimum 10 per kelas A-Z.
 - [ ] Holdout berasal dari sesi/sumber yang tidak pernah dipakai training atau tuning.
@@ -44,9 +50,11 @@ Build production selalu fail-closed: model harus berstatus `verified` dan seluru
 
 - [ ] Minimum dua perangkat fisik target dan versi Android dicatat.
 - [ ] Satu kata end-to-end lulus untuk 1-12 huruf, termasuk huruf berulang.
-- [ ] Tambah huruf idempoten; hasil lama tidak dapat masuk setelah pindai ulang atau pergantian sesi.
-- [ ] Hapus huruf terakhir, hapus kata, pindai ulang, pembacaan kata, dan interupsi TTS lulus.
-- [ ] Preview minimum 24 FPS dan p95 ROI-layak-ke-stabil maksimum 2 detik.
+- [ ] Satu tekanan Pindai kata hanya mengambil satu foto; hasil lama tidak dapat masuk setelah pindai ulang atau pergantian sesi.
+- [ ] Pindai ulang mengganti hasil secara utuh; Bacakan hanya aktif untuk foto terakhir yang berhasil; interupsi TTS lulus.
+- [ ] Lebar bingkai dapat disesuaikan untuk satu huruf dan kata panjang; area pilihan sesuai foto pada seluruh orientasi yang didukung.
+- [ ] Foto hanya di memori dan dilepas setelah pekerjaan latar selesai, termasuk pindai ulang, keluar layar, background, dan error.
+- [ ] Preview minimum 24 FPS dan p95 tekanan Pindai kata hingga hasil/penolakan maksimum 2 detik; capture dan inferensi dilaporkan terpisah.
 - [ ] Soak kamera minimum 10 menit tanpa crash, ANR, stall, atau false utterance.
 - [ ] Fresh install, izin grant/deny/permanent deny/revoke, background, lock, dan reboot lulus.
 - [ ] Cold start dalam mode pesawat lulus; kamera, inferensi, dan voice lokal tetap berfungsi.
@@ -69,7 +77,7 @@ Build production selalu fail-closed: model harus berstatus `verified` dan seluru
 
 ## Keputusan
 
-- [ ] Product owner menyetujui keterbatasan: input satu sel A-Z per langkah, output maksimum satu kata; bukan pemindaian kata/baris/halaman sekaligus.
+- [ ] Product owner menyetujui keterbatasan: satu kata Braille dasar A–Z, satu baris, 1–12 huruf; kalimat, halaman, singkatan, angka, dan tanda baca belum didukung.
 - [ ] Accessibility reviewer menyetujui bukti TalkBack/perangkat.
 - [ ] Model reviewer menyetujui holdout dan negative corpus.
 - [ ] Release owner menyetujui signing, policy, dan staged rollout.

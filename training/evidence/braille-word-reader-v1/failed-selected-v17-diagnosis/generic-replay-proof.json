@@ -1,0 +1,22 @@
+{
+  "status": "passed",
+  "scope": "Generic CLI replay equals original mirror-specific diagnosis for all810 model-word decisions and3258 GT-cell rows; no model inference.",
+  "command": [
+    "C:\\bm-envs\\angelina-benchmark\\Scripts\\python.exe",
+    ".braille-training-work\\word-scan-v1-20260905\\compare_held_cache.py",
+    "--baseline",
+    ".braille-training-work\\word-scan-v1-20260905\\selected-v17",
+    "--selection",
+    ".braille-training-work\\word-scan-v1-20260905\\selected-v17",
+    "--candidate-cache",
+    ".braille-training-work\\word-scan-v1-20260905\\run22\\held-diagnosis",
+    "--data",
+    ".braille-training-work\\word-scan-v1-20260905\\data",
+    "--output",
+    ".braille-training-work\\word-scan-v1-20260905\\run22\\held-diagnosis\\generic-replay-final"
+  ],
+  "script_sha256": "ee075dffbfb17b670a500904a64cb48071131d100ff2855f30d5e7fc839a9f01",
+  "original_comparison_sha256": "072eb832e019ff416ac2d8fd7d3018d51f06b532a55fcd45a4b2e98db8a76363",
+  "generic_comparison_sha256": "95aaa4704b212e4bd3f183f86d0af960021a36dc10812ed1028d54f2baf37aa8",
+  "word_and_cell_aggregate_equal": true
+}

@@ -1,0 +1,54 @@
+{
+  "scope": "Fixture preparation and visual source review only; model inference has not run",
+  "manifest_sha256": "4d92222c0fe73691efaeeba278252741b739cd04491121abb5ab579e25170f89",
+  "contact_sheet_sha256": "07d4108ba1c9f96441211c304c7105affa937d1f29b28fd8e75eda348a03fe4a",
+  "visual_review": {
+    "reviewer": "Codex image inspection, not independent human review",
+    "cases": 14,
+    "unsupported": "Masks 60 and 47 have visible neighboring A-Z cells establishing dot-column and row position. No isolated single-dot unsupported case.",
+    "multiple_rows": "Two separated natural front-side annotation rows visible in all three photos; each has 3 and 4 selected A-Z cells. The three photos show the same or closely related printed content, so these are correlated regressions.",
+    "selection_cut": "The guide bisects the terminal M cell into its two dot columns; terminal cell crosses guide/crop while complete preceding letters remain visible.",
+    "over_limit": "15,14,14 contiguous annotated cells respectively remain in the selection. Other unsupported patterns coexist and are explicitly retained; these cases do not isolate only the length rejection reason.",
+    "blanks": "Constant white and gray images contain no Braille."
+  },
+  "protected_inputs_observed_read_only": [
+    {
+      "file": ".braille-training-work/word-scan-v1-20260905/data/validation-words.json",
+      "sha256": "2ee26bbffd0457830eebe81dd48beb0b4bcb3a6dafe7957544f2ca3a0984c346",
+      "records": 135
+    },
+    {
+      "file": ".braille-training-work/word-scan-v1-20260905/data/validation-stress-selection.json",
+      "sha256": "e2ab968f7c4dcf7e774181fde687e1321f58d20567528af4b21fd03ff5a3e625",
+      "records": 405
+    },
+    {
+      "file": ".braille-training-work/word-scan-v1-20260905/data/external-words.json",
+      "sha256": "e69d7c0d9582aef7d51a2c15706f6bf62bc3cdfe35d22ad28ad007301d56b41b",
+      "records": 607
+    },
+    {
+      "file": ".braille-training-work/word-detector-20260905/public-evaluation/report.json",
+      "sha256": "61d392fbdd394ed0e0022c8577d12fb72227a7b5c2923168fc4031dac516234a",
+      "records": 66
+    }
+  ],
+  "negative_regression": {
+    "count": 44,
+    "inventory_sha256": "34bc9cbdbc3411428886576e554ce560e9ac234fae6d6898b10ec5d4cf0015b2"
+  },
+  "generator_sources_retained": "rejection-fixtures-v3/generator-source; helper recovered from hash-identical run10/source/word_data.py after ongoing training edits changed current word_data.py",
+  "not_independent_holdout": true,
+  "no_model_or_training_data_changes": true,
+  "regeneration": {
+    "archived_generator_used": true,
+    "new_output_directory": ".braille-training-work/word-scan-v1-20260905/rejection-fixtures-regeneration-check",
+    "manifest_byte_identical": true,
+    "png_files_byte_identical": 38,
+    "includes": {
+      "model_input_images": 14,
+      "original_source_crops": 12,
+      "annotated_reviews": 12
+    }
+  }
+}

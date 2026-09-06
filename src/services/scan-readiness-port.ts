@@ -1,8 +1,7 @@
 import { IS_PRODUCTION_BUILD } from '@/config';
-import { BRAILLE_MODEL_RELEASE_VERIFIED } from '@/ml/braille-model-contract';
+import { WORD_MODEL_BUNDLED, WORD_MODEL_RELEASE_VERIFIED } from '@/ml/word-model-assets';
 import { isBrailleModelRuntimeAllowed } from '@/ml/braille-model-runtime-policy';
 import type { ScanReadinessPort, ScannerPort } from '@/services/ports';
-import { scannerPort } from '@/services/single-cell-scanner-port';
 import type { ScanReadiness } from '@/types';
 
 const READY: ScanReadiness = Object.freeze({ available: true });
@@ -18,17 +17,22 @@ const SCANNER_NOT_AVAILABLE: ScanReadiness = Object.freeze({
 });
 
 type ScannerAvailabilityProbe = Pick<ScannerPort, 'getAvailability'>;
+// Keep the home route lightweight: actual native/model loading happens on Pindai.
+const PHOTO_SCANNER_PROBE: ScannerAvailabilityProbe = {
+  getAvailability: async () => ({ available: true }),
+};
 
 export class RuntimeScanReadinessPort implements ScanReadinessPort {
   constructor(
-    private readonly scanner: ScannerAvailabilityProbe = scannerPort,
+    private readonly scanner: ScannerAvailabilityProbe = PHOTO_SCANNER_PROBE,
     private readonly isProductionBuild = IS_PRODUCTION_BUILD,
-    private readonly releaseVerified = BRAILLE_MODEL_RELEASE_VERIFIED,
+    private readonly releaseVerified = WORD_MODEL_RELEASE_VERIFIED,
+    private readonly modelBundled = WORD_MODEL_BUNDLED,
   ) {}
 
   async getAvailability(): Promise<ScanReadiness> {
     if (
-      !isBrailleModelRuntimeAllowed(
+      !this.modelBundled || !isBrailleModelRuntimeAllowed(
         this.isProductionBuild,
         this.releaseVerified,
       )

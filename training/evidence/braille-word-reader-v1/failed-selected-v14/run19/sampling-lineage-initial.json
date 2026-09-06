@@ -1,0 +1,23 @@
+{
+  "status": "passed",
+  "created_at_utc": "2026-09-05T14:41:40.878573+00:00",
+  "audit_script_sha256": "6dd8a68292cdf12dfe88d225df6cde95a0a85ac826540f3da8b5535742a698df",
+  "protocol_sha256": "640aaa016b652fd5129e609ccc77d0b0f289136af01a6cb8a3d2ac81df8ac7fc",
+  "actual": {
+    "run": ".braille-training-work\\word-scan-v1-20260905\\run19",
+    "config_sha256": "0414ae3eca63d757d9a30e015bf257f7c741e9bfd19a4b9f46e1131fe594d349",
+    "manifest_sha256": "130c80f135af5677d6b78a5e401126f54b15204481aab6de00a88c443956c4fa",
+    "sampling_history_sha256": null,
+    "positive_records": 23600,
+    "negative_draws_per_epoch": 1282,
+    "observed_epochs": []
+  },
+  "verified_parent": null,
+  "eligible_retained_epochs": [],
+  "required_epoch": null,
+  "limitations": [
+    "This verifies complete record consumption and source separation, not that every cell survived stochastic augmentation.",
+    "Inherited coverage is tied to a re-audited retained parent checkpoint. New partial-cell supervision exposure is reported separately.",
+    "No images, model outputs or external metrics participate in this audit."
+  ]
+}

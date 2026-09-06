@@ -1,0 +1,427 @@
+{
+  "schema_version": 1,
+  "created_at_utc": "2026-09-05T20:56:38.932073+00:00",
+  "status": "static_config_and_arithmetic_passed",
+  "scope": "Read-only serialized checkpoint JSON and installed Keras pure padding-function AST. No graph creation, backend import, tensors, inference, training or accuracy claim.",
+  "parent": {
+    "path": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\selected-v15\\best-word.keras",
+    "sha256": "cce2432c0ddb8952c885dd58697589c285209588dafa81aacdd891b1660068b7",
+    "config_sha256": "3259be2b7e2179f89339fb123e651c7202b46d2b2330589b689c9d15a0e02415",
+    "name": "braille_word_reader_full_tail",
+    "plain_batchnorm_layers": 52,
+    "all_batchnorm_frozen": true
+  },
+  "coordinate_convention": "Input pixel-index centers begin q=0. Origins are nominal convolution support centers; edge padding truncates real-pixel support. With pixel-edge centers q=0.5, add0.5 to every reported origin.",
+  "receptive_field_recurrence": "jump_out=jump_in*stride; RF_out=RF_in+(effective_kernel-1)*jump_in; origin_out=origin_in+((effective_kernel-1)/2-pad_before)*jump_in.",
+  "actual_parent_states": {
+    "input_layer": {
+      "shape": [
+        192,
+        480,
+        3
+      ],
+      "jump": 1,
+      "origin": 0,
+      "rf": 1
+    },
+    "Conv1": {
+      "shape": [
+        96,
+        240,
+        16
+      ],
+      "jump": 2,
+      "origin": 1.0,
+      "rf": 3
+    },
+    "bn_Conv1": {
+      "shape": [
+        96,
+        240,
+        16
+      ],
+      "jump": 2,
+      "origin": 1.0,
+      "rf": 3
+    },
+    "Conv1_relu": {
+      "shape": [
+        96,
+        240,
+        16
+      ],
+      "jump": 2,
+      "origin": 1.0,
+      "rf": 3
+    },
+    "expanded_conv_depthwise": {
+      "shape": [
+        96,
+        240,
+        16
+      ],
+      "jump": 2,
+      "origin": 1.0,
+      "rf": 7
+    },
+    "expanded_conv_depthwise_BN": {
+      "shape": [
+        96,
+        240,
+        16
+      ],
+      "jump": 2,
+      "origin": 1.0,
+      "rf": 7
+    },
+    "expanded_conv_depthwise_relu": {
+      "shape": [
+        96,
+        240,
+        16
+      ],
+      "jump": 2,
+      "origin": 1.0,
+      "rf": 7
+    },
+    "expanded_conv_project": {
+      "shape": [
+        96,
+        240,
+        8
+      ],
+      "jump": 2,
+      "origin": 1.0,
+      "rf": 7
+    },
+    "expanded_conv_project_BN": {
+      "shape": [
+        96,
+        240,
+        8
+      ],
+      "jump": 2,
+      "origin": 1.0,
+      "rf": 7
+    },
+    "block_1_expand": {
+      "shape": [
+        96,
+        240,
+        48
+      ],
+      "jump": 2,
+      "origin": 1.0,
+      "rf": 7
+    },
+    "block_1_expand_BN": {
+      "shape": [
+        96,
+        240,
+        48
+      ],
+      "jump": 2,
+      "origin": 1.0,
+      "rf": 7
+    },
+    "block_1_expand_relu": {
+      "shape": [
+        96,
+        240,
+        48
+      ],
+      "jump": 2,
+      "origin": 1.0,
+      "rf": 7
+    },
+    "block_1_pad": {
+      "shape": [
+        97,
+        241,
+        48
+      ],
+      "jump": 2,
+      "origin": 1.0,
+      "rf": 7
+    },
+    "block_1_depthwise": {
+      "shape": [
+        48,
+        120,
+        48
+      ],
+      "jump": 4,
+      "origin": 3.0,
+      "rf": 11
+    },
+    "block_1_depthwise_BN": {
+      "shape": [
+        48,
+        120,
+        48
+      ],
+      "jump": 4,
+      "origin": 3.0,
+      "rf": 11
+    },
+    "block_1_depthwise_relu": {
+      "shape": [
+        48,
+        120,
+        48
+      ],
+      "jump": 4,
+      "origin": 3.0,
+      "rf": 11
+    },
+    "block_1_project": {
+      "shape": [
+        48,
+        120,
+        16
+      ],
+      "jump": 4,
+      "origin": 3.0,
+      "rf": 11
+    },
+    "block_1_project_BN": {
+      "shape": [
+        48,
+        120,
+        16
+      ],
+      "jump": 4,
+      "origin": 3.0,
+      "rf": 11
+    },
+    "block_2_expand": {
+      "shape": [
+        48,
+        120,
+        96
+      ],
+      "jump": 4,
+      "origin": 3.0,
+      "rf": 11
+    },
+    "block_2_expand_BN": {
+      "shape": [
+        48,
+        120,
+        96
+      ],
+      "jump": 4,
+      "origin": 3.0,
+      "rf": 11
+    },
+    "block_2_expand_relu": {
+      "shape": [
+        48,
+        120,
+        96
+      ],
+      "jump": 4,
+      "origin": 3.0,
+      "rf": 11
+    },
+    "block_2_depthwise": {
+      "shape": [
+        48,
+        120,
+        96
+      ],
+      "jump": 4,
+      "origin": 3.0,
+      "rf": 19
+    },
+    "block_2_depthwise_BN": {
+      "shape": [
+        48,
+        120,
+        96
+      ],
+      "jump": 4,
+      "origin": 3.0,
+      "rf": 19
+    },
+    "block_2_depthwise_relu": {
+      "shape": [
+        48,
+        120,
+        96
+      ],
+      "jump": 4,
+      "origin": 3.0,
+      "rf": 19
+    },
+    "block_2_project": {
+      "shape": [
+        48,
+        120,
+        16
+      ],
+      "jump": 4,
+      "origin": 3.0,
+      "rf": 19
+    },
+    "block_2_project_BN": {
+      "shape": [
+        48,
+        120,
+        16
+      ],
+      "jump": 4,
+      "origin": 3.0,
+      "rf": 19
+    },
+    "block_2_add": {
+      "shape": [
+        48,
+        120,
+        16
+      ],
+      "jump": 4,
+      "origin": 3.0,
+      "rf": 19
+    },
+    "block_3_expand": {
+      "shape": [
+        48,
+        120,
+        96
+      ],
+      "jump": 4,
+      "origin": 3.0,
+      "rf": 19
+    },
+    "block_3_expand_BN": {
+      "shape": [
+        48,
+        120,
+        96
+      ],
+      "jump": 4,
+      "origin": 3.0,
+      "rf": 19
+    },
+    "block_3_expand_relu": {
+      "shape": [
+        48,
+        120,
+        96
+      ],
+      "jump": 4,
+      "origin": 3.0,
+      "rf": 19
+    }
+  },
+  "proposed_depthwise": {
+    "shape": [
+      48,
+      120,
+      16
+    ],
+    "jump": 4,
+    "origin": 3.0,
+    "rf": 11
+  },
+  "proposed_projection": {
+    "shape": [
+      48,
+      120,
+      64
+    ],
+    "jump": 4,
+    "origin": 3,
+    "rf": 11,
+    "kernel_initializer": "zeros",
+    "bias_initializer": "zeros"
+  },
+  "same_padding": {
+    "input_shape": [
+      96,
+      240
+    ],
+    "kernel": [
+      3,
+      3
+    ],
+    "strides": [
+      2,
+      2
+    ],
+    "top": 0,
+    "bottom": 1,
+    "left": 0,
+    "right": 1,
+    "verified_installed_keras_pure_function": true
+  },
+  "insertion": {
+    "existing_merge": "add_1([fpn_4,up_sampling2d_1])",
+    "existing_activation": "activation(relu)",
+    "proposed": "Add projected stride2 residual to the unchanged result of add_1, immediately before activation. Keep original add_1 computation order unchanged.",
+    "old_fpn4_shape": [
+      null,
+      48,
+      120,
+      64
+    ],
+    "new_residual_shape": [
+      null,
+      48,
+      120,
+      64
+    ],
+    "output_shape": [
+      null,
+      48,
+      120,
+      11
+    ]
+  },
+  "parameter_count": {
+    "depthwise_kernel": 144,
+    "depthwise_bias": 0,
+    "pointwise_kernel": 1024,
+    "pointwise_bias": 64
+  },
+  "total_added_parameters": 1232,
+  "float32_parameter_bytes": 4928,
+  "mac_count": {
+    "depthwise": 829440,
+    "pointwise": 5898240
+  },
+  "total_added_macs": 6727680,
+  "mac_convention": "One scalar multiply-accumulate counts as one MAC; count dense scheduled kernel positions including boundary padding. Runtime fusion/sparsity can differ.",
+  "non_mac_additions": {
+    "pointwise_bias_adds": 368640,
+    "residual_adds": 368640
+  },
+  "activation_storage": {
+    "tap_float32_bytes": 1474560,
+    "depthwise_output_float32_bytes": 368640,
+    "projected_residual_float32_bytes": 1474560,
+    "limit": "Individual tensor sizes only, not additive measured peak RAM. Shared tap liveness, backend workspaces, activation gradients and optimizer state depend on execution."
+  },
+  "local_path_after_two_reader_convolutions": {
+    "new_branch_nominal_rf": 27,
+    "old_low_branch_nominal_rf": 35
+  },
+  "limitations": [
+    "CameraNormalization uses global spatial statistics; RF7/11/19/27/35 describe convolution support relative to its normalized output, not a strict local receptive field in raw RGB.",
+    "Existing FPN16/8/32 routes remain and contribute broader context; this branch does not shrink the complete model receptive field.",
+    "Tap already follows Conv1 stride2 and ReLU6; it cannot restore raw details lost there, and branch still downsamples to stride4 before prediction.",
+    "The tap precedes the expanded_conv_project 16-to8 bottleneck and block1 downsample, so it offers a shorter local feature path; detail preservation or Braille accuracy is unproven.",
+    "No high-resolution stride2 output head, dot coordinates or label mapping are introduced; six output probabilities and decoder grid remain unchanged.",
+    "Both 1x1 kernel and bias must initialize exactly zero. The new depthwise kernel must not also start zero, or the two-layer branch can have dead kernel gradients.",
+    "At zero pointwise weights the new depthwise kernel initially receives zero branch gradient; a nonzero pointwise update can unlock it. Actual finite-gradient and save/load/output equality checks remain required.",
+    "Fresh learned depthwise downsample is not automatically an antialias filter. Alignment and MAC arithmetic do not prove Keras/TFLite numerical parity or Android runtime performance."
+  ],
+  "source_sha256": {
+    "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\audit_stride2_tap_static.py": "cb4f293dd3185fcb7c7d59053c98410e5780d71e2c841be248799a90a9e35158",
+    "C:\\bm-envs\\word-scan-torch-only\\Lib\\site-packages\\keras\\src\\backend\\torch\\nn.py": "eb3f920f01db66c395089e59072c97b9283214868986cac40380f00ec16f9e85",
+    "C:\\bm-envs\\word-scan-torch-only\\Lib\\site-packages\\keras\\src\\backend\\tensorflow\\nn.py": "49a03861a966dfeeb5889e01b91c8d1dc2e0600ce17cb2cb1b30e8d6a4fabada",
+    "C:\\bm-envs\\word-scan-torch-only\\Lib\\site-packages\\keras\\src\\applications\\mobilenet_v2.py": "bba4c26c43686bbec920d6f5729f0d78a18545de7341d3004e7e3fb6c82ff142",
+    "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\selected-v15\\source\\word_model.py": "c446732a2905a612cd6f1dd64d2d3d01303b1c71933c34552d26f3b5052fd551"
+  }
+}

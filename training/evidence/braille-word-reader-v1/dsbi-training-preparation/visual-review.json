@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "created_at_utc": "2026-09-05T14:11:22.723293+00:00",
+  "reviewer": "AI assistant visual estimates",
+  "positive_examples_reviewed": 12,
+  "explicit_zero_examples_reviewed": 4,
+  "empty_recto_pages_reviewed": 1,
+  "blockers_found": [],
+  "finding": "Full grids and occupied bit positions qualitatively match the reviewed recto RGB, including sparse full-cell extent. Grid locations are approximate optical centers; the .3-pitch envelope need not contain every light/shadow tail.",
+  "coordinate_space": {
+    "input": "supplied already deskewed +recto.jpg",
+    "decode": "Pillow convert RGB",
+    "applied_rotation_degrees": 0,
+    "expand": false,
+    "fill": null,
+    "pre_crop_resampling": null,
+    "annotation_angle": "metadata about the original skewed scan, never applied again"
+  },
+  "unlisted_slot_policy_for_next_preparation": "Separate ignore_boxes, no objectness/geometry/bit positive target; mask zero stays explicit background.",
+  "primary_sources": [
+    "https://github.com/yeluo1994/DSBI/blob/6937eb8973efe5ff337e5c018485cb626303f5c2/README.md",
+    "https://github.com/IlyaOvodov/AngelinaReader/blob/328b0e0d30353d76ec06cde8560a876da5c46ab7/data_utils/dsbi.py",
+    "https://github.com/IlyaOvodov/AngelinaReader/blob/328b0e0d30353d76ec06cde8560a876da5c46ab7/data_utils/data.py#L279-L282",
+    "https://arxiv.org/abs/1811.10893"
+  ],
+  "hashes": {
+    "ASSESSMENT.md": "0d7e25fa97983e41137ce6014817c9327ab641249c66c58211832b3cdc702e6a",
+    "train-assessment.json": "32211c52e8759a54fc38c3b33b3e13f8869bb675b762fe407b9e0d69cd516dee",
+    "download-manifest.json": "b8de8f3e3291025608bb35a66f29ea12f0fffb2c5300eca63053d63325bb673b",
+    "angelina-exact-source-overlap.json": "0bebae33e72844ffb8eb220b9739af54cd0ee69a76f49c73ce74a4370f9d22a1",
+    "grid-contact-1.png": "17aae150158e766084fab2d8e23dbfb639348dc03a97099cdf97ba9b86e2c4ff",
+    "grid-contact-2.png": "2337d9feb2f062efdad6a42549a70698159fe2fcb23d92b8abddfffe960bc410",
+    "grid-contact-3.png": "af4feb9c970c4e4aa935fcf576e73c79ecb48c2df85f306bfbf56225d17ce034",
+    "explicit-zero-mask-review.png": "7eee4c8c377bc3288e1da4c9b8014f45daa7c981ad85c58f0b274578ff2d1572",
+    "explicit-zero-mask-review.json": "523c35ef406e9bef18532ee2b4d30a8102f6d2c2bd51fefe1c5844f2cd18a5f7",
+    "empty-recto-M+2.png": "79e4fc01cd70195ad94b22959a16bef8d9d9c75727ca1290b729e6d60dc2b974"
+  }
+}

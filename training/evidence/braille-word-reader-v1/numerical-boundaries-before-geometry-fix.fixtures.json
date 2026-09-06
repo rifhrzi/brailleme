@@ -1,0 +1,4793 @@
+{
+  "schema_version": 1,
+  "encoding": "row,column,eleven IEEE754 uint32 bit patterns",
+  "cases": [
+    {
+      "id": "blank",
+      "group": "control",
+      "peaks": [],
+      "thresholds": {
+        "proposalScore": 0.35,
+        "acceptScore": 0.4,
+        "dotConfidence": 0.7,
+        "nmsIou": 0.25,
+        "minCellWidth": 0.008,
+        "minCellHeight": 0.06,
+        "edgeMargin": 0.008,
+        "maxRowDeviation": 0.55,
+        "maxGapRatio": 1.2,
+        "maxOverlapRatio": 0.5
+      },
+      "selection": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "expected": {
+        "text": "",
+        "reason": "no_grid"
+      }
+    },
+    {
+      "id": "MAMA",
+      "group": "control",
+      "peaks": [
+        [
+          24,
+          30,
+          1065017672,
+          0,
+          0,
+          1028443341,
+          1048576000,
+          1065185444,
+          1008981770,
+          1065185444,
+          1065185444,
+          1008981770,
+          1008981770
+        ],
+        [
+          24,
+          39,
+          1065017672,
+          0,
+          0,
+          1028443341,
+          1048576000,
+          1065185444,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770
+        ],
+        [
+          24,
+          48,
+          1065017672,
+          0,
+          0,
+          1028443341,
+          1048576000,
+          1065185444,
+          1008981770,
+          1065185444,
+          1065185444,
+          1008981770,
+          1008981770
+        ],
+        [
+          24,
+          57,
+          1065017672,
+          0,
+          0,
+          1028443341,
+          1048576000,
+          1065185444,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770
+        ]
+      ],
+      "thresholds": {
+        "proposalScore": 0.35,
+        "acceptScore": 0.4,
+        "dotConfidence": 0.7,
+        "nmsIou": 0.25,
+        "minCellWidth": 0.008,
+        "minCellHeight": 0.06,
+        "edgeMargin": 0.008,
+        "maxRowDeviation": 0.55,
+        "maxGapRatio": 1.2,
+        "maxOverlapRatio": 0.5
+      },
+      "selection": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "expected": {
+        "text": "MAMA",
+        "reason": ""
+      }
+    },
+    {
+      "id": "KAKAK",
+      "group": "control",
+      "peaks": [
+        [
+          24,
+          30,
+          1065017672,
+          0,
+          0,
+          1028443341,
+          1048576000,
+          1065185444,
+          1008981770,
+          1065185444,
+          1008981770,
+          1008981770,
+          1008981770
+        ],
+        [
+          24,
+          39,
+          1065017672,
+          0,
+          0,
+          1028443341,
+          1048576000,
+          1065185444,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770
+        ],
+        [
+          24,
+          48,
+          1065017672,
+          0,
+          0,
+          1028443341,
+          1048576000,
+          1065185444,
+          1008981770,
+          1065185444,
+          1008981770,
+          1008981770,
+          1008981770
+        ],
+        [
+          24,
+          57,
+          1065017672,
+          0,
+          0,
+          1028443341,
+          1048576000,
+          1065185444,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770
+        ],
+        [
+          24,
+          66,
+          1065017672,
+          0,
+          0,
+          1028443341,
+          1048576000,
+          1065185444,
+          1008981770,
+          1065185444,
+          1008981770,
+          1008981770,
+          1008981770
+        ]
+      ],
+      "thresholds": {
+        "proposalScore": 0.35,
+        "acceptScore": 0.4,
+        "dotConfidence": 0.7,
+        "nmsIou": 0.25,
+        "minCellWidth": 0.008,
+        "minCellHeight": 0.06,
+        "edgeMargin": 0.008,
+        "maxRowDeviation": 0.55,
+        "maxGapRatio": 1.2,
+        "maxOverlapRatio": 0.5
+      },
+      "selection": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "expected": {
+        "text": "KAKAK",
+        "reason": ""
+      }
+    },
+    {
+      "id": "proposal-previous",
+      "group": "proposal",
+      "peaks": [
+        [
+          24,
+          48,
+          1051931442,
+          0,
+          0,
+          1028443341,
+          1048576000,
+          1065185444,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770
+        ]
+      ],
+      "thresholds": {
+        "proposalScore": 0.35,
+        "acceptScore": 0.4,
+        "dotConfidence": 0.7,
+        "nmsIou": 0.25,
+        "minCellWidth": 0.008,
+        "minCellHeight": 0.06,
+        "edgeMargin": 0.008,
+        "maxRowDeviation": 0.55,
+        "maxGapRatio": 1.2,
+        "maxOverlapRatio": 0.5
+      },
+      "selection": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "expected": {
+        "text": "",
+        "reason": "no_grid"
+      }
+    },
+    {
+      "id": "weak-middle-previous",
+      "group": "proposal",
+      "peaks": [
+        [
+          24,
+          42,
+          1065017672,
+          0,
+          0,
+          1028443341,
+          1048576000,
+          1065185444,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770
+        ],
+        [
+          24,
+          51,
+          1051931442,
+          0,
+          0,
+          1028443341,
+          1048576000,
+          1065185444,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770
+        ],
+        [
+          24,
+          60,
+          1065017672,
+          0,
+          0,
+          1028443341,
+          1048576000,
+          1065185444,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770
+        ]
+      ],
+      "thresholds": {
+        "proposalScore": 0.35,
+        "acceptScore": 0.4,
+        "dotConfidence": 0.7,
+        "nmsIou": 0.25,
+        "minCellWidth": 0.008,
+        "minCellHeight": 0.06,
+        "edgeMargin": 0.008,
+        "maxRowDeviation": 0.55,
+        "maxGapRatio": 1.2,
+        "maxOverlapRatio": 0.5
+      },
+      "selection": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "expected": {
+        "text": "",
+        "reason": "gap"
+      }
+    },
+    {
+      "id": "accept-previous",
+      "group": "acceptance",
+      "peaks": [
+        [
+          24,
+          48,
+          1053609164,
+          0,
+          0,
+          1028443341,
+          1048576000,
+          1065185444,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770
+        ]
+      ],
+      "thresholds": {
+        "proposalScore": 0.35,
+        "acceptScore": 0.4,
+        "dotConfidence": 0.7,
+        "nmsIou": 0.25,
+        "minCellWidth": 0.008,
+        "minCellHeight": 0.06,
+        "edgeMargin": 0.008,
+        "maxRowDeviation": 0.55,
+        "maxGapRatio": 1.2,
+        "maxOverlapRatio": 0.5
+      },
+      "selection": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "expected": {
+        "text": "",
+        "reason": "low_confidence"
+      }
+    },
+    {
+      "id": "active-dot-previous",
+      "group": "dot",
+      "peaks": [
+        [
+          24,
+          48,
+          1065017672,
+          0,
+          0,
+          1028443341,
+          1048576000,
+          1060320050,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770
+        ]
+      ],
+      "thresholds": {
+        "proposalScore": 0.35,
+        "acceptScore": 0.4,
+        "dotConfidence": 0.7,
+        "nmsIou": 0.25,
+        "minCellWidth": 0.008,
+        "minCellHeight": 0.06,
+        "edgeMargin": 0.008,
+        "maxRowDeviation": 0.55,
+        "maxGapRatio": 1.2,
+        "maxOverlapRatio": 0.5
+      },
+      "selection": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "expected": {
+        "text": "",
+        "reason": "low_confidence"
+      }
+    },
+    {
+      "id": "absent-dot-previous",
+      "group": "dot",
+      "peaks": [
+        [
+          24,
+          48,
+          1065017672,
+          0,
+          0,
+          1028443341,
+          1048576000,
+          1065185444,
+          1050253721,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770
+        ]
+      ],
+      "thresholds": {
+        "proposalScore": 0.35,
+        "acceptScore": 0.4,
+        "dotConfidence": 0.7,
+        "nmsIou": 0.25,
+        "minCellWidth": 0.008,
+        "minCellHeight": 0.06,
+        "edgeMargin": 0.008,
+        "maxRowDeviation": 0.55,
+        "maxGapRatio": 1.2,
+        "maxOverlapRatio": 0.5
+      },
+      "selection": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "expected": {
+        "text": "A",
+        "reason": ""
+      }
+    },
+    {
+      "id": "minimum-width-previous",
+      "group": "minimum_size",
+      "peaks": [
+        [
+          24,
+          48,
+          1065017672,
+          0,
+          0,
+          1006834286,
+          1048576000,
+          1065185444,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770
+        ]
+      ],
+      "thresholds": {
+        "proposalScore": 0.35,
+        "acceptScore": 0.4,
+        "dotConfidence": 0.7,
+        "nmsIou": 0.25,
+        "minCellWidth": 0.008,
+        "minCellHeight": 0.06,
+        "edgeMargin": 0.008,
+        "maxRowDeviation": 0.55,
+        "maxGapRatio": 1.2,
+        "maxOverlapRatio": 0.5
+      },
+      "selection": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      }
+    },
+    {
+      "id": "minimum-height-previous",
+      "group": "minimum_size",
+      "peaks": [
+        [
+          24,
+          48,
+          1065017672,
+          0,
+          0,
+          1028443341,
+          1031127694,
+          1065185444,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770
+        ]
+      ],
+      "thresholds": {
+        "proposalScore": 0.35,
+        "acceptScore": 0.4,
+        "dotConfidence": 0.7,
+        "nmsIou": 0.25,
+        "minCellWidth": 0.008,
+        "minCellHeight": 0.06,
+        "edgeMargin": 0.008,
+        "maxRowDeviation": 0.55,
+        "maxGapRatio": 1.2,
+        "maxOverlapRatio": 0.5
+      },
+      "selection": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      }
+    },
+    {
+      "id": "gap-height-previous",
+      "group": "gap",
+      "peaks": [
+        [
+          24,
+          36,
+          1065017672,
+          0,
+          0,
+          1028443341,
+          1042284543,
+          1065185444,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770
+        ],
+        [
+          24,
+          45,
+          1065017672,
+          0,
+          0,
+          1028443341,
+          1042284543,
+          1065185444,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770
+        ]
+      ],
+      "thresholds": {
+        "proposalScore": 0.35,
+        "acceptScore": 0.4,
+        "dotConfidence": 0.7,
+        "nmsIou": 0.25,
+        "minCellWidth": 0.008,
+        "minCellHeight": 0.06,
+        "edgeMargin": 0.008,
+        "maxRowDeviation": 0.55,
+        "maxGapRatio": 1.2,
+        "maxOverlapRatio": 0.5
+      },
+      "selection": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      }
+    },
+    {
+      "id": "plateau-previous",
+      "group": "local_maximum",
+      "peaks": [
+        [
+          24,
+          48,
+          1065017672,
+          0,
+          0,
+          1028443341,
+          1048576000,
+          1065185444,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770
+        ],
+        [
+          24,
+          49,
+          1065017671,
+          0,
+          0,
+          1028443341,
+          1048576000,
+          1065185444,
+          1065185444,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770
+        ]
+      ],
+      "thresholds": {
+        "proposalScore": 0.35,
+        "acceptScore": 0.4,
+        "dotConfidence": 0.7,
+        "nmsIou": 0.25,
+        "minCellWidth": 0.008,
+        "minCellHeight": 0.06,
+        "edgeMargin": 0.008,
+        "maxRowDeviation": 0.55,
+        "maxGapRatio": 1.2,
+        "maxOverlapRatio": 0.5
+      },
+      "selection": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      }
+    },
+    {
+      "id": "proposal-rounded",
+      "group": "proposal",
+      "peaks": [
+        [
+          24,
+          48,
+          1051931443,
+          0,
+          0,
+          1028443341,
+          1048576000,
+          1065185444,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770
+        ]
+      ],
+      "thresholds": {
+        "proposalScore": 0.35,
+        "acceptScore": 0.4,
+        "dotConfidence": 0.7,
+        "nmsIou": 0.25,
+        "minCellWidth": 0.008,
+        "minCellHeight": 0.06,
+        "edgeMargin": 0.008,
+        "maxRowDeviation": 0.55,
+        "maxGapRatio": 1.2,
+        "maxOverlapRatio": 0.5
+      },
+      "selection": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "expected": {
+        "text": "",
+        "reason": "no_grid"
+      }
+    },
+    {
+      "id": "weak-middle-rounded",
+      "group": "proposal",
+      "peaks": [
+        [
+          24,
+          42,
+          1065017672,
+          0,
+          0,
+          1028443341,
+          1048576000,
+          1065185444,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770
+        ],
+        [
+          24,
+          51,
+          1051931443,
+          0,
+          0,
+          1028443341,
+          1048576000,
+          1065185444,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770
+        ],
+        [
+          24,
+          60,
+          1065017672,
+          0,
+          0,
+          1028443341,
+          1048576000,
+          1065185444,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770
+        ]
+      ],
+      "thresholds": {
+        "proposalScore": 0.35,
+        "acceptScore": 0.4,
+        "dotConfidence": 0.7,
+        "nmsIou": 0.25,
+        "minCellWidth": 0.008,
+        "minCellHeight": 0.06,
+        "edgeMargin": 0.008,
+        "maxRowDeviation": 0.55,
+        "maxGapRatio": 1.2,
+        "maxOverlapRatio": 0.5
+      },
+      "selection": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "expected": {
+        "text": "",
+        "reason": "gap"
+      }
+    },
+    {
+      "id": "accept-rounded",
+      "group": "acceptance",
+      "peaks": [
+        [
+          24,
+          48,
+          1053609165,
+          0,
+          0,
+          1028443341,
+          1048576000,
+          1065185444,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770
+        ]
+      ],
+      "thresholds": {
+        "proposalScore": 0.35,
+        "acceptScore": 0.4,
+        "dotConfidence": 0.7,
+        "nmsIou": 0.25,
+        "minCellWidth": 0.008,
+        "minCellHeight": 0.06,
+        "edgeMargin": 0.008,
+        "maxRowDeviation": 0.55,
+        "maxGapRatio": 1.2,
+        "maxOverlapRatio": 0.5
+      },
+      "selection": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "expected": {
+        "text": "A",
+        "reason": ""
+      }
+    },
+    {
+      "id": "active-dot-rounded",
+      "group": "dot",
+      "peaks": [
+        [
+          24,
+          48,
+          1065017672,
+          0,
+          0,
+          1028443341,
+          1048576000,
+          1060320051,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770
+        ]
+      ],
+      "thresholds": {
+        "proposalScore": 0.35,
+        "acceptScore": 0.4,
+        "dotConfidence": 0.7,
+        "nmsIou": 0.25,
+        "minCellWidth": 0.008,
+        "minCellHeight": 0.06,
+        "edgeMargin": 0.008,
+        "maxRowDeviation": 0.55,
+        "maxGapRatio": 1.2,
+        "maxOverlapRatio": 0.5
+      },
+      "selection": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "expected": {
+        "text": "",
+        "reason": "low_confidence"
+      }
+    },
+    {
+      "id": "absent-dot-rounded",
+      "group": "dot",
+      "peaks": [
+        [
+          24,
+          48,
+          1065017672,
+          0,
+          0,
+          1028443341,
+          1048576000,
+          1065185444,
+          1050253722,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770
+        ]
+      ],
+      "thresholds": {
+        "proposalScore": 0.35,
+        "acceptScore": 0.4,
+        "dotConfidence": 0.7,
+        "nmsIou": 0.25,
+        "minCellWidth": 0.008,
+        "minCellHeight": 0.06,
+        "edgeMargin": 0.008,
+        "maxRowDeviation": 0.55,
+        "maxGapRatio": 1.2,
+        "maxOverlapRatio": 0.5
+      },
+      "selection": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "expected": {
+        "text": "",
+        "reason": "low_confidence"
+      }
+    },
+    {
+      "id": "minimum-width-rounded",
+      "group": "minimum_size",
+      "peaks": [
+        [
+          24,
+          48,
+          1065017672,
+          0,
+          0,
+          1006834287,
+          1048576000,
+          1065185444,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770
+        ]
+      ],
+      "thresholds": {
+        "proposalScore": 0.35,
+        "acceptScore": 0.4,
+        "dotConfidence": 0.7,
+        "nmsIou": 0.25,
+        "minCellWidth": 0.008,
+        "minCellHeight": 0.06,
+        "edgeMargin": 0.008,
+        "maxRowDeviation": 0.55,
+        "maxGapRatio": 1.2,
+        "maxOverlapRatio": 0.5
+      },
+      "selection": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      }
+    },
+    {
+      "id": "minimum-height-rounded",
+      "group": "minimum_size",
+      "peaks": [
+        [
+          24,
+          48,
+          1065017672,
+          0,
+          0,
+          1028443341,
+          1031127695,
+          1065185444,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770
+        ]
+      ],
+      "thresholds": {
+        "proposalScore": 0.35,
+        "acceptScore": 0.4,
+        "dotConfidence": 0.7,
+        "nmsIou": 0.25,
+        "minCellWidth": 0.008,
+        "minCellHeight": 0.06,
+        "edgeMargin": 0.008,
+        "maxRowDeviation": 0.55,
+        "maxGapRatio": 1.2,
+        "maxOverlapRatio": 0.5
+      },
+      "selection": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      }
+    },
+    {
+      "id": "gap-height-rounded",
+      "group": "gap",
+      "peaks": [
+        [
+          24,
+          36,
+          1065017672,
+          0,
+          0,
+          1028443341,
+          1042284544,
+          1065185444,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770
+        ],
+        [
+          24,
+          45,
+          1065017672,
+          0,
+          0,
+          1028443341,
+          1042284544,
+          1065185444,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770
+        ]
+      ],
+      "thresholds": {
+        "proposalScore": 0.35,
+        "acceptScore": 0.4,
+        "dotConfidence": 0.7,
+        "nmsIou": 0.25,
+        "minCellWidth": 0.008,
+        "minCellHeight": 0.06,
+        "edgeMargin": 0.008,
+        "maxRowDeviation": 0.55,
+        "maxGapRatio": 1.2,
+        "maxOverlapRatio": 0.5
+      },
+      "selection": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      }
+    },
+    {
+      "id": "plateau-rounded",
+      "group": "local_maximum",
+      "peaks": [
+        [
+          24,
+          48,
+          1065017672,
+          0,
+          0,
+          1028443341,
+          1048576000,
+          1065185444,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770
+        ],
+        [
+          24,
+          49,
+          1065017672,
+          0,
+          0,
+          1028443341,
+          1048576000,
+          1065185444,
+          1065185444,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770
+        ]
+      ],
+      "thresholds": {
+        "proposalScore": 0.35,
+        "acceptScore": 0.4,
+        "dotConfidence": 0.7,
+        "nmsIou": 0.25,
+        "minCellWidth": 0.008,
+        "minCellHeight": 0.06,
+        "edgeMargin": 0.008,
+        "maxRowDeviation": 0.55,
+        "maxGapRatio": 1.2,
+        "maxOverlapRatio": 0.5
+      },
+      "selection": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      }
+    },
+    {
+      "id": "proposal-next",
+      "group": "proposal",
+      "peaks": [
+        [
+          24,
+          48,
+          1051931444,
+          0,
+          0,
+          1028443341,
+          1048576000,
+          1065185444,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770
+        ]
+      ],
+      "thresholds": {
+        "proposalScore": 0.35,
+        "acceptScore": 0.4,
+        "dotConfidence": 0.7,
+        "nmsIou": 0.25,
+        "minCellWidth": 0.008,
+        "minCellHeight": 0.06,
+        "edgeMargin": 0.008,
+        "maxRowDeviation": 0.55,
+        "maxGapRatio": 1.2,
+        "maxOverlapRatio": 0.5
+      },
+      "selection": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "expected": {
+        "text": "",
+        "reason": "low_confidence"
+      }
+    },
+    {
+      "id": "weak-middle-next",
+      "group": "proposal",
+      "peaks": [
+        [
+          24,
+          42,
+          1065017672,
+          0,
+          0,
+          1028443341,
+          1048576000,
+          1065185444,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770
+        ],
+        [
+          24,
+          51,
+          1051931444,
+          0,
+          0,
+          1028443341,
+          1048576000,
+          1065185444,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770
+        ],
+        [
+          24,
+          60,
+          1065017672,
+          0,
+          0,
+          1028443341,
+          1048576000,
+          1065185444,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770
+        ]
+      ],
+      "thresholds": {
+        "proposalScore": 0.35,
+        "acceptScore": 0.4,
+        "dotConfidence": 0.7,
+        "nmsIou": 0.25,
+        "minCellWidth": 0.008,
+        "minCellHeight": 0.06,
+        "edgeMargin": 0.008,
+        "maxRowDeviation": 0.55,
+        "maxGapRatio": 1.2,
+        "maxOverlapRatio": 0.5
+      },
+      "selection": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "expected": {
+        "text": "",
+        "reason": "low_confidence"
+      }
+    },
+    {
+      "id": "accept-next",
+      "group": "acceptance",
+      "peaks": [
+        [
+          24,
+          48,
+          1053609166,
+          0,
+          0,
+          1028443341,
+          1048576000,
+          1065185444,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770
+        ]
+      ],
+      "thresholds": {
+        "proposalScore": 0.35,
+        "acceptScore": 0.4,
+        "dotConfidence": 0.7,
+        "nmsIou": 0.25,
+        "minCellWidth": 0.008,
+        "minCellHeight": 0.06,
+        "edgeMargin": 0.008,
+        "maxRowDeviation": 0.55,
+        "maxGapRatio": 1.2,
+        "maxOverlapRatio": 0.5
+      },
+      "selection": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "expected": {
+        "text": "A",
+        "reason": ""
+      }
+    },
+    {
+      "id": "active-dot-next",
+      "group": "dot",
+      "peaks": [
+        [
+          24,
+          48,
+          1065017672,
+          0,
+          0,
+          1028443341,
+          1048576000,
+          1060320052,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770
+        ]
+      ],
+      "thresholds": {
+        "proposalScore": 0.35,
+        "acceptScore": 0.4,
+        "dotConfidence": 0.7,
+        "nmsIou": 0.25,
+        "minCellWidth": 0.008,
+        "minCellHeight": 0.06,
+        "edgeMargin": 0.008,
+        "maxRowDeviation": 0.55,
+        "maxGapRatio": 1.2,
+        "maxOverlapRatio": 0.5
+      },
+      "selection": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "expected": {
+        "text": "A",
+        "reason": ""
+      }
+    },
+    {
+      "id": "absent-dot-next",
+      "group": "dot",
+      "peaks": [
+        [
+          24,
+          48,
+          1065017672,
+          0,
+          0,
+          1028443341,
+          1048576000,
+          1065185444,
+          1050253723,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770
+        ]
+      ],
+      "thresholds": {
+        "proposalScore": 0.35,
+        "acceptScore": 0.4,
+        "dotConfidence": 0.7,
+        "nmsIou": 0.25,
+        "minCellWidth": 0.008,
+        "minCellHeight": 0.06,
+        "edgeMargin": 0.008,
+        "maxRowDeviation": 0.55,
+        "maxGapRatio": 1.2,
+        "maxOverlapRatio": 0.5
+      },
+      "selection": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "expected": {
+        "text": "",
+        "reason": "low_confidence"
+      }
+    },
+    {
+      "id": "minimum-width-next",
+      "group": "minimum_size",
+      "peaks": [
+        [
+          24,
+          48,
+          1065017672,
+          0,
+          0,
+          1006834288,
+          1048576000,
+          1065185444,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770
+        ]
+      ],
+      "thresholds": {
+        "proposalScore": 0.35,
+        "acceptScore": 0.4,
+        "dotConfidence": 0.7,
+        "nmsIou": 0.25,
+        "minCellWidth": 0.008,
+        "minCellHeight": 0.06,
+        "edgeMargin": 0.008,
+        "maxRowDeviation": 0.55,
+        "maxGapRatio": 1.2,
+        "maxOverlapRatio": 0.5
+      },
+      "selection": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      }
+    },
+    {
+      "id": "minimum-height-next",
+      "group": "minimum_size",
+      "peaks": [
+        [
+          24,
+          48,
+          1065017672,
+          0,
+          0,
+          1028443341,
+          1031127696,
+          1065185444,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770
+        ]
+      ],
+      "thresholds": {
+        "proposalScore": 0.35,
+        "acceptScore": 0.4,
+        "dotConfidence": 0.7,
+        "nmsIou": 0.25,
+        "minCellWidth": 0.008,
+        "minCellHeight": 0.06,
+        "edgeMargin": 0.008,
+        "maxRowDeviation": 0.55,
+        "maxGapRatio": 1.2,
+        "maxOverlapRatio": 0.5
+      },
+      "selection": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      }
+    },
+    {
+      "id": "gap-height-next",
+      "group": "gap",
+      "peaks": [
+        [
+          24,
+          36,
+          1065017672,
+          0,
+          0,
+          1028443341,
+          1042284545,
+          1065185444,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770
+        ],
+        [
+          24,
+          45,
+          1065017672,
+          0,
+          0,
+          1028443341,
+          1042284545,
+          1065185444,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770
+        ]
+      ],
+      "thresholds": {
+        "proposalScore": 0.35,
+        "acceptScore": 0.4,
+        "dotConfidence": 0.7,
+        "nmsIou": 0.25,
+        "minCellWidth": 0.008,
+        "minCellHeight": 0.06,
+        "edgeMargin": 0.008,
+        "maxRowDeviation": 0.55,
+        "maxGapRatio": 1.2,
+        "maxOverlapRatio": 0.5
+      },
+      "selection": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      }
+    },
+    {
+      "id": "plateau-next",
+      "group": "local_maximum",
+      "peaks": [
+        [
+          24,
+          48,
+          1065017672,
+          0,
+          0,
+          1028443341,
+          1048576000,
+          1065185444,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770
+        ],
+        [
+          24,
+          49,
+          1065017673,
+          0,
+          0,
+          1028443341,
+          1048576000,
+          1065185444,
+          1065185444,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770
+        ]
+      ],
+      "thresholds": {
+        "proposalScore": 0.35,
+        "acceptScore": 0.4,
+        "dotConfidence": 0.7,
+        "nmsIou": 0.25,
+        "minCellWidth": 0.008,
+        "minCellHeight": 0.06,
+        "edgeMargin": 0.008,
+        "maxRowDeviation": 0.55,
+        "maxGapRatio": 1.2,
+        "maxOverlapRatio": 0.5
+      },
+      "selection": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      }
+    },
+    {
+      "id": "selection-0-left--1",
+      "group": "selection_clipping",
+      "peaks": [
+        [
+          24,
+          36,
+          1065017672,
+          1050253722,
+          1060320051,
+          1028443341,
+          1045891645,
+          1065185444,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770
+        ]
+      ],
+      "thresholds": {
+        "proposalScore": 0.35,
+        "acceptScore": 0.4,
+        "dotConfidence": 0.7,
+        "nmsIou": 0.25,
+        "minCellWidth": 0.008,
+        "minCellHeight": 0.06,
+        "edgeMargin": 0.008,
+        "maxRowDeviation": 0.55,
+        "maxGapRatio": 1.2,
+        "maxOverlapRatio": 0.5
+      },
+      "selection": {
+        "x": 0.277499999726812,
+        "y": 0,
+        "width": 0.7225000002731881,
+        "height": 1
+      }
+    },
+    {
+      "id": "selection-0-right--1",
+      "group": "selection_clipping",
+      "peaks": [
+        [
+          24,
+          36,
+          1065017672,
+          1050253722,
+          1060320051,
+          1028443341,
+          1045891645,
+          1065185444,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770
+        ]
+      ],
+      "thresholds": {
+        "proposalScore": 0.35,
+        "acceptScore": 0.4,
+        "dotConfidence": 0.7,
+        "nmsIou": 0.25,
+        "minCellWidth": 0.008,
+        "minCellHeight": 0.06,
+        "edgeMargin": 0.008,
+        "maxRowDeviation": 0.55,
+        "maxGapRatio": 1.2,
+        "maxOverlapRatio": 0.5
+      },
+      "selection": {
+        "x": 0,
+        "y": 0,
+        "width": 0.32750000047187006,
+        "height": 1
+      }
+    },
+    {
+      "id": "selection-0-top--1",
+      "group": "selection_clipping",
+      "peaks": [
+        [
+          24,
+          36,
+          1065017672,
+          1050253722,
+          1060320051,
+          1028443341,
+          1045891645,
+          1065185444,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770
+        ]
+      ],
+      "thresholds": {
+        "proposalScore": 0.35,
+        "acceptScore": 0.4,
+        "dotConfidence": 0.7,
+        "nmsIou": 0.25,
+        "minCellWidth": 0.008,
+        "minCellHeight": 0.06,
+        "edgeMargin": 0.008,
+        "maxRowDeviation": 0.55,
+        "maxGapRatio": 1.2,
+        "maxOverlapRatio": 0.5
+      },
+      "selection": {
+        "x": 0,
+        "y": 0.409583336363236,
+        "width": 1,
+        "height": 0.590416663636764
+      }
+    },
+    {
+      "id": "selection-0-bottom--1",
+      "group": "selection_clipping",
+      "peaks": [
+        [
+          24,
+          36,
+          1065017672,
+          1050253722,
+          1060320051,
+          1028443341,
+          1045891645,
+          1065185444,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770
+        ]
+      ],
+      "thresholds": {
+        "proposalScore": 0.35,
+        "acceptScore": 0.4,
+        "dotConfidence": 0.7,
+        "nmsIou": 0.25,
+        "minCellWidth": 0.008,
+        "minCellHeight": 0.06,
+        "edgeMargin": 0.008,
+        "maxRowDeviation": 0.55,
+        "maxGapRatio": 1.2,
+        "maxOverlapRatio": 0.5
+      },
+      "selection": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 0.619583329806725
+      }
+    },
+    {
+      "id": "selection-0-touch-right--1",
+      "group": "selection_exclusion",
+      "peaks": [
+        [
+          24,
+          36,
+          1065017672,
+          1050253722,
+          1060320051,
+          1028443341,
+          1045891645,
+          1065185444,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770
+        ]
+      ],
+      "thresholds": {
+        "proposalScore": 0.35,
+        "acceptScore": 0.4,
+        "dotConfidence": 0.7,
+        "nmsIou": 0.25,
+        "minCellWidth": 0.008,
+        "minCellHeight": 0.06,
+        "edgeMargin": 0.008,
+        "maxRowDeviation": 0.55,
+        "maxGapRatio": 1.2,
+        "maxOverlapRatio": 0.5
+      },
+      "selection": {
+        "x": 0.32750000047187006,
+        "y": 0,
+        "width": 0.67249999952813,
+        "height": 1
+      }
+    },
+    {
+      "id": "selection-0-touch-left--1",
+      "group": "selection_exclusion",
+      "peaks": [
+        [
+          24,
+          36,
+          1065017672,
+          1050253722,
+          1060320051,
+          1028443341,
+          1045891645,
+          1065185444,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770
+        ]
+      ],
+      "thresholds": {
+        "proposalScore": 0.35,
+        "acceptScore": 0.4,
+        "dotConfidence": 0.7,
+        "nmsIou": 0.25,
+        "minCellWidth": 0.008,
+        "minCellHeight": 0.06,
+        "edgeMargin": 0.008,
+        "maxRowDeviation": 0.55,
+        "maxGapRatio": 1.2,
+        "maxOverlapRatio": 0.5
+      },
+      "selection": {
+        "x": 0,
+        "y": 0,
+        "width": 0.277499999726812,
+        "height": 1
+      }
+    },
+    {
+      "id": "selection-0-touch-bottom--1",
+      "group": "selection_exclusion",
+      "peaks": [
+        [
+          24,
+          36,
+          1065017672,
+          1050253722,
+          1060320051,
+          1028443341,
+          1045891645,
+          1065185444,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770
+        ]
+      ],
+      "thresholds": {
+        "proposalScore": 0.35,
+        "acceptScore": 0.4,
+        "dotConfidence": 0.7,
+        "nmsIou": 0.25,
+        "minCellWidth": 0.008,
+        "minCellHeight": 0.06,
+        "edgeMargin": 0.008,
+        "maxRowDeviation": 0.55,
+        "maxGapRatio": 1.2,
+        "maxOverlapRatio": 0.5
+      },
+      "selection": {
+        "x": 0,
+        "y": 0.619583329806725,
+        "width": 1,
+        "height": 0.38041667019327496
+      }
+    },
+    {
+      "id": "selection-0-touch-top--1",
+      "group": "selection_exclusion",
+      "peaks": [
+        [
+          24,
+          36,
+          1065017672,
+          1050253722,
+          1060320051,
+          1028443341,
+          1045891645,
+          1065185444,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770
+        ]
+      ],
+      "thresholds": {
+        "proposalScore": 0.35,
+        "acceptScore": 0.4,
+        "dotConfidence": 0.7,
+        "nmsIou": 0.25,
+        "minCellWidth": 0.008,
+        "minCellHeight": 0.06,
+        "edgeMargin": 0.008,
+        "maxRowDeviation": 0.55,
+        "maxGapRatio": 1.2,
+        "maxOverlapRatio": 0.5
+      },
+      "selection": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 0.409583336363236
+      }
+    },
+    {
+      "id": "selection-0-left-0",
+      "group": "selection_clipping",
+      "peaks": [
+        [
+          24,
+          36,
+          1065017672,
+          1050253722,
+          1060320051,
+          1028443341,
+          1045891645,
+          1065185444,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770
+        ]
+      ],
+      "thresholds": {
+        "proposalScore": 0.35,
+        "acceptScore": 0.4,
+        "dotConfidence": 0.7,
+        "nmsIou": 0.25,
+        "minCellWidth": 0.008,
+        "minCellHeight": 0.06,
+        "edgeMargin": 0.008,
+        "maxRowDeviation": 0.55,
+        "maxGapRatio": 1.2,
+        "maxOverlapRatio": 0.5
+      },
+      "selection": {
+        "x": 0.27749999972681205,
+        "y": 0,
+        "width": 0.722500000273188,
+        "height": 1
+      }
+    },
+    {
+      "id": "selection-0-right-0",
+      "group": "selection_clipping",
+      "peaks": [
+        [
+          24,
+          36,
+          1065017672,
+          1050253722,
+          1060320051,
+          1028443341,
+          1045891645,
+          1065185444,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770
+        ]
+      ],
+      "thresholds": {
+        "proposalScore": 0.35,
+        "acceptScore": 0.4,
+        "dotConfidence": 0.7,
+        "nmsIou": 0.25,
+        "minCellWidth": 0.008,
+        "minCellHeight": 0.06,
+        "edgeMargin": 0.008,
+        "maxRowDeviation": 0.55,
+        "maxGapRatio": 1.2,
+        "maxOverlapRatio": 0.5
+      },
+      "selection": {
+        "x": 0,
+        "y": 0,
+        "width": 0.3275000004718701,
+        "height": 1
+      }
+    },
+    {
+      "id": "selection-0-top-0",
+      "group": "selection_clipping",
+      "peaks": [
+        [
+          24,
+          36,
+          1065017672,
+          1050253722,
+          1060320051,
+          1028443341,
+          1045891645,
+          1065185444,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770
+        ]
+      ],
+      "thresholds": {
+        "proposalScore": 0.35,
+        "acceptScore": 0.4,
+        "dotConfidence": 0.7,
+        "nmsIou": 0.25,
+        "minCellWidth": 0.008,
+        "minCellHeight": 0.06,
+        "edgeMargin": 0.008,
+        "maxRowDeviation": 0.55,
+        "maxGapRatio": 1.2,
+        "maxOverlapRatio": 0.5
+      },
+      "selection": {
+        "x": 0,
+        "y": 0.4095833363632361,
+        "width": 1,
+        "height": 0.5904166636367639
+      }
+    },
+    {
+      "id": "selection-0-bottom-0",
+      "group": "selection_clipping",
+      "peaks": [
+        [
+          24,
+          36,
+          1065017672,
+          1050253722,
+          1060320051,
+          1028443341,
+          1045891645,
+          1065185444,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770
+        ]
+      ],
+      "thresholds": {
+        "proposalScore": 0.35,
+        "acceptScore": 0.4,
+        "dotConfidence": 0.7,
+        "nmsIou": 0.25,
+        "minCellWidth": 0.008,
+        "minCellHeight": 0.06,
+        "edgeMargin": 0.008,
+        "maxRowDeviation": 0.55,
+        "maxGapRatio": 1.2,
+        "maxOverlapRatio": 0.5
+      },
+      "selection": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 0.6195833298067251
+      }
+    },
+    {
+      "id": "selection-0-touch-right-0",
+      "group": "selection_exclusion",
+      "peaks": [
+        [
+          24,
+          36,
+          1065017672,
+          1050253722,
+          1060320051,
+          1028443341,
+          1045891645,
+          1065185444,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770
+        ]
+      ],
+      "thresholds": {
+        "proposalScore": 0.35,
+        "acceptScore": 0.4,
+        "dotConfidence": 0.7,
+        "nmsIou": 0.25,
+        "minCellWidth": 0.008,
+        "minCellHeight": 0.06,
+        "edgeMargin": 0.008,
+        "maxRowDeviation": 0.55,
+        "maxGapRatio": 1.2,
+        "maxOverlapRatio": 0.5
+      },
+      "selection": {
+        "x": 0.3275000004718701,
+        "y": 0,
+        "width": 0.6724999995281299,
+        "height": 1
+      }
+    },
+    {
+      "id": "selection-0-touch-left-0",
+      "group": "selection_exclusion",
+      "peaks": [
+        [
+          24,
+          36,
+          1065017672,
+          1050253722,
+          1060320051,
+          1028443341,
+          1045891645,
+          1065185444,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770
+        ]
+      ],
+      "thresholds": {
+        "proposalScore": 0.35,
+        "acceptScore": 0.4,
+        "dotConfidence": 0.7,
+        "nmsIou": 0.25,
+        "minCellWidth": 0.008,
+        "minCellHeight": 0.06,
+        "edgeMargin": 0.008,
+        "maxRowDeviation": 0.55,
+        "maxGapRatio": 1.2,
+        "maxOverlapRatio": 0.5
+      },
+      "selection": {
+        "x": 0,
+        "y": 0,
+        "width": 0.27749999972681205,
+        "height": 1
+      }
+    },
+    {
+      "id": "selection-0-touch-bottom-0",
+      "group": "selection_exclusion",
+      "peaks": [
+        [
+          24,
+          36,
+          1065017672,
+          1050253722,
+          1060320051,
+          1028443341,
+          1045891645,
+          1065185444,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770
+        ]
+      ],
+      "thresholds": {
+        "proposalScore": 0.35,
+        "acceptScore": 0.4,
+        "dotConfidence": 0.7,
+        "nmsIou": 0.25,
+        "minCellWidth": 0.008,
+        "minCellHeight": 0.06,
+        "edgeMargin": 0.008,
+        "maxRowDeviation": 0.55,
+        "maxGapRatio": 1.2,
+        "maxOverlapRatio": 0.5
+      },
+      "selection": {
+        "x": 0,
+        "y": 0.6195833298067251,
+        "width": 1,
+        "height": 0.38041667019327485
+      }
+    },
+    {
+      "id": "selection-0-touch-top-0",
+      "group": "selection_exclusion",
+      "peaks": [
+        [
+          24,
+          36,
+          1065017672,
+          1050253722,
+          1060320051,
+          1028443341,
+          1045891645,
+          1065185444,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770
+        ]
+      ],
+      "thresholds": {
+        "proposalScore": 0.35,
+        "acceptScore": 0.4,
+        "dotConfidence": 0.7,
+        "nmsIou": 0.25,
+        "minCellWidth": 0.008,
+        "minCellHeight": 0.06,
+        "edgeMargin": 0.008,
+        "maxRowDeviation": 0.55,
+        "maxGapRatio": 1.2,
+        "maxOverlapRatio": 0.5
+      },
+      "selection": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 0.4095833363632361
+      }
+    },
+    {
+      "id": "selection-0-left-1",
+      "group": "selection_clipping",
+      "peaks": [
+        [
+          24,
+          36,
+          1065017672,
+          1050253722,
+          1060320051,
+          1028443341,
+          1045891645,
+          1065185444,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770
+        ]
+      ],
+      "thresholds": {
+        "proposalScore": 0.35,
+        "acceptScore": 0.4,
+        "dotConfidence": 0.7,
+        "nmsIou": 0.25,
+        "minCellWidth": 0.008,
+        "minCellHeight": 0.06,
+        "edgeMargin": 0.008,
+        "maxRowDeviation": 0.55,
+        "maxGapRatio": 1.2,
+        "maxOverlapRatio": 0.5
+      },
+      "selection": {
+        "x": 0.2774999997268121,
+        "y": 0,
+        "width": 0.7225000002731878,
+        "height": 1
+      }
+    },
+    {
+      "id": "selection-0-right-1",
+      "group": "selection_clipping",
+      "peaks": [
+        [
+          24,
+          36,
+          1065017672,
+          1050253722,
+          1060320051,
+          1028443341,
+          1045891645,
+          1065185444,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770
+        ]
+      ],
+      "thresholds": {
+        "proposalScore": 0.35,
+        "acceptScore": 0.4,
+        "dotConfidence": 0.7,
+        "nmsIou": 0.25,
+        "minCellWidth": 0.008,
+        "minCellHeight": 0.06,
+        "edgeMargin": 0.008,
+        "maxRowDeviation": 0.55,
+        "maxGapRatio": 1.2,
+        "maxOverlapRatio": 0.5
+      },
+      "selection": {
+        "x": 0,
+        "y": 0,
+        "width": 0.32750000047187017,
+        "height": 1
+      }
+    },
+    {
+      "id": "selection-0-top-1",
+      "group": "selection_clipping",
+      "peaks": [
+        [
+          24,
+          36,
+          1065017672,
+          1050253722,
+          1060320051,
+          1028443341,
+          1045891645,
+          1065185444,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770
+        ]
+      ],
+      "thresholds": {
+        "proposalScore": 0.35,
+        "acceptScore": 0.4,
+        "dotConfidence": 0.7,
+        "nmsIou": 0.25,
+        "minCellWidth": 0.008,
+        "minCellHeight": 0.06,
+        "edgeMargin": 0.008,
+        "maxRowDeviation": 0.55,
+        "maxGapRatio": 1.2,
+        "maxOverlapRatio": 0.5
+      },
+      "selection": {
+        "x": 0,
+        "y": 0.40958333636323613,
+        "width": 1,
+        "height": 0.5904166636367638
+      }
+    },
+    {
+      "id": "selection-0-bottom-1",
+      "group": "selection_clipping",
+      "peaks": [
+        [
+          24,
+          36,
+          1065017672,
+          1050253722,
+          1060320051,
+          1028443341,
+          1045891645,
+          1065185444,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770
+        ]
+      ],
+      "thresholds": {
+        "proposalScore": 0.35,
+        "acceptScore": 0.4,
+        "dotConfidence": 0.7,
+        "nmsIou": 0.25,
+        "minCellWidth": 0.008,
+        "minCellHeight": 0.06,
+        "edgeMargin": 0.008,
+        "maxRowDeviation": 0.55,
+        "maxGapRatio": 1.2,
+        "maxOverlapRatio": 0.5
+      },
+      "selection": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 0.6195833298067253
+      }
+    },
+    {
+      "id": "selection-0-touch-right-1",
+      "group": "selection_exclusion",
+      "peaks": [
+        [
+          24,
+          36,
+          1065017672,
+          1050253722,
+          1060320051,
+          1028443341,
+          1045891645,
+          1065185444,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770
+        ]
+      ],
+      "thresholds": {
+        "proposalScore": 0.35,
+        "acceptScore": 0.4,
+        "dotConfidence": 0.7,
+        "nmsIou": 0.25,
+        "minCellWidth": 0.008,
+        "minCellHeight": 0.06,
+        "edgeMargin": 0.008,
+        "maxRowDeviation": 0.55,
+        "maxGapRatio": 1.2,
+        "maxOverlapRatio": 0.5
+      },
+      "selection": {
+        "x": 0.32750000047187017,
+        "y": 0,
+        "width": 0.6724999995281298,
+        "height": 1
+      }
+    },
+    {
+      "id": "selection-0-touch-left-1",
+      "group": "selection_exclusion",
+      "peaks": [
+        [
+          24,
+          36,
+          1065017672,
+          1050253722,
+          1060320051,
+          1028443341,
+          1045891645,
+          1065185444,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770
+        ]
+      ],
+      "thresholds": {
+        "proposalScore": 0.35,
+        "acceptScore": 0.4,
+        "dotConfidence": 0.7,
+        "nmsIou": 0.25,
+        "minCellWidth": 0.008,
+        "minCellHeight": 0.06,
+        "edgeMargin": 0.008,
+        "maxRowDeviation": 0.55,
+        "maxGapRatio": 1.2,
+        "maxOverlapRatio": 0.5
+      },
+      "selection": {
+        "x": 0,
+        "y": 0,
+        "width": 0.2774999997268121,
+        "height": 1
+      }
+    },
+    {
+      "id": "selection-0-touch-bottom-1",
+      "group": "selection_exclusion",
+      "peaks": [
+        [
+          24,
+          36,
+          1065017672,
+          1050253722,
+          1060320051,
+          1028443341,
+          1045891645,
+          1065185444,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770
+        ]
+      ],
+      "thresholds": {
+        "proposalScore": 0.35,
+        "acceptScore": 0.4,
+        "dotConfidence": 0.7,
+        "nmsIou": 0.25,
+        "minCellWidth": 0.008,
+        "minCellHeight": 0.06,
+        "edgeMargin": 0.008,
+        "maxRowDeviation": 0.55,
+        "maxGapRatio": 1.2,
+        "maxOverlapRatio": 0.5
+      },
+      "selection": {
+        "x": 0,
+        "y": 0.6195833298067253,
+        "width": 1,
+        "height": 0.38041667019327474
+      }
+    },
+    {
+      "id": "selection-0-touch-top-1",
+      "group": "selection_exclusion",
+      "peaks": [
+        [
+          24,
+          36,
+          1065017672,
+          1050253722,
+          1060320051,
+          1028443341,
+          1045891645,
+          1065185444,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770
+        ]
+      ],
+      "thresholds": {
+        "proposalScore": 0.35,
+        "acceptScore": 0.4,
+        "dotConfidence": 0.7,
+        "nmsIou": 0.25,
+        "minCellWidth": 0.008,
+        "minCellHeight": 0.06,
+        "edgeMargin": 0.008,
+        "maxRowDeviation": 0.55,
+        "maxGapRatio": 1.2,
+        "maxOverlapRatio": 0.5
+      },
+      "selection": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 0.40958333636323613
+      }
+    },
+    {
+      "id": "selection-1-left--1",
+      "group": "selection_clipping",
+      "peaks": [
+        [
+          19,
+          58,
+          1065017672,
+          1058642330,
+          1053609165,
+          1032805417,
+          1044549468,
+          1065185444,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770
+        ]
+      ],
+      "thresholds": {
+        "proposalScore": 0.35,
+        "acceptScore": 0.4,
+        "dotConfidence": 0.7,
+        "nmsIou": 0.25,
+        "minCellWidth": 0.008,
+        "minCellHeight": 0.06,
+        "edgeMargin": 0.008,
+        "maxRowDeviation": 0.55,
+        "maxGapRatio": 1.2,
+        "maxOverlapRatio": 0.5
+      },
+      "selection": {
+        "x": 0.4533333333830038,
+        "y": 0,
+        "width": 0.5466666666169961,
+        "height": 1
+      }
+    },
+    {
+      "id": "selection-1-right--1",
+      "group": "selection_clipping",
+      "peaks": [
+        [
+          19,
+          58,
+          1065017672,
+          1058642330,
+          1053609165,
+          1032805417,
+          1044549468,
+          1065185444,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770
+        ]
+      ],
+      "thresholds": {
+        "proposalScore": 0.35,
+        "acceptScore": 0.4,
+        "dotConfidence": 0.7,
+        "nmsIou": 0.25,
+        "minCellWidth": 0.008,
+        "minCellHeight": 0.06,
+        "edgeMargin": 0.008,
+        "maxRowDeviation": 0.55,
+        "maxGapRatio": 1.2,
+        "maxOverlapRatio": 0.5
+      },
+      "selection": {
+        "x": 0,
+        "y": 0,
+        "width": 0.523333333681027,
+        "height": 1
+      }
+    },
+    {
+      "id": "selection-1-top--1",
+      "group": "selection_clipping",
+      "peaks": [
+        [
+          19,
+          58,
+          1065017672,
+          1058642330,
+          1053609165,
+          1032805417,
+          1044549468,
+          1065185444,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770
+        ]
+      ],
+      "thresholds": {
+        "proposalScore": 0.35,
+        "acceptScore": 0.4,
+        "dotConfidence": 0.7,
+        "nmsIou": 0.25,
+        "minCellWidth": 0.008,
+        "minCellHeight": 0.06,
+        "edgeMargin": 0.008,
+        "maxRowDeviation": 0.55,
+        "maxGapRatio": 1.2,
+        "maxOverlapRatio": 0.5
+      },
+      "selection": {
+        "x": 0,
+        "y": 0.30916666798293585,
+        "width": 1,
+        "height": 0.6908333320170641
+      }
+    },
+    {
+      "id": "selection-1-bottom--1",
+      "group": "selection_clipping",
+      "peaks": [
+        [
+          19,
+          58,
+          1065017672,
+          1058642330,
+          1053609165,
+          1032805417,
+          1044549468,
+          1065185444,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770
+        ]
+      ],
+      "thresholds": {
+        "proposalScore": 0.35,
+        "acceptScore": 0.4,
+        "dotConfidence": 0.7,
+        "nmsIou": 0.25,
+        "minCellWidth": 0.008,
+        "minCellHeight": 0.06,
+        "edgeMargin": 0.008,
+        "maxRowDeviation": 0.55,
+        "maxGapRatio": 1.2,
+        "maxOverlapRatio": 0.5
+      },
+      "selection": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 0.49916666559875006
+      }
+    },
+    {
+      "id": "selection-1-touch-right--1",
+      "group": "selection_exclusion",
+      "peaks": [
+        [
+          19,
+          58,
+          1065017672,
+          1058642330,
+          1053609165,
+          1032805417,
+          1044549468,
+          1065185444,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770
+        ]
+      ],
+      "thresholds": {
+        "proposalScore": 0.35,
+        "acceptScore": 0.4,
+        "dotConfidence": 0.7,
+        "nmsIou": 0.25,
+        "minCellWidth": 0.008,
+        "minCellHeight": 0.06,
+        "edgeMargin": 0.008,
+        "maxRowDeviation": 0.55,
+        "maxGapRatio": 1.2,
+        "maxOverlapRatio": 0.5
+      },
+      "selection": {
+        "x": 0.523333333681027,
+        "y": 0,
+        "width": 0.47666666631897303,
+        "height": 1
+      }
+    },
+    {
+      "id": "selection-1-touch-left--1",
+      "group": "selection_exclusion",
+      "peaks": [
+        [
+          19,
+          58,
+          1065017672,
+          1058642330,
+          1053609165,
+          1032805417,
+          1044549468,
+          1065185444,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770
+        ]
+      ],
+      "thresholds": {
+        "proposalScore": 0.35,
+        "acceptScore": 0.4,
+        "dotConfidence": 0.7,
+        "nmsIou": 0.25,
+        "minCellWidth": 0.008,
+        "minCellHeight": 0.06,
+        "edgeMargin": 0.008,
+        "maxRowDeviation": 0.55,
+        "maxGapRatio": 1.2,
+        "maxOverlapRatio": 0.5
+      },
+      "selection": {
+        "x": 0,
+        "y": 0,
+        "width": 0.4533333333830038,
+        "height": 1
+      }
+    },
+    {
+      "id": "selection-1-touch-bottom--1",
+      "group": "selection_exclusion",
+      "peaks": [
+        [
+          19,
+          58,
+          1065017672,
+          1058642330,
+          1053609165,
+          1032805417,
+          1044549468,
+          1065185444,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770
+        ]
+      ],
+      "thresholds": {
+        "proposalScore": 0.35,
+        "acceptScore": 0.4,
+        "dotConfidence": 0.7,
+        "nmsIou": 0.25,
+        "minCellWidth": 0.008,
+        "minCellHeight": 0.06,
+        "edgeMargin": 0.008,
+        "maxRowDeviation": 0.55,
+        "maxGapRatio": 1.2,
+        "maxOverlapRatio": 0.5
+      },
+      "selection": {
+        "x": 0,
+        "y": 0.49916666559875006,
+        "width": 1,
+        "height": 0.5008333344012499
+      }
+    },
+    {
+      "id": "selection-1-touch-top--1",
+      "group": "selection_exclusion",
+      "peaks": [
+        [
+          19,
+          58,
+          1065017672,
+          1058642330,
+          1053609165,
+          1032805417,
+          1044549468,
+          1065185444,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770
+        ]
+      ],
+      "thresholds": {
+        "proposalScore": 0.35,
+        "acceptScore": 0.4,
+        "dotConfidence": 0.7,
+        "nmsIou": 0.25,
+        "minCellWidth": 0.008,
+        "minCellHeight": 0.06,
+        "edgeMargin": 0.008,
+        "maxRowDeviation": 0.55,
+        "maxGapRatio": 1.2,
+        "maxOverlapRatio": 0.5
+      },
+      "selection": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 0.30916666798293585
+      }
+    },
+    {
+      "id": "selection-1-left-0",
+      "group": "selection_clipping",
+      "peaks": [
+        [
+          19,
+          58,
+          1065017672,
+          1058642330,
+          1053609165,
+          1032805417,
+          1044549468,
+          1065185444,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770
+        ]
+      ],
+      "thresholds": {
+        "proposalScore": 0.35,
+        "acceptScore": 0.4,
+        "dotConfidence": 0.7,
+        "nmsIou": 0.25,
+        "minCellWidth": 0.008,
+        "minCellHeight": 0.06,
+        "edgeMargin": 0.008,
+        "maxRowDeviation": 0.55,
+        "maxGapRatio": 1.2,
+        "maxOverlapRatio": 0.5
+      },
+      "selection": {
+        "x": 0.45333333338300386,
+        "y": 0,
+        "width": 0.5466666666169961,
+        "height": 1
+      }
+    },
+    {
+      "id": "selection-1-right-0",
+      "group": "selection_clipping",
+      "peaks": [
+        [
+          19,
+          58,
+          1065017672,
+          1058642330,
+          1053609165,
+          1032805417,
+          1044549468,
+          1065185444,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770
+        ]
+      ],
+      "thresholds": {
+        "proposalScore": 0.35,
+        "acceptScore": 0.4,
+        "dotConfidence": 0.7,
+        "nmsIou": 0.25,
+        "minCellWidth": 0.008,
+        "minCellHeight": 0.06,
+        "edgeMargin": 0.008,
+        "maxRowDeviation": 0.55,
+        "maxGapRatio": 1.2,
+        "maxOverlapRatio": 0.5
+      },
+      "selection": {
+        "x": 0,
+        "y": 0,
+        "width": 0.5233333336810271,
+        "height": 1
+      }
+    },
+    {
+      "id": "selection-1-top-0",
+      "group": "selection_clipping",
+      "peaks": [
+        [
+          19,
+          58,
+          1065017672,
+          1058642330,
+          1053609165,
+          1032805417,
+          1044549468,
+          1065185444,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770
+        ]
+      ],
+      "thresholds": {
+        "proposalScore": 0.35,
+        "acceptScore": 0.4,
+        "dotConfidence": 0.7,
+        "nmsIou": 0.25,
+        "minCellWidth": 0.008,
+        "minCellHeight": 0.06,
+        "edgeMargin": 0.008,
+        "maxRowDeviation": 0.55,
+        "maxGapRatio": 1.2,
+        "maxOverlapRatio": 0.5
+      },
+      "selection": {
+        "x": 0,
+        "y": 0.3091666679829359,
+        "width": 1,
+        "height": 0.6908333320170641
+      }
+    },
+    {
+      "id": "selection-1-bottom-0",
+      "group": "selection_clipping",
+      "peaks": [
+        [
+          19,
+          58,
+          1065017672,
+          1058642330,
+          1053609165,
+          1032805417,
+          1044549468,
+          1065185444,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770
+        ]
+      ],
+      "thresholds": {
+        "proposalScore": 0.35,
+        "acceptScore": 0.4,
+        "dotConfidence": 0.7,
+        "nmsIou": 0.25,
+        "minCellWidth": 0.008,
+        "minCellHeight": 0.06,
+        "edgeMargin": 0.008,
+        "maxRowDeviation": 0.55,
+        "maxGapRatio": 1.2,
+        "maxOverlapRatio": 0.5
+      },
+      "selection": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 0.4991666655987501
+      }
+    },
+    {
+      "id": "selection-1-touch-right-0",
+      "group": "selection_exclusion",
+      "peaks": [
+        [
+          19,
+          58,
+          1065017672,
+          1058642330,
+          1053609165,
+          1032805417,
+          1044549468,
+          1065185444,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770
+        ]
+      ],
+      "thresholds": {
+        "proposalScore": 0.35,
+        "acceptScore": 0.4,
+        "dotConfidence": 0.7,
+        "nmsIou": 0.25,
+        "minCellWidth": 0.008,
+        "minCellHeight": 0.06,
+        "edgeMargin": 0.008,
+        "maxRowDeviation": 0.55,
+        "maxGapRatio": 1.2,
+        "maxOverlapRatio": 0.5
+      },
+      "selection": {
+        "x": 0.5233333336810271,
+        "y": 0,
+        "width": 0.4766666663189729,
+        "height": 1
+      }
+    },
+    {
+      "id": "selection-1-touch-left-0",
+      "group": "selection_exclusion",
+      "peaks": [
+        [
+          19,
+          58,
+          1065017672,
+          1058642330,
+          1053609165,
+          1032805417,
+          1044549468,
+          1065185444,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770
+        ]
+      ],
+      "thresholds": {
+        "proposalScore": 0.35,
+        "acceptScore": 0.4,
+        "dotConfidence": 0.7,
+        "nmsIou": 0.25,
+        "minCellWidth": 0.008,
+        "minCellHeight": 0.06,
+        "edgeMargin": 0.008,
+        "maxRowDeviation": 0.55,
+        "maxGapRatio": 1.2,
+        "maxOverlapRatio": 0.5
+      },
+      "selection": {
+        "x": 0,
+        "y": 0,
+        "width": 0.45333333338300386,
+        "height": 1
+      }
+    },
+    {
+      "id": "selection-1-touch-bottom-0",
+      "group": "selection_exclusion",
+      "peaks": [
+        [
+          19,
+          58,
+          1065017672,
+          1058642330,
+          1053609165,
+          1032805417,
+          1044549468,
+          1065185444,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770
+        ]
+      ],
+      "thresholds": {
+        "proposalScore": 0.35,
+        "acceptScore": 0.4,
+        "dotConfidence": 0.7,
+        "nmsIou": 0.25,
+        "minCellWidth": 0.008,
+        "minCellHeight": 0.06,
+        "edgeMargin": 0.008,
+        "maxRowDeviation": 0.55,
+        "maxGapRatio": 1.2,
+        "maxOverlapRatio": 0.5
+      },
+      "selection": {
+        "x": 0,
+        "y": 0.4991666655987501,
+        "width": 1,
+        "height": 0.5008333344012499
+      }
+    },
+    {
+      "id": "selection-1-touch-top-0",
+      "group": "selection_exclusion",
+      "peaks": [
+        [
+          19,
+          58,
+          1065017672,
+          1058642330,
+          1053609165,
+          1032805417,
+          1044549468,
+          1065185444,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770
+        ]
+      ],
+      "thresholds": {
+        "proposalScore": 0.35,
+        "acceptScore": 0.4,
+        "dotConfidence": 0.7,
+        "nmsIou": 0.25,
+        "minCellWidth": 0.008,
+        "minCellHeight": 0.06,
+        "edgeMargin": 0.008,
+        "maxRowDeviation": 0.55,
+        "maxGapRatio": 1.2,
+        "maxOverlapRatio": 0.5
+      },
+      "selection": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 0.3091666679829359
+      }
+    },
+    {
+      "id": "selection-1-left-1",
+      "group": "selection_clipping",
+      "peaks": [
+        [
+          19,
+          58,
+          1065017672,
+          1058642330,
+          1053609165,
+          1032805417,
+          1044549468,
+          1065185444,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770
+        ]
+      ],
+      "thresholds": {
+        "proposalScore": 0.35,
+        "acceptScore": 0.4,
+        "dotConfidence": 0.7,
+        "nmsIou": 0.25,
+        "minCellWidth": 0.008,
+        "minCellHeight": 0.06,
+        "edgeMargin": 0.008,
+        "maxRowDeviation": 0.55,
+        "maxGapRatio": 1.2,
+        "maxOverlapRatio": 0.5
+      },
+      "selection": {
+        "x": 0.4533333333830039,
+        "y": 0,
+        "width": 0.5466666666169961,
+        "height": 1
+      }
+    },
+    {
+      "id": "selection-1-right-1",
+      "group": "selection_clipping",
+      "peaks": [
+        [
+          19,
+          58,
+          1065017672,
+          1058642330,
+          1053609165,
+          1032805417,
+          1044549468,
+          1065185444,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770
+        ]
+      ],
+      "thresholds": {
+        "proposalScore": 0.35,
+        "acceptScore": 0.4,
+        "dotConfidence": 0.7,
+        "nmsIou": 0.25,
+        "minCellWidth": 0.008,
+        "minCellHeight": 0.06,
+        "edgeMargin": 0.008,
+        "maxRowDeviation": 0.55,
+        "maxGapRatio": 1.2,
+        "maxOverlapRatio": 0.5
+      },
+      "selection": {
+        "x": 0,
+        "y": 0,
+        "width": 0.5233333336810272,
+        "height": 1
+      }
+    },
+    {
+      "id": "selection-1-top-1",
+      "group": "selection_clipping",
+      "peaks": [
+        [
+          19,
+          58,
+          1065017672,
+          1058642330,
+          1053609165,
+          1032805417,
+          1044549468,
+          1065185444,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770
+        ]
+      ],
+      "thresholds": {
+        "proposalScore": 0.35,
+        "acceptScore": 0.4,
+        "dotConfidence": 0.7,
+        "nmsIou": 0.25,
+        "minCellWidth": 0.008,
+        "minCellHeight": 0.06,
+        "edgeMargin": 0.008,
+        "maxRowDeviation": 0.55,
+        "maxGapRatio": 1.2,
+        "maxOverlapRatio": 0.5
+      },
+      "selection": {
+        "x": 0,
+        "y": 0.30916666798293596,
+        "width": 1,
+        "height": 0.6908333320170641
+      }
+    },
+    {
+      "id": "selection-1-bottom-1",
+      "group": "selection_clipping",
+      "peaks": [
+        [
+          19,
+          58,
+          1065017672,
+          1058642330,
+          1053609165,
+          1032805417,
+          1044549468,
+          1065185444,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770
+        ]
+      ],
+      "thresholds": {
+        "proposalScore": 0.35,
+        "acceptScore": 0.4,
+        "dotConfidence": 0.7,
+        "nmsIou": 0.25,
+        "minCellWidth": 0.008,
+        "minCellHeight": 0.06,
+        "edgeMargin": 0.008,
+        "maxRowDeviation": 0.55,
+        "maxGapRatio": 1.2,
+        "maxOverlapRatio": 0.5
+      },
+      "selection": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 0.49916666559875017
+      }
+    },
+    {
+      "id": "selection-1-touch-right-1",
+      "group": "selection_exclusion",
+      "peaks": [
+        [
+          19,
+          58,
+          1065017672,
+          1058642330,
+          1053609165,
+          1032805417,
+          1044549468,
+          1065185444,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770
+        ]
+      ],
+      "thresholds": {
+        "proposalScore": 0.35,
+        "acceptScore": 0.4,
+        "dotConfidence": 0.7,
+        "nmsIou": 0.25,
+        "minCellWidth": 0.008,
+        "minCellHeight": 0.06,
+        "edgeMargin": 0.008,
+        "maxRowDeviation": 0.55,
+        "maxGapRatio": 1.2,
+        "maxOverlapRatio": 0.5
+      },
+      "selection": {
+        "x": 0.5233333336810272,
+        "y": 0,
+        "width": 0.4766666663189728,
+        "height": 1
+      }
+    },
+    {
+      "id": "selection-1-touch-left-1",
+      "group": "selection_exclusion",
+      "peaks": [
+        [
+          19,
+          58,
+          1065017672,
+          1058642330,
+          1053609165,
+          1032805417,
+          1044549468,
+          1065185444,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770
+        ]
+      ],
+      "thresholds": {
+        "proposalScore": 0.35,
+        "acceptScore": 0.4,
+        "dotConfidence": 0.7,
+        "nmsIou": 0.25,
+        "minCellWidth": 0.008,
+        "minCellHeight": 0.06,
+        "edgeMargin": 0.008,
+        "maxRowDeviation": 0.55,
+        "maxGapRatio": 1.2,
+        "maxOverlapRatio": 0.5
+      },
+      "selection": {
+        "x": 0,
+        "y": 0,
+        "width": 0.4533333333830039,
+        "height": 1
+      }
+    },
+    {
+      "id": "selection-1-touch-bottom-1",
+      "group": "selection_exclusion",
+      "peaks": [
+        [
+          19,
+          58,
+          1065017672,
+          1058642330,
+          1053609165,
+          1032805417,
+          1044549468,
+          1065185444,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770
+        ]
+      ],
+      "thresholds": {
+        "proposalScore": 0.35,
+        "acceptScore": 0.4,
+        "dotConfidence": 0.7,
+        "nmsIou": 0.25,
+        "minCellWidth": 0.008,
+        "minCellHeight": 0.06,
+        "edgeMargin": 0.008,
+        "maxRowDeviation": 0.55,
+        "maxGapRatio": 1.2,
+        "maxOverlapRatio": 0.5
+      },
+      "selection": {
+        "x": 0,
+        "y": 0.49916666559875017,
+        "width": 1,
+        "height": 0.5008333344012499
+      }
+    },
+    {
+      "id": "selection-1-touch-top-1",
+      "group": "selection_exclusion",
+      "peaks": [
+        [
+          19,
+          58,
+          1065017672,
+          1058642330,
+          1053609165,
+          1032805417,
+          1044549468,
+          1065185444,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770
+        ]
+      ],
+      "thresholds": {
+        "proposalScore": 0.35,
+        "acceptScore": 0.4,
+        "dotConfidence": 0.7,
+        "nmsIou": 0.25,
+        "minCellWidth": 0.008,
+        "minCellHeight": 0.06,
+        "edgeMargin": 0.008,
+        "maxRowDeviation": 0.55,
+        "maxGapRatio": 1.2,
+        "maxOverlapRatio": 0.5
+      },
+      "selection": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 0.30916666798293596
+      }
+    },
+    {
+      "id": "selection-2-left--1",
+      "group": "selection_clipping",
+      "peaks": [
+        [
+          24,
+          48,
+          1065017672,
+          0,
+          0,
+          1040187392,
+          1048576000,
+          1065185444,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770
+        ]
+      ],
+      "thresholds": {
+        "proposalScore": 0.35,
+        "acceptScore": 0.4,
+        "dotConfidence": 0.7,
+        "nmsIou": 0.25,
+        "minCellWidth": 0.008,
+        "minCellHeight": 0.06,
+        "edgeMargin": 0.008,
+        "maxRowDeviation": 0.55,
+        "maxGapRatio": 1.2,
+        "maxOverlapRatio": 0.5
+      },
+      "selection": {
+        "x": 0.33749999999999997,
+        "y": 0,
+        "width": 0.6625000000000001,
+        "height": 1
+      }
+    },
+    {
+      "id": "selection-2-right--1",
+      "group": "selection_clipping",
+      "peaks": [
+        [
+          24,
+          48,
+          1065017672,
+          0,
+          0,
+          1040187392,
+          1048576000,
+          1065185444,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770
+        ]
+      ],
+      "thresholds": {
+        "proposalScore": 0.35,
+        "acceptScore": 0.4,
+        "dotConfidence": 0.7,
+        "nmsIou": 0.25,
+        "minCellWidth": 0.008,
+        "minCellHeight": 0.06,
+        "edgeMargin": 0.008,
+        "maxRowDeviation": 0.55,
+        "maxGapRatio": 1.2,
+        "maxOverlapRatio": 0.5
+      },
+      "selection": {
+        "x": 0,
+        "y": 0,
+        "width": 0.46249999999999997,
+        "height": 1
+      }
+    },
+    {
+      "id": "selection-2-top--1",
+      "group": "selection_clipping",
+      "peaks": [
+        [
+          24,
+          48,
+          1065017672,
+          0,
+          0,
+          1040187392,
+          1048576000,
+          1065185444,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770
+        ]
+      ],
+      "thresholds": {
+        "proposalScore": 0.35,
+        "acceptScore": 0.4,
+        "dotConfidence": 0.7,
+        "nmsIou": 0.25,
+        "minCellWidth": 0.008,
+        "minCellHeight": 0.06,
+        "edgeMargin": 0.008,
+        "maxRowDeviation": 0.55,
+        "maxGapRatio": 1.2,
+        "maxOverlapRatio": 0.5
+      },
+      "selection": {
+        "x": 0,
+        "y": 0.37499999999999994,
+        "width": 1,
+        "height": 0.625
+      }
+    },
+    {
+      "id": "selection-2-bottom--1",
+      "group": "selection_clipping",
+      "peaks": [
+        [
+          24,
+          48,
+          1065017672,
+          0,
+          0,
+          1040187392,
+          1048576000,
+          1065185444,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770
+        ]
+      ],
+      "thresholds": {
+        "proposalScore": 0.35,
+        "acceptScore": 0.4,
+        "dotConfidence": 0.7,
+        "nmsIou": 0.25,
+        "minCellWidth": 0.008,
+        "minCellHeight": 0.06,
+        "edgeMargin": 0.008,
+        "maxRowDeviation": 0.55,
+        "maxGapRatio": 1.2,
+        "maxOverlapRatio": 0.5
+      },
+      "selection": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 0.6249999999999999
+      }
+    },
+    {
+      "id": "selection-2-touch-right--1",
+      "group": "selection_exclusion",
+      "peaks": [
+        [
+          24,
+          48,
+          1065017672,
+          0,
+          0,
+          1040187392,
+          1048576000,
+          1065185444,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770
+        ]
+      ],
+      "thresholds": {
+        "proposalScore": 0.35,
+        "acceptScore": 0.4,
+        "dotConfidence": 0.7,
+        "nmsIou": 0.25,
+        "minCellWidth": 0.008,
+        "minCellHeight": 0.06,
+        "edgeMargin": 0.008,
+        "maxRowDeviation": 0.55,
+        "maxGapRatio": 1.2,
+        "maxOverlapRatio": 0.5
+      },
+      "selection": {
+        "x": 0.46249999999999997,
+        "y": 0,
+        "width": 0.5375000000000001,
+        "height": 1
+      }
+    },
+    {
+      "id": "selection-2-touch-left--1",
+      "group": "selection_exclusion",
+      "peaks": [
+        [
+          24,
+          48,
+          1065017672,
+          0,
+          0,
+          1040187392,
+          1048576000,
+          1065185444,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770
+        ]
+      ],
+      "thresholds": {
+        "proposalScore": 0.35,
+        "acceptScore": 0.4,
+        "dotConfidence": 0.7,
+        "nmsIou": 0.25,
+        "minCellWidth": 0.008,
+        "minCellHeight": 0.06,
+        "edgeMargin": 0.008,
+        "maxRowDeviation": 0.55,
+        "maxGapRatio": 1.2,
+        "maxOverlapRatio": 0.5
+      },
+      "selection": {
+        "x": 0,
+        "y": 0,
+        "width": 0.33749999999999997,
+        "height": 1
+      }
+    },
+    {
+      "id": "selection-2-touch-bottom--1",
+      "group": "selection_exclusion",
+      "peaks": [
+        [
+          24,
+          48,
+          1065017672,
+          0,
+          0,
+          1040187392,
+          1048576000,
+          1065185444,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770
+        ]
+      ],
+      "thresholds": {
+        "proposalScore": 0.35,
+        "acceptScore": 0.4,
+        "dotConfidence": 0.7,
+        "nmsIou": 0.25,
+        "minCellWidth": 0.008,
+        "minCellHeight": 0.06,
+        "edgeMargin": 0.008,
+        "maxRowDeviation": 0.55,
+        "maxGapRatio": 1.2,
+        "maxOverlapRatio": 0.5
+      },
+      "selection": {
+        "x": 0,
+        "y": 0.6249999999999999,
+        "width": 1,
+        "height": 0.3750000000000001
+      }
+    },
+    {
+      "id": "selection-2-touch-top--1",
+      "group": "selection_exclusion",
+      "peaks": [
+        [
+          24,
+          48,
+          1065017672,
+          0,
+          0,
+          1040187392,
+          1048576000,
+          1065185444,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770
+        ]
+      ],
+      "thresholds": {
+        "proposalScore": 0.35,
+        "acceptScore": 0.4,
+        "dotConfidence": 0.7,
+        "nmsIou": 0.25,
+        "minCellWidth": 0.008,
+        "minCellHeight": 0.06,
+        "edgeMargin": 0.008,
+        "maxRowDeviation": 0.55,
+        "maxGapRatio": 1.2,
+        "maxOverlapRatio": 0.5
+      },
+      "selection": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 0.37499999999999994
+      }
+    },
+    {
+      "id": "selection-2-left-0",
+      "group": "selection_clipping",
+      "peaks": [
+        [
+          24,
+          48,
+          1065017672,
+          0,
+          0,
+          1040187392,
+          1048576000,
+          1065185444,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770
+        ]
+      ],
+      "thresholds": {
+        "proposalScore": 0.35,
+        "acceptScore": 0.4,
+        "dotConfidence": 0.7,
+        "nmsIou": 0.25,
+        "minCellWidth": 0.008,
+        "minCellHeight": 0.06,
+        "edgeMargin": 0.008,
+        "maxRowDeviation": 0.55,
+        "maxGapRatio": 1.2,
+        "maxOverlapRatio": 0.5
+      },
+      "selection": {
+        "x": 0.3375,
+        "y": 0,
+        "width": 0.6625,
+        "height": 1
+      }
+    },
+    {
+      "id": "selection-2-right-0",
+      "group": "selection_clipping",
+      "peaks": [
+        [
+          24,
+          48,
+          1065017672,
+          0,
+          0,
+          1040187392,
+          1048576000,
+          1065185444,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770
+        ]
+      ],
+      "thresholds": {
+        "proposalScore": 0.35,
+        "acceptScore": 0.4,
+        "dotConfidence": 0.7,
+        "nmsIou": 0.25,
+        "minCellWidth": 0.008,
+        "minCellHeight": 0.06,
+        "edgeMargin": 0.008,
+        "maxRowDeviation": 0.55,
+        "maxGapRatio": 1.2,
+        "maxOverlapRatio": 0.5
+      },
+      "selection": {
+        "x": 0,
+        "y": 0,
+        "width": 0.4625,
+        "height": 1
+      }
+    },
+    {
+      "id": "selection-2-top-0",
+      "group": "selection_clipping",
+      "peaks": [
+        [
+          24,
+          48,
+          1065017672,
+          0,
+          0,
+          1040187392,
+          1048576000,
+          1065185444,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770
+        ]
+      ],
+      "thresholds": {
+        "proposalScore": 0.35,
+        "acceptScore": 0.4,
+        "dotConfidence": 0.7,
+        "nmsIou": 0.25,
+        "minCellWidth": 0.008,
+        "minCellHeight": 0.06,
+        "edgeMargin": 0.008,
+        "maxRowDeviation": 0.55,
+        "maxGapRatio": 1.2,
+        "maxOverlapRatio": 0.5
+      },
+      "selection": {
+        "x": 0,
+        "y": 0.375,
+        "width": 1,
+        "height": 0.625
+      }
+    },
+    {
+      "id": "selection-2-bottom-0",
+      "group": "selection_clipping",
+      "peaks": [
+        [
+          24,
+          48,
+          1065017672,
+          0,
+          0,
+          1040187392,
+          1048576000,
+          1065185444,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770
+        ]
+      ],
+      "thresholds": {
+        "proposalScore": 0.35,
+        "acceptScore": 0.4,
+        "dotConfidence": 0.7,
+        "nmsIou": 0.25,
+        "minCellWidth": 0.008,
+        "minCellHeight": 0.06,
+        "edgeMargin": 0.008,
+        "maxRowDeviation": 0.55,
+        "maxGapRatio": 1.2,
+        "maxOverlapRatio": 0.5
+      },
+      "selection": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 0.625
+      }
+    },
+    {
+      "id": "selection-2-touch-right-0",
+      "group": "selection_exclusion",
+      "peaks": [
+        [
+          24,
+          48,
+          1065017672,
+          0,
+          0,
+          1040187392,
+          1048576000,
+          1065185444,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770
+        ]
+      ],
+      "thresholds": {
+        "proposalScore": 0.35,
+        "acceptScore": 0.4,
+        "dotConfidence": 0.7,
+        "nmsIou": 0.25,
+        "minCellWidth": 0.008,
+        "minCellHeight": 0.06,
+        "edgeMargin": 0.008,
+        "maxRowDeviation": 0.55,
+        "maxGapRatio": 1.2,
+        "maxOverlapRatio": 0.5
+      },
+      "selection": {
+        "x": 0.4625,
+        "y": 0,
+        "width": 0.5375,
+        "height": 1
+      }
+    },
+    {
+      "id": "selection-2-touch-left-0",
+      "group": "selection_exclusion",
+      "peaks": [
+        [
+          24,
+          48,
+          1065017672,
+          0,
+          0,
+          1040187392,
+          1048576000,
+          1065185444,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770
+        ]
+      ],
+      "thresholds": {
+        "proposalScore": 0.35,
+        "acceptScore": 0.4,
+        "dotConfidence": 0.7,
+        "nmsIou": 0.25,
+        "minCellWidth": 0.008,
+        "minCellHeight": 0.06,
+        "edgeMargin": 0.008,
+        "maxRowDeviation": 0.55,
+        "maxGapRatio": 1.2,
+        "maxOverlapRatio": 0.5
+      },
+      "selection": {
+        "x": 0,
+        "y": 0,
+        "width": 0.3375,
+        "height": 1
+      }
+    },
+    {
+      "id": "selection-2-touch-bottom-0",
+      "group": "selection_exclusion",
+      "peaks": [
+        [
+          24,
+          48,
+          1065017672,
+          0,
+          0,
+          1040187392,
+          1048576000,
+          1065185444,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770
+        ]
+      ],
+      "thresholds": {
+        "proposalScore": 0.35,
+        "acceptScore": 0.4,
+        "dotConfidence": 0.7,
+        "nmsIou": 0.25,
+        "minCellWidth": 0.008,
+        "minCellHeight": 0.06,
+        "edgeMargin": 0.008,
+        "maxRowDeviation": 0.55,
+        "maxGapRatio": 1.2,
+        "maxOverlapRatio": 0.5
+      },
+      "selection": {
+        "x": 0,
+        "y": 0.625,
+        "width": 1,
+        "height": 0.375
+      }
+    },
+    {
+      "id": "selection-2-touch-top-0",
+      "group": "selection_exclusion",
+      "peaks": [
+        [
+          24,
+          48,
+          1065017672,
+          0,
+          0,
+          1040187392,
+          1048576000,
+          1065185444,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770
+        ]
+      ],
+      "thresholds": {
+        "proposalScore": 0.35,
+        "acceptScore": 0.4,
+        "dotConfidence": 0.7,
+        "nmsIou": 0.25,
+        "minCellWidth": 0.008,
+        "minCellHeight": 0.06,
+        "edgeMargin": 0.008,
+        "maxRowDeviation": 0.55,
+        "maxGapRatio": 1.2,
+        "maxOverlapRatio": 0.5
+      },
+      "selection": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 0.375
+      }
+    },
+    {
+      "id": "selection-2-left-1",
+      "group": "selection_clipping",
+      "peaks": [
+        [
+          24,
+          48,
+          1065017672,
+          0,
+          0,
+          1040187392,
+          1048576000,
+          1065185444,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770
+        ]
+      ],
+      "thresholds": {
+        "proposalScore": 0.35,
+        "acceptScore": 0.4,
+        "dotConfidence": 0.7,
+        "nmsIou": 0.25,
+        "minCellWidth": 0.008,
+        "minCellHeight": 0.06,
+        "edgeMargin": 0.008,
+        "maxRowDeviation": 0.55,
+        "maxGapRatio": 1.2,
+        "maxOverlapRatio": 0.5
+      },
+      "selection": {
+        "x": 0.3375000000000001,
+        "y": 0,
+        "width": 0.6624999999999999,
+        "height": 1
+      }
+    },
+    {
+      "id": "selection-2-right-1",
+      "group": "selection_clipping",
+      "peaks": [
+        [
+          24,
+          48,
+          1065017672,
+          0,
+          0,
+          1040187392,
+          1048576000,
+          1065185444,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770
+        ]
+      ],
+      "thresholds": {
+        "proposalScore": 0.35,
+        "acceptScore": 0.4,
+        "dotConfidence": 0.7,
+        "nmsIou": 0.25,
+        "minCellWidth": 0.008,
+        "minCellHeight": 0.06,
+        "edgeMargin": 0.008,
+        "maxRowDeviation": 0.55,
+        "maxGapRatio": 1.2,
+        "maxOverlapRatio": 0.5
+      },
+      "selection": {
+        "x": 0,
+        "y": 0,
+        "width": 0.4625000000000001,
+        "height": 1
+      }
+    },
+    {
+      "id": "selection-2-top-1",
+      "group": "selection_clipping",
+      "peaks": [
+        [
+          24,
+          48,
+          1065017672,
+          0,
+          0,
+          1040187392,
+          1048576000,
+          1065185444,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770
+        ]
+      ],
+      "thresholds": {
+        "proposalScore": 0.35,
+        "acceptScore": 0.4,
+        "dotConfidence": 0.7,
+        "nmsIou": 0.25,
+        "minCellWidth": 0.008,
+        "minCellHeight": 0.06,
+        "edgeMargin": 0.008,
+        "maxRowDeviation": 0.55,
+        "maxGapRatio": 1.2,
+        "maxOverlapRatio": 0.5
+      },
+      "selection": {
+        "x": 0,
+        "y": 0.37500000000000006,
+        "width": 1,
+        "height": 0.625
+      }
+    },
+    {
+      "id": "selection-2-bottom-1",
+      "group": "selection_clipping",
+      "peaks": [
+        [
+          24,
+          48,
+          1065017672,
+          0,
+          0,
+          1040187392,
+          1048576000,
+          1065185444,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770
+        ]
+      ],
+      "thresholds": {
+        "proposalScore": 0.35,
+        "acceptScore": 0.4,
+        "dotConfidence": 0.7,
+        "nmsIou": 0.25,
+        "minCellWidth": 0.008,
+        "minCellHeight": 0.06,
+        "edgeMargin": 0.008,
+        "maxRowDeviation": 0.55,
+        "maxGapRatio": 1.2,
+        "maxOverlapRatio": 0.5
+      },
+      "selection": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 0.6250000000000001
+      }
+    },
+    {
+      "id": "selection-2-touch-right-1",
+      "group": "selection_exclusion",
+      "peaks": [
+        [
+          24,
+          48,
+          1065017672,
+          0,
+          0,
+          1040187392,
+          1048576000,
+          1065185444,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770
+        ]
+      ],
+      "thresholds": {
+        "proposalScore": 0.35,
+        "acceptScore": 0.4,
+        "dotConfidence": 0.7,
+        "nmsIou": 0.25,
+        "minCellWidth": 0.008,
+        "minCellHeight": 0.06,
+        "edgeMargin": 0.008,
+        "maxRowDeviation": 0.55,
+        "maxGapRatio": 1.2,
+        "maxOverlapRatio": 0.5
+      },
+      "selection": {
+        "x": 0.4625000000000001,
+        "y": 0,
+        "width": 0.5374999999999999,
+        "height": 1
+      }
+    },
+    {
+      "id": "selection-2-touch-left-1",
+      "group": "selection_exclusion",
+      "peaks": [
+        [
+          24,
+          48,
+          1065017672,
+          0,
+          0,
+          1040187392,
+          1048576000,
+          1065185444,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770
+        ]
+      ],
+      "thresholds": {
+        "proposalScore": 0.35,
+        "acceptScore": 0.4,
+        "dotConfidence": 0.7,
+        "nmsIou": 0.25,
+        "minCellWidth": 0.008,
+        "minCellHeight": 0.06,
+        "edgeMargin": 0.008,
+        "maxRowDeviation": 0.55,
+        "maxGapRatio": 1.2,
+        "maxOverlapRatio": 0.5
+      },
+      "selection": {
+        "x": 0,
+        "y": 0,
+        "width": 0.3375000000000001,
+        "height": 1
+      }
+    },
+    {
+      "id": "selection-2-touch-bottom-1",
+      "group": "selection_exclusion",
+      "peaks": [
+        [
+          24,
+          48,
+          1065017672,
+          0,
+          0,
+          1040187392,
+          1048576000,
+          1065185444,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770
+        ]
+      ],
+      "thresholds": {
+        "proposalScore": 0.35,
+        "acceptScore": 0.4,
+        "dotConfidence": 0.7,
+        "nmsIou": 0.25,
+        "minCellWidth": 0.008,
+        "minCellHeight": 0.06,
+        "edgeMargin": 0.008,
+        "maxRowDeviation": 0.55,
+        "maxGapRatio": 1.2,
+        "maxOverlapRatio": 0.5
+      },
+      "selection": {
+        "x": 0,
+        "y": 0.6250000000000001,
+        "width": 1,
+        "height": 0.3749999999999999
+      }
+    },
+    {
+      "id": "selection-2-touch-top-1",
+      "group": "selection_exclusion",
+      "peaks": [
+        [
+          24,
+          48,
+          1065017672,
+          0,
+          0,
+          1040187392,
+          1048576000,
+          1065185444,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770
+        ]
+      ],
+      "thresholds": {
+        "proposalScore": 0.35,
+        "acceptScore": 0.4,
+        "dotConfidence": 0.7,
+        "nmsIou": 0.25,
+        "minCellWidth": 0.008,
+        "minCellHeight": 0.06,
+        "edgeMargin": 0.008,
+        "maxRowDeviation": 0.55,
+        "maxGapRatio": 1.2,
+        "maxOverlapRatio": 0.5
+      },
+      "selection": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 0.37500000000000006
+      }
+    },
+    {
+      "id": "edge-left--1",
+      "group": "edge_margin",
+      "peaks": [
+        [
+          24,
+          12,
+          1065017672,
+          1050253722,
+          0,
+          1028443341,
+          1048576000,
+          1065185444,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770
+        ]
+      ],
+      "thresholds": {
+        "proposalScore": 0.35,
+        "acceptScore": 0.4,
+        "dotConfidence": 0.7,
+        "nmsIou": 0.25,
+        "minCellWidth": 0.008,
+        "minCellHeight": 0.06,
+        "edgeMargin": 0.07749999972681203,
+        "maxRowDeviation": 0.55,
+        "maxGapRatio": 1.2,
+        "maxOverlapRatio": 0.5
+      },
+      "selection": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      }
+    },
+    {
+      "id": "edge-left-0",
+      "group": "edge_margin",
+      "peaks": [
+        [
+          24,
+          12,
+          1065017672,
+          1050253722,
+          0,
+          1028443341,
+          1048576000,
+          1065185444,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770
+        ]
+      ],
+      "thresholds": {
+        "proposalScore": 0.35,
+        "acceptScore": 0.4,
+        "dotConfidence": 0.7,
+        "nmsIou": 0.25,
+        "minCellWidth": 0.008,
+        "minCellHeight": 0.06,
+        "edgeMargin": 0.07749999972681204,
+        "maxRowDeviation": 0.55,
+        "maxGapRatio": 1.2,
+        "maxOverlapRatio": 0.5
+      },
+      "selection": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      }
+    },
+    {
+      "id": "edge-left-1",
+      "group": "edge_margin",
+      "peaks": [
+        [
+          24,
+          12,
+          1065017672,
+          1050253722,
+          0,
+          1028443341,
+          1048576000,
+          1065185444,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770
+        ]
+      ],
+      "thresholds": {
+        "proposalScore": 0.35,
+        "acceptScore": 0.4,
+        "dotConfidence": 0.7,
+        "nmsIou": 0.25,
+        "minCellWidth": 0.008,
+        "minCellHeight": 0.06,
+        "edgeMargin": 0.07749999972681205,
+        "maxRowDeviation": 0.55,
+        "maxGapRatio": 1.2,
+        "maxOverlapRatio": 0.5
+      },
+      "selection": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      }
+    },
+    {
+      "id": "edge-right--1",
+      "group": "edge_margin",
+      "peaks": [
+        [
+          24,
+          107,
+          1065017672,
+          1060320051,
+          0,
+          1028443341,
+          1048576000,
+          1065185444,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770
+        ]
+      ],
+      "thresholds": {
+        "proposalScore": 0.35,
+        "acceptScore": 0.4,
+        "dotConfidence": 0.7,
+        "nmsIou": 0.25,
+        "minCellWidth": 0.008,
+        "minCellHeight": 0.06,
+        "edgeMargin": 0.07749999972681208,
+        "maxRowDeviation": 0.55,
+        "maxGapRatio": 1.2,
+        "maxOverlapRatio": 0.5
+      },
+      "selection": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      }
+    },
+    {
+      "id": "edge-right-0",
+      "group": "edge_margin",
+      "peaks": [
+        [
+          24,
+          107,
+          1065017672,
+          1060320051,
+          0,
+          1028443341,
+          1048576000,
+          1065185444,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770
+        ]
+      ],
+      "thresholds": {
+        "proposalScore": 0.35,
+        "acceptScore": 0.4,
+        "dotConfidence": 0.7,
+        "nmsIou": 0.25,
+        "minCellWidth": 0.008,
+        "minCellHeight": 0.06,
+        "edgeMargin": 0.0774999997268121,
+        "maxRowDeviation": 0.55,
+        "maxGapRatio": 1.2,
+        "maxOverlapRatio": 0.5
+      },
+      "selection": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      }
+    },
+    {
+      "id": "edge-right-1",
+      "group": "edge_margin",
+      "peaks": [
+        [
+          24,
+          107,
+          1065017672,
+          1060320051,
+          0,
+          1028443341,
+          1048576000,
+          1065185444,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770
+        ]
+      ],
+      "thresholds": {
+        "proposalScore": 0.35,
+        "acceptScore": 0.4,
+        "dotConfidence": 0.7,
+        "nmsIou": 0.25,
+        "minCellWidth": 0.008,
+        "minCellHeight": 0.06,
+        "edgeMargin": 0.07749999972681211,
+        "maxRowDeviation": 0.55,
+        "maxGapRatio": 1.2,
+        "maxOverlapRatio": 0.5
+      },
+      "selection": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      }
+    },
+    {
+      "id": "edge-top--1",
+      "group": "edge_margin",
+      "peaks": [
+        [
+          7,
+          48,
+          1065017672,
+          0,
+          1050253722,
+          1028443341,
+          1040187392,
+          1065185444,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770
+        ]
+      ],
+      "thresholds": {
+        "proposalScore": 0.35,
+        "acceptScore": 0.4,
+        "dotConfidence": 0.7,
+        "nmsIou": 0.25,
+        "minCellWidth": 0.008,
+        "minCellHeight": 0.06,
+        "edgeMargin": 0.089583333581686,
+        "maxRowDeviation": 0.55,
+        "maxGapRatio": 1.2,
+        "maxOverlapRatio": 0.5
+      },
+      "selection": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      }
+    },
+    {
+      "id": "edge-top-0",
+      "group": "edge_margin",
+      "peaks": [
+        [
+          7,
+          48,
+          1065017672,
+          0,
+          1050253722,
+          1028443341,
+          1040187392,
+          1065185444,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770
+        ]
+      ],
+      "thresholds": {
+        "proposalScore": 0.35,
+        "acceptScore": 0.4,
+        "dotConfidence": 0.7,
+        "nmsIou": 0.25,
+        "minCellWidth": 0.008,
+        "minCellHeight": 0.06,
+        "edgeMargin": 0.08958333358168602,
+        "maxRowDeviation": 0.55,
+        "maxGapRatio": 1.2,
+        "maxOverlapRatio": 0.5
+      },
+      "selection": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      }
+    },
+    {
+      "id": "edge-top-1",
+      "group": "edge_margin",
+      "peaks": [
+        [
+          7,
+          48,
+          1065017672,
+          0,
+          1050253722,
+          1028443341,
+          1040187392,
+          1065185444,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770
+        ]
+      ],
+      "thresholds": {
+        "proposalScore": 0.35,
+        "acceptScore": 0.4,
+        "dotConfidence": 0.7,
+        "nmsIou": 0.25,
+        "minCellWidth": 0.008,
+        "minCellHeight": 0.06,
+        "edgeMargin": 0.08958333358168603,
+        "maxRowDeviation": 0.55,
+        "maxGapRatio": 1.2,
+        "maxOverlapRatio": 0.5
+      },
+      "selection": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      }
+    },
+    {
+      "id": "edge-bottom--1",
+      "group": "edge_margin",
+      "peaks": [
+        [
+          41,
+          48,
+          1065017672,
+          0,
+          1060320051,
+          1028443341,
+          1040187392,
+          1065185444,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770
+        ]
+      ],
+      "thresholds": {
+        "proposalScore": 0.35,
+        "acceptScore": 0.4,
+        "dotConfidence": 0.7,
+        "nmsIou": 0.25,
+        "minCellWidth": 0.008,
+        "minCellHeight": 0.06,
+        "edgeMargin": 0.06875000024835264,
+        "maxRowDeviation": 0.55,
+        "maxGapRatio": 1.2,
+        "maxOverlapRatio": 0.5
+      },
+      "selection": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      }
+    },
+    {
+      "id": "edge-bottom-0",
+      "group": "edge_margin",
+      "peaks": [
+        [
+          41,
+          48,
+          1065017672,
+          0,
+          1060320051,
+          1028443341,
+          1040187392,
+          1065185444,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770
+        ]
+      ],
+      "thresholds": {
+        "proposalScore": 0.35,
+        "acceptScore": 0.4,
+        "dotConfidence": 0.7,
+        "nmsIou": 0.25,
+        "minCellWidth": 0.008,
+        "minCellHeight": 0.06,
+        "edgeMargin": 0.06875000024835265,
+        "maxRowDeviation": 0.55,
+        "maxGapRatio": 1.2,
+        "maxOverlapRatio": 0.5
+      },
+      "selection": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      }
+    },
+    {
+      "id": "edge-bottom-1",
+      "group": "edge_margin",
+      "peaks": [
+        [
+          41,
+          48,
+          1065017672,
+          0,
+          1060320051,
+          1028443341,
+          1040187392,
+          1065185444,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770,
+          1008981770
+        ]
+      ],
+      "thresholds": {
+        "proposalScore": 0.35,
+        "acceptScore": 0.4,
+        "dotConfidence": 0.7,
+        "nmsIou": 0.25,
+        "minCellWidth": 0.008,
+        "minCellHeight": 0.06,
+        "edgeMargin": 0.06875000024835266,
+        "maxRowDeviation": 0.55,
+        "maxGapRatio": 1.2,
+        "maxOverlapRatio": 0.5
+      },
+      "selection": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      }
+    }
+  ]
+}

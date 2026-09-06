@@ -1,0 +1,129 @@
+{
+  "scope": "PRIVATE CPU NumPy/Pillow prototype only. No active source/model/profile change, no new training or selection protocol, no model inference or recognition accuracy claim.",
+  "files": {
+    "prepare.py": {
+      "sha256": "0c4de0eebda759dbb3d966d235d1d6bc42a4c71647bdc0d4a54fab68433f78d6",
+      "bytes": 5452
+    },
+    "private-edits.patch": {
+      "sha256": "a3129468fbafb8991848e8f8e8e9cf2c048ba6930a8f114d6c48607c2ed7c864",
+      "bytes": 5126
+    },
+    "proof-report.json": {
+      "sha256": "7df89ed1f3be63849d893d3119a5f1105183e8141da9b4cbf0de6b3d7a41d4a6",
+      "bytes": 10205
+    },
+    "prototype-spec.json": {
+      "sha256": "30a478d99de348da15b6457b5f56831541e73a7ad652e5f1270a3b14e0d19035",
+      "bytes": 3728
+    },
+    "run_proof.py": {
+      "sha256": "b496d581c2b917447e0d6eee720723857ff220aae7c5480a8b99fe55535913f3",
+      "bytes": 5356
+    },
+    "source-original/word_bn_affine.py": {
+      "sha256": "fa117f65beda3f6d159f707a5cd45d3a367b8f5b436b8c43c0d7621071297dff",
+      "bytes": 5135
+    },
+    "source-original/word_bn_affine_init.py": {
+      "sha256": "ea76999d35a6e9ba94cffce06c359adb1201cb396b54345668b7ed13afe99ce1",
+      "bytes": 9683
+    },
+    "source-original/word_bn_affine_parity.py": {
+      "sha256": "d4baba52b0993240e0b5092500ae32ee5d1b01e636d2546261a0a24996bd4a21",
+      "bytes": 14737
+    },
+    "source-original/word_data.py": {
+      "sha256": "659ab6b508a69b34bfb8dc899c5fa6e2214bd64e08281f40f9c39aa91d74996c",
+      "bytes": 26068
+    },
+    "source-original/word_decode.py": {
+      "sha256": "bd301c5afeb4ba2e6866371665324d2de7f0a6ee252ef76ce02a5553193d63c5",
+      "bytes": 7945
+    },
+    "source-original/word_dsbi.py": {
+      "sha256": "feecf16dba6d376415e15707c02c8f05fcf6650055da09ad9f4712099e6325ff",
+      "bytes": 7331
+    },
+    "source-original/word_fine_branch.py": {
+      "sha256": "53bff984c33a20556721328e6253fadd060019573b068deee2a671d08a530750",
+      "bytes": 5665
+    },
+    "source-original/word_fine_init.py": {
+      "sha256": "3baa5f15b2b4b74ea120dd8150ad3b8a11f59139ad3eb833d3b2089e188d1310",
+      "bytes": 8595
+    },
+    "source-original/word_fine_parity.py": {
+      "sha256": "de30cf4b3df1d8ec4bf820f6e1d98c8e40a39eb674a9ce470a3067569f3a8cbe",
+      "bytes": 9651
+    },
+    "source-original/word_fine_validation.py": {
+      "sha256": "b075760aee90afa17a84c0e8ec3a421132e0644130929f8f7a85b54b11058124",
+      "bytes": 10070
+    },
+    "source-original/word_geometry_head.py": {
+      "sha256": "f46c8f90e7f4fc9404eed2dc27fbde6e5c823d25d4f88e4127c7e56ed6e8764e",
+      "bytes": 5857
+    },
+    "source-original/word_geometry_init.py": {
+      "sha256": "072379a1ef409d901c2478135174561c14781560cdd56a0b91b0229b8032e15e",
+      "bytes": 7916
+    },
+    "source-original/word_geometry_parity.py": {
+      "sha256": "700d9175dc627fb7bf12c0ac20f640191cf5a045e29067c310f5dad5f3bd6f0b",
+      "bytes": 6018
+    },
+    "source-original/word_model.py": {
+      "sha256": "c446732a2905a612cd6f1dd64d2d3d01303b1c71933c34552d26f3b5052fd551",
+      "bytes": 5890
+    },
+    "source-original/word_point_geometry.py": {
+      "sha256": "2b932b320d191277b86ae13daecb82b5abbf0a46e9464d7360ee1e941aca760b",
+      "bytes": 8361
+    },
+    "source-original/word_point_metadata.py": {
+      "sha256": "de1cad0157e744f2f646010eac5355b88d1d11f52662d4b9353166661f59049f",
+      "bytes": 5280
+    },
+    "source-original/word_sampling.py": {
+      "sha256": "c234523277dba683e68a2863e14736bc68432da3b6ca65bb5d8a64bc7d9dc0fe",
+      "bytes": 4164
+    },
+    "source-original/word_sources.py": {
+      "sha256": "affb3488d8c25e3d0131eb4340cae29fcece563ac75373e071f97fef68f09acd",
+      "bytes": 8105
+    },
+    "source-original/word_tail.py": {
+      "sha256": "bdd4b5d12d56e25c1100a282483e7a31176b5a65beb353a0623ceea40a49dc0e",
+      "bytes": 8506
+    },
+    "source-original/word_train.py": {
+      "sha256": "f472b80d0466e17cf1efcb59661b3fea300f5618d4288ec1847fa8d3b628c97b",
+      "bytes": 43876
+    },
+    "source-original/word_vertical_stretch.py": {
+      "sha256": "336168fbfe4441bfa91e0855f473997a403a542a2b64789ca7cbd1b11b188ed5",
+      "bytes": 1108
+    },
+    "source-private/word_data.py": {
+      "sha256": "260a88ce649dbd8d7a6f8439094ada1e22193d257adfc379e9a2c6d060defe62",
+      "bytes": 26786
+    },
+    "source-private/word_horizontal_aspect.py": {
+      "sha256": "8338270dc2d7fdd938ca85d7597e80b87ed59742e8986e6a7c5e4724e0a1a886",
+      "bytes": 938
+    },
+    "source-private/word_train.py": {
+      "sha256": "e3856e95c94f416c4621c8947fc5920283af29c1c7cb0e634de5322a342b9d25",
+      "bytes": 44906
+    },
+    "stdout.log": {
+      "sha256": "88bcc093c2a2762e1c060d4cad67908f11d034b88dd3d56e680d1435488eaf41",
+      "bytes": 1382
+    },
+    "test_private_aspect.py": {
+      "sha256": "845c74bdbc6fd5096b15beac8ae660a164518670677543930825ba21183502eb",
+      "bytes": 11969
+    }
+  }
+}

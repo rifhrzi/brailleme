@@ -1,0 +1,302 @@
+{
+  "status": "passed",
+  "created_at_utc": "2026-09-05T19:40:24.871386+00:00",
+  "scope": "Six fixed TRAIN/analytic inputs, initial and actual nonzero affine copies; no accuracy or candidate activation.",
+  "initialization_report_sha256": "b805f1091e6c59f036cd81f5253f0ca00eb0578e450727e5c105090abf99cf50",
+  "source_sha256": "d4baba52b0993240e0b5092500ae32ee5d1b01e636d2546261a0a24996bd4a21",
+  "initialization_report": ".braille-training-work\\word-scan-v1-20260905\\bn-affine-parent-v1\\bn-affine-initialization.json",
+  "oracle_report_sha256": "6b1f67677f8950c69a3f5a4f63f786ae011c9a77f0a571684cb35f4eced508ea",
+  "oracle_sha256": "2ba7da257b3788e756e56377087ae948960c3ae200ef5e55041f1d74e6999eb7",
+  "selected_validation_report": ".braille-training-work\\word-scan-v1-20260905\\selected-v15\\selected-validation.json",
+  "selected_validation_sha256": "d136021888194895e3bd19cd3800ace90cb3cc83776a87799fd7fda8d9623b39",
+  "thresholds": {
+    "proposalScore": 0.25,
+    "acceptScore": 0.25,
+    "dotConfidence": 0.7,
+    "nmsIou": 0.25,
+    "minCellWidth": 0.008,
+    "minCellHeight": 0.06,
+    "edgeMargin": 0.008,
+    "maxRowDeviation": 0.55,
+    "maxGapRatio": 1.2,
+    "maxOverlapRatio": 0.5
+  },
+  "decision_sources_sha256": {
+    "word_decode.py": "bd301c5afeb4ba2e6866371665324d2de7f0a6ee252ef76ce02a5553193d63c5",
+    "word_benchmark.py": "ad7d4f3a35a8d0dd3a530dfeb8f849fde585e97cadcde5fcb043950bedd05988",
+    "benchmark_angelina.py": "6c7d63c8b5c461fec73e415b46df74d15c0bca455cc9f411c5fb6edd5d353353",
+    "word_data.py": "659ab6b508a69b34bfb8dc899c5fa6e2214bd64e08281f40f9c39aa91d74996c"
+  },
+  "absolute_tolerance": 0.0001,
+  "relative_tolerance": 0.0001,
+  "probes": {
+    "initial": {
+      "checkpoint_sha256": "6d4847f3030ec40476a2e29c65a4a0941f6ea9ba7e59260b20c3c6e9d48bf35d",
+      "artifact_sha256": "406db0e55e8a5ba9e0d00fb22aadc24f19698219f375e4dcead9057cf3bf2230",
+      "artifact_bytes": 3259716,
+      "operators": [
+        "ADD",
+        "CONCATENATION",
+        "CONV_2D",
+        "DEPTHWISE_CONV_2D",
+        "LOGISTIC",
+        "MAXIMUM",
+        "MEAN",
+        "MINIMUM",
+        "MUL",
+        "RELU",
+        "RESHAPE",
+        "RSQRT",
+        "SQUARED_DIFFERENCE",
+        "STRIDED_SLICE",
+        "SUB",
+        "TILE"
+      ],
+      "builtins_only": true,
+      "samples": 6,
+      "all_finite": true,
+      "torch_vs_tf_max_abs": 7.033348083496094e-06,
+      "tf_vs_tflite_max_abs": 1.3530254364013672e-05,
+      "torch_vs_tflite_max_abs": 1.2576580047607422e-05,
+      "eager_train_eval_exact": true,
+      "compiled_vs_eager_max_abs": 5.0067901611328125e-06,
+      "all_moments_and_weights_unchanged": true,
+      "input": {
+        "count": 1,
+        "shape": [
+          1,
+          192,
+          480,
+          3
+        ],
+        "dtype": "float32"
+      },
+      "output": {
+        "count": 1,
+        "shape": [
+          1,
+          48,
+          120,
+          11
+        ],
+        "dtype": "float32"
+      },
+      "raw_and_quality_effective_decisions_equal": true,
+      "decisions": [
+        {
+          "raw": {
+            "text": "",
+            "reason": "clipped",
+            "cell_count": 9
+          },
+          "quality_reason": "",
+          "effective": {
+            "text": "",
+            "reason": "clipped",
+            "cell_count": 9
+          }
+        },
+        {
+          "raw": {
+            "text": "",
+            "reason": "clipped",
+            "cell_count": 12
+          },
+          "quality_reason": "",
+          "effective": {
+            "text": "",
+            "reason": "clipped",
+            "cell_count": 12
+          }
+        },
+        {
+          "raw": {
+            "text": "",
+            "reason": "no_grid",
+            "cell_count": 0
+          },
+          "quality_reason": "",
+          "effective": {
+            "text": "",
+            "reason": "no_grid",
+            "cell_count": 0
+          }
+        },
+        {
+          "raw": {
+            "text": "",
+            "reason": "no_grid",
+            "cell_count": 0
+          },
+          "quality_reason": "dark",
+          "effective": {
+            "text": "",
+            "reason": "dark",
+            "cell_count": 0
+          }
+        },
+        {
+          "raw": {
+            "text": "",
+            "reason": "no_grid",
+            "cell_count": 0
+          },
+          "quality_reason": "glare",
+          "effective": {
+            "text": "",
+            "reason": "glare",
+            "cell_count": 0
+          }
+        },
+        {
+          "raw": {
+            "text": "",
+            "reason": "no_grid",
+            "cell_count": 0
+          },
+          "quality_reason": "",
+          "effective": {
+            "text": "",
+            "reason": "no_grid",
+            "cell_count": 0
+          }
+        }
+      ]
+    },
+    "nonzero": {
+      "checkpoint_sha256": "22ea3ccdfc59751fdd349356c9ce256791431d374d5de546298ec2dfbed72041",
+      "artifact_sha256": "c90e4e9db9c84f3f66647cf7877563c99cc1fb5a740ac3e65c1f92c5fec38bb3",
+      "artifact_bytes": 3259716,
+      "operators": [
+        "ADD",
+        "CONCATENATION",
+        "CONV_2D",
+        "DEPTHWISE_CONV_2D",
+        "LOGISTIC",
+        "MAXIMUM",
+        "MEAN",
+        "MINIMUM",
+        "MUL",
+        "RELU",
+        "RESHAPE",
+        "RSQRT",
+        "SQUARED_DIFFERENCE",
+        "STRIDED_SLICE",
+        "SUB",
+        "TILE"
+      ],
+      "builtins_only": true,
+      "samples": 6,
+      "all_finite": true,
+      "torch_vs_tf_max_abs": 5.513429641723633e-06,
+      "tf_vs_tflite_max_abs": 1.8835067749023438e-05,
+      "torch_vs_tflite_max_abs": 1.8298625946044922e-05,
+      "eager_train_eval_exact": true,
+      "compiled_vs_eager_max_abs": 3.516674041748047e-06,
+      "all_moments_and_weights_unchanged": true,
+      "input": {
+        "count": 1,
+        "shape": [
+          1,
+          192,
+          480,
+          3
+        ],
+        "dtype": "float32"
+      },
+      "output": {
+        "count": 1,
+        "shape": [
+          1,
+          48,
+          120,
+          11
+        ],
+        "dtype": "float32"
+      },
+      "raw_and_quality_effective_decisions_equal": true,
+      "decisions": [
+        {
+          "raw": {
+            "text": "",
+            "reason": "clipped",
+            "cell_count": 9
+          },
+          "quality_reason": "",
+          "effective": {
+            "text": "",
+            "reason": "clipped",
+            "cell_count": 9
+          }
+        },
+        {
+          "raw": {
+            "text": "",
+            "reason": "clipped",
+            "cell_count": 12
+          },
+          "quality_reason": "",
+          "effective": {
+            "text": "",
+            "reason": "clipped",
+            "cell_count": 12
+          }
+        },
+        {
+          "raw": {
+            "text": "",
+            "reason": "no_grid",
+            "cell_count": 0
+          },
+          "quality_reason": "",
+          "effective": {
+            "text": "",
+            "reason": "no_grid",
+            "cell_count": 0
+          }
+        },
+        {
+          "raw": {
+            "text": "",
+            "reason": "no_grid",
+            "cell_count": 0
+          },
+          "quality_reason": "dark",
+          "effective": {
+            "text": "",
+            "reason": "dark",
+            "cell_count": 0
+          }
+        },
+        {
+          "raw": {
+            "text": "",
+            "reason": "no_grid",
+            "cell_count": 0
+          },
+          "quality_reason": "glare",
+          "effective": {
+            "text": "",
+            "reason": "glare",
+            "cell_count": 0
+          }
+        },
+        {
+          "raw": {
+            "text": "",
+            "reason": "no_grid",
+            "cell_count": 0
+          },
+          "quality_reason": "",
+          "effective": {
+            "text": "",
+            "reason": "no_grid",
+            "cell_count": 0
+          }
+        }
+      ]
+    }
+  },
+  "conversion_probes_must_not_be_activated_or_resumed": true,
+  "trained_candidate_requires_full405_parity": true
+}

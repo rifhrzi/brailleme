@@ -1,0 +1,59 @@
+{
+    "created_at_utc":  "2026-09-06T02:24:56.8586431Z",
+    "scope":  "Append-only source and actual/synthetic provenance validation; no model execution",
+    "files":  [
+                  {
+                      "original":  ".braille-training-work/word-scan-v1-20260905/real-horizontal-aspect-continuation-preflight-verifier-check.json",
+                      "sha256":  "050688242150c4cf3fd7951b594a240148c25bbd6911f6b0b1389f381935a97b",
+                      "file":  "actual-preflight-replay.json",
+                      "bytes":  16306
+                  },
+                  {
+                      "original":  ".braille-training-work/word-scan-v1-20260905/verify_real_horizontal_aspect_continuation_preflight.mjs",
+                      "sha256":  "bc39409e9656dbcd439d8b864628696aaa22c9cbd975b32a102b57fe77bc2084",
+                      "file":  "verify-real-preflight.mjs",
+                      "bytes":  7144
+                  },
+                  {
+                      "original":  ".braille-training-work/word-scan-v1-20260905/horizontal-aspect-continuation-verifier-validation.json",
+                      "sha256":  "2073c70787d8864ba0173f80545eeeb1c5906d754b32762e63aaf1bdfe4e96e8",
+                      "file":  "synthetic-validation.json",
+                      "bytes":  1366
+                  },
+                  {
+                      "original":  ".braille-training-work/word-scan-v1-20260905/horizontal-aspect-continuation-verifier-tests.log",
+                      "sha256":  "75aba08c2d50edcdb74f74e07703a682b861d8b9f8a29ef9dfd8972b2910671a",
+                      "file":  "synthetic-tests.log",
+                      "bytes":  20334
+                  },
+                  {
+                      "original":  "scripts/verify-word-model-assets.mjs",
+                      "sha256":  "6e0a30e1fe50915f53000fa455b6d71d6d4b6c6ae5341d986f24da5285992d92",
+                      "file":  "verify-word-model-assets.mjs",
+                      "bytes":  138337
+                  },
+                  {
+                      "original":  "scripts/test-word-model-verifier.mjs",
+                      "sha256":  "f7e1c6c12bda732c6b294ed4405f2c51c4936277522b384ec647a5f4269fe831",
+                      "file":  "test-word-model-verifier.mjs",
+                      "bytes":  118450
+                  },
+                  {
+                      "sha256":  "94080084ef9089db4d88743c07be7a4ff467d80017576cc5fe1bb920aa32de1a",
+                      "file":  "README.md",
+                      "bytes":  608
+                  }
+              ],
+    "originalArchive":  [
+                            {
+                                "sha256":  "c02018b78bb54d3eda81ba0a4e9339455483e34a7ac8f6a68ecff87fb0f6463b",
+                                "file":  "../preflight.json"
+                            },
+                            {
+                                "sha256":  "cb5cdefd10027d705431d93842fba0e2e1fec7c20b56560843a9102ca24948b3",
+                                "file":  "../archive-index.json"
+                            }
+                        ],
+    "originalArchiveModified":  false,
+    "status":  "passed"
+}

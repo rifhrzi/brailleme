@@ -1,0 +1,243 @@
+{
+  "schemaVersion": 1,
+  "decoderVersion": "six-dot-word-v2",
+  "artifact": {
+    "name": "braille-word-reader",
+    "version": "1.0.0-experimental.v26",
+    "status": "experimental_candidate",
+    "file": "word-reader.tflite",
+    "sha256": "406db0e55e8a5ba9e0d00fb22aadc24f19698219f375e4dcead9057cf3bf2230",
+    "sizeBytes": 3259716
+  },
+  "imageNormalization": {
+    "kind": "per_channel_standardize_grayscale",
+    "location": "inside_model_before_backbone_rescaling",
+    "variance": "population",
+    "stdFloor": 0.001,
+    "targetMean": 0.5,
+    "targetStd": 0.05,
+    "clip": [
+      0,
+      1
+    ],
+    "grayscale": "mean_of_standardized_channels",
+    "outputChannels": 3
+  },
+  "input": {
+    "shape": [
+      1,
+      192,
+      480,
+      3
+    ],
+    "dtype": "float32",
+    "layout": "NHWC",
+    "channelOrder": "RGB",
+    "normalization": "pixel / 255.0",
+    "resizeInterpolation": "pillow_bilinear_antialias_u8_22bit",
+    "androidRawPixelCorrection": "nitro-image-0.15.1-argb8888-is-rgba",
+    "backboneNormalization": "Rescaling(2, -1) inside model"
+  },
+  "output": {
+    "shape": [
+      1,
+      48,
+      120,
+      11
+    ],
+    "dtype": "float32",
+    "layout": [
+      "objectness",
+      "offset_x",
+      "offset_y",
+      "width",
+      "height",
+      "dot1",
+      "dot2",
+      "dot3",
+      "dot4",
+      "dot5",
+      "dot6"
+    ]
+  },
+  "thresholds": {
+    "proposalScore": 0.25,
+    "acceptScore": 0.25,
+    "dotConfidence": 0.7,
+    "nmsIou": 0.25,
+    "minCellWidth": 0.008,
+    "minCellHeight": 0.06,
+    "edgeMargin": 0.008,
+    "maxRowDeviation": 0.55,
+    "maxGapRatio": 1.2,
+    "maxOverlapRatio": 0.5
+  },
+  "latinMasks": [
+    1,
+    3,
+    9,
+    25,
+    17,
+    11,
+    27,
+    19,
+    10,
+    26,
+    5,
+    7,
+    13,
+    29,
+    21,
+    15,
+    31,
+    23,
+    14,
+    30,
+    37,
+    39,
+    58,
+    45,
+    61,
+    53
+  ],
+  "internalAcceptance": {
+    "passed": false,
+    "exactWordSuccessRate": 0.5321252059308073,
+    "acceptedWordAccuracy": 0.9202279202279202,
+    "evaluatedWordCount": 607,
+    "acceptedWordCount": 351,
+    "negativeImageCount": 44,
+    "negativeFalseAccepts": 0
+  },
+  "physicalCameraValidated": false,
+  "nativeSelfTest": {
+    "expectedText": "RAWENSTWA",
+    "file": "native-word-fixture.png",
+    "sha256": "5115a112aad01432f4ebdfa22d8dcb686f1330075d5030bc5c039c154dc4d164",
+    "roi": {
+      "x": 0.14288889567057292,
+      "y": 0.40029182879377434,
+      "width": 0.7142222425672743,
+      "height": 0.19941634241245138
+    },
+    "source": "books/ola/IMG_5365.labeled.jpg",
+    "source_sha256": "07f8a7610c881ed21faccebdc55f68585c11fd927039397c616d42ad13761b87",
+    "source_crop": [
+      22,
+      1083,
+      472,
+      1340
+    ],
+    "source_model_context_crop": [
+      86,
+      1147,
+      408,
+      1276
+    ],
+    "width": 450,
+    "height": 257,
+    "guideAspect": 6.271219512195121,
+    "purpose": "Original RGB source crop with surrounding pixels; not an already resized 480x192 model input.",
+    "native_validated": false,
+    "runtime_input_reference": {
+      "crop": [
+        64,
+        64,
+        386,
+        193
+      ],
+      "selection": {
+        "x": 0.0009316864961422777,
+        "y": 0.30135658914728686,
+        "width": 0.9981366743952592,
+        "height": 0.3972868217054264
+      },
+      "quality_reason": "",
+      "input_float32_sha256": "88e89e4e9854e0c1cd62d21842b4c24642b22de76fb5cc22a8f8a869df68970b",
+      "cached_output_sha256": "fecec0daeff85c1bd90f93d9c4b5b98a86cd0c63ac0618a06b48375723042c39",
+      "decoded_text": "RAWENSTWA",
+      "rejection": "",
+      "input_rgb_sha256": "da834ef8e57904ccfbae2f15f5dcff9d4e6eff7ca56cb9893a7f0140d84c3c44",
+      "cached_validation_image": "validation-words/000049.png",
+      "exact_cached_pixels": true,
+      "model_sha256": "406db0e55e8a5ba9e0d00fb22aadc24f19698219f375e4dcead9057cf3bf2230",
+      "thresholds": {
+        "proposalScore": 0.25,
+        "acceptScore": 0.25,
+        "dotConfidence": 0.7,
+        "nmsIou": 0.25,
+        "minCellWidth": 0.008,
+        "minCellHeight": 0.06,
+        "edgeMargin": 0.008,
+        "maxRowDeviation": 0.55,
+        "maxGapRatio": 1.2,
+        "maxOverlapRatio": 0.5
+      },
+      "source_sha256": {
+        "src/ml/word-image-processing.ts": "e97bf56d549c20f9d849c11fb5ac26c0abacf48030e847def46dbeb3e8e8248f",
+        "src/ml/word-model-contract.ts": "e985d76a5d372cf4f31a325a39ca88268422dd5c0685e50c48ee1fb69dffc99f",
+        "src/ml/word-decoder.ts": "f8bb0ef65a03c850c8aedccf287e00501a5bf1b4c4bba60440141567752b6c15",
+        "src/types/word-scan.ts": "f6b8ac0cf1072b3ec99f23ac8407e5d8e38c7e801a7c90f4cc2a3503761a1964",
+        "scripts/word-native-parity/geometry-reference.cjs": "a4dbeee051f06aa7d2459070e3e213ee4d28ea63d69c639cb7247d69fc751cca",
+        "scripts/word-native-parity/fixture-geometry.cjs": "b6c82d2e38d980ae1fafa579df2a6dbc070cd177c86988e9db9cadde6c1aa16b",
+        "training/scripts/word_fixture.py": "377bcee2679f46a9c5195e36ab64a8c8acf20322058bd9dfe15258833d83c0d3"
+      }
+    }
+  },
+  "experimentalUse": {
+    "enabled": true,
+    "scope": "local_internal_only",
+    "authorizedBy": "user",
+    "reason": "Use highest measured existing whole-word model; original accuracy gates remain failed."
+  },
+  "evidence": {
+    "publicBenchmark": {
+      "file": "training/evidence/braille-word-reader-v1/experimental-internal-best/public-benchmark.json",
+      "sha256": "53b97677aea261af1174a5f70edc81affbf272ca32f7611ae3df688638209944"
+    },
+    "wholeWordFixtures": {
+      "file": "training/evidence/braille-word-reader-v1/experimental-internal-best/external-words.json",
+      "sha256": "e69d7c0d9582aef7d51a2c15706f6bf62bc3cdfe35d22ad28ad007301d56b41b"
+    },
+    "conversion": {
+      "file": "training/evidence/braille-word-reader-v1/experimental-internal-best/export-report.json",
+      "sha256": "e3e61fc55c8eeb1a948d18d09357f295e72252d52fc3c51c53bb68ae1c884c8e"
+    },
+    "validationSelection": {
+      "file": "training/evidence/braille-word-reader-v1/experimental-internal-best/selected-validation-fullprecision.json",
+      "sha256": "fe6848be28bf6933e9d49e3b28e653acd2a9748922186bfd3e0bc51671b071e9"
+    },
+    "repetitionDiagnostics": {
+      "file": "training/evidence/braille-word-reader-v1/experimental-internal-best/repetition-diagnostics.json",
+      "sha256": "b1a81f7301720bc5607086722146ed1e639fdd7097ea656939aa4289c9c8cbdc"
+    },
+    "rejectionDiagnostics": {
+      "file": "training/evidence/braille-word-reader-v1/experimental-internal-best/rejection-diagnostics.json",
+      "sha256": "7a15241e0c03de9627c8c5a3788a13f4cb9aee55dc715f0384c24faaa3aaa9d8"
+    },
+    "decoderParity": {
+      "file": "training/evidence/braille-word-reader-v1/experimental-internal-best/decoder-parity-v2.json",
+      "sha256": "d40ed2edbdbac65b7df0fe603d180f5fcf0ea2ef04a6fb53cf05f14605a5b0c7"
+    },
+    "nativeFixtureGeometry": {
+      "file": "training/evidence/braille-word-reader-v1/experimental-internal-best/native-fixture-geometry.json",
+      "sha256": "98a602234b6da4b0d8a188e807437c1199a78a806137eecd437bbc2b189a6b80"
+    }
+  },
+  "provenance": {
+    "checkpointSha256": "cce2432c0ddb8952c885dd58697589c285209588dafa81aacdd891b1660068b7",
+    "selection": "Best existing whole-word weight from recorded public development comparisons, per user instruction; current v2 decoder retained. Not independent holdout selection.",
+    "datasets": [
+      {
+        "name": "AngelinaDataset",
+        "revision": "e13038d483bb58e17046d640e078dc4768276e9b",
+        "redistributionRightsConfirmed": false
+      },
+      {
+        "name": "DSBI",
+        "revision": "6937eb8973efe5ff337e5c018485cb626303f5c2",
+        "redistributionRightsConfirmed": false
+      }
+    ]
+  }
+}

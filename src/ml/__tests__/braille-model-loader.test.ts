@@ -36,6 +36,10 @@ jest.mock(
   '../../../assets/models/braille-cell-classifier-v2/braille_model.tflite',
   () => 101,
 );
+jest.mock(
+  '../../../assets/models/braille-cell-classifier-v2/native-self-test-v.png',
+  () => 202,
+);
 
 const loadAssetMock = Asset.loadAsync as jest.MockedFunction<
   typeof Asset.loadAsync
@@ -171,7 +175,6 @@ describe('useBrailleModel', () => {
     nativeImages = createNativeImagePipeline();
     loadAssetMock.mockResolvedValue([
       { localUri: 'file:///data/user/0/app/cache/braille_model.tflite' },
-      { localUri: 'file:///data/user/0/app/cache/native-self-test-v.png' },
     ] as Awaited<ReturnType<typeof Asset.loadAsync>>);
     loadImageMock.mockResolvedValue(nativeImages.source);
   });
@@ -203,6 +206,7 @@ describe('useBrailleModel', () => {
       { url: 'file:///data/user/0/app/cache/braille_model.tflite' },
       [],
     );
+    expect(loadAssetMock).toHaveBeenCalledWith(101);
 
     await act(async () => {
       selfTest.resolve([validProbabilityBuffer()]);
@@ -210,6 +214,7 @@ describe('useBrailleModel', () => {
     });
     await waitFor(() => expect(hook.result.current.status).toBe('ready'));
     expect(hook.result.current).toEqual({ status: 'ready', model });
+    expect(loadImageMock).toHaveBeenCalledWith(202);
     expect(nativeImages.source.crop).toHaveBeenCalledWith(11, 11, 39, 39);
     expect(nativeImages.cropped.resize).toHaveBeenCalledWith(28, 28);
     expect(model.runSync).toHaveBeenCalledTimes(1);
@@ -231,20 +236,10 @@ describe('useBrailleModel', () => {
 
   it.each([
     ['tidak mengembalikan aset', []],
-    ['tidak memiliki localUri', [{}, {}]],
+    ['tidak memiliki localUri', [{}]],
     [
       'mengembalikan URI model non-lokal',
-      [
-        { localUri: 'https://example.test/model.tflite' },
-        { localUri: 'file:///native-self-test-v.png' },
-      ],
-    ],
-    [
-      'mengembalikan URI fixture non-lokal',
-      [
-        { localUri: 'file:///braille_model.tflite' },
-        { localUri: 'https://example.test/native-self-test-v.png' },
-      ],
+      [{ localUri: 'https://example.test/model.tflite' }],
     ],
   ])('menolak aset yang %s', async (_caseName, assets) => {
     loadAssetMock.mockResolvedValue(

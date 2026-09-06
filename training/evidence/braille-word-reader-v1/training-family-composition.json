@@ -1,0 +1,106 @@
+{
+  "scope": "Training and held manifest composition only; no model inference or external threshold selection.",
+  "training_manifest_sha256": "b8e959ccb9eb3cfa60fdf61cb716e3b606430d500f4770d0c2a1ef5d5082772c",
+  "total_patches": 21353,
+  "families": {
+    "books/chudo_derevo_redmi": {
+      "patches": 1013,
+      "complete_occurrences": 4721,
+      "source_images": 16,
+      "height_quantiles_px": [
+        50.196075439453125,
+        72.53333282470703,
+        138.89361572265625
+      ],
+      "patch_fraction": 0.04744064065939212
+    },
+    "books/mdd-redmi1": {
+      "patches": 903,
+      "complete_occurrences": 4434,
+      "source_images": 12,
+      "height_quantiles_px": [
+        50.5912826538086,
+        81.14075088500977,
+        134.39999389648438
+      ],
+      "patch_fraction": 0.04228913969933967
+    },
+    "books/mdd_cannon1": {
+      "patches": 899,
+      "complete_occurrences": 4495,
+      "source_images": 12,
+      "height_quantiles_px": [
+        58.43704833984376,
+        83.20000457763672,
+        132.41378784179688
+      ],
+      "patch_fraction": 0.0421018123917014
+    },
+    "books/skazki": {
+      "patches": 14966,
+      "complete_occurrences": 75327,
+      "source_images": 132,
+      "height_quantiles_px": [
+        43.397254943847656,
+        65.88235473632812,
+        147.6923065185547
+      ],
+      "patch_fraction": 0.7008851215285908
+    },
+    "books/telefon": {
+      "patches": 1642,
+      "complete_occurrences": 7650,
+      "source_images": 26,
+      "height_quantiles_px": [
+        49.54838905334473,
+        74.08436965942383,
+        141.14641418457063
+      ],
+      "patch_fraction": 0.07689785978551024
+    },
+    "books/uploaded": {
+      "patches": 159,
+      "complete_occurrences": 820,
+      "source_images": 2,
+      "height_quantiles_px": [
+        41.93761062622071,
+        64.0,
+        142.97872924804688
+      ],
+      "patch_fraction": 0.007446260478621271
+    },
+    "handwritten/kov": {
+      "patches": 846,
+      "complete_occurrences": 4126,
+      "source_images": 13,
+      "height_quantiles_px": [
+        43.81208038330078,
+        65.82857513427734,
+        137.25312042236328
+      ],
+      "patch_fraction": 0.03961972556549431
+    },
+    "handwritten/uploaded": {
+      "patches": 881,
+      "complete_occurrences": 4886,
+      "source_images": 13,
+      "height_quantiles_px": [
+        39.68000030517578,
+        64.0,
+        131.43762969970703
+      ],
+      "patch_fraction": 0.041258839507329184
+    },
+    "not_braille/misc": {
+      "patches": 44,
+      "complete_occurrences": 0,
+      "source_images": 44,
+      "height_quantiles_px": [],
+      "patch_fraction": 0.0020606003840209805
+    }
+  },
+  "validation_words_by_family": {
+    "books/ola": 122,
+    "handwritten/ang_redmi": 13
+  }
+}

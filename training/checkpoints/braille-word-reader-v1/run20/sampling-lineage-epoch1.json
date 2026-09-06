@@ -1,0 +1,32 @@
+{
+  "status": "passed",
+  "created_at_utc": "2026-09-05T15:47:04.988914+00:00",
+  "audit_script_sha256": "b475bc582b6e6f7f606ff8d70ce1f90b7a0b2ad080ab71989be26c768dfec2dd",
+  "protocol_sha256": "ad9fe8ff96fbfb107db3aec051e7f84051c2550a8f27f7b68925daa13e13dfcf",
+  "actual": {
+    "run": ".braille-training-work\\word-scan-v1-20260905\\run20",
+    "config_sha256": "75bc0305e899aa1c13936fa8614ef42702fedefc9d3c5abfd294d60ccf30a51d",
+    "manifest_sha256": "130c80f135af5677d6b78a5e401126f54b15204481aab6de00a88c443956c4fa",
+    "sampling_history_sha256": "a889f3604381da97ab746ad65028fc9c16af5c91ecb79f1d4b1679952534bea5",
+    "positive_records": 23600,
+    "negative_draws_per_epoch": 1282,
+    "observed_epochs": [
+      {
+        "epoch": 1,
+        "checkpoint_sha256": "b45d495f1c14fb32f9ac9782da08f0a92bb9f3fca3dcccbd63031247a3abad3e",
+        "completed_batches": 1037,
+        "actual_cumulative_positive_records": 10601,
+        "all_positive_records_seen_in_this_run": false,
+        "eligible_by_sampling_lineage": false
+      }
+    ]
+  },
+  "verified_parent": null,
+  "eligible_retained_epochs": [],
+  "required_epoch": null,
+  "limitations": [
+    "This verifies complete record consumption and source separation, not that every cell survived stochastic augmentation.",
+    "Inherited coverage is tied to a re-audited retained parent checkpoint. New partial-cell supervision exposure is reported separately.",
+    "No images, model outputs or external metrics participate in this audit."
+  ]
+}

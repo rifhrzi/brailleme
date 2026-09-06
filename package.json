@@ -1,7 +1,7 @@
 {
   "name": "brailleme",
   "main": "expo-router/entry",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "expo": {
     "doctor": {
       "reactNativeDirectoryCheck": {
@@ -82,7 +82,9 @@
     "audit:dependencies": "npm audit --omit=dev --audit-level=critical",
     "export:android": "expo export --platform android --output-dir dist",
     "lint": "expo lint --no-cache",
-    "model:verify": "node scripts/verify-model-assets.mjs",
+    "model:verify": "node scripts/verify-model-assets.mjs && node scripts/verify-word-model-assets.mjs",
+    "model:verify:classifier": "node scripts/verify-model-assets.mjs",
+    "model:verify:word": "node scripts/verify-word-model-assets.mjs",
     "typecheck": "tsc --noEmit",
     "test": "jest --runInBand",
     "test:watch": "jest --watch",

@@ -1,0 +1,263 @@
+{
+  "created_at_utc": "2026-09-05T18:54:19.810586+00:00",
+  "scope": "Descriptive TRAIN-only statistics on the unchanged v15 reader. No validation/external inputs, augmentation, gradients, optimizer, BN update, model save, threshold selection, or activation-based sample selection.",
+  "sampling": "Per positive source family in frozen manifest order, indices floor((n-1)*q/4), q=1,2,3. 36 cached RGB inputs, three per 12 families; source cropping/resize already applied by dataset preparation.",
+  "checkpoint_sha256": "cce2432c0ddb8952c885dd58697589c285209588dafa81aacdd891b1660068b7",
+  "manifest_sha256": "130c80f135af5677d6b78a5e401126f54b15204481aab6de00a88c443956c4fa",
+  "script_sha256": "c876afbfaaf29394ecb41049ebcb2b695c832dbc2d20c550fa6b6d54e684bad5",
+  "samples": [
+    {
+      "family": "books/chudo_derevo_redmi",
+      "manifest_index": 253,
+      "source": "books/chudo_derevo_redmi/IMG_20190715_113010.labeled.jpg",
+      "image": "train/000253.png",
+      "sha256": "3efec9ab4b3fc72d38bfb97105ab0ecfcf9f4d264c1c270da974982de4b5294c"
+    },
+    {
+      "family": "books/chudo_derevo_redmi",
+      "manifest_index": 6393,
+      "source": "books/chudo_derevo_redmi/IMG_20190715_112928.labeled.jpg",
+      "image": "../complete-source-training-v3/000064.png",
+      "sha256": "c95a621d26e19c1afc02f47248c1221e9171c6528fec43c6908f25118c4d6bc1"
+    },
+    {
+      "family": "books/chudo_derevo_redmi",
+      "manifest_index": 6646,
+      "source": "books/chudo_derevo_redmi/IMG_20190715_113010.labeled.jpg",
+      "image": "../complete-source-training-v3/000317.png",
+      "sha256": "b1d94123d5073d4b2c810e95b441712de1f18d2d14e3e2c98306cf89811698c8"
+    },
+    {
+      "family": "books/mdd-redmi1",
+      "manifest_index": 667,
+      "source": "books/mdd-redmi1/09.labeled.jpg",
+      "image": "train/000667.png",
+      "sha256": "5832614bf883976a099cacee10e0352973c35411b12444ca3f3c4b7a36c001ad"
+    },
+    {
+      "family": "books/mdd-redmi1",
+      "manifest_index": 7017,
+      "source": "books/mdd-redmi1/05.labeled.jpg",
+      "image": "../complete-source-training-v3/000688.png",
+      "sha256": "9fb34b0b52362eb65568e16eb3088fa2c8dc5a6db257c352a87ba69d5c909043"
+    },
+    {
+      "family": "books/mdd-redmi1",
+      "manifest_index": 7242,
+      "source": "books/mdd-redmi1/09.labeled.jpg",
+      "image": "../complete-source-training-v3/000913.png",
+      "sha256": "daf3b7c2f5dcad8569b325d48a6d31cf68b41e7bc4b5256330ccfdb87acf6453"
+    },
+    {
+      "family": "books/mdd_cannon1",
+      "manifest_index": 1000,
+      "source": "books/mdd_cannon1/09.labeled.jpg",
+      "image": "train/001000.png",
+      "sha256": "d230c0f6925310b387079dbd6818f8b27d1f93c8688f3412289634f2c48fba40"
+    },
+    {
+      "family": "books/mdd_cannon1",
+      "manifest_index": 7588,
+      "source": "books/mdd_cannon1/05.labeled.jpg",
+      "image": "../complete-source-training-v3/001259.png",
+      "sha256": "c9c3e0ee14319c4c047a639981a08bcf535da192b3bad24e4594a53a07a04d69"
+    },
+    {
+      "family": "books/mdd_cannon1",
+      "manifest_index": 7812,
+      "source": "books/mdd_cannon1/09.labeled.jpg",
+      "image": "../complete-source-training-v3/001483.png",
+      "sha256": "0fd83f767004b99cab8f94e431c0be6db32a950b2c0ead5bb5bfaed080df3525"
+    },
+    {
+      "family": "books/skazki",
+      "manifest_index": 8101,
+      "source": "books/skazki/IMG_20190715_121019.labeled.jpg",
+      "image": "../complete-source-training-v3/001772.png",
+      "sha256": "22bc5506e58a3161a3638779de94e5d76bfe3d6b8f39be86d6dc9cf91cf9a331"
+    },
+    {
+      "family": "books/skazki",
+      "manifest_index": 11842,
+      "source": "books/skazki/IMG_20190715_121436.labeled.jpg",
+      "image": "../complete-source-training-v3/005513.png",
+      "sha256": "61ced84d1410c2fdc77ab511cbaf19014f5aaa85ffd3a0f2fb118924f785175f"
+    },
+    {
+      "family": "books/skazki",
+      "manifest_index": 15583,
+      "source": "books/skazki/IMG_20190715_121939.labeled.jpg",
+      "image": "../complete-source-training-v3/009254.png",
+      "sha256": "a55671b8b88e5e8697a7d39e6a1674ad8e82a9a8ab0bc0711f833565264f3da9"
+    },
+    {
+      "family": "books/telefon",
+      "manifest_index": 5194,
+      "source": "books/telefon/IMG_20190715_123252.labeled.jpg",
+      "image": "train/005194.png",
+      "sha256": "d1e7f3b5a8469686ca82843eb467273b37b060b3699e65caba73f9b443a405e5"
+    },
+    {
+      "family": "books/telefon",
+      "manifest_index": 19420,
+      "source": "books/telefon/IMG_20190715_123137.labeled.jpg",
+      "image": "../complete-source-training-v3/013091.png",
+      "sha256": "ee9ceea27d45af9d1ce2126c030cccb9e6d56dd3dec80524a2641f7bffb907f4"
+    },
+    {
+      "family": "books/telefon",
+      "manifest_index": 19830,
+      "source": "books/telefon/IMG_20190715_123252.labeled.jpg",
+      "image": "../complete-source-training-v3/013501.png",
+      "sha256": "914c7c4bf8f505957ac080167d454c9558fd27bdc2b43bd35ff3af56f5072339"
+    },
+    {
+      "family": "books/uploaded",
+      "manifest_index": 5549,
+      "source": "books/uploaded/IMG_20190731_131541.labeled.jpg",
+      "image": "train/005549.png",
+      "sha256": "f9e104f024483d2165c847f0e70342570af8592b31966eb39391852082e54559"
+    },
+    {
+      "family": "books/uploaded",
+      "manifest_index": 20267,
+      "source": "books/uploaded/15662143454241346711394.labeled.jpg",
+      "image": "../complete-source-training-v3/013938.png",
+      "sha256": "9a90d3eb0f630466e64e867bbbba90110e9893db73c9f477b0a287106b55bfd8"
+    },
+    {
+      "family": "books/uploaded",
+      "manifest_index": 20306,
+      "source": "books/uploaded/15662143454241346711394.labeled.jpg",
+      "image": "../complete-source-training-v3/013977.png",
+      "sha256": "17579b25934e5ac28c707527f81628e375d0b39ad22784319f9edc1a22f8cd5a"
+    },
+    {
+      "family": "dsbi/Massage",
+      "manifest_index": 21577,
+      "source": "dsbi/Massage/M+4+recto.jpg",
+      "image": "../dsbi-training-contexts-v2/images/000224.png",
+      "sha256": "ec737310b4e278d9635a5da8fde436a58441c63820626abd38ff34c3178516de"
+    },
+    {
+      "family": "dsbi/Massage",
+      "manifest_index": 21808,
+      "source": "dsbi/Massage/M+7+recto.jpg",
+      "image": "../dsbi-training-contexts-v2/images/000455.png",
+      "sha256": "4095716f724976656c055855944efde6789b8e0c7d9058ed9fc2110f58d38f7a"
+    },
+    {
+      "family": "dsbi/Massage",
+      "manifest_index": 22017,
+      "source": "dsbi/Massage/M+9+recto.jpg",
+      "image": "../dsbi-training-contexts-v2/images/000664.png",
+      "sha256": "a94f64bf16683f5c4a8942eed2f638a0b01f73a7e81b96621a1132dc8aac8f41"
+    },
+    {
+      "family": "dsbi/Math",
+      "manifest_index": 22437,
+      "source": "dsbi/Math/math+4+recto.jpg",
+      "image": "../dsbi-training-contexts-v2/images/001084.png",
+      "sha256": "dcea6c2ec0cdf45368a20062b9847c28ad3025302ea89675ebc4fcff55919e30"
+    },
+    {
+      "family": "dsbi/Math",
+      "manifest_index": 22643,
+      "source": "dsbi/Math/math+5+recto.jpg",
+      "image": "../dsbi-training-contexts-v2/images/001290.png",
+      "sha256": "f63dc4c9c1178b6499328469a22dd75f4e319abeb585880caafd8f894e0cd801"
+    },
+    {
+      "family": "dsbi/Math",
+      "manifest_index": 22855,
+      "source": "dsbi/Math/math+9+recto.jpg",
+      "image": "../dsbi-training-contexts-v2/images/001502.png",
+      "sha256": "553332ac9083e9861bd859f169c078b6c2cff6e66302cf2592981abc1cf5216c"
+    },
+    {
+      "family": "dsbi/Ordinary Printed Document",
+      "manifest_index": 23134,
+      "source": "dsbi/Ordinary Printed Document/OPD+1+recto.jpg",
+      "image": "../dsbi-training-contexts-v2/images/001781.png",
+      "sha256": "86fef292aad2dda8505ea102d00143491d33df76900fa1e7bd12c543081d6766"
+    },
+    {
+      "family": "dsbi/Ordinary Printed Document",
+      "manifest_index": 23206,
+      "source": "dsbi/Ordinary Printed Document/OPD+2+recto.jpg",
+      "image": "../dsbi-training-contexts-v2/images/001853.png",
+      "sha256": "a38daac218ffa7650274846b650dd191ac72066fa7fa1f95ff2023c74802531b"
+    },
+    {
+      "family": "dsbi/Ordinary Printed Document",
+      "manifest_index": 23278,
+      "source": "dsbi/Ordinary Printed Document/OPD+3+recto.jpg",
+      "image": "../dsbi-training-contexts-v2/images/001925.png",
+      "sha256": "973c989f8f0e94991c430b185b997eac8fbe87775c9dde02bd93f92b4a909514"
+    },
+    {
+      "family": "dsbi/Shaver Yang Fengting",
+      "manifest_index": 23435,
+      "source": "dsbi/Shaver Yang Fengting/SYF+3+recto.jpg",
+      "image": "../dsbi-training-contexts-v2/images/002082.png",
+      "sha256": "b04c7ce34c45ea24c8bb64eff0c9c9f3699305c784ca556cab757a71df0edcb1"
+    },
+    {
+      "family": "dsbi/Shaver Yang Fengting",
+      "manifest_index": 23520,
+      "source": "dsbi/Shaver Yang Fengting/SYF+4+recto.jpg",
+      "image": "../dsbi-training-contexts-v2/images/002167.png",
+      "sha256": "97cb27d6208d6780f8eaaba58a56d0ad30ecaf2af3fc283fd02038b482e29665"
+    },
+    {
+      "family": "dsbi/Shaver Yang Fengting",
+      "manifest_index": 23605,
+      "source": "dsbi/Shaver Yang Fengting/SYF+5+recto.jpg",
+      "image": "../dsbi-training-contexts-v2/images/002252.png",
+      "sha256": "38dab1844df16105afbe2af54fff9678e6859e610570d2914459e4053ad93334"
+    },
+    {
+      "family": "handwritten/kov",
+      "manifest_index": 5775,
+      "source": "handwritten/kov/6c4425c1-ecb1-499f-ad8a-283f802a1936.labeled.jpg",
+      "image": "train/005775.png",
+      "sha256": "d81cce77d6d52f36c722fdd76d04fb3a4e7e486f04df38b1106f3b155ade4dc0"
+    },
+    {
+      "family": "handwritten/kov",
+      "manifest_index": 20405,
+      "source": "handwritten/kov/0cf2b6ac-036f-429b-8b9d-405415ee5840.labeled.jpg",
+      "image": "../complete-source-training-v3/014076.png",
+      "sha256": "d5a70ba088001026cc870c2959a5565ef40b04a64795815c68a695be45d30c17"
+    },
+    {
+      "family": "handwritten/kov",
+      "manifest_index": 20616,
+      "source": "handwritten/kov/847e140b-9cca-4986-94f0-a81955dcda24.labeled.jpg",
+      "image": "../complete-source-training-v3/014287.png",
+      "sha256": "db72342359e76be9bda32a362879bb91b99d09f5934d7bfeb5468a0763cc5d76"
+    },
+    {
+      "family": "handwritten/uploaded",
+      "manifest_index": 6146,
+      "source": "handwritten/uploaded/15662872188361764114561.labeled.jpg",
+      "image": "train/006146.png",
+      "sha256": "5ae4ce0f84f674bd87bd4503820c83f8257fbb3d1559b43ac202dfdf65eae2bc"
+    },
+    {
+      "family": "handwritten/uploaded",
+      "manifest_index": 20912,
+      "source": "handwritten/uploaded/1563958149299417728125.labeled.jpg",
+      "image": "../complete-source-training-v3/014583.png",
+      "sha256": "0fad2cd5fe233c593bd5df13bd84ee6892b86bf4a420b1e7615efce222393e3e"
+    },
+    {
+      "family": "handwritten/uploaded",
+      "manifest_index": 21132,
+      "source": "handwritten/uploaded/15660462156041370045416.labeled.jpg",
+      "image": "../complete-source-training-v3/014803.png",
+      "sha256": "c81bdcecae9719ba7aa8144157ea874f741266962958881783da4d207856a1ae"
+    }
+  ],
+  "interpretation_limits": "Activation distribution mismatch and ReLU sparsity are descriptive. Neither proves a recognition cause, an accuracy gain from changing BN, nor representative physical-camera behavior. Stored moments originated in earlier model training and are compared to current activations, not asserted to be optimal moments for this data."
+}

@@ -1,0 +1,632 @@
+{
+  "created_at_utc": "2026-09-05T18:21:50.704638+00:00",
+  "status": "passed",
+  "scope": "Exact DSBI TRAIN grid annotation ratios only; no model, validation, external photos or target edits.",
+  "point_metadata_sha256": "ea9592a727f7f3abcc6b017f8f22e143e90ae1541f623c43adf30104021937e8",
+  "script_sha256": "003ec0aae62d22dd8f87d46ce0f57f7f13aee3c62f8a3ac08f7eaaa1c49331c9",
+  "unique_positive_cells": 9983,
+  "nonempty_recto_sources": 25,
+  "ratio_definition": "((bottom_y-top_y)/2)/(right_x-left_x), using supplied deskewed source pixel coordinates.",
+  "unique_cell_weighted_y_over_x_pitch": {
+    "minimum": 0.7916666666666666,
+    "p05": 0.9375,
+    "median": 1.0,
+    "p95": 1.105263157894737,
+    "maximum": 1.3333333333333333
+  },
+  "equal_source_weighted_median_ratios": {
+    "minimum": 0.975,
+    "p05": 0.9782608695652174,
+    "median": 1.0238095238095237,
+    "p95": 1.0681818181818181,
+    "maximum": 1.0681818181818181
+  },
+  "by_source": {
+    "dsbi/Massage/M+1+recto.jpg": {
+      "unique_cells": 103,
+      "y_over_x_pitch": {
+        "minimum": 0.92,
+        "p05": 0.9782608695652174,
+        "median": 1.0681818181818181,
+        "p95": 1.125,
+        "maximum": 1.15
+      },
+      "x_pitch_pixels": {
+        "minimum": 20.0,
+        "p05": 20.0,
+        "median": 22.0,
+        "p95": 23.0,
+        "maximum": 25.0
+      },
+      "mean_y_pitch_pixels": {
+        "minimum": 22.5,
+        "p05": 22.5,
+        "median": 22.5,
+        "p95": 23.5,
+        "maximum": 23.5
+      }
+    },
+    "dsbi/Massage/M+10+recto.jpg": {
+      "unique_cells": 503,
+      "y_over_x_pitch": {
+        "minimum": 0.8461538461538461,
+        "p05": 0.9166666666666666,
+        "median": 0.9782608695652174,
+        "p95": 1.0454545454545454,
+        "maximum": 1.1
+      },
+      "x_pitch_pixels": {
+        "minimum": 20.0,
+        "p05": 22.0,
+        "median": 23.0,
+        "p95": 24.0,
+        "maximum": 26.0
+      },
+      "mean_y_pitch_pixels": {
+        "minimum": 22.0,
+        "p05": 22.0,
+        "median": 22.5,
+        "p95": 23.0,
+        "maximum": 23.0
+      }
+    },
+    "dsbi/Massage/M+3+recto.jpg": {
+      "unique_cells": 551,
+      "y_over_x_pitch": {
+        "minimum": 0.8653846153846154,
+        "p05": 0.9038461538461539,
+        "median": 1.0454545454545454,
+        "p95": 1.175,
+        "maximum": 1.236842105263158
+      },
+      "x_pitch_pixels": {
+        "minimum": 19.0,
+        "p05": 20.0,
+        "median": 22.0,
+        "p95": 25.0,
+        "maximum": 26.0
+      },
+      "mean_y_pitch_pixels": {
+        "minimum": 20.0,
+        "p05": 22.5,
+        "median": 23.0,
+        "p95": 23.5,
+        "maximum": 23.5
+      }
+    },
+    "dsbi/Massage/M+4+recto.jpg": {
+      "unique_cells": 504,
+      "y_over_x_pitch": {
+        "minimum": 0.9,
+        "p05": 0.9583333333333334,
+        "median": 1.0681818181818181,
+        "p95": 1.2777777777777777,
+        "maximum": 1.3333333333333333
+      },
+      "x_pitch_pixels": {
+        "minimum": 18.0,
+        "p05": 18.0,
+        "median": 22.0,
+        "p95": 24.0,
+        "maximum": 25.0
+      },
+      "mean_y_pitch_pixels": {
+        "minimum": 22.5,
+        "p05": 22.5,
+        "median": 23.5,
+        "p95": 24.0,
+        "maximum": 24.0
+      }
+    },
+    "dsbi/Massage/M+5+recto.jpg": {
+      "unique_cells": 346,
+      "y_over_x_pitch": {
+        "minimum": 0.9047619047619048,
+        "p05": 1.0,
+        "median": 1.0454545454545454,
+        "p95": 1.119047619047619,
+        "maximum": 1.175
+      },
+      "x_pitch_pixels": {
+        "minimum": 20.0,
+        "p05": 21.0,
+        "median": 22.0,
+        "p95": 23.0,
+        "maximum": 25.0
+      },
+      "mean_y_pitch_pixels": {
+        "minimum": 19.0,
+        "p05": 22.5,
+        "median": 23.0,
+        "p95": 23.5,
+        "maximum": 23.5
+      }
+    },
+    "dsbi/Massage/M+6+recto.jpg": {
+      "unique_cells": 136,
+      "y_over_x_pitch": {
+        "minimum": 0.8035714285714286,
+        "p05": 0.94,
+        "median": 1.0681818181818181,
+        "p95": 1.15625,
+        "maximum": 1.175
+      },
+      "x_pitch_pixels": {
+        "minimum": 20.0,
+        "p05": 20.0,
+        "median": 22.0,
+        "p95": 25.0,
+        "maximum": 28.0
+      },
+      "mean_y_pitch_pixels": {
+        "minimum": 22.5,
+        "p05": 22.5,
+        "median": 23.5,
+        "p95": 23.5,
+        "maximum": 23.5
+      }
+    },
+    "dsbi/Massage/M+7+recto.jpg": {
+      "unique_cells": 490,
+      "y_over_x_pitch": {
+        "minimum": 0.9166666666666666,
+        "p05": 0.9260416666666667,
+        "median": 0.9782608695652174,
+        "p95": 1.0227272727272727,
+        "maximum": 1.0454545454545454
+      },
+      "x_pitch_pixels": {
+        "minimum": 22.0,
+        "p05": 22.0,
+        "median": 23.0,
+        "p95": 24.0,
+        "maximum": 24.0
+      },
+      "mean_y_pitch_pixels": {
+        "minimum": 22.0,
+        "p05": 22.0,
+        "median": 22.5,
+        "p95": 22.5,
+        "maximum": 23.0
+      }
+    },
+    "dsbi/Massage/M+8+recto.jpg": {
+      "unique_cells": 509,
+      "y_over_x_pitch": {
+        "minimum": 0.8148148148148148,
+        "p05": 0.9,
+        "median": 0.9782608695652174,
+        "p95": 1.0952380952380953,
+        "maximum": 1.15
+      },
+      "x_pitch_pixels": {
+        "minimum": 20.0,
+        "p05": 21.0,
+        "median": 23.0,
+        "p95": 25.0,
+        "maximum": 27.0
+      },
+      "mean_y_pitch_pixels": {
+        "minimum": 22.0,
+        "p05": 22.0,
+        "median": 22.5,
+        "p95": 23.0,
+        "maximum": 23.0
+      }
+    },
+    "dsbi/Massage/M+9+recto.jpg": {
+      "unique_cells": 517,
+      "y_over_x_pitch": {
+        "minimum": 0.9166666666666666,
+        "p05": 0.9166666666666666,
+        "median": 0.9782608695652174,
+        "p95": 1.0227272727272727,
+        "maximum": 1.0909090909090908
+      },
+      "x_pitch_pixels": {
+        "minimum": 22.0,
+        "p05": 22.0,
+        "median": 23.0,
+        "p95": 24.0,
+        "maximum": 24.0
+      },
+      "mean_y_pitch_pixels": {
+        "minimum": 22.0,
+        "p05": 22.0,
+        "median": 22.5,
+        "p95": 22.5,
+        "maximum": 24.0
+      }
+    },
+    "dsbi/Math/math+1+recto.jpg": {
+      "unique_cells": 97,
+      "y_over_x_pitch": {
+        "minimum": 0.8913043478260869,
+        "p05": 0.9318181818181818,
+        "median": 1.0238095238095237,
+        "p95": 1.075,
+        "maximum": 1.1
+      },
+      "x_pitch_pixels": {
+        "minimum": 20.0,
+        "p05": 20.0,
+        "median": 21.0,
+        "p95": 23.0,
+        "maximum": 24.0
+      },
+      "mean_y_pitch_pixels": {
+        "minimum": 20.5,
+        "p05": 20.5,
+        "median": 21.5,
+        "p95": 22.0,
+        "maximum": 22.0
+      }
+    },
+    "dsbi/Math/math+10+recto.jpg": {
+      "unique_cells": 487,
+      "y_over_x_pitch": {
+        "minimum": 0.9545454545454546,
+        "p05": 0.9545454545454546,
+        "median": 1.0238095238095237,
+        "p95": 1.0238095238095237,
+        "maximum": 1.0238095238095237
+      },
+      "x_pitch_pixels": {
+        "minimum": 21.0,
+        "p05": 21.0,
+        "median": 21.0,
+        "p95": 22.0,
+        "maximum": 22.0
+      },
+      "mean_y_pitch_pixels": {
+        "minimum": 21.0,
+        "p05": 21.0,
+        "median": 21.5,
+        "p95": 21.5,
+        "maximum": 21.5
+      }
+    },
+    "dsbi/Math/math+2+recto.jpg": {
+      "unique_cells": 90,
+      "y_over_x_pitch": {
+        "minimum": 0.84,
+        "p05": 0.8958333333333334,
+        "median": 1.0,
+        "p95": 1.075,
+        "maximum": 1.075
+      },
+      "x_pitch_pixels": {
+        "minimum": 20.0,
+        "p05": 20.0,
+        "median": 21.0,
+        "p95": 24.0,
+        "maximum": 25.0
+      },
+      "mean_y_pitch_pixels": {
+        "minimum": 21.0,
+        "p05": 21.0,
+        "median": 21.5,
+        "p95": 21.5,
+        "maximum": 21.5
+      }
+    },
+    "dsbi/Math/math+3+recto.jpg": {
+      "unique_cells": 511,
+      "y_over_x_pitch": {
+        "minimum": 0.9523809523809523,
+        "p05": 0.9545454545454546,
+        "median": 1.0,
+        "p95": 1.0238095238095237,
+        "maximum": 1.075
+      },
+      "x_pitch_pixels": {
+        "minimum": 20.0,
+        "p05": 20.5,
+        "median": 21.0,
+        "p95": 22.0,
+        "maximum": 22.0
+      },
+      "mean_y_pitch_pixels": {
+        "minimum": 20.0,
+        "p05": 21.0,
+        "median": 21.5,
+        "p95": 21.5,
+        "maximum": 21.5
+      }
+    },
+    "dsbi/Math/math+4+recto.jpg": {
+      "unique_cells": 532,
+      "y_over_x_pitch": {
+        "minimum": 0.9545454545454546,
+        "p05": 0.9545454545454546,
+        "median": 1.0238095238095237,
+        "p95": 1.05,
+        "maximum": 1.1
+      },
+      "x_pitch_pixels": {
+        "minimum": 20.0,
+        "p05": 20.0,
+        "median": 21.0,
+        "p95": 22.0,
+        "maximum": 22.0
+      },
+      "mean_y_pitch_pixels": {
+        "minimum": 21.0,
+        "p05": 21.0,
+        "median": 21.5,
+        "p95": 22.0,
+        "maximum": 22.0
+      }
+    },
+    "dsbi/Math/math+5+recto.jpg": {
+      "unique_cells": 557,
+      "y_over_x_pitch": {
+        "minimum": 0.9318181818181818,
+        "p05": 0.9545454545454546,
+        "median": 1.0,
+        "p95": 1.05,
+        "maximum": 1.075
+      },
+      "x_pitch_pixels": {
+        "minimum": 20.0,
+        "p05": 20.0,
+        "median": 21.0,
+        "p95": 22.0,
+        "maximum": 22.0
+      },
+      "mean_y_pitch_pixels": {
+        "minimum": 20.5,
+        "p05": 21.0,
+        "median": 21.5,
+        "p95": 21.5,
+        "maximum": 21.5
+      }
+    },
+    "dsbi/Math/math+6+recto.jpg": {
+      "unique_cells": 286,
+      "y_over_x_pitch": {
+        "minimum": 0.9772727272727273,
+        "p05": 0.9772727272727273,
+        "median": 1.0238095238095237,
+        "p95": 1.075,
+        "maximum": 1.1
+      },
+      "x_pitch_pixels": {
+        "minimum": 20.0,
+        "p05": 20.0,
+        "median": 21.0,
+        "p95": 22.0,
+        "maximum": 22.0
+      },
+      "mean_y_pitch_pixels": {
+        "minimum": 21.5,
+        "p05": 21.5,
+        "median": 21.5,
+        "p95": 22.0,
+        "maximum": 22.0
+      }
+    },
+    "dsbi/Math/math+7+recto.jpg": {
+      "unique_cells": 532,
+      "y_over_x_pitch": {
+        "minimum": 0.9545454545454546,
+        "p05": 0.9545454545454546,
+        "median": 1.0,
+        "p95": 1.075,
+        "maximum": 1.075
+      },
+      "x_pitch_pixels": {
+        "minimum": 20.0,
+        "p05": 20.0,
+        "median": 21.0,
+        "p95": 22.0,
+        "maximum": 22.0
+      },
+      "mean_y_pitch_pixels": {
+        "minimum": 21.0,
+        "p05": 21.0,
+        "median": 21.5,
+        "p95": 21.5,
+        "maximum": 21.5
+      }
+    },
+    "dsbi/Math/math+8+recto.jpg": {
+      "unique_cells": 27,
+      "y_over_x_pitch": {
+        "minimum": 0.9772727272727273,
+        "p05": 0.9772727272727273,
+        "median": 1.0238095238095237,
+        "p95": 1.1146052631578947,
+        "maximum": 1.1944444444444444
+      },
+      "x_pitch_pixels": {
+        "minimum": 18.0,
+        "p05": 19.3,
+        "median": 21.0,
+        "p95": 22.0,
+        "maximum": 22.0
+      },
+      "mean_y_pitch_pixels": {
+        "minimum": 21.5,
+        "p05": 21.5,
+        "median": 21.5,
+        "p95": 21.5,
+        "maximum": 21.5
+      }
+    },
+    "dsbi/Math/math+9+recto.jpg": {
+      "unique_cells": 448,
+      "y_over_x_pitch": {
+        "minimum": 0.875,
+        "p05": 0.9545454545454546,
+        "median": 1.0238095238095237,
+        "p95": 1.0476190476190477,
+        "maximum": 1.075
+      },
+      "x_pitch_pixels": {
+        "minimum": 20.0,
+        "p05": 21.0,
+        "median": 21.0,
+        "p95": 22.0,
+        "maximum": 24.0
+      },
+      "mean_y_pitch_pixels": {
+        "minimum": 21.0,
+        "p05": 21.0,
+        "median": 21.5,
+        "p95": 22.0,
+        "maximum": 22.0
+      }
+    },
+    "dsbi/Ordinary Printed Document/OPD+1+recto.jpg": {
+      "unique_cells": 413,
+      "y_over_x_pitch": {
+        "minimum": 0.7916666666666666,
+        "p05": 0.925,
+        "median": 1.0,
+        "p95": 1.0833333333333333,
+        "maximum": 1.1388888888888888
+      },
+      "x_pitch_pixels": {
+        "minimum": 18.0,
+        "p05": 18.0,
+        "median": 20.0,
+        "p95": 21.0,
+        "maximum": 24.0
+      },
+      "mean_y_pitch_pixels": {
+        "minimum": 18.5,
+        "p05": 18.5,
+        "median": 19.5,
+        "p95": 20.5,
+        "maximum": 20.5
+      }
+    },
+    "dsbi/Ordinary Printed Document/OPD+2+recto.jpg": {
+      "unique_cells": 428,
+      "y_over_x_pitch": {
+        "minimum": 0.8409090909090909,
+        "p05": 0.9090909090909091,
+        "median": 0.975,
+        "p95": 1.0736111111111104,
+        "maximum": 1.1111111111111112
+      },
+      "x_pitch_pixels": {
+        "minimum": 18.0,
+        "p05": 18.0,
+        "median": 20.0,
+        "p95": 21.0,
+        "maximum": 22.0
+      },
+      "mean_y_pitch_pixels": {
+        "minimum": 18.5,
+        "p05": 19.0,
+        "median": 19.5,
+        "p95": 20.0,
+        "maximum": 20.0
+      }
+    },
+    "dsbi/Ordinary Printed Document/OPD+3+recto.jpg": {
+      "unique_cells": 410,
+      "y_over_x_pitch": {
+        "minimum": 0.8636363636363636,
+        "p05": 0.9047619047619048,
+        "median": 1.0,
+        "p95": 1.0555555555555556,
+        "maximum": 1.1388888888888888
+      },
+      "x_pitch_pixels": {
+        "minimum": 18.0,
+        "p05": 19.0,
+        "median": 20.0,
+        "p95": 21.0,
+        "maximum": 22.0
+      },
+      "mean_y_pitch_pixels": {
+        "minimum": 19.0,
+        "p05": 19.0,
+        "median": 19.5,
+        "p95": 20.0,
+        "maximum": 20.5
+      }
+    },
+    "dsbi/Shaver Yang Fengting/SYF+3+recto.jpg": {
+      "unique_cells": 469,
+      "y_over_x_pitch": {
+        "minimum": 0.8809523809523809,
+        "p05": 0.925,
+        "median": 1.025,
+        "p95": 1.105263157894737,
+        "maximum": 1.1842105263157894
+      },
+      "x_pitch_pixels": {
+        "minimum": 19.0,
+        "p05": 19.0,
+        "median": 20.0,
+        "p95": 21.0,
+        "maximum": 21.0
+      },
+      "mean_y_pitch_pixels": {
+        "minimum": 18.5,
+        "p05": 19.0,
+        "median": 20.0,
+        "p95": 21.5,
+        "maximum": 22.5
+      }
+    },
+    "dsbi/Shaver Yang Fengting/SYF+4+recto.jpg": {
+      "unique_cells": 545,
+      "y_over_x_pitch": {
+        "minimum": 0.925,
+        "p05": 0.95,
+        "median": 1.025,
+        "p95": 1.125,
+        "maximum": 1.1842105263157894
+      },
+      "x_pitch_pixels": {
+        "minimum": 19.0,
+        "p05": 19.0,
+        "median": 20.0,
+        "p95": 20.0,
+        "maximum": 20.0
+      },
+      "mean_y_pitch_pixels": {
+        "minimum": 18.5,
+        "p05": 18.5,
+        "median": 20.0,
+        "p95": 22.0,
+        "maximum": 22.5
+      }
+    },
+    "dsbi/Shaver Yang Fengting/SYF+5+recto.jpg": {
+      "unique_cells": 492,
+      "y_over_x_pitch": {
+        "minimum": 0.9047619047619048,
+        "p05": 0.95,
+        "median": 1.0263157894736843,
+        "p95": 1.105263157894737,
+        "maximum": 1.1578947368421053
+      },
+      "x_pitch_pixels": {
+        "minimum": 19.0,
+        "p05": 19.0,
+        "median": 20.0,
+        "p95": 20.0,
+        "maximum": 21.0
+      },
+      "mean_y_pitch_pixels": {
+        "minimum": 19.0,
+        "p05": 19.0,
+        "median": 20.0,
+        "p95": 21.5,
+        "maximum": 22.0
+      }
+    }
+  },
+  "limitations": [
+    "Grid lines are source annotations, not new optical measurements of dot centers.",
+    "DSBI source images are already deskewed scanner images; these ratios do not establish Angelina camera perspective statistics.",
+    "No annotation bounding-box aspect or external box bias is treated as an optical pitch measurement.",
+    "Paper IV.B supports a separate plus/minus10percent vertical stretch augmentation, but no accuracy benefit is assumed."
+  ]
+}

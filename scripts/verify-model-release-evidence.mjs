@@ -1,15 +1,16 @@
 import { createHash } from "node:crypto";
 import { existsSync, readFileSync } from "node:fs";
-import { dirname, relative, resolve } from "node:path";
+import { dirname, isAbsolute, relative, resolve } from "node:path";
 import { spawnSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
+import { isDeepStrictEqual } from "node:util";
 
 const projectRoot = dirname(dirname(fileURLToPath(import.meta.url)));
 const modelDirectory = resolve(
   projectRoot,
   "assets",
   "models",
-  "braille-cell-classifier-v2",
+  "braille-word-reader-v1",
 );
 
 function readJson(path) {
@@ -26,7 +27,7 @@ function resolveProjectPath(path, label) {
   }
   const resolved = resolve(projectRoot, path);
   const projectRelative = relative(projectRoot, resolved);
-  if (projectRelative.startsWith("..") || projectRelative === "") {
+  if (projectRelative.startsWith("..") || projectRelative === "" || isAbsolute(projectRelative)) {
     throw new Error(`${label} harus menunjuk file di dalam repository.`);
   }
   return resolved;
@@ -42,8 +43,8 @@ const evidenceManifest = readJson(evidenceManifestPath);
 const blockers = [];
 const requiredVerificationKeys = [
   "tensorContractInspected",
-  "labelCountMatchesOutput",
-  "labelOrderConfirmedAgainstTrainingCode",
+  "dotMaskMappingVerified",
+  "wordDecoderVerified",
   "preprocessingConfirmedAgainstTrainingCode",
   "kerasTfliteConversionParityPassed",
   "nativePostCropFixturePassed",
@@ -137,7 +138,7 @@ for (const [name, expectedHash] of Object.entries(
 )) {
   const path = resolve(evidenceDirectory, name);
   const evidenceRelative = relative(evidenceDirectory, path);
-  if (evidenceRelative.startsWith("..") || evidenceRelative === "") {
+  if (evidenceRelative.startsWith("..") || evidenceRelative === "" || isAbsolute(evidenceRelative)) {
     blockers.push(`path evidence tidak aman: ${name}`);
     continue;
   }
@@ -244,7 +245,22 @@ addBlocker(
 );
 
 const evidenceFiles = evidenceManifest.evidenceFiles ?? {};
-const evaluation = readJson(resolve(evidenceDirectory, "evaluation_report.json"));
+const evaluationReportName = "evaluation_report.json";
+const evaluationReportPath = resolve(evidenceDirectory, evaluationReportName);
+addBlocker(
+  typeof evidenceFiles[evaluationReportName] === "string" && existsSync(evaluationReportPath),
+  "evaluation_report.json belum diikat ke evidence manifest",
+);
+const evaluation = existsSync(evaluationReportPath) ? readJson(evaluationReportPath) : {};
+addBlocker(
+  evaluation.model?.sha256 === manifest.artifact?.sha256 &&
+    evaluation.model?.version === manifest.artifact?.version,
+  "evaluation report memakai model atau versi yang berbeda",
+);
+addBlocker(
+  isDeepStrictEqual(evaluation.thresholds, manifest.thresholds),
+  "evaluation report memakai ambang decoder yang berbeda",
+);
 const nativeDevelopmentEvidenceName = "native-development-verification.json";
 const nativeDevelopmentEvidencePath = resolve(
   evidenceDirectory,
@@ -276,15 +292,15 @@ if (nativeDevelopmentEvidenceIsBound) {
   );
   addBlocker(nativeFixture?.passed === true, "fixture native post-crop belum lulus");
   addBlocker(
-    nativeFixture?.expectedLabel === manifest.nativeSelfTest?.expectedLabel &&
-      nativeFixture?.actualLabel === manifest.nativeSelfTest?.expectedLabel,
+    nativeFixture?.expectedLabel === manifest.nativeSelfTest?.expectedText &&
+      nativeFixture?.actualLabel === manifest.nativeSelfTest?.expectedText,
     "label fixture native post-crop tidak cocok",
   );
   addBlocker(
     finiteAtLeast(
       nativeFixture?.actualConfidence,
       manifest.nativeSelfTest?.minimumConfidence,
-    ),
+    ) && nativeFixture.actualConfidence <= 1,
     "confidence fixture native post-crop di bawah ambang",
   );
   addBlocker(
@@ -296,6 +312,14 @@ if (nativeDevelopmentEvidenceIsBound) {
 }
 const criteria = evidenceManifest.acceptanceCriteria ?? {};
 const holdoutCriteria = criteria.physicalHoldout ?? {};
+addBlocker(
+  finiteAtLeast(holdoutCriteria.minimumSampleCount, 260) &&
+    finiteAtLeast(holdoutCriteria.minimumSamplesPerClass, 10) &&
+    finiteAtLeast(holdoutCriteria.minimumAccuracy, 0.90) &&
+    finiteAtLeast(holdoutCriteria.minimumMacroF1, 0.90) &&
+    finiteAtLeast(holdoutCriteria.minimumPerClassRecall, 0.80),
+  "kriteria physical holdout tidak boleh lebih rendah dari persyaratan produksi",
+);
 const holdout = evaluation.physical_holdout;
 addBlocker(holdout !== null && typeof holdout === "object", "physical holdout belum tersedia");
 addBlocker(
@@ -303,6 +327,13 @@ addBlocker(
   "manifest physical holdout belum valid",
 );
 if (holdout) {
+  addBlocker(
+    finiteAtLeast(holdout.exact_word_accuracy, 0.75) &&
+      finiteAtLeast(holdout.accepted_word_accuracy, 0.95) &&
+      holdout.exact_word_accuracy <= 1 && holdout.accepted_word_accuracy <= 1 &&
+      holdout.rejections_counted_as_failures === true,
+    "akurasi kata fisik utuh/diterima belum lulus atau penolakan tidak dihitung gagal",
+  );
   addBlocker(
     finiteAtLeast(holdout.sample_count, holdoutCriteria.minimumSampleCount),
     "jumlah physical holdout di bawah ambang",
@@ -338,6 +369,12 @@ if (holdout) {
 }
 
 const negativeCriteria = criteria.negativeCorpus ?? {};
+addBlocker(
+  finiteAtLeast(negativeCriteria.minimumSceneCount, 12) &&
+    negativeCriteria.maximumFalseAcceptCount === 0 &&
+    negativeCriteria.confidenceThreshold === 0.90,
+  "kriteria negatif produksi tidak boleh dilonggarkan",
+);
 const negative = evaluation.negative_guardrail;
 addBlocker(negative !== null && typeof negative === "object", "negative corpus belum tersedia");
 if (negative) {
@@ -346,11 +383,15 @@ if (negative) {
     "jumlah negative scene di bawah ambang",
   );
   addBlocker(
-    finiteAtMost(
+    Number.isInteger(negative.false_accept_count) && negative.false_accept_count >= 0 && finiteAtMost(
       negative.false_accept_count,
       negativeCriteria.maximumFalseAcceptCount,
     ),
     "false accept negative corpus melewati ambang",
+  );
+  addBlocker(
+    negative.all_accepted_words_counted === true,
+    "regresi negatif harus menghitung semua hasil kata yang diterima aplikasi, termasuk confidence di bawah 0.90",
   );
   addBlocker(
     negative.confidence_threshold === negativeCriteria.confidenceThreshold,
@@ -403,6 +444,13 @@ if (
   );
   const device = readJson(devicePath);
   const runtimeCriteria = criteria.nativeRuntime ?? {};
+  addBlocker(
+    finiteAtLeast(runtimeCriteria.minimumPhysicalDeviceCount, 2) &&
+      finiteAtLeast(runtimeCriteria.minimumPreviewFps, 24) &&
+      finiteAtMost(runtimeCriteria.maximumP95StableLatencyMs, 2000) &&
+      finiteAtLeast(runtimeCriteria.minimumSoakMinutes, 10),
+    "kriteria perangkat produksi tidak boleh dilonggarkan",
+  );
   addBlocker(device.modelSha256 === manifest.artifact.sha256, "device test memakai model berbeda");
   addBlocker(device.gitCommit === expectedCommit, "device test memakai commit berbeda");
   addBlocker(

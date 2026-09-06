@@ -1,0 +1,49 @@
+{
+  "created_at_utc": "2026-09-06T08:09:25.624604+00:00",
+  "scope": "Synthetic ideal outputs only. No ML, pixels, model outputs, validation405, external607, selection, calibration, or decoder changes.",
+  "lengths": [
+    1,
+    8,
+    9,
+    12
+  ],
+  "angles_degrees": [
+    0,
+    -3,
+    3,
+    -5,
+    5
+  ],
+  "unrotated_cell_width_pixels": 18,
+  "unrotated_cell_height_pixels": 32,
+  "center_pitch_pixels": 28,
+  "rotation_origin_pixels": [
+    240,
+    96
+  ],
+  "canvas_pixels": [
+    480,
+    192
+  ],
+  "guide_xyxy": [
+    0,
+    0,
+    1,
+    1
+  ],
+  "word": "MAMAMAMAMAMA",
+  "score_and_selected_dot_probability": 1,
+  "geometry": "Rotate every center and all cell corners by the same angle. Encode the exact resulting axis-aligned bounding rectangle at the stride4 center site, casting tensor fields to float32.",
+  "source_sha256": {
+    "training/scripts/word_decode.py": "fa2179b74459d84055b244ac60353d52d59cd12eda80b5cc279382c28f1be444",
+    "training/scripts/word_data.py": "d692b4b28620af7e4b40ebdedccda68769feb8d3f51bd1508e807487fd32b7d7",
+    "training/scripts/benchmark_angelina.py": "6c7d63c8b5c461fec73e415b46df74d15c0bca455cc9f411c5fb6edd5d353353",
+    "training/scripts/word_anchor_zoom.py": "d6f5337d08368b8da55948f314bd06af7b03fa1602e40240778a9b4edea26377",
+    "src/ml/word-decoder.ts": "f8bb0ef65a03c850c8aedccf287e00501a5bf1b4c4bba60440141567752b6c15",
+    "src/ml/word-model-contract.ts": "e985d76a5d372cf4f31a325a39ca88268422dd5c0685e50c48ee1fb69dffc99f",
+    "src/types/word-scan.ts": "f6b8ac0cf1072b3ec99f23ac8407e5d8e38c7e801a7c90f4cc2a3503761a1964",
+    "scripts/word-native-parity/geometry-reference.cjs": "a4dbeee051f06aa7d2459070e3e213ee4d28ea63d69c639cb7247d69fc751cca",
+    ".braille-training-work/word-scan-v1-20260905/tilted_row_contract_diagnostic.py": "11cbbc146303d139f9faeba39f0c763aa539f1c546efcacf487819e5b3e8c505",
+    ".braille-training-work/word-scan-v1-20260905/tilted_row_contract_diagnostic.cjs": "c57ddeb2519989ca758cddce6484801740d7eb7be20959c882e4333e5cfede20"
+  }
+}

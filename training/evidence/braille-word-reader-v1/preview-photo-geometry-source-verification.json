@@ -1,0 +1,172 @@
+{
+  "schemaVersion": 1,
+  "scope": "Source and JavaScript tests plus isolated Android x86_64 Kotlin/C++ module compilation; actual camera runtime and all-ABI APK verification pending",
+  "nitrogenVersion": "0.36.5",
+  "generatedBindings": 14,
+  "packageJsonAndLockChangedByThisImplementation": false,
+  "nodeModulesPatched": false,
+  "checks": {
+    "targetedTests": {
+      "suites": 2,
+      "passed": 36,
+      "failed": 0
+    },
+    "typecheck": true,
+    "scopedEslint": true,
+    "expoAndroidAutolinkingResolved": true,
+    "nativeCompilation": true,
+    "nativeCaptureGeometryParity": false,
+    "physicalDevice": false
+  },
+  "moduleFiles": [
+    {
+      "file": "modules/braille-word-geometry/android/build.gradle",
+      "sha256": "02e2dcbda4ced239902b37f610934ccf3e26e8b31952f0005997970fef270c41"
+    },
+    {
+      "file": "modules/braille-word-geometry/android/CMakeLists.txt",
+      "sha256": "2e9cc14c2588fb27ba7530ec452b6f49e5274c614a24f65f3e01c3f320097845"
+    },
+    {
+      "file": "modules/braille-word-geometry/android/consumer-rules.pro",
+      "sha256": "f63e5bb960568fdd3c9f773ad8fe5e264e738202ee888a474a1a8351dfe69e5d"
+    },
+    {
+      "file": "modules/braille-word-geometry/android/src/main/AndroidManifest.xml",
+      "sha256": "21058c692532098e42afc39cf09de946c38229ec414bb7ac32f4fc90ba9a5f45"
+    },
+    {
+      "file": "modules/braille-word-geometry/android/src/main/cpp/cpp-adapter.cpp",
+      "sha256": "1b60e23d0aa1b1ecbc3eb041ab87fa1099590c674accbdf27c5b0c62699e7be2"
+    },
+    {
+      "file": "modules/braille-word-geometry/android/src/main/java/com/margelo/nitro/braillewordgeometry/HybridWordPhotoGeometry.kt",
+      "sha256": "48e433d0a3f1226d0f6714c75708cd826e1c8bd42ff6a24838761c3eabf9bd82"
+    },
+    {
+      "file": "modules/braille-word-geometry/android/src/main/java/expo/modules/braillewordgeometry/BrailleWordGeometryModule.kt",
+      "sha256": "417fc6eb0bd4952c3ffb3f100b49a7d3eb9a3cb980656ad23bfd4e399f12429f"
+    },
+    {
+      "file": "modules/braille-word-geometry/expo-module.config.json",
+      "sha256": "397647d0f20ccb6bc029987a27da172210bc3be08cd47c80d14b1fd361cf9b8f"
+    },
+    {
+      "file": "modules/braille-word-geometry/LICENSE",
+      "sha256": "fb3ca4a837f5779e83cef89b78253a8949cfb9429c340309f62d0465ec6610b4"
+    },
+    {
+      "file": "modules/braille-word-geometry/nitro.json",
+      "sha256": "f8607d1bd91a1842163df16d6d21b685d52fc5d337c74f0b74f855a6ed7ac11e"
+    },
+    {
+      "file": "modules/braille-word-geometry/nitrogen/generated/.gitattributes",
+      "sha256": "8401d61d91c8f286601668b1b3c8e90e324d3f09d45a22bc72712c9b5f18e348"
+    },
+    {
+      "file": "modules/braille-word-geometry/nitrogen/generated/android/BrailleWordGeometry+autolinking.cmake",
+      "sha256": "92474ba23df6fd03faab221195f2f26d966a22d48caec13623b1836110c141bf"
+    },
+    {
+      "file": "modules/braille-word-geometry/nitrogen/generated/android/BrailleWordGeometry+autolinking.gradle",
+      "sha256": "f7808458852b7208f1b8a831f51c8b6f8fc3d7529ecb6ea77fc27030e898b44c"
+    },
+    {
+      "file": "modules/braille-word-geometry/nitrogen/generated/android/BrailleWordGeometryOnLoad.cpp",
+      "sha256": "852c47e99b04bf66540bb2259c24f1ba9bb55fd80167e76fd429b4a6764f6ffe"
+    },
+    {
+      "file": "modules/braille-word-geometry/nitrogen/generated/android/BrailleWordGeometryOnLoad.hpp",
+      "sha256": "d372a0fcb36e94516ead97febe0ecdaaf31a4f20f2b1dfb7f3562534e41733f0"
+    },
+    {
+      "file": "modules/braille-word-geometry/nitrogen/generated/android/c++/JHybridWordPhotoGeometrySpec.cpp",
+      "sha256": "aca3450800e3a6065ea20f816fa217b23f34619e74842f3401277a68f39c8b39"
+    },
+    {
+      "file": "modules/braille-word-geometry/nitrogen/generated/android/c++/JHybridWordPhotoGeometrySpec.hpp",
+      "sha256": "e0bfaf645821b1b080ea7d7f9946099c8bce682eab83c85c635e490eba06d57a"
+    },
+    {
+      "file": "modules/braille-word-geometry/nitrogen/generated/android/c++/JPhotoGeometry.hpp",
+      "sha256": "55db880d62679fb27013ff605b7130fa1d0f37de0023fe5044b2ced0d6100dda"
+    },
+    {
+      "file": "modules/braille-word-geometry/nitrogen/generated/android/kotlin/com/margelo/nitro/braillewordgeometry/BrailleWordGeometryOnLoad.kt",
+      "sha256": "01254773c574d84736b27b0bda3604a9d8b61d5c754a6ed6eaa9560d625fac9c"
+    },
+    {
+      "file": "modules/braille-word-geometry/nitrogen/generated/android/kotlin/com/margelo/nitro/braillewordgeometry/HybridWordPhotoGeometrySpec.kt",
+      "sha256": "c8123e7de366c0861530d58271dee2e61a8ac3a1e6d6e2d87a59a40503cae3c9"
+    },
+    {
+      "file": "modules/braille-word-geometry/nitrogen/generated/android/kotlin/com/margelo/nitro/braillewordgeometry/PhotoGeometry.kt",
+      "sha256": "ad148255a6136bf9841b6d4a38d41d08c5ba31dde4678dac0d1dea8ed20c1bf7"
+    },
+    {
+      "file": "modules/braille-word-geometry/nitrogen/generated/shared/c++/HybridWordPhotoGeometrySpec.cpp",
+      "sha256": "b0d6091bed0a79c4a1cecaeb149d6a9155dd6a6fff00346ac47ff2f1d76a72fe"
+    },
+    {
+      "file": "modules/braille-word-geometry/nitrogen/generated/shared/c++/HybridWordPhotoGeometrySpec.hpp",
+      "sha256": "a9e86e499807eced6eb906eb77b08bc6902e20d3820b6db88868a4499054aca1"
+    },
+    {
+      "file": "modules/braille-word-geometry/nitrogen/generated/shared/c++/PhotoGeometry.hpp",
+      "sha256": "ea786b4d6a90fc35b6bc501b0ec962e9367c7f7e772d1e9f4b74dd73828a74c1"
+    },
+    {
+      "file": "modules/braille-word-geometry/README.md",
+      "sha256": "2922f98de543e0bc598c0d31a514d1a8d5188470725cf77a6d66f9e0836a686a"
+    },
+    {
+      "file": "modules/braille-word-geometry/src/index.ts",
+      "sha256": "715162d4f8834cf160be13e65bad8c498d681d2d542c4104c1c42751c490563c"
+    },
+    {
+      "file": "modules/braille-word-geometry/src/WordPhotoGeometry.nitro.ts",
+      "sha256": "756f22ead8150c6482d1f7bb2348522f911c0ec07044b6571cef6cdc71eb4a7b"
+    }
+  ],
+  "applicationFiles": [
+    {
+      "file": "src/ml/word-camera-geometry.ts",
+      "sha256": "90f30d081a927aea9f96aefcd55ec8e339c3feda20aa37b3aa22f26ae2605547"
+    },
+    {
+      "file": "src/ml/__tests__/word-camera-geometry.test.ts",
+      "sha256": "738d00e0ce291afd7f4ca09bc12f897185317fa99c84821d872141a96aa1218f"
+    },
+    {
+      "file": "src/features/live/word-photo-camera.tsx",
+      "sha256": "eb1877ae346fd7fede4241273ef2dc7a798a73edd621167322dc5d5585602cdf"
+    },
+    {
+      "file": "src/features/live/__tests__/word-photo-camera.test.tsx",
+      "sha256": "8f072f4c0218237b0f5cfcdfda1841b2d6430346217231bd02e29d5a3e9750e2"
+    }
+  ],
+  "coordinates": {
+    "previewInput": "React Native dp; native CameraRef applies pixel density internally",
+    "camera": "opaque sensor pixel coordinates from PreviewView sensorToViewTransform inverse",
+    "photoBuffer": "CameraX sensorToBufferTransformMatrix after JPEG HAL correction",
+    "uprightPhoto": "mirror then clockwise rotation with bounds translated to zero; matches Photo.toImageAsync"
+  },
+  "architecture": "local Expo autolinking plus one Nitro metadata helper; existing VisionCamera Photo; no pixel copies or retained native image objects",
+  "nativeCompilationEvidence": {
+    "file": "training/evidence/braille-word-reader-v1/preview-photo-geometry-native-compilation.json",
+    "sha256": "c4f6aa3604eda0c281bf65a711c8393fca5f0e244d8a7eae1821b92968a5db56",
+    "abis": [
+      "x86_64"
+    ],
+    "scope": "local module release variant only"
+  },
+  "previewDiagnostics": {
+    "tag": "BRAILLE_WORD_CAPTURE_GEOMETRY",
+    "environment": "preview",
+    "oneRecordPerSuccessfullyMappedCapture": true,
+    "productionSilentTestPassed": true,
+    "pixelsTextUrisOrPersistentState": false,
+    "logcatRuntimeObservationPending": true
+  }
+}

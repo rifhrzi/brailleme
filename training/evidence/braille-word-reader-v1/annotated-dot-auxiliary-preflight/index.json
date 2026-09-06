@@ -1,0 +1,355 @@
+{
+  "status": "runtime_passed_exact_source_adopted",
+  "retained_at_utc": "2026-09-06T08:45:36.189009+00:00",
+  "scope": "Training-only supervision mechanics proof; no accuracy, selected model, physical, offline APK or release claim.",
+  "original_prototype_index_sha256": "d3166ffeae1f651fb52f5adba9fdcd776a1cf7b8ea0005ab93bb2b79244dd6c3",
+  "original_runtime_preparation_index_sha256": "2457033fd0e420752a33c439238276aa2ee9039398f566689214db94481d804d",
+  "runtime_report_sha256": "9590846e3afe5e83baa76b0204a18797f8574d14ff9900edb123a41fbdac993b",
+  "applied_source_report_sha256": "54b25e32f0cbc19317c6c7b47f7b4fb9a7e06ee551c29807390672c6c84d8eb2",
+  "git_retainability": {
+    "command": "git check-ignore --no-index --stdin",
+    "checked_paths_including_index": 55,
+    "ignored_paths": []
+  },
+  "payload_files": 54,
+  "payload_bytes": 1507611,
+  "files": [
+    {
+      "path": "prototype/candidate/word_dot_aux.py",
+      "sha256": "c858dc8bb90bfacab8d50d80edd7d9e4ac497990097815e090759ef8eace513e",
+      "bytes": 2876,
+      "original_path": ".braille-training-work/word-scan-v1-20260905/dot-auxiliary-prototype-v1/candidate/word_dot_aux.py"
+    },
+    {
+      "path": "prototype/candidate/word_dot_aux_targets.py",
+      "sha256": "48bd3db197dffd1c3004f4c14ce2c6137ce95cc72386cf2199ac791e04fd9a92",
+      "bytes": 2644,
+      "original_path": ".braille-training-work/word-scan-v1-20260905/dot-auxiliary-prototype-v1/candidate/word_dot_aux_targets.py"
+    },
+    {
+      "path": "prototype/candidate/word_train.py",
+      "sha256": "60ca41ffebcea96567bad08859627664de1c98bce3c41a486e7280c842861e74",
+      "bytes": 54049,
+      "original_path": ".braille-training-work/word-scan-v1-20260905/dot-auxiliary-prototype-v1/candidate/word_train.py"
+    },
+    {
+      "path": "prototype/integration.patch",
+      "sha256": "3f365cda12f867fc5f48829929cd115048f3d2a3707e62e323bea4930993a825",
+      "bytes": 22229,
+      "original_path": ".braille-training-work/word-scan-v1-20260905/dot-auxiliary-prototype-v1/integration.patch"
+    },
+    {
+      "path": "prototype/original/word_data.py",
+      "sha256": "d692b4b28620af7e4b40ebdedccda68769feb8d3f51bd1508e807487fd32b7d7",
+      "bytes": 27515,
+      "original_path": ".braille-training-work/word-scan-v1-20260905/dot-auxiliary-prototype-v1/original/word_data.py"
+    },
+    {
+      "path": "prototype/original/word_geometry_head.py",
+      "sha256": "f46c8f90e7f4fc9404eed2dc27fbde6e5c823d25d4f88e4127c7e56ed6e8764e",
+      "bytes": 5857,
+      "original_path": ".braille-training-work/word-scan-v1-20260905/dot-auxiliary-prototype-v1/original/word_geometry_head.py"
+    },
+    {
+      "path": "prototype/original/word_model.py",
+      "sha256": "c446732a2905a612cd6f1dd64d2d3d01303b1c71933c34552d26f3b5052fd551",
+      "bytes": 5890,
+      "original_path": ".braille-training-work/word-scan-v1-20260905/dot-auxiliary-prototype-v1/original/word_model.py"
+    },
+    {
+      "path": "prototype/original/word_point_geometry.py",
+      "sha256": "2b932b320d191277b86ae13daecb82b5abbf0a46e9464d7360ee1e941aca760b",
+      "bytes": 8361,
+      "original_path": ".braille-training-work/word-scan-v1-20260905/dot-auxiliary-prototype-v1/original/word_point_geometry.py"
+    },
+    {
+      "path": "prototype/original/word_train.py",
+      "sha256": "e22a5302af5eca4482c8901827e06b04126c72bb6964e63db97d940254f40a38",
+      "bytes": 50653,
+      "original_path": ".braille-training-work/word-scan-v1-20260905/dot-auxiliary-prototype-v1/original/word_train.py"
+    },
+    {
+      "path": "prototype/prepare_integration.py",
+      "sha256": "efa661c3ca9fbafc5ac9ec07dd26d3b600841b07c8152aa953650d4f5479e8f6",
+      "bytes": 8727,
+      "original_path": ".braille-training-work/word-scan-v1-20260905/dot-auxiliary-prototype-v1/prepare_integration.py"
+    },
+    {
+      "path": "prototype/pure-tests.log",
+      "sha256": "3028e299e08fef948424f007839bdb67f69f08a7bfbd90f1333b2abe0df4c05f",
+      "bytes": 1663,
+      "original_path": ".braille-training-work/word-scan-v1-20260905/dot-auxiliary-prototype-v1/pure-tests.log"
+    },
+    {
+      "path": "prototype/README.md",
+      "sha256": "51115af754f735f41106b46bffe7f1213d78c1db51c2644646ebaa566c0556a9",
+      "bytes": 5283,
+      "original_path": ".braille-training-work/word-scan-v1-20260905/dot-auxiliary-prototype-v1/README.md"
+    },
+    {
+      "path": "prototype/replacements.json",
+      "sha256": "20c0a49b76d6b44f35ff7aad974c258485436797786f563b46b4bffb620b6f3e",
+      "bytes": 7400,
+      "original_path": ".braille-training-work/word-scan-v1-20260905/dot-auxiliary-prototype-v1/replacements.json"
+    },
+    {
+      "path": "prototype/report.json",
+      "sha256": "4a2b9f2ef66de690c6411890d0e78f7fdeecf219f6c1e49ee2aa3faa36b50936",
+      "bytes": 3249,
+      "original_path": ".braille-training-work/word-scan-v1-20260905/dot-auxiliary-prototype-v1/report.json"
+    },
+    {
+      "path": "prototype/test_targets.py",
+      "sha256": "1ea989c5e1b80b98adb7bcfc4bb5cdd73e4fc249d98e617bdd2c7a637796bde2",
+      "bytes": 11394,
+      "original_path": ".braille-training-work/word-scan-v1-20260905/dot-auxiliary-prototype-v1/test_targets.py"
+    },
+    {
+      "path": "prototype/index.json",
+      "sha256": "d3166ffeae1f651fb52f5adba9fdcd776a1cf7b8ea0005ab93bb2b79244dd6c3",
+      "bytes": 2511,
+      "original_path": ".braille-training-work/word-scan-v1-20260905/dot-auxiliary-prototype-v1/index.json"
+    },
+    {
+      "path": "runtime/fixture-protocol.json",
+      "sha256": "11846237a01fc1fd996cbabfe8a873ef760864f3d10fb57adaa54e5e229eba62",
+      "bytes": 7914,
+      "original_path": ".braille-training-work/word-scan-v1-20260905/dot-auxiliary-runtime-preparation-v1/fixture-protocol.json"
+    },
+    {
+      "path": "runtime/prepare_metadata.py",
+      "sha256": "8618554083e5bdb6178bfd7dc5abb2fbdd46ccea1aa9a6daaa413fcd0375e782",
+      "bytes": 4558,
+      "original_path": ".braille-training-work/word-scan-v1-20260905/dot-auxiliary-runtime-preparation-v1/prepare_metadata.py"
+    },
+    {
+      "path": "runtime/readiness.json",
+      "sha256": "05b901cac189b2446a45f5d17bc0093f05b53832b63ee1b4cc584200f2ebdd51",
+      "bytes": 504,
+      "original_path": ".braille-training-work/word-scan-v1-20260905/dot-auxiliary-runtime-preparation-v1/readiness.json"
+    },
+    {
+      "path": "runtime/README.md",
+      "sha256": "438844ff14bab8f080c3fb3ac73b21fe15d5fce4568fb766bd85a17f8a328ed5",
+      "bytes": 3753,
+      "original_path": ".braille-training-work/word-scan-v1-20260905/dot-auxiliary-runtime-preparation-v1/README.md"
+    },
+    {
+      "path": "runtime/runtime-preflight.py",
+      "sha256": "4b66a08cb794c4a7099faba28848e712edf994956b313bf144dfc9e5bc097d36",
+      "bytes": 17539,
+      "original_path": ".braille-training-work/word-scan-v1-20260905/dot-auxiliary-runtime-preparation-v1/runtime-preflight.py"
+    },
+    {
+      "path": "runtime/source/benchmark_angelina.py",
+      "sha256": "6c7d63c8b5c461fec73e415b46df74d15c0bca455cc9f411c5fb6edd5d353353",
+      "bytes": 26081,
+      "original_path": ".braille-training-work/word-scan-v1-20260905/dot-auxiliary-runtime-preparation-v1/source/benchmark_angelina.py"
+    },
+    {
+      "path": "runtime/source/word_anchor_zoom.py",
+      "sha256": "d6f5337d08368b8da55948f314bd06af7b03fa1602e40240778a9b4edea26377",
+      "bytes": 2830,
+      "original_path": ".braille-training-work/word-scan-v1-20260905/dot-auxiliary-runtime-preparation-v1/source/word_anchor_zoom.py"
+    },
+    {
+      "path": "runtime/source/word_bn_affine.py",
+      "sha256": "fa117f65beda3f6d159f707a5cd45d3a367b8f5b436b8c43c0d7621071297dff",
+      "bytes": 5135,
+      "original_path": ".braille-training-work/word-scan-v1-20260905/dot-auxiliary-runtime-preparation-v1/source/word_bn_affine.py"
+    },
+    {
+      "path": "runtime/source/word_bn_affine_init.py",
+      "sha256": "ea76999d35a6e9ba94cffce06c359adb1201cb396b54345668b7ed13afe99ce1",
+      "bytes": 9683,
+      "original_path": ".braille-training-work/word-scan-v1-20260905/dot-auxiliary-runtime-preparation-v1/source/word_bn_affine_init.py"
+    },
+    {
+      "path": "runtime/source/word_bn_affine_parity.py",
+      "sha256": "d4baba52b0993240e0b5092500ae32ee5d1b01e636d2546261a0a24996bd4a21",
+      "bytes": 14737,
+      "original_path": ".braille-training-work/word-scan-v1-20260905/dot-auxiliary-runtime-preparation-v1/source/word_bn_affine_parity.py"
+    },
+    {
+      "path": "runtime/source/word_data.py",
+      "sha256": "d692b4b28620af7e4b40ebdedccda68769feb8d3f51bd1508e807487fd32b7d7",
+      "bytes": 27515,
+      "original_path": ".braille-training-work/word-scan-v1-20260905/dot-auxiliary-runtime-preparation-v1/source/word_data.py"
+    },
+    {
+      "path": "runtime/source/word_decode.py",
+      "sha256": "fa2179b74459d84055b244ac60353d52d59cd12eda80b5cc279382c28f1be444",
+      "bytes": 7493,
+      "original_path": ".braille-training-work/word-scan-v1-20260905/dot-auxiliary-runtime-preparation-v1/source/word_decode.py"
+    },
+    {
+      "path": "runtime/source/word_dsbi.py",
+      "sha256": "feecf16dba6d376415e15707c02c8f05fcf6650055da09ad9f4712099e6325ff",
+      "bytes": 7331,
+      "original_path": ".braille-training-work/word-scan-v1-20260905/dot-auxiliary-runtime-preparation-v1/source/word_dsbi.py"
+    },
+    {
+      "path": "runtime/source/word_fine_branch.py",
+      "sha256": "53bff984c33a20556721328e6253fadd060019573b068deee2a671d08a530750",
+      "bytes": 5665,
+      "original_path": ".braille-training-work/word-scan-v1-20260905/dot-auxiliary-runtime-preparation-v1/source/word_fine_branch.py"
+    },
+    {
+      "path": "runtime/source/word_fine_init.py",
+      "sha256": "3baa5f15b2b4b74ea120dd8150ad3b8a11f59139ad3eb833d3b2089e188d1310",
+      "bytes": 8595,
+      "original_path": ".braille-training-work/word-scan-v1-20260905/dot-auxiliary-runtime-preparation-v1/source/word_fine_init.py"
+    },
+    {
+      "path": "runtime/source/word_fine_parity.py",
+      "sha256": "de30cf4b3df1d8ec4bf820f6e1d98c8e40a39eb674a9ce470a3067569f3a8cbe",
+      "bytes": 9651,
+      "original_path": ".braille-training-work/word-scan-v1-20260905/dot-auxiliary-runtime-preparation-v1/source/word_fine_parity.py"
+    },
+    {
+      "path": "runtime/source/word_fine_validation.py",
+      "sha256": "b075760aee90afa17a84c0e8ec3a421132e0644130929f8f7a85b54b11058124",
+      "bytes": 10070,
+      "original_path": ".braille-training-work/word-scan-v1-20260905/dot-auxiliary-runtime-preparation-v1/source/word_fine_validation.py"
+    },
+    {
+      "path": "runtime/source/word_geometry_head.py",
+      "sha256": "f46c8f90e7f4fc9404eed2dc27fbde6e5c823d25d4f88e4127c7e56ed6e8764e",
+      "bytes": 5857,
+      "original_path": ".braille-training-work/word-scan-v1-20260905/dot-auxiliary-runtime-preparation-v1/source/word_geometry_head.py"
+    },
+    {
+      "path": "runtime/source/word_geometry_init.py",
+      "sha256": "072379a1ef409d901c2478135174561c14781560cdd56a0b91b0229b8032e15e",
+      "bytes": 7916,
+      "original_path": ".braille-training-work/word-scan-v1-20260905/dot-auxiliary-runtime-preparation-v1/source/word_geometry_init.py"
+    },
+    {
+      "path": "runtime/source/word_geometry_parity.py",
+      "sha256": "700d9175dc627fb7bf12c0ac20f640191cf5a045e29067c310f5dad5f3bd6f0b",
+      "bytes": 6018,
+      "original_path": ".braille-training-work/word-scan-v1-20260905/dot-auxiliary-runtime-preparation-v1/source/word_geometry_parity.py"
+    },
+    {
+      "path": "runtime/source/word_horizontal_aspect.py",
+      "sha256": "3ea4fa7d625c91d15c28e157d1bfc675eb72f980571f95631060a82b81494d5a",
+      "bytes": 940,
+      "original_path": ".braille-training-work/word-scan-v1-20260905/dot-auxiliary-runtime-preparation-v1/source/word_horizontal_aspect.py"
+    },
+    {
+      "path": "runtime/source/word_model.py",
+      "sha256": "c446732a2905a612cd6f1dd64d2d3d01303b1c71933c34552d26f3b5052fd551",
+      "bytes": 5890,
+      "original_path": ".braille-training-work/word-scan-v1-20260905/dot-auxiliary-runtime-preparation-v1/source/word_model.py"
+    },
+    {
+      "path": "runtime/source/word_normalization_transition.py",
+      "sha256": "7f825809cf7b97043015d4a63c06b3be16aa6d236cf0afdbf8e0cf8d8330c5f6",
+      "bytes": 7601,
+      "original_path": ".braille-training-work/word-scan-v1-20260905/dot-auxiliary-runtime-preparation-v1/source/word_normalization_transition.py"
+    },
+    {
+      "path": "runtime/source/word_point_geometry.py",
+      "sha256": "2b932b320d191277b86ae13daecb82b5abbf0a46e9464d7360ee1e941aca760b",
+      "bytes": 8361,
+      "original_path": ".braille-training-work/word-scan-v1-20260905/dot-auxiliary-runtime-preparation-v1/source/word_point_geometry.py"
+    },
+    {
+      "path": "runtime/source/word_point_metadata.py",
+      "sha256": "de1cad0157e744f2f646010eac5355b88d1d11f52662d4b9353166661f59049f",
+      "bytes": 5280,
+      "original_path": ".braille-training-work/word-scan-v1-20260905/dot-auxiliary-runtime-preparation-v1/source/word_point_metadata.py"
+    },
+    {
+      "path": "runtime/source/word_sampling.py",
+      "sha256": "c234523277dba683e68a2863e14736bc68432da3b6ca65bb5d8a64bc7d9dc0fe",
+      "bytes": 4164,
+      "original_path": ".braille-training-work/word-scan-v1-20260905/dot-auxiliary-runtime-preparation-v1/source/word_sampling.py"
+    },
+    {
+      "path": "runtime/source/word_sources.py",
+      "sha256": "affb3488d8c25e3d0131eb4340cae29fcece563ac75373e071f97fef68f09acd",
+      "bytes": 8105,
+      "original_path": ".braille-training-work/word-scan-v1-20260905/dot-auxiliary-runtime-preparation-v1/source/word_sources.py"
+    },
+    {
+      "path": "runtime/source/word_tail.py",
+      "sha256": "bdd4b5d12d56e25c1100a282483e7a31176b5a65beb353a0623ceea40a49dc0e",
+      "bytes": 8506,
+      "original_path": ".braille-training-work/word-scan-v1-20260905/dot-auxiliary-runtime-preparation-v1/source/word_tail.py"
+    },
+    {
+      "path": "runtime/source/word_train.py",
+      "sha256": "e22a5302af5eca4482c8901827e06b04126c72bb6964e63db97d940254f40a38",
+      "bytes": 50653,
+      "original_path": ".braille-training-work/word-scan-v1-20260905/dot-auxiliary-runtime-preparation-v1/source/word_train.py"
+    },
+    {
+      "path": "runtime/source/word_vertical_stretch.py",
+      "sha256": "336168fbfe4441bfa91e0855f473997a403a542a2b64789ca7cbd1b11b188ed5",
+      "bytes": 1108,
+      "original_path": ".braille-training-work/word-scan-v1-20260905/dot-auxiliary-runtime-preparation-v1/source/word_vertical_stretch.py"
+    },
+    {
+      "path": "runtime/index.json",
+      "sha256": "2457033fd0e420752a33c439238276aa2ee9039398f566689214db94481d804d",
+      "bytes": 5042,
+      "original_path": ".braille-training-work/word-scan-v1-20260905/dot-auxiliary-runtime-preparation-v1/index.json"
+    },
+    {
+      "path": "runtime/execution.json",
+      "sha256": "5df75a0daee4df03dd59fee0c6696922dcdf2eb74b02590890cd96d8a3bfdb50",
+      "bytes": 595,
+      "original_path": ".braille-training-work/word-scan-v1-20260905/dot-auxiliary-runtime-preparation-v1/execution.json"
+    },
+    {
+      "path": "runtime/execution.log",
+      "sha256": "d1c844028ccb93a4108d20f33047f2cfd490c0d11e94d4bf06105c5762f7ba66",
+      "bytes": 284,
+      "original_path": ".braille-training-work/word-scan-v1-20260905/dot-auxiliary-runtime-preparation-v1/execution.log"
+    },
+    {
+      "path": "runtime/applied-source-report.json",
+      "sha256": "54b25e32f0cbc19317c6c7b47f7b4fb9a7e06ee551c29807390672c6c84d8eb2",
+      "bytes": 1181,
+      "original_path": ".braille-training-work/word-scan-v1-20260905/dot-auxiliary-runtime-preparation-v1/applied-source-report.json"
+    },
+    {
+      "path": "runtime/results/report.json",
+      "sha256": "9590846e3afe5e83baa76b0204a18797f8574d14ff9900edb123a41fbdac993b",
+      "bytes": 5333,
+      "original_path": ".braille-training-work/word-scan-v1-20260905/dot-auxiliary-runtime-preparation-v1/results/report.json"
+    },
+    {
+      "path": "runtime/results/rng-traces.json",
+      "sha256": "9227bbfa3efb0578ebcae4b9e7713ee6bc7c6701eebc38aa94a450c467443cdc",
+      "bytes": 3005,
+      "original_path": ".braille-training-work/word-scan-v1-20260905/dot-auxiliary-runtime-preparation-v1/results/rng-traces.json"
+    },
+    {
+      "path": "runtime/results/actual-patches.npz",
+      "sha256": "7c3e55579fe9b44dd9fe3c6e16b67f527638ace727f6aa1f9ad91bc131f313f8",
+      "bytes": 979464,
+      "original_path": ".braille-training-work/word-scan-v1-20260905/dot-auxiliary-runtime-preparation-v1/results/actual-patches.npz"
+    },
+    {
+      "path": "README.md",
+      "sha256": "33c3fcb3d0c6ecba38e8b17820d5ce19f9ccc58422978a8849ae8539bb93645c",
+      "bytes": 2953
+    }
+  ],
+  "omitted_diagnostic_checkpoints": [
+    {
+      "path": ".braille-training-work/word-scan-v1-20260905/dot-auxiliary-runtime-preparation-v1/results/reader-after-one-step.keras",
+      "sha256": "39dbbd523b16342afc6c18dfe52cd7887c01b7b3668e69d452420e89eb3450d0",
+      "bytes": 3954308,
+      "reason": "Diagnostic one-step weights only; forbidden training parent or active model; deliberately not retained in tracked evidence."
+    },
+    {
+      "path": ".braille-training-work/word-scan-v1-20260905/dot-auxiliary-runtime-preparation-v1/results/training-after-one-step.keras",
+      "sha256": "0005c44d8257b2fcb5460446116e0cf056e415b721543fa4685649a3ee2f6a82",
+      "bytes": 10359877,
+      "reason": "Diagnostic one-step weights only; forbidden training parent or active model; deliberately not retained in tracked evidence."
+    }
+  ]
+}

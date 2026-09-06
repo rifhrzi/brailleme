@@ -1,0 +1,32 @@
+{
+    "status":  "passed",
+    "created_at_utc":  "2026-09-05T21:30:11.6862239Z",
+    "asset_gate_cases":  183,
+    "flatbuffer_checks":  4,
+    "eslint_exit_code":  0,
+    "actual_retained_preflight_replay":  "passed",
+    "files":  [
+                  {
+                      "sha256":  "e93e4a44c1214eb62e33c6bbba21d58a0b9f683df3c25e9bbacf43030a633058",
+                      "file":  "scripts/verify-word-model-assets.mjs"
+                  },
+                  {
+                      "sha256":  "783cbe850b88f37f505123c64f8459f31cfe396e416330d206e1ffdf61493643",
+                      "file":  "scripts/test-word-model-verifier.mjs"
+                  },
+                  {
+                      "sha256":  "f13687b4ec6462988332a0126ed866afc73689c34df25e60c120ea678d58d228",
+                      "file":  ".braille-training-work/word-scan-v1-20260905/fine-detail-verifier-tests-final.log"
+                  },
+                  {
+                      "sha256":  "dabb919e01540057a0316352a82cc97119c40d3cb352477d67a8cd3542160ae7",
+                      "file":  ".braille-training-work/word-scan-v1-20260905/real-fine-detail-preflight-verifier-check.json"
+                  },
+                  {
+                      "sha256":  "f835232be0e6616b4913807e903cd90d26cfcc49bcec6689315997b631d870f4",
+                      "file":  ".braille-training-work/word-scan-v1-20260905/verify_real_fine_detail_preflight.mjs"
+                  }
+              ],
+    "scope":  "Fine detail branch provenance, source lineage, initialization/nonzero conversion and independent audits. Existing legacy no-branch synthetic cases remain accepted. No model, training, dataset, threshold or acceptance gate changed.",
+    "limits":  "Synthetic verifier checks and real archived preflight are not final trained accuracy, full405 parity, native or physical-camera evidence."
+}

@@ -11,7 +11,7 @@ function scannerProbe(availability: ScannerAvailability) {
 describe('RuntimeScanReadinessPort', () => {
   it('fail-closed pada production ketika model belum terverifikasi', async () => {
     const scanner = scannerProbe({ available: true });
-    const port = new RuntimeScanReadinessPort(scanner, true, false);
+    const port = new RuntimeScanReadinessPort(scanner, true, false, true);
 
     await expect(port.getAvailability()).resolves.toEqual({
       available: false,
@@ -27,7 +27,7 @@ describe('RuntimeScanReadinessPort', () => {
       reason: 'native_scanner_not_installed',
       message: 'Native scanner tidak ditemukan.',
     });
-    const port = new RuntimeScanReadinessPort(scanner, true, true);
+    const port = new RuntimeScanReadinessPort(scanner, true, true, true);
 
     await expect(port.getAvailability()).resolves.toEqual({
       available: false,
@@ -45,9 +45,19 @@ describe('RuntimeScanReadinessPort', () => {
       scanner,
       production,
       verified,
+      true,
     );
 
     await expect(port.getAvailability()).resolves.toEqual({ available: true });
     expect(scanner.getAvailability).toHaveBeenCalledTimes(1);
+  });
+
+  it('menolak preview sebelum model kata lolos dan dibundel', async () => {
+    const scanner = scannerProbe({ available: true });
+    const port = new RuntimeScanReadinessPort(scanner, false, false, false);
+    await expect(port.getAvailability()).resolves.toMatchObject({
+      available: false, reason: 'model_not_available',
+    });
+    expect(scanner.getAvailability).not.toHaveBeenCalled();
   });
 });

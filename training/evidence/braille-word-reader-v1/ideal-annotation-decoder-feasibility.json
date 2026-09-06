@@ -1,0 +1,740 @@
+{
+  "schema_version": 1,
+  "scope": "Ideal annotated geometry through actual TypeScript decoder and separate RGB quality checks. Geometry/contract feasibility only; NEVER model accuracy or fixture filtering.",
+  "simulated_annotation_cases": 1147,
+  "native_execution_cases": 0,
+  "model_inference_cases": 0,
+  "thresholds": {
+    "proposalScore": 0.35,
+    "acceptScore": 0.4,
+    "dotConfidence": 0.7,
+    "nmsIou": 0.25,
+    "minCellWidth": 0.008,
+    "minCellHeight": 0.06,
+    "edgeMargin": 0.008,
+    "maxRowDeviation": 0.55,
+    "maxGapRatio": 1.2,
+    "maxOverlapRatio": 0.5
+  },
+  "manifests": {
+    "natural": {
+      "file": "validation-words.json",
+      "sha256": "2ee26bbffd0457830eebe81dd48beb0b4bcb3a6dafe7957544f2ca3a0984c346",
+      "count": 135
+    },
+    "stress": {
+      "file": "validation-stress-selection.json",
+      "sha256": "e2ab968f7c4dcf7e774181fde687e1321f58d20567528af4b21fd03ff5a3e625",
+      "count": 405
+    },
+    "external": {
+      "file": "external-words.json",
+      "sha256": "e69d7c0d9582aef7d51a2c15706f6bf62bc3cdfe35d22ad28ad007301d56b41b",
+      "count": 607
+    }
+  },
+  "preparation_sha256": "0fa46bea36891232a442ee99755e4afdccab4c4b4883141542b34ae092af37b9",
+  "raw_inputs_sha256": "31b659156586468265cff72355bc7482a9f5c8bbd9ba52dcc30e60dbc5183ea6",
+  "all_outcomes_sha256": "161ad572b961aa4a37d03a95181a638e1b279ac8cbdaebad4c6a3730f701a06d",
+  "source_sha256": {
+    "src/ml/word-decoder.ts": "f51c62ba6c3abbd01619a1420760027366f3af91084ff2c302662cde72bcd05d",
+    "src/ml/word-model-contract.ts": "8d78bbaeaf7afda3177e444670a7634dae699b535e18f7c1137e0ec84bbff1a8",
+    "src/ml/word-image-processing.ts": "e97bf56d549c20f9d849c11fb5ac26c0abacf48030e847def46dbeb3e8e8248f",
+    "src/types/word-scan.ts": "f6b8ac0cf1072b3ec99f23ac8407e5d8e38c7e801a7c90f4cc2a3503761a1964",
+    "scripts/word-native-parity/geometry-reference.cjs": "a4dbeee051f06aa7d2459070e3e213ee4d28ea63d69c639cb7247d69fc751cca",
+    "scripts/word-decoder-parity/geometry-ceiling.py": "cc0d041b9249f37e4c823674b32340bbacdea7009dd22a93647a341181ac1841",
+    "scripts/word-decoder-parity/geometry-ceiling.cjs": "d18d98b10285a43d932d8bacbef7d958580763d2874b062ddf15eed750521eb5"
+  },
+  "encoding": "Every complete context annotation in JSON double precision; center/4 grid floor, exact objectness1/dots0or1, dx/dy/normalizedw/h rounded only when written to Float32 tensor. Collisions retain first annotation and are explicitly reported. Partial context cells are counted but omitted as requested; complete cells intersecting selection remain included.",
+  "limitations": [
+    "Natural135 are also contained within stress405; counts across groups are not independent.",
+    "Perfect predicted annotations are a diagnostic oracle, not evidence of recognition performance.",
+    "A trained model can output boxes different from annotations; these results describe the specified ideal-annotation representation.",
+    "Partial cells outside model context are not represented by this oracle; separate clipped-cell regressions remain necessary."
+  ],
+  "groups": {
+    "natural": {
+      "total": 135,
+      "decoder_accepted": 134,
+      "decoder_exact": 134,
+      "decoder_accepted_wrong": 0,
+      "decoder_rejection_reasons": {
+        "multiple_rows": 1
+      },
+      "quality_rejections": {},
+      "pipeline_exact": 134,
+      "grid_collision_fixtures": 0,
+      "grid_collision_cells": 0,
+      "adjacent_grid_peak_fixtures": 0,
+      "complete_context_cells": 543,
+      "omitted_partial_context_cells": 280,
+      "partial_context_intersects_selection_fixtures": 0,
+      "by_length": {
+        "1": {
+          "total": 29,
+          "decoder_accepted": 29,
+          "decoder_exact": 29,
+          "decoder_accepted_wrong": 0,
+          "decoder_rejection_reasons": {},
+          "quality_rejections": {},
+          "pipeline_exact": 29,
+          "grid_collision_fixtures": 0,
+          "grid_collision_cells": 0,
+          "adjacent_grid_peak_fixtures": 0,
+          "complete_context_cells": 29,
+          "omitted_partial_context_cells": 50,
+          "partial_context_intersects_selection_fixtures": 0
+        },
+        "2": {
+          "total": 21,
+          "decoder_accepted": 21,
+          "decoder_exact": 21,
+          "decoder_accepted_wrong": 0,
+          "decoder_rejection_reasons": {},
+          "quality_rejections": {},
+          "pipeline_exact": 21,
+          "grid_collision_fixtures": 0,
+          "grid_collision_cells": 0,
+          "adjacent_grid_peak_fixtures": 0,
+          "complete_context_cells": 42,
+          "omitted_partial_context_cells": 2,
+          "partial_context_intersects_selection_fixtures": 0
+        },
+        "3": {
+          "total": 17,
+          "decoder_accepted": 17,
+          "decoder_exact": 17,
+          "decoder_accepted_wrong": 0,
+          "decoder_rejection_reasons": {},
+          "quality_rejections": {},
+          "pipeline_exact": 17,
+          "grid_collision_fixtures": 0,
+          "grid_collision_cells": 0,
+          "adjacent_grid_peak_fixtures": 0,
+          "complete_context_cells": 51,
+          "omitted_partial_context_cells": 1,
+          "partial_context_intersects_selection_fixtures": 0
+        },
+        "4": {
+          "total": 11,
+          "decoder_accepted": 11,
+          "decoder_exact": 11,
+          "decoder_accepted_wrong": 0,
+          "decoder_rejection_reasons": {},
+          "quality_rejections": {},
+          "pipeline_exact": 11,
+          "grid_collision_fixtures": 0,
+          "grid_collision_cells": 0,
+          "adjacent_grid_peak_fixtures": 0,
+          "complete_context_cells": 44,
+          "omitted_partial_context_cells": 2,
+          "partial_context_intersects_selection_fixtures": 0
+        },
+        "5": {
+          "total": 10,
+          "decoder_accepted": 10,
+          "decoder_exact": 10,
+          "decoder_accepted_wrong": 0,
+          "decoder_rejection_reasons": {},
+          "quality_rejections": {},
+          "pipeline_exact": 10,
+          "grid_collision_fixtures": 0,
+          "grid_collision_cells": 0,
+          "adjacent_grid_peak_fixtures": 0,
+          "complete_context_cells": 50,
+          "omitted_partial_context_cells": 23,
+          "partial_context_intersects_selection_fixtures": 0
+        },
+        "6": {
+          "total": 23,
+          "decoder_accepted": 23,
+          "decoder_exact": 23,
+          "decoder_accepted_wrong": 0,
+          "decoder_rejection_reasons": {},
+          "quality_rejections": {},
+          "pipeline_exact": 23,
+          "grid_collision_fixtures": 0,
+          "grid_collision_cells": 0,
+          "adjacent_grid_peak_fixtures": 0,
+          "complete_context_cells": 138,
+          "omitted_partial_context_cells": 85,
+          "partial_context_intersects_selection_fixtures": 0
+        },
+        "7": {
+          "total": 8,
+          "decoder_accepted": 7,
+          "decoder_exact": 7,
+          "decoder_accepted_wrong": 0,
+          "decoder_rejection_reasons": {
+            "multiple_rows": 1
+          },
+          "quality_rejections": {},
+          "pipeline_exact": 7,
+          "grid_collision_fixtures": 0,
+          "grid_collision_cells": 0,
+          "adjacent_grid_peak_fixtures": 0,
+          "complete_context_cells": 56,
+          "omitted_partial_context_cells": 25,
+          "partial_context_intersects_selection_fixtures": 0
+        },
+        "8": {
+          "total": 11,
+          "decoder_accepted": 11,
+          "decoder_exact": 11,
+          "decoder_accepted_wrong": 0,
+          "decoder_rejection_reasons": {},
+          "quality_rejections": {},
+          "pipeline_exact": 11,
+          "grid_collision_fixtures": 0,
+          "grid_collision_cells": 0,
+          "adjacent_grid_peak_fixtures": 0,
+          "complete_context_cells": 88,
+          "omitted_partial_context_cells": 61,
+          "partial_context_intersects_selection_fixtures": 0
+        },
+        "9": {
+          "total": 5,
+          "decoder_accepted": 5,
+          "decoder_exact": 5,
+          "decoder_accepted_wrong": 0,
+          "decoder_rejection_reasons": {},
+          "quality_rejections": {},
+          "pipeline_exact": 5,
+          "grid_collision_fixtures": 0,
+          "grid_collision_cells": 0,
+          "adjacent_grid_peak_fixtures": 0,
+          "complete_context_cells": 45,
+          "omitted_partial_context_cells": 31,
+          "partial_context_intersects_selection_fixtures": 0
+        }
+      }
+    },
+    "stress": {
+      "total": 405,
+      "decoder_accepted": 402,
+      "decoder_exact": 402,
+      "decoder_accepted_wrong": 0,
+      "decoder_rejection_reasons": {
+        "multiple_rows": 3
+      },
+      "quality_rejections": {
+        "low_confidence": 30
+      },
+      "pipeline_exact": 372,
+      "grid_collision_fixtures": 0,
+      "grid_collision_cells": 0,
+      "adjacent_grid_peak_fixtures": 0,
+      "complete_context_cells": 1630,
+      "omitted_partial_context_cells": 839,
+      "partial_context_intersects_selection_fixtures": 0,
+      "by_length": {
+        "1": {
+          "total": 87,
+          "decoder_accepted": 87,
+          "decoder_exact": 87,
+          "decoder_accepted_wrong": 0,
+          "decoder_rejection_reasons": {},
+          "quality_rejections": {
+            "low_confidence": 9
+          },
+          "pipeline_exact": 78,
+          "grid_collision_fixtures": 0,
+          "grid_collision_cells": 0,
+          "adjacent_grid_peak_fixtures": 0,
+          "complete_context_cells": 87,
+          "omitted_partial_context_cells": 150,
+          "partial_context_intersects_selection_fixtures": 0
+        },
+        "2": {
+          "total": 63,
+          "decoder_accepted": 63,
+          "decoder_exact": 63,
+          "decoder_accepted_wrong": 0,
+          "decoder_rejection_reasons": {},
+          "quality_rejections": {
+            "low_confidence": 5
+          },
+          "pipeline_exact": 58,
+          "grid_collision_fixtures": 0,
+          "grid_collision_cells": 0,
+          "adjacent_grid_peak_fixtures": 0,
+          "complete_context_cells": 127,
+          "omitted_partial_context_cells": 5,
+          "partial_context_intersects_selection_fixtures": 0
+        },
+        "3": {
+          "total": 51,
+          "decoder_accepted": 51,
+          "decoder_exact": 51,
+          "decoder_accepted_wrong": 0,
+          "decoder_rejection_reasons": {},
+          "quality_rejections": {
+            "low_confidence": 4
+          },
+          "pipeline_exact": 47,
+          "grid_collision_fixtures": 0,
+          "grid_collision_cells": 0,
+          "adjacent_grid_peak_fixtures": 0,
+          "complete_context_cells": 153,
+          "omitted_partial_context_cells": 3,
+          "partial_context_intersects_selection_fixtures": 0
+        },
+        "4": {
+          "total": 33,
+          "decoder_accepted": 33,
+          "decoder_exact": 33,
+          "decoder_accepted_wrong": 0,
+          "decoder_rejection_reasons": {},
+          "quality_rejections": {
+            "low_confidence": 1
+          },
+          "pipeline_exact": 32,
+          "grid_collision_fixtures": 0,
+          "grid_collision_cells": 0,
+          "adjacent_grid_peak_fixtures": 0,
+          "complete_context_cells": 132,
+          "omitted_partial_context_cells": 6,
+          "partial_context_intersects_selection_fixtures": 0
+        },
+        "5": {
+          "total": 30,
+          "decoder_accepted": 30,
+          "decoder_exact": 30,
+          "decoder_accepted_wrong": 0,
+          "decoder_rejection_reasons": {},
+          "quality_rejections": {
+            "low_confidence": 2
+          },
+          "pipeline_exact": 28,
+          "grid_collision_fixtures": 0,
+          "grid_collision_cells": 0,
+          "adjacent_grid_peak_fixtures": 0,
+          "complete_context_cells": 150,
+          "omitted_partial_context_cells": 69,
+          "partial_context_intersects_selection_fixtures": 0
+        },
+        "6": {
+          "total": 69,
+          "decoder_accepted": 69,
+          "decoder_exact": 69,
+          "decoder_accepted_wrong": 0,
+          "decoder_rejection_reasons": {},
+          "quality_rejections": {
+            "low_confidence": 6
+          },
+          "pipeline_exact": 63,
+          "grid_collision_fixtures": 0,
+          "grid_collision_cells": 0,
+          "adjacent_grid_peak_fixtures": 0,
+          "complete_context_cells": 414,
+          "omitted_partial_context_cells": 255,
+          "partial_context_intersects_selection_fixtures": 0
+        },
+        "7": {
+          "total": 24,
+          "decoder_accepted": 21,
+          "decoder_exact": 21,
+          "decoder_accepted_wrong": 0,
+          "decoder_rejection_reasons": {
+            "multiple_rows": 3
+          },
+          "quality_rejections": {
+            "low_confidence": 2
+          },
+          "pipeline_exact": 19,
+          "grid_collision_fixtures": 0,
+          "grid_collision_cells": 0,
+          "adjacent_grid_peak_fixtures": 0,
+          "complete_context_cells": 168,
+          "omitted_partial_context_cells": 75,
+          "partial_context_intersects_selection_fixtures": 0
+        },
+        "8": {
+          "total": 33,
+          "decoder_accepted": 33,
+          "decoder_exact": 33,
+          "decoder_accepted_wrong": 0,
+          "decoder_rejection_reasons": {},
+          "quality_rejections": {
+            "low_confidence": 1
+          },
+          "pipeline_exact": 32,
+          "grid_collision_fixtures": 0,
+          "grid_collision_cells": 0,
+          "adjacent_grid_peak_fixtures": 0,
+          "complete_context_cells": 264,
+          "omitted_partial_context_cells": 183,
+          "partial_context_intersects_selection_fixtures": 0
+        },
+        "9": {
+          "total": 15,
+          "decoder_accepted": 15,
+          "decoder_exact": 15,
+          "decoder_accepted_wrong": 0,
+          "decoder_rejection_reasons": {},
+          "quality_rejections": {},
+          "pipeline_exact": 15,
+          "grid_collision_fixtures": 0,
+          "grid_collision_cells": 0,
+          "adjacent_grid_peak_fixtures": 0,
+          "complete_context_cells": 135,
+          "omitted_partial_context_cells": 93,
+          "partial_context_intersects_selection_fixtures": 0
+        }
+      }
+    },
+    "external": {
+      "total": 607,
+      "decoder_accepted": 604,
+      "decoder_exact": 604,
+      "decoder_accepted_wrong": 0,
+      "decoder_rejection_reasons": {
+        "gap": 3
+      },
+      "quality_rejections": {
+        "low_confidence": 29
+      },
+      "pipeline_exact": 575,
+      "grid_collision_fixtures": 0,
+      "grid_collision_cells": 0,
+      "adjacent_grid_peak_fixtures": 0,
+      "complete_context_cells": 2298,
+      "omitted_partial_context_cells": 1183,
+      "partial_context_intersects_selection_fixtures": 0,
+      "by_length": {
+        "1": {
+          "total": 152,
+          "decoder_accepted": 152,
+          "decoder_exact": 152,
+          "decoder_accepted_wrong": 0,
+          "decoder_rejection_reasons": {},
+          "quality_rejections": {
+            "low_confidence": 21
+          },
+          "pipeline_exact": 131,
+          "grid_collision_fixtures": 0,
+          "grid_collision_cells": 0,
+          "adjacent_grid_peak_fixtures": 0,
+          "complete_context_cells": 152,
+          "omitted_partial_context_cells": 70,
+          "partial_context_intersects_selection_fixtures": 0
+        },
+        "2": {
+          "total": 109,
+          "decoder_accepted": 108,
+          "decoder_exact": 108,
+          "decoder_accepted_wrong": 0,
+          "decoder_rejection_reasons": {
+            "gap": 1
+          },
+          "quality_rejections": {
+            "low_confidence": 4
+          },
+          "pipeline_exact": 104,
+          "grid_collision_fixtures": 0,
+          "grid_collision_cells": 0,
+          "adjacent_grid_peak_fixtures": 0,
+          "complete_context_cells": 218,
+          "omitted_partial_context_cells": 1,
+          "partial_context_intersects_selection_fixtures": 0
+        },
+        "3": {
+          "total": 73,
+          "decoder_accepted": 73,
+          "decoder_exact": 73,
+          "decoder_accepted_wrong": 0,
+          "decoder_rejection_reasons": {},
+          "quality_rejections": {
+            "low_confidence": 2
+          },
+          "pipeline_exact": 71,
+          "grid_collision_fixtures": 0,
+          "grid_collision_cells": 0,
+          "adjacent_grid_peak_fixtures": 0,
+          "complete_context_cells": 219,
+          "omitted_partial_context_cells": 0,
+          "partial_context_intersects_selection_fixtures": 0
+        },
+        "4": {
+          "total": 66,
+          "decoder_accepted": 64,
+          "decoder_exact": 64,
+          "decoder_accepted_wrong": 0,
+          "decoder_rejection_reasons": {
+            "gap": 2
+          },
+          "quality_rejections": {
+            "low_confidence": 1
+          },
+          "pipeline_exact": 63,
+          "grid_collision_fixtures": 0,
+          "grid_collision_cells": 0,
+          "adjacent_grid_peak_fixtures": 0,
+          "complete_context_cells": 264,
+          "omitted_partial_context_cells": 8,
+          "partial_context_intersects_selection_fixtures": 0
+        },
+        "5": {
+          "total": 70,
+          "decoder_accepted": 70,
+          "decoder_exact": 70,
+          "decoder_accepted_wrong": 0,
+          "decoder_rejection_reasons": {},
+          "quality_rejections": {
+            "low_confidence": 1
+          },
+          "pipeline_exact": 69,
+          "grid_collision_fixtures": 0,
+          "grid_collision_cells": 0,
+          "adjacent_grid_peak_fixtures": 0,
+          "complete_context_cells": 350,
+          "omitted_partial_context_cells": 11,
+          "partial_context_intersects_selection_fixtures": 0
+        },
+        "6": {
+          "total": 43,
+          "decoder_accepted": 43,
+          "decoder_exact": 43,
+          "decoder_accepted_wrong": 0,
+          "decoder_rejection_reasons": {},
+          "quality_rejections": {},
+          "pipeline_exact": 43,
+          "grid_collision_fixtures": 0,
+          "grid_collision_cells": 0,
+          "adjacent_grid_peak_fixtures": 0,
+          "complete_context_cells": 258,
+          "omitted_partial_context_cells": 91,
+          "partial_context_intersects_selection_fixtures": 0
+        },
+        "7": {
+          "total": 35,
+          "decoder_accepted": 35,
+          "decoder_exact": 35,
+          "decoder_accepted_wrong": 0,
+          "decoder_rejection_reasons": {},
+          "quality_rejections": {},
+          "pipeline_exact": 35,
+          "grid_collision_fixtures": 0,
+          "grid_collision_cells": 0,
+          "adjacent_grid_peak_fixtures": 0,
+          "complete_context_cells": 245,
+          "omitted_partial_context_cells": 362,
+          "partial_context_intersects_selection_fixtures": 0
+        },
+        "8": {
+          "total": 24,
+          "decoder_accepted": 24,
+          "decoder_exact": 24,
+          "decoder_accepted_wrong": 0,
+          "decoder_rejection_reasons": {},
+          "quality_rejections": {},
+          "pipeline_exact": 24,
+          "grid_collision_fixtures": 0,
+          "grid_collision_cells": 0,
+          "adjacent_grid_peak_fixtures": 0,
+          "complete_context_cells": 192,
+          "omitted_partial_context_cells": 279,
+          "partial_context_intersects_selection_fixtures": 0
+        },
+        "9": {
+          "total": 15,
+          "decoder_accepted": 15,
+          "decoder_exact": 15,
+          "decoder_accepted_wrong": 0,
+          "decoder_rejection_reasons": {},
+          "quality_rejections": {},
+          "pipeline_exact": 15,
+          "grid_collision_fixtures": 0,
+          "grid_collision_cells": 0,
+          "adjacent_grid_peak_fixtures": 0,
+          "complete_context_cells": 135,
+          "omitted_partial_context_cells": 188,
+          "partial_context_intersects_selection_fixtures": 0
+        },
+        "10": {
+          "total": 13,
+          "decoder_accepted": 13,
+          "decoder_exact": 13,
+          "decoder_accepted_wrong": 0,
+          "decoder_rejection_reasons": {},
+          "quality_rejections": {},
+          "pipeline_exact": 13,
+          "grid_collision_fixtures": 0,
+          "grid_collision_cells": 0,
+          "adjacent_grid_peak_fixtures": 0,
+          "complete_context_cells": 137,
+          "omitted_partial_context_cells": 152,
+          "partial_context_intersects_selection_fixtures": 0
+        },
+        "11": {
+          "total": 5,
+          "decoder_accepted": 5,
+          "decoder_exact": 5,
+          "decoder_accepted_wrong": 0,
+          "decoder_rejection_reasons": {},
+          "quality_rejections": {},
+          "pipeline_exact": 5,
+          "grid_collision_fixtures": 0,
+          "grid_collision_cells": 0,
+          "adjacent_grid_peak_fixtures": 0,
+          "complete_context_cells": 60,
+          "omitted_partial_context_cells": 21,
+          "partial_context_intersects_selection_fixtures": 0
+        },
+        "12": {
+          "total": 2,
+          "decoder_accepted": 2,
+          "decoder_exact": 2,
+          "decoder_accepted_wrong": 0,
+          "decoder_rejection_reasons": {},
+          "quality_rejections": {},
+          "pipeline_exact": 2,
+          "grid_collision_fixtures": 0,
+          "grid_collision_cells": 0,
+          "adjacent_grid_peak_fixtures": 0,
+          "complete_context_cells": 68,
+          "omitted_partial_context_cells": 0,
+          "partial_context_intersects_selection_fixtures": 0
+        }
+      }
+    }
+  },
+  "accepted_text_mismatches": [],
+  "decoder_rejected_fixtures": [
+    {
+      "group": "natural",
+      "index": 45,
+      "image": "validation-words/000045.png",
+      "source": "books/ola/IMG_5365.labeled.jpg",
+      "expected": "PRIMERA",
+      "decoder_text": "",
+      "decoder_reason": "multiple_rows",
+      "quality_reason": "",
+      "expected_cell_count": 7,
+      "decoded_box_count": 7,
+      "complete_context_cells": 7,
+      "omitted_partial_context_cells": 0,
+      "grid_collisions": [],
+      "adjacent_grid_peaks": [],
+      "partial_context_intersects_selection": [],
+      "max_center_gap_over_median_height": 0.8529741863075195,
+      "row_span_over_median_height": 0.6212121212121211
+    },
+    {
+      "group": "stress",
+      "index": 45,
+      "image": "validation-words/000045.png",
+      "source": "books/ola/IMG_5365.labeled.jpg",
+      "expected": "PRIMERA",
+      "decoder_text": "",
+      "decoder_reason": "multiple_rows",
+      "quality_reason": "",
+      "expected_cell_count": 7,
+      "decoded_box_count": 7,
+      "complete_context_cells": 7,
+      "omitted_partial_context_cells": 0,
+      "grid_collisions": [],
+      "adjacent_grid_peaks": [],
+      "partial_context_intersects_selection": [],
+      "max_center_gap_over_median_height": 0.8529741863075195,
+      "row_span_over_median_height": 0.6212121212121211
+    },
+    {
+      "group": "stress",
+      "index": 225,
+      "image": "validation-stress-words/000045-soft_narrow.png",
+      "source": "books/ola/IMG_5365.labeled.jpg",
+      "expected": "PRIMERA",
+      "decoder_text": "",
+      "decoder_reason": "multiple_rows",
+      "quality_reason": "",
+      "expected_cell_count": 7,
+      "decoded_box_count": 7,
+      "complete_context_cells": 7,
+      "omitted_partial_context_cells": 0,
+      "grid_collisions": [],
+      "adjacent_grid_peaks": [],
+      "partial_context_intersects_selection": [],
+      "max_center_gap_over_median_height": 0.6427200352433995,
+      "row_span_over_median_height": 0.621212121212121
+    },
+    {
+      "group": "stress",
+      "index": 226,
+      "image": "validation-stress-words/000045-faint.png",
+      "source": "books/ola/IMG_5365.labeled.jpg",
+      "expected": "PRIMERA",
+      "decoder_text": "",
+      "decoder_reason": "multiple_rows",
+      "quality_reason": "",
+      "expected_cell_count": 7,
+      "decoded_box_count": 7,
+      "complete_context_cells": 7,
+      "omitted_partial_context_cells": 0,
+      "grid_collisions": [],
+      "adjacent_grid_peaks": [],
+      "partial_context_intersects_selection": [],
+      "max_center_gap_over_median_height": 0.7730078563411898,
+      "row_span_over_median_height": 0.6212121212121211
+    },
+    {
+      "group": "external",
+      "index": 29,
+      "image": "external-words/000029.png",
+      "source": "uploaded/test2/16133680849224939776977609910946.labeled.jpg",
+      "expected": "DHFJ",
+      "decoder_text": "",
+      "decoder_reason": "gap",
+      "quality_reason": "",
+      "expected_cell_count": 4,
+      "decoded_box_count": 4,
+      "complete_context_cells": 4,
+      "omitted_partial_context_cells": 4,
+      "grid_collisions": [],
+      "adjacent_grid_peaks": [],
+      "partial_context_intersects_selection": [],
+      "max_center_gap_over_median_height": 1.988795518207282,
+      "row_span_over_median_height": 0.2777777777777778
+    },
+    {
+      "group": "external",
+      "index": 33,
+      "image": "external-words/000033.png",
+      "source": "uploaded/test2/16133680849224939776977609910946.labeled.jpg",
+      "expected": "HHDJ",
+      "decoder_text": "",
+      "decoder_reason": "gap",
+      "quality_reason": "",
+      "expected_cell_count": 4,
+      "decoded_box_count": 4,
+      "complete_context_cells": 4,
+      "omitted_partial_context_cells": 3,
+      "grid_collisions": [],
+      "adjacent_grid_peaks": [],
+      "partial_context_intersects_selection": [],
+      "max_center_gap_over_median_height": 2.0049562010142927,
+      "row_span_over_median_height": 0.11111111111111105
+    },
+    {
+      "group": "external",
+      "index": 542,
+      "image": "external-words/000542.png",
+      "source": "uploaded/test2/af3d648e88464c7bad4bc334bb2c16a4.labeled.jpg",
+      "expected": "RV",
+      "decoder_text": "",
+      "decoder_reason": "gap",
+      "quality_reason": "",
+      "expected_cell_count": 2,
+      "decoded_box_count": 2,
+      "complete_context_cells": 2,
+      "omitted_partial_context_cells": 0,
+      "grid_collisions": [],
+      "adjacent_grid_peaks": [],
+      "partial_context_intersects_selection": [],
+      "max_center_gap_over_median_height": 1.2474645030425966,
+      "row_span_over_median_height": 0.058823529411764705
+    }
+  ],
+  "grid_collision_fixtures": [],
+  "adjacent_grid_peak_fixtures": []
+}

@@ -1,0 +1,128 @@
+{
+  "created_at_utc": "2026-09-05T21:14:51.858741+00:00",
+  "run": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\run25",
+  "source_sha256": {
+    "word_data.py": "659ab6b508a69b34bfb8dc899c5fa6e2214bd64e08281f40f9c39aa91d74996c",
+    "word_model.py": "c446732a2905a612cd6f1dd64d2d3d01303b1c71933c34552d26f3b5052fd551",
+    "word_decode.py": "bd301c5afeb4ba2e6866371665324d2de7f0a6ee252ef76ce02a5553193d63c5",
+    "word_train.py": "f472b80d0466e17cf1efcb59661b3fea300f5618d4288ec1847fa8d3b628c97b",
+    "word_sampling.py": "c234523277dba683e68a2863e14736bc68432da3b6ca65bb5d8a64bc7d9dc0fe",
+    "word_tail.py": "bdd4b5d12d56e25c1100a282483e7a31176b5a65beb353a0623ceea40a49dc0e",
+    "word_sources.py": "affb3488d8c25e3d0131eb4340cae29fcece563ac75373e071f97fef68f09acd",
+    "word_dsbi.py": "feecf16dba6d376415e15707c02c8f05fcf6650055da09ad9f4712099e6325ff",
+    "word_point_geometry.py": "2b932b320d191277b86ae13daecb82b5abbf0a46e9464d7360ee1e941aca760b",
+    "word_point_metadata.py": "de1cad0157e744f2f646010eac5355b88d1d11f52662d4b9353166661f59049f",
+    "word_geometry_head.py": "f46c8f90e7f4fc9404eed2dc27fbde6e5c823d25d4f88e4127c7e56ed6e8764e",
+    "word_geometry_init.py": "072379a1ef409d901c2478135174561c14781560cdd56a0b91b0229b8032e15e",
+    "word_geometry_parity.py": "700d9175dc627fb7bf12c0ac20f640191cf5a045e29067c310f5dad5f3bd6f0b",
+    "word_vertical_stretch.py": "336168fbfe4441bfa91e0855f473997a403a542a2b64789ca7cbd1b11b188ed5",
+    "word_bn_affine.py": "fa117f65beda3f6d159f707a5cd45d3a367b8f5b436b8c43c0d7621071297dff",
+    "word_bn_affine_init.py": "ea76999d35a6e9ba94cffce06c359adb1201cb396b54345668b7ed13afe99ce1",
+    "word_bn_affine_parity.py": "d4baba52b0993240e0b5092500ae32ee5d1b01e636d2546261a0a24996bd4a21",
+    "word_fine_branch.py": "53bff984c33a20556721328e6253fadd060019573b068deee2a671d08a530750",
+    "word_fine_init.py": "3baa5f15b2b4b74ea120dd8150ad3b8a11f59139ad3eb833d3b2089e188d1310",
+    "word_fine_parity.py": "de30cf4b3df1d8ec4bf820f6e1d98c8e40a39eb674a9ce470a3067569f3a8cbe",
+    "word_fine_validation.py": "b075760aee90afa17a84c0e8ec3a421132e0644130929f8f7a85b54b11058124"
+  },
+  "parent_checkpoint": ".braille-training-work\\word-scan-v1-20260905\\fine-branch-parent-v2\\fine-parent.keras",
+  "parent_checkpoint_sha256": "f5f3b239d0ead7fea9d8f6d8d95d82b9c8fa5a678bdd67c1d7db7246406e6b4e",
+  "base_parent_checkpoint": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\selected-v15\\best-word.keras",
+  "base_parent_checkpoint_sha256": "cce2432c0ddb8952c885dd58697589c285209588dafa81aacdd891b1660068b7",
+  "parent_selected_validation_sha256": "d136021888194895e3bd19cd3800ace90cb3cc83776a87799fd7fda8d9623b39",
+  "parent_training_config_sha256": "75bc0305e899aa1c13936fa8614ef42702fedefc9d3c5abfd294d60ccf30a51d",
+  "parent_sampling_lineage_sha256": "4cc87be5de829f8be91ea1c68a6bb3b6ad6370db8509ed44a8fda55a03e40b9a",
+  "training_manifest_sha256": "130c80f135af5677d6b78a5e401126f54b15204481aab6de00a88c443956c4fa",
+  "supplemental_source_indexes": [
+    "../dsbi-training-contexts-v2/source-index.json"
+  ],
+  "planned_epochs": 10,
+  "planned_eligible_epochs": [
+    8,
+    9,
+    10
+  ],
+  "batch_size": 24,
+  "learning_rate": 2e-05,
+  "seed": 20260905,
+  "negative_repeat": 27,
+  "supplemental_negative_repeat": 2,
+  "geometry_loss": "relative_size_huber",
+  "illumination_augmentation": true,
+  "horizontal_mirror_augmentation": false,
+  "vertical_stretch_augmentation": false,
+  "half_turn_augmentation": false,
+  "polarity_augmentation": false,
+  "partial_geometry_supervision": false,
+  "dsbi_visible_partial_supervision": true,
+  "geometry_conditioned_residual": false,
+  "batchnorm_affine": false,
+  "fine_detail_branch": true,
+  "fine_initialization_report": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\fine-branch-parent-v2\\fine-initialization.json",
+  "fine_initialization_report_sha256": "88225ac54a4a9345614cbdf621730dce184a76aab1b590284d9f7777f8870971",
+  "fine_conversion_report": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\fine-branch-parent-v2\\fine-conversion-parity.json",
+  "fine_conversion_report_sha256": "b3333384d36cb024b9bd9498cec77354b9c75d03653db9a1c9f5b6eba681bbb0",
+  "nonzero_diagnostic_sha256": "6ee8686bb37af80b8d28d96f91a7f10fb1b41ade8d09878dfe9b2d81e540a2ae",
+  "nonzero_diagnostic_forbidden": true,
+  "point_metadata_sha256": "ea9592a727f7f3abcc6b017f8f22e143e90ae1541f623c43adf30104021937e8",
+  "selection": "Unchanged v15 control plus actual eligible8-10 on frozen405 natural+stress; weak-peaks-v2 grid and >=95percent accepted precision separately per group. External607/44/66 and12/14 diagnostics never select checkpoints/thresholds.",
+  "rationale": "A separate detail path taps 16-channel stride2 features before the second downsample, retaining information available before backbone projection/downsampling. This hypothesis targets detection/geometry evidence and does not assert an accuracy gain.",
+  "adaptation": {
+    "fine_branch": {
+      "tap": "expanded_conv_depthwise_relu",
+      "tap_shape": [
+        null,
+        96,
+        240,
+        16
+      ],
+      "tap_stride": 2,
+      "tap_pixel_origin": 1,
+      "tap_local_support": 7,
+      "branch_output_shape": [
+        null,
+        48,
+        120,
+        64
+      ],
+      "output_stride": 4,
+      "output_pixel_origin": 3,
+      "output_local_support": 11,
+      "support_scope": "Convolution support relative to the normalized tensor; raw RGB normalization is global.",
+      "depthwise": {
+        "kernel": 3,
+        "stride": 2,
+        "padding": "same",
+        "bias": false
+      },
+      "lateral": {
+        "kernel": 1,
+        "channels": 64,
+        "bias": true
+      },
+      "addition": "Original add_1 result plus branch, before original activation",
+      "added_parameters": 1232,
+      "added_convolution_macs": 6727680,
+      "extra_batchnorm_layers": 0
+    },
+    "parameters": 830539,
+    "new_depthwise_initializer": "HeNormal seed20260905; nonzero",
+    "new_lateral_initializer": "Kernel and bias exactly zero; linear before old activation",
+    "existing_trainability": "All inherited convolution/FPN/head weights remain trainable with the same optimizer; all52 ordinary BN layers stay frozen.",
+    "eligibility": "Require this run to consume all23600 positive records before eligible8-10; no inherited sampling shortcut.",
+    "unchanged": "All280 inherited arrays initially exact, normalization targetStd.05, fulltail32/16/8/4, all data/point masks/negative exposure/augmentation/RNG/decoder/405grid."
+  },
+  "proof_limits": "Six TRAIN/analytic inputs all reject and establish zero identity, real gradient reachability and nonzero builtin numeric/raw/effective conversion parity only. Every selected trained candidate still needs full405 parity and original607/44/66 plus12/14 diagnostics.",
+  "default_off": "Patches AST and every pixel/target/RNG/sample-order operation remain unchanged from run24/run23; with mirror/vertical OFF they retain audited run20 v15 profile.",
+  "preflight_reports": [
+    {
+      "path": ".braille-training-work\\word-scan-v1-20260905\\stride2-tap-independent-static-audit\\audit.json",
+      "sha256": "6e5cc6678d370a03eabcb883020053f1a5f2562ebbb583c1c3ad835cd97fb3fb"
+    },
+    {
+      "path": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\fine-branch-parent-v2\\trainer-validation-preflight.json",
+      "sha256": "de98b309eb04774308355d74cd4ca3c475f798c33337672d3e54a370dfd0eb18"
+    }
+  ],
+  "preflight_audits": [],
+  "no_activation_before_original_gates": true
+}

@@ -1,0 +1,102 @@
+{
+    "status":  "candidate_built_not_evaluated",
+    "created_at_utc":  "2026-09-05T22:32:16.3316484Z",
+    "scope":  "Private inference-only uniform checkpoint average; source archives untouched, no ML/405pixels/labels/607/externalexport",
+    "files":  [
+                  {
+                      "file":  "prepare.py",
+                      "sha256":  "c4698da0a685df7ee4942a8615499dcf45b26ff53498177e024ef9d07f6a0da5",
+                      "bytes":  10573
+                  },
+                  {
+                      "file":  "average.py",
+                      "sha256":  "05c7f3bf2794dbfc833f6fd5ee24613dbfa41ae4d2a2018b637e08c8c12adf93",
+                      "bytes":  5583
+                  },
+                  {
+                      "file":  "test_average.py",
+                      "sha256":  "bfad8ed3c6b53c63bb00cf907aced154e0ca59a34571b2d9bbbcef240c7fc0e0",
+                      "bytes":  1723
+                  },
+                  {
+                      "file":  "tests.log",
+                      "sha256":  "7c450793e45e08d27b47b9e605ae43a8f78ac810fe3a553e9fdf083f39630f49",
+                      "bytes":  1968
+                  },
+                  {
+                      "file":  "README.md",
+                      "sha256":  "d9998741d4d931c32624d2b17cb20dbe5ce3f6419841a1735f876056a9377ad4",
+                      "bytes":  2892
+                  },
+                  {
+                      "file":  "inventory.json",
+                      "sha256":  "882e9afe58e8204e38eba929214129853766a90f70165ec6ce1225ce41a10f3f",
+                      "bytes":  250256
+                  },
+                  {
+                      "file":  "graph.json",
+                      "sha256":  "081567e8c8457cc45bbdffe7721a109d4fc0e1b73fe2c93f6e6606707e258345",
+                      "bytes":  430026
+                  },
+                  {
+                      "file":  "plan.json",
+                      "sha256":  "6520a4e0d41e7bbbb8e5e7ffd9aaed5b6a80d4d54ccb38b96f29341db76c1f98",
+                      "bytes":  12990
+                  },
+                  {
+                      "file":  "candidate-report.json",
+                      "sha256":  "0ce6817ef003e8fe86c03e1e183ebf8f5c3c602bb18eeaeb5d825559ed0ced1b",
+                      "bytes":  40594
+                  },
+                  {
+                      "file":  "wortsman22a.pdf",
+                      "sha256":  "5f7e770b7bfea7463a2909694b1692804fc57d79ccbc54e7dac92855844bfb9c",
+                      "bytes":  1243707
+                  },
+                  {
+                      "file":  "selection-source/word_bn_affine.py",
+                      "sha256":  "fa117f65beda3f6d159f707a5cd45d3a367b8f5b436b8c43c0d7621071297dff",
+                      "bytes":  5135
+                  },
+                  {
+                      "file":  "selection-source/word_data.py",
+                      "sha256":  "70184d6bff134cae4d003cf852bebc93f5c955c685ee2883972a337924793f02",
+                      "bytes":  27024
+                  },
+                  {
+                      "file":  "selection-source/word_decode.py",
+                      "sha256":  "bd301c5afeb4ba2e6866371665324d2de7f0a6ee252ef76ce02a5553193d63c5",
+                      "bytes":  7945
+                  },
+                  {
+                      "file":  "selection-source/word_geometry_head.py",
+                      "sha256":  "f46c8f90e7f4fc9404eed2dc27fbde6e5c823d25d4f88e4127c7e56ed6e8764e",
+                      "bytes":  5857
+                  },
+                  {
+                      "file":  "selection-source/word_model.py",
+                      "sha256":  "c446732a2905a612cd6f1dd64d2d3d01303b1c71933c34552d26f3b5052fd551",
+                      "bytes":  5890
+                  },
+                  {
+                      "file":  "selection-source/word_select.py",
+                      "sha256":  "ab8ad646d4693bf9528e4aace201464f9cc7b632f4c2ed9863ad9a74f2caf07c",
+                      "bytes":  8904
+                  }
+              ],
+    "candidate":  {
+                      "sha256":  "7c831094852512ef79d791fa31570e6016d15e513004defdeadb091c401b9cda",
+                      "training_resume_allowed":  false,
+                      "file":  "uniform-08-09-10.keras",
+                      "bytes":  3276201,
+                      "tested_by_model_inference":  false
+                  },
+    "unit_tests":  {
+                       "backend_imports":  [
+
+                                           ],
+                       "log":  "tests.log",
+                       "passed":  4
+                   },
+    "root_independent_audit_pending":  true
+}

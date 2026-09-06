@@ -1,0 +1,303 @@
+{
+  "status": "passed",
+  "created_at_utc": "2026-09-05T19:28:56.554342+00:00",
+  "initialization_report_sha256": "b805f1091e6c59f036cd81f5253f0ca00eb0578e450727e5c105090abf99cf50",
+  "source_sha256": "6c502d7dcac0692df0f8c2858bf2d8a76800ba130613e14289e8f77ed66debab",
+  "reference_oracle": ".braille-training-work\\word-scan-v1-20260905\\geometry-head-parent-v1\\initialization-oracle.npz",
+  "reference_oracle_sha256": "9330946dafe06c7705b3f2c85cce26f8bbfeca11763ba7465d62e809180d5669",
+  "reference_report": ".braille-training-work\\word-scan-v1-20260905\\geometry-head-parent-v1\\geometry-initialization.json",
+  "reference_report_sha256": "791bac9f9e92cab96925a9c802de9c6b141e07c7c2e00b4fbce9904187293359",
+  "reference_scope": "Reuse only the six frozen TRAIN/analytic input images; every parent/initial/nonzero output is recomputed from this initialization, never taken from the older reference checkpoint.",
+  "oracle_sha256": "2ba7da257b3788e756e56377087ae948960c3ae200ef5e55041f1d74e6999eb7",
+  "samples": 6,
+  "device": "cpu",
+  "threads": 2,
+  "initial_and_parent_exact": true,
+  "train_and_eval_exact": true,
+  "all_weights_unchanged": true,
+  "selected_validation_report": ".braille-training-work\\word-scan-v1-20260905\\selected-v15\\selected-validation.json",
+  "selected_validation_sha256": "d136021888194895e3bd19cd3800ace90cb3cc83776a87799fd7fda8d9623b39",
+  "thresholds": {
+    "proposalScore": 0.25,
+    "acceptScore": 0.25,
+    "dotConfidence": 0.7,
+    "nmsIou": 0.25,
+    "minCellWidth": 0.008,
+    "minCellHeight": 0.06,
+    "edgeMargin": 0.008,
+    "maxRowDeviation": 0.55,
+    "maxGapRatio": 1.2,
+    "maxOverlapRatio": 0.5
+  },
+  "decision_sources_sha256": {
+    "word_decode.py": "bd301c5afeb4ba2e6866371665324d2de7f0a6ee252ef76ce02a5553193d63c5",
+    "word_benchmark.py": "ad7d4f3a35a8d0dd3a530dfeb8f849fde585e97cadcde5fcb043950bedd05988",
+    "benchmark_angelina.py": "6c7d63c8b5c461fec73e415b46df74d15c0bca455cc9f411c5fb6edd5d353353",
+    "word_data.py": "659ab6b508a69b34bfb8dc899c5fa6e2214bd64e08281f40f9c39aa91d74996c"
+  },
+  "decisions": {
+    "parent": [
+      {
+        "raw": {
+          "text": "",
+          "reason": "clipped",
+          "cell_count": 9
+        },
+        "quality_reason": "",
+        "effective": {
+          "text": "",
+          "reason": "clipped",
+          "cell_count": 9
+        }
+      },
+      {
+        "raw": {
+          "text": "",
+          "reason": "clipped",
+          "cell_count": 12
+        },
+        "quality_reason": "",
+        "effective": {
+          "text": "",
+          "reason": "clipped",
+          "cell_count": 12
+        }
+      },
+      {
+        "raw": {
+          "text": "",
+          "reason": "no_grid",
+          "cell_count": 0
+        },
+        "quality_reason": "",
+        "effective": {
+          "text": "",
+          "reason": "no_grid",
+          "cell_count": 0
+        }
+      },
+      {
+        "raw": {
+          "text": "",
+          "reason": "no_grid",
+          "cell_count": 0
+        },
+        "quality_reason": "dark",
+        "effective": {
+          "text": "",
+          "reason": "dark",
+          "cell_count": 0
+        }
+      },
+      {
+        "raw": {
+          "text": "",
+          "reason": "no_grid",
+          "cell_count": 0
+        },
+        "quality_reason": "glare",
+        "effective": {
+          "text": "",
+          "reason": "glare",
+          "cell_count": 0
+        }
+      },
+      {
+        "raw": {
+          "text": "",
+          "reason": "no_grid",
+          "cell_count": 0
+        },
+        "quality_reason": "",
+        "effective": {
+          "text": "",
+          "reason": "no_grid",
+          "cell_count": 0
+        }
+      }
+    ],
+    "initial": [
+      {
+        "raw": {
+          "text": "",
+          "reason": "clipped",
+          "cell_count": 9
+        },
+        "quality_reason": "",
+        "effective": {
+          "text": "",
+          "reason": "clipped",
+          "cell_count": 9
+        }
+      },
+      {
+        "raw": {
+          "text": "",
+          "reason": "clipped",
+          "cell_count": 12
+        },
+        "quality_reason": "",
+        "effective": {
+          "text": "",
+          "reason": "clipped",
+          "cell_count": 12
+        }
+      },
+      {
+        "raw": {
+          "text": "",
+          "reason": "no_grid",
+          "cell_count": 0
+        },
+        "quality_reason": "",
+        "effective": {
+          "text": "",
+          "reason": "no_grid",
+          "cell_count": 0
+        }
+      },
+      {
+        "raw": {
+          "text": "",
+          "reason": "no_grid",
+          "cell_count": 0
+        },
+        "quality_reason": "dark",
+        "effective": {
+          "text": "",
+          "reason": "dark",
+          "cell_count": 0
+        }
+      },
+      {
+        "raw": {
+          "text": "",
+          "reason": "no_grid",
+          "cell_count": 0
+        },
+        "quality_reason": "glare",
+        "effective": {
+          "text": "",
+          "reason": "glare",
+          "cell_count": 0
+        }
+      },
+      {
+        "raw": {
+          "text": "",
+          "reason": "no_grid",
+          "cell_count": 0
+        },
+        "quality_reason": "",
+        "effective": {
+          "text": "",
+          "reason": "no_grid",
+          "cell_count": 0
+        }
+      }
+    ],
+    "nonzero": [
+      {
+        "raw": {
+          "text": "",
+          "reason": "clipped",
+          "cell_count": 9
+        },
+        "quality_reason": "",
+        "effective": {
+          "text": "",
+          "reason": "clipped",
+          "cell_count": 9
+        }
+      },
+      {
+        "raw": {
+          "text": "",
+          "reason": "clipped",
+          "cell_count": 12
+        },
+        "quality_reason": "",
+        "effective": {
+          "text": "",
+          "reason": "clipped",
+          "cell_count": 12
+        }
+      },
+      {
+        "raw": {
+          "text": "",
+          "reason": "no_grid",
+          "cell_count": 0
+        },
+        "quality_reason": "",
+        "effective": {
+          "text": "",
+          "reason": "no_grid",
+          "cell_count": 0
+        }
+      },
+      {
+        "raw": {
+          "text": "",
+          "reason": "no_grid",
+          "cell_count": 0
+        },
+        "quality_reason": "dark",
+        "effective": {
+          "text": "",
+          "reason": "dark",
+          "cell_count": 0
+        }
+      },
+      {
+        "raw": {
+          "text": "",
+          "reason": "no_grid",
+          "cell_count": 0
+        },
+        "quality_reason": "glare",
+        "effective": {
+          "text": "",
+          "reason": "glare",
+          "cell_count": 0
+        }
+      },
+      {
+        "raw": {
+          "text": "",
+          "reason": "no_grid",
+          "cell_count": 0
+        },
+        "quality_reason": "",
+        "effective": {
+          "text": "",
+          "reason": "no_grid",
+          "cell_count": 0
+        }
+      }
+    ]
+  },
+  "nonzero_max_output_delta": 0.03368663787841797,
+  "train_inputs": [
+    {
+      "image": "train/000000.png",
+      "source": "books/chudo_derevo_redmi/IMG_20190715_112912.labeled.jpg",
+      "sha256": "dec6b2c72152ff5eb8a87be172a7e20764eae23d427a401fd98075f19d7de1f1"
+    },
+    {
+      "image": "train/003163.png",
+      "source": "books/skazki/IMG_20190715_121834.labeled.jpg",
+      "sha256": "707ffff038ec67f271aee1e7e7c1bb4524ad18370c453d132f450bb84aaaedb6"
+    },
+    {
+      "image": "train/006326.png",
+      "source": "not_braille/misc/ul.jpg",
+      "sha256": "860bf163e12e45008a203a2d9e619d6cdfd0e555e9fe40cb567355a90938c5c3"
+    }
+  ],
+  "analytic_inputs": [
+    "black",
+    "white",
+    "seed20260905 uniform random"
+  ]
+}

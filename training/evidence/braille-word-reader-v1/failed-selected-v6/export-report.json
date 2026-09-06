@@ -1,0 +1,54 @@
+{
+  "status": "unverified_candidate",
+  "source_checkpoint_sha256": "7d6a6f04bfa24b84531ae33e50ca0794b91dcc7e857f0fcbc8a6b0e8e61ec8ee",
+  "artifact_sha256": "ccf93a70ad0a7b0cda882fda2525f7d14632d682ec8188bab65ee6bb76d6b73f",
+  "artifact_bytes": 851480,
+  "input_shape": [
+    1,
+    192,
+    480,
+    3
+  ],
+  "output_shape": [
+    1,
+    48,
+    120,
+    11
+  ],
+  "dtype": "<class 'numpy.float32'>",
+  "parity_samples": 405,
+  "parity_fixture_sha256": "e2ab968f7c4dcf7e774181fde687e1321f58d20567528af4b21fd03ff5a3e625",
+  "training_backend_vs_tensorflow_max_abs": 4.807114601135254e-05,
+  "tensorflow_vs_tflite_max_abs": 0.00010129809379577637,
+  "decoded_text_parity": true,
+  "decoded_rejection_parity": true,
+  "parity_pass": true,
+  "native_preprocessing_parity_validated": false,
+  "physical_camera_validated": false,
+  "thresholds": {
+    "proposalScore": 0.35,
+    "acceptScore": 0.4,
+    "dotConfidence": 0.7,
+    "nmsIou": 0.25,
+    "minCellWidth": 0.008,
+    "minCellHeight": 0.06,
+    "edgeMargin": 0.008,
+    "maxRowDeviation": 0.55,
+    "maxGapRatio": 1.2,
+    "maxOverlapRatio": 0.5
+  },
+  "imageNormalization": {
+    "kind": "per_channel_standardize_grayscale",
+    "location": "inside_model_before_backbone_rescaling",
+    "variance": "population",
+    "stdFloor": 0.001,
+    "targetMean": 0.5,
+    "targetStd": 0.05,
+    "clip": [
+      0,
+      1
+    ],
+    "grayscale": "mean_of_standardized_channels",
+    "outputChannels": 3
+  }
+}

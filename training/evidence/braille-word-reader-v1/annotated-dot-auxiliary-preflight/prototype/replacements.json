@@ -1,0 +1,86 @@
+[
+  {
+    "before": "from word_normalization_transition import validated_normalization_transition, training_normalization_metadata",
+    "after": "from word_normalization_transition import validated_normalization_transition, training_normalization_metadata\nfrom word_dot_aux import AUXILIARY_DOT_COEFFICIENT, wrap_dot_training\nfrom word_dot_aux_targets import complete_dot_queries, pad_dot_queries"
+  },
+  {
+    "before": "'word_anchor_zoom.py', 'word_normalization_transition.py')",
+    "after": "'word_anchor_zoom.py', 'word_normalization_transition.py', 'word_dot_aux.py', 'word_dot_aux_targets.py')"
+  },
+  {
+    "before": "point_states=None,vertical_stretch_augmentation=False,horizontal_aspect_augmentation=False,anchor_zoom_cap=False):",
+    "after": "point_states=None,vertical_stretch_augmentation=False,horizontal_aspect_augmentation=False,anchor_zoom_cap=False,auxiliary_dot_supervision=False):"
+  },
+  {
+    "before": "        self.point_states = point_states",
+    "after": "        self.point_states = point_states\n        self.auxiliary_dot_supervision = auxiliary_dot_supervision"
+  },
+  {
+    "before": "        images, labels = [], []",
+    "after": "        images, labels = [], []\n        auxiliary_rows = []"
+  },
+  {
+    "before": "        return np.stack(images), np.stack(labels)",
+    "after": "            if self.auxiliary_dot_supervision:\n                auxiliary_rows.append(complete_dot_queries(point_state, masks[:positive_count], eligible[:positive_count]))\n        if self.auxiliary_dot_supervision:\n            queries, occupancy = pad_dot_queries(auxiliary_rows)\n            return (np.stack(images), queries), (np.stack(labels), occupancy)\n        return np.stack(images), np.stack(labels)"
+  },
+  {
+    "before": "def __init__(self, root, output, batch_size, retain_epochs=False,train_dataset=None,expected_bn_moments=None):",
+    "after": "def __init__(self, root, output, batch_size, retain_epochs=False,train_dataset=None,expected_bn_moments=None,reader=None):"
+  },
+  {
+    "before": "        self.expected_bn_moments = expected_bn_moments",
+    "after": "        self.expected_bn_moments = expected_bn_moments\n        self.reader = reader"
+  },
+  {
+    "before": "        callback_started=time.perf_counter()\n        moment_hash = None",
+    "after": "        callback_started=time.perf_counter()\n        reader = self.reader if self.reader is not None else self.model\n        moment_hash = None"
+  },
+  {
+    "before": "moment_hash = moving_moments_sha256(self.model)",
+    "after": "moment_hash = moving_moments_sha256(reader)"
+  },
+  {
+    "before": "        self.model.save(self.output/\"last.keras\")",
+    "after": "        reader.save(self.output/\"last.keras\")\n        if self.reader is not None:\n            self.model.save(self.output/\"last-training.keras\")"
+  },
+  {
+    "before": "predictions = self.model.predict(self.images, batch_size=self.batch_size, verbose=0)",
+    "after": "predictions = reader.predict(self.images, batch_size=self.batch_size, verbose=0)"
+  },
+  {
+    "before": "            self.model.save(self.output/\"best-word.keras\")",
+    "after": "            reader.save(self.output/\"best-word.keras\")"
+  },
+  {
+    "before": "    parser.add_argument('--normalization-runtime-proof', type=Path, help='Actual std.15 six-input Torch/TF/TFLite runtime proof.')",
+    "after": "    parser.add_argument('--normalization-runtime-proof', type=Path, help='Actual std.15 six-input Torch/TF/TFLite runtime proof.')\n    parser.add_argument('--auxiliary-dot-supervision', action='store_true', help='Training-only explicit DSBI complete-cell occupancy objective with fixed weight .25.')"
+  },
+  {
+    "before": "    return args\n\n\n",
+    "after": "    if args.auxiliary_dot_supervision and (not args.resume or not args.illumination_augmentation\n            or not args.dsbi_visible_partial_supervision or not args.balance_source_families\n            or args.anchor_zoom_cap or args.horizontal_aspect_augmentation or args.vertical_stretch_augmentation\n            or args.horizontal_mirror_augmentation or args.camera_augmentation or args.half_turn_augmentation\n            or args.polarity_augmentation or args.partial_geometry_supervision or args.geometry_head_initialization\n            or args.bn_affine_initialization or args.fine_branch_initialization or args.normalization_initialization\n            or args.image_normalization is not None):\n        parser.error('Auxiliary dots require the unchanged full-tail illumination/DSBI reader without other ablations')\n    return args\n\n\n"
+  },
+  {
+    "before": "anchor_zoom_cap=args.anchor_zoom_cap)\n    validation = Patches",
+    "after": "anchor_zoom_cap=args.anchor_zoom_cap,auxiliary_dot_supervision=args.auxiliary_dot_supervision)\n    validation = Patches"
+  },
+  {
+    "before": "False, args.seed+1,partial_geometry_supervision=args.partial_geometry_supervision)",
+    "after": "False, args.seed+1,partial_geometry_supervision=args.partial_geometry_supervision,auxiliary_dot_supervision=args.auxiliary_dot_supervision)"
+  },
+  {
+    "before": "    model.compile(optimizer=keras.optimizers.Adam(args.learning_rate, clipnorm=10.), loss=word_relative_loss if args.geometry_loss=='relative_size_huber' else word_loss, jit_compile=False)",
+    "after": "    if args.auxiliary_dot_supervision:\n        training_model = wrap_dot_training(model, word_relative_loss if args.geometry_loss=='relative_size_huber' else word_loss, args.learning_rate)\n    else:\n        model.compile(optimizer=keras.optimizers.Adam(args.learning_rate, clipnorm=10.), loss=word_relative_loss if args.geometry_loss=='relative_size_huber' else word_loss, jit_compile=False)\n        training_model = model"
+  },
+  {
+    "before": "    config['fine_detail_branch'] = fine_branch",
+    "after": "    config['fine_detail_branch'] = fine_branch\n    config['auxiliary_dot_supervision'] = {'enabled': args.auxiliary_dot_supervision}\n    if args.auxiliary_dot_supervision:\n        config['auxiliary_dot_supervision'].update(coefficient=AUXILIARY_DOT_COEFFICIENT,\n            target='Explicit mask bits at actual transformed DSBI TRAIN points, complete at every raster, all six positions within stride4/origin3 feature hull.',\n            unknown_policy='No points for Angelina, unknown slots or partial cells; missing auxiliary labels are -1.',\n            denominator='Separate known-point count; original main loss and denominator unchanged.',\n            validation='All validation records have ignored auxiliary queries; val_loss is the original reader loss. Whole-word callbacks use reader only.',\n            training_parameters=training_model.count_params(),\n            checkpoints='Selectable last/best/retained Keras files contain reader only; last-training.keras separately preserves full wrapper and optimizer. Reader resume starts a fresh auxiliary head and optimizer; full-state resume needs an explicit separate workflow.')"
+  },
+  {
+    "before": "    history = model.fit(train,",
+    "after": "    history = training_model.fit(train,"
+  },
+  {
+    "before": "expected_bn_moments=batchnorm_affine.get('moving_moments_sha256'))",
+    "after": "expected_bn_moments=batchnorm_affine.get('moving_moments_sha256'),reader=model if args.auxiliary_dot_supervision else None)"
+  }
+]

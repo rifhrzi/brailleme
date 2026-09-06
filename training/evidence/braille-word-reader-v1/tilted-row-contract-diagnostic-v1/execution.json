@@ -1,0 +1,25 @@
+[
+  {
+    "command": [
+      "C:\\bm-envs\\angelina-benchmark\\Scripts\\python.exe",
+      "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\tilted_row_contract_diagnostic.py"
+    ],
+    "started_at_utc": "2026-09-06T08:09:25.504097+00:00",
+    "ended_at_utc": "2026-09-06T08:09:29.416628+00:00",
+    "exit_code": 0,
+    "stdout": "{\n  \"cases\": 20,\n  \"rejected_cases\": [\n    {\n      \"length\": 9,\n      \"angle_degrees\": -5,\n      \"actual_python_reason\": \"multiple_rows\"\n    },\n    {\n      \"length\": 9,\n      \"angle_degrees\": 5,\n      \"actual_python_reason\": \"multiple_rows\"\n    },\n    {\n      \"length\": 12,\n      \"angle_degrees\": -5,\n      \"actual_python_reason\": \"multiple_rows\"\n    },\n    {\n      \"length\": 12,\n      \"angle_degrees\": 5,\n      \"actual_python_reason\": \"multiple_rows\"\n    }\n  ]\n}\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "C:\\Program Files\\nodejs\\node.EXE",
+      "--max-old-space-size=192",
+      "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\tilted_row_contract_diagnostic.cjs"
+    ],
+    "started_at_utc": "2026-09-06T08:09:29.418156+00:00",
+    "ended_at_utc": "2026-09-06T08:09:30.428069+00:00",
+    "exit_code": 0,
+    "stdout": "{\n  \"cases\": 20,\n  \"python_typescript_decisions_equal\": true,\n  \"tilted_single_row_rejections\": 4,\n  \"report_sha256\": \"c38e94b67a969941a50c8620d923e0dd7ec1c73756a9702fae38cc75b85cbfde\"\n}\n",
+    "stderr": ""
+  }
+]

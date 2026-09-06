@@ -1,0 +1,240 @@
+{
+  "status": "passed_hash_and_aggregate_review",
+  "scope": "Existing native-agent report and source/fixture/cache hashes plus row aggregation checked once. No repeated proposal trace, decoding, NPZ inference, external607 access, export, thresholds or tie-rule changes.",
+  "inputs": [
+    {
+      "file": ".braille-training-work\\word-scan-v1-20260905\\run24\\held-diagnosis\\bn-affine-comparison\\comparison.json",
+      "sha256": "0d2b9dd0126f0a25d3deadfc3fbc0ae79de059f57fb44419267f2658f7b3fc48"
+    },
+    {
+      "file": ".braille-training-work\\word-scan-v1-20260905\\run24\\held-diagnosis\\cache-report.json",
+      "sha256": "f0a7305a4bd87293247febabe360823e1f782f3fc726a6358f4abe10f5cb110b"
+    },
+    {
+      "file": ".braille-training-work\\word-scan-v1-20260905\\selected-v19\\checkpoint-selection.json",
+      "sha256": "e9e9418f8880d73b803397eff418436cbaa7e53fe2f8405637bc946873bb9a98"
+    },
+    {
+      "file": ".braille-training-work\\word-scan-v1-20260905\\selected-v19\\selected-validation.json",
+      "sha256": "9f15e8fe2eadf17ca712cb5263a2799a1c45867fca7054bd03e87f0bc7cd663e"
+    }
+  ],
+  "verified_source_and_input_bindings": {
+    ".braille-training-work/word-scan-v1-20260905/compare_held_cache.py": "ee075dffbfb17b670a500904a64cb48071131d100ff2855f30d5e7fc839a9f01",
+    ".braille-training-work/word-scan-v1-20260905/data/validation-stress-selection.json": "e2ab968f7c4dcf7e774181fde687e1321f58d20567528af4b21fd03ff5a3e625",
+    ".braille-training-work/word-scan-v1-20260905/selected-v19/checkpoint-selection.json": "e9e9418f8880d73b803397eff418436cbaa7e53fe2f8405637bc946873bb9a98",
+    ".braille-training-work/word-scan-v1-20260905/run24/held-diagnosis/cache-report.json": "f0a7305a4bd87293247febabe360823e1f782f3fc726a6358f4abe10f5cb110b",
+    ".braille-training-work/word-scan-v1-20260905/selected-v18/selected-validation-fullprecision.json": "ab4ea9526b13c15030dcabaebf98e7326ca06d1a97890976ce50bb79ab9cee43",
+    ".braille-training-work/word-scan-v1-20260905/selected-v18/backend-fullprecision.npz": "20f0a6c0224ec7f640ca0e46275914e912a2b1b440882f0b1e9e94e8bb72556b",
+    ".braille-training-work/word-scan-v1-20260905/run24/held-diagnosis/held-outputs.npz": "761c131d41c6a924e8789fe867bd39a806ea1199d2cb091a4d05de7bfeee5e8e",
+    ".braille-training-work/word-scan-v1-20260905/selected-v18/source/word_data.py": "659ab6b508a69b34bfb8dc899c5fa6e2214bd64e08281f40f9c39aa91d74996c",
+    "training/scripts/benchmark_angelina.py": "6c7d63c8b5c461fec73e415b46df74d15c0bca455cc9f411c5fb6edd5d353353",
+    ".braille-training-work/word-scan-v1-20260905/selected-v19/source/word_bn_affine.py": "fa117f65beda3f6d159f707a5cd45d3a367b8f5b436b8c43c0d7621071297dff",
+    ".braille-training-work/word-scan-v1-20260905/selected-v19/source/word_data.py": "659ab6b508a69b34bfb8dc899c5fa6e2214bd64e08281f40f9c39aa91d74996c",
+    ".braille-training-work/word-scan-v1-20260905/selected-v19/source/word_decode.py": "bd301c5afeb4ba2e6866371665324d2de7f0a6ee252ef76ce02a5553193d63c5",
+    ".braille-training-work/word-scan-v1-20260905/selected-v19/source/word_geometry_head.py": "f46c8f90e7f4fc9404eed2dc27fbde6e5c823d25d4f88e4127c7e56ed6e8764e",
+    ".braille-training-work/word-scan-v1-20260905/selected-v19/source/word_model.py": "c446732a2905a612cd6f1dd64d2d3d01303b1c71933c34552d26f3b5052fd551",
+    ".braille-training-work/word-scan-v1-20260905/selected-v19/source/word_select.py": "ab8ad646d4693bf9528e4aace201464f9cc7b632f4c2ed9863ad9a74f2caf07c"
+  },
+  "sources": [
+    {
+      "file": ".braille-training-work\\word-scan-v1-20260905\\v19-held-diagnosis\\source\\audit_v19_held_aggregate.py",
+      "sha256": "88b5eaca474d697f659bdaa4a44f68a8c6af80bb5d2414d525e3081715e84b67"
+    },
+    {
+      "file": ".braille-training-work\\word-scan-v1-20260905\\v19-held-diagnosis\\source\\compare_held_cache.py",
+      "sha256": "ee075dffbfb17b670a500904a64cb48071131d100ff2855f30d5e7fc839a9f01"
+    },
+    {
+      "file": ".braille-training-work\\word-scan-v1-20260905\\v19-held-diagnosis\\source\\word_decode.py",
+      "sha256": "bd301c5afeb4ba2e6866371665324d2de7f0a6ee252ef76ce02a5553193d63c5"
+    },
+    {
+      "file": ".braille-training-work\\word-scan-v1-20260905\\v19-held-diagnosis\\source\\word_data.py",
+      "sha256": "659ab6b508a69b34bfb8dc899c5fa6e2214bd64e08281f40f9c39aa91d74996c"
+    },
+    {
+      "file": ".braille-training-work\\word-scan-v1-20260905\\v19-held-diagnosis\\source\\benchmark_angelina.py",
+      "sha256": "6c7d63c8b5c461fec73e415b46df74d15c0bca455cc9f411c5fb6edd5d353353"
+    }
+  ],
+  "summaries": {
+    "baseline": {
+      "total": 405,
+      "correct": 357,
+      "accepted": 362,
+      "rejected": 43,
+      "post_nms_detections": 1522,
+      "unmatched_gt_cells": 111,
+      "unmatched_prediction_cells": 4,
+      "rejection_reasons": {
+        "unsupported_pattern": 3,
+        "low_confidence": 6,
+        "clipped": 4,
+        "no_grid": 30
+      },
+      "quality_rejected": 30,
+      "unmatched_GT_quality_placeholders": 103,
+      "unmatched_GT_after_quality_pass": 8,
+      "matched_wrong_masks": 8,
+      "accepted_wrong": [
+        {
+          "index": 147,
+          "expected": "WRAQ",
+          "text": "WRQ",
+          "unmatched_gt": [
+            2
+          ],
+          "wrong_confident_matched_masks": []
+        },
+        {
+          "index": 149,
+          "expected": "PTICA",
+          "text": "RC",
+          "unmatched_gt": [
+            0,
+            2,
+            4
+          ],
+          "wrong_confident_matched_masks": [
+            {
+              "truth": 30,
+              "predicted": 23,
+              "dot_confidence": 0.963678240776062
+            }
+          ]
+        },
+        {
+          "index": 150,
+          "expected": "PTICA",
+          "text": "PTIC",
+          "unmatched_gt": [
+            4
+          ],
+          "wrong_confident_matched_masks": []
+        },
+        {
+          "index": 173,
+          "expected": "EGO",
+          "text": "EO",
+          "unmatched_gt": [
+            1
+          ],
+          "wrong_confident_matched_masks": []
+        },
+        {
+          "index": 174,
+          "expected": "EGO",
+          "text": "EO",
+          "unmatched_gt": [
+            1
+          ],
+          "wrong_confident_matched_masks": []
+        }
+      ]
+    },
+    "candidate": {
+      "total": 405,
+      "correct": 357,
+      "accepted": 362,
+      "rejected": 43,
+      "post_nms_detections": 1522,
+      "unmatched_gt_cells": 111,
+      "unmatched_prediction_cells": 4,
+      "rejection_reasons": {
+        "low_confidence": 6,
+        "unsupported_pattern": 3,
+        "clipped": 4,
+        "no_grid": 30
+      },
+      "quality_rejected": 30,
+      "unmatched_GT_quality_placeholders": 103,
+      "unmatched_GT_after_quality_pass": 8,
+      "matched_wrong_masks": 9,
+      "accepted_wrong": [
+        {
+          "index": 147,
+          "expected": "WRAQ",
+          "text": "WRQ",
+          "unmatched_gt": [
+            2
+          ],
+          "wrong_confident_matched_masks": []
+        },
+        {
+          "index": 149,
+          "expected": "PTICA",
+          "text": "RC",
+          "unmatched_gt": [
+            0,
+            2,
+            4
+          ],
+          "wrong_confident_matched_masks": [
+            {
+              "truth": 30,
+              "predicted": 23,
+              "dot_confidence": 0.9823347330093384
+            }
+          ]
+        },
+        {
+          "index": 150,
+          "expected": "PTICA",
+          "text": "PTIC",
+          "unmatched_gt": [
+            4
+          ],
+          "wrong_confident_matched_masks": []
+        },
+        {
+          "index": 173,
+          "expected": "EGO",
+          "text": "EO",
+          "unmatched_gt": [
+            1
+          ],
+          "wrong_confident_matched_masks": []
+        },
+        {
+          "index": 174,
+          "expected": "EGO",
+          "text": "EO",
+          "unmatched_gt": [
+            1
+          ],
+          "wrong_confident_matched_masks": []
+        }
+      ]
+    }
+  },
+  "changed_final_decisions": [
+    {
+      "index": 23,
+      "expected": "ZWUKOW",
+      "baseline": [
+        "ZWUKOW",
+        ""
+      ],
+      "candidate": [
+        "",
+        "low_confidence"
+      ]
+    },
+    {
+      "index": 46,
+      "expected": "NA",
+      "baseline": [
+        "",
+        "low_confidence"
+      ],
+      "candidate": [
+        "NA",
+        ""
+      ]
+    }
+  ],
+  "selected_control_first_tie_preserved": true,
+  "important_limit": "The111 unmatched GT cells include103 cells in30 quality-rejected zero placeholders; only8 are unmatched after quality pass. Do not describe111 as detector misses. Greedy IoU>=.25 can also conflate severe geometry errors with misses; raw proposal detail was not repeated.",
+  "interpretation": "Both models retain357/405 correct,362accepted and43rejected. One gained NA and one lost ZWUKOW cancel. All5 wrong accepted results stay shorter than GT; only PTICA->RC includes a confidently wrong matched T->R as well as missing cells. Four clipped S decisions and all matched/unmatched assignments stay unchanged. This does not establish physical accuracy or a causal failure diagnosis."
+}

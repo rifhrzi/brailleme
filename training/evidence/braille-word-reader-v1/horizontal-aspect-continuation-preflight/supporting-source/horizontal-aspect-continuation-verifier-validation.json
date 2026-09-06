@@ -1,0 +1,28 @@
+{
+    "created_at_utc":  "2026-09-05T23:16:13.6323340Z",
+    "test_log":  {
+                     "sha256":  "75aba08c2d50edcdb74f74e07703a682b861d8b9f8a29ef9dfd8972b2910671a",
+                     "file":  ".braille-training-work/word-scan-v1-20260905/horizontal-aspect-continuation-verifier-tests.log"
+                 },
+    "flatbuffer_checks":  4,
+    "sources":  [
+                    {
+                        "sha256":  "6e0a30e1fe50915f53000fa455b6d71d6d4b6c6ae5341d986f24da5285992d92",
+                        "file":  "scripts/verify-word-model-assets.mjs"
+                    },
+                    {
+                        "sha256":  "f7e1c6c12bda732c6b294ed4405f2c51c4936277522b384ec647a5f4269fe831",
+                        "file":  "scripts/test-word-model-verifier.mjs"
+                    }
+                ],
+    "numerical_acceptance_gates_changed":  false,
+    "eslint":  {
+                   "exit_code":  0,
+                   "command":  "npx.cmd eslint scripts/verify-word-model-assets.mjs scripts/test-word-model-verifier.mjs"
+               },
+    "scope":  "Synthetic word asset provenance gates and ESLint only; no model accuracy or retained actual preflight replay claimed here.",
+    "newly_added_continuation_cases":  9,
+    "asset_gate_cases":  207,
+    "model_execution":  false,
+    "status":  "passed"
+}

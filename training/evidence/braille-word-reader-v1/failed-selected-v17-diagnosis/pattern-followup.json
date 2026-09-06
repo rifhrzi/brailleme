@@ -1,0 +1,1182 @@
+{
+  "scope": "Post-hoc approximate diagnosis on held405 saved predictions; not evidence of training-code label bug or causal isolation.",
+  "source_sha256": "d4bf5a0ac001904ca11e5cf2ee3d184224a3a9acac564e836dce0ab615a31a82",
+  "comparison_sha256": "072eb832e019ff416ac2d8fd7d3018d51f06b532a55fcd45a4b2e98db8a76363",
+  "fixture_sha256": "e2ab968f7c4dcf7e774181fde687e1321f58d20567528af4b21fd03ff5a3e625",
+  "exact_horizontal_mirror_mask_errors": 27,
+  "by_pattern": {
+    "L": 5,
+    "K": 11,
+    "A": 9,
+    "B": 2
+  },
+  "on_gt_masks_using_only_left_column": 27,
+  "control_correct_masks_among_cases": 27,
+  "unique_words": 22,
+  "unique_base_crops": 14,
+  "previously_correct_words_lost": 22,
+  "center_dx_px": {
+    "n": 27,
+    "mean": -29.383071388358516,
+    "median": -25.89252018928528,
+    "min": -45.94461512565614,
+    "max": -15.881765521805931
+  },
+  "center_dx_div_gt_width": {
+    "n": 27,
+    "mean": -0.4041880756661413,
+    "median": -0.3998013890037952,
+    "min": -0.4831599642150103,
+    "max": -0.32696696846258055
+  },
+  "mirror_minus_control_dx_div_gt_width": {
+    "n": 27,
+    "mean": -0.44089277342411076,
+    "median": -0.43770463820546857,
+    "min": -0.5312728352353653,
+    "max": -0.350293781426218
+  },
+  "objectness": {
+    "n": 27,
+    "mean": 0.4259505945223349,
+    "median": 0.42410609126091003,
+    "min": 0.25938189029693604,
+    "max": 0.6147843599319458
+  },
+  "dot_confidence": {
+    "n": 27,
+    "mean": 0.9942634144444363,
+    "median": 0.997946698917076,
+    "min": 0.9430373050272465,
+    "max": 0.9998879432678223
+  },
+  "lost_clipped_words": 16,
+  "lost_clipped_words_with_exact_mirror_violator": 9,
+  "lost_clipped_violation_sides": {
+    "guide_top": 2,
+    "guide_left": 7,
+    "frame_left_margin": 4,
+    "guide_right": 4
+  },
+  "non_mirror_errors": {
+    "1->2": 4,
+    "29->31": 8,
+    "21->23": 2,
+    "37->39": 2,
+    "25->29": 1,
+    "23->7": 1,
+    "15->56": 2,
+    "30->23": 1,
+    "5->41": 1
+  },
+  "cases": [
+    {
+      "index": 21,
+      "image": "validation-words/000021.png",
+      "source": "books/ola/IMG_5200.labeled.jpg",
+      "expected": "LI",
+      "gt_index": 0,
+      "gt_letter": "L",
+      "gt_mask": 7,
+      "predicted_mask": 56,
+      "lost_word": true,
+      "reason": "unsupported_pattern",
+      "width_px": 90.25641025641028,
+      "center_dx_px": -38.82105520444037,
+      "center_dx_div_gt_width": -0.43011964573101535,
+      "mirror_minus_control_dx_div_gt_width": -0.4909236087717792,
+      "control_mask_correct": true,
+      "score": 0.27645668387413025,
+      "dot_confidence": 0.9985798336565495,
+      "gt_box_px": [
+        135.38461538461536,
+        24.51063829787234,
+        225.64102564102564,
+        171.57446808510636
+      ],
+      "predicted_box_px": [
+        91.47363138198854,
+        24.35973620414733,
+        191.90989923477173,
+        172.60333132743835
+      ],
+      "iou": 0.41878923166818766
+    },
+    {
+      "index": 26,
+      "image": "validation-words/000026.png",
+      "source": "books/ola/IMG_5201.labeled.jpg",
+      "expected": "KAK",
+      "gt_index": 2,
+      "gt_letter": "K",
+      "gt_mask": 5,
+      "predicted_mask": 40,
+      "lost_word": true,
+      "reason": "unsupported_pattern",
+      "width_px": 99.31034482758622,
+      "center_dx_px": -42.37374545787944,
+      "center_dx_div_gt_width": -0.42668007579114703,
+      "mirror_minus_control_dx_div_gt_width": -0.4394419085234403,
+      "control_mask_correct": true,
+      "score": 0.396964967250824,
+      "dot_confidence": 0.999004905577749,
+      "gt_box_px": [
+        322.7586206896552,
+        24.51063829787234,
+        422.0689655172414,
+        171.57446808510636
+      ],
+      "predicted_box_px": [
+        280.14683294296265,
+        20.452243328094486,
+        379.93326234817505,
+        168.21874570846558
+      ],
+      "iou": 0.38878670683960315
+    },
+    {
+      "index": 33,
+      "image": "validation-words/000033.png",
+      "source": "books/ola/IMG_5201.labeled.jpg",
+      "expected": "A",
+      "gt_index": 0,
+      "gt_letter": "A",
+      "gt_mask": 1,
+      "predicted_mask": 8,
+      "lost_word": true,
+      "reason": "clipped",
+      "width_px": 99.45945945945945,
+      "center_dx_px": -45.94461512565614,
+      "center_dx_div_gt_width": -0.4619431412090428,
+      "mirror_minus_control_dx_div_gt_width": -0.4805624569563761,
+      "control_mask_correct": true,
+      "score": 0.32098788022994995,
+      "dot_confidence": 0.9966639063786715,
+      "gt_box_px": [
+        190.2702702702703,
+        21.333333333333332,
+        289.72972972972974,
+        170.66666666666666
+      ],
+      "predicted_box_px": [
+        143.737726688385,
+        20.389773845672607,
+        244.37304306030273,
+        168.0350832939148
+      ],
+      "iou": 0.36451644491275603
+    },
+    {
+      "index": 63,
+      "image": "validation-words/000063.png",
+      "source": "books/ola/IMG_5369.labeled.jpg",
+      "expected": "KAK",
+      "gt_index": 2,
+      "gt_letter": "K",
+      "gt_mask": 5,
+      "predicted_mask": 40,
+      "lost_word": true,
+      "reason": "unsupported_pattern",
+      "width_px": 105.14285714285711,
+      "center_dx_px": -39.01438934462408,
+      "center_dx_div_gt_width": -0.37106076822332695,
+      "mirror_minus_control_dx_div_gt_width": -0.41875713545343163,
+      "control_mask_correct": true,
+      "score": 0.37819892168045044,
+      "dot_confidence": 0.9963991900440305,
+      "gt_box_px": [
+        324.57142857142856,
+        22.325581395348838,
+        429.71428571428567,
+        169.67441860465115
+      ],
+      "predicted_box_px": [
+        286.0092771053314,
+        21.04206418991089,
+        390.24765849113464,
+        175.0414538383484
+      ],
+      "iou": 0.4425330273762417
+    },
+    {
+      "index": 65,
+      "image": "validation-words/000065.png",
+      "source": "books/ola/IMG_5369.labeled.jpg",
+      "expected": "KAJDOM",
+      "gt_index": 0,
+      "gt_letter": "K",
+      "gt_mask": 5,
+      "predicted_mask": 40,
+      "lost_word": true,
+      "reason": "clipped",
+      "width_px": 56.61538461538463,
+      "center_dx_px": -22.4852977349208,
+      "center_dx_div_gt_width": -0.39715879151354666,
+      "mirror_minus_control_dx_div_gt_width": -0.4094256052504414,
+      "control_mask_correct": true,
+      "score": 0.6147843599319458,
+      "dot_confidence": 0.9430373050272465,
+      "gt_box_px": [
+        24.615384615384617,
+        51.69230769230769,
+        81.23076923076924,
+        132.92307692307693
+      ],
+      "predicted_box_px": [
+        2.976046562194825,
+        46.756155490875244,
+        57.89951181411743,
+        133.87576913833618
+      ],
+      "iou": 0.4047371002441138
+    },
+    {
+      "index": 67,
+      "image": "validation-words/000067.png",
+      "source": "books/ola/IMG_5369.labeled.jpg",
+      "expected": "KAJDOM",
+      "gt_index": 1,
+      "gt_letter": "A",
+      "gt_mask": 1,
+      "predicted_mask": 8,
+      "lost_word": true,
+      "reason": "unsupported_pattern",
+      "width_px": 57.313432835820876,
+      "center_dx_px": -20.537475343960416,
+      "center_dx_div_gt_width": -0.3583361583451428,
+      "mirror_minus_control_dx_div_gt_width": -0.4130943020805719,
+      "control_mask_correct": true,
+      "score": 0.5754045248031616,
+      "dot_confidence": 0.9984762956155464,
+      "gt_box_px": [
+        97.91044776119402,
+        55.199999999999996,
+        155.2238805970149,
+        134.4
+      ],
+      "predicted_box_px": [
+        77.51075100898743,
+        52.05965518951416,
+        134.54862666130066,
+        136.55196857452393
+      ],
+      "iou": 0.44941298409155533
+    },
+    {
+      "index": 97,
+      "image": "validation-words/000097.png",
+      "source": "books/ola/IMG_5373.labeled.jpg",
+      "expected": "KAK",
+      "gt_index": 1,
+      "gt_letter": "A",
+      "gt_mask": 1,
+      "predicted_mask": 8,
+      "lost_word": true,
+      "reason": "unsupported_pattern",
+      "width_px": 91.42857142857144,
+      "center_dx_px": -34.27218723297119,
+      "center_dx_div_gt_width": -0.3748520478606223,
+      "mirror_minus_control_dx_div_gt_width": -0.393544990196824,
+      "control_mask_correct": true,
+      "score": 0.4302501976490021,
+      "dot_confidence": 0.9993891494814306,
+      "gt_box_px": [
+        194.28571428571428,
+        26.88,
+        285.7142857142857,
+        168.95999999999998
+      ],
+      "predicted_box_px": [
+        156.85757112503052,
+        26.134479284286506,
+        254.59805440902713,
+        169.7609326839447
+      ],
+      "iou": 0.46422475624690945
+    },
+    {
+      "index": 97,
+      "image": "validation-words/000097.png",
+      "source": "books/ola/IMG_5373.labeled.jpg",
+      "expected": "KAK",
+      "gt_index": 2,
+      "gt_letter": "K",
+      "gt_mask": 5,
+      "predicted_mask": 40,
+      "lost_word": true,
+      "reason": "unsupported_pattern",
+      "width_px": 91.42857142857144,
+      "center_dx_px": -40.23989177317844,
+      "center_dx_div_gt_width": -0.44012381626913916,
+      "mirror_minus_control_dx_div_gt_width": -0.43770463820546857,
+      "control_mask_correct": true,
+      "score": 0.5012719631195068,
+      "dot_confidence": 0.9976240103133023,
+      "gt_box_px": [
+        312.38095238095235,
+        34.56,
+        403.8095238095238,
+        172.79999999999998
+      ],
+      "predicted_box_px": [
+        268.70768916606903,
+        28.106603145599372,
+        367.00300347805023,
+        176.63078451156616
+      ],
+      "iou": 0.38354307701528834
+    },
+    {
+      "index": 101,
+      "image": "validation-words/000101.png",
+      "source": "books/ola/IMG_5373.labeled.jpg",
+      "expected": "KAJDOM",
+      "gt_index": 0,
+      "gt_letter": "K",
+      "gt_mask": 5,
+      "predicted_mask": 40,
+      "lost_word": true,
+      "reason": "clipped",
+      "width_px": 59.99999999999999,
+      "center_dx_px": -22.636041665077204,
+      "center_dx_div_gt_width": -0.3772673610846201,
+      "mirror_minus_control_dx_div_gt_width": -0.3916264335314433,
+      "control_mask_correct": true,
+      "score": 0.42410609126091003,
+      "dot_confidence": 0.9993588934303261,
+      "gt_box_px": [
+        26.4,
+        47.407407407407405,
+        86.39999999999999,
+        130.37037037037035
+      ],
+      "predicted_box_px": [
+        3.476346850395202,
+        40.676183223724365,
+        64.05156981945038,
+        132.14983320236206
+      ],
+      "iou": 0.422397757641256
+    },
+    {
+      "index": 123,
+      "image": "validation-words/000123.png",
+      "source": "handwritten/ang_redmi/01.labeled.jpg",
+      "expected": "BLAGO",
+      "gt_index": 1,
+      "gt_letter": "L",
+      "gt_mask": 7,
+      "predicted_mask": 56,
+      "lost_word": true,
+      "reason": "unsupported_pattern",
+      "width_px": 66.53465346534654,
+      "center_dx_px": -21.754633941272687,
+      "center_dx_div_gt_width": -0.32696696846258055,
+      "mirror_minus_control_dx_div_gt_width": -0.37524645307234356,
+      "control_mask_correct": true,
+      "score": 0.5213533639907837,
+      "dot_confidence": 0.9987805534619838,
+      "gt_box_px": [
+        114.05940594059405,
+        44.48780487804878,
+        180.59405940594058,
+        145.17073170731706
+      ],
+      "predicted_box_px": [
+        92.5027289390564,
+        42.75846195220947,
+        158.64146852493286,
+        146.1547327041626
+      ],
+      "iou": 0.4960522151874721
+    },
+    {
+      "index": 177,
+      "image": "validation-stress-words/000021-soft_narrow.png",
+      "source": "books/ola/IMG_5200.labeled.jpg",
+      "expected": "LI",
+      "gt_index": 0,
+      "gt_letter": "L",
+      "gt_mask": 7,
+      "predicted_mask": 56,
+      "lost_word": true,
+      "reason": "clipped",
+      "width_px": 68.54917234664072,
+      "center_dx_px": -33.1202156579715,
+      "center_dx_div_gt_width": -0.4831599642150103,
+      "mirror_minus_control_dx_div_gt_width": -0.5312728352353653,
+      "control_mask_correct": true,
+      "score": 0.37682729959487915,
+      "dot_confidence": 0.991706307977438,
+      "gt_box_px": [
+        160.5452775073028,
+        23.758118701007838,
+        229.09444985394353,
+        172.3699888017917
+      ],
+      "predicted_box_px": [
+        113.60130321979524,
+        26.01880717277527,
+        209.79799282550812,
+        170.77661204338074
+      ],
+      "iou": 0.4198215516095645
+    },
+    {
+      "index": 186,
+      "image": "validation-stress-words/000025-faint.png",
+      "source": "books/ola/IMG_5201.labeled.jpg",
+      "expected": "STRANIQKA",
+      "gt_index": 8,
+      "gt_letter": "A",
+      "gt_mask": 1,
+      "predicted_mask": 8,
+      "lost_word": true,
+      "reason": "unsupported_pattern",
+      "width_px": 39.72413793103448,
+      "center_dx_px": -15.881765521805931,
+      "center_dx_div_gt_width": -0.3998013890037952,
+      "mirror_minus_control_dx_div_gt_width": -0.4770764200430778,
+      "control_mask_correct": true,
+      "score": 0.4457903504371643,
+      "dot_confidence": 0.996964966878295,
+      "gt_box_px": [
+        422.06896551724145,
+        66.77764565992867,
+        461.79310344827593,
+        132.52794292508918
+      ],
+      "predicted_box_px": [
+        406.3122124671936,
+        67.22489142417908,
+        445.7863254547119,
+        129.871755361557
+      ],
+      "iou": 0.4128436777651618
+    },
+    {
+      "index": 201,
+      "image": "validation-stress-words/000033-soft_narrow.png",
+      "source": "books/ola/IMG_5201.labeled.jpg",
+      "expected": "A",
+      "gt_index": 0,
+      "gt_letter": "A",
+      "gt_mask": 1,
+      "predicted_mask": 8,
+      "lost_word": true,
+      "reason": "clipped",
+      "width_px": 100.07770007770011,
+      "center_dx_px": -45.915475368499756,
+      "center_dx_div_gt_width": -0.4587982670749935,
+      "mirror_minus_control_dx_div_gt_width": -0.4775867677891845,
+      "control_mask_correct": true,
+      "score": 0.31241676211357117,
+      "dot_confidence": 0.9969775467179716,
+      "gt_box_px": [
+        189.96114996114994,
+        19.744680851063826,
+        290.03885003885006,
+        172.25531914893614
+      ],
+      "predicted_box_px": [
+        143.3977086544037,
+        19.76582860946655,
+        244.7713406085968,
+        168.57555150985718
+      ],
+      "iou": 0.36753275116596296
+    },
+    {
+      "index": 261,
+      "image": "validation-stress-words/000063-soft_narrow.png",
+      "source": "books/ola/IMG_5369.labeled.jpg",
+      "expected": "KAK",
+      "gt_index": 0,
+      "gt_letter": "K",
+      "gt_mask": 5,
+      "predicted_mask": 40,
+      "lost_word": true,
+      "reason": "clipped",
+      "width_px": 81.92949907235618,
+      "center_dx_px": -35.325377041200966,
+      "center_dx_div_gt_width": -0.4311679851722674,
+      "mirror_minus_control_dx_div_gt_width": -0.48757593467885624,
+      "control_mask_correct": true,
+      "score": 0.4234554171562195,
+      "dot_confidence": 0.9987385949352756,
+      "gt_box_px": [
+        92.17068645640074,
+        19.948987246811704,
+        174.10018552875692,
+        172.05101275318827
+      ],
+      "predicted_box_px": [
+        45.580872654914856,
+        18.91189217567443,
+        150.03924524784088,
+        175.9942286014557
+      ],
+      "iou": 0.4385988086158662
+    },
+    {
+      "index": 261,
+      "image": "validation-stress-words/000063-soft_narrow.png",
+      "source": "books/ola/IMG_5369.labeled.jpg",
+      "expected": "KAK",
+      "gt_index": 2,
+      "gt_letter": "K",
+      "gt_mask": 5,
+      "predicted_mask": 40,
+      "lost_word": true,
+      "reason": "clipped",
+      "width_px": 81.92949907235612,
+      "center_dx_px": -32.8632107435661,
+      "center_dx_div_gt_width": -0.4011157289579291,
+      "mirror_minus_control_dx_div_gt_width": -0.4924981793415725,
+      "control_mask_correct": true,
+      "score": 0.4603472650051117,
+      "dot_confidence": 0.9994473108672537,
+      "gt_box_px": [
+        305.899814471243,
+        19.948987246811704,
+        387.82931354359914,
+        172.05101275318827
+      ],
+      "predicted_box_px": [
+        263.81841707229614,
+        22.006492137908936,
+        364.1842894554138,
+        173.9445948600769
+      ],
+      "iou": 0.46110771865075595
+    },
+    {
+      "index": 262,
+      "image": "validation-stress-words/000063-faint.png",
+      "source": "books/ola/IMG_5369.labeled.jpg",
+      "expected": "KAK",
+      "gt_index": 2,
+      "gt_letter": "K",
+      "gt_mask": 5,
+      "predicted_mask": 40,
+      "lost_word": true,
+      "reason": "unsupported_pattern",
+      "width_px": 98.31539888682744,
+      "center_dx_px": -34.45543609368775,
+      "center_dx_div_gt_width": -0.3504581833955635,
+      "mirror_minus_control_dx_div_gt_width": -0.4092104936329028,
+      "control_mask_correct": true,
+      "score": 0.4971437156200409,
+      "dot_confidence": 0.9992757097352296,
+      "gt_box_px": [
+        319.0797773654916,
+        19.948987246811704,
+        417.39517625231906,
+        172.05101275318827
+      ],
+      "predicted_box_px": [
+        282.28079879283905,
+        20.328673243522637,
+        385.28328263759613,
+        175.47936141490936
+      ],
+      "iou": 0.48082305136663195
+    },
+    {
+      "index": 270,
+      "image": "validation-stress-words/000067-faint.png",
+      "source": "books/ola/IMG_5369.labeled.jpg",
+      "expected": "KAJDOM",
+      "gt_index": 1,
+      "gt_letter": "A",
+      "gt_mask": 1,
+      "predicted_mask": 8,
+      "lost_word": true,
+      "reason": "unsupported_pattern",
+      "width_px": 57.58000694203403,
+      "center_dx_px": -20.13739476345428,
+      "center_dx_div_gt_width": -0.34972893948635086,
+      "mirror_minus_control_dx_div_gt_width": -0.41352450810114116,
+      "control_mask_correct": true,
+      "score": 0.5495618581771851,
+      "dot_confidence": 0.9989588600583375,
+      "gt_box_px": [
+        97.24956612287397,
+        50.45581395348837,
+        154.829573064908,
+        138.86511627906978
+      ],
+      "predicted_box_px": [
+        75.70329082012177,
+        49.53994274139404,
+        136.10105884075165,
+        138.5022268295288
+      ],
+      "iou": 0.4856930273772941
+    },
+    {
+      "index": 271,
+      "image": "validation-stress-words/000068-soft_narrow.png",
+      "source": "books/ola/IMG_5369.labeled.jpg",
+      "expected": "STOLBIKE",
+      "gt_index": 4,
+      "gt_letter": "B",
+      "gt_mask": 3,
+      "predicted_mask": 24,
+      "lost_word": true,
+      "reason": "unsupported_pattern",
+      "width_px": 43.969465648854964,
+      "center_dx_px": -18.83794620018878,
+      "center_dx_div_gt_width": -0.4284324569834601,
+      "mirror_minus_control_dx_div_gt_width": -0.44588580321934485,
+      "control_mask_correct": true,
+      "score": 0.4039801061153412,
+      "dot_confidence": 0.9935663091018796,
+      "gt_box_px": [
+        247.32824427480915,
+        52.52830188679245,
+        291.2977099236641,
+        137.0566037735849
+      ],
+      "predicted_box_px": [
+        223.67219185829163,
+        51.872865200042725,
+        277.2778699398041,
+        136.47880125045776
+      ],
+      "iou": 0.4382017012399787
+    },
+    {
+      "index": 283,
+      "image": "validation-stress-words/000074-soft_narrow.png",
+      "source": "books/ola/IMG_5370.labeled.jpg",
+      "expected": "SOBAKI",
+      "gt_index": 3,
+      "gt_letter": "A",
+      "gt_mask": 1,
+      "predicted_mask": 8,
+      "lost_word": true,
+      "reason": "unsupported_pattern",
+      "width_px": 55.9585492227979,
+      "center_dx_px": -21.6114663546567,
+      "center_dx_div_gt_width": -0.3862049080045134,
+      "mirror_minus_control_dx_div_gt_width": -0.350293781426218,
+      "control_mask_correct": true,
+      "score": 0.3211565315723419,
+      "dot_confidence": 0.9922586474567652,
+      "gt_box_px": [
+        247.8341968911917,
+        48.73846153846154,
+        303.7927461139896,
+        155.07692307692307
+      ],
+      "predicted_box_px": [
+        220.3231840133667,
+        47.55857872962952,
+        288.0808262825012,
+        141.57570099830627
+      ],
+      "iou": 0.4352459862473024
+    },
+    {
+      "index": 284,
+      "image": "validation-stress-words/000074-faint.png",
+      "source": "books/ola/IMG_5370.labeled.jpg",
+      "expected": "SOBAKI",
+      "gt_index": 3,
+      "gt_letter": "A",
+      "gt_mask": 1,
+      "predicted_mask": 8,
+      "lost_word": true,
+      "reason": "unsupported_pattern",
+      "width_px": 62.17616580310877,
+      "center_dx_px": -25.628178405020492,
+      "center_dx_div_gt_width": -0.4121865360140798,
+      "mirror_minus_control_dx_div_gt_width": -0.38284776093562467,
+      "control_mask_correct": true,
+      "score": 0.3346250653266907,
+      "dot_confidence": 0.989301024004817,
+      "gt_box_px": [
+        248.70466321243524,
+        52.54111405835544,
+        310.880829015544,
+        150.3236074270557
+      ],
+      "predicted_box_px": [
+        222.30286073684692,
+        53.3413667678833,
+        286.0262746810913,
+        142.67102909088135
+      ],
+      "iou": 0.3950990880057072
+    },
+    {
+      "index": 329,
+      "image": "validation-stress-words/000097-soft_narrow.png",
+      "source": "books/ola/IMG_5373.labeled.jpg",
+      "expected": "KAK",
+      "gt_index": 0,
+      "gt_letter": "K",
+      "gt_mask": 5,
+      "predicted_mask": 40,
+      "lost_word": true,
+      "reason": "clipped",
+      "width_px": 71.42857142857142,
+      "center_dx_px": -30.425375393458765,
+      "center_dx_div_gt_width": -0.4259552555084228,
+      "mirror_minus_control_dx_div_gt_width": -0.5048937487602235,
+      "control_mask_correct": true,
+      "score": 0.39059212803840637,
+      "dot_confidence": 0.9992038632044569,
+      "gt_box_px": [
+        117.14285714285714,
+        19.2,
+        188.57142857142856,
+        161.28
+      ],
+      "predicted_box_px": [
+        78.19484162330627,
+        23.09016799926758,
+        166.6686933040619,
+        156.42193984985352
+      ],
+      "iou": 0.43042292700311413
+    },
+    {
+      "index": 329,
+      "image": "validation-stress-words/000097-soft_narrow.png",
+      "source": "books/ola/IMG_5373.labeled.jpg",
+      "expected": "KAK",
+      "gt_index": 1,
+      "gt_letter": "A",
+      "gt_mask": 1,
+      "predicted_mask": 8,
+      "lost_word": true,
+      "reason": "clipped",
+      "width_px": 68.57142857142856,
+      "center_dx_px": -25.89252018928528,
+      "center_dx_div_gt_width": -0.3775992527604104,
+      "mirror_minus_control_dx_div_gt_width": -0.40353617295622835,
+      "control_mask_correct": true,
+      "score": 0.25938189029693604,
+      "dot_confidence": 0.99699563276954,
+      "gt_box_px": [
+        205.71428571428572,
+        26.88,
+        274.2857142857143,
+        168.95999999999998
+      ],
+      "predicted_box_px": [
+        174.81367564201355,
+        33.59936738014221,
+        253.40128397941587,
+        154.6035521030426
+      ],
+      "iou": 0.4280107685773182
+    },
+    {
+      "index": 329,
+      "image": "validation-stress-words/000097-soft_narrow.png",
+      "source": "books/ola/IMG_5373.labeled.jpg",
+      "expected": "KAK",
+      "gt_index": 2,
+      "gt_letter": "K",
+      "gt_mask": 5,
+      "predicted_mask": 40,
+      "lost_word": true,
+      "reason": "clipped",
+      "width_px": 68.57142857142856,
+      "center_dx_px": -30.81876042910983,
+      "center_dx_div_gt_width": -0.4494402562578518,
+      "mirror_minus_control_dx_div_gt_width": -0.5225499932964645,
+      "control_mask_correct": true,
+      "score": 0.49464142322540283,
+      "dot_confidence": 0.9996839122613892,
+      "gt_box_px": [
+        294.2857142857143,
+        34.56,
+        362.85714285714283,
+        172.79999999999998
+      ],
+      "predicted_box_px": [
+        254.58282160758972,
+        35.57837390899658,
+        340.92251467704773,
+        168.82041263580322
+      ],
+      "iou": 0.42073332191584434
+    },
+    {
+      "index": 379,
+      "image": "validation-stress-words/000122-soft_narrow.png",
+      "source": "handwritten/ang_redmi/01.labeled.jpg",
+      "expected": "BLYCSM",
+      "gt_index": 0,
+      "gt_letter": "B",
+      "gt_mask": 3,
+      "predicted_mask": 24,
+      "lost_word": true,
+      "reason": "clipped",
+      "width_px": 57.68240343347639,
+      "center_dx_px": -21.955390735757195,
+      "center_dx_div_gt_width": -0.3806254495112669,
+      "mirror_minus_control_dx_div_gt_width": -0.41630443706221537,
+      "control_mask_correct": true,
+      "score": 0.4350850582122803,
+      "dot_confidence": 0.9800100177526474,
+      "gt_box_px": [
+        26.781115879828327,
+        36.08510638297872,
+        84.46351931330472,
+        150.46808510638294
+      ],
+      "predicted_box_px": [
+        0.7034971714019767,
+        39.30433678627014,
+        66.63035655021667,
+        147.97708916664124
+      ],
+      "iou": 0.45914049072257435
+    },
+    {
+      "index": 379,
+      "image": "validation-stress-words/000122-soft_narrow.png",
+      "source": "handwritten/ang_redmi/01.labeled.jpg",
+      "expected": "BLYCSM",
+      "gt_index": 1,
+      "gt_letter": "L",
+      "gt_mask": 7,
+      "predicted_mask": 56,
+      "lost_word": true,
+      "reason": "clipped",
+      "width_px": 55.62231759656652,
+      "center_dx_px": -21.016674724771207,
+      "center_dx_div_gt_width": -0.37784608108577866,
+      "mirror_minus_control_dx_div_gt_width": -0.4403754334298917,
+      "control_mask_correct": true,
+      "score": 0.4333016872406006,
+      "dot_confidence": 0.9998879432678223,
+      "gt_box_px": [
+        98.8841201716738,
+        36.08510638297872,
+        154.50643776824032,
+        150.46808510638294
+      ],
+      "predicted_box_px": [
+        71.16088092327118,
+        40.45314049720764,
+        140.19632756710052,
+        147.99766564369202
+      ],
+      "iou": 0.47549556938485305
+    },
+    {
+      "index": 381,
+      "image": "validation-stress-words/000123-soft_narrow.png",
+      "source": "handwritten/ang_redmi/01.labeled.jpg",
+      "expected": "BLAGO",
+      "gt_index": 1,
+      "gt_letter": "L",
+      "gt_mask": 7,
+      "predicted_mask": 56,
+      "lost_word": true,
+      "reason": "unsupported_pattern",
+      "width_px": 66.53465346534654,
+      "center_dx_px": -25.533371963123273,
+      "center_dx_div_gt_width": -0.3837605012314658,
+      "mirror_minus_control_dx_div_gt_width": -0.48143194395871386,
+      "control_mask_correct": true,
+      "score": 0.38973355293273926,
+      "dot_confidence": 0.997946698917076,
+      "gt_box_px": [
+        114.05940594059405,
+        27.317073170731703,
+        180.59405940594058,
+        161.56097560975607
+      ],
+      "predicted_box_px": [
+        80.72788596153259,
+        34.378461122512824,
+        162.8588354587555,
+        160.94100689888
+      ],
+      "iou": 0.4696574294862309
+    },
+    {
+      "index": 391,
+      "image": "validation-stress-words/000128-soft_narrow.png",
+      "source": "handwritten/ang_redmi/02.labeled.jpg",
+      "expected": "KOTIKI",
+      "gt_index": 0,
+      "gt_letter": "K",
+      "gt_mask": 5,
+      "predicted_mask": 40,
+      "lost_word": true,
+      "reason": "clipped",
+      "width_px": 57.142857142857146,
+      "center_dx_px": -25.845035076141347,
+      "center_dx_div_gt_width": -0.4522881138324735,
+      "mirror_minus_control_dx_div_gt_width": -0.4169131365418433,
+      "control_mask_correct": true,
+      "score": 0.532846987247467,
+      "dot_confidence": 0.986874801106751,
+      "gt_box_px": [
+        27.428571428571423,
+        40.28235294117647,
+        84.57142857142857,
+        160.75294117647059
+      ],
+      "predicted_box_px": [
+        -4.20457601547241,
+        40.5741605758667,
+        64.51450586318971,
+        162.80972957611084
+      ],
+      "iou": 0.41165044504570053
+    }
+  ],
+  "lost_clipped_cases": [
+    {
+      "index": 25,
+      "expected": "STRANIQKA",
+      "violations": [
+        {
+          "prediction_index": 9,
+          "mask": 2,
+          "sides": [
+            "guide_top"
+          ],
+          "matched_gt": "A",
+          "exact_mirror_error": false
+        }
+      ]
+    },
+    {
+      "index": 33,
+      "expected": "A",
+      "violations": [
+        {
+          "prediction_index": 0,
+          "mask": 8,
+          "sides": [
+            "guide_left"
+          ],
+          "matched_gt": "A",
+          "exact_mirror_error": true
+        }
+      ]
+    },
+    {
+      "index": 65,
+      "expected": "KAJDOM",
+      "violations": [
+        {
+          "prediction_index": 0,
+          "mask": 40,
+          "sides": [
+            "frame_left_margin"
+          ],
+          "matched_gt": "K",
+          "exact_mirror_error": true
+        }
+      ]
+    },
+    {
+      "index": 93,
+      "expected": "RAWENSTWA",
+      "violations": [
+        {
+          "prediction_index": 3,
+          "mask": 17,
+          "sides": [
+            "guide_top"
+          ],
+          "matched_gt": "E",
+          "exact_mirror_error": false
+        }
+      ]
+    },
+    {
+      "index": 101,
+      "expected": "KAJDOM",
+      "violations": [
+        {
+          "prediction_index": 0,
+          "mask": 40,
+          "sides": [
+            "frame_left_margin"
+          ],
+          "matched_gt": "K",
+          "exact_mirror_error": true
+        }
+      ]
+    },
+    {
+      "index": 130,
+      "expected": "I",
+      "violations": [
+        {
+          "prediction_index": 1,
+          "mask": 8,
+          "sides": [
+            "guide_right"
+          ],
+          "matched_gt": null,
+          "exact_mirror_error": false
+        }
+      ]
+    },
+    {
+      "index": 141,
+      "expected": "IZ",
+      "violations": [
+        {
+          "prediction_index": 2,
+          "mask": 8,
+          "sides": [
+            "guide_right"
+          ],
+          "matched_gt": null,
+          "exact_mirror_error": false
+        }
+      ]
+    },
+    {
+      "index": 151,
+      "expected": "PRI",
+      "violations": [
+        {
+          "prediction_index": 0,
+          "mask": 56,
+          "sides": [
+            "guide_left"
+          ],
+          "matched_gt": "P",
+          "exact_mirror_error": false
+        }
+      ]
+    },
+    {
+      "index": 177,
+      "expected": "LI",
+      "violations": [
+        {
+          "prediction_index": 0,
+          "mask": 56,
+          "sides": [
+            "guide_left"
+          ],
+          "matched_gt": "L",
+          "exact_mirror_error": true
+        }
+      ]
+    },
+    {
+      "index": 201,
+      "expected": "A",
+      "violations": [
+        {
+          "prediction_index": 0,
+          "mask": 8,
+          "sides": [
+            "guide_left"
+          ],
+          "matched_gt": "A",
+          "exact_mirror_error": true
+        }
+      ]
+    },
+    {
+      "index": 261,
+      "expected": "KAK",
+      "violations": [
+        {
+          "prediction_index": 0,
+          "mask": 40,
+          "sides": [
+            "guide_left"
+          ],
+          "matched_gt": "K",
+          "exact_mirror_error": true
+        }
+      ]
+    },
+    {
+      "index": 329,
+      "expected": "KAK",
+      "violations": [
+        {
+          "prediction_index": 0,
+          "mask": 40,
+          "sides": [
+            "guide_left"
+          ],
+          "matched_gt": "K",
+          "exact_mirror_error": true
+        }
+      ]
+    },
+    {
+      "index": 379,
+      "expected": "BLYCSM",
+      "violations": [
+        {
+          "prediction_index": 0,
+          "mask": 24,
+          "sides": [
+            "frame_left_margin"
+          ],
+          "matched_gt": "B",
+          "exact_mirror_error": true
+        }
+      ]
+    },
+    {
+      "index": 391,
+      "expected": "KOTIKI",
+      "violations": [
+        {
+          "prediction_index": 0,
+          "mask": 40,
+          "sides": [
+            "guide_left",
+            "frame_left_margin"
+          ],
+          "matched_gt": "K",
+          "exact_mirror_error": true
+        }
+      ]
+    },
+    {
+      "index": 395,
+      "expected": "I",
+      "violations": [
+        {
+          "prediction_index": 1,
+          "mask": 8,
+          "sides": [
+            "guide_right"
+          ],
+          "matched_gt": null,
+          "exact_mirror_error": false
+        }
+      ]
+    },
+    {
+      "index": 396,
+      "expected": "I",
+      "violations": [
+        {
+          "prediction_index": 1,
+          "mask": 8,
+          "sides": [
+            "guide_right"
+          ],
+          "matched_gt": null,
+          "exact_mirror_error": false
+        }
+      ]
+    }
+  ],
+  "interpretation": "All exact mirror errors are left-column-only patterns with boxes shifted left. This is consistent with the detector explaining the same visible column as the right column of a differently centered logical cell. These cached outputs cannot establish exact dot positions in Angelina annotations or isolate the training intervention from all optimization effects. No threshold was changed."
+}

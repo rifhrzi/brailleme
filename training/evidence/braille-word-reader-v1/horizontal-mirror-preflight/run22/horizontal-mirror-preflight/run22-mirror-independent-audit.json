@@ -1,0 +1,166 @@
+{
+  "status": "passed",
+  "scope": "Read-only CPU NumPy/Pillow proof. Exact unchanged Patches AST is executed with a neutral PyDataset base; no Keras worker scheduling/backend/model is executed. This is transform/target integrity, not accuracy or physical-camera evidence.",
+  "source_sha256": {
+    "word_data.py": "abc7a31a94db497b9a48ce44bd68d96556e67014623c5645c129153844b48cb7",
+    "word_train.py": "c8fc0c5ff209a24b6021de46c403e2ad92abb2b13d421ee3cb8da5bf8b77739e",
+    "word_point_geometry.py": "2b932b320d191277b86ae13daecb82b5abbf0a46e9464d7360ee1e941aca760b",
+    "word_point_metadata.py": "de1cad0157e744f2f646010eac5355b88d1d11f52662d4b9353166661f59049f",
+    "word_sampling.py": "c234523277dba683e68a2863e14736bc68432da3b6ca65bb5d8a64bc7d9dc0fe"
+  },
+  "script_sha256": "060c11cad3fc57467025bad079569856e7808611d1b312349e85f7db45ee0593",
+  "run20_config_sha256": "75bc0305e899aa1c13936fa8614ef42702fedefc9d3c5abfd294d60ccf30a51d",
+  "training_manifest_sha256": "130c80f135af5677d6b78a5e401126f54b15204481aab6de00a88c443956c4fa",
+  "point_metadata_sha256": "ea9592a727f7f3abcc6b017f8f22e143e90ae1541f623c43adf30104021937e8",
+  "run20_data_point_metadata_sampling_sources_byte_identical": true,
+  "run20_patches_ast_identical": true,
+  "all_known_mask_mirror_involutions_and_target_labels": 63,
+  "stage_visibility_cases": 252,
+  "partial_unknown_bit_checks": 63,
+  "mirror_pixel_operation_exact": true,
+  "point_slot_permutation": [
+    3,
+    4,
+    5,
+    0,
+    1,
+    2
+  ],
+  "pillow_marker_oracles": [
+    {
+      "stage": "mirror",
+      "max_centroid_error_pixels": 0.003933545076961309
+    },
+    {
+      "stage": "affine",
+      "max_centroid_error_pixels": 0.00954551177136409
+    },
+    {
+      "stage": "rotation",
+      "max_centroid_error_pixels": 0.005110205948597013
+    }
+  ],
+  "full_balanced_order_identical": true,
+  "expanded_negative_exposure": {
+    "base": [
+      44,
+      27
+    ],
+    "supplemental": [
+      47,
+      2
+    ]
+  },
+  "real_batches": [
+    {
+      "batch": 0,
+      "record_indices": [
+        23075,
+        20987,
+        76,
+        23780,
+        22098,
+        433
+      ],
+      "off_pixels_sha256": "462033e0fb6194616c58b4f68c813ce5603713751cf83995c3d1b53bbb9dc017",
+      "off_targets_sha256": "c6df6358272489c8b55420c33b3cf27c7b7296f5d2a7bd035d803f9bcbd291b0",
+      "on_pixels_sha256": "cf120f02ba2785e31bd85637ddf33a2beedf16afdc79025c3081e2ec00ef9318",
+      "on_targets_sha256": "539f6e1679d88b84956409076092525ca81fe087d7bce6c42d44b331ec843285",
+      "paired_random_calls": 73
+    },
+    {
+      "batch": 2,
+      "record_indices": [
+        5422,
+        5724,
+        7953,
+        20255,
+        20269,
+        70
+      ],
+      "off_pixels_sha256": "51c66a536e1b0fa5a473b6975a8c663aa0aa56523c10ac25156049aa504a1a63",
+      "off_targets_sha256": "365e7cfcb102f0cd0b4c0a66986445ff10cf35e588b962ac1af2259240269298",
+      "on_pixels_sha256": "e10fc3bcc57c9ab15e6d88b320a2e79b770b8c1b68e91b213e7cf3aed7c0508c",
+      "on_targets_sha256": "9c50a170a1a1b848c849fa42082b88bbf3edfb0e5bea1ea6a4ba266ee81ba198",
+      "paired_random_calls": 70
+    },
+    {
+      "batch": 4,
+      "record_indices": [
+        7728,
+        7992,
+        22473,
+        23573,
+        23096,
+        7197
+      ],
+      "off_pixels_sha256": "88f394088b76c0c803c0674e17a82987cd4f28b17e657c1aea2d020e020f2f35",
+      "off_targets_sha256": "dbf63b7dac53dbdd9b29f44962ad511443f4a291cacf0b81e06cfc0f4263be5b",
+      "on_pixels_sha256": "5caf41e8e05ddf13db69d50741f75cb7a51fa84954c7d32c1bfeba9fd436d334",
+      "on_targets_sha256": "77974561c1aa6864054598020e546f8b0cf770b6ed2148cb55f384ede9d4ccdc",
+      "paired_random_calls": 74
+    },
+    {
+      "batch": 9,
+      "record_indices": [
+        1873,
+        4954,
+        11040,
+        22706,
+        20056,
+        7227
+      ],
+      "off_pixels_sha256": "76058e1a0777bae5f64aa148b98ca23a09a07acc390a09e41332b1ad733f5af0",
+      "off_targets_sha256": "1d7d50e11b7bd6a153c3a18bd6c954a8579f381109fda5bf7d827c85e028d4ac",
+      "on_pixels_sha256": "feb82ce9d8f71e909421ea6f6e1bcc40576f42250f0ece6148ddf4c75104a929",
+      "on_targets_sha256": "92032ec306551b54a66394a9c370afa001d90bfda5fc5328678d2ab2664dd758",
+      "paired_random_calls": 64
+    },
+    {
+      "batch": 114,
+      "record_indices": [
+        24109,
+        22720,
+        9070,
+        21703,
+        23791,
+        7999
+      ],
+      "off_pixels_sha256": "b8aa30940fc8777d83f84d953a5121e86f64aaceefe02c13308c6179f01d79b6",
+      "off_targets_sha256": "7c71b5fa01f8e8fed1fb424b96fcd7ddb0a7f90aba432a270c4b564e0ad6d625",
+      "on_pixels_sha256": "b3dd980c8408a59e0417858ed1672093545f8ca1242bdbdb293c35ff73ee78dd",
+      "on_targets_sha256": "63d8a7715ab469943c2b9cbc44b05971b584ee98d1e8b30bfb8fa755b04e3daf",
+      "paired_random_calls": 69
+    }
+  ],
+  "real_source_families": [
+    "books/chudo_derevo_redmi",
+    "books/mdd-redmi1",
+    "books/mdd_cannon1",
+    "books/skazki",
+    "books/telefon",
+    "books/uploaded",
+    "dsbi/Massage",
+    "dsbi/Math",
+    "dsbi/Ordinary Printed Document",
+    "dsbi/Shaver Yang Fengting",
+    "handwritten/kov",
+    "handwritten/uploaded"
+  ],
+  "mirror_invocations": 16,
+  "target_checks": {
+    "complete": 250,
+    "geometry_only": 30,
+    "unknown_boxes": 111
+  },
+  "off_mode_rgb_targets_rng_exact_vs_run20": true,
+  "on_off_random_calls_and_final_rng_states_equal": true,
+  "metadata_and_cached_point_states_unchanged": true,
+  "defects": [],
+  "limitations": [
+    "Collision priority in the existing one-cell-per-grid head is unchanged; complete known labels win over geometry-only fragments.",
+    "Unknown slot regions can overlap a known-cell Gaussian; unknown slots themselves never supply a positive center, geometry or bits.",
+    "Mirrored Braille patterns can become non-A-Z; all 63 masks remain valid TRAIN supervision and runtime still rejects unsupported patterns.",
+    "Actual mirrored augmentation does not guarantee recognition gain; original validation/public/native/physical criteria remain unchanged."
+  ]
+}

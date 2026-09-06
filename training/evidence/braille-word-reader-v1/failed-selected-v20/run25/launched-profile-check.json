@@ -1,0 +1,74 @@
+{
+  "status": "passed",
+  "created_at_utc": "2026-09-05T21:20:34.829184+00:00",
+  "config_sha256": "a337384ac622ad6c393f627cadf0a71d8c3e0b0b604c1338f8464578641df550",
+  "unchanged_parent_config_keys": [
+    "input_shape",
+    "output_shape",
+    "epochs",
+    "batch_size",
+    "learning_rate",
+    "seed",
+    "train_patches",
+    "validation_patches",
+    "data_sha256",
+    "tf32_training_enabled",
+    "illumination_augmentation",
+    "horizontal_mirror_augmentation",
+    "geometry_loss",
+    "imageNormalization",
+    "negative_expansion",
+    "sampling",
+    "augmentation_protocol"
+  ],
+  "source_files_verified": 21,
+  "fine_detail_branch": {
+    "enabled": true,
+    "initialization_report": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\fine-branch-parent-v2\\fine-initialization.json",
+    "initialization_report_sha256": "88225ac54a4a9345614cbdf621730dce184a76aab1b590284d9f7777f8870971",
+    "conversion_report": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\fine-branch-parent-v2\\fine-conversion-parity.json",
+    "conversion_report_sha256": "b3333384d36cb024b9bd9498cec77354b9c75d03653db9a1c9f5b6eba681bbb0",
+    "base_parent_checkpoint_sha256": "cce2432c0ddb8952c885dd58697589c285209588dafa81aacdd891b1660068b7",
+    "initial_checkpoint_sha256": "f5f3b239d0ead7fea9d8f6d8d95d82b9c8fa5a678bdd67c1d7db7246406e6b4e",
+    "nonzero_diagnostic_sha256": "6ee8686bb37af80b8d28d96f91a7f10fb1b41ade8d09878dfe9b2d81e540a2ae",
+    "nonzero_diagnostic_forbidden": true,
+    "spec": {
+      "tap": "expanded_conv_depthwise_relu",
+      "tap_shape": [
+        null,
+        96,
+        240,
+        16
+      ],
+      "tap_stride": 2,
+      "tap_pixel_origin": 1,
+      "tap_local_support": 7,
+      "branch_output_shape": [
+        null,
+        48,
+        120,
+        64
+      ],
+      "output_stride": 4,
+      "output_pixel_origin": 3,
+      "output_local_support": 11,
+      "support_scope": "Convolution support relative to the normalized tensor; raw RGB normalization is global.",
+      "depthwise": {
+        "kernel": 3,
+        "stride": 2,
+        "padding": "same",
+        "bias": false
+      },
+      "lateral": {
+        "kernel": 1,
+        "channels": 64,
+        "bias": true
+      },
+      "addition": "Original add_1 result plus branch, before original activation",
+      "added_parameters": 1232,
+      "added_convolution_macs": 6727680,
+      "extra_batchnorm_layers": 0
+    }
+  },
+  "plain_frozen_bn_layers": 52
+}

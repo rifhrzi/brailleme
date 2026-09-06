@@ -46,7 +46,7 @@ describe('guard dan pemulihan route', () => {
       name: 'Aktifkan kamera',
     });
     expect(activationButton.props.accessibilityHint).toBe(
-      'Membuka kamera dan mulai menyusun kata satu sel per huruf',
+      'Membuka pratinjau kamera untuk memindai satu foto kata',
     );
     expect(activationButton).toHaveStyle({
       minHeight: minimumTouchTarget,
@@ -99,7 +99,7 @@ describe('guard dan pemulihan route', () => {
     expect(screen.getByTestId('live-activation-gate')).toBeOnTheScreen();
   });
 
-  it('mempertahankan draft kata di memori saat runtime kamera di-unmount karena blur', async () => {
+  it('menghapus hasil kata ketika runtime kamera ditutup karena blur', async () => {
     const user = userEvent.setup();
     const routerModule = jest.requireMock<{
       __setRouteFocused(focused: boolean): void;
@@ -144,7 +144,7 @@ describe('guard dan pemulihan route', () => {
     await user.press(
       screen.getByRole('button', { name: 'Aktifkan kamera' }),
     );
-    expect(screen.getByText('Kata sementara: A')).toBeOnTheScreen();
+    expect(screen.getByText('Kata sementara: kosong')).toBeOnTheScreen();
   });
 
   it('menyediakan pemulihan aman ketika route pemindai gagal', async () => {

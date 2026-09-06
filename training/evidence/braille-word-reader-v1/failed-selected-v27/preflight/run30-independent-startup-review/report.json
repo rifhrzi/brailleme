@@ -1,0 +1,159 @@
+{
+  "status": "passed",
+  "created_at_utc": "2026-09-06T07:15:23.291256+00:00",
+  "script_sha256": "ffb5c274561aa2f2b844f9d3358fc8eb180d7f2e012e8da6af004c5004ec4c45",
+  "preflight_report_sha256": "2ed436ff0fed1ee7a716c3ad0adc3f94201eef0a6229e32af7682807087397a7",
+  "training_config_sha256": "28e649bc9cef62afc535446f0675fa5c7fc8a8b98946d1a9507eeb9539a6e3c2",
+  "launch_command_sha256": "87f651ba7dcebcbb8fcfd25c1a9523c6edaff5f7046d66886c051db2e8456152",
+  "protocol_sha256": "dacada918c7473c3a2c81bd10c3197447ffddf68c834b32774a1945cc03187d8",
+  "launcher_sha256": "d1dbb1fffc2d23331132e40af73458e0e36cc2ded762216f4d6881374a0fe39d",
+  "training_started_at_utc": "2026-09-06T07:00:46.268752+00:00",
+  "sources_verified": 24,
+  "data_references_verified": 8,
+  "parent_checkpoint_sha256": "cce2432c0ddb8952c885dd58697589c285209588dafa81aacdd891b1660068b7",
+  "learning_rate": 5e-05,
+  "parameters": 829307,
+  "batch_normalization": {
+    "layers": 52,
+    "trainable_affine_layers": 0,
+    "momentum_values": [
+      0.999
+    ],
+    "epsilon_values": [
+      0.001
+    ],
+    "backbone_call_training_keywords": [
+      false
+    ],
+    "evaluation_mode": "Keras predict/test and the export serving function call the outer model with training=False; stored moving moments are used."
+  },
+  "imageNormalization": {
+    "kind": "per_channel_standardize_grayscale",
+    "location": "inside_model_before_backbone_rescaling",
+    "variance": "population",
+    "stdFloor": 0.001,
+    "targetMean": 0.5,
+    "targetStd": 0.05,
+    "clip": [
+      0,
+      1
+    ],
+    "grayscale": "mean_of_standardized_channels",
+    "outputChannels": 3
+  },
+  "new_config_keys_all_disabled": {
+    "vertical_stretch_augmentation": false,
+    "horizontal_aspect_augmentation": false,
+    "anchor_zoom_cap": false,
+    "geometry_conditioned_residual": {
+      "enabled": false
+    },
+    "batchnorm_affine": {
+      "enabled": false
+    },
+    "normalization_transition": {
+      "enabled": false
+    },
+    "fine_detail_branch": {
+      "enabled": false
+    }
+  },
+  "baseline_config_sha256": "75bc0305e899aa1c13936fa8614ef42702fedefc9d3c5abfd294d60ccf30a51d",
+  "baseline_changed_keys": [
+    "learning_rate",
+    "resume",
+    "resume_sha256",
+    "source_sha256",
+    "started_at_utc"
+  ],
+  "first_sampling_row_equal_to_run20": true,
+  "first_sampling_row": {
+    "order_int64_sha256": "eb35dfcfdbb4989223e61d02e307dff472752e5dc1939cc41ad940b72406f8dc",
+    "records": 24882,
+    "unique_record_indices_this_epoch": 11883,
+    "cumulative_unique_record_indices": 11883,
+    "families": {
+      "books/chudo_derevo_redmi": {
+        "records_this_epoch": 1967,
+        "unique_records_this_epoch": 1013,
+        "cumulative_unique_records": 1013,
+        "total_unique_records": 1013
+      },
+      "books/mdd-redmi1": {
+        "records_this_epoch": 1967,
+        "unique_records_this_epoch": 903,
+        "cumulative_unique_records": 903,
+        "total_unique_records": 903
+      },
+      "books/mdd_cannon1": {
+        "records_this_epoch": 1967,
+        "unique_records_this_epoch": 899,
+        "cumulative_unique_records": 899,
+        "total_unique_records": 899
+      },
+      "books/skazki": {
+        "records_this_epoch": 1967,
+        "unique_records_this_epoch": 1967,
+        "cumulative_unique_records": 1967,
+        "total_unique_records": 14966
+      },
+      "books/telefon": {
+        "records_this_epoch": 1967,
+        "unique_records_this_epoch": 1642,
+        "cumulative_unique_records": 1642,
+        "total_unique_records": 1642
+      },
+      "books/uploaded": {
+        "records_this_epoch": 1967,
+        "unique_records_this_epoch": 159,
+        "cumulative_unique_records": 159,
+        "total_unique_records": 159
+      },
+      "dsbi/Massage": {
+        "records_this_epoch": 1967,
+        "unique_records_this_epoch": 838,
+        "cumulative_unique_records": 838,
+        "total_unique_records": 838
+      },
+      "dsbi/Math": {
+        "records_this_epoch": 1967,
+        "unique_records_this_epoch": 824,
+        "cumulative_unique_records": 824,
+        "total_unique_records": 824
+      },
+      "dsbi/Ordinary Printed Document": {
+        "records_this_epoch": 1966,
+        "unique_records_this_epoch": 289,
+        "cumulative_unique_records": 289,
+        "total_unique_records": 289
+      },
+      "dsbi/Shaver Yang Fengting": {
+        "records_this_epoch": 1966,
+        "unique_records_this_epoch": 340,
+        "cumulative_unique_records": 340,
+        "total_unique_records": 340
+      },
+      "handwritten/kov": {
+        "records_this_epoch": 1966,
+        "unique_records_this_epoch": 846,
+        "cumulative_unique_records": 846,
+        "total_unique_records": 846
+      },
+      "handwritten/uploaded": {
+        "records_this_epoch": 1966,
+        "unique_records_this_epoch": 881,
+        "cumulative_unique_records": 881,
+        "total_unique_records": 881
+      }
+    },
+    "epoch": 1,
+    "dataset_epoch": 2,
+    "completed_batches": 1037,
+    "expected_batches": 1037,
+    "complete_epoch": true
+  },
+  "sampling_history_snapshot_sha256": "a889f3604381da97ab746ad65028fc9c16af5c91ecb79f1d4b1679952534bea5",
+  "historical_run20_sampling_history_sha256": "01c4d0dc071ab3b362eda303664d5c46817421a8e848a2df09ca0c2459a15739",
+  "findings": [],
+  "limitations": "Actual generated metadata and completed callback row verified using only stdlib and file hashes. No model/backend load, gradient or inference. First epoch is ineligible; final own-cycle audit still required. Equal record order does not prove identical pixel tensors, gradients, GPU arithmetic or accuracy."
+}

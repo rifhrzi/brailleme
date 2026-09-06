@@ -1,0 +1,117 @@
+{
+  "created_at_utc": "2026-09-05T17:05:56.659763+00:00",
+  "geometry_conditioned_residual": true,
+  "source_sha256": {
+    "word_data.py": "abc7a31a94db497b9a48ce44bd68d96556e67014623c5645c129153844b48cb7",
+    "word_model.py": "c446732a2905a612cd6f1dd64d2d3d01303b1c71933c34552d26f3b5052fd551",
+    "word_decode.py": "bd301c5afeb4ba2e6866371665324d2de7f0a6ee252ef76ce02a5553193d63c5",
+    "word_train.py": "c8fc0c5ff209a24b6021de46c403e2ad92abb2b13d421ee3cb8da5bf8b77739e",
+    "word_sampling.py": "c234523277dba683e68a2863e14736bc68432da3b6ca65bb5d8a64bc7d9dc0fe",
+    "word_tail.py": "bdd4b5d12d56e25c1100a282483e7a31176b5a65beb353a0623ceea40a49dc0e",
+    "word_sources.py": "affb3488d8c25e3d0131eb4340cae29fcece563ac75373e071f97fef68f09acd",
+    "word_dsbi.py": "feecf16dba6d376415e15707c02c8f05fcf6650055da09ad9f4712099e6325ff",
+    "word_point_geometry.py": "2b932b320d191277b86ae13daecb82b5abbf0a46e9464d7360ee1e941aca760b",
+    "word_point_metadata.py": "de1cad0157e744f2f646010eac5355b88d1d11f52662d4b9353166661f59049f",
+    "word_geometry_head.py": "f46c8f90e7f4fc9404eed2dc27fbde6e5c823d25d4f88e4127c7e56ed6e8764e",
+    "word_geometry_init.py": "072379a1ef409d901c2478135174561c14781560cdd56a0b91b0229b8032e15e",
+    "word_geometry_parity.py": "700d9175dc627fb7bf12c0ac20f640191cf5a045e29067c310f5dad5f3bd6f0b"
+  },
+  "base_parent_checkpoint_sha256": "cce2432c0ddb8952c885dd58697589c285209588dafa81aacdd891b1660068b7",
+  "zero_parent_checkpoint_sha256": "d6d43af7f662584d1f84c1ac7411d1572f898224746973405ed080c3ea1171d5",
+  "initialization_report": ".braille-training-work\\word-scan-v1-20260905\\geometry-head-parent-v1\\geometry-initialization.json",
+  "initialization_report_sha256": "791bac9f9e92cab96925a9c802de9c6b141e07c7c2e00b4fbce9904187293359",
+  "conversion_report": ".braille-training-work\\word-scan-v1-20260905\\geometry-head-parent-v1\\geometry-conversion-parity.json",
+  "conversion_report_sha256": "ff6d7c4774e4a2e02572585d44bd0b43a5707499a9ad20c3b402bb144a4ba985",
+  "slot_prior_audit_sha256": "216656cff63c75274de69d19a5363c829d91a9d0e913080f20d9bb275c03c459",
+  "point_metadata_sha256": "ea9592a727f7f3abcc6b017f8f22e143e90ae1541f623c43adf30104021937e8",
+  "training_manifest_sha256": "130c80f135af5677d6b78a5e401126f54b15204481aab6de00a88c443956c4fa",
+  "sampling": {
+    "name": "geometry_slot_samples",
+    "trainable": true,
+    "dtype": {
+      "module": "keras",
+      "class_name": "DTypePolicy",
+      "config": {
+        "name": "float32"
+      },
+      "registered_name": null
+    },
+    "slot_fractions": [
+      [
+        0.2023809523809515,
+        0.12412587412587281
+      ],
+      [
+        0.2023809523809515,
+        0.5086505190311416
+      ],
+      [
+        0.2023809523809515,
+        0.8942307692307694
+      ],
+      [
+        0.8273809523809524,
+        0.12412587412587281
+      ],
+      [
+        0.8273809523809524,
+        0.5086505190311416
+      ],
+      [
+        0.8273809523809524,
+        0.8942307692307694
+      ]
+    ],
+    "feature_origin": 3.0,
+    "stride": 4
+  },
+  "architecture": "Inherited head Conv2D kernels/biases once as direct linear logits; shared coarse sigmoid geometry;64to8projection,sixbilinear taps,Dense32ReLU,Dense11zero residual added to all inherited11logits,finalsigmoid. No inverse sigmoid.",
+  "added_parameters": 2451,
+  "added_conv_dense_macs_per_image": 13824000,
+  "boundary_policy": "Clamp to fine feature border before bilinear floor/neighbors; no new RNG or pixel/annotation transform.",
+  "batch_size": 24,
+  "planned_epochs": 10,
+  "planned_eligible_epochs": [
+    8,
+    9,
+    10
+  ],
+  "initial_learning_rate": 2e-05,
+  "geometry_loss": "relative_size_huber",
+  "dsbi_visible_partial_supervision": true,
+  "horizontal_mirror_augmentation": false,
+  "preflight_audits": [
+    {
+      "path": ".braille-training-work\\word-scan-v1-20260905\\independent-geometry-head-audit.json",
+      "sha256": "07e37fed184403242fa45f4d175b8802bfb70858033f7c73742828a0fc5b3f5c"
+    },
+    {
+      "path": ".braille-training-work\\word-scan-v1-20260905\\independent-coordinate-preflight.json",
+      "sha256": "c74dbd0cb33a5f324e76fb3dd19eb576e5d4a7a5f455e3d37d7828c4986aee7d"
+    },
+    {
+      "path": ".braille-training-work\\word-scan-v1-20260905\\geometry-head-parent-v1\\gpu-batch-preflight.json",
+      "sha256": "38207ce269d734557e000f47f415885bac3921b360b3f15a8cbb78afcc367c5c"
+    },
+    {
+      "path": ".braille-training-work\\word-scan-v1-20260905\\geometry-head-parent-v1\\geometry-initialization.json",
+      "sha256": "791bac9f9e92cab96925a9c802de9c6b141e07c7c2e00b4fbce9904187293359"
+    },
+    {
+      "path": ".braille-training-work\\word-scan-v1-20260905\\geometry-head-parent-v1\\geometry-conversion-parity.json",
+      "sha256": "ff6d7c4774e4a2e02572585d44bd0b43a5707499a9ad20c3b402bb144a4ba985"
+    }
+  ],
+  "selection": "Unchanged v15 control plus eligible8-10 on frozen405 natural+stress; weak-peaks-v2 grid and >=95percent accepted precision separately per group. External607/44/66 and12/14diagnostics never select checkpoints/thresholds.",
+  "forbidden_parents": [
+    "nonzero-diagnostic-only.keras",
+    "zero-conversion-probe.tflite",
+    "nonzero-conversion-probe.tflite"
+  ],
+  "limitations": [
+    "Slot medians come from9983unique DSBI TRAIN cells, not exact Angelina keypoints.",
+    "The stride4 origin3 is the nominal fine-feature lattice, not a unique physical center for fused FPN features.",
+    "TRAIN cached Y slot error can reach8.333pixels.",
+    "No accuracy gain is assumed; all original public and physical gates remain."
+  ]
+}

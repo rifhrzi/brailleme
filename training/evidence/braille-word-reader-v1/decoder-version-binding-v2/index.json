@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "created_at_utc": "2026-09-06T07:31:10.105674+00:00",
+  "scope": "Exact completed decoder-version binding report and seven changed source snapshots; no model, APK, raw tensors, or new test execution.",
+  "raw_log_retention": "The original focused commands returned output to tool sessions only. Raw log files were not persisted; report check results are tool-observed. Tests were not rerun for retention.",
+  "files": [
+    {
+      "file": "report.json",
+      "sha256": "c78ce155da25bee99a547ed3ff0e8715c39278e51d0e36fe75dadd94d070867c",
+      "sizeBytes": 3686
+    },
+    {
+      "file": "source/assets/models/braille-word-reader-v1/manifest.json",
+      "sha256": "2613108ab076b1f8ffce6cbe75f6b3ab686add54d32c2c25cda5d5ddb53e5431",
+      "sizeBytes": 1538,
+      "originalPath": "assets/models/braille-word-reader-v1/manifest.json"
+    },
+    {
+      "file": "source/private/promote_candidate.py",
+      "sha256": "fa78585885a2c8bc7364fc9377f5744d3f8804fc87b3907196f0ab79bd8b4311",
+      "sizeBytes": 12476,
+      "originalPath": ".braille-training-work/word-scan-v1-20260905/promote_candidate.py"
+    },
+    {
+      "file": "source/scripts/test-word-model-verifier.mjs",
+      "sha256": "350530e9e4f31eb21c1f27de7863aab171b3afe5f0621d9fa8715610333d58f2",
+      "sizeBytes": 120905,
+      "originalPath": "scripts/test-word-model-verifier.mjs"
+    },
+    {
+      "file": "source/scripts/verify-word-model-assets.mjs",
+      "sha256": "77e78c7c5d3a5eeaf8c681a2f21671e04cdd54747acb540e1de500ccfac15f7e",
+      "sizeBytes": 139871,
+      "originalPath": "scripts/verify-word-model-assets.mjs"
+    },
+    {
+      "file": "source/src/ml/__tests__/word-model-loader.test.ts",
+      "sha256": "da984d4e8ab0dfd35efb000e2baaab047965769ad600abe6fa2395bed3e02343",
+      "sizeBytes": 7670,
+      "originalPath": "src/ml/__tests__/word-model-loader.test.ts"
+    },
+    {
+      "file": "source/src/ml/word-model-assets.ts",
+      "sha256": "3155a78934b980bbec6a16a370da5772069b5c096ce9bb3aa4549da48c17a5db",
+      "sizeBytes": 933,
+      "originalPath": "src/ml/word-model-assets.ts"
+    },
+    {
+      "file": "source/src/ml/word-model-loader.ts",
+      "sha256": "f814ce89a2dd05ab7bf402cb255c3e7c08534dec8d857048743b3060fa9ebe1c",
+      "sizeBytes": 6187,
+      "originalPath": "src/ml/word-model-loader.ts"
+    }
+  ],
+  "payloadFileCount": 8,
+  "payloadBytes": 293266
+}

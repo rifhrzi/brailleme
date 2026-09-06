@@ -1,0 +1,1010 @@
+{
+  "created_at_utc": "2026-09-06T04:23:44.892580+00:00",
+  "scope": "One embedded normalization scale adaptation from unchanged v15 weights, same DSBI sources/points/partial labels/sampling/negative exposure, no runtime pixel or gate change.",
+  "rationale": "Detect visible known cell fragments at the canvas edge to reject incomplete words. Supervise only exact occupied dot centers surviving every raster, never logically blank fragments or unknown slots.",
+  "training_manifest_sha256": "130c80f135af5677d6b78a5e401126f54b15204481aab6de00a88c443956c4fa",
+  "base_manifest_sha256": "b8e959ccb9eb3cfa60fdf61cb716e3b606430d500f4770d0c2a1ef5d5082772c",
+  "supplemental_manifest_sha256": "21dc4f93821b2282b8c0f0967430f22b44fc868d26b4a3265e6fd57995892a44",
+  "supplemental_source_indexes": [
+    "../dsbi-training-contexts-v2/source-index.json"
+  ],
+  "supplemental_source_index_sha256": "8d62cf1850308fb864449bbcabc4399ef4e9a9aab62216b35c8064fa634450a6",
+  "independent_context_audit": ".braille-training-work\\word-scan-v1-20260905\\dsbi-training-contexts-v2\\independent-context-audit.json",
+  "independent_context_audit_sha256": "68e686665e611ce8e4d63c28626e8c2e82b6510205e17f4261fa53af47c2e0aa",
+  "source_sha256": {
+    "word_data.py": "d692b4b28620af7e4b40ebdedccda68769feb8d3f51bd1508e807487fd32b7d7",
+    "word_model.py": "c446732a2905a612cd6f1dd64d2d3d01303b1c71933c34552d26f3b5052fd551",
+    "word_decode.py": "bd301c5afeb4ba2e6866371665324d2de7f0a6ee252ef76ce02a5553193d63c5",
+    "word_train.py": "e22a5302af5eca4482c8901827e06b04126c72bb6964e63db97d940254f40a38",
+    "word_sampling.py": "c234523277dba683e68a2863e14736bc68432da3b6ca65bb5d8a64bc7d9dc0fe",
+    "word_tail.py": "bdd4b5d12d56e25c1100a282483e7a31176b5a65beb353a0623ceea40a49dc0e",
+    "word_sources.py": "affb3488d8c25e3d0131eb4340cae29fcece563ac75373e071f97fef68f09acd",
+    "word_dsbi.py": "feecf16dba6d376415e15707c02c8f05fcf6650055da09ad9f4712099e6325ff",
+    "word_point_geometry.py": "2b932b320d191277b86ae13daecb82b5abbf0a46e9464d7360ee1e941aca760b",
+    "word_point_metadata.py": "de1cad0157e744f2f646010eac5355b88d1d11f52662d4b9353166661f59049f",
+    "word_geometry_head.py": "f46c8f90e7f4fc9404eed2dc27fbde6e5c823d25d4f88e4127c7e56ed6e8764e",
+    "word_geometry_init.py": "072379a1ef409d901c2478135174561c14781560cdd56a0b91b0229b8032e15e",
+    "word_geometry_parity.py": "700d9175dc627fb7bf12c0ac20f640191cf5a045e29067c310f5dad5f3bd6f0b",
+    "word_vertical_stretch.py": "336168fbfe4441bfa91e0855f473997a403a542a2b64789ca7cbd1b11b188ed5",
+    "word_bn_affine.py": "fa117f65beda3f6d159f707a5cd45d3a367b8f5b436b8c43c0d7621071297dff",
+    "word_bn_affine_init.py": "ea76999d35a6e9ba94cffce06c359adb1201cb396b54345668b7ed13afe99ce1",
+    "word_bn_affine_parity.py": "d4baba52b0993240e0b5092500ae32ee5d1b01e636d2546261a0a24996bd4a21",
+    "word_fine_branch.py": "53bff984c33a20556721328e6253fadd060019573b068deee2a671d08a530750",
+    "word_fine_init.py": "3baa5f15b2b4b74ea120dd8150ad3b8a11f59139ad3eb833d3b2089e188d1310",
+    "word_fine_parity.py": "de30cf4b3df1d8ec4bf820f6e1d98c8e40a39eb674a9ce470a3067569f3a8cbe",
+    "word_fine_validation.py": "b075760aee90afa17a84c0e8ec3a421132e0644130929f8f7a85b54b11058124",
+    "word_horizontal_aspect.py": "3ea4fa7d625c91d15c28e157d1bfc675eb72f980571f95631060a82b81494d5a",
+    "word_anchor_zoom.py": "d6f5337d08368b8da55948f314bd06af7b03fa1602e40240778a9b4edea26377",
+    "word_normalization_transition.py": "7f825809cf7b97043015d4a63c06b3be16aa6d236cf0afdbf8e0cf8d8330c5f6"
+  },
+  "parent_checkpoint": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\normalization-std15-parent-v1\\std15-parent.keras",
+  "parent_checkpoint_sha256": "918d148a43399642f44c5d18693eb2733eecca338f0332fed8782cbe79beea00",
+  "planned_epochs": 10,
+  "batch_size": 24,
+  "learning_rate": 2e-05,
+  "seed": 20260905,
+  "negative_repeat": 27,
+  "supplemental_negative_repeat": 2,
+  "negative_expansion": {
+    "base_unique_negative_records": 44,
+    "base_repeat": 27,
+    "supplemental_unique_negative_records": 47,
+    "supplemental_repeat": 2,
+    "negative_draws": 1282,
+    "total_epoch_records": 24882
+  },
+  "negative_fraction": 0.05152318945422394,
+  "geometry_loss": "relative_size_huber",
+  "illumination_augmentation": true,
+  "horizontal_mirror_augmentation": false,
+  "partial_geometry_supervision": false,
+  "unknown_grid_slots": "Separate ignore_boxes transform with pixels and remain objectness-ignore only; never become positive full/partial cells.",
+  "sampling": {
+    "strategy": "equal_positive_source_family_patches",
+    "epoch_records": 24882,
+    "positive_records_per_epoch": 23600,
+    "negative_records_per_epoch": 1282,
+    "negative_fraction_unchanged": 0.05152318945422394,
+    "complete_cycle_epochs": 8,
+    "families": {
+      "books/chudo_derevo_redmi": {
+        "unique_records": 1013,
+        "records_per_epoch": 1967,
+        "epochs_to_visit_all": 1
+      },
+      "books/mdd-redmi1": {
+        "unique_records": 903,
+        "records_per_epoch": 1967,
+        "epochs_to_visit_all": 1
+      },
+      "books/mdd_cannon1": {
+        "unique_records": 899,
+        "records_per_epoch": 1967,
+        "epochs_to_visit_all": 1
+      },
+      "books/skazki": {
+        "unique_records": 14966,
+        "records_per_epoch": 1967,
+        "epochs_to_visit_all": 8
+      },
+      "books/telefon": {
+        "unique_records": 1642,
+        "records_per_epoch": 1967,
+        "epochs_to_visit_all": 1
+      },
+      "books/uploaded": {
+        "unique_records": 159,
+        "records_per_epoch": 1967,
+        "epochs_to_visit_all": 1
+      },
+      "dsbi/Massage": {
+        "unique_records": 838,
+        "records_per_epoch": 1967,
+        "epochs_to_visit_all": 1
+      },
+      "dsbi/Math": {
+        "unique_records": 824,
+        "records_per_epoch": 1967,
+        "epochs_to_visit_all": 1
+      },
+      "dsbi/Ordinary Printed Document": {
+        "unique_records": 289,
+        "records_per_epoch": 1966,
+        "epochs_to_visit_all": 1
+      },
+      "dsbi/Shaver Yang Fengting": {
+        "unique_records": 340,
+        "records_per_epoch": 1966,
+        "epochs_to_visit_all": 1
+      },
+      "handwritten/kov": {
+        "unique_records": 846,
+        "records_per_epoch": 1966,
+        "epochs_to_visit_all": 1
+      },
+      "handwritten/uploaded": {
+        "unique_records": 881,
+        "records_per_epoch": 1966,
+        "epochs_to_visit_all": 1
+      }
+    },
+    "ordering": "Fixed seeded permutation within each positive source family, continuous cyclic epoch cursors, then seeded whole-epoch shuffle. Every existing negative record index appears exactly once per epoch, including authorized negative repeats.",
+    "scope": "Balances patch counts, not guaranteed equal numbers of cells or independent physical examples. All source records remain in the manifest."
+  },
+  "planned_orders": [
+    {
+      "epoch": 1,
+      "all_positive_records_seen": false,
+      "audit": {
+        "order_int64_sha256": "eb35dfcfdbb4989223e61d02e307dff472752e5dc1939cc41ad940b72406f8dc",
+        "records": 24882,
+        "unique_record_indices_this_epoch": 11883,
+        "cumulative_unique_record_indices": 11883,
+        "families": {
+          "books/chudo_derevo_redmi": {
+            "records_this_epoch": 1967,
+            "unique_records_this_epoch": 1013,
+            "cumulative_unique_records": 1013,
+            "total_unique_records": 1013
+          },
+          "books/mdd-redmi1": {
+            "records_this_epoch": 1967,
+            "unique_records_this_epoch": 903,
+            "cumulative_unique_records": 903,
+            "total_unique_records": 903
+          },
+          "books/mdd_cannon1": {
+            "records_this_epoch": 1967,
+            "unique_records_this_epoch": 899,
+            "cumulative_unique_records": 899,
+            "total_unique_records": 899
+          },
+          "books/skazki": {
+            "records_this_epoch": 1967,
+            "unique_records_this_epoch": 1967,
+            "cumulative_unique_records": 1967,
+            "total_unique_records": 14966
+          },
+          "books/telefon": {
+            "records_this_epoch": 1967,
+            "unique_records_this_epoch": 1642,
+            "cumulative_unique_records": 1642,
+            "total_unique_records": 1642
+          },
+          "books/uploaded": {
+            "records_this_epoch": 1967,
+            "unique_records_this_epoch": 159,
+            "cumulative_unique_records": 159,
+            "total_unique_records": 159
+          },
+          "dsbi/Massage": {
+            "records_this_epoch": 1967,
+            "unique_records_this_epoch": 838,
+            "cumulative_unique_records": 838,
+            "total_unique_records": 838
+          },
+          "dsbi/Math": {
+            "records_this_epoch": 1967,
+            "unique_records_this_epoch": 824,
+            "cumulative_unique_records": 824,
+            "total_unique_records": 824
+          },
+          "dsbi/Ordinary Printed Document": {
+            "records_this_epoch": 1966,
+            "unique_records_this_epoch": 289,
+            "cumulative_unique_records": 289,
+            "total_unique_records": 289
+          },
+          "dsbi/Shaver Yang Fengting": {
+            "records_this_epoch": 1966,
+            "unique_records_this_epoch": 340,
+            "cumulative_unique_records": 340,
+            "total_unique_records": 340
+          },
+          "handwritten/kov": {
+            "records_this_epoch": 1966,
+            "unique_records_this_epoch": 846,
+            "cumulative_unique_records": 846,
+            "total_unique_records": 846
+          },
+          "handwritten/uploaded": {
+            "records_this_epoch": 1966,
+            "unique_records_this_epoch": 881,
+            "cumulative_unique_records": 881,
+            "total_unique_records": 881
+          }
+        }
+      }
+    },
+    {
+      "epoch": 2,
+      "all_positive_records_seen": false,
+      "audit": {
+        "order_int64_sha256": "06b07951e8dc32d4d8d153524973e289b5e764e81f1185f69052b3ba6bfa2acb",
+        "records": 24882,
+        "unique_record_indices_this_epoch": 11883,
+        "cumulative_unique_record_indices": 13850,
+        "families": {
+          "books/chudo_derevo_redmi": {
+            "records_this_epoch": 1967,
+            "unique_records_this_epoch": 1013,
+            "cumulative_unique_records": 1013,
+            "total_unique_records": 1013
+          },
+          "books/mdd-redmi1": {
+            "records_this_epoch": 1967,
+            "unique_records_this_epoch": 903,
+            "cumulative_unique_records": 903,
+            "total_unique_records": 903
+          },
+          "books/mdd_cannon1": {
+            "records_this_epoch": 1967,
+            "unique_records_this_epoch": 899,
+            "cumulative_unique_records": 899,
+            "total_unique_records": 899
+          },
+          "books/skazki": {
+            "records_this_epoch": 1967,
+            "unique_records_this_epoch": 1967,
+            "cumulative_unique_records": 3934,
+            "total_unique_records": 14966
+          },
+          "books/telefon": {
+            "records_this_epoch": 1967,
+            "unique_records_this_epoch": 1642,
+            "cumulative_unique_records": 1642,
+            "total_unique_records": 1642
+          },
+          "books/uploaded": {
+            "records_this_epoch": 1967,
+            "unique_records_this_epoch": 159,
+            "cumulative_unique_records": 159,
+            "total_unique_records": 159
+          },
+          "dsbi/Massage": {
+            "records_this_epoch": 1967,
+            "unique_records_this_epoch": 838,
+            "cumulative_unique_records": 838,
+            "total_unique_records": 838
+          },
+          "dsbi/Math": {
+            "records_this_epoch": 1967,
+            "unique_records_this_epoch": 824,
+            "cumulative_unique_records": 824,
+            "total_unique_records": 824
+          },
+          "dsbi/Ordinary Printed Document": {
+            "records_this_epoch": 1966,
+            "unique_records_this_epoch": 289,
+            "cumulative_unique_records": 289,
+            "total_unique_records": 289
+          },
+          "dsbi/Shaver Yang Fengting": {
+            "records_this_epoch": 1966,
+            "unique_records_this_epoch": 340,
+            "cumulative_unique_records": 340,
+            "total_unique_records": 340
+          },
+          "handwritten/kov": {
+            "records_this_epoch": 1966,
+            "unique_records_this_epoch": 846,
+            "cumulative_unique_records": 846,
+            "total_unique_records": 846
+          },
+          "handwritten/uploaded": {
+            "records_this_epoch": 1966,
+            "unique_records_this_epoch": 881,
+            "cumulative_unique_records": 881,
+            "total_unique_records": 881
+          }
+        }
+      }
+    },
+    {
+      "epoch": 3,
+      "all_positive_records_seen": false,
+      "audit": {
+        "order_int64_sha256": "c471c7a89d7b803deabb5fc12622d6f6d740c9df54f4d7f08b6edad796abe37d",
+        "records": 24882,
+        "unique_record_indices_this_epoch": 11883,
+        "cumulative_unique_record_indices": 15817,
+        "families": {
+          "books/chudo_derevo_redmi": {
+            "records_this_epoch": 1967,
+            "unique_records_this_epoch": 1013,
+            "cumulative_unique_records": 1013,
+            "total_unique_records": 1013
+          },
+          "books/mdd-redmi1": {
+            "records_this_epoch": 1967,
+            "unique_records_this_epoch": 903,
+            "cumulative_unique_records": 903,
+            "total_unique_records": 903
+          },
+          "books/mdd_cannon1": {
+            "records_this_epoch": 1967,
+            "unique_records_this_epoch": 899,
+            "cumulative_unique_records": 899,
+            "total_unique_records": 899
+          },
+          "books/skazki": {
+            "records_this_epoch": 1967,
+            "unique_records_this_epoch": 1967,
+            "cumulative_unique_records": 5901,
+            "total_unique_records": 14966
+          },
+          "books/telefon": {
+            "records_this_epoch": 1967,
+            "unique_records_this_epoch": 1642,
+            "cumulative_unique_records": 1642,
+            "total_unique_records": 1642
+          },
+          "books/uploaded": {
+            "records_this_epoch": 1967,
+            "unique_records_this_epoch": 159,
+            "cumulative_unique_records": 159,
+            "total_unique_records": 159
+          },
+          "dsbi/Massage": {
+            "records_this_epoch": 1967,
+            "unique_records_this_epoch": 838,
+            "cumulative_unique_records": 838,
+            "total_unique_records": 838
+          },
+          "dsbi/Math": {
+            "records_this_epoch": 1967,
+            "unique_records_this_epoch": 824,
+            "cumulative_unique_records": 824,
+            "total_unique_records": 824
+          },
+          "dsbi/Ordinary Printed Document": {
+            "records_this_epoch": 1966,
+            "unique_records_this_epoch": 289,
+            "cumulative_unique_records": 289,
+            "total_unique_records": 289
+          },
+          "dsbi/Shaver Yang Fengting": {
+            "records_this_epoch": 1966,
+            "unique_records_this_epoch": 340,
+            "cumulative_unique_records": 340,
+            "total_unique_records": 340
+          },
+          "handwritten/kov": {
+            "records_this_epoch": 1966,
+            "unique_records_this_epoch": 846,
+            "cumulative_unique_records": 846,
+            "total_unique_records": 846
+          },
+          "handwritten/uploaded": {
+            "records_this_epoch": 1966,
+            "unique_records_this_epoch": 881,
+            "cumulative_unique_records": 881,
+            "total_unique_records": 881
+          }
+        }
+      }
+    },
+    {
+      "epoch": 4,
+      "all_positive_records_seen": false,
+      "audit": {
+        "order_int64_sha256": "cc539bca953184acc65e20daba2e847a48486bc02064ba2af7aa0c037f99216c",
+        "records": 24882,
+        "unique_record_indices_this_epoch": 11883,
+        "cumulative_unique_record_indices": 17784,
+        "families": {
+          "books/chudo_derevo_redmi": {
+            "records_this_epoch": 1967,
+            "unique_records_this_epoch": 1013,
+            "cumulative_unique_records": 1013,
+            "total_unique_records": 1013
+          },
+          "books/mdd-redmi1": {
+            "records_this_epoch": 1967,
+            "unique_records_this_epoch": 903,
+            "cumulative_unique_records": 903,
+            "total_unique_records": 903
+          },
+          "books/mdd_cannon1": {
+            "records_this_epoch": 1967,
+            "unique_records_this_epoch": 899,
+            "cumulative_unique_records": 899,
+            "total_unique_records": 899
+          },
+          "books/skazki": {
+            "records_this_epoch": 1967,
+            "unique_records_this_epoch": 1967,
+            "cumulative_unique_records": 7868,
+            "total_unique_records": 14966
+          },
+          "books/telefon": {
+            "records_this_epoch": 1967,
+            "unique_records_this_epoch": 1642,
+            "cumulative_unique_records": 1642,
+            "total_unique_records": 1642
+          },
+          "books/uploaded": {
+            "records_this_epoch": 1967,
+            "unique_records_this_epoch": 159,
+            "cumulative_unique_records": 159,
+            "total_unique_records": 159
+          },
+          "dsbi/Massage": {
+            "records_this_epoch": 1967,
+            "unique_records_this_epoch": 838,
+            "cumulative_unique_records": 838,
+            "total_unique_records": 838
+          },
+          "dsbi/Math": {
+            "records_this_epoch": 1967,
+            "unique_records_this_epoch": 824,
+            "cumulative_unique_records": 824,
+            "total_unique_records": 824
+          },
+          "dsbi/Ordinary Printed Document": {
+            "records_this_epoch": 1966,
+            "unique_records_this_epoch": 289,
+            "cumulative_unique_records": 289,
+            "total_unique_records": 289
+          },
+          "dsbi/Shaver Yang Fengting": {
+            "records_this_epoch": 1966,
+            "unique_records_this_epoch": 340,
+            "cumulative_unique_records": 340,
+            "total_unique_records": 340
+          },
+          "handwritten/kov": {
+            "records_this_epoch": 1966,
+            "unique_records_this_epoch": 846,
+            "cumulative_unique_records": 846,
+            "total_unique_records": 846
+          },
+          "handwritten/uploaded": {
+            "records_this_epoch": 1966,
+            "unique_records_this_epoch": 881,
+            "cumulative_unique_records": 881,
+            "total_unique_records": 881
+          }
+        }
+      }
+    },
+    {
+      "epoch": 5,
+      "all_positive_records_seen": false,
+      "audit": {
+        "order_int64_sha256": "234184d74e8f0db17f21937e417fa7228a2e7968c27fe7334846467eb7f76ac7",
+        "records": 24882,
+        "unique_record_indices_this_epoch": 11883,
+        "cumulative_unique_record_indices": 19751,
+        "families": {
+          "books/chudo_derevo_redmi": {
+            "records_this_epoch": 1967,
+            "unique_records_this_epoch": 1013,
+            "cumulative_unique_records": 1013,
+            "total_unique_records": 1013
+          },
+          "books/mdd-redmi1": {
+            "records_this_epoch": 1967,
+            "unique_records_this_epoch": 903,
+            "cumulative_unique_records": 903,
+            "total_unique_records": 903
+          },
+          "books/mdd_cannon1": {
+            "records_this_epoch": 1967,
+            "unique_records_this_epoch": 899,
+            "cumulative_unique_records": 899,
+            "total_unique_records": 899
+          },
+          "books/skazki": {
+            "records_this_epoch": 1967,
+            "unique_records_this_epoch": 1967,
+            "cumulative_unique_records": 9835,
+            "total_unique_records": 14966
+          },
+          "books/telefon": {
+            "records_this_epoch": 1967,
+            "unique_records_this_epoch": 1642,
+            "cumulative_unique_records": 1642,
+            "total_unique_records": 1642
+          },
+          "books/uploaded": {
+            "records_this_epoch": 1967,
+            "unique_records_this_epoch": 159,
+            "cumulative_unique_records": 159,
+            "total_unique_records": 159
+          },
+          "dsbi/Massage": {
+            "records_this_epoch": 1967,
+            "unique_records_this_epoch": 838,
+            "cumulative_unique_records": 838,
+            "total_unique_records": 838
+          },
+          "dsbi/Math": {
+            "records_this_epoch": 1967,
+            "unique_records_this_epoch": 824,
+            "cumulative_unique_records": 824,
+            "total_unique_records": 824
+          },
+          "dsbi/Ordinary Printed Document": {
+            "records_this_epoch": 1966,
+            "unique_records_this_epoch": 289,
+            "cumulative_unique_records": 289,
+            "total_unique_records": 289
+          },
+          "dsbi/Shaver Yang Fengting": {
+            "records_this_epoch": 1966,
+            "unique_records_this_epoch": 340,
+            "cumulative_unique_records": 340,
+            "total_unique_records": 340
+          },
+          "handwritten/kov": {
+            "records_this_epoch": 1966,
+            "unique_records_this_epoch": 846,
+            "cumulative_unique_records": 846,
+            "total_unique_records": 846
+          },
+          "handwritten/uploaded": {
+            "records_this_epoch": 1966,
+            "unique_records_this_epoch": 881,
+            "cumulative_unique_records": 881,
+            "total_unique_records": 881
+          }
+        }
+      }
+    },
+    {
+      "epoch": 6,
+      "all_positive_records_seen": false,
+      "audit": {
+        "order_int64_sha256": "e20f7a4d54ec8cc9951b0f5b201e71eca141ec0bed07afd9df7af30791757852",
+        "records": 24882,
+        "unique_record_indices_this_epoch": 11883,
+        "cumulative_unique_record_indices": 21718,
+        "families": {
+          "books/chudo_derevo_redmi": {
+            "records_this_epoch": 1967,
+            "unique_records_this_epoch": 1013,
+            "cumulative_unique_records": 1013,
+            "total_unique_records": 1013
+          },
+          "books/mdd-redmi1": {
+            "records_this_epoch": 1967,
+            "unique_records_this_epoch": 903,
+            "cumulative_unique_records": 903,
+            "total_unique_records": 903
+          },
+          "books/mdd_cannon1": {
+            "records_this_epoch": 1967,
+            "unique_records_this_epoch": 899,
+            "cumulative_unique_records": 899,
+            "total_unique_records": 899
+          },
+          "books/skazki": {
+            "records_this_epoch": 1967,
+            "unique_records_this_epoch": 1967,
+            "cumulative_unique_records": 11802,
+            "total_unique_records": 14966
+          },
+          "books/telefon": {
+            "records_this_epoch": 1967,
+            "unique_records_this_epoch": 1642,
+            "cumulative_unique_records": 1642,
+            "total_unique_records": 1642
+          },
+          "books/uploaded": {
+            "records_this_epoch": 1967,
+            "unique_records_this_epoch": 159,
+            "cumulative_unique_records": 159,
+            "total_unique_records": 159
+          },
+          "dsbi/Massage": {
+            "records_this_epoch": 1967,
+            "unique_records_this_epoch": 838,
+            "cumulative_unique_records": 838,
+            "total_unique_records": 838
+          },
+          "dsbi/Math": {
+            "records_this_epoch": 1967,
+            "unique_records_this_epoch": 824,
+            "cumulative_unique_records": 824,
+            "total_unique_records": 824
+          },
+          "dsbi/Ordinary Printed Document": {
+            "records_this_epoch": 1966,
+            "unique_records_this_epoch": 289,
+            "cumulative_unique_records": 289,
+            "total_unique_records": 289
+          },
+          "dsbi/Shaver Yang Fengting": {
+            "records_this_epoch": 1966,
+            "unique_records_this_epoch": 340,
+            "cumulative_unique_records": 340,
+            "total_unique_records": 340
+          },
+          "handwritten/kov": {
+            "records_this_epoch": 1966,
+            "unique_records_this_epoch": 846,
+            "cumulative_unique_records": 846,
+            "total_unique_records": 846
+          },
+          "handwritten/uploaded": {
+            "records_this_epoch": 1966,
+            "unique_records_this_epoch": 881,
+            "cumulative_unique_records": 881,
+            "total_unique_records": 881
+          }
+        }
+      }
+    },
+    {
+      "epoch": 7,
+      "all_positive_records_seen": false,
+      "audit": {
+        "order_int64_sha256": "cd9a9c707c80008e78ed63e71eb015e53fcdf6db47dac5363232803f015d36a8",
+        "records": 24882,
+        "unique_record_indices_this_epoch": 11883,
+        "cumulative_unique_record_indices": 23685,
+        "families": {
+          "books/chudo_derevo_redmi": {
+            "records_this_epoch": 1967,
+            "unique_records_this_epoch": 1013,
+            "cumulative_unique_records": 1013,
+            "total_unique_records": 1013
+          },
+          "books/mdd-redmi1": {
+            "records_this_epoch": 1967,
+            "unique_records_this_epoch": 903,
+            "cumulative_unique_records": 903,
+            "total_unique_records": 903
+          },
+          "books/mdd_cannon1": {
+            "records_this_epoch": 1967,
+            "unique_records_this_epoch": 899,
+            "cumulative_unique_records": 899,
+            "total_unique_records": 899
+          },
+          "books/skazki": {
+            "records_this_epoch": 1967,
+            "unique_records_this_epoch": 1967,
+            "cumulative_unique_records": 13769,
+            "total_unique_records": 14966
+          },
+          "books/telefon": {
+            "records_this_epoch": 1967,
+            "unique_records_this_epoch": 1642,
+            "cumulative_unique_records": 1642,
+            "total_unique_records": 1642
+          },
+          "books/uploaded": {
+            "records_this_epoch": 1967,
+            "unique_records_this_epoch": 159,
+            "cumulative_unique_records": 159,
+            "total_unique_records": 159
+          },
+          "dsbi/Massage": {
+            "records_this_epoch": 1967,
+            "unique_records_this_epoch": 838,
+            "cumulative_unique_records": 838,
+            "total_unique_records": 838
+          },
+          "dsbi/Math": {
+            "records_this_epoch": 1967,
+            "unique_records_this_epoch": 824,
+            "cumulative_unique_records": 824,
+            "total_unique_records": 824
+          },
+          "dsbi/Ordinary Printed Document": {
+            "records_this_epoch": 1966,
+            "unique_records_this_epoch": 289,
+            "cumulative_unique_records": 289,
+            "total_unique_records": 289
+          },
+          "dsbi/Shaver Yang Fengting": {
+            "records_this_epoch": 1966,
+            "unique_records_this_epoch": 340,
+            "cumulative_unique_records": 340,
+            "total_unique_records": 340
+          },
+          "handwritten/kov": {
+            "records_this_epoch": 1966,
+            "unique_records_this_epoch": 846,
+            "cumulative_unique_records": 846,
+            "total_unique_records": 846
+          },
+          "handwritten/uploaded": {
+            "records_this_epoch": 1966,
+            "unique_records_this_epoch": 881,
+            "cumulative_unique_records": 881,
+            "total_unique_records": 881
+          }
+        }
+      }
+    },
+    {
+      "epoch": 8,
+      "all_positive_records_seen": true,
+      "audit": {
+        "order_int64_sha256": "7a6e46b205a764b3fe88fdfb12b3a551950508f45f929b6b7ecf71fd988531e9",
+        "records": 24882,
+        "unique_record_indices_this_epoch": 11883,
+        "cumulative_unique_record_indices": 24882,
+        "families": {
+          "books/chudo_derevo_redmi": {
+            "records_this_epoch": 1967,
+            "unique_records_this_epoch": 1013,
+            "cumulative_unique_records": 1013,
+            "total_unique_records": 1013
+          },
+          "books/mdd-redmi1": {
+            "records_this_epoch": 1967,
+            "unique_records_this_epoch": 903,
+            "cumulative_unique_records": 903,
+            "total_unique_records": 903
+          },
+          "books/mdd_cannon1": {
+            "records_this_epoch": 1967,
+            "unique_records_this_epoch": 899,
+            "cumulative_unique_records": 899,
+            "total_unique_records": 899
+          },
+          "books/skazki": {
+            "records_this_epoch": 1967,
+            "unique_records_this_epoch": 1967,
+            "cumulative_unique_records": 14966,
+            "total_unique_records": 14966
+          },
+          "books/telefon": {
+            "records_this_epoch": 1967,
+            "unique_records_this_epoch": 1642,
+            "cumulative_unique_records": 1642,
+            "total_unique_records": 1642
+          },
+          "books/uploaded": {
+            "records_this_epoch": 1967,
+            "unique_records_this_epoch": 159,
+            "cumulative_unique_records": 159,
+            "total_unique_records": 159
+          },
+          "dsbi/Massage": {
+            "records_this_epoch": 1967,
+            "unique_records_this_epoch": 838,
+            "cumulative_unique_records": 838,
+            "total_unique_records": 838
+          },
+          "dsbi/Math": {
+            "records_this_epoch": 1967,
+            "unique_records_this_epoch": 824,
+            "cumulative_unique_records": 824,
+            "total_unique_records": 824
+          },
+          "dsbi/Ordinary Printed Document": {
+            "records_this_epoch": 1966,
+            "unique_records_this_epoch": 289,
+            "cumulative_unique_records": 289,
+            "total_unique_records": 289
+          },
+          "dsbi/Shaver Yang Fengting": {
+            "records_this_epoch": 1966,
+            "unique_records_this_epoch": 340,
+            "cumulative_unique_records": 340,
+            "total_unique_records": 340
+          },
+          "handwritten/kov": {
+            "records_this_epoch": 1966,
+            "unique_records_this_epoch": 846,
+            "cumulative_unique_records": 846,
+            "total_unique_records": 846
+          },
+          "handwritten/uploaded": {
+            "records_this_epoch": 1966,
+            "unique_records_this_epoch": 881,
+            "cumulative_unique_records": 881,
+            "total_unique_records": 881
+          }
+        }
+      }
+    },
+    {
+      "epoch": 9,
+      "all_positive_records_seen": true,
+      "audit": {
+        "order_int64_sha256": "781e44740f85e5ab31a08b40ef29a9ee87f2bf6a919611b8da1f675405228c62",
+        "records": 24882,
+        "unique_record_indices_this_epoch": 11883,
+        "cumulative_unique_record_indices": 24882,
+        "families": {
+          "books/chudo_derevo_redmi": {
+            "records_this_epoch": 1967,
+            "unique_records_this_epoch": 1013,
+            "cumulative_unique_records": 1013,
+            "total_unique_records": 1013
+          },
+          "books/mdd-redmi1": {
+            "records_this_epoch": 1967,
+            "unique_records_this_epoch": 903,
+            "cumulative_unique_records": 903,
+            "total_unique_records": 903
+          },
+          "books/mdd_cannon1": {
+            "records_this_epoch": 1967,
+            "unique_records_this_epoch": 899,
+            "cumulative_unique_records": 899,
+            "total_unique_records": 899
+          },
+          "books/skazki": {
+            "records_this_epoch": 1967,
+            "unique_records_this_epoch": 1967,
+            "cumulative_unique_records": 14966,
+            "total_unique_records": 14966
+          },
+          "books/telefon": {
+            "records_this_epoch": 1967,
+            "unique_records_this_epoch": 1642,
+            "cumulative_unique_records": 1642,
+            "total_unique_records": 1642
+          },
+          "books/uploaded": {
+            "records_this_epoch": 1967,
+            "unique_records_this_epoch": 159,
+            "cumulative_unique_records": 159,
+            "total_unique_records": 159
+          },
+          "dsbi/Massage": {
+            "records_this_epoch": 1967,
+            "unique_records_this_epoch": 838,
+            "cumulative_unique_records": 838,
+            "total_unique_records": 838
+          },
+          "dsbi/Math": {
+            "records_this_epoch": 1967,
+            "unique_records_this_epoch": 824,
+            "cumulative_unique_records": 824,
+            "total_unique_records": 824
+          },
+          "dsbi/Ordinary Printed Document": {
+            "records_this_epoch": 1966,
+            "unique_records_this_epoch": 289,
+            "cumulative_unique_records": 289,
+            "total_unique_records": 289
+          },
+          "dsbi/Shaver Yang Fengting": {
+            "records_this_epoch": 1966,
+            "unique_records_this_epoch": 340,
+            "cumulative_unique_records": 340,
+            "total_unique_records": 340
+          },
+          "handwritten/kov": {
+            "records_this_epoch": 1966,
+            "unique_records_this_epoch": 846,
+            "cumulative_unique_records": 846,
+            "total_unique_records": 846
+          },
+          "handwritten/uploaded": {
+            "records_this_epoch": 1966,
+            "unique_records_this_epoch": 881,
+            "cumulative_unique_records": 881,
+            "total_unique_records": 881
+          }
+        }
+      }
+    },
+    {
+      "epoch": 10,
+      "all_positive_records_seen": true,
+      "audit": {
+        "order_int64_sha256": "21f7ec8f464ea791304d84049f4ae5f0ea7c81959eeb5a9ff54042491b7760ab",
+        "records": 24882,
+        "unique_record_indices_this_epoch": 11883,
+        "cumulative_unique_record_indices": 24882,
+        "families": {
+          "books/chudo_derevo_redmi": {
+            "records_this_epoch": 1967,
+            "unique_records_this_epoch": 1013,
+            "cumulative_unique_records": 1013,
+            "total_unique_records": 1013
+          },
+          "books/mdd-redmi1": {
+            "records_this_epoch": 1967,
+            "unique_records_this_epoch": 903,
+            "cumulative_unique_records": 903,
+            "total_unique_records": 903
+          },
+          "books/mdd_cannon1": {
+            "records_this_epoch": 1967,
+            "unique_records_this_epoch": 899,
+            "cumulative_unique_records": 899,
+            "total_unique_records": 899
+          },
+          "books/skazki": {
+            "records_this_epoch": 1967,
+            "unique_records_this_epoch": 1967,
+            "cumulative_unique_records": 14966,
+            "total_unique_records": 14966
+          },
+          "books/telefon": {
+            "records_this_epoch": 1967,
+            "unique_records_this_epoch": 1642,
+            "cumulative_unique_records": 1642,
+            "total_unique_records": 1642
+          },
+          "books/uploaded": {
+            "records_this_epoch": 1967,
+            "unique_records_this_epoch": 159,
+            "cumulative_unique_records": 159,
+            "total_unique_records": 159
+          },
+          "dsbi/Massage": {
+            "records_this_epoch": 1967,
+            "unique_records_this_epoch": 838,
+            "cumulative_unique_records": 838,
+            "total_unique_records": 838
+          },
+          "dsbi/Math": {
+            "records_this_epoch": 1967,
+            "unique_records_this_epoch": 824,
+            "cumulative_unique_records": 824,
+            "total_unique_records": 824
+          },
+          "dsbi/Ordinary Printed Document": {
+            "records_this_epoch": 1966,
+            "unique_records_this_epoch": 289,
+            "cumulative_unique_records": 289,
+            "total_unique_records": 289
+          },
+          "dsbi/Shaver Yang Fengting": {
+            "records_this_epoch": 1966,
+            "unique_records_this_epoch": 340,
+            "cumulative_unique_records": 340,
+            "total_unique_records": 340
+          },
+          "handwritten/kov": {
+            "records_this_epoch": 1966,
+            "unique_records_this_epoch": 846,
+            "cumulative_unique_records": 846,
+            "total_unique_records": 846
+          },
+          "handwritten/uploaded": {
+            "records_this_epoch": 1966,
+            "unique_records_this_epoch": 881,
+            "cumulative_unique_records": 881,
+            "total_unique_records": 881
+          }
+        }
+      }
+    }
+  ],
+  "checkpoint_eligibility": "Only actual completed epochs with all23600positive records consumed within this run. Planned eligible8-10; early best-word is diagnostic only. Source-record consumption does not guarantee every cell survives random augmentation.",
+  "selection": "Control std.05 first, then own-cycle eligible8-10 std.15 checkpoints on unchanged405. Weak-peaks-v2, >=95% accepted precision per natural/stress, maximize equal-group whole-word mean, ties preserve control. No external607/44/66/12/14 threshold or checkpoint selection.",
+  "external_evidence": "Already observed public development regression; no independent physical holdout or production claim.",
+  "no_activation_before_gates": true,
+  "dsbi_visible_partial_supervision": true,
+  "point_metadata_sha256": "ea9592a727f7f3abcc6b017f8f22e143e90ae1541f623c43adf30104021937e8",
+  "preflight_audits": [
+    {
+      "path": ".braille-training-work\\word-scan-v1-20260905\\run20-independent-point-audit\\report.json",
+      "sha256": "88bbff3aa1288058225fd98cf0922286ba49b8ca2651dc49a369426c90e688b6"
+    },
+    {
+      "path": ".braille-training-work\\word-scan-v1-20260905\\run20-independent-point-audit\\gradient-report.json",
+      "sha256": "604f350c7f773b1901c614bcc865acec5072ad0c75730b18023d18a1357efde8"
+    },
+    {
+      "path": ".braille-training-work\\word-scan-v1-20260905\\run20\\preflight-tests.json",
+      "sha256": "5a1f3ce69d55ee22b88c54edae82ffd5ccd99dd2fc2a39a943b0b9566125e139"
+    },
+    {
+      "path": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\run29\\normalization-transition-guard-audit.json",
+      "sha256": "c9cf75b0da2c0e98e6d982674a11c30f1d6dd062b2866745ef37430ec1d066a9"
+    },
+    {
+      "path": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\run29\\preflight-tests.json",
+      "sha256": "909e76bd87ba5177a120b532c25563583eb4b824a805d4f597069c6c60bad55e"
+    }
+  ],
+  "base_parent_checkpoint_sha256": "cce2432c0ddb8952c885dd58697589c285209588dafa81aacdd891b1660068b7",
+  "normalization_transition": true,
+  "target_std_after": 0.15,
+  "anchor_zoom_cap": false,
+  "horizontal_aspect_augmentation": false,
+  "vertical_stretch_augmentation": false
+}

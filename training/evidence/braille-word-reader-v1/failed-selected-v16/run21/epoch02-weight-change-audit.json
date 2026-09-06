@@ -1,0 +1,481 @@
+{
+  "created_at_utc": "2026-09-05T17:16:17.136067+00:00",
+  "kind": "saved_weights_only_no_inference",
+  "parent_sha256": "d6d43af7f662584d1f84c1ac7411d1572f898224746973405ed080c3ea1171d5",
+  "checkpoint_sha256": "bd34966a9f1539e2da946cdf4ad32472c6c3ace903db659ed325d4ba66569f1a",
+  "epoch": 2,
+  "model_arrays": 286,
+  "unchanged_bn_arrays": 208,
+  "changed_model_arrays": 78,
+  "changed": [
+    {
+      "name": "layers/conv2d/vars/0",
+      "max_delta": 0.006687484681606293,
+      "l1_delta": 49.86732864379883,
+      "count": 81920
+    },
+    {
+      "name": "layers/conv2d/vars/1",
+      "max_delta": 0.0004758331924676895,
+      "l1_delta": 0.010356422513723373,
+      "count": 64
+    },
+    {
+      "name": "layers/conv2d_1/vars/0",
+      "max_delta": 0.004912436008453369,
+      "l1_delta": 9.498054504394531,
+      "count": 18432
+    },
+    {
+      "name": "layers/conv2d_1/vars/1",
+      "max_delta": 0.0004758071154356003,
+      "l1_delta": 0.010356216691434383,
+      "count": 64
+    },
+    {
+      "name": "layers/conv2d_2/vars/0",
+      "max_delta": 0.009339407086372375,
+      "l1_delta": 5.376888275146484,
+      "count": 6144
+    },
+    {
+      "name": "layers/conv2d_2/vars/1",
+      "max_delta": 0.0004758071154356003,
+      "l1_delta": 0.010356228798627853,
+      "count": 64
+    },
+    {
+      "name": "layers/conv2d_3/vars/0",
+      "max_delta": 0.007663458585739136,
+      "l1_delta": 5.542741775512695,
+      "count": 6144
+    },
+    {
+      "name": "layers/conv2d_3/vars/1",
+      "max_delta": 0.00047580525279045105,
+      "l1_delta": 0.010356233455240726,
+      "count": 64
+    },
+    {
+      "name": "layers/conv2d_4/vars/0",
+      "max_delta": 0.004302799701690674,
+      "l1_delta": 0.02516421675682068,
+      "count": 64
+    },
+    {
+      "name": "layers/conv2d_4/vars/1",
+      "max_delta": 0.0002808570861816406,
+      "l1_delta": 0.0002808570861816406,
+      "count": 1
+    },
+    {
+      "name": "layers/conv2d_5/vars/0",
+      "max_delta": 0.00628318265080452,
+      "l1_delta": 0.1051320806145668,
+      "count": 256
+    },
+    {
+      "name": "layers/conv2d_5/vars/1",
+      "max_delta": 0.0006957054138183594,
+      "l1_delta": 0.0008928924798965454,
+      "count": 4
+    },
+    {
+      "name": "layers/conv2d_6/vars/0",
+      "max_delta": 0.011249691247940063,
+      "l1_delta": 0.30104923248291016,
+      "count": 384
+    },
+    {
+      "name": "layers/conv2d_6/vars/1",
+      "max_delta": 0.00043803825974464417,
+      "l1_delta": 0.0014522282872349024,
+      "count": 6
+    },
+    {
+      "name": "layers/conv2d_7/vars/0",
+      "max_delta": 0.014823035337030888,
+      "l1_delta": 1.499157428741455,
+      "count": 512
+    },
+    {
+      "name": "layers/conv2d_7/vars/1",
+      "max_delta": 0.006475572474300861,
+      "l1_delta": 0.03140866011381149,
+      "count": 8
+    },
+    {
+      "name": "layers/dense/vars/0",
+      "max_delta": 0.022204458713531494,
+      "l1_delta": 6.620386600494385,
+      "count": 1536
+    },
+    {
+      "name": "layers/dense/vars/1",
+      "max_delta": 0.016041362658143044,
+      "l1_delta": 0.12328282743692398,
+      "count": 32
+    },
+    {
+      "name": "layers/dense_1/vars/0",
+      "max_delta": 0.014643398113548756,
+      "l1_delta": 0.6496583223342896,
+      "count": 352
+    },
+    {
+      "name": "layers/dense_1/vars/1",
+      "max_delta": 0.0006842869333922863,
+      "l1_delta": 0.0026767246890813112,
+      "count": 11
+    },
+    {
+      "name": "layers/functional/layers/conv2d/vars/0",
+      "max_delta": 0.002133036497980356,
+      "l1_delta": 0.17395511269569397,
+      "count": 432
+    },
+    {
+      "name": "layers/functional/layers/conv2d_1/vars/0",
+      "max_delta": 0.0013996362686157227,
+      "l1_delta": 0.0238470658659935,
+      "count": 128
+    },
+    {
+      "name": "layers/functional/layers/conv2d_10/vars/0",
+      "max_delta": 0.0039886850863695145,
+      "l1_delta": 1.1597164869308472,
+      "count": 1536
+    },
+    {
+      "name": "layers/functional/layers/conv2d_11/vars/0",
+      "max_delta": 0.004804842174053192,
+      "l1_delta": 0.9908755421638489,
+      "count": 1536
+    },
+    {
+      "name": "layers/functional/layers/conv2d_12/vars/0",
+      "max_delta": 0.005247145891189575,
+      "l1_delta": 0.9818058013916016,
+      "count": 1536
+    },
+    {
+      "name": "layers/functional/layers/conv2d_13/vars/0",
+      "max_delta": 0.0033408552408218384,
+      "l1_delta": 1.3394947052001953,
+      "count": 3072
+    },
+    {
+      "name": "layers/functional/layers/conv2d_14/vars/0",
+      "max_delta": 0.004123317077755928,
+      "l1_delta": 4.273834228515625,
+      "count": 6144
+    },
+    {
+      "name": "layers/functional/layers/conv2d_15/vars/0",
+      "max_delta": 0.004837861284613609,
+      "l1_delta": 3.9940080642700195,
+      "count": 6144
+    },
+    {
+      "name": "layers/functional/layers/conv2d_16/vars/0",
+      "max_delta": 0.003582913428544998,
+      "l1_delta": 4.202075481414795,
+      "count": 6144
+    },
+    {
+      "name": "layers/functional/layers/conv2d_17/vars/0",
+      "max_delta": 0.005521997809410095,
+      "l1_delta": 3.7907156944274902,
+      "count": 6144
+    },
+    {
+      "name": "layers/functional/layers/conv2d_18/vars/0",
+      "max_delta": 0.0037335865199565887,
+      "l1_delta": 4.286354064941406,
+      "count": 6144
+    },
+    {
+      "name": "layers/functional/layers/conv2d_19/vars/0",
+      "max_delta": 0.0038575157523155212,
+      "l1_delta": 3.754549503326416,
+      "count": 6144
+    },
+    {
+      "name": "layers/functional/layers/conv2d_2/vars/0",
+      "max_delta": 0.0038605183362960815,
+      "l1_delta": 0.3128672242164612,
+      "count": 384
+    },
+    {
+      "name": "layers/functional/layers/conv2d_20/vars/0",
+      "max_delta": 0.0035474933683872223,
+      "l1_delta": 4.105318069458008,
+      "count": 6144
+    },
+    {
+      "name": "layers/functional/layers/conv2d_21/vars/0",
+      "max_delta": 0.005097631365060806,
+      "l1_delta": 4.815412521362305,
+      "count": 9216
+    },
+    {
+      "name": "layers/functional/layers/conv2d_22/vars/0",
+      "max_delta": 0.004898436367511749,
+      "l1_delta": 9.764368057250977,
+      "count": 13824
+    },
+    {
+      "name": "layers/functional/layers/conv2d_23/vars/0",
+      "max_delta": 0.004022172652184963,
+      "l1_delta": 8.502748489379883,
+      "count": 13824
+    },
+    {
+      "name": "layers/functional/layers/conv2d_24/vars/0",
+      "max_delta": 0.004509828053414822,
+      "l1_delta": 9.808268547058105,
+      "count": 13824
+    },
+    {
+      "name": "layers/functional/layers/conv2d_25/vars/0",
+      "max_delta": 0.004952623508870602,
+      "l1_delta": 7.355319499969482,
+      "count": 13824
+    },
+    {
+      "name": "layers/functional/layers/conv2d_26/vars/0",
+      "max_delta": 0.004185132682323456,
+      "l1_delta": 8.364594459533691,
+      "count": 13824
+    },
+    {
+      "name": "layers/functional/layers/conv2d_27/vars/0",
+      "max_delta": 0.005687769502401352,
+      "l1_delta": 9.047719955444336,
+      "count": 23040
+    },
+    {
+      "name": "layers/functional/layers/conv2d_28/vars/0",
+      "max_delta": 0.004330888390541077,
+      "l1_delta": 23.99156951904297,
+      "count": 38400
+    },
+    {
+      "name": "layers/functional/layers/conv2d_29/vars/0",
+      "max_delta": 0.004088304936885834,
+      "l1_delta": 21.204587936401367,
+      "count": 38400
+    },
+    {
+      "name": "layers/functional/layers/conv2d_3/vars/0",
+      "max_delta": 0.0035299360752105713,
+      "l1_delta": 0.38858675956726074,
+      "count": 768
+    },
+    {
+      "name": "layers/functional/layers/conv2d_30/vars/0",
+      "max_delta": 0.010107574984431267,
+      "l1_delta": 21.612564086914062,
+      "count": 38400
+    },
+    {
+      "name": "layers/functional/layers/conv2d_31/vars/0",
+      "max_delta": 0.008912865072488785,
+      "l1_delta": 17.754749298095703,
+      "count": 38400
+    },
+    {
+      "name": "layers/functional/layers/conv2d_32/vars/0",
+      "max_delta": 0.00505254790186882,
+      "l1_delta": 22.552623748779297,
+      "count": 38400
+    },
+    {
+      "name": "layers/functional/layers/conv2d_33/vars/0",
+      "max_delta": 0.005173590034246445,
+      "l1_delta": 42.38313674926758,
+      "count": 76800
+    },
+    {
+      "name": "layers/functional/layers/conv2d_34/vars/0",
+      "max_delta": 0.005451135337352753,
+      "l1_delta": 128.91847229003906,
+      "count": 204800
+    },
+    {
+      "name": "layers/functional/layers/conv2d_4/vars/0",
+      "max_delta": 0.004924792796373367,
+      "l1_delta": 1.2694599628448486,
+      "count": 1536
+    },
+    {
+      "name": "layers/functional/layers/conv2d_5/vars/0",
+      "max_delta": 0.003815397620201111,
+      "l1_delta": 0.8294129967689514,
+      "count": 1536
+    },
+    {
+      "name": "layers/functional/layers/conv2d_6/vars/0",
+      "max_delta": 0.003999117761850357,
+      "l1_delta": 1.095766305923462,
+      "count": 1536
+    },
+    {
+      "name": "layers/functional/layers/conv2d_7/vars/0",
+      "max_delta": 0.003961585462093353,
+      "l1_delta": 0.7917558550834656,
+      "count": 1536
+    },
+    {
+      "name": "layers/functional/layers/conv2d_8/vars/0",
+      "max_delta": 0.004059609025716782,
+      "l1_delta": 1.188816785812378,
+      "count": 1536
+    },
+    {
+      "name": "layers/functional/layers/conv2d_9/vars/0",
+      "max_delta": 0.0041191596537828445,
+      "l1_delta": 1.0125552415847778,
+      "count": 1536
+    },
+    {
+      "name": "layers/functional/layers/depthwise_conv2d/vars/0",
+      "max_delta": 0.001012563705444336,
+      "l1_delta": 0.020007696002721786,
+      "count": 144
+    },
+    {
+      "name": "layers/functional/layers/depthwise_conv2d_1/vars/0",
+      "max_delta": 0.005490779876708984,
+      "l1_delta": 0.30855968594551086,
+      "count": 432
+    },
+    {
+      "name": "layers/functional/layers/depthwise_conv2d_10/vars/0",
+      "max_delta": 0.004623711109161377,
+      "l1_delta": 1.170396327972412,
+      "count": 1728
+    },
+    {
+      "name": "layers/functional/layers/depthwise_conv2d_11/vars/0",
+      "max_delta": 0.003661084920167923,
+      "l1_delta": 1.8060753345489502,
+      "count": 2592
+    },
+    {
+      "name": "layers/functional/layers/depthwise_conv2d_12/vars/0",
+      "max_delta": 0.005559831857681274,
+      "l1_delta": 1.7746193408966064,
+      "count": 2592
+    },
+    {
+      "name": "layers/functional/layers/depthwise_conv2d_13/vars/0",
+      "max_delta": 0.006110548973083496,
+      "l1_delta": 2.016205310821533,
+      "count": 2592
+    },
+    {
+      "name": "layers/functional/layers/depthwise_conv2d_14/vars/0",
+      "max_delta": 0.0035155117511749268,
+      "l1_delta": 2.6172406673431396,
+      "count": 4320
+    },
+    {
+      "name": "layers/functional/layers/depthwise_conv2d_15/vars/0",
+      "max_delta": 0.006988197565078735,
+      "l1_delta": 2.2774124145507812,
+      "count": 4320
+    },
+    {
+      "name": "layers/functional/layers/depthwise_conv2d_16/vars/0",
+      "max_delta": 0.007522135972976685,
+      "l1_delta": 4.021402359008789,
+      "count": 4320
+    },
+    {
+      "name": "layers/functional/layers/depthwise_conv2d_2/vars/0",
+      "max_delta": 0.004572443664073944,
+      "l1_delta": 0.5228939056396484,
+      "count": 864
+    },
+    {
+      "name": "layers/functional/layers/depthwise_conv2d_3/vars/0",
+      "max_delta": 0.003854990005493164,
+      "l1_delta": 0.5042476654052734,
+      "count": 864
+    },
+    {
+      "name": "layers/functional/layers/depthwise_conv2d_4/vars/0",
+      "max_delta": 0.0038493573665618896,
+      "l1_delta": 0.564658522605896,
+      "count": 864
+    },
+    {
+      "name": "layers/functional/layers/depthwise_conv2d_5/vars/0",
+      "max_delta": 0.005117535591125488,
+      "l1_delta": 0.6066694259643555,
+      "count": 864
+    },
+    {
+      "name": "layers/functional/layers/depthwise_conv2d_6/vars/0",
+      "max_delta": 0.003598153591156006,
+      "l1_delta": 0.5819665193557739,
+      "count": 864
+    },
+    {
+      "name": "layers/functional/layers/depthwise_conv2d_7/vars/0",
+      "max_delta": 0.004015237092971802,
+      "l1_delta": 1.1813185214996338,
+      "count": 1728
+    },
+    {
+      "name": "layers/functional/layers/depthwise_conv2d_8/vars/0",
+      "max_delta": 0.004146158695220947,
+      "l1_delta": 1.1646374464035034,
+      "count": 1728
+    },
+    {
+      "name": "layers/functional/layers/depthwise_conv2d_9/vars/0",
+      "max_delta": 0.0041852593421936035,
+      "l1_delta": 1.158646583557129,
+      "count": 1728
+    },
+    {
+      "name": "layers/separable_conv2d/vars/0",
+      "max_delta": 0.00399809330701828,
+      "l1_delta": 0.2434382289648056,
+      "count": 576
+    },
+    {
+      "name": "layers/separable_conv2d/vars/1",
+      "max_delta": 0.007057845592498779,
+      "l1_delta": 2.5334763526916504,
+      "count": 4096
+    },
+    {
+      "name": "layers/separable_conv2d/vars/2",
+      "max_delta": 0.0023820505011826754,
+      "l1_delta": 0.017844030633568764,
+      "count": 64
+    },
+    {
+      "name": "layers/separable_conv2d_1/vars/0",
+      "max_delta": 0.005693264305591583,
+      "l1_delta": 0.2728802561759949,
+      "count": 576
+    },
+    {
+      "name": "layers/separable_conv2d_1/vars/1",
+      "max_delta": 0.006959099322557449,
+      "l1_delta": 1.9162379503250122,
+      "count": 4096
+    },
+    {
+      "name": "layers/separable_conv2d_1/vars/2",
+      "max_delta": 0.002196233719587326,
+      "l1_delta": 0.021239183843135834,
+      "count": 64
+    }
+  ],
+  "result": "PASS"
+}

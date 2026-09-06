@@ -1,0 +1,115 @@
+{
+  "status": "passed",
+  "created_at_utc": "2026-09-05T16:49:58.160512+00:00",
+  "scope": "Initialization equality and separate nonzero diagnostic; no training, checkpoint selection or accuracy claim.",
+  "parent_checkpoint": ".braille-training-work\\word-scan-v1-20260905\\selected-v15\\best-word.keras",
+  "parent_checkpoint_sha256": "cce2432c0ddb8952c885dd58697589c285209588dafa81aacdd891b1660068b7",
+  "zero_checkpoint": ".braille-training-work\\word-scan-v1-20260905\\geometry-head-parent-v1\\geometry-parent.keras",
+  "zero_checkpoint_sha256": "d6d43af7f662584d1f84c1ac7411d1572f898224746973405ed080c3ea1171d5",
+  "nonzero_diagnostic_checkpoint": ".braille-training-work\\word-scan-v1-20260905\\geometry-head-parent-v1\\nonzero-diagnostic-only.keras",
+  "nonzero_diagnostic_sha256": "650456fda2ce7347182e96a61bf59e99257676ec8b846020892907a2c920cddb",
+  "nonzero_diagnostic_must_never_be_resumed": true,
+  "slot_prior_audit": ".braille-training-work\\word-scan-v1-20260905\\slot-prior-audit.json",
+  "slot_prior_audit_sha256": "216656cff63c75274de69d19a5363c829d91a9d0e913080f20d9bb275c03c459",
+  "source_sha256": {
+    "word_data.py": "abc7a31a94db497b9a48ce44bd68d96556e67014623c5645c129153844b48cb7",
+    "word_geometry_head.py": "f46c8f90e7f4fc9404eed2dc27fbde6e5c823d25d4f88e4127c7e56ed6e8764e",
+    "word_geometry_init.py": "072379a1ef409d901c2478135174561c14781560cdd56a0b91b0229b8032e15e",
+    "word_model.py": "c446732a2905a612cd6f1dd64d2d3d01303b1c71933c34552d26f3b5052fd551"
+  },
+  "oracle_sha256": "9330946dafe06c7705b3f2c85cce26f8bbfeca11763ba7465d62e809180d5669",
+  "train_inputs": [
+    {
+      "image": "train/000000.png",
+      "source": "books/chudo_derevo_redmi/IMG_20190715_112912.labeled.jpg",
+      "sha256": "dec6b2c72152ff5eb8a87be172a7e20764eae23d427a401fd98075f19d7de1f1"
+    },
+    {
+      "image": "train/003163.png",
+      "source": "books/skazki/IMG_20190715_121834.labeled.jpg",
+      "sha256": "707ffff038ec67f271aee1e7e7c1bb4524ad18370c453d132f450bb84aaaedb6"
+    },
+    {
+      "image": "train/006326.png",
+      "source": "not_braille/misc/ul.jpg",
+      "sha256": "860bf163e12e45008a203a2d9e619d6cdfd0e555e9fe40cb567355a90938c5c3"
+    }
+  ],
+  "analytic_inputs": [
+    "black",
+    "white",
+    "seed20260905 uniform random"
+  ],
+  "zero_outputs_equal_parent": true,
+  "zero_save_reload_all_weights_equal": true,
+  "zero_branch_gradients": {
+    "loss": 0.2237982451915741,
+    "final_l1": 9.78038665652275,
+    "projection_l1": 0.0,
+    "hidden_l1": 0.0
+  },
+  "after_isolated_final_step_gradients": {
+    "loss": 0.2218274623155594,
+    "final_l1": 8.743125006556511,
+    "projection_l1": 0.03984446273534559,
+    "hidden_l1": 0.03648506426543463
+  },
+  "initial_final_residual_gradient_l1_by_channel": [
+    0.4534945487976074,
+    4.278894424438477,
+    1.3034229278564453,
+    1.8749058246612549,
+    1.7858977317810059,
+    0.0068614245392382145,
+    0.016002386808395386,
+    0.004279792308807373,
+    0.006597307976335287,
+    0.0014801829820498824,
+    0.04855034127831459
+  ],
+  "nonzero_max_output_delta": 0.0089111328125,
+  "parameters": 831758,
+  "added_parameters": 2451,
+  "added_conv_dense_macs_per_image": 13824000,
+  "sampling": {
+    "name": "geometry_slot_samples",
+    "trainable": true,
+    "dtype": {
+      "module": "keras",
+      "class_name": "DTypePolicy",
+      "config": {
+        "name": "float32"
+      },
+      "registered_name": null
+    },
+    "slot_fractions": [
+      [
+        0.2023809523809515,
+        0.12412587412587281
+      ],
+      [
+        0.2023809523809515,
+        0.5086505190311416
+      ],
+      [
+        0.2023809523809515,
+        0.8942307692307694
+      ],
+      [
+        0.8273809523809524,
+        0.12412587412587281
+      ],
+      [
+        0.8273809523809524,
+        0.5086505190311416
+      ],
+      [
+        0.8273809523809524,
+        0.8942307692307694
+      ]
+    ],
+    "feature_origin": 3.0,
+    "stride": 4
+  },
+  "conversion_required_before_training": "Actual nonzero diagnostic copy, builtins-only TFLite, all six oracle inputs; zero branch pruning is insufficient."
+}

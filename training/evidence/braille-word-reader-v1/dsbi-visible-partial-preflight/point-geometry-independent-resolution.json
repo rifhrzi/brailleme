@@ -1,0 +1,106 @@
+{
+  "status": "passed",
+  "scope": "Independent recheck of the historical exact-cardinal regression against real Pillow corner pixels. Main all-stage conservative hull unchanged. No model/GPU/trainer edits.",
+  "helper_sha256": "2b932b320d191277b86ae13daecb82b5abbf0a46e9464d7360ee1e941aca760b",
+  "test_sha256": "7331b1ab6fdbdbfe31a0d8408761699482bb209432574dc689590000e438e034",
+  "historical_review_sha256": "7de16015268d2c297f59db312654ffd69098c5990d81b2a6bac7b25a93425ce0",
+  "historical_repro_sha256": "2cfa72c30402950c45b572ad1e49d6fc3f13a087d0efb3bb8820e85a86946fee",
+  "cases": [
+    {
+      "angle": 0,
+      "point_xy": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          479.0,
+          191.0
+        ],
+        [
+          0.0,
+          191.0
+        ]
+      ],
+      "all_survive": true,
+      "exact_raster_parity": true
+    },
+    {
+      "angle": 180,
+      "point_xy": [
+        [
+          479.0,
+          191.0
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          479.0,
+          0.0
+        ]
+      ],
+      "all_survive": true,
+      "exact_raster_parity": true
+    },
+    {
+      "angle": 360,
+      "point_xy": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          479.0,
+          191.0
+        ],
+        [
+          0.0,
+          191.0
+        ]
+      ],
+      "all_survive": true,
+      "exact_raster_parity": true
+    },
+    {
+      "angle": 720,
+      "point_xy": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          479.0,
+          191.0
+        ],
+        [
+          0.0,
+          191.0
+        ]
+      ],
+      "all_survive": true,
+      "exact_raster_parity": true
+    },
+    {
+      "angle": -180,
+      "point_xy": [
+        [
+          479.0,
+          191.0
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          479.0,
+          0.0
+        ]
+      ],
+      "all_survive": true,
+      "exact_raster_parity": true
+    }
+  ],
+  "remaining_concrete_findings": []
+}

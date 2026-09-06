@@ -1,0 +1,18 @@
+{
+  "status": "applied_exact_runtime_proven_candidate",
+  "applied_at_utc": "2026-09-06T08:40:07.046344+00:00",
+  "runtime_report_sha256": "9590846e3afe5e83baa76b0204a18797f8574d14ff9900edb123a41fbdac993b",
+  "old_word_train_sha256": "e22a5302af5eca4482c8901827e06b04126c72bb6964e63db97d940254f40a38",
+  "applied_sources": {
+    "word_train.py": "60ca41ffebcea96567bad08859627664de1c98bce3c41a486e7280c842861e74",
+    "word_dot_aux.py": "c858dc8bb90bfacab8d50d80edd7d9e4ac497990097815e090759ef8eace513e",
+    "word_dot_aux_targets.py": "48bd3db197dffd1c3004f4c14ce2c6137ce95cc72386cf2199ac791e04fd9a92"
+  },
+  "word_model_unchanged_sha256": "c446732a2905a612cd6f1dd64d2d3d01303b1c71933c34552d26f3b5052fd551",
+  "authorized_training_parent_sha256": "cce2432c0ddb8952c885dd58697589c285209588dafa81aacdd891b1660068b7",
+  "forbidden_diagnostic_checkpoints": [
+    "39dbbd523b16342afc6c18dfe52cd7887c01b7b3668e69d452420e89eb3450d0",
+    "0005c44d8257b2fcb5460446116e0cf056e415b721543fa4685649a3ee2f6a82"
+  ],
+  "routine_tests_not_repeated": "Exact tested bytes; actual runtime proof already passed; no model/data/loss/decoder edits beyond the three approved files."
+}

@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "decoderVersion": "six-dot-word-v2",
+  "artifact": {
+    "name": "braille-word-reader",
+    "version": "1.0.0-candidate.1",
+    "status": "training",
+    "file": "word-reader.tflite",
+    "sha256": "",
+    "sizeBytes": 0
+  },
+  "imageNormalization": { "kind": "none" },
+  "input": {
+    "shape": [1, 192, 480, 3],
+    "dtype": "float32",
+    "layout": "NHWC",
+    "channelOrder": "RGB",
+    "normalization": "pixel / 255.0",
+    "resizeInterpolation": "pillow_bilinear_antialias_u8_22bit",
+    "androidRawPixelCorrection": "nitro-image-0.15.1-argb8888-is-rgba",
+    "backboneNormalization": "Rescaling(2, -1) inside model"
+  },
+  "output": {
+    "shape": [1, 48, 120, 11],
+    "dtype": "float32",
+    "layout": ["objectness", "offset_x", "offset_y", "width", "height", "dot1", "dot2", "dot3", "dot4", "dot5", "dot6"]
+  },
+  "thresholds": {
+    "proposalScore": 0.25,
+    "acceptScore": 0.65,
+    "dotConfidence": 0.9,
+    "nmsIou": 0.25,
+    "minCellWidth": 0.008,
+    "minCellHeight": 0.06,
+    "edgeMargin": 0.008,
+    "maxRowDeviation": 0.55,
+    "maxGapRatio": 1.2,
+    "maxOverlapRatio": 0.5
+  },
+  "latinMasks": [1, 3, 9, 25, 17, 11, 27, 19, 10, 26, 5, 7, 13, 29, 21, 15, 31, 23, 14, 30, 37, 39, 58, 45, 61, 53],
+  "internalAcceptance": {
+    "passed": false,
+    "exactWordSuccessRate": 0,
+    "acceptedWordAccuracy": 0,
+    "evaluatedWordCount": 0,
+    "acceptedWordCount": 0,
+    "negativeImageCount": 0,
+    "negativeFalseAccepts": 0
+  },
+  "physicalCameraValidated": false,
+  "nativeSelfTest": null
+}

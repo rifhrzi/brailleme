@@ -1,0 +1,39 @@
+{
+    "status":  "passed",
+    "completed_at_utc":  "2026-09-05T22:22:33.7138239Z",
+    "scope":  "Horizontal aspect provenance verifier only; no model/data/threshold or frozen preflight changes",
+    "verifier_sha256":  "4db47633b31c0e9e907c3d0a8d6b555dcdff6a7f1b389ab257e331e65ffc0b07",
+    "tests_sha256":  "ab7f35468e112c16a0b100c1f41f2b2556f556ab9c98d0fa616963803272597d",
+    "synthetic_asset_gate_cases":  198,
+    "synthetic_flatbuffer_checks":  4,
+    "synthetic_log":  {
+                          "sha256":  "8c708767c35a06076947c3020f60acd9e6a19455425e446b484727db33c4ebfe",
+                          "file":  "horizontal-aspect-verifier-tests-final.log"
+                      },
+    "eslint":  {
+                   "exit_code":  0,
+                   "files":  [
+                                 "scripts/verify-word-model-assets.mjs",
+                                 "scripts/test-word-model-verifier.mjs"
+                             ]
+               },
+    "actual_retained_replay":  {
+                                   "config_sha256":  "5e667caadfe937cbecaa57210cee1039df0cfa9a9a0390143e65015138c48f7b",
+                                   "sha256":  "2006ee58fe834a867a31ec703c05859f80bc87ce2ac2e385defb9d436df94779",
+                                   "file":  "real-horizontal-aspect-preflight-verifier-check.json",
+                                   "preflight_sha256":  "e565be5f2a0730b9fd4a15d7978d3beb5eb22b93d358404ed909efee5b40de0c"
+                               },
+    "actual_replay_script":  {
+                                 "sha256":  "5e5e5089c7134ed53930454aff51c45e5dfe129dc2cb20849e6ce6155a0197ae",
+                                 "file":  "verify_real_horizontal_aspect_preflight.mjs"
+                             },
+    "coverage":  [
+                     "Frozen profile/range/gate/stream and same eligible parent",
+                     "Actual config/protocol/source/data/DSBI point identity",
+                     "Default OFF and point/partial/unknown integration audit",
+                     "Original private source dependency tree and source-bound141 test evidence",
+                     "Legacy no-horizontal-aspect fixtures preserved"
+                 ],
+    "no_model_execution":  true,
+    "no_gate_changes":  true
+}

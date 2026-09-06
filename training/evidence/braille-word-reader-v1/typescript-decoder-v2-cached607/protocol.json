@@ -1,0 +1,41 @@
+{
+  "created_at_utc": "2026-09-06T07:37:01.138874+00:00",
+  "scope": "Frozen607 cached public regression parity. No model/backend, native camera, fixture changes, new pixel corpus, calibration, or accuracy promotion.",
+  "decoder_version": "six-dot-word-v2",
+  "case_count": 607,
+  "box_absolute_tolerance": 1e-12,
+  "cache_file": ".braille-training-work/word-scan-v1-20260905/selected-v15/public-word-outputs.npz",
+  "replay_file": ".braille-training-work/word-scan-v1-20260905/selected-v26/cached-word-replay.json",
+  "source_sha256": {
+    "src/ml/word-decoder.ts": "f8bb0ef65a03c850c8aedccf287e00501a5bf1b4c4bba60440141567752b6c15",
+    "src/ml/word-model-contract.ts": "e985d76a5d372cf4f31a325a39ca88268422dd5c0685e50c48ee1fb69dffc99f",
+    "src/ml/word-image-processing.ts": "e97bf56d549c20f9d849c11fb5ac26c0abacf48030e847def46dbeb3e8e8248f",
+    "src/types/word-scan.ts": "f6b8ac0cf1072b3ec99f23ac8407e5d8e38c7e801a7c90f4cc2a3503761a1964",
+    "training/scripts/word_decode.py": "fa2179b74459d84055b244ac60353d52d59cd12eda80b5cc279382c28f1be444",
+    "training/scripts/word_data.py": "d692b4b28620af7e4b40ebdedccda68769feb8d3f51bd1508e807487fd32b7d7",
+    "training/scripts/word_benchmark.py": "ad7d4f3a35a8d0dd3a530dfeb8f849fde585e97cadcde5fcb043950bedd05988",
+    "training/scripts/benchmark_angelina.py": "6c7d63c8b5c461fec73e415b46df74d15c0bca455cc9f411c5fb6edd5d353353",
+    "training/scripts/word_anchor_zoom.py": "d6f5337d08368b8da55948f314bd06af7b03fa1602e40240778a9b4edea26377",
+    "scripts/word-decoder-parity/prepare.py": "863b2d79d3e64532bbba19cfc9799dd321b298914c7424c102962871aaf123a6",
+    "scripts/word-decoder-parity/compare.cjs": "bf189ba36f64e8769239f7bbd6e5c68788c43c636612a59608b81200d6b0797c",
+    "scripts/word-native-parity/geometry-reference.cjs": "a4dbeee051f06aa7d2459070e3e213ee4d28ea63d69c639cb7247d69fc751cca",
+    ".braille-training-work/word-scan-v1-20260905/selected-v26-typescript-parity-v2/prepare.py": "007654bc83cdb8f7bfaad955897cfba5bea19360adb7c993f86985d40c60281a",
+    ".braille-training-work/word-scan-v1-20260905/selected-v26-typescript-parity-v2/compare.cjs": "86e383bf6b7c1a3e0310b6916e529aeefbbbbfb834400356f7d759dd0349244e",
+    ".braille-training-work/word-scan-v1-20260905/prepare_v26_ts_parity.py": "283874d34f2c994ce5472f0512afbf30568980bd5c134551fdab9c1531f48355"
+  },
+  "bound_artifacts": {
+    ".braille-training-work/word-scan-v1-20260905/selected-v15-independent-diagnosis/protocol.json": "771320895163a7b2188d7add60873c4e151a9e0476f519a77d138c2a955178f0",
+    ".braille-training-work/word-scan-v1-20260905/selected-v26/public-benchmark.json": "53b97677aea261af1174a5f70edc81affbf272ca32f7611ae3df688638209944",
+    ".braille-training-work/word-scan-v1-20260905/selected-v26/cached-word-replay.json": "3009469908dd1e691921e04c47a38390495c5b92f472b08a9954aea65b92eadf",
+    ".braille-training-work/word-scan-v1-20260905/selected-v26/selected-validation-fullprecision.json": "fe6848be28bf6933e9d49e3b28e653acd2a9748922186bfd3e0bc51671b071e9",
+    ".braille-training-work/word-scan-v1-20260905/data/external-words.json": "e69d7c0d9582aef7d51a2c15706f6bf62bc3cdfe35d22ad28ad007301d56b41b",
+    ".braille-training-work/word-scan-v1-20260905/selected-v15/public-word-outputs.npz": "c262510395aba57e717a8ea3232d3a18cba18a8f36e9c116fa75694e2dc1b49e",
+    ".braille-training-work/word-scan-v1-20260905/selected-v26/word_reader.tflite": "406db0e55e8a5ba9e0d00fb22aadc24f19698219f375e4dcead9057cf3bf2230",
+    ".braille-training-work/word-scan-v1-20260905/selected-v15/word_reader.tflite": "406db0e55e8a5ba9e0d00fb22aadc24f19698219f375e4dcead9057cf3bf2230"
+  },
+  "per_process_memory_budget_bytes": 367001600,
+  "large_outputs_are_binary_and_untracked": [
+    "outputs.f32le",
+    "inputs.rgb"
+  ]
+}

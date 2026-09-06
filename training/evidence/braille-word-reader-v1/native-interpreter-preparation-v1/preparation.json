@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "status": "prepared_and_compiled_no_android_execution",
+  "stage": "C:\\bm-word-native-interpreter-20260906-final",
+  "compiled_report_sha256": "7cec578d0da01ec25a0e310f0877b1118efc41c1d24c7687d3546668af871064",
+  "runner_sha256": "995cedbcba3d29f5213ad47ba65d02ce4cc5aa0aac6e18db566aedad44ca0503",
+  "library_sha256": "b1fdd3d23e58df54f8ce47c704ed4bc0882be37e479fe86a87108d5f8153c422",
+  "input_manifest_sha256": "cc57718263d40e1e4e33c9182ba2c5b17ce8e144cf134acc6d31fdc286ba15ea",
+  "input_count": 6,
+  "input_bytes_total": 6635520,
+  "sources": [
+    {
+      "path": "scripts/word-native-interpreter/compare.cjs",
+      "sha256": "4fa8ade36a97e4ea36e10aa6d8aef20f62cf4c80c4c3eca3837507255f6936e7",
+      "bytes": 7627
+    },
+    {
+      "path": "scripts/word-native-interpreter/compare.test.cjs",
+      "sha256": "b678a95bec27fa30db90c9d7da694762fce6a0aa1f48ed9f9b1656806ad5596f",
+      "bytes": 5578
+    },
+    {
+      "path": "scripts/word-native-interpreter/compile.py",
+      "sha256": "793c0b0a96bb650f541705e7df458af8d042f4e80f19c1d47c4fe06ba7a36627",
+      "bytes": 5057
+    },
+    {
+      "path": "scripts/word-native-interpreter/prepare.py",
+      "sha256": "d9ce8999b4a1c3dec1313b3c8abcd804abefae78aa87abbb594a4c899522dc5c",
+      "bytes": 6330
+    },
+    {
+      "path": "scripts/word-native-interpreter/README.md",
+      "sha256": "16bd8bc0a063148155ab30ffa853c5347ba408c0244db14794dfa0a776ba7b4b",
+      "bytes": 7739
+    },
+    {
+      "path": "scripts/word-native-interpreter/run.py",
+      "sha256": "67e66176835809dbf5b5edbaab2678c2dd90678db9804334264f4e2f284a9e96",
+      "bytes": 5185
+    },
+    {
+      "path": "scripts/word-native-interpreter/word_interpreter.c",
+      "sha256": "bb09f22771ea633f7706ba7ec5ea82f5d169548b904f685df37f834d3a7fdd2c",
+      "bytes": 5993
+    }
+  ],
+  "checks": {
+    "C_compile": "passed_clang_O2_Wall_Wextra_Werror_x86_64_API29",
+    "python_syntax": "3_files_passed",
+    "node_syntax": "passed",
+    "comparator_synthetic_tests": {
+      "command": "node --test scripts/word-native-interpreter/compare.test.cjs",
+      "passed": 5,
+      "total": 5,
+      "source_sha256": "b678a95bec27fa30db90c9d7da694762fce6a0aa1f48ed9f9b1656806ad5596f",
+      "scope": "Synthetic bookkeeping only; temporary outputs removed, no native inference evidence"
+    },
+    "compile_artifact_and_current_source_hashes": "all_passed"
+  },
+  "pending": [
+    "Selected trained geometry candidate and six actual desktop TFLite outputs",
+    "Coordinated emulator window after selection/export/benchmark",
+    "Actual Android inference, tensor parity, decoder decisions and peak RSS"
+  ],
+  "operator_execution_proven": false,
+  "native_peak_rss_kib": null,
+  "main_apk_smoke_proven": false,
+  "physical_camera_proven": false,
+  "limits": [
+    "Raw oracle inputs and compiled AAR library remain in the isolated stage; this small archive retains source/protocol/compile metadata.",
+    "No Java/JNI or Nitro bridge equivalence claim; actual C API runtime remains pending.",
+    "If selection retains the nongather control, defer trained-geometry operator proof; no extra405 conversion for unselected branches."
+  ]
+}

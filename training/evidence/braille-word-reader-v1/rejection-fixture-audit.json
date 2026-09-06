@@ -1,0 +1,144 @@
+{
+  "scope": "Fixture provenance, geometry, and pixel integrity only; no model inference",
+  "status": "passed",
+  "manifest_sha256": "4d92222c0fe73691efaeeba278252741b739cd04491121abb5ab579e25170f89",
+  "audit_script_sha256": "72a414084d2154a245432080ea2a29b44339291debb3efaee43da06244ea09d3",
+  "records": 14,
+  "source_photos": 6,
+  "all_source_photos_validation_only": true,
+  "all_pixels_exact": true,
+  "max_box_coordinate_error_pixels": 0.0,
+  "no_model_or_threshold_selection": true,
+  "rows": [
+    {
+      "id": "unsupported_pattern-01",
+      "pixels_exact": true,
+      "annotation_checks": "passed",
+      "source": "books/ola/IMG_5200.labeled.jpg",
+      "selected_cells": 3,
+      "complete_in_guide": 3,
+      "source_sha256": "e1aa344690fae8981f2109705c2b8d2ef98162f45e5e7910c8ec9cdf52de8472",
+      "image_sha256": "c2671b221999c8bf1877f9eb881177ce66f6873351c9ffb54f2a13a39012dc7b"
+    },
+    {
+      "id": "unsupported_pattern-02",
+      "pixels_exact": true,
+      "annotation_checks": "passed",
+      "source": "handwritten/ang_redmi/01.labeled.jpg",
+      "selected_cells": 5,
+      "complete_in_guide": 5,
+      "source_sha256": "67bae0fe5b779314743db268023e0ad507b376fbcf67872cf1578e7e71dbab85",
+      "image_sha256": "6358fe104765542d8d0b43635e758197c5d12274cfe44f6eddba25c53891c8c3"
+    },
+    {
+      "id": "unsupported_pattern-03",
+      "pixels_exact": true,
+      "annotation_checks": "passed",
+      "source": "books/ola/IMG_5201.labeled.jpg",
+      "selected_cells": 3,
+      "complete_in_guide": 3,
+      "source_sha256": "5679be43c38f8104378f286a737704aab0211123d90a31d5dada8014872cf39f",
+      "image_sha256": "52ec357d1852e3abbb67acf6b204c7b810a208ef035d3328fa05b479ff45924c"
+    },
+    {
+      "id": "multiple_rows-01",
+      "pixels_exact": true,
+      "annotation_checks": "passed",
+      "source": "books/ola/IMG_5365.labeled.jpg",
+      "selected_cells": 7,
+      "complete_in_guide": 7,
+      "source_sha256": "07f8a7610c881ed21faccebdc55f68585c11fd927039397c616d42ad13761b87",
+      "image_sha256": "a9c3902c771f59017504786dd911dd7fc470d7ed4b722bc33d4b0a58e99e4072"
+    },
+    {
+      "id": "multiple_rows-02",
+      "pixels_exact": true,
+      "annotation_checks": "passed",
+      "source": "books/ola/IMG_5366.labeled.jpg",
+      "selected_cells": 7,
+      "complete_in_guide": 7,
+      "source_sha256": "7bbf2a7b865d19e9629a54c1640f606e57f651393d4055a80683a19bb2eeb417",
+      "image_sha256": "327ffb1018f6061a07ccf52c6f187e66352b704244cea688fa2ded13a3cf65de"
+    },
+    {
+      "id": "multiple_rows-03",
+      "pixels_exact": true,
+      "annotation_checks": "passed",
+      "source": "books/ola/IMG_5371.labeled.jpg",
+      "selected_cells": 7,
+      "complete_in_guide": 7,
+      "source_sha256": "2b1f4f69f1a0c5fbdff65acbfef8ceeefea951ca1bcc817ab7d8eaf9f8532738",
+      "image_sha256": "36c10481b4bf9c0449de1dd2af20de292c83eea1be179b0dd3953099ee1f9e96"
+    },
+    {
+      "id": "selection_cut-01",
+      "pixels_exact": true,
+      "annotation_checks": "passed",
+      "source": "books/ola/IMG_5200.labeled.jpg",
+      "selected_cells": 6,
+      "complete_in_guide": 5,
+      "source_sha256": "e1aa344690fae8981f2109705c2b8d2ef98162f45e5e7910c8ec9cdf52de8472",
+      "image_sha256": "9190ab6666e45d3ec851dd58121608a41d89be50798937b6b21c9f3a10a775fc"
+    },
+    {
+      "id": "selection_cut-02",
+      "pixels_exact": true,
+      "annotation_checks": "passed",
+      "source": "handwritten/ang_redmi/01.labeled.jpg",
+      "selected_cells": 6,
+      "complete_in_guide": 5,
+      "source_sha256": "67bae0fe5b779314743db268023e0ad507b376fbcf67872cf1578e7e71dbab85",
+      "image_sha256": "c4d3ba863713a1c7786371990cf301efcd51430c5cfc4a0e5aee395ec0842cfc"
+    },
+    {
+      "id": "selection_cut-03",
+      "pixels_exact": true,
+      "annotation_checks": "passed",
+      "source": "books/ola/IMG_5201.labeled.jpg",
+      "selected_cells": 7,
+      "complete_in_guide": 6,
+      "source_sha256": "5679be43c38f8104378f286a737704aab0211123d90a31d5dada8014872cf39f",
+      "image_sha256": "fd405298a41e6c79a05150e3792a5dbc4d52b30328dbf9c0ce0e1afe8e55a777"
+    },
+    {
+      "id": "over_limit-01",
+      "pixels_exact": true,
+      "annotation_checks": "passed",
+      "source": "books/ola/IMG_5200.labeled.jpg",
+      "selected_cells": 15,
+      "complete_in_guide": 15,
+      "source_sha256": "e1aa344690fae8981f2109705c2b8d2ef98162f45e5e7910c8ec9cdf52de8472",
+      "image_sha256": "454bc5525f13aa0b66760526bfa177b949bec9242f25590a1496ee23ed058b12"
+    },
+    {
+      "id": "over_limit-02",
+      "pixels_exact": true,
+      "annotation_checks": "passed",
+      "source": "handwritten/ang_redmi/01.labeled.jpg",
+      "selected_cells": 14,
+      "complete_in_guide": 14,
+      "source_sha256": "67bae0fe5b779314743db268023e0ad507b376fbcf67872cf1578e7e71dbab85",
+      "image_sha256": "92a9dd08b7925f14f50f04cba919a95636b5978c747c5dbec6bd26aa1159b2be"
+    },
+    {
+      "id": "over_limit-03",
+      "pixels_exact": true,
+      "annotation_checks": "passed",
+      "source": "books/ola/IMG_5201.labeled.jpg",
+      "selected_cells": 14,
+      "complete_in_guide": 14,
+      "source_sha256": "5679be43c38f8104378f286a737704aab0211123d90a31d5dada8014872cf39f",
+      "image_sha256": "d80980039ef7cc745f8b55b488901a5a144985d4d2abe9ef57a122d83e9921fd"
+    },
+    {
+      "id": "blank-white",
+      "pixels_exact": true,
+      "annotation_checks": "generated_blank"
+    },
+    {
+      "id": "blank-gray",
+      "pixels_exact": true,
+      "annotation_checks": "generated_blank"
+    }
+  ]
+}

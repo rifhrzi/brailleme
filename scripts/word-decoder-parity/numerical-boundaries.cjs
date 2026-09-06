@@ -1,0 +1,157 @@
+// Deterministic sparse tensors at representable probability and geometry boundaries.
+const assert = require('node:assert/strict');
+const crypto = require('node:crypto');
+const fs = require('node:fs');
+const path = require('node:path');
+const { execFileSync } = require('node:child_process');
+const { load, root } = require('../word-native-parity/geometry-reference.cjs');
+
+const [python, destination] = process.argv.slice(2);
+if (!python || !destination) throw new Error('Usage: node numerical-boundaries.cjs <python.exe> <report.json>');
+const { decodeWordOutput, wordBoxIou } = load(path.join(root, 'src/ml/word-decoder.ts'));
+const { DEFAULT_WORD_MODEL_THRESHOLDS, WORD_LATIN_MASKS } = load(path.join(root, 'src/ml/word-model-contract.ts'));
+const thresholds = { ...DEFAULT_WORD_MODEL_THRESHOLDS, proposalScore: 0.35, acceptScore: 0.4, dotConfidence: 0.7 };
+const selection = { x: 0, y: 0, width: 1, height: 1 };
+const cases = [];
+const sha = (data) => crypto.createHash('sha256').update(data).digest('hex');
+const step32 = (number, step) => {
+  const value = new Float32Array([number]);
+  new Uint32Array(value.buffer)[0] += step;
+  return value[0];
+};
+const step64 = (number, step) => {
+  const value = new Float64Array([number]);
+  new BigUint64Array(value.buffer)[0] += BigInt(step);
+  return value[0];
+};
+function peak(column = 48, options = {}) {
+  const { row = 24, dx = 0, dy = 0, width = 0.05, height = 0.25, score = 0.98, mask = 1 } = options;
+  const value = new Float32Array([score, dx, dy, width, height, ...Array.from({ length: 6 }, (_, bit) => mask & (1 << bit) ? 0.99 : 0.01)]);
+  return [row, column, ...new Uint32Array(value.buffer)];
+}
+function setValue(item, channel, value) {
+  const changed = [...item];
+  changed[channel + 2] = new Uint32Array(new Float32Array([value]).buffer)[0];
+  return changed;
+}
+function outputOf(peaks) {
+  const output = new Float32Array(48 * 120 * 11);
+  for (const [row, column, ...bits] of peaks) output.set(new Float32Array(new Uint32Array(bits).buffer), (row * 120 + column) * 11);
+  return output;
+}
+function add(id, group, peaks, changes = {}, expected) {
+  cases.push({ id, group, peaks, thresholds: { ...thresholds, ...changes.thresholds }, selection: changes.selection || selection, ...(changes.selectionEdges ? { selection_xyxy: changes.selectionEdges } : {}), ...(expected ? { expected } : {}) });
+}
+function runtimeSelection(fixture) {
+  if (!fixture.selection_xyxy) return fixture.selection;
+  const [x, y, right, bottom] = fixture.selection_xyxy;
+  return { x, y, width: right - x, height: bottom - y };
+}
+function actualBox(item) {
+  const result = decodeWordOutput(outputOf([item]), thresholds);
+  assert.equal(result.status, 'success');
+  return result.boxes[0];
+}
+add('blank', 'control', [], {}, { text: '', reason: 'no_grid' });
+for (const text of ['MAMA', 'KAKAK']) add(text, 'control', [...text].map((letter, index) => peak(30 + index * 9, { mask: WORD_LATIN_MASKS[letter.charCodeAt(0) - 65] })), {}, { text, reason: '' });
+for (const step of [-1, 0, 1]) {
+  const name = ['previous', 'rounded', 'next'][step + 1];
+  add(`proposal-${name}`, 'proposal', [peak(48, { score: step32(0.35, step) })], {}, { text: '', reason: step === 1 ? 'low_confidence' : 'no_grid' });
+  add(`weak-middle-${name}`, 'proposal', [peak(42), peak(51, { score: step32(0.35, step) }), peak(60)], {}, { text: '', reason: step === 1 ? 'low_confidence' : 'gap' });
+  add(`accept-${name}`, 'acceptance', [peak(48, { score: step32(0.4, step) })], {}, step === -1 ? { text: '', reason: 'low_confidence' } : { text: 'A', reason: '' });
+  add(`active-dot-${name}`, 'dot', [setValue(peak(), 5, step32(0.7, step))], {}, step === 1 ? { text: 'A', reason: '' } : { text: '', reason: 'low_confidence' });
+  add(`absent-dot-${name}`, 'dot', [setValue(peak(), 6, step32(0.3, step))], {}, step === -1 ? { text: 'A', reason: '' } : { text: '', reason: 'low_confidence' });
+  add(`minimum-width-${name}`, 'minimum_size', [peak(48, { width: step32(0.008, step) })]);
+  add(`minimum-height-${name}`, 'minimum_size', [peak(48, { height: step32(0.06, step) })]);
+  add(`gap-height-${name}`, 'gap', [peak(36, { height: step32(0.15625, step) }), peak(45, { height: step32(0.15625, step) })]);
+  add(`plateau-${name}`, 'local_maximum', [peak(48), peak(49, { score: step32(0.98, step), mask: 3 })]);
+}
+// ROI coordinates are doubles in the app. Test adjacent representable doubles
+// around each edge of boxes decoded from exact float32 tensor entries.
+for (const [index, item] of [peak(36, { dx: 0.3, dy: 0.7, width: 0.05, height: 0.21 }), peak(58, { dx: 0.6, row: 19, dy: 0.4, width: 0.07, height: 0.19 }), peak(48, { width: 0.125, height: 0.25 })].entries()) {
+  const box = actualBox(item);
+  for (const step of [-1, 0, 1]) {
+    const left = step64(box.x, step);
+    const right = step64(box.x + box.width, step);
+    const top = step64(box.y, step);
+    const bottom = step64(box.y + box.height, step);
+    add(`selection-${index}-left-${step}`, 'selection_clipping', [item], { selection: { x: left, y: 0, width: 1 - left, height: 1 } });
+    add(`selection-${index}-right-${step}`, 'selection_clipping', [item], { selection: { x: 0, y: 0, width: right, height: 1 } });
+    add(`selection-${index}-top-${step}`, 'selection_clipping', [item], { selection: { x: 0, y: top, width: 1, height: 1 - top } });
+    add(`selection-${index}-bottom-${step}`, 'selection_clipping', [item], { selection: { x: 0, y: 0, width: 1, height: bottom } });
+    add(`selection-${index}-touch-right-${step}`, 'selection_exclusion', [item], { selection: { x: right, y: 0, width: 1 - right, height: 1 } });
+    add(`selection-${index}-touch-left-${step}`, 'selection_exclusion', [item], { selection: { x: 0, y: 0, width: left, height: 1 } });
+    add(`selection-${index}-touch-bottom-${step}`, 'selection_exclusion', [item], { selection: { x: 0, y: bottom, width: 1, height: 1 - bottom } });
+    add(`selection-${index}-touch-top-${step}`, 'selection_exclusion', [item], { selection: { x: 0, y: 0, width: 1, height: top } });
+  }
+}
+for (const [side, item] of [['left', peak(12, { dx: 0.3 })], ['right', peak(107, { dx: 0.7 })], ['top', peak(48, { row: 7, dy: 0.3, height: 0.125 })], ['bottom', peak(48, { row: 41, dy: 0.7, height: 0.125 })]]) {
+  const box = actualBox(item);
+  const margin = Math.min(box.x, box.y, 1 - box.x - box.width, 1 - box.y - box.height);
+  for (const step of [-1, 0, 1]) add(`edge-${side}-${step}`, 'edge_margin', [item], { thresholds: { edgeMargin: step64(margin, step) } });
+}
+// A raw float32 width/height can differ from (right-left)/(bottom-top)
+// after conversion to double coordinates. Keep these as separate boundary cases.
+for (const [index, item] of [peak(12, { dx: 0.1, width: 0.05, row: 7, dy: 0.1, height: 0.07 }), peak(24, { dx: 0.3, width: 0.13, row: 9, dy: 0.3, height: 0.25 }), peak(58, { dx: 0.6, width: 0.07, row: 19, dy: 0.4, height: 0.19 })].entries()) {
+  const box = actualBox(item);
+  for (const step of [-1, 0, 1]) {
+    add(`raw-width-${index}-${step}`, 'raw_size', [item], { thresholds: { minCellWidth: step64(box.width, step) } });
+    add(`raw-height-${index}-${step}`, 'raw_size', [item], { thresholds: { minCellHeight: step64(box.height, step) } });
+  }
+}
+for (const [index, pair] of [
+  [peak(30, { dx: 0.3, width: 0.05, height: 0.19 }), peak(40, { dx: 0.7, width: 0.07, height: 0.21 })],
+  [peak(36, { dx: 0.6, width: 0.023, height: 0.11 }), peak(45, { dx: 0.1, width: 0.05, height: 0.13 })],
+].entries()) {
+  const [a, b] = pair.map(actualBox);
+  const medianHeight = (a.height + b.height) / 2;
+  const gap = (b.x + b.width / 2 - a.x - a.width / 2) * 480;
+  const gapThreshold = gap / medianHeight / 192;
+  for (const step of [-1, 0, 1]) add(`gap-expression-${index}-${step}`, 'gap_operation_order', pair, { thresholds: { maxGapRatio: step64(gapThreshold, step) } });
+}
+for (const [index, pair] of [
+  [peak(36, { dx: 0.3, row: 19, dy: 0.4, height: 0.19 }), peak(45, { dx: 0.7, row: 24, dy: 0.7, height: 0.21 })],
+  [peak(36, { row: 19, dy: 0.3, height: 0.25 }), peak(45, { row: 24, dy: 0.1, height: 0.25 })],
+].entries()) {
+  const [a, b] = pair.map(actualBox);
+  const rowThreshold = (b.y + b.height / 2 - (a.y + a.height / 2)) / ((a.height + b.height) / 2);
+  for (const step of [-1, 0, 1]) add(`row-expression-${index}-${step}`, 'row_operation_order', pair, { thresholds: { maxRowDeviation: step64(rowThreshold, step) } });
+}
+const overlapping = [peak(36, { dx: 0.3, width: 0.08 }), peak(40, { dx: 0.6, width: 0.08 })];
+const [first, second] = overlapping.map(actualBox);
+const nmsBoundary = wordBoxIou(first, second);
+const overlapBoundary = (Math.min(first.x + first.width, second.x + second.width) - Math.max(first.x, second.x)) / Math.min(first.width, second.width);
+for (const step of [-1, 0, 1]) {
+  add(`nms-expression-${step}`, 'nms_operation_order', overlapping, { thresholds: { nmsIou: step64(nmsBoundary, step), maxOverlapRatio: 0.99 } });
+  add(`overlap-expression-${step}`, 'overlap_operation_order', overlapping, { thresholds: { nmsIou: 0.99, maxOverlapRatio: step64(overlapBoundary, step) } });
+}
+// Frozen benchmark fixtures store xyxy. Preserve those source coordinates;
+// the app replay converts to xywh, then decoder reconstructs the right/bottom.
+for (const [index, item, left, top] of [[0, peak(24, { dx: 0.1, row: 9, dy: 0.3, height: 0.07 }), 0.05, 0.05], [1, peak(36, { dx: 0.1, row: 19, dy: 0.1, height: 0.13 }), 0.03, 0.07]]) {
+  const box = actualBox(item);
+  for (const step of [-1, 0, 1]) {
+    add(`xyxy-transport-${index}-right-${step}`, 'selection_transport', [item], { selectionEdges: [left, 0, step64(box.x + box.width, step), 1] });
+    add(`xyxy-transport-${index}-bottom-${step}`, 'selection_transport', [item], { selectionEdges: [0, top, 1, step64(box.y + box.height, step)] });
+  }
+}
+
+const fixturePath = destination.replace(/\.json$/, '') + '.fixtures.json';
+fs.mkdirSync(path.dirname(destination), { recursive: true });
+fs.writeFileSync(fixturePath, JSON.stringify({ schema_version: 1, encoding: 'row,column,eleven IEEE754 uint32 bit patterns', cases }, null, 2) + '\n');
+const reference = JSON.parse(execFileSync(python, [path.join(root, 'scripts/word-decoder-parity/numerical-boundaries.py'), fixturePath], { encoding: 'utf8', maxBuffer: 2 * 1024 * 1024 }));
+assert.equal(reference.rows.length, cases.length);
+const rows = cases.map((fixture, index) => {
+  const decoded = decodeWordOutput(outputOf(fixture.peaks), fixture.thresholds, runtimeSelection(fixture));
+  const actual = { text: decoded.status === 'success' ? decoded.text : '', reason: decoded.status === 'success' ? '' : decoded.reason };
+  if (fixture.expected) assert.deepEqual(actual, fixture.expected, `Independent expectation failed: ${fixture.id}`);
+  const expected = reference.rows[index];
+  assert.equal(expected.id, fixture.id);
+  return { id: fixture.id, group: fixture.group, typescript_text: actual.text, typescript_reason: actual.reason, python_text: expected.text, python_reason: expected.reason, match: actual.text === expected.text && actual.reason === expected.reason };
+});
+const mismatches = rows.filter((row) => !row.match);
+const sources = ['src/ml/word-decoder.ts', 'src/ml/word-model-contract.ts', 'src/types/word-scan.ts', 'training/scripts/word_decode.py', 'scripts/word-decoder-parity/numerical-boundaries.cjs', 'scripts/word-decoder-parity/numerical-boundaries.py'];
+const report = { schema_version: 1, created_at_utc: new Date().toISOString(), scope: 'Synthetic numerical-boundary regression using actual TypeScript and Python decoders; no model inference or accuracy evidence.', fixture_sha256: sha(fs.readFileSync(fixturePath)), total: rows.length, matches: rows.length - mismatches.length, mismatch_count: mismatches.length, parity_passed: mismatches.length === 0, independent_expected_cases: cases.filter((row) => row.expected).length, groups: Object.fromEntries([...new Set(rows.map((row) => row.group))].map((group) => [group, rows.filter((row) => row.group === group).length])), source_sha256: Object.fromEntries(sources.map((file) => [file, sha(fs.readFileSync(path.join(root, file)))])), python: { version: reference.python_version, numpy: reference.numpy_version, model_loaded: reference.model_loaded, torch_imported: reference.torch_imported, tensorflow_imported: reference.tensorflow_imported }, rows };
+assert.equal(report.source_sha256['training/scripts/word_decode.py'], reference.decoder_sha256, 'Python decoder changed during replay');
+fs.writeFileSync(destination, JSON.stringify(report, null, 2) + '\n');
+process.stdout.write(JSON.stringify({ total: report.total, matches: report.matches, mismatches, groups: report.groups }, null, 2) + '\n');
+if (mismatches.length) process.exitCode = 1;

@@ -110,6 +110,7 @@ export function LiveRouteView({
     useCallback(
       () => () => {
         setActivationConfirmed(false);
+        setWordDraft(INITIAL_WORD_DRAFT_STATE);
       },
       [],
     ),
@@ -124,18 +125,19 @@ export function LiveRouteView({
       <Screen testID="live-activation-gate">
         <View style={styles.hero}>
           <Text accessibilityRole="header" selectable style={styles.title}>
-            Susun satu kata
+            Pindai satu kata
           </Text>
           <Text selectable style={styles.intro}>
             Kamera hanya aktif setelah Anda menyetujuinya pada setiap kunjungan.
-            Setiap sel dipindai dan dikonfirmasi sebagai satu huruf.
+            Satu foto digunakan untuk membaca seluruh kata dari kiri ke kanan.
           </Text>
         </View>
         <SectionCard title="Sebelum kamera aktif">
           <Text selectable style={styles.body}>
             Kamera dan pemrosesan offline dimulai setelah Anda menekan tombol di
-            bawah. Pindai satu sel, tambahkan huruf yang stabil, lalu lanjutkan
-            ke sel berikutnya. Gambar dan hasil tidak disimpan atau dikirim.
+            bawah. Tempatkan satu kata utuh dalam kotak lalu tekan Pindai kata.
+            Maksimal 12 huruf A sampai Z dalam satu baris. Foto dan hasil tidak
+            disimpan atau dikirim.
           </Text>
           <View style={styles.warning}>
             <Text selectable style={styles.warningText}>
@@ -145,7 +147,7 @@ export function LiveRouteView({
             </Text>
           </View>
           <AccessibleButton
-            accessibilityHint="Membuka kamera dan mulai menyusun kata satu sel per huruf"
+            accessibilityHint="Membuka pratinjau kamera untuk memindai satu foto kata"
             label="Aktifkan kamera"
             onPress={() => setActivationConfirmed(true)}
             variant="action"

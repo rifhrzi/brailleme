@@ -1,0 +1,62 @@
+{
+  "created_at_utc": "2026-09-05T15:29:20.949915+00:00",
+  "enabled": true,
+  "metadata_path": "../dsbi-point-metadata-v1/points.json",
+  "point_metadata_sha256": "ea9592a727f7f3abcc6b017f8f22e143e90ae1541f623c43adf30104021937e8",
+  "source_sha256": {
+    "word_data.py": "abc7a31a94db497b9a48ce44bd68d96556e67014623c5645c129153844b48cb7",
+    "word_model.py": "c446732a2905a612cd6f1dd64d2d3d01303b1c71933c34552d26f3b5052fd551",
+    "word_decode.py": "bd301c5afeb4ba2e6866371665324d2de7f0a6ee252ef76ce02a5553193d63c5",
+    "word_train.py": "4d091c0a887cb25fffc1bc6e7bb7e7ab547880c5fda4b8a45ef3c09af87c3e15",
+    "word_sampling.py": "c234523277dba683e68a2863e14736bc68432da3b6ca65bb5d8a64bc7d9dc0fe",
+    "word_tail.py": "bdd4b5d12d56e25c1100a282483e7a31176b5a65beb353a0623ceea40a49dc0e",
+    "word_sources.py": "affb3488d8c25e3d0131eb4340cae29fcece563ac75373e071f97fef68f09acd",
+    "word_dsbi.py": "feecf16dba6d376415e15707c02c8f05fcf6650055da09ad9f4712099e6325ff",
+    "word_point_geometry.py": "2b932b320d191277b86ae13daecb82b5abbf0a46e9464d7360ee1e941aca760b",
+    "word_point_metadata.py": "de1cad0157e744f2f646010eac5355b88d1d11f52662d4b9353166661f59049f"
+  },
+  "training_manifest_sha256": "130c80f135af5677d6b78a5e401126f54b15204481aab6de00a88c443956c4fa",
+  "supplemental_source_index_sha256": "8d62cf1850308fb864449bbcabc4399ef4e9a9aab62216b35c8064fa634450a6",
+  "supplemental_manifest_sha256": "21dc4f93821b2282b8c0f0967430f22b44fc868d26b4a3265e6fd57995892a44",
+  "parent_checkpoint_sha256": "44372fa1c73356f3ddfce6ac1001bb9124164846fdf87c12096b6afc1d2c0443",
+  "planned_epochs": 10,
+  "planned_eligible_epochs": [
+    8,
+    9,
+    10
+  ],
+  "minimum_visible_size_pixels": [
+    4,
+    12
+  ],
+  "minimum_surviving_occupied_centers": 1,
+  "full_span_canvas_dimensions_excluded": true,
+  "coordinate_space": "Exact DSBI provided deskewed +recto.jpg pixel-index centers from raw TXT; no angle re-application; actual middle row preserved.",
+  "source_binding": "Each sidecar record exactly rederived at startup from hash-bound TRAIN annotation and (source,row,col,annotation_line,mask), with original image/cache/TRAIN membership separately audited.",
+  "visibility": "Safe center hull 0<=x<=W-1,0<=y<=H-1 after source crop, resize and every affine/rotation raster. Occupied survivors AND across stages; lost points cannot recover.",
+  "source_crop_resize": "q=(source_point-crop_origin+0.5)*scale-0.5",
+  "geometry_targets": "Only still-crossing known DSBI source boxes with occupied survivors: regress visible box clamped to canvas, objectness1, all six bits -1. This is fragment rejection geometry, not the full source cell box.",
+  "complete_target_policy": "Complete cells keep full original target; complete targets overwrite colliding fragment targets.",
+  "excluded": "Angelina partials, unlisted DSBI slots, mask-zero cells, no surviving occupied points, earlier cut boxes now fully inside, visible fragments below4x12, full-span width/height.",
+  "default_off": "Original pixels, box transforms, RNG draws, target tensors, sample order and negative exposure must match run19 exactly before launch.",
+  "limitations": [
+    "Surviving geometric occupied centers prove annotated point presence, not guaranteed post-blur optical visibility.",
+    "Overlapping/colliding cells may suppress fragments; this does not create a universal rejection guarantee.",
+    "Known external607 and14 rejection diagnostics are already observed development regressions, never independent physical holdout."
+  ],
+  "selection": "Unchanged v13 control plus eligible8-10 on frozen405 natural+stress; weak-peaks-v2 grid and >=95percent accepted precision separately per group. External607/44/66 never select checkpoints/thresholds.",
+  "preflight_audits": [
+    {
+      "path": ".braille-training-work\\word-scan-v1-20260905\\run20-independent-point-audit\\report.json",
+      "sha256": "88bbff3aa1288058225fd98cf0922286ba49b8ca2651dc49a369426c90e688b6"
+    },
+    {
+      "path": ".braille-training-work\\word-scan-v1-20260905\\run20-independent-point-audit\\gradient-report.json",
+      "sha256": "604f350c7f773b1901c614bcc865acec5072ad0c75730b18023d18a1357efde8"
+    },
+    {
+      "path": ".braille-training-work\\word-scan-v1-20260905\\run20\\preflight-tests.json",
+      "sha256": "5a1f3ce69d55ee22b88c54edae82ffd5ccd99dd2fc2a39a943b0b9566125e139"
+    }
+  ]
+}

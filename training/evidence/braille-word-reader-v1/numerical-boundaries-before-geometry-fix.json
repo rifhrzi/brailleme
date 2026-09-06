@@ -1,0 +1,1066 @@
+{
+  "schema_version": 1,
+  "created_at_utc": "2026-09-05T06:19:56.923Z",
+  "scope": "Synthetic numerical-boundary regression using actual TypeScript and Python decoders; no model inference or accuracy evidence.",
+  "fixture_sha256": "9889f4b46b14b4fac18a795e8876ff3b99339c0e2050ea58bd942c68b4f341b5",
+  "total": 114,
+  "matches": 112,
+  "mismatch_count": 2,
+  "parity_passed": false,
+  "independent_expected_cases": 18,
+  "groups": {
+    "control": 3,
+    "proposal": 6,
+    "acceptance": 3,
+    "dot": 6,
+    "minimum_size": 6,
+    "gap": 3,
+    "local_maximum": 3,
+    "selection_clipping": 36,
+    "selection_exclusion": 36,
+    "edge_margin": 12
+  },
+  "source_sha256": {
+    "src/ml/word-decoder.ts": "f51c62ba6c3abbd01619a1420760027366f3af91084ff2c302662cde72bcd05d",
+    "src/ml/word-model-contract.ts": "8d78bbaeaf7afda3177e444670a7634dae699b535e18f7c1137e0ec84bbff1a8",
+    "src/types/word-scan.ts": "f6b8ac0cf1072b3ec99f23ac8407e5d8e38c7e801a7c90f4cc2a3503761a1964",
+    "training/scripts/word_decode.py": "28201f06984638de7208633e50c7437b8fb93a58d1813eb216545a4f42df53c7",
+    "scripts/word-decoder-parity/numerical-boundaries.cjs": "3c4ac92122c2f0e8f1f3d59861f1b28749b7664850f9a76d5618c35c0b10e36b",
+    "scripts/word-decoder-parity/numerical-boundaries.py": "41777d0a968a1fa9c55c052d8d3a3891321ce6b3a8b929e64e356cff4b5500e0"
+  },
+  "python": {
+    "version": "3.12.14 (main, Aug 14 2026, 15:40:22) [MSC v.1944 64 bit (AMD64)]",
+    "numpy": "2.0.2",
+    "model_loaded": false,
+    "torch_imported": false,
+    "tensorflow_imported": false
+  },
+  "rows": [
+    {
+      "id": "blank",
+      "group": "control",
+      "typescript_text": "",
+      "typescript_reason": "no_grid",
+      "python_text": "",
+      "python_reason": "no_grid",
+      "match": true
+    },
+    {
+      "id": "MAMA",
+      "group": "control",
+      "typescript_text": "MAMA",
+      "typescript_reason": "",
+      "python_text": "MAMA",
+      "python_reason": "",
+      "match": true
+    },
+    {
+      "id": "KAKAK",
+      "group": "control",
+      "typescript_text": "KAKAK",
+      "typescript_reason": "",
+      "python_text": "KAKAK",
+      "python_reason": "",
+      "match": true
+    },
+    {
+      "id": "proposal-previous",
+      "group": "proposal",
+      "typescript_text": "",
+      "typescript_reason": "no_grid",
+      "python_text": "",
+      "python_reason": "no_grid",
+      "match": true
+    },
+    {
+      "id": "weak-middle-previous",
+      "group": "proposal",
+      "typescript_text": "",
+      "typescript_reason": "gap",
+      "python_text": "",
+      "python_reason": "gap",
+      "match": true
+    },
+    {
+      "id": "accept-previous",
+      "group": "acceptance",
+      "typescript_text": "",
+      "typescript_reason": "low_confidence",
+      "python_text": "",
+      "python_reason": "low_confidence",
+      "match": true
+    },
+    {
+      "id": "active-dot-previous",
+      "group": "dot",
+      "typescript_text": "",
+      "typescript_reason": "low_confidence",
+      "python_text": "",
+      "python_reason": "low_confidence",
+      "match": true
+    },
+    {
+      "id": "absent-dot-previous",
+      "group": "dot",
+      "typescript_text": "A",
+      "typescript_reason": "",
+      "python_text": "A",
+      "python_reason": "",
+      "match": true
+    },
+    {
+      "id": "minimum-width-previous",
+      "group": "minimum_size",
+      "typescript_text": "",
+      "typescript_reason": "too_far",
+      "python_text": "",
+      "python_reason": "too_far",
+      "match": true
+    },
+    {
+      "id": "minimum-height-previous",
+      "group": "minimum_size",
+      "typescript_text": "",
+      "typescript_reason": "too_far",
+      "python_text": "",
+      "python_reason": "too_far",
+      "match": true
+    },
+    {
+      "id": "gap-height-previous",
+      "group": "gap",
+      "typescript_text": "",
+      "typescript_reason": "gap",
+      "python_text": "",
+      "python_reason": "gap",
+      "match": true
+    },
+    {
+      "id": "plateau-previous",
+      "group": "local_maximum",
+      "typescript_text": "A",
+      "typescript_reason": "",
+      "python_text": "A",
+      "python_reason": "",
+      "match": true
+    },
+    {
+      "id": "proposal-rounded",
+      "group": "proposal",
+      "typescript_text": "",
+      "typescript_reason": "no_grid",
+      "python_text": "",
+      "python_reason": "no_grid",
+      "match": true
+    },
+    {
+      "id": "weak-middle-rounded",
+      "group": "proposal",
+      "typescript_text": "",
+      "typescript_reason": "gap",
+      "python_text": "",
+      "python_reason": "gap",
+      "match": true
+    },
+    {
+      "id": "accept-rounded",
+      "group": "acceptance",
+      "typescript_text": "A",
+      "typescript_reason": "",
+      "python_text": "A",
+      "python_reason": "",
+      "match": true
+    },
+    {
+      "id": "active-dot-rounded",
+      "group": "dot",
+      "typescript_text": "",
+      "typescript_reason": "low_confidence",
+      "python_text": "",
+      "python_reason": "low_confidence",
+      "match": true
+    },
+    {
+      "id": "absent-dot-rounded",
+      "group": "dot",
+      "typescript_text": "",
+      "typescript_reason": "low_confidence",
+      "python_text": "",
+      "python_reason": "low_confidence",
+      "match": true
+    },
+    {
+      "id": "minimum-width-rounded",
+      "group": "minimum_size",
+      "typescript_text": "A",
+      "typescript_reason": "",
+      "python_text": "A",
+      "python_reason": "",
+      "match": true
+    },
+    {
+      "id": "minimum-height-rounded",
+      "group": "minimum_size",
+      "typescript_text": "",
+      "typescript_reason": "too_far",
+      "python_text": "",
+      "python_reason": "too_far",
+      "match": true
+    },
+    {
+      "id": "gap-height-rounded",
+      "group": "gap",
+      "typescript_text": "",
+      "typescript_reason": "gap",
+      "python_text": "",
+      "python_reason": "gap",
+      "match": true
+    },
+    {
+      "id": "plateau-rounded",
+      "group": "local_maximum",
+      "typescript_text": "A",
+      "typescript_reason": "",
+      "python_text": "A",
+      "python_reason": "",
+      "match": true
+    },
+    {
+      "id": "proposal-next",
+      "group": "proposal",
+      "typescript_text": "",
+      "typescript_reason": "low_confidence",
+      "python_text": "",
+      "python_reason": "low_confidence",
+      "match": true
+    },
+    {
+      "id": "weak-middle-next",
+      "group": "proposal",
+      "typescript_text": "",
+      "typescript_reason": "low_confidence",
+      "python_text": "",
+      "python_reason": "low_confidence",
+      "match": true
+    },
+    {
+      "id": "accept-next",
+      "group": "acceptance",
+      "typescript_text": "A",
+      "typescript_reason": "",
+      "python_text": "A",
+      "python_reason": "",
+      "match": true
+    },
+    {
+      "id": "active-dot-next",
+      "group": "dot",
+      "typescript_text": "A",
+      "typescript_reason": "",
+      "python_text": "A",
+      "python_reason": "",
+      "match": true
+    },
+    {
+      "id": "absent-dot-next",
+      "group": "dot",
+      "typescript_text": "",
+      "typescript_reason": "low_confidence",
+      "python_text": "",
+      "python_reason": "low_confidence",
+      "match": true
+    },
+    {
+      "id": "minimum-width-next",
+      "group": "minimum_size",
+      "typescript_text": "A",
+      "typescript_reason": "",
+      "python_text": "A",
+      "python_reason": "",
+      "match": true
+    },
+    {
+      "id": "minimum-height-next",
+      "group": "minimum_size",
+      "typescript_text": "A",
+      "typescript_reason": "",
+      "python_text": "A",
+      "python_reason": "",
+      "match": true
+    },
+    {
+      "id": "gap-height-next",
+      "group": "gap",
+      "typescript_text": "AA",
+      "typescript_reason": "",
+      "python_text": "AA",
+      "python_reason": "",
+      "match": true
+    },
+    {
+      "id": "plateau-next",
+      "group": "local_maximum",
+      "typescript_text": "B",
+      "typescript_reason": "",
+      "python_text": "B",
+      "python_reason": "",
+      "match": true
+    },
+    {
+      "id": "selection-0-left--1",
+      "group": "selection_clipping",
+      "typescript_text": "A",
+      "typescript_reason": "",
+      "python_text": "A",
+      "python_reason": "",
+      "match": true
+    },
+    {
+      "id": "selection-0-right--1",
+      "group": "selection_clipping",
+      "typescript_text": "",
+      "typescript_reason": "clipped",
+      "python_text": "",
+      "python_reason": "clipped",
+      "match": true
+    },
+    {
+      "id": "selection-0-top--1",
+      "group": "selection_clipping",
+      "typescript_text": "A",
+      "typescript_reason": "",
+      "python_text": "A",
+      "python_reason": "",
+      "match": true
+    },
+    {
+      "id": "selection-0-bottom--1",
+      "group": "selection_clipping",
+      "typescript_text": "",
+      "typescript_reason": "clipped",
+      "python_text": "",
+      "python_reason": "clipped",
+      "match": true
+    },
+    {
+      "id": "selection-0-touch-right--1",
+      "group": "selection_exclusion",
+      "typescript_text": "",
+      "typescript_reason": "clipped",
+      "python_text": "",
+      "python_reason": "clipped",
+      "match": true
+    },
+    {
+      "id": "selection-0-touch-left--1",
+      "group": "selection_exclusion",
+      "typescript_text": "",
+      "typescript_reason": "no_grid",
+      "python_text": "",
+      "python_reason": "no_grid",
+      "match": true
+    },
+    {
+      "id": "selection-0-touch-bottom--1",
+      "group": "selection_exclusion",
+      "typescript_text": "",
+      "typescript_reason": "clipped",
+      "python_text": "",
+      "python_reason": "clipped",
+      "match": true
+    },
+    {
+      "id": "selection-0-touch-top--1",
+      "group": "selection_exclusion",
+      "typescript_text": "",
+      "typescript_reason": "no_grid",
+      "python_text": "",
+      "python_reason": "no_grid",
+      "match": true
+    },
+    {
+      "id": "selection-0-left-0",
+      "group": "selection_clipping",
+      "typescript_text": "A",
+      "typescript_reason": "",
+      "python_text": "A",
+      "python_reason": "",
+      "match": true
+    },
+    {
+      "id": "selection-0-right-0",
+      "group": "selection_clipping",
+      "typescript_text": "A",
+      "typescript_reason": "",
+      "python_text": "A",
+      "python_reason": "",
+      "match": true
+    },
+    {
+      "id": "selection-0-top-0",
+      "group": "selection_clipping",
+      "typescript_text": "A",
+      "typescript_reason": "",
+      "python_text": "A",
+      "python_reason": "",
+      "match": true
+    },
+    {
+      "id": "selection-0-bottom-0",
+      "group": "selection_clipping",
+      "typescript_text": "A",
+      "typescript_reason": "",
+      "python_text": "A",
+      "python_reason": "",
+      "match": true
+    },
+    {
+      "id": "selection-0-touch-right-0",
+      "group": "selection_exclusion",
+      "typescript_text": "",
+      "typescript_reason": "no_grid",
+      "python_text": "",
+      "python_reason": "no_grid",
+      "match": true
+    },
+    {
+      "id": "selection-0-touch-left-0",
+      "group": "selection_exclusion",
+      "typescript_text": "",
+      "typescript_reason": "no_grid",
+      "python_text": "",
+      "python_reason": "no_grid",
+      "match": true
+    },
+    {
+      "id": "selection-0-touch-bottom-0",
+      "group": "selection_exclusion",
+      "typescript_text": "",
+      "typescript_reason": "no_grid",
+      "python_text": "",
+      "python_reason": "no_grid",
+      "match": true
+    },
+    {
+      "id": "selection-0-touch-top-0",
+      "group": "selection_exclusion",
+      "typescript_text": "",
+      "typescript_reason": "no_grid",
+      "python_text": "",
+      "python_reason": "no_grid",
+      "match": true
+    },
+    {
+      "id": "selection-0-left-1",
+      "group": "selection_clipping",
+      "typescript_text": "",
+      "typescript_reason": "clipped",
+      "python_text": "",
+      "python_reason": "clipped",
+      "match": true
+    },
+    {
+      "id": "selection-0-right-1",
+      "group": "selection_clipping",
+      "typescript_text": "A",
+      "typescript_reason": "",
+      "python_text": "A",
+      "python_reason": "",
+      "match": true
+    },
+    {
+      "id": "selection-0-top-1",
+      "group": "selection_clipping",
+      "typescript_text": "",
+      "typescript_reason": "clipped",
+      "python_text": "",
+      "python_reason": "clipped",
+      "match": true
+    },
+    {
+      "id": "selection-0-bottom-1",
+      "group": "selection_clipping",
+      "typescript_text": "A",
+      "typescript_reason": "",
+      "python_text": "A",
+      "python_reason": "",
+      "match": true
+    },
+    {
+      "id": "selection-0-touch-right-1",
+      "group": "selection_exclusion",
+      "typescript_text": "",
+      "typescript_reason": "no_grid",
+      "python_text": "",
+      "python_reason": "no_grid",
+      "match": true
+    },
+    {
+      "id": "selection-0-touch-left-1",
+      "group": "selection_exclusion",
+      "typescript_text": "",
+      "typescript_reason": "clipped",
+      "python_text": "",
+      "python_reason": "clipped",
+      "match": true
+    },
+    {
+      "id": "selection-0-touch-bottom-1",
+      "group": "selection_exclusion",
+      "typescript_text": "",
+      "typescript_reason": "no_grid",
+      "python_text": "",
+      "python_reason": "no_grid",
+      "match": true
+    },
+    {
+      "id": "selection-0-touch-top-1",
+      "group": "selection_exclusion",
+      "typescript_text": "",
+      "typescript_reason": "clipped",
+      "python_text": "",
+      "python_reason": "clipped",
+      "match": true
+    },
+    {
+      "id": "selection-1-left--1",
+      "group": "selection_clipping",
+      "typescript_text": "A",
+      "typescript_reason": "",
+      "python_text": "A",
+      "python_reason": "",
+      "match": true
+    },
+    {
+      "id": "selection-1-right--1",
+      "group": "selection_clipping",
+      "typescript_text": "",
+      "typescript_reason": "clipped",
+      "python_text": "",
+      "python_reason": "clipped",
+      "match": true
+    },
+    {
+      "id": "selection-1-top--1",
+      "group": "selection_clipping",
+      "typescript_text": "A",
+      "typescript_reason": "",
+      "python_text": "A",
+      "python_reason": "",
+      "match": true
+    },
+    {
+      "id": "selection-1-bottom--1",
+      "group": "selection_clipping",
+      "typescript_text": "",
+      "typescript_reason": "clipped",
+      "python_text": "",
+      "python_reason": "clipped",
+      "match": true
+    },
+    {
+      "id": "selection-1-touch-right--1",
+      "group": "selection_exclusion",
+      "typescript_text": "",
+      "typescript_reason": "clipped",
+      "python_text": "",
+      "python_reason": "clipped",
+      "match": true
+    },
+    {
+      "id": "selection-1-touch-left--1",
+      "group": "selection_exclusion",
+      "typescript_text": "",
+      "typescript_reason": "no_grid",
+      "python_text": "",
+      "python_reason": "no_grid",
+      "match": true
+    },
+    {
+      "id": "selection-1-touch-bottom--1",
+      "group": "selection_exclusion",
+      "typescript_text": "",
+      "typescript_reason": "clipped",
+      "python_text": "",
+      "python_reason": "clipped",
+      "match": true
+    },
+    {
+      "id": "selection-1-touch-top--1",
+      "group": "selection_exclusion",
+      "typescript_text": "",
+      "typescript_reason": "no_grid",
+      "python_text": "",
+      "python_reason": "no_grid",
+      "match": true
+    },
+    {
+      "id": "selection-1-left-0",
+      "group": "selection_clipping",
+      "typescript_text": "A",
+      "typescript_reason": "",
+      "python_text": "A",
+      "python_reason": "",
+      "match": true
+    },
+    {
+      "id": "selection-1-right-0",
+      "group": "selection_clipping",
+      "typescript_text": "A",
+      "typescript_reason": "",
+      "python_text": "A",
+      "python_reason": "",
+      "match": true
+    },
+    {
+      "id": "selection-1-top-0",
+      "group": "selection_clipping",
+      "typescript_text": "A",
+      "typescript_reason": "",
+      "python_text": "A",
+      "python_reason": "",
+      "match": true
+    },
+    {
+      "id": "selection-1-bottom-0",
+      "group": "selection_clipping",
+      "typescript_text": "A",
+      "typescript_reason": "",
+      "python_text": "A",
+      "python_reason": "",
+      "match": true
+    },
+    {
+      "id": "selection-1-touch-right-0",
+      "group": "selection_exclusion",
+      "typescript_text": "",
+      "typescript_reason": "no_grid",
+      "python_text": "",
+      "python_reason": "no_grid",
+      "match": true
+    },
+    {
+      "id": "selection-1-touch-left-0",
+      "group": "selection_exclusion",
+      "typescript_text": "",
+      "typescript_reason": "no_grid",
+      "python_text": "",
+      "python_reason": "no_grid",
+      "match": true
+    },
+    {
+      "id": "selection-1-touch-bottom-0",
+      "group": "selection_exclusion",
+      "typescript_text": "",
+      "typescript_reason": "no_grid",
+      "python_text": "",
+      "python_reason": "no_grid",
+      "match": true
+    },
+    {
+      "id": "selection-1-touch-top-0",
+      "group": "selection_exclusion",
+      "typescript_text": "",
+      "typescript_reason": "no_grid",
+      "python_text": "",
+      "python_reason": "no_grid",
+      "match": true
+    },
+    {
+      "id": "selection-1-left-1",
+      "group": "selection_clipping",
+      "typescript_text": "",
+      "typescript_reason": "clipped",
+      "python_text": "",
+      "python_reason": "clipped",
+      "match": true
+    },
+    {
+      "id": "selection-1-right-1",
+      "group": "selection_clipping",
+      "typescript_text": "A",
+      "typescript_reason": "",
+      "python_text": "A",
+      "python_reason": "",
+      "match": true
+    },
+    {
+      "id": "selection-1-top-1",
+      "group": "selection_clipping",
+      "typescript_text": "",
+      "typescript_reason": "clipped",
+      "python_text": "",
+      "python_reason": "clipped",
+      "match": true
+    },
+    {
+      "id": "selection-1-bottom-1",
+      "group": "selection_clipping",
+      "typescript_text": "A",
+      "typescript_reason": "",
+      "python_text": "A",
+      "python_reason": "",
+      "match": true
+    },
+    {
+      "id": "selection-1-touch-right-1",
+      "group": "selection_exclusion",
+      "typescript_text": "",
+      "typescript_reason": "no_grid",
+      "python_text": "",
+      "python_reason": "no_grid",
+      "match": true
+    },
+    {
+      "id": "selection-1-touch-left-1",
+      "group": "selection_exclusion",
+      "typescript_text": "",
+      "typescript_reason": "clipped",
+      "python_text": "",
+      "python_reason": "clipped",
+      "match": true
+    },
+    {
+      "id": "selection-1-touch-bottom-1",
+      "group": "selection_exclusion",
+      "typescript_text": "",
+      "typescript_reason": "no_grid",
+      "python_text": "",
+      "python_reason": "no_grid",
+      "match": true
+    },
+    {
+      "id": "selection-1-touch-top-1",
+      "group": "selection_exclusion",
+      "typescript_text": "",
+      "typescript_reason": "clipped",
+      "python_text": "",
+      "python_reason": "clipped",
+      "match": true
+    },
+    {
+      "id": "selection-2-left--1",
+      "group": "selection_clipping",
+      "typescript_text": "A",
+      "typescript_reason": "",
+      "python_text": "A",
+      "python_reason": "",
+      "match": true
+    },
+    {
+      "id": "selection-2-right--1",
+      "group": "selection_clipping",
+      "typescript_text": "",
+      "typescript_reason": "clipped",
+      "python_text": "",
+      "python_reason": "clipped",
+      "match": true
+    },
+    {
+      "id": "selection-2-top--1",
+      "group": "selection_clipping",
+      "typescript_text": "A",
+      "typescript_reason": "",
+      "python_text": "A",
+      "python_reason": "",
+      "match": true
+    },
+    {
+      "id": "selection-2-bottom--1",
+      "group": "selection_clipping",
+      "typescript_text": "",
+      "typescript_reason": "clipped",
+      "python_text": "",
+      "python_reason": "clipped",
+      "match": true
+    },
+    {
+      "id": "selection-2-touch-right--1",
+      "group": "selection_exclusion",
+      "typescript_text": "",
+      "typescript_reason": "clipped",
+      "python_text": "",
+      "python_reason": "clipped",
+      "match": true
+    },
+    {
+      "id": "selection-2-touch-left--1",
+      "group": "selection_exclusion",
+      "typescript_text": "",
+      "typescript_reason": "no_grid",
+      "python_text": "",
+      "python_reason": "no_grid",
+      "match": true
+    },
+    {
+      "id": "selection-2-touch-bottom--1",
+      "group": "selection_exclusion",
+      "typescript_text": "",
+      "typescript_reason": "clipped",
+      "python_text": "",
+      "python_reason": "clipped",
+      "match": true
+    },
+    {
+      "id": "selection-2-touch-top--1",
+      "group": "selection_exclusion",
+      "typescript_text": "",
+      "typescript_reason": "no_grid",
+      "python_text": "",
+      "python_reason": "no_grid",
+      "match": true
+    },
+    {
+      "id": "selection-2-left-0",
+      "group": "selection_clipping",
+      "typescript_text": "A",
+      "typescript_reason": "",
+      "python_text": "A",
+      "python_reason": "",
+      "match": true
+    },
+    {
+      "id": "selection-2-right-0",
+      "group": "selection_clipping",
+      "typescript_text": "A",
+      "typescript_reason": "",
+      "python_text": "A",
+      "python_reason": "",
+      "match": true
+    },
+    {
+      "id": "selection-2-top-0",
+      "group": "selection_clipping",
+      "typescript_text": "A",
+      "typescript_reason": "",
+      "python_text": "A",
+      "python_reason": "",
+      "match": true
+    },
+    {
+      "id": "selection-2-bottom-0",
+      "group": "selection_clipping",
+      "typescript_text": "A",
+      "typescript_reason": "",
+      "python_text": "A",
+      "python_reason": "",
+      "match": true
+    },
+    {
+      "id": "selection-2-touch-right-0",
+      "group": "selection_exclusion",
+      "typescript_text": "",
+      "typescript_reason": "no_grid",
+      "python_text": "",
+      "python_reason": "no_grid",
+      "match": true
+    },
+    {
+      "id": "selection-2-touch-left-0",
+      "group": "selection_exclusion",
+      "typescript_text": "",
+      "typescript_reason": "no_grid",
+      "python_text": "",
+      "python_reason": "no_grid",
+      "match": true
+    },
+    {
+      "id": "selection-2-touch-bottom-0",
+      "group": "selection_exclusion",
+      "typescript_text": "",
+      "typescript_reason": "no_grid",
+      "python_text": "",
+      "python_reason": "no_grid",
+      "match": true
+    },
+    {
+      "id": "selection-2-touch-top-0",
+      "group": "selection_exclusion",
+      "typescript_text": "",
+      "typescript_reason": "no_grid",
+      "python_text": "",
+      "python_reason": "no_grid",
+      "match": true
+    },
+    {
+      "id": "selection-2-left-1",
+      "group": "selection_clipping",
+      "typescript_text": "",
+      "typescript_reason": "clipped",
+      "python_text": "",
+      "python_reason": "clipped",
+      "match": true
+    },
+    {
+      "id": "selection-2-right-1",
+      "group": "selection_clipping",
+      "typescript_text": "A",
+      "typescript_reason": "",
+      "python_text": "A",
+      "python_reason": "",
+      "match": true
+    },
+    {
+      "id": "selection-2-top-1",
+      "group": "selection_clipping",
+      "typescript_text": "",
+      "typescript_reason": "clipped",
+      "python_text": "",
+      "python_reason": "clipped",
+      "match": true
+    },
+    {
+      "id": "selection-2-bottom-1",
+      "group": "selection_clipping",
+      "typescript_text": "A",
+      "typescript_reason": "",
+      "python_text": "A",
+      "python_reason": "",
+      "match": true
+    },
+    {
+      "id": "selection-2-touch-right-1",
+      "group": "selection_exclusion",
+      "typescript_text": "",
+      "typescript_reason": "no_grid",
+      "python_text": "",
+      "python_reason": "no_grid",
+      "match": true
+    },
+    {
+      "id": "selection-2-touch-left-1",
+      "group": "selection_exclusion",
+      "typescript_text": "",
+      "typescript_reason": "clipped",
+      "python_text": "",
+      "python_reason": "clipped",
+      "match": true
+    },
+    {
+      "id": "selection-2-touch-bottom-1",
+      "group": "selection_exclusion",
+      "typescript_text": "",
+      "typescript_reason": "no_grid",
+      "python_text": "",
+      "python_reason": "no_grid",
+      "match": true
+    },
+    {
+      "id": "selection-2-touch-top-1",
+      "group": "selection_exclusion",
+      "typescript_text": "",
+      "typescript_reason": "clipped",
+      "python_text": "",
+      "python_reason": "clipped",
+      "match": true
+    },
+    {
+      "id": "edge-left--1",
+      "group": "edge_margin",
+      "typescript_text": "A",
+      "typescript_reason": "",
+      "python_text": "A",
+      "python_reason": "",
+      "match": true
+    },
+    {
+      "id": "edge-left-0",
+      "group": "edge_margin",
+      "typescript_text": "A",
+      "typescript_reason": "",
+      "python_text": "A",
+      "python_reason": "",
+      "match": true
+    },
+    {
+      "id": "edge-left-1",
+      "group": "edge_margin",
+      "typescript_text": "",
+      "typescript_reason": "clipped",
+      "python_text": "",
+      "python_reason": "clipped",
+      "match": true
+    },
+    {
+      "id": "edge-right--1",
+      "group": "edge_margin",
+      "typescript_text": "A",
+      "typescript_reason": "",
+      "python_text": "A",
+      "python_reason": "",
+      "match": true
+    },
+    {
+      "id": "edge-right-0",
+      "group": "edge_margin",
+      "typescript_text": "A",
+      "typescript_reason": "",
+      "python_text": "A",
+      "python_reason": "",
+      "match": true
+    },
+    {
+      "id": "edge-right-1",
+      "group": "edge_margin",
+      "typescript_text": "A",
+      "typescript_reason": "",
+      "python_text": "",
+      "python_reason": "clipped",
+      "match": false
+    },
+    {
+      "id": "edge-top--1",
+      "group": "edge_margin",
+      "typescript_text": "A",
+      "typescript_reason": "",
+      "python_text": "A",
+      "python_reason": "",
+      "match": true
+    },
+    {
+      "id": "edge-top-0",
+      "group": "edge_margin",
+      "typescript_text": "A",
+      "typescript_reason": "",
+      "python_text": "A",
+      "python_reason": "",
+      "match": true
+    },
+    {
+      "id": "edge-top-1",
+      "group": "edge_margin",
+      "typescript_text": "",
+      "typescript_reason": "clipped",
+      "python_text": "",
+      "python_reason": "clipped",
+      "match": true
+    },
+    {
+      "id": "edge-bottom--1",
+      "group": "edge_margin",
+      "typescript_text": "A",
+      "typescript_reason": "",
+      "python_text": "A",
+      "python_reason": "",
+      "match": true
+    },
+    {
+      "id": "edge-bottom-0",
+      "group": "edge_margin",
+      "typescript_text": "A",
+      "typescript_reason": "",
+      "python_text": "A",
+      "python_reason": "",
+      "match": true
+    },
+    {
+      "id": "edge-bottom-1",
+      "group": "edge_margin",
+      "typescript_text": "A",
+      "typescript_reason": "",
+      "python_text": "",
+      "python_reason": "clipped",
+      "match": false
+    }
+  ]
+}

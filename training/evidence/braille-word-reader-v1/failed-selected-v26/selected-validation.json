@@ -1,0 +1,286 @@
+{
+  "source_checkpoint": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\selected-v15\\best-word.keras",
+  "checkpoint_sha256": "cce2432c0ddb8952c885dd58697589c285209588dafa81aacdd891b1660068b7",
+  "thresholds": {
+    "proposalScore": 0.25,
+    "acceptScore": 0.25,
+    "dotConfidence": 0.7,
+    "nmsIou": 0.25,
+    "minCellWidth": 0.008,
+    "minCellHeight": 0.06,
+    "edgeMargin": 0.008,
+    "maxRowDeviation": 0.55,
+    "maxGapRatio": 1.2,
+    "maxOverlapRatio": 0.5
+  },
+  "words": {
+    "total": 405,
+    "accepted": 359,
+    "correct": 355,
+    "exact_word_accuracy": 0.8765432098765432,
+    "accepted_accuracy": 0.9888579387186629,
+    "by_length": {
+      "1": {
+        "total": 87,
+        "accepted": 74,
+        "correct": 74,
+        "exact_word_accuracy": 0.8505747126436781,
+        "accepted_accuracy": 1.0
+      },
+      "2": {
+        "total": 63,
+        "accepted": 57,
+        "correct": 57,
+        "exact_word_accuracy": 0.9047619047619048,
+        "accepted_accuracy": 1.0
+      },
+      "3": {
+        "total": 51,
+        "accepted": 46,
+        "correct": 45,
+        "exact_word_accuracy": 0.8823529411764706,
+        "accepted_accuracy": 0.9782608695652174
+      },
+      "4": {
+        "total": 33,
+        "accepted": 32,
+        "correct": 31,
+        "exact_word_accuracy": 0.9393939393939394,
+        "accepted_accuracy": 0.96875
+      },
+      "5": {
+        "total": 30,
+        "accepted": 28,
+        "correct": 26,
+        "exact_word_accuracy": 0.8666666666666667,
+        "accepted_accuracy": 0.9285714285714286
+      },
+      "6": {
+        "total": 69,
+        "accepted": 62,
+        "correct": 62,
+        "exact_word_accuracy": 0.8985507246376812,
+        "accepted_accuracy": 1.0
+      },
+      "7": {
+        "total": 24,
+        "accepted": 18,
+        "correct": 18,
+        "exact_word_accuracy": 0.75,
+        "accepted_accuracy": 1.0
+      },
+      "8": {
+        "total": 33,
+        "accepted": 27,
+        "correct": 27,
+        "exact_word_accuracy": 0.8181818181818182,
+        "accepted_accuracy": 1.0
+      },
+      "9": {
+        "total": 15,
+        "accepted": 15,
+        "correct": 15,
+        "exact_word_accuracy": 1.0,
+        "accepted_accuracy": 1.0
+      }
+    },
+    "rejection_reasons": {
+      "clipped": 7,
+      "unsupported_pattern": 3,
+      "low_confidence": 6,
+      "no_grid": 30
+    }
+  },
+  "decoder_version": "six-dot-word-v2",
+  "imageNormalization": {
+    "kind": "per_channel_standardize_grayscale",
+    "location": "inside_model_before_backbone_rescaling",
+    "variance": "population",
+    "stdFloor": 0.001,
+    "targetMean": 0.5,
+    "targetStd": 0.05,
+    "clip": [
+      0,
+      1
+    ],
+    "grayscale": "mean_of_standardized_channels",
+    "outputChannels": 3
+  },
+  "validation_groups": {
+    "natural": {
+      "total": 135,
+      "accepted": 129,
+      "correct": 129,
+      "exact_word_accuracy": 0.9555555555555556,
+      "accepted_accuracy": 1.0,
+      "by_length": {
+        "1": {
+          "total": 29,
+          "accepted": 27,
+          "correct": 27,
+          "exact_word_accuracy": 0.9310344827586207,
+          "accepted_accuracy": 1.0
+        },
+        "2": {
+          "total": 21,
+          "accepted": 20,
+          "correct": 20,
+          "exact_word_accuracy": 0.9523809523809523,
+          "accepted_accuracy": 1.0
+        },
+        "3": {
+          "total": 17,
+          "accepted": 17,
+          "correct": 17,
+          "exact_word_accuracy": 1.0,
+          "accepted_accuracy": 1.0
+        },
+        "4": {
+          "total": 11,
+          "accepted": 11,
+          "correct": 11,
+          "exact_word_accuracy": 1.0,
+          "accepted_accuracy": 1.0
+        },
+        "5": {
+          "total": 10,
+          "accepted": 10,
+          "correct": 10,
+          "exact_word_accuracy": 1.0,
+          "accepted_accuracy": 1.0
+        },
+        "6": {
+          "total": 23,
+          "accepted": 23,
+          "correct": 23,
+          "exact_word_accuracy": 1.0,
+          "accepted_accuracy": 1.0
+        },
+        "7": {
+          "total": 8,
+          "accepted": 7,
+          "correct": 7,
+          "exact_word_accuracy": 0.875,
+          "accepted_accuracy": 1.0
+        },
+        "8": {
+          "total": 11,
+          "accepted": 9,
+          "correct": 9,
+          "exact_word_accuracy": 0.8181818181818182,
+          "accepted_accuracy": 1.0
+        },
+        "9": {
+          "total": 5,
+          "accepted": 5,
+          "correct": 5,
+          "exact_word_accuracy": 1.0,
+          "accepted_accuracy": 1.0
+        }
+      },
+      "rejection_reasons": {
+        "clipped": 3,
+        "unsupported_pattern": 1,
+        "low_confidence": 2
+      }
+    },
+    "stress": {
+      "total": 270,
+      "accepted": 230,
+      "correct": 226,
+      "exact_word_accuracy": 0.837037037037037,
+      "accepted_accuracy": 0.9826086956521739,
+      "by_length": {
+        "1": {
+          "total": 58,
+          "accepted": 47,
+          "correct": 47,
+          "exact_word_accuracy": 0.8103448275862069,
+          "accepted_accuracy": 1.0
+        },
+        "2": {
+          "total": 42,
+          "accepted": 37,
+          "correct": 37,
+          "exact_word_accuracy": 0.8809523809523809,
+          "accepted_accuracy": 1.0
+        },
+        "3": {
+          "total": 34,
+          "accepted": 29,
+          "correct": 28,
+          "exact_word_accuracy": 0.8235294117647058,
+          "accepted_accuracy": 0.9655172413793104
+        },
+        "4": {
+          "total": 22,
+          "accepted": 21,
+          "correct": 20,
+          "exact_word_accuracy": 0.9090909090909091,
+          "accepted_accuracy": 0.9523809523809523
+        },
+        "5": {
+          "total": 20,
+          "accepted": 18,
+          "correct": 16,
+          "exact_word_accuracy": 0.8,
+          "accepted_accuracy": 0.8888888888888888
+        },
+        "6": {
+          "total": 46,
+          "accepted": 39,
+          "correct": 39,
+          "exact_word_accuracy": 0.8478260869565217,
+          "accepted_accuracy": 1.0
+        },
+        "7": {
+          "total": 16,
+          "accepted": 11,
+          "correct": 11,
+          "exact_word_accuracy": 0.6875,
+          "accepted_accuracy": 1.0
+        },
+        "8": {
+          "total": 22,
+          "accepted": 18,
+          "correct": 18,
+          "exact_word_accuracy": 0.8181818181818182,
+          "accepted_accuracy": 1.0
+        },
+        "9": {
+          "total": 10,
+          "accepted": 10,
+          "correct": 10,
+          "exact_word_accuracy": 1.0,
+          "accepted_accuracy": 1.0
+        }
+      },
+      "rejection_reasons": {
+        "low_confidence": 4,
+        "clipped": 4,
+        "unsupported_pattern": 2,
+        "no_grid": 30
+      }
+    }
+  },
+  "equal_group_mean_exact": 0.8962962962962964,
+  "both_group_precision_gates_pass": true,
+  "oracle": {
+    "backend": "torch",
+    "tf32_enabled": false,
+    "fixture_sha256": "e2ab968f7c4dcf7e774181fde687e1321f58d20567528af4b21fd03ff5a3e625",
+    "fixture_file": "validation-stress-selection.json",
+    "checkpoint_sha256": "cce2432c0ddb8952c885dd58697589c285209588dafa81aacdd891b1660068b7",
+    "source_sha256": {
+      "word_select.py": "3f9567ea035de52b6a315605b38d9c52079168657d6a2cc2059c2d541ea26eb3",
+      "word_model.py": "c446732a2905a612cd6f1dd64d2d3d01303b1c71933c34552d26f3b5052fd551",
+      "word_decode.py": "fa2179b74459d84055b244ac60353d52d59cd12eda80b5cc279382c28f1be444",
+      "word_data.py": "d692b4b28620af7e4b40ebdedccda68769feb8d3f51bd1508e807487fd32b7d7",
+      "word_geometry_head.py": "f46c8f90e7f4fc9404eed2dc27fbde6e5c823d25d4f88e4127c7e56ed6e8764e",
+      "word_bn_affine.py": "fa117f65beda3f6d159f707a5cd45d3a367b8f5b436b8c43c0d7621071297dff",
+      "word_anchor_zoom.py": "d6f5337d08368b8da55948f314bd06af7b03fa1602e40240778a9b4edea26377"
+    },
+    "decoder_version": "six-dot-word-v2"
+  },
+  "quality_rejected_before_decode": 30
+}

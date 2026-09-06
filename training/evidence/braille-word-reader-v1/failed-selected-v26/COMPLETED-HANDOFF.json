@@ -1,0 +1,158 @@
+{
+  "completed_at_utc": "2026-09-06T06:58:02.852407+00:00",
+  "status": "completed_failed_original_model_gates",
+  "decoder_version": "six-dot-word-v2",
+  "model_sha256": "406db0e55e8a5ba9e0d00fb22aadc24f19698219f375e4dcead9057cf3bf2230",
+  "checkpoint_sha256": "cce2432c0ddb8952c885dd58697589c285209588dafa81aacdd891b1660068b7",
+  "whole_words": {
+    "total": 607,
+    "accepted": 351,
+    "correct": 323,
+    "exact_word_accuracy": 0.5321252059308073,
+    "accepted_accuracy": 0.9202279202279202,
+    "by_length": {
+      "1": {
+        "total": 152,
+        "accepted": 96,
+        "correct": 94,
+        "exact_word_accuracy": 0.618421052631579,
+        "accepted_accuracy": 0.9791666666666666
+      },
+      "2": {
+        "total": 109,
+        "accepted": 74,
+        "correct": 63,
+        "exact_word_accuracy": 0.5779816513761468,
+        "accepted_accuracy": 0.8513513513513513
+      },
+      "3": {
+        "total": 73,
+        "accepted": 49,
+        "correct": 42,
+        "exact_word_accuracy": 0.5753424657534246,
+        "accepted_accuracy": 0.8571428571428571
+      },
+      "4": {
+        "total": 66,
+        "accepted": 40,
+        "correct": 37,
+        "exact_word_accuracy": 0.5606060606060606,
+        "accepted_accuracy": 0.925
+      },
+      "5": {
+        "total": 70,
+        "accepted": 32,
+        "correct": 31,
+        "exact_word_accuracy": 0.44285714285714284,
+        "accepted_accuracy": 0.96875
+      },
+      "6": {
+        "total": 43,
+        "accepted": 21,
+        "correct": 19,
+        "exact_word_accuracy": 0.4418604651162791,
+        "accepted_accuracy": 0.9047619047619048
+      },
+      "7": {
+        "total": 35,
+        "accepted": 14,
+        "correct": 14,
+        "exact_word_accuracy": 0.4,
+        "accepted_accuracy": 1.0
+      },
+      "8": {
+        "total": 24,
+        "accepted": 8,
+        "correct": 7,
+        "exact_word_accuracy": 0.2916666666666667,
+        "accepted_accuracy": 0.875
+      },
+      "9": {
+        "total": 15,
+        "accepted": 6,
+        "correct": 6,
+        "exact_word_accuracy": 0.4,
+        "accepted_accuracy": 1.0
+      },
+      "10": {
+        "total": 13,
+        "accepted": 6,
+        "correct": 6,
+        "exact_word_accuracy": 0.46153846153846156,
+        "accepted_accuracy": 1.0
+      },
+      "11": {
+        "total": 5,
+        "accepted": 5,
+        "correct": 4,
+        "exact_word_accuracy": 0.8,
+        "accepted_accuracy": 0.8
+      },
+      "12": {
+        "total": 2,
+        "accepted": 0,
+        "correct": 0,
+        "exact_word_accuracy": 0.0,
+        "accepted_accuracy": null
+      }
+    },
+    "rejection_reasons": {
+      "clipped": 167,
+      "low_confidence": 57,
+      "gap": 7,
+      "unsupported_pattern": 12,
+      "no_grid": 11,
+      "overlapping_cells": 2
+    }
+  },
+  "negative_regression": {
+    "total": 44,
+    "accepted": 0,
+    "independent_holdout": false,
+    "reason": "These 44 public negatives are also training/regression inputs."
+  },
+  "legacy_regression": {
+    "total": 66,
+    "accepted": 28,
+    "correct": 20,
+    "is_complete_word_benchmark": false
+  },
+  "repetition": {
+    "total": 12,
+    "accepted": 11,
+    "correct": 11
+  },
+  "rejection": {
+    "total": 14,
+    "accepted": 2,
+    "correct": 12
+  },
+  "lite405": {
+    "samples": 405,
+    "max_abs": 4.553794860839844e-05,
+    "raw_and_effective_decisions_exact": true
+  },
+  "files_sha256": {
+    "checkpoint-selection.json": "d2738da65f70e3dc7be6bb8dd1a1be0dd8c5ad928ae97362efa2242b0b807501",
+    "selected-validation-fullprecision.json": "fe6848be28bf6933e9d49e3b28e653acd2a9748922186bfd3e0bc51671b071e9",
+    "cached-word-replay.json": "3009469908dd1e691921e04c47a38390495c5b92f472b08a9954aea65b92eadf",
+    "backend-tflite-v2.npz": "579eba486b74bcf141c22c1ea71ff995a631732a8cd57eeb31598b1d6a2b6b1d",
+    "export-report.json": "e3e61fc55c8eeb1a948d18d09357f295e72252d52fc3c51c53bb68ae1c884c8e",
+    "decoder-parity-v2.json": "d40ed2edbdbac65b7df0fe603d180f5fcf0ea2ef04a6fb53cf05f14605a5b0c7",
+    "public-benchmark.json": "53b97677aea261af1174a5f70edc81affbf272ca32f7611ae3df688638209944",
+    "repetition-diagnostics.json": "b1a81f7301720bc5607086722146ed1e639fdd7097ea656939aa4289c9c8cbdc",
+    "rejection-diagnostics.json": "7a15241e0c03de9627c8c5a3788a13f4cb9aee55dc715f0384c24faaa3aaa9d8",
+    "lite-retry-process-result.json": "b689f7d959c899038da0fdfa952b9d551c14cfa5c8f357ff2c154ce128cd3360"
+  },
+  "no_active_asset_promoted": true,
+  "new_model_invocations": {
+    "whole607": 0,
+    "lite405": 405,
+    "negative44": 44,
+    "legacy66": 66,
+    "repetition12": 12,
+    "rejection14": 14
+  },
+  "tensorflow_proof": "Prior exact-model/source/fixture numeric proof inherited; 405 new Lite outputs and v2 decisions verified. See export-report.json for precise binding.",
+  "interrupted_attempt": "interrupted-lite-refresh-20260906/interruption.json"
+}

@@ -1,0 +1,55 @@
+{
+  "created_at_utc": "2026-09-06T07:29:12.515780+00:00",
+  "status": "passed_bounded_source_integration_review_and_fix",
+  "scope": "Decoder identity binding in manifest, runtime availability/loader, prospective promotion, and asset verification. No ML, native execution, APK, or promotion.",
+  "defect": "Selection, oracle, candidate, and export decoder_version fields were ignored by promotion and asset verification, allowing stale decoder selection reports to be paired with current app decoder evidence.",
+  "fix": "Manifest decoderVersion is tied to the actual exported app WORD_DECODER_VERSION literal. All current selection/candidate/oracle/export reports must agree. Runtime availability and loader reject mismatches before native loading.",
+  "decoder_version": "six-dot-word-v2",
+  "changed_source_sha256": {
+    "assets/models/braille-word-reader-v1/manifest.json": "2613108ab076b1f8ffce6cbe75f6b3ab686add54d32c2c25cda5d5ddb53e5431",
+    "src/ml/word-model-assets.ts": "3155a78934b980bbec6a16a370da5772069b5c096ce9bb3aa4549da48c17a5db",
+    "src/ml/word-model-loader.ts": "f814ce89a2dd05ab7bf402cb255c3e7c08534dec8d857048743b3060fa9ebe1c",
+    "src/ml/__tests__/word-model-loader.test.ts": "da984d4e8ab0dfd35efb000e2baaab047965769ad600abe6fa2395bed3e02343",
+    "scripts/verify-word-model-assets.mjs": "77e78c7c5d3a5eeaf8c681a2f21671e04cdd54747acb540e1de500ccfac15f7e",
+    "scripts/test-word-model-verifier.mjs": "350530e9e4f31eb21c1f27de7863aab171b3afe5f0621d9fa8715610333d58f2",
+    ".braille-training-work/word-scan-v1-20260905/promote_candidate.py": "fa78585885a2c8bc7364fc9377f5744d3f8804fc87b3907196f0ab79bd8b4311"
+  },
+  "checks": [
+    {
+      "command": "node scripts/test-word-model-verifier.mjs 'decoder version'",
+      "exit_code": 0,
+      "asset_gate_cases": 11,
+      "flatbuffer_checks": 4,
+      "kind": "synthetic focused verification rule tests"
+    },
+    {
+      "command": "npm.cmd test -- --runInBand src/ml/__tests__/word-model-loader.test.ts",
+      "exit_code": 0,
+      "tests_passed": 12,
+      "kind": "mocked focused application loader tests"
+    },
+    {
+      "command": "npx.cmd eslint src/ml/word-model-assets.ts src/ml/word-model-loader.ts src/ml/__tests__/word-model-loader.test.ts scripts/verify-word-model-assets.mjs scripts/test-word-model-verifier.mjs",
+      "exit_code": 0
+    },
+    {
+      "kind": "stdlib source/report check",
+      "promotion_helper_ast_parse": "passed",
+      "actual_v26_reports_and_all_4_candidate_versions_match": true,
+      "pending_manifest_status_training_size_zero_empty_hash_internal_false_no_binary": true
+    }
+  ],
+  "frozen_source_integrity": {
+    "protocol_sha256": "dacada918c7473c3a2c81bd10c3197447ffddf68c834b32774a1945cc03187d8",
+    "training_source_count": 24,
+    "selector_source_count": 7,
+    "all_match_frozen_protocol": true,
+    "word_model_contract_sha256": "e985d76a5d372cf4f31a325a39ca88268422dd5c0685e50c48ee1fb69dffc99f"
+  },
+  "unchanged_historical_evidence_policy": "No version requirement is applied to inherited TensorFlow numeric proof. Its model/source/fixture exactness and numerical-only scope remain unchanged.",
+  "remaining_prerequisites": [
+    "Current selected candidate still fails model acceptance; no activation or main APK.",
+    "Old nativePreprocessing.source_code_sha256 and nativeRuntime.resizer_contract_sha256 bind the entire old word-model-contract.ts. Keep stale source rejection and obtain fresh appropriate proof before activation.",
+    "Final selected candidate needs current source-bound actual 607 TypeScript parity, remaining native verification, and final serial source checks."
+  ]
+}

@@ -1,0 +1,248 @@
+{
+  "capture": {
+    "id": "photo4by3-view1by1-1788626835424-2",
+    "case": "photo4by3-view1by1",
+    "target": {
+      "width": 1920,
+      "height": 1440
+    },
+    "orientationSource": "interface",
+    "window": {
+      "width": 914.2857142857143,
+      "height": 411.42857142857144
+    },
+    "density": 2.625,
+    "preview": {
+      "widthDp": 231.42857142857144,
+      "heightDp": 231.42857142857144,
+      "width": 608,
+      "height": 607,
+      "resolution": {
+        "width": 1280,
+        "height": 960
+      },
+      "path": "/data/user/0/com.brailleme.geometrydiagnostic/cache/nitro_image_7114890897908259192.png"
+    },
+    "guide": {
+      "x": 0.3,
+      "y": 0.3,
+      "width": 0.4,
+      "height": 0.4
+    },
+    "guidePoints": [
+      {
+        "x": 832.553466796875,
+        "y": 671.7628173828125
+      },
+      {
+        "x": 448.2371826171875,
+        "y": 671.7628173828125
+      },
+      {
+        "x": 448.2371826171875,
+        "y": 287.44647216796875
+      },
+      {
+        "x": 832.553466796875,
+        "y": 287.44647216796875
+      }
+    ],
+    "fullPoints": [
+      {
+        "x": 1120.7906494140625,
+        "y": 960
+      },
+      {
+        "x": 159.99993896484375,
+        "y": 960
+      },
+      {
+        "x": 159.99993896484375,
+        "y": -0.790771484375
+      },
+      {
+        "x": 1120.7906494140625,
+        "y": -0.790771484375
+      }
+    ],
+    "geometry": {
+      "width": 1280,
+      "height": 960,
+      "sensorToBuffer": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "rotationDegrees": 180,
+      "isMirrored": false,
+      "cropRect": [
+        0,
+        0,
+        1280,
+        960
+      ]
+    },
+    "jpegPath": "/data/user/0/com.brailleme.geometrydiagnostic/cache/VisionCamera_8448105415270781918.jpg",
+    "photo": {
+      "width": 1280,
+      "height": 960,
+      "path": "/data/user/0/com.brailleme.geometrydiagnostic/cache/nitro_image_6545581239229476773.png"
+    }
+  },
+  "roi": {
+    "x": 0.3495676040649414,
+    "y": 0.30024706522623695,
+    "width": 0.3002470970153809,
+    "height": 0.40032952626546225
+  },
+  "roi_independent_corner_check": {
+    "expected_pixels_xyxy": [
+      447.44656372070324,
+      288.23723144531243,
+      831.7628479003906,
+      672.5535400390625
+    ],
+    "actual_pixels_xyxy": [
+      447.446533203125,
+      288.2371826171875,
+      831.7628173828126,
+      672.5535278320312
+    ],
+    "max_absolute_corner_error_pixels": 4.88281249317879e-05
+  },
+  "checks": [
+    {
+      "id": "red",
+      "preview_centroid": [
+        371.1175710594315,
+        253.1485788113695
+      ],
+      "photo_centroid": [
+        746.0553278688525,
+        400.38729508196724
+      ],
+      "predicted_photo_centroid": [
+        745.6671051227461,
+        400.69657057059123
+      ],
+      "error_photo_pixels": 0.4963549420102631,
+      "preview_color_pixels": 387,
+      "photo_color_pixels": 976,
+      "passed": true,
+      "inside_preview_guide": true,
+      "inside_photo_roi": true,
+      "guide_membership_matches": true
+    },
+    {
+      "id": "magenta",
+      "preview_centroid": [
+        371.1748166259169,
+        365.62713936430316
+      ],
+      "photo_centroid": [
+        746.0209580838323,
+        578.0449101796407
+      ],
+      "predicted_photo_centroid": [
+        745.7575673077685,
+        578.7334123648334
+      ],
+      "error_photo_pixels": 0.7371634553683165,
+      "preview_color_pixels": 409,
+      "photo_color_pixels": 1002,
+      "passed": true,
+      "inside_preview_guide": true,
+      "inside_photo_roi": true,
+      "guide_membership_matches": true
+    },
+    {
+      "id": "cyan",
+      "preview_centroid": [
+        236.40953545232273,
+        365.5513447432763
+      ],
+      "photo_centroid": [
+        533.0213505461768,
+        578.0769612711023
+      ],
+      "predicted_photo_centroid": [
+        532.795017566541,
+        578.6134407463642
+      ],
+      "error_photo_pixels": 0.5822687051938321,
+      "preview_color_pixels": 409,
+      "photo_color_pixels": 1007,
+      "passed": true,
+      "inside_preview_guide": true,
+      "inside_photo_roi": true,
+      "guide_membership_matches": true
+    },
+    {
+      "id": "blue",
+      "preview_centroid": [
+        236.3826530612245,
+        253.09183673469389
+      ],
+      "photo_centroid": [
+        533.0081135902637,
+        400.4158215010142
+      ],
+      "predicted_photo_centroid": [
+        532.7525367250248,
+        400.606756297733
+      ],
+      "error_photo_pixels": 0.31902293121876585,
+      "preview_color_pixels": 392,
+      "photo_color_pixels": 986,
+      "passed": true,
+      "inside_preview_guide": true,
+      "inside_photo_roi": true,
+      "guide_membership_matches": true
+    }
+  ],
+  "failure": null,
+  "jpeg_vs_nitro": {
+    "encoded_size": [
+      1280,
+      960
+    ],
+    "exif_orientation": 3,
+    "upright_size": [
+      1280,
+      960
+    ],
+    "same_dimensions_as_nitro": true,
+    "mean_absolute_rgb_difference": 0.0,
+    "max_absolute_rgb_difference": 0,
+    "claim": "JPEG plane bytes saved by Photo.saveToTemporaryFileAsync (EXIF metadata attached, no pixel crop/re-encode in installed source); independently decoded and EXIF-oriented with Pillow."
+  },
+  "passed": true,
+  "files": {
+    "imageproxy.jpg": {
+      "sha256": "d11b3e939fa2ec1b16da5141fa0b88027c584fd0ff15acdbf53a6b7251fe060b",
+      "bytes": 87902
+    },
+    "mapped-roi.png": {
+      "sha256": "43466a5b9ec1e56ee845ca7018da2df296859c49adc21121eb28564c0ba2cf94",
+      "bytes": 14360
+    },
+    "photo-review.png": {
+      "sha256": "f7ab5b114f7be4430ac2e2acb4383d16b6a6908ee75c8686ec5669fd9d9cb23a",
+      "bytes": 37377
+    },
+    "photo.png": {
+      "sha256": "e2ee0a75bfca5471869846daa21504fb8939b70a021d3dc9edbdf59a283ee5ce",
+      "bytes": 36508
+    },
+    "preview.png": {
+      "sha256": "902e8cea585229418b2680c204d12d7847b01a6957c454955671ac81ed7f5737",
+      "bytes": 28427
+    }
+  }
+}

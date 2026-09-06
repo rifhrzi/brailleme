@@ -2,11 +2,11 @@
 
 Berlaku mulai 27 Agustus 2026.
 
-BrailleMe memproses frame kamera, crop satu sel, huruf hasil pemindaian, dan kata yang sedang disusun langsung di perangkat. Aplikasi tidak menyimpan atau mengunggah gambar kamera, huruf, maupun kata tersebut.
+BrailleMe memproses foto satu kata Braille, posisi sel, dan hasil kata langsung di perangkat. Foto dan hasil hanya digunakan sementara selama pemindaian. Aplikasi tidak menyimpan atau mengunggah gambar kamera maupun teks hasil pemindaian.
 
-Hanya preferensi aplikasi-seperti status pengenalan, kecepatan dan volume suara, mute, serta haptik-yang disimpan secara lokal. Preferensi dapat dihapus melalui Reset di Pengaturan atau dengan menghapus aplikasi.
+Hanya preferensi aplikasi, seperti status pengenalan, kecepatan dan volume suara, status bisu, serta getaran, yang disimpan secara lokal. Preferensi dapat dihapus melalui Kembalikan pengaturan awal di halaman Pengaturan atau dengan menghapus aplikasi.
 
-Izin kamera digunakan hanya ketika pemindai dibuka. Getaran dipakai untuk umpan balik haptik. Suara dibacakan melalui mesin text-to-speech Android yang terpasang; BrailleMe hanya memilih voice Bahasa Indonesia yang ditandai tersedia secara lokal.
+Izin kamera digunakan hanya ketika pemindai dibuka. Getaran dipakai sebagai umpan balik. Suara dibacakan melalui mesin pembaca teks Android yang terpasang; BrailleMe hanya memilih suara Bahasa Indonesia yang tersedia secara lokal.
 
 BrailleMe yang dipasang dari paket rilis tidak meminta izin internet. Aplikasi tidak memiliki akun, iklan, analitik, atau telemetri, serta tidak menjual maupun membagikan data pengguna.
 

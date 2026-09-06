@@ -1,0 +1,330 @@
+{
+  "status": "descriptive annotation-only preflight complete",
+  "script_sha256": "ab173c64c0db8561449d978848c8abf5fa5e39bd698c55a7ef754f6e93139870",
+  "scope": "TRAIN cache and held-validation annotations only. No model outputs, external corpus, image relabeling, or threshold tuning.",
+  "weighting": "Cached complete-cell occurrences, before stochastic zoom/translation/rotation and sampler reweighting; not unique physical cells and not expected training epoch exposure.",
+  "hypothetical_transform": "Vertical factor1.1 around corner-coordinate image center y96, x unchanged; this isolates the added factor, not the full combined augmentation.",
+  "datasets": {
+    "train": {
+      "file": ".braille-training-work\\word-scan-v1-20260905\\combined-training-v5\\combined-training-manifest.json",
+      "sha256": "130c80f135af5677d6b78a5e401126f54b15204481aab6de00a88c443956c4fa",
+      "manifest_records": 23691,
+      "groups": {
+        "Angelina": {
+          "records": 21309,
+          "all": 240738,
+          "full_cell_occurrences": 106451,
+          "width_pixels": {
+            "min": 11.884456671251712,
+            "p05": 26.158038147138967,
+            "median": 44.0,
+            "p95": 100.57142857142856,
+            "max": 117.81818181818181
+          },
+          "height_pixels": {
+            "min": 17.81443298969073,
+            "p05": 39.80487804878048,
+            "median": 65.93939393939394,
+            "p95": 152.27586206896552,
+            "max": 167.38461538461542
+          },
+          "box_width_height_ratio": {
+            "min": 0.5475770218228498,
+            "p05": 0.6111111111111107,
+            "median": 0.65625,
+            "p95": 0.6991545549539278,
+            "max": 0.7714285714285715
+          },
+          "minimum_vertical_canvas_clearance_pixels": {
+            "min": 0.0,
+            "p05": 9.365853658536585,
+            "median": 48.0,
+            "p95": 67.9467588591184,
+            "max": 85.77319587628865
+          },
+          "height_pixels_after_vertical_0_9": {
+            "min": 16.032989690721656,
+            "p05": 35.824390243902435,
+            "median": 59.345454545454544,
+            "p95": 137.04827586206898,
+            "max": 150.64615384615388
+          },
+          "height_pixels_after_vertical_1_1": {
+            "min": 19.595876288659802,
+            "p05": 43.78536585365853,
+            "median": 72.53333333333333,
+            "p95": 167.5034482758621,
+            "max": 184.12307692307698
+          },
+          "cells_crossing_vertical_canvas_at_centered_1_1": 4788,
+          "fraction_crossing_vertical_canvas_at_centered_1_1": 0.0449784407849621
+        },
+        "DSBI": {
+          "records": 2291,
+          "all": 27055,
+          "full_cell_occurrences": 13909,
+          "width_pixels": {
+            "min": 21.07317073170725,
+            "p05": 24.8586030664396,
+            "median": 38.11414392059553,
+            "p95": 92.83516483516435,
+            "max": 112.3902439024393
+          },
+          "height_pixels": {
+            "min": 38.882008368200815,
+            "p05": 40.83037974683552,
+            "median": 61.679999999999964,
+            "p95": 147.8136986301365,
+            "max": 155.15675675675723
+          },
+          "box_width_height_ratio": {
+            "min": 0.49722311069756775,
+            "p05": 0.5724687715774283,
+            "median": 0.6153846153846155,
+            "p95": 0.6515415939499695,
+            "max": 0.7371606666967797
+          },
+          "minimum_vertical_canvas_clearance_pixels": {
+            "min": 0.0,
+            "p05": 7.487258687258617,
+            "median": 53.07317073170731,
+            "p95": 75.32647214854109,
+            "max": 76.55899581589959
+          },
+          "height_pixels_after_vertical_0_9": {
+            "min": 34.99380753138073,
+            "p05": 36.74734177215197,
+            "median": 55.51199999999997,
+            "p95": 133.03232876712286,
+            "max": 139.64108108108152
+          },
+          "height_pixels_after_vertical_1_1": {
+            "min": 42.7702092050209,
+            "p05": 44.913417721519075,
+            "median": 67.84799999999997,
+            "p95": 162.59506849315017,
+            "max": 170.67243243243297
+          },
+          "cells_crossing_vertical_canvas_at_centered_1_1": 936,
+          "fraction_crossing_vertical_canvas_at_centered_1_1": 0.06729455748076785
+        }
+      }
+    },
+    "validation_patches": {
+      "file": ".braille-training-work\\word-scan-v1-20260905\\data\\validation.json",
+      "sha256": "d796841e8fdd21443d3f9f28e5c6339bda0199fa68ba1e864c4f6c434958443a",
+      "manifest_records": 559,
+      "groups": {
+        "all": {
+          "records": 559,
+          "all": 5047,
+          "full_cell_occurrences": 3195,
+          "width_pixels": {
+            "min": 14.662379421221885,
+            "p05": 17.7491961414791,
+            "median": 38.32699619771864,
+            "p95": 91.42857142857143,
+            "max": 111.51515151515153
+          },
+          "height_pixels": {
+            "min": 23.813953488372093,
+            "p05": 26.281368821292773,
+            "median": 57.90476190476191,
+            "p95": 136.6153846153846,
+            "max": 162.46153846153845
+          },
+          "box_width_height_ratio": {
+            "min": 0.3510933169079146,
+            "p05": 0.6128133704735378,
+            "median": 0.6651549508692371,
+            "p95": 0.7073954983922828,
+            "max": 0.7816377171215882
+          },
+          "minimum_vertical_canvas_clearance_pixels": {
+            "min": 0.0,
+            "p05": 4.320723981900447,
+            "median": 49.27433628318584,
+            "p95": 75.83790849673203,
+            "max": 83.25
+          },
+          "height_pixels_after_vertical_0_9": {
+            "min": 21.432558139534883,
+            "p05": 23.653231939163497,
+            "median": 52.11428571428572,
+            "p95": 122.95384615384616,
+            "max": 146.2153846153846
+          },
+          "height_pixels_after_vertical_1_1": {
+            "min": 26.195348837209306,
+            "p05": 28.909505703422052,
+            "median": 63.69523809523811,
+            "p95": 150.27692307692308,
+            "max": 178.70769230769233
+          },
+          "cells_crossing_vertical_canvas_at_centered_1_1": 270,
+          "fraction_crossing_vertical_canvas_at_centered_1_1": 0.08450704225352113
+        }
+      }
+    },
+    "held405": {
+      "file": ".braille-training-work\\word-scan-v1-20260905\\data\\validation-stress-selection.json",
+      "sha256": "e2ab968f7c4dcf7e774181fde687e1321f58d20567528af4b21fd03ff5a3e625",
+      "manifest_records": 405,
+      "groups": {
+        "natural": {
+          "records": 135,
+          "all": 543,
+          "full_cell_occurrences": 543,
+          "width_pixels": {
+            "min": 37.29729729729729,
+            "p05": 38.918918918918905,
+            "median": 57.5,
+            "p95": 103.17757009345794,
+            "max": 112.65306122448982
+          },
+          "height_pixels": {
+            "min": 55.351351351351354,
+            "p05": 58.04651162790698,
+            "median": 86.4,
+            "p95": 149.7173333333333,
+            "max": 153.6
+          },
+          "box_width_height_ratio": {
+            "min": 0.5525078369905956,
+            "p05": 0.6206852532679739,
+            "median": 0.6734006734006736,
+            "p95": 0.723610438069393,
+            "max": 0.7563419981208895
+          },
+          "minimum_vertical_canvas_clearance_pixels": {
+            "min": 19.2,
+            "p05": 20.425531914893615,
+            "median": 49.694117647058825,
+            "p95": 65.24271844660194,
+            "max": 67.45945945945947
+          },
+          "height_pixels_after_vertical_0_9": {
+            "min": 49.81621621621622,
+            "p05": 52.24186046511628,
+            "median": 77.76,
+            "p95": 134.74559999999997,
+            "max": 138.24
+          },
+          "height_pixels_after_vertical_1_1": {
+            "min": 60.8864864864865,
+            "p05": 63.851162790697686,
+            "median": 95.04000000000002,
+            "p95": 164.68906666666663,
+            "max": 168.96
+          },
+          "cells_crossing_vertical_canvas_at_centered_1_1": 0,
+          "fraction_crossing_vertical_canvas_at_centered_1_1": 0.0
+        },
+        "soft_narrow": {
+          "records": 135,
+          "all": 543,
+          "full_cell_occurrences": 543,
+          "width_pixels": {
+            "min": 37.29729729729729,
+            "p05": 38.918918918918905,
+            "median": 57.41626794258377,
+            "p95": 94.91026711718303,
+            "max": 104.85595228094434
+          },
+          "height_pixels": {
+            "min": 73.8018018018018,
+            "p05": 77.3953488372093,
+            "median": 114.38297872340422,
+            "p95": 152.7399776035834,
+            "max": 153.60000000000002
+          },
+          "box_width_height_ratio": {
+            "min": 0.4152550990040076,
+            "p05": 0.4679730371146899,
+            "median": 0.5071138975883821,
+            "p95": 0.6216393601318799,
+            "max": 0.6893790660042752
+          },
+          "minimum_vertical_canvas_clearance_pixels": {
+            "min": 19.19999999999999,
+            "p05": 19.27104532839963,
+            "median": 34.37037037037036,
+            "p95": 54.99029126213592,
+            "max": 57.94594594594595
+          },
+          "height_pixels_after_vertical_0_9": {
+            "min": 66.42162162162163,
+            "p05": 69.65581395348838,
+            "median": 102.94468085106381,
+            "p95": 137.46597984322509,
+            "max": 138.24000000000004
+          },
+          "height_pixels_after_vertical_1_1": {
+            "min": 81.18198198198199,
+            "p05": 85.13488372093023,
+            "median": 125.82127659574465,
+            "p95": 168.01397536394177,
+            "max": 168.96000000000004
+          },
+          "cells_crossing_vertical_canvas_at_centered_1_1": 0,
+          "fraction_crossing_vertical_canvas_at_centered_1_1": 0.0
+        },
+        "faint": {
+          "records": 135,
+          "all": 543,
+          "full_cell_occurrences": 543,
+          "width_pixels": {
+            "min": 37.297297297297234,
+            "p05": 38.918918918918905,
+            "median": 57.736671347634456,
+            "p95": 99.68751387527423,
+            "max": 104.85595228094434
+          },
+          "height_pixels": {
+            "min": 61.07735321528425,
+            "p05": 64.05132317562149,
+            "median": 95.59629941126995,
+            "p95": 152.7399776035834,
+            "max": 153.60000000000002
+          },
+          "box_width_height_ratio": {
+            "min": 0.4983061188048095,
+            "p05": 0.5622363084758553,
+            "median": 0.6102693602693604,
+            "p95": 0.6611944968891219,
+            "max": 0.6893790660042752
+          },
+          "minimum_vertical_canvas_clearance_pixels": {
+            "min": 19.19999999999999,
+            "p05": 19.27104532839963,
+            "median": 44.50619148293569,
+            "p95": 62.060930699698694,
+            "max": 64.50698974836907
+          },
+          "height_pixels_after_vertical_0_9": {
+            "min": 54.969617893755824,
+            "p05": 57.64619085805934,
+            "median": 86.03666947014295,
+            "p95": 137.46597984322509,
+            "max": 138.24000000000004
+          },
+          "height_pixels_after_vertical_1_1": {
+            "min": 67.18508853681267,
+            "p05": 70.45645549318364,
+            "median": 105.15592935239695,
+            "p95": 168.01397536394177,
+            "max": 168.96000000000004
+          },
+          "cells_crossing_vertical_canvas_at_centered_1_1": 0,
+          "fraction_crossing_vertical_canvas_at_centered_1_1": 0.0
+        }
+      }
+    }
+  },
+  "physical_padding_reference": {
+    "file": "train-cell-extent-review/findings.json",
+    "sha256": "7bc94a8f7b442617dbf4d8dd2444cc54a463dc46da1d59281028b8deb053affc",
+    "conclusion": "Exact DSBI padding is .3 horizontal source pitch per edge. Four small TRAIN-only Angelina multi-dot optical estimates distinguish larger/manual margins from dot pitch but have +/-2px uncertainty. Held Angelina provides only boxes/labels, so physical point-to-box padding cannot be recovered exactly and is not inferred from bbox aspect."
+  },
+  "interpretation": "The proposed .9-1.1 factor is the paper-prescribed ablation, not fitted to these sizes. It changes height10percent rather than imposing a new size band. Border cells can be cut and must retain the existing all-stage completeness/point-survivor logic. No new acceptance gates or cell rejection thresholds are proposed."
+}

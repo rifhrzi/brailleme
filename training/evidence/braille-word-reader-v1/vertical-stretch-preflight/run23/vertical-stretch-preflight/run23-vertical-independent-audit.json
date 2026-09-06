@@ -1,0 +1,158 @@
+{
+  "status": "passed",
+  "scope": "Independent transform/target CPU proof, not recognition accuracy or Keras scheduling evidence.",
+  "script_sha256": "91c41d14e50c07b7a5ec84d3b7ea3e79271f0777201f15fab05d7875badc0a4d",
+  "source_sha256": {
+    "word_data.py": "659ab6b508a69b34bfb8dc899c5fa6e2214bd64e08281f40f9c39aa91d74996c",
+    "word_decode.py": "bd301c5afeb4ba2e6866371665324d2de7f0a6ee252ef76ce02a5553193d63c5",
+    "word_dsbi.py": "feecf16dba6d376415e15707c02c8f05fcf6650055da09ad9f4712099e6325ff",
+    "word_geometry_head.py": "f46c8f90e7f4fc9404eed2dc27fbde6e5c823d25d4f88e4127c7e56ed6e8764e",
+    "word_geometry_init.py": "072379a1ef409d901c2478135174561c14781560cdd56a0b91b0229b8032e15e",
+    "word_geometry_parity.py": "700d9175dc627fb7bf12c0ac20f640191cf5a045e29067c310f5dad5f3bd6f0b",
+    "word_model.py": "c446732a2905a612cd6f1dd64d2d3d01303b1c71933c34552d26f3b5052fd551",
+    "word_point_geometry.py": "2b932b320d191277b86ae13daecb82b5abbf0a46e9464d7360ee1e941aca760b",
+    "word_point_metadata.py": "de1cad0157e744f2f646010eac5355b88d1d11f52662d4b9353166661f59049f",
+    "word_sampling.py": "c234523277dba683e68a2863e14736bc68432da3b6ca65bb5d8a64bc7d9dc0fe",
+    "word_sources.py": "affb3488d8c25e3d0131eb4340cae29fcece563ac75373e071f97fef68f09acd",
+    "word_tail.py": "bdd4b5d12d56e25c1100a282483e7a31176b5a65beb353a0623ceea40a49dc0e",
+    "word_train.py": "634c7760336ce0817c1a2310b5ee8d941c75b4a8a5bfd16cd6e1a8f6be4e03db",
+    "word_vertical_stretch.py": "336168fbfe4441bfa91e0855f473997a403a542a2b64789ca7cbd1b11b188ed5"
+  },
+  "plan_sha256": "dff9bfac80d4ac38ac457e9eb27ab0056de504eefa7427cc5c47196b13e14179",
+  "plan_source_flags_and_range_verified": true,
+  "training_manifest_sha256": "130c80f135af5677d6b78a5e401126f54b15204481aab6de00a88c443956c4fa",
+  "point_metadata_sha256": "ea9592a727f7f3abcc6b017f8f22e143e90ae1541f623c43adf30104021937e8",
+  "stream_identity_and_prefixes_passed": true,
+  "global_numpy_rng_unchanged": true,
+  "all63_stage_point_visibility_checks": 252,
+  "pillow_marker_checks": [
+    {
+      "factor": 0.9,
+      "max_centroid_error_pixels": 0.00953399765532481
+    },
+    {
+      "factor": 1.0,
+      "max_centroid_error_pixels": 0.011679946879141312
+    },
+    {
+      "factor": 1.1,
+      "max_centroid_error_pixels": 0.009576862886717663
+    }
+  ],
+  "run20_off_pixels_targets_rng_byte_identical": true,
+  "on_off_main_rng_calls_and_final_state_equal": true,
+  "actual_augment_cut_then_rotation_return_never_recovers_complete_or_occupied_point": true,
+  "actual_patches_factor_order_matches_independent_stream": true,
+  "factor_does_nothing_when_existing_affine_is_skipped": true,
+  "evaluation_mode_ignores_flag_and_matches_run20": true,
+  "repeated_batch_order_independent": true,
+  "full_balanced_order_identical": true,
+  "source_families": [
+    "books/chudo_derevo_redmi",
+    "books/mdd-redmi1",
+    "books/mdd_cannon1",
+    "books/skazki",
+    "books/telefon",
+    "books/uploaded",
+    "dsbi/Massage",
+    "dsbi/Math",
+    "dsbi/Ordinary Printed Document",
+    "dsbi/Shaver Yang Fengting",
+    "handwritten/kov",
+    "handwritten/uploaded"
+  ],
+  "real_batches": [
+    {
+      "batch": 0,
+      "indices": [
+        23075,
+        20987,
+        76,
+        23780,
+        22098,
+        433
+      ],
+      "off_pixels_sha256": "462033e0fb6194616c58b4f68c813ce5603713751cf83995c3d1b53bbb9dc017",
+      "off_targets_sha256": "c6df6358272489c8b55420c33b3cf27c7b7296f5d2a7bd035d803f9bcbd291b0",
+      "on_pixels_sha256": "7e01506fee006e6f7265ad03ddf96e0d8872ef332d7ccd20af4155927c3ae18a",
+      "on_targets_sha256": "b937c38dbb91d05d42f6ca9b64e9a05990c1a1fcaf7589f01e17074db25ad3c2",
+      "main_rng_draws": 73
+    },
+    {
+      "batch": 2,
+      "indices": [
+        5422,
+        5724,
+        7953,
+        20255,
+        20269,
+        70
+      ],
+      "off_pixels_sha256": "51c66a536e1b0fa5a473b6975a8c663aa0aa56523c10ac25156049aa504a1a63",
+      "off_targets_sha256": "365e7cfcb102f0cd0b4c0a66986445ff10cf35e588b962ac1af2259240269298",
+      "on_pixels_sha256": "36c9ad219c8652f7c7c0ed072ce4d5437e6e7ff06256e0ef72ec0760a1683a24",
+      "on_targets_sha256": "df902d16edda2eb1579156ebe2cdb86dbbd2dbd267f295d97303d276bae2b272",
+      "main_rng_draws": 70
+    },
+    {
+      "batch": 4,
+      "indices": [
+        7728,
+        7992,
+        22473,
+        23573,
+        23096,
+        7197
+      ],
+      "off_pixels_sha256": "88f394088b76c0c803c0674e17a82987cd4f28b17e657c1aea2d020e020f2f35",
+      "off_targets_sha256": "dbf63b7dac53dbdd9b29f44962ad511443f4a291cacf0b81e06cfc0f4263be5b",
+      "on_pixels_sha256": "27d2d56a2f7f9883e1aed8b81f2db71b673cd5150d2d19b01957e2335b04fd28",
+      "on_targets_sha256": "0e5e63dd1e9adfd579b729a0e348ab4377fe80580c78c7093fe6546a761f988c",
+      "main_rng_draws": 74
+    },
+    {
+      "batch": 9,
+      "indices": [
+        1873,
+        4954,
+        11040,
+        22706,
+        20056,
+        7227
+      ],
+      "off_pixels_sha256": "76058e1a0777bae5f64aa148b98ca23a09a07acc390a09e41332b1ad733f5af0",
+      "off_targets_sha256": "1d7d50e11b7bd6a153c3a18bd6c954a8579f381109fda5bf7d827c85e028d4ac",
+      "on_pixels_sha256": "b03a6b48c3e38022063eb96b96993a193ec940833a39b2ea0ffc23ebf2a9033f",
+      "on_targets_sha256": "5dbba11329e77a13b8b3e424fb9922877bd1caf93fe6bb1d75c776e5c80927d8",
+      "main_rng_draws": 64
+    },
+    {
+      "batch": 114,
+      "indices": [
+        24109,
+        22720,
+        9070,
+        21703,
+        23791,
+        7999
+      ],
+      "off_pixels_sha256": "b8aa30940fc8777d83f84d953a5121e86f64aaceefe02c13308c6179f01d79b6",
+      "off_targets_sha256": "7c71b5fa01f8e8fed1fb424b96fcd7ddb0a7f90aba432a270c4b564e0ad6d625",
+      "on_pixels_sha256": "ea66eca666c5a4b60225ee97655c8b23c6f7baae93a52f48530fde0dd41124b2",
+      "on_targets_sha256": "f36d0de9b38956ae6e2695fc9b8d27934d7c5a4f90db8aa00af7ed50705614b2",
+      "main_rng_draws": 69
+    }
+  ],
+  "target_checks": {
+    "complete": 396,
+    "geometry_only": 42,
+    "unknown_boxes": 148
+  },
+  "cached_point_states_unchanged": true,
+  "defects": [],
+  "limitations": [
+    "Actual Patches AST uses a neutral PyDataset base: Keras workers/GPU are not executed.",
+    "Known complete-cell targets still win one-grid-center collisions; unknown slots can overlap known-cell Gaussian soft regions but do not supply labels.",
+    "Fixed small batch sample proves exercised transform paths, not whole-corpus performance or every stochastic draw."
+  ]
+}

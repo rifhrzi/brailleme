@@ -1,0 +1,168 @@
+{
+  "schema_version": 1,
+  "status": "inputs_only_model_and_native_execution_pending",
+  "scope": "Six original TRAIN/analytic inputs; whole-image decoder comparison, no accuracy/quality/camera claim.",
+  "oracle_npz_sha256": "9330946dafe06c7705b3f2c85cce26f8bbfeca11763ba7465d62e809180d5669",
+  "oracle_path": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\geometry-head-parent-v1\\initialization-oracle.npz",
+  "initialization_report_sha256": "791bac9f9e92cab96925a9c802de9c6b141e07c7c2e00b4fbce9904187293359",
+  "input_shape": [
+    1,
+    192,
+    480,
+    3
+  ],
+  "output_shape": [
+    1,
+    48,
+    120,
+    11
+  ],
+  "dtype": "float32_little_endian",
+  "absolute_tolerance": 0.0001,
+  "relative_tolerance": 0.0001,
+  "source_sha256": "d9ce8999b4a1c3dec1313b3c8abcd804abefae78aa87abbb594a4c899522dc5c",
+  "cases": [
+    {
+      "index": 0,
+      "identity": {
+        "image": "train/000000.png",
+        "source": "books/chudo_derevo_redmi/IMG_20190715_112912.labeled.jpg",
+        "sha256": "dec6b2c72152ff5eb8a87be172a7e20764eae23d427a401fd98075f19d7de1f1"
+      },
+      "input": "inputs/0000.f32",
+      "input_sha256": "547c146964c269932bcbc063c94602f2ff2a60dac3992a0cd00a1bdf51715b75",
+      "input_bytes": 1105920,
+      "selection": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      }
+    },
+    {
+      "index": 1,
+      "identity": {
+        "image": "train/003163.png",
+        "source": "books/skazki/IMG_20190715_121834.labeled.jpg",
+        "sha256": "707ffff038ec67f271aee1e7e7c1bb4524ad18370c453d132f450bb84aaaedb6"
+      },
+      "input": "inputs/0001.f32",
+      "input_sha256": "2e207ee87a485708fddb7ca04064a2a8dd88d931cf2c42e2f1503a373024f6ac",
+      "input_bytes": 1105920,
+      "selection": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      }
+    },
+    {
+      "index": 2,
+      "identity": {
+        "image": "train/006326.png",
+        "source": "not_braille/misc/ul.jpg",
+        "sha256": "860bf163e12e45008a203a2d9e619d6cdfd0e555e9fe40cb567355a90938c5c3"
+      },
+      "input": "inputs/0002.f32",
+      "input_sha256": "ccb95859d4727dd5b71474c8c1053181df43b9db5490ade2f7c805f4c2f223ea",
+      "input_bytes": 1105920,
+      "selection": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      }
+    },
+    {
+      "index": 3,
+      "identity": {
+        "analytic": "black"
+      },
+      "input": "inputs/0003.f32",
+      "input_sha256": "278fed3b78a153a77a4008ae53ab2ee4ff2488fad83f9766edcdc191e037ae6c",
+      "input_bytes": 1105920,
+      "selection": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      }
+    },
+    {
+      "index": 4,
+      "identity": {
+        "analytic": "white"
+      },
+      "input": "inputs/0004.f32",
+      "input_sha256": "f27e5b978e82dab52554c7a8993b9e64ce11789dc759ad9b06fd01bfbf201354",
+      "input_bytes": 1105920,
+      "selection": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      }
+    },
+    {
+      "index": 5,
+      "identity": {
+        "analytic": "seed20260905 uniform random"
+      },
+      "input": "inputs/0005.f32",
+      "input_sha256": "db87a56915c6f54df81737c9dc6a4fc0f9fdffcf3bff9340408ab231617b69fb",
+      "input_bytes": 1105920,
+      "selection": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      }
+    }
+  ],
+  "model_sha256": null,
+  "observed_model_operators": null,
+  "thresholds": null,
+  "desktop_report_sha256": null,
+  "limits": [
+    "No threshold changes are permitted for native parity.",
+    "These are TRAIN/analytic inputs, not six held-out word accuracy examples.",
+    "Synthetic random float inputs are not rounded to RGB8; quality preprocessing is not replayed."
+  ],
+  "files": [
+    {
+      "path": "geometry-initialization.json",
+      "sha256": "791bac9f9e92cab96925a9c802de9c6b141e07c7c2e00b4fbce9904187293359",
+      "bytes": 4202
+    },
+    {
+      "path": "inputs/0000.f32",
+      "sha256": "547c146964c269932bcbc063c94602f2ff2a60dac3992a0cd00a1bdf51715b75",
+      "bytes": 1105920
+    },
+    {
+      "path": "inputs/0001.f32",
+      "sha256": "2e207ee87a485708fddb7ca04064a2a8dd88d931cf2c42e2f1503a373024f6ac",
+      "bytes": 1105920
+    },
+    {
+      "path": "inputs/0002.f32",
+      "sha256": "ccb95859d4727dd5b71474c8c1053181df43b9db5490ade2f7c805f4c2f223ea",
+      "bytes": 1105920
+    },
+    {
+      "path": "inputs/0003.f32",
+      "sha256": "278fed3b78a153a77a4008ae53ab2ee4ff2488fad83f9766edcdc191e037ae6c",
+      "bytes": 1105920
+    },
+    {
+      "path": "inputs/0004.f32",
+      "sha256": "f27e5b978e82dab52554c7a8993b9e64ce11789dc759ad9b06fd01bfbf201354",
+      "bytes": 1105920
+    },
+    {
+      "path": "inputs/0005.f32",
+      "sha256": "db87a56915c6f54df81737c9dc6a4fc0f9fdffcf3bff9340408ab231617b69fb",
+      "bytes": 1105920
+    }
+  ]
+}

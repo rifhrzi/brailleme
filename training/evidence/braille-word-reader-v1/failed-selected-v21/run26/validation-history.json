@@ -1,0 +1,1862 @@
+[
+  {
+    "epoch": 1,
+    "loss": 0.8604084849357605,
+    "val_loss": 0.7523303031921387,
+    "thresholds": {
+      "proposalScore": 0.35,
+      "acceptScore": 0.4,
+      "dotConfidence": 0.7,
+      "nmsIou": 0.25,
+      "minCellWidth": 0.008,
+      "minCellHeight": 0.06,
+      "edgeMargin": 0.008,
+      "maxRowDeviation": 0.55,
+      "maxGapRatio": 1.2,
+      "maxOverlapRatio": 0.5
+    },
+    "words": {
+      "total": 135,
+      "accepted": 126,
+      "correct": 125,
+      "exact_word_accuracy": 0.9259259259259259,
+      "accepted_accuracy": 0.9920634920634921,
+      "by_length": {
+        "1": {
+          "total": 29,
+          "accepted": 26,
+          "correct": 26,
+          "exact_word_accuracy": 0.896551724137931,
+          "accepted_accuracy": 1.0
+        },
+        "2": {
+          "total": 21,
+          "accepted": 19,
+          "correct": 19,
+          "exact_word_accuracy": 0.9047619047619048,
+          "accepted_accuracy": 1.0
+        },
+        "3": {
+          "total": 17,
+          "accepted": 17,
+          "correct": 17,
+          "exact_word_accuracy": 1.0,
+          "accepted_accuracy": 1.0
+        },
+        "4": {
+          "total": 11,
+          "accepted": 11,
+          "correct": 11,
+          "exact_word_accuracy": 1.0,
+          "accepted_accuracy": 1.0
+        },
+        "5": {
+          "total": 10,
+          "accepted": 7,
+          "correct": 7,
+          "exact_word_accuracy": 0.7,
+          "accepted_accuracy": 1.0
+        },
+        "6": {
+          "total": 23,
+          "accepted": 23,
+          "correct": 23,
+          "exact_word_accuracy": 1.0,
+          "accepted_accuracy": 1.0
+        },
+        "7": {
+          "total": 8,
+          "accepted": 7,
+          "correct": 7,
+          "exact_word_accuracy": 0.875,
+          "accepted_accuracy": 1.0
+        },
+        "8": {
+          "total": 11,
+          "accepted": 11,
+          "correct": 10,
+          "exact_word_accuracy": 0.9090909090909091,
+          "accepted_accuracy": 0.9090909090909091
+        },
+        "9": {
+          "total": 5,
+          "accepted": 5,
+          "correct": 5,
+          "exact_word_accuracy": 1.0,
+          "accepted_accuracy": 1.0
+        }
+      },
+      "rejection_reasons": {
+        "low_confidence": 6,
+        "clipped": 2,
+        "unsupported_pattern": 1
+      }
+    },
+    "sampling": {
+      "order_int64_sha256": "eb35dfcfdbb4989223e61d02e307dff472752e5dc1939cc41ad940b72406f8dc",
+      "records": 24882,
+      "unique_record_indices_this_epoch": 11883,
+      "cumulative_unique_record_indices": 11883,
+      "families": {
+        "books/chudo_derevo_redmi": {
+          "records_this_epoch": 1967,
+          "unique_records_this_epoch": 1013,
+          "cumulative_unique_records": 1013,
+          "total_unique_records": 1013
+        },
+        "books/mdd-redmi1": {
+          "records_this_epoch": 1967,
+          "unique_records_this_epoch": 903,
+          "cumulative_unique_records": 903,
+          "total_unique_records": 903
+        },
+        "books/mdd_cannon1": {
+          "records_this_epoch": 1967,
+          "unique_records_this_epoch": 899,
+          "cumulative_unique_records": 899,
+          "total_unique_records": 899
+        },
+        "books/skazki": {
+          "records_this_epoch": 1967,
+          "unique_records_this_epoch": 1967,
+          "cumulative_unique_records": 1967,
+          "total_unique_records": 14966
+        },
+        "books/telefon": {
+          "records_this_epoch": 1967,
+          "unique_records_this_epoch": 1642,
+          "cumulative_unique_records": 1642,
+          "total_unique_records": 1642
+        },
+        "books/uploaded": {
+          "records_this_epoch": 1967,
+          "unique_records_this_epoch": 159,
+          "cumulative_unique_records": 159,
+          "total_unique_records": 159
+        },
+        "dsbi/Massage": {
+          "records_this_epoch": 1967,
+          "unique_records_this_epoch": 838,
+          "cumulative_unique_records": 838,
+          "total_unique_records": 838
+        },
+        "dsbi/Math": {
+          "records_this_epoch": 1967,
+          "unique_records_this_epoch": 824,
+          "cumulative_unique_records": 824,
+          "total_unique_records": 824
+        },
+        "dsbi/Ordinary Printed Document": {
+          "records_this_epoch": 1966,
+          "unique_records_this_epoch": 289,
+          "cumulative_unique_records": 289,
+          "total_unique_records": 289
+        },
+        "dsbi/Shaver Yang Fengting": {
+          "records_this_epoch": 1966,
+          "unique_records_this_epoch": 340,
+          "cumulative_unique_records": 340,
+          "total_unique_records": 340
+        },
+        "handwritten/kov": {
+          "records_this_epoch": 1966,
+          "unique_records_this_epoch": 846,
+          "cumulative_unique_records": 846,
+          "total_unique_records": 846
+        },
+        "handwritten/uploaded": {
+          "records_this_epoch": 1966,
+          "unique_records_this_epoch": 881,
+          "cumulative_unique_records": 881,
+          "total_unique_records": 881
+        }
+      },
+      "epoch": 1,
+      "dataset_epoch": 2,
+      "completed_batches": 1037,
+      "expected_batches": 1037,
+      "complete_epoch": true
+    },
+    "timing_seconds": {
+      "fit_and_patch_validation": 214.98882099999173,
+      "save_last_and_retained": 0.2813124000094831,
+      "whole_word_predict": 1.8654648999945493,
+      "whole_word_calibrate": 1.4845541999966372,
+      "callback_total": 5.001526499996544
+    }
+  },
+  {
+    "epoch": 2,
+    "loss": 0.8252872824668884,
+    "val_loss": 0.7370482683181763,
+    "thresholds": {
+      "proposalScore": 0.35,
+      "acceptScore": 0.4,
+      "dotConfidence": 0.7,
+      "nmsIou": 0.25,
+      "minCellWidth": 0.008,
+      "minCellHeight": 0.06,
+      "edgeMargin": 0.008,
+      "maxRowDeviation": 0.55,
+      "maxGapRatio": 1.2,
+      "maxOverlapRatio": 0.5
+    },
+    "words": {
+      "total": 135,
+      "accepted": 122,
+      "correct": 120,
+      "exact_word_accuracy": 0.8888888888888888,
+      "accepted_accuracy": 0.9836065573770492,
+      "by_length": {
+        "1": {
+          "total": 29,
+          "accepted": 26,
+          "correct": 26,
+          "exact_word_accuracy": 0.896551724137931,
+          "accepted_accuracy": 1.0
+        },
+        "2": {
+          "total": 21,
+          "accepted": 17,
+          "correct": 16,
+          "exact_word_accuracy": 0.7619047619047619,
+          "accepted_accuracy": 0.9411764705882353
+        },
+        "3": {
+          "total": 17,
+          "accepted": 16,
+          "correct": 16,
+          "exact_word_accuracy": 0.9411764705882353,
+          "accepted_accuracy": 1.0
+        },
+        "4": {
+          "total": 11,
+          "accepted": 11,
+          "correct": 11,
+          "exact_word_accuracy": 1.0,
+          "accepted_accuracy": 1.0
+        },
+        "5": {
+          "total": 10,
+          "accepted": 9,
+          "correct": 8,
+          "exact_word_accuracy": 0.8,
+          "accepted_accuracy": 0.8888888888888888
+        },
+        "6": {
+          "total": 23,
+          "accepted": 21,
+          "correct": 21,
+          "exact_word_accuracy": 0.9130434782608695,
+          "accepted_accuracy": 1.0
+        },
+        "7": {
+          "total": 8,
+          "accepted": 7,
+          "correct": 7,
+          "exact_word_accuracy": 0.875,
+          "accepted_accuracy": 1.0
+        },
+        "8": {
+          "total": 11,
+          "accepted": 10,
+          "correct": 10,
+          "exact_word_accuracy": 0.9090909090909091,
+          "accepted_accuracy": 1.0
+        },
+        "9": {
+          "total": 5,
+          "accepted": 5,
+          "correct": 5,
+          "exact_word_accuracy": 1.0,
+          "accepted_accuracy": 1.0
+        }
+      },
+      "rejection_reasons": {
+        "unsupported_pattern": 2,
+        "low_confidence": 8,
+        "clipped": 3
+      }
+    },
+    "sampling": {
+      "order_int64_sha256": "06b07951e8dc32d4d8d153524973e289b5e764e81f1185f69052b3ba6bfa2acb",
+      "records": 24882,
+      "unique_record_indices_this_epoch": 11883,
+      "cumulative_unique_record_indices": 13850,
+      "families": {
+        "books/chudo_derevo_redmi": {
+          "records_this_epoch": 1967,
+          "unique_records_this_epoch": 1013,
+          "cumulative_unique_records": 1013,
+          "total_unique_records": 1013
+        },
+        "books/mdd-redmi1": {
+          "records_this_epoch": 1967,
+          "unique_records_this_epoch": 903,
+          "cumulative_unique_records": 903,
+          "total_unique_records": 903
+        },
+        "books/mdd_cannon1": {
+          "records_this_epoch": 1967,
+          "unique_records_this_epoch": 899,
+          "cumulative_unique_records": 899,
+          "total_unique_records": 899
+        },
+        "books/skazki": {
+          "records_this_epoch": 1967,
+          "unique_records_this_epoch": 1967,
+          "cumulative_unique_records": 3934,
+          "total_unique_records": 14966
+        },
+        "books/telefon": {
+          "records_this_epoch": 1967,
+          "unique_records_this_epoch": 1642,
+          "cumulative_unique_records": 1642,
+          "total_unique_records": 1642
+        },
+        "books/uploaded": {
+          "records_this_epoch": 1967,
+          "unique_records_this_epoch": 159,
+          "cumulative_unique_records": 159,
+          "total_unique_records": 159
+        },
+        "dsbi/Massage": {
+          "records_this_epoch": 1967,
+          "unique_records_this_epoch": 838,
+          "cumulative_unique_records": 838,
+          "total_unique_records": 838
+        },
+        "dsbi/Math": {
+          "records_this_epoch": 1967,
+          "unique_records_this_epoch": 824,
+          "cumulative_unique_records": 824,
+          "total_unique_records": 824
+        },
+        "dsbi/Ordinary Printed Document": {
+          "records_this_epoch": 1966,
+          "unique_records_this_epoch": 289,
+          "cumulative_unique_records": 289,
+          "total_unique_records": 289
+        },
+        "dsbi/Shaver Yang Fengting": {
+          "records_this_epoch": 1966,
+          "unique_records_this_epoch": 340,
+          "cumulative_unique_records": 340,
+          "total_unique_records": 340
+        },
+        "handwritten/kov": {
+          "records_this_epoch": 1966,
+          "unique_records_this_epoch": 846,
+          "cumulative_unique_records": 846,
+          "total_unique_records": 846
+        },
+        "handwritten/uploaded": {
+          "records_this_epoch": 1966,
+          "unique_records_this_epoch": 881,
+          "cumulative_unique_records": 881,
+          "total_unique_records": 881
+        }
+      },
+      "epoch": 2,
+      "dataset_epoch": 3,
+      "completed_batches": 1037,
+      "expected_batches": 1037,
+      "complete_epoch": true
+    },
+    "timing_seconds": {
+      "fit_and_patch_validation": 234.40181159999338,
+      "save_last_and_retained": 0.30634170000848826,
+      "whole_word_predict": 0.46865450000041164,
+      "whole_word_calibrate": 1.5908802000049036,
+      "callback_total": 2.38172800000757
+    }
+  },
+  {
+    "epoch": 3,
+    "loss": 0.799411416053772,
+    "val_loss": 0.734924852848053,
+    "thresholds": {
+      "proposalScore": 0.25,
+      "acceptScore": 0.4,
+      "dotConfidence": 0.7,
+      "nmsIou": 0.25,
+      "minCellWidth": 0.008,
+      "minCellHeight": 0.06,
+      "edgeMargin": 0.008,
+      "maxRowDeviation": 0.55,
+      "maxGapRatio": 1.2,
+      "maxOverlapRatio": 0.5
+    },
+    "words": {
+      "total": 135,
+      "accepted": 119,
+      "correct": 119,
+      "exact_word_accuracy": 0.8814814814814815,
+      "accepted_accuracy": 1.0,
+      "by_length": {
+        "1": {
+          "total": 29,
+          "accepted": 25,
+          "correct": 25,
+          "exact_word_accuracy": 0.8620689655172413,
+          "accepted_accuracy": 1.0
+        },
+        "2": {
+          "total": 21,
+          "accepted": 15,
+          "correct": 15,
+          "exact_word_accuracy": 0.7142857142857143,
+          "accepted_accuracy": 1.0
+        },
+        "3": {
+          "total": 17,
+          "accepted": 16,
+          "correct": 16,
+          "exact_word_accuracy": 0.9411764705882353,
+          "accepted_accuracy": 1.0
+        },
+        "4": {
+          "total": 11,
+          "accepted": 11,
+          "correct": 11,
+          "exact_word_accuracy": 1.0,
+          "accepted_accuracy": 1.0
+        },
+        "5": {
+          "total": 10,
+          "accepted": 8,
+          "correct": 8,
+          "exact_word_accuracy": 0.8,
+          "accepted_accuracy": 1.0
+        },
+        "6": {
+          "total": 23,
+          "accepted": 22,
+          "correct": 22,
+          "exact_word_accuracy": 0.9565217391304348,
+          "accepted_accuracy": 1.0
+        },
+        "7": {
+          "total": 8,
+          "accepted": 7,
+          "correct": 7,
+          "exact_word_accuracy": 0.875,
+          "accepted_accuracy": 1.0
+        },
+        "8": {
+          "total": 11,
+          "accepted": 10,
+          "correct": 10,
+          "exact_word_accuracy": 0.9090909090909091,
+          "accepted_accuracy": 1.0
+        },
+        "9": {
+          "total": 5,
+          "accepted": 5,
+          "correct": 5,
+          "exact_word_accuracy": 1.0,
+          "accepted_accuracy": 1.0
+        }
+      },
+      "rejection_reasons": {
+        "low_confidence": 12,
+        "clipped": 3,
+        "unsupported_pattern": 1
+      }
+    },
+    "sampling": {
+      "order_int64_sha256": "c471c7a89d7b803deabb5fc12622d6f6d740c9df54f4d7f08b6edad796abe37d",
+      "records": 24882,
+      "unique_record_indices_this_epoch": 11883,
+      "cumulative_unique_record_indices": 15817,
+      "families": {
+        "books/chudo_derevo_redmi": {
+          "records_this_epoch": 1967,
+          "unique_records_this_epoch": 1013,
+          "cumulative_unique_records": 1013,
+          "total_unique_records": 1013
+        },
+        "books/mdd-redmi1": {
+          "records_this_epoch": 1967,
+          "unique_records_this_epoch": 903,
+          "cumulative_unique_records": 903,
+          "total_unique_records": 903
+        },
+        "books/mdd_cannon1": {
+          "records_this_epoch": 1967,
+          "unique_records_this_epoch": 899,
+          "cumulative_unique_records": 899,
+          "total_unique_records": 899
+        },
+        "books/skazki": {
+          "records_this_epoch": 1967,
+          "unique_records_this_epoch": 1967,
+          "cumulative_unique_records": 5901,
+          "total_unique_records": 14966
+        },
+        "books/telefon": {
+          "records_this_epoch": 1967,
+          "unique_records_this_epoch": 1642,
+          "cumulative_unique_records": 1642,
+          "total_unique_records": 1642
+        },
+        "books/uploaded": {
+          "records_this_epoch": 1967,
+          "unique_records_this_epoch": 159,
+          "cumulative_unique_records": 159,
+          "total_unique_records": 159
+        },
+        "dsbi/Massage": {
+          "records_this_epoch": 1967,
+          "unique_records_this_epoch": 838,
+          "cumulative_unique_records": 838,
+          "total_unique_records": 838
+        },
+        "dsbi/Math": {
+          "records_this_epoch": 1967,
+          "unique_records_this_epoch": 824,
+          "cumulative_unique_records": 824,
+          "total_unique_records": 824
+        },
+        "dsbi/Ordinary Printed Document": {
+          "records_this_epoch": 1966,
+          "unique_records_this_epoch": 289,
+          "cumulative_unique_records": 289,
+          "total_unique_records": 289
+        },
+        "dsbi/Shaver Yang Fengting": {
+          "records_this_epoch": 1966,
+          "unique_records_this_epoch": 340,
+          "cumulative_unique_records": 340,
+          "total_unique_records": 340
+        },
+        "handwritten/kov": {
+          "records_this_epoch": 1966,
+          "unique_records_this_epoch": 846,
+          "cumulative_unique_records": 846,
+          "total_unique_records": 846
+        },
+        "handwritten/uploaded": {
+          "records_this_epoch": 1966,
+          "unique_records_this_epoch": 881,
+          "cumulative_unique_records": 881,
+          "total_unique_records": 881
+        }
+      },
+      "epoch": 3,
+      "dataset_epoch": 4,
+      "completed_batches": 1037,
+      "expected_batches": 1037,
+      "complete_epoch": true
+    },
+    "timing_seconds": {
+      "fit_and_patch_validation": 214.36745710000105,
+      "save_last_and_retained": 0.2859186999994563,
+      "whole_word_predict": 0.3922347999905469,
+      "whole_word_calibrate": 1.5390746000048239,
+      "callback_total": 2.2312681999901542
+    }
+  },
+  {
+    "epoch": 4,
+    "loss": 0.7771760821342468,
+    "val_loss": 0.7347720265388489,
+    "thresholds": {
+      "proposalScore": 0.35,
+      "acceptScore": 0.4,
+      "dotConfidence": 0.7,
+      "nmsIou": 0.25,
+      "minCellWidth": 0.008,
+      "minCellHeight": 0.06,
+      "edgeMargin": 0.008,
+      "maxRowDeviation": 0.55,
+      "maxGapRatio": 1.2,
+      "maxOverlapRatio": 0.5
+    },
+    "words": {
+      "total": 135,
+      "accepted": 128,
+      "correct": 124,
+      "exact_word_accuracy": 0.9185185185185185,
+      "accepted_accuracy": 0.96875,
+      "by_length": {
+        "1": {
+          "total": 29,
+          "accepted": 26,
+          "correct": 26,
+          "exact_word_accuracy": 0.896551724137931,
+          "accepted_accuracy": 1.0
+        },
+        "2": {
+          "total": 21,
+          "accepted": 20,
+          "correct": 19,
+          "exact_word_accuracy": 0.9047619047619048,
+          "accepted_accuracy": 0.95
+        },
+        "3": {
+          "total": 17,
+          "accepted": 17,
+          "correct": 16,
+          "exact_word_accuracy": 0.9411764705882353,
+          "accepted_accuracy": 0.9411764705882353
+        },
+        "4": {
+          "total": 11,
+          "accepted": 11,
+          "correct": 11,
+          "exact_word_accuracy": 1.0,
+          "accepted_accuracy": 1.0
+        },
+        "5": {
+          "total": 10,
+          "accepted": 10,
+          "correct": 9,
+          "exact_word_accuracy": 0.9,
+          "accepted_accuracy": 0.9
+        },
+        "6": {
+          "total": 23,
+          "accepted": 21,
+          "correct": 21,
+          "exact_word_accuracy": 0.9130434782608695,
+          "accepted_accuracy": 1.0
+        },
+        "7": {
+          "total": 8,
+          "accepted": 7,
+          "correct": 7,
+          "exact_word_accuracy": 0.875,
+          "accepted_accuracy": 1.0
+        },
+        "8": {
+          "total": 11,
+          "accepted": 11,
+          "correct": 10,
+          "exact_word_accuracy": 0.9090909090909091,
+          "accepted_accuracy": 0.9090909090909091
+        },
+        "9": {
+          "total": 5,
+          "accepted": 5,
+          "correct": 5,
+          "exact_word_accuracy": 1.0,
+          "accepted_accuracy": 1.0
+        }
+      },
+      "rejection_reasons": {
+        "clipped": 2,
+        "low_confidence": 4,
+        "unsupported_pattern": 1
+      }
+    },
+    "sampling": {
+      "order_int64_sha256": "cc539bca953184acc65e20daba2e847a48486bc02064ba2af7aa0c037f99216c",
+      "records": 24882,
+      "unique_record_indices_this_epoch": 11883,
+      "cumulative_unique_record_indices": 17784,
+      "families": {
+        "books/chudo_derevo_redmi": {
+          "records_this_epoch": 1967,
+          "unique_records_this_epoch": 1013,
+          "cumulative_unique_records": 1013,
+          "total_unique_records": 1013
+        },
+        "books/mdd-redmi1": {
+          "records_this_epoch": 1967,
+          "unique_records_this_epoch": 903,
+          "cumulative_unique_records": 903,
+          "total_unique_records": 903
+        },
+        "books/mdd_cannon1": {
+          "records_this_epoch": 1967,
+          "unique_records_this_epoch": 899,
+          "cumulative_unique_records": 899,
+          "total_unique_records": 899
+        },
+        "books/skazki": {
+          "records_this_epoch": 1967,
+          "unique_records_this_epoch": 1967,
+          "cumulative_unique_records": 7868,
+          "total_unique_records": 14966
+        },
+        "books/telefon": {
+          "records_this_epoch": 1967,
+          "unique_records_this_epoch": 1642,
+          "cumulative_unique_records": 1642,
+          "total_unique_records": 1642
+        },
+        "books/uploaded": {
+          "records_this_epoch": 1967,
+          "unique_records_this_epoch": 159,
+          "cumulative_unique_records": 159,
+          "total_unique_records": 159
+        },
+        "dsbi/Massage": {
+          "records_this_epoch": 1967,
+          "unique_records_this_epoch": 838,
+          "cumulative_unique_records": 838,
+          "total_unique_records": 838
+        },
+        "dsbi/Math": {
+          "records_this_epoch": 1967,
+          "unique_records_this_epoch": 824,
+          "cumulative_unique_records": 824,
+          "total_unique_records": 824
+        },
+        "dsbi/Ordinary Printed Document": {
+          "records_this_epoch": 1966,
+          "unique_records_this_epoch": 289,
+          "cumulative_unique_records": 289,
+          "total_unique_records": 289
+        },
+        "dsbi/Shaver Yang Fengting": {
+          "records_this_epoch": 1966,
+          "unique_records_this_epoch": 340,
+          "cumulative_unique_records": 340,
+          "total_unique_records": 340
+        },
+        "handwritten/kov": {
+          "records_this_epoch": 1966,
+          "unique_records_this_epoch": 846,
+          "cumulative_unique_records": 846,
+          "total_unique_records": 846
+        },
+        "handwritten/uploaded": {
+          "records_this_epoch": 1966,
+          "unique_records_this_epoch": 881,
+          "cumulative_unique_records": 881,
+          "total_unique_records": 881
+        }
+      },
+      "epoch": 4,
+      "dataset_epoch": 5,
+      "completed_batches": 1037,
+      "expected_batches": 1037,
+      "complete_epoch": true
+    },
+    "timing_seconds": {
+      "fit_and_patch_validation": 207.58473400000366,
+      "save_last_and_retained": 0.27606079999532085,
+      "whole_word_predict": 0.38432169999578036,
+      "whole_word_calibrate": 1.447591400006786,
+      "callback_total": 2.119483599992236
+    }
+  },
+  {
+    "epoch": 5,
+    "loss": 0.7722415328025818,
+    "val_loss": 0.7262430191040039,
+    "thresholds": {
+      "proposalScore": 0.35,
+      "acceptScore": 0.4,
+      "dotConfidence": 0.7,
+      "nmsIou": 0.25,
+      "minCellWidth": 0.008,
+      "minCellHeight": 0.06,
+      "edgeMargin": 0.008,
+      "maxRowDeviation": 0.55,
+      "maxGapRatio": 1.2,
+      "maxOverlapRatio": 0.5
+    },
+    "words": {
+      "total": 135,
+      "accepted": 123,
+      "correct": 120,
+      "exact_word_accuracy": 0.8888888888888888,
+      "accepted_accuracy": 0.975609756097561,
+      "by_length": {
+        "1": {
+          "total": 29,
+          "accepted": 25,
+          "correct": 25,
+          "exact_word_accuracy": 0.8620689655172413,
+          "accepted_accuracy": 1.0
+        },
+        "2": {
+          "total": 21,
+          "accepted": 16,
+          "correct": 15,
+          "exact_word_accuracy": 0.7142857142857143,
+          "accepted_accuracy": 0.9375
+        },
+        "3": {
+          "total": 17,
+          "accepted": 17,
+          "correct": 16,
+          "exact_word_accuracy": 0.9411764705882353,
+          "accepted_accuracy": 0.9411764705882353
+        },
+        "4": {
+          "total": 11,
+          "accepted": 11,
+          "correct": 11,
+          "exact_word_accuracy": 1.0,
+          "accepted_accuracy": 1.0
+        },
+        "5": {
+          "total": 10,
+          "accepted": 9,
+          "correct": 8,
+          "exact_word_accuracy": 0.8,
+          "accepted_accuracy": 0.8888888888888888
+        },
+        "6": {
+          "total": 23,
+          "accepted": 23,
+          "correct": 23,
+          "exact_word_accuracy": 1.0,
+          "accepted_accuracy": 1.0
+        },
+        "7": {
+          "total": 8,
+          "accepted": 7,
+          "correct": 7,
+          "exact_word_accuracy": 0.875,
+          "accepted_accuracy": 1.0
+        },
+        "8": {
+          "total": 11,
+          "accepted": 10,
+          "correct": 10,
+          "exact_word_accuracy": 0.9090909090909091,
+          "accepted_accuracy": 1.0
+        },
+        "9": {
+          "total": 5,
+          "accepted": 5,
+          "correct": 5,
+          "exact_word_accuracy": 1.0,
+          "accepted_accuracy": 1.0
+        }
+      },
+      "rejection_reasons": {
+        "low_confidence": 9,
+        "clipped": 2,
+        "unsupported_pattern": 1
+      }
+    },
+    "sampling": {
+      "order_int64_sha256": "234184d74e8f0db17f21937e417fa7228a2e7968c27fe7334846467eb7f76ac7",
+      "records": 24882,
+      "unique_record_indices_this_epoch": 11883,
+      "cumulative_unique_record_indices": 19751,
+      "families": {
+        "books/chudo_derevo_redmi": {
+          "records_this_epoch": 1967,
+          "unique_records_this_epoch": 1013,
+          "cumulative_unique_records": 1013,
+          "total_unique_records": 1013
+        },
+        "books/mdd-redmi1": {
+          "records_this_epoch": 1967,
+          "unique_records_this_epoch": 903,
+          "cumulative_unique_records": 903,
+          "total_unique_records": 903
+        },
+        "books/mdd_cannon1": {
+          "records_this_epoch": 1967,
+          "unique_records_this_epoch": 899,
+          "cumulative_unique_records": 899,
+          "total_unique_records": 899
+        },
+        "books/skazki": {
+          "records_this_epoch": 1967,
+          "unique_records_this_epoch": 1967,
+          "cumulative_unique_records": 9835,
+          "total_unique_records": 14966
+        },
+        "books/telefon": {
+          "records_this_epoch": 1967,
+          "unique_records_this_epoch": 1642,
+          "cumulative_unique_records": 1642,
+          "total_unique_records": 1642
+        },
+        "books/uploaded": {
+          "records_this_epoch": 1967,
+          "unique_records_this_epoch": 159,
+          "cumulative_unique_records": 159,
+          "total_unique_records": 159
+        },
+        "dsbi/Massage": {
+          "records_this_epoch": 1967,
+          "unique_records_this_epoch": 838,
+          "cumulative_unique_records": 838,
+          "total_unique_records": 838
+        },
+        "dsbi/Math": {
+          "records_this_epoch": 1967,
+          "unique_records_this_epoch": 824,
+          "cumulative_unique_records": 824,
+          "total_unique_records": 824
+        },
+        "dsbi/Ordinary Printed Document": {
+          "records_this_epoch": 1966,
+          "unique_records_this_epoch": 289,
+          "cumulative_unique_records": 289,
+          "total_unique_records": 289
+        },
+        "dsbi/Shaver Yang Fengting": {
+          "records_this_epoch": 1966,
+          "unique_records_this_epoch": 340,
+          "cumulative_unique_records": 340,
+          "total_unique_records": 340
+        },
+        "handwritten/kov": {
+          "records_this_epoch": 1966,
+          "unique_records_this_epoch": 846,
+          "cumulative_unique_records": 846,
+          "total_unique_records": 846
+        },
+        "handwritten/uploaded": {
+          "records_this_epoch": 1966,
+          "unique_records_this_epoch": 881,
+          "cumulative_unique_records": 881,
+          "total_unique_records": 881
+        }
+      },
+      "epoch": 5,
+      "dataset_epoch": 6,
+      "completed_batches": 1037,
+      "expected_batches": 1037,
+      "complete_epoch": true
+    },
+    "timing_seconds": {
+      "fit_and_patch_validation": 212.94151600000623,
+      "save_last_and_retained": 0.27196050000202376,
+      "whole_word_predict": 0.41744599999219645,
+      "whole_word_calibrate": 1.4391904000076465,
+      "callback_total": 2.1405931999906898
+    }
+  },
+  {
+    "epoch": 6,
+    "loss": 0.7567155957221985,
+    "val_loss": 0.7430323362350464,
+    "thresholds": {
+      "proposalScore": 0.25,
+      "acceptScore": 0.4,
+      "dotConfidence": 0.7,
+      "nmsIou": 0.25,
+      "minCellWidth": 0.008,
+      "minCellHeight": 0.06,
+      "edgeMargin": 0.008,
+      "maxRowDeviation": 0.55,
+      "maxGapRatio": 1.2,
+      "maxOverlapRatio": 0.5
+    },
+    "words": {
+      "total": 135,
+      "accepted": 123,
+      "correct": 122,
+      "exact_word_accuracy": 0.9037037037037037,
+      "accepted_accuracy": 0.991869918699187,
+      "by_length": {
+        "1": {
+          "total": 29,
+          "accepted": 26,
+          "correct": 25,
+          "exact_word_accuracy": 0.8620689655172413,
+          "accepted_accuracy": 0.9615384615384616
+        },
+        "2": {
+          "total": 21,
+          "accepted": 19,
+          "correct": 19,
+          "exact_word_accuracy": 0.9047619047619048,
+          "accepted_accuracy": 1.0
+        },
+        "3": {
+          "total": 17,
+          "accepted": 16,
+          "correct": 16,
+          "exact_word_accuracy": 0.9411764705882353,
+          "accepted_accuracy": 1.0
+        },
+        "4": {
+          "total": 11,
+          "accepted": 11,
+          "correct": 11,
+          "exact_word_accuracy": 1.0,
+          "accepted_accuracy": 1.0
+        },
+        "5": {
+          "total": 10,
+          "accepted": 8,
+          "correct": 8,
+          "exact_word_accuracy": 0.8,
+          "accepted_accuracy": 1.0
+        },
+        "6": {
+          "total": 23,
+          "accepted": 21,
+          "correct": 21,
+          "exact_word_accuracy": 0.9130434782608695,
+          "accepted_accuracy": 1.0
+        },
+        "7": {
+          "total": 8,
+          "accepted": 7,
+          "correct": 7,
+          "exact_word_accuracy": 0.875,
+          "accepted_accuracy": 1.0
+        },
+        "8": {
+          "total": 11,
+          "accepted": 10,
+          "correct": 10,
+          "exact_word_accuracy": 0.9090909090909091,
+          "accepted_accuracy": 1.0
+        },
+        "9": {
+          "total": 5,
+          "accepted": 5,
+          "correct": 5,
+          "exact_word_accuracy": 1.0,
+          "accepted_accuracy": 1.0
+        }
+      },
+      "rejection_reasons": {
+        "low_confidence": 8,
+        "clipped": 3,
+        "unsupported_pattern": 1
+      }
+    },
+    "sampling": {
+      "order_int64_sha256": "e20f7a4d54ec8cc9951b0f5b201e71eca141ec0bed07afd9df7af30791757852",
+      "records": 24882,
+      "unique_record_indices_this_epoch": 11883,
+      "cumulative_unique_record_indices": 21718,
+      "families": {
+        "books/chudo_derevo_redmi": {
+          "records_this_epoch": 1967,
+          "unique_records_this_epoch": 1013,
+          "cumulative_unique_records": 1013,
+          "total_unique_records": 1013
+        },
+        "books/mdd-redmi1": {
+          "records_this_epoch": 1967,
+          "unique_records_this_epoch": 903,
+          "cumulative_unique_records": 903,
+          "total_unique_records": 903
+        },
+        "books/mdd_cannon1": {
+          "records_this_epoch": 1967,
+          "unique_records_this_epoch": 899,
+          "cumulative_unique_records": 899,
+          "total_unique_records": 899
+        },
+        "books/skazki": {
+          "records_this_epoch": 1967,
+          "unique_records_this_epoch": 1967,
+          "cumulative_unique_records": 11802,
+          "total_unique_records": 14966
+        },
+        "books/telefon": {
+          "records_this_epoch": 1967,
+          "unique_records_this_epoch": 1642,
+          "cumulative_unique_records": 1642,
+          "total_unique_records": 1642
+        },
+        "books/uploaded": {
+          "records_this_epoch": 1967,
+          "unique_records_this_epoch": 159,
+          "cumulative_unique_records": 159,
+          "total_unique_records": 159
+        },
+        "dsbi/Massage": {
+          "records_this_epoch": 1967,
+          "unique_records_this_epoch": 838,
+          "cumulative_unique_records": 838,
+          "total_unique_records": 838
+        },
+        "dsbi/Math": {
+          "records_this_epoch": 1967,
+          "unique_records_this_epoch": 824,
+          "cumulative_unique_records": 824,
+          "total_unique_records": 824
+        },
+        "dsbi/Ordinary Printed Document": {
+          "records_this_epoch": 1966,
+          "unique_records_this_epoch": 289,
+          "cumulative_unique_records": 289,
+          "total_unique_records": 289
+        },
+        "dsbi/Shaver Yang Fengting": {
+          "records_this_epoch": 1966,
+          "unique_records_this_epoch": 340,
+          "cumulative_unique_records": 340,
+          "total_unique_records": 340
+        },
+        "handwritten/kov": {
+          "records_this_epoch": 1966,
+          "unique_records_this_epoch": 846,
+          "cumulative_unique_records": 846,
+          "total_unique_records": 846
+        },
+        "handwritten/uploaded": {
+          "records_this_epoch": 1966,
+          "unique_records_this_epoch": 881,
+          "cumulative_unique_records": 881,
+          "total_unique_records": 881
+        }
+      },
+      "epoch": 6,
+      "dataset_epoch": 7,
+      "completed_batches": 1037,
+      "expected_batches": 1037,
+      "complete_epoch": true
+    },
+    "timing_seconds": {
+      "fit_and_patch_validation": 209.69200860000274,
+      "save_last_and_retained": 0.27649380000366364,
+      "whole_word_predict": 0.38404829999490175,
+      "whole_word_calibrate": 1.4545330999972066,
+      "callback_total": 2.1303307999914978
+    }
+  },
+  {
+    "epoch": 7,
+    "loss": 0.7476924061775208,
+    "val_loss": 0.7127556800842285,
+    "thresholds": {
+      "proposalScore": 0.25,
+      "acceptScore": 0.4,
+      "dotConfidence": 0.7,
+      "nmsIou": 0.25,
+      "minCellWidth": 0.008,
+      "minCellHeight": 0.06,
+      "edgeMargin": 0.008,
+      "maxRowDeviation": 0.55,
+      "maxGapRatio": 1.2,
+      "maxOverlapRatio": 0.5
+    },
+    "words": {
+      "total": 135,
+      "accepted": 123,
+      "correct": 122,
+      "exact_word_accuracy": 0.9037037037037037,
+      "accepted_accuracy": 0.991869918699187,
+      "by_length": {
+        "1": {
+          "total": 29,
+          "accepted": 26,
+          "correct": 25,
+          "exact_word_accuracy": 0.8620689655172413,
+          "accepted_accuracy": 0.9615384615384616
+        },
+        "2": {
+          "total": 21,
+          "accepted": 19,
+          "correct": 19,
+          "exact_word_accuracy": 0.9047619047619048,
+          "accepted_accuracy": 1.0
+        },
+        "3": {
+          "total": 17,
+          "accepted": 16,
+          "correct": 16,
+          "exact_word_accuracy": 0.9411764705882353,
+          "accepted_accuracy": 1.0
+        },
+        "4": {
+          "total": 11,
+          "accepted": 11,
+          "correct": 11,
+          "exact_word_accuracy": 1.0,
+          "accepted_accuracy": 1.0
+        },
+        "5": {
+          "total": 10,
+          "accepted": 8,
+          "correct": 8,
+          "exact_word_accuracy": 0.8,
+          "accepted_accuracy": 1.0
+        },
+        "6": {
+          "total": 23,
+          "accepted": 22,
+          "correct": 22,
+          "exact_word_accuracy": 0.9565217391304348,
+          "accepted_accuracy": 1.0
+        },
+        "7": {
+          "total": 8,
+          "accepted": 7,
+          "correct": 7,
+          "exact_word_accuracy": 0.875,
+          "accepted_accuracy": 1.0
+        },
+        "8": {
+          "total": 11,
+          "accepted": 9,
+          "correct": 9,
+          "exact_word_accuracy": 0.8181818181818182,
+          "accepted_accuracy": 1.0
+        },
+        "9": {
+          "total": 5,
+          "accepted": 5,
+          "correct": 5,
+          "exact_word_accuracy": 1.0,
+          "accepted_accuracy": 1.0
+        }
+      },
+      "rejection_reasons": {
+        "low_confidence": 8,
+        "clipped": 3,
+        "unsupported_pattern": 1
+      }
+    },
+    "sampling": {
+      "order_int64_sha256": "cd9a9c707c80008e78ed63e71eb015e53fcdf6db47dac5363232803f015d36a8",
+      "records": 24882,
+      "unique_record_indices_this_epoch": 11883,
+      "cumulative_unique_record_indices": 23685,
+      "families": {
+        "books/chudo_derevo_redmi": {
+          "records_this_epoch": 1967,
+          "unique_records_this_epoch": 1013,
+          "cumulative_unique_records": 1013,
+          "total_unique_records": 1013
+        },
+        "books/mdd-redmi1": {
+          "records_this_epoch": 1967,
+          "unique_records_this_epoch": 903,
+          "cumulative_unique_records": 903,
+          "total_unique_records": 903
+        },
+        "books/mdd_cannon1": {
+          "records_this_epoch": 1967,
+          "unique_records_this_epoch": 899,
+          "cumulative_unique_records": 899,
+          "total_unique_records": 899
+        },
+        "books/skazki": {
+          "records_this_epoch": 1967,
+          "unique_records_this_epoch": 1967,
+          "cumulative_unique_records": 13769,
+          "total_unique_records": 14966
+        },
+        "books/telefon": {
+          "records_this_epoch": 1967,
+          "unique_records_this_epoch": 1642,
+          "cumulative_unique_records": 1642,
+          "total_unique_records": 1642
+        },
+        "books/uploaded": {
+          "records_this_epoch": 1967,
+          "unique_records_this_epoch": 159,
+          "cumulative_unique_records": 159,
+          "total_unique_records": 159
+        },
+        "dsbi/Massage": {
+          "records_this_epoch": 1967,
+          "unique_records_this_epoch": 838,
+          "cumulative_unique_records": 838,
+          "total_unique_records": 838
+        },
+        "dsbi/Math": {
+          "records_this_epoch": 1967,
+          "unique_records_this_epoch": 824,
+          "cumulative_unique_records": 824,
+          "total_unique_records": 824
+        },
+        "dsbi/Ordinary Printed Document": {
+          "records_this_epoch": 1966,
+          "unique_records_this_epoch": 289,
+          "cumulative_unique_records": 289,
+          "total_unique_records": 289
+        },
+        "dsbi/Shaver Yang Fengting": {
+          "records_this_epoch": 1966,
+          "unique_records_this_epoch": 340,
+          "cumulative_unique_records": 340,
+          "total_unique_records": 340
+        },
+        "handwritten/kov": {
+          "records_this_epoch": 1966,
+          "unique_records_this_epoch": 846,
+          "cumulative_unique_records": 846,
+          "total_unique_records": 846
+        },
+        "handwritten/uploaded": {
+          "records_this_epoch": 1966,
+          "unique_records_this_epoch": 881,
+          "cumulative_unique_records": 881,
+          "total_unique_records": 881
+        }
+      },
+      "epoch": 7,
+      "dataset_epoch": 8,
+      "completed_batches": 1037,
+      "expected_batches": 1037,
+      "complete_epoch": true
+    },
+    "timing_seconds": {
+      "fit_and_patch_validation": 207.4359875999944,
+      "save_last_and_retained": 0.2855491000082111,
+      "whole_word_predict": 0.39859189999697264,
+      "whole_word_calibrate": 1.5360897000064142,
+      "callback_total": 2.2368471000081627
+    }
+  },
+  {
+    "epoch": 8,
+    "loss": 0.7379263043403625,
+    "val_loss": 0.7103008031845093,
+    "thresholds": {
+      "proposalScore": 0.25,
+      "acceptScore": 0.4,
+      "dotConfidence": 0.7,
+      "nmsIou": 0.25,
+      "minCellWidth": 0.008,
+      "minCellHeight": 0.06,
+      "edgeMargin": 0.008,
+      "maxRowDeviation": 0.55,
+      "maxGapRatio": 1.2,
+      "maxOverlapRatio": 0.5
+    },
+    "words": {
+      "total": 135,
+      "accepted": 124,
+      "correct": 123,
+      "exact_word_accuracy": 0.9111111111111111,
+      "accepted_accuracy": 0.9919354838709677,
+      "by_length": {
+        "1": {
+          "total": 29,
+          "accepted": 26,
+          "correct": 25,
+          "exact_word_accuracy": 0.8620689655172413,
+          "accepted_accuracy": 0.9615384615384616
+        },
+        "2": {
+          "total": 21,
+          "accepted": 18,
+          "correct": 18,
+          "exact_word_accuracy": 0.8571428571428571,
+          "accepted_accuracy": 1.0
+        },
+        "3": {
+          "total": 17,
+          "accepted": 16,
+          "correct": 16,
+          "exact_word_accuracy": 0.9411764705882353,
+          "accepted_accuracy": 1.0
+        },
+        "4": {
+          "total": 11,
+          "accepted": 11,
+          "correct": 11,
+          "exact_word_accuracy": 1.0,
+          "accepted_accuracy": 1.0
+        },
+        "5": {
+          "total": 10,
+          "accepted": 8,
+          "correct": 8,
+          "exact_word_accuracy": 0.8,
+          "accepted_accuracy": 1.0
+        },
+        "6": {
+          "total": 23,
+          "accepted": 23,
+          "correct": 23,
+          "exact_word_accuracy": 1.0,
+          "accepted_accuracy": 1.0
+        },
+        "7": {
+          "total": 8,
+          "accepted": 7,
+          "correct": 7,
+          "exact_word_accuracy": 0.875,
+          "accepted_accuracy": 1.0
+        },
+        "8": {
+          "total": 11,
+          "accepted": 10,
+          "correct": 10,
+          "exact_word_accuracy": 0.9090909090909091,
+          "accepted_accuracy": 1.0
+        },
+        "9": {
+          "total": 5,
+          "accepted": 5,
+          "correct": 5,
+          "exact_word_accuracy": 1.0,
+          "accepted_accuracy": 1.0
+        }
+      },
+      "rejection_reasons": {
+        "low_confidence": 7,
+        "clipped": 3,
+        "unsupported_pattern": 1
+      }
+    },
+    "sampling": {
+      "order_int64_sha256": "7a6e46b205a764b3fe88fdfb12b3a551950508f45f929b6b7ecf71fd988531e9",
+      "records": 24882,
+      "unique_record_indices_this_epoch": 11883,
+      "cumulative_unique_record_indices": 24882,
+      "families": {
+        "books/chudo_derevo_redmi": {
+          "records_this_epoch": 1967,
+          "unique_records_this_epoch": 1013,
+          "cumulative_unique_records": 1013,
+          "total_unique_records": 1013
+        },
+        "books/mdd-redmi1": {
+          "records_this_epoch": 1967,
+          "unique_records_this_epoch": 903,
+          "cumulative_unique_records": 903,
+          "total_unique_records": 903
+        },
+        "books/mdd_cannon1": {
+          "records_this_epoch": 1967,
+          "unique_records_this_epoch": 899,
+          "cumulative_unique_records": 899,
+          "total_unique_records": 899
+        },
+        "books/skazki": {
+          "records_this_epoch": 1967,
+          "unique_records_this_epoch": 1967,
+          "cumulative_unique_records": 14966,
+          "total_unique_records": 14966
+        },
+        "books/telefon": {
+          "records_this_epoch": 1967,
+          "unique_records_this_epoch": 1642,
+          "cumulative_unique_records": 1642,
+          "total_unique_records": 1642
+        },
+        "books/uploaded": {
+          "records_this_epoch": 1967,
+          "unique_records_this_epoch": 159,
+          "cumulative_unique_records": 159,
+          "total_unique_records": 159
+        },
+        "dsbi/Massage": {
+          "records_this_epoch": 1967,
+          "unique_records_this_epoch": 838,
+          "cumulative_unique_records": 838,
+          "total_unique_records": 838
+        },
+        "dsbi/Math": {
+          "records_this_epoch": 1967,
+          "unique_records_this_epoch": 824,
+          "cumulative_unique_records": 824,
+          "total_unique_records": 824
+        },
+        "dsbi/Ordinary Printed Document": {
+          "records_this_epoch": 1966,
+          "unique_records_this_epoch": 289,
+          "cumulative_unique_records": 289,
+          "total_unique_records": 289
+        },
+        "dsbi/Shaver Yang Fengting": {
+          "records_this_epoch": 1966,
+          "unique_records_this_epoch": 340,
+          "cumulative_unique_records": 340,
+          "total_unique_records": 340
+        },
+        "handwritten/kov": {
+          "records_this_epoch": 1966,
+          "unique_records_this_epoch": 846,
+          "cumulative_unique_records": 846,
+          "total_unique_records": 846
+        },
+        "handwritten/uploaded": {
+          "records_this_epoch": 1966,
+          "unique_records_this_epoch": 881,
+          "cumulative_unique_records": 881,
+          "total_unique_records": 881
+        }
+      },
+      "epoch": 8,
+      "dataset_epoch": 9,
+      "completed_batches": 1037,
+      "expected_batches": 1037,
+      "complete_epoch": true
+    },
+    "timing_seconds": {
+      "fit_and_patch_validation": 207.5229876999947,
+      "save_last_and_retained": 0.3001910000020871,
+      "whole_word_predict": 0.40009110000391956,
+      "whole_word_calibrate": 1.687701200004085,
+      "callback_total": 2.403205300011905
+    }
+  },
+  {
+    "epoch": 9,
+    "loss": 0.7326346039772034,
+    "val_loss": 0.7122788429260254,
+    "thresholds": {
+      "proposalScore": 0.25,
+      "acceptScore": 0.4,
+      "dotConfidence": 0.7,
+      "nmsIou": 0.25,
+      "minCellWidth": 0.008,
+      "minCellHeight": 0.06,
+      "edgeMargin": 0.008,
+      "maxRowDeviation": 0.55,
+      "maxGapRatio": 1.2,
+      "maxOverlapRatio": 0.5
+    },
+    "words": {
+      "total": 135,
+      "accepted": 123,
+      "correct": 122,
+      "exact_word_accuracy": 0.9037037037037037,
+      "accepted_accuracy": 0.991869918699187,
+      "by_length": {
+        "1": {
+          "total": 29,
+          "accepted": 26,
+          "correct": 25,
+          "exact_word_accuracy": 0.8620689655172413,
+          "accepted_accuracy": 0.9615384615384616
+        },
+        "2": {
+          "total": 21,
+          "accepted": 18,
+          "correct": 18,
+          "exact_word_accuracy": 0.8571428571428571,
+          "accepted_accuracy": 1.0
+        },
+        "3": {
+          "total": 17,
+          "accepted": 16,
+          "correct": 16,
+          "exact_word_accuracy": 0.9411764705882353,
+          "accepted_accuracy": 1.0
+        },
+        "4": {
+          "total": 11,
+          "accepted": 11,
+          "correct": 11,
+          "exact_word_accuracy": 1.0,
+          "accepted_accuracy": 1.0
+        },
+        "5": {
+          "total": 10,
+          "accepted": 8,
+          "correct": 8,
+          "exact_word_accuracy": 0.8,
+          "accepted_accuracy": 1.0
+        },
+        "6": {
+          "total": 23,
+          "accepted": 22,
+          "correct": 22,
+          "exact_word_accuracy": 0.9565217391304348,
+          "accepted_accuracy": 1.0
+        },
+        "7": {
+          "total": 8,
+          "accepted": 7,
+          "correct": 7,
+          "exact_word_accuracy": 0.875,
+          "accepted_accuracy": 1.0
+        },
+        "8": {
+          "total": 11,
+          "accepted": 10,
+          "correct": 10,
+          "exact_word_accuracy": 0.9090909090909091,
+          "accepted_accuracy": 1.0
+        },
+        "9": {
+          "total": 5,
+          "accepted": 5,
+          "correct": 5,
+          "exact_word_accuracy": 1.0,
+          "accepted_accuracy": 1.0
+        }
+      },
+      "rejection_reasons": {
+        "low_confidence": 8,
+        "clipped": 3,
+        "unsupported_pattern": 1
+      }
+    },
+    "sampling": {
+      "order_int64_sha256": "781e44740f85e5ab31a08b40ef29a9ee87f2bf6a919611b8da1f675405228c62",
+      "records": 24882,
+      "unique_record_indices_this_epoch": 11883,
+      "cumulative_unique_record_indices": 24882,
+      "families": {
+        "books/chudo_derevo_redmi": {
+          "records_this_epoch": 1967,
+          "unique_records_this_epoch": 1013,
+          "cumulative_unique_records": 1013,
+          "total_unique_records": 1013
+        },
+        "books/mdd-redmi1": {
+          "records_this_epoch": 1967,
+          "unique_records_this_epoch": 903,
+          "cumulative_unique_records": 903,
+          "total_unique_records": 903
+        },
+        "books/mdd_cannon1": {
+          "records_this_epoch": 1967,
+          "unique_records_this_epoch": 899,
+          "cumulative_unique_records": 899,
+          "total_unique_records": 899
+        },
+        "books/skazki": {
+          "records_this_epoch": 1967,
+          "unique_records_this_epoch": 1967,
+          "cumulative_unique_records": 14966,
+          "total_unique_records": 14966
+        },
+        "books/telefon": {
+          "records_this_epoch": 1967,
+          "unique_records_this_epoch": 1642,
+          "cumulative_unique_records": 1642,
+          "total_unique_records": 1642
+        },
+        "books/uploaded": {
+          "records_this_epoch": 1967,
+          "unique_records_this_epoch": 159,
+          "cumulative_unique_records": 159,
+          "total_unique_records": 159
+        },
+        "dsbi/Massage": {
+          "records_this_epoch": 1967,
+          "unique_records_this_epoch": 838,
+          "cumulative_unique_records": 838,
+          "total_unique_records": 838
+        },
+        "dsbi/Math": {
+          "records_this_epoch": 1967,
+          "unique_records_this_epoch": 824,
+          "cumulative_unique_records": 824,
+          "total_unique_records": 824
+        },
+        "dsbi/Ordinary Printed Document": {
+          "records_this_epoch": 1966,
+          "unique_records_this_epoch": 289,
+          "cumulative_unique_records": 289,
+          "total_unique_records": 289
+        },
+        "dsbi/Shaver Yang Fengting": {
+          "records_this_epoch": 1966,
+          "unique_records_this_epoch": 340,
+          "cumulative_unique_records": 340,
+          "total_unique_records": 340
+        },
+        "handwritten/kov": {
+          "records_this_epoch": 1966,
+          "unique_records_this_epoch": 846,
+          "cumulative_unique_records": 846,
+          "total_unique_records": 846
+        },
+        "handwritten/uploaded": {
+          "records_this_epoch": 1966,
+          "unique_records_this_epoch": 881,
+          "cumulative_unique_records": 881,
+          "total_unique_records": 881
+        }
+      },
+      "epoch": 9,
+      "dataset_epoch": 10,
+      "completed_batches": 1037,
+      "expected_batches": 1037,
+      "complete_epoch": true
+    },
+    "timing_seconds": {
+      "fit_and_patch_validation": 208.60765619999438,
+      "save_last_and_retained": 0.27688400000624824,
+      "whole_word_predict": 0.3919994999887422,
+      "whole_word_calibrate": 1.4914914000110002,
+      "callback_total": 2.1733527000033064
+    }
+  },
+  {
+    "epoch": 10,
+    "loss": 0.7286694049835205,
+    "val_loss": 0.708848774433136,
+    "thresholds": {
+      "proposalScore": 0.25,
+      "acceptScore": 0.4,
+      "dotConfidence": 0.7,
+      "nmsIou": 0.25,
+      "minCellWidth": 0.008,
+      "minCellHeight": 0.06,
+      "edgeMargin": 0.008,
+      "maxRowDeviation": 0.55,
+      "maxGapRatio": 1.2,
+      "maxOverlapRatio": 0.5
+    },
+    "words": {
+      "total": 135,
+      "accepted": 125,
+      "correct": 124,
+      "exact_word_accuracy": 0.9185185185185185,
+      "accepted_accuracy": 0.992,
+      "by_length": {
+        "1": {
+          "total": 29,
+          "accepted": 25,
+          "correct": 25,
+          "exact_word_accuracy": 0.8620689655172413,
+          "accepted_accuracy": 1.0
+        },
+        "2": {
+          "total": 21,
+          "accepted": 20,
+          "correct": 20,
+          "exact_word_accuracy": 0.9523809523809523,
+          "accepted_accuracy": 1.0
+        },
+        "3": {
+          "total": 17,
+          "accepted": 16,
+          "correct": 16,
+          "exact_word_accuracy": 0.9411764705882353,
+          "accepted_accuracy": 1.0
+        },
+        "4": {
+          "total": 11,
+          "accepted": 11,
+          "correct": 11,
+          "exact_word_accuracy": 1.0,
+          "accepted_accuracy": 1.0
+        },
+        "5": {
+          "total": 10,
+          "accepted": 8,
+          "correct": 8,
+          "exact_word_accuracy": 0.8,
+          "accepted_accuracy": 1.0
+        },
+        "6": {
+          "total": 23,
+          "accepted": 22,
+          "correct": 22,
+          "exact_word_accuracy": 0.9565217391304348,
+          "accepted_accuracy": 1.0
+        },
+        "7": {
+          "total": 8,
+          "accepted": 7,
+          "correct": 7,
+          "exact_word_accuracy": 0.875,
+          "accepted_accuracy": 1.0
+        },
+        "8": {
+          "total": 11,
+          "accepted": 11,
+          "correct": 10,
+          "exact_word_accuracy": 0.9090909090909091,
+          "accepted_accuracy": 0.9090909090909091
+        },
+        "9": {
+          "total": 5,
+          "accepted": 5,
+          "correct": 5,
+          "exact_word_accuracy": 1.0,
+          "accepted_accuracy": 1.0
+        }
+      },
+      "rejection_reasons": {
+        "low_confidence": 6,
+        "clipped": 3,
+        "unsupported_pattern": 1
+      }
+    },
+    "sampling": {
+      "order_int64_sha256": "21f7ec8f464ea791304d84049f4ae5f0ea7c81959eeb5a9ff54042491b7760ab",
+      "records": 24882,
+      "unique_record_indices_this_epoch": 11883,
+      "cumulative_unique_record_indices": 24882,
+      "families": {
+        "books/chudo_derevo_redmi": {
+          "records_this_epoch": 1967,
+          "unique_records_this_epoch": 1013,
+          "cumulative_unique_records": 1013,
+          "total_unique_records": 1013
+        },
+        "books/mdd-redmi1": {
+          "records_this_epoch": 1967,
+          "unique_records_this_epoch": 903,
+          "cumulative_unique_records": 903,
+          "total_unique_records": 903
+        },
+        "books/mdd_cannon1": {
+          "records_this_epoch": 1967,
+          "unique_records_this_epoch": 899,
+          "cumulative_unique_records": 899,
+          "total_unique_records": 899
+        },
+        "books/skazki": {
+          "records_this_epoch": 1967,
+          "unique_records_this_epoch": 1967,
+          "cumulative_unique_records": 14966,
+          "total_unique_records": 14966
+        },
+        "books/telefon": {
+          "records_this_epoch": 1967,
+          "unique_records_this_epoch": 1642,
+          "cumulative_unique_records": 1642,
+          "total_unique_records": 1642
+        },
+        "books/uploaded": {
+          "records_this_epoch": 1967,
+          "unique_records_this_epoch": 159,
+          "cumulative_unique_records": 159,
+          "total_unique_records": 159
+        },
+        "dsbi/Massage": {
+          "records_this_epoch": 1967,
+          "unique_records_this_epoch": 838,
+          "cumulative_unique_records": 838,
+          "total_unique_records": 838
+        },
+        "dsbi/Math": {
+          "records_this_epoch": 1967,
+          "unique_records_this_epoch": 824,
+          "cumulative_unique_records": 824,
+          "total_unique_records": 824
+        },
+        "dsbi/Ordinary Printed Document": {
+          "records_this_epoch": 1966,
+          "unique_records_this_epoch": 289,
+          "cumulative_unique_records": 289,
+          "total_unique_records": 289
+        },
+        "dsbi/Shaver Yang Fengting": {
+          "records_this_epoch": 1966,
+          "unique_records_this_epoch": 340,
+          "cumulative_unique_records": 340,
+          "total_unique_records": 340
+        },
+        "handwritten/kov": {
+          "records_this_epoch": 1966,
+          "unique_records_this_epoch": 846,
+          "cumulative_unique_records": 846,
+          "total_unique_records": 846
+        },
+        "handwritten/uploaded": {
+          "records_this_epoch": 1966,
+          "unique_records_this_epoch": 881,
+          "cumulative_unique_records": 881,
+          "total_unique_records": 881
+        }
+      },
+      "epoch": 10,
+      "dataset_epoch": 11,
+      "completed_batches": 1037,
+      "expected_batches": 1037,
+      "complete_epoch": true
+    },
+    "timing_seconds": {
+      "fit_and_patch_validation": 206.7888654999988,
+      "save_last_and_retained": 0.2863993999926606,
+      "whole_word_predict": 0.39875160000519827,
+      "whole_word_calibrate": 1.4679200999962632,
+      "callback_total": 2.1703535999986343
+    }
+  }
+]

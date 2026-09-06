@@ -1,0 +1,284 @@
+{
+  "report": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\run23\\held-diagnosis\\stretch-comparison\\comparison.json",
+  "sha256": "2447c27fc97981b448e0b7dc8dc3e570981a11e187b352088fcfb93119e723d8",
+  "words": {
+    "baseline": {
+      "total": 405,
+      "accepted": 362,
+      "correct": 357,
+      "whole_word_accuracy": 0.8814814814814815,
+      "accepted_accuracy": 0.9861878453038674,
+      "rejected": 43,
+      "rejection_reasons": {
+        "unsupported_pattern": 3,
+        "low_confidence": 6,
+        "clipped": 4,
+        "no_grid": 30
+      },
+      "post_nms_detections": 1522,
+      "unmatched_gt_cells": 111,
+      "unmatched_prediction_cells": 4
+    },
+    "candidate": {
+      "total": 405,
+      "accepted": 361,
+      "correct": 357,
+      "whole_word_accuracy": 0.8814814814814815,
+      "accepted_accuracy": 0.9889196675900277,
+      "rejected": 44,
+      "rejection_reasons": {
+        "low_confidence": 7,
+        "unsupported_pattern": 3,
+        "clipped": 4,
+        "no_grid": 30
+      },
+      "post_nms_detections": 1523,
+      "unmatched_gt_cells": 110,
+      "unmatched_prediction_cells": 4
+    }
+  },
+  "cells": {
+    "baseline": {
+      "gt_cells": 1629,
+      "matched": 1518,
+      "unmatched": 111,
+      "matched_correct_mask": 1510,
+      "matched_wrong_mask": 8,
+      "matched_wrong_dot_bits": 12,
+      "matched_below_objectness_accept": 0,
+      "matched_below_dot_confidence": 8,
+      "iou": {
+        "count": 1518,
+        "mean": 0.8428400609611632,
+        "median": 0.848453279136959,
+        "p90": 0.9222524013584117
+      },
+      "center_error_px": {
+        "count": 1518,
+        "mean": 2.1565755176243777,
+        "median": 1.8286861521778497,
+        "p90": 3.70349079780191
+      },
+      "center_dx_px": {
+        "count": 1518,
+        "mean": 0.29468016332493496,
+        "median": 0.11783800405959965,
+        "p90": 2.3326981734877683
+      },
+      "center_dy_px": {
+        "count": 1518,
+        "mean": -0.5227734641811179,
+        "median": -0.4481198171724543,
+        "p90": 1.596491467952738
+      },
+      "width_ratio": {
+        "count": 1518,
+        "mean": 1.1250924019215305,
+        "median": 1.108266071628282,
+        "p90": 1.254857977490493
+      },
+      "height_ratio": {
+        "count": 1518,
+        "mean": 1.0213276227057337,
+        "median": 1.0231891276226157,
+        "p90": 1.0912978109291622
+      },
+      "score": {
+        "count": 1518,
+        "mean": 0.6661271743662901,
+        "median": 0.6779041886329651,
+        "p90": 0.7951834797859192
+      },
+      "dot_confidence": {
+        "count": 1518,
+        "mean": 0.9916091768667773,
+        "median": 0.9991827774210833,
+        "p90": 0.9998814061284065
+      }
+    },
+    "candidate": {
+      "gt_cells": 1629,
+      "matched": 1519,
+      "unmatched": 110,
+      "matched_correct_mask": 1510,
+      "matched_wrong_mask": 9,
+      "matched_wrong_dot_bits": 13,
+      "matched_below_objectness_accept": 0,
+      "matched_below_dot_confidence": 8,
+      "iou": {
+        "count": 1519,
+        "mean": 0.8456935106842142,
+        "median": 0.8492641777939838,
+        "p90": 0.9211978761031463
+      },
+      "center_error_px": {
+        "count": 1519,
+        "mean": 2.0789388897882497,
+        "median": 1.7494392332427777,
+        "p90": 3.6079564407732243
+      },
+      "center_dx_px": {
+        "count": 1519,
+        "mean": 0.28242094645192145,
+        "median": 0.11256005304943528,
+        "p90": 2.2366725403500824
+      },
+      "center_dy_px": {
+        "count": 1519,
+        "mean": -0.47208372823303807,
+        "median": -0.411237084236987,
+        "p90": 1.61870942115784
+      },
+      "width_ratio": {
+        "count": 1519,
+        "mean": 1.1180563233243903,
+        "median": 1.1034183184737745,
+        "p90": 1.239594481285516
+      },
+      "height_ratio": {
+        "count": 1519,
+        "mean": 1.027960377167789,
+        "median": 1.0281741155518427,
+        "p90": 1.0985585626919527
+      },
+      "score": {
+        "count": 1519,
+        "mean": 0.6861768533831917,
+        "median": 0.6943540573120117,
+        "p90": 0.8147344350814819
+      },
+      "dot_confidence": {
+        "count": 1519,
+        "mean": 0.9923618929201788,
+        "median": 0.9994256496429443,
+        "p90": 0.9999149280803976
+      }
+    }
+  },
+  "transitions": {
+    "baseline_correct_candidate_wrong": 1,
+    "baseline_wrong_candidate_correct": 1,
+    "both_correct": 356,
+    "both_wrong": 47,
+    "lost_indices": [
+      23
+    ],
+    "gained_indices": [
+      147
+    ],
+    "lost_outcomes": {
+      "low_confidence": 1
+    },
+    "lost_words_with_unmatched_gt": 0,
+    "lost_words_with_extra_predictions": 0,
+    "lost_words_with_wrong_matched_mask": 0,
+    "lost_words_with_low_dot_confidence": 1,
+    "lost_words_with_low_objectness": 0,
+    "both_model_matched_gt_cells": 1518,
+    "paired_geometry_and_confidence_deltas_candidate_minus_baseline": {
+      "iou": {
+        "count": 1518,
+        "mean": 0.002893812760207611,
+        "median": 0.00326722451433209,
+        "p90": 0.02499036746606432
+      },
+      "center_error_px": {
+        "count": 1518,
+        "mean": -0.07787312508743122,
+        "median": -0.02769665587446124,
+        "p90": 0.09846341149630473
+      },
+      "center_dx_px": {
+        "count": 1518,
+        "mean": -0.010810927891605709,
+        "median": 0.013361990451812744,
+        "p90": 0.1323012351989547
+      },
+      "center_dy_px": {
+        "count": 1518,
+        "mean": 0.05137174846469496,
+        "median": 0.019879698753356934,
+        "p90": 0.14680577516555784
+      },
+      "width_ratio": {
+        "count": 1518,
+        "mean": -0.007063461786230824,
+        "median": -0.007033746819378628,
+        "p90": 0.01637914733640082
+      },
+      "height_ratio": {
+        "count": 1518,
+        "mean": 0.006719223295692462,
+        "median": 0.006168310690407797,
+        "p90": 0.025731849753194203
+      },
+      "score": {
+        "count": 1518,
+        "mean": 0.02032296936738161,
+        "median": 0.019489645957946777,
+        "p90": 0.05369145274162292
+      },
+      "dot_confidence": {
+        "count": 1518,
+        "mean": 0.0007513314282591211,
+        "median": 0.0001239195335074328,
+        "p90": 0.0023239796049892877
+      }
+    },
+    "paired_lost_words_deltas": {
+      "iou": {
+        "count": 6,
+        "mean": -0.003051860915595598,
+        "median": -0.003533974930023165,
+        "p90": 0.0105939530489787
+      },
+      "center_error_px": {
+        "count": 6,
+        "mean": -0.14711328451692166,
+        "median": -0.018428612284824508,
+        "p90": 0.0026325048062862955
+      },
+      "center_dx_px": {
+        "count": 6,
+        "mean": -0.4659618139266968,
+        "median": -0.09967833757400513,
+        "p90": 0.04113990068435669
+      },
+      "center_dy_px": {
+        "count": 6,
+        "mean": 0.024747133255004883,
+        "median": 0.03947341442108154,
+        "p90": 0.1363452672958374
+      },
+      "width_ratio": {
+        "count": 6,
+        "mean": -0.006124289071970194,
+        "median": -0.009094266787819216,
+        "p90": 0.004064876221768321
+      },
+      "height_ratio": {
+        "count": 6,
+        "mean": 0.01005717324614778,
+        "median": 0.010171436987328253,
+        "p90": 0.025691908266809116
+      },
+      "score": {
+        "count": 6,
+        "mean": 0.029696832100550335,
+        "median": 0.024228692054748535,
+        "p90": 0.057858556509017944
+      },
+      "dot_confidence": {
+        "count": 6,
+        "mean": -0.010454721462641222,
+        "median": 0.00043767239549197257,
+        "p90": 0.007621486351126805
+      }
+    },
+    "gt_cell_match_transitions": {
+      "1->1": 1518,
+      "0->1": 1,
+      "0->0": 110
+    }
+  }
+}

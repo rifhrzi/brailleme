@@ -1,0 +1,202 @@
+{
+  "status": "compiled_only_not_executed_on_android",
+  "abi": "x86_64",
+  "minimum_api": 29,
+  "backend": "Exact LiteRT 1.4.0 C API with default options and no setter calls, matching fast-tflite 3.0.1 delegates=[] creation.",
+  "aar": {
+    "path": "C:\\Users\\rifqi\\.gradle\\caches\\modules-2\\files-2.1\\com.google.ai.edge.litert\\litert\\1.4.0\\28dce4edc35e39fb81d46b2c9ce5e22646ff52da\\litert-1.4.0.aar",
+    "sha256": "54b567572cb2d1295571c785198f87597809cbf22d6cb8acfeac23869041887d"
+  },
+  "ndk": "C:\\Users\\rifqi\\AppData\\Local\\Android\\Sdk\\ndk\\27.1.12297006",
+  "ndk_source_properties_sha256": "e9b907b9c90bc2f0aaa87049580cc0c3ee0bb6aff50b58e4d1a8876ba3aeb026",
+  "compiler_version": "Android (12285214, based on r522817b) clang version 18.0.2 (https://android.googlesource.com/toolchain/llvm-project d8003a456d14a3deb8054cdaa529ffbf02d9b262)\nTarget: x86_64-w64-windows-gnu\nThread model: posix\nInstalledDir: C:/Users/rifqi/AppData/Local/Android/Sdk/ndk/27.1.12297006/toolchains/llvm/prebuilt/windows-x86_64/bin\n",
+  "command": [
+    "C:\\Users\\rifqi\\AppData\\Local\\Android\\Sdk\\ndk\\27.1.12297006\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+    "--target=x86_64-linux-android29",
+    "-std=c11",
+    "-O2",
+    "-Wall",
+    "-Wextra",
+    "-Werror",
+    "-fPIE",
+    "-pie",
+    "-IC:\\bm-word-native-interpreter-20260906-final\\headers",
+    "-IC:\\bm-word-native-interpreter-20260906-final\\headers\\external\\org_tensorflow",
+    "C:\\bm-word-native-interpreter-20260906-final\\word_interpreter.c",
+    "-LC:\\bm-word-native-interpreter-20260906-final",
+    "-ltensorflowlite_jni",
+    "-lm",
+    "-Wl,-rpath,$ORIGIN",
+    "-Wl,-z,max-page-size=16384",
+    "-o",
+    "C:\\bm-word-native-interpreter-20260906-final\\word-interpreter"
+  ],
+  "elf_command": [
+    "C:\\Users\\rifqi\\AppData\\Local\\Android\\Sdk\\ndk\\27.1.12297006\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\llvm-readelf.exe",
+    "-h",
+    "-d",
+    "-Ws",
+    "C:\\bm-word-native-interpreter-20260906-final\\word-interpreter"
+  ],
+  "sources": [
+    {
+      "path": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\scripts\\word-native-interpreter\\compile.py",
+      "sha256": "793c0b0a96bb650f541705e7df458af8d042f4e80f19c1d47c4fe06ba7a36627"
+    },
+    {
+      "path": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\scripts\\word-native-interpreter\\word_interpreter.c",
+      "sha256": "bb09f22771ea633f7706ba7ec5ea82f5d169548b904f685df37f834d3a7fdd2c"
+    },
+    {
+      "path": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\node_modules\\react-native-fast-tflite\\cpp\\HybridTfliteModule.cpp",
+      "sha256": "35826e9fd36dc95435d27db148ee167aa0bac41309142c48d6e45dba8c15a72f"
+    },
+    {
+      "path": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\node_modules\\react-native-fast-tflite\\cpp\\HybridTfliteModel.cpp",
+      "sha256": "f386754b83e3f8ad2614ae82278581b0c6384b60d7f883f484456ddd7ea16803"
+    },
+    {
+      "path": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\node_modules\\react-native-fast-tflite\\android\\build.gradle",
+      "sha256": "a04609b061c550a28561b314c6a79deb9e5ef21cf6108e35d1d77ca1b4515d10"
+    },
+    {
+      "path": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\node_modules\\react-native-fast-tflite\\package.json",
+      "sha256": "6c873c4908af17d62ee10bc9a31c6ca5331621e8d5f2957ae042302ad77ebcdf"
+    },
+    {
+      "path": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\src\\ml\\word-model-loader.ts",
+      "sha256": "462b2f22734ddce77c5d67b843788fd5d3a703f91ebe0410eb42ed89ca4a9d82"
+    },
+    {
+      "path": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\package-lock.json",
+      "sha256": "dae5af9e618c9dc5b81208bb9c3e46a252f7e3ad1727b909cbbda518a53f4620"
+    }
+  ],
+  "files": [
+    {
+      "path": "compiler.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "library-elf.txt",
+      "sha256": "1d5f6cf7d388e225cb961d9509c812c6d5e68175d9b530ec1282f0a8eedbd7c9",
+      "bytes": 2546
+    },
+    {
+      "path": "libtensorflowlite_jni.so",
+      "sha256": "b1fdd3d23e58df54f8ce47c704ed4bc0882be37e479fe86a87108d5f8153c422",
+      "bytes": 6053528
+    },
+    {
+      "path": "runner-elf.txt",
+      "sha256": "c800f3223a95dcf8ac10e40be9a4e6324ac3447485fb033cafcc64f12a09f5e7",
+      "bytes": 11260
+    },
+    {
+      "path": "word-interpreter",
+      "sha256": "995cedbcba3d29f5213ad47ba65d02ce4cc5aa0aac6e18db566aedad44ca0503",
+      "bytes": 15376
+    },
+    {
+      "path": "word_interpreter.c",
+      "sha256": "bb09f22771ea633f7706ba7ec5ea82f5d169548b904f685df37f834d3a7fdd2c",
+      "bytes": 5993
+    },
+    {
+      "path": "headers/tflite/builtin_ops.h",
+      "sha256": "78ac84e3366abcc22be656580a3f4e5701902d30769e5749fda5079cce826e3d",
+      "bytes": 8394
+    },
+    {
+      "path": "headers/external/org_tensorflow/tensorflow/compiler/mlir/lite/core/c/builtin_op_data.h",
+      "sha256": "b45ea12f9bf0cba09aad3a9a2989f797df13a58b5c28eaac00d36d2c0d13cc60",
+      "bytes": 18156
+    },
+    {
+      "path": "headers/external/org_tensorflow/tensorflow/compiler/mlir/lite/core/c/tflite_types.h",
+      "sha256": "11b64f1ec5e013e39953ffdae21a6cc139ba1ca500a302ebfff76df2681ea4b7",
+      "bytes": 2873
+    },
+    {
+      "path": "headers/tflite/c/builtin_op_data.h",
+      "sha256": "b32630397e31a92282a0f7379071a88c77d2f69101411a33ff8be9ef86239f78",
+      "bytes": 916
+    },
+    {
+      "path": "headers/tflite/c/common.h",
+      "sha256": "cc7f9c4af1c48ec4c6aab4f041900c6d34efe96c3c0abb61c5cf60a83e12a0e0",
+      "bytes": 1258
+    },
+    {
+      "path": "headers/tflite/c/c_api.h",
+      "sha256": "4911095e17091a720f890609ac00969051e6f4f1c8f071bc454459a7c00124b8",
+      "bytes": 2533
+    },
+    {
+      "path": "headers/tflite/c/c_api_experimental.h",
+      "sha256": "59db421ff19a5419b278423dfc7276484aa3ddf912e89f425952f34cb557603f",
+      "bytes": 931
+    },
+    {
+      "path": "headers/tflite/c/c_api_opaque.h",
+      "sha256": "0fb1c03888435ddef85df3b552ff138d153711a7a01e2df601af46200fc87fc0",
+      "bytes": 901
+    },
+    {
+      "path": "headers/tflite/c/c_api_types.h",
+      "sha256": "6c1d75ffbff4e844c1026185dabf8580dd10bf3eea181867f542884f9e6387b7",
+      "bytes": 956
+    },
+    {
+      "path": "headers/tflite/core/c/builtin_op_data.h",
+      "sha256": "7f17ed358e6ee3404feae190b7fcfa3a54cec6020a5bd4c10d816873810c094a",
+      "bytes": 1204
+    },
+    {
+      "path": "headers/tflite/core/c/common.h",
+      "sha256": "a470828b9553280e25043d2f115305aa99aa3d6ec76e7c5103cfc2972a38217a",
+      "bytes": 73634
+    },
+    {
+      "path": "headers/tflite/core/c/c_api.h",
+      "sha256": "fa2fff0f25801e019794073efaab08873bf81a3e9e79196b15288c292326053e",
+      "bytes": 31576
+    },
+    {
+      "path": "headers/tflite/core/c/c_api_experimental.h",
+      "sha256": "b6fbfa061656d025779976939201cc0d3ae48e030fef52aa860cbdce94b4d841",
+      "bytes": 20207
+    },
+    {
+      "path": "headers/tflite/core/c/c_api_opaque.h",
+      "sha256": "ef685e292e977d7c03d20b6b0aa99580317a3302b21b41184ecc7bebc767108a",
+      "bytes": 43139
+    },
+    {
+      "path": "headers/tflite/core/c/c_api_types.h",
+      "sha256": "5c61f7e658e5e181aada8999bf8482fd1d0a37e6067a796ccede00a2fd4ac8fe",
+      "bytes": 6060
+    },
+    {
+      "path": "headers/tflite/core/c/operator.h",
+      "sha256": "d9fb7cfb068b4ad714114d927b9fa82d9f0ec5c68e518e3d20ef37c41bfd2187",
+      "bytes": 11719
+    },
+    {
+      "path": "headers/tflite/core/async/c/types.h",
+      "sha256": "09caaccd1a1ebb824d9748fc36a5e0c3d45f9c99f3f0f80ce2cca87218687d14",
+      "bytes": 1427
+    },
+    {
+      "path": "headers/tflite/delegates/nnapi/nnapi_delegate_c_api.h",
+      "sha256": "f4c85ca064f544a63ec7ee066d606efeba5ac82c29a8ee50c264f1af99c11076",
+      "bytes": 4453
+    }
+  ],
+  "limits": [
+    "No interpreter invocation, operator execution or tensor parity has been established yet.",
+    "Standalone C API omits Nitro/JS bridge, worklet, loader, camera and main APK lifecycle.",
+    "No Java Interpreter default-options equivalence is assumed."
+  ]
+}

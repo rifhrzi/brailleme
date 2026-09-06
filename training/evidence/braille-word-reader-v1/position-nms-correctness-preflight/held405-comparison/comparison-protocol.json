@@ -1,0 +1,50 @@
+{
+  "created_at_utc": "2026-09-06T04:51:25.891496+00:00",
+  "scope": "Single root-authorized cached405 comparison; no model execution, calibration, selection or external607 data.",
+  "checkpoint_sha256": "cce2432c0ddb8952c885dd58697589c285209588dafa81aacdd891b1660068b7",
+  "cache_path": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\selected-v15\\backend-fullprecision.npz",
+  "raw_cache_sha256": "20f0a6c0224ec7f640ca0e46275914e912a2b1b440882f0b1e9e94e8bb72556b",
+  "fixture_sha256": "e2ab968f7c4dcf7e774181fde687e1321f58d20567528af4b21fd03ff5a3e625",
+  "selected_validation_sha256": "d136021888194895e3bd19cd3800ace90cb3cc83776a87799fd7fda8d9623b39",
+  "thresholds": {
+    "proposalScore": 0.25,
+    "acceptScore": 0.25,
+    "dotConfidence": 0.7,
+    "nmsIou": 0.25,
+    "minCellWidth": 0.008,
+    "minCellHeight": 0.06,
+    "edgeMargin": 0.008,
+    "maxRowDeviation": 0.55,
+    "maxGapRatio": 1.2,
+    "maxOverlapRatio": 0.5
+  },
+  "prototype_spec_sha256": "053caf93c4e1771c913ac370b9720b3faa832904bc69cbc7effa52185010d609",
+  "python_test_report_sha256": "c69c6d3372027995095347cf25f28ba527b04f43b815a4ef3900eee38d920692",
+  "typescript_test_report_sha256": "b0c597dc23ae5e0a66e087bddc4fb5723df540c52018239d099117fcb68792dc",
+  "script_sha256": "7c917dedfa61c46d841cf01e1c5beac8d4ee4ffc0b2a614c31b80ff233e3493a",
+  "raw_cache_provenance": "word_select saves original model.predict outputs; prepare_calibration_outputs copies and changes calibration-only tensors. Do not use peak-filtered cache.",
+  "source_private_sha256": {
+    "training/scripts/word_decode.py": "0ed237d2875e30f3656479e11e9f7a59ba346736b7f6b6107fe9459660785e89",
+    "training/scripts/word_select.py": "11675c4f4e0439170ecf38bfefbae18e3fef7f86cd36199c71c6e81c709d68e2",
+    "training/scripts/word_data.py": "d692b4b28620af7e4b40ebdedccda68769feb8d3f51bd1508e807487fd32b7d7",
+    "training/scripts/word_model.py": "c446732a2905a612cd6f1dd64d2d3d01303b1c71933c34552d26f3b5052fd551",
+    "training/scripts/word_anchor_zoom.py": "d6f5337d08368b8da55948f314bd06af7b03fa1602e40240778a9b4edea26377",
+    "training/scripts/benchmark_angelina.py": "6c7d63c8b5c461fec73e415b46df74d15c0bca455cc9f411c5fb6edd5d353353",
+    "src/ml/word-decoder.ts": "f8bb0ef65a03c850c8aedccf287e00501a5bf1b4c4bba60440141567752b6c15",
+    "src/ml/word-model-contract.ts": "8d78bbaeaf7afda3177e444670a7634dae699b535e18f7c1137e0ec84bbff1a8",
+    "src/types/word-scan.ts": "f6b8ac0cf1072b3ec99f23ac8407e5d8e38c7e801a7c90f4cc2a3503761a1964",
+    "src/types/live-scan.ts": "bfcb958421baa9492aad2c8e6dddda26b78a25f93e63494eb9f919bc9668e5b9"
+  },
+  "source_original_sha256": {
+    "training/scripts/word_decode.py": "bd301c5afeb4ba2e6866371665324d2de7f0a6ee252ef76ce02a5553193d63c5",
+    "training/scripts/word_select.py": "11675c4f4e0439170ecf38bfefbae18e3fef7f86cd36199c71c6e81c709d68e2",
+    "training/scripts/word_data.py": "d692b4b28620af7e4b40ebdedccda68769feb8d3f51bd1508e807487fd32b7d7",
+    "training/scripts/word_model.py": "c446732a2905a612cd6f1dd64d2d3d01303b1c71933c34552d26f3b5052fd551",
+    "training/scripts/word_anchor_zoom.py": "d6f5337d08368b8da55948f314bd06af7b03fa1602e40240778a9b4edea26377",
+    "training/scripts/benchmark_angelina.py": "6c7d63c8b5c461fec73e415b46df74d15c0bca455cc9f411c5fb6edd5d353353",
+    "src/ml/word-decoder.ts": "f51c62ba6c3abbd01619a1420760027366f3af91084ff2c302662cde72bcd05d",
+    "src/ml/word-model-contract.ts": "8d78bbaeaf7afda3177e444670a7634dae699b535e18f7c1137e0ec84bbff1a8",
+    "src/types/word-scan.ts": "f6b8ac0cf1072b3ec99f23ac8407e5d8e38c7e801a7c90f4cc2a3503761a1964",
+    "src/types/live-scan.ts": "bfcb958421baa9492aad2c8e6dddda26b78a25f93e63494eb9f919bc9668e5b9"
+  }
+}

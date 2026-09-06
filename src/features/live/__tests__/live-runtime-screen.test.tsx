@@ -7,13 +7,15 @@ import {
 } from '@/features/live/word-draft';
 
 const mockModel = { id: 'validated-model' };
+const mockThresholds = { acceptScore: 0.9 };
+const mockAcquireModel = jest.fn(() => jest.fn());
 const mockRetry = jest.fn();
 let mockModelState: Record<string, unknown> = { status: 'loading' };
 let mockCameraProps: Record<string, unknown> | undefined;
 const mockLiveScreenView = jest.fn();
 
-jest.mock('@/ml', () => ({
-  useBrailleModel: () => mockModelState,
+jest.mock('@/ml/word-model-loader', () => ({
+  useWordModel: () => mockModelState,
 }));
 
 jest.mock('@/services', () => ({
@@ -21,41 +23,37 @@ jest.mock('@/services', () => ({
   scannerPort: { id: 'scanner-port' },
 }));
 
-jest.mock('@/features/live/live-single-cell-camera', () => {
+jest.mock('@/features/live/word-photo-camera', () => {
   const React = jest.requireActual<typeof import('react')>('react');
-  const { View } = jest.requireActual<typeof import('react-native')>(
-    'react-native',
-  );
+  const { View } =
+    jest.requireActual<typeof import('react-native')>('react-native');
 
-  return function MockLiveSingleCellCamera(props: Record<string, unknown>) {
+  return function MockWordPhotoCamera(props: Record<string, unknown>) {
     mockCameraProps = props;
-    return React.createElement(View, { testID: 'single-cell-camera' });
+    return React.createElement(View, { testID: 'word-photo-camera' });
   };
 });
 
-jest.mock('@/features/live/live-screen', () => {
+jest.mock('@/features/live/word-scan-screen', () => {
   const React = jest.requireActual<typeof import('react')>('react');
-  const { View } = jest.requireActual<typeof import('react-native')>(
-    'react-native',
-  );
+  const { View } =
+    jest.requireActual<typeof import('react-native')>('react-native');
 
-  return {
-    LiveScreenView(props: Record<string, unknown>) {
-      mockLiveScreenView(props);
-      const renderScannerPreview = props.renderScannerPreview as
-        | ((mockPreviewProps: Record<string, unknown>) => React.ReactNode)
-        | undefined;
-      return React.createElement(
-        View,
-        { testID: 'live-screen-view' },
-        renderScannerPreview?.({
-          active: true,
-          resetToken: 7,
-          sessionId: 'runtime-session',
-          torchEnabled: true,
-        }),
-      );
-    },
+  return function WordScanScreen(props: Record<string, unknown>) {
+    mockLiveScreenView(props);
+    const renderScannerPreview = props.renderCamera as
+      | ((mockPreviewProps: Record<string, unknown>) => React.ReactNode)
+      | undefined;
+    return React.createElement(
+      View,
+      { testID: 'live-screen-view' },
+      renderScannerPreview?.({
+        active: true,
+        sessionId: 'runtime-session',
+        torchEnabled: true,
+        guideAspectRatio: 4,
+      }),
+    );
   };
 });
 
@@ -70,7 +68,7 @@ describe('LiveRuntimeScreen', () => {
 
     expect(screen.getByTestId('live-model-loading')).toBeOnTheScreen();
     expect(screen.queryByTestId('live-screen-view')).toBeNull();
-    expect(screen.queryByTestId('single-cell-camera')).toBeNull();
+    expect(screen.queryByTestId('word-photo-camera')).toBeNull();
   });
 
   it('menampilkan pemulihan ramah pengguna tanpa membocorkan error teknis', async () => {
@@ -91,7 +89,7 @@ describe('LiveRuntimeScreen', () => {
       screen.getByText(/Pemindai belum dapat disiapkan.*buka Bantuan\./s),
     ).toBeOnTheScreen();
     expect(screen.queryByText(/Softmax|tensor/i)).toBeNull();
-    expect(screen.queryByTestId('single-cell-camera')).toBeNull();
+    expect(screen.queryByTestId('word-photo-camera')).toBeNull();
 
     await user.press(screen.getByRole('button', { name: 'Coba lagi' }));
     await user.press(screen.getByRole('button', { name: 'Bantuan' }));
@@ -102,8 +100,14 @@ describe('LiveRuntimeScreen', () => {
     expect(router.back).toHaveBeenCalledTimes(1);
   });
 
-  it('menghubungkan model, sesi, reset, dan torch ke kamera setelah siap', async () => {
-    mockModelState = { status: 'ready', model: mockModel };
+  it('menghubungkan model kata, sesi, lease, dan torch ke kamera setelah siap', async () => {
+    mockModelState = {
+      status: 'ready',
+      model: mockModel,
+      thresholds: mockThresholds,
+      modelVersion: 'word-test',
+      acquireModel: mockAcquireModel,
+    };
     const onWordDraftChange = jest.fn();
     const wordDraft = wordDraftReducer(INITIAL_WORD_DRAFT_STATE, {
       type: 'commit_letter',
@@ -127,17 +131,18 @@ describe('LiveRuntimeScreen', () => {
       expect.objectContaining({
         cameraPermission: services.cameraPermissionPort,
         onWordDraftChange,
-        scanner: services.scannerPort,
         wordDraft,
       }),
     );
     expect(mockCameraProps).toEqual({
       active: true,
       model: mockModel,
-      resetToken: 7,
-      scanner: services.scannerPort,
+      thresholds: mockThresholds,
+      modelVersion: 'word-test',
+      acquireModel: mockAcquireModel,
       sessionId: 'runtime-session',
       torchEnabled: true,
+      guideAspectRatio: 4,
     });
   });
 

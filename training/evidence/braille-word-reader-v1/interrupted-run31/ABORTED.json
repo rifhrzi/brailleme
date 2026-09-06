@@ -1,0 +1,175 @@
+{
+  "status": "interrupted_by_strategy_change",
+  "recorded_at_utc": "2026-09-06T09:22:48.366832+00:00",
+  "reason": "User requested a faster and more effective approach; root explicitly stopped the active experiment and prohibited further training/selection.",
+  "stop_method": "Stop-Process on exact owned trainer PID15248 after command-line run31/word_train and parent31296 guards; launcher and environment wrappers exited naturally.",
+  "stopped_trainer_pid": 15248,
+  "unified_session_id": 36786,
+  "unified_exit_code": 1,
+  "training_process_result": {
+    "completed_at_utc": "2026-09-06T09:21:44.642237+00:00",
+    "exit_code": 4294967295
+  },
+  "last_complete_epoch": 8,
+  "interrupted_epoch": 9,
+  "planned_epochs": 10,
+  "last_complete_sampler_batches": 1037,
+  "last_complete_natural135_callback": {
+    "total": 135,
+    "accepted": 125,
+    "correct": 125,
+    "exact_word_accuracy": 0.9259259259259259,
+    "accepted_accuracy": 1.0,
+    "by_length": {
+      "1": {
+        "total": 29,
+        "accepted": 25,
+        "correct": 25,
+        "exact_word_accuracy": 0.8620689655172413,
+        "accepted_accuracy": 1.0
+      },
+      "2": {
+        "total": 21,
+        "accepted": 21,
+        "correct": 21,
+        "exact_word_accuracy": 1.0,
+        "accepted_accuracy": 1.0
+      },
+      "3": {
+        "total": 17,
+        "accepted": 16,
+        "correct": 16,
+        "exact_word_accuracy": 0.9411764705882353,
+        "accepted_accuracy": 1.0
+      },
+      "4": {
+        "total": 11,
+        "accepted": 11,
+        "correct": 11,
+        "exact_word_accuracy": 1.0,
+        "accepted_accuracy": 1.0
+      },
+      "5": {
+        "total": 10,
+        "accepted": 8,
+        "correct": 8,
+        "exact_word_accuracy": 0.8,
+        "accepted_accuracy": 1.0
+      },
+      "6": {
+        "total": 23,
+        "accepted": 23,
+        "correct": 23,
+        "exact_word_accuracy": 1.0,
+        "accepted_accuracy": 1.0
+      },
+      "7": {
+        "total": 8,
+        "accepted": 7,
+        "correct": 7,
+        "exact_word_accuracy": 0.875,
+        "accepted_accuracy": 1.0
+      },
+      "8": {
+        "total": 11,
+        "accepted": 9,
+        "correct": 9,
+        "exact_word_accuracy": 0.8181818181818182,
+        "accepted_accuracy": 1.0
+      },
+      "9": {
+        "total": 5,
+        "accepted": 5,
+        "correct": 5,
+        "exact_word_accuracy": 1.0,
+        "accepted_accuracy": 1.0
+      }
+    },
+    "rejection_reasons": {
+      "low_confidence": 5,
+      "clipped": 4,
+      "unsupported_pattern": 1
+    }
+  },
+  "scope": "Natural135 callbacks are diagnostics, not frozen405 selection or external607 results. This interrupted run is ineligible for selection; no new checkpoint selection, export, external benchmark or promotion occurred.",
+  "selector_started": false,
+  "model_activated": false,
+  "no_backend_processes_after_exit": true,
+  "retained_checkpoint_files": [
+    {
+      "file": "retained-epochs/epoch-01.keras",
+      "sha256": "66acd0d0d5f16798ad367b09180fa66c7cab6ad613b25145135d861d261545a5",
+      "sizeBytes": 3954308,
+      "zip_crc_valid": true
+    },
+    {
+      "file": "retained-epochs/epoch-02.keras",
+      "sha256": "7d4623d4a2008988d6bf624a74f63b067a21741de6c5de57883579674bc420ec",
+      "sizeBytes": 3954308,
+      "zip_crc_valid": true
+    },
+    {
+      "file": "retained-epochs/epoch-03.keras",
+      "sha256": "0c3c4b17bd6f2b9f336292f48894311e82f2bc3791a3bd98bb1286bdcf7c0f6d",
+      "sizeBytes": 3954308,
+      "zip_crc_valid": true
+    },
+    {
+      "file": "retained-epochs/epoch-04.keras",
+      "sha256": "13f40f2378356e044bb934eb13e3c1fded63bc0c03bc0460f02e239e2faaa22b",
+      "sizeBytes": 3954308,
+      "zip_crc_valid": true
+    },
+    {
+      "file": "retained-epochs/epoch-05.keras",
+      "sha256": "2c2b176bf43fb3ad82499bf3f4d9bc067bfd0a908c6c19ab5654fa42f0bd4a81",
+      "sizeBytes": 3954308,
+      "zip_crc_valid": true
+    },
+    {
+      "file": "retained-epochs/epoch-06.keras",
+      "sha256": "70f01a58182bafee5cb8142ad466088f011949d5228fd9612b71894dee0178c3",
+      "sizeBytes": 3954308,
+      "zip_crc_valid": true
+    },
+    {
+      "file": "retained-epochs/epoch-07.keras",
+      "sha256": "d334a6e5054189ad0f10c1f86e3577c5bc8436bb85f16e1fe85b9dfe34b69a45",
+      "sizeBytes": 3954308,
+      "zip_crc_valid": true
+    },
+    {
+      "file": "retained-epochs/epoch-08.keras",
+      "sha256": "97853dbbf7434e2984fc1997d1600b2d4dc8fd5e638aed6f3e5df81f547c2f95",
+      "sizeBytes": 3954308,
+      "zip_crc_valid": true
+    },
+    {
+      "file": "last.keras",
+      "sha256": "97853dbbf7434e2984fc1997d1600b2d4dc8fd5e638aed6f3e5df81f547c2f95",
+      "sizeBytes": 3954308,
+      "zip_crc_valid": true
+    },
+    {
+      "file": "last-training.keras",
+      "sha256": "e58b9353fa428194aecc36bff7e422f96159ab28c01b2c87012a226bb1bfc734",
+      "sizeBytes": 10359877,
+      "zip_crc_valid": true
+    },
+    {
+      "file": "best-word.keras",
+      "sha256": "1f326776a346f841a3103de5a059433c957b4828860ba2372af9dea5ae34dd44",
+      "sizeBytes": 3954308,
+      "zip_crc_valid": true
+    }
+  ],
+  "evidence_sha256": {
+    "training-config.json": "fecd8ead41b03d61305e8b9dbeaaa6fae5f6532ac8cb5bb7e36d9f6aab3dd7ba",
+    "auxiliary-dot-protocol.json": "9212eb5a9ab53ca7b6783a3b216014308e28fe786f76d264878fa8355a194155",
+    "launch-command.json": "e4ecd369ca79ebb4945e3b57e50d787a7663719b63410c20bf67d3aba34cd49e",
+    "training-process-result.json": "8365afe9ef4ad0c1d7aff38be0553c09633711f8d222c6cc20fb575b1d80b5e0",
+    "training.log": "ace1805da12a78400988ee1cad9f7d99d539ee40d680990ce720a6c3c4268ef8",
+    "sampling-history.json": "64f3504d16ecafadf84981d3db66dae9d2c6b536d5c8e41018f68d6c312ef815",
+    "validation-history.json": "acd447174696dc2c5ec9659c6d7f08798a4d94cc99efb30ec1fe15613a1b41bf"
+  }
+}

@@ -30,11 +30,12 @@ export default function OnboardingScreen() {
           Tiga hal penting sebelum mulai.
         </Text>
 
-        <SectionCard title="Susun satu kata" variant="plain">
+        <SectionCard title="Pindai satu kata" variant="plain">
           <Text selectable style={styles.body}>
-            BrailleMe menyusun satu kata dengan memindai satu sel untuk setiap
-            huruf A sampai Z. Tambahkan huruf yang sudah stabil, lalu lanjutkan
-            ke sel berikutnya. Aplikasi tidak membaca seluruh baris sekaligus.
+            Tempatkan satu kata Braille di dalam bingkai, dengan kamera tepat di
+            atasnya dan cahaya miring dari ujung atas kertas. Tekan Pindai kata.
+            Aplikasi membaca huruf dari kiri ke kanan. Gunakan satu baris A sampai Z,
+            maksimal 12 huruf, lalu periksa hasil sebelum memilih Bacakan.
           </Text>
         </SectionCard>
 

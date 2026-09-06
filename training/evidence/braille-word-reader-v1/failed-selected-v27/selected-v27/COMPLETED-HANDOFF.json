@@ -1,0 +1,122 @@
+{
+  "completed_at_utc": "2026-09-06T08:35:38.944145+00:00",
+  "status": "unchanged_control_retained",
+  "run": ".braille-training-work\\word-scan-v1-20260905\\run30",
+  "selected_checkpoint_sha256": "cce2432c0ddb8952c885dd58697589c285209588dafa81aacdd891b1660068b7",
+  "decoder_version": "six-dot-word-v2",
+  "selection_table_sha256": "f220fa624154ba239c4611c4247c9345c2fd89b527c042ec741239bc7da07cbd",
+  "selection_report_sha256": "38dfe0d46a2f5aabbd77ecf827cc471c99af615cf8ef07d31d9f881f7d9266d7",
+  "sampling_audit_sha256": "f4b604bd872139140267c3a04b117d485b6acb24055f0a4f9c71bee46fd42523",
+  "training_configuration_sha256": "28e649bc9cef62afc535446f0675fa5c7fc8a8b98946d1a9507eeb9539a6e3c2",
+  "training_process_result": {
+    "completed_at_utc": "2026-09-06T08:30:50.038245+00:00",
+    "exit_code": 0
+  },
+  "selection_process_result": {
+    "completed_at_utc": "2026-09-06T08:34:03.092424+00:00",
+    "exit_code": 0
+  },
+  "source_snapshot_matches_current": true,
+  "comparison": [
+    {
+      "source_checkpoint": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\selected-v26\\best-word.keras",
+      "checkpoint_sha256": "cce2432c0ddb8952c885dd58697589c285209588dafa81aacdd891b1660068b7",
+      "correct": 355,
+      "accepted": 359,
+      "total": 405,
+      "natural_correct": 129,
+      "stress_correct": 226,
+      "equal_group_mean_exact": 0.8962962962962964
+    },
+    {
+      "source_checkpoint": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\run30\\retained-epochs\\epoch-08.keras",
+      "checkpoint_sha256": "861993aa5fbdb1d97fe0c76b0081ee1dc703e646bc3f0e9c54c8239f4817aadc",
+      "correct": 352,
+      "accepted": 356,
+      "total": 405,
+      "natural_correct": 129,
+      "stress_correct": 223,
+      "equal_group_mean_exact": 0.8907407407407408
+    },
+    {
+      "source_checkpoint": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\run30\\retained-epochs\\epoch-09.keras",
+      "checkpoint_sha256": "354ee1ecb4d18cf1055d9aeb4534edd51c4fd8976ee4fff3a5820534f26dab1d",
+      "correct": 350,
+      "accepted": 355,
+      "total": 405,
+      "natural_correct": 125,
+      "stress_correct": 225,
+      "equal_group_mean_exact": 0.8796296296296297
+    },
+    {
+      "source_checkpoint": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\run30\\retained-epochs\\epoch-10.keras",
+      "checkpoint_sha256": "6a8ed25b8931c3fe7665d0c333ce657c13fa5951381395cd4ebfc978b2abf94e",
+      "correct": 347,
+      "accepted": 352,
+      "total": 405,
+      "natural_correct": 124,
+      "stress_correct": 223,
+      "equal_group_mean_exact": 0.8722222222222222
+    }
+  ],
+  "unchanged_control_fields": [
+    "checkpoint_sha256",
+    "thresholds",
+    "words",
+    "decoder_version",
+    "imageNormalization",
+    "validation_groups",
+    "equal_group_mean_exact",
+    "both_group_precision_gates_pass",
+    "oracle",
+    "quality_rejected_before_decode"
+  ],
+  "control_model_bytes_identical": true,
+  "old_torch405_oracle_sha256": "20f0a6c0224ec7f640ca0e46275914e912a2b1b440882f0b1e9e94e8bb72556b",
+  "new_torch405_oracle_sha256": "20f0a6c0224ec7f640ca0e46275914e912a2b1b440882f0b1e9e94e8bb72556b",
+  "all_cached_arrays_exact": [
+    {
+      "key": "outputs",
+      "dtype": "float32",
+      "shape": [
+        405,
+        48,
+        120,
+        11
+      ],
+      "exact": true
+    },
+    {
+      "key": "quality_rejected",
+      "dtype": "bool",
+      "shape": [
+        405
+      ],
+      "exact": true
+    },
+    {
+      "key": "fixture_sha256",
+      "dtype": "<U64",
+      "shape": [],
+      "exact": true
+    },
+    {
+      "key": "checkpoint_sha256",
+      "dtype": "<U64",
+      "shape": [],
+      "exact": true
+    }
+  ],
+  "inherited_current_v2_evaluation": {
+    "directory": ".braille-training-work\\word-scan-v1-20260905\\selected-v26",
+    "completed_handoff_sha256": "c33eca7d6df083076b0921dd4c7391101b294f1081803e16547c335e23ca5208",
+    "invocation_count_erratum_sha256": "a0361b760a6be137c6e06ee586cfa148d65e3f5617ba80604ed3a3d9845cc6cb",
+    "export_report_sha256": "e3e61fc55c8eeb1a948d18d09357f295e72252d52fc3c51c53bb68ae1c884c8e",
+    "public_benchmark_sha256": "53b97677aea261af1174a5f70edc81affbf272ca32f7611ae3df688638209944",
+    "repetition_sha256": "b1a81f7301720bc5607086722146ed1e639fdd7097ea656939aa4289c9c8cbdc",
+    "rejection_sha256": "7a15241e0c03de9627c8c5a3788a13f4cb9aee55dc715f0384c24faaa3aaa9d8"
+  },
+  "new_export_or_external_inference": false,
+  "backend_modules_imported_for_this_comparison": [],
+  "next_action": "Notify root. Do not start another experiment before its conditional auxiliary-dot backend preflight is scheduled and reviewed. Original model gates still fail; no active word asset or APK promotion."
+}

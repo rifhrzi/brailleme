@@ -1,0 +1,18 @@
+{
+  "status": "passed_bounded_source_delta_review",
+  "created_at_utc": "2026-09-05T19:42:42.989184+00:00",
+  "source_sha256": "d4baba52b0993240e0b5092500ae32ee5d1b01e636d2546261a0a24996bd4a21",
+  "previous_source_sha256": "6c502d7dcac0692df0f8c2858bf2d8a76800ba130613e14289e8f77ed66debab",
+  "failure_report_sha256": "f712cfec88a8035216db9f319eb319d6411cb7ca25de5f5fcd144ee9a6b0aa23",
+  "new_torch_oracle_report_sha256": "6b1f67677f8950c69a3f5a4f63f786ae011c9a77f0a571684cb35f4eced508ea",
+  "old_and_new_oracle_identical_sha256": "2ba7da257b3788e756e56377087ae948960c3ae200ef5e55041f1d74e6999eb7",
+  "checked": [
+    "Eager training=False vs training=True uses exact array equality.",
+    "Compiled predict vs eager uses unchanged backend numerical tolerance1e-4 and exact raw/effective decoder decisions.",
+    "All original model arrays including stored moving moments remain exact.",
+    "Count/dtype/shape/finite/range, sources/parent/threshold hashes and no activation/resume scope retained.",
+    "Proof-directory changes output placement only; original initialization/one-input oracle remain bound."
+  ],
+  "model_execution_by_reviewer": false,
+  "tensorflow_conversion_result_reviewed": false
+}

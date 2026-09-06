@@ -1,0 +1,248 @@
+{
+  "capture": {
+    "id": "photo4by3-view1by1-1788626818812-1",
+    "case": "photo4by3-view1by1",
+    "target": {
+      "width": 1920,
+      "height": 1440
+    },
+    "orientationSource": "interface",
+    "window": {
+      "width": 411.42857142857144,
+      "height": 914.2857142857143
+    },
+    "density": 2.625,
+    "preview": {
+      "widthDp": 387.42857142857144,
+      "heightDp": 387.42857142857144,
+      "width": 1017,
+      "height": 1017,
+      "resolution": {
+        "width": 1280,
+        "height": 960
+      },
+      "path": "/data/user/0/com.brailleme.geometrydiagnostic/cache/nitro_image_3586365032391734463.png"
+    },
+    "guide": {
+      "x": 0.3,
+      "y": 0.3,
+      "width": 0.4,
+      "height": 0.4
+    },
+    "guidePoints": [
+      {
+        "x": 832,
+        "y": 287.9999694824219
+      },
+      {
+        "x": 832,
+        "y": 671.9999389648438
+      },
+      {
+        "x": 448,
+        "y": 671.9999389648438
+      },
+      {
+        "x": 448,
+        "y": 287.9999694824219
+      }
+    ],
+    "fullPoints": [
+      {
+        "x": 1120,
+        "y": 0
+      },
+      {
+        "x": 1120,
+        "y": 959.9998779296875
+      },
+      {
+        "x": 160.00006103515625,
+        "y": 959.9998779296875
+      },
+      {
+        "x": 160.00006103515625,
+        "y": 0
+      }
+    ],
+    "geometry": {
+      "width": 1280,
+      "height": 960,
+      "sensorToBuffer": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "rotationDegrees": 270,
+      "isMirrored": false,
+      "cropRect": [
+        0,
+        0,
+        1280,
+        960
+      ]
+    },
+    "jpegPath": "/data/user/0/com.brailleme.geometrydiagnostic/cache/VisionCamera_5622803697933881615.jpg",
+    "photo": {
+      "width": 960,
+      "height": 1280,
+      "path": "/data/user/0/com.brailleme.geometrydiagnostic/cache/nitro_image_6548584157498181071.png"
+    }
+  },
+  "roi": {
+    "x": 0.2999999682108561,
+    "y": 0.35,
+    "width": 0.3999999682108561,
+    "height": 0.3
+  },
+  "roi_independent_corner_check": {
+    "expected_pixels_xyxy": [
+      287.9999633789062,
+      447.9999816894532,
+      671.9999145507812,
+      831.9999572753906
+    ],
+    "actual_pixels_xyxy": [
+      287.9999694824219,
+      448.0,
+      671.9999389648438,
+      831.9999999999999
+    ],
+    "max_absolute_corner_error_pixels": 4.2724609329525265e-05
+  },
+  "checks": [
+    {
+      "id": "red",
+      "preview_centroid": [
+        592.7413479052823,
+        620.8879781420765
+      ],
+      "photo_centroid": [
+        559.6127049180328,
+        746.0553278688525
+      ],
+      "predicted_photo_centroid": [
+        559.5197852831361,
+        746.0889096562424
+      ],
+      "error_photo_pixels": 0.09880179651018604,
+      "preview_color_pixels": 1098,
+      "photo_color_pixels": 976,
+      "passed": true,
+      "inside_preview_guide": true,
+      "inside_photo_roi": true,
+      "guide_membership_matches": true
+    },
+    {
+      "id": "magenta",
+      "preview_centroid": [
+        404.62334801762114,
+        620.9202643171806
+      ],
+      "photo_centroid": [
+        381.95508982035926,
+        746.0209580838323
+      ],
+      "predicted_photo_centroid": [
+        381.9452946946094,
+        746.1193862797719
+      ],
+      "error_photo_pixels": 0.09891437835008374,
+      "preview_color_pixels": 1135,
+      "photo_color_pixels": 1002,
+      "passed": true,
+      "inside_preview_guide": true,
+      "inside_photo_roi": true,
+      "guide_membership_matches": true
+    },
+    {
+      "id": "cyan",
+      "preview_centroid": [
+        404.57719298245615,
+        395.0675438596491
+      ],
+      "photo_centroid": [
+        381.9230387288977,
+        533.0213505461768
+      ],
+      "predicted_photo_centroid": [
+        381.90172652536233,
+        532.925091437811
+      ],
+      "error_photo_pixels": 0.09859019202184548,
+      "preview_color_pixels": 1140,
+      "photo_color_pixels": 1007,
+      "passed": true,
+      "inside_preview_guide": true,
+      "inside_photo_roi": true,
+      "guide_membership_matches": true
+    },
+    {
+      "id": "blue",
+      "preview_centroid": [
+        592.7996389891697,
+        395.05595667870034
+      ],
+      "photo_centroid": [
+        559.5841784989858,
+        533.0081135902637
+      ],
+      "predicted_photo_centroid": [
+        559.5748093081277,
+        532.9141536865784
+      ],
+      "error_photo_pixels": 0.09442587165547132,
+      "preview_color_pixels": 1108,
+      "photo_color_pixels": 986,
+      "passed": true,
+      "inside_preview_guide": true,
+      "inside_photo_roi": true,
+      "guide_membership_matches": true
+    }
+  ],
+  "failure": null,
+  "jpeg_vs_nitro": {
+    "encoded_size": [
+      1280,
+      960
+    ],
+    "exif_orientation": 8,
+    "upright_size": [
+      960,
+      1280
+    ],
+    "same_dimensions_as_nitro": true,
+    "mean_absolute_rgb_difference": 0.0,
+    "max_absolute_rgb_difference": 0,
+    "claim": "JPEG plane bytes saved by Photo.saveToTemporaryFileAsync (EXIF metadata attached, no pixel crop/re-encode in installed source); independently decoded and EXIF-oriented with Pillow."
+  },
+  "passed": true,
+  "files": {
+    "imageproxy.jpg": {
+      "sha256": "8beb700e7f4f81e5547602e0d8aa9573ed2935230058a0d601938aeebafd1d6d",
+      "bytes": 87902
+    },
+    "mapped-roi.png": {
+      "sha256": "d45e1cf124f435ebf301d0c6becac821a4b2b1f0afb7ca7c959b109f8960c37e",
+      "bytes": 14239
+    },
+    "photo-review.png": {
+      "sha256": "0251a176554ba859b215a63eaa480b7652c793d0f9b41e56a1db99630a88ec87",
+      "bytes": 35684
+    },
+    "photo.png": {
+      "sha256": "fed615b4f2e502a9783ce1101efaefaddc597a6f2a15ed64d4da2eead90246bb",
+      "bytes": 35005
+    },
+    "preview.png": {
+      "sha256": "f5fdc1252b007ff567127926a49c5b2f68405d23167b99324d7338501a86a61b",
+      "bytes": 57552
+    }
+  }
+}

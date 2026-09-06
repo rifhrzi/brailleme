@@ -1,0 +1,309 @@
+{
+  "status": "passed",
+  "scope": "Independent raw26 TRAIN TXT arithmetic, all cached known-cell coordinates, saved config center-tap lattice and four synthetic Pillow RGB markers. No TensorFlow/Torch/GPU imports, model execution, training or shared-source edits.",
+  "audited_files": {
+    "audit_feature_lattice.py": "81de7f870615b48e3ae04cc69976257b398900096c9d528846da7fcffc82ffd4",
+    "feature-lattice-audit.json": "0844999f8df7c1285bb6bb57e451c57e98db0249817843b96581b3309ccaee79",
+    "audit_slot_priors.py": "ac807c1c23a2075ae888e8a383283b0e335aad78b2a6862c59abc33b9355fc7d",
+    "slot-prior-audit.json": "216656cff63c75274de69d19a5363c829d91a9d0e913080f20d9bb275c03c459"
+  },
+  "script_sha256": "c469cee1f87b905db92435d1c875fa447add2bf8a54bbde24e09c491141d0988",
+  "checkpoint_sha256": "44372fa1c73356f3ddfce6ac1001bb9124164846fdf87c12096b6afc1d2c0443",
+  "source_index_sha256": "8d62cf1850308fb864449bbcabc4399ef4e9a9aab62216b35c8064fa634450a6",
+  "manifest_sha256": "21dc4f93821b2282b8c0f0967430f22b44fc868d26b4a3265e6fd57995892a44",
+  "point_metadata_sha256": "ea9592a727f7f3abcc6b017f8f22e143e90ae1541f623c43adf30104021937e8",
+  "raw_annotations": [
+    {
+      "source": "dsbi/Massage/M+1+recto.jpg",
+      "sha256": "9be911ebb3212b3522e9f56ec01c190f52988f52d528da7984c37f93c8711790"
+    },
+    {
+      "source": "dsbi/Massage/M+2+recto.jpg",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "dsbi/Massage/M+3+recto.jpg",
+      "sha256": "7f7fd0b597a9ef318d028426c55204df068bfd6d28e102d08b89110b32244a69"
+    },
+    {
+      "source": "dsbi/Massage/M+4+recto.jpg",
+      "sha256": "abce3e9c45ebab3c79c2aa9e8f06ecda3cbf1bb47c2a9d1fc67933936666b55f"
+    },
+    {
+      "source": "dsbi/Massage/M+5+recto.jpg",
+      "sha256": "b5502c36d1565baaaaad500603bb8b4f5e42b4ab0c61d3f5cb00d77490d5f62d"
+    },
+    {
+      "source": "dsbi/Massage/M+6+recto.jpg",
+      "sha256": "39e0fe69487d7fa6c4e11f82450c984b39d4bca988fcf50964d94065fbd958ac"
+    },
+    {
+      "source": "dsbi/Massage/M+7+recto.jpg",
+      "sha256": "4e2152b8f171c0f129beac96ea472430d2fcdc34a9876aed00808678b0944200"
+    },
+    {
+      "source": "dsbi/Massage/M+8+recto.jpg",
+      "sha256": "61d2f5218ed4e47eb63b995c230b40951d341e000a47df51c87970a7b6912db8"
+    },
+    {
+      "source": "dsbi/Massage/M+9+recto.jpg",
+      "sha256": "28ba413977d70457a57e36dffb2c3f50ae2625adf297f84d4dbe2d0296b5a8e2"
+    },
+    {
+      "source": "dsbi/Massage/M+10+recto.jpg",
+      "sha256": "e4912b39b883029f302cdc1f87aed6a9ffcdac728647b71c75db5578d18397fe"
+    },
+    {
+      "source": "dsbi/Math/math+1+recto.jpg",
+      "sha256": "7d6d1a9451ed29d2897733504f47f68c6dcaa1cb46edcad52a7c4bcfe878fead"
+    },
+    {
+      "source": "dsbi/Math/math+2+recto.jpg",
+      "sha256": "f7b250ac8079222265fc41e92646f6b4db51c3a3ef7a0b78c7cacb816f8db539"
+    },
+    {
+      "source": "dsbi/Math/math+3+recto.jpg",
+      "sha256": "563fe72f6ef30e93955a42a8ba08c11d27c626cd214109625f013bb359891fda"
+    },
+    {
+      "source": "dsbi/Math/math+4+recto.jpg",
+      "sha256": "d20a2fcd59efdbc28df2e8c5d75af973274668a2d4e24b0ea98067d186dce62f"
+    },
+    {
+      "source": "dsbi/Math/math+5+recto.jpg",
+      "sha256": "a2afe98830691a72a96e894914bda8595782865bc6b7569d3bcab0520a0cfd05"
+    },
+    {
+      "source": "dsbi/Math/math+6+recto.jpg",
+      "sha256": "b28e284b36710e286c6313fc8cae7a53f08382680d9fb7def8e39172ef631d60"
+    },
+    {
+      "source": "dsbi/Math/math+7+recto.jpg",
+      "sha256": "45ad4550d7708e42711c076385dab39ee02e83c7287d30c4cb3f64cb2734722d"
+    },
+    {
+      "source": "dsbi/Math/math+8+recto.jpg",
+      "sha256": "8bbcb0d69f983564eec000d882104112f10d85dac0ab1f8296bda5d582a54024"
+    },
+    {
+      "source": "dsbi/Math/math+9+recto.jpg",
+      "sha256": "58f107a1b89a5e5c93d2aa05134ee8ad0a9bc583f55b7dbec90cdbfd98155ad8"
+    },
+    {
+      "source": "dsbi/Math/math+10+recto.jpg",
+      "sha256": "dab268e3633b7ad71941791d482d1c9d9b28c4d92e6ff943b8060358a05799b8"
+    },
+    {
+      "source": "dsbi/Ordinary Printed Document/OPD+1+recto.jpg",
+      "sha256": "f8eb3157bac5198e8f3d20f56301f0048a9a853db9eb12cb69987b8180cb6a0d"
+    },
+    {
+      "source": "dsbi/Ordinary Printed Document/OPD+2+recto.jpg",
+      "sha256": "6c80d8fc7f556b3893b2605650b7bf1227fa3b71412a6c4060b205d221852a1c"
+    },
+    {
+      "source": "dsbi/Ordinary Printed Document/OPD+3+recto.jpg",
+      "sha256": "dab154f2dff04b5e513009578e8928b971480657c9e450f95df89676a06d5731"
+    },
+    {
+      "source": "dsbi/Shaver Yang Fengting/SYF+3+recto.jpg",
+      "sha256": "60b4ac0444de3a625715b28981f718ccca6bcfe15247b7b4866e0b95d43aacb5"
+    },
+    {
+      "source": "dsbi/Shaver Yang Fengting/SYF+4+recto.jpg",
+      "sha256": "55e75b50cafa0fddc0d28ef2cd91ac76f46f3fdc9214536f3d88786215b399e6"
+    },
+    {
+      "source": "dsbi/Shaver Yang Fengting/SYF+5+recto.jpg",
+      "sha256": "5d9adb30f84fe8ad33bb8ceff07ff83fa60fbd2c257b5ecf1c1946c613bd285b"
+    }
+  ],
+  "stride4_center_tap_ramps": [
+    {
+      "input_size": 192,
+      "output_size": 48,
+      "first": 3.0,
+      "last": 191.0,
+      "jump": 4
+    },
+    {
+      "input_size": 480,
+      "output_size": 120,
+      "first": 3.0,
+      "last": 479.0,
+      "jump": 4
+    }
+  ],
+  "unique_raw_nonzero_cells": 9983,
+  "cached_occurrences": 27055,
+  "complete_cached_occurrences": 13911,
+  "unique_complete_seen": 9983,
+  "max_cached_box_error_pixels": 0.0,
+  "max_original_fraction_to_cached_q_error_pixels": 1.1368683772161603e-13,
+  "max_cached_fraction_vs_unique_source_fraction_difference": 2.1094237467877974e-15,
+  "raw_source_medians": [
+    [
+      0.20238095238095158,
+      0.12412587412587293
+    ],
+    [
+      0.20238095238095158,
+      0.5086505190311419
+    ],
+    [
+      0.20238095238095158,
+      0.8942307692307693
+    ],
+    [
+      0.8273809523809532,
+      0.12412587412587293
+    ],
+    [
+      0.8273809523809532,
+      0.5086505190311419
+    ],
+    [
+      0.8273809523809532,
+      0.8942307692307693
+    ]
+  ],
+  "all_reported_fraction_and_pixel_error_percentiles_match": true,
+  "pillow_markers": [
+    {
+      "family": "dsbi/Massage",
+      "record": "../dsbi-training-contexts-v2/images/000000.png",
+      "source_row": 4,
+      "source_col": 9,
+      "crop": [
+        419,
+        224,
+        865,
+        404
+      ],
+      "point": [
+        448.0,
+        291.0
+      ],
+      "scale": [
+        1.0762331838565022,
+        1.0666666666666667
+      ],
+      "expected": [
+        31.248878923766817,
+        71.5
+      ],
+      "pillow_rgb_energy_centroid": [
+        31.282758620689656,
+        71.5
+      ],
+      "absolute_error_pixels": [
+        0.03387969692283832,
+        0.0
+      ]
+    },
+    {
+      "family": "dsbi/Math",
+      "record": "../dsbi-training-contexts-v2/images/000875.png",
+      "source_row": 4,
+      "source_col": 10,
+      "crop": [
+        468,
+        311,
+        651,
+        384
+      ],
+      "point": [
+        498.0,
+        326.0
+      ],
+      "scale": [
+        2.622950819672131,
+        2.6301369863013697
+      ],
+      "expected": [
+        79.5,
+        40.26712328767123
+      ],
+      "pillow_rgb_energy_centroid": [
+        79.5,
+        40.23364485981308
+      ],
+      "absolute_error_pixels": [
+        0.0,
+        0.03347842785814947
+      ]
+    },
+    {
+      "family": "dsbi/Ordinary Printed Document",
+      "record": "../dsbi-training-contexts-v2/images/001709.png",
+      "source_row": 2,
+      "source_col": 7,
+      "crop": [
+        304,
+        52,
+        707,
+        214
+      ],
+      "point": [
+        330.0,
+        114.0
+      ],
+      "scale": [
+        1.1910669975186103,
+        1.1851851851851851
+      ],
+      "expected": [
+        31.063275434243174,
+        73.57407407407408
+      ],
+      "pillow_rgb_energy_centroid": [
+        31.086021505376344,
+        73.55376344086021
+      ],
+      "absolute_error_pixels": [
+        0.022746071133170176,
+        0.02031063321386739
+      ]
+    },
+    {
+      "family": "dsbi/Shaver Yang Fengting",
+      "record": "../dsbi-training-contexts-v2/images/001998.png",
+      "source_row": 2,
+      "source_col": 12,
+      "crop": [
+        507,
+        77,
+        690,
+        150
+      ],
+      "point": [
+        565.0,
+        91.0
+      ],
+      "scale": [
+        2.622950819672131,
+        2.6301369863013697
+      ],
+      "expected": [
+        152.94262295081967,
+        37.63698630136986
+      ],
+      "pillow_rgb_energy_centroid": [
+        152.94915254237287,
+        37.67909604519774
+      ],
+      "absolute_error_pixels": [
+        0.006529591553203318,
+        0.04210974382787924
+      ]
+    }
+  ],
+  "defects": [],
+  "interpretation_limits": [
+    "Origin3 is the fine-branch nominal convolution lattice; fused nearest-upsampled features do not possess one exact physical center.",
+    "Priors weight each9983 unique known nonzero cell once, including unoccupied grid slots. They are not per-family balanced.",
+    "Pixel-error percentiles weight13911 complete cached occurrences times six slots and report per-axis absolute errors, not radial or unique-cell errors.",
+    "Median absolute pixel errors x=.0282885,y=.246437; p95 x=.118431,y=1.521288; worst y=8.332971. Low median is not a universal point-localization bound.",
+    "DSBI deskewed TRAIN grid priors do not prove Angelina occupied-point coordinates, rotated box priors, learned sampler improvement or converted graph parity."
+  ]
+}

@@ -1,0 +1,218 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-09-05",
+  "scope": "Isolated local Android geometry module compilation and static binary inspection only; no application APK, no model execution and no camera capture.",
+  "workspace": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme",
+  "stage": "C:\\bm-word-geometry-compile-20260905",
+  "stageDependencies": "Own copied node_modules from C:\\bm-word-apk-20260905 using the exact package-lock; no junctions and no patched dependencies.",
+  "packageLock": {
+    "file": "C:\\bm-word-geometry-compile-20260905\\package-lock.json",
+    "sha256": "dae5af9e618c9dc5b81208bb9c3e46a252f7e3ad1727b909cbbda518a53f4620",
+    "bytes": 733677
+  },
+  "dependencyVersions": {
+    "expo": "57.0.20",
+    "react-native": "0.86.3",
+    "react-native-vision-camera": "5.2.2",
+    "react-native-nitro-modules": "0.36.5",
+    "react-native-nitro-image": "0.15.1",
+    "react-native-worklets": "0.10.1"
+  },
+  "toolchain": {
+    "jdk": "C:\\Users\\rifqi\\.jdks\\brailleme-temurin-17\\jdk-17.0.20+8",
+    "gradle": "9.3.1",
+    "kotlin": "2.1.20",
+    "ndk": "27.1.12297006",
+    "cmake": "3.22.1",
+    "minSdk": 29,
+    "compileSdk": 36,
+    "targetSdk": 36
+  },
+  "variant": "release / CMake RelWithDebInfo",
+  "abisCompiled": [
+    "x86_64"
+  ],
+  "commands": [
+    "./gradlew.bat :braille-word-geometry:compileReleaseKotlin --offline --no-daemon --max-workers=1 -Dorg.gradle.jvmargs=\"-Xmx1024m -XX:MaxMetaspaceSize=384m\" -Pkotlin.compiler.execution.strategy=in-process -PreactNativeArchitectures=x86_64",
+    "./gradlew.bat :braille-word-geometry:externalNativeBuildRelease --init-script ../evidence/limit-native-jobs.gradle --offline --no-daemon --max-workers=1 -Dorg.gradle.jvmargs=\"-Xmx1024m -XX:MaxMetaspaceSize=384m\" -Pkotlin.compiler.execution.strategy=in-process -PreactNativeArchitectures=x86_64"
+  ],
+  "checks": {
+    "kotlinCompilation": true,
+    "cppCompilationAndLinking": true,
+    "jniOnLoadExported": true,
+    "nitroRegistrationSymbolExported": true,
+    "javapSignaturesMatchGeneratedJni": true,
+    "allApkAbis": false,
+    "runtimeLoadAndCapture": false,
+    "physicalDevice": false,
+    "applicationApkBuilt": false
+  },
+  "buildResults": {
+    "kotlin": {
+      "seconds": 57,
+      "tasks": 102
+    },
+    "cppAndRequiredPrefabDependencies": {
+      "seconds": 502,
+      "tasks": 68
+    }
+  },
+  "fixesValidated": [
+    "Direct react-android Gradle dependency supplies fbjni HybridData and DoNotStrip to generated Kotlin; no npm or lock change.",
+    "Local module honors reactNativeArchitectures; diagnostic build limited to x86_64."
+  ],
+  "earlierAttempts": [
+    "Initial online dependency resolution stalled in HTTPS artifact read and its isolated Gradle daemon was stopped.",
+    "Offline debug variant could not resolve uncached ReactAndroid/Hermes debug AARs; switched to existing cached release variants.",
+    "Initial release Kotlin compile exposed the missing direct react-android classpath dependency; corrected before successful compile."
+  ],
+  "artifact": {
+    "file": "C:\\bm-word-geometry-compile-20260905\\modules\\braille-word-geometry\\android\\build\\intermediates\\cxx\\RelWithDebInfo\\2w3d4n64\\obj\\x86_64\\libBrailleWordGeometry.so",
+    "sha256": "2b62d7040b8fa662bebe94d3be766cca6d66e0ece365f053b233782723a19d8e",
+    "bytes": 1566448,
+    "elfClass": "ELF64",
+    "machine": 62,
+    "dynamicDependencies": [
+      "libfbjni.so",
+      "libjsi.so",
+      "libNitroModules.so",
+      "libreactnative.so",
+      "libVisionCamera.so",
+      "libNitroImage.so",
+      "libandroid.so",
+      "libm.so",
+      "libc++_shared.so",
+      "libdl.so",
+      "libc.so"
+    ]
+  },
+  "evidence": [
+    {
+      "file": "C:\\bm-word-geometry-compile-20260905\\evidence\\kotlin-release-fixed.log",
+      "sha256": "97e6621b3f629120469bf03e9032eb191d35eb8600654eef301b644dc3d7f312",
+      "bytes": 34102
+    },
+    {
+      "file": "C:\\bm-word-geometry-compile-20260905\\evidence\\cpp-release.log",
+      "sha256": "e080c0492946942b198ae6a0317b1554bdc394ce3e147f1056af4852f240933c",
+      "bytes": 32524
+    },
+    {
+      "file": "C:\\bm-word-geometry-compile-20260905\\evidence\\limit-native-jobs.gradle",
+      "sha256": "7e6a3ac89ba0ecc804bdceb555d7be82b9533b12c077dd15db33a3288a3fa77d",
+      "bytes": 363
+    },
+    {
+      "file": "C:\\bm-word-geometry-compile-20260905\\evidence\\geometry-elf.txt",
+      "sha256": "6b59e3e282d8631fbfe561ea2c7a9417eac6b4d1d1e340248a652dacc91b5087",
+      "bytes": 51538
+    },
+    {
+      "file": "C:\\bm-word-geometry-compile-20260905\\evidence\\geometry-javap.txt",
+      "sha256": "b7c910e816d79bacb2d1447c0d5618846539ccbe7e47f6ae98aeb34eab06c6af",
+      "bytes": 3098
+    },
+    {
+      "file": "C:\\bm-word-geometry-compile-20260905\\evidence\\compile-source-copy.json",
+      "sha256": "3d256e52fe01ac5fcf4dc8b20bc44304d276765d09dc404c63423bdf7e72c448",
+      "bytes": 8212
+    }
+  ],
+  "compiledWorkspaceSourcesMatchStage": true,
+  "compiledSourceFiles": [
+    {
+      "file": "modules/braille-word-geometry/android/build.gradle",
+      "sha256": "02e2dcbda4ced239902b37f610934ccf3e26e8b31952f0005997970fef270c41"
+    },
+    {
+      "file": "modules/braille-word-geometry/android/CMakeLists.txt",
+      "sha256": "2e9cc14c2588fb27ba7530ec452b6f49e5274c614a24f65f3e01c3f320097845"
+    },
+    {
+      "file": "modules/braille-word-geometry/android/consumer-rules.pro",
+      "sha256": "f63e5bb960568fdd3c9f773ad8fe5e264e738202ee888a474a1a8351dfe69e5d"
+    },
+    {
+      "file": "modules/braille-word-geometry/android/src/main/AndroidManifest.xml",
+      "sha256": "21058c692532098e42afc39cf09de946c38229ec414bb7ac32f4fc90ba9a5f45"
+    },
+    {
+      "file": "modules/braille-word-geometry/android/src/main/cpp/cpp-adapter.cpp",
+      "sha256": "1b60e23d0aa1b1ecbc3eb041ab87fa1099590c674accbdf27c5b0c62699e7be2"
+    },
+    {
+      "file": "modules/braille-word-geometry/android/src/main/java/com/margelo/nitro/braillewordgeometry/HybridWordPhotoGeometry.kt",
+      "sha256": "48e433d0a3f1226d0f6714c75708cd826e1c8bd42ff6a24838761c3eabf9bd82"
+    },
+    {
+      "file": "modules/braille-word-geometry/android/src/main/java/expo/modules/braillewordgeometry/BrailleWordGeometryModule.kt",
+      "sha256": "417fc6eb0bd4952c3ffb3f100b49a7d3eb9a3cb980656ad23bfd4e399f12429f"
+    },
+    {
+      "file": "modules/braille-word-geometry/nitrogen/generated/.gitattributes",
+      "sha256": "8401d61d91c8f286601668b1b3c8e90e324d3f09d45a22bc72712c9b5f18e348"
+    },
+    {
+      "file": "modules/braille-word-geometry/nitrogen/generated/android/BrailleWordGeometry+autolinking.cmake",
+      "sha256": "92474ba23df6fd03faab221195f2f26d966a22d48caec13623b1836110c141bf"
+    },
+    {
+      "file": "modules/braille-word-geometry/nitrogen/generated/android/BrailleWordGeometry+autolinking.gradle",
+      "sha256": "f7808458852b7208f1b8a831f51c8b6f8fc3d7529ecb6ea77fc27030e898b44c"
+    },
+    {
+      "file": "modules/braille-word-geometry/nitrogen/generated/android/BrailleWordGeometryOnLoad.cpp",
+      "sha256": "852c47e99b04bf66540bb2259c24f1ba9bb55fd80167e76fd429b4a6764f6ffe"
+    },
+    {
+      "file": "modules/braille-word-geometry/nitrogen/generated/android/BrailleWordGeometryOnLoad.hpp",
+      "sha256": "d372a0fcb36e94516ead97febe0ecdaaf31a4f20f2b1dfb7f3562534e41733f0"
+    },
+    {
+      "file": "modules/braille-word-geometry/nitrogen/generated/android/c++/JHybridWordPhotoGeometrySpec.cpp",
+      "sha256": "aca3450800e3a6065ea20f816fa217b23f34619e74842f3401277a68f39c8b39"
+    },
+    {
+      "file": "modules/braille-word-geometry/nitrogen/generated/android/c++/JHybridWordPhotoGeometrySpec.hpp",
+      "sha256": "e0bfaf645821b1b080ea7d7f9946099c8bce682eab83c85c635e490eba06d57a"
+    },
+    {
+      "file": "modules/braille-word-geometry/nitrogen/generated/android/c++/JPhotoGeometry.hpp",
+      "sha256": "55db880d62679fb27013ff605b7130fa1d0f37de0023fe5044b2ced0d6100dda"
+    },
+    {
+      "file": "modules/braille-word-geometry/nitrogen/generated/android/kotlin/com/margelo/nitro/braillewordgeometry/BrailleWordGeometryOnLoad.kt",
+      "sha256": "01254773c574d84736b27b0bda3604a9d8b61d5c754a6ed6eaa9560d625fac9c"
+    },
+    {
+      "file": "modules/braille-word-geometry/nitrogen/generated/android/kotlin/com/margelo/nitro/braillewordgeometry/HybridWordPhotoGeometrySpec.kt",
+      "sha256": "c8123e7de366c0861530d58271dee2e61a8ac3a1e6d6e2d87a59a40503cae3c9"
+    },
+    {
+      "file": "modules/braille-word-geometry/nitrogen/generated/android/kotlin/com/margelo/nitro/braillewordgeometry/PhotoGeometry.kt",
+      "sha256": "ad148255a6136bf9841b6d4a38d41d08c5ba31dde4678dac0d1dea8ed20c1bf7"
+    },
+    {
+      "file": "modules/braille-word-geometry/nitrogen/generated/shared/c++/HybridWordPhotoGeometrySpec.cpp",
+      "sha256": "b0d6091bed0a79c4a1cecaeb149d6a9155dd6a6fff00346ac47ff2f1d76a72fe"
+    },
+    {
+      "file": "modules/braille-word-geometry/nitrogen/generated/shared/c++/HybridWordPhotoGeometrySpec.hpp",
+      "sha256": "a9e86e499807eced6eb906eb77b08bc6902e20d3820b6db88868a4499054aca1"
+    },
+    {
+      "file": "modules/braille-word-geometry/nitrogen/generated/shared/c++/PhotoGeometry.hpp",
+      "sha256": "ea786b4d6a90fc35b6bc501b0ec962e9367c7f7e772d1e9f4b74dd73828a74c1"
+    }
+  ],
+  "cameraXMatrixWithoutViewPort": {
+    "verified": true,
+    "source": {
+      "file": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\native-crop-audit\\sources\\androidx\\camera\\core\\internal\\CameraUseCaseAdapter.java",
+      "sha256": "4339c2926149661346282d8e1e07fa6ae6031fdb959627777fae62402716aadc",
+      "bytes": 63386
+    },
+    "method": "updateViewPortAndSensorToBufferMatrix",
+    "observation": "setSensorToBufferTransformMatrix is executed for each use case regardless of ViewPort; only setViewPortCropRect is conditional."
+  }
+}

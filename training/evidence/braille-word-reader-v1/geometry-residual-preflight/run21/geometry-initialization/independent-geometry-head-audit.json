@@ -1,0 +1,66 @@
+{
+  "status": "passed",
+  "scope": "Independent source and ZIP/HDF5 checks plus NumPy execution of sampling arithmetic against a scalar oracle and stored six-input output equality. No model/backend execution.",
+  "source_sha256": "f46c8f90e7f4fc9404eed2dc27fbde6e5c823d25d4f88e4127c7e56ed6e8764e",
+  "test_source_sha256": "ecf8a9818959d37cd1ddcd4f4de08a034cb87d930d4132d4919e6b747011d454",
+  "initialization_report_sha256": "791bac9f9e92cab96925a9c802de9c6b141e07c7c2e00b4fbce9904187293359",
+  "parent_checkpoint_sha256": "cce2432c0ddb8952c885dd58697589c285209588dafa81aacdd891b1660068b7",
+  "zero_checkpoint_sha256": "d6d43af7f662584d1f84c1ac7411d1572f898224746973405ed080c3ea1171d5",
+  "oracle_sha256": "9330946dafe06c7705b3f2c85cce26f8bbfeca11763ba7465d62e809180d5669",
+  "script_sha256": "337bdfbedc1a48ec3d6f1e56bb80a6d53f5b322d368622ade8940083ca50b605",
+  "all_inherited_weight_layers_equal": 113,
+  "all_inherited_arrays_equal": 280,
+  "added_weight_layers": [
+    "geometry_feature_mlp",
+    "geometry_feature_projection",
+    "geometry_residual_zero"
+  ],
+  "added_parameters": 2451,
+  "final_projection_all_zero": true,
+  "inherited_head_filters": [
+    1,
+    4,
+    6
+  ],
+  "head_kernel_duplication": false,
+  "inverse_sigmoid_reconstruction": false,
+  "frozen_batchnorm_layers": 52,
+  "backbone_called_training_false": true,
+  "unchanged_old_normalization_and_feature_graph": true,
+  "input_shape": [
+    null,
+    192,
+    480,
+    3
+  ],
+  "output_shape": [
+    null,
+    48,
+    120,
+    11
+  ],
+  "multi_batch_scalar_oracle": {
+    "batch": 3,
+    "grid": [
+      5,
+      7
+    ],
+    "channels": 3,
+    "slots": 6,
+    "comparisons": 1890,
+    "max_absolute_error": 3.814697265625e-06,
+    "out_of_range_slots_clamped": 277,
+    "batched_equals_separate_calls": true
+  },
+  "stored_zero_oracle_equal_inputs": 6,
+  "stored_nonzero_max_delta": 0.0089111328125,
+  "defects": [],
+  "limits": [
+    "NumPy arithmetic proof does not execute Keras/Torch/TF; trainer owns actual backend gradients and nonzero TFLite conversion proof.",
+    "Border semantics replicate the nearest feature sample by clamping coordinates, rather than zero padding or excluding a slot. Out-of-range coordinate gradients are zero.",
+    "Origin3 is nominal fine-grid indexing, not an exact receptive-field center for fused coarse features.",
+    "The sampler uses approximate DSBI TRAIN-derived priors; no exact Angelina keypoint or accuracy claim.",
+    "Only the zero checkpoint is eligible as an initialization parent; the separately updated nonzero probe must not enter training ancestry."
+  ],
+  "ml_modules_imported": []
+}

@@ -1,0 +1,240 @@
+{
+  "status": "passed",
+  "scope": "Actual retained run27 continuation plus inherited run26 horizontal aspect and DSBI point/source provenance. The current verifier source was executed against exact archived configuration/protocol/guard/HDF5 parent report/source snapshots, original run26 transform proof, and retained run20/run26 eligible ancestry. No numerical model or release acceptance is claimed. Run27 preflight archive has no final sampling history; final selected-model lineage still must retain/verify its completed training history.",
+  "verifier_sha256": "6e0a30e1fe50915f53000fa455b6d71d6d4b6c6ae5341d986f24da5285992d92",
+  "script_sha256": "bc39409e9656dbcd439d8b864628696aaa22c9cbd975b32a102b57fe77bc2084",
+  "preflight": {
+    "file": "training/evidence/braille-word-reader-v1/horizontal-aspect-continuation-preflight/preflight.json",
+    "sha256": "c02018b78bb54d3eda81ba0a4e9339455483e34a7ac8f6a68ecff87fb0f6463b"
+  },
+  "archive_index": {
+    "file": "training/evidence/braille-word-reader-v1/horizontal-aspect-continuation-preflight/archive-index.json",
+    "sha256": "cb5cdefd10027d705431d93842fba0e2e1fec7c20b56560843a9102ca24948b3"
+  },
+  "verified_archive_payloads": 82,
+  "training_configuration": {
+    "file": "training/evidence/braille-word-reader-v1/horizontal-aspect-continuation-preflight/run27/training-config.json",
+    "sha256": "0ba021536a1e1cd9326de39c0c44815e489e9bb6184d511fe4fca9ddce31c5bf"
+  },
+  "continuation": {
+    "protocol": {
+      "file": "training/evidence/braille-word-reader-v1/horizontal-aspect-continuation-preflight/run27/horizontal-aspect-continuation-preflight/horizontal-aspect-continuation-protocol.json",
+      "sha256": "6537ee607288fa2a494ab3965ba8d8dac81a690c4a8f1a864b88bbda59af0acb"
+    },
+    "guardAudit": {
+      "file": "training/evidence/braille-word-reader-v1/horizontal-aspect-continuation-preflight/run27/horizontal-aspect-continuation-preflight/continuation-guard-audit.json",
+      "sha256": "5deeaef84bb0c81e687f8f259cfce024bc224819773181ad74b6276756d14f42"
+    },
+    "parentArtifactAudit": {
+      "file": "training/evidence/braille-word-reader-v1/horizontal-aspect-continuation-preflight/run27/horizontal-aspect-continuation-preflight/parent-artifact-audit/report.json",
+      "sha256": "e455903420bd182d8c075250c3f032fcc3a93fec659c7f5f35466f03a74fe71c"
+    },
+    "parentCheckpointSha256": "6113867b21316669169391fa7216f9d1b9bf147a13c153889ff6de1c26e9a4ea",
+    "inheritedRunConfigurationSha256": "5e667caadfe937cbecaa57210cee1039df0cfa9a9a0390143e65015138c48f7b",
+    "inheritedHorizontalAspectProtocolSha256": "a1ca1962bbabf307a2f5255a2e8d67b57133f3e4ae2f30298e28445398958b34",
+    "sources": [
+      {
+        "file": "training/evidence/braille-word-reader-v1/horizontal-aspect-continuation-preflight/run27/horizontal-aspect-continuation-preflight/source/audit_run27_continuation.py",
+        "sha256": "18cd3dfec0ce7c0fafe95b55a690846719a0e528dafce2f093bd7ef4caf05b1f"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/horizontal-aspect-continuation-preflight/run27/horizontal-aspect-continuation-preflight/source/launch_run27.py",
+        "sha256": "525e5b7920139703828be0b257660af0b4e97c9dff37a86feca7271806984d9a"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/horizontal-aspect-continuation-preflight/run27/horizontal-aspect-continuation-preflight/source/prepare_run27.py",
+        "sha256": "6b95c0a4ecfb18db7e05218ecb37601f1f8b9b4b80c9ae479c53082b0fe9af55"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/horizontal-aspect-continuation-preflight/run27/horizontal-aspect-continuation-preflight/parent-source/launch-command.json",
+        "sha256": "a3d065c1b287dbd34fc374bf1877b3ddcb251098a7033de93862f76e1e5e5c46"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/horizontal-aspect-continuation-preflight/run27/horizontal-aspect-continuation-preflight/parent-artifact-audit/audit.py",
+        "sha256": "ceaa8908add7b37a0287521cc9df181bb0f4f14a1ec95ced0eb55665faf86fc8"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/horizontal-aspect-continuation-preflight/run27/horizontal-aspect-continuation-preflight/parent-artifact-audit/archive_index-snapshot.json",
+        "sha256": "1539913792f3fced929eac110f69d497b7bd982567fd1d0bbab9de7a0f6f4522"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/horizontal-aspect-continuation-preflight/run27/horizontal-aspect-continuation-preflight/parent-artifact-audit/checkpoint_cache_metadata-snapshot.json",
+        "sha256": "f733c8c10ba9672da2822cef2a13ae9f1934246a15e562006d524e1050a2cc38"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/horizontal-aspect-continuation-preflight/run27/horizontal-aspect-continuation-preflight/parent-artifact-audit/config-snapshot.json",
+        "sha256": "5e667caadfe937cbecaa57210cee1039df0cfa9a9a0390143e65015138c48f7b"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/horizontal-aspect-continuation-preflight/run27/horizontal-aspect-continuation-preflight/parent-artifact-audit/control-model-config.json",
+        "sha256": "3259be2b7e2179f89339fb123e651c7202b46d2b2330589b689c9d15a0e02415"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/horizontal-aspect-continuation-preflight/run27/horizontal-aspect-continuation-preflight/parent-artifact-audit/index.json",
+        "sha256": "a571ae62b0d3b7efc489d7a1bd491f874cfc6ef8a17faf5a21729bca349f4626"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/horizontal-aspect-continuation-preflight/run27/horizontal-aspect-continuation-preflight/parent-artifact-audit/lineage-snapshot.json",
+        "sha256": "dfbc870d0c6ed4553f80e8d8011431c6a7746f2c4db8971da7818e6a55be238d"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/horizontal-aspect-continuation-preflight/run27/horizontal-aspect-continuation-preflight/parent-artifact-audit/parent-model-config.json",
+        "sha256": "3259be2b7e2179f89339fb123e651c7202b46d2b2330589b689c9d15a0e02415"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/horizontal-aspect-continuation-preflight/run27/horizontal-aspect-continuation-preflight/parent-artifact-audit/sampling-snapshot.json",
+        "sha256": "01c4d0dc071ab3b362eda303664d5c46817421a8e848a2df09ca0c2459a15739"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/horizontal-aspect-continuation-preflight/run27/horizontal-aspect-continuation-preflight/parent-artifact-audit/selection-snapshot.json",
+        "sha256": "1400ad05e3935f28aea9ea2a6ba4caabf7330dea1f008a3aded3c7b1c1df92ba"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/horizontal-aspect-continuation-preflight/run27/horizontal-aspect-continuation-preflight/parent-artifact-audit/validation_history-snapshot.json",
+        "sha256": "2664188ffb827c237fb69e263c5ae44db963057558b27cd285b6380e7d957142"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/horizontal-aspect-continuation-preflight/run27/horizontal-aspect-continuation-preflight/run27-plan.json",
+        "sha256": "f3b9f59cf8acaf7fa39fe3fe36c75279c0423d3b5bc50fd1c552469bc0030dbb"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/horizontal-aspect-continuation-preflight/run27/horizontal-aspect-continuation-preflight/launch-command.json",
+        "sha256": "ee76e8511bdcaa6f7314d414bab2eac5a5e0e7068c999ce93d3fff62564bf176"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/horizontal-aspect-continuation-preflight/run27/horizontal-aspect-continuation-preflight/training-source/word_data.py",
+        "sha256": "70184d6bff134cae4d003cf852bebc93f5c955c685ee2883972a337924793f02"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/horizontal-aspect-continuation-preflight/run27/horizontal-aspect-continuation-preflight/training-source/word_model.py",
+        "sha256": "c446732a2905a612cd6f1dd64d2d3d01303b1c71933c34552d26f3b5052fd551"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/horizontal-aspect-continuation-preflight/run27/horizontal-aspect-continuation-preflight/training-source/word_decode.py",
+        "sha256": "bd301c5afeb4ba2e6866371665324d2de7f0a6ee252ef76ce02a5553193d63c5"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/horizontal-aspect-continuation-preflight/run27/horizontal-aspect-continuation-preflight/training-source/word_train.py",
+        "sha256": "42143d0169e4de41644a9a65fe59c82b117fe34556f163bcbf4b8e91f93cb24f"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/horizontal-aspect-continuation-preflight/run27/horizontal-aspect-continuation-preflight/training-source/word_sampling.py",
+        "sha256": "c234523277dba683e68a2863e14736bc68432da3b6ca65bb5d8a64bc7d9dc0fe"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/horizontal-aspect-continuation-preflight/run27/horizontal-aspect-continuation-preflight/training-source/word_tail.py",
+        "sha256": "bdd4b5d12d56e25c1100a282483e7a31176b5a65beb353a0623ceea40a49dc0e"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/horizontal-aspect-continuation-preflight/run27/horizontal-aspect-continuation-preflight/training-source/word_sources.py",
+        "sha256": "affb3488d8c25e3d0131eb4340cae29fcece563ac75373e071f97fef68f09acd"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/horizontal-aspect-continuation-preflight/run27/horizontal-aspect-continuation-preflight/training-source/word_dsbi.py",
+        "sha256": "feecf16dba6d376415e15707c02c8f05fcf6650055da09ad9f4712099e6325ff"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/horizontal-aspect-continuation-preflight/run27/horizontal-aspect-continuation-preflight/training-source/word_point_geometry.py",
+        "sha256": "2b932b320d191277b86ae13daecb82b5abbf0a46e9464d7360ee1e941aca760b"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/horizontal-aspect-continuation-preflight/run27/horizontal-aspect-continuation-preflight/training-source/word_point_metadata.py",
+        "sha256": "de1cad0157e744f2f646010eac5355b88d1d11f52662d4b9353166661f59049f"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/horizontal-aspect-continuation-preflight/run27/horizontal-aspect-continuation-preflight/training-source/word_geometry_head.py",
+        "sha256": "f46c8f90e7f4fc9404eed2dc27fbde6e5c823d25d4f88e4127c7e56ed6e8764e"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/horizontal-aspect-continuation-preflight/run27/horizontal-aspect-continuation-preflight/training-source/word_geometry_init.py",
+        "sha256": "072379a1ef409d901c2478135174561c14781560cdd56a0b91b0229b8032e15e"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/horizontal-aspect-continuation-preflight/run27/horizontal-aspect-continuation-preflight/training-source/word_geometry_parity.py",
+        "sha256": "700d9175dc627fb7bf12c0ac20f640191cf5a045e29067c310f5dad5f3bd6f0b"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/horizontal-aspect-continuation-preflight/run27/horizontal-aspect-continuation-preflight/training-source/word_vertical_stretch.py",
+        "sha256": "336168fbfe4441bfa91e0855f473997a403a542a2b64789ca7cbd1b11b188ed5"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/horizontal-aspect-continuation-preflight/run27/horizontal-aspect-continuation-preflight/training-source/word_bn_affine.py",
+        "sha256": "fa117f65beda3f6d159f707a5cd45d3a367b8f5b436b8c43c0d7621071297dff"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/horizontal-aspect-continuation-preflight/run27/horizontal-aspect-continuation-preflight/training-source/word_bn_affine_init.py",
+        "sha256": "ea76999d35a6e9ba94cffce06c359adb1201cb396b54345668b7ed13afe99ce1"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/horizontal-aspect-continuation-preflight/run27/horizontal-aspect-continuation-preflight/training-source/word_bn_affine_parity.py",
+        "sha256": "d4baba52b0993240e0b5092500ae32ee5d1b01e636d2546261a0a24996bd4a21"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/horizontal-aspect-continuation-preflight/run27/horizontal-aspect-continuation-preflight/training-source/word_fine_branch.py",
+        "sha256": "53bff984c33a20556721328e6253fadd060019573b068deee2a671d08a530750"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/horizontal-aspect-continuation-preflight/run27/horizontal-aspect-continuation-preflight/training-source/word_fine_init.py",
+        "sha256": "3baa5f15b2b4b74ea120dd8150ad3b8a11f59139ad3eb833d3b2089e188d1310"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/horizontal-aspect-continuation-preflight/run27/horizontal-aspect-continuation-preflight/training-source/word_fine_parity.py",
+        "sha256": "de30cf4b3df1d8ec4bf820f6e1d98c8e40a39eb674a9ce470a3067569f3a8cbe"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/horizontal-aspect-continuation-preflight/run27/horizontal-aspect-continuation-preflight/training-source/word_fine_validation.py",
+        "sha256": "b075760aee90afa17a84c0e8ec3a421132e0644130929f8f7a85b54b11058124"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/horizontal-aspect-continuation-preflight/run27/horizontal-aspect-continuation-preflight/training-source/word_horizontal_aspect.py",
+        "sha256": "3ea4fa7d625c91d15c28e157d1bfc675eb72f980571f95631060a82b81494d5a"
+      }
+    ]
+  },
+  "parent_configuration": {
+    "file": "training/evidence/braille-word-reader-v1/horizontal-aspect-preflight/run26/training-config.json",
+    "sha256": "5e667caadfe937cbecaa57210cee1039df0cfa9a9a0390143e65015138c48f7b"
+  },
+  "parent_sampling_history": {
+    "file": "training/evidence/braille-word-reader-v1/horizontal-aspect-continuation-preflight/run26/sampling-history.json",
+    "sha256": "01c4d0dc071ab3b362eda303664d5c46817421a8e848a2df09ca0c2459a15739"
+  },
+  "parent_sampling_eligibility": {
+    "file": "training/evidence/braille-word-reader-v1/horizontal-aspect-continuation-preflight/run26/sampling-lineage-final.json",
+    "sha256": "dfbc870d0c6ed4553f80e8d8011431c6a7746f2c4db8971da7818e6a55be238d"
+  },
+  "inherited_original_transform": {
+    "file": "training/evidence/braille-word-reader-v1/horizontal-aspect-preflight/run26/horizontal-aspect-preflight/horizontal-aspect-protocol.json",
+    "sha256": "a1ca1962bbabf307a2f5255a2e8d67b57133f3e4ae2f30298e28445398958b34"
+  },
+  "grandparent_sampling_eligibility": {
+    "run": "run20",
+    "configuration": {
+      "file": "training/evidence/braille-word-reader-v1/failed-selected-v22/run20/training-config.json",
+      "sha256": "75bc0305e899aa1c13936fa8614ef42702fedefc9d3c5abfd294d60ccf30a51d"
+    },
+    "sampling-history.json": {
+      "file": "training/evidence/braille-word-reader-v1/failed-selected-v22/run20/sampling-history.json",
+      "sha256": "01c4d0dc071ab3b362eda303664d5c46817421a8e848a2df09ca0c2459a15739"
+    },
+    "sampling-lineage-final.json": {
+      "file": "training/evidence/braille-word-reader-v1/failed-selected-v22/run20/sampling-lineage-final.json",
+      "sha256": "4cc87be5de829f8be91ea1c68a6bb3b6ad6370db8509ed44a8fda55a03e40b9a"
+    }
+  },
+  "dsbi_source_index": {
+    "file": "training/evidence/braille-word-reader-v1/dsbi-training-preparation/source-index.json",
+    "sha256": "8d62cf1850308fb864449bbcabc4399ef4e9a9aab62216b35c8064fa634450a6"
+  },
+  "dsbi_point_metadata": {
+    "file": "training/evidence/braille-word-reader-v1/horizontal-aspect-continuation-preflight/point-metadata/points.json",
+    "sha256": "ea9592a727f7f3abcc6b017f8f22e143e90ae1541f623c43adf30104021937e8"
+  },
+  "source_annotation_count": 26,
+  "source_cells": 9983,
+  "all_proof_paths_archived_in_repository": true,
+  "source_photos_read": false,
+  "model_execution": false,
+  "synthetic_unit_suite_repeated": false,
+  "original_archive_modified": false
+}

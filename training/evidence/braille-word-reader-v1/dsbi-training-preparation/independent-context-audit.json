@@ -1,0 +1,32 @@
+{
+  "status": "passed",
+  "conservative_boundary_flags": [],
+  "scope": "Reconstruct every DSBI context directly from raw grid text and original RGB.\n\nIndependent of word_dsbi.py, its preparer, and their coordinate helpers.\n",
+  "script_sha256": "bfc85a4013688840cb59a45773e5ce1d52ab8ec1bd2049522e0a0150805dec50",
+  "manifest_sha256": "21dc4f93821b2282b8c0f0967430f22b44fc868d26b4a3265e6fd57995892a44",
+  "source_index_sha256": "8d62cf1850308fb864449bbcabc4399ef4e9a9aab62216b35c8064fa634450a6",
+  "original_sources": 26,
+  "contexts": 2338,
+  "unique_positive_source_cells": 9983,
+  "complete_unique_source_cells_seen": 9983,
+  "all_intersecting_positive_occurrences_checked": 27055,
+  "all_unknown_ignore_boxes_checked": 10874,
+  "pixel_bytes_compared": 646410240,
+  "pixel_mismatches": 0,
+  "max_coordinate_error": 1.1368683772161603e-13,
+  "by_kind": {
+    "annotated_row_band": 2329,
+    "documented_empty_recto": 9
+  },
+  "by_family": {
+    "dsbi/Massage": 875,
+    "dsbi/Math": 834,
+    "dsbi/Ordinary Printed Document": 289,
+    "dsbi/Shaver Yang Fengting": 340
+  },
+  "elapsed_seconds": 7.338181400002213,
+  "limitations": [
+    "Uses source annotations as truth; no independent physical or optical-label certification.",
+    "Verifies pre-augmentation cached crops; training augmentation exposure is audited separately."
+  ]
+}

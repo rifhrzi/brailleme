@@ -1,0 +1,148 @@
+{
+  "created_at_utc": "2026-09-05T22:59:46.262664+00:00",
+  "run": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\run27",
+  "source_sha256": {
+    "word_data.py": "70184d6bff134cae4d003cf852bebc93f5c955c685ee2883972a337924793f02",
+    "word_model.py": "c446732a2905a612cd6f1dd64d2d3d01303b1c71933c34552d26f3b5052fd551",
+    "word_decode.py": "bd301c5afeb4ba2e6866371665324d2de7f0a6ee252ef76ce02a5553193d63c5",
+    "word_train.py": "42143d0169e4de41644a9a65fe59c82b117fe34556f163bcbf4b8e91f93cb24f",
+    "word_sampling.py": "c234523277dba683e68a2863e14736bc68432da3b6ca65bb5d8a64bc7d9dc0fe",
+    "word_tail.py": "bdd4b5d12d56e25c1100a282483e7a31176b5a65beb353a0623ceea40a49dc0e",
+    "word_sources.py": "affb3488d8c25e3d0131eb4340cae29fcece563ac75373e071f97fef68f09acd",
+    "word_dsbi.py": "feecf16dba6d376415e15707c02c8f05fcf6650055da09ad9f4712099e6325ff",
+    "word_point_geometry.py": "2b932b320d191277b86ae13daecb82b5abbf0a46e9464d7360ee1e941aca760b",
+    "word_point_metadata.py": "de1cad0157e744f2f646010eac5355b88d1d11f52662d4b9353166661f59049f",
+    "word_geometry_head.py": "f46c8f90e7f4fc9404eed2dc27fbde6e5c823d25d4f88e4127c7e56ed6e8764e",
+    "word_geometry_init.py": "072379a1ef409d901c2478135174561c14781560cdd56a0b91b0229b8032e15e",
+    "word_geometry_parity.py": "700d9175dc627fb7bf12c0ac20f640191cf5a045e29067c310f5dad5f3bd6f0b",
+    "word_vertical_stretch.py": "336168fbfe4441bfa91e0855f473997a403a542a2b64789ca7cbd1b11b188ed5",
+    "word_bn_affine.py": "fa117f65beda3f6d159f707a5cd45d3a367b8f5b436b8c43c0d7621071297dff",
+    "word_bn_affine_init.py": "ea76999d35a6e9ba94cffce06c359adb1201cb396b54345668b7ed13afe99ce1",
+    "word_bn_affine_parity.py": "d4baba52b0993240e0b5092500ae32ee5d1b01e636d2546261a0a24996bd4a21",
+    "word_fine_branch.py": "53bff984c33a20556721328e6253fadd060019573b068deee2a671d08a530750",
+    "word_fine_init.py": "3baa5f15b2b4b74ea120dd8150ad3b8a11f59139ad3eb833d3b2089e188d1310",
+    "word_fine_parity.py": "de30cf4b3df1d8ec4bf820f6e1d98c8e40a39eb674a9ce470a3067569f3a8cbe",
+    "word_fine_validation.py": "b075760aee90afa17a84c0e8ec3a421132e0644130929f8f7a85b54b11058124",
+    "word_horizontal_aspect.py": "3ea4fa7d625c91d15c28e157d1bfc675eb72f980571f95631060a82b81494d5a"
+  },
+  "parent_checkpoint": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\run26\\retained-epochs\\epoch-10.keras",
+  "parent_checkpoint_sha256": "6113867b21316669169391fa7216f9d1b9bf147a13c153889ff6de1c26e9a4ea",
+  "parent_training_config_sha256": "5e667caadfe937cbecaa57210cee1039df0cfa9a9a0390143e65015138c48f7b",
+  "parent_sampling_lineage_sha256": "dfbc870d0c6ed4553f80e8d8011431c6a7746f2c4db8971da7818e6a55be238d",
+  "training_manifest_sha256": "130c80f135af5677d6b78a5e401126f54b15204481aab6de00a88c443956c4fa",
+  "supplemental_source_indexes": [
+    "../dsbi-training-contexts-v2/source-index.json"
+  ],
+  "planned_epochs": 10,
+  "planned_eligible_epochs": [
+    8,
+    9,
+    10
+  ],
+  "batch_size": 24,
+  "learning_rate": 2e-05,
+  "seed": 20260905,
+  "negative_repeat": 27,
+  "supplemental_negative_repeat": 2,
+  "geometry_loss": "relative_size_huber",
+  "illumination_augmentation": true,
+  "horizontal_mirror_augmentation": false,
+  "vertical_stretch_augmentation": false,
+  "horizontal_aspect_augmentation": true,
+  "camera_augmentation": false,
+  "half_turn_augmentation": false,
+  "polarity_augmentation": false,
+  "partial_geometry_supervision": false,
+  "dsbi_visible_partial_supervision": true,
+  "geometry_conditioned_residual": false,
+  "batchnorm_affine": false,
+  "fine_detail_branch": false,
+  "frozen_batchnorm": true,
+  "point_metadata_sha256": "ea9592a727f7f3abcc6b017f8f22e143e90ae1541f623c43adf30104021937e8",
+  "selection": "Unchanged selected-v22/v15 control first plus actual run27 eligible epochs8-10 on frozen405; weak-peaks-v2/group gates/tie rule unchanged. No external outputs used.",
+  "rationale": "Run26 epoch10 improves held matched cells1518->1524, wrong masks8->7 and paired mean IoU+.042902, while losing7/gaining5 words. Training and validation loss still decline at epoch10 with unchanged2e-5 learning rate. Continue optimizing this same horizontal-aspect objective; do not select or activate the failed parent as the control.",
+  "historical_audit": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\aspect-augmentation-independent-static-v2.json",
+  "historical_audit_sha256": "014c6fe0d2e6827303863f54ae2ee2a8d8a33bd1f1b6d8dcb6fcc94f43c50208",
+  "private_prototype": {
+    "directory": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\horizontal-aspect-prototype-v1",
+    "index_sha256": "c53b382af5777c38ef46f7ee34ea44226cbe5e9fa8bca799fde48505b6f039b3",
+    "spec_sha256": "30a478d99de348da15b6457b5f56831541e73a7ad652e5f1270a3b14e0d19035",
+    "proof_sha256": "7df89ed1f3be63849d893d3119a5f1105183e8141da9b4cbf0de6b3d7a41d4a6"
+  },
+  "horizontal_aspect": {
+    "range": [
+      0.55,
+      1.25
+    ],
+    "distribution": "uniform",
+    "existing_affine_probability": 0.85,
+    "base_zoom": [
+      0.8,
+      1.7
+    ],
+    "scale_x": "zoom*width_factor",
+    "scale_y": "zoom",
+    "stream_id": 1212240720,
+    "seed_sequence": [
+      "seed",
+      "dataset_epoch",
+      "expanded_record_index",
+      1212240720
+    ],
+    "draws": "One independent factor per expanded record identity per epoch; batch grouping/order and legacy RNG do not affect the factor. Repeated index within an epoch repeats it. Apply only when existing affine Bernoulli succeeds.",
+    "raster": "One existing centered Pillow affine; same scales/translation for pixels, all known/unknown boxes and exact DSBI occupied pixel centers. No extra resampling.",
+    "eligibility": "Original completeness AND every raster bounds test; occupied centers cannot regain visibility. Known DSBI fragments still require surviving occupied centers and all6bits unknown; other partial/unknown behavior unchanged.",
+    "annotations": "Transform whole RGB and original boxes together; no padding/identity/mask relabeling or source filtering.",
+    "profile_guard": "Only illumination mode; no camera-only factor multiplication, mirror, vertical stretch, polarity/halfturn, architecture initialization or normalization rebuilding."
+  },
+  "default_off": "Current defaultFalse/factor1 pixels, targets, source order and RNG must equal archived run25. Enabling horizontal aspect preserves legacy random draws/order and changes only the existing whole-image affine geometry.",
+  "preflight_audits": [],
+  "no_activation_before_original_gates": true,
+  "control_checkpoint": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\selected-v22\\best-word.keras",
+  "control_checkpoint_sha256": "cce2432c0ddb8952c885dd58697589c285209588dafa81aacdd891b1660068b7",
+  "control_selected_validation_sha256": "0f8c2eccd96a4b84a23721cadb8bcf14fbcaa1e2e94fe8cde97434ae2c038550",
+  "continuation": {
+    "kind": "weight_only_same_sample_realizations",
+    "parent_retained_epoch": 10,
+    "parent_is_selected_control": false,
+    "parent_training_config": {
+      "path": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\run26\\training-config.json",
+      "sha256": "5e667caadfe937cbecaa57210cee1039df0cfa9a9a0390143e65015138c48f7b"
+    },
+    "parent_sampling_lineage": {
+      "path": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\run26\\sampling-lineage-final.json",
+      "sha256": "dfbc870d0c6ed4553f80e8d8011431c6a7746f2c4db8971da7818e6a55be238d"
+    },
+    "parent_sampling_history": {
+      "path": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\run26\\sampling-history.json",
+      "sha256": "01c4d0dc071ab3b362eda303664d5c46817421a8e848a2df09ca0c2459a15739"
+    },
+    "parent_selection": {
+      "path": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\selected-v21\\checkpoint-selection.json",
+      "sha256": "1400ad05e3935f28aea9ea2a6ba4caabf7330dea1f008a3aded3c7b1c1df92ba"
+    },
+    "parent_held_diagnosis": {
+      "path": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\run26\\held-diagnosis\\horizontal-aspect-comparison\\comparison.json",
+      "sha256": "870999502ba0f02d65391a1d02d106235b28373dd3703b83fe84d256f1c24f6a"
+    },
+    "original_initial_checkpoint_sha256": "cce2432c0ddb8952c885dd58697589c285209588dafa81aacdd891b1660068b7",
+    "optimizer": "Reset deliberately: load_model(compile=False), then fresh Adam(lr2e-5,clipnorm10). No stored optimizer variables are restored.",
+    "scheduler": "Fresh ReduceLROnPlateau(val_loss,patience4,factor.5,min_lr1e-5), identical policy to run26.",
+    "sample_realizations": "Seed20260905, sampler cursor and dataset epoch restart exactly as run26. Repeat the same10epoch source order and image/point/illumination/width-factor draws; this is additional optimization, not new augmentation exposure.",
+    "sampling_eligibility": "Require this run to complete its own23600-positive-record cycle; only local epochs8/9/10 eligible. Parent coverage does not make early local epochs eligible.",
+    "source_policy": "All22 training source files and all data manifests/point metadata are byte-identical to run26.",
+    "inherited_horizontal_aspect_protocol": {
+      "path": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\run26\\horizontal-aspect-protocol.json",
+      "sha256": "a1ca1962bbabf307a2f5255a2e8d67b57133f3e4ae2f30298e28445398958b34"
+    },
+    "inherited_transform_audit": {
+      "path": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\run26\\horizontal-aspect-integration-audit.json",
+      "sha256": "b1d97481f7d890c91af7e2043bf2ccbefcae1b7c8f9a36d1f73acb16288c8627"
+    },
+    "inherited_source_bound_tests": {
+      "path": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\run26\\preflight-tests.json",
+      "sha256": "fc0cc9d22cbf7c6de5686f505ddc60acfc6a7a6e28a8cdfc0136056c9375fd4f"
+    },
+    "inherited_scope": "The b1d974 integration audit and141 tests establish identical transform/source semantics and originally bind the v15 initializer. They are not rerun or relabeled as an audit of the new epoch10 parent. New independent parent/continuation audits establish that binding."
+  }
+}

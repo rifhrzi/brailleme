@@ -1,0 +1,119 @@
+{
+  "schema_version": 1,
+  "status": "frozen_before_evaluation",
+  "created_at_utc": "2026-09-05T22:51:48.109977+00:00",
+  "plan": {
+    "path": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\run20-uniform-average-preparation\\plan.json",
+    "sha256": "6520a4e0d41e7bbbb8e5e7ffd9aaed5b6a80d4d54ccb38b96f29341db76c1f98"
+  },
+  "candidate_report": {
+    "path": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\run20-uniform-average-preparation\\candidate-report.json",
+    "sha256": "0ce6817ef003e8fe86c03e1e183ebf8f5c3c602bb18eeaeb5d825559ed0ced1b"
+  },
+  "independent_preparation_audit": {
+    "path": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\run20-uniform-average-preparation\\independent-audit.json",
+    "sha256": "f71e485c232d314df1d363de994ac77768be51d42211f17f8c8872e7f85e8cd3"
+  },
+  "control_selection": {
+    "path": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\selected-v21\\checkpoint-selection.json",
+    "sha256": "1400ad05e3935f28aea9ea2a6ba4caabf7330dea1f008a3aded3c7b1c1df92ba"
+  },
+  "control_validation": {
+    "path": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\selected-v21\\selected-validation.json",
+    "sha256": "63173b07eab97418ad80b1a91e05be3f9ec2d38d6ad1b9a84e2f63ab7213115c"
+  },
+  "ordered_candidates": [
+    {
+      "path": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\selected-v21\\best-word.keras",
+      "sha256": "cce2432c0ddb8952c885dd58697589c285209588dafa81aacdd891b1660068b7"
+    },
+    {
+      "path": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\run20-uniform-average-preparation\\uniform-08-09-10.keras",
+      "sha256": "7c831094852512ef79d791fa31570e6016d15e513004defdeadb091c401b9cda"
+    }
+  ],
+  "fixture": {
+    "path": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\data\\validation-stress-selection.json",
+    "sha256": "e2ab968f7c4dcf7e774181fde687e1321f58d20567528af4b21fd03ff5a3e625"
+  },
+  "threshold_grid": "weak-peaks-v2",
+  "threshold_grid_values": {
+    "proposal": [
+      0.15,
+      0.25,
+      0.35
+    ],
+    "accept": [
+      0.2,
+      0.25,
+      0.3,
+      0.35,
+      0.4,
+      0.55,
+      0.65,
+      0.75
+    ],
+    "dot": [
+      0.7,
+      0.8,
+      0.9,
+      0.95
+    ]
+  },
+  "tie_rule": "Control first; replace only on strictly higher existing grouped rank.",
+  "derivation": "Exactly one uniform average of already eligible run20 epochs 8/9/10; no new training epoch or sampling row.",
+  "source_sampling_lineage": {
+    "path": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\run20\\sampling-lineage-final.json",
+    "sha256": "4cc87be5de829f8be91ea1c68a6bb3b6ad6370db8509ed44a8fda55a03e40b9a"
+  },
+  "sources": {
+    "word_select.py": {
+      "path": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\run20-uniform-average-preparation\\selection-source\\word_select.py",
+      "sha256": "ab8ad646d4693bf9528e4aace201464f9cc7b632f4c2ed9863ad9a74f2caf07c"
+    },
+    "word_model.py": {
+      "path": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\run20-uniform-average-preparation\\selection-source\\word_model.py",
+      "sha256": "c446732a2905a612cd6f1dd64d2d3d01303b1c71933c34552d26f3b5052fd551"
+    },
+    "word_decode.py": {
+      "path": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\run20-uniform-average-preparation\\selection-source\\word_decode.py",
+      "sha256": "bd301c5afeb4ba2e6866371665324d2de7f0a6ee252ef76ce02a5553193d63c5"
+    },
+    "word_data.py": {
+      "path": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\run20-uniform-average-preparation\\selection-source\\word_data.py",
+      "sha256": "70184d6bff134cae4d003cf852bebc93f5c955c685ee2883972a337924793f02"
+    },
+    "word_geometry_head.py": {
+      "path": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\run20-uniform-average-preparation\\selection-source\\word_geometry_head.py",
+      "sha256": "f46c8f90e7f4fc9404eed2dc27fbde6e5c823d25d4f88e4127c7e56ed6e8764e"
+    },
+    "word_bn_affine.py": {
+      "path": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\run20-uniform-average-preparation\\selection-source\\word_bn_affine.py",
+      "sha256": "fa117f65beda3f6d159f707a5cd45d3a367b8f5b436b8c43c0d7621071297dff"
+    }
+  },
+  "orchestrator": {
+    "path": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\select_uniform_after_run26.py",
+    "sha256": "715447e2dada7ccfcbd39393ab21b227db5dc0d394a5389b27ea64bb34ff8e4e"
+  },
+  "external_outputs_used": false,
+  "command": [
+    "C:\\bm-envs\\word-scan-torch-only\\Scripts\\python.exe",
+    "-u",
+    "training/scripts/word_select.py",
+    "--candidates",
+    "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\selected-v21\\best-word.keras",
+    "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\run20-uniform-average-preparation\\uniform-08-09-10.keras",
+    "--data",
+    "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\data",
+    "--output",
+    "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\selected-v22",
+    "--batch-size",
+    "24",
+    "--validation-manifest",
+    "validation-stress-selection.json",
+    "--grouped-selection",
+    "--threshold-grid",
+    "weak-peaks-v2"
+  ]
+}

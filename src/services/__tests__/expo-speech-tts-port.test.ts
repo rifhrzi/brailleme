@@ -269,6 +269,78 @@ describe('ExpoSpeechTtsPort', () => {
     expect(speech.speak).toHaveBeenCalledTimes(1);
   });
 
+  it('membatalkan speech yang menunggu probe dan antrean lama sebelum native audio dimulai', async () => {
+    const speech = createSpeechHarness();
+    let resolveProbe!: (voices: readonly typeof INDONESIAN_LOCAL_VOICE[]) => void;
+    const pendingProbe = new Promise<readonly typeof INDONESIAN_LOCAL_VOICE[]>((resolve) => {
+      resolveProbe = resolve;
+    });
+    const probe: LocalVoiceProbe = {
+      getLocalVoicesAsync: jest.fn(() => pendingProbe),
+    };
+    const port = new ExpoSpeechTtsPort(async () => speech.api, probe);
+    const listener = jest.fn<void, [TtsPlaybackEvent]>();
+    port.subscribePlayback(listener);
+
+    const waiting = port.speak('MAMA', { rate: 1, volume: 1 });
+    await jest.advanceTimersByTimeAsync(0);
+    expect(probe.getLocalVoicesAsync).toHaveBeenCalledTimes(1);
+    const queued = port.speak('KAKAK', { rate: 1, volume: 1 });
+    const stopping = port.stop();
+    resolveProbe([INDONESIAN_LOCAL_VOICE]);
+
+    await expect(Promise.all([waiting, queued])).resolves.toEqual([
+      { ok: false, code: 'failed', message: 'Pembacaan dibatalkan.' },
+      { ok: false, code: 'failed', message: 'Pembacaan dibatalkan.' },
+    ]);
+    await expect(stopping).resolves.toEqual({ ok: true });
+    expect(speech.speak).not.toHaveBeenCalled();
+    expect(listener).not.toHaveBeenCalled();
+    expect(speech.stop).toHaveBeenCalledTimes(1);
+
+    await expect(port.speak('BARU', { rate: 1, volume: 1 })).resolves.toEqual({ ok: true });
+    expect(speech.speak).toHaveBeenCalledTimes(1);
+    expect(speech.speak).toHaveBeenLastCalledWith('BARU', expect.any(Object));
+  });
+
+  it('membatalkan permintaan yang belum mulai dan tetap menerima speech setelah stop', async () => {
+    const speech = createSpeechHarness();
+    const port = new ExpoSpeechTtsPort(async () => speech.api, createLocalProbe());
+
+    const stale = port.speak('LAMA', { rate: 1, volume: 1 });
+    const stopped = port.stop();
+    const fresh = port.speak('BARU', { rate: 1, volume: 1 });
+
+    await expect(stale).resolves.toMatchObject({ ok: false, code: 'failed' });
+    await expect(stopped).resolves.toEqual({ ok: true });
+    await expect(fresh).resolves.toEqual({ ok: true });
+    expect(speech.speak).toHaveBeenCalledTimes(1);
+    expect(speech.speak).toHaveBeenLastCalledWith('BARU', expect.any(Object));
+    expect(speech.stop.mock.invocationCallOrder[0]).toBeLessThan(speech.speak.mock.invocationCallOrder[0]!);
+  });
+
+  it('mencegah pengganti lama dan repeat dimulai jika stop tiba saat interupsi native menunggu', async () => {
+    const speech = createSpeechHarness();
+    const port = new ExpoSpeechTtsPort(async () => speech.api, createLocalProbe());
+    await port.speak('AWAL', { rate: 1, volume: 1 });
+    let finishNativeStop!: () => void;
+    speech.stop.mockImplementationOnce(() => new Promise<undefined>((resolve) => {
+      finishNativeStop = () => resolve(undefined);
+    }));
+    const replacement = port.speak('PENGGANTI', { rate: 1, volume: 1 });
+    await jest.advanceTimersByTimeAsync(0);
+    expect(speech.stop).toHaveBeenCalledTimes(1);
+    const repeat = port.repeat();
+    const stopping = port.stop();
+    finishNativeStop();
+
+    await expect(replacement).resolves.toMatchObject({ ok: false, code: 'failed' });
+    await expect(repeat).resolves.toMatchObject({ ok: false, code: 'failed' });
+    await expect(stopping).resolves.toEqual({ ok: true });
+    expect(speech.speak).toHaveBeenCalledTimes(1);
+    expect(speech.speak).toHaveBeenLastCalledWith('AWAL', expect.any(Object));
+  });
+
   it('menerbitkan lifecycle selesai sehingga state UI tidak stale', async () => {
     const speech = createSpeechHarness();
     const port = new ExpoSpeechTtsPort(

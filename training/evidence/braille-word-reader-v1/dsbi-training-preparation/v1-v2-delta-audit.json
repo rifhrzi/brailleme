@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "passed": true,
+  "scope": "Compare immutable v1 and append-only v2, including actual cached PNG bytes; no model/inference/training.",
+  "script_sha256": "aab582ffb56f70e60a1907d63d8e31519e3c7b12024125e4547ffe3c035e99a3",
+  "v1_manifest_sha256": "90ef9bd8a4334db031d7af8ef6a0a41aaf6b06ee2be0a847bac53279b214b0f7",
+  "v2_manifest_sha256": "21dc4f93821b2282b8c0f0967430f22b44fc868d26b4a3265e6fd57995892a44",
+  "v2_source_index_sha256": "8d62cf1850308fb864449bbcabc4399ef4e9a9aab62216b35c8064fa634450a6",
+  "source_archive_sha256": "5240974352345c5a094a846d413c5a603a0cfa5a27389763b827c258faaa8d1c",
+  "cached_png_files_identical": 2338,
+  "total_png_bytes_identical": 291480904,
+  "record_path_changes": 2338,
+  "source_completeness_flag_changes": [
+    {
+      "record": 2015,
+      "source": "dsbi/Shaver Yang Fengting/SYF+3+recto.jpg",
+      "source_cell": {
+        "row": 8,
+        "col": 4,
+        "annotation_line": 68
+      },
+      "crop": [
+        41,
+        556,
+        215,
+        626
+      ],
+      "box": [
+        391.72413793103453,
+        21.942857142857143,
+        480.00000000000006,
+        170.05714285714285
+      ],
+      "before": false,
+      "after": true
+    },
+    {
+      "record": 2101,
+      "source": "dsbi/Shaver Yang Fengting/SYF+3+recto.jpg",
+      "source_cell": {
+        "row": 26,
+        "col": 4,
+        "annotation_line": 444
+      },
+      "crop": [
+        41,
+        1991,
+        215,
+        2061
+      ],
+      "box": [
+        391.72413793103453,
+        21.942857142857143,
+        480.00000000000006,
+        170.05714285714285
+      ],
+      "before": false,
+      "after": true
+    }
+  ],
+  "source_coverage_ledger_changes": [
+    {
+      "source": "dsbi/Shaver Yang Fengting/SYF+3+recto.jpg",
+      "row": 8,
+      "col": 4,
+      "delta_complete_occurrences": 1
+    },
+    {
+      "source": "dsbi/Shaver Yang Fengting/SYF+3+recto.jpg",
+      "row": 26,
+      "col": 4,
+      "delta_complete_occurrences": 1
+    }
+  ],
+  "all_other_record_fields_identical": true,
+  "six_protected_original_artifacts_unchanged": true
+}

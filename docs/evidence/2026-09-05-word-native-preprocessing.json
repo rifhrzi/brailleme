@@ -1,0 +1,394 @@
+{
+  "scope": "Standalone Android Bitmap primitives with synthetic inputs; not a camera, Nitro bridge, or model accuracy test.",
+  "compared_at_utc": "2026-09-05T04:36:13.797034+00:00",
+  "pillow_version": "12.3.0",
+  "source_code_sha256": {
+    "src/ml/word-image-processing.ts": "e97bf56d549c20f9d849c11fb5ac26c0abacf48030e847def46dbeb3e8e8248f",
+    "src/ml/word-model-contract.ts": "8d78bbaeaf7afda3177e444670a7634dae699b535e18f7c1137e0ec84bbff1a8",
+    "scripts/word-native-parity/WordNativeParity.java": "4ebc7cbee92c591237a66b915f24fb580fcf19c4e0d8fbc5fd16f6d15eab57e6",
+    "scripts/word-native-parity/geometry-reference.cjs": "a4dbeee051f06aa7d2459070e3e213ee4d28ea63d69c639cb7247d69fc751cca",
+    "scripts/word-native-parity/pixel-reference.cjs": "602041a3e60ae2db5e8214c589d52af58b07ef6227e40154e6321968e78ad9e1",
+    "scripts/word-native-parity/compare.py": "39c7db3659490b99f4acff62b869976cd0ccf31966e5feb75db609c6e81c4e90"
+  },
+  "device": {
+    "sdk": 36,
+    "device": "sdk_gphone64_x86_64",
+    "fingerprint": "google/sdk_gphone64_x86_64/emu64xa:16/BE2A.250530.026.D1/13818094:user/release-keys",
+    "native_byte_order": "LITTLE_ENDIAN"
+  },
+  "argb8888_raw_bytes_for_rgb_11_22_33": [
+    11,
+    22,
+    33,
+    255
+  ],
+  "rotation_mirroring_geometry_passed": true,
+  "pillow_native_resize_pixel_parity_passed": false,
+  "typescript_antialias_pillow_pixel_parity_passed": true,
+  "nitro_declared_bgra_matches_native_bytes": false,
+  "limitations": [
+    "Synthetic emulator Bitmap primitives do not validate real camera capture, autofocus, lighting, or accessibility.",
+    "The Nitro/JS bridge is inspected in source but is not invoked by this standalone DEX harness.",
+    "Decoder/model prediction parity is separate from pixel and coordinate parity.",
+    "High-frequency colored patterns intentionally stress channel ordering and downsampling; they are not an accuracy benchmark."
+  ],
+  "cases": [
+    {
+      "id": "rotation-0-mirror-false-aspect-1",
+      "rotation_and_mirroring": {
+        "max_channel_error_0_255": 0.0,
+        "mean_channel_error_0_255": 0.0,
+        "rmse_0_255": 0.0,
+        "exact_pixel_fraction": 1.0
+      },
+      "crop_matches_typescript": true,
+      "native_crop_pixel_error": {
+        "max_channel_error_0_255": 0.0,
+        "mean_channel_error_0_255": 0.0,
+        "rmse_0_255": 0.0,
+        "exact_pixel_fraction": 1.0
+      },
+      "selection_max_error": 0.0,
+      "pillow_bilinear_vs_native": {
+        "max_channel_error_0_255": 26.0,
+        "mean_channel_error_0_255": 1.9137188946759258,
+        "rmse_0_255": 3.889972102364736,
+        "exact_pixel_fraction": 0.03204210069444444
+      },
+      "typescript_antialias_vs_pillow": {
+        "max_channel_error_0_255": 0.0,
+        "mean_channel_error_0_255": 0.0,
+        "rmse_0_255": 0.0,
+        "exact_pixel_fraction": 1.0
+      },
+      "typescript_float32_vs_pillow_max_error": 0.0,
+      "center_sampled_bilinear_vs_native": {
+        "max_channel_error_0_255": 26.0,
+        "mean_channel_error_0_255": 1.9140335648148148,
+        "rmse_0_255": 3.8824860484831967,
+        "exact_pixel_fraction": 0.029568142361111112
+      },
+      "raw_as_rgba_vs_get_pixels": {
+        "max_channel_error_0_255": 0.0,
+        "mean_channel_error_0_255": 0.0,
+        "rmse_0_255": 0.0,
+        "exact_pixel_fraction": 1.0
+      },
+      "raw_as_bgra_vs_get_pixels": {
+        "max_channel_error_0_255": 255.0,
+        "mean_channel_error_0_255": 71.01355613425926,
+        "rmse_0_255": 103.96698339931181,
+        "exact_pixel_fraction": 0.0021809895833333334
+      },
+      "native_rgb_sha256": "1f4f3ab48354d6e2c55187c939d307e2ff943421cbd57472ccbd638641745e73",
+      "native_crop_raw_sha256": "6328377bc5c79feef3d123d2d60f1ddba58e218791b7492cd6cf42666aaa9199",
+      "typescript_float32_sha256": "1abef07cd2b76714293ecd9f88f3bb09d824c2ee15c9b220373b2fb709c34ac9"
+    },
+    {
+      "id": "rotation-0-mirror-false-aspect-4",
+      "rotation_and_mirroring": {
+        "max_channel_error_0_255": 0.0,
+        "mean_channel_error_0_255": 0.0,
+        "rmse_0_255": 0.0,
+        "exact_pixel_fraction": 1.0
+      },
+      "crop_matches_typescript": true,
+      "native_crop_pixel_error": {
+        "max_channel_error_0_255": 0.0,
+        "mean_channel_error_0_255": 0.0,
+        "rmse_0_255": 0.0,
+        "exact_pixel_fraction": 1.0
+      },
+      "selection_max_error": 0.0,
+      "pillow_bilinear_vs_native": {
+        "max_channel_error_0_255": 86.0,
+        "mean_channel_error_0_255": 7.136834490740741,
+        "rmse_0_255": 14.75442200663923,
+        "exact_pixel_fraction": 0.01804470486111111
+      },
+      "typescript_antialias_vs_pillow": {
+        "max_channel_error_0_255": 0.0,
+        "mean_channel_error_0_255": 0.0,
+        "rmse_0_255": 0.0,
+        "exact_pixel_fraction": 1.0
+      },
+      "typescript_float32_vs_pillow_max_error": 0.0,
+      "center_sampled_bilinear_vs_native": {
+        "max_channel_error_0_255": 28.0,
+        "mean_channel_error_0_255": 1.9218858506944445,
+        "rmse_0_255": 3.886577779292567,
+        "exact_pixel_fraction": 0.02896050347222222
+      },
+      "raw_as_rgba_vs_get_pixels": {
+        "max_channel_error_0_255": 0.0,
+        "mean_channel_error_0_255": 0.0,
+        "rmse_0_255": 0.0,
+        "exact_pixel_fraction": 1.0
+      },
+      "raw_as_bgra_vs_get_pixels": {
+        "max_channel_error_0_255": 255.0,
+        "mean_channel_error_0_255": 70.7912037037037,
+        "rmse_0_255": 103.71186443533246,
+        "exact_pixel_fraction": 0.002170138888888889
+      },
+      "native_rgb_sha256": "c41899a484320acf4446456c3d584733cf3dc4212522b34655d3c8be4a7b8a1d",
+      "native_crop_raw_sha256": "5ecdde86533004509bce50ace8e08baf9bd0aa874843eee9450a0138a8353bc5",
+      "typescript_float32_sha256": "56718e8046d019c41b31d3c04ad1ced77db3440379880f47912cbc52582aff7d"
+    },
+    {
+      "id": "rotation-0-mirror-false-aspect-8",
+      "rotation_and_mirroring": {
+        "max_channel_error_0_255": 0.0,
+        "mean_channel_error_0_255": 0.0,
+        "rmse_0_255": 0.0,
+        "exact_pixel_fraction": 1.0
+      },
+      "crop_matches_typescript": true,
+      "native_crop_pixel_error": {
+        "max_channel_error_0_255": 0.0,
+        "mean_channel_error_0_255": 0.0,
+        "rmse_0_255": 0.0,
+        "exact_pixel_fraction": 1.0
+      },
+      "selection_max_error": 0.0,
+      "pillow_bilinear_vs_native": {
+        "max_channel_error_0_255": 115.0,
+        "mean_channel_error_0_255": 24.79652777777778,
+        "rmse_0_255": 41.71114518354954,
+        "exact_pixel_fraction": 0.0
+      },
+      "typescript_antialias_vs_pillow": {
+        "max_channel_error_0_255": 0.0,
+        "mean_channel_error_0_255": 0.0,
+        "rmse_0_255": 0.0,
+        "exact_pixel_fraction": 1.0
+      },
+      "typescript_float32_vs_pillow_max_error": 0.0,
+      "center_sampled_bilinear_vs_native": {
+        "max_channel_error_0_255": 21.0,
+        "mean_channel_error_0_255": 1.7351453993055554,
+        "rmse_0_255": 3.5002474904230647,
+        "exact_pixel_fraction": 0.04636501736111111
+      },
+      "raw_as_rgba_vs_get_pixels": {
+        "max_channel_error_0_255": 0.0,
+        "mean_channel_error_0_255": 0.0,
+        "rmse_0_255": 0.0,
+        "exact_pixel_fraction": 1.0
+      },
+      "raw_as_bgra_vs_get_pixels": {
+        "max_channel_error_0_255": 255.0,
+        "mean_channel_error_0_255": 71.61312934027778,
+        "rmse_0_255": 104.68583604951806,
+        "exact_pixel_fraction": 0.002007378472222222
+      },
+      "native_rgb_sha256": "88991e24fe31a92253d1e9ce4e2ad4ec214528a94dc03b680d10996ecf01b908",
+      "native_crop_raw_sha256": "d24cd9635f93a9b688ef3ca497bdb5b4e5ec5ae341057835240758637201d8c3",
+      "typescript_float32_sha256": "3657f6e973233852185b31bb4eb2de3f4028fbf4b7a64dce2a8b5b91e797d899"
+    },
+    {
+      "id": "rotation-90-mirror-false-aspect-4",
+      "rotation_and_mirroring": {
+        "max_channel_error_0_255": 0.0,
+        "mean_channel_error_0_255": 0.0,
+        "rmse_0_255": 0.0,
+        "exact_pixel_fraction": 1.0
+      },
+      "crop_matches_typescript": true,
+      "native_crop_pixel_error": {
+        "max_channel_error_0_255": 0.0,
+        "mean_channel_error_0_255": 0.0,
+        "rmse_0_255": 0.0,
+        "exact_pixel_fraction": 1.0
+      },
+      "selection_max_error": 0.0,
+      "pillow_bilinear_vs_native": {
+        "max_channel_error_0_255": 80.0,
+        "mean_channel_error_0_255": 7.185246672453704,
+        "rmse_0_255": 14.9750181388238,
+        "exact_pixel_fraction": 0.0408203125
+      },
+      "typescript_antialias_vs_pillow": {
+        "max_channel_error_0_255": 0.0,
+        "mean_channel_error_0_255": 0.0,
+        "rmse_0_255": 0.0,
+        "exact_pixel_fraction": 1.0
+      },
+      "typescript_float32_vs_pillow_max_error": 0.0,
+      "center_sampled_bilinear_vs_native": {
+        "max_channel_error_0_255": 23.0,
+        "mean_channel_error_0_255": 1.6392867476851851,
+        "rmse_0_255": 3.5702137897652055,
+        "exact_pixel_fraction": 0.07516276041666667
+      },
+      "raw_as_rgba_vs_get_pixels": {
+        "max_channel_error_0_255": 0.0,
+        "mean_channel_error_0_255": 0.0,
+        "rmse_0_255": 0.0,
+        "exact_pixel_fraction": 1.0
+      },
+      "raw_as_bgra_vs_get_pixels": {
+        "max_channel_error_0_255": 255.0,
+        "mean_channel_error_0_255": 70.96208767361111,
+        "rmse_0_255": 103.89869646730014,
+        "exact_pixel_fraction": 0.002018229166666667
+      },
+      "native_rgb_sha256": "ac50645fafa54bedbdbc245ce6cfb55051d4f3050a3720af2416db26521e7022",
+      "native_crop_raw_sha256": "836b4f5a5f5100d3e519ce049e192665367be21fdb0e960c9e03599c8907cded",
+      "typescript_float32_sha256": "409d0546b60dbe03e990502a5fb14139ea414eb0de06737a1ace7b1fd9fffac5"
+    },
+    {
+      "id": "rotation-180-mirror-false-aspect-4",
+      "rotation_and_mirroring": {
+        "max_channel_error_0_255": 0.0,
+        "mean_channel_error_0_255": 0.0,
+        "rmse_0_255": 0.0,
+        "exact_pixel_fraction": 1.0
+      },
+      "crop_matches_typescript": true,
+      "native_crop_pixel_error": {
+        "max_channel_error_0_255": 0.0,
+        "mean_channel_error_0_255": 0.0,
+        "rmse_0_255": 0.0,
+        "exact_pixel_fraction": 1.0
+      },
+      "selection_max_error": 0.0,
+      "pillow_bilinear_vs_native": {
+        "max_channel_error_0_255": 83.0,
+        "mean_channel_error_0_255": 6.868583622685185,
+        "rmse_0_255": 14.755125786626378,
+        "exact_pixel_fraction": 0.10537109375
+      },
+      "typescript_antialias_vs_pillow": {
+        "max_channel_error_0_255": 0.0,
+        "mean_channel_error_0_255": 0.0,
+        "rmse_0_255": 0.0,
+        "exact_pixel_fraction": 1.0
+      },
+      "typescript_float32_vs_pillow_max_error": 0.0,
+      "center_sampled_bilinear_vs_native": {
+        "max_channel_error_0_255": 28.0,
+        "mean_channel_error_0_255": 1.5654694733796297,
+        "rmse_0_255": 3.8844358495427573,
+        "exact_pixel_fraction": 0.31737196180555555
+      },
+      "raw_as_rgba_vs_get_pixels": {
+        "max_channel_error_0_255": 0.0,
+        "mean_channel_error_0_255": 0.0,
+        "rmse_0_255": 0.0,
+        "exact_pixel_fraction": 1.0
+      },
+      "raw_as_bgra_vs_get_pixels": {
+        "max_channel_error_0_255": 255.0,
+        "mean_channel_error_0_255": 70.81599392361112,
+        "rmse_0_255": 103.73339778894875,
+        "exact_pixel_fraction": 0.0020616319444444445
+      },
+      "native_rgb_sha256": "48e2ef7772078602df0d5fa65438fe58ca2aad162b0ba272696242f26bb0e85d",
+      "native_crop_raw_sha256": "1a88d557064d3fe99949736305a9d32d002f956db15fc96fefd66cef99ffad08",
+      "typescript_float32_sha256": "b0a8d05152fed3e8b2d4e8fdf58420100bc45379cb445b93908b0bf28990db5c"
+    },
+    {
+      "id": "rotation-270-mirror-false-aspect-4",
+      "rotation_and_mirroring": {
+        "max_channel_error_0_255": 0.0,
+        "mean_channel_error_0_255": 0.0,
+        "rmse_0_255": 0.0,
+        "exact_pixel_fraction": 1.0
+      },
+      "crop_matches_typescript": true,
+      "native_crop_pixel_error": {
+        "max_channel_error_0_255": 0.0,
+        "mean_channel_error_0_255": 0.0,
+        "rmse_0_255": 0.0,
+        "exact_pixel_fraction": 1.0
+      },
+      "selection_max_error": 0.0,
+      "pillow_bilinear_vs_native": {
+        "max_channel_error_0_255": 80.0,
+        "mean_channel_error_0_255": 7.081861255787037,
+        "rmse_0_255": 14.976596929359177,
+        "exact_pixel_fraction": 0.07713758680555556
+      },
+      "typescript_antialias_vs_pillow": {
+        "max_channel_error_0_255": 0.0,
+        "mean_channel_error_0_255": 0.0,
+        "rmse_0_255": 0.0,
+        "exact_pixel_fraction": 1.0
+      },
+      "typescript_float32_vs_pillow_max_error": 0.0,
+      "center_sampled_bilinear_vs_native": {
+        "max_channel_error_0_255": 23.0,
+        "mean_channel_error_0_255": 1.4952112268518518,
+        "rmse_0_255": 3.570002050588165,
+        "exact_pixel_fraction": 0.20870225694444444
+      },
+      "raw_as_rgba_vs_get_pixels": {
+        "max_channel_error_0_255": 0.0,
+        "mean_channel_error_0_255": 0.0,
+        "rmse_0_255": 0.0,
+        "exact_pixel_fraction": 1.0
+      },
+      "raw_as_bgra_vs_get_pixels": {
+        "max_channel_error_0_255": 255.0,
+        "mean_channel_error_0_255": 70.97120949074075,
+        "rmse_0_255": 103.90425147757786,
+        "exact_pixel_fraction": 0.0020833333333333333
+      },
+      "native_rgb_sha256": "978c9a80f7271333e76711f4f869b5f23241f7aade6bbf12a6eb056305e76d47",
+      "native_crop_raw_sha256": "b94c42ce0ea5916af4368104dbb3cd7725a60bcf14c76a5682fa5ee773443484",
+      "typescript_float32_sha256": "4b6eb8a1ee878528136f6956e7bd41f0c90c907d89bf786b5be66c3ef97a84ef"
+    },
+    {
+      "id": "rotation-90-mirror-true-aspect-4",
+      "rotation_and_mirroring": {
+        "max_channel_error_0_255": 0.0,
+        "mean_channel_error_0_255": 0.0,
+        "rmse_0_255": 0.0,
+        "exact_pixel_fraction": 1.0
+      },
+      "crop_matches_typescript": true,
+      "native_crop_pixel_error": {
+        "max_channel_error_0_255": 0.0,
+        "mean_channel_error_0_255": 0.0,
+        "rmse_0_255": 0.0,
+        "exact_pixel_fraction": 1.0
+      },
+      "selection_max_error": 0.0,
+      "pillow_bilinear_vs_native": {
+        "max_channel_error_0_255": 80.0,
+        "mean_channel_error_0_255": 7.029774305555556,
+        "rmse_0_255": 14.994649894644521,
+        "exact_pixel_fraction": 0.10028211805555555
+      },
+      "typescript_antialias_vs_pillow": {
+        "max_channel_error_0_255": 0.0,
+        "mean_channel_error_0_255": 0.0,
+        "rmse_0_255": 0.0,
+        "exact_pixel_fraction": 1.0
+      },
+      "typescript_float32_vs_pillow_max_error": 0.0,
+      "center_sampled_bilinear_vs_native": {
+        "max_channel_error_0_255": 25.0,
+        "mean_channel_error_0_255": 1.451833767361111,
+        "rmse_0_255": 3.652452820093541,
+        "exact_pixel_fraction": 0.3172526041666667
+      },
+      "raw_as_rgba_vs_get_pixels": {
+        "max_channel_error_0_255": 0.0,
+        "mean_channel_error_0_255": 0.0,
+        "rmse_0_255": 0.0,
+        "exact_pixel_fraction": 1.0
+      },
+      "raw_as_bgra_vs_get_pixels": {
+        "max_channel_error_0_255": 255.0,
+        "mean_channel_error_0_255": 70.9691333912037,
+        "rmse_0_255": 103.901086755592,
+        "exact_pixel_fraction": 0.0019856770833333332
+      },
+      "native_rgb_sha256": "e8d9f91e811d50f9d6ce090bdd262818b480b47bab6e474e5a33a07efc3cd582",
+      "native_crop_raw_sha256": "80cfc9b64d8ea9cf1c8dda43bbb51ce75ca9c61bb1fab0bb7c79f70d95f99861",
+      "typescript_float32_sha256": "f1e996a81a8c8f50fa3bf606da7786ce4697d089651c04312fbfe1f0168785e9"
+    }
+  ]
+}

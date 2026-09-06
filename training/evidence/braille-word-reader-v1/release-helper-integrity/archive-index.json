@@ -1,0 +1,120 @@
+{
+  "scope": "Helper integrity only. The 11 tests and PowerShell checks are mocked; the separate real v15 rejection used its actual binary and reports in an isolated prospective tree. No passing candidate, actual source-check sequence, APK build/signing, native runtime or physical test is established.",
+  "files": [
+    {
+      "file": "actual-failed-candidate/promotion-rejection-check.json",
+      "bytes": 1247,
+      "sha256": "506f7c3e88890c3a27d9d2f0fe19fe8b691f5aa3f02626940df9519ffc2024f1"
+    },
+    {
+      "file": "actual-failed-candidate/promotion-review.json",
+      "bytes": 176141,
+      "sha256": "de75fef839ec3e5ee999d35c49aa248bfe617332d50418081a69b975cd5f402e"
+    },
+    {
+      "file": "actual-failed-candidate/promotion-verifier.log",
+      "bytes": 657,
+      "sha256": "43da535b1cd132d05fbda6c018bf6f451b94a03ec228636f0a7327c7bc3d7d54"
+    },
+    {
+      "file": "actual-failed-candidate/source/check_promotion_rejection.py",
+      "bytes": 3298,
+      "sha256": "68030365daf8691a785d2d3b041efc70078822b99e822a84395b1de0e71fd7e3"
+    },
+    {
+      "file": "actual-failed-candidate/source/inspect-tflite.mjs",
+      "bytes": 2113,
+      "sha256": "be4e7746ea23cff2baa562fe407880af8e453aefcdcc2af77776249b7e50c797"
+    },
+    {
+      "file": "actual-failed-candidate/source/promote_candidate.py",
+      "bytes": 11941,
+      "sha256": "521f2a93f2e655d68938d08a531cffe702f33126f2627ef2e515f97d9d485d43"
+    },
+    {
+      "file": "actual-failed-candidate/source/review_word_promotion.py",
+      "bytes": 3238,
+      "sha256": "d06c0d239bd04bc7eac6fbbed489c4f72cf05a5eed9d245bd06b700fe08230ac"
+    },
+    {
+      "file": "actual-failed-candidate/source/verify-word-model-assets.mjs",
+      "bytes": 101303,
+      "sha256": "2f19d5b2322127e57d6a795b46aedf2d93576a67434934999d956f468526287c"
+    },
+    {
+      "file": "mocked-helper-checks/powershell-mocked-run/output/word-scan-20260905/export-android.log",
+      "bytes": 56,
+      "sha256": "ff7c06ef57159503aedbc760ce88ce6d6bef8dfd185005b1b7ccce2c8e4d8d2e"
+    },
+    {
+      "file": "mocked-helper-checks/powershell-mocked-run/output/word-scan-20260905/lint.log",
+      "bytes": 36,
+      "sha256": "34606694151de62cdcd737d0795de4c2be8b6bf452dfde0998a45831e48cbb32"
+    },
+    {
+      "file": "mocked-helper-checks/powershell-mocked-run/output/word-scan-20260905/model-verify.log",
+      "bytes": 52,
+      "sha256": "dafd40babf3dcdf32cebcd3cd68f4e7dd82df71b932e7b0b220f9ee2951f60ca"
+    },
+    {
+      "file": "mocked-helper-checks/powershell-mocked-run/output/word-scan-20260905/release-config-verify.log",
+      "bytes": 70,
+      "sha256": "4b92469dcd96c1448eb7d8e7eeae6d716863208583ff770c588ecb021bed56bb"
+    },
+    {
+      "file": "mocked-helper-checks/powershell-mocked-run/output/word-scan-20260905/source-checks.json",
+      "bytes": 2115,
+      "sha256": "ab5603ca6786a7994f4f5557509960253bcce08df2e7d934e7c39c9b6f2da4e5"
+    },
+    {
+      "file": "mocked-helper-checks/powershell-mocked-run/output/word-scan-20260905/source-snapshot-after.json",
+      "bytes": 148,
+      "sha256": "88f1b562495cc6951f63d86af303f7c687e6a1d630dff0335ad7e14f654d3494"
+    },
+    {
+      "file": "mocked-helper-checks/powershell-mocked-run/output/word-scan-20260905/source-snapshot-before.json",
+      "bytes": 148,
+      "sha256": "88f1b562495cc6951f63d86af303f7c687e6a1d630dff0335ad7e14f654d3494"
+    },
+    {
+      "file": "mocked-helper-checks/powershell-mocked-run/output/word-scan-20260905/test-coverage.log",
+      "bytes": 54,
+      "sha256": "c3d876b630f9905677c7ef5d09e6af7cddb8f0d10b25f1e16124c8ff5cc43f1c"
+    },
+    {
+      "file": "mocked-helper-checks/powershell-mocked-run/output/word-scan-20260905/typecheck.log",
+      "bytes": 46,
+      "sha256": "2de7aeeaef95a4cd93fa2fd61634ca9becfe88dd825577a7d4ee1b59ba12da4e"
+    },
+    {
+      "file": "mocked-helper-checks/report.json",
+      "bytes": 2183,
+      "sha256": "663466c90c38039ceed67211345809688b55218676737aa82822e315425944a4"
+    },
+    {
+      "file": "mocked-helper-checks/source/stage_source.py",
+      "bytes": 7890,
+      "sha256": "843027b373e767a2b083f091fc44fa9f39113c1cf0ec5c5c2011ad25818da8fa"
+    },
+    {
+      "file": "mocked-helper-checks/source/test-verify-source.ps1",
+      "bytes": 2449,
+      "sha256": "4f114abbe7a5b9a383e01f105ceae443fe34babe88e67e1563700def36e58dc7"
+    },
+    {
+      "file": "mocked-helper-checks/source/test_release_helper_integrity.py",
+      "bytes": 6534,
+      "sha256": "11109484fa688318d4eadb9e2574b0e5b413a513679aca1d76db302b7249c7ce"
+    },
+    {
+      "file": "mocked-helper-checks/source/verify-source.ps1",
+      "bytes": 1990,
+      "sha256": "ef5ed8028cfd0cc24cf221e1d8e6ad2cb22e8a83091e8ec118efde587c8722c5"
+    },
+    {
+      "file": "mocked-helper-checks/source/verify_apk.py",
+      "bytes": 7511,
+      "sha256": "088e706ebebf76b57e8f6a2b3ca28f143fd595d60ed730acde7be697a48f2331"
+    }
+  ]
+}

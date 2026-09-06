@@ -1,0 +1,80 @@
+{
+  "status": "passed",
+  "scope": "Actual run23 vertical stretch and DSBI point provenance checks only. Retained prelaunch audit/script, protocol and all run source snapshots were hash verified. The vertical proof is the original 4d6fd2 report and 91c41d script; source/plan/draw/point/Pillow/OFF evidence is verified. No transform corpus or model inference was rerun by this provenance check. The existing run20 sampling audit proves base v15 epoch9 eligibility. Per-run DSBI metadata bytes additionally match their retained gzip archive. Final candidate lineage is not yet assembled; numerical recognition, full405 trained-model parity, native and physical gates are not claimed.",
+  "verifier_sha256": "c43a39f7595372bec0183390d5022c813cf4e14e6a9ea8a65287e0ca351e650f",
+  "script_sha256": "6fba08c7d137095fc8248aa928779d140b15886b2eb7817e7516af84b3af7c5f",
+  "preflight": {
+    "file": "training/evidence/braille-word-reader-v1/vertical-stretch-preflight/preflight.json",
+    "sha256": "8182c031928381020cb00f2407b64097faefd93cf88c521f94b5ec1d881f93da"
+  },
+  "training_configuration": {
+    "file": "training/evidence/braille-word-reader-v1/vertical-stretch-preflight/run23/training-config.json",
+    "sha256": "0285e636e032f0fe3601e7536a6105138143b5173a780cc857a20cdfb7e29b69"
+  },
+  "vertical_stretch": {
+    "protocol": {
+      "file": "training/evidence/braille-word-reader-v1/vertical-stretch-preflight/run23/vertical-stretch-preflight/vertical-stretch-protocol.json",
+      "sha256": "e77fed55055f0569f839ba09ff3ff39b2bb4b919cb7deb38377c9f60a4059502"
+    },
+    "parentCheckpointSha256": "cce2432c0ddb8952c885dd58697589c285209588dafa81aacdd891b1660068b7",
+    "audits": [
+      {
+        "file": "training/evidence/braille-word-reader-v1/vertical-stretch-preflight/run23/vertical-stretch-preflight/run23-vertical-independent-audit.json",
+        "sha256": "4d6fd2e3549abcd857ab666f003e955321ca780500114b7640e3f63e0688293e"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/vertical-stretch-preflight/run23/vertical-stretch-preflight/preflight-tests.json",
+        "sha256": "c6c01d0416d84edb8251db54b9d05c6833c208a7a4ce233866fb94cf17d2be52"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/vertical-stretch-preflight/run23/vertical-stretch-preflight/train-pitch-ratio-audit.json",
+        "sha256": "720abf48a753feedd9801c1187701e2afae27e0bd3a9a670416c8db95e7afd90"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/vertical-stretch-preflight/run23/vertical-stretch-preflight/train-held-vertical-scale-context-audit.json",
+        "sha256": "664d6765c7ea70b2ce00194001a15b4f001fd7001d656c1796b02c2a920f6087"
+      }
+    ],
+    "sources": [
+      {
+        "file": "training/evidence/braille-word-reader-v1/vertical-stretch-preflight/run23/vertical-stretch-preflight/source/audit_vertical_stretch_independent.py",
+        "sha256": "91c41d14e50c07b7a5ec84d3b7ea3e79271f0777201f15fab05d7875badc0a4d"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/vertical-stretch-preflight/run23/vertical-stretch-preflight/source/audit_train_pitch_ratio.py",
+        "sha256": "003ec0aae62d22dd8f87d46ce0f57f7f13aee3c62f8a3ac08f7eaaa1c49331c9"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/vertical-stretch-preflight/run23/vertical-stretch-preflight/source/audit_train_held_vertical_scale_context.py",
+        "sha256": "ab173c64c0db8561449d978848c8abf5fa5e39bd698c55a7ef754f6e93139870"
+      }
+    ]
+  },
+  "parent_sampling_eligibility": {
+    "run": "run20",
+    "configuration": {
+      "file": ".braille-training-work/word-scan-v1-20260905/run20/training-config.json",
+      "sha256": "75bc0305e899aa1c13936fa8614ef42702fedefc9d3c5abfd294d60ccf30a51d"
+    },
+    "sampling-history.json": {
+      "file": ".braille-training-work/word-scan-v1-20260905/run20/sampling-history.json",
+      "sha256": "01c4d0dc071ab3b362eda303664d5c46817421a8e848a2df09ca0c2459a15739"
+    },
+    "sampling-lineage-final.json": {
+      "file": ".braille-training-work/word-scan-v1-20260905/run20/sampling-lineage-final.json",
+      "sha256": "4cc87be5de829f8be91ea1c68a6bb3b6ad6370db8509ed44a8fda55a03e40b9a"
+    }
+  },
+  "dsbi_source_index": {
+    "file": "training/evidence/braille-word-reader-v1/dsbi-training-preparation/source-index.json",
+    "sha256": "8d62cf1850308fb864449bbcabc4399ef4e9a9aab62216b35c8064fa634450a6"
+  },
+  "dsbi_point_metadata": {
+    "file": ".braille-training-work/word-scan-v1-20260905/dsbi-point-metadata-v1/points.json",
+    "sha256": "ea9592a727f7f3abcc6b017f8f22e143e90ae1541f623c43adf30104021937e8"
+  },
+  "source_annotation_count": 26,
+  "source_cells": 9983,
+  "source_photos_read": false,
+  "model_execution": false
+}

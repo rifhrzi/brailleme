@@ -1,0 +1,26 @@
+{
+  "scope": "Historical prelaunch defect; v1 was not used for run28 training.",
+  "v1Helper": {
+    "file": "training/evidence/braille-word-reader-v1/anchor-zoom-preflight/historical-v1/word_anchor_zoom.py",
+    "sha256": "9ef0174b20581730d7f9ee753dcde0b19e0b471ffd8eb00606df138d001a71b7"
+  },
+  "observedCase": {
+    "box": [
+      50,
+      70,
+      280,
+      125
+    ],
+    "zoom": 1.2847156687768433,
+    "translate_x": 4.0959770676002165,
+    "translate_y": 0.0,
+    "old_left": -1.4210854715202004e-14
+  },
+  "fix": "V2 verifies actual affine arithmetic even at bound>=sampled zoom; one ULP fixes this case within the original eight-ULP budget.",
+  "fixedInSourceSha256": "d6f5337d08368b8da55948f314bd06af7b03fa1602e40240778a9b4edea26377",
+  "independentProof": {
+    "file": "training/evidence/braille-word-reader-v1/anchor-zoom-preflight/independent-review/report.json",
+    "sha256": "b6942349e922dc962e08b26ef0c67b817964e4b1c6b35576a3c62783fc1a9f3c"
+  },
+  "separateEarlierTestCorrection": "The initial test expected a full left-edge cell with -4% translation to be infeasible. Its valid cap is .92. The original test and correction are retained separately; that mistake was not the later float32 rounding defect."
+}

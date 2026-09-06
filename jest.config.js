@@ -2,6 +2,10 @@
 module.exports = {
   preset: 'jest-expo',
   clearMocks: true,
+  modulePathIgnorePatterns: [
+    '<rootDir>/.braille-training-work/',
+    '<rootDir>/training/evidence/',
+  ],
   collectCoverageFrom: [
     'src/**/*.{ts,tsx}',
     '!src/**/__tests__/**',
@@ -21,7 +25,8 @@ module.exports = {
   },
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/src/$1',
+    '\\.tflite$': '<rootDir>/scripts/jest-model-asset.cjs',
   },
   setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
-  testPathIgnorePatterns: ['/node_modules/', '/dist/'],
+  testPathIgnorePatterns: ['/node_modules/', '/dist/', '/.braille-training-work/', '/training/evidence/'],
 };

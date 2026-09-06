@@ -1,0 +1,352 @@
+{
+  "created_at_utc": "2026-09-06T09:52:05.146012+00:00",
+  "decision": "rejected_pretrained_candidate_no_app_activation",
+  "reason": "Whole-word accuracy24.05% and accepted precision92.41% fail75%/95%; one mandatory rejection is falsely accepted.",
+  "strategy": "Stop repeated custom training; one existing pretrained model, source-derived scale correction, frozen validation threshold followed by one public regression. No new epochs.",
+  "run31": "Stopped during epoch9; eight complete checkpoints retained; no checkpoint selection or promotion.",
+  "model": {
+    "source": "https://github.com/snoop2head/DotNeuralNet",
+    "commit": "c0b7795270cfe5442fa980c73ee0f8ada07c911e",
+    "sha256": "aeb1fe31f75dd9e3860434d4067c7537b1159a407ebc2848156aad8cda4ed842",
+    "name": "YOLOv8m Braille64 pretrained",
+    "class_mapping": "standard_mask=int(model.names[class_id][::-1],2)"
+  },
+  "validation_baseline": {
+    "metrics": {
+      "thresholds": {
+        "proposalScore": 0.15,
+        "acceptScore": 0.2,
+        "nmsIou": 0.25,
+        "minCellWidth": 0.008,
+        "minCellHeight": 0.06,
+        "edgeMargin": 0.008,
+        "maxRowDeviation": 0.55,
+        "maxGapRatio": 1.2,
+        "maxOverlapRatio": 0.5
+      },
+      "natural": {
+        "total": 135,
+        "accepted": 26,
+        "correct": 5,
+        "exact_word_accuracy": 0.037037037037037035,
+        "accepted_accuracy": 0.19230769230769232
+      },
+      "stress": {
+        "total": 270,
+        "accepted": 13,
+        "correct": 0,
+        "exact_word_accuracy": 0.0,
+        "accepted_accuracy": 0.0
+      },
+      "whole_words": {
+        "total": 405,
+        "accepted": 39,
+        "correct": 5,
+        "exact_word_accuracy": 0.012345679012345678,
+        "accepted_accuracy": 0.1282051282051282
+      },
+      "group_precision_gate_passed": false,
+      "equal_group_exact_mean": 0.018518518518518517
+    },
+    "wall_seconds_after_model_load": 15.896976100004395
+  },
+  "validation_guide24": {
+    "metrics": {
+      "thresholds": {
+        "proposalScore": 0.25,
+        "acceptScore": 0.65,
+        "nmsIou": 0.25,
+        "minCellWidth": 0.008,
+        "minCellHeight": 0.06,
+        "edgeMargin": 0.008,
+        "maxRowDeviation": 0.55,
+        "maxGapRatio": 1.2,
+        "maxOverlapRatio": 0.5
+      },
+      "natural": {
+        "total": 135,
+        "accepted": 99,
+        "correct": 97,
+        "exact_word_accuracy": 0.7185185185185186,
+        "accepted_accuracy": 0.9797979797979798
+      },
+      "stress": {
+        "total": 270,
+        "accepted": 132,
+        "correct": 127,
+        "exact_word_accuracy": 0.4703703703703704,
+        "accepted_accuracy": 0.9621212121212122
+      },
+      "whole_words": {
+        "total": 405,
+        "accepted": 231,
+        "correct": 224,
+        "exact_word_accuracy": 0.5530864197530864,
+        "accepted_accuracy": 0.9696969696969697
+      },
+      "group_precision_gate_passed": true,
+      "equal_group_exact_mean": 0.5944444444444444
+    },
+    "wall_seconds_after_model_load": 13.965538099990226
+  },
+  "regression_guide24": {
+    "metrics": {
+      "legacy66": {
+        "total": 66,
+        "accepted": 14,
+        "correct": 11,
+        "exact_accuracy": 0.16666666666666666,
+        "accepted_accuracy": 0.7857142857142857,
+        "reasons": {
+          "low_confidence": 37,
+          "accepted": 14,
+          "clipped": 13,
+          "no_grid": 1,
+          "gap": 1
+        }
+      },
+      "negative44": {
+        "total": 44,
+        "accepted": 0,
+        "correct": 44,
+        "exact_accuracy": 1.0,
+        "accepted_accuracy": 0.0,
+        "reasons": {
+          "no_grid": 44
+        }
+      },
+      "rejection14": {
+        "total": 14,
+        "accepted": 1,
+        "correct": 13,
+        "exact_accuracy": 0.9285714285714286,
+        "accepted_accuracy": 0.0,
+        "reasons": {
+          "unsupported_pattern": 2,
+          "low_confidence": 3,
+          "no_grid": 3,
+          "clipped": 1,
+          "accepted": 1,
+          "too_many_cells": 3,
+          "glare": 1
+        }
+      },
+      "repetition12": {
+        "total": 12,
+        "accepted": 3,
+        "correct": 3,
+        "exact_accuracy": 0.25,
+        "accepted_accuracy": 1.0,
+        "reasons": {
+          "no_grid": 3,
+          "low_confidence": 5,
+          "accepted": 3,
+          "clipped": 1
+        }
+      },
+      "word607": {
+        "total": 607,
+        "accepted": 158,
+        "correct": 146,
+        "exact_accuracy": 0.24052718286655683,
+        "accepted_accuracy": 0.9240506329113924,
+        "reasons": {
+          "low_confidence": 304,
+          "accepted": 158,
+          "no_grid": 112,
+          "clipped": 29,
+          "gap": 2,
+          "unsupported_pattern": 2
+        }
+      }
+    },
+    "by_length": {
+      "1": {
+        "total": 152,
+        "accepted": 10,
+        "correct": 10,
+        "exact_accuracy": 0.06578947368421052,
+        "accepted_accuracy": 1.0,
+        "reasons": {
+          "low_confidence": 57,
+          "no_grid": 78,
+          "clipped": 6,
+          "accepted": 10,
+          "unsupported_pattern": 1
+        }
+      },
+      "2": {
+        "total": 109,
+        "accepted": 35,
+        "correct": 31,
+        "exact_accuracy": 0.28440366972477066,
+        "accepted_accuracy": 0.8857142857142857,
+        "reasons": {
+          "low_confidence": 56,
+          "accepted": 35,
+          "no_grid": 15,
+          "clipped": 2,
+          "unsupported_pattern": 1
+        }
+      },
+      "3": {
+        "total": 73,
+        "accepted": 24,
+        "correct": 22,
+        "exact_accuracy": 0.3013698630136986,
+        "accepted_accuracy": 0.9166666666666666,
+        "reasons": {
+          "low_confidence": 31,
+          "accepted": 24,
+          "no_grid": 13,
+          "clipped": 5
+        }
+      },
+      "4": {
+        "total": 66,
+        "accepted": 26,
+        "correct": 24,
+        "exact_accuracy": 0.36363636363636365,
+        "accepted_accuracy": 0.9230769230769231,
+        "reasons": {
+          "accepted": 26,
+          "low_confidence": 34,
+          "clipped": 2,
+          "gap": 1,
+          "no_grid": 3
+        }
+      },
+      "5": {
+        "total": 70,
+        "accepted": 24,
+        "correct": 23,
+        "exact_accuracy": 0.32857142857142857,
+        "accepted_accuracy": 0.9583333333333334,
+        "reasons": {
+          "low_confidence": 38,
+          "accepted": 24,
+          "gap": 1,
+          "clipped": 6,
+          "no_grid": 1
+        }
+      },
+      "6": {
+        "total": 43,
+        "accepted": 12,
+        "correct": 12,
+        "exact_accuracy": 0.27906976744186046,
+        "accepted_accuracy": 1.0,
+        "reasons": {
+          "low_confidence": 26,
+          "accepted": 12,
+          "clipped": 5
+        }
+      },
+      "7": {
+        "total": 35,
+        "accepted": 9,
+        "correct": 9,
+        "exact_accuracy": 0.2571428571428571,
+        "accepted_accuracy": 1.0,
+        "reasons": {
+          "low_confidence": 24,
+          "accepted": 9,
+          "clipped": 1,
+          "no_grid": 1
+        }
+      },
+      "8": {
+        "total": 24,
+        "accepted": 5,
+        "correct": 4,
+        "exact_accuracy": 0.16666666666666666,
+        "accepted_accuracy": 0.8,
+        "reasons": {
+          "low_confidence": 16,
+          "accepted": 5,
+          "clipped": 2,
+          "no_grid": 1
+        }
+      },
+      "9": {
+        "total": 15,
+        "accepted": 5,
+        "correct": 4,
+        "exact_accuracy": 0.26666666666666666,
+        "accepted_accuracy": 0.8,
+        "reasons": {
+          "low_confidence": 10,
+          "accepted": 5
+        }
+      },
+      "10": {
+        "total": 13,
+        "accepted": 5,
+        "correct": 4,
+        "exact_accuracy": 0.3076923076923077,
+        "accepted_accuracy": 0.8,
+        "reasons": {
+          "accepted": 5,
+          "low_confidence": 8
+        }
+      },
+      "11": {
+        "total": 5,
+        "accepted": 3,
+        "correct": 3,
+        "exact_accuracy": 0.6,
+        "accepted_accuracy": 1.0,
+        "reasons": {
+          "accepted": 3,
+          "low_confidence": 2
+        }
+      },
+      "12": {
+        "total": 2,
+        "accepted": 0,
+        "correct": 0,
+        "exact_accuracy": 0.0,
+        "accepted_accuracy": 0.0,
+        "reasons": {
+          "low_confidence": 2
+        }
+      }
+    },
+    "wall_seconds_after_model_load": 24.392269400006626,
+    "thresholds": {
+      "proposalScore": 0.25,
+      "acceptScore": 0.65,
+      "nmsIou": 0.25,
+      "minCellWidth": 0.008,
+      "minCellHeight": 0.06,
+      "edgeMargin": 0.008,
+      "maxRowDeviation": 0.55,
+      "maxGapRatio": 1.2,
+      "maxOverlapRatio": 0.5
+    }
+  },
+  "naive_new_detector_plus_perfect_classifier_ceiling": {
+    "blocked_quality_or_geometry": 172,
+    "optimistic_correct_upper_bound": 435,
+    "total": 607,
+    "fraction": 0.7166392092257001,
+    "limitation": "Assumes the same quality gate, retained detections and geometry; does not bound replacement or merging of detectors."
+  },
+  "limits": [
+    "Public pretrained training overlap not excluded; development feasibility/regression, not independent physical holdout.",
+    "GPU desktop timings exclude download, dependency setup and model load; not Android latency.",
+    "Weight distribution licensing and native parity remain unresolved; no APK was built for this failed candidate."
+  ],
+  "source_and_private_output_sha256": {
+    ".braille-training-work/word-scan-v1-20260905/dotneuralnet-pretrained-probe-v1/benchmark_validation.py": "d2dc6eaa2c38596e53fb724da9ef2de32136a994d0ec49d48512e1cf71d59645",
+    ".braille-training-work/word-scan-v1-20260905/dotneuralnet-pretrained-probe-v1/benchmark_validation_guide24.py": "c06e86990395acef25d01ffb1d9736398e86314925ebaba7f739f97fcf775164",
+    ".braille-training-work/word-scan-v1-20260905/dotneuralnet-pretrained-probe-v1/benchmark_regression_guide24.py": "725607b18dcacff6dd0f79f4d35eff462b52fcb4f58dca2dc39a296470eec436",
+    ".braille-training-work/word-scan-v1-20260905/dotneuralnet-pretrained-probe-v1/probe_runtime.py": "f1649c4d418a1bbb527ad304b24c5d38da2ac7677fe89fae5cad40ade920db90",
+    ".braille-training-work/word-scan-v1-20260905/dotneuralnet-pretrained-probe-v1/pattern_boxes.py": "7aeb4f73a39bc373350f5b889914d1878328daf4f16957b6192e5579c138e34e",
+    ".braille-training-work/word-scan-v1-20260905/dotneuralnet-pretrained-probe-v1/train-scale-audit.json": "eeb63ea44b0a837d295742a6c4f9847cddc9ad401517f6184f3d691a07ba839f",
+    ".braille-training-work/word-scan-v1-20260905/dotneuralnet-pretrained-probe-v1/external-input-catalog.json": "3dfd890bb46fe3bf814df3abcfbbb4ac25d95573df397fa1152bf5f0d70bda86",
+    ".braille-training-work/word-scan-v1-20260905/dotneuralnet-pretrained-probe-v1/validation-once/report.json": "3f30fcb61db66332887bf15b357650f07c1b04e705b77b527c7e54b5d1e7db93",
+    ".braille-training-work/word-scan-v1-20260905/dotneuralnet-pretrained-probe-v1/validation-guide24-once/report.json": "a2432de93ae78bd0930f8d3aa1460860182e90945ac2a36e134917ac9a1c70f6",
+    ".braille-training-work/word-scan-v1-20260905/dotneuralnet-pretrained-probe-v1/regression-guide24-once/report.json": "434d8130fe4f0850c275036ab31617e5791df2d9edf740e313cf2a3d66d9acb8"
+  }
+}

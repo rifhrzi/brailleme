@@ -1,0 +1,63 @@
+{
+  "updated_at_utc": "2026-09-05T16:28:45.464773+00:00",
+  "owner": "/root/word_training_resume",
+  "status": "Run20 complete; v15 selected epoch9; parity then unchanged benchmark running session23964",
+  "exec_session_id": 23964,
+  "parent": "selected-v13/best-word.keras",
+  "train_manifest": "../combined-training-v5/combined-training-manifest.json",
+  "base_manifest": "../complete-source-training-v3/combined-training-manifest.json",
+  "supplemental_source_index": "../dsbi-training-contexts-v2/source-index.json",
+  "point_metadata": "../dsbi-point-metadata-v1/points.json",
+  "protocols": [
+    "dsbi-addition-protocol.json",
+    "dsbi-visible-partial-protocol.json"
+  ],
+  "preflight_tests": "preflight-tests.json (93 passed)",
+  "preflight_auditor": "/root/word_native_resume",
+  "planned_epochs": 10,
+  "eligible_epochs": [
+    8,
+    9,
+    10
+  ],
+  "next_selection": "selected-v15",
+  "selection_control": "selected-v13/best-word.keras",
+  "selection_fixture": "validation-stress-selection.json frozen405",
+  "selection_grid": "weak-peaks-v2",
+  "training_command_flags": [
+    "--epochs 10",
+    "--batch-size 24",
+    "--learning-rate .00002",
+    "--negative-repeat 27",
+    "--supplemental-negative-repeat 2",
+    "--illumination-augmentation",
+    "--balance-source-families",
+    "--retain-epochs",
+    "--geometry-loss relative_size_huber",
+    "--dsbi-visible-partial-supervision",
+    "--dsbi-point-metadata ../dsbi-point-metadata-v1/points.json"
+  ],
+  "after_training": "Run word_sampling_audit.py --protocol run20/dsbi-addition-protocol.json --require-eligible-epoch10; select v13 + eligible8/9/10 only; new winner export parity then unchanged607/44/66; same control no repeated external inference.",
+  "preflight_independent_audit": "../run20-independent-point-audit/report.json",
+  "training_config_sha256": "75bc0305e899aa1c13936fa8614ef42702fedefc9d3c5abfd294d60ccf30a51d",
+  "last_completed_epoch": 10,
+  "latest_callback": {
+    "total": 135,
+    "correct": 121,
+    "accepted": 122
+  },
+  "selected_checkpoint_sha256": "cce2432c0ddb8952c885dd58697589c285209588dafa81aacdd891b1660068b7",
+  "selected_directory": "selected-v15",
+  "selection_result": {
+    "correct": 357,
+    "total": 405,
+    "accepted": 362,
+    "natural_correct": 130,
+    "natural_total": 135,
+    "natural_accepted": 130,
+    "stress_correct": 227,
+    "stress_total": 270,
+    "stress_accepted": 232
+  },
+  "latest_sampling_audit": "sampling-lineage-final.json"
+}

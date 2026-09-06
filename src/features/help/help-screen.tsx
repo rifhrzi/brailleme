@@ -10,27 +10,31 @@ export default function HelpScreen() {
   return (
     <Screen testID="help-screen">
       <Text selectable style={styles.intro}>
-        Ikuti langkah berikut untuk menyusun satu kata dan memulihkan pemindai
+        Ikuti langkah berikut untuk memindai satu kata dan memulihkan pemindai
         jika ada masalah.
       </Text>
 
-      <SectionCard title="Susun kata, satu sel per huruf" variant="plain">
+      <SectionCard title="Pindai satu blok kata" variant="plain">
         <Text selectable style={styles.body}>
-          Buka Pindai, izinkan kamera, lalu tempatkan sel Braille pertama di
-          tengah kotak. Tahan posisi sampai huruf stabil, periksa hasilnya, dan
-          pilih Tambah huruf. Ulangi untuk sel berikutnya sampai satu kata
-          selesai.
+          Buka Pindai, izinkan kamera, lalu tempatkan seluruh kata di dalam
+          bingkai. Sisakan ruang di kedua ujung kata dan tahan kamera saat
+          menekan Pindai kata. Aplikasi membaca sel dari kiri ke kanan.
         </Text>
         <Text selectable style={styles.body}>
-          Gunakan Hapus huruf terakhir untuk koreksi. Pemindai menyusun kata
-          secara berurutan; aplikasi tidak membaca seluruh baris sekaligus dan
-          tidak menebak spasi.
+          Posisikan kamera tepat di atas kata. Arahkan cahaya miring dari ujung
+          atas kertas agar bayangan titik terlihat.
+        </Text>
+        <Text selectable style={styles.body}>
+          Periksa hasil, lalu pilih Bacakan. Jika belum sesuai atau gambar kurang
+          jelas, pilih Pindai ulang. Pemindai menerima satu kata A–Z dalam satu
+          baris, maksimal 12 huruf. Angka, tanda baca, singkatan Braille, dan
+          beberapa kata sekaligus belum didukung.
         </Text>
       </SectionCard>
 
       <SectionCard title="Periksa sebelum digunakan" variant="plain">
         <Text selectable style={styles.body}>
-          Huruf yang stabil dan kata yang tersusun tetap dapat salah. Jangan
+          Kata hasil pemindaian tetap dapat salah. Jangan
           gunakan hasil tanpa verifikasi manusia untuk konteks medis, hukum,
           finansial, ujian, keselamatan, atau keputusan penting lainnya.
         </Text>

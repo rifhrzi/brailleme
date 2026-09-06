@@ -1,0 +1,68 @@
+{
+  "status": "passed",
+  "scope": "Actual run22 mirror and DSBI point provenance checks only. Retained prelaunch audit/script, protocol and all run source snapshots were hash verified. The mirror proof is the original efd565 report and 060c11 script; postlaunch addenda are not preflight inputs. No transform corpus or model inference was rerun by this provenance check. The existing run20 sampling audit proves base v15 epoch9 eligibility. Per-run DSBI metadata bytes additionally match their retained gzip archive. Final candidate lineage is not yet assembled; numerical recognition, full405 trained-model parity, native and physical gates are not claimed.",
+  "verifier_sha256": "ff888e9720365ae3c6bb366a236cbb6c059b85c3afcd9d9f59162cd90a6566a4",
+  "script_sha256": "60226c5b60ac66a488a07dd7d0de8c615ece3196c18c5a643dbf87c8a1ab3608",
+  "preflight": {
+    "file": "training/evidence/braille-word-reader-v1/horizontal-mirror-preflight/preflight.json",
+    "sha256": "9433198cb151417027927c0b9c5a3d2598684fa326a5cee31ae6b6fd640fb2ab"
+  },
+  "training_configuration": {
+    "file": "training/evidence/braille-word-reader-v1/horizontal-mirror-preflight/run22/training-config.json",
+    "sha256": "1bf06ae262b21009a9dbf976b4028b91f1e69bbea2a9a793ff44690879ee01c2"
+  },
+  "mirror": {
+    "protocol": {
+      "file": "training/evidence/braille-word-reader-v1/horizontal-mirror-preflight/run22/horizontal-mirror-preflight/horizontal-mirror-protocol.json",
+      "sha256": "4e9dc05dfa486f896d06a5d320d4aaab0f584a6f9e973854c1f87578b7d554aa"
+    },
+    "parentCheckpointSha256": "cce2432c0ddb8952c885dd58697589c285209588dafa81aacdd891b1660068b7",
+    "audits": [
+      {
+        "file": "training/evidence/braille-word-reader-v1/horizontal-mirror-preflight/run22/horizontal-mirror-preflight/run22-mirror-independent-audit.json",
+        "sha256": "efd565a8d372c141a5f5e3456a855f4e59d0486da75a9f09ab807e19d52a62c6"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/horizontal-mirror-preflight/run22/horizontal-mirror-preflight/preflight-tests.json",
+        "sha256": "6689bdf9513955620d7d22cdc62af37a99f46e1e63c6ef97947cbde680e753ae"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/horizontal-mirror-preflight/run22/horizontal-mirror-preflight/training-mirror-exposure.json",
+        "sha256": "fb159332849342d10ac535aed1f647bd6424891623d1414995e3693751edda78"
+      }
+    ],
+    "sources": [
+      {
+        "file": "training/evidence/braille-word-reader-v1/horizontal-mirror-preflight/run22/horizontal-mirror-preflight/source/audit_run22_mirror.py",
+        "sha256": "060c11cad3fc57467025bad079569856e7808611d1b312349e85f7db45ee0593"
+      }
+    ]
+  },
+  "parent_sampling_eligibility": {
+    "run": "run20",
+    "configuration": {
+      "file": ".braille-training-work/word-scan-v1-20260905/run20/training-config.json",
+      "sha256": "75bc0305e899aa1c13936fa8614ef42702fedefc9d3c5abfd294d60ccf30a51d"
+    },
+    "sampling-history.json": {
+      "file": ".braille-training-work/word-scan-v1-20260905/run20/sampling-history.json",
+      "sha256": "01c4d0dc071ab3b362eda303664d5c46817421a8e848a2df09ca0c2459a15739"
+    },
+    "sampling-lineage-final.json": {
+      "file": ".braille-training-work/word-scan-v1-20260905/run20/sampling-lineage-final.json",
+      "sha256": "4cc87be5de829f8be91ea1c68a6bb3b6ad6370db8509ed44a8fda55a03e40b9a"
+    }
+  },
+  "dsbi_source_index": {
+    "file": "training/evidence/braille-word-reader-v1/dsbi-training-preparation/source-index.json",
+    "sha256": "8d62cf1850308fb864449bbcabc4399ef4e9a9aab62216b35c8064fa634450a6"
+  },
+  "dsbi_point_metadata": {
+    "file": ".braille-training-work/word-scan-v1-20260905/dsbi-point-metadata-v1/points.json",
+    "sha256": "ea9592a727f7f3abcc6b017f8f22e143e90ae1541f623c43adf30104021937e8"
+  },
+  "source_annotation_count": 26,
+  "source_cells": 9983,
+  "source_photos_read": false,
+  "model_execution": false
+}

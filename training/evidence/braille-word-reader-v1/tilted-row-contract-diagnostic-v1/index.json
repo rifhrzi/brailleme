@@ -1,0 +1,80 @@
+{
+  "scope": "20 synthetic ideal-output cases, no model/pixels/benchmark or decoder change. Quantifies horizontal-row tolerance; no physical C/H/J causal claim.",
+  "files": [
+    {
+      "file": "execution.json",
+      "sha256": "4208137c12860aa64e20356960b96c0be1e19f19ee39c7498cdd8ef36f1a9e1b",
+      "sizeBytes": 1596
+    },
+    {
+      "file": "protocol.json",
+      "sha256": "7a98a617b588e674fdb9e4fa31bfa4381a6e2b3663dc0e1b7ca370a3a3c95885",
+      "sizeBytes": 2078
+    },
+    {
+      "file": "python-reference.json",
+      "sha256": "813a19536f44ab01a6cdc4b00b928aff687ab3195b41cb5b7b0888d13a9a9638",
+      "sizeBytes": 105070
+    },
+    {
+      "file": "report.json",
+      "sha256": "c38e94b67a969941a50c8620d923e0dd7ec1c73756a9702fae38cc75b85cbfde",
+      "sizeBytes": 37437
+    },
+    {
+      "file": "source/training/scripts/word_decode.py",
+      "sha256": "fa2179b74459d84055b244ac60353d52d59cd12eda80b5cc279382c28f1be444",
+      "sizeBytes": 7493
+    },
+    {
+      "file": "source/training/scripts/word_data.py",
+      "sha256": "d692b4b28620af7e4b40ebdedccda68769feb8d3f51bd1508e807487fd32b7d7",
+      "sizeBytes": 27515
+    },
+    {
+      "file": "source/training/scripts/benchmark_angelina.py",
+      "sha256": "6c7d63c8b5c461fec73e415b46df74d15c0bca455cc9f411c5fb6edd5d353353",
+      "sizeBytes": 26081
+    },
+    {
+      "file": "source/training/scripts/word_anchor_zoom.py",
+      "sha256": "d6f5337d08368b8da55948f314bd06af7b03fa1602e40240778a9b4edea26377",
+      "sizeBytes": 2830
+    },
+    {
+      "file": "source/src/ml/word-decoder.ts",
+      "sha256": "f8bb0ef65a03c850c8aedccf287e00501a5bf1b4c4bba60440141567752b6c15",
+      "sizeBytes": 7396
+    },
+    {
+      "file": "source/src/ml/word-model-contract.ts",
+      "sha256": "e985d76a5d372cf4f31a325a39ca88268422dd5c0685e50c48ee1fb69dffc99f",
+      "sizeBytes": 3685
+    },
+    {
+      "file": "source/src/types/word-scan.ts",
+      "sha256": "f6b8ac0cf1072b3ec99f23ac8407e5d8e38c7e801a7c90f4cc2a3503761a1964",
+      "sizeBytes": 5185
+    },
+    {
+      "file": "source/scripts/word-native-parity/geometry-reference.cjs",
+      "sha256": "a4dbeee051f06aa7d2459070e3e213ee4d28ea63d69c639cb7247d69fc751cca",
+      "sizeBytes": 2864
+    },
+    {
+      "file": "source/helpers/tilted_row_contract_diagnostic.py",
+      "sha256": "11cbbc146303d139f9faeba39f0c763aa539f1c546efcacf487819e5b3e8c505",
+      "sizeBytes": 5553
+    },
+    {
+      "file": "source/helpers/tilted_row_contract_diagnostic.cjs",
+      "sha256": "c57ddeb2519989ca758cddce6484801740d7eb7be20959c882e4333e5cfede20",
+      "sizeBytes": 4216
+    }
+  ],
+  "localBinaryNotCopied": {
+    "file": ".braille-training-work/word-scan-v1-20260905/tilted-row-contract-diagnostic-v1/outputs.f32le",
+    "sha256": "0a2bf17705999881cc554913bd7357d15d189978a2f1e7ea90089366e8335fe6",
+    "sizeBytes": 5068800
+  }
+}

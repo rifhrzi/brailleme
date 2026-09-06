@@ -1,0 +1,41 @@
+{
+  "status": "passed",
+  "created_at_utc": "2026-09-05T20:17:34.206265+00:00",
+  "audit_script_sha256": "5a3dc3f3ad1dfd8817337cb37ab997e66083a06205defc4fc0cdd54804341273",
+  "protocol_sha256": "2ec46c9d7eccaaeebfd98143dffce7c7ddbdd2ff56a8c0f3a68ab5ba1015cfe9",
+  "actual": {
+    "run": ".braille-training-work\\word-scan-v1-20260905\\run24",
+    "config_sha256": "acba040121d8349a5fea5693438ad47f47c61c08afea4a82638d99a4984629bc",
+    "batchnorm_moment_validation_history_sha256": "cc5b521e66aac7a3151f0321e2fc46153ba811f0fd9b173e21e9494d6e490ad2",
+    "manifest_sha256": "130c80f135af5677d6b78a5e401126f54b15204481aab6de00a88c443956c4fa",
+    "sampling_history_sha256": "98702e128ad471506d6170f20d4b779f9ed36f06afe59cac6e8ccc3fded65866",
+    "positive_records": 23600,
+    "negative_draws_per_epoch": 1282,
+    "observed_epochs": [
+      {
+        "epoch": 1,
+        "checkpoint_sha256": "20f7c2b78b3663a63aabdf47475b00efdb2baefa1f339f32135c41f97219e26f",
+        "completed_batches": 1037,
+        "actual_cumulative_positive_records": 10601,
+        "all_positive_records_seen_in_this_run": false,
+        "eligible_by_sampling_lineage": false
+      },
+      {
+        "epoch": 2,
+        "checkpoint_sha256": "381791d7dc81b5c1ebec77c2f44a60bfca34fd079d13e2e00d585060f14ed44c",
+        "completed_batches": 1037,
+        "actual_cumulative_positive_records": 12568,
+        "all_positive_records_seen_in_this_run": false,
+        "eligible_by_sampling_lineage": false
+      }
+    ]
+  },
+  "verified_parent": null,
+  "eligible_retained_epochs": [],
+  "required_epoch": null,
+  "limitations": [
+    "This verifies complete record consumption and source separation, not that every cell survived stochastic augmentation.",
+    "Inherited coverage is tied to a re-audited retained parent checkpoint. New partial-cell supervision exposure is reported separately.",
+    "No images, model outputs or external metrics participate in this audit."
+  ]
+}

@@ -1,0 +1,205 @@
+{
+  "scope": "Completed failed v26 evaluation with six-dot-word-v2. No active model or main APK.",
+  "internalAcceptancePassed": false,
+  "physicalCameraValidated": false,
+  "modelSha256": "406db0e55e8a5ba9e0d00fb22aadc24f19698219f375e4dcead9057cf3bf2230",
+  "checkpointSha256": "cce2432c0ddb8952c885dd58697589c285209588dafa81aacdd891b1660068b7",
+  "inferenceScope": {
+    "whole607": 0,
+    "lite405": 405,
+    "negative44": 44,
+    "legacy66": 66,
+    "repetition12": 12,
+    "rejection14": 14
+  },
+  "tensorflowProof": "Prior exact-model/source/fixture numeric proof inherited; 405 new Lite outputs and v2 decisions verified. See export-report.json for precise binding.",
+  "files": [
+    {
+      "file": "cached-word-replay.json",
+      "sha256": "3009469908dd1e691921e04c47a38390495c5b92f472b08a9954aea65b92eadf",
+      "sizeBytes": 2589454
+    },
+    {
+      "file": "checkpoint-selection.json",
+      "sha256": "d2738da65f70e3dc7be6bb8dd1a1be0dd8c5ad928ae97362efa2242b0b807501",
+      "sizeBytes": 34203
+    },
+    {
+      "file": "COMPLETED-HANDOFF.json",
+      "sha256": "c33eca7d6df083076b0921dd4c7391101b294f1081803e16547c335e23ca5208",
+      "sizeBytes": 5034
+    },
+    {
+      "file": "decoder-parity-v2.json",
+      "sha256": "d40ed2edbdbac65b7df0fe603d180f5fcf0ea2ef04a6fb53cf05f14605a5b0c7",
+      "sizeBytes": 95903
+    },
+    {
+      "file": "export-report.json",
+      "sha256": "e3e61fc55c8eeb1a948d18d09357f295e72252d52fc3c51c53bb68ae1c884c8e",
+      "sizeBytes": 2933
+    },
+    {
+      "file": "launch-command.json",
+      "sha256": "7e38daa26eabd1343befea5edeb0e80ffe2392a401cfdf76d3d70e16f61b8d93",
+      "sizeBytes": 1363
+    },
+    {
+      "file": "lite-regressions-retry.log",
+      "sha256": "868acfcd41e57297ef2dddccb2fcc352095c5309cad6be8eb846a0822d3373a8",
+      "sizeBytes": 15042
+    },
+    {
+      "file": "lite-regressions.log",
+      "sha256": "42628eeaa4f61d3508827cd73c6d16f7b7ea1bdaba67515af9bdfaa50001a121",
+      "sizeBytes": 1632
+    },
+    {
+      "file": "lite-retry-process-result.json",
+      "sha256": "b689f7d959c899038da0fdfa952b9d551c14cfa5c8f357ff2c154ce128cd3360",
+      "sizeBytes": 345
+    },
+    {
+      "file": "public-benchmark.json",
+      "sha256": "53b97677aea261af1174a5f70edc81affbf272ca32f7611ae3df688638209944",
+      "sizeBytes": 2550871
+    },
+    {
+      "file": "rejection-diagnostics.json",
+      "sha256": "7a15241e0c03de9627c8c5a3788a13f4cb9aee55dc715f0384c24faaa3aaa9d8",
+      "sizeBytes": 6734
+    },
+    {
+      "file": "repetition-diagnostics.json",
+      "sha256": "b1a81f7301720bc5607086722146ed1e639fdd7097ea656939aa4289c9c8cbdc",
+      "sizeBytes": 5586
+    },
+    {
+      "file": "selected-validation-fullprecision.json",
+      "sha256": "fe6848be28bf6933e9d49e3b28e653acd2a9748922186bfd3e0bc51671b071e9",
+      "sizeBytes": 8269
+    },
+    {
+      "file": "selected-validation.json",
+      "sha256": "fe6848be28bf6933e9d49e3b28e653acd2a9748922186bfd3e0bc51671b071e9",
+      "sizeBytes": 8269
+    },
+    {
+      "file": "selection-process-result.json",
+      "sha256": "56fb4cd5084249df8612b7b16ba4942944cd4a8fa960527f79732d1a2bfd5fb8",
+      "sizeBytes": 83
+    },
+    {
+      "file": "selection-protocol.json",
+      "sha256": "6700bc6f8be535ac1be188b1e3ff376979a5788bcbd6b525c59b85a751d813c9",
+      "sizeBytes": 4476
+    },
+    {
+      "file": "selection.log",
+      "sha256": "a6b9adb033989d1ced58ae078e3d5a57022fc6e8aae690bee9af736e8d419414",
+      "sizeBytes": 10899
+    },
+    {
+      "file": "interrupted-lite-refresh-20260906/evaluate_position_v26.py",
+      "sha256": "6116f78bba6bc531d381462eb275c7783390db9cc6cbb9ea4c14ee953b10d764",
+      "sizeBytes": 13931
+    },
+    {
+      "file": "interrupted-lite-refresh-20260906/interruption.json",
+      "sha256": "0fdf731ea217d8d1b9f70c8e4d2dd9e3964c250903609c8f6c4c78c3b88c1a81",
+      "sizeBytes": 1060
+    },
+    {
+      "file": "interrupted-lite-refresh-20260906/lite-regressions.log",
+      "sha256": "42628eeaa4f61d3508827cd73c6d16f7b7ea1bdaba67515af9bdfaa50001a121",
+      "sizeBytes": 1632
+    },
+    {
+      "file": "source/word_anchor_zoom.py",
+      "sha256": "d6f5337d08368b8da55948f314bd06af7b03fa1602e40240778a9b4edea26377",
+      "sizeBytes": 2830
+    },
+    {
+      "file": "source/word_bn_affine.py",
+      "sha256": "fa117f65beda3f6d159f707a5cd45d3a367b8f5b436b8c43c0d7621071297dff",
+      "sizeBytes": 5135
+    },
+    {
+      "file": "source/word_data.py",
+      "sha256": "d692b4b28620af7e4b40ebdedccda68769feb8d3f51bd1508e807487fd32b7d7",
+      "sizeBytes": 27515
+    },
+    {
+      "file": "source/word_decode.py",
+      "sha256": "fa2179b74459d84055b244ac60353d52d59cd12eda80b5cc279382c28f1be444",
+      "sizeBytes": 7493
+    },
+    {
+      "file": "source/word_geometry_head.py",
+      "sha256": "f46c8f90e7f4fc9404eed2dc27fbde6e5c823d25d4f88e4127c7e56ed6e8764e",
+      "sizeBytes": 5857
+    },
+    {
+      "file": "source/word_model.py",
+      "sha256": "c446732a2905a612cd6f1dd64d2d3d01303b1c71933c34552d26f3b5052fd551",
+      "sizeBytes": 5890
+    },
+    {
+      "file": "source/word_select.py",
+      "sha256": "3f9567ea035de52b6a315605b38d9c52079168657d6a2cc2059c2d541ea26eb3",
+      "sizeBytes": 9047
+    },
+    {
+      "file": "helpers/evaluate_position_v26.py",
+      "sha256": "6116f78bba6bc531d381462eb275c7783390db9cc6cbb9ea4c14ee953b10d764",
+      "sizeBytes": 13931
+    },
+    {
+      "file": "helpers/evaluate_position_v26_retry.py",
+      "sha256": "55d62bc806ec7bde2923cf404d65a76315d83b545e6ccfea0aa0435aaaf0fb83",
+      "sizeBytes": 14673
+    },
+    {
+      "file": "helpers/retain_v26.py",
+      "sha256": "10269c889e28847940305c085b63c0339f43c74a23687bc747f134c2a2a374e0",
+      "sizeBytes": 2975
+    },
+    {
+      "file": "historical/v15-export-report.json",
+      "sha256": "b709a6cc4bf2b45a2e37c7633ee3925235af2083fbf8f501195143b06b1bfd47",
+      "sizeBytes": 1510
+    },
+    {
+      "file": "historical/v15-raw607-protocol.json",
+      "sha256": "771320895163a7b2188d7add60873c4e151a9e0476f519a77d138c2a955178f0",
+      "sizeBytes": 2413
+    }
+  ],
+  "largeLocalArtifactsNotCopied": [
+    {
+      "file": ".braille-training-work/word-scan-v1-20260905/selected-v26/best-word.keras",
+      "sha256": "cce2432c0ddb8952c885dd58697589c285209588dafa81aacdd891b1660068b7",
+      "sizeBytes": 10346677
+    },
+    {
+      "file": ".braille-training-work/word-scan-v1-20260905/selected-v26/word_reader.tflite",
+      "sha256": "406db0e55e8a5ba9e0d00fb22aadc24f19698219f375e4dcead9057cf3bf2230",
+      "sizeBytes": 3259716
+    },
+    {
+      "file": ".braille-training-work/word-scan-v1-20260905/selected-v26/backend-fullprecision.npz",
+      "sha256": "20f0a6c0224ec7f640ca0e46275914e912a2b1b440882f0b1e9e94e8bb72556b",
+      "sizeBytes": 95425411
+    },
+    {
+      "file": ".braille-training-work/word-scan-v1-20260905/selected-v26/backend-tflite-v2.npz",
+      "sha256": "579eba486b74bcf141c22c1ea71ff995a631732a8cd57eeb31598b1d6a2b6b1d",
+      "sizeBytes": 95418851
+    },
+    {
+      "file": ".braille-training-work/word-scan-v1-20260905/selected-v15/public-word-outputs.npz",
+      "sha256": "c262510395aba57e717a8ea3232d3a18cba18a8f36e9c116fa75694e2dc1b49e",
+      "sizeBytes": 142807319
+    }
+  ]
+}

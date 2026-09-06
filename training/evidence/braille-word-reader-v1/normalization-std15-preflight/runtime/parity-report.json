@@ -1,0 +1,212 @@
+{
+  "status": "passed",
+  "created_at_utc": "2026-09-06T04:10:22.160197+00:00",
+  "phase": "tensorflow",
+  "script_sha256": "6a1909b7c97aaa991d5ad5d40f95d7015c170b6e69120a0197b21b75766c7279",
+  "initializer": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\normalization-std15-parent-v1\\std15-parent.keras",
+  "initializer_sha256": "918d148a43399642f44c5d18693eb2733eecca338f0332fed8782cbe79beea00",
+  "initialization_report_sha256": "bb1b0dc9068e4757a3e680c8d31ce7f40fd582ccba3d6c41db8fa94f4f92224b",
+  "base_checkpoint_sha256": "cce2432c0ddb8952c885dd58697589c285209588dafa81aacdd891b1660068b7",
+  "input_oracle_sha256": "9330946dafe06c7705b3f2c85cce26f8bbfeca11763ba7465d62e809180d5669",
+  "input_identity_report_sha256": "791bac9f9e92cab96925a9c802de9c6b141e07c7c2e00b4fbce9904187293359",
+  "train_inputs": [
+    {
+      "image": "train/000000.png",
+      "source": "books/chudo_derevo_redmi/IMG_20190715_112912.labeled.jpg",
+      "sha256": "dec6b2c72152ff5eb8a87be172a7e20764eae23d427a401fd98075f19d7de1f1"
+    },
+    {
+      "image": "train/003163.png",
+      "source": "books/skazki/IMG_20190715_121834.labeled.jpg",
+      "sha256": "707ffff038ec67f271aee1e7e7c1bb4524ad18370c453d132f450bb84aaaedb6"
+    },
+    {
+      "image": "train/006326.png",
+      "source": "not_braille/misc/ul.jpg",
+      "sha256": "860bf163e12e45008a203a2d9e619d6cdfd0e555e9fe40cb567355a90938c5c3"
+    }
+  ],
+  "selected_validation_sha256": "d136021888194895e3bd19cd3800ace90cb3cc83776a87799fd7fda8d9623b39",
+  "thresholds": {
+    "proposalScore": 0.25,
+    "acceptScore": 0.25,
+    "dotConfidence": 0.7,
+    "nmsIou": 0.25,
+    "minCellWidth": 0.008,
+    "minCellHeight": 0.06,
+    "edgeMargin": 0.008,
+    "maxRowDeviation": 0.55,
+    "maxGapRatio": 1.2,
+    "maxOverlapRatio": 0.5
+  },
+  "source_sha256": {
+    "word_model.py": "c446732a2905a612cd6f1dd64d2d3d01303b1c71933c34552d26f3b5052fd551",
+    "word_data.py": "d692b4b28620af7e4b40ebdedccda68769feb8d3f51bd1508e807487fd32b7d7",
+    "word_anchor_zoom.py": "d6f5337d08368b8da55948f314bd06af7b03fa1602e40240778a9b4edea26377",
+    "word_decode.py": "bd301c5afeb4ba2e6866371665324d2de7f0a6ee252ef76ce02a5553193d63c5",
+    "word_benchmark.py": "ad7d4f3a35a8d0dd3a530dfeb8f849fde585e97cadcde5fcb043950bedd05988",
+    "benchmark_angelina.py": "6c7d63c8b5c461fec73e415b46df74d15c0bca455cc9f411c5fb6edd5d353353",
+    "word_bn_affine_parity.py": "d4baba52b0993240e0b5092500ae32ee5d1b01e636d2546261a0a24996bd4a21"
+  },
+  "imageNormalization": {
+    "kind": "per_channel_standardize_grayscale",
+    "location": "inside_model_before_backbone_rescaling",
+    "variance": "population",
+    "stdFloor": 0.001,
+    "targetMean": 0.5,
+    "targetStd": 0.15,
+    "clip": [
+      0,
+      1
+    ],
+    "grayscale": "mean_of_standardized_channels",
+    "outputChannels": 3
+  },
+  "model_arrays": 280,
+  "parameters": 829307,
+  "frozen_batchnorm_layers": 52,
+  "feature_pyramid_strides": [
+    32,
+    16,
+    8,
+    4
+  ],
+  "weights_sha256": "952e102a72f2c73a641ddf7c4cd0b1eb0a8e141d263b5ec8accd5e0e54bf2ab3",
+  "eager_train_eval_exact": true,
+  "compiled_eager_max_abs": 3.874301910400391e-06,
+  "normalization_formula_max_abs": 0.0,
+  "all_outputs_finite_and_bounded": true,
+  "decisions": [
+    {
+      "raw": {
+        "text": "",
+        "reason": "clipped",
+        "cell_count": 9
+      },
+      "quality_reason": "",
+      "effective": {
+        "text": "",
+        "reason": "clipped",
+        "cell_count": 9
+      }
+    },
+    {
+      "raw": {
+        "text": "",
+        "reason": "too_many_cells",
+        "cell_count": 13
+      },
+      "quality_reason": "",
+      "effective": {
+        "text": "",
+        "reason": "too_many_cells",
+        "cell_count": 13
+      }
+    },
+    {
+      "raw": {
+        "text": "",
+        "reason": "no_grid",
+        "cell_count": 0
+      },
+      "quality_reason": "",
+      "effective": {
+        "text": "",
+        "reason": "no_grid",
+        "cell_count": 0
+      }
+    },
+    {
+      "raw": {
+        "text": "",
+        "reason": "no_grid",
+        "cell_count": 0
+      },
+      "quality_reason": "dark",
+      "effective": {
+        "text": "",
+        "reason": "dark",
+        "cell_count": 0
+      }
+    },
+    {
+      "raw": {
+        "text": "",
+        "reason": "no_grid",
+        "cell_count": 0
+      },
+      "quality_reason": "glare",
+      "effective": {
+        "text": "",
+        "reason": "glare",
+        "cell_count": 0
+      }
+    },
+    {
+      "raw": {
+        "text": "",
+        "reason": "no_grid",
+        "cell_count": 0
+      },
+      "quality_reason": "",
+      "effective": {
+        "text": "",
+        "reason": "no_grid",
+        "cell_count": 0
+      }
+    }
+  ],
+  "scope": "Actual one-field std.15 initializer, not a second perturbed diagnostic model. Six fixed TRAIN/analytic probes only; no checkpoint selection or accuracy claim. Any trained candidate still needs full405 parity and original607/44/66/12/14 gates.",
+  "torch_report_sha256": "f3f293b139a2965f201fabe29f95a5a7a3a916dde2b30f3513d30f3124661102",
+  "torch_oracle_sha256": "7faa44fb7b07add610a6782be502d570fca3a316791b0912a66fffe01fc8572e",
+  "torch_tf_max_abs": 9.208917617797852e-06,
+  "tf_tflite_max_abs": 1.3530254364013672e-05,
+  "torch_tflite_max_abs": 1.2159347534179688e-05,
+  "tensor_tolerance": {
+    "atol": 0.0001,
+    "rtol": 0.0001
+  },
+  "raw_and_effective_decoder_parity": true,
+  "builtins_only": true,
+  "operators": [
+    "ADD",
+    "CONCATENATION",
+    "CONV_2D",
+    "DEPTHWISE_CONV_2D",
+    "LOGISTIC",
+    "MAXIMUM",
+    "MEAN",
+    "MINIMUM",
+    "MUL",
+    "RELU",
+    "RESHAPE",
+    "RSQRT",
+    "SQUARED_DIFFERENCE",
+    "STRIDED_SLICE",
+    "SUB",
+    "TILE"
+  ],
+  "input": {
+    "count": 1,
+    "shape": [
+      1,
+      192,
+      480,
+      3
+    ],
+    "dtype": "float32"
+  },
+  "output": {
+    "count": 1,
+    "shape": [
+      1,
+      48,
+      120,
+      11
+    ],
+    "dtype": "float32"
+  },
+  "artifact_sha256": "df3945012bdb30b2c343efbaf09d0d8ade1f8ce6d92f8fc07e5fd3ffd6dd106f",
+  "artifact_bytes": 3259712,
+  "all_weights_and_moments_unchanged": true
+}

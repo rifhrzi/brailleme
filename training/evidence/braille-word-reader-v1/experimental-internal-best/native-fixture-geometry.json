@@ -1,0 +1,2716 @@
+{
+  "scope": "Validation startup-fixture geometry/input eligibility; no inference or native execution.",
+  "total": 135,
+  "eligible": 134,
+  "validation_manifest_sha256": "2ee26bbffd0457830eebe81dd48beb0b4bcb3a6dafe7957544f2ca3a0984c346",
+  "source_sha256": {
+    "src/ml/word-image-processing.ts": "e97bf56d549c20f9d849c11fb5ac26c0abacf48030e847def46dbeb3e8e8248f",
+    "src/ml/word-model-contract.ts": "e985d76a5d372cf4f31a325a39ca88268422dd5c0685e50c48ee1fb69dffc99f",
+    "src/ml/word-decoder.ts": "f8bb0ef65a03c850c8aedccf287e00501a5bf1b4c4bba60440141567752b6c15",
+    "src/types/word-scan.ts": "f6b8ac0cf1072b3ec99f23ac8407e5d8e38c7e801a7c90f4cc2a3503761a1964",
+    "scripts/word-native-parity/geometry-reference.cjs": "a4dbeee051f06aa7d2459070e3e213ee4d28ea63d69c639cb7247d69fc751cca",
+    "scripts/word-native-parity/fixture-geometry.cjs": "b6c82d2e38d980ae1fafa579df2a6dbc070cd177c86988e9db9cadde6c1aa16b",
+    "training/scripts/word_fixture.py": "377bcee2679f46a9c5195e36ab64a8c8acf20322058bd9dfe15258833d83c0d3"
+  },
+  "rows": [
+    {
+      "index": 0,
+      "image": "validation-words/000000.png",
+      "expected": "ZWUK",
+      "expected_crop": [
+        29,
+        29,
+        174,
+        88
+      ],
+      "actual_crop": [
+        29,
+        29,
+        174,
+        88
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "a3837616ec06ea5384a617ac2b52d67685e9d5a095ccc7118a74047920c33224"
+    },
+    {
+      "index": 1,
+      "image": "validation-words/000001.png",
+      "expected": "W",
+      "expected_crop": [
+        24,
+        24,
+        141,
+        71
+      ],
+      "actual_crop": [
+        24,
+        24,
+        141,
+        71
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "e09f22b4ce9d185e229d194d64733c49c5575e224f12df32282429220f7e1680"
+    },
+    {
+      "index": 2,
+      "image": "validation-words/000002.png",
+      "expected": "KAJDOM",
+      "expected_crop": [
+        39,
+        39,
+        232,
+        116
+      ],
+      "actual_crop": [
+        39,
+        39,
+        232,
+        116
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "dd776fd2013cf45d51d2673ff7cb628af43c4d879acd186308230d4dc64f7ea3"
+    },
+    {
+      "index": 3,
+      "image": "validation-words/000003.png",
+      "expected": "IZ",
+      "expected_crop": [
+        24,
+        24,
+        143,
+        72
+      ],
+      "actual_crop": [
+        24,
+        24,
+        143,
+        72
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "656ccab36a2445cae6239ebf0f54b77598160d7b1f9808f9415ca5ae918a96b0"
+    },
+    {
+      "index": 4,
+      "image": "validation-words/000004.png",
+      "expected": "UTRO",
+      "expected_crop": [
+        30,
+        30,
+        180,
+        91
+      ],
+      "actual_crop": [
+        30,
+        30,
+        180,
+        91
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "2bd53c0ddf431e10c51b847c5ead931d0b74737f271c1054d2120fdf0194eb73"
+    },
+    {
+      "index": 5,
+      "image": "validation-words/000005.png",
+      "expected": "TRAKTOR",
+      "expected_crop": [
+        48,
+        48,
+        287,
+        144
+      ],
+      "actual_crop": [
+        48,
+        48,
+        287,
+        144
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "f9d23f6c6b5553f5de99ec1986d64572f26d6fa7f5c7946a557a0ff821e10610"
+    },
+    {
+      "index": 6,
+      "image": "validation-words/000006.png",
+      "expected": "WRAQ",
+      "expected_crop": [
+        26,
+        26,
+        154,
+        78
+      ],
+      "actual_crop": [
+        26,
+        26,
+        154,
+        78
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "ce26df63405e96ae71151bda99fcdd7941059700a552528fe38c1f4f7013a2d7"
+    },
+    {
+      "index": 7,
+      "image": "validation-words/000007.png",
+      "expected": "PTICA",
+      "expected_crop": [
+        26,
+        26,
+        158,
+        79
+      ],
+      "actual_crop": [
+        26,
+        26,
+        158,
+        79
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "1b6284fc58ce2c8452b733973d3723d541c6768080247be5ec053a214a7a64ca"
+    },
+    {
+      "index": 8,
+      "image": "validation-words/000008.png",
+      "expected": "PRI",
+      "expected_crop": [
+        24,
+        24,
+        140,
+        71
+      ],
+      "actual_crop": [
+        24,
+        24,
+        140,
+        71
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "054c5f2581ef4da51cbfb9666e005b49c52edb2195ff682c4655bad4f1a4810e"
+    },
+    {
+      "index": 9,
+      "image": "validation-words/000009.png",
+      "expected": "ZWUKOW",
+      "expected_crop": [
+        39,
+        39,
+        236,
+        119
+      ],
+      "actual_crop": [
+        39,
+        39,
+        236,
+        119
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "3c7888a8238ab3424592e9924c3299136e82ac089121253d6584597c8bcdd31f"
+    },
+    {
+      "index": 10,
+      "image": "validation-words/000010.png",
+      "expected": "I",
+      "expected_crop": [
+        24,
+        24,
+        144,
+        72
+      ],
+      "actual_crop": [
+        24,
+        24,
+        144,
+        72
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "b574cfc25db3d7ff687ced941c77e69e259408b6179a964dadb1e929ce5278be"
+    },
+    {
+      "index": 11,
+      "image": "validation-words/000011.png",
+      "expected": "K",
+      "expected_crop": [
+        24,
+        24,
+        141,
+        71
+      ],
+      "actual_crop": [
+        24,
+        24,
+        141,
+        71
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "f47cccb9cda3b79c102f328fd0ed7f23751557a98e11f8bb7ab2e6476c0ed966"
+    },
+    {
+      "index": 12,
+      "image": "validation-words/000012.png",
+      "expected": "UQASTKAM",
+      "expected_crop": [
+        49,
+        49,
+        295,
+        148
+      ],
+      "actual_crop": [
+        49,
+        49,
+        295,
+        148
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "5b097b5b4e251b7bc99d0ef1848a33662f64e5c96590818c026f87770469d9bd"
+    },
+    {
+      "index": 13,
+      "image": "validation-words/000013.png",
+      "expected": "RASSKAJI",
+      "expected_crop": [
+        56,
+        56,
+        337,
+        169
+      ],
+      "actual_crop": [
+        56,
+        56,
+        337,
+        169
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "c1eb1046baeab56f3967f99e9ab094e510c80e012e982f00f61f7d1112e68e1e"
+    },
+    {
+      "index": 14,
+      "image": "validation-words/000014.png",
+      "expected": "O",
+      "expected_crop": [
+        24,
+        24,
+        141,
+        71
+      ],
+      "actual_crop": [
+        24,
+        24,
+        141,
+        71
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "254937d735e6491bde19b7ba335ad1e47f0256786f14aca0954469ad20181b4f"
+    },
+    {
+      "index": 15,
+      "image": "validation-words/000015.png",
+      "expected": "SWOIH",
+      "expected_crop": [
+        34,
+        34,
+        205,
+        103
+      ],
+      "actual_crop": [
+        34,
+        34,
+        205,
+        103
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "9eabb4c3855069638c972aa90d2f530547fcbce9df650767496f9bcc8df56947"
+    },
+    {
+      "index": 16,
+      "image": "validation-words/000016.png",
+      "expected": "PROIZNESI",
+      "expected_crop": [
+        59,
+        59,
+        355,
+        179
+      ],
+      "actual_crop": [
+        59,
+        59,
+        355,
+        179
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "a4c7986fac0bf0757da08c62bece6a9a656151da7a884b2240b9b20e88af57d9"
+    },
+    {
+      "index": 17,
+      "image": "validation-words/000017.png",
+      "expected": "W",
+      "expected_crop": [
+        24,
+        24,
+        140,
+        71
+      ],
+      "actual_crop": [
+        24,
+        24,
+        140,
+        71
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "7ec985e5b2b15dac1da3265dadfd7679169a7450cea099621f7d62edcce05936"
+    },
+    {
+      "index": 18,
+      "image": "validation-words/000018.png",
+      "expected": "ZWUQANIE",
+      "expected_crop": [
+        55,
+        55,
+        331,
+        165
+      ],
+      "actual_crop": [
+        55,
+        55,
+        331,
+        165
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "becfbc194fb03f39a28468ac27baf345cd73bd35a828dead5d88f308275c8073"
+    },
+    {
+      "index": 19,
+      "image": "validation-words/000019.png",
+      "expected": "EGO",
+      "expected_crop": [
+        24,
+        24,
+        140,
+        71
+      ],
+      "actual_crop": [
+        24,
+        24,
+        140,
+        71
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "d24aa29c3d239ab9e60faddd2bc8bd8bf03ba7c580f2182e44013a1bd798a284"
+    },
+    {
+      "index": 20,
+      "image": "validation-words/000020.png",
+      "expected": "LIQESTWO",
+      "expected_crop": [
+        56,
+        56,
+        334,
+        168
+      ],
+      "actual_crop": [
+        56,
+        56,
+        334,
+        168
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "28c8049f731fe5d2442fc8391b239af6ea6a3afde9188d45e5ffcab5332ec52b"
+    },
+    {
+      "index": 21,
+      "image": "validation-words/000021.png",
+      "expected": "LI",
+      "expected_crop": [
+        24,
+        24,
+        141,
+        71
+      ],
+      "actual_crop": [
+        24,
+        24,
+        141,
+        71
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "ef0bf2e5956882e66fc59f9cc27b1b0010546e775393a5d637bed0a5c502327d"
+    },
+    {
+      "index": 22,
+      "image": "validation-words/000022.png",
+      "expected": "W",
+      "expected_crop": [
+        24,
+        24,
+        128,
+        67
+      ],
+      "actual_crop": [
+        24,
+        24,
+        128,
+        67
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "d28f13393c04ad889436dbafb5cf03e5fe82bdf8fbe0d5b015353ccc18002128"
+    },
+    {
+      "index": 23,
+      "image": "validation-words/000023.png",
+      "expected": "ZWUKOW",
+      "expected_crop": [
+        40,
+        40,
+        241,
+        122
+      ],
+      "actual_crop": [
+        40,
+        40,
+        241,
+        122
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "3824f4cbf83c8aedaca0a872d8a54bb565548f221b0487dd9786d6deabf4c4f2"
+    },
+    {
+      "index": 24,
+      "image": "validation-words/000024.png",
+      "expected": "I",
+      "expected_crop": [
+        24,
+        24,
+        137,
+        70
+      ],
+      "actual_crop": [
+        24,
+        24,
+        137,
+        70
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "0fe5b77409e1b42f5e768b40b5aa59f45d558fd11db6874044db93085532556f"
+    },
+    {
+      "index": 25,
+      "image": "validation-words/000025.png",
+      "expected": "STRANIQKA",
+      "expected_crop": [
+        58,
+        58,
+        348,
+        174
+      ],
+      "actual_crop": [
+        58,
+        58,
+        348,
+        174
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "c8009351728f97e3554f6d9e17d65917403aee470c541357ca31948e182fc960"
+    },
+    {
+      "index": 26,
+      "image": "validation-words/000026.png",
+      "expected": "KAK",
+      "expected_crop": [
+        24,
+        24,
+        140,
+        71
+      ],
+      "actual_crop": [
+        24,
+        24,
+        140,
+        71
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "e80771ec67d97fd520d69108d5df18f6f79cc783d94f24504339e5707b1ca73d"
+    },
+    {
+      "index": 27,
+      "image": "validation-words/000027.png",
+      "expected": "W",
+      "expected_crop": [
+        24,
+        24,
+        138,
+        70
+      ],
+      "actual_crop": [
+        24,
+        24,
+        138,
+        70
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "dfbdc48aee0c453e6845e1e8cfa7c99d54ac9fd7b71fc4ae6e432ed16996c495"
+    },
+    {
+      "index": 28,
+      "image": "validation-words/000028.png",
+      "expected": "RUSSKOM",
+      "expected_crop": [
+        47,
+        47,
+        280,
+        142
+      ],
+      "actual_crop": [
+        47,
+        47,
+        280,
+        142
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "cbbad9dcbfb8a06c82da24c29543616a6b0aa35383950938f0760963f699586a"
+    },
+    {
+      "index": 29,
+      "image": "validation-words/000029.png",
+      "expected": "ZWUKI",
+      "expected_crop": [
+        34,
+        34,
+        205,
+        103
+      ],
+      "actual_crop": [
+        34,
+        34,
+        205,
+        103
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "9d37327497206e3c9b9a2aef952b994b15eef3a205876fbd4713dde878ca2216"
+    },
+    {
+      "index": 30,
+      "image": "validation-words/000030.png",
+      "expected": "W",
+      "expected_crop": [
+        24,
+        24,
+        138,
+        70
+      ],
+      "actual_crop": [
+        24,
+        24,
+        138,
+        70
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "09ceb07511a3fefd76f4a46766eacfc91aa5a0a9698b978f94e484c45014a61b"
+    },
+    {
+      "index": 31,
+      "image": "validation-words/000031.png",
+      "expected": "SLOWO",
+      "expected_crop": [
+        32,
+        32,
+        194,
+        97
+      ],
+      "actual_crop": [
+        32,
+        32,
+        194,
+        97
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "dbb085020bd4c189ea31bd0825f9a90b41270555e9dcf98b43645f3a51b99927"
+    },
+    {
+      "index": 32,
+      "image": "validation-words/000032.png",
+      "expected": "MOJNO",
+      "expected_crop": [
+        34,
+        34,
+        203,
+        102
+      ],
+      "actual_crop": [
+        34,
+        34,
+        203,
+        102
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "7cf16037c370ad634811f44130ce490730e55e5ef8088133a09806921da9db5d"
+    },
+    {
+      "index": 33,
+      "image": "validation-words/000033.png",
+      "expected": "A",
+      "expected_crop": [
+        24,
+        24,
+        135,
+        69
+      ],
+      "actual_crop": [
+        24,
+        24,
+        135,
+        69
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "e27755a410198d36554469f85f8766329383aa9fa16ea9db55feb802f042ab95"
+    },
+    {
+      "index": 34,
+      "image": "validation-words/000034.png",
+      "expected": "SLOWO",
+      "expected_crop": [
+        33,
+        33,
+        198,
+        99
+      ],
+      "actual_crop": [
+        33,
+        33,
+        198,
+        99
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "08544d3447796f861c7b512c72712e9b18718099dfab22a0090c519d149fdffc"
+    },
+    {
+      "index": 35,
+      "image": "validation-words/000035.png",
+      "expected": "SRAWNI",
+      "expected_crop": [
+        41,
+        41,
+        244,
+        124
+      ],
+      "actual_crop": [
+        41,
+        41,
+        244,
+        124
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "3a57081772a431ed16fb3e86313fff6e582cef7b36264987eca4858996762289"
+    },
+    {
+      "index": 36,
+      "image": "validation-words/000036.png",
+      "expected": "ZWUKOW",
+      "expected_crop": [
+        41,
+        41,
+        245,
+        123
+      ],
+      "actual_crop": [
+        41,
+        41,
+        245,
+        123
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "7d398686387546200f4953f31aa56dfe4105e83e12bf53a052977fdf251d9360"
+    },
+    {
+      "index": 37,
+      "image": "validation-words/000037.png",
+      "expected": "W",
+      "expected_crop": [
+        24,
+        24,
+        135,
+        69
+      ],
+      "actual_crop": [
+        24,
+        24,
+        135,
+        69
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "62ec24c82b38a2adc61ce0e41f0ea3c77a7ce052f7a407097302e8afd9fd7036"
+    },
+    {
+      "index": 38,
+      "image": "validation-words/000038.png",
+      "expected": "QEM",
+      "expected_crop": [
+        24,
+        24,
+        135,
+        69
+      ],
+      "actual_crop": [
+        24,
+        24,
+        135,
+        69
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "eb15293b7cb20e53caeb7a153c6f071bb3ec03ae365ad7d9c727bce89faa1ddc"
+    },
+    {
+      "index": 39,
+      "image": "validation-words/000039.png",
+      "expected": "ONI",
+      "expected_crop": [
+        24,
+        24,
+        134,
+        69
+      ],
+      "actual_crop": [
+        24,
+        24,
+        134,
+        69
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "522cb2db49bafaf5981eab60cb78c8e848dde50ee838eb1b9466bf345d6554ce"
+    },
+    {
+      "index": 40,
+      "image": "validation-words/000040.png",
+      "expected": "ZWUK",
+      "expected_crop": [
+        28,
+        28,
+        168,
+        85
+      ],
+      "actual_crop": [
+        28,
+        28,
+        168,
+        85
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "893bd33b951c86ffdbbbfbea4765607692afc938ee5a75196843b62b6338e5fa"
+    },
+    {
+      "index": 41,
+      "image": "validation-words/000041.png",
+      "expected": "ZWUK",
+      "expected_crop": [
+        28,
+        28,
+        168,
+        85
+      ],
+      "actual_crop": [
+        28,
+        28,
+        168,
+        85
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "7e889b29e74a35eadfcac5b354d79f5eb659001e4ed3cf58fe5e1fc3608195d6"
+    },
+    {
+      "index": 42,
+      "image": "validation-words/000042.png",
+      "expected": "QTO",
+      "expected_crop": [
+        24,
+        24,
+        127,
+        66
+      ],
+      "actual_crop": [
+        24,
+        24,
+        127,
+        66
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "a1e47dd76190c0c0326957e30af27ab01dc49d992155d0673d86c5cef31c3424"
+    },
+    {
+      "index": 43,
+      "image": "validation-words/000043.png",
+      "expected": "QEMU",
+      "expected_crop": [
+        27,
+        27,
+        161,
+        81
+      ],
+      "actual_crop": [
+        27,
+        27,
+        161,
+        81
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "a427ec9f3afbe0a61f5ec2ac5016680146a0be183454a29df687ebeda679ef39"
+    },
+    {
+      "index": 44,
+      "image": "validation-words/000044.png",
+      "expected": "PO",
+      "expected_crop": [
+        24,
+        24,
+        138,
+        70
+      ],
+      "actual_crop": [
+        24,
+        24,
+        138,
+        70
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "271f2ddab5746feaa1fb273022bf940f2c862ebe33872f7873bc36cbd483c162"
+    },
+    {
+      "index": 45,
+      "image": "validation-words/000045.png",
+      "expected": "PRIMERA",
+      "expected_crop": [
+        38,
+        38,
+        227,
+        114
+      ],
+      "actual_crop": [
+        38,
+        38,
+        227,
+        114
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "060f3a0df469e11cb326d90b4b16586d116c789e588b59cecaabe5d5e5d75157"
+    },
+    {
+      "index": 46,
+      "image": "validation-words/000046.png",
+      "expected": "NA",
+      "expected_crop": [
+        24,
+        24,
+        134,
+        69
+      ],
+      "actual_crop": [
+        24,
+        24,
+        134,
+        69
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "fdf76ba61ef3e5e34cadc35719e808439985e6a544e573a22d4d14e902cc28ad"
+    },
+    {
+      "index": 47,
+      "image": "validation-words/000047.png",
+      "expected": "SLOJENIE",
+      "expected_crop": [
+        54,
+        54,
+        322,
+        162
+      ],
+      "actual_crop": [
+        54,
+        54,
+        322,
+        162
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "77162d410e90845436c356c5b89610c856406fdc7a9cc619dc335c7181e40ec2"
+    },
+    {
+      "index": 48,
+      "image": "validation-words/000048.png",
+      "expected": "I",
+      "expected_crop": [
+        24,
+        24,
+        135,
+        69
+      ],
+      "actual_crop": [
+        24,
+        24,
+        135,
+        69
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "02f50bba0a13a79676eab820e2314569b1ae811c9cca9c190237891259342c44"
+    },
+    {
+      "index": 49,
+      "image": "validation-words/000049.png",
+      "expected": "RAWENSTWA",
+      "expected_crop": [
+        64,
+        64,
+        386,
+        193
+      ],
+      "actual_crop": [
+        64,
+        64,
+        386,
+        193
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "da834ef8e57904ccfbae2f15f5dcff9d4e6eff7ca56cb9893a7f0140d84c3c44"
+    },
+    {
+      "index": 50,
+      "image": "validation-words/000050.png",
+      "expected": "I",
+      "expected_crop": [
+        24,
+        24,
+        144,
+        72
+      ],
+      "actual_crop": [
+        24,
+        24,
+        144,
+        72
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "dadf9b0bc5964f01c2dfba00020f5330048ef136814e04168d4f8f0dfa45ab7a"
+    },
+    {
+      "index": 51,
+      "image": "validation-words/000051.png",
+      "expected": "QTO",
+      "expected_crop": [
+        24,
+        24,
+        122,
+        63
+      ],
+      "actual_crop": [
+        24,
+        24,
+        122,
+        63
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "86dec06c1ae8fe4f1de323ab42b61a0fcafbaa1691409dd526ab74b081c1726f"
+    },
+    {
+      "index": 52,
+      "image": "validation-words/000052.png",
+      "expected": "QEMU",
+      "expected_crop": [
+        26,
+        26,
+        155,
+        79
+      ],
+      "actual_crop": [
+        26,
+        26,
+        155,
+        79
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "48259223ddd3807941ffde3299cabb78217301f2276a3ca24e74a0ce139c30e5"
+    },
+    {
+      "index": 53,
+      "image": "validation-words/000053.png",
+      "expected": "PO",
+      "expected_crop": [
+        24,
+        24,
+        131,
+        68
+      ],
+      "actual_crop": [
+        24,
+        24,
+        131,
+        68
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "896a0a7475919157f0146c6b20a87ea1c784485b87ed607e995d7a27ae24b72e"
+    },
+    {
+      "index": 54,
+      "image": "validation-words/000054.png",
+      "expected": "NA",
+      "expected_crop": [
+        24,
+        24,
+        131,
+        68
+      ],
+      "actual_crop": [
+        24,
+        24,
+        131,
+        68
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "0ec01507da561c933d5a3600e40ca4844bf741f09024877947b2cfb9d117365b"
+    },
+    {
+      "index": 55,
+      "image": "validation-words/000055.png",
+      "expected": "SLOJENIE",
+      "expected_crop": [
+        51,
+        51,
+        305,
+        154
+      ],
+      "actual_crop": [
+        51,
+        51,
+        305,
+        154
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "5a79c44195ada9dd80f4774ec2e36c7d2de1c726307c45af48ea5c7e1f1300e5"
+    },
+    {
+      "index": 56,
+      "image": "validation-words/000056.png",
+      "expected": "I",
+      "expected_crop": [
+        24,
+        24,
+        131,
+        68
+      ],
+      "actual_crop": [
+        24,
+        24,
+        131,
+        68
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "cae90b3e625f0b3bba70827d4262f9a67fa12fe652d186f9b3df30a2eb245e87"
+    },
+    {
+      "index": 57,
+      "image": "validation-words/000057.png",
+      "expected": "RAWENSTWA",
+      "expected_crop": [
+        61,
+        61,
+        364,
+        182
+      ],
+      "actual_crop": [
+        61,
+        61,
+        364,
+        182
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "f07235ad1637f84f39efa76935b944a42a5da72229ae8d158f5a96ad1c3df018"
+    },
+    {
+      "index": 58,
+      "image": "validation-words/000058.png",
+      "expected": "I",
+      "expected_crop": [
+        24,
+        24,
+        137,
+        70
+      ],
+      "actual_crop": [
+        24,
+        24,
+        137,
+        70
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "aa7152922321cb448ce723bbab427aa8ebc9fa401a33c7c088f68819aa5feebb"
+    },
+    {
+      "index": 59,
+      "image": "validation-words/000059.png",
+      "expected": "NA",
+      "expected_crop": [
+        24,
+        24,
+        144,
+        72
+      ],
+      "actual_crop": [
+        24,
+        24,
+        144,
+        72
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "60b5b53e77afc2d49eb5b9cda867ac906f95d8efebe4f44fa90a5bcd53ce3a43"
+    },
+    {
+      "index": 60,
+      "image": "validation-words/000060.png",
+      "expected": "NA",
+      "expected_crop": [
+        24,
+        24,
+        135,
+        69
+      ],
+      "actual_crop": [
+        24,
+        24,
+        135,
+        69
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "9c7457a53d13a62ab8a322e55932ff473fcbd62c14b3d481836c1e97fb84c693"
+    },
+    {
+      "index": 61,
+      "image": "validation-words/000061.png",
+      "expected": "NA",
+      "expected_crop": [
+        24,
+        24,
+        128,
+        67
+      ],
+      "actual_crop": [
+        24,
+        24,
+        128,
+        67
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "3280ffc39a7b461dfa860601be2517dfc3671f6411f91f2f6cef7ec924e6db37"
+    },
+    {
+      "index": 62,
+      "image": "validation-words/000062.png",
+      "expected": "NA",
+      "expected_crop": [
+        24,
+        24,
+        125,
+        64
+      ],
+      "actual_crop": [
+        24,
+        24,
+        125,
+        64
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "5b76ff6da6c46ffd1aed1c27d77c175470b11f6f5900178efa65aac68ff61151"
+    },
+    {
+      "index": 63,
+      "image": "validation-words/000063.png",
+      "expected": "KAK",
+      "expected_crop": [
+        24,
+        24,
+        129,
+        67
+      ],
+      "actual_crop": [
+        24,
+        24,
+        129,
+        67
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "25ff290da648d9a63cb75226a4e52a7a3509e939ef17b8d4925f5c3b76c751d0"
+    },
+    {
+      "index": 64,
+      "image": "validation-words/000064.png",
+      "expected": "W",
+      "expected_crop": [
+        24,
+        24,
+        129,
+        67
+      ],
+      "actual_crop": [
+        24,
+        24,
+        129,
+        67
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "84d30ff83c647ad7432670f9f97e0bb3f9d41f9e05643de4a333c31ed5eb3846"
+    },
+    {
+      "index": 65,
+      "image": "validation-words/000065.png",
+      "expected": "KAJDOM",
+      "expected_crop": [
+        39,
+        39,
+        234,
+        117
+      ],
+      "actual_crop": [
+        39,
+        39,
+        234,
+        117
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "141e995a8807e5dec1172f7c8119dee2c690af622fa81c394741d9aef65b6b2e"
+    },
+    {
+      "index": 66,
+      "image": "validation-words/000066.png",
+      "expected": "W",
+      "expected_crop": [
+        24,
+        24,
+        128,
+        67
+      ],
+      "actual_crop": [
+        24,
+        24,
+        128,
+        67
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "602b72e015121f166c981ca444ec4dd745c17a828c48582de380f2db98b891d7"
+    },
+    {
+      "index": 67,
+      "image": "validation-words/000067.png",
+      "expected": "KAJDOM",
+      "expected_crop": [
+        40,
+        40,
+        241,
+        120
+      ],
+      "actual_crop": [
+        40,
+        40,
+        241,
+        120
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "531dfa07c3c00f01d1e4aec3898bf9fc14ab48c5d02366b02efcb1d5f1af5a40"
+    },
+    {
+      "index": 68,
+      "image": "validation-words/000068.png",
+      "expected": "STOLBIKE",
+      "expected_crop": [
+        52,
+        52,
+        314,
+        158
+      ],
+      "actual_crop": [
+        52,
+        52,
+        314,
+        158
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "f497747957cd8d3f518ce598756cbada44c780052bac117498b05feee79f4802"
+    },
+    {
+      "index": 69,
+      "image": "validation-words/000069.png",
+      "expected": "PO",
+      "expected_crop": [
+        24,
+        24,
+        138,
+        70
+      ],
+      "actual_crop": [
+        24,
+        24,
+        138,
+        70
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "d2d1bc297568bd6f8aaaacddba204873fb467d2a003f4483471e67032c4e1f89"
+    },
+    {
+      "index": 70,
+      "image": "validation-words/000070.png",
+      "expected": "ODNOMU",
+      "expected_crop": [
+        41,
+        41,
+        245,
+        123
+      ],
+      "actual_crop": [
+        41,
+        41,
+        245,
+        123
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "d6bf100fb06dafce5cc9159da55b8be55a3c33a3932350f698fd293445f8462e"
+    },
+    {
+      "index": 71,
+      "image": "validation-words/000071.png",
+      "expected": "PRIMERU",
+      "expected_crop": [
+        47,
+        47,
+        280,
+        140
+      ],
+      "actual_crop": [
+        47,
+        47,
+        280,
+        140
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "624543fa3bacd41d16f0703aba60895084af11be215ea87d4e1507e3102a965f"
+    },
+    {
+      "index": 72,
+      "image": "validation-words/000072.png",
+      "expected": "I",
+      "expected_crop": [
+        24,
+        24,
+        128,
+        67
+      ],
+      "actual_crop": [
+        24,
+        24,
+        128,
+        67
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "47ecb708ea06131fabdca92bd2d75fcfe89a515b2ca2772aa5f39fb80e37ccbe"
+    },
+    {
+      "index": 73,
+      "image": "validation-words/000073.png",
+      "expected": "U",
+      "expected_crop": [
+        24,
+        24,
+        141,
+        71
+      ],
+      "actual_crop": [
+        24,
+        24,
+        141,
+        71
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "f01c284d5bd1e45535409b0f8ddbb2d62840994189b338e7c3f31f25c45b80ec"
+    },
+    {
+      "index": 74,
+      "image": "validation-words/000074.png",
+      "expected": "SOBAKI",
+      "expected_crop": [
+        39,
+        39,
+        232,
+        117
+      ],
+      "actual_crop": [
+        39,
+        39,
+        232,
+        117
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "c78398391fceeaa64ca103f51e01732639ad7ccdb63bffd5206b1a066e2f4029"
+    },
+    {
+      "index": 75,
+      "image": "validation-words/000075.png",
+      "expected": "XENKOW",
+      "expected_crop": [
+        42,
+        42,
+        254,
+        128
+      ],
+      "actual_crop": [
+        42,
+        42,
+        254,
+        128
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "00f48d6300fa32b657c8b63838bf43be6318fb18912cd0b4569cde68b714aef8"
+    },
+    {
+      "index": 76,
+      "image": "validation-words/000076.png",
+      "expected": "ON",
+      "expected_crop": [
+        24,
+        24,
+        146,
+        73
+      ],
+      "actual_crop": [
+        24,
+        24,
+        146,
+        73
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "3c6ef284dfc6d879ae25d1ce72d129cea82d18c790d69527097998953787bc2f"
+    },
+    {
+      "index": 77,
+      "image": "validation-words/000077.png",
+      "expected": "UJE",
+      "expected_crop": [
+        26,
+        26,
+        156,
+        79
+      ],
+      "actual_crop": [
+        26,
+        26,
+        156,
+        79
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "c035e5490fd066085ceff9423c5f6dff33d904802f9b9b32283b29ae56d4b990"
+    },
+    {
+      "index": 78,
+      "image": "validation-words/000078.png",
+      "expected": "DOLJEN",
+      "expected_crop": [
+        39,
+        39,
+        236,
+        118
+      ],
+      "actual_crop": [
+        39,
+        39,
+        236,
+        118
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "959e39c5ecd2b6b99daf6deed10a8f00d237056358f24774b7cbc0e725b81721"
+    },
+    {
+      "index": 79,
+      "image": "validation-words/000079.png",
+      "expected": "ZNESTI",
+      "expected_crop": [
+        44,
+        44,
+        262,
+        131
+      ],
+      "actual_crop": [
+        44,
+        44,
+        262,
+        131
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "4b041e40bed5004d55196276ef124801b2debf430e15cdff404cc96fb798d1a3"
+    },
+    {
+      "index": 80,
+      "image": "validation-words/000080.png",
+      "expected": "PO",
+      "expected_crop": [
+        24,
+        24,
+        143,
+        72
+      ],
+      "actual_crop": [
+        24,
+        24,
+        143,
+        72
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "243fafdb31494ab6004ee9aa1d5d7541864989129b4c7b3ac2f40775e7a4ec41"
+    },
+    {
+      "index": 81,
+      "image": "validation-words/000081.png",
+      "expected": "ADRESAM",
+      "expected_crop": [
+        47,
+        47,
+        284,
+        142
+      ],
+      "actual_crop": [
+        47,
+        47,
+        284,
+        142
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "63f1be1652217ae423ecf4f692b13ac14eea0ae2099944452e05858a4db74c4c"
+    },
+    {
+      "index": 82,
+      "image": "validation-words/000082.png",
+      "expected": "UJE",
+      "expected_crop": [
+        25,
+        25,
+        148,
+        74
+      ],
+      "actual_crop": [
+        25,
+        25,
+        148,
+        74
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "02c2f9bc157fbe32b406c96a9a7021f56cdb46bd6a3eb3d8887b122aa8a7d605"
+    },
+    {
+      "index": 83,
+      "image": "validation-words/000083.png",
+      "expected": "PISEM",
+      "expected_crop": [
+        36,
+        36,
+        215,
+        107
+      ],
+      "actual_crop": [
+        36,
+        36,
+        215,
+        107
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "fae1900546aede6e2c46a8750790772a6096b046e03c9a66ce5e2a0b3c44d8b2"
+    },
+    {
+      "index": 84,
+      "image": "validation-words/000084.png",
+      "expected": "EMU",
+      "expected_crop": [
+        24,
+        24,
+        144,
+        72
+      ],
+      "actual_crop": [
+        24,
+        24,
+        144,
+        72
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "43e984c8c868988e1838cc869f85aafdcdf373edc358edcb7aa0862ce11c88aa"
+    },
+    {
+      "index": 85,
+      "image": "validation-words/000085.png",
+      "expected": "NADO",
+      "expected_crop": [
+        26,
+        26,
+        157,
+        79
+      ],
+      "actual_crop": [
+        26,
+        26,
+        157,
+        79
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "2c4f9662a29d0a203b0f72bf6d962b62d6d6a64de24b4ff2f953517a00026485"
+    },
+    {
+      "index": 86,
+      "image": "validation-words/000086.png",
+      "expected": "QTO",
+      "expected_crop": [
+        24,
+        24,
+        134,
+        69
+      ],
+      "actual_crop": [
+        24,
+        24,
+        134,
+        69
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "7c443df3ae7f88009308f4a31d7427dbfd2d4a83e7db07130e1af2c36202fef6"
+    },
+    {
+      "index": 87,
+      "image": "validation-words/000087.png",
+      "expected": "QEMU",
+      "expected_crop": [
+        26,
+        26,
+        156,
+        79
+      ],
+      "actual_crop": [
+        26,
+        26,
+        156,
+        79
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "a699f76c28a4fecdd9d8dc00cc5f1b9b670a57d333ab1ddd64c49bc57f03e6c4"
+    },
+    {
+      "index": 88,
+      "image": "validation-words/000088.png",
+      "expected": "PO",
+      "expected_crop": [
+        24,
+        24,
+        132,
+        68
+      ],
+      "actual_crop": [
+        24,
+        24,
+        132,
+        68
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "128d0c9277183a9a9d9b712fc654e9d89ffd8b1a920b039a0b8a666fe7aade3b"
+    },
+    {
+      "index": 89,
+      "image": "validation-words/000089.png",
+      "expected": "PRIMERA",
+      "expected_crop": [
+        39,
+        39,
+        232,
+        118
+      ],
+      "actual_crop": [
+        39,
+        39,
+        232,
+        118
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "214a8c0cbe417b2ef2dc2775506c1a2564aa3b8dc667a87e2ff8a87b4de87d8f"
+    },
+    {
+      "index": 90,
+      "image": "validation-words/000090.png",
+      "expected": "NA",
+      "expected_crop": [
+        24,
+        24,
+        137,
+        70
+      ],
+      "actual_crop": [
+        24,
+        24,
+        137,
+        70
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "7549f239710ed9cc31b1137f013166a05ddd873ca26d45d5db813af1708358bd"
+    },
+    {
+      "index": 91,
+      "image": "validation-words/000091.png",
+      "expected": "SLOJENIE",
+      "expected_crop": [
+        50,
+        50,
+        299,
+        149
+      ],
+      "actual_crop": [
+        50,
+        50,
+        299,
+        149
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "c44208251566f2389db658961a2fd668f2a6182e4ca40b0545c761b6625da069"
+    },
+    {
+      "index": 92,
+      "image": "validation-words/000092.png",
+      "expected": "I",
+      "expected_crop": [
+        24,
+        24,
+        131,
+        68
+      ],
+      "actual_crop": [
+        24,
+        24,
+        131,
+        68
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "5227815a793a0063f7090231da6897157687cf029d1f47f32807dd52c2ac454d"
+    },
+    {
+      "index": 93,
+      "image": "validation-words/000093.png",
+      "expected": "RAWENSTWA",
+      "expected_crop": [
+        55,
+        55,
+        332,
+        166
+      ],
+      "actual_crop": [
+        55,
+        55,
+        332,
+        166
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "edc6c10e8da7887c1ccda427f0b27bde3034c0e9ea520944d0b17f9ebf7faaf4"
+    },
+    {
+      "index": 94,
+      "image": "validation-words/000094.png",
+      "expected": "I",
+      "expected_crop": [
+        24,
+        24,
+        128,
+        67
+      ],
+      "actual_crop": [
+        24,
+        24,
+        128,
+        67
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "c603274209ed4c2267561f65d866a27b7e7fd245f0b46b98835ba13aef672543"
+    },
+    {
+      "index": 95,
+      "image": "validation-words/000095.png",
+      "expected": "NA",
+      "expected_crop": [
+        24,
+        24,
+        137,
+        70
+      ],
+      "actual_crop": [
+        24,
+        24,
+        137,
+        70
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "48b0b79971a4ddaa5c76c6ba03ce841531c86f6b05623e70411bb31007a484f5"
+    },
+    {
+      "index": 96,
+      "image": "validation-words/000096.png",
+      "expected": "NA",
+      "expected_crop": [
+        24,
+        24,
+        129,
+        67
+      ],
+      "actual_crop": [
+        24,
+        24,
+        129,
+        67
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "31c21a2f4c08ccd182f6e79c3b306ed37fd0a01e77ec57a54e8596b0052fa919"
+    },
+    {
+      "index": 97,
+      "image": "validation-words/000097.png",
+      "expected": "KAK",
+      "expected_crop": [
+        25,
+        25,
+        151,
+        75
+      ],
+      "actual_crop": [
+        25,
+        25,
+        151,
+        75
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "e86779c21292f46273e1c9bcc927223c0850e0abec8a832c71a120809a613fc8"
+    },
+    {
+      "index": 98,
+      "image": "validation-words/000098.png",
+      "expected": "W",
+      "expected_crop": [
+        24,
+        24,
+        135,
+        69
+      ],
+      "actual_crop": [
+        24,
+        24,
+        135,
+        69
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "b31fdd2a5ea44e1ceadeea73163d6135731022cc73617962485c3f83e13ab8e3"
+    },
+    {
+      "index": 99,
+      "image": "validation-words/000099.png",
+      "expected": "KAJDOM",
+      "expected_crop": [
+        40,
+        40,
+        239,
+        121
+      ],
+      "actual_crop": [
+        40,
+        40,
+        239,
+        121
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "bfc80f47cb6fa60d62675dfc484c13fdc855da31c443e8a4f07f9b901c053fed"
+    },
+    {
+      "index": 100,
+      "image": "validation-words/000100.png",
+      "expected": "W",
+      "expected_crop": [
+        24,
+        24,
+        135,
+        69
+      ],
+      "actual_crop": [
+        24,
+        24,
+        135,
+        69
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "8efd8be376f3c2973d86bdb4cb10e19f5f2713abfb73b46b0ad58d2634484888"
+    },
+    {
+      "index": 101,
+      "image": "validation-words/000101.png",
+      "expected": "KAJDOM",
+      "expected_crop": [
+        40,
+        40,
+        240,
+        121
+      ],
+      "actual_crop": [
+        40,
+        40,
+        240,
+        121
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "129a6b7f2064a74ffe55645da70043bbf186cd0cbc0c3735f207d5c1294aa34e"
+    },
+    {
+      "index": 102,
+      "image": "validation-words/000102.png",
+      "expected": "STOLBIKE",
+      "expected_crop": [
+        50,
+        50,
+        299,
+        150
+      ],
+      "actual_crop": [
+        50,
+        50,
+        299,
+        150
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "70b180fbbaa10c9d0466d0bbcf0df7636724415d69b4122f8019f33dc6990668"
+    },
+    {
+      "index": 103,
+      "image": "validation-words/000103.png",
+      "expected": "PO",
+      "expected_crop": [
+        24,
+        24,
+        144,
+        72
+      ],
+      "actual_crop": [
+        24,
+        24,
+        144,
+        72
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "8fe15c2f4546749e63e0a9773639bc34052b56d4f7cbc81869bd1ec2718ab635"
+    },
+    {
+      "index": 104,
+      "image": "validation-words/000104.png",
+      "expected": "ODNOMU",
+      "expected_crop": [
+        40,
+        40,
+        238,
+        120
+      ],
+      "actual_crop": [
+        40,
+        40,
+        238,
+        120
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "65fb67c72e9b9dc4ee5d58d4d8a20b5758d59cb624b1f8d15210021723baeb58"
+    },
+    {
+      "index": 105,
+      "image": "validation-words/000105.png",
+      "expected": "PRIMERU",
+      "expected_crop": [
+        44,
+        44,
+        263,
+        131
+      ],
+      "actual_crop": [
+        44,
+        44,
+        263,
+        131
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "db4891afb9e4cb07a0c3e959a2229d62065b1884db0cc7ac1acf8f3599dda187"
+    },
+    {
+      "index": 106,
+      "image": "validation-words/000106.png",
+      "expected": "I",
+      "expected_crop": [
+        24,
+        24,
+        131,
+        68
+      ],
+      "actual_crop": [
+        24,
+        24,
+        131,
+        68
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "1f75c021c77cf01a35d8a22257e93b01b877950036fbdbe4f832f502333cf3cb"
+    },
+    {
+      "index": 107,
+      "image": "validation-words/000107.png",
+      "expected": "U",
+      "expected_crop": [
+        24,
+        24,
+        131,
+        68
+      ],
+      "actual_crop": [
+        24,
+        24,
+        131,
+        68
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "e81a54faf4cf2faa8643ba1209f9a0ac44bedf1e2d0262f3f24073b326945e2a"
+    },
+    {
+      "index": 108,
+      "image": "validation-words/000108.png",
+      "expected": "SOBAKI",
+      "expected_crop": [
+        37,
+        37,
+        222,
+        111
+      ],
+      "actual_crop": [
+        37,
+        37,
+        222,
+        111
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "28fc091228d717ef9e9daa0b2a51dc6387524bc8994b02c815051798bbdb2929"
+    },
+    {
+      "index": 109,
+      "image": "validation-words/000109.png",
+      "expected": "XENKOW",
+      "expected_crop": [
+        38,
+        38,
+        230,
+        115
+      ],
+      "actual_crop": [
+        38,
+        38,
+        230,
+        115
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "11e3b98486a620ddcfbbd51fce18cc04af6cad190e4f3ce0e3d160ff14f9b220"
+    },
+    {
+      "index": 110,
+      "image": "validation-words/000110.png",
+      "expected": "ON",
+      "expected_crop": [
+        24,
+        24,
+        131,
+        68
+      ],
+      "actual_crop": [
+        24,
+        24,
+        131,
+        68
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "b6530963d31bffd999614240ed399eefb02963d5f76f346e8c298548bb5ecf82"
+    },
+    {
+      "index": 111,
+      "image": "validation-words/000111.png",
+      "expected": "UJE",
+      "expected_crop": [
+        24,
+        24,
+        135,
+        69
+      ],
+      "actual_crop": [
+        24,
+        24,
+        135,
+        69
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "1d44074476a9f738ef13bccec2988142f92307636856e4678de4bc7dcd7e9b9a"
+    },
+    {
+      "index": 112,
+      "image": "validation-words/000112.png",
+      "expected": "XENKOW",
+      "expected_crop": [
+        39,
+        39,
+        236,
+        119
+      ],
+      "actual_crop": [
+        39,
+        39,
+        236,
+        119
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "e01d66a7d7cd27c1214b45419e988f5af0581d034706769d141ce76edb0e4726"
+    },
+    {
+      "index": 113,
+      "image": "validation-words/000113.png",
+      "expected": "DOLJEN",
+      "expected_crop": [
+        37,
+        37,
+        221,
+        112
+      ],
+      "actual_crop": [
+        37,
+        37,
+        221,
+        112
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "079655bac526f7b9353368d214cdb1a004939989e95e0d26ee1965abe003ccfe"
+    },
+    {
+      "index": 114,
+      "image": "validation-words/000114.png",
+      "expected": "RAZNESTI",
+      "expected_crop": [
+        51,
+        51,
+        307,
+        155
+      ],
+      "actual_crop": [
+        51,
+        51,
+        307,
+        155
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "3483b045ceb1ffbaabe2f633dcf12145b37760624403e1564b5da0af52f415c9"
+    },
+    {
+      "index": 115,
+      "image": "validation-words/000115.png",
+      "expected": "PO",
+      "expected_crop": [
+        24,
+        24,
+        135,
+        69
+      ],
+      "actual_crop": [
+        24,
+        24,
+        135,
+        69
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "9ff0a38580afefe42a798b22251f8270cd7e6f18693b89d24fe1a08d1796241c"
+    },
+    {
+      "index": 116,
+      "image": "validation-words/000116.png",
+      "expected": "ADRESAM",
+      "expected_crop": [
+        43,
+        43,
+        259,
+        131
+      ],
+      "actual_crop": [
+        43,
+        43,
+        259,
+        131
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "ef619231e837825b345e1d9299e607c1a424a55b367582cbc1076af83d37d877"
+    },
+    {
+      "index": 117,
+      "image": "validation-words/000117.png",
+      "expected": "ON",
+      "expected_crop": [
+        24,
+        24,
+        131,
+        68
+      ],
+      "actual_crop": [
+        24,
+        24,
+        131,
+        68
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "6c561b0a4dc7937f524cd727dfe65c8d6b0e95fefa13fcb02d428ee019571dc3"
+    },
+    {
+      "index": 118,
+      "image": "validation-words/000118.png",
+      "expected": "UJE",
+      "expected_crop": [
+        24,
+        24,
+        135,
+        69
+      ],
+      "actual_crop": [
+        24,
+        24,
+        135,
+        69
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "fccb1927a36baa19783f2722ba782fcbacd4a1d22911f00b6a1b842b59c295df"
+    },
+    {
+      "index": 119,
+      "image": "validation-words/000119.png",
+      "expected": "PISEM",
+      "expected_crop": [
+        32,
+        32,
+        194,
+        97
+      ],
+      "actual_crop": [
+        32,
+        32,
+        194,
+        97
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "a111d5d5639abc397c374cfe0ce2f0279828d607ee283d9ce16ea249bc8563eb"
+    },
+    {
+      "index": 120,
+      "image": "validation-words/000120.png",
+      "expected": "EMU",
+      "expected_crop": [
+        24,
+        24,
+        137,
+        70
+      ],
+      "actual_crop": [
+        24,
+        24,
+        137,
+        70
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "c35b73468e6d1411b6738f86e400010aaa05f7cf6012673336e2f3fcbb1b267d"
+    },
+    {
+      "index": 121,
+      "image": "validation-words/000121.png",
+      "expected": "NADO",
+      "expected_crop": [
+        25,
+        25,
+        151,
+        77
+      ],
+      "actual_crop": [
+        25,
+        25,
+        151,
+        77
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "64e63e7e330724bf5bbad318f14190a3898598305a405e7742667607d799a8e0"
+    },
+    {
+      "index": 122,
+      "image": "validation-words/000122.png",
+      "expected": "BLYCSM",
+      "expected_crop": [
+        47,
+        47,
+        280,
+        141
+      ],
+      "actual_crop": [
+        47,
+        47,
+        280,
+        141
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "d2f5501005fa42dcde970420ab3b3da7a83db2e9c109256432341bf3c726f218"
+    },
+    {
+      "index": 123,
+      "image": "validation-words/000123.png",
+      "expected": "BLAGO",
+      "expected_crop": [
+        40,
+        40,
+        242,
+        122
+      ],
+      "actual_crop": [
+        40,
+        40,
+        242,
+        122
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "2f8412274897eda0c18a201a31f4c2c73013db36f6d08d8fb6b7cc3cf3b2da6c"
+    },
+    {
+      "index": 124,
+      "image": "validation-words/000124.png",
+      "expected": "S",
+      "expected_crop": [
+        27,
+        27,
+        163,
+        82
+      ],
+      "actual_crop": [
+        27,
+        27,
+        163,
+        82
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "f105c8c48fbe7be490b02c7145327a195ccc9d2039f52d3253a4ef533edc5966"
+    },
+    {
+      "index": 125,
+      "image": "validation-words/000125.png",
+      "expected": "S",
+      "expected_crop": [
+        24,
+        28,
+        162,
+        84
+      ],
+      "actual_crop": [
+        24,
+        28,
+        162,
+        84
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "1fb38ed301418c1f5e60a20231915e37171fc27f09cf95d6d69ecbc5615bb037"
+    },
+    {
+      "index": 126,
+      "image": "validation-words/000126.png",
+      "expected": "DOROGOGO",
+      "expected_crop": [
+        61,
+        61,
+        368,
+        184
+      ],
+      "actual_crop": [
+        61,
+        61,
+        368,
+        184
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "7514554a5dd2d35f9620a73dd5fcf2b04a458e95362269271dc7ebfdf31c422e"
+    },
+    {
+      "index": 127,
+      "image": "validation-words/000127.png",
+      "expected": "I",
+      "expected_crop": [
+        28,
+        28,
+        166,
+        84
+      ],
+      "actual_crop": [
+        28,
+        28,
+        166,
+        84
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "93e9bfc6efc4310bc03800e4495b6a5e5d771e25788fa34e21badad078960e8a"
+    },
+    {
+      "index": 128,
+      "image": "validation-words/000128.png",
+      "expected": "KOTIKI",
+      "expected_crop": [
+        42,
+        42,
+        252,
+        127
+      ],
+      "actual_crop": [
+        42,
+        42,
+        253,
+        127
+      ],
+      "eligible": false,
+      "reason": "runtime_integer_crop_differs"
+    },
+    {
+      "index": 129,
+      "image": "validation-words/000129.png",
+      "expected": "GEPARD",
+      "expected_crop": [
+        43,
+        43,
+        256,
+        129
+      ],
+      "actual_crop": [
+        43,
+        43,
+        256,
+        129
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "71744701f498b6d37c35d2c639cb3ea541bcf1a2e142e78eb1671e53972d514f"
+    },
+    {
+      "index": 130,
+      "image": "validation-words/000130.png",
+      "expected": "I",
+      "expected_crop": [
+        25,
+        25,
+        148,
+        74
+      ],
+      "actual_crop": [
+        25,
+        25,
+        148,
+        74
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "5a14031269d33fe8b2d48aa6405c2c0eb27aa1c4367c0be14224779c510cb21e"
+    },
+    {
+      "index": 131,
+      "image": "validation-words/000131.png",
+      "expected": "MOI",
+      "expected_crop": [
+        25,
+        25,
+        151,
+        75
+      ],
+      "actual_crop": [
+        25,
+        25,
+        151,
+        75
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "93ea4477d03d0e6070d291a39d54114ae3fac746c36c0fde1f1fc1c54e31363b"
+    },
+    {
+      "index": 132,
+      "image": "validation-words/000132.png",
+      "expected": "PODRU",
+      "expected_crop": [
+        37,
+        37,
+        220,
+        111
+      ],
+      "actual_crop": [
+        37,
+        37,
+        220,
+        111
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "095ad936c5e3cf4b19e487469e8dcc9ebe32a9aa7e71822b4c4a0cb98a71425a"
+    },
+    {
+      "index": 133,
+      "image": "validation-words/000133.png",
+      "expected": "KUPILI",
+      "expected_crop": [
+        42,
+        42,
+        251,
+        127
+      ],
+      "actual_crop": [
+        42,
+        42,
+        251,
+        127
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "9e4275c174f669907fdd1b511f4f5b21c97776b03cd34a288b7f3fa2a44c9e0f"
+    },
+    {
+      "index": 134,
+      "image": "validation-words/000134.png",
+      "expected": "EDEM",
+      "expected_crop": [
+        29,
+        29,
+        174,
+        88
+      ],
+      "actual_crop": [
+        29,
+        29,
+        174,
+        88
+      ],
+      "eligible": true,
+      "reason": "",
+      "input_rgb_sha256": "020cf6090bc8e3ecf7b96e92f616a2298d8e5c695ccc44eae7d6942abc04a9dd"
+    }
+  ]
+}

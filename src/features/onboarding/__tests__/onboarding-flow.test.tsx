@@ -14,6 +14,11 @@ import {
   updateAppPreferences,
 } from '@/storage';
 
+jest.mock('@/ml/word-model-assets', () => ({
+  WORD_MODEL_BUNDLED: true,
+  WORD_MODEL_RELEASE_VERIFIED: false,
+}));
+
 type RouterMock = {
   back: jest.Mock;
   canGoBack: jest.Mock;
@@ -119,7 +124,7 @@ describe('alur onboarding', () => {
     await render(<HelpScreen />);
 
     expect(
-      screen.getByRole('header', { name: 'Susun kata, satu sel per huruf' }),
+      screen.getByRole('header', { name: 'Pindai satu blok kata' }),
     ).toBeOnTheScreen();
     expect(screen.queryByText(/proofreader/i)).toBeNull();
     for (const implementationTerm of [
@@ -136,13 +141,13 @@ describe('alur onboarding', () => {
     updateAppPreferences({ onboardingCompleted: true });
     await render(<HomeScreen />);
 
-    expect(screen.getByText(/Susun satu kata Braille/i)).toBeOnTheScreen();
+    expect(screen.getByText(/Pindai satu kata Braille/i)).toBeOnTheScreen();
     expect(
-      await screen.findByRole('button', { name: 'Mulai susun kata' }),
+      await screen.findByRole('button', { name: 'Buka pemindai kata' }),
     ).toBeOnTheScreen();
-    expect(screen.getByText('Siap menyusun kata')).toBeOnTheScreen();
+    expect(screen.getByText('Siap memindai kata')).toBeOnTheScreen();
     expect(
-      screen.getByText(/Pindai setiap huruf satu sel pada satu waktu/i),
+      screen.getByText(/Tempatkan satu kata di dalam bingkai/i),
     ).toBeOnTheScreen();
     expect(screen.getByRole('button', { name: 'Bantuan' })).toBeOnTheScreen();
     expect(screen.getByRole('button', { name: 'Privasi' })).toBeOnTheScreen();

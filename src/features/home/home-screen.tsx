@@ -76,12 +76,12 @@ export default function HomeScreen() {
 
   const scannerReady = scanReadiness?.available === true;
   const statusTitle = scannerReady
-    ? 'Siap menyusun kata'
+    ? 'Siap memindai kata'
     : scanReadiness === null
       ? 'Memeriksa pemindai'
       : 'Pemindai belum siap';
   const statusDescription = scannerReady
-    ? 'Pindai setiap huruf satu sel pada satu waktu, lalu susun hingga menjadi satu kata.'
+    ? 'Tempatkan satu kata di dalam bingkai, lalu tekan Pindai kata.'
     : scanReadiness === null
       ? 'Sedang memeriksa komponen pemindai di perangkat ini.'
       : scanReadiness.message;
@@ -116,11 +116,11 @@ export default function HomeScreen() {
 
       <View style={styles.hero}>
         <Text accessibilityRole="header" selectable style={styles.title}>
-          Susun satu kata Braille
+          Pindai satu kata Braille
         </Text>
         <Text selectable style={styles.intro}>
-          Pindai satu sel untuk setiap huruf, konfirmasi hasilnya, lalu bacakan
-          kata yang sudah tersusun. Semua pemrosesan tetap offline.
+          Ambil foto satu kata. Aplikasi membaca huruf dari kiri ke kanan,
+          lalu menampilkan kata untuk diperiksa dan dibacakan. Semua pemrosesan tetap offline.
         </Text>
       </View>
 
@@ -160,13 +160,13 @@ export default function HomeScreen() {
           </View>
         </View>
         <AccessibleButton
-          accessibilityHint="Membuka pemindai untuk menyusun satu kata, satu sel per huruf"
+          accessibilityHint="Membuka kamera untuk memindai satu blok kata Braille"
           disabled={scanReadiness === null}
           label={
             scanReadiness === null
               ? 'Memeriksa pemindai'
               : scannerReady
-                ? 'Mulai susun kata'
+                ? 'Buka pemindai kata'
                 : 'Lihat status pemindai'
           }
           onPress={() => router.replace('/live')}
@@ -174,20 +174,20 @@ export default function HomeScreen() {
           variant={scannerReady ? 'action' : 'secondary'}
         />
         <Text selectable style={styles.disclaimer}>
-          Setiap huruf tetap perlu diperiksa terhadap sumber Braille.
+          Satu baris, huruf A–Z, maksimal 12 huruf. Periksa hasil terhadap sumber Braille.
         </Text>
       </View>
 
       <SectionCard title="Sebelum memindai" variant="plain">
         <View style={styles.guideList}>
-          <GuideRow number={1} text="Letakkan sel pertama di dalam bingkai." />
+          <GuideRow number={1} text="Letakkan seluruh kata di dalam bingkai." />
           <GuideRow
             number={2}
-            text="Tunggu huruf stabil, lalu tambahkan ke kata."
+            text="Tahan kamera, lalu tekan Pindai kata."
           />
           <GuideRow
             number={3}
-            text="Ulangi per sel dan periksa kata sebelum digunakan."
+            text="Periksa hasil, lalu pilih Bacakan atau Pindai ulang."
           />
         </View>
       </SectionCard>

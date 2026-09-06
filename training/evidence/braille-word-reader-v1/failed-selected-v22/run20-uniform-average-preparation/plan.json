@@ -1,0 +1,223 @@
+{
+  "schema_version": 1,
+  "status": "frozen_preparation_not_evaluated",
+  "created_at_utc": "2026-09-05T22:29:48.266987+00:00",
+  "scope": "One uniform checkpoint-weight candidate only. No model execution, output calibration, source filtering or new training.",
+  "inputs": [
+    {
+      "path": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\run20\\retained-epochs\\epoch-08.keras",
+      "sha256": "1b6c9d810045bbd01a57b98f661557ce46968e41ef433ef78de1d92622b9a1c2",
+      "epoch": 8,
+      "weight": {
+        "numerator": 1,
+        "denominator": 3
+      },
+      "config_json_sha256": "3259be2b7e2179f89339fb123e651c7202b46d2b2330589b689c9d15a0e02415",
+      "graph_sha256": "b317a2625a2ed18cca616a0b7f620aac7409fb59bf4a722da40213e546c6a720",
+      "compile_config_sha256": "3bc235e9b086ee60e3af1fa6434388676ff7e73ee703fbc8a22f27285cddb802",
+      "model_array_count": 280,
+      "optimizer_dataset_count": 146,
+      "sampling": {
+        "epoch": 8,
+        "checkpoint_sha256": "1b6c9d810045bbd01a57b98f661557ce46968e41ef433ef78de1d92622b9a1c2",
+        "completed_batches": 1037,
+        "actual_cumulative_positive_records": 23600,
+        "all_positive_records_seen_in_this_run": true,
+        "eligible_by_sampling_lineage": true
+      }
+    },
+    {
+      "path": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\run20\\retained-epochs\\epoch-09.keras",
+      "sha256": "cce2432c0ddb8952c885dd58697589c285209588dafa81aacdd891b1660068b7",
+      "epoch": 9,
+      "weight": {
+        "numerator": 1,
+        "denominator": 3
+      },
+      "config_json_sha256": "3259be2b7e2179f89339fb123e651c7202b46d2b2330589b689c9d15a0e02415",
+      "graph_sha256": "b317a2625a2ed18cca616a0b7f620aac7409fb59bf4a722da40213e546c6a720",
+      "compile_config_sha256": "3bc235e9b086ee60e3af1fa6434388676ff7e73ee703fbc8a22f27285cddb802",
+      "model_array_count": 280,
+      "optimizer_dataset_count": 146,
+      "sampling": {
+        "epoch": 9,
+        "checkpoint_sha256": "cce2432c0ddb8952c885dd58697589c285209588dafa81aacdd891b1660068b7",
+        "completed_batches": 1037,
+        "actual_cumulative_positive_records": 23600,
+        "all_positive_records_seen_in_this_run": true,
+        "eligible_by_sampling_lineage": true
+      }
+    },
+    {
+      "path": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\run20\\retained-epochs\\epoch-10.keras",
+      "sha256": "01fa26cdf9c0bc7c2d57e0ec0dc79a53f1b70403c2f322d4f634e4d4a68cf5e6",
+      "epoch": 10,
+      "weight": {
+        "numerator": 1,
+        "denominator": 3
+      },
+      "config_json_sha256": "ea457e4a113cda0b90eed186516bbe0c265b91ee115a58bf5cea2b6f7d8af1a7",
+      "graph_sha256": "b317a2625a2ed18cca616a0b7f620aac7409fb59bf4a722da40213e546c6a720",
+      "compile_config_sha256": "c6fa9ba5b460556494285db65ec9907b5c7a41c2a2f8298900fde8554796dc6a",
+      "model_array_count": 280,
+      "optimizer_dataset_count": 146,
+      "sampling": {
+        "epoch": 10,
+        "checkpoint_sha256": "01fa26cdf9c0bc7c2d57e0ec0dc79a53f1b70403c2f322d4f634e4d4a68cf5e6",
+        "completed_batches": 1037,
+        "actual_cumulative_positive_records": 23600,
+        "all_positive_records_seen_in_this_run": true,
+        "eligible_by_sampling_lineage": true
+      }
+    }
+  ],
+  "input_epoch_order": [
+    8,
+    9,
+    10
+  ],
+  "coefficient_rule": "Exactly1/3 each; no subset, greedy addition, coefficient search or learned mixture.",
+  "source_training_config": {
+    "path": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\run20\\training-config.json",
+    "sha256": "75bc0305e899aa1c13936fa8614ef42702fedefc9d3c5abfd294d60ccf30a51d"
+  },
+  "source_sampling_lineage": {
+    "path": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\run20\\sampling-lineage-final.json",
+    "sha256": "4cc87be5de829f8be91ea1c68a6bb3b6ad6370db8509ed44a8fda55a03e40b9a"
+  },
+  "source_sampling_history": {
+    "path": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\run20\\sampling-history.json",
+    "sha256": "01c4d0dc071ab3b362eda303664d5c46817421a8e848a2df09ca0c2459a15739"
+  },
+  "source_parent_checkpoint_sha256": "44372fa1c73356f3ddfce6ac1001bb9124164846fdf87c12096b6afc1d2c0443",
+  "source_data_sha256": {
+    "source-split.json": "870e1be00c8e4fa4c34e755f26b1ff6becaa3e1fdb70288b0499c2aeba8867dc",
+    "train.json": "f728b900c791433f8fd4aea08997af96f3320c0cfe5628619843a2a5b798cddc",
+    "validation.json": "d796841e8fdd21443d3f9f28e5c6339bda0199fa68ba1e864c4f6c434958443a",
+    "validation-words.json": "2ee26bbffd0457830eebe81dd48beb0b4bcb3a6dafe7957544f2ca3a0984c346",
+    "../complete-source-training-v3/combined-training-manifest.json": "b8e959ccb9eb3cfa60fdf61cb716e3b606430d500f4770d0c2a1ef5d5082772c",
+    "../dsbi-training-contexts-v2/source-index.json": "8d62cf1850308fb864449bbcabc4399ef4e9a9aab62216b35c8064fa634450a6",
+    "../combined-training-v5/combined-training-manifest.json": "130c80f135af5677d6b78a5e401126f54b15204481aab6de00a88c443956c4fa",
+    "../dsbi-point-metadata-v1/points.json": "ea9592a727f7f3abcc6b017f8f22e143e90ae1541f623c43adf30104021937e8"
+  },
+  "source_training_sha256": {
+    "word_data.py": "abc7a31a94db497b9a48ce44bd68d96556e67014623c5645c129153844b48cb7",
+    "word_model.py": "c446732a2905a612cd6f1dd64d2d3d01303b1c71933c34552d26f3b5052fd551",
+    "word_decode.py": "bd301c5afeb4ba2e6866371665324d2de7f0a6ee252ef76ce02a5553193d63c5",
+    "word_train.py": "4d091c0a887cb25fffc1bc6e7bb7e7ab547880c5fda4b8a45ef3c09af87c3e15",
+    "word_sampling.py": "c234523277dba683e68a2863e14736bc68432da3b6ca65bb5d8a64bc7d9dc0fe",
+    "word_tail.py": "bdd4b5d12d56e25c1100a282483e7a31176b5a65beb353a0623ceea40a49dc0e",
+    "word_sources.py": "affb3488d8c25e3d0131eb4340cae29fcece563ac75373e071f97fef68f09acd",
+    "word_dsbi.py": "feecf16dba6d376415e15707c02c8f05fcf6650055da09ad9f4712099e6325ff",
+    "word_point_geometry.py": "2b932b320d191277b86ae13daecb82b5abbf0a46e9464d7360ee1e941aca760b",
+    "word_point_metadata.py": "de1cad0157e744f2f646010eac5355b88d1d11f52662d4b9353166661f59049f"
+  },
+  "model_graph_sha256": "b317a2625a2ed18cca616a0b7f620aac7409fb59bf4a722da40213e546c6a720",
+  "inventory": {
+    "path": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\run20-uniform-average-preparation\\inventory.json",
+    "sha256": "882e9afe58e8204e38eba929214129853766a90f70165ec6ce1225ce41a10f3f"
+  },
+  "model_array_count": 280,
+  "bn_array_count_preserved": 208,
+  "arrays_to_average": 72,
+  "arithmetic": "For each non-BN float32 array, promote inputs individually to float64, add in epoch order8,9,10, divide by3 in float64, cast once tofloat32. Copy208BN arrays byte-for-byte fromepoch9.",
+  "candidate_path": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\run20-uniform-average-preparation\\uniform-08-09-10.keras",
+  "candidate_use": "Untested inference-only; never an active asset before original gates. Do not resume training from this bundle.",
+  "optimizer_policy": "Drop entire optimizer HDF5 group and set compile_config={}; do not average146optimizer datasets or inherit optimizer learning-rate/step state.",
+  "graph_policy": "Preserve epoch9 graph/build serialization exactly; compile_config alone is emptied. No added layers or normalization/BN-stat recalibration.",
+  "control_sequence": {
+    "after": "run26 selection completes into selected-v21",
+    "control_path": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\selected-v21\\best-word.keras",
+    "control_hash_binding": "Append separate evaluation protocol afterselected-v21exists; do not edit this plan.",
+    "candidate_order": [
+      "current selected-v21 control",
+      "uniform-08-09-10.keras"
+    ],
+    "output": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\selected-v22",
+    "tie_rule": "Keep first candidate because selector replaces only on rank>best; control first.",
+    "before": "Any new external607/44/66 evaluation or TF/export of selected-v21/v22"
+  },
+  "selection": {
+    "fixture": {
+      "path": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\data\\validation-stress-selection.json",
+      "sha256": "e2ab968f7c4dcf7e774181fde687e1321f58d20567528af4b21fd03ff5a3e625"
+    },
+    "fixture_content_read": false,
+    "expected_records": 405,
+    "threshold_grid": "weak-peaks-v2",
+    "threshold_grid_values": {
+      "proposal": [
+        0.15,
+        0.25,
+        0.35
+      ],
+      "accept": [
+        0.2,
+        0.25,
+        0.3,
+        0.35,
+        0.4,
+        0.55,
+        0.65,
+        0.75
+      ],
+      "dot": [
+        0.7,
+        0.8,
+        0.9,
+        0.95
+      ]
+    },
+    "ranking": "Require accepted precision>=.95 separately on natural/stress; maximizeequal-group meanexact including rejections; unchanged existing fallback/tie behavior.",
+    "sources": {
+      "word_select.py": {
+        "path": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\run20-uniform-average-preparation\\selection-source\\word_select.py",
+        "sha256": "ab8ad646d4693bf9528e4aace201464f9cc7b632f4c2ed9863ad9a74f2caf07c"
+      },
+      "word_model.py": {
+        "path": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\run20-uniform-average-preparation\\selection-source\\word_model.py",
+        "sha256": "c446732a2905a612cd6f1dd64d2d3d01303b1c71933c34552d26f3b5052fd551"
+      },
+      "word_decode.py": {
+        "path": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\run20-uniform-average-preparation\\selection-source\\word_decode.py",
+        "sha256": "bd301c5afeb4ba2e6866371665324d2de7f0a6ee252ef76ce02a5553193d63c5"
+      },
+      "word_data.py": {
+        "path": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\run20-uniform-average-preparation\\selection-source\\word_data.py",
+        "sha256": "70184d6bff134cae4d003cf852bebc93f5c955c685ee2883972a337924793f02"
+      },
+      "word_geometry_head.py": {
+        "path": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\run20-uniform-average-preparation\\selection-source\\word_geometry_head.py",
+        "sha256": "f46c8f90e7f4fc9404eed2dc27fbde6e5c823d25d4f88e4127c7e56ed6e8764e"
+      },
+      "word_bn_affine.py": {
+        "path": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\run20-uniform-average-preparation\\selection-source\\word_bn_affine.py",
+        "sha256": "fa117f65beda3f6d159f707a5cd45d3a367b8f5b436b8c43c0d7621071297dff"
+      }
+    },
+    "external_selection": false
+  },
+  "source_prepare": {
+    "path": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\run20-uniform-average-preparation\\prepare.py",
+    "sha256": "c4698da0a685df7ee4942a8615499dcf45b26ff53498177e024ef9d07f6a0da5"
+  },
+  "source_average": {
+    "path": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\run20-uniform-average-preparation\\average.py",
+    "sha256": "05c7f3bf2794dbfc833f6fd5ee24613dbfa41ae4d2a2018b637e08c8c12adf93"
+  },
+  "primary_reference": {
+    "url": "https://proceedings.mlr.press/v162/wortsman22a/wortsman22a.pdf",
+    "file": {
+      "path": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\run20-uniform-average-preparation\\wortsman22a.pdf",
+      "sha256": "5f7e770b7bfea7463a2909694b1692804fc57d79ccbc54e7dac92855844bfb9c"
+    },
+    "limits": "Evidence on image/text classification, not this Braille detector. Uniform averages can degrade performance and do not guarantee calibration. Ours is one training trajectory, not the paper main independent-run recipe."
+  },
+  "requirements_before_model_claim": [
+    "Independent whole-array arithmetic and graph/BN/source-preservation review",
+    "Actual Keras compile=False load and frozen405 control-first comparison afterrun26",
+    "If selected, required original conversion/native/word/negative gates remain unchanged"
+  ],
+  "no_model_execution": true,
+  "no_training_mutation": true
+}

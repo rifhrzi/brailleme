@@ -1,0 +1,488 @@
+{
+  "schemaVersion": 1,
+  "createdAtUtc": "2026-09-06T04:39:38.749259+00:00",
+  "run": "run29",
+  "scope": "Source/runtime/prelaunch evidence for the single embedded targetStd .05 to .15 transition, plus a separately identified postlaunch epoch01 HDF5 observation. Not final selection, recognition accuracy, native-camera proof or model activation.",
+  "configuration": {
+    "file": "training/evidence/braille-word-reader-v1/normalization-std15-preflight/run29/training-config.json",
+    "sha256": "c20b26876b042015fdd580d6acfaf3509d34edbfb7f1fbcc1b8709d719ac5dfb"
+  },
+  "protocol": {
+    "file": "training/evidence/braille-word-reader-v1/normalization-std15-preflight/run29/normalization-std15-protocol.json",
+    "sha256": "78fcad0078192e567687e6600a0841e3e982ffac83e507c1c5ffec06e9a515a6"
+  },
+  "sourceSnapshots": {
+    "word_data.py": {
+      "file": "training/evidence/braille-word-reader-v1/normalization-std15-preflight/run29/source/word_data.py",
+      "sha256": "d692b4b28620af7e4b40ebdedccda68769feb8d3f51bd1508e807487fd32b7d7"
+    },
+    "word_model.py": {
+      "file": "training/evidence/braille-word-reader-v1/normalization-std15-preflight/run29/source/word_model.py",
+      "sha256": "c446732a2905a612cd6f1dd64d2d3d01303b1c71933c34552d26f3b5052fd551"
+    },
+    "word_decode.py": {
+      "file": "training/evidence/braille-word-reader-v1/normalization-std15-preflight/run29/source/word_decode.py",
+      "sha256": "bd301c5afeb4ba2e6866371665324d2de7f0a6ee252ef76ce02a5553193d63c5"
+    },
+    "word_train.py": {
+      "file": "training/evidence/braille-word-reader-v1/normalization-std15-preflight/run29/source/word_train.py",
+      "sha256": "e22a5302af5eca4482c8901827e06b04126c72bb6964e63db97d940254f40a38"
+    },
+    "word_sampling.py": {
+      "file": "training/evidence/braille-word-reader-v1/normalization-std15-preflight/run29/source/word_sampling.py",
+      "sha256": "c234523277dba683e68a2863e14736bc68432da3b6ca65bb5d8a64bc7d9dc0fe"
+    },
+    "word_tail.py": {
+      "file": "training/evidence/braille-word-reader-v1/normalization-std15-preflight/run29/source/word_tail.py",
+      "sha256": "bdd4b5d12d56e25c1100a282483e7a31176b5a65beb353a0623ceea40a49dc0e"
+    },
+    "word_sources.py": {
+      "file": "training/evidence/braille-word-reader-v1/normalization-std15-preflight/run29/source/word_sources.py",
+      "sha256": "affb3488d8c25e3d0131eb4340cae29fcece563ac75373e071f97fef68f09acd"
+    },
+    "word_dsbi.py": {
+      "file": "training/evidence/braille-word-reader-v1/normalization-std15-preflight/run29/source/word_dsbi.py",
+      "sha256": "feecf16dba6d376415e15707c02c8f05fcf6650055da09ad9f4712099e6325ff"
+    },
+    "word_point_geometry.py": {
+      "file": "training/evidence/braille-word-reader-v1/normalization-std15-preflight/run29/source/word_point_geometry.py",
+      "sha256": "2b932b320d191277b86ae13daecb82b5abbf0a46e9464d7360ee1e941aca760b"
+    },
+    "word_point_metadata.py": {
+      "file": "training/evidence/braille-word-reader-v1/normalization-std15-preflight/run29/source/word_point_metadata.py",
+      "sha256": "de1cad0157e744f2f646010eac5355b88d1d11f52662d4b9353166661f59049f"
+    },
+    "word_geometry_head.py": {
+      "file": "training/evidence/braille-word-reader-v1/normalization-std15-preflight/run29/source/word_geometry_head.py",
+      "sha256": "f46c8f90e7f4fc9404eed2dc27fbde6e5c823d25d4f88e4127c7e56ed6e8764e"
+    },
+    "word_geometry_init.py": {
+      "file": "training/evidence/braille-word-reader-v1/normalization-std15-preflight/run29/source/word_geometry_init.py",
+      "sha256": "072379a1ef409d901c2478135174561c14781560cdd56a0b91b0229b8032e15e"
+    },
+    "word_geometry_parity.py": {
+      "file": "training/evidence/braille-word-reader-v1/normalization-std15-preflight/run29/source/word_geometry_parity.py",
+      "sha256": "700d9175dc627fb7bf12c0ac20f640191cf5a045e29067c310f5dad5f3bd6f0b"
+    },
+    "word_vertical_stretch.py": {
+      "file": "training/evidence/braille-word-reader-v1/normalization-std15-preflight/run29/source/word_vertical_stretch.py",
+      "sha256": "336168fbfe4441bfa91e0855f473997a403a542a2b64789ca7cbd1b11b188ed5"
+    },
+    "word_bn_affine.py": {
+      "file": "training/evidence/braille-word-reader-v1/normalization-std15-preflight/run29/source/word_bn_affine.py",
+      "sha256": "fa117f65beda3f6d159f707a5cd45d3a367b8f5b436b8c43c0d7621071297dff"
+    },
+    "word_bn_affine_init.py": {
+      "file": "training/evidence/braille-word-reader-v1/normalization-std15-preflight/run29/source/word_bn_affine_init.py",
+      "sha256": "ea76999d35a6e9ba94cffce06c359adb1201cb396b54345668b7ed13afe99ce1"
+    },
+    "word_bn_affine_parity.py": {
+      "file": "training/evidence/braille-word-reader-v1/normalization-std15-preflight/run29/source/word_bn_affine_parity.py",
+      "sha256": "d4baba52b0993240e0b5092500ae32ee5d1b01e636d2546261a0a24996bd4a21"
+    },
+    "word_fine_branch.py": {
+      "file": "training/evidence/braille-word-reader-v1/normalization-std15-preflight/run29/source/word_fine_branch.py",
+      "sha256": "53bff984c33a20556721328e6253fadd060019573b068deee2a671d08a530750"
+    },
+    "word_fine_init.py": {
+      "file": "training/evidence/braille-word-reader-v1/normalization-std15-preflight/run29/source/word_fine_init.py",
+      "sha256": "3baa5f15b2b4b74ea120dd8150ad3b8a11f59139ad3eb833d3b2089e188d1310"
+    },
+    "word_fine_parity.py": {
+      "file": "training/evidence/braille-word-reader-v1/normalization-std15-preflight/run29/source/word_fine_parity.py",
+      "sha256": "de30cf4b3df1d8ec4bf820f6e1d98c8e40a39eb674a9ce470a3067569f3a8cbe"
+    },
+    "word_fine_validation.py": {
+      "file": "training/evidence/braille-word-reader-v1/normalization-std15-preflight/run29/source/word_fine_validation.py",
+      "sha256": "b075760aee90afa17a84c0e8ec3a421132e0644130929f8f7a85b54b11058124"
+    },
+    "word_horizontal_aspect.py": {
+      "file": "training/evidence/braille-word-reader-v1/normalization-std15-preflight/run29/source/word_horizontal_aspect.py",
+      "sha256": "3ea4fa7d625c91d15c28e157d1bfc675eb72f980571f95631060a82b81494d5a"
+    },
+    "word_anchor_zoom.py": {
+      "file": "training/evidence/braille-word-reader-v1/normalization-std15-preflight/run29/source/word_anchor_zoom.py",
+      "sha256": "d6f5337d08368b8da55948f314bd06af7b03fa1602e40240778a9b4edea26377"
+    },
+    "word_normalization_transition.py": {
+      "file": "training/evidence/braille-word-reader-v1/normalization-std15-preflight/run29/source/word_normalization_transition.py",
+      "sha256": "7f825809cf7b97043015d4a63c06b3be16aa6d236cf0afdbf8e0cf8d8330c5f6"
+    }
+  },
+  "testSourceSnapshots": {
+    "test_word_normalization_transition.py": {
+      "file": "training/evidence/braille-word-reader-v1/normalization-std15-preflight/run29/test-source/test_word_normalization_transition.py",
+      "sha256": "18a21d192d8f6a0475aca366b104ce37d2771c0a9df981b20ff30e8df2414811"
+    },
+    "test_word_training_config.py": {
+      "file": "training/evidence/braille-word-reader-v1/normalization-std15-preflight/run29/test-source/test_word_training_config.py",
+      "sha256": "c22253218a20ede45338e2b82022f87824b39b1573db438c20c2c50fd9a4e6e5"
+    },
+    "test_word_anchor_zoom.py": {
+      "file": "training/evidence/braille-word-reader-v1/normalization-std15-preflight/run29/test-source/test_word_anchor_zoom.py",
+      "sha256": "9c340a4a28c19c5b6f1dd216d7dc041fe1b28f458b00a9e040de537cfa7188b7"
+    }
+  },
+  "runFiles": {
+    "training-config.json": {
+      "file": "training/evidence/braille-word-reader-v1/normalization-std15-preflight/run29/training-config.json",
+      "sha256": "c20b26876b042015fdd580d6acfaf3509d34edbfb7f1fbcc1b8709d719ac5dfb"
+    },
+    "normalization-std15-protocol.json": {
+      "file": "training/evidence/braille-word-reader-v1/normalization-std15-preflight/run29/normalization-std15-protocol.json",
+      "sha256": "78fcad0078192e567687e6600a0841e3e982ffac83e507c1c5ffec06e9a515a6"
+    },
+    "launch-command.json": {
+      "file": "training/evidence/braille-word-reader-v1/normalization-std15-preflight/run29/launch-command.json",
+      "sha256": "9bc64d787af72fe774d85c971b2dea3e97182017f96863bf89363d58f34ca65c"
+    },
+    "dsbi-addition-protocol.json": {
+      "file": "training/evidence/braille-word-reader-v1/normalization-std15-preflight/run29/dsbi-addition-protocol.json",
+      "sha256": "9726a5000129ccd7e1d00e35295714f61e82d5ef3c43bfc66996551b017470da"
+    },
+    "dsbi-visible-partial-protocol.json": {
+      "file": "training/evidence/braille-word-reader-v1/normalization-std15-preflight/run29/dsbi-visible-partial-protocol.json",
+      "sha256": "b7912b973af07e6d4631237ed5fb27e0f238e570e401511fd0e0512d9f0f4db9"
+    },
+    "preflight-tests.json": {
+      "file": "training/evidence/braille-word-reader-v1/normalization-std15-preflight/run29/preflight-tests.json",
+      "sha256": "909e76bd87ba5177a120b532c25563583eb4b824a805d4f597069c6c60bad55e"
+    },
+    "preflight-tests.log": {
+      "file": "training/evidence/braille-word-reader-v1/normalization-std15-preflight/run29/preflight-tests.log",
+      "sha256": "a12cf811e6e7d39fd01347292f7a0844a8bdf989c606c6e2338d6e0b91fe3327"
+    },
+    "normalization-transition-guard-audit.json": {
+      "file": "training/evidence/braille-word-reader-v1/normalization-std15-preflight/run29/normalization-transition-guard-audit.json",
+      "sha256": "c9cf75b0da2c0e98e6d982674a11c30f1d6dd062b2866745ef37430ec1d066a9"
+    }
+  },
+  "supportingSources": {
+    "prepare_run29.py": {
+      "file": "training/evidence/braille-word-reader-v1/normalization-std15-preflight/supporting-source/prepare_run29.py",
+      "sha256": "4be6b943b0f83f50f84d3e6ce9edf16de8d3d7f11a1718483569747b881095c1"
+    },
+    "launch_run29.py": {
+      "file": "training/evidence/braille-word-reader-v1/normalization-std15-preflight/supporting-source/launch_run29.py",
+      "sha256": "19fd7c8930deaa48b83ca9fe0277e0297340557d17eaa8c570e138a1698a44b4"
+    },
+    "test_run29.py": {
+      "file": "training/evidence/braille-word-reader-v1/normalization-std15-preflight/supporting-source/test_run29.py",
+      "sha256": "d24dc754be2a51b4922051c7bb62774b932505dc647f07521083927c9e1b9efe"
+    },
+    "audit_run29_normalization_transition.py": {
+      "file": "training/evidence/braille-word-reader-v1/normalization-std15-preflight/supporting-source/audit_run29_normalization_transition.py",
+      "sha256": "6e80d3de325e5cbf8feb2d472a4fac4a2f7929db00cc21df30b6c8545ad3ccad"
+    },
+    "retainer": {
+      "file": "training/evidence/braille-word-reader-v1/normalization-std15-preflight/supporting-source/retain_normalization_std15_preflight.py",
+      "sha256": "f97042abd6cbd0a62741b115460fdc1971e89f9861bee6ce819aa876cba944ea"
+    }
+  },
+  "initialization": {
+    "initialization-report.json": {
+      "file": "training/evidence/braille-word-reader-v1/normalization-std15-preflight/initialization/initialization-report.json.gz",
+      "sha256": "54eaa88723e498de4236b890eea70986261a9b60f60fd3d3502b2fea5d1ffce7",
+      "encoding": "gzip",
+      "rawSha256": "bb1b0dc9068e4757a3e680c8d31ce7f40fd582ccba3d6c41db8fa94f4f92224b",
+      "rawSizeBytes": 163949
+    },
+    "parent-config.json": {
+      "file": "training/evidence/braille-word-reader-v1/normalization-std15-preflight/initialization/parent-config.json.gz",
+      "sha256": "847a3cd6378cb2d965448299ae409fb3e3f84b46a4e96105ab7540a6739b495b",
+      "encoding": "gzip",
+      "rawSha256": "3259be2b7e2179f89339fb123e651c7202b46d2b2330589b689c9d15a0e02415",
+      "rawSizeBytes": 174407
+    },
+    "initialized-config.json": {
+      "file": "training/evidence/braille-word-reader-v1/normalization-std15-preflight/initialization/initialized-config.json.gz",
+      "sha256": "6b411a88ab2369250818c901e05cf8e7b41cf7d0155b80063cd5a9e2646fe69b",
+      "encoding": "gzip",
+      "rawSha256": "22a3dfca4865469f47abf98a40cc4b2bd1c752c16c52e105979b8d770b9d59f9",
+      "rawSizeBytes": 158548
+    },
+    "prepare.py": {
+      "file": "training/evidence/braille-word-reader-v1/normalization-std15-preflight/initialization/prepare.py",
+      "sha256": "7f0ccaa11d0d57b1b55eed15149a83cc38f9736d6c86e80139bd3c0747a7e48f"
+    },
+    "sources": {
+      "hdf5_inventory_audit.py": {
+        "file": "training/evidence/braille-word-reader-v1/normalization-std15-preflight/initialization/source/hdf5_inventory_audit.py",
+        "sha256": "ceaa8908add7b37a0287521cc9df181bb0f4f14a1ec95ced0eb55665faf86fc8"
+      },
+      "word_model.py": {
+        "file": "training/evidence/braille-word-reader-v1/normalization-std15-preflight/run29/source/word_model.py",
+        "sha256": "c446732a2905a612cd6f1dd64d2d3d01303b1c71933c34552d26f3b5052fd551"
+      }
+    }
+  },
+  "runtimeProof": {
+    "parity-report.json": {
+      "file": "training/evidence/braille-word-reader-v1/normalization-std15-preflight/runtime/parity-report.json",
+      "sha256": "0ae7507e53b84780b44ad71cc58963a2f69ac57e1b17fd32b7f16e336292c28c"
+    },
+    "torch-report.json": {
+      "file": "training/evidence/braille-word-reader-v1/normalization-std15-preflight/runtime/torch-report.json",
+      "sha256": "f3f293b139a2965f201fabe29f95a5a7a3a916dde2b30f3513d30f3124661102"
+    },
+    "probe.py": {
+      "file": "training/evidence/braille-word-reader-v1/normalization-std15-preflight/runtime/probe.py",
+      "sha256": "6a1909b7c97aaa991d5ad5d40f95d7015c170b6e69120a0197b21b75766c7279"
+    },
+    "sources": {
+      "word_model.py": {
+        "file": "training/evidence/braille-word-reader-v1/normalization-std15-preflight/run29/source/word_model.py",
+        "sha256": "c446732a2905a612cd6f1dd64d2d3d01303b1c71933c34552d26f3b5052fd551"
+      },
+      "word_data.py": {
+        "file": "training/evidence/braille-word-reader-v1/normalization-std15-preflight/run29/source/word_data.py",
+        "sha256": "d692b4b28620af7e4b40ebdedccda68769feb8d3f51bd1508e807487fd32b7d7"
+      },
+      "word_anchor_zoom.py": {
+        "file": "training/evidence/braille-word-reader-v1/normalization-std15-preflight/run29/source/word_anchor_zoom.py",
+        "sha256": "d6f5337d08368b8da55948f314bd06af7b03fa1602e40240778a9b4edea26377"
+      },
+      "word_decode.py": {
+        "file": "training/evidence/braille-word-reader-v1/normalization-std15-preflight/run29/source/word_decode.py",
+        "sha256": "bd301c5afeb4ba2e6866371665324d2de7f0a6ee252ef76ce02a5553193d63c5"
+      },
+      "word_benchmark.py": {
+        "file": "training/evidence/braille-word-reader-v1/normalization-std15-preflight/runtime/source/word_benchmark.py",
+        "sha256": "ad7d4f3a35a8d0dd3a530dfeb8f849fde585e97cadcde5fcb043950bedd05988"
+      },
+      "benchmark_angelina.py": {
+        "file": "training/evidence/braille-word-reader-v1/normalization-std15-preflight/runtime/source/benchmark_angelina.py",
+        "sha256": "6c7d63c8b5c461fec73e415b46df74d15c0bca455cc9f411c5fb6edd5d353353"
+      },
+      "word_bn_affine_parity.py": {
+        "file": "training/evidence/braille-word-reader-v1/normalization-std15-preflight/run29/source/word_bn_affine_parity.py",
+        "sha256": "d4baba52b0993240e0b5092500ae32ee5d1b01e636d2546261a0a24996bd4a21"
+      }
+    },
+    "inputIdentityReport": {
+      "file": "training/evidence/braille-word-reader-v1/normalization-std15-preflight/runtime/six-input-identity-original-report.json",
+      "sha256": "791bac9f9e92cab96925a9c802de9c6b141e07c7c2e00b4fbce9904187293359"
+    }
+  },
+  "postlaunchEpoch01Audit": {
+    "report.json": {
+      "file": "training/evidence/braille-word-reader-v1/normalization-std15-preflight/postlaunch-epoch01/report.json.gz",
+      "sha256": "2016d60768f13950c45121d5c88982e9e092df060177efed9a21e47bd451cab9",
+      "encoding": "gzip",
+      "rawSha256": "4af1a19ad6d04dd90b029188e29318376a969869bfc2b89c87c7b95c6aa8efb1",
+      "rawSizeBytes": 164912
+    },
+    "audit.py": {
+      "file": "training/evidence/braille-word-reader-v1/normalization-std15-preflight/postlaunch-epoch01/audit.py",
+      "sha256": "a67f2cd5e4d5fbd6fa676e12b2456eb9aaa43bd573be35892642f260a783d991"
+    },
+    "hdf5_inventory_source.py": {
+      "file": "training/evidence/braille-word-reader-v1/normalization-std15-preflight/initialization/source/hdf5_inventory_audit.py",
+      "sha256": "ceaa8908add7b37a0287521cc9df181bb0f4f14a1ec95ced0eb55665faf86fc8"
+    },
+    "training-config-snapshot.json": {
+      "file": "training/evidence/braille-word-reader-v1/normalization-std15-preflight/run29/training-config.json",
+      "sha256": "c20b26876b042015fdd580d6acfaf3509d34edbfb7f1fbcc1b8709d719ac5dfb"
+    },
+    "validation-history-snapshot.json": {
+      "file": "training/evidence/braille-word-reader-v1/normalization-std15-preflight/postlaunch-epoch01/validation-history-snapshot.json",
+      "sha256": "5562d1eca6fddf4f46bfdbc4bf5a51229dff490c48775907fcf0d0a39ef5ba1f"
+    }
+  },
+  "parentProofs": {
+    "run20/training-config.json": {
+      "file": "training/evidence/braille-word-reader-v1/normalization-std15-preflight/parent/run20__training-config.json",
+      "sha256": "75bc0305e899aa1c13936fa8614ef42702fedefc9d3c5abfd294d60ccf30a51d"
+    },
+    "selected-v15/selected-validation.json": {
+      "file": "training/evidence/braille-word-reader-v1/normalization-std15-preflight/parent/selected-v15__selected-validation.json",
+      "sha256": "d136021888194895e3bd19cd3800ace90cb3cc83776a87799fd7fda8d9623b39"
+    }
+  },
+  "omittedLargeArtifacts": [
+    {
+      "originalWorkPath": ".braille-training-work/word-scan-v1-20260905/selected-v15/best-word.keras",
+      "sha256": "cce2432c0ddb8952c885dd58697589c285209588dafa81aacdd891b1660068b7",
+      "sizeBytes": 10346677,
+      "role": "Base std05 v15 checkpoint",
+      "retainedInThisArchive": false,
+      "reason": "Model binary or raw tensor omitted by design; exact bytes were hashed during retention."
+    },
+    {
+      "originalWorkPath": ".braille-training-work/word-scan-v1-20260905/normalization-std15-parent-v1/std15-parent.keras",
+      "sha256": "918d148a43399642f44c5d18693eb2733eecca338f0332fed8782cbe79beea00",
+      "sizeBytes": 3901002,
+      "role": "Actual std15 initialization",
+      "retainedInThisArchive": false,
+      "reason": "Model binary or raw tensor omitted by design; exact bytes were hashed during retention."
+    },
+    {
+      "originalWorkPath": ".braille-training-work/word-scan-v1-20260905/normalization-std15-runtime-v1/reload-check.keras",
+      "sha256": "36bc1a7823cf387fa203379506ff67482860a3ff8da7ddd15cf6bad7c732feea",
+      "sizeBytes": 3954308,
+      "role": "Actual save/load roundtrip",
+      "retainedInThisArchive": false,
+      "reason": "Model binary or raw tensor omitted by design; exact bytes were hashed during retention."
+    },
+    {
+      "originalWorkPath": ".braille-training-work/word-scan-v1-20260905/normalization-std15-runtime-v1/std15-probe.tflite",
+      "sha256": "df3945012bdb30b2c343efbaf09d0d8ade1f8ce6d92f8fc07e5fd3ffd6dd106f",
+      "sizeBytes": 3259712,
+      "role": "Actual builtins-only six-input conversion",
+      "retainedInThisArchive": false,
+      "reason": "Model binary or raw tensor omitted by design; exact bytes were hashed during retention."
+    },
+    {
+      "originalWorkPath": ".braille-training-work/word-scan-v1-20260905/normalization-std15-runtime-v1/torch-oracle.npz",
+      "sha256": "7faa44fb7b07add610a6782be502d570fca3a316791b0912a66fffe01fc8572e",
+      "sizeBytes": 4064600,
+      "role": "Six fixed RGB inputs and Torch/base outputs",
+      "retainedInThisArchive": false,
+      "reason": "Model binary or raw tensor omitted by design; exact bytes were hashed during retention."
+    },
+    {
+      "originalWorkPath": ".braille-training-work/word-scan-v1-20260905/geometry-head-parent-v1/initialization-oracle.npz",
+      "sha256": "9330946dafe06c7705b3f2c85cce26f8bbfeca11763ba7465d62e809180d5669",
+      "sizeBytes": 5414397,
+      "role": "Original fixed six-input oracle",
+      "retainedInThisArchive": false,
+      "reason": "Model binary or raw tensor omitted by design; exact bytes were hashed during retention."
+    },
+    {
+      "originalWorkPath": ".braille-training-work/word-scan-v1-20260905/normalization-std15-runtime-v1/tflite-six-outputs.npy",
+      "sha256": "1c78729b6aa00290914b6d249a9c057842e0deb3ee2689076da4e683d295143f",
+      "sizeBytes": 1520768,
+      "role": "Saved six Lite outputs; hash measured now, original parity report did not bind this separate NPY",
+      "retainedInThisArchive": false,
+      "reason": "Model binary or raw tensor omitted by design; exact bytes were hashed during retention."
+    },
+    {
+      "originalWorkPath": ".braille-training-work/word-scan-v1-20260905/run29/retained-epochs/epoch-01.keras",
+      "sha256": "8f157b5209e74c9e96cd50d08783a812fba65248888967cfdc495d8fb6304d77",
+      "sizeBytes": 10346677,
+      "role": "Epoch01 trained checkpoint, not sampling eligible",
+      "retainedInThisArchive": false,
+      "reason": "Model binary or raw tensor omitted by design; exact bytes were hashed during retention."
+    }
+  ],
+  "linkedDataArchives": [
+    {
+      "configurationKey": "source-split.json",
+      "file": "training/evidence/braille-word-reader-v1/data-manifests/data__source-split.json.gz",
+      "sha256": "b3fce8c6a3472555582527dde9528b5f9cbdec5e9c2071d9069cc077da50cd5e",
+      "encoding": "gzip",
+      "rawSha256": "870e1be00c8e4fa4c34e755f26b1ff6becaa3e1fdb70288b0499c2aeba8867dc",
+      "rawSizeBytes": 16901
+    },
+    {
+      "configurationKey": "train.json",
+      "file": "training/evidence/braille-word-reader-v1/data-manifests/data__train.json.gz",
+      "sha256": "0f177755da74bcf26e0635be0f47a53dd3a9c0575b6e7650b6d3e883ff6db6d9",
+      "encoding": "gzip",
+      "rawSha256": "f728b900c791433f8fd4aea08997af96f3320c0cfe5628619843a2a5b798cddc",
+      "rawSizeBytes": 12234829
+    },
+    {
+      "configurationKey": "validation.json",
+      "file": "training/evidence/braille-word-reader-v1/data-manifests/data__validation.json.gz",
+      "sha256": "0b787e5ca1f0697ece80cda9edbc44202c796c744f2432ab5b7479b294785367",
+      "encoding": "gzip",
+      "rawSha256": "d796841e8fdd21443d3f9f28e5c6339bda0199fa68ba1e864c4f6c434958443a",
+      "rawSizeBytes": 817839
+    },
+    {
+      "configurationKey": "validation-words.json",
+      "file": "training/evidence/braille-word-reader-v1/data-manifests/data__validation-words.json.gz",
+      "sha256": "46391b458c7148fd537cf2220b38a13e879584eef1a87592ce93fab2f121ba40",
+      "encoding": "gzip",
+      "rawSha256": "2ee26bbffd0457830eebe81dd48beb0b4bcb3a6dafe7957544f2ca3a0984c346",
+      "rawSizeBytes": 320986
+    },
+    {
+      "configurationKey": "../complete-source-training-v3/combined-training-manifest.json",
+      "file": "training/evidence/braille-word-reader-v1/data-manifests/complete-source-training-v3__combined-training-manifest.json.gz",
+      "sha256": "7df20ee334696969ed6dd8d2da53d1579db73ad49f3702f7b09e8ff20f69d812",
+      "encoding": "gzip",
+      "rawSha256": "b8e959ccb9eb3cfa60fdf61cb716e3b606430d500f4770d0c2a1ef5d5082772c",
+      "rawSizeBytes": 42973165
+    },
+    {
+      "configurationKey": "../dsbi-training-contexts-v2/source-index.json",
+      "file": "training/evidence/braille-word-reader-v1/data-manifests/dsbi-training-contexts-v2__source-index.json.gz",
+      "sha256": "1ff3c634e15e1f21b0b5b97803a42f17e8e4876d0a5cf9c6c4ead3b1a9acbeb0",
+      "encoding": "gzip",
+      "rawSha256": "8d62cf1850308fb864449bbcabc4399ef4e9a9aab62216b35c8064fa634450a6",
+      "rawSizeBytes": 32919
+    },
+    {
+      "configurationKey": "../combined-training-v5/combined-training-manifest.json",
+      "file": "training/evidence/braille-word-reader-v1/data-manifests/combined-training-v5__combined-training-manifest.json.gz",
+      "sha256": "bff2da06424c519e55a2c583ab6eaeda44e850eb94eb6ac5bb22aa99f654e4d4",
+      "encoding": "gzip",
+      "rawSha256": "130c80f135af5677d6b78a5e401126f54b15204481aab6de00a88c443956c4fa",
+      "rawSizeBytes": 53573232
+    },
+    {
+      "configurationKey": "../dsbi-point-metadata-v1/points.json",
+      "file": "training/evidence/braille-word-reader-v1/data-manifests/dsbi-point-metadata-v1__points.json.gz",
+      "sha256": "153bcff6a485a90090542adc93b542237b6b215a2c1669d3d5e7c673447e2596",
+      "encoding": "gzip",
+      "rawSha256": "ea9592a727f7f3abcc6b017f8f22e143e90ae1541f623c43adf30104021937e8",
+      "rawSizeBytes": 15415882
+    }
+  ],
+  "linkedExistingProofs": {
+    "anchor-zoom-preflight/preflight.json": {
+      "file": "training/evidence/braille-word-reader-v1/anchor-zoom-preflight/preflight.json",
+      "sha256": "8c5a0f517dc290b9a9f0e604d4a906e2f01e5003a620d00801986c628fb99e1e"
+    },
+    "data-manifests/index.json": {
+      "file": "training/evidence/braille-word-reader-v1/data-manifests/index.json",
+      "sha256": "df88e4b5fbcf6e53d1da84272685c13607e0950909861eb4df275b2686b9f14b"
+    },
+    "dsbi-training-preparation/archive.json": {
+      "file": "training/evidence/braille-word-reader-v1/dsbi-training-preparation/archive.json",
+      "sha256": "3d96fa219c195002409227ffb39519dfb35f68b43742eaa084c307d09f94a608"
+    },
+    "dsbi-training-preparation/source-index.json": {
+      "file": "training/evidence/braille-word-reader-v1/dsbi-training-preparation/source-index.json",
+      "sha256": "8d62cf1850308fb864449bbcabc4399ef4e9a9aab62216b35c8064fa634450a6"
+    },
+    "dsbi-training-preparation/independent-context-audit.json": {
+      "file": "training/evidence/braille-word-reader-v1/dsbi-training-preparation/independent-context-audit.json",
+      "sha256": "68e686665e611ce8e4d63c28626e8c2e82b6510205e17f4261fa53af47c2e0aa"
+    },
+    "dsbi-visible-partial-preflight/archive.json": {
+      "file": "training/evidence/braille-word-reader-v1/dsbi-visible-partial-preflight/archive.json",
+      "sha256": "550c461334d6e82439ce4faf8e64368a3a54c0b104bc075e768b35b48873a348"
+    },
+    "dsbi-visible-partial-preflight/real-dsbi-point-run20-verifier-check.json": {
+      "file": "training/evidence/braille-word-reader-v1/dsbi-visible-partial-preflight/real-dsbi-point-run20-verifier-check.json",
+      "sha256": "5aad2dc02f0c6029fae57e60a0b4f1a941405becd993b0f5e3d005a3761f1ef6"
+    }
+  },
+  "verification": {
+    "actualSources": 24,
+    "prelaunchTests": 21,
+    "testSourceFiles": 3,
+    "actualLoadedInitializerGuard": true,
+    "independentGuardSemanticNegativeCases": 11,
+    "independentCliIsolationCases": 9,
+    "sixInputRuntimeMaxAbs": 1.3530254364013672e-05,
+    "sixRawAndEffectiveDecisionsExact": true,
+    "initialModelArraysUnchanged": 280,
+    "epoch01FrozenBNArraysUnchanged": 208,
+    "epoch01NotSamplingEligible": true,
+    "newBackendExecutionByRetainer": false,
+    "newTestsByRetainer": false
+  },
+  "limitations": [
+    "Initializer changes outputs for nonconstant inputs; parity is between runtimes on that initializer, never equality against std05.",
+    "The initialization report was written before actual model loading; the separate later Torch/TF/Lite and loaded-guard reports close that specific pending preflight step.",
+    "Six original probes comprise two positive TRAIN crops, one TRAIN negative, black, white and seeded random RGB. They are not a physical holdout or accuracy benchmark.",
+    "The immutable independent guard report uses a model stand-in for negative branch tests; actual loaded initializer is separately covered by the21-test report.",
+    "Epoch01 array changes prove stored updates only. Its source cycle is incomplete; no selected checkpoint is asserted.",
+    "Original reports retain original paths. Repository-relative reference maps resolve retained bytes; model/tensor omissions are explicit and cannot be replayed from this compact archive alone.",
+    "The index of24 source files includes dormant utility modules. Actual configuration leaves anchor cap, horizontal/mirror/vertical, geometry, BN-affine and fine branches off."
+  ]
+}

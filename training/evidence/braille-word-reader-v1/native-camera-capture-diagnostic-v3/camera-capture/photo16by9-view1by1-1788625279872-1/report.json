@@ -1,0 +1,185 @@
+{
+  "capture": {
+    "id": "photo16by9-view1by1-1788625279872-1",
+    "case": "photo16by9-view1by1",
+    "target": {
+      "width": 1920,
+      "height": 1080
+    },
+    "orientationSource": "interface",
+    "window": {
+      "width": 411.42857142857144,
+      "height": 914.2857142857143
+    },
+    "density": 2.625,
+    "preview": {
+      "widthDp": 387.42857142857144,
+      "heightDp": 387.42857142857144,
+      "width": 1017,
+      "height": 1017,
+      "resolution": {
+        "width": 1280,
+        "height": 960
+      },
+      "path": "/data/user/0/com.brailleme.geometrydiagnostic/cache/nitro_image_8230978546555509568.png"
+    },
+    "guide": {
+      "x": 0.3,
+      "y": 0.3,
+      "width": 0.4,
+      "height": 0.4
+    },
+    "guidePoints": [
+      {
+        "x": 448,
+        "y": 671.9998779296875
+      },
+      {
+        "x": 448,
+        "y": 287.99993896484375
+      },
+      {
+        "x": 832,
+        "y": 287.99993896484375
+      },
+      {
+        "x": 832,
+        "y": 671.9998779296875
+      }
+    ],
+    "fullPoints": [
+      {
+        "x": 160,
+        "y": 959.9998779296875
+      },
+      {
+        "x": 160,
+        "y": 0
+      },
+      {
+        "x": 1120,
+        "y": 0
+      },
+      {
+        "x": 1120,
+        "y": 959.9998779296875
+      }
+    ],
+    "geometry": {
+      "width": 1280,
+      "height": 720,
+      "sensorToBuffer": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        -120,
+        0,
+        0,
+        1
+      ],
+      "rotationDegrees": 90,
+      "isMirrored": false,
+      "cropRect": [
+        0,
+        0,
+        1280,
+        720
+      ]
+    },
+    "photo": {
+      "width": 720,
+      "height": 1280,
+      "path": "/data/user/0/com.brailleme.geometrydiagnostic/cache/nitro_image_7146449892255903085.png"
+    }
+  },
+  "roi": {
+    "x": 0.23333350287543403,
+    "y": 0.35,
+    "width": 0.533333248562283,
+    "height": 0.3
+  },
+  "roi_independent_corner_check": {
+    "expected_pixels_xyxy": [
+      168.00008544921877,
+      448.0,
+      552.0000366210937,
+      832.0
+    ],
+    "actual_pixels_xyxy": [
+      168.0001220703125,
+      448.0,
+      552.0000610351562,
+      831.9999999999999
+    ],
+    "max_absolute_corner_error_pixels": 3.662109372726263e-05
+  },
+  "checks": [
+    {
+      "id": "red",
+      "preview_centroid": [
+        723.688785046729,
+        373.51433021806855
+      ],
+      "photo_centroid": [
+        683.1600706713781,
+        512.4724381625442
+      ],
+      "predicted_photo_centroid": [
+        563.1280918873663,
+        512.5798987309201
+      ],
+      "error_photo_pixels": 120.03202688690722,
+      "preview_color_pixels": 1605,
+      "photo_color_pixels": 1415,
+      "passed": false,
+      "inside_preview_guide": false,
+      "inside_photo_roi": false,
+      "guide_membership_matches": true
+    },
+    {
+      "id": "blue",
+      "preview_centroid": [
+        723.7258064516129,
+        644.5688585607941
+      ],
+      "photo_centroid": [
+        683.1739130434783,
+        768.4123422159888
+      ],
+      "predicted_photo_centroid": [
+        563.1630383418101,
+        768.4425803523719
+      ],
+      "error_photo_pixels": 120.01087851109328,
+      "preview_color_pixels": 1612,
+      "photo_color_pixels": 1426,
+      "passed": false,
+      "inside_preview_guide": false,
+      "inside_photo_roi": false,
+      "guide_membership_matches": true
+    }
+  ],
+  "failure": "Missing marker magenta: 0 pixels; Missing marker cyan: 0 pixels",
+  "jpeg_vs_nitro": null,
+  "passed": false,
+  "files": {
+    "mapped-roi.png": {
+      "sha256": "7859526126f566eeeeb85cf8fb742b2c291e709544899d2e9c5d8307ea0ebc79",
+      "bytes": 2299
+    },
+    "photo-review.png": {
+      "sha256": "edc3892a13abc6ca8f761f1b0bf6a865b0653232faac66d5dcf5053a2b273c8a",
+      "bytes": 26848
+    },
+    "photo.png": {
+      "sha256": "9f48984164c5ff75f9138fc9ab3527c2c4941794cbd66e06ac5c0fc0f8fffd17",
+      "bytes": 26221
+    },
+    "preview.png": {
+      "sha256": "04bb5b9e17d171805139334f01da261dc74bc862b487a867dc0a949bc4edb181",
+      "bytes": 64358
+    }
+  }
+}

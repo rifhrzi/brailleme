@@ -134,7 +134,7 @@ const modelManifestPath = resolve(
   projectRoot,
   "assets",
   "models",
-  "braille-cell-classifier-v2",
+  "braille-word-reader-v1",
   "manifest.json",
 );
 if (!existsSync(modelManifestPath)) fail("manifest model aktif tidak ditemukan");

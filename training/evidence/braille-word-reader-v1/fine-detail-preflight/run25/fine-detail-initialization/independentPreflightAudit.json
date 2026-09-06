@@ -1,0 +1,125 @@
+{
+  "status": "passed",
+  "scope": "Independent frozen-source, serialized graph/HDF5 arrays and saved six-input oracle/decoder/quality audit. No graph/backend/model inference or gradients rerun.",
+  "inputs": [
+    {
+      "file": ".braille-training-work\\word-scan-v1-20260905\\fine-branch-parent-v2\\fine-initialization.json",
+      "sha256": "88225ac54a4a9345614cbdf621730dce184a76aab1b590284d9f7777f8870971"
+    },
+    {
+      "file": ".braille-training-work\\word-scan-v1-20260905\\fine-branch-parent-v2\\fine-conversion-parity.json",
+      "sha256": "b3333384d36cb024b9bd9498cec77354b9c75d03653db9a1c9f5b6eba681bbb0"
+    },
+    {
+      "file": ".braille-training-work\\word-scan-v1-20260905\\stride2-tap-independent-static-audit\\audit.json",
+      "sha256": "6e5cc6678d370a03eabcb883020053f1a5f2562ebbb583c1c3ad835cd97fb3fb"
+    }
+  ],
+  "script_sha256": "234d3fcaba96871803e43362e5c1eeb7d0196eb8330a0b1b17b2127b9a103176",
+  "sources": [
+    {
+      "file": ".braille-training-work\\word-scan-v1-20260905\\fine-branch-independent-preflight\\source\\audit_fine_branch_independent.py",
+      "sha256": "234d3fcaba96871803e43362e5c1eeb7d0196eb8330a0b1b17b2127b9a103176"
+    },
+    {
+      "file": ".braille-training-work\\word-scan-v1-20260905\\fine-branch-independent-preflight\\source\\word_data.py",
+      "sha256": "659ab6b508a69b34bfb8dc899c5fa6e2214bd64e08281f40f9c39aa91d74996c"
+    },
+    {
+      "file": ".braille-training-work\\word-scan-v1-20260905\\fine-branch-independent-preflight\\source\\word_fine_branch.py",
+      "sha256": "53bff984c33a20556721328e6253fadd060019573b068deee2a671d08a530750"
+    },
+    {
+      "file": ".braille-training-work\\word-scan-v1-20260905\\fine-branch-independent-preflight\\source\\word_fine_init.py",
+      "sha256": "3baa5f15b2b4b74ea120dd8150ad3b8a11f59139ad3eb833d3b2089e188d1310"
+    },
+    {
+      "file": ".braille-training-work\\word-scan-v1-20260905\\fine-branch-independent-preflight\\source\\word_model.py",
+      "sha256": "c446732a2905a612cd6f1dd64d2d3d01303b1c71933c34552d26f3b5052fd551"
+    },
+    {
+      "file": ".braille-training-work\\word-scan-v1-20260905\\fine-branch-independent-preflight\\source\\benchmark_angelina.py",
+      "sha256": "6c7d63c8b5c461fec73e415b46df74d15c0bca455cc9f411c5fb6edd5d353353"
+    },
+    {
+      "file": ".braille-training-work\\word-scan-v1-20260905\\fine-branch-independent-preflight\\source\\word_benchmark.py",
+      "sha256": "ad7d4f3a35a8d0dd3a530dfeb8f849fde585e97cadcde5fcb043950bedd05988"
+    },
+    {
+      "file": ".braille-training-work\\word-scan-v1-20260905\\fine-branch-independent-preflight\\source\\word_bn_affine_parity.py",
+      "sha256": "d4baba52b0993240e0b5092500ae32ee5d1b01e636d2546261a0a24996bd4a21"
+    },
+    {
+      "file": ".braille-training-work\\word-scan-v1-20260905\\fine-branch-independent-preflight\\source\\word_decode.py",
+      "sha256": "bd301c5afeb4ba2e6866371665324d2de7f0a6ee252ef76ce02a5553193d63c5"
+    },
+    {
+      "file": ".braille-training-work\\word-scan-v1-20260905\\fine-branch-independent-preflight\\source\\word_fine_parity.py",
+      "sha256": "de30cf4b3df1d8ec4bf820f6e1d98c8e40a39eb674a9ce470a3067569f3a8cbe"
+    }
+  ],
+  "base_parent_checkpoint_sha256": "cce2432c0ddb8952c885dd58697589c285209588dafa81aacdd891b1660068b7",
+  "initial_checkpoint_sha256": "f5f3b239d0ead7fea9d8f6d8d95d82b9c8fa5a678bdd67c1d7db7246406e6b4e",
+  "forbidden_diagnostic_sha256": "6ee8686bb37af80b8d28d96f91a7f10fb1b41ade8d09878dfe9b2d81e540a2ae",
+  "initialization_report_sha256": "88225ac54a4a9345614cbdf621730dce184a76aab1b590284d9f7777f8870971",
+  "conversion_report_sha256": "b3333384d36cb024b9bd9498cec77354b9c75d03653db9a1c9f5b6eba681bbb0",
+  "oracle_sha256": "3546e53fe4153fc5544c5314351c8e81af3c9f01f1dc447aa083d9e6b2200462",
+  "inherited_arrays_byte_identical": 280,
+  "total_arrays": 283,
+  "changed_diagnostic_arrays": [
+    "fpn_2_zero/kernel",
+    "fpn_2_zero/bias"
+  ],
+  "zero_lateral_all_zero": true,
+  "random_depthwise_nonzero_and_diagnostic_unchanged": true,
+  "inherited_fulltail_lateral_nonzero_preserved": true,
+  "ordinary_frozen_BN_layers": 52,
+  "backbone_and_layer_trainability_unchanged": true,
+  "inherited_normalization_unchanged": true,
+  "serialized_branch_has_no_relu_between_zero_and_add": true,
+  "same_padding_axes": [
+    {
+      "input": 192,
+      "new_depthwise_leading_trailing_padding": [
+        0,
+        1
+      ],
+      "output": 48,
+      "origin": 3.0,
+      "stride": 4,
+      "local_support": 11
+    },
+    {
+      "input": 480,
+      "new_depthwise_leading_trailing_padding": [
+        0,
+        1
+      ],
+      "output": 120,
+      "origin": 3.0,
+      "stride": 4,
+      "local_support": 11
+    }
+  ],
+  "initial_outputs_byte_identical_parent": 6,
+  "nonzero_max_output_delta": 0.0054135918617248535,
+  "exact_saved_input_provenance_passed": true,
+  "raw_and_quality_decisions_recomputed_equal": true,
+  "gradient_source_review": "Actual source computes real TRAIN loss backward at zero, requires nonzero new-lateral gradient and zero depthwise gradient; changes only new lateral, then requires positive depthwise gradient. Serialized diagnostic kernel and bias both change by nonzero max.01 while every other array remains identical. Backend gradient computation itself was not repeated by this reviewer.",
+  "zero_gradient_report": {
+    "loss": 0.1352894902229309,
+    "lateral_l1": 0.26713400334119797,
+    "depthwise_l1": 0.0
+  },
+  "after_lateral_step_gradient_report": {
+    "loss": 0.13430780172348022,
+    "lateral_l1": 0.25813381373882294,
+    "depthwise_l1": 0.028637714684009552
+  },
+  "defects": [],
+  "limits": [
+    "Convolution origin/support describes normalized-tensor coordinates; global CameraNormalization prevents a claim of an11pixel raw-RGB receptive field.",
+    "All six preflight inputs reject; numeric conversion is not recognition accuracy. Full405 trained parity and unchanged gates remain required.",
+    "Training guards and final protocol are audited separately after trainer integration."
+  ]
+}

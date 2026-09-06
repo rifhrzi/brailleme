@@ -1,0 +1,27 @@
+{
+  "command": [
+    "C:\\bm-envs\\word-scan-torch-only\\Scripts\\python.exe",
+    "-u",
+    "training/scripts/word_select.py",
+    "--candidates",
+    "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\selected-v26\\best-word.keras",
+    "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\run30\\retained-epochs\\epoch-08.keras",
+    "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\run30\\retained-epochs\\epoch-09.keras",
+    "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\run30\\retained-epochs\\epoch-10.keras",
+    "--data",
+    "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\data",
+    "--output",
+    "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\selected-v27",
+    "--batch-size",
+    "24",
+    "--validation-manifest",
+    "validation-stress-selection.json",
+    "--grouped-selection",
+    "--threshold-grid",
+    "weak-peaks-v2"
+  ],
+  "audit_sha256": "f4b604bd872139140267c3a04b117d485b6acb24055f0a4f9c71bee46fd42523",
+  "protocol_sha256": "dacada918c7473c3a2c81bd10c3197447ffddf68c834b32774a1945cc03187d8",
+  "selector_launcher_sha256": "3995d47b2acd233333e989a3046a2c695387e9f7e63997b60ad287b2ae772ebc",
+  "started_at_utc": "2026-09-06T08:31:36.707376+00:00"
+}

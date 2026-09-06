@@ -1,0 +1,15 @@
+{
+  "$schema": "https://nitro.margelo.com/nitro.schema.json",
+  "cxxNamespace": ["braillewordgeometry"],
+  "ios": { "iosModuleName": "BrailleWordGeometry" },
+  "android": {
+    "androidNamespace": ["braillewordgeometry"],
+    "androidCxxLibName": "BrailleWordGeometry"
+  },
+  "autolinking": {
+    "WordPhotoGeometry": {
+      "android": { "language": "kotlin", "implementationClassName": "HybridWordPhotoGeometry" }
+    }
+  },
+  "ignorePaths": ["**/node_modules"]
+}

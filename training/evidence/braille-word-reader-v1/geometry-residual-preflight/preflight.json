@@ -1,0 +1,160 @@
+{
+  "scope": "Run21 zero-branch initialization and pretraining proofs only. Training and recognition gates are not passed by this evidence.",
+  "configuration": {
+    "file": "training/evidence/braille-word-reader-v1/geometry-residual-preflight/run21/training-config.json",
+    "sha256": "82fd5c704a5ef706d90f7b45aacdddadd3f5053f50405dde4012e0a4a69ca14b"
+  },
+  "geometryInitialization": {
+    "initializationReport": {
+      "file": "training/evidence/braille-word-reader-v1/geometry-residual-preflight/run21/geometry-initialization/geometry-initialization.json",
+      "sha256": "791bac9f9e92cab96925a9c802de9c6b141e07c7c2e00b4fbce9904187293359"
+    },
+    "nonzeroConversionProof": {
+      "file": "training/evidence/braille-word-reader-v1/geometry-residual-preflight/run21/geometry-initialization/geometry-conversion-parity.json",
+      "sha256": "ff6d7c4774e4a2e02572585d44bd0b43a5707499a9ad20c3b402bb144a4ba985"
+    },
+    "slotPriorAudit": {
+      "file": "training/evidence/braille-word-reader-v1/geometry-residual-preflight/run21/geometry-initialization/slot-prior-audit.json",
+      "sha256": "216656cff63c75274de69d19a5363c829d91a9d0e913080f20d9bb275c03c459"
+    },
+    "featureLatticeAudit": {
+      "file": "training/evidence/braille-word-reader-v1/geometry-residual-preflight/run21/geometry-initialization/feature-lattice-audit.json",
+      "sha256": "0844999f8df7c1285bb6bb57e451c57e98db0249817843b96581b3309ccaee79"
+    },
+    "backboneLatticeIdentity": {
+      "file": "training/evidence/braille-word-reader-v1/geometry-residual-preflight/run21/geometry-initialization/v15-backbone-lattice-identity.json",
+      "sha256": "ea50cf1aa4390342f723dd98479b9eb69ccf1ea1fb22e2215b03d5f64ff6c18f"
+    },
+    "independentCoordinateAudit": {
+      "file": "training/evidence/braille-word-reader-v1/geometry-residual-preflight/run21/geometry-initialization/independent-coordinate-preflight.json",
+      "sha256": "c74dbd0cb33a5f324e76fb3dd19eb576e5d4a7a5f455e3d37d7828c4986aee7d"
+    },
+    "independentHeadAudit": {
+      "file": "training/evidence/braille-word-reader-v1/geometry-residual-preflight/run21/geometry-initialization/independent-geometry-head-audit.json",
+      "sha256": "07e37fed184403242fa45f4d175b8802bfb70858033f7c73742828a0fc5b3f5c"
+    },
+    "gpuBatchPreflight": {
+      "file": "training/evidence/braille-word-reader-v1/geometry-residual-preflight/run21/geometry-initialization/gpu-batch-preflight.json",
+      "sha256": "38207ce269d734557e000f47f415885bac3921b360b3f15a8cbb78afcc367c5c"
+    },
+    "protocol": {
+      "file": "training/evidence/braille-word-reader-v1/geometry-residual-preflight/run21/geometry-initialization/geometry-residual-protocol.json",
+      "sha256": "a68cd43a5e6a5cddc3373458666ec44380544068f19641334e11949042633b7f"
+    },
+    "baseParentCheckpointSha256": "cce2432c0ddb8952c885dd58697589c285209588dafa81aacdd891b1660068b7",
+    "zeroParentCheckpointSha256": "d6d43af7f662584d1f84c1ac7411d1572f898224746973405ed080c3ea1171d5",
+    "forbiddenDiagnosticCheckpointSha256": "650456fda2ce7347182e96a61bf59e99257676ec8b846020892907a2c920cddb",
+    "sources": [
+      {
+        "file": "training/evidence/braille-word-reader-v1/geometry-residual-preflight/run21/geometry-initialization/source/word_data.py",
+        "sha256": "abc7a31a94db497b9a48ce44bd68d96556e67014623c5645c129153844b48cb7"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/geometry-residual-preflight/run21/geometry-initialization/source/word_geometry_head.py",
+        "sha256": "f46c8f90e7f4fc9404eed2dc27fbde6e5c823d25d4f88e4127c7e56ed6e8764e"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/geometry-residual-preflight/run21/geometry-initialization/source/word_geometry_init.py",
+        "sha256": "072379a1ef409d901c2478135174561c14781560cdd56a0b91b0229b8032e15e"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/geometry-residual-preflight/run21/geometry-initialization/source/word_model.py",
+        "sha256": "c446732a2905a612cd6f1dd64d2d3d01303b1c71933c34552d26f3b5052fd551"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/geometry-residual-preflight/run21/geometry-initialization/source/word_geometry_parity.py",
+        "sha256": "700d9175dc627fb7bf12c0ac20f640191cf5a045e29067c310f5dad5f3bd6f0b"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/geometry-residual-preflight/run21/geometry-initialization/source/audit_slot_priors.py",
+        "sha256": "ac807c1c23a2075ae888e8a383283b0e335aad78b2a6862c59abc33b9355fc7d"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/geometry-residual-preflight/run21/geometry-initialization/source/audit_feature_lattice.py",
+        "sha256": "81de7f870615b48e3ae04cc69976257b398900096c9d528846da7fcffc82ffd4"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/geometry-residual-preflight/run21/geometry-initialization/source/independent-coordinate-preflight.py",
+        "sha256": "c469cee1f87b905db92435d1c875fa447add2bf8a54bbde24e09c491141d0988"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/geometry-residual-preflight/run21/geometry-initialization/source/independent-geometry-head-audit.py",
+        "sha256": "337bdfbedc1a48ec3d6f1e56bb80a6d53f5b322d368622ade8940083ca50b605"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/geometry-residual-preflight/run21/geometry-initialization/source/probe_geometry_training_batch.py",
+        "sha256": "a088ebe636e50ed99a08c9b4afd39617778a7e92bb1d61dc519467e712b7af93"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/geometry-residual-preflight/run21/geometry-initialization/source/test_word_geometry_head.py",
+        "sha256": "ecf8a9818959d37cd1ddcd4f4de08a034cb87d930d4132d4919e6b747011d454"
+      }
+    ]
+  },
+  "geometry-residual-protocol.json": {
+    "file": "training/evidence/braille-word-reader-v1/geometry-residual-preflight/run21/geometry-residual-protocol.json",
+    "sha256": "a68cd43a5e6a5cddc3373458666ec44380544068f19641334e11949042633b7f"
+  },
+  "dsbi-addition-protocol.json": {
+    "file": "training/evidence/braille-word-reader-v1/geometry-residual-preflight/run21/dsbi-addition-protocol.json",
+    "sha256": "3d903a9c395bb6acf7fdb91cda7d914b8e80ea01dfa090668395a464d4ac3b7c"
+  },
+  "dsbi-visible-partial-protocol.json": {
+    "file": "training/evidence/braille-word-reader-v1/geometry-residual-preflight/run21/dsbi-visible-partial-protocol.json",
+    "sha256": "5bba345e5395dfac18355466afa1c5b1f4fb8be646ebf497b2b1b00593d71ab9"
+  },
+  "sources": [
+    {
+      "file": "training/evidence/braille-word-reader-v1/geometry-residual-preflight/run21/source/word_data.py",
+      "sha256": "abc7a31a94db497b9a48ce44bd68d96556e67014623c5645c129153844b48cb7"
+    },
+    {
+      "file": "training/evidence/braille-word-reader-v1/geometry-residual-preflight/run21/source/word_model.py",
+      "sha256": "c446732a2905a612cd6f1dd64d2d3d01303b1c71933c34552d26f3b5052fd551"
+    },
+    {
+      "file": "training/evidence/braille-word-reader-v1/geometry-residual-preflight/run21/source/word_decode.py",
+      "sha256": "bd301c5afeb4ba2e6866371665324d2de7f0a6ee252ef76ce02a5553193d63c5"
+    },
+    {
+      "file": "training/evidence/braille-word-reader-v1/geometry-residual-preflight/run21/source/word_train.py",
+      "sha256": "c8fc0c5ff209a24b6021de46c403e2ad92abb2b13d421ee3cb8da5bf8b77739e"
+    },
+    {
+      "file": "training/evidence/braille-word-reader-v1/geometry-residual-preflight/run21/source/word_sampling.py",
+      "sha256": "c234523277dba683e68a2863e14736bc68432da3b6ca65bb5d8a64bc7d9dc0fe"
+    },
+    {
+      "file": "training/evidence/braille-word-reader-v1/geometry-residual-preflight/run21/source/word_tail.py",
+      "sha256": "bdd4b5d12d56e25c1100a282483e7a31176b5a65beb353a0623ceea40a49dc0e"
+    },
+    {
+      "file": "training/evidence/braille-word-reader-v1/geometry-residual-preflight/run21/source/word_sources.py",
+      "sha256": "affb3488d8c25e3d0131eb4340cae29fcece563ac75373e071f97fef68f09acd"
+    },
+    {
+      "file": "training/evidence/braille-word-reader-v1/geometry-residual-preflight/run21/source/word_dsbi.py",
+      "sha256": "feecf16dba6d376415e15707c02c8f05fcf6650055da09ad9f4712099e6325ff"
+    },
+    {
+      "file": "training/evidence/braille-word-reader-v1/geometry-residual-preflight/run21/source/word_point_geometry.py",
+      "sha256": "2b932b320d191277b86ae13daecb82b5abbf0a46e9464d7360ee1e941aca760b"
+    },
+    {
+      "file": "training/evidence/braille-word-reader-v1/geometry-residual-preflight/run21/source/word_point_metadata.py",
+      "sha256": "de1cad0157e744f2f646010eac5355b88d1d11f52662d4b9353166661f59049f"
+    },
+    {
+      "file": "training/evidence/braille-word-reader-v1/geometry-residual-preflight/run21/source/word_geometry_head.py",
+      "sha256": "f46c8f90e7f4fc9404eed2dc27fbde6e5c823d25d4f88e4127c7e56ed6e8764e"
+    },
+    {
+      "file": "training/evidence/braille-word-reader-v1/geometry-residual-preflight/run21/source/word_geometry_init.py",
+      "sha256": "072379a1ef409d901c2478135174561c14781560cdd56a0b91b0229b8032e15e"
+    },
+    {
+      "file": "training/evidence/braille-word-reader-v1/geometry-residual-preflight/run21/source/word_geometry_parity.py",
+      "sha256": "700d9175dc627fb7bf12c0ac20f640191cf5a045e29067c310f5dad5f3bd6f0b"
+    }
+  ]
+}

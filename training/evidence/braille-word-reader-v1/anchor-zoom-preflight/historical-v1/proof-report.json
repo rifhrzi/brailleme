@@ -1,0 +1,204 @@
+{
+  "status": "passed",
+  "created_at_utc": "2026-09-06T02:35:03.620013+00:00",
+  "completed_at_utc": "2026-09-06T02:35:51.437059+00:00",
+  "prototype_spec_sha256": "1ccd5cc5da6b53012317b1fb4329f8584370b94279d3c25dc30feaf9b7dd509f",
+  "script_sha256": "bfdb27dc6b46eab06dce2d773fc571c6e921cd5dff92b127d316004aa1e731d6",
+  "scope": "PRIVATE actual AST-loaded Patches/augment/target execution, frozen TRAIN metadata and exact DSBI point states, synthetic Pillow rasters. No ML/model/validation/external inference or active-source mutation.",
+  "baseline": "V15 isotropic illumination and exact-point partial supervision; horizontal/vertical/mirror/half-turn/camera/polarity OFF.",
+  "cohort_sha256": "ddf9dbcb1e11943a7d54e738aca80b71f0026caac070302536ebc0a93eb4e7a1",
+  "training_manifest_sha256": "130c80f135af5677d6b78a5e401126f54b15204481aab6de00a88c443956c4fa",
+  "point_metadata_proof": {
+    "path": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\dsbi-point-metadata-v1\\points.json",
+    "sha256": "ea9592a727f7f3abcc6b017f8f22e143e90ae1541f623c43adf30104021937e8",
+    "records": 2338,
+    "known_cell_occurrences": 27055,
+    "source_verification": "Exact equality with freshly parsed hash-bound DSBI TRAIN annotations; no inferred dot positions."
+  },
+  "proofs": {
+    "boundary_algebra_cases": 68,
+    "default_off_paired_actual_patches_records": 80,
+    "paired_main_rng_records": 1280,
+    "unchanged_draw_pixels_and_targets_exact": true,
+    "irreversible_complete_and_point_visibility": true,
+    "unknowns_never_full": true,
+    "capped_affine_draws": 167
+  },
+  "totals": {
+    "baseline": {
+      "records": 1280,
+      "original_full": 6176,
+      "full_six_bit_targets": 4791,
+      "geometry_only_targets": 1111,
+      "ignored_grid_positions": 1683810,
+      "zero_full_target_records": 298,
+      "unknown_boxes": 3328,
+      "affine_draws": 1099,
+      "full_lost_at_affine": 1348
+    },
+    "capped": {
+      "records": 1280,
+      "original_full": 6176,
+      "full_six_bit_targets": 4942,
+      "geometry_only_targets": 1134,
+      "ignored_grid_positions": 1450079,
+      "zero_full_target_records": 203,
+      "unknown_boxes": 3328,
+      "affine_draws": 1099,
+      "full_lost_at_affine": 1063
+    }
+  },
+  "by_original_row_length": {
+    "1": {
+      "baseline": {
+        "records": 96,
+        "original_full": 96,
+        "full_six_bit_targets": 45,
+        "geometry_only_targets": 17,
+        "ignored_grid_positions": 156506,
+        "zero_full_target_records": 51,
+        "unknown_boxes": 32,
+        "affine_draws": 87,
+        "full_lost_at_affine": 48
+      },
+      "capped": {
+        "records": 96,
+        "original_full": 96,
+        "full_six_bit_targets": 64,
+        "geometry_only_targets": 34,
+        "ignored_grid_positions": 126858,
+        "zero_full_target_records": 32,
+        "unknown_boxes": 32,
+        "affine_draws": 87,
+        "full_lost_at_affine": 0
+      }
+    },
+    "5": {
+      "baseline": {
+        "records": 384,
+        "original_full": 1920,
+        "full_six_bit_targets": 1509,
+        "geometry_only_targets": 270,
+        "ignored_grid_positions": 360817,
+        "zero_full_target_records": 1,
+        "unknown_boxes": 1152,
+        "affine_draws": 338,
+        "full_lost_at_affine": 396
+      },
+      "capped": {
+        "records": 384,
+        "original_full": 1920,
+        "full_six_bit_targets": 1512,
+        "geometry_only_targets": 270,
+        "ignored_grid_positions": 357441,
+        "zero_full_target_records": 0,
+        "unknown_boxes": 1152,
+        "affine_draws": 338,
+        "full_lost_at_affine": 393
+      }
+    },
+    "9": {
+      "baseline": {
+        "records": 384,
+        "original_full": 3456,
+        "full_six_bit_targets": 2848,
+        "geometry_only_targets": 776,
+        "ignored_grid_positions": 516743,
+        "zero_full_target_records": 0,
+        "unknown_boxes": 1952,
+        "affine_draws": 321,
+        "full_lost_at_affine": 604
+      },
+      "capped": {
+        "records": 384,
+        "original_full": 3456,
+        "full_six_bit_targets": 2848,
+        "geometry_only_targets": 776,
+        "ignored_grid_positions": 516743,
+        "zero_full_target_records": 0,
+        "unknown_boxes": 1952,
+        "affine_draws": 321,
+        "full_lost_at_affine": 604
+      }
+    },
+    "2": {
+      "baseline": {
+        "records": 160,
+        "original_full": 320,
+        "full_six_bit_targets": 180,
+        "geometry_only_targets": 27,
+        "ignored_grid_positions": 337709,
+        "zero_full_target_records": 65,
+        "unknown_boxes": 128,
+        "affine_draws": 132,
+        "full_lost_at_affine": 134
+      },
+      "capped": {
+        "records": 160,
+        "original_full": 320,
+        "full_six_bit_targets": 243,
+        "geometry_only_targets": 25,
+        "ignored_grid_positions": 233050,
+        "zero_full_target_records": 26,
+        "unknown_boxes": 128,
+        "affine_draws": 132,
+        "full_lost_at_affine": 23
+      }
+    },
+    "3": {
+      "baseline": {
+        "records": 128,
+        "original_full": 384,
+        "full_six_bit_targets": 209,
+        "geometry_only_targets": 21,
+        "ignored_grid_positions": 241704,
+        "zero_full_target_records": 53,
+        "unknown_boxes": 0,
+        "affine_draws": 115,
+        "full_lost_at_affine": 166
+      },
+      "capped": {
+        "records": 128,
+        "original_full": 384,
+        "full_six_bit_targets": 275,
+        "geometry_only_targets": 29,
+        "ignored_grid_positions": 145656,
+        "zero_full_target_records": 17,
+        "unknown_boxes": 0,
+        "affine_draws": 115,
+        "full_lost_at_affine": 43
+      }
+    },
+    "0": {
+      "baseline": {
+        "records": 128,
+        "original_full": 0,
+        "full_six_bit_targets": 0,
+        "geometry_only_targets": 0,
+        "ignored_grid_positions": 70331,
+        "zero_full_target_records": 128,
+        "unknown_boxes": 64,
+        "affine_draws": 106,
+        "full_lost_at_affine": 0
+      },
+      "capped": {
+        "records": 128,
+        "original_full": 0,
+        "full_six_bit_targets": 0,
+        "geometry_only_targets": 0,
+        "ignored_grid_positions": 70331,
+        "zero_full_target_records": 128,
+        "unknown_boxes": 64,
+        "affine_draws": 106,
+        "full_lost_at_affine": 0
+      }
+    }
+  },
+  "limitations": [
+    "40 fixed metadata-stratified TRAIN records over32 diagnostic epochs; not actual source-balanced epoch exposure or recognition accuracy.",
+    "Only one full known anchor is protected at the affine stage when feasible at zoom>=.8; later rotation can cut it.",
+    "Other known cells and fragments can gain or lose visibility with changed scale; immutable source annotations, unknown slots and irreversible rules remain unchanged.",
+    "No candidate or release claim; one ablation still needs unchanged frozen405 selection and original external gates."
+  ],
+  "paired_results_sha256": "805c06af7a8693aee2af7b1b146a838b216716aa23e3d20cbd781961a46db1a0"
+}

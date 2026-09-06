@@ -1,0 +1,120 @@
+{
+  "status": "passed",
+  "completed_at_utc": "2026-09-06T08:36:51.976166+00:00",
+  "script_sha256": "4b66a08cb794c4a7099faba28848e712edf994956b313bf144dfc9e5bc097d36",
+  "protocol_sha256": "11846237a01fc1fd996cbabfe8a873ef760864f3d10fb57adaa54e5e229eba62",
+  "parent_checkpoint_sha256": "cce2432c0ddb8952c885dd58697589c285209588dafa81aacdd891b1660068b7",
+  "torch_version": "2.7.1+cu128",
+  "keras_version": "3.15.1",
+  "device": "cpu",
+  "samples": [
+    {
+      "family": "books/chudo_derevo_redmi",
+      "manifest_index": 253,
+      "source": "books/chudo_derevo_redmi/IMG_20190715_113010.labeled.jpg",
+      "image": "train/000253.png",
+      "sha256": "3efec9ab4b3fc72d38bfb97105ab0ecfcf9f4d264c1c270da974982de4b5294c",
+      "record_json_sha256": "5e52eea179b7f3980ab0a4efc8bc7232c22b9315dfd33e7d83e0159f5ad4df12"
+    },
+    {
+      "family": "dsbi/Massage",
+      "manifest_index": 21577,
+      "source": "dsbi/Massage/M+4+recto.jpg",
+      "image": "../dsbi-training-contexts-v2/images/000224.png",
+      "sha256": "ec737310b4e278d9635a5da8fde436a58441c63820626abd38ff34c3178516de",
+      "record_json_sha256": "b970d7bf396f88e3f454105d8ca98922c7a374f71fc55350ab9dfec3b81f33d3"
+    },
+    {
+      "family": "dsbi/Math",
+      "manifest_index": 22437,
+      "source": "dsbi/Math/math+4+recto.jpg",
+      "image": "../dsbi-training-contexts-v2/images/001084.png",
+      "sha256": "dcea6c2ec0cdf45368a20062b9847c28ad3025302ea89675ebc4fcff55919e30",
+      "record_json_sha256": "bafb024532b99f5c9636395136868a9efe99658cd881327f01a01098bae91b7d"
+    },
+    {
+      "family": "dsbi/Ordinary Printed Document",
+      "manifest_index": 23134,
+      "source": "dsbi/Ordinary Printed Document/OPD+1+recto.jpg",
+      "image": "../dsbi-training-contexts-v2/images/001781.png",
+      "sha256": "86fef292aad2dda8505ea102d00143491d33df76900fa1e7bd12c543081d6766",
+      "record_json_sha256": "a50cacba6a001974d21b6918e7cb83380bb1dc979a512ea2dbd1a70413e4d67d"
+    },
+    {
+      "family": "dsbi/Shaver Yang Fengting",
+      "manifest_index": 23435,
+      "source": "dsbi/Shaver Yang Fengting/SYF+3+recto.jpg",
+      "image": "../dsbi-training-contexts-v2/images/002082.png",
+      "sha256": "b04c7ce34c45ea24c8bb64eff0c9c9f3699305c784ca556cab757a71df0edcb1",
+      "record_json_sha256": "57310f84d5f08d82a2aca95a0579fc58a339a10a12b99cd08b811d787a42eec4"
+    },
+    {
+      "image": "train/006326.png",
+      "source": "not_braille/misc/ul.jpg",
+      "sha256": "860bf163e12e45008a203a2d9e619d6cdfd0e555e9fe40cb567355a90938c5c3",
+      "manifest_index": 6326,
+      "family": "not_braille/misc",
+      "record_json_sha256": "19140a8bdb258cc8edd76b8c8b9cd4f17a46d2d1bf12c570d822a32eecc0fd47"
+    }
+  ],
+  "micro_batch_order": [
+    1,
+    2,
+    4,
+    0,
+    5,
+    3
+  ],
+  "point_metadata_audit": {
+    "path": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\dsbi-point-metadata-v1\\points.json",
+    "sha256": "ea9592a727f7f3abcc6b017f8f22e143e90ae1541f623c43adf30104021937e8",
+    "records": 2338,
+    "known_cell_occurrences": 27055,
+    "source_verification": "Exact equality with freshly parsed hash-bound DSBI TRAIN annotations; no inferred dot positions."
+  },
+  "actual_patches_sha256": "7c3e55579fe9b44dd9fe3c6e16b67f527638ace727f6aa1f9ad91bc131f313f8",
+  "rng_trace_sha256": "9227bbfa3efb0578ebcae4b9e7713ee6bc7c6701eebc38aa94a450c467443cdc",
+  "main_arrays_and_rng_exact_off_and_on": true,
+  "known_query_points": 36,
+  "dynamic_query_shape": [
+    6,
+    12,
+    2
+  ],
+  "training_parameters": 829404,
+  "reader_parameters": 829307,
+  "initial_graph_weights_outputs_equal": true,
+  "main_loss_formula_unchanged": true,
+  "auxiliary_gradient_l1": {
+    "fine_features": 5.4967498779296875,
+    "head_kernel": 21.936290740966797,
+    "shared_conv": 37.517364501953125
+  },
+  "ignored_loss_and_gradients_exact_zero": true,
+  "loss_values": {
+    "main": 0.8947488069534302,
+    "auxiliary": 0.7626517415046692,
+    "total": 1.085411787033081,
+    "validation_main": 0.23432332277297974,
+    "validation_auxiliary": 0.0
+  },
+  "validation_metrics": {
+    "annotated_dot_logits_loss": 0.0,
+    "loss": 0.23432332277297974,
+    "word_cells_loss": 0.23432332277297974
+  },
+  "one_step_metrics": {
+    "annotated_dot_logits_loss": 0.7626517415046692,
+    "loss": 1.085411787033081,
+    "word_cells_loss": 0.894748866558075
+  },
+  "optimizer_steps": 1,
+  "frozen_52_bn_all_208_arrays_exact": true,
+  "reader_roundtrip_exact_no_auxiliary_classes": true,
+  "wrapper_roundtrip_exact_optimizer_state_readable": true,
+  "reader_checkpoint_sha256": "39dbbd523b16342afc6c18dfe52cd7887c01b7b3668e69d452420e89eb3450d0",
+  "wrapper_checkpoint_sha256": "0005c44d8257b2fcb5460446116e0cf056e415b721543fa4685649a3ee2f6a82",
+  "reader_weights_before_sha256": "952e102a72f2c73a641ddf7c4cd0b1eb0a8e141d263b5ec8accd5e0e54bf2ab3",
+  "reader_weights_after_sha256": "e1e9da40fe4194b638eaa64eab72e32de5c1220d47242a10be722097cacfa95f",
+  "scope": "One diagnostic optimizer step on fixed TRAIN inputs only. Reader checkpoints are forbidden for training initialization/activation; no accuracy, held-selection, TF/Lite, full CLI resume or interruption-exact continuation claim."
+}

@@ -1,0 +1,290 @@
+{
+  "schemaVersion": 1,
+  "scope": "Reason-summary labeling only; frozen benchmark, outputs, rows, numerical counts and acceptance gates unchanged.",
+  "original_report": {
+    "file": "training/evidence/braille-word-reader-v1/failed-selected-v13/public-benchmark.json",
+    "sha256": "b8b160a4983e63bd31f8e667d3bfe8cdc5f6a25bd3324b1ab5e5d505352eadf7"
+  },
+  "model_sha256": "ac6950a4c3b50754533af6f966448b1c12b04c59539b6cd8dffc6ee44132445e",
+  "fixture_manifest_sha256": "e69d7c0d9582aef7d51a2c15706f6bf62bc3cdfe35d22ad28ad007301d56b41b",
+  "cached_outputs": {
+    "path": ".braille-training-work/word-scan-v1-20260905/selected-v13/public-word-outputs.npz",
+    "sha256": "90409e66d896d996c2e80da58cadc7c3a14102271197ef10ca88394fee2f752c",
+    "only_field_read": "quality_reasons"
+  },
+  "source_cause": "word_benchmark used zeros_like(output) for pre-decoder quality rejection. summarize decoded these empty placeholders as no_grid, while final rows correctly retained low_confidence. Replacement future reporting counts reasons directly from the final rows and preserves all other summarize metrics.",
+  "original_summary_reasons": {
+    "clipped": 204,
+    "no_grid": 57,
+    "low_confidence": 20,
+    "gap": 16,
+    "unsupported_pattern": 11,
+    "too_many_cells": 4,
+    "overlapping_cells": 4
+  },
+  "final_row_reasons": {
+    "clipped": 204,
+    "low_confidence": 49,
+    "gap": 16,
+    "unsupported_pattern": 11,
+    "no_grid": 28,
+    "too_many_cells": 4,
+    "overlapping_cells": 4
+  },
+  "quality_reasons_reproduced_from_all_607_cached_rgb_images": true,
+  "quality_rejected_count": 29,
+  "quality_rejected_rows": [
+    {
+      "image": "external-words/000003.png",
+      "image_sha256": "e579213b65427388b4e6cb8bb6955eaa7498c691e2850b245c27245d22031d86",
+      "reason": "low_confidence"
+    },
+    {
+      "image": "external-words/000067.png",
+      "image_sha256": "4dbcd9eb9e1727d948b0dc5ca9d2dfdb7288da1e3e5a505b1e0660d108ee64d3",
+      "reason": "low_confidence"
+    },
+    {
+      "image": "external-words/000076.png",
+      "image_sha256": "5448500c402658bea238e27ec53d951bbd2e8d67587b7c0afcd49bc392fc9dc8",
+      "reason": "low_confidence"
+    },
+    {
+      "image": "external-words/000077.png",
+      "image_sha256": "5849cb71f7f5630c234178f09be3eeab0978227d93500698dae50c7be366a7b1",
+      "reason": "low_confidence"
+    },
+    {
+      "image": "external-words/000078.png",
+      "image_sha256": "bb901014d3b5dea59c0701a733157b78d1b03f3b49237f8ddff57df6c9a6d4da",
+      "reason": "low_confidence"
+    },
+    {
+      "image": "external-words/000090.png",
+      "image_sha256": "428fa69020f0399e479fb8fa94767a5cbed78fd5b67790f8a53282ce66913b89",
+      "reason": "low_confidence"
+    },
+    {
+      "image": "external-words/000095.png",
+      "image_sha256": "1e1642086794a6ce4bc74de4b00f32de524f92005fda26d7bc97a5259d92a835",
+      "reason": "low_confidence"
+    },
+    {
+      "image": "external-words/000150.png",
+      "image_sha256": "73856a470a9214887a11b326c63d43eed636a959fa2f97495a1f3d39837fe5cd",
+      "reason": "low_confidence"
+    },
+    {
+      "image": "external-words/000193.png",
+      "image_sha256": "da78595b6389e58488c2ea5a2391f0d527a0167ab6e0e33163852273060572a1",
+      "reason": "low_confidence"
+    },
+    {
+      "image": "external-words/000330.png",
+      "image_sha256": "948bcdec6698a8d9d1d3a14c7ff6d14ce9fa3a1c680cabfbacace71232d09d8d",
+      "reason": "low_confidence"
+    },
+    {
+      "image": "external-words/000337.png",
+      "image_sha256": "50804dc04eda09defdef22d1f3c2bdbadeb5140998073f642ddec7591856c08f",
+      "reason": "low_confidence"
+    },
+    {
+      "image": "external-words/000341.png",
+      "image_sha256": "eb9a9242137dd759dfa23e4982c1a035a6a0116e43a122c82082250363e5baaf",
+      "reason": "low_confidence"
+    },
+    {
+      "image": "external-words/000342.png",
+      "image_sha256": "c9c9671c766b50f333601ab82ddcaefc03f75ec1feb393c1d846e44e568b4d96",
+      "reason": "low_confidence"
+    },
+    {
+      "image": "external-words/000345.png",
+      "image_sha256": "6092e1daaef7b9ae4f028cb97dfb69a1ef713760b30c3861acc74b0923a28ab1",
+      "reason": "low_confidence"
+    },
+    {
+      "image": "external-words/000491.png",
+      "image_sha256": "aea764c492a0e57ffa93fa8b12401eca63c18d92400d397a9f5b2476d9ca3492",
+      "reason": "low_confidence"
+    },
+    {
+      "image": "external-words/000544.png",
+      "image_sha256": "78389f581c38892b7aefaf1f1a659c12e6b3ba0636552348fc8248c0ff031b14",
+      "reason": "low_confidence"
+    },
+    {
+      "image": "external-words/000547.png",
+      "image_sha256": "0eb67f103b6c2e25b26ec707ad963d78930f74d376e0cac7758b8b1a4df62e4e",
+      "reason": "low_confidence"
+    },
+    {
+      "image": "external-words/000549.png",
+      "image_sha256": "959bec2143c459435683578d7b11945892b208cbf6685db8c4ad9993da1d6643",
+      "reason": "low_confidence"
+    },
+    {
+      "image": "external-words/000551.png",
+      "image_sha256": "9848729b4d7922a0439de201cdfe8c4db9834713ec2086478a6b23190f658b23",
+      "reason": "low_confidence"
+    },
+    {
+      "image": "external-words/000552.png",
+      "image_sha256": "d06cc0a3aa534d3693b77098411d426fbe03177bee6bd435c30fbce2be18f0a4",
+      "reason": "low_confidence"
+    },
+    {
+      "image": "external-words/000555.png",
+      "image_sha256": "eb1fa2c14214dfedf8100f333a01b9f6f35ca0c0d3b3582ce8b30abb4b9e00f5",
+      "reason": "low_confidence"
+    },
+    {
+      "image": "external-words/000556.png",
+      "image_sha256": "4f8f1387b2d8554abb143637d996a22565150b5ed9ac0a8f0c89e3e85e6b604e",
+      "reason": "low_confidence"
+    },
+    {
+      "image": "external-words/000575.png",
+      "image_sha256": "629efec06eadb5d34b0c17d55b39281628f685adb2425641abdad2129d116437",
+      "reason": "low_confidence"
+    },
+    {
+      "image": "external-words/000579.png",
+      "image_sha256": "5caa86c34ed74b6b7edf9580201d6d33fb70561ba79c76c3ed5ee5e41275b319",
+      "reason": "low_confidence"
+    },
+    {
+      "image": "external-words/000581.png",
+      "image_sha256": "5c28c9d067d216370b286200b775aa2c4a646892ff1c347d22fce75a0fd85575",
+      "reason": "low_confidence"
+    },
+    {
+      "image": "external-words/000582.png",
+      "image_sha256": "57eac25ba85a70047d43c61e06820232d3e87f84cbd6282ccbfd8f5afd0cef14",
+      "reason": "low_confidence"
+    },
+    {
+      "image": "external-words/000584.png",
+      "image_sha256": "eb04f72066820d2127bd12e63c8f0b912f8b9a25910199971939848b3df8c132",
+      "reason": "low_confidence"
+    },
+    {
+      "image": "external-words/000591.png",
+      "image_sha256": "c4928833795f2d776d10ac0296a65d81854bcbad1ed711a37b5079bca75322f3",
+      "reason": "low_confidence"
+    },
+    {
+      "image": "external-words/000592.png",
+      "image_sha256": "9a12950a874ba665aa68cdfd5a57791cf3ee3011aedbdea59b7d93b32be69556",
+      "reason": "low_confidence"
+    }
+  ],
+  "all_numeric_fields_and_per_length_counts_match_final_rows": true,
+  "unchanged_numeric_metrics": {
+    "total": 607,
+    "accepted": 291,
+    "correct": 262,
+    "exact_word_accuracy": 0.4316309719934102,
+    "accepted_accuracy": 0.9003436426116839,
+    "by_length": {
+      "1": {
+        "total": 152,
+        "accepted": 80,
+        "correct": 76,
+        "exact_word_accuracy": 0.5,
+        "accepted_accuracy": 0.95
+      },
+      "2": {
+        "total": 109,
+        "accepted": 59,
+        "correct": 54,
+        "exact_word_accuracy": 0.4954128440366973,
+        "accepted_accuracy": 0.9152542372881356
+      },
+      "3": {
+        "total": 73,
+        "accepted": 45,
+        "correct": 37,
+        "exact_word_accuracy": 0.5068493150684932,
+        "accepted_accuracy": 0.8222222222222222
+      },
+      "4": {
+        "total": 66,
+        "accepted": 33,
+        "correct": 28,
+        "exact_word_accuracy": 0.42424242424242425,
+        "accepted_accuracy": 0.8484848484848485
+      },
+      "5": {
+        "total": 70,
+        "accepted": 19,
+        "correct": 16,
+        "exact_word_accuracy": 0.22857142857142856,
+        "accepted_accuracy": 0.8421052631578947
+      },
+      "6": {
+        "total": 43,
+        "accepted": 16,
+        "correct": 16,
+        "exact_word_accuracy": 0.37209302325581395,
+        "accepted_accuracy": 1.0
+      },
+      "7": {
+        "total": 35,
+        "accepted": 16,
+        "correct": 16,
+        "exact_word_accuracy": 0.45714285714285713,
+        "accepted_accuracy": 1.0
+      },
+      "8": {
+        "total": 24,
+        "accepted": 11,
+        "correct": 8,
+        "exact_word_accuracy": 0.3333333333333333,
+        "accepted_accuracy": 0.7272727272727273
+      },
+      "9": {
+        "total": 15,
+        "accepted": 4,
+        "correct": 4,
+        "exact_word_accuracy": 0.26666666666666666,
+        "accepted_accuracy": 1.0
+      },
+      "10": {
+        "total": 13,
+        "accepted": 3,
+        "correct": 3,
+        "exact_word_accuracy": 0.23076923076923078,
+        "accepted_accuracy": 1.0
+      },
+      "11": {
+        "total": 5,
+        "accepted": 4,
+        "correct": 3,
+        "exact_word_accuracy": 0.6,
+        "accepted_accuracy": 0.75
+      },
+      "12": {
+        "total": 2,
+        "accepted": 1,
+        "correct": 1,
+        "exact_word_accuracy": 0.5,
+        "accepted_accuracy": 1.0
+      }
+    }
+  },
+  "future_fix": {
+    "file": "training/scripts/word_benchmark.py",
+    "sha256": "ad7d4f3a35a8d0dd3a530dfeb8f849fde585e97cadcde5fcb043950bedd05988"
+  },
+  "focused_regression": {
+    "file": "training/tests/test_word_benchmark.py",
+    "sha256": "7bf2dec63fe2c86889f49760bd4214f3d9585eb22593a5e73d215e6cfc3150e0",
+    "tests_passed": 2
+  },
+  "verification_source": {
+    "file": "training/evidence/braille-word-reader-v1/legacy-v2-oracle-607/retain_evidence.py",
+    "sha256": "c5409a008732cad0106d01406aa3d1462324f163f271399624c4455c6db4d41c"
+  }
+}

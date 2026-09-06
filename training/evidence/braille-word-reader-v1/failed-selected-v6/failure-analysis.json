@@ -1,0 +1,112 @@
+{
+  "scope": "Post-test failure diagnosis only; no external gradients, threshold calibration, relabeling or fixture removal.",
+  "matching": "Greedy nearest unused selected proposal center, distance <= .45 ground-truth cell height; approximate diagnostic, not detector AP.",
+  "counts": {
+    "ground_truth_cells": 2242,
+    "matched_ground_truth_cells": 2004,
+    "matched_correct_mask": 1761,
+    "clipped_word_matched_cells": 1002,
+    "clipped_word_correct_masks": 873,
+    "unmatched_predictions": 247,
+    "clipped_with_unmatched_prediction": 78,
+    "unmatched_ground_truth_cells": 238
+  },
+  "quantiles": {
+    "external_gt_height": {
+      "p05": 48.338393314003085,
+      "p25": 67.6056338028169,
+      "median": 96.0,
+      "p75": 136.35215311004782,
+      "p95": 151.57894736842104
+    },
+    "matched_center_error_per_height": {
+      "p05": 0.02336018793203734,
+      "p25": 0.047003103056692946,
+      "median": 0.06535232280912068,
+      "p75": 0.08882064847167306,
+      "p95": 0.29131655868989703
+    },
+    "matched_width_ratio": {
+      "p05": 0.9501122522816461,
+      "p25": 1.2456729550864183,
+      "median": 1.3780712814707505,
+      "p75": 1.49937481880188,
+      "p95": 1.655078437150109
+    },
+    "matched_height_ratio": {
+      "p05": 0.8498951870635428,
+      "p25": 1.0311304278995679,
+      "median": 1.1021669546960307,
+      "p75": 1.1786992562256648,
+      "p95": 1.2886493313593164
+    },
+    "matched_objectness": {
+      "p05": 0.3926386058330536,
+      "p25": 0.5080806165933609,
+      "median": 0.6286078095436096,
+      "p75": 0.7393763512372971,
+      "p95": 0.8487907737493514
+    },
+    "external_luminance_std": {
+      "p05": 0.010091920103877782,
+      "p25": 0.016227605752646923,
+      "median": 0.023488154634833336,
+      "p75": 0.0371533390134573,
+      "p95": 0.06149426251649857
+    },
+    "train_gt_height": {
+      "p05": 36.837209302325576,
+      "p25": 46.54545454545455,
+      "median": 61.71428571428572,
+      "p75": 90.35294117647058,
+      "p95": 130.72340425531914
+    },
+    "train_luminance_std": {
+      "p05": 0.0256509680300951,
+      "p25": 0.03642259165644646,
+      "median": 0.04420585371553898,
+      "p75": 0.05303035955876112,
+      "p95": 0.07302167527377604
+    },
+    "validation_gt_height": {
+      "p05": 28.95238095238095,
+      "p25": 41.73913043478261,
+      "median": 57.60000000000001,
+      "p75": 100.056338028169,
+      "p95": 137.7391304347826
+    },
+    "validation_luminance_std": {
+      "p05": 0.02579622492194176,
+      "p25": 0.03155944589525461,
+      "median": 0.04001476801931858,
+      "p75": 0.04913508798927069,
+      "p95": 0.06501341462135315
+    }
+  },
+  "words_by_median_cell_height_pixels": {
+    "75": {
+      "words": 84,
+      "correct": 11
+    },
+    "125": {
+      "words": 228,
+      "correct": 83
+    },
+    "100": {
+      "words": 79,
+      "correct": 16
+    },
+    "150": {
+      "words": 125,
+      "correct": 43
+    },
+    "50": {
+      "words": 75,
+      "correct": 11
+    },
+    "25": {
+      "words": 16,
+      "correct": 4
+    }
+  }
+}

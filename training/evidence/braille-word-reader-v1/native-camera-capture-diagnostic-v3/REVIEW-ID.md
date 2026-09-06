@@ -1,0 +1,24 @@
+# Tinjauan bukti kamera native v3
+
+Bukti ini berasal dari APK diagnostik terpisah tanpa model pada kamera imagefile emulator. Enam kasus target 4:3 lulus; dua kasus tambahan 16:9 gagal. Tidak ada klaim APK utama, kamera fisik, atau keberhasilan pengenalan.
+
+Pada foto tinjauan, tanda silang hijau menunjukkan posisi yang dihitung dari metadata sensor; warna asli memberikan posisi pengamatan yang independen. Persegi panjang hijau adalah ROI panduan. Tidak ada transformasi yang dipasang ulang dari posisi penanda.
+
+| Kasus | Target foto | Viewport | Rotasi foto | Galat maksimum (px) | Hasil | Bukti |
+| --- | --- | --- | --- | --- | --- | --- |
+| 1 | 1920 x 1440 | 1:1 | 90 | 0.098951 | Lulus | [pratinjau](camera-capture-v3/photo4by3-view1by1-1788626714688-1/preview.png), [foto + ROI](camera-capture-v3/photo4by3-view1by1-1788626714688-1/photo-review.png), [JPEG mentah](camera-capture-v3/photo4by3-view1by1-1788626714688-1/imageproxy.jpg), [metadata](camera-capture-v3/photo4by3-view1by1-1788626714688-1/report.json) |
+| 2 | 1920 x 1080 | 1:1 | 90 | 119.992875 | Gagal | [pratinjau](camera-capture-v3/photo16by9-view1by1-1788626729848-1/preview.png), [foto + ROI](camera-capture-v3/photo16by9-view1by1-1788626729848-1/photo-review.png), [JPEG mentah](camera-capture-v3/photo16by9-view1by1-1788626729848-1/imageproxy.jpg), [metadata](camera-capture-v3/photo16by9-view1by1-1788626729848-1/report.json) |
+| 3 | 1920 x 1440 | 1:1 | 0 | 0.803819 | Lulus | [pratinjau](camera-capture-v3/photo4by3-view1by1-1788626745439-1/preview.png), [foto + ROI](camera-capture-v3/photo4by3-view1by1-1788626745439-1/photo-review.png), [JPEG mentah](camera-capture-v3/photo4by3-view1by1-1788626745439-1/imageproxy.jpg), [metadata](camera-capture-v3/photo4by3-view1by1-1788626745439-1/report.json) |
+| 4 | 1920 x 1080 | 1:1 | 0 | 120.601024 | Gagal | [pratinjau](camera-capture-v3/photo16by9-view1by1-1788626762107-1/preview.png), [foto + ROI](camera-capture-v3/photo16by9-view1by1-1788626762107-1/photo-review.png), [JPEG mentah](camera-capture-v3/photo16by9-view1by1-1788626762107-1/imageproxy.jpg), [metadata](camera-capture-v3/photo16by9-view1by1-1788626762107-1/report.json) |
+| 5 | 1920 x 1440 | 2:1 | 0 | 0.297267 | Lulus | [pratinjau](camera-capture-v3/photo4by3-view2by1-1788626778916-1/preview.png), [foto + ROI](camera-capture-v3/photo4by3-view2by1-1788626778916-1/photo-review.png), [JPEG mentah](camera-capture-v3/photo4by3-view2by1-1788626778916-1/imageproxy.jpg), [metadata](camera-capture-v3/photo4by3-view2by1-1788626778916-1/report.json) |
+| 6 | 1920 x 1440 | 2:1 | 90 | 0.481009 | Lulus | [pratinjau](camera-capture-v3/photo4by3-view2by1-1788626797322-2/preview.png), [foto + ROI](camera-capture-v3/photo4by3-view2by1-1788626797322-2/photo-review.png), [JPEG mentah](camera-capture-v3/photo4by3-view2by1-1788626797322-2/imageproxy.jpg), [metadata](camera-capture-v3/photo4by3-view2by1-1788626797322-2/report.json) |
+| 7 | 1920 x 1440 | 1:1 | 270 | 0.098914 | Lulus | [pratinjau](camera-capture-v3/photo4by3-view1by1-1788626818812-1/preview.png), [foto + ROI](camera-capture-v3/photo4by3-view1by1-1788626818812-1/photo-review.png), [JPEG mentah](camera-capture-v3/photo4by3-view1by1-1788626818812-1/imageproxy.jpg), [metadata](camera-capture-v3/photo4by3-view1by1-1788626818812-1/report.json) |
+| 8 | 1920 x 1440 | 1:1 | 180 | 0.737163 | Lulus | [pratinjau](camera-capture-v3/photo4by3-view1by1-1788626835424-2/preview.png), [foto + ROI](camera-capture-v3/photo4by3-view1by1-1788626835424-2/photo-review.png), [JPEG mentah](camera-capture-v3/photo4by3-view1by1-1788626835424-2/imageproxy.jpg), [metadata](camera-capture-v3/photo4by3-view1by1-1788626835424-2/report.json) |
+
+Resolusi yang benar-benar dipilih adalah 1280 x 960 untuk pratinjau dan foto 4:3, serta 1280 x 720 untuk foto 16:9. Semua pengambilan memakai kamera belakang tanpa mirror. Toleransi 4 piksel dibekukan sebelum pengambilan.
+
+JPEG 16:9 identik dengan baris 240-959 dari JPEG 4:3, sedangkan matriks sensor menyatakan crop mulai baris 120. Seluruh delapan JPEG setelah orientasi EXIF identik dengan bitmap Nitro. Selisih 16:9 mendahului konversi Nitro dan tetap dicatat tanpa koreksi heuristik.
+
+[Laporan asli](report.json) tetap byte-identik dengan SHA-256 `afeace64ae29721b46de9598584f664659f021b32ff7fa5ad166af53143161c7`. [Penjelasan sumber dan batas bukti](README.md) membedakan hasil piksel dari inferensi mengenai source emulator. Percobaan awal yang kehilangan dua penanda tetap disimpan di `camera-capture/` dan tidak dihitung sebagai keberhasilan empat penanda.
+
+[Indeks hash](archive-index.json) mencakup seluruh file yang disimpan, termasuk bundle/sourcemap untuk mengikat sumber yang benar-benar dijalankan. APK berukuran 104 MB tidak disalin. [Verifier dan replay offline](../../../../scripts/word-native-capture/README.md) memeriksa delapan laporan pengambilan serta kedua pasangan JPEG tanpa ADB/emulator atau inferensi model.

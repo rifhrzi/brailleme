@@ -1,0 +1,217 @@
+{
+  "status": "passed",
+  "scope": "Independent CPU NumPy/Pillow replay of actual AST-loaded Patches against frozen run19, plus all2338 raw-TXT point records and target deltas. No Keras/model/inference/training/GPU.",
+  "script_sha256": "af152c7ce5f6b38142c44b1c2b1899144a4b09a208b6ef963763988fa9ca3519",
+  "source_sha256": {
+    "word_data.py": "abc7a31a94db497b9a48ce44bd68d96556e67014623c5645c129153844b48cb7",
+    "word_train.py": "4d091c0a887cb25fffc1bc6e7bb7e7ab547880c5fda4b8a45ef3c09af87c3e15",
+    "word_point_geometry.py": "2b932b320d191277b86ae13daecb82b5abbf0a46e9464d7360ee1e941aca760b",
+    "word_point_metadata.py": "de1cad0157e744f2f646010eac5355b88d1d11f52662d4b9353166661f59049f",
+    "word_model.py": "c446732a2905a612cd6f1dd64d2d3d01303b1c71933c34552d26f3b5052fd551",
+    "word_sampling.py": "c234523277dba683e68a2863e14736bc68432da3b6ca65bb5d8a64bc7d9dc0fe"
+  },
+  "baseline_source_sha256": {
+    "word_data.py": "7a41e67b82dee87f1dc5efb813cfac2de1f5be4bc49971fda86167d0b2bb0d5b",
+    "word_train.py": "e9494a076f686fd0d8ca0888efbdb1085213f63c76c1e4ef8ab71345bd3fbc58"
+  },
+  "metadata_sha256": "ea9592a727f7f3abcc6b017f8f22e143e90ae1541f623c43adf30104021937e8",
+  "metadata_known_occurrences_checked": 27055,
+  "unaugmented_target_counts": {
+    "records": 2338,
+    "full_centers_unchanged": 13911,
+    "visible_fragment_inputs": 7414,
+    "new_unknown_dot_centers": 7414,
+    "zero_known_records_unchanged": 47
+  },
+  "paired_profiles": [
+    {
+      "profile": {},
+      "training": true,
+      "batches": 4,
+      "records": 30,
+      "passed": true
+    },
+    {
+      "profile": {},
+      "training": false,
+      "batches": 4,
+      "records": 30,
+      "passed": true
+    },
+    {
+      "profile": {
+        "camera_augmentation": true
+      },
+      "training": true,
+      "batches": 4,
+      "records": 30,
+      "passed": true
+    },
+    {
+      "profile": {
+        "camera_augmentation": true
+      },
+      "training": false,
+      "batches": 4,
+      "records": 30,
+      "passed": true
+    },
+    {
+      "profile": {
+        "illumination_augmentation": true
+      },
+      "training": true,
+      "batches": 4,
+      "records": 30,
+      "passed": true
+    },
+    {
+      "profile": {
+        "illumination_augmentation": true
+      },
+      "training": false,
+      "batches": 4,
+      "records": 30,
+      "passed": true
+    },
+    {
+      "profile": {
+        "polarity_augmentation": true
+      },
+      "training": true,
+      "batches": 4,
+      "records": 30,
+      "passed": true
+    },
+    {
+      "profile": {
+        "polarity_augmentation": true
+      },
+      "training": false,
+      "batches": 4,
+      "records": 30,
+      "passed": true
+    },
+    {
+      "profile": {
+        "half_turn_augmentation": true
+      },
+      "training": true,
+      "batches": 4,
+      "records": 30,
+      "passed": true
+    },
+    {
+      "profile": {
+        "half_turn_augmentation": true
+      },
+      "training": false,
+      "batches": 4,
+      "records": 30,
+      "passed": true
+    },
+    {
+      "profile": {
+        "illumination_augmentation": true,
+        "horizontal_mirror_augmentation": true
+      },
+      "training": true,
+      "batches": 4,
+      "records": 30,
+      "passed": true
+    },
+    {
+      "profile": {
+        "illumination_augmentation": true,
+        "horizontal_mirror_augmentation": true
+      },
+      "training": false,
+      "batches": 4,
+      "records": 30,
+      "passed": true
+    }
+  ],
+  "paired_sample_sources": [
+    "books/chudo_derevo_redmi/IMG_20190715_112912.labeled.jpg",
+    "books/mdd-redmi1/01crop.labeled.jpg",
+    "books/mdd_cannon1/01crop.labeled.jpg",
+    "books/skazki/IMG_20190715_121011.labeled.jpg",
+    "books/telefon/IMG_20190715_123123.labeled.jpg",
+    "books/uploaded/15662143454241346711394.labeled.jpg",
+    "dsbi/Massage/M+1+recto.jpg",
+    "dsbi/Massage/M+2+recto.jpg",
+    "dsbi/Math/math+1+recto.jpg",
+    "dsbi/Math/math+2+recto.jpg",
+    "dsbi/Ordinary Printed Document/OPD+1+recto.jpg",
+    "dsbi/Shaver Yang Fengting/SYF+3+recto.jpg",
+    "handwritten/kov/04089871-23a0-44ca-8830-581a13b03153.labeled.jpg",
+    "handwritten/uploaded/1563957317247869394114.labeled.jpg",
+    "not_braille/misc/016.jpg",
+    "not_braille/misc/_06.jpg"
+  ],
+  "paired_sample_images": [
+    "train/000000.png",
+    "train/000001.png",
+    "train/000442.png",
+    "train/000443.png",
+    "train/000776.png",
+    "train/000777.png",
+    "train/001106.png",
+    "train/001107.png",
+    "train/004784.png",
+    "train/004785.png",
+    "train/005510.png",
+    "train/005511.png",
+    "../dsbi-training-contexts-v2/images/000017.png",
+    "../dsbi-training-contexts-v2/images/000028.png",
+    "../dsbi-training-contexts-v2/images/000000.png",
+    "../dsbi-training-contexts-v2/images/000001.png",
+    "../dsbi-training-contexts-v2/images/000921.png",
+    "../dsbi-training-contexts-v2/images/000922.png",
+    "../dsbi-training-contexts-v2/images/000875.png",
+    "../dsbi-training-contexts-v2/images/000876.png",
+    "../dsbi-training-contexts-v2/images/001709.png",
+    "../dsbi-training-contexts-v2/images/001710.png",
+    "../dsbi-training-contexts-v2/images/001998.png",
+    "../dsbi-training-contexts-v2/images/001999.png",
+    "train/005564.png",
+    "train/005565.png",
+    "train/005926.png",
+    "train/005927.png",
+    "train/006283.png",
+    "train/006284.png"
+  ],
+  "geometry_trace": {
+    "rotate": 45,
+    "occupied_centers_lost": 170,
+    "previously_lost_coordinates_inside_still_invisible": 0,
+    "affine": 48,
+    "half_turn": 6,
+    "mirror_horizontal": 6
+  },
+  "gradient_fixture": {
+    "image": "../dsbi-training-contexts-v2/images/000002.png",
+    "image_sha256": "ae9de4fc05329bbb4529cb1003a3e5b9fdcd4b953df5235d52d200b66e195f2c",
+    "target_sha256": "2a5245475c8a471bb9533447e5df7aa875faa8e8dd45626b6d560b97768bff58"
+  },
+  "forced_affine_outside_then_rotation_inside": {
+    "final_coordinates": [
+      477.6075543689525,
+      166.78318562211086
+    ],
+    "final_coordinates_inside": true,
+    "occupied_survivors": 0,
+    "generated_fragment_targets": 0,
+    "actual_marker_pixels_recovered": false
+  },
+  "physical_F_strategy": {
+    "unchanged_angelina_ideal_target_text": "BLYCS",
+    "reason": "",
+    "scope": "No source point metadata exists for Angelina, so this ablation does not directly change that target. Recognition transfer from DSBI cuts must be measured after training."
+  },
+  "limitations": [
+    "PyDataset base is a minimal constructor stub; the actual Patches class, data functions, sampler and RNG are used without Keras scheduling.",
+    "Paired augmentation replay is bounded to recorded profiles/sources/seeds; all2338 unaugmented DSBI target cases are checked.",
+    "Gradient evidence is generated separately from the saved actual target using the unchanged loss."
+  ]
+}

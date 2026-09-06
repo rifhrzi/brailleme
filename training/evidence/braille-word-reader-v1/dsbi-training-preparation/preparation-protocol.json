@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "created_at_utc": "2026-09-05T14:34:39.681293+00:00",
+  "scope": "Append-only DSBI TRAIN context preparation; no training, inference, validation selection or test pixels.",
+  "dataset_revision": "6937eb8973efe5ff337e5c018485cb626303f5c2",
+  "source_coordinate_space": "provided_deskewed_recto_image_pixels",
+  "image_transform_before_crop": "Identity on provided already deskewed +recto.jpg; JPEG decode to RGB; never reapply annotation angle.",
+  "cell_box": "Full two-column/three-row grid, .3 horizontal column pitch extension on every edge.",
+  "positive_anchor_policy": {
+    "row_bands": "Listed slots in row/column order; span determined only by source ordinal, one-based row and band ordinal.",
+    "column_spans_cycle": [
+      1,
+      2,
+      4,
+      6,
+      8,
+      12
+    ],
+    "context_width": "max(anchor union width + two horizontal pitches, 3.2 * maximum full cell height)",
+    "context_aspect": 2.5,
+    "pixel_crop_rounding": "floor left/top; ceil right/bottom after fitting the complete rectangle inside the source image"
+  },
+  "unlisted_slots": "Separate transformed full ignore_boxes; never positive objectness/geometry/dots.",
+  "explicit_zero_masks": "Retained in source ledger as background, excluded from positive boxes/masks.",
+  "empty_recto_side": "Nine fixed contexts at 20/50/80 percent x/y; 320x128 source pixels, bounded if needed; justified only by documented empty side annotation.",
+  "resize": {
+    "width": 480,
+    "height": 192,
+    "resampling": "Pillow Image.Resampling.BILINEAR",
+    "pillow_version": "12.3.0",
+    "png_compress_level": 1
+  },
+  "download_provenance_sha256": "b8de8f3e3291025608bb35a66f29ea12f0fffb2c5300eca63053d63325bb673b",
+  "generator_sha256": "54fe00edff055c2f826e9c8230599309eeb6c48d20358e947c0156886d55c4fa",
+  "parser_sha256": "feecf16dba6d376415e15707c02c8f05fcf6650055da09ad9f4712099e6325ff",
+  "protected_original_hashes": {
+    "source-split.json": "870e1be00c8e4fa4c34e755f26b1ff6becaa3e1fdb70288b0499c2aeba8867dc",
+    "train.json": "f728b900c791433f8fd4aea08997af96f3320c0cfe5628619843a2a5b798cddc",
+    "validation.json": "d796841e8fdd21443d3f9f28e5c6339bda0199fa68ba1e864c4f6c434958443a",
+    "validation-words.json": "2ee26bbffd0457830eebe81dd48beb0b4bcb3a6dafe7957544f2ca3a0984c346",
+    "validation-stress-selection.json": "e2ab968f7c4dcf7e774181fde687e1321f58d20567528af4b21fd03ff5a3e625",
+    "external-words.json": "e69d7c0d9582aef7d51a2c15706f6bf62bc3cdfe35d22ad28ad007301d56b41b"
+  },
+  "originally_complete": "Compare the full original source box to the bounded integer source crop before resize, with exact inequalities and no restoration tolerance. Crops remain inside the original deskewed raster."
+}

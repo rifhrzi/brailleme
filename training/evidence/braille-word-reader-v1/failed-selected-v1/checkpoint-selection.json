@@ -1,0 +1,389 @@
+{
+  "created_at_utc": "2026-09-05T04:58:01.399405+00:00",
+  "fixture_sha256": "2ee26bbffd0457830eebe81dd48beb0b4bcb3a6dafe7957544f2ca3a0984c346",
+  "validation_words": 135,
+  "selection_rule": "Prefer accepted accuracy >=95%, then maximum exact whole-word accuracy (rejections count as errors); all candidates use the same final validation inputs and full-float32 oracle.",
+  "candidates": [
+    {
+      "source_checkpoint": ".braille-training-work\\word-scan-v1-20260905\\run3\\best-word.keras",
+      "checkpoint_sha256": "ff07bd39666af19a1c0c9c03cc59bb8dab016285135c38a6f9106205f2e40f5e",
+      "thresholds": {
+        "proposalScore": 0.35,
+        "acceptScore": 0.4,
+        "dotConfidence": 0.7,
+        "nmsIou": 0.25,
+        "minCellWidth": 0.008,
+        "minCellHeight": 0.06,
+        "edgeMargin": 0.008,
+        "maxRowDeviation": 0.55,
+        "maxGapRatio": 1.2,
+        "maxOverlapRatio": 0.5
+      },
+      "words": {
+        "total": 135,
+        "accepted": 114,
+        "correct": 113,
+        "exact_word_accuracy": 0.837037037037037,
+        "accepted_accuracy": 0.9912280701754386,
+        "by_length": {
+          "1": {
+            "total": 29,
+            "accepted": 25,
+            "correct": 25,
+            "exact_word_accuracy": 0.8620689655172413,
+            "accepted_accuracy": 1.0
+          },
+          "2": {
+            "total": 21,
+            "accepted": 18,
+            "correct": 17,
+            "exact_word_accuracy": 0.8095238095238095,
+            "accepted_accuracy": 0.9444444444444444
+          },
+          "3": {
+            "total": 17,
+            "accepted": 16,
+            "correct": 16,
+            "exact_word_accuracy": 0.9411764705882353,
+            "accepted_accuracy": 1.0
+          },
+          "4": {
+            "total": 11,
+            "accepted": 9,
+            "correct": 9,
+            "exact_word_accuracy": 0.8181818181818182,
+            "accepted_accuracy": 1.0
+          },
+          "5": {
+            "total": 10,
+            "accepted": 8,
+            "correct": 8,
+            "exact_word_accuracy": 0.8,
+            "accepted_accuracy": 1.0
+          },
+          "6": {
+            "total": 23,
+            "accepted": 22,
+            "correct": 22,
+            "exact_word_accuracy": 0.9565217391304348,
+            "accepted_accuracy": 1.0
+          },
+          "7": {
+            "total": 8,
+            "accepted": 7,
+            "correct": 7,
+            "exact_word_accuracy": 0.875,
+            "accepted_accuracy": 1.0
+          },
+          "8": {
+            "total": 11,
+            "accepted": 6,
+            "correct": 6,
+            "exact_word_accuracy": 0.5454545454545454,
+            "accepted_accuracy": 1.0
+          },
+          "9": {
+            "total": 5,
+            "accepted": 3,
+            "correct": 3,
+            "exact_word_accuracy": 0.6,
+            "accepted_accuracy": 1.0
+          }
+        },
+        "rejection_reasons": {
+          "low_confidence": 9,
+          "gap": 1,
+          "clipped": 7,
+          "unsupported_pattern": 2,
+          "no_grid": 2
+        }
+      }
+    },
+    {
+      "source_checkpoint": ".braille-training-work\\word-scan-v1-20260905\\run4\\last.keras",
+      "checkpoint_sha256": "c4b7e487ce8ca91ecef81ba19c9afd2d436dcb8f51a7f501d93c6b7564f3f93a",
+      "thresholds": {
+        "proposalScore": 0.35,
+        "acceptScore": 0.4,
+        "dotConfidence": 0.7,
+        "nmsIou": 0.25,
+        "minCellWidth": 0.008,
+        "minCellHeight": 0.06,
+        "edgeMargin": 0.008,
+        "maxRowDeviation": 0.55,
+        "maxGapRatio": 1.2,
+        "maxOverlapRatio": 0.5
+      },
+      "words": {
+        "total": 135,
+        "accepted": 114,
+        "correct": 110,
+        "exact_word_accuracy": 0.8148148148148148,
+        "accepted_accuracy": 0.9649122807017544,
+        "by_length": {
+          "1": {
+            "total": 29,
+            "accepted": 23,
+            "correct": 23,
+            "exact_word_accuracy": 0.7931034482758621,
+            "accepted_accuracy": 1.0
+          },
+          "2": {
+            "total": 21,
+            "accepted": 18,
+            "correct": 15,
+            "exact_word_accuracy": 0.7142857142857143,
+            "accepted_accuracy": 0.8333333333333334
+          },
+          "3": {
+            "total": 17,
+            "accepted": 16,
+            "correct": 15,
+            "exact_word_accuracy": 0.8823529411764706,
+            "accepted_accuracy": 0.9375
+          },
+          "4": {
+            "total": 11,
+            "accepted": 10,
+            "correct": 10,
+            "exact_word_accuracy": 0.9090909090909091,
+            "accepted_accuracy": 1.0
+          },
+          "5": {
+            "total": 10,
+            "accepted": 9,
+            "correct": 9,
+            "exact_word_accuracy": 0.9,
+            "accepted_accuracy": 1.0
+          },
+          "6": {
+            "total": 23,
+            "accepted": 22,
+            "correct": 22,
+            "exact_word_accuracy": 0.9565217391304348,
+            "accepted_accuracy": 1.0
+          },
+          "7": {
+            "total": 8,
+            "accepted": 7,
+            "correct": 7,
+            "exact_word_accuracy": 0.875,
+            "accepted_accuracy": 1.0
+          },
+          "8": {
+            "total": 11,
+            "accepted": 6,
+            "correct": 6,
+            "exact_word_accuracy": 0.5454545454545454,
+            "accepted_accuracy": 1.0
+          },
+          "9": {
+            "total": 5,
+            "accepted": 3,
+            "correct": 3,
+            "exact_word_accuracy": 0.6,
+            "accepted_accuracy": 1.0
+          }
+        },
+        "rejection_reasons": {
+          "gap": 2,
+          "clipped": 6,
+          "low_confidence": 9,
+          "too_many_cells": 1,
+          "no_grid": 3
+        }
+      }
+    },
+    {
+      "source_checkpoint": ".braille-training-work\\word-scan-v1-20260905\\run5\\best-word.keras",
+      "checkpoint_sha256": "e79046508c2abd660a58e208fc579f12f0db72fa03da5834899dae9a2f03470e",
+      "thresholds": {
+        "proposalScore": 0.35,
+        "acceptScore": 0.4,
+        "dotConfidence": 0.7,
+        "nmsIou": 0.25,
+        "minCellWidth": 0.008,
+        "minCellHeight": 0.06,
+        "edgeMargin": 0.008,
+        "maxRowDeviation": 0.55,
+        "maxGapRatio": 1.2,
+        "maxOverlapRatio": 0.5
+      },
+      "words": {
+        "total": 135,
+        "accepted": 120,
+        "correct": 118,
+        "exact_word_accuracy": 0.8740740740740741,
+        "accepted_accuracy": 0.9833333333333333,
+        "by_length": {
+          "1": {
+            "total": 29,
+            "accepted": 25,
+            "correct": 25,
+            "exact_word_accuracy": 0.8620689655172413,
+            "accepted_accuracy": 1.0
+          },
+          "2": {
+            "total": 21,
+            "accepted": 19,
+            "correct": 18,
+            "exact_word_accuracy": 0.8571428571428571,
+            "accepted_accuracy": 0.9473684210526315
+          },
+          "3": {
+            "total": 17,
+            "accepted": 16,
+            "correct": 16,
+            "exact_word_accuracy": 0.9411764705882353,
+            "accepted_accuracy": 1.0
+          },
+          "4": {
+            "total": 11,
+            "accepted": 10,
+            "correct": 10,
+            "exact_word_accuracy": 0.9090909090909091,
+            "accepted_accuracy": 1.0
+          },
+          "5": {
+            "total": 10,
+            "accepted": 9,
+            "correct": 8,
+            "exact_word_accuracy": 0.8,
+            "accepted_accuracy": 0.8888888888888888
+          },
+          "6": {
+            "total": 23,
+            "accepted": 22,
+            "correct": 22,
+            "exact_word_accuracy": 0.9565217391304348,
+            "accepted_accuracy": 1.0
+          },
+          "7": {
+            "total": 8,
+            "accepted": 7,
+            "correct": 7,
+            "exact_word_accuracy": 0.875,
+            "accepted_accuracy": 1.0
+          },
+          "8": {
+            "total": 11,
+            "accepted": 9,
+            "correct": 9,
+            "exact_word_accuracy": 0.8181818181818182,
+            "accepted_accuracy": 1.0
+          },
+          "9": {
+            "total": 5,
+            "accepted": 3,
+            "correct": 3,
+            "exact_word_accuracy": 0.6,
+            "accepted_accuracy": 1.0
+          }
+        },
+        "rejection_reasons": {
+          "gap": 2,
+          "clipped": 5,
+          "low_confidence": 6,
+          "no_grid": 2
+        }
+      }
+    },
+    {
+      "source_checkpoint": ".braille-training-work\\word-scan-v1-20260905\\run5\\last.keras",
+      "checkpoint_sha256": "8bf1a4008bac3f84d983caf363a3806d0f4b5b2e3d1b398cd7c93fca69b67e2e",
+      "thresholds": {
+        "proposalScore": 0.35,
+        "acceptScore": 0.4,
+        "dotConfidence": 0.7,
+        "nmsIou": 0.25,
+        "minCellWidth": 0.008,
+        "minCellHeight": 0.06,
+        "edgeMargin": 0.008,
+        "maxRowDeviation": 0.55,
+        "maxGapRatio": 1.2,
+        "maxOverlapRatio": 0.5
+      },
+      "words": {
+        "total": 135,
+        "accepted": 119,
+        "correct": 117,
+        "exact_word_accuracy": 0.8666666666666667,
+        "accepted_accuracy": 0.9831932773109243,
+        "by_length": {
+          "1": {
+            "total": 29,
+            "accepted": 26,
+            "correct": 26,
+            "exact_word_accuracy": 0.896551724137931,
+            "accepted_accuracy": 1.0
+          },
+          "2": {
+            "total": 21,
+            "accepted": 17,
+            "correct": 15,
+            "exact_word_accuracy": 0.7142857142857143,
+            "accepted_accuracy": 0.8823529411764706
+          },
+          "3": {
+            "total": 17,
+            "accepted": 17,
+            "correct": 17,
+            "exact_word_accuracy": 1.0,
+            "accepted_accuracy": 1.0
+          },
+          "4": {
+            "total": 11,
+            "accepted": 10,
+            "correct": 10,
+            "exact_word_accuracy": 0.9090909090909091,
+            "accepted_accuracy": 1.0
+          },
+          "5": {
+            "total": 10,
+            "accepted": 8,
+            "correct": 8,
+            "exact_word_accuracy": 0.8,
+            "accepted_accuracy": 1.0
+          },
+          "6": {
+            "total": 23,
+            "accepted": 22,
+            "correct": 22,
+            "exact_word_accuracy": 0.9565217391304348,
+            "accepted_accuracy": 1.0
+          },
+          "7": {
+            "total": 8,
+            "accepted": 7,
+            "correct": 7,
+            "exact_word_accuracy": 0.875,
+            "accepted_accuracy": 1.0
+          },
+          "8": {
+            "total": 11,
+            "accepted": 8,
+            "correct": 8,
+            "exact_word_accuracy": 0.7272727272727273,
+            "accepted_accuracy": 1.0
+          },
+          "9": {
+            "total": 5,
+            "accepted": 4,
+            "correct": 4,
+            "exact_word_accuracy": 0.8,
+            "accepted_accuracy": 1.0
+          }
+        },
+        "rejection_reasons": {
+          "gap": 1,
+          "clipped": 5,
+          "low_confidence": 8,
+          "no_grid": 2
+        }
+      }
+    }
+  ],
+  "selected_checkpoint": ".braille-training-work\\word-scan-v1-20260905\\run5\\best-word.keras",
+  "selected_checkpoint_sha256": "e79046508c2abd660a58e208fc579f12f0db72fa03da5834899dae9a2f03470e",
+  "external_outputs_used": false
+}

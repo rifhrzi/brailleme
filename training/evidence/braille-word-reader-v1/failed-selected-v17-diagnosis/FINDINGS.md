@@ -1,0 +1,21 @@
+# Diagnosis run22 mirror pada cache 405 blok
+
+Kontrol membaca **357/405** blok dengan benar; epoch8 mirror membaca **314/405**. Ada 45 blok yang semula benar menjadi gagal, dan 2 yang membaik. Hasil ini direproduksi persis dari cache memakai decoder yang diarsipkan dan ambang asli masing-masing kandidat.
+
+**Penurunan terutama berkaitan dengan pola titik dan penempatan kotak, bukan berkurangnya sel yang ditemukan.** Matching satu-ke-satu berdasarkan IoU >=0,25 menghubungkan 1518 sel kontrol dan 1521 sel mirror dengan 1629 sel anotasi. Sebanyak 108 sel berasal dari 30 gambar yang sama-sama ditolak pemeriksaan kualitas; di luar gambar itu, sel tanpa pasangan berkurang dari 3 menjadi 0. Tidak ada sel tanpa pasangan pada 45 blok yang kehilangan hasil benar.
+
+Mask salah pada sel yang berpasangan bertambah dari 8 menjadi 49. Sebanyak **27 kasus tepat menjadi pola pantulan horizontal**: A→8 sebanyak9, K→40 sebanyak11, L→56 sebanyak5, dan B→24 sebanyak2. Semua pola asal hanya memakai kolom kiri. Semua27 mask itu benar pada kontrol. Kasus ini muncul pada22 blok yang kehilangan hasil benar, berasal dari14 crop dasar; varian stress bukan sumber independen tambahan.
+
+Pada27 kasus tersebut, pusat kotak mirror bergeser ke kiri dengan median0,400 kali lebar kotak anotasi, atau0,438 kali lebar jika dibandingkan dengan pusat prediksi kontrol. Confidence titik minimum0,943 dan skor deteksi minimum0,259, sehingga kasus-kasus ini juga melewati ambang confidence kontrol. Temuan ini konsisten dengan model menempatkan kolom yang tampak sebagai kolom kanan dari sel logis yang pusatnya bergeser. Anotasi Angelina tidak memberi posisi titik yang persis; ini tidak membuktikan pergeseran fisik titik, kesalahan kode label, atau satu-satunya penyebab regresi. Perubahan optimisasi/normalisasi tetap dapat berkontribusi.
+
+Alasan akhir45 blok yang memburuk:16 `clipped`,13 `unsupported_pattern`,10 `low_confidence`, dan6 hasil salah yang diterima. Dari16 kasus clipped,9 memiliki kotak pelanggar batas yang juga mengalami exact-mirror mask error. Pada1518 sel yang sama-sama berpasangan, rata-rata galat pusat bertambah1,115 piksel dan IoU berkurang0,00846. Mask salah lain termasuk N→Q sebanyak8; tidak semua kesalahan berupa pantulan.
+
+Regresi terlihat pada natural (130→113 benar dari135) dan stress (227→201 benar dari270). Penurunan menurut panjang terbesar secara jumlah adalah panjang2 dan6, masing-masing turun11 blok; panjang1 turun8. Tabel lengkap per panjang1–12 dan seluruh pola yang terwakili tersedia di [TABLES.md](TABLES.md). Panjang10–12 serta hurufF/V tidak terwakili dalam set ini.
+
+Matching ini diagnosis aproksimasi, bukan AP: IoU rendah dapat mencampur kegagalan lokasi dan deteksi; prediksi tanpa pasangan dapat berupa pecahan, konteks, atau deteksi tambahan. Ambang asli berbeda (kontrol proposal/accept0,25/0,25; mirror0,15/0,20), tanpa pencarian atau perubahan ambang. Tidak ada inferensi baru, akses607 eksternal, perubahan model aktif, atau bukti APK/perangkat fisik.
+
+Bukti lengkap:
+
+- [comparison.json.gz](comparison.json.gz): `072eb832e019ff416ac2d8fd7d3018d51f06b532a55fcd45a4b2e98db8a76363`; memuat seluruh405 keputusan per model, kotak, enam probabilitas, matching, statistik per pola/panjang, dan hash sumber/cache/checkpoint/fixture.
+- [pattern-followup.json](pattern-followup.json): `7cfbb9b7b46324db556931b4d9aa9087fd1a5af8f18fd44b14edd3b16a7ae078`; seluruh27 kasus pantulan dan16 kasus clipped yang kehilangan hasil benar.
+- Skrip reproduksi: [compare_control.py](scripts/compare_control.py) dan [pattern_followup.py](scripts/pattern_followup.py); hanya NumPy dan pustaka standar. Tiga pemeriksaan matching, seluruh hash405 PNG, identitas cache/model, dan kesetaraan metrik agregat dengan laporan seleksi lulus.

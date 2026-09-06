@@ -1,0 +1,36 @@
+{
+  "status": "private_numpy_semantics_and_syntax_passed_backend_pending",
+  "completed_at_utc": "2026-09-06T07:42:03.214191+00:00",
+  "tests": 11,
+  "exit_code": 0,
+  "test_log_sha256": "3028e299e08fef948424f007839bdb67f69f08a7bfbd90f1333b2abe0df4c05f",
+  "source_hashes_before": {
+    ".braille-training-work\\word-scan-v1-20260905\\dot-auxiliary-prototype-v1\\candidate\\word_dot_aux.py": "c858dc8bb90bfacab8d50d80edd7d9e4ac497990097815e090759ef8eace513e",
+    ".braille-training-work\\word-scan-v1-20260905\\dot-auxiliary-prototype-v1\\candidate\\word_dot_aux_targets.py": "48bd3db197dffd1c3004f4c14ce2c6137ce95cc72386cf2199ac791e04fd9a92",
+    ".braille-training-work\\word-scan-v1-20260905\\dot-auxiliary-prototype-v1\\candidate\\word_train.py": "60ca41ffebcea96567bad08859627664de1c98bce3c41a486e7280c842861e74",
+    ".braille-training-work\\word-scan-v1-20260905\\dot-auxiliary-prototype-v1\\test_targets.py": "1ea989c5e1b80b98adb7bcfc4bb5cdd73e4fc249d98e617bdd2c7a637796bde2",
+    ".braille-training-work\\word-scan-v1-20260905\\dot-auxiliary-prototype-v1\\prepare_integration.py": "efa661c3ca9fbafc5ac9ec07dd26d3b600841b07c8152aa953650d4f5479e8f6"
+  },
+  "source_hashes_after": {
+    ".braille-training-work\\word-scan-v1-20260905\\dot-auxiliary-prototype-v1\\candidate\\word_dot_aux.py": "c858dc8bb90bfacab8d50d80edd7d9e4ac497990097815e090759ef8eace513e",
+    ".braille-training-work\\word-scan-v1-20260905\\dot-auxiliary-prototype-v1\\candidate\\word_dot_aux_targets.py": "48bd3db197dffd1c3004f4c14ce2c6137ce95cc72386cf2199ac791e04fd9a92",
+    ".braille-training-work\\word-scan-v1-20260905\\dot-auxiliary-prototype-v1\\candidate\\word_train.py": "60ca41ffebcea96567bad08859627664de1c98bce3c41a486e7280c842861e74",
+    ".braille-training-work\\word-scan-v1-20260905\\dot-auxiliary-prototype-v1\\test_targets.py": "1ea989c5e1b80b98adb7bcfc4bb5cdd73e4fc249d98e617bdd2c7a637796bde2",
+    ".braille-training-work\\word-scan-v1-20260905\\dot-auxiliary-prototype-v1\\prepare_integration.py": "efa661c3ca9fbafc5ac9ec07dd26d3b600841b07c8152aa953650d4f5479e8f6"
+  },
+  "main_source_unchanged": {
+    "word_data.py": "d692b4b28620af7e4b40ebdedccda68769feb8d3f51bd1508e807487fd32b7d7",
+    "word_geometry_head.py": "f46c8f90e7f4fc9404eed2dc27fbde6e5c823d25d4f88e4127c7e56ed6e8764e",
+    "word_model.py": "c446732a2905a612cd6f1dd64d2d3d01303b1c71933c34552d26f3b5052fd551",
+    "word_point_geometry.py": "2b932b320d191277b86ae13daecb82b5abbf0a46e9464d7360ee1e941aca760b",
+    "word_train.py": "e22a5302af5eca4482c8901827e06b04126c72bb6964e63db97d940254f40a38"
+  },
+  "patch_sha256": "3f365cda12f867fc5f48829929cd115048f3d2a3707e62e323bea4930993a825",
+  "backend_imported": false,
+  "new_dataset_pixels_read": false,
+  "limitations": [
+    "Keras wrapper is syntax and source reviewed only; backend graph construction, loss accounting, shared gradient and save/reload equivalence remain pending root authorization.",
+    "Actual Patches __getitem__ old/new AST was exercised with synthetic image and augmentation adapters and actual NumPy make_target; no real Pillow or dataset path ran.",
+    "NumPy BCE oracle tests finite known/ignored labels; actual backend BCE exact-zero and gradients remain untested."
+  ]
+}

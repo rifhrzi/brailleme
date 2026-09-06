@@ -1,0 +1,41 @@
+{
+  "updated_at_utc": "2026-09-05T15:20:24.921438+00:00",
+  "owner": "/root/word_training_resume",
+  "active_run": "run19",
+  "exec_session_id": null,
+  "status": "run19 and v14 selection complete; unchanged v13 control selected; no active process",
+  "protocol": "run19/dsbi-addition-protocol.json",
+  "config": "run19/training-config.json",
+  "last_completed_epoch": 10,
+  "latest_callback": {
+    "natural_correct": 117,
+    "natural_total": 135,
+    "accepted": 120
+  },
+  "latest_sampling_audit": "run19/sampling-lineage-final.json",
+  "planned_eligible_epochs": [
+    8,
+    9,
+    10
+  ],
+  "next_selection_directory": "selected-v14",
+  "control": "selected-v13/best-word.keras",
+  "selection_fixture": "data/validation-stress-selection.json",
+  "selection_grid": "weak-peaks-v2",
+  "selection_command": "word_select.py --data data --output selected-v14 --validation-manifest validation-stress-selection.json --grouped-selection --threshold-grid weak-peaks-v2 --batch-size24 --candidates selected-v13/best-word.keras run19/retained-epochs/epoch-08.keras run19/retained-epochs/epoch-09.keras run19/retained-epochs/epoch-10.keras",
+  "before_selection": "Run word_sampling_audit.py --run run19 --protocol run19/dsbi-addition-protocol.json --report run19/sampling-lineage-final.json --require-eligible-epoch10, and inspect actual source/negative audits.",
+  "if_new_winner": "TF export with word_export.py then unchanged word_benchmark.py607/44/66. No activation before75whole/95accepted/0negative and finaldiagnostics/nativegates.",
+  "if_same_winner": "Do not repeat existing v13 external inference. Continue evidence-led recognition with root.",
+  "current_external_v13": {
+    "whole_correct": 262,
+    "total": 607,
+    "accepted": 291,
+    "negative_accepted": 0,
+    "negative_total": 44,
+    "model_sha256": "ac6950a4c3b50754533af6f966448b1c12b04c59539b6cd8dffc6ee44132445e"
+  },
+  "v13_diagnostics": "Root generated12/12 repetitions; rejected13/14 real cases, selection_cut-02 acceptsBLYCS missingF.",
+  "future_ablation_only": "Visible-partial targets for actual occupied dots outsidecenter, and geometry-conditioned reading; not implemented. DSBI unknownslots remain ignore-only.",
+  "pending_independent_audit": "Source coupling/ignore/27x2 and actual epochs1-2 audit passed; final sampling replay all10 passed",
+  "selection_result": "v13 control 351/405,351/360 accepted, equal-group mean .8833333; best DSBI epoch9 349/405,349/352 accepted, mean .8759259"
+}

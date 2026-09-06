@@ -1,0 +1,84 @@
+{
+  "created_at_utc": "2026-09-05T18:48:22.686600+00:00",
+  "enabled": true,
+  "metadata_path": "../dsbi-point-metadata-v1/points.json",
+  "point_metadata_sha256": "ea9592a727f7f3abcc6b017f8f22e143e90ae1541f623c43adf30104021937e8",
+  "source_sha256": {
+    "word_data.py": "659ab6b508a69b34bfb8dc899c5fa6e2214bd64e08281f40f9c39aa91d74996c",
+    "word_model.py": "c446732a2905a612cd6f1dd64d2d3d01303b1c71933c34552d26f3b5052fd551",
+    "word_decode.py": "bd301c5afeb4ba2e6866371665324d2de7f0a6ee252ef76ce02a5553193d63c5",
+    "word_train.py": "634c7760336ce0817c1a2310b5ee8d941c75b4a8a5bfd16cd6e1a8f6be4e03db",
+    "word_sampling.py": "c234523277dba683e68a2863e14736bc68432da3b6ca65bb5d8a64bc7d9dc0fe",
+    "word_tail.py": "bdd4b5d12d56e25c1100a282483e7a31176b5a65beb353a0623ceea40a49dc0e",
+    "word_sources.py": "affb3488d8c25e3d0131eb4340cae29fcece563ac75373e071f97fef68f09acd",
+    "word_dsbi.py": "feecf16dba6d376415e15707c02c8f05fcf6650055da09ad9f4712099e6325ff",
+    "word_point_geometry.py": "2b932b320d191277b86ae13daecb82b5abbf0a46e9464d7360ee1e941aca760b",
+    "word_point_metadata.py": "de1cad0157e744f2f646010eac5355b88d1d11f52662d4b9353166661f59049f",
+    "word_geometry_head.py": "f46c8f90e7f4fc9404eed2dc27fbde6e5c823d25d4f88e4127c7e56ed6e8764e",
+    "word_geometry_init.py": "072379a1ef409d901c2478135174561c14781560cdd56a0b91b0229b8032e15e",
+    "word_geometry_parity.py": "700d9175dc627fb7bf12c0ac20f640191cf5a045e29067c310f5dad5f3bd6f0b",
+    "word_vertical_stretch.py": "336168fbfe4441bfa91e0855f473997a403a542a2b64789ca7cbd1b11b188ed5"
+  },
+  "training_manifest_sha256": "130c80f135af5677d6b78a5e401126f54b15204481aab6de00a88c443956c4fa",
+  "supplemental_source_index_sha256": "8d62cf1850308fb864449bbcabc4399ef4e9a9aab62216b35c8064fa634450a6",
+  "supplemental_manifest_sha256": "21dc4f93821b2282b8c0f0967430f22b44fc868d26b4a3265e6fd57995892a44",
+  "parent_checkpoint_sha256": "cce2432c0ddb8952c885dd58697589c285209588dafa81aacdd891b1660068b7",
+  "planned_epochs": 10,
+  "planned_eligible_epochs": [
+    8,
+    9,
+    10
+  ],
+  "minimum_visible_size_pixels": [
+    4,
+    12
+  ],
+  "minimum_surviving_occupied_centers": 1,
+  "full_span_canvas_dimensions_excluded": true,
+  "coordinate_space": "Exact DSBI provided deskewed +recto.jpg pixel-index centers from raw TXT; no angle re-application; actual middle row preserved.",
+  "source_binding": "Each sidecar record exactly rederived at startup from hash-bound TRAIN annotation and (source,row,col,annotation_line,mask), with original image/cache/TRAIN membership separately audited.",
+  "visibility": "Safe center hull 0<=x<=W-1,0<=y<=H-1 after source crop, resize and every affine/rotation raster. Occupied survivors AND across stages; lost points cannot recover.",
+  "source_crop_resize": "q=(source_point-crop_origin+0.5)*scale-0.5",
+  "geometry_targets": "Only still-crossing known DSBI source boxes with occupied survivors: regress visible box clamped to canvas, objectness1, all six bits -1. This is fragment rejection geometry, not the full source cell box.",
+  "complete_target_policy": "Complete cells keep full original target; complete targets overwrite colliding fragment targets.",
+  "excluded": "Angelina partials, unlisted DSBI slots, mask-zero cells, no surviving occupied points, earlier cut boxes now fully inside, visible fragments below4x12, full-span width/height.",
+  "default_off": "Current OFF pixels, targets, source order and main RNG must match archived run20; enabling vertical stretch preserves main RNG draws and sampling order, while geometry changes with the real raster.",
+  "limitations": [
+    "Surviving geometric occupied centers prove annotated point presence, not guaranteed post-blur optical visibility.",
+    "Overlapping/colliding cells may suppress fragments; this does not create a universal rejection guarantee.",
+    "Known external607 and14 rejection diagnostics are already observed development regressions, never independent physical holdout."
+  ],
+  "selection": "Unchanged v15 control plus actual eligible8-10 on frozen405 natural+stress; weak-peaks-v2 grid and >=95percent accepted precision separately per group. External607/44/66 and12/14 diagnostics never select checkpoints/thresholds.",
+  "preflight_audits": [
+    {
+      "path": ".braille-training-work\\word-scan-v1-20260905\\run20-independent-point-audit\\report.json",
+      "sha256": "88bbff3aa1288058225fd98cf0922286ba49b8ca2651dc49a369426c90e688b6"
+    },
+    {
+      "path": ".braille-training-work\\word-scan-v1-20260905\\run20-independent-point-audit\\gradient-report.json",
+      "sha256": "604f350c7f773b1901c614bcc865acec5072ad0c75730b18023d18a1357efde8"
+    },
+    {
+      "path": ".braille-training-work\\word-scan-v1-20260905\\run20\\preflight-tests.json",
+      "sha256": "5a1f3ce69d55ee22b88c54edae82ffd5ccd99dd2fc2a39a943b0b9566125e139"
+    },
+    {
+      "path": ".braille-training-work\\word-scan-v1-20260905\\run23-vertical-independent-audit.json",
+      "sha256": "4d6fd2e3549abcd857ab666f003e955321ca780500114b7640e3f63e0688293e"
+    },
+    {
+      "path": ".braille-training-work\\word-scan-v1-20260905\\run23\\preflight-tests.json",
+      "sha256": "c6c01d0416d84edb8251db54b9d05c6833c208a7a4ce233866fb94cf17d2be52"
+    },
+    {
+      "path": ".braille-training-work\\word-scan-v1-20260905\\train-pitch-ratio-audit.json",
+      "sha256": "720abf48a753feedd9801c1187701e2afae27e0bd3a9a670416c8db95e7afd90"
+    },
+    {
+      "path": ".braille-training-work\\word-scan-v1-20260905\\train-held-vertical-scale-context-audit.json",
+      "sha256": "664d6765c7ea70b2ce00194001a15b4f001fd7001d656c1796b02c2a920f6087"
+    }
+  ],
+  "horizontal_mirror_augmentation": false,
+  "vertical_stretch_augmentation": true
+}

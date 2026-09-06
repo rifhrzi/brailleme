@@ -1,0 +1,29 @@
+{
+  "status": "passed",
+  "config_sha256": "0285e636e032f0fe3601e7536a6105138143b5173a780cc857a20cdfb7e29b69",
+  "parent_config_sha256": "75bc0305e899aa1c13936fa8614ef42702fedefc9d3c5abfd294d60ccf30a51d",
+  "equal_parent_keys": [
+    "batch_size",
+    "learning_rate",
+    "seed",
+    "negative_repeat",
+    "supplemental_negative_repeat",
+    "geometry_loss",
+    "illumination_augmentation",
+    "horizontal_mirror_augmentation",
+    "half_turn_augmentation",
+    "polarity_augmentation",
+    "partial_geometry_supervision",
+    "dsbi_visible_partial_supervision",
+    "sampling",
+    "data_sha256",
+    "tf32_training_enabled",
+    "imageNormalization",
+    "batch_normalization",
+    "feature_pyramid_strides",
+    "parameters",
+    "geometry_conditioned_residual"
+  ],
+  "only_new_enabled_augmentation": "vertical_stretch_augmentation",
+  "all_three_protocols_match_sources_and_predate_training": true
+}

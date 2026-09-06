@@ -1,0 +1,171 @@
+{
+  "scope": "synthetic_composition_from_training_only",
+  "model_sha256": "406db0e55e8a5ba9e0d00fb22aadc24f19698219f375e4dcead9057cf3bf2230",
+  "fixture_manifest_sha256": "bdf89716ab644baa8f7e0a47c90f058e5da5ccfb594c9403070760f86819c41c",
+  "thresholds": {
+    "proposalScore": 0.25,
+    "acceptScore": 0.25,
+    "dotConfidence": 0.7,
+    "nmsIou": 0.25,
+    "minCellWidth": 0.008,
+    "minCellHeight": 0.06,
+    "edgeMargin": 0.008,
+    "maxRowDeviation": 0.55,
+    "maxGapRatio": 1.2,
+    "maxOverlapRatio": 0.5
+  },
+  "total": 12,
+  "correct": 11,
+  "accepted": 11,
+  "used_for_external_checkpoint_or_threshold_selection": false,
+  "is_natural_whole_word_benchmark": false,
+  "rows": [
+    {
+      "image": "style-01-a.png",
+      "image_sha256": "02ed58685472075fefc1d483ac4d60de66e7170abe2dc76c78b437de06a37ae2",
+      "category": "repetition",
+      "expected_reject": false,
+      "expected": "A",
+      "predicted": "A",
+      "rejection": "",
+      "detected_cell_count": 1,
+      "correct": true
+    },
+    {
+      "image": "style-01-mama.png",
+      "image_sha256": "3f63c02b07c2831311f3b89c225df4563d59b770d1d887e93c5c5d071a0dc23e",
+      "category": "repetition",
+      "expected_reject": false,
+      "expected": "MAMA",
+      "predicted": "MAMA",
+      "rejection": "",
+      "detected_cell_count": 4,
+      "correct": true
+    },
+    {
+      "image": "style-01-kakak.png",
+      "image_sha256": "0702636f4f2e304c3e3343952b82f9615ad27c6057444696c120a442617c5906",
+      "category": "repetition",
+      "expected_reject": false,
+      "expected": "KAKAK",
+      "predicted": "KAKAK",
+      "rejection": "",
+      "detected_cell_count": 5,
+      "correct": true
+    },
+    {
+      "image": "style-01-mamamamamama.png",
+      "image_sha256": "074bb0cb13e40eb3ceeb205fff7054db58d6580940f49e39b214bcb622f81b1e",
+      "category": "repetition",
+      "expected_reject": false,
+      "expected": "MAMAMAMAMAMA",
+      "predicted": "MAMAMAMAMAMA",
+      "rejection": "",
+      "detected_cell_count": 12,
+      "correct": true
+    },
+    {
+      "image": "style-02-a.png",
+      "image_sha256": "5d2ddbc3b9e6f06fd25634e1184aaf2767e15cc7bdb855925477dd2df0da83b9",
+      "category": "repetition",
+      "expected_reject": false,
+      "expected": "A",
+      "predicted": "A",
+      "rejection": "",
+      "detected_cell_count": 1,
+      "correct": true
+    },
+    {
+      "image": "style-02-mama.png",
+      "image_sha256": "5ea5b887d6ca8781d2b29768dacaf70573394050b459c6eacecf5855f1c4d6c9",
+      "category": "repetition",
+      "expected_reject": false,
+      "expected": "MAMA",
+      "predicted": "MAMA",
+      "rejection": "",
+      "detected_cell_count": 4,
+      "correct": true
+    },
+    {
+      "image": "style-02-kakak.png",
+      "image_sha256": "a7b60749ad392ba65fbec5dcb86ea95e903f23879beb19f0ab6be63a2aed070e",
+      "category": "repetition",
+      "expected_reject": false,
+      "expected": "KAKAK",
+      "predicted": "KAKAK",
+      "rejection": "",
+      "detected_cell_count": 5,
+      "correct": true
+    },
+    {
+      "image": "style-02-mamamamamama.png",
+      "image_sha256": "e4760171663c5fd97fee4a88165f381b020bb9e3fe2f3fc5dd9ceec2cf3e6d35",
+      "category": "repetition",
+      "expected_reject": false,
+      "expected": "MAMAMAMAMAMA",
+      "predicted": "MAMAMAMAMAMA",
+      "rejection": "",
+      "detected_cell_count": 12,
+      "correct": true
+    },
+    {
+      "image": "style-03-a.png",
+      "image_sha256": "a0c883ae90f5db274108c852d4cd9623b09fd72a63148fb992bbf4111fae83ae",
+      "category": "repetition",
+      "expected_reject": false,
+      "expected": "A",
+      "predicted": "A",
+      "rejection": "",
+      "detected_cell_count": 1,
+      "correct": true
+    },
+    {
+      "image": "style-03-mama.png",
+      "image_sha256": "0fd726717847159c1f36c89bd7a9e6fb8bb4cb2d5ad10b9d92d6be219c5cd6e7",
+      "category": "repetition",
+      "expected_reject": false,
+      "expected": "MAMA",
+      "predicted": "MAMA",
+      "rejection": "",
+      "detected_cell_count": 4,
+      "correct": true
+    },
+    {
+      "image": "style-03-kakak.png",
+      "image_sha256": "9787a170ae059cc8c19ef3a5e1b17428002c4f77e794014e7015d605affc2fb7",
+      "category": "repetition",
+      "expected_reject": false,
+      "expected": "KAKAK",
+      "predicted": "KAKAK",
+      "rejection": "",
+      "detected_cell_count": 5,
+      "correct": true
+    },
+    {
+      "image": "style-03-mamamamamama.png",
+      "image_sha256": "3e3d2a43a8de16257adcc6b83caad322ccd23587aa823a59d5ec34ec55fc59ff",
+      "category": "repetition",
+      "expected_reject": false,
+      "expected": "MAMAMAMAMAMA",
+      "predicted": "",
+      "rejection": "clipped",
+      "detected_cell_count": 12,
+      "correct": false
+    }
+  ],
+  "by_category": {
+    "repetition": {
+      "total": 12,
+      "correct": 11,
+      "accepted": 11
+    }
+  },
+  "original_rgb_quality_checked_before_inference": true,
+  "all_frozen_image_hashes_verified": true,
+  "source_sha256": {
+    "training/scripts/word_diagnostics.py": "8ed39776c629e642d51eb11ea499959a961d6cb4b4339a579d748716d7e87943",
+    "training/scripts/word_benchmark.py": "ad7d4f3a35a8d0dd3a530dfeb8f849fde585e97cadcde5fcb043950bedd05988",
+    "training/scripts/word_decode.py": "bd301c5afeb4ba2e6866371665324d2de7f0a6ee252ef76ce02a5553193d63c5",
+    "training/scripts/word_data.py": "abc7a31a94db497b9a48ce44bd68d96556e67014623c5645c129153844b48cb7"
+  }
+}

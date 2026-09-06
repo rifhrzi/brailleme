@@ -1,0 +1,71 @@
+--- source-original/word_data.py
++++ source-private/word_data.py
+@@ -256,7 +256,7 @@
+     return image.transpose(Image.Transpose.ROTATE_180),rotated,remapped
+ 
+ 
+-def augment_patch(image, boxes, rng, camera_augmentation=False, polarity_augmentation=False, illumination_augmentation=False, originally_complete=None, point_state=None, vertical_stretch=1.0):
++def augment_patch(image, boxes, rng, camera_augmentation=False, polarity_augmentation=False, illumination_augmentation=False, originally_complete=None, point_state=None, vertical_stretch=1.0, horizontal_aspect=1.0):
+     """Return pixels, boxes, eligibility, and optional tracked occupied points.
+ 
+     The default three-item return and RNG draws are unchanged. Supplying an
+@@ -266,6 +266,8 @@
+     """
+     if not np.isfinite(vertical_stretch) or not .9 <= vertical_stretch <= 1.1:
+         raise ValueError('Vertical stretch must be a finite factor in [.9, 1.1]')
++    if not np.isfinite(horizontal_aspect) or not .55 <= horizontal_aspect <= 1.25:
++        raise ValueError('Horizontal aspect must be finite in [.55, 1.25]')
+     boxes = boxes.copy()
+     def inside_canvas():
+         return (boxes[:,0]>=0)&(boxes[:,1]>=0)&(boxes[:,2]<=WIDTH)&(boxes[:,3]<=HEIGHT)
+@@ -279,6 +281,8 @@
+     if (camera_augmentation or controlled_light) and rng.random()<.85:
+         zoom = float(rng.uniform(.8, 1.7) if controlled_light else rng.uniform(.85, 1.35))
+         scale_x=zoom if controlled_light else zoom*float(rng.uniform(.55, 1.25))
++        if horizontal_aspect != 1.0:
++            scale_x *= horizontal_aspect
+         scale_y=zoom*vertical_stretch
+         translate_x, translate_y = float(rng.uniform(-.04, .04))*WIDTH, float(rng.uniform(-.04, .04))*HEIGHT
+         image, boxes = affine_patch(image, boxes, scale_x, scale_y, translate_x, translate_y)
+--- source-original/word_train.py
++++ source-private/word_train.py
+@@ -127,8 +127,11 @@
+             'epoch_guard': 'Hash all stored moving means/variances before saving any epoch checkpoint; mismatch aborts.'}
+ 
+ 
++from word_horizontal_aspect import horizontal_aspect_factors
++
++
+ class Patches(keras.utils.PyDataset):
+-    def __init__(self, root, records, batch_size, training, seed, camera_augmentation=False, polarity_augmentation=False,half_turn_augmentation=False,illumination_augmentation=False,horizontal_mirror_augmentation=False,balance_source_families=False,partial_geometry_supervision=False,point_states=None,vertical_stretch_augmentation=False):
++    def __init__(self, root, records, batch_size, training, seed, camera_augmentation=False, polarity_augmentation=False,half_turn_augmentation=False,illumination_augmentation=False,horizontal_mirror_augmentation=False,balance_source_families=False,partial_geometry_supervision=False,point_states=None,vertical_stretch_augmentation=False,horizontal_aspect_augmentation=False):
+         super().__init__(workers=2, use_multiprocessing=False, max_queue_size=2)
+         self.root, self.records, self.batch_size = root, records, batch_size
+         self.training, self.seed, self.epoch = training, seed, 0
+@@ -141,6 +144,7 @@
+         self.partial_geometry_supervision=partial_geometry_supervision
+         self.point_states = point_states
+         self.vertical_stretch_augmentation = vertical_stretch_augmentation
++        self.horizontal_aspect_augmentation = horizontal_aspect_augmentation
+         self.order = np.arange(len(records))
+         self.on_epoch_end()
+ 
+@@ -153,6 +157,8 @@
+         batch_indices = self.order[index*self.batch_size:(index+1)*self.batch_size]
+         height_factors = (vertical_stretch_factors(self.seed, self.epoch, index, len(batch_indices))
+                           if self.training and self.vertical_stretch_augmentation else None)
++        width_factors = (horizontal_aspect_factors(self.seed, self.epoch, batch_indices)
++                         if self.training and self.horizontal_aspect_augmentation else None)
+         for batch_offset, record_index in enumerate(batch_indices):
+             record = self.records[record_index]
+             with Image.open(self.root/record["image"]) as source:
+@@ -183,7 +189,8 @@
+                     if point_state is not None:
+                         point_state = point_state.mirror_horizontal()
+                 augmented = augment_patch(image, boxes, rng, self.camera_augmentation,self.polarity_augmentation,self.half_turn_augmentation or self.illumination_augmentation,originally_complete=originally_complete,point_state=point_state,
+-                                          vertical_stretch=float(height_factors[batch_offset]) if height_factors is not None else 1.0)
++                                          vertical_stretch=float(height_factors[batch_offset]) if height_factors is not None else 1.0,
++                                          horizontal_aspect=float(width_factors[batch_offset]) if width_factors is not None else 1.0)
+                 pixels, boxes, eligible = augmented[:3]
+                 if point_state is not None:
+                     point_state = augmented[3]

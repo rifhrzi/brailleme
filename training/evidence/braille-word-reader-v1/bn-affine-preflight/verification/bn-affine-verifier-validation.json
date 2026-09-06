@@ -1,0 +1,35 @@
+{
+  "status": "passed",
+  "scope": "Synthetic verifier regression and actual hash-bound run24 preflight only; no model, training or numerical release-gate change.",
+  "asset_gate_cases": 164,
+  "flatbuffer_checks": 4,
+  "lint": "passed",
+  "verifier": {
+    "file": "scripts/verify-word-model-assets.mjs",
+    "sha256": "2f19d5b2322127e57d6a795b46aedf2d93576a67434934999d956f468526287c"
+  },
+  "tests": {
+    "file": "scripts/test-word-model-verifier.mjs",
+    "sha256": "f9c70f0420ba77417d5e495af3016b7580154ef73b36e25500a96949e50c9066"
+  },
+  "test_log": {
+    "file": ".braille-training-work/word-scan-v1-20260905/bn-affine-verifier-tests-final.log",
+    "sha256": "17cdb5442b81986dd7eb4b8132f0b03ac86239b89bc3f0665a8bff6d70d5fe7a"
+  },
+  "actual_preflight_replay": {
+    "file": ".braille-training-work/word-scan-v1-20260905/real-bn-affine-preflight-verifier-check.json",
+    "sha256": "174e0d757dadc0abaf7b06229723d48408124ffb9ea3d0656ea954344ed3ac7d"
+  },
+  "actual_replay_script": {
+    "file": ".braille-training-work/word-scan-v1-20260905/verify_real_bn_affine_preflight.mjs",
+    "sha256": "9e534937456ca4c7235b8841ff2d098914213913170a1e68af62f81cfd229d4f"
+  },
+  "prelaunch_guard_audit": {
+    "file": ".braille-training-work/word-scan-v1-20260905/run24/bn-affine-guard-audit.json",
+    "sha256": "89950c8cba24fdb08f3f3ecd9f22194b3607c3a289e4f4b309786a9bfeac6293"
+  },
+  "limitations": [
+    "Synthetic tests establish rule rejection only.",
+    "Actual replay binds prelaunch proofs and eligible v15 parent; run24 trained selection/final epoch moments/full405 parity and original acceptance gates remain separate."
+  ]
+}

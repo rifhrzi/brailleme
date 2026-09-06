@@ -1,0 +1,255 @@
+{
+  "scope": "The stride2 detail branch did not improve frozen whole-word validation. Recognition gates remain failed; the identical v15 control was retained. Frozen validation selected the unchanged selected-v15 checkpoint and thresholds, with identical aggregate word metrics. No new export or external inference was performed.",
+  "internalAcceptancePassed": false,
+  "physicalCameraValidated": false,
+  "externalResultReference": "../failed-selected-v15/public-benchmark.json",
+  "selectedCheckpointSha256": "cce2432c0ddb8952c885dd58697589c285209588dafa81aacdd891b1660068b7",
+  "preflightReference": "training/evidence/braille-word-reader-v1/fine-detail-preflight/preflight-v2.json",
+  "files": [
+    {
+      "file": "run25/default-data-path-identity.json",
+      "sha256": "a406de1e93c5238b121cea3c309df181ab67f374680a3b4c61605f6d45713f6b",
+      "sizeBytes": 964
+    },
+    {
+      "file": "run25/dsbi-addition-protocol.json",
+      "sha256": "0aa9199ecad66e98c441fb67258698b1221f55d463e26eda1362ba1e5f07e92e",
+      "sizeBytes": 39864
+    },
+    {
+      "file": "run25/dsbi-visible-partial-protocol.json",
+      "sha256": "7296fdea10829b0bb6be2b60db94783677810c4d2e8eccd2d02741ff1eae3a41",
+      "sizeBytes": 6780
+    },
+    {
+      "file": "run25/fine-branch-guard-audit.json",
+      "sha256": "90234558b57e6fdeb204dd12bbc250e8921d9254e87dab5bdd68677aceb8889a",
+      "sizeBytes": 6824
+    },
+    {
+      "file": "run25/fine-branch-protocol.json",
+      "sha256": "b43597d492cf48fce5bc5b4814ada5940c26876d98a50d08257422213518aed1",
+      "sizeBytes": 8620
+    },
+    {
+      "file": "run25/history.json",
+      "sha256": "7bebe2abf5cfc8114ef94a9c19a16308b12f7f130640bfc88aa97df33f720265",
+      "sizeBytes": 993
+    },
+    {
+      "file": "run25/launch-command.json",
+      "sha256": "6fdf253d15e3ab0422028d9c437c036d20d766cadab1f583ec8e16c222cc63bd",
+      "sizeBytes": 1949
+    },
+    {
+      "file": "run25/launched-profile-check.json",
+      "sha256": "4e804833a34a9f8a84d31761060745f9e5a8c74f94ae66f71e3387b351c2d4ff",
+      "sizeBytes": 2635
+    },
+    {
+      "file": "run25/preflight-tests.json",
+      "sha256": "c2869fabf6b2134890e6c1a00b5c2493292971dc0299559d30ed793d4ad439d6",
+      "sizeBytes": 272
+    },
+    {
+      "file": "run25/run25-plan.json",
+      "sha256": "53519baaa539daed93492adb47bc968a78c1d779829dbcacf7ac44b6bf8182b1",
+      "sizeBytes": 7919
+    },
+    {
+      "file": "run25/sampling-first-eligible-epoch8.json",
+      "sha256": "70d026ba20c92a2aa93631a58ee10d03c2b052882ccaf71dc0b23a2e34432dc3",
+      "sizeBytes": 3925
+    },
+    {
+      "file": "run25/sampling-history.json",
+      "sha256": "01c4d0dc071ab3b362eda303664d5c46817421a8e848a2df09ca0c2459a15739",
+      "sizeBytes": 27983
+    },
+    {
+      "file": "run25/sampling-interim-epochs2.json",
+      "sha256": "9719a84ac2b775d11df29fa7ceb5b4d03ff3cf00fc4926935c39253cf3d13d4e",
+      "sizeBytes": 1927
+    },
+    {
+      "file": "run25/sampling-lineage-final.json",
+      "sha256": "69d4cc234d495ba1cf7597059f87ce1e9358f7600b77f7469a920937df6aba58",
+      "sizeBytes": 4661
+    },
+    {
+      "file": "run25/selected-validation.json",
+      "sha256": "6f1ea668f2421bebf0b10b87f0c582e7fc95cecd978d6d11d8de35f399e282ed",
+      "sizeBytes": 5280
+    },
+    {
+      "file": "run25/selection-command.json",
+      "sha256": "9bdfa2c131b833f9820a35507bba036716429fd9ac5cc5cef3e713fe56158a09",
+      "sizeBytes": 1301
+    },
+    {
+      "file": "run25/source/word_bn_affine.py",
+      "sha256": "fa117f65beda3f6d159f707a5cd45d3a367b8f5b436b8c43c0d7621071297dff",
+      "sizeBytes": 5135
+    },
+    {
+      "file": "run25/source/word_bn_affine_init.py",
+      "sha256": "ea76999d35a6e9ba94cffce06c359adb1201cb396b54345668b7ed13afe99ce1",
+      "sizeBytes": 9683
+    },
+    {
+      "file": "run25/source/word_bn_affine_parity.py",
+      "sha256": "d4baba52b0993240e0b5092500ae32ee5d1b01e636d2546261a0a24996bd4a21",
+      "sizeBytes": 14737
+    },
+    {
+      "file": "run25/source/word_data.py",
+      "sha256": "659ab6b508a69b34bfb8dc899c5fa6e2214bd64e08281f40f9c39aa91d74996c",
+      "sizeBytes": 26068
+    },
+    {
+      "file": "run25/source/word_decode.py",
+      "sha256": "bd301c5afeb4ba2e6866371665324d2de7f0a6ee252ef76ce02a5553193d63c5",
+      "sizeBytes": 7945
+    },
+    {
+      "file": "run25/source/word_dsbi.py",
+      "sha256": "feecf16dba6d376415e15707c02c8f05fcf6650055da09ad9f4712099e6325ff",
+      "sizeBytes": 7331
+    },
+    {
+      "file": "run25/source/word_fine_branch.py",
+      "sha256": "53bff984c33a20556721328e6253fadd060019573b068deee2a671d08a530750",
+      "sizeBytes": 5665
+    },
+    {
+      "file": "run25/source/word_fine_init.py",
+      "sha256": "3baa5f15b2b4b74ea120dd8150ad3b8a11f59139ad3eb833d3b2089e188d1310",
+      "sizeBytes": 8595
+    },
+    {
+      "file": "run25/source/word_fine_parity.py",
+      "sha256": "de30cf4b3df1d8ec4bf820f6e1d98c8e40a39eb674a9ce470a3067569f3a8cbe",
+      "sizeBytes": 9651
+    },
+    {
+      "file": "run25/source/word_fine_validation.py",
+      "sha256": "b075760aee90afa17a84c0e8ec3a421132e0644130929f8f7a85b54b11058124",
+      "sizeBytes": 10070
+    },
+    {
+      "file": "run25/source/word_geometry_head.py",
+      "sha256": "f46c8f90e7f4fc9404eed2dc27fbde6e5c823d25d4f88e4127c7e56ed6e8764e",
+      "sizeBytes": 5857
+    },
+    {
+      "file": "run25/source/word_geometry_init.py",
+      "sha256": "072379a1ef409d901c2478135174561c14781560cdd56a0b91b0229b8032e15e",
+      "sizeBytes": 7916
+    },
+    {
+      "file": "run25/source/word_geometry_parity.py",
+      "sha256": "700d9175dc627fb7bf12c0ac20f640191cf5a045e29067c310f5dad5f3bd6f0b",
+      "sizeBytes": 6018
+    },
+    {
+      "file": "run25/source/word_model.py",
+      "sha256": "c446732a2905a612cd6f1dd64d2d3d01303b1c71933c34552d26f3b5052fd551",
+      "sizeBytes": 5890
+    },
+    {
+      "file": "run25/source/word_point_geometry.py",
+      "sha256": "2b932b320d191277b86ae13daecb82b5abbf0a46e9464d7360ee1e941aca760b",
+      "sizeBytes": 8361
+    },
+    {
+      "file": "run25/source/word_point_metadata.py",
+      "sha256": "de1cad0157e744f2f646010eac5355b88d1d11f52662d4b9353166661f59049f",
+      "sizeBytes": 5280
+    },
+    {
+      "file": "run25/source/word_sampling.py",
+      "sha256": "c234523277dba683e68a2863e14736bc68432da3b6ca65bb5d8a64bc7d9dc0fe",
+      "sizeBytes": 4164
+    },
+    {
+      "file": "run25/source/word_sources.py",
+      "sha256": "affb3488d8c25e3d0131eb4340cae29fcece563ac75373e071f97fef68f09acd",
+      "sizeBytes": 8105
+    },
+    {
+      "file": "run25/source/word_tail.py",
+      "sha256": "bdd4b5d12d56e25c1100a282483e7a31176b5a65beb353a0623ceea40a49dc0e",
+      "sizeBytes": 8506
+    },
+    {
+      "file": "run25/source/word_train.py",
+      "sha256": "f472b80d0466e17cf1efcb59661b3fea300f5618d4288ec1847fa8d3b628c97b",
+      "sizeBytes": 43876
+    },
+    {
+      "file": "run25/source/word_vertical_stretch.py",
+      "sha256": "336168fbfe4441bfa91e0855f473997a403a542a2b64789ca7cbd1b11b188ed5",
+      "sizeBytes": 1108
+    },
+    {
+      "file": "run25/training-config.json",
+      "sha256": "a337384ac622ad6c393f627cadf0a71d8c3e0b0b604c1338f8464578641df550",
+      "sizeBytes": 15712
+    },
+    {
+      "file": "run25/training-process-result.json",
+      "sha256": "a6b2cbb8964b6b79a2bae2041adc4a3d716c7f21c136cb3bf07bb9eff87c110b",
+      "sizeBytes": 83
+    },
+    {
+      "file": "run25/validation-history.json",
+      "sha256": "366788cf6331260f82eb94a3d0a64f0c7fbf0fa12767d2e6894d08c1bad1c6f1",
+      "sizeBytes": 56918
+    },
+    {
+      "file": "selected-v20/checkpoint-selection.json",
+      "sha256": "9884829de783b4c529d443a6ae5e14e38cb25ccff9f5ff5dbf1e0d39b2ed3ba5",
+      "sizeBytes": 33997
+    },
+    {
+      "file": "selected-v20/selected-validation-fullprecision.json",
+      "sha256": "9f15e8fe2eadf17ca712cb5263a2799a1c45867fca7054bd03e87f0bc7cd663e",
+      "sizeBytes": 8089
+    },
+    {
+      "file": "selected-v20/selected-validation.json",
+      "sha256": "9f15e8fe2eadf17ca712cb5263a2799a1c45867fca7054bd03e87f0bc7cd663e",
+      "sizeBytes": 8089
+    },
+    {
+      "file": "selected-v20/source/word_bn_affine.py",
+      "sha256": "fa117f65beda3f6d159f707a5cd45d3a367b8f5b436b8c43c0d7621071297dff",
+      "sizeBytes": 5135
+    },
+    {
+      "file": "selected-v20/source/word_data.py",
+      "sha256": "659ab6b508a69b34bfb8dc899c5fa6e2214bd64e08281f40f9c39aa91d74996c",
+      "sizeBytes": 26068
+    },
+    {
+      "file": "selected-v20/source/word_decode.py",
+      "sha256": "bd301c5afeb4ba2e6866371665324d2de7f0a6ee252ef76ce02a5553193d63c5",
+      "sizeBytes": 7945
+    },
+    {
+      "file": "selected-v20/source/word_geometry_head.py",
+      "sha256": "f46c8f90e7f4fc9404eed2dc27fbde6e5c823d25d4f88e4127c7e56ed6e8764e",
+      "sizeBytes": 5857
+    },
+    {
+      "file": "selected-v20/source/word_model.py",
+      "sha256": "c446732a2905a612cd6f1dd64d2d3d01303b1c71933c34552d26f3b5052fd551",
+      "sizeBytes": 5890
+    },
+    {
+      "file": "selected-v20/source/word_select.py",
+      "sha256": "ab8ad646d4693bf9528e4aace201464f9cc7b632f4c2ed9863ad9a74f2caf07c",
+      "sizeBytes": 8904
+    }
+  ]
+}

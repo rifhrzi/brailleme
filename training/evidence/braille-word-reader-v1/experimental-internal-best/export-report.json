@@ -1,0 +1,72 @@
+{
+  "status": "unverified_candidate",
+  "source_checkpoint_sha256": "cce2432c0ddb8952c885dd58697589c285209588dafa81aacdd891b1660068b7",
+  "artifact_sha256": "406db0e55e8a5ba9e0d00fb22aadc24f19698219f375e4dcead9057cf3bf2230",
+  "artifact_bytes": 3259716,
+  "input_shape": [
+    1,
+    192,
+    480,
+    3
+  ],
+  "output_shape": [
+    1,
+    48,
+    120,
+    11
+  ],
+  "dtype": "<class 'numpy.float32'>",
+  "parity_samples": 405,
+  "parity_fixture_sha256": "e2ab968f7c4dcf7e774181fde687e1321f58d20567528af4b21fd03ff5a3e625",
+  "training_backend_vs_tensorflow_max_abs": 2.7298927307128906e-05,
+  "tensorflow_vs_tflite_max_abs": 5.429983139038086e-05,
+  "decoded_text_parity": true,
+  "decoded_rejection_parity": true,
+  "parity_pass": true,
+  "native_preprocessing_parity_validated": false,
+  "physical_camera_validated": false,
+  "thresholds": {
+    "proposalScore": 0.25,
+    "acceptScore": 0.25,
+    "dotConfidence": 0.7,
+    "nmsIou": 0.25,
+    "minCellWidth": 0.008,
+    "minCellHeight": 0.06,
+    "edgeMargin": 0.008,
+    "maxRowDeviation": 0.55,
+    "maxGapRatio": 1.2,
+    "maxOverlapRatio": 0.5
+  },
+  "imageNormalization": {
+    "kind": "per_channel_standardize_grayscale",
+    "location": "inside_model_before_backbone_rescaling",
+    "variance": "population",
+    "stdFloor": 0.001,
+    "targetMean": 0.5,
+    "targetStd": 0.05,
+    "clip": [
+      0,
+      1
+    ],
+    "grayscale": "mean_of_standardized_channels",
+    "outputChannels": 3
+  },
+  "decoder_version": "six-dot-word-v2",
+  "training_backend_vs_tflite_max_abs": 4.553794860839844e-05,
+  "inherited_tensorflow_numeric_proof": {
+    "report": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\selected-v15\\export-report.json",
+    "report_sha256": "b709a6cc4bf2b45a2e37c7633ee3925235af2083fbf8f501195143b06b1bfd47",
+    "checkpoint_bytes_identical": true,
+    "serialized_graph_and_normalization_identical": true,
+    "word_model_source_sha256": "c446732a2905a612cd6f1dd64d2d3d01303b1c71933c34552d26f3b5052fd551",
+    "fixture_manifest_identical": true,
+    "old_and_current_torch405_outputs_exact": true,
+    "old_torch_oracle_sha256": "20f0a6c0224ec7f640ca0e46275914e912a2b1b440882f0b1e9e94e8bb72556b",
+    "current_torch_oracle_sha256": "20f0a6c0224ec7f640ca0e46275914e912a2b1b440882f0b1e9e94e8bb72556b",
+    "scope": "Only prior TensorFlow numeric bounds are inherited for the exact same model/source/fixture and byte-identical Torch405 outputs. All v2 Lite405 outputs and raw/effective decisions were newly evaluated."
+  },
+  "actual_tflite_v2_oracle_sha256": "579eba486b74bcf141c22c1ea71ff995a631732a8cd57eeb31598b1d6a2b6b1d",
+  "actual_execution_script_sha256": "55d62bc806ec7bde2923cf404d65a76315d83b545e6ccfea0aa0435aaaf0fb83",
+  "artifact_reused_without_reconversion": true,
+  "actual_lite_interpreter_version": "2.20.0"
+}

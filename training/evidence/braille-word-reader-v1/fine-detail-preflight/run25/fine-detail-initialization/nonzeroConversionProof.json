@@ -1,0 +1,384 @@
+{
+  "status": "passed",
+  "created_at_utc": "2026-09-05T21:07:53.486626+00:00",
+  "scope": "Six fixed TRAIN/analytic inputs, actual initial and nonzero stride2 copies; no accuracy or activation.",
+  "initialization_report": ".braille-training-work\\word-scan-v1-20260905\\fine-branch-parent-v2\\fine-initialization.json",
+  "initialization_report_sha256": "88225ac54a4a9345614cbdf621730dce184a76aab1b590284d9f7777f8870971",
+  "oracle_sha256": "3546e53fe4153fc5544c5314351c8e81af3c9f01f1dc447aa083d9e6b2200462",
+  "source_sha256": {
+    "word_fine_parity.py": "de30cf4b3df1d8ec4bf820f6e1d98c8e40a39eb674a9ce470a3067569f3a8cbe",
+    "word_bn_affine_parity.py": "d4baba52b0993240e0b5092500ae32ee5d1b01e636d2546261a0a24996bd4a21",
+    "word_decode.py": "bd301c5afeb4ba2e6866371665324d2de7f0a6ee252ef76ce02a5553193d63c5",
+    "word_benchmark.py": "ad7d4f3a35a8d0dd3a530dfeb8f849fde585e97cadcde5fcb043950bedd05988",
+    "benchmark_angelina.py": "6c7d63c8b5c461fec73e415b46df74d15c0bca455cc9f411c5fb6edd5d353353",
+    "word_data.py": "659ab6b508a69b34bfb8dc899c5fa6e2214bd64e08281f40f9c39aa91d74996c"
+  },
+  "selected_validation_report": ".braille-training-work\\word-scan-v1-20260905\\selected-v15\\selected-validation.json",
+  "selected_validation_sha256": "d136021888194895e3bd19cd3800ace90cb3cc83776a87799fd7fda8d9623b39",
+  "thresholds": {
+    "proposalScore": 0.25,
+    "acceptScore": 0.25,
+    "dotConfidence": 0.7,
+    "nmsIou": 0.25,
+    "minCellWidth": 0.008,
+    "minCellHeight": 0.06,
+    "edgeMargin": 0.008,
+    "maxRowDeviation": 0.55,
+    "maxGapRatio": 1.2,
+    "maxOverlapRatio": 0.5
+  },
+  "absolute_tolerance": 0.0001,
+  "relative_tolerance": 0.0001,
+  "probes": {
+    "initial": {
+      "checkpoint_sha256": "f5f3b239d0ead7fea9d8f6d8d95d82b9c8fa5a678bdd67c1d7db7246406e6b4e",
+      "artifact_sha256": "75c0eaeb449e02fe4490be68a5eb252b5159f6e744136e30cb44720f1ed19d32",
+      "artifact_bytes": 3265900,
+      "operators": [
+        "ADD",
+        "CONCATENATION",
+        "CONV_2D",
+        "DEPTHWISE_CONV_2D",
+        "LOGISTIC",
+        "MAXIMUM",
+        "MEAN",
+        "MINIMUM",
+        "MUL",
+        "RELU",
+        "RESHAPE",
+        "RSQRT",
+        "SQUARED_DIFFERENCE",
+        "STRIDED_SLICE",
+        "SUB",
+        "TILE"
+      ],
+      "builtins_only": true,
+      "samples": 6,
+      "all_finite": true,
+      "torch_vs_tf_max_abs": 7.033348083496094e-06,
+      "tf_vs_tflite_max_abs": 1.3530254364013672e-05,
+      "torch_vs_tflite_max_abs": 1.2576580047607422e-05,
+      "compiled_vs_eager_max_abs": 5.0067901611328125e-06,
+      "eager_train_eval_exact": true,
+      "all_moments_and_weights_unchanged": true,
+      "raw_and_quality_effective_decisions_equal": true,
+      "decisions": [
+        {
+          "raw": {
+            "text": "",
+            "reason": "clipped",
+            "cell_count": 9
+          },
+          "quality_reason": "",
+          "effective": {
+            "text": "",
+            "reason": "clipped",
+            "cell_count": 9
+          }
+        },
+        {
+          "raw": {
+            "text": "",
+            "reason": "clipped",
+            "cell_count": 12
+          },
+          "quality_reason": "",
+          "effective": {
+            "text": "",
+            "reason": "clipped",
+            "cell_count": 12
+          }
+        },
+        {
+          "raw": {
+            "text": "",
+            "reason": "no_grid",
+            "cell_count": 0
+          },
+          "quality_reason": "",
+          "effective": {
+            "text": "",
+            "reason": "no_grid",
+            "cell_count": 0
+          }
+        },
+        {
+          "raw": {
+            "text": "",
+            "reason": "no_grid",
+            "cell_count": 0
+          },
+          "quality_reason": "dark",
+          "effective": {
+            "text": "",
+            "reason": "dark",
+            "cell_count": 0
+          }
+        },
+        {
+          "raw": {
+            "text": "",
+            "reason": "no_grid",
+            "cell_count": 0
+          },
+          "quality_reason": "glare",
+          "effective": {
+            "text": "",
+            "reason": "glare",
+            "cell_count": 0
+          }
+        },
+        {
+          "raw": {
+            "text": "",
+            "reason": "no_grid",
+            "cell_count": 0
+          },
+          "quality_reason": "",
+          "effective": {
+            "text": "",
+            "reason": "no_grid",
+            "cell_count": 0
+          }
+        }
+      ],
+      "input": {
+        "count": 1,
+        "shape": [
+          1,
+          192,
+          480,
+          3
+        ],
+        "dtype": "float32"
+      },
+      "output": {
+        "count": 1,
+        "shape": [
+          1,
+          48,
+          120,
+          11
+        ],
+        "dtype": "float32"
+      }
+    },
+    "nonzero": {
+      "checkpoint_sha256": "6ee8686bb37af80b8d28d96f91a7f10fb1b41ade8d09878dfe9b2d81e540a2ae",
+      "artifact_sha256": "e33ff178669e6bb047fcdbe362c79f4f01c7f620e06425d42d0a56e59f576e22",
+      "artifact_bytes": 3266348,
+      "operators": [
+        "ADD",
+        "CONCATENATION",
+        "CONV_2D",
+        "DEPTHWISE_CONV_2D",
+        "LOGISTIC",
+        "MAXIMUM",
+        "MEAN",
+        "MINIMUM",
+        "MUL",
+        "RELU",
+        "RESHAPE",
+        "RSQRT",
+        "SQUARED_DIFFERENCE",
+        "STRIDED_SLICE",
+        "SUB",
+        "TILE"
+      ],
+      "builtins_only": true,
+      "samples": 6,
+      "all_finite": true,
+      "torch_vs_tf_max_abs": 7.18235969543457e-06,
+      "tf_vs_tflite_max_abs": 1.3768672943115234e-05,
+      "torch_vs_tflite_max_abs": 1.3321638107299805e-05,
+      "compiled_vs_eager_max_abs": 4.887580871582031e-06,
+      "eager_train_eval_exact": true,
+      "all_moments_and_weights_unchanged": true,
+      "raw_and_quality_effective_decisions_equal": true,
+      "decisions": [
+        {
+          "raw": {
+            "text": "",
+            "reason": "clipped",
+            "cell_count": 9
+          },
+          "quality_reason": "",
+          "effective": {
+            "text": "",
+            "reason": "clipped",
+            "cell_count": 9
+          }
+        },
+        {
+          "raw": {
+            "text": "",
+            "reason": "clipped",
+            "cell_count": 12
+          },
+          "quality_reason": "",
+          "effective": {
+            "text": "",
+            "reason": "clipped",
+            "cell_count": 12
+          }
+        },
+        {
+          "raw": {
+            "text": "",
+            "reason": "no_grid",
+            "cell_count": 0
+          },
+          "quality_reason": "",
+          "effective": {
+            "text": "",
+            "reason": "no_grid",
+            "cell_count": 0
+          }
+        },
+        {
+          "raw": {
+            "text": "",
+            "reason": "no_grid",
+            "cell_count": 0
+          },
+          "quality_reason": "dark",
+          "effective": {
+            "text": "",
+            "reason": "dark",
+            "cell_count": 0
+          }
+        },
+        {
+          "raw": {
+            "text": "",
+            "reason": "no_grid",
+            "cell_count": 0
+          },
+          "quality_reason": "glare",
+          "effective": {
+            "text": "",
+            "reason": "glare",
+            "cell_count": 0
+          }
+        },
+        {
+          "raw": {
+            "text": "",
+            "reason": "no_grid",
+            "cell_count": 0
+          },
+          "quality_reason": "",
+          "effective": {
+            "text": "",
+            "reason": "no_grid",
+            "cell_count": 0
+          }
+        }
+      ],
+      "input": {
+        "count": 1,
+        "shape": [
+          1,
+          192,
+          480,
+          3
+        ],
+        "dtype": "float32"
+      },
+      "output": {
+        "count": 1,
+        "shape": [
+          1,
+          48,
+          120,
+          11
+        ],
+        "dtype": "float32"
+      }
+    }
+  },
+  "torch_parent_decisions": [
+    {
+      "raw": {
+        "text": "",
+        "reason": "clipped",
+        "cell_count": 9
+      },
+      "quality_reason": "",
+      "effective": {
+        "text": "",
+        "reason": "clipped",
+        "cell_count": 9
+      }
+    },
+    {
+      "raw": {
+        "text": "",
+        "reason": "clipped",
+        "cell_count": 12
+      },
+      "quality_reason": "",
+      "effective": {
+        "text": "",
+        "reason": "clipped",
+        "cell_count": 12
+      }
+    },
+    {
+      "raw": {
+        "text": "",
+        "reason": "no_grid",
+        "cell_count": 0
+      },
+      "quality_reason": "",
+      "effective": {
+        "text": "",
+        "reason": "no_grid",
+        "cell_count": 0
+      }
+    },
+    {
+      "raw": {
+        "text": "",
+        "reason": "no_grid",
+        "cell_count": 0
+      },
+      "quality_reason": "dark",
+      "effective": {
+        "text": "",
+        "reason": "dark",
+        "cell_count": 0
+      }
+    },
+    {
+      "raw": {
+        "text": "",
+        "reason": "no_grid",
+        "cell_count": 0
+      },
+      "quality_reason": "glare",
+      "effective": {
+        "text": "",
+        "reason": "glare",
+        "cell_count": 0
+      }
+    },
+    {
+      "raw": {
+        "text": "",
+        "reason": "no_grid",
+        "cell_count": 0
+      },
+      "quality_reason": "",
+      "effective": {
+        "text": "",
+        "reason": "no_grid",
+        "cell_count": 0
+      }
+    }
+  ],
+  "nonzero_tf_output_delta": 0.005413472652435303,
+  "nonzero_tflite_output_delta": 0.005413413047790527,
+  "conversion_probes_must_not_be_activated_or_resumed": true,
+  "trained_candidate_requires_full405_parity": true
+}

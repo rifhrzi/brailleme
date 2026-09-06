@@ -1,0 +1,109 @@
+{
+  "status": "passed",
+  "created_at_utc": "2026-09-06T02:19:58.898571+00:00",
+  "audit_script_sha256": "f9045e770865279f89942e8ccf2c97f9e35b68a4e91797e12a4e48b25de61537",
+  "protocol_sha256": "6537ee607288fa2a494ab3965ba8d8dac81a690c4a8f1a864b88bbda59af0acb",
+  "actual": {
+    "run": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\run27",
+    "config_sha256": "0ba021536a1e1cd9326de39c0c44815e489e9bb6184d511fe4fca9ddce31c5bf",
+    "batchnorm_moment_validation_history_sha256": null,
+    "manifest_sha256": "130c80f135af5677d6b78a5e401126f54b15204481aab6de00a88c443956c4fa",
+    "sampling_history_sha256": "01c4d0dc071ab3b362eda303664d5c46817421a8e848a2df09ca0c2459a15739",
+    "positive_records": 23600,
+    "negative_draws_per_epoch": 1282,
+    "observed_epochs": [
+      {
+        "epoch": 1,
+        "checkpoint_sha256": "26f9f303544f3cfa0a95e8dcc6f476ba7026ebc3f8aef0b9b863e1e36d094e3d",
+        "completed_batches": 1037,
+        "actual_cumulative_positive_records": 10601,
+        "all_positive_records_seen_in_this_run": false,
+        "eligible_by_sampling_lineage": false
+      },
+      {
+        "epoch": 2,
+        "checkpoint_sha256": "ea9fa694c0f7984d50dc89e73a450bb146d57b87d24296d442a2fa4ace8feacf",
+        "completed_batches": 1037,
+        "actual_cumulative_positive_records": 12568,
+        "all_positive_records_seen_in_this_run": false,
+        "eligible_by_sampling_lineage": false
+      },
+      {
+        "epoch": 3,
+        "checkpoint_sha256": "4f9075cb44c147fa736fa396c56c4560482aef56a8e953b2fd48c76b929f1e88",
+        "completed_batches": 1037,
+        "actual_cumulative_positive_records": 14535,
+        "all_positive_records_seen_in_this_run": false,
+        "eligible_by_sampling_lineage": false
+      },
+      {
+        "epoch": 4,
+        "checkpoint_sha256": "0a526b4b2c19798c1b06a48f321c07a074b0fdbe96f8ca5b1e5cc3640704641b",
+        "completed_batches": 1037,
+        "actual_cumulative_positive_records": 16502,
+        "all_positive_records_seen_in_this_run": false,
+        "eligible_by_sampling_lineage": false
+      },
+      {
+        "epoch": 5,
+        "checkpoint_sha256": "d5227020b5970ad8a8a245895bda7d98ba4a3140b508d6a1ab09f3d52d591812",
+        "completed_batches": 1037,
+        "actual_cumulative_positive_records": 18469,
+        "all_positive_records_seen_in_this_run": false,
+        "eligible_by_sampling_lineage": false
+      },
+      {
+        "epoch": 6,
+        "checkpoint_sha256": "9f074a4c3ee57e52c664b860e943305b0936ef0f03ad64af7252d6eedb8f3255",
+        "completed_batches": 1037,
+        "actual_cumulative_positive_records": 20436,
+        "all_positive_records_seen_in_this_run": false,
+        "eligible_by_sampling_lineage": false
+      },
+      {
+        "epoch": 7,
+        "checkpoint_sha256": "2004cd05a03734d024e3cd6ed0fb6e2c4863fa290606820d3ffc8c612c0ab84f",
+        "completed_batches": 1037,
+        "actual_cumulative_positive_records": 22403,
+        "all_positive_records_seen_in_this_run": false,
+        "eligible_by_sampling_lineage": false
+      },
+      {
+        "epoch": 8,
+        "checkpoint_sha256": "ef6394786655175f35bcad7d0f8ca1e21c799df9f83a1cd90bec3c7397edf867",
+        "completed_batches": 1037,
+        "actual_cumulative_positive_records": 23600,
+        "all_positive_records_seen_in_this_run": true,
+        "eligible_by_sampling_lineage": true
+      },
+      {
+        "epoch": 9,
+        "checkpoint_sha256": "ca2785bf7eb1914714a74281621a34f5ab517bc54ff8c0c593c23133e07bca4a",
+        "completed_batches": 1037,
+        "actual_cumulative_positive_records": 23600,
+        "all_positive_records_seen_in_this_run": true,
+        "eligible_by_sampling_lineage": true
+      },
+      {
+        "epoch": 10,
+        "checkpoint_sha256": "9ca9d70e694741466b3575e41fa1a6a66498fc068ea83e9568e6110f3a82f7b3",
+        "completed_batches": 1037,
+        "actual_cumulative_positive_records": 23600,
+        "all_positive_records_seen_in_this_run": true,
+        "eligible_by_sampling_lineage": true
+      }
+    ]
+  },
+  "verified_parent": null,
+  "eligible_retained_epochs": [
+    8,
+    9,
+    10
+  ],
+  "required_epoch": 8,
+  "limitations": [
+    "This verifies complete record consumption and source separation, not that every cell survived stochastic augmentation.",
+    "Inherited coverage is tied to a re-audited retained parent checkpoint. New partial-cell supervision exposure is reported separately.",
+    "No images, model outputs or external metrics participate in this audit."
+  ]
+}

@@ -1,0 +1,1372 @@
+{
+  "created_at_utc": "2026-09-05T07:20:13.453852+00:00",
+  "fixture_sha256": "e2ab968f7c4dcf7e774181fde687e1321f58d20567528af4b21fd03ff5a3e625",
+  "validation_words": 405,
+  "selection_rule": "Require accepted accuracy >=95% separately on natural and stress groups, then maximize equal-group mean whole-word exactness including quality/decoder rejections. All candidates use identical frozen validation inputs and a full-float32 oracle.",
+  "candidates": [
+    {
+      "source_checkpoint": ".braille-training-work\\word-scan-v1-20260905\\selected-v6\\best-word.keras",
+      "checkpoint_sha256": "7d6a6f04bfa24b84531ae33e50ca0794b91dcc7e857f0fcbc8a6b0e8e61ec8ee",
+      "thresholds": {
+        "proposalScore": 0.35,
+        "acceptScore": 0.4,
+        "dotConfidence": 0.7,
+        "nmsIou": 0.25,
+        "minCellWidth": 0.008,
+        "minCellHeight": 0.06,
+        "edgeMargin": 0.008,
+        "maxRowDeviation": 0.55,
+        "maxGapRatio": 1.2,
+        "maxOverlapRatio": 0.5
+      },
+      "words": {
+        "total": 405,
+        "accepted": 335,
+        "correct": 327,
+        "exact_word_accuracy": 0.8074074074074075,
+        "accepted_accuracy": 0.9761194029850746,
+        "by_length": {
+          "1": {
+            "total": 87,
+            "accepted": 71,
+            "correct": 71,
+            "exact_word_accuracy": 0.8160919540229885,
+            "accepted_accuracy": 1.0
+          },
+          "2": {
+            "total": 63,
+            "accepted": 51,
+            "correct": 50,
+            "exact_word_accuracy": 0.7936507936507936,
+            "accepted_accuracy": 0.9803921568627451
+          },
+          "3": {
+            "total": 51,
+            "accepted": 47,
+            "correct": 45,
+            "exact_word_accuracy": 0.8823529411764706,
+            "accepted_accuracy": 0.9574468085106383
+          },
+          "4": {
+            "total": 33,
+            "accepted": 29,
+            "correct": 28,
+            "exact_word_accuracy": 0.8484848484848485,
+            "accepted_accuracy": 0.9655172413793104
+          },
+          "5": {
+            "total": 30,
+            "accepted": 26,
+            "correct": 24,
+            "exact_word_accuracy": 0.8,
+            "accepted_accuracy": 0.9230769230769231
+          },
+          "6": {
+            "total": 69,
+            "accepted": 57,
+            "correct": 57,
+            "exact_word_accuracy": 0.8260869565217391,
+            "accepted_accuracy": 1.0
+          },
+          "7": {
+            "total": 24,
+            "accepted": 17,
+            "correct": 17,
+            "exact_word_accuracy": 0.7083333333333334,
+            "accepted_accuracy": 1.0
+          },
+          "8": {
+            "total": 33,
+            "accepted": 25,
+            "correct": 23,
+            "exact_word_accuracy": 0.696969696969697,
+            "accepted_accuracy": 0.92
+          },
+          "9": {
+            "total": 15,
+            "accepted": 12,
+            "correct": 12,
+            "exact_word_accuracy": 0.8,
+            "accepted_accuracy": 1.0
+          }
+        },
+        "rejection_reasons": {
+          "low_confidence": 20,
+          "clipped": 13,
+          "too_many_cells": 2,
+          "unsupported_pattern": 3,
+          "no_grid": 31,
+          "gap": 1
+        }
+      },
+      "imageNormalization": {
+        "kind": "per_channel_standardize_grayscale",
+        "location": "inside_model_before_backbone_rescaling",
+        "variance": "population",
+        "stdFloor": 0.001,
+        "targetMean": 0.5,
+        "targetStd": 0.05,
+        "clip": [
+          0,
+          1
+        ],
+        "grayscale": "mean_of_standardized_channels",
+        "outputChannels": 3
+      },
+      "validation_groups": {
+        "natural": {
+          "total": 135,
+          "accepted": 113,
+          "correct": 113,
+          "exact_word_accuracy": 0.837037037037037,
+          "accepted_accuracy": 1.0,
+          "by_length": {
+            "1": {
+              "total": 29,
+              "accepted": 26,
+              "correct": 26,
+              "exact_word_accuracy": 0.896551724137931,
+              "accepted_accuracy": 1.0
+            },
+            "2": {
+              "total": 21,
+              "accepted": 19,
+              "correct": 19,
+              "exact_word_accuracy": 0.9047619047619048,
+              "accepted_accuracy": 1.0
+            },
+            "3": {
+              "total": 17,
+              "accepted": 17,
+              "correct": 17,
+              "exact_word_accuracy": 1.0,
+              "accepted_accuracy": 1.0
+            },
+            "4": {
+              "total": 11,
+              "accepted": 9,
+              "correct": 9,
+              "exact_word_accuracy": 0.8181818181818182,
+              "accepted_accuracy": 1.0
+            },
+            "5": {
+              "total": 10,
+              "accepted": 9,
+              "correct": 9,
+              "exact_word_accuracy": 0.9,
+              "accepted_accuracy": 1.0
+            },
+            "6": {
+              "total": 23,
+              "accepted": 19,
+              "correct": 19,
+              "exact_word_accuracy": 0.8260869565217391,
+              "accepted_accuracy": 1.0
+            },
+            "7": {
+              "total": 8,
+              "accepted": 5,
+              "correct": 5,
+              "exact_word_accuracy": 0.625,
+              "accepted_accuracy": 1.0
+            },
+            "8": {
+              "total": 11,
+              "accepted": 6,
+              "correct": 6,
+              "exact_word_accuracy": 0.5454545454545454,
+              "accepted_accuracy": 1.0
+            },
+            "9": {
+              "total": 5,
+              "accepted": 3,
+              "correct": 3,
+              "exact_word_accuracy": 0.6,
+              "accepted_accuracy": 1.0
+            }
+          },
+          "rejection_reasons": {
+            "low_confidence": 11,
+            "clipped": 9,
+            "too_many_cells": 1,
+            "unsupported_pattern": 1
+          }
+        },
+        "stress": {
+          "total": 270,
+          "accepted": 222,
+          "correct": 214,
+          "exact_word_accuracy": 0.7925925925925926,
+          "accepted_accuracy": 0.963963963963964,
+          "by_length": {
+            "1": {
+              "total": 58,
+              "accepted": 45,
+              "correct": 45,
+              "exact_word_accuracy": 0.7758620689655172,
+              "accepted_accuracy": 1.0
+            },
+            "2": {
+              "total": 42,
+              "accepted": 32,
+              "correct": 31,
+              "exact_word_accuracy": 0.7380952380952381,
+              "accepted_accuracy": 0.96875
+            },
+            "3": {
+              "total": 34,
+              "accepted": 30,
+              "correct": 28,
+              "exact_word_accuracy": 0.8235294117647058,
+              "accepted_accuracy": 0.9333333333333333
+            },
+            "4": {
+              "total": 22,
+              "accepted": 20,
+              "correct": 19,
+              "exact_word_accuracy": 0.8636363636363636,
+              "accepted_accuracy": 0.95
+            },
+            "5": {
+              "total": 20,
+              "accepted": 17,
+              "correct": 15,
+              "exact_word_accuracy": 0.75,
+              "accepted_accuracy": 0.8823529411764706
+            },
+            "6": {
+              "total": 46,
+              "accepted": 38,
+              "correct": 38,
+              "exact_word_accuracy": 0.8260869565217391,
+              "accepted_accuracy": 1.0
+            },
+            "7": {
+              "total": 16,
+              "accepted": 12,
+              "correct": 12,
+              "exact_word_accuracy": 0.75,
+              "accepted_accuracy": 1.0
+            },
+            "8": {
+              "total": 22,
+              "accepted": 19,
+              "correct": 17,
+              "exact_word_accuracy": 0.7727272727272727,
+              "accepted_accuracy": 0.8947368421052632
+            },
+            "9": {
+              "total": 10,
+              "accepted": 9,
+              "correct": 9,
+              "exact_word_accuracy": 0.9,
+              "accepted_accuracy": 1.0
+            }
+          },
+          "rejection_reasons": {
+            "low_confidence": 9,
+            "clipped": 4,
+            "too_many_cells": 1,
+            "unsupported_pattern": 2,
+            "no_grid": 31,
+            "gap": 1
+          }
+        }
+      },
+      "equal_group_mean_exact": 0.8148148148148149,
+      "both_group_precision_gates_pass": true
+    },
+    {
+      "source_checkpoint": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\run11\\retained-epochs\\epoch-01.keras",
+      "checkpoint_sha256": "34df044af5c49aca705a7b55cebe09d5d47283f2dbd68551b722167a253a5a85",
+      "thresholds": {
+        "proposalScore": 0.35,
+        "acceptScore": 0.4,
+        "dotConfidence": 0.7,
+        "nmsIou": 0.25,
+        "minCellWidth": 0.008,
+        "minCellHeight": 0.06,
+        "edgeMargin": 0.008,
+        "maxRowDeviation": 0.55,
+        "maxGapRatio": 1.2,
+        "maxOverlapRatio": 0.5
+      },
+      "words": {
+        "total": 405,
+        "accepted": 330,
+        "correct": 322,
+        "exact_word_accuracy": 0.7950617283950617,
+        "accepted_accuracy": 0.9757575757575757,
+        "by_length": {
+          "1": {
+            "total": 87,
+            "accepted": 67,
+            "correct": 67,
+            "exact_word_accuracy": 0.7701149425287356,
+            "accepted_accuracy": 1.0
+          },
+          "2": {
+            "total": 63,
+            "accepted": 52,
+            "correct": 49,
+            "exact_word_accuracy": 0.7777777777777778,
+            "accepted_accuracy": 0.9423076923076923
+          },
+          "3": {
+            "total": 51,
+            "accepted": 45,
+            "correct": 43,
+            "exact_word_accuracy": 0.8431372549019608,
+            "accepted_accuracy": 0.9555555555555556
+          },
+          "4": {
+            "total": 33,
+            "accepted": 27,
+            "correct": 27,
+            "exact_word_accuracy": 0.8181818181818182,
+            "accepted_accuracy": 1.0
+          },
+          "5": {
+            "total": 30,
+            "accepted": 25,
+            "correct": 23,
+            "exact_word_accuracy": 0.7666666666666667,
+            "accepted_accuracy": 0.92
+          },
+          "6": {
+            "total": 69,
+            "accepted": 57,
+            "correct": 57,
+            "exact_word_accuracy": 0.8260869565217391,
+            "accepted_accuracy": 1.0
+          },
+          "7": {
+            "total": 24,
+            "accepted": 19,
+            "correct": 19,
+            "exact_word_accuracy": 0.7916666666666666,
+            "accepted_accuracy": 1.0
+          },
+          "8": {
+            "total": 33,
+            "accepted": 26,
+            "correct": 25,
+            "exact_word_accuracy": 0.7575757575757576,
+            "accepted_accuracy": 0.9615384615384616
+          },
+          "9": {
+            "total": 15,
+            "accepted": 12,
+            "correct": 12,
+            "exact_word_accuracy": 0.8,
+            "accepted_accuracy": 1.0
+          }
+        },
+        "rejection_reasons": {
+          "gap": 5,
+          "clipped": 11,
+          "too_many_cells": 1,
+          "multiple_rows": 1,
+          "no_grid": 35,
+          "low_confidence": 20,
+          "unsupported_pattern": 2
+        }
+      },
+      "imageNormalization": {
+        "kind": "per_channel_standardize_grayscale",
+        "location": "inside_model_before_backbone_rescaling",
+        "variance": "population",
+        "stdFloor": 0.001,
+        "targetMean": 0.5,
+        "targetStd": 0.05,
+        "clip": [
+          0,
+          1
+        ],
+        "grayscale": "mean_of_standardized_channels",
+        "outputChannels": 3
+      },
+      "validation_groups": {
+        "natural": {
+          "total": 135,
+          "accepted": 118,
+          "correct": 117,
+          "exact_word_accuracy": 0.8666666666666667,
+          "accepted_accuracy": 0.9915254237288136,
+          "by_length": {
+            "1": {
+              "total": 29,
+              "accepted": 25,
+              "correct": 25,
+              "exact_word_accuracy": 0.8620689655172413,
+              "accepted_accuracy": 1.0
+            },
+            "2": {
+              "total": 21,
+              "accepted": 20,
+              "correct": 20,
+              "exact_word_accuracy": 0.9523809523809523,
+              "accepted_accuracy": 1.0
+            },
+            "3": {
+              "total": 17,
+              "accepted": 16,
+              "correct": 16,
+              "exact_word_accuracy": 0.9411764705882353,
+              "accepted_accuracy": 1.0
+            },
+            "4": {
+              "total": 11,
+              "accepted": 10,
+              "correct": 10,
+              "exact_word_accuracy": 0.9090909090909091,
+              "accepted_accuracy": 1.0
+            },
+            "5": {
+              "total": 10,
+              "accepted": 10,
+              "correct": 9,
+              "exact_word_accuracy": 0.9,
+              "accepted_accuracy": 0.9
+            },
+            "6": {
+              "total": 23,
+              "accepted": 20,
+              "correct": 20,
+              "exact_word_accuracy": 0.8695652173913043,
+              "accepted_accuracy": 1.0
+            },
+            "7": {
+              "total": 8,
+              "accepted": 7,
+              "correct": 7,
+              "exact_word_accuracy": 0.875,
+              "accepted_accuracy": 1.0
+            },
+            "8": {
+              "total": 11,
+              "accepted": 7,
+              "correct": 7,
+              "exact_word_accuracy": 0.6363636363636364,
+              "accepted_accuracy": 1.0
+            },
+            "9": {
+              "total": 5,
+              "accepted": 3,
+              "correct": 3,
+              "exact_word_accuracy": 0.6,
+              "accepted_accuracy": 1.0
+            }
+          },
+          "rejection_reasons": {
+            "gap": 2,
+            "clipped": 7,
+            "too_many_cells": 1,
+            "multiple_rows": 1,
+            "no_grid": 2,
+            "low_confidence": 4
+          }
+        },
+        "stress": {
+          "total": 270,
+          "accepted": 212,
+          "correct": 205,
+          "exact_word_accuracy": 0.7592592592592593,
+          "accepted_accuracy": 0.9669811320754716,
+          "by_length": {
+            "1": {
+              "total": 58,
+              "accepted": 42,
+              "correct": 42,
+              "exact_word_accuracy": 0.7241379310344828,
+              "accepted_accuracy": 1.0
+            },
+            "2": {
+              "total": 42,
+              "accepted": 32,
+              "correct": 29,
+              "exact_word_accuracy": 0.6904761904761905,
+              "accepted_accuracy": 0.90625
+            },
+            "3": {
+              "total": 34,
+              "accepted": 29,
+              "correct": 27,
+              "exact_word_accuracy": 0.7941176470588235,
+              "accepted_accuracy": 0.9310344827586207
+            },
+            "4": {
+              "total": 22,
+              "accepted": 17,
+              "correct": 17,
+              "exact_word_accuracy": 0.7727272727272727,
+              "accepted_accuracy": 1.0
+            },
+            "5": {
+              "total": 20,
+              "accepted": 15,
+              "correct": 14,
+              "exact_word_accuracy": 0.7,
+              "accepted_accuracy": 0.9333333333333333
+            },
+            "6": {
+              "total": 46,
+              "accepted": 37,
+              "correct": 37,
+              "exact_word_accuracy": 0.8043478260869565,
+              "accepted_accuracy": 1.0
+            },
+            "7": {
+              "total": 16,
+              "accepted": 12,
+              "correct": 12,
+              "exact_word_accuracy": 0.75,
+              "accepted_accuracy": 1.0
+            },
+            "8": {
+              "total": 22,
+              "accepted": 19,
+              "correct": 18,
+              "exact_word_accuracy": 0.8181818181818182,
+              "accepted_accuracy": 0.9473684210526315
+            },
+            "9": {
+              "total": 10,
+              "accepted": 9,
+              "correct": 9,
+              "exact_word_accuracy": 0.9,
+              "accepted_accuracy": 1.0
+            }
+          },
+          "rejection_reasons": {
+            "low_confidence": 16,
+            "gap": 3,
+            "clipped": 4,
+            "unsupported_pattern": 2,
+            "no_grid": 33
+          }
+        }
+      },
+      "equal_group_mean_exact": 0.812962962962963,
+      "both_group_precision_gates_pass": true
+    },
+    {
+      "source_checkpoint": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\run11\\retained-epochs\\epoch-02.keras",
+      "checkpoint_sha256": "173b8bc7febcb0e657ca27e6912d6d1932fd58133de9f77691c84dc8d966b154",
+      "thresholds": {
+        "proposalScore": 0.35,
+        "acceptScore": 0.4,
+        "dotConfidence": 0.7,
+        "nmsIou": 0.25,
+        "minCellWidth": 0.008,
+        "minCellHeight": 0.06,
+        "edgeMargin": 0.008,
+        "maxRowDeviation": 0.55,
+        "maxGapRatio": 1.2,
+        "maxOverlapRatio": 0.5
+      },
+      "words": {
+        "total": 405,
+        "accepted": 321,
+        "correct": 313,
+        "exact_word_accuracy": 0.7728395061728395,
+        "accepted_accuracy": 0.9750778816199377,
+        "by_length": {
+          "1": {
+            "total": 87,
+            "accepted": 68,
+            "correct": 68,
+            "exact_word_accuracy": 0.7816091954022989,
+            "accepted_accuracy": 1.0
+          },
+          "2": {
+            "total": 63,
+            "accepted": 48,
+            "correct": 44,
+            "exact_word_accuracy": 0.6984126984126984,
+            "accepted_accuracy": 0.9166666666666666
+          },
+          "3": {
+            "total": 51,
+            "accepted": 43,
+            "correct": 42,
+            "exact_word_accuracy": 0.8235294117647058,
+            "accepted_accuracy": 0.9767441860465116
+          },
+          "4": {
+            "total": 33,
+            "accepted": 25,
+            "correct": 25,
+            "exact_word_accuracy": 0.7575757575757576,
+            "accepted_accuracy": 1.0
+          },
+          "5": {
+            "total": 30,
+            "accepted": 24,
+            "correct": 22,
+            "exact_word_accuracy": 0.7333333333333333,
+            "accepted_accuracy": 0.9166666666666666
+          },
+          "6": {
+            "total": 69,
+            "accepted": 56,
+            "correct": 55,
+            "exact_word_accuracy": 0.7971014492753623,
+            "accepted_accuracy": 0.9821428571428571
+          },
+          "7": {
+            "total": 24,
+            "accepted": 18,
+            "correct": 18,
+            "exact_word_accuracy": 0.75,
+            "accepted_accuracy": 1.0
+          },
+          "8": {
+            "total": 33,
+            "accepted": 27,
+            "correct": 27,
+            "exact_word_accuracy": 0.8181818181818182,
+            "accepted_accuracy": 1.0
+          },
+          "9": {
+            "total": 15,
+            "accepted": 12,
+            "correct": 12,
+            "exact_word_accuracy": 0.8,
+            "accepted_accuracy": 1.0
+          }
+        },
+        "rejection_reasons": {
+          "gap": 4,
+          "clipped": 6,
+          "low_confidence": 36,
+          "too_many_cells": 1,
+          "no_grid": 36,
+          "unsupported_pattern": 1
+        }
+      },
+      "imageNormalization": {
+        "kind": "per_channel_standardize_grayscale",
+        "location": "inside_model_before_backbone_rescaling",
+        "variance": "population",
+        "stdFloor": 0.001,
+        "targetMean": 0.5,
+        "targetStd": 0.05,
+        "clip": [
+          0,
+          1
+        ],
+        "grayscale": "mean_of_standardized_channels",
+        "outputChannels": 3
+      },
+      "validation_groups": {
+        "natural": {
+          "total": 135,
+          "accepted": 117,
+          "correct": 116,
+          "exact_word_accuracy": 0.8592592592592593,
+          "accepted_accuracy": 0.9914529914529915,
+          "by_length": {
+            "1": {
+              "total": 29,
+              "accepted": 25,
+              "correct": 25,
+              "exact_word_accuracy": 0.8620689655172413,
+              "accepted_accuracy": 1.0
+            },
+            "2": {
+              "total": 21,
+              "accepted": 18,
+              "correct": 18,
+              "exact_word_accuracy": 0.8571428571428571,
+              "accepted_accuracy": 1.0
+            },
+            "3": {
+              "total": 17,
+              "accepted": 16,
+              "correct": 16,
+              "exact_word_accuracy": 0.9411764705882353,
+              "accepted_accuracy": 1.0
+            },
+            "4": {
+              "total": 11,
+              "accepted": 10,
+              "correct": 10,
+              "exact_word_accuracy": 0.9090909090909091,
+              "accepted_accuracy": 1.0
+            },
+            "5": {
+              "total": 10,
+              "accepted": 9,
+              "correct": 8,
+              "exact_word_accuracy": 0.8,
+              "accepted_accuracy": 0.8888888888888888
+            },
+            "6": {
+              "total": 23,
+              "accepted": 20,
+              "correct": 20,
+              "exact_word_accuracy": 0.8695652173913043,
+              "accepted_accuracy": 1.0
+            },
+            "7": {
+              "total": 8,
+              "accepted": 7,
+              "correct": 7,
+              "exact_word_accuracy": 0.875,
+              "accepted_accuracy": 1.0
+            },
+            "8": {
+              "total": 11,
+              "accepted": 9,
+              "correct": 9,
+              "exact_word_accuracy": 0.8181818181818182,
+              "accepted_accuracy": 1.0
+            },
+            "9": {
+              "total": 5,
+              "accepted": 3,
+              "correct": 3,
+              "exact_word_accuracy": 0.6,
+              "accepted_accuracy": 1.0
+            }
+          },
+          "rejection_reasons": {
+            "gap": 2,
+            "clipped": 3,
+            "low_confidence": 10,
+            "too_many_cells": 1,
+            "no_grid": 2
+          }
+        },
+        "stress": {
+          "total": 270,
+          "accepted": 204,
+          "correct": 197,
+          "exact_word_accuracy": 0.7296296296296296,
+          "accepted_accuracy": 0.9656862745098039,
+          "by_length": {
+            "1": {
+              "total": 58,
+              "accepted": 43,
+              "correct": 43,
+              "exact_word_accuracy": 0.7413793103448276,
+              "accepted_accuracy": 1.0
+            },
+            "2": {
+              "total": 42,
+              "accepted": 30,
+              "correct": 26,
+              "exact_word_accuracy": 0.6190476190476191,
+              "accepted_accuracy": 0.8666666666666667
+            },
+            "3": {
+              "total": 34,
+              "accepted": 27,
+              "correct": 26,
+              "exact_word_accuracy": 0.7647058823529411,
+              "accepted_accuracy": 0.9629629629629629
+            },
+            "4": {
+              "total": 22,
+              "accepted": 15,
+              "correct": 15,
+              "exact_word_accuracy": 0.6818181818181818,
+              "accepted_accuracy": 1.0
+            },
+            "5": {
+              "total": 20,
+              "accepted": 15,
+              "correct": 14,
+              "exact_word_accuracy": 0.7,
+              "accepted_accuracy": 0.9333333333333333
+            },
+            "6": {
+              "total": 46,
+              "accepted": 36,
+              "correct": 35,
+              "exact_word_accuracy": 0.7608695652173914,
+              "accepted_accuracy": 0.9722222222222222
+            },
+            "7": {
+              "total": 16,
+              "accepted": 11,
+              "correct": 11,
+              "exact_word_accuracy": 0.6875,
+              "accepted_accuracy": 1.0
+            },
+            "8": {
+              "total": 22,
+              "accepted": 18,
+              "correct": 18,
+              "exact_word_accuracy": 0.8181818181818182,
+              "accepted_accuracy": 1.0
+            },
+            "9": {
+              "total": 10,
+              "accepted": 9,
+              "correct": 9,
+              "exact_word_accuracy": 0.9,
+              "accepted_accuracy": 1.0
+            }
+          },
+          "rejection_reasons": {
+            "low_confidence": 26,
+            "gap": 2,
+            "clipped": 3,
+            "no_grid": 34,
+            "unsupported_pattern": 1
+          }
+        }
+      },
+      "equal_group_mean_exact": 0.7944444444444445,
+      "both_group_precision_gates_pass": true
+    },
+    {
+      "source_checkpoint": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\run11\\retained-epochs\\epoch-03.keras",
+      "checkpoint_sha256": "a42f7952a80e1edd29c06d513ee602187865db8910d0179192f9a7d8e23f11b7",
+      "thresholds": {
+        "proposalScore": 0.35,
+        "acceptScore": 0.4,
+        "dotConfidence": 0.7,
+        "nmsIou": 0.25,
+        "minCellWidth": 0.008,
+        "minCellHeight": 0.06,
+        "edgeMargin": 0.008,
+        "maxRowDeviation": 0.55,
+        "maxGapRatio": 1.2,
+        "maxOverlapRatio": 0.5
+      },
+      "words": {
+        "total": 405,
+        "accepted": 334,
+        "correct": 329,
+        "exact_word_accuracy": 0.8123456790123457,
+        "accepted_accuracy": 0.9850299401197605,
+        "by_length": {
+          "1": {
+            "total": 87,
+            "accepted": 68,
+            "correct": 68,
+            "exact_word_accuracy": 0.7816091954022989,
+            "accepted_accuracy": 1.0
+          },
+          "2": {
+            "total": 63,
+            "accepted": 53,
+            "correct": 51,
+            "exact_word_accuracy": 0.8095238095238095,
+            "accepted_accuracy": 0.9622641509433962
+          },
+          "3": {
+            "total": 51,
+            "accepted": 44,
+            "correct": 42,
+            "exact_word_accuracy": 0.8235294117647058,
+            "accepted_accuracy": 0.9545454545454546
+          },
+          "4": {
+            "total": 33,
+            "accepted": 29,
+            "correct": 29,
+            "exact_word_accuracy": 0.8787878787878788,
+            "accepted_accuracy": 1.0
+          },
+          "5": {
+            "total": 30,
+            "accepted": 22,
+            "correct": 22,
+            "exact_word_accuracy": 0.7333333333333333,
+            "accepted_accuracy": 1.0
+          },
+          "6": {
+            "total": 69,
+            "accepted": 58,
+            "correct": 58,
+            "exact_word_accuracy": 0.8405797101449275,
+            "accepted_accuracy": 1.0
+          },
+          "7": {
+            "total": 24,
+            "accepted": 19,
+            "correct": 19,
+            "exact_word_accuracy": 0.7916666666666666,
+            "accepted_accuracy": 1.0
+          },
+          "8": {
+            "total": 33,
+            "accepted": 28,
+            "correct": 27,
+            "exact_word_accuracy": 0.8181818181818182,
+            "accepted_accuracy": 0.9642857142857143
+          },
+          "9": {
+            "total": 15,
+            "accepted": 13,
+            "correct": 13,
+            "exact_word_accuracy": 0.8666666666666667,
+            "accepted_accuracy": 1.0
+          }
+        },
+        "rejection_reasons": {
+          "low_confidence": 22,
+          "clipped": 6,
+          "no_grid": 39,
+          "unsupported_pattern": 2,
+          "multiple_rows": 1,
+          "gap": 1
+        }
+      },
+      "imageNormalization": {
+        "kind": "per_channel_standardize_grayscale",
+        "location": "inside_model_before_backbone_rescaling",
+        "variance": "population",
+        "stdFloor": 0.001,
+        "targetMean": 0.5,
+        "targetStd": 0.05,
+        "clip": [
+          0,
+          1
+        ],
+        "grayscale": "mean_of_standardized_channels",
+        "outputChannels": 3
+      },
+      "validation_groups": {
+        "natural": {
+          "total": 135,
+          "accepted": 121,
+          "correct": 121,
+          "exact_word_accuracy": 0.8962962962962963,
+          "accepted_accuracy": 1.0,
+          "by_length": {
+            "1": {
+              "total": 29,
+              "accepted": 25,
+              "correct": 25,
+              "exact_word_accuracy": 0.8620689655172413,
+              "accepted_accuracy": 1.0
+            },
+            "2": {
+              "total": 21,
+              "accepted": 20,
+              "correct": 20,
+              "exact_word_accuracy": 0.9523809523809523,
+              "accepted_accuracy": 1.0
+            },
+            "3": {
+              "total": 17,
+              "accepted": 16,
+              "correct": 16,
+              "exact_word_accuracy": 0.9411764705882353,
+              "accepted_accuracy": 1.0
+            },
+            "4": {
+              "total": 11,
+              "accepted": 10,
+              "correct": 10,
+              "exact_word_accuracy": 0.9090909090909091,
+              "accepted_accuracy": 1.0
+            },
+            "5": {
+              "total": 10,
+              "accepted": 9,
+              "correct": 9,
+              "exact_word_accuracy": 0.9,
+              "accepted_accuracy": 1.0
+            },
+            "6": {
+              "total": 23,
+              "accepted": 21,
+              "correct": 21,
+              "exact_word_accuracy": 0.9130434782608695,
+              "accepted_accuracy": 1.0
+            },
+            "7": {
+              "total": 8,
+              "accepted": 7,
+              "correct": 7,
+              "exact_word_accuracy": 0.875,
+              "accepted_accuracy": 1.0
+            },
+            "8": {
+              "total": 11,
+              "accepted": 9,
+              "correct": 9,
+              "exact_word_accuracy": 0.8181818181818182,
+              "accepted_accuracy": 1.0
+            },
+            "9": {
+              "total": 5,
+              "accepted": 4,
+              "correct": 4,
+              "exact_word_accuracy": 0.8,
+              "accepted_accuracy": 1.0
+            }
+          },
+          "rejection_reasons": {
+            "low_confidence": 6,
+            "clipped": 4,
+            "no_grid": 3,
+            "unsupported_pattern": 1
+          }
+        },
+        "stress": {
+          "total": 270,
+          "accepted": 213,
+          "correct": 208,
+          "exact_word_accuracy": 0.7703703703703704,
+          "accepted_accuracy": 0.9765258215962441,
+          "by_length": {
+            "1": {
+              "total": 58,
+              "accepted": 43,
+              "correct": 43,
+              "exact_word_accuracy": 0.7413793103448276,
+              "accepted_accuracy": 1.0
+            },
+            "2": {
+              "total": 42,
+              "accepted": 33,
+              "correct": 31,
+              "exact_word_accuracy": 0.7380952380952381,
+              "accepted_accuracy": 0.9393939393939394
+            },
+            "3": {
+              "total": 34,
+              "accepted": 28,
+              "correct": 26,
+              "exact_word_accuracy": 0.7647058823529411,
+              "accepted_accuracy": 0.9285714285714286
+            },
+            "4": {
+              "total": 22,
+              "accepted": 19,
+              "correct": 19,
+              "exact_word_accuracy": 0.8636363636363636,
+              "accepted_accuracy": 1.0
+            },
+            "5": {
+              "total": 20,
+              "accepted": 13,
+              "correct": 13,
+              "exact_word_accuracy": 0.65,
+              "accepted_accuracy": 1.0
+            },
+            "6": {
+              "total": 46,
+              "accepted": 37,
+              "correct": 37,
+              "exact_word_accuracy": 0.8043478260869565,
+              "accepted_accuracy": 1.0
+            },
+            "7": {
+              "total": 16,
+              "accepted": 12,
+              "correct": 12,
+              "exact_word_accuracy": 0.75,
+              "accepted_accuracy": 1.0
+            },
+            "8": {
+              "total": 22,
+              "accepted": 19,
+              "correct": 18,
+              "exact_word_accuracy": 0.8181818181818182,
+              "accepted_accuracy": 0.9473684210526315
+            },
+            "9": {
+              "total": 10,
+              "accepted": 9,
+              "correct": 9,
+              "exact_word_accuracy": 0.9,
+              "accepted_accuracy": 1.0
+            }
+          },
+          "rejection_reasons": {
+            "low_confidence": 16,
+            "clipped": 2,
+            "no_grid": 36,
+            "unsupported_pattern": 1,
+            "multiple_rows": 1,
+            "gap": 1
+          }
+        }
+      },
+      "equal_group_mean_exact": 0.8333333333333333,
+      "both_group_precision_gates_pass": true
+    },
+    {
+      "source_checkpoint": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\run11\\retained-epochs\\epoch-04.keras",
+      "checkpoint_sha256": "3c7f250695be5df67c6c852ab6aaab77541b6109aa92c566ab62dd1e9967efc0",
+      "thresholds": {
+        "proposalScore": 0.35,
+        "acceptScore": 0.4,
+        "dotConfidence": 0.7,
+        "nmsIou": 0.25,
+        "minCellWidth": 0.008,
+        "minCellHeight": 0.06,
+        "edgeMargin": 0.008,
+        "maxRowDeviation": 0.55,
+        "maxGapRatio": 1.2,
+        "maxOverlapRatio": 0.5
+      },
+      "words": {
+        "total": 405,
+        "accepted": 330,
+        "correct": 321,
+        "exact_word_accuracy": 0.7925925925925926,
+        "accepted_accuracy": 0.9727272727272728,
+        "by_length": {
+          "1": {
+            "total": 87,
+            "accepted": 68,
+            "correct": 68,
+            "exact_word_accuracy": 0.7816091954022989,
+            "accepted_accuracy": 1.0
+          },
+          "2": {
+            "total": 63,
+            "accepted": 50,
+            "correct": 48,
+            "exact_word_accuracy": 0.7619047619047619,
+            "accepted_accuracy": 0.96
+          },
+          "3": {
+            "total": 51,
+            "accepted": 45,
+            "correct": 42,
+            "exact_word_accuracy": 0.8235294117647058,
+            "accepted_accuracy": 0.9333333333333333
+          },
+          "4": {
+            "total": 33,
+            "accepted": 27,
+            "correct": 27,
+            "exact_word_accuracy": 0.8181818181818182,
+            "accepted_accuracy": 1.0
+          },
+          "5": {
+            "total": 30,
+            "accepted": 24,
+            "correct": 22,
+            "exact_word_accuracy": 0.7333333333333333,
+            "accepted_accuracy": 0.9166666666666666
+          },
+          "6": {
+            "total": 69,
+            "accepted": 58,
+            "correct": 57,
+            "exact_word_accuracy": 0.8260869565217391,
+            "accepted_accuracy": 0.9827586206896551
+          },
+          "7": {
+            "total": 24,
+            "accepted": 18,
+            "correct": 18,
+            "exact_word_accuracy": 0.75,
+            "accepted_accuracy": 1.0
+          },
+          "8": {
+            "total": 33,
+            "accepted": 28,
+            "correct": 27,
+            "exact_word_accuracy": 0.8181818181818182,
+            "accepted_accuracy": 0.9642857142857143
+          },
+          "9": {
+            "total": 15,
+            "accepted": 12,
+            "correct": 12,
+            "exact_word_accuracy": 0.8,
+            "accepted_accuracy": 1.0
+          }
+        },
+        "rejection_reasons": {
+          "gap": 4,
+          "low_confidence": 25,
+          "clipped": 7,
+          "unsupported_pattern": 2,
+          "no_grid": 37
+        }
+      },
+      "imageNormalization": {
+        "kind": "per_channel_standardize_grayscale",
+        "location": "inside_model_before_backbone_rescaling",
+        "variance": "population",
+        "stdFloor": 0.001,
+        "targetMean": 0.5,
+        "targetStd": 0.05,
+        "clip": [
+          0,
+          1
+        ],
+        "grayscale": "mean_of_standardized_channels",
+        "outputChannels": 3
+      },
+      "validation_groups": {
+        "natural": {
+          "total": 135,
+          "accepted": 119,
+          "correct": 119,
+          "exact_word_accuracy": 0.8814814814814815,
+          "accepted_accuracy": 1.0,
+          "by_length": {
+            "1": {
+              "total": 29,
+              "accepted": 25,
+              "correct": 25,
+              "exact_word_accuracy": 0.8620689655172413,
+              "accepted_accuracy": 1.0
+            },
+            "2": {
+              "total": 21,
+              "accepted": 19,
+              "correct": 19,
+              "exact_word_accuracy": 0.9047619047619048,
+              "accepted_accuracy": 1.0
+            },
+            "3": {
+              "total": 17,
+              "accepted": 16,
+              "correct": 16,
+              "exact_word_accuracy": 0.9411764705882353,
+              "accepted_accuracy": 1.0
+            },
+            "4": {
+              "total": 11,
+              "accepted": 10,
+              "correct": 10,
+              "exact_word_accuracy": 0.9090909090909091,
+              "accepted_accuracy": 1.0
+            },
+            "5": {
+              "total": 10,
+              "accepted": 8,
+              "correct": 8,
+              "exact_word_accuracy": 0.8,
+              "accepted_accuracy": 1.0
+            },
+            "6": {
+              "total": 23,
+              "accepted": 22,
+              "correct": 22,
+              "exact_word_accuracy": 0.9565217391304348,
+              "accepted_accuracy": 1.0
+            },
+            "7": {
+              "total": 8,
+              "accepted": 7,
+              "correct": 7,
+              "exact_word_accuracy": 0.875,
+              "accepted_accuracy": 1.0
+            },
+            "8": {
+              "total": 11,
+              "accepted": 9,
+              "correct": 9,
+              "exact_word_accuracy": 0.8181818181818182,
+              "accepted_accuracy": 1.0
+            },
+            "9": {
+              "total": 5,
+              "accepted": 3,
+              "correct": 3,
+              "exact_word_accuracy": 0.6,
+              "accepted_accuracy": 1.0
+            }
+          },
+          "rejection_reasons": {
+            "gap": 1,
+            "low_confidence": 8,
+            "clipped": 4,
+            "unsupported_pattern": 1,
+            "no_grid": 2
+          }
+        },
+        "stress": {
+          "total": 270,
+          "accepted": 211,
+          "correct": 202,
+          "exact_word_accuracy": 0.7481481481481481,
+          "accepted_accuracy": 0.957345971563981,
+          "by_length": {
+            "1": {
+              "total": 58,
+              "accepted": 43,
+              "correct": 43,
+              "exact_word_accuracy": 0.7413793103448276,
+              "accepted_accuracy": 1.0
+            },
+            "2": {
+              "total": 42,
+              "accepted": 31,
+              "correct": 29,
+              "exact_word_accuracy": 0.6904761904761905,
+              "accepted_accuracy": 0.9354838709677419
+            },
+            "3": {
+              "total": 34,
+              "accepted": 29,
+              "correct": 26,
+              "exact_word_accuracy": 0.7647058823529411,
+              "accepted_accuracy": 0.896551724137931
+            },
+            "4": {
+              "total": 22,
+              "accepted": 17,
+              "correct": 17,
+              "exact_word_accuracy": 0.7727272727272727,
+              "accepted_accuracy": 1.0
+            },
+            "5": {
+              "total": 20,
+              "accepted": 16,
+              "correct": 14,
+              "exact_word_accuracy": 0.7,
+              "accepted_accuracy": 0.875
+            },
+            "6": {
+              "total": 46,
+              "accepted": 36,
+              "correct": 35,
+              "exact_word_accuracy": 0.7608695652173914,
+              "accepted_accuracy": 0.9722222222222222
+            },
+            "7": {
+              "total": 16,
+              "accepted": 11,
+              "correct": 11,
+              "exact_word_accuracy": 0.6875,
+              "accepted_accuracy": 1.0
+            },
+            "8": {
+              "total": 22,
+              "accepted": 19,
+              "correct": 18,
+              "exact_word_accuracy": 0.8181818181818182,
+              "accepted_accuracy": 0.9473684210526315
+            },
+            "9": {
+              "total": 10,
+              "accepted": 9,
+              "correct": 9,
+              "exact_word_accuracy": 0.9,
+              "accepted_accuracy": 1.0
+            }
+          },
+          "rejection_reasons": {
+            "low_confidence": 17,
+            "gap": 3,
+            "clipped": 3,
+            "no_grid": 35,
+            "unsupported_pattern": 1
+          }
+        }
+      },
+      "equal_group_mean_exact": 0.8148148148148149,
+      "both_group_precision_gates_pass": true
+    }
+  ],
+  "selected_checkpoint": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\run11\\retained-epochs\\epoch-03.keras",
+  "selected_checkpoint_sha256": "a42f7952a80e1edd29c06d513ee602187865db8910d0179192f9a7d8e23f11b7",
+  "external_outputs_used": false
+}

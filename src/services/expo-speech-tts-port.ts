@@ -144,6 +144,7 @@ function withTimeout<T>(promise: Promise<T>, timeoutMs: number): Promise<T> {
 export class ExpoSpeechTtsPort implements TtsPort {
   private readonly listeners = new Set<TtsPlaybackListener>();
   private commandQueue: Promise<void> = Promise.resolve();
+  private speechCancellationGeneration = 0;
   private playbackSequence = 0;
   private activePlayback: ActivePlayback | undefined;
   private lastRequest: SpeechRequest | undefined;
@@ -183,20 +184,25 @@ export class ExpoSpeechTtsPort implements TtsPort {
   }
 
   speak(text: string, options: TtsSpeakOptions): Promise<PortResult> {
-    return this.enqueue(() => this.speakOnce(text, options, false));
+    const generation = this.speechCancellationGeneration;
+    return this.enqueue(() => this.speakOnce(text, options, false, generation));
   }
 
   stop(): Promise<PortResult> {
+    // Invalidate pending speech immediately, including commands that have not
+    // started in the queue or are awaiting native voice discovery.
+    this.speechCancellationGeneration += 1;
     return this.enqueue(() => this.stopOnce());
   }
 
   repeat(): Promise<PortResult> {
+    const generation = this.speechCancellationGeneration;
     return this.enqueue(async () => {
       const previous = this.lastRequest;
       if (!previous) {
         return failed('Belum ada hasil suara yang dapat diulangi.');
       }
-      return this.speakOnce(previous.text, previous.options, true);
+      return this.speakOnce(previous.text, previous.options, true, generation);
     });
   }
 
@@ -231,7 +237,11 @@ export class ExpoSpeechTtsPort implements TtsPort {
     rawText: string,
     options: TtsSpeakOptions,
     force: boolean,
+    generation: number,
   ): Promise<PortResult> {
+    if (generation !== this.speechCancellationGeneration) {
+      return failed('Pembacaan dibatalkan.');
+    }
     const text = rawText.trim();
     const validationError = this.validateRequest(text, options);
     if (validationError) {
@@ -254,6 +264,9 @@ export class ExpoSpeechTtsPort implements TtsPort {
     if (!voice) {
       return unavailable('Suara Bahasa Indonesia offline belum tersedia.');
     }
+    if (generation !== this.speechCancellationGeneration) {
+      return failed('Pembacaan dibatalkan.');
+    }
 
     if (this.activePlayback) {
       const stopped = await this.stopOnce();
@@ -262,6 +275,11 @@ export class ExpoSpeechTtsPort implements TtsPort {
       }
     }
 
+    // stop() may arrive while interrupting an active utterance. The screen
+    // discards stale completions; this guard also prevents stale native audio.
+    if (generation !== this.speechCancellationGeneration) {
+      return failed('Pembacaan dibatalkan.');
+    }
     const token = ++this.playbackSequence;
     this.clearPlaybackWatchdog();
     this.activePlayback = { requestKey: key, text, token };

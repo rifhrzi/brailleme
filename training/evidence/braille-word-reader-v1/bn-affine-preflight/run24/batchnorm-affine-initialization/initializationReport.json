@@ -1,0 +1,387 @@
+{
+  "status": "passed",
+  "created_at_utc": "2026-09-05T19:04:59.318467+00:00",
+  "scope": "One cached TRAIN input on CPU; initial equality/reload and real-loss backward without optimizer. Separate fixed .001 alternating affine perturbation is only a forbidden export diagnostic.",
+  "parent_checkpoint": ".braille-training-work\\word-scan-v1-20260905\\selected-v15\\best-word.keras",
+  "parent_checkpoint_sha256": "cce2432c0ddb8952c885dd58697589c285209588dafa81aacdd891b1660068b7",
+  "initial_checkpoint": ".braille-training-work\\word-scan-v1-20260905\\bn-affine-parent-v1\\bn-affine-parent.keras",
+  "initial_checkpoint_sha256": "6d4847f3030ec40476a2e29c65a4a0941f6ea9ba7e59260b20c3c6e9d48bf35d",
+  "nonzero_diagnostic_checkpoint": ".braille-training-work\\word-scan-v1-20260905\\bn-affine-parent-v1\\nonzero-diagnostic-only.keras",
+  "nonzero_diagnostic_sha256": "22ea3ccdfc59751fdd349356c9ce256791431d374d5de546298ec2dfbed72041",
+  "nonzero_diagnostic_must_never_be_resumed": true,
+  "source_sha256": {
+    "word_bn_affine.py": "fa117f65beda3f6d159f707a5cd45d3a367b8f5b436b8c43c0d7621071297dff",
+    "word_bn_affine_init.py": "ea76999d35a6e9ba94cffce06c359adb1201cb396b54345668b7ed13afe99ce1",
+    "word_model.py": "c446732a2905a612cd6f1dd64d2d3d01303b1c71933c34552d26f3b5052fd551",
+    "word_data.py": "659ab6b508a69b34bfb8dc899c5fa6e2214bd64e08281f40f9c39aa91d74996c"
+  },
+  "activation_report": ".braille-training-work\\word-scan-v1-20260905\\v15-train-batchnorm-activations\\report.json",
+  "activation_report_sha256": "1d24e354d1acf8d8da937f1c730e33f93048191aac285e354327e472680078e1",
+  "input": {
+    "image": "train/000000.png",
+    "source": "books/chudo_derevo_redmi/IMG_20190715_112912.labeled.jpg",
+    "image_sha256": "dec6b2c72152ff5eb8a87be172a7e20764eae23d427a401fd98075f19d7de1f1",
+    "train_manifest_sha256": "f728b900c791433f8fd4aea08997af96f3320c0cfe5628619843a2a5b798cddc",
+    "manifest_index": 0
+  },
+  "oracle_sha256": "d48156d71b5db51fbc89da208e7b7d33f8d16326c12a806a05838c539c786ccc",
+  "backend": "torch",
+  "torch_version": "2.7.1+cu128",
+  "keras_version": "3.15.1",
+  "device": "cpu",
+  "threads": 2,
+  "parameters": 829307,
+  "batchnorm_affine": {
+    "mode": "affine_only_frozen_moments",
+    "batchnorm_layers": 52,
+    "trainable_affine_layers": 52,
+    "backbone_call_training_keywords": [
+      false
+    ],
+    "layer_forced_frozen_moments": 52,
+    "affine_parameters": 18544,
+    "layer_names": [
+      "bn_Conv1",
+      "expanded_conv_depthwise_BN",
+      "expanded_conv_project_BN",
+      "block_1_expand_BN",
+      "block_1_depthwise_BN",
+      "block_1_project_BN",
+      "block_2_expand_BN",
+      "block_2_depthwise_BN",
+      "block_2_project_BN",
+      "block_3_expand_BN",
+      "block_3_depthwise_BN",
+      "block_3_project_BN",
+      "block_4_expand_BN",
+      "block_4_depthwise_BN",
+      "block_4_project_BN",
+      "block_5_expand_BN",
+      "block_5_depthwise_BN",
+      "block_5_project_BN",
+      "block_6_expand_BN",
+      "block_6_depthwise_BN",
+      "block_6_project_BN",
+      "block_7_expand_BN",
+      "block_7_depthwise_BN",
+      "block_7_project_BN",
+      "block_8_expand_BN",
+      "block_8_depthwise_BN",
+      "block_8_project_BN",
+      "block_9_expand_BN",
+      "block_9_depthwise_BN",
+      "block_9_project_BN",
+      "block_10_expand_BN",
+      "block_10_depthwise_BN",
+      "block_10_project_BN",
+      "block_11_expand_BN",
+      "block_11_depthwise_BN",
+      "block_11_project_BN",
+      "block_12_expand_BN",
+      "block_12_depthwise_BN",
+      "block_12_project_BN",
+      "block_13_expand_BN",
+      "block_13_depthwise_BN",
+      "block_13_project_BN",
+      "block_14_expand_BN",
+      "block_14_depthwise_BN",
+      "block_14_project_BN",
+      "block_15_expand_BN",
+      "block_15_depthwise_BN",
+      "block_15_project_BN",
+      "block_16_expand_BN",
+      "block_16_depthwise_BN",
+      "block_16_project_BN",
+      "Conv_1_bn"
+    ],
+    "moving_moments": "Unchanged stored mean/variance enforced inside each replacement BN call, including outer model training=True."
+  },
+  "imageNormalization": {
+    "kind": "per_channel_standardize_grayscale",
+    "location": "inside_model_before_backbone_rescaling",
+    "variance": "population",
+    "stdFloor": 0.001,
+    "targetMean": 0.5,
+    "targetStd": 0.05,
+    "clip": [
+      0,
+      1
+    ],
+    "grayscale": "mean_of_standardized_channels",
+    "outputChannels": 3
+  },
+  "all_initial_arrays_equal_parent": true,
+  "initial_train_eval_parent_outputs_equal": true,
+  "save_reload_values_and_outputs_equal": true,
+  "all_arrays_unchanged_after_backward": true,
+  "parent_unchanged": true,
+  "array_count": 280,
+  "initial_arrays_sha256": "0ec3ae4bc118a07cdccd9e513058a28cdfa597ac2682bba3eb9d78c4f7fe2c7a",
+  "gradient_loss": 0.1352894902229309,
+  "gradient_rows": [
+    {
+      "layer": "bn_Conv1",
+      "gamma_gradient_l1": 0.07353388518095016,
+      "beta_gradient_l1": 0.047993626445531845
+    },
+    {
+      "layer": "expanded_conv_depthwise_BN",
+      "gamma_gradient_l1": 0.07372254878282547,
+      "beta_gradient_l1": 0.3267959654331207
+    },
+    {
+      "layer": "expanded_conv_project_BN",
+      "gamma_gradient_l1": 0.02601267397403717,
+      "beta_gradient_l1": 0.03391440212726593
+    },
+    {
+      "layer": "block_1_expand_BN",
+      "gamma_gradient_l1": 0.11107055842876434,
+      "beta_gradient_l1": 0.3299596905708313
+    },
+    {
+      "layer": "block_1_depthwise_BN",
+      "gamma_gradient_l1": 0.25657010078430176,
+      "beta_gradient_l1": 0.3345431089401245
+    },
+    {
+      "layer": "block_1_project_BN",
+      "gamma_gradient_l1": 0.056858956813812256,
+      "beta_gradient_l1": 0.03111875429749489
+    },
+    {
+      "layer": "block_2_expand_BN",
+      "gamma_gradient_l1": 0.2138003408908844,
+      "beta_gradient_l1": 0.11484647542238235
+    },
+    {
+      "layer": "block_2_depthwise_BN",
+      "gamma_gradient_l1": 0.24567022919654846,
+      "beta_gradient_l1": 0.26655420660972595
+    },
+    {
+      "layer": "block_2_project_BN",
+      "gamma_gradient_l1": 0.0377948097884655,
+      "beta_gradient_l1": 0.024789154529571533
+    },
+    {
+      "layer": "block_3_expand_BN",
+      "gamma_gradient_l1": 0.39978909492492676,
+      "beta_gradient_l1": 0.2611163258552551
+    },
+    {
+      "layer": "block_3_depthwise_BN",
+      "gamma_gradient_l1": 0.45968466997146606,
+      "beta_gradient_l1": 0.2750851809978485
+    },
+    {
+      "layer": "block_3_project_BN",
+      "gamma_gradient_l1": 0.038878634572029114,
+      "beta_gradient_l1": 0.01812797784805298
+    },
+    {
+      "layer": "block_4_expand_BN",
+      "gamma_gradient_l1": 0.2508929967880249,
+      "beta_gradient_l1": 0.08904316276311874
+    },
+    {
+      "layer": "block_4_depthwise_BN",
+      "gamma_gradient_l1": 0.2304985374212265,
+      "beta_gradient_l1": 0.14029094576835632
+    },
+    {
+      "layer": "block_4_project_BN",
+      "gamma_gradient_l1": 0.04432567209005356,
+      "beta_gradient_l1": 0.013910421170294285
+    },
+    {
+      "layer": "block_5_expand_BN",
+      "gamma_gradient_l1": 0.28847837448120117,
+      "beta_gradient_l1": 0.11863148212432861
+    },
+    {
+      "layer": "block_5_depthwise_BN",
+      "gamma_gradient_l1": 0.2615949213504791,
+      "beta_gradient_l1": 0.15532320737838745
+    },
+    {
+      "layer": "block_5_project_BN",
+      "gamma_gradient_l1": 0.03688879311084747,
+      "beta_gradient_l1": 0.012191111221909523
+    },
+    {
+      "layer": "block_6_expand_BN",
+      "gamma_gradient_l1": 0.37774458527565,
+      "beta_gradient_l1": 0.17365072667598724
+    },
+    {
+      "layer": "block_6_depthwise_BN",
+      "gamma_gradient_l1": 0.4161359667778015,
+      "beta_gradient_l1": 0.1952754557132721
+    },
+    {
+      "layer": "block_6_project_BN",
+      "gamma_gradient_l1": 0.059285718947649,
+      "beta_gradient_l1": 0.023298803716897964
+    },
+    {
+      "layer": "block_7_expand_BN",
+      "gamma_gradient_l1": 0.261568158864975,
+      "beta_gradient_l1": 0.09074822813272476
+    },
+    {
+      "layer": "block_7_depthwise_BN",
+      "gamma_gradient_l1": 0.13401468098163605,
+      "beta_gradient_l1": 0.10978429019451141
+    },
+    {
+      "layer": "block_7_project_BN",
+      "gamma_gradient_l1": 0.06246858835220337,
+      "beta_gradient_l1": 0.023260075598955154
+    },
+    {
+      "layer": "block_8_expand_BN",
+      "gamma_gradient_l1": 0.4145801067352295,
+      "beta_gradient_l1": 0.13711407780647278
+    },
+    {
+      "layer": "block_8_depthwise_BN",
+      "gamma_gradient_l1": 0.24711795151233673,
+      "beta_gradient_l1": 0.15291687846183777
+    },
+    {
+      "layer": "block_8_project_BN",
+      "gamma_gradient_l1": 0.06360889971256256,
+      "beta_gradient_l1": 0.023729491978883743
+    },
+    {
+      "layer": "block_9_expand_BN",
+      "gamma_gradient_l1": 0.31576117873191833,
+      "beta_gradient_l1": 0.13521668314933777
+    },
+    {
+      "layer": "block_9_depthwise_BN",
+      "gamma_gradient_l1": 0.24112555384635925,
+      "beta_gradient_l1": 0.11272785812616348
+    },
+    {
+      "layer": "block_9_project_BN",
+      "gamma_gradient_l1": 0.0581614151597023,
+      "beta_gradient_l1": 0.017973465844988823
+    },
+    {
+      "layer": "block_10_expand_BN",
+      "gamma_gradient_l1": 0.3809295892715454,
+      "beta_gradient_l1": 0.17252546548843384
+    },
+    {
+      "layer": "block_10_depthwise_BN",
+      "gamma_gradient_l1": 0.4624920189380646,
+      "beta_gradient_l1": 0.21642036736011505
+    },
+    {
+      "layer": "block_10_project_BN",
+      "gamma_gradient_l1": 0.07867556065320969,
+      "beta_gradient_l1": 0.02855701744556427
+    },
+    {
+      "layer": "block_11_expand_BN",
+      "gamma_gradient_l1": 0.5239511728286743,
+      "beta_gradient_l1": 0.21993644535541534
+    },
+    {
+      "layer": "block_11_depthwise_BN",
+      "gamma_gradient_l1": 0.4633910655975342,
+      "beta_gradient_l1": 0.19959881901741028
+    },
+    {
+      "layer": "block_11_project_BN",
+      "gamma_gradient_l1": 0.09257227182388306,
+      "beta_gradient_l1": 0.024410739541053772
+    },
+    {
+      "layer": "block_12_expand_BN",
+      "gamma_gradient_l1": 0.5034010410308838,
+      "beta_gradient_l1": 0.1671527922153473
+    },
+    {
+      "layer": "block_12_depthwise_BN",
+      "gamma_gradient_l1": 0.5411006212234497,
+      "beta_gradient_l1": 0.20797164738178253
+    },
+    {
+      "layer": "block_12_project_BN",
+      "gamma_gradient_l1": 0.08489739149808884,
+      "beta_gradient_l1": 0.01576913334429264
+    },
+    {
+      "layer": "block_13_expand_BN",
+      "gamma_gradient_l1": 0.3534625768661499,
+      "beta_gradient_l1": 0.11712032556533813
+    },
+    {
+      "layer": "block_13_depthwise_BN",
+      "gamma_gradient_l1": 0.21027883887290955,
+      "beta_gradient_l1": 0.0679607018828392
+    },
+    {
+      "layer": "block_13_project_BN",
+      "gamma_gradient_l1": 0.04445858299732208,
+      "beta_gradient_l1": 0.012675083242356777
+    },
+    {
+      "layer": "block_14_expand_BN",
+      "gamma_gradient_l1": 0.11938808858394623,
+      "beta_gradient_l1": 0.04751904681324959
+    },
+    {
+      "layer": "block_14_depthwise_BN",
+      "gamma_gradient_l1": 0.10758189857006073,
+      "beta_gradient_l1": 0.05606481432914734
+    },
+    {
+      "layer": "block_14_project_BN",
+      "gamma_gradient_l1": 0.03440142050385475,
+      "beta_gradient_l1": 0.012313701212406158
+    },
+    {
+      "layer": "block_15_expand_BN",
+      "gamma_gradient_l1": 0.10122375935316086,
+      "beta_gradient_l1": 0.04184655845165253
+    },
+    {
+      "layer": "block_15_depthwise_BN",
+      "gamma_gradient_l1": 0.14248540997505188,
+      "beta_gradient_l1": 0.08826494216918945
+    },
+    {
+      "layer": "block_15_project_BN",
+      "gamma_gradient_l1": 0.0265674889087677,
+      "beta_gradient_l1": 0.010272840969264507
+    },
+    {
+      "layer": "block_16_expand_BN",
+      "gamma_gradient_l1": 0.10061553865671158,
+      "beta_gradient_l1": 0.048881348222494125
+    },
+    {
+      "layer": "block_16_depthwise_BN",
+      "gamma_gradient_l1": 0.08251353353261948,
+      "beta_gradient_l1": 0.0653216689825058
+    },
+    {
+      "layer": "block_16_project_BN",
+      "gamma_gradient_l1": 0.03580278903245926,
+      "beta_gradient_l1": 0.01915687695145607
+    },
+    {
+      "layer": "Conv_1_bn",
+      "gamma_gradient_l1": 0.01828254573047161,
+      "beta_gradient_l1": 0.011631124652922153
+    }
+  ],
+  "diagnostic_changed_affine_tensors": 104,
+  "diagnostic_other_weights_and_moments_unchanged": true,
+  "nonzero_max_output_delta": 0.02948659658432007,
+  "conversion_required_before_training": "Six fixed TRAIN/analytic inputs; initial and nonzero Torch/TF/TFLite builtins-only parity. This one-input CPU proof alone never permits a training launch."
+}

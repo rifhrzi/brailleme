@@ -1,0 +1,186 @@
+{
+  "created_at_utc": "2026-09-05T17:52:41.588607+00:00",
+  "kind": "TRAIN_only_expected_balanced_sampling_complete_label_frequency_before_stochastic_augmentation",
+  "manifest_sha256": "130c80f135af5677d6b78a5e401126f54b15204481aab6de00a88c443956c4fa",
+  "sampling_config_sha256": "75bc0305e899aa1c13936fa8614ef42702fedefc9d3c5abfd294d60ccf30a51d",
+  "expected_complete_cell_occurrences_per_epoch": 126080.31919341827,
+  "before_mirror_dot_frequencies": [
+    0.6001312284491234,
+    0.4946901318173904,
+    0.5063571797575472,
+    0.45092919979626767,
+    0.5097680848013668,
+    0.27013340529417124
+  ],
+  "after_probability_half_mirror_expected_frequencies": [
+    0.5255302141226955,
+    0.5022291083093786,
+    0.38824529252585926,
+    0.5255302141226955,
+    0.5022291083093786,
+    0.38824529252585926
+  ],
+  "families": {
+    "books/chudo_derevo_redmi": {
+      "positive_records": 1013,
+      "expected_record_draws_per_epoch": 1967,
+      "complete_occurrences_before_augmentation": 4721,
+      "occupied_dot_counts": [
+        3283,
+        2300,
+        2620,
+        2077,
+        2494,
+        920
+      ]
+    },
+    "books/mdd-redmi1": {
+      "positive_records": 903,
+      "expected_record_draws_per_epoch": 1967,
+      "complete_occurrences_before_augmentation": 4433,
+      "occupied_dot_counts": [
+        3013,
+        2368,
+        2548,
+        2092,
+        2083,
+        951
+      ]
+    },
+    "books/mdd_cannon1": {
+      "positive_records": 899,
+      "expected_record_draws_per_epoch": 1967,
+      "complete_occurrences_before_augmentation": 4492,
+      "occupied_dot_counts": [
+        3025,
+        2410,
+        2569,
+        2144,
+        2138,
+        947
+      ]
+    },
+    "books/skazki": {
+      "positive_records": 14966,
+      "expected_record_draws_per_epoch": 1967,
+      "complete_occurrences_before_augmentation": 75324,
+      "occupied_dot_counts": [
+        51833,
+        37991,
+        43270,
+        35232,
+        39790,
+        15437
+      ]
+    },
+    "books/telefon": {
+      "positive_records": 1642,
+      "expected_record_draws_per_epoch": 1967,
+      "complete_occurrences_before_augmentation": 7649,
+      "occupied_dot_counts": [
+        5240,
+        3853,
+        4256,
+        3415,
+        3759,
+        1517
+      ]
+    },
+    "books/uploaded": {
+      "positive_records": 159,
+      "expected_record_draws_per_epoch": 1967,
+      "complete_occurrences_before_augmentation": 820,
+      "occupied_dot_counts": [
+        543,
+        418,
+        448,
+        414,
+        463,
+        195
+      ]
+    },
+    "dsbi/Massage": {
+      "positive_records": 838,
+      "expected_record_draws_per_epoch": 1967,
+      "complete_occurrences_before_augmentation": 5097,
+      "occupied_dot_counts": [
+        2464,
+        2073,
+        1991,
+        2116,
+        3024,
+        1774
+      ]
+    },
+    "dsbi/Math": {
+      "positive_records": 824,
+      "expected_record_draws_per_epoch": 1967,
+      "complete_occurrences_before_augmentation": 4979,
+      "occupied_dot_counts": [
+        2517,
+        2466,
+        2038,
+        2184,
+        2713,
+        1774
+      ]
+    },
+    "dsbi/Ordinary Printed Document": {
+      "positive_records": 289,
+      "expected_record_draws_per_epoch": 1966,
+      "complete_occurrences_before_augmentation": 1682,
+      "occupied_dot_counts": [
+        726,
+        727,
+        785,
+        522,
+        696,
+        547
+      ]
+    },
+    "dsbi/Shaver Yang Fengting": {
+      "positive_records": 340,
+      "expected_record_draws_per_epoch": 1966,
+      "complete_occurrences_before_augmentation": 2151,
+      "occupied_dot_counts": [
+        1229,
+        1185,
+        922,
+        994,
+        943,
+        672
+      ]
+    },
+    "handwritten/kov": {
+      "positive_records": 846,
+      "expected_record_draws_per_epoch": 1966,
+      "complete_occurrences_before_augmentation": 4126,
+      "occupied_dot_counts": [
+        2421,
+        2015,
+        2168,
+        2109,
+        2282,
+        1158
+      ]
+    },
+    "handwritten/uploaded": {
+      "positive_records": 881,
+      "expected_record_draws_per_epoch": 1966,
+      "complete_occurrences_before_augmentation": 4886,
+      "occupied_dot_counts": [
+        3064,
+        2447,
+        2692,
+        2397,
+        2549,
+        1422
+      ]
+    }
+  },
+  "limitations": [
+    "Expected uniform cycling-family exposure, not actual sampled augmentation survivor counts.",
+    "Equalized label exposure is an augmentation rationale, not evidence of recognition improvement."
+  ],
+  "status": "passed"
+}

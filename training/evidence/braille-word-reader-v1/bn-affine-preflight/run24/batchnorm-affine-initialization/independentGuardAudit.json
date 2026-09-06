@@ -1,0 +1,109 @@
+{
+  "status": "passed",
+  "scope": "Independent actual-report and serialized52BN metadata guard proof with exact source AST; no model/backend/inference. Save spy verifies callback ordering, not a real checkpoint serialization.",
+  "script_sha256": "4e57434a53ff34898335eb999f47c5e71f88388c101839f545aa5745d2ee4dbd",
+  "reviewed_plan_sha256": "10fd61cabbaee84aea8db46455d2e6d1cdc623a255cd2d9c8e976b7e34efe7e3",
+  "source_sha256": {
+    "word_data.py": "659ab6b508a69b34bfb8dc899c5fa6e2214bd64e08281f40f9c39aa91d74996c",
+    "word_model.py": "c446732a2905a612cd6f1dd64d2d3d01303b1c71933c34552d26f3b5052fd551",
+    "word_decode.py": "bd301c5afeb4ba2e6866371665324d2de7f0a6ee252ef76ce02a5553193d63c5",
+    "word_train.py": "c081a0e1d5f1d1f5aac19ffaed51d8229af527cf5299d99e63d28850ea69b31a",
+    "word_sampling.py": "c234523277dba683e68a2863e14736bc68432da3b6ca65bb5d8a64bc7d9dc0fe",
+    "word_tail.py": "bdd4b5d12d56e25c1100a282483e7a31176b5a65beb353a0623ceea40a49dc0e",
+    "word_sources.py": "affb3488d8c25e3d0131eb4340cae29fcece563ac75373e071f97fef68f09acd",
+    "word_dsbi.py": "feecf16dba6d376415e15707c02c8f05fcf6650055da09ad9f4712099e6325ff",
+    "word_point_geometry.py": "2b932b320d191277b86ae13daecb82b5abbf0a46e9464d7360ee1e941aca760b",
+    "word_point_metadata.py": "de1cad0157e744f2f646010eac5355b88d1d11f52662d4b9353166661f59049f",
+    "word_geometry_head.py": "f46c8f90e7f4fc9404eed2dc27fbde6e5c823d25d4f88e4127c7e56ed6e8764e",
+    "word_geometry_init.py": "072379a1ef409d901c2478135174561c14781560cdd56a0b91b0229b8032e15e",
+    "word_geometry_parity.py": "700d9175dc627fb7bf12c0ac20f640191cf5a045e29067c310f5dad5f3bd6f0b",
+    "word_vertical_stretch.py": "336168fbfe4441bfa91e0855f473997a403a542a2b64789ca7cbd1b11b188ed5",
+    "word_bn_affine.py": "fa117f65beda3f6d159f707a5cd45d3a367b8f5b436b8c43c0d7621071297dff",
+    "word_bn_affine_init.py": "ea76999d35a6e9ba94cffce06c359adb1201cb396b54345668b7ed13afe99ce1",
+    "word_bn_affine_parity.py": "d4baba52b0993240e0b5092500ae32ee5d1b01e636d2546261a0a24996bd4a21"
+  },
+  "initialization_report_sha256": "b805f1091e6c59f036cd81f5253f0ca00eb0578e450727e5c105090abf99cf50",
+  "conversion_report_sha256": "a20cd2fbf3cc322a4088ea7aaef3a8d64b19ed56962418fcacce71d4cd218db9",
+  "independent_helper_runtime_audit_sha256": "6131c7b17012f6ca63b74f16fe43dc98e70f2050543d3fcf13427afb993ae451",
+  "base_parent_checkpoint_sha256": "cce2432c0ddb8952c885dd58697589c285209588dafa81aacdd891b1660068b7",
+  "initial_checkpoint_sha256": "6d4847f3030ec40476a2e29c65a4a0941f6ea9ba7e59260b20c3c6e9d48bf35d",
+  "forbidden_diagnostic_sha256": "22ea3ccdfc59751fdd349356c9ce256791431d374d5de546298ec2dfbed72041",
+  "actual52BN_checkpoint_metadata_and_spec_passed": true,
+  "moving_moments_sha256": "1f190a8fe5f4b3f7162147f7cf254a9fc437dfd20e0b34f3603003fffdc00ae7",
+  "exact_actual_proof_pair_and_initial_resume_passed": true,
+  "default_disabled_behavior_unchanged": true,
+  "patches_ast_identical_run23": true,
+  "data_targets_sampler_point_sources_identical_run23": true,
+  "plain_trainable_BN_rejected_despite_saved_false": true,
+  "moving_moment_corruption_aborts_before_any_checkpoint_write": true,
+  "unchanged_moments_allow_last_and_retained_save": true,
+  "gamma_beta_changes_do_not_change_moment_digest": true,
+  "negative_cases": [
+    {
+      "case": "diagnostic resume",
+      "reason": "Resume only the exact initial affine parent after the complete six-input nonzero conversion proof"
+    },
+    {
+      "case": "base parent resume instead of initialized parent",
+      "reason": "Resume only the exact initial affine parent after the complete six-input nonzero conversion proof"
+    },
+    {
+      "case": "missing explicit proof",
+      "reason": "Frozen-moment affine training requires its explicit audited initialization and conversion reports"
+    },
+    {
+      "case": "failed conversion",
+      "reason": "Resume only the exact initial affine parent after the complete six-input nonzero conversion proof"
+    },
+    {
+      "case": "wrong proof pair",
+      "reason": "Resume only the exact initial affine parent after the complete six-input nonzero conversion proof"
+    },
+    {
+      "case": "non-finite numeric summary",
+      "reason": "Affine numeric summary contradicts the declared probability parity tolerance"
+    },
+    {
+      "case": "out-of-tolerance numeric summary",
+      "reason": "Affine numeric summary contradicts the declared probability parity tolerance"
+    },
+    {
+      "case": "zero diagnostic effect",
+      "reason": "Affine proof contract changed"
+    },
+    {
+      "case": "custom operator",
+      "reason": "Affine initial/nonzero conversion probe is incomplete or changed"
+    },
+    {
+      "case": "mismatched raw/effective decisions",
+      "reason": "Affine initial/nonzero conversion probe is incomplete or changed"
+    },
+    {
+      "case": "missing full405 trained parity requirement",
+      "reason": "Affine proof contract changed"
+    },
+    {
+      "case": "wrong output shape",
+      "reason": "Affine initial/nonzero conversion probe is incomplete or changed"
+    },
+    {
+      "case": "source snapshot mismatch",
+      "reason": "Affine conversion proof source changed"
+    },
+    {
+      "case": "plain trainable BN mixed with fixed-moment class",
+      "reason": "Trainable BN must force frozen moments inside layer.call, not only the saved backbone call"
+    },
+    {
+      "case": "changed moving moments before first checkpoint write",
+      "reason": "Frozen BN moving moments changed; abort before writing a checkpoint"
+    }
+  ],
+  "defects": [],
+  "limits": [
+    "Class call/autograd/save-load mechanics are separately proven by the hash-bound real tiny-model audit; this guard proof uses lightweight type/variable adapters initialized from actual saved52BN HDF5 values.",
+    "The final protocol will bind this prelaunch audit, so this report binds the reviewed plan rather than creating a circular protocol hash. Actual config/protocol linkage is verified separately after they exist.",
+    "Six-input conversion preflight contains no accepted words; trained candidate still requires full405 parity and unchanged acceptance gates."
+  ]
+}

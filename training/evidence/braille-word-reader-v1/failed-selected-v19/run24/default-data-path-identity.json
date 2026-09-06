@@ -1,0 +1,13 @@
+{
+  "status": "passed",
+  "scope": "Run24 changes trainer BN registration/guards only; actual Patches AST and pixel/target/sampler/point source files exact run23. Vertical/mirror flags are both OFF as in v15/run20.",
+  "patches_ast_sha256": "716a0dcc01c04df2b29519c19def912344e3bddb5e230aaaf74bbdcc78d113fc",
+  "trainer_sha256": "c081a0e1d5f1d1f5aac19ffaed51d8229af527cf5299d99e63d28850ea69b31a",
+  "source_paths": [
+    "training\\scripts\\word_data.py",
+    "training\\scripts\\word_sampling.py",
+    "training\\scripts\\word_point_geometry.py",
+    "training\\scripts\\word_point_metadata.py",
+    "training\\scripts\\word_sources.py"
+  ]
+}

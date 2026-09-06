@@ -4,7 +4,7 @@ import { readFileSync } from 'node:fs';
 const modelManifest = JSON.parse(
   readFileSync(
     new URL(
-      '../assets/models/braille-cell-classifier-v2/manifest.json',
+      '../assets/models/braille-word-reader-v1/manifest.json',
       import.meta.url,
     ),
     'utf8',

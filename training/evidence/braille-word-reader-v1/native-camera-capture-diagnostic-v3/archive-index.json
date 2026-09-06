@@ -1,0 +1,947 @@
+{
+  "schema_version": 1,
+  "scope": "Byte-exact retention of isolated synthetic native camera diagnostic; no main APK, model, physical-camera or production acceptance claim.",
+  "original_report_sha256": "afeace64ae29721b46de9598584f664659f021b32ff7fa5ad166af53143161c7",
+  "files": [
+    {
+      "path": "bundle/index.android.bundle",
+      "sha256": "0ae40931cd30f8284d1e9a5484d00b75b07784dbe38a0da374daa21e2ed854b8",
+      "bytes": 1348092
+    },
+    {
+      "path": "bundle/index.android.bundle.packager.map",
+      "sha256": "4539b3cddfc8f70f7e289c7c7b0ecb31daea077ca7c33533de83cb8697a98369",
+      "bytes": 5821886
+    },
+    {
+      "path": "camera-capture/actual-pixel-crop-comparison.json",
+      "sha256": "a5ca6a80aa2ca80a98b19b099dd97d85c310e3bd395479c19b89f5d2744cd61d",
+      "bytes": 1298
+    },
+    {
+      "path": "camera-capture/current.png",
+      "sha256": "2883a00243a4bb5958a40322439c9a756e26c3a4a28e42c2e23ef5dec01a1575",
+      "bytes": 89073
+    },
+    {
+      "path": "camera-capture/events.json",
+      "sha256": "8e27f78e9b19b3653312367ba1b9e1ad9807b9bfc622006dd64de2c62d79a953",
+      "bytes": 12822
+    },
+    {
+      "path": "camera-capture/feed-manifest.json",
+      "sha256": "503ff995eb948b5f9d143d9a61dff3ccbab5f6795f13ab801ba287f0307cd7d2",
+      "bytes": 1375
+    },
+    {
+      "path": "camera-capture/initial.png",
+      "sha256": "22eb868f0d5f3e8acb50a7796a28fa4887d38884246a4f9cfb85082729454f3c",
+      "bytes": 349282
+    },
+    {
+      "path": "camera-capture/landmark-feed.png",
+      "sha256": "c137ebbda81b003c2d325a79623981cb3aa0c87cffd1f93a2de35f7ebbf894e1",
+      "bytes": 21595
+    },
+    {
+      "path": "camera-capture/logcat.txt",
+      "sha256": "8754767065d9f00c0615c164188eba1539c207fc4b8ada65606627be506ababc",
+      "bytes": 4787983
+    },
+    {
+      "path": "camera-capture/photo16by9-view1by1-1788625279872-1/mapped-roi.png",
+      "sha256": "7859526126f566eeeeb85cf8fb742b2c291e709544899d2e9c5d8307ea0ebc79",
+      "bytes": 2299
+    },
+    {
+      "path": "camera-capture/photo16by9-view1by1-1788625279872-1/photo-review.png",
+      "sha256": "edc3892a13abc6ca8f761f1b0bf6a865b0653232faac66d5dcf5053a2b273c8a",
+      "bytes": 26848
+    },
+    {
+      "path": "camera-capture/photo16by9-view1by1-1788625279872-1/photo.png",
+      "sha256": "9f48984164c5ff75f9138fc9ab3527c2c4941794cbd66e06ac5c0fc0f8fffd17",
+      "bytes": 26221
+    },
+    {
+      "path": "camera-capture/photo16by9-view1by1-1788625279872-1/preview.png",
+      "sha256": "04bb5b9e17d171805139334f01da261dc74bc862b487a867dc0a949bc4edb181",
+      "bytes": 64358
+    },
+    {
+      "path": "camera-capture/photo16by9-view1by1-1788625279872-1/report.json",
+      "sha256": "2f31ea9cca873824cc738cc648ed2087ae929468ba94b4eda06bc7e214751900",
+      "bytes": 4242
+    },
+    {
+      "path": "camera-capture/photo16by9-view1by1-1788625487364-1/mapped-roi.png",
+      "sha256": "633a3ac69dd028b5d6cf3e2f1641ec6174dda72f47ea471711a0690558231982",
+      "bytes": 2527
+    },
+    {
+      "path": "camera-capture/photo16by9-view1by1-1788625487364-1/photo-review.png",
+      "sha256": "6799116fb08bf6df15cf3671bf77dd2e567884a7e79135c52985bb6faf3a70d3",
+      "bytes": 24908
+    },
+    {
+      "path": "camera-capture/photo16by9-view1by1-1788625487364-1/photo.png",
+      "sha256": "cd64abb1cbe3c81c0ef5c4f49895885c602e4d1bdf27950ac1109f14ec17dee1",
+      "bytes": 23320
+    },
+    {
+      "path": "camera-capture/photo16by9-view1by1-1788625487364-1/preview.png",
+      "sha256": "2d35e2dcddba8ae5fbc1297311ad9813a05f1f07104296da7815751e212f7306",
+      "bytes": 31781
+    },
+    {
+      "path": "camera-capture/photo16by9-view1by1-1788625487364-1/report.json",
+      "sha256": "d751de33d4f918b054c446faa822347c1cb7861d9ea77ece61430f4f672564e1",
+      "bytes": 4382
+    },
+    {
+      "path": "camera-capture/photo4by3-view1by1-1788625214539-1/mapped-roi.png",
+      "sha256": "2bff5f72f5ea3cba444ed4b226b2b7d96287d92d57308f0ddfd56b3e45665896",
+      "bytes": 5315
+    },
+    {
+      "path": "camera-capture/photo4by3-view1by1-1788625214539-1/photo-review.png",
+      "sha256": "ebfac0f982f9349ee69c70004bcc4f36a01cb7197c73300db5bccce09dd4ac36",
+      "bytes": 37548
+    },
+    {
+      "path": "camera-capture/photo4by3-view1by1-1788625214539-1/photo.png",
+      "sha256": "46e511e000723292144e07c5ed164b19f63982a31d8b64b5059bacabae3a7673",
+      "bytes": 37483
+    },
+    {
+      "path": "camera-capture/photo4by3-view1by1-1788625214539-1/preview.png",
+      "sha256": "04bb5b9e17d171805139334f01da261dc74bc862b487a867dc0a949bc4edb181",
+      "bytes": 64358
+    },
+    {
+      "path": "camera-capture/photo4by3-view1by1-1788625214539-1/report.json",
+      "sha256": "7048829ba18b5efa8f8f2350f2b796bf98dc5a973386475639e5ab71b4017dff",
+      "bytes": 4237
+    },
+    {
+      "path": "camera-capture/photo4by3-view1by1-1788625314212-1/mapped-roi.png",
+      "sha256": "c52c52a690bd087411b77fba7ca2e4404a96d97fe1c2dc1637d76fee4dc00f9e",
+      "bytes": 5354
+    },
+    {
+      "path": "camera-capture/photo4by3-view1by1-1788625314212-1/photo-review.png",
+      "sha256": "69cc596d729766e0f2a9bddc5feba8ee4db2f8fa41261642dd22e5c5ea45c11b",
+      "bytes": 38557
+    },
+    {
+      "path": "camera-capture/photo4by3-view1by1-1788625314212-1/photo.png",
+      "sha256": "39a73c54dbc535788235c0648b51e32819a45a1633a50df6dd251f4b6d2eb204",
+      "bytes": 38329
+    },
+    {
+      "path": "camera-capture/photo4by3-view1by1-1788625314212-1/preview.png",
+      "sha256": "2d35e2dcddba8ae5fbc1297311ad9813a05f1f07104296da7815751e212f7306",
+      "bytes": 31781
+    },
+    {
+      "path": "camera-capture/photo4by3-view1by1-1788625314212-1/report.json",
+      "sha256": "6ee97e55f6f5042fd49837bffd339a97f376b3a8ff54998eabda04e796225a73",
+      "bytes": 4371
+    },
+    {
+      "path": "camera-capture/photo4by3-view2by1-1788625494656-1/mapped-roi.png",
+      "sha256": "cfe2d3b0a81461eafcf9d5d033f789ce79b748f6dc3b3a58ee1477227a767dd6",
+      "bytes": 1775
+    },
+    {
+      "path": "camera-capture/photo4by3-view2by1-1788625494656-1/photo-review.png",
+      "sha256": "0438485d9d8d9ddc6b359ebcffb99d8df8e28db23dd1be47036e45942cc6f776",
+      "bytes": 39010
+    },
+    {
+      "path": "camera-capture/photo4by3-view2by1-1788625494656-1/photo.png",
+      "sha256": "39a73c54dbc535788235c0648b51e32819a45a1633a50df6dd251f4b6d2eb204",
+      "bytes": 38329
+    },
+    {
+      "path": "camera-capture/photo4by3-view2by1-1788625494656-1/preview.png",
+      "sha256": "1dab788c7acf785b3c13b6555baa81ea2043e9dfc00e940e9535842ea085797a",
+      "bytes": 41930
+    },
+    {
+      "path": "camera-capture/photo4by3-view2by1-1788625494656-1/report.json",
+      "sha256": "7fd4e2d5f27de15769511c2599bdd6e0c3e05397383e150bf0b5ef35bc8d1634",
+      "bytes": 4270
+    },
+    {
+      "path": "camera-capture/ready-v2.png",
+      "sha256": "d05e7557afaa54695c9bfcda1888f4eeacb74758b9406cc7086f3fbc113391b0",
+      "bytes": 74364
+    },
+    {
+      "path": "camera-capture/report.json",
+      "sha256": "2ed57279f854c3f0e025bec010d5d68cb6c4f91909b7d67244d277dc13b2ca04",
+      "bytes": 25872
+    },
+    {
+      "path": "camera-capture-v3/case-control-results.json",
+      "sha256": "bb3354cc95274545a16655557749ec448924b37bb874bb65308496478ad05202",
+      "bytes": 2785
+    },
+    {
+      "path": "camera-capture-v3/current.png",
+      "sha256": "f1869fdef0c70ae5c65210913c5657ea5f33efc2b4fbb86cda79f4e5f86c5361",
+      "bytes": 74916
+    },
+    {
+      "path": "camera-capture-v3/events.json",
+      "sha256": "ffddaedfc3ee38a9d94961e05ab83b0935832e976a75265c6ec226e316cecfab",
+      "bytes": 21222
+    },
+    {
+      "path": "camera-capture-v3/feed-manifest.json",
+      "sha256": "02d0d7c1e8a94b1875dafb3585dbf1e6680d3d73df10206aa9a388b3df8384fa",
+      "bytes": 1351
+    },
+    {
+      "path": "camera-capture-v3/landmark-feed.png",
+      "sha256": "5b03083835a30d707a98eb3ce4fa3ae3b95d5f07711f1505703de4cfd1eff2b4",
+      "bytes": 18165
+    },
+    {
+      "path": "camera-capture-v3/logcat.txt",
+      "sha256": "e2de92dc77ce06e94d706648aaf9ef95fac27f07d023168e622139936af5c131",
+      "bytes": 3623560
+    },
+    {
+      "path": "camera-capture-v3/photo16by9-view1by1-1788626729848-1/imageproxy.jpg",
+      "sha256": "d644bb3a329557bce4d1b850c023a1eae9879ed5aa5602cf5fc8c44aa58b07cf",
+      "bytes": 70714
+    },
+    {
+      "path": "camera-capture-v3/photo16by9-view1by1-1788626729848-1/mapped-roi.png",
+      "sha256": "ed19e314938fd41bc00623dad9a3954b7a8e54964758d93f22b8ae95e35c7b5f",
+      "bytes": 8867
+    },
+    {
+      "path": "camera-capture-v3/photo16by9-view1by1-1788626729848-1/photo-review.png",
+      "sha256": "5c19dc1a566a2e7dda551776d6181802d36b55caf69d6f1b03cd50a7a573baee",
+      "bytes": 34323
+    },
+    {
+      "path": "camera-capture-v3/photo16by9-view1by1-1788626729848-1/photo.png",
+      "sha256": "ddc4d7c1d150b627fd436ca8326c4bee685e1f9c8e4db37612de10a8c44cae9b",
+      "bytes": 33579
+    },
+    {
+      "path": "camera-capture-v3/photo16by9-view1by1-1788626729848-1/preview.png",
+      "sha256": "b08e451449ff89d321ae3003dc3b452cbaf47d4e88ceab53d22efa46701d8f7f",
+      "bytes": 59248
+    },
+    {
+      "path": "camera-capture-v3/photo16by9-view1by1-1788626729848-1/report.json",
+      "sha256": "a966073b525d94e2882c43e5da86b9833fe48b239228b049d2ac4d4fb989cf6a",
+      "bytes": 6048
+    },
+    {
+      "path": "camera-capture-v3/photo16by9-view1by1-1788626762107-1/imageproxy.jpg",
+      "sha256": "11fb65d865d2e65f247656758ed887d9aeb483755901d0b0a1e6fd1e2e2d2984",
+      "bytes": 70714
+    },
+    {
+      "path": "camera-capture-v3/photo16by9-view1by1-1788626762107-1/mapped-roi.png",
+      "sha256": "79bc6af425541e15c8169d8f976d7466cac27d683d4cdbc4899dbe1167144d56",
+      "bytes": 8914
+    },
+    {
+      "path": "camera-capture-v3/photo16by9-view1by1-1788626762107-1/photo-review.png",
+      "sha256": "22e12318e5d05239d0faf6e30fce5941732dc2b111c616d15c9af15a0b7c5247",
+      "bytes": 35079
+    },
+    {
+      "path": "camera-capture-v3/photo16by9-view1by1-1788626762107-1/photo.png",
+      "sha256": "41ef5f79db7e564882ff4ed501a950b12fcbcbb9596d7a7141f7e0aab8623dfd",
+      "bytes": 34041
+    },
+    {
+      "path": "camera-capture-v3/photo16by9-view1by1-1788626762107-1/preview.png",
+      "sha256": "1664fe979f52f16b3128341a38439fb93eaf9b0435c57d8d688078855c7b45d8",
+      "bytes": 30269
+    },
+    {
+      "path": "camera-capture-v3/photo16by9-view1by1-1788626762107-1/report.json",
+      "sha256": "044d3e03bc2cb2477bcaf10c7f3439a19db3f753e11b53e2af7414428a7b53a7",
+      "bytes": 6188
+    },
+    {
+      "path": "camera-capture-v3/photo4by3-view1by1-1788626714688-1/imageproxy.jpg",
+      "sha256": "80104ede5ef80ddf08eb7c60a51cb367b515902a972f1dafed2dd2c2c177eb86",
+      "bytes": 87902
+    },
+    {
+      "path": "camera-capture-v3/photo4by3-view1by1-1788626714688-1/mapped-roi.png",
+      "sha256": "19adbd7a5145cb685460adfbca781318a19039db6641fe6d1b26013e0bb58030",
+      "bytes": 14188
+    },
+    {
+      "path": "camera-capture-v3/photo4by3-view1by1-1788626714688-1/photo-review.png",
+      "sha256": "a9f8178940d37921aa9230fe9fc8dacabb2ad2eb74d9217bffa81b14d4d91d3e",
+      "bytes": 35757
+    },
+    {
+      "path": "camera-capture-v3/photo4by3-view1by1-1788626714688-1/photo.png",
+      "sha256": "a9f537446525701d239a72cfd51e8b008f2904c5088a30f6c1d5ac7435394340",
+      "bytes": 35035
+    },
+    {
+      "path": "camera-capture-v3/photo4by3-view1by1-1788626714688-1/preview.png",
+      "sha256": "b08e451449ff89d321ae3003dc3b452cbaf47d4e88ceab53d22efa46701d8f7f",
+      "bytes": 59248
+    },
+    {
+      "path": "camera-capture-v3/photo4by3-view1by1-1788626714688-1/report.json",
+      "sha256": "b7973b5f7e475d30c3df04330200f8ebd35703868c17cd9fe5729e8d531d3126",
+      "bytes": 6040
+    },
+    {
+      "path": "camera-capture-v3/photo4by3-view1by1-1788626745439-1/imageproxy.jpg",
+      "sha256": "43afd9bc5820eee7e900e9f5c7dae2bd68a9a5aa5cf24b901e9afc14c469447d",
+      "bytes": 87902
+    },
+    {
+      "path": "camera-capture-v3/photo4by3-view1by1-1788626745439-1/mapped-roi.png",
+      "sha256": "4ac08c8403ad2b4c66c5a73260b0d6b156b04a63a9a32599339b85011e9b7324",
+      "bytes": 14199
+    },
+    {
+      "path": "camera-capture-v3/photo4by3-view1by1-1788626745439-1/photo-review.png",
+      "sha256": "446d7a1e283bfd11871c2cb12fdba9cc84ea51f2dd88d446faff95727114e592",
+      "bytes": 37342
+    },
+    {
+      "path": "camera-capture-v3/photo4by3-view1by1-1788626745439-1/photo.png",
+      "sha256": "bf9e57b08bd686a90aa43b20282f0da1aec91ecfdebdea1d7ee8472a89a1982e",
+      "bytes": 36420
+    },
+    {
+      "path": "camera-capture-v3/photo4by3-view1by1-1788626745439-1/preview.png",
+      "sha256": "1664fe979f52f16b3128341a38439fb93eaf9b0435c57d8d688078855c7b45d8",
+      "bytes": 30269
+    },
+    {
+      "path": "camera-capture-v3/photo4by3-view1by1-1788626745439-1/report.json",
+      "sha256": "e5d384567d097db5d2dd479fc64ebca77b160a2f32bc9967054d187642c3efcc",
+      "bytes": 6173
+    },
+    {
+      "path": "camera-capture-v3/photo4by3-view1by1-1788626818812-1/imageproxy.jpg",
+      "sha256": "8beb700e7f4f81e5547602e0d8aa9573ed2935230058a0d601938aeebafd1d6d",
+      "bytes": 87902
+    },
+    {
+      "path": "camera-capture-v3/photo4by3-view1by1-1788626818812-1/mapped-roi.png",
+      "sha256": "d45e1cf124f435ebf301d0c6becac821a4b2b1f0afb7ca7c959b109f8960c37e",
+      "bytes": 14239
+    },
+    {
+      "path": "camera-capture-v3/photo4by3-view1by1-1788626818812-1/photo-review.png",
+      "sha256": "0251a176554ba859b215a63eaa480b7652c793d0f9b41e56a1db99630a88ec87",
+      "bytes": 35684
+    },
+    {
+      "path": "camera-capture-v3/photo4by3-view1by1-1788626818812-1/photo.png",
+      "sha256": "fed615b4f2e502a9783ce1101efaefaddc597a6f2a15ed64d4da2eead90246bb",
+      "bytes": 35005
+    },
+    {
+      "path": "camera-capture-v3/photo4by3-view1by1-1788626818812-1/preview.png",
+      "sha256": "f5fdc1252b007ff567127926a49c5b2f68405d23167b99324d7338501a86a61b",
+      "bytes": 57552
+    },
+    {
+      "path": "camera-capture-v3/photo4by3-view1by1-1788626818812-1/report.json",
+      "sha256": "1b9be672cc0263719b9152508966a6c769b35213daa5300e271c8ccd6ac54637",
+      "bytes": 6094
+    },
+    {
+      "path": "camera-capture-v3/photo4by3-view1by1-1788626835424-2/imageproxy.jpg",
+      "sha256": "d11b3e939fa2ec1b16da5141fa0b88027c584fd0ff15acdbf53a6b7251fe060b",
+      "bytes": 87902
+    },
+    {
+      "path": "camera-capture-v3/photo4by3-view1by1-1788626835424-2/mapped-roi.png",
+      "sha256": "43466a5b9ec1e56ee845ca7018da2df296859c49adc21121eb28564c0ba2cf94",
+      "bytes": 14360
+    },
+    {
+      "path": "camera-capture-v3/photo4by3-view1by1-1788626835424-2/photo-review.png",
+      "sha256": "f7ab5b114f7be4430ac2e2acb4383d16b6a6908ee75c8686ec5669fd9d9cb23a",
+      "bytes": 37377
+    },
+    {
+      "path": "camera-capture-v3/photo4by3-view1by1-1788626835424-2/photo.png",
+      "sha256": "e2ee0a75bfca5471869846daa21504fb8939b70a021d3dc9edbdf59a283ee5ce",
+      "bytes": 36508
+    },
+    {
+      "path": "camera-capture-v3/photo4by3-view1by1-1788626835424-2/preview.png",
+      "sha256": "902e8cea585229418b2680c204d12d7847b01a6957c454955671ac81ed7f5737",
+      "bytes": 28427
+    },
+    {
+      "path": "camera-capture-v3/photo4by3-view1by1-1788626835424-2/report.json",
+      "sha256": "acdd9ad11a915cb345b057b5d422826c98f833d343d7d3d1580ec0816cdfda9d",
+      "bytes": 6210
+    },
+    {
+      "path": "camera-capture-v3/photo4by3-view2by1-1788626778916-1/imageproxy.jpg",
+      "sha256": "ea6e5bd61ea93fabe9c9da2ae853247d96587f0980da103ea5a6e5cf5c5ef74b",
+      "bytes": 87902
+    },
+    {
+      "path": "camera-capture-v3/photo4by3-view2by1-1788626778916-1/mapped-roi.png",
+      "sha256": "e48d38bfd6e331987750a995b5693cb6ff553ce6c819c128cdda6e0395f70341",
+      "bytes": 13567
+    },
+    {
+      "path": "camera-capture-v3/photo4by3-view2by1-1788626778916-1/photo-review.png",
+      "sha256": "b49e9fab46f078f9b04c2046d355e50aa5bf00af9533359a0eba3391acd66323",
+      "bytes": 37123
+    },
+    {
+      "path": "camera-capture-v3/photo4by3-view2by1-1788626778916-1/photo.png",
+      "sha256": "bf9e57b08bd686a90aa43b20282f0da1aec91ecfdebdea1d7ee8472a89a1982e",
+      "bytes": 36420
+    },
+    {
+      "path": "camera-capture-v3/photo4by3-view2by1-1788626778916-1/preview.png",
+      "sha256": "625f8d2052c69c02f5f7013c516dec4d7eff24ba9072edca391300101b6ca0a8",
+      "bytes": 45991
+    },
+    {
+      "path": "camera-capture-v3/photo4by3-view2by1-1788626778916-1/report.json",
+      "sha256": "23d7f37b569d2083c3d98e04623bb81dab49d25bacdb3a798c7c9bc0704d8d83",
+      "bytes": 6067
+    },
+    {
+      "path": "camera-capture-v3/photo4by3-view2by1-1788626797322-2/imageproxy.jpg",
+      "sha256": "b6f34b903d62ded0cf55b71a31c15941f6f042bf15a9bf1560471d31aa91d250",
+      "bytes": 87902
+    },
+    {
+      "path": "camera-capture-v3/photo4by3-view2by1-1788626797322-2/mapped-roi.png",
+      "sha256": "4722a136bf3539476ee4bba0ebd1757c92b00d5597295a835b154a47ed0f10d0",
+      "bytes": 4795
+    },
+    {
+      "path": "camera-capture-v3/photo4by3-view2by1-1788626797322-2/photo-review.png",
+      "sha256": "ac3ed1228c41cbd6416e2a5d07eb4599f1adf3d44cf71e03dcd1434d23dcbe7e",
+      "bytes": 34598
+    },
+    {
+      "path": "camera-capture-v3/photo4by3-view2by1-1788626797322-2/photo.png",
+      "sha256": "a9f537446525701d239a72cfd51e8b008f2904c5088a30f6c1d5ac7435394340",
+      "bytes": 35035
+    },
+    {
+      "path": "camera-capture-v3/photo4by3-view2by1-1788626797322-2/preview.png",
+      "sha256": "4b7b7ea30535d7217ea4d1c9786c34da5d46a85d51df46551fc9551bbfb23c45",
+      "bytes": 28350
+    },
+    {
+      "path": "camera-capture-v3/photo4by3-view2by1-1788626797322-2/report.json",
+      "sha256": "37a4bdfba587bbb5677579a4f6a5e9d2a4dd766bd3719862c265b76e358667b9",
+      "bytes": 6204
+    },
+    {
+      "path": "camera-capture-v3/report.json",
+      "sha256": "84001ccc8599159009367623b97ad15380bef96587e7853763ac7d9a3fc574ce",
+      "bytes": 57633
+    },
+    {
+      "path": "camera-capture-v3/rotation0-case1-frozen.png",
+      "sha256": "e2f6795df05963a7dd18580689e941ef63b494f11d14d2971b9436d0faeffb0d",
+      "bytes": 96970
+    },
+    {
+      "path": "camera-capture-v3/rotation0-case2-frozen.png",
+      "sha256": "58ce9a65a2b11e3c0e71f6cd074a87a5fee3e10e53a7c29ced6c310a242e523f",
+      "bytes": 109034
+    },
+    {
+      "path": "camera-capture-v3/rotation0-case3-frozen.png",
+      "sha256": "cb752a6cc7128ffb39b25d65ce7c157eb1d418a11464e15b9f1f7fdb518f7002",
+      "bytes": 79434
+    },
+    {
+      "path": "camera-capture-v3/rotation1-case1-frozen.png",
+      "sha256": "b4ebe89a5b7bb8b4a704a7bce36c0514e9d1754f442b53b8dc2a53be2c5ed5f8",
+      "bytes": 88463
+    },
+    {
+      "path": "camera-capture-v3/rotation1-case2-frozen.png",
+      "sha256": "4dd187d3772e407d864b10572b62d4046b122ad347325f57bb4ae71908005800",
+      "bytes": 96164
+    },
+    {
+      "path": "camera-capture-v3/rotation1-case3-frozen.png",
+      "sha256": "3af4856ae78a08027e01119e0185c83550739f6aa331dee9d2f5e4479ed73d69",
+      "bytes": 93930
+    },
+    {
+      "path": "camera-capture-v3/rotation2-case1-frozen.png",
+      "sha256": "01f86808f0f90901522c6199a2700bf5e1f197a2aff37f4ae57400e0f240548c",
+      "bytes": 95967
+    },
+    {
+      "path": "camera-capture-v3/rotation3-case1-frozen.png",
+      "sha256": "6bc550958d1088cfb41b3250e0baa97c51f630de93f1882897aab5365084978b",
+      "bytes": 87073
+    },
+    {
+      "path": "camera-source-audit/camera__camera-format-converters.c",
+      "sha256": "e2d513854aee2f3d0aae7c6f918358e689916b37541530830866588d158d4fc0",
+      "bytes": 82752
+    },
+    {
+      "path": "camera-source-audit/camera__camera-virtualscene-utils.cpp",
+      "sha256": "8e59d458e256930b80abd920488ddb209244e1ebd766a99100e3e5c76de3c2bc",
+      "bytes": 7520
+    },
+    {
+      "path": "camera-source-audit/camerax-Image2JpegBytes.java",
+      "sha256": "507afb31befef8d2ece971e8e98db4e0a1944ceccd0b0dbf21aec727bc08d053",
+      "bytes": 5271
+    },
+    {
+      "path": "camera-source-audit/camerax-ImageUtil.java",
+      "sha256": "911bcb50de10d3aef6507ca7ebcaaabde4a097a5b7d67d84d86f95b9432061ed",
+      "bytes": 21181
+    },
+    {
+      "path": "camera-source-audit/camerax-JpegImage2Result.java",
+      "sha256": "11eadb76ab36ecd5511597160b6b418b3e9ba80d28377b5a933068cde392f310",
+      "bytes": 2226
+    },
+    {
+      "path": "camera-source-audit/camerax-ProcessingInput2Packet.java",
+      "sha256": "a9a39f2f9df7c90d69cf56bc5cca6065112184306dd10ebf025f1f33afc71c71",
+      "bytes": 6608
+    },
+    {
+      "path": "camera-source-audit/camerax-ProcessingNode.java",
+      "sha256": "51c34f36c736583131f7ddfeb6904d9c2e1abae2d8c580aa7bbabd3bd3a0d3fa",
+      "bytes": 20175
+    },
+    {
+      "path": "camera-source-audit/emu-main-dev__camera__camera-format-converters.c",
+      "sha256": "37a8c892e5232039c3c8c4b007f267d9702d8f43d2f2c6198eece4fe59aea59f",
+      "bytes": 84530
+    },
+    {
+      "path": "camera-source-audit/emu-main-dev__camera__camera-virtualscene-utils.cpp",
+      "sha256": "607665b87859208e6b191c9c5f692d4e683dc3b12ca4bf18017c2bd8fbede66a",
+      "bytes": 9986
+    },
+    {
+      "path": "camera-source-audit/emu-main-dev__main-common.c",
+      "sha256": "f734bbc8ee8625cf0bfa8d8a05a3a30170a0d90057ab6ace558197ca2a645814",
+      "bytes": 83257
+    },
+    {
+      "path": "camera-source-audit/emu-main-dev__ver__src__Renderer.cpp",
+      "sha256": "d510c65ed947b32c8145d270445a882cdeef6d5d947fc83a30a868953c50c245",
+      "bytes": 9646
+    },
+    {
+      "path": "camera-source-audit/emu-main-dev__ver__src__virtual_environment_renderer.cpp",
+      "sha256": "f5638793933ed068ccc5fa2189f35c523b6f67a24de68447f4846772db819419",
+      "bytes": 21271
+    },
+    {
+      "path": "camera-source-audit/main-common.c",
+      "sha256": "932ba0a29ae7fed3e49a38ca734fbe296e73088c434a30f705ebbeccc85e71d4",
+      "bytes": 80960
+    },
+    {
+      "path": "camera-source-audit/qemu-camera-list.json",
+      "sha256": "eca1cb6f59af54ecf98cea376b3044d9a1852ceeb6a8de4a08d5f699519a990d",
+      "bytes": 4388
+    },
+    {
+      "path": "camera-source-audit/qemu-heads.json",
+      "sha256": "e52b502c1bc08092ef0ffd273d95d3ddfe0622dc049f1b3240bb8786e238643d",
+      "bytes": 13288
+    },
+    {
+      "path": "camera-source-audit/source-downloads.json",
+      "sha256": "79169170458bdea68177bb4df8c90b14ab7327ac31d7351ce5c650b6de1ab200",
+      "bytes": 2150
+    },
+    {
+      "path": "harness/analyze-captures.py",
+      "sha256": "864a75faae68e12e14c4f95c6e8126cd7a1ede837989e47c990133fefdd6fb4f",
+      "bytes": 8454
+    },
+    {
+      "path": "harness/capture-control.py",
+      "sha256": "97ad8d6b14943eeb2e631c8663c60636c19dcbe46c9e253b7ef12fd1d82f2957",
+      "bytes": 1546
+    },
+    {
+      "path": "harness/freeze-capture-evidence.py",
+      "sha256": "c7eb1516bb15f364adbff91e38cb0823b8a3e3f7e1eedb3cf2cc946c735e83da",
+      "bytes": 10159
+    },
+    {
+      "path": "harness/limit-native-jobs.gradle",
+      "sha256": "bbc13f90c62f29371bb841c6ee1cae3e4ba4ffd6f3b8bc3bc397a3e302ed218c",
+      "bytes": 446
+    },
+    {
+      "path": "harness/prepare-capture-feed-v3.py",
+      "sha256": "8c28769d92c6f91ca7e539973405ba8feddf2798622d4388d8afa115ce21b928",
+      "bytes": 1555
+    },
+    {
+      "path": "harness/prepare-capture-feed.py",
+      "sha256": "1e2760829ea56c0e82a2b4202f9613f41191f9ee256754d98fc6c4508eda4fce",
+      "bytes": 1775
+    },
+    {
+      "path": "harness/run-capture-cases.py",
+      "sha256": "9eac9ba7a3e19feb8b4b470eae61ae0fb4833cbe5b072d37bc4ea15ffc36095c",
+      "bytes": 2613
+    },
+    {
+      "path": "logs/capture-app-build-v2.log",
+      "sha256": "e51c8859658dfad16278a34cd71354a2dc4d4ee04b8b52e900bd5937a595e48a",
+      "bytes": 120610
+    },
+    {
+      "path": "logs/capture-app-build-v3.log",
+      "sha256": "6b147dbed63387eecb65e710c944b550ae56ebdbb7fd034ba217f64341b32fa6",
+      "bytes": 120298
+    },
+    {
+      "path": "logs/capture-app-build.log",
+      "sha256": "74f3f1497c8644738f7ebc1140b51ac93e2af82e9382316c60175457220150ce",
+      "bytes": 165062
+    },
+    {
+      "path": "logs/capture-cases-v3-retry.log",
+      "sha256": "d9b6e67b414f3fdf6032bba14dec3fba1f0626951a10a7646cfd864b8e6acfa3",
+      "bytes": 3082
+    },
+    {
+      "path": "logs/capture-cases-v3.log",
+      "sha256": "50b61be6fc33524c4a355a0fddce3281212abdb7529f2100059f060926afa525",
+      "bytes": 1360
+    },
+    {
+      "path": "logs/capture-v3-apksigner.txt",
+      "sha256": "68a15a3029131fc8ed7f416d08d4e6344ada075a1bca2838db8ac6395f619aa4",
+      "bytes": 2016
+    },
+    {
+      "path": "logs/capture-v3-badging.txt",
+      "sha256": "6983a1f1297fc61cc8a78d3fb303b1751e3945e89de7ea5e787f3c6bcaf96613",
+      "bytes": 12212
+    },
+    {
+      "path": "logs/capture-v3-zipalign.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "logs/emulator-capture-command.json",
+      "sha256": "d32653edd9a9f984232e9b7a4021721bdfa1efa53c779662b4a8778f9136bf78",
+      "bytes": 1082
+    },
+    {
+      "path": "logs/emulator-capture-stdout.log",
+      "sha256": "6f6907cd050a5dadb9f5a94fb90c10949b725e3b6b20469a617d48113f2c5aa8",
+      "bytes": 10946
+    },
+    {
+      "path": "logs/emulator-capture-v2-stdout.log",
+      "sha256": "d686b717ee1c0128fbe59dd9ac290eeb1cc12fd366fe140d41a674d73d6ed452",
+      "bytes": 11288
+    },
+    {
+      "path": "logs/emulator-capture-v3-command.json",
+      "sha256": "91382fa0f39176754f86be27eef2b3d8c99d105783237224e7b45b358f2e1b3f",
+      "bytes": 1062
+    },
+    {
+      "path": "logs/emulator-capture-v3-stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "logs/emulator-capture-v3-stdout.log",
+      "sha256": "5868d209b0c34ff92b69528c5a7eeb2ff06e7aa21d208a66a543288d4cd796b1",
+      "bytes": 11253
+    },
+    {
+      "path": "logs/final-v3-camera-service.txt",
+      "sha256": "12e1707d4e4b87ad7d4af0f0d178ea761323ff902a866a8ce5232beb73190622",
+      "bytes": 58800
+    },
+    {
+      "path": "logs/initial-camera-service.txt",
+      "sha256": "649dd1106d3157fa9889bd00578292bedf412a69a380723bed14a22ec907d3a9",
+      "bytes": 35156
+    },
+    {
+      "path": "logs/initial-harness-logcat.txt",
+      "sha256": "b76aac6a3afdef3f705c3e3d8925dbf56f0f7160cbf82bd31d82215ae75fe86c",
+      "bytes": 3016322
+    },
+    {
+      "path": "README.md",
+      "sha256": "2362c077c5124f3a00166a204504ad0a899ef82d93a6a33eb1aa21a513104a71",
+      "bytes": 5470
+    },
+    {
+      "path": "report.json",
+      "sha256": "afeace64ae29721b46de9598584f664659f021b32ff7fa5ad166af53143161c7",
+      "bytes": 47265
+    },
+    {
+      "path": "REVIEW-ID.md",
+      "sha256": "f2c4de63641a8a26d5896da250f5f3c4b3a129ebee64cb3f248d5dcf6423a734",
+      "bytes": 4913
+    },
+    {
+      "path": "source/android/app/build.gradle",
+      "sha256": "723c33537a6587759277c2eeb831193d82b629f874d79616a1762337a5a7ea55",
+      "bytes": 8485
+    },
+    {
+      "path": "source/android/app/src/main/AndroidManifest.xml",
+      "sha256": "9c4f306482660ad6bcf1ef9e541bbe6c4a24d4d02e8f909ab25254c68fc23b4f",
+      "bytes": 2598
+    },
+    {
+      "path": "source/android/app/src/main/java/com/brailleme/app/MainApplication.kt",
+      "sha256": "5763dc20b9145f2e273ed4c3e1f4e47237d14aa283344210c65af8addbe38b3e",
+      "bytes": 1489
+    },
+    {
+      "path": "source/android/gradle.properties",
+      "sha256": "77d6da2b471fa11132d7d91030349f1b8730a20f2df89e9e1ceb1680f0fc48e0",
+      "bytes": 2682
+    },
+    {
+      "path": "source/app.config.ts",
+      "sha256": "43a0c4acdfab113fbf20f66e7ad75152737013765bc116f83d8d6708f32e363f",
+      "bytes": 1147
+    },
+    {
+      "path": "source/geometry-entry.tsx",
+      "sha256": "483f4db6bccbe64c293a9f34d6bf6af6521c9fa570aa3cef078e3f7522142b2f",
+      "bytes": 7428
+    },
+    {
+      "path": "source/metro.config.js",
+      "sha256": "61b7ab1d3e01e1bebd9784e22d5172bb31997b7ebb76cd79ef75cde30237d618",
+      "bytes": 230
+    },
+    {
+      "path": "source/modules/braille-word-geometry/android/build.gradle",
+      "sha256": "02e2dcbda4ced239902b37f610934ccf3e26e8b31952f0005997970fef270c41",
+      "bytes": 1363
+    },
+    {
+      "path": "source/modules/braille-word-geometry/android/CMakeLists.txt",
+      "sha256": "2e9cc14c2588fb27ba7530ec452b6f49e5274c614a24f65f3e01c3f320097845",
+      "bytes": 497
+    },
+    {
+      "path": "source/modules/braille-word-geometry/android/consumer-rules.pro",
+      "sha256": "f63e5bb960568fdd3c9f773ad8fe5e264e738202ee888a474a1a8351dfe69e5d",
+      "bytes": 170
+    },
+    {
+      "path": "source/modules/braille-word-geometry/android/src/main/AndroidManifest.xml",
+      "sha256": "21058c692532098e42afc39cf09de946c38229ec414bb7ac32f4fc90ba9a5f45",
+      "bytes": 23
+    },
+    {
+      "path": "source/modules/braille-word-geometry/android/src/main/cpp/cpp-adapter.cpp",
+      "sha256": "1b60e23d0aa1b1ecbc3eb041ab87fa1099590c674accbdf27c5b0c62699e7be2",
+      "bytes": 256
+    },
+    {
+      "path": "source/modules/braille-word-geometry/android/src/main/java/com/margelo/nitro/braillewordgeometry/HybridWordPhotoGeometry.kt",
+      "sha256": "48e433d0a3f1226d0f6714c75708cd826e1c8bd42ff6a24838761c3eabf9bd82",
+      "bytes": 1020
+    },
+    {
+      "path": "source/modules/braille-word-geometry/android/src/main/java/expo/modules/braillewordgeometry/BrailleWordGeometryModule.kt",
+      "sha256": "417fc6eb0bd4952c3ffb3f100b49a7d3eb9a3cb980656ad23bfd4e399f12429f",
+      "bytes": 352
+    },
+    {
+      "path": "source/modules/braille-word-geometry/expo-module.config.json",
+      "sha256": "397647d0f20ccb6bc029987a27da172210bc3be08cd47c80d14b1fd361cf9b8f",
+      "bytes": 129
+    },
+    {
+      "path": "source/modules/braille-word-geometry/LICENSE",
+      "sha256": "fb3ca4a837f5779e83cef89b78253a8949cfb9429c340309f62d0465ec6610b4",
+      "bytes": 1106
+    },
+    {
+      "path": "source/modules/braille-word-geometry/nitro.json",
+      "sha256": "f8607d1bd91a1842163df16d6d21b685d52fc5d337c74f0b74f855a6ed7ac11e",
+      "bytes": 466
+    },
+    {
+      "path": "source/modules/braille-word-geometry/nitrogen/generated/.gitattributes",
+      "sha256": "8401d61d91c8f286601668b1b3c8e90e324d3f09d45a22bc72712c9b5f18e348",
+      "bytes": 27
+    },
+    {
+      "path": "source/modules/braille-word-geometry/nitrogen/generated/android/BrailleWordGeometry+autolinking.cmake",
+      "sha256": "92474ba23df6fd03faab221195f2f26d966a22d48caec13623b1836110c141bf",
+      "bytes": 2958
+    },
+    {
+      "path": "source/modules/braille-word-geometry/nitrogen/generated/android/BrailleWordGeometry+autolinking.gradle",
+      "sha256": "f7808458852b7208f1b8a831f51c8b6f8fc3d7529ecb6ea77fc27030e898b44c",
+      "bytes": 711
+    },
+    {
+      "path": "source/modules/braille-word-geometry/nitrogen/generated/android/BrailleWordGeometryOnLoad.cpp",
+      "sha256": "852c47e99b04bf66540bb2259c24f1ba9bb55fd80167e76fd429b4a6764f6ffe",
+      "bytes": 1989
+    },
+    {
+      "path": "source/modules/braille-word-geometry/nitrogen/generated/android/BrailleWordGeometryOnLoad.hpp",
+      "sha256": "d372a0fcb36e94516ead97febe0ecdaaf31a4f20f2b1dfb7f3562534e41733f0",
+      "bytes": 1083
+    },
+    {
+      "path": "source/modules/braille-word-geometry/nitrogen/generated/android/c++/JHybridWordPhotoGeometrySpec.cpp",
+      "sha256": "aca3450800e3a6065ea20f816fa217b23f34619e74842f3401277a68f39c8b39",
+      "bytes": 2693
+    },
+    {
+      "path": "source/modules/braille-word-geometry/nitrogen/generated/android/c++/JHybridWordPhotoGeometrySpec.hpp",
+      "sha256": "e0bfaf645821b1b080ea7d7f9946099c8bce682eab83c85c635e490eba06d57a",
+      "bytes": 2221
+    },
+    {
+      "path": "source/modules/braille-word-geometry/nitrogen/generated/android/c++/JPhotoGeometry.hpp",
+      "sha256": "55db880d62679fb27013ff605b7130fa1d0f37de0023fe5044b2ced0d6100dda",
+      "bytes": 3656
+    },
+    {
+      "path": "source/modules/braille-word-geometry/nitrogen/generated/android/kotlin/com/margelo/nitro/braillewordgeometry/BrailleWordGeometryOnLoad.kt",
+      "sha256": "01254773c574d84736b27b0bda3604a9d8b61d5c754a6ed6eaa9560d625fac9c",
+      "bytes": 1114
+    },
+    {
+      "path": "source/modules/braille-word-geometry/nitrogen/generated/android/kotlin/com/margelo/nitro/braillewordgeometry/HybridWordPhotoGeometrySpec.kt",
+      "sha256": "c8123e7de366c0861530d58271dee2e61a8ac3a1e6d6e2d87a59a40503cae3c9",
+      "bytes": 1678
+    },
+    {
+      "path": "source/modules/braille-word-geometry/nitrogen/generated/android/kotlin/com/margelo/nitro/braillewordgeometry/PhotoGeometry.kt",
+      "sha256": "ad148255a6136bf9841b6d4a38d41d08c5ba31dde4678dac0d1dea8ed20c1bf7",
+      "bytes": 1895
+    },
+    {
+      "path": "source/modules/braille-word-geometry/nitrogen/generated/shared/c++/HybridWordPhotoGeometrySpec.cpp",
+      "sha256": "b0d6091bed0a79c4a1cecaeb149d6a9155dd6a6fff00346ac47ff2f1d76a72fe",
+      "bytes": 666
+    },
+    {
+      "path": "source/modules/braille-word-geometry/nitrogen/generated/shared/c++/HybridWordPhotoGeometrySpec.hpp",
+      "sha256": "a9e86e499807eced6eb906eb77b08bc6902e20d3820b6db88868a4499054aca1",
+      "bytes": 1960
+    },
+    {
+      "path": "source/modules/braille-word-geometry/nitrogen/generated/shared/c++/PhotoGeometry.hpp",
+      "sha256": "ea786b4d6a90fc35b6bc501b0ec962e9367c7f7e772d1e9f4b74dd73828a74c1",
+      "bytes": 5276
+    },
+    {
+      "path": "source/modules/braille-word-geometry/README.md",
+      "sha256": "2922f98de543e0bc598c0d31a514d1a8d5188470725cf77a6d66f9e0836a686a",
+      "bytes": 3806
+    },
+    {
+      "path": "source/modules/braille-word-geometry/src/index.ts",
+      "sha256": "715162d4f8834cf160be13e65bad8c498d681d2d542c4104c1c42751c490563c",
+      "bytes": 565
+    },
+    {
+      "path": "source/modules/braille-word-geometry/src/WordPhotoGeometry.nitro.ts",
+      "sha256": "756f22ead8150c6482d1f7bb2348522f911c0ec07044b6571cef6cdc71eb4a7b",
+      "bytes": 515
+    },
+    {
+      "path": "source/node_modules/react-native-vision-camera/android/src/main/java/com/margelo/nitro/camera/extensions/ByteBuffer+readableBytes.kt",
+      "sha256": "466f3d7a7b6a67408467c11c641972b8f6c30ad963aa3faa8be34a666a771bc5",
+      "bytes": 733
+    },
+    {
+      "path": "source/node_modules/react-native-vision-camera/android/src/main/java/com/margelo/nitro/camera/hybrids/instances/HybridPhoto.kt",
+      "sha256": "b1ef27b7313ce1b4b6b0fba110bb02ac40b494595377e2e6245b282588f7d6b9",
+      "bytes": 7191
+    },
+    {
+      "path": "source/package-lock.json",
+      "sha256": "dae5af9e618c9dc5b81208bb9c3e46a252f7e3ad1727b909cbbda518a53f4620",
+      "bytes": 733677
+    },
+    {
+      "path": "source/package.json",
+      "sha256": "5223575cf12242726bc6ea36735f3acee7af16167f02364d2ae63939cb661746",
+      "bytes": 3892
+    },
+    {
+      "path": "source/src/ml/word-camera-geometry.ts",
+      "sha256": "90f30d081a927aea9f96aefcd55ec8e339c3feda20aa37b3aa22f26ae2605547",
+      "bytes": 5015
+    },
+    {
+      "path": "source/src/ml/word-model-contract.ts",
+      "sha256": "8d78bbaeaf7afda3177e444670a7634dae699b535e18f7c1137e0ec84bbff1a8",
+      "bytes": 3685
+    },
+    {
+      "path": "source/src/types/live-scan.ts",
+      "sha256": "bfcb958421baa9492aad2c8e6dddda26b78a25f93e63494eb9f919bc9668e5b9",
+      "bytes": 3839
+    },
+    {
+      "path": "source/src/types/word-scan.ts",
+      "sha256": "f6b8ac0cf1072b3ec99f23ac8407e5d8e38c7e801a7c90f4cc2a3503761a1964",
+      "bytes": 5185
+    },
+    {
+      "path": "source/tsconfig.json",
+      "sha256": "1ddc7532bcb2355fe7f459e39692f8818f2968767b424671090953119503049e",
+      "bytes": 383
+    }
+  ],
+  "file_count": 185,
+  "total_bytes": 24339323,
+  "apk_retained": false,
+  "replay_sources": [
+    {
+      "path": "scripts/word-native-capture/README.md",
+      "sha256": "0ba0c1e3e69e52c2d021e791cabe8b7639625c5c59a81e1ae01b071603508638",
+      "bytes": 2410
+    },
+    {
+      "path": "scripts/word-native-capture/verify_archive.py",
+      "sha256": "2019fd0be5e9e22fe1c71b6cdf0641713a47b127f93a7aecf419dbf07ad01ba3",
+      "bytes": 5807
+    }
+  ]
+}

@@ -12,9 +12,10 @@ export default function PrivacyScreen() {
 
       <SectionCard title="Pemrosesan tetap di perangkat" variant="plain">
         <Text selectable style={styles.body}>
-          BrailleMe memproses gambar kamera, potongan satu sel, hasil huruf, dan
-          kata sementara langsung di perangkat. Aplikasi tidak menyimpan atau
-          mengunggah gambar kamera maupun teks hasil pemindaian.
+          BrailleMe memproses foto satu kata Braille, posisi sel, dan hasil kata
+          langsung di perangkat. Foto dan hasil hanya digunakan sementara selama
+          pemindaian. Aplikasi tidak menyimpan atau mengunggah gambar kamera
+          maupun teks hasil pemindaian.
         </Text>
       </SectionCard>
 

@@ -1,0 +1,29 @@
+{
+  "status": "passed",
+  "scope": "One actual phase1 batch24 CUDA backward, no optimizer or checkpoint save; all tensors finite. This is a memory/execution probe, not training or accuracy evidence.",
+  "parent_sha256": "d6d43af7f662584d1f84c1ac7411d1572f898224746973405ed080c3ea1171d5",
+  "batch_size": 24,
+  "dataset_epoch": 2,
+  "loss": 0.5644031167030334,
+  "elapsed_seconds": 7.548924899994745,
+  "max_allocated_bytes": 3297601024,
+  "max_reserved_bytes": 3376414720,
+  "device": "NVIDIA GeForce RTX 5060 Laptop GPU",
+  "gradient_tensors": 78,
+  "negative_expansion": {
+    "base_unique_negative_records": 44,
+    "base_repeat": 27,
+    "supplemental_unique_negative_records": 47,
+    "supplemental_repeat": 2,
+    "negative_draws": 1282,
+    "total_epoch_records": 24882
+  },
+  "point_metadata_sha256": "ea9592a727f7f3abcc6b017f8f22e143e90ae1541f623c43adf30104021937e8",
+  "script_sha256": "a088ebe636e50ed99a08c9b4afd39617778a7e92bb1d61dc519467e712b7af93",
+  "source_sha256": {
+    "word_train.py": "c8fc0c5ff209a24b6021de46c403e2ad92abb2b13d421ee3cb8da5bf8b77739e",
+    "word_geometry_head.py": "f46c8f90e7f4fc9404eed2dc27fbde6e5c823d25d4f88e4127c7e56ed6e8764e",
+    "word_model.py": "c446732a2905a612cd6f1dd64d2d3d01303b1c71933c34552d26f3b5052fd551",
+    "word_data.py": "abc7a31a94db497b9a48ce44bd68d96556e67014623c5645c129153844b48cb7"
+  }
+}

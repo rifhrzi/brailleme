@@ -1,0 +1,96 @@
+{
+  "status": "passed_with_descriptive_limits",
+  "script_sha256": "9e80b2ef29cb71b49f473dda56ac10a6715bae7d40efc7222dc8134f04cdeeb8",
+  "reviewed_files": {
+    ".braille-training-work\\word-scan-v1-20260905\\audit_v15_batchnorm_activations.py": "c876afbfaaf29394ecb41049ebcb2b695c832dbc2d20c550fa6b6d54e684bad5",
+    ".braille-training-work\\word-scan-v1-20260905\\v15-train-batchnorm-activations\\protocol.json": "f2a9775da85500b2ac9a6ac5e579aaf2369930dc70e2c55f132fb5ac032fc5ae",
+    ".braille-training-work\\word-scan-v1-20260905\\v15-train-batchnorm-activations\\report.json": "1d24e354d1acf8d8da937f1c730e33f93048191aac285e354327e472680078e1",
+    ".braille-training-work\\word-scan-v1-20260905\\combined-training-v5\\combined-training-manifest.json": "130c80f135af5677d6b78a5e401126f54b15204481aab6de00a88c443956c4fa",
+    ".braille-training-work\\word-scan-v1-20260905\\selected-v15\\best-word.keras": "cce2432c0ddb8952c885dd58697589c285209588dafa81aacdd891b1660068b7"
+  },
+  "sampling": {
+    "cached_inputs": 36,
+    "positive_families": 12,
+    "unique_source_photos": 31,
+    "family_counts": {
+      "books/chudo_derevo_redmi": 3,
+      "books/mdd-redmi1": 3,
+      "books/mdd_cannon1": 3,
+      "books/skazki": 3,
+      "books/telefon": 3,
+      "books/uploaded": 3,
+      "dsbi/Massage": 3,
+      "dsbi/Math": 3,
+      "dsbi/Ordinary Printed Document": 3,
+      "dsbi/Shaver Yang Fengting": 3,
+      "handwritten/kov": 3,
+      "handwritten/uploaded": 3
+    },
+    "all_hashes_and_TRAIN_membership_verified": true
+  },
+  "checks": {
+    "actual_checkpoint_prefix_and_full_nested_backbone": true,
+    "BN_axis_last_population_moments_formula_reviewed": true,
+    "all52_saved_moments_match_HDF5": true,
+    "all52_channel_counts_quantiles_recomputed": true,
+    "all_relu6_shapes_counts_fractions_consistent": true,
+    "checkpoint_hash_unchanged": true,
+    "max_prefix_numpy_statistics_error": 8.719938930923377e-07,
+    "max_recomputed_quantile_error": 0.0
+  },
+  "selected_statistics": {
+    "bn_Conv1": {
+      "channels": 16,
+      "spatial_sample_count_per_channel": 829440,
+      "absolute_mean_shift_per_saved_std": {
+        "min": 1.0533905954919314e-21,
+        "p05": 1.782602756652195e-20,
+        "median": 0.1204707463568303,
+        "p95": 0.2207168782721507,
+        "max": 0.32900964608587896
+      },
+      "observed_std_per_saved_std": {
+        "min": 5.774583907309793e-21,
+        "p05": 1.7971664872050017e-20,
+        "median": 0.1441173015579841,
+        "p95": 0.36747646914895954,
+        "max": 0.3886505938891453
+      }
+    },
+    "block_13_depthwise_BN": {
+      "channels": 288,
+      "spatial_sample_count_per_channel": 3240,
+      "absolute_mean_shift_per_saved_std": {
+        "min": 0.021233417948879205,
+        "p05": 0.15852267200294184,
+        "median": 3.175389353580471,
+        "p95": 20.575921340975746,
+        "max": 76.24324591275891
+      },
+      "observed_std_per_saved_std": {
+        "min": 0.14151398949261107,
+        "p05": 0.9275913423772733,
+        "median": 3.125787911503659,
+        "p95": 9.16218800561075,
+        "max": 16.51129092462509
+      }
+    }
+  },
+  "block13_relu6": {
+    "values": 933120,
+    "zero": 244924,
+    "at_or_above_six": 179483,
+    "zero_fraction": 0.2624785665294925,
+    "at_or_above_six_fraction": 0.1923471793552812
+  },
+  "defects": [],
+  "interpretation": "Valid descriptive motivation for a separately controlled gamma/beta adaptation experiment while keeping moving moments and inference-mode backbone fixed. BN inference is an affine per-channel mapping; gamma/beta can change that mapping without recalibrating moments. This audit does not establish that those parameters are the bottleneck or predict any accuracy gain.",
+  "limitations": [
+    "36 cached positives are only 3 manifest-order quantile samples per family, with repeated source photos and possible overlapping contexts; this is not random or source-independent population estimation.",
+    "Moments pool all spatial positions, including paper/background/verso/unknown regions. They do not isolate foreground Braille activations, and no negatives or stochastic augmentation are sampled.",
+    "Mean-shift and std ratios use sqrt(saved_variance+epsilon), not unadjusted stored standard deviation, and are channel medians. ReLU6 saturation is a pooled element fraction.",
+    "The report retains observed means/variances, not raw activations or their sums. This review checks the accumulation formula, shapes, stored moments and derived arithmetic; it does not independently reproduce deep-layer moments without inference.",
+    "The script checks both all model weight bytes before/after and checkpoint file hash, with gradients disabled and no optimizer/save. Its in-memory before/after equality is evidence from the original run; this review separately verifies the retained checkpoint and its BN moments.",
+    "Gamma/beta-only training requires an explicit trainable-variable set and training=False for the nested backbone; merely unfreezing BN under training=True would update moments and test a different hypothesis."
+  ]
+}

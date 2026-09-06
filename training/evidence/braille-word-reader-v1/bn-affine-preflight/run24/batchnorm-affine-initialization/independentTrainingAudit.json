@@ -1,0 +1,59 @@
+{
+  "status": "passed",
+  "protocol_sha256": "fa45227eeda0d83b3e1e9b73ec8d177dd516d2276af4cca134602267ad7c3766",
+  "script_sha256": "520be35c83239a6b146fd695777836b2bf63172aff2f65b31756ff5a77435f57",
+  "helper_sha256": "fa117f65beda3f6d159f707a5cd45d3a367b8f5b436b8c43c0d7621071297dff",
+  "keras_version": "3.15.1",
+  "torch_version": "2.7.1+cu128",
+  "installed_sources": {
+    "C:\\bm-envs\\word-scan-torch-only\\Lib\\site-packages\\keras\\src\\models\\functional.py": "6da6617186c5076f04e0ea137c663189a85da0f838d27c596c2ae1fb0763b86a",
+    "C:\\bm-envs\\word-scan-torch-only\\Lib\\site-packages\\keras\\src\\layers\\normalization\\batch_normalization.py": "5ae9015e1631dadf350e61cc52d0279d63ddc505b4110b9466d0d39ec5cc4a6f"
+  },
+  "plain_nested_false_changed_moment_arrays": 4,
+  "fixed_moment_BN_layers": 2,
+  "affine_parameters": 16,
+  "initial_parent_clone_weights_and_train_eval_outputs_exact": true,
+  "variables_do_not_alias_parent": true,
+  "three_real_sgd_steps": {
+    "all4_affine_tensors_changed": true,
+    "gradient_max_per_tensor_by_step": [
+      [
+        0.0057737198658287525,
+        0.009571217931807041,
+        0.01666446402668953,
+        0.016041310504078865
+      ],
+      [
+        0.005777184851467609,
+        0.009547857567667961,
+        0.016636040061712265,
+        0.016012897714972496
+      ],
+      [
+        0.005780614912509918,
+        0.009524554014205933,
+        0.016607675701379776,
+        0.015984531491994858
+      ]
+    ],
+    "all_moving_and_non_affine_arrays_exact": true,
+    "maximum_output_change": 0.001067042350769043
+  },
+  "trained_save_load_weights_train_eval_outputs_exact": true,
+  "loaded_classes_force_false_inside_call": true,
+  "keras_train_on_batch_updates_weights_without_moving_moments": true,
+  "original_parent_weights_and_flags_unchanged": true,
+  "moving_arrays_before_after_sha256": "346086b18900d7cbd36ab7a9e1fb1a9433d9a692f81d7267381cc1af4e7223d7",
+  "tiny_model_sha256": "acbcaeafc6f3ab9a8a1d343ff3fe594bb694137ec2e1b001f5014f6ec76364f7",
+  "defects": [],
+  "correction_to_prior_activation_review": {
+    "file": ".braille-training-work\\word-scan-v1-20260905\\v15-batchnorm-activation-independent-review.json",
+    "sha256": "f59d3e651fcd0e20016c6fc2367921c94569aa5f1dc5507f9e17b4cc5e021f17",
+    "statement": "The prior descriptive activation audit remains valid because its probe/prefix used training=False and every BN was frozen. Its future affine-training advice requires refinement: stored nested training=False kwargs alone are insufficient in actual Keras3.15.1 Functional training. Force inference behavior inside each BN call (as this helper does), then verify actual updates/save-load leave moments exact."
+  },
+  "interpretation": "This utility opens only existing BN gamma/beta in addition to the already trainable convolution/head weights. It does not make the entire reader optimizer affine-only. The isolated SGD proof intentionally updated only gamma/beta to demonstrate their effect; actual train_on_batch also verifies the existing broader variable set.",
+  "limits": [
+    "Tiny-model Torch CPU semantic proof only; actual full-v15 initialization and TF/TFLite parity remain separate trainer proofs.",
+    "No recognition accuracy, production readiness or benefit from affine adaptation is established."
+  ]
+}

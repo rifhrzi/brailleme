@@ -1,0 +1,123 @@
+{
+  "created_at_utc": "2026-09-05T23:05:12.831305+00:00",
+  "enabled": true,
+  "metadata_path": "../dsbi-point-metadata-v1/points.json",
+  "point_metadata_sha256": "ea9592a727f7f3abcc6b017f8f22e143e90ae1541f623c43adf30104021937e8",
+  "source_sha256": {
+    "word_data.py": "70184d6bff134cae4d003cf852bebc93f5c955c685ee2883972a337924793f02",
+    "word_model.py": "c446732a2905a612cd6f1dd64d2d3d01303b1c71933c34552d26f3b5052fd551",
+    "word_decode.py": "bd301c5afeb4ba2e6866371665324d2de7f0a6ee252ef76ce02a5553193d63c5",
+    "word_train.py": "42143d0169e4de41644a9a65fe59c82b117fe34556f163bcbf4b8e91f93cb24f",
+    "word_sampling.py": "c234523277dba683e68a2863e14736bc68432da3b6ca65bb5d8a64bc7d9dc0fe",
+    "word_tail.py": "bdd4b5d12d56e25c1100a282483e7a31176b5a65beb353a0623ceea40a49dc0e",
+    "word_sources.py": "affb3488d8c25e3d0131eb4340cae29fcece563ac75373e071f97fef68f09acd",
+    "word_dsbi.py": "feecf16dba6d376415e15707c02c8f05fcf6650055da09ad9f4712099e6325ff",
+    "word_point_geometry.py": "2b932b320d191277b86ae13daecb82b5abbf0a46e9464d7360ee1e941aca760b",
+    "word_point_metadata.py": "de1cad0157e744f2f646010eac5355b88d1d11f52662d4b9353166661f59049f",
+    "word_geometry_head.py": "f46c8f90e7f4fc9404eed2dc27fbde6e5c823d25d4f88e4127c7e56ed6e8764e",
+    "word_geometry_init.py": "072379a1ef409d901c2478135174561c14781560cdd56a0b91b0229b8032e15e",
+    "word_geometry_parity.py": "700d9175dc627fb7bf12c0ac20f640191cf5a045e29067c310f5dad5f3bd6f0b",
+    "word_vertical_stretch.py": "336168fbfe4441bfa91e0855f473997a403a542a2b64789ca7cbd1b11b188ed5",
+    "word_bn_affine.py": "fa117f65beda3f6d159f707a5cd45d3a367b8f5b436b8c43c0d7621071297dff",
+    "word_bn_affine_init.py": "ea76999d35a6e9ba94cffce06c359adb1201cb396b54345668b7ed13afe99ce1",
+    "word_bn_affine_parity.py": "d4baba52b0993240e0b5092500ae32ee5d1b01e636d2546261a0a24996bd4a21",
+    "word_fine_branch.py": "53bff984c33a20556721328e6253fadd060019573b068deee2a671d08a530750",
+    "word_fine_init.py": "3baa5f15b2b4b74ea120dd8150ad3b8a11f59139ad3eb833d3b2089e188d1310",
+    "word_fine_parity.py": "de30cf4b3df1d8ec4bf820f6e1d98c8e40a39eb674a9ce470a3067569f3a8cbe",
+    "word_fine_validation.py": "b075760aee90afa17a84c0e8ec3a421132e0644130929f8f7a85b54b11058124",
+    "word_horizontal_aspect.py": "3ea4fa7d625c91d15c28e157d1bfc675eb72f980571f95631060a82b81494d5a"
+  },
+  "training_manifest_sha256": "130c80f135af5677d6b78a5e401126f54b15204481aab6de00a88c443956c4fa",
+  "supplemental_source_index_sha256": "8d62cf1850308fb864449bbcabc4399ef4e9a9aab62216b35c8064fa634450a6",
+  "supplemental_manifest_sha256": "21dc4f93821b2282b8c0f0967430f22b44fc868d26b4a3265e6fd57995892a44",
+  "parent_checkpoint_sha256": "6113867b21316669169391fa7216f9d1b9bf147a13c153889ff6de1c26e9a4ea",
+  "planned_epochs": 10,
+  "planned_eligible_epochs": [
+    8,
+    9,
+    10
+  ],
+  "minimum_visible_size_pixels": [
+    4,
+    12
+  ],
+  "minimum_surviving_occupied_centers": 1,
+  "full_span_canvas_dimensions_excluded": true,
+  "coordinate_space": "Exact DSBI provided deskewed +recto.jpg pixel-index centers from raw TXT; no angle re-application; actual middle row preserved.",
+  "source_binding": "Each sidecar record exactly rederived at startup from hash-bound TRAIN annotation and (source,row,col,annotation_line,mask), with original image/cache/TRAIN membership separately audited.",
+  "visibility": "Safe center hull 0<=x<=W-1,0<=y<=H-1 after source crop, resize and every affine/rotation raster. Occupied survivors AND across stages; lost points cannot recover.",
+  "source_crop_resize": "q=(source_point-crop_origin+0.5)*scale-0.5",
+  "geometry_targets": "Only still-crossing known DSBI source boxes with occupied survivors: regress visible box clamped to canvas, objectness1, all six bits -1. This is fragment rejection geometry, not the full source cell box.",
+  "complete_target_policy": "Complete cells keep full original target; complete targets overwrite colliding fragment targets.",
+  "excluded": "Angelina partials, unlisted DSBI slots, mask-zero cells, no surviving occupied points, earlier cut boxes now fully inside, visible fragments below4x12, full-span width/height.",
+  "default_off": "Current defaultFalse/factor1 pixels, targets, source order and RNG must equal archived run25. Enabling horizontal aspect preserves legacy random draws/order and changes only the existing whole-image affine geometry.",
+  "limitations": [
+    "Surviving geometric occupied centers prove annotated point presence, not guaranteed post-blur optical visibility.",
+    "Overlapping/colliding cells may suppress fragments; this does not create a universal rejection guarantee.",
+    "Known external607 and14 rejection diagnostics are already observed development regressions, never independent physical holdout."
+  ],
+  "selection": "Unchanged selected-v22/v15 control first plus actual run27 eligible epochs8-10 on frozen405; weak-peaks-v2/group gates/tie rule unchanged. No external outputs used.",
+  "preflight_audits": [
+    {
+      "path": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\run27-parent-independent-audit\\report.json",
+      "sha256": "e455903420bd182d8c075250c3f032fcc3a93fec659c7f5f35466f03a74fe71c"
+    },
+    {
+      "path": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\run27\\continuation-guard-audit.json",
+      "sha256": "5deeaef84bb0c81e687f8f259cfce024bc224819773181ad74b6276756d14f42"
+    }
+  ],
+  "parent_checkpoint": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\run26\\retained-epochs\\epoch-10.keras",
+  "horizontal_mirror_augmentation": false,
+  "vertical_stretch_augmentation": false,
+  "horizontal_aspect_augmentation": true,
+  "geometry_conditioned_residual": false,
+  "batchnorm_affine": false,
+  "fine_detail_branch": false,
+  "scope": "Weight-only horizontal-aspect continuation from eligible run26 epoch10; unchanged data/source/geometry/normalization and fresh same-seed optimization.",
+  "rationale": "Run26 epoch10 improves held matched cells1518->1524, wrong masks8->7 and paired mean IoU+.042902, while losing7/gaining5 words. Training and validation loss still decline at epoch10 with unchanged2e-5 learning rate. Continue optimizing this same horizontal-aspect objective; do not select or activate the failed parent as the control.",
+  "continuation": {
+    "kind": "weight_only_same_sample_realizations",
+    "parent_retained_epoch": 10,
+    "parent_is_selected_control": false,
+    "parent_training_config": {
+      "path": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\run26\\training-config.json",
+      "sha256": "5e667caadfe937cbecaa57210cee1039df0cfa9a9a0390143e65015138c48f7b"
+    },
+    "parent_sampling_lineage": {
+      "path": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\run26\\sampling-lineage-final.json",
+      "sha256": "dfbc870d0c6ed4553f80e8d8011431c6a7746f2c4db8971da7818e6a55be238d"
+    },
+    "parent_sampling_history": {
+      "path": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\run26\\sampling-history.json",
+      "sha256": "01c4d0dc071ab3b362eda303664d5c46817421a8e848a2df09ca0c2459a15739"
+    },
+    "parent_selection": {
+      "path": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\selected-v21\\checkpoint-selection.json",
+      "sha256": "1400ad05e3935f28aea9ea2a6ba4caabf7330dea1f008a3aded3c7b1c1df92ba"
+    },
+    "parent_held_diagnosis": {
+      "path": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\run26\\held-diagnosis\\horizontal-aspect-comparison\\comparison.json",
+      "sha256": "870999502ba0f02d65391a1d02d106235b28373dd3703b83fe84d256f1c24f6a"
+    },
+    "original_initial_checkpoint_sha256": "cce2432c0ddb8952c885dd58697589c285209588dafa81aacdd891b1660068b7",
+    "optimizer": "Reset deliberately: load_model(compile=False), then fresh Adam(lr2e-5,clipnorm10). No stored optimizer variables are restored.",
+    "scheduler": "Fresh ReduceLROnPlateau(val_loss,patience4,factor.5,min_lr1e-5), identical policy to run26.",
+    "sample_realizations": "Seed20260905, sampler cursor and dataset epoch restart exactly as run26. Repeat the same10epoch source order and image/point/illumination/width-factor draws; this is additional optimization, not new augmentation exposure.",
+    "sampling_eligibility": "Require this run to complete its own23600-positive-record cycle; only local epochs8/9/10 eligible. Parent coverage does not make early local epochs eligible.",
+    "source_policy": "All22 training source files and all data manifests/point metadata are byte-identical to run26.",
+    "inherited_horizontal_aspect_protocol": {
+      "path": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\run26\\horizontal-aspect-protocol.json",
+      "sha256": "a1ca1962bbabf307a2f5255a2e8d67b57133f3e4ae2f30298e28445398958b34"
+    },
+    "inherited_transform_audit": {
+      "path": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\run26\\horizontal-aspect-integration-audit.json",
+      "sha256": "b1d97481f7d890c91af7e2043bf2ccbefcae1b7c8f9a36d1f73acb16288c8627"
+    },
+    "inherited_source_bound_tests": {
+      "path": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\run26\\preflight-tests.json",
+      "sha256": "fc0cc9d22cbf7c6de5686f505ddc60acfc6a7a6e28a8cdfc0136056c9375fd4f"
+    },
+    "inherited_scope": "The b1d974 integration audit and141 tests establish identical transform/source semantics and originally bind the v15 initializer. They are not rerun or relabeled as an audit of the new epoch10 parent. New independent parent/continuation audits establish that binding."
+  }
+}

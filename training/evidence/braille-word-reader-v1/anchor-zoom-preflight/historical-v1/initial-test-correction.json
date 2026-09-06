@@ -1,0 +1,8 @@
+{
+  "status": "test_expectation_corrected_before_final_proof",
+  "failed_file": "proof-before-boundary-expectation-fix.py",
+  "failure": "The assertion expected zoom 1.7 to remain unchanged for full box [0,0,50,192] translated left by 19.2 pixels.",
+  "correction": "The analytic feasible cap is .92, so the original expected no-cap result was wrong. The corrected test requires a cap between .8 and .93.",
+  "helper_changed": false,
+  "scope": "A geometry-test expectation error; no model, data, threshold or actual training was involved. The original failed test source is retained."
+}

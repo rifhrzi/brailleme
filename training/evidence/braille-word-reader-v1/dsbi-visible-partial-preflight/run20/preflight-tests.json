@@ -1,0 +1,36 @@
+{
+  "status": "passed",
+  "created_at_utc": "2026-09-05T15:32:58.125754+00:00",
+  "command": "KERAS_BACKEND=torch KERAS_TORCH_DEVICE=cpu CUDA_VISIBLE_DEVICES=-1 C:/bm-envs/word-scan-torch-only/Scripts/python.exe -m unittest discover -s training/tests -p test_word*.py -q",
+  "tests": 93,
+  "failures": 0,
+  "errors": 0,
+  "test_sha256": {
+    "training\\tests\\test_word_dsbi.py": "42f0635010b8f49700dbb98b097a446fde14ac8e8a3e87502fafd4ba7acae862",
+    "training\\tests\\test_word_dsbi_prepare.py": "8ddfdfbacba54981adda31287e8c61b23e4ca21e0538addc55252b0aed663bb1",
+    "training\\tests\\test_word_fixture_geometry.py": "c194dac16118c0a390c0f76aea907447ecf226185bab7fb8017647502d730212",
+    "training\\tests\\test_word_ignored_slots.py": "bdbd905cb86200b529b868d1aeb9f6453f9c02f88a9f4c41ebd6dd9503b996df",
+    "training\\tests\\test_word_loss.py": "5772b60c7a25727ae197c11ebfd1187c87288b5e06ab7ab5c754beb12f506737",
+    "training\\tests\\test_word_pipeline.py": "0c679e3de4cbf56faf0b8ed5ffce9be00aeb260abcb67f875bce5d5bd2f16368",
+    "training\\tests\\test_word_point_geometry.py": "7331b1ab6fdbdbfe31a0d8408761699482bb209432574dc689590000e438e034",
+    "training\\tests\\test_word_point_metadata.py": "6a476d9992a8aefba8ab5e2c163f5d70fdc70681576b4d8f421db1c8c7083809",
+    "training\\tests\\test_word_sampling.py": "6d360e2649103acde59eb4a0b0d48eafd12473492be92cfb0691dd8988c24a9a",
+    "training\\tests\\test_word_selection.py": "8091ab7e3efe25c716c3e42c7342411891020a9a565d39edb59491934d8db12e",
+    "training\\tests\\test_word_sources.py": "3d08fca0fb47e67b2ccaa7070afc14688927849c61e09eaf582ab090a56843d8",
+    "training\\tests\\test_word_training_config.py": "86c53cad504c4c534bf32bab4ae651f79c66721a870b6fd6eea952b947c2a8d0",
+    "training\\tests\\test_word_visible_partial.py": "6e3e75e0f09b207b55c84bde4837c21084dab1f5f9398af6898b9923918e67f5"
+  },
+  "source_sha256": {
+    "word_data.py": "abc7a31a94db497b9a48ce44bd68d96556e67014623c5645c129153844b48cb7",
+    "word_model.py": "c446732a2905a612cd6f1dd64d2d3d01303b1c71933c34552d26f3b5052fd551",
+    "word_decode.py": "bd301c5afeb4ba2e6866371665324d2de7f0a6ee252ef76ce02a5553193d63c5",
+    "word_train.py": "4d091c0a887cb25fffc1bc6e7bb7e7ab547880c5fda4b8a45ef3c09af87c3e15",
+    "word_sampling.py": "c234523277dba683e68a2863e14736bc68432da3b6ca65bb5d8a64bc7d9dc0fe",
+    "word_tail.py": "bdd4b5d12d56e25c1100a282483e7a31176b5a65beb353a0623ceea40a49dc0e",
+    "word_sources.py": "affb3488d8c25e3d0131eb4340cae29fcece563ac75373e071f97fef68f09acd",
+    "word_dsbi.py": "feecf16dba6d376415e15707c02c8f05fcf6650055da09ad9f4712099e6325ff",
+    "word_point_geometry.py": "2b932b320d191277b86ae13daecb82b5abbf0a46e9464d7360ee1e941aca760b",
+    "word_point_metadata.py": "de1cad0157e744f2f646010eac5355b88d1d11f52662d4b9353166661f59049f"
+  },
+  "scope": "CPU decoder, target, sampling/source/point metadata and augmentation regressions; no claim of model or physical-camera accuracy."
+}

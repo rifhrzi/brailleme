@@ -51,9 +51,9 @@ describe('Beranda readiness pemindai', () => {
     expect(
       screen.getByRole('button', { name: 'Lihat status pemindai' }),
     ).toBeOnTheScreen();
-    expect(screen.queryByText('Siap menyusun kata')).toBeNull();
+    expect(screen.queryByText('Siap memindai kata')).toBeNull();
     expect(
-      screen.queryByRole('button', { name: 'Mulai susun kata' }),
+      screen.queryByRole('button', { name: 'Buka pemindai kata' }),
     ).toBeNull();
     expect(screen.queryByText(/classifier|verifikasi|runtime/i)).toBeNull();
   });
@@ -63,9 +63,9 @@ describe('Beranda readiness pemindai', () => {
 
     await render(<HomeScreen />);
 
-    expect(await screen.findByText('Siap menyusun kata')).toBeOnTheScreen();
+    expect(await screen.findByText('Siap memindai kata')).toBeOnTheScreen();
     expect(
-      screen.getByRole('button', { name: 'Mulai susun kata' }),
+      screen.getByRole('button', { name: 'Buka pemindai kata' }),
     ).toBeOnTheScreen();
     expect(
       screen.queryByRole('button', { name: 'Lihat status pemindai' }),

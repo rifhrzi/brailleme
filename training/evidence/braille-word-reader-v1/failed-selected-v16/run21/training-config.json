@@ -1,0 +1,358 @@
+{
+  "backend": "torch",
+  "keras_version": "3.15.1",
+  "device": "NVIDIA GeForce RTX 5060 Laptop GPU",
+  "architecture": "MobileNetV2 alpha0.5 ImageNet, FPN stride32/16/8/4, joint sigmoid center/box/dots",
+  "input_shape": [
+    1,
+    192,
+    480,
+    3
+  ],
+  "normalization": "RGB float32 /255; internal per-image per-channel mean and population std (ddof=0, std floor .001), mean standardized channels, .5+.05*gray clipped [0,1], repeat RGB, then Rescaling(2,-1)",
+  "output_shape": [
+    1,
+    48,
+    120,
+    11
+  ],
+  "output_channels": [
+    "objectness",
+    "dx",
+    "dy",
+    "width",
+    "height",
+    "dot1",
+    "dot2",
+    "dot3",
+    "dot4",
+    "dot5",
+    "dot6"
+  ],
+  "epochs": 10,
+  "batch_size": 24,
+  "learning_rate": 2e-05,
+  "seed": 20260905,
+  "train_patches": 24882,
+  "validation_patches": 559,
+  "resume": ".braille-training-work\\word-scan-v1-20260905\\geometry-head-parent-v1\\geometry-parent.keras",
+  "physical_camera_validated": false,
+  "started_at_utc": "2026-09-05T17:06:41.092667+00:00",
+  "source_sha256": {
+    "word_data.py": "abc7a31a94db497b9a48ce44bd68d96556e67014623c5645c129153844b48cb7",
+    "word_model.py": "c446732a2905a612cd6f1dd64d2d3d01303b1c71933c34552d26f3b5052fd551",
+    "word_decode.py": "bd301c5afeb4ba2e6866371665324d2de7f0a6ee252ef76ce02a5553193d63c5",
+    "word_train.py": "c8fc0c5ff209a24b6021de46c403e2ad92abb2b13d421ee3cb8da5bf8b77739e",
+    "word_sampling.py": "c234523277dba683e68a2863e14736bc68432da3b6ca65bb5d8a64bc7d9dc0fe",
+    "word_tail.py": "bdd4b5d12d56e25c1100a282483e7a31176b5a65beb353a0623ceea40a49dc0e",
+    "word_sources.py": "affb3488d8c25e3d0131eb4340cae29fcece563ac75373e071f97fef68f09acd",
+    "word_dsbi.py": "feecf16dba6d376415e15707c02c8f05fcf6650055da09ad9f4712099e6325ff",
+    "word_point_geometry.py": "2b932b320d191277b86ae13daecb82b5abbf0a46e9464d7360ee1e941aca760b",
+    "word_point_metadata.py": "de1cad0157e744f2f646010eac5355b88d1d11f52662d4b9353166661f59049f",
+    "word_geometry_head.py": "f46c8f90e7f4fc9404eed2dc27fbde6e5c823d25d4f88e4127c7e56ed6e8764e",
+    "word_geometry_init.py": "072379a1ef409d901c2478135174561c14781560cdd56a0b91b0229b8032e15e",
+    "word_geometry_parity.py": "700d9175dc627fb7bf12c0ac20f640191cf5a045e29067c310f5dad5f3bd6f0b"
+  },
+  "data_sha256": {
+    "source-split.json": "870e1be00c8e4fa4c34e755f26b1ff6becaa3e1fdb70288b0499c2aeba8867dc",
+    "train.json": "f728b900c791433f8fd4aea08997af96f3320c0cfe5628619843a2a5b798cddc",
+    "validation.json": "d796841e8fdd21443d3f9f28e5c6339bda0199fa68ba1e864c4f6c434958443a",
+    "validation-words.json": "2ee26bbffd0457830eebe81dd48beb0b4bcb3a6dafe7957544f2ca3a0984c346",
+    "../complete-source-training-v3/combined-training-manifest.json": "b8e959ccb9eb3cfa60fdf61cb716e3b606430d500f4770d0c2a1ef5d5082772c",
+    "../dsbi-training-contexts-v2/source-index.json": "8d62cf1850308fb864449bbcabc4399ef4e9a9aab62216b35c8064fa634450a6",
+    "../combined-training-v5/combined-training-manifest.json": "130c80f135af5677d6b78a5e401126f54b15204481aab6de00a88c443956c4fa",
+    "../dsbi-point-metadata-v1/points.json": "ea9592a727f7f3abcc6b017f8f22e143e90ae1541f623c43adf30104021937e8"
+  },
+  "imagenet_weights_sha256": "279052de2cfa801003aa6cc25cc4d007d35dd0b76f06935268c79788b7642d05",
+  "torch_version": "2.7.1+cu128",
+  "cuda_version": "12.8",
+  "tf32_training_enabled": true,
+  "camera_augmentation": false,
+  "polarity_augmentation": false,
+  "half_turn_augmentation": false,
+  "illumination_augmentation": true,
+  "horizontal_mirror_augmentation": false,
+  "partial_geometry_supervision": {
+    "enabled": false,
+    "complete_cells": "Unchanged objectness, full box and six known bits.",
+    "representable_partial_cells": "Only actual canvas-crossing full source boxes with center inside and width/height below canvas size: objectness+full geometry, all six dot labels ignored (-1), no clipped-box substitution.",
+    "other_partial_cells": "Ignore objectness region; no geometry/dot target. A previously cropped cell moved fully inside cannot regain a target."
+  },
+  "dsbi_visible_partial_supervision": {
+    "enabled": true,
+    "metadata": {
+      "path": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\dsbi-point-metadata-v1\\points.json",
+      "sha256": "ea9592a727f7f3abcc6b017f8f22e143e90ae1541f623c43adf30104021937e8",
+      "records": 2338,
+      "known_cell_occurrences": 27055,
+      "source_verification": "Exact equality with freshly parsed hash-bound DSBI TRAIN annotations; no inferred dot positions."
+    },
+    "minimum_visible_size_pixels": [
+      4,
+      12
+    ],
+    "occupied_visibility": "At least one explicitly occupied source point survives the safe pixel-center hull after crop, resize and every geometric raster; visibility is irreversible.",
+    "targets": "Only DSBI known source boxes still crossing the canvas: objectness and clamped visible geometry, six dot targets -1. Full-span width/height excluded.",
+    "unchanged": "Complete cells, Angelina partials and separate unknown-slot ignore regions."
+  },
+  "dsbi_point_metadata": "../dsbi-point-metadata-v1/points.json",
+  "geometry_conditioned_residual": {
+    "enabled": true,
+    "initialization_report": ".braille-training-work\\word-scan-v1-20260905\\geometry-head-parent-v1\\geometry-initialization.json",
+    "initialization_report_sha256": "791bac9f9e92cab96925a9c802de9c6b141e07c7c2e00b4fbce9904187293359",
+    "conversion_report": ".braille-training-work\\word-scan-v1-20260905\\geometry-head-parent-v1\\geometry-conversion-parity.json",
+    "conversion_report_sha256": "ff6d7c4774e4a2e02572585d44bd0b43a5707499a9ad20c3b402bb144a4ba985",
+    "zero_checkpoint_sha256": "d6d43af7f662584d1f84c1ac7411d1572f898224746973405ed080c3ea1171d5",
+    "base_parent_checkpoint_sha256": "cce2432c0ddb8952c885dd58697589c285209588dafa81aacdd891b1660068b7",
+    "slot_prior_audit_sha256": "216656cff63c75274de69d19a5363c829d91a9d0e913080f20d9bb275c03c459",
+    "sampling": {
+      "name": "geometry_slot_samples",
+      "trainable": true,
+      "dtype": {
+        "module": "keras",
+        "class_name": "DTypePolicy",
+        "config": {
+          "name": "float32"
+        },
+        "registered_name": null
+      },
+      "slot_fractions": [
+        [
+          0.2023809523809515,
+          0.12412587412587281
+        ],
+        [
+          0.2023809523809515,
+          0.5086505190311416
+        ],
+        [
+          0.2023809523809515,
+          0.8942307692307694
+        ],
+        [
+          0.8273809523809524,
+          0.12412587412587281
+        ],
+        [
+          0.8273809523809524,
+          0.5086505190311416
+        ],
+        [
+          0.8273809523809524,
+          0.8942307692307694
+        ]
+      ],
+      "feature_origin": 3.0,
+      "stride": 4
+    },
+    "residual_channels": 11,
+    "projection_channels": 8,
+    "hidden_units": 32,
+    "added_parameters": 2451
+  },
+  "sampling": {
+    "strategy": "equal_positive_source_family_patches",
+    "epoch_records": 24882,
+    "positive_records_per_epoch": 23600,
+    "negative_records_per_epoch": 1282,
+    "negative_fraction_unchanged": 0.05152318945422394,
+    "complete_cycle_epochs": 8,
+    "families": {
+      "books/chudo_derevo_redmi": {
+        "unique_records": 1013,
+        "records_per_epoch": 1967,
+        "epochs_to_visit_all": 1
+      },
+      "books/mdd-redmi1": {
+        "unique_records": 903,
+        "records_per_epoch": 1967,
+        "epochs_to_visit_all": 1
+      },
+      "books/mdd_cannon1": {
+        "unique_records": 899,
+        "records_per_epoch": 1967,
+        "epochs_to_visit_all": 1
+      },
+      "books/skazki": {
+        "unique_records": 14966,
+        "records_per_epoch": 1967,
+        "epochs_to_visit_all": 8
+      },
+      "books/telefon": {
+        "unique_records": 1642,
+        "records_per_epoch": 1967,
+        "epochs_to_visit_all": 1
+      },
+      "books/uploaded": {
+        "unique_records": 159,
+        "records_per_epoch": 1967,
+        "epochs_to_visit_all": 1
+      },
+      "dsbi/Massage": {
+        "unique_records": 838,
+        "records_per_epoch": 1967,
+        "epochs_to_visit_all": 1
+      },
+      "dsbi/Math": {
+        "unique_records": 824,
+        "records_per_epoch": 1967,
+        "epochs_to_visit_all": 1
+      },
+      "dsbi/Ordinary Printed Document": {
+        "unique_records": 289,
+        "records_per_epoch": 1966,
+        "epochs_to_visit_all": 1
+      },
+      "dsbi/Shaver Yang Fengting": {
+        "unique_records": 340,
+        "records_per_epoch": 1966,
+        "epochs_to_visit_all": 1
+      },
+      "handwritten/kov": {
+        "unique_records": 846,
+        "records_per_epoch": 1966,
+        "epochs_to_visit_all": 1
+      },
+      "handwritten/uploaded": {
+        "unique_records": 881,
+        "records_per_epoch": 1966,
+        "epochs_to_visit_all": 1
+      }
+    },
+    "ordering": "Fixed seeded permutation within each positive source family, continuous cyclic epoch cursors, then seeded whole-epoch shuffle. Every existing negative record index appears exactly once per epoch, including authorized negative repeats.",
+    "scope": "Balances patch counts, not guaranteed equal numbers of cells or independent physical examples. All source records remain in the manifest.",
+    "keras_batch_shuffle": false
+  },
+  "visibility_supervision": "A cell must be complete in the original cached image and after every affine/rotation rasterization. Eligibility cannot become true again after pixels were cut.",
+  "train_manifest": "../combined-training-v5/combined-training-manifest.json",
+  "base_train_manifest": "../complete-source-training-v3/combined-training-manifest.json",
+  "supplemental_source_indexes": [
+    "../dsbi-training-contexts-v2/source-index.json"
+  ],
+  "supplemental_source_audit": {
+    "status": "passed",
+    "preserved_base_manifest": "../complete-source-training-v3/combined-training-manifest.json",
+    "preserved_base_manifest_sha256": "b8e959ccb9eb3cfa60fdf61cb716e3b606430d500f4770d0c2a1ef5d5082772c",
+    "original_source_split_sha256": "870e1be00c8e4fa4c34e755f26b1ff6becaa3e1fdb70288b0499c2aeba8867dc",
+    "supplemental_sources": [
+      "dsbi/Massage/M+1+recto.jpg",
+      "dsbi/Massage/M+10+recto.jpg",
+      "dsbi/Massage/M+2+recto.jpg",
+      "dsbi/Massage/M+3+recto.jpg",
+      "dsbi/Massage/M+4+recto.jpg",
+      "dsbi/Massage/M+5+recto.jpg",
+      "dsbi/Massage/M+6+recto.jpg",
+      "dsbi/Massage/M+7+recto.jpg",
+      "dsbi/Massage/M+8+recto.jpg",
+      "dsbi/Massage/M+9+recto.jpg",
+      "dsbi/Math/math+1+recto.jpg",
+      "dsbi/Math/math+10+recto.jpg",
+      "dsbi/Math/math+2+recto.jpg",
+      "dsbi/Math/math+3+recto.jpg",
+      "dsbi/Math/math+4+recto.jpg",
+      "dsbi/Math/math+5+recto.jpg",
+      "dsbi/Math/math+6+recto.jpg",
+      "dsbi/Math/math+7+recto.jpg",
+      "dsbi/Math/math+8+recto.jpg",
+      "dsbi/Math/math+9+recto.jpg",
+      "dsbi/Ordinary Printed Document/OPD+1+recto.jpg",
+      "dsbi/Ordinary Printed Document/OPD+2+recto.jpg",
+      "dsbi/Ordinary Printed Document/OPD+3+recto.jpg",
+      "dsbi/Shaver Yang Fengting/SYF+3+recto.jpg",
+      "dsbi/Shaver Yang Fengting/SYF+4+recto.jpg",
+      "dsbi/Shaver Yang Fengting/SYF+5+recto.jpg"
+    ],
+    "indexes": [
+      {
+        "path": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\dsbi-training-contexts-v2\\source-index.json",
+        "sha256": "8d62cf1850308fb864449bbcabc4399ef4e9a9aab62216b35c8064fa634450a6",
+        "dataset": "DSBI",
+        "revision": "6937eb8973efe5ff337e5c018485cb626303f5c2",
+        "generated_manifest_sha256": "21dc4f93821b2282b8c0f0967430f22b44fc868d26b4a3265e6fd57995892a44",
+        "sources": 26,
+        "families": [
+          "dsbi/Massage",
+          "dsbi/Math",
+          "dsbi/Ordinary Printed Document",
+          "dsbi/Shaver Yang Fengting"
+        ],
+        "records": 2338
+      }
+    ],
+    "combined_records": 23691,
+    "scope": "Exact append-only records, split membership and original/cached pixel hashes; no label or validation changes."
+  },
+  "unique_train_patches": 23691,
+  "negative_repeat": 27,
+  "supplemental_negative_repeat": 2,
+  "negative_expansion": {
+    "base_unique_negative_records": 44,
+    "base_repeat": 27,
+    "supplemental_unique_negative_records": 47,
+    "supplemental_repeat": 2,
+    "negative_draws": 1282,
+    "total_epoch_records": 24882
+  },
+  "unique_negative_patches": 91,
+  "augmentation_protocol": {
+    "isotropic_zoom": [
+      0.8,
+      1.7
+    ],
+    "polarity_inversion_probability": 0.0,
+    "contrast": [
+      0.3,
+      1.6
+    ],
+    "target_channel_mean": [
+      0.35,
+      0.8
+    ],
+    "gaussian_blur_max_pixels": 2.0,
+    "generated_low_contrast_fallback_std": 0.01,
+    "photometric_clamp": "once after floating-point contrast/exposure",
+    "source_and_annotation_filtering": false,
+    "half_turn_probability": 0.0,
+    "front_side_annotation_identity": "Preserve source orientation, cell masks, and front-side annotation membership.",
+    "random_draw_protocol": "Consume the same initial half-turn draw as the rotation profile, but do not rotate; subsequent augmentation RNG draws stay paired."
+  },
+  "retain_epochs": true,
+  "geometry_loss": "relative_size_huber",
+  "image_normalization": "channel_gray_std05",
+  "imageNormalization": {
+    "kind": "per_channel_standardize_grayscale",
+    "location": "inside_model_before_backbone_rescaling",
+    "variance": "population",
+    "stdFloor": 0.001,
+    "targetMean": 0.5,
+    "targetStd": 0.05,
+    "clip": [
+      0,
+      1
+    ],
+    "grayscale": "mean_of_standardized_channels",
+    "outputChannels": 3
+  },
+  "feature_pyramid_strides": [
+    32,
+    16,
+    8,
+    4
+  ],
+  "parameters": 831758,
+  "batch_normalization": {
+    "layers": 52,
+    "trainable_affine_layers": 0,
+    "momentum_values": [
+      0.999
+    ],
+    "epsilon_values": [
+      0.001
+    ],
+    "backbone_call_training_keywords": [
+      false
+    ],
+    "evaluation_mode": "Keras predict/test and the export serving function call the outer model with training=False; stored moving moments are used."
+  },
+  "resume_sha256": "d6d43af7f662584d1f84c1ac7411d1572f898224746973405ed080c3ea1171d5"
+}

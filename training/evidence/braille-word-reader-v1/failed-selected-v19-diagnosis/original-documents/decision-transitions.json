@@ -1,0 +1,205 @@
+{
+  "scope": "Approximate post-NMS diagnostic on cached held405; not AP, not new inference, not external607, not physical proof.",
+  "comparison_sha256": "0d2b9dd0126f0a25d3deadfc3fbc0ae79de059f57fb44419267f2658f7b3fc48",
+  "source_sha256": "2a6424b8f57a9c5548fdd8f906dcebdd36e56240b05ea4773c3dbf6f4c09c2ac",
+  "thresholds": {
+    "proposalScore": 0.25,
+    "acceptScore": 0.25,
+    "dotConfidence": 0.7,
+    "nmsIou": 0.25,
+    "minCellWidth": 0.008,
+    "minCellHeight": 0.06,
+    "edgeMargin": 0.008,
+    "maxRowDeviation": 0.55,
+    "maxGapRatio": 1.2,
+    "maxOverlapRatio": 0.5
+  },
+  "changed_decisions": [
+    {
+      "index": 23,
+      "expected": "ZWUKOW",
+      "baseline": {
+        "text": "ZWUKOW",
+        "reason": ""
+      },
+      "candidate": {
+        "text": "",
+        "reason": "low_confidence"
+      }
+    },
+    {
+      "index": 46,
+      "expected": "NA",
+      "baseline": {
+        "text": "",
+        "reason": "low_confidence"
+      },
+      "candidate": {
+        "text": "NA",
+        "reason": ""
+      }
+    }
+  ],
+  "changed_matched_masks": [
+    {
+      "index": 126,
+      "word": "DOROGOGO",
+      "gt_index": 0,
+      "gt_letter": "D",
+      "baseline": {
+        "mask": 25,
+        "letter": "D",
+        "dot_confidence": 0.5648098886013031,
+        "confidence_pass": false
+      },
+      "candidate": {
+        "mask": 29,
+        "letter": "N",
+        "dot_confidence": 0.5270742774009705,
+        "confidence_pass": false
+      }
+    },
+    {
+      "index": 145,
+      "word": "TRAKTOR",
+      "gt_index": 6,
+      "gt_letter": "R",
+      "baseline": {
+        "mask": 23,
+        "letter": "R",
+        "dot_confidence": 0.5028605461120605,
+        "confidence_pass": false
+      },
+      "candidate": {
+        "mask": 7,
+        "letter": "L",
+        "dot_confidence": 0.6971310377120972,
+        "confidence_pass": false
+      }
+    },
+    {
+      "index": 388,
+      "word": "DOROGOGO",
+      "gt_index": 2,
+      "gt_letter": "R",
+      "baseline": {
+        "mask": 21,
+        "letter": "O",
+        "dot_confidence": 0.8603502810001373,
+        "confidence_pass": true
+      },
+      "candidate": {
+        "mask": 23,
+        "letter": "R",
+        "dot_confidence": 0.8818172216415405,
+        "confidence_pass": true
+      }
+    }
+  ],
+  "changed_matched_dot_confidence_pass": [
+    {
+      "index": 23,
+      "word": "ZWUKOW",
+      "gt_index": 1,
+      "gt_letter": "W",
+      "baseline": {
+        "mask": 58,
+        "letter": "W",
+        "dot_confidence": 0.760992705821991,
+        "confidence_pass": true
+      },
+      "candidate": {
+        "mask": 58,
+        "letter": "W",
+        "dot_confidence": 0.6435749530792236,
+        "confidence_pass": false
+      }
+    },
+    {
+      "index": 46,
+      "word": "NA",
+      "gt_index": 0,
+      "gt_letter": "N",
+      "baseline": {
+        "mask": 29,
+        "letter": "N",
+        "dot_confidence": 0.6758366823196411,
+        "confidence_pass": false
+      },
+      "candidate": {
+        "mask": 29,
+        "letter": "N",
+        "dot_confidence": 0.7043301463127136,
+        "confidence_pass": true
+      }
+    },
+    {
+      "index": 126,
+      "word": "DOROGOGO",
+      "gt_index": 4,
+      "gt_letter": "G",
+      "baseline": {
+        "mask": 19,
+        "letter": "H",
+        "dot_confidence": 0.6359414458274841,
+        "confidence_pass": false
+      },
+      "candidate": {
+        "mask": 19,
+        "letter": "H",
+        "dot_confidence": 0.7281440794467926,
+        "confidence_pass": true
+      }
+    }
+  ],
+  "geometry": {
+    "iou": {
+      "count": 1518,
+      "mean": 0.0026178965381990597,
+      "median": 0.0016037669900734186,
+      "p90": 0.02309966572629571
+    },
+    "center_error_px": {
+      "count": 1518,
+      "mean": -0.047338901381233124,
+      "median": -0.029191799011117237,
+      "p90": 0.09570019867372419
+    },
+    "center_dx_px": {
+      "count": 1518,
+      "mean": 0.00648100566172939,
+      "median": 0.01861727237701416,
+      "p90": 0.1299920439720154
+    },
+    "center_dy_px": {
+      "count": 1518,
+      "mean": 0.09567334136786983,
+      "median": 0.050638437271118164,
+      "p90": 0.1742366313934326
+    },
+    "width_ratio": {
+      "count": 1518,
+      "mean": -0.002401407848165385,
+      "median": -0.002554614704264213,
+      "p90": 0.019296934347886728
+    },
+    "height_ratio": {
+      "count": 1518,
+      "mean": -0.0030372886214657924,
+      "median": -0.002572237380913278,
+      "p90": 0.014253226561963017
+    },
+    "score": {
+      "count": 1518,
+      "mean": 0.010992009492102661,
+      "median": 0.011548489332199097,
+      "p90": 0.04151582121849058
+    },
+    "dot_confidence": {
+      "count": 1518,
+      "mean": 0.0010507399480192744,
+      "median": 0.0001281390432268381,
+      "p90": 0.002112396364100276
+    }
+  }
+}

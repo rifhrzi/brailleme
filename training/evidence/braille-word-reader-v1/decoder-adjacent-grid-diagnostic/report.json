@@ -1,0 +1,271 @@
+{
+  "status": "one_bounded_contract_mismatch_reproduced",
+  "created_at_utc": "2026-09-06T04:41:20.296319+00:00",
+  "scope": "Source review and small analytic NumPy target/decoder/loss-algebra probes. No ML backend, gradients, training, image inputs, dataset/output corpus, threshold tuning or active edits.",
+  "source_sha256": {
+    "training/scripts/word_data.py": "d692b4b28620af7e4b40ebdedccda68769feb8d3f51bd1508e807487fd32b7d7",
+    "training/scripts/word_model.py": "c446732a2905a612cd6f1dd64d2d3d01303b1c71933c34552d26f3b5052fd551",
+    "training/scripts/word_decode.py": "bd301c5afeb4ba2e6866371665324d2de7f0a6ee252ef76ce02a5553193d63c5",
+    "training/scripts/benchmark_angelina.py": "6c7d63c8b5c461fec73e415b46df74d15c0bca455cc9f411c5fb6edd5d353353",
+    "src/ml/word-decoder.ts": "f51c62ba6c3abbd01619a1420760027366f3af91084ff2c302662cde72bcd05d"
+  },
+  "script_sha256": "30b858055c0e8683578bba4d59dad6503d9ee26f5be3b995fbeb23ba80c5d13f",
+  "thresholds": {
+    "proposalScore": 0.25,
+    "acceptScore": 0.25,
+    "dotConfidence": 0.7,
+    "nmsIou": 0.25,
+    "minCellWidth": 0.008,
+    "minCellHeight": 0.06,
+    "edgeMargin": 0.008,
+    "maxRowDeviation": 0.55,
+    "maxGapRatio": 1.2,
+    "maxOverlapRatio": 0.5
+  },
+  "finding": {
+    "title": "Adjacent valid center sites are removed before positional box NMS, allowing a shortened word",
+    "cause": "make_target/loss supervise both adjacent sites as positive centers; 3x3 local-maximum selection in Python and TS permits only the stronger site or first tied site, irrespective of disjoint predicted boxes.",
+    "cases": [
+      {
+        "case": "adjacent_grid_centers",
+        "boxes_pixels": [
+          [
+            98,
+            90,
+            102,
+            102
+          ],
+          [
+            102.5,
+            90,
+            106.5,
+            102
+          ]
+        ],
+        "target_centers_yx": [
+          [
+            24,
+            25
+          ],
+          [
+            24,
+            26
+          ]
+        ],
+        "target_center_values": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.008333333767950535,
+            0.0625,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            1.0,
+            0.125,
+            0.0,
+            0.008333333767950535,
+            0.0625,
+            1.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "actual_decoder": {
+          "text": "A",
+          "reason": "",
+          "cells": [
+            {
+              "box": [
+                0.20416666644935808,
+                0.46875,
+                0.2125000002173086,
+                0.53125
+              ],
+              "score": 1.0,
+              "dots": [
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "mask": 1,
+              "dot_confidence": 1.0
+            }
+          ]
+        },
+        "expected_word": "AB",
+        "reproduces_shortened_acceptance": true
+      },
+      {
+        "case": "two_grid_steps",
+        "boxes_pixels": [
+          [
+            98,
+            90,
+            102,
+            102
+          ],
+          [
+            106,
+            90,
+            110,
+            102
+          ]
+        ],
+        "target_centers_yx": [
+          [
+            24,
+            25
+          ],
+          [
+            24,
+            27
+          ]
+        ],
+        "target_center_values": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.008333333767950535,
+            0.0625,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.008333333767950535,
+            0.0625,
+            1.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "actual_decoder": {
+          "text": "AB",
+          "reason": "",
+          "cells": [
+            {
+              "box": [
+                0.20416666644935808,
+                0.46875,
+                0.2125000002173086,
+                0.53125
+              ],
+              "score": 1.0,
+              "dots": [
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "mask": 1,
+              "dot_confidence": 1.0
+            },
+            {
+              "box": [
+                0.22083333311602474,
+                0.46875,
+                0.22916666688397527,
+                0.53125
+              ],
+              "score": 1.0,
+              "dots": [
+                1.0,
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "mask": 3,
+              "dot_confidence": 1.0
+            }
+          ]
+        },
+        "expected_word": "AB",
+        "reproduces_shortened_acceptance": false
+      }
+    ],
+    "unequal_scores_result": {
+      "text": "A",
+      "reason": "",
+      "cells": [
+        {
+          "box": [
+            0.20416666644935808,
+            0.46875,
+            0.2125000002173086,
+            0.53125
+          ],
+          "score": 0.9990000128746033,
+          "dots": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "mask": 1,
+          "dot_confidence": 1.0
+        }
+      ]
+    },
+    "location": [
+      "training/scripts/word_data.py:214-224",
+      "training/scripts/word_model.py:54-59",
+      "training/scripts/word_decode.py:34-39",
+      "src/ml/word-decoder.ts:98-113"
+    ],
+    "scale_limit": "Reproducer width4px/height12px passes current minimum3.84px/11.52px. Center separation4.5px maps to adjacentstride4 sites. A center pitch at least8px avoids immediate-grid adjacency on the same row; this is not a measured corpus distribution.",
+    "classification": "Demonstrable small-scale target/decoder representability mismatch. Not evidence of the cause or frequency of errors in current real fixtures."
+  },
+  "consistent_contracts": {
+    "single_cell_AZ_roundtrip_cases": 78,
+    "max_reconstructed_box_error_pixels": 4.76837158203125e-07,
+    "offsets": "Target fractional center=(box_center/4)-floor(box_center/4); decoder (grid+offset)/(WIDTH/4,HEIGHT/4) exactly reverses it apart from float32 storage.",
+    "box_sizes": "Target width/480,height/192; same normalized sizes used in decoder. Relative-size log loss compares the same quantities, and offset loss uses fractional grid units.",
+    "gaussian": "Only exp(0)=1 centers pass>=.999; nearest noncenterGaussianexp(-.5)<.999. Shoulders do not receive center geometry/bit supervision.",
+    "bit_order": "Target and decoder both use bit0dot1..bit5dot6; all26 ordinary A-Z roundtrips pass.",
+    "bit_loss_algebra": {
+      "positive_bit_delta": -0.2939453125,
+      "negative_bit_delta": 0.8046875,
+      "expected_positive_delta": -0.2938933324510595,
+      "expected_negative_delta": 0.8047189562170501,
+      "noncenter_bits_do_not_change_loss": true,
+      "autograd_checked": false
+    },
+    "edge_rejection": "Training includes fully visible cells at frame edges; decoder edgeMargin conservatively rejects them by design, not an x/y scaling mismatch."
+  },
+  "recommended_followup": "Assess tiny-cell adjacency explicitly before changing decoder behavior; any fix should retain separate valid positions or reject ambiguity. This audit authorizes no decoder/source/threshold changes.",
+  "limitations": [
+    "No actual TRAIN/validation/external prevalence measured.",
+    "No predicted-model tensors or physical pixels read.",
+    "No claim that a decoder intervention improves held/public accuracy.",
+    "Existing partial-point/augmentation-survival audits were not repeated."
+  ]
+}

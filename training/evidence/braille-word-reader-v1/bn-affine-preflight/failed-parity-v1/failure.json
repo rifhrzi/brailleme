@@ -1,0 +1,9 @@
+{
+  "status": "failed_before_artifact",
+  "phase": "tensorflow",
+  "cause": "Compared graph-compiled model.predict to eager model(training=True), which includes an execution-mode arithmetic difference. Same-mode train/eval and exact moment invariants must be verified separately.",
+  "max_abs_difference": 5.00679e-06,
+  "absolute_and_relative_tolerance": 1e-06,
+  "conversion_artifacts_written": false,
+  "source_sha256": "6c502d7dcac0692df0f8c2858bf2d8a76800ba130613e14289e8f77ed66debab"
+}

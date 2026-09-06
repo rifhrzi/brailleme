@@ -1,26 +1,28 @@
 # Draft Listing Google Play - Bahasa Indonesia
 
+Draft untuk alur foto kata versi 0.2.0. Belum boleh dipublikasikan sebelum seluruh production gate lulus pada AAB final.
+
 ## Nama aplikasi
 
 BrailleMe
 
 ## Deskripsi singkat
 
-Susun satu kata Braille secara offline, satu sel untuk setiap huruf.
+Pindai satu kata Braille dalam satu foto dan bacakan hasilnya secara offline.
 
 ## Deskripsi lengkap
 
-BrailleMe membantu pengguna menyusun satu kata dari sel Braille A-Z melalui kamera Android. Tempatkan satu sel di area bidik, tunggu sampai huruf terdeteksi stabil, periksa hasilnya, lalu tambahkan huruf tersebut ke kata. Ulangi langkah ini untuk setiap huruf dan bacakan kata melalui suara lokal perangkat.
+BrailleMe membantu pengguna membaca satu kata Braille A-Z melalui kamera Android. Tempatkan seluruh kata dalam bingkai, sesuaikan lebar bingkai, lalu tekan Pindai kata. Aplikasi membaca sel dari kiri ke kanan, menampilkan foto beserta kotak huruf dan hasil kata, lalu menyediakan Bacakan atau Pindai ulang.
 
-Aplikasi dirancang untuk bekerja offline. Frame kamera, huruf hasil pemindaian, dan kata yang sedang disusun tidak disimpan atau dikirim ke server. Navigasi, status, kontrol suara, haptik, serta pesan pemulihan dirancang agar dapat digunakan bersama TalkBack.
+Aplikasi dirancang untuk bekerja offline. Foto hanya berada dalam memori selama diperlukan, lalu dilepas. Gambar dan hasil kata tidak disimpan permanen atau dikirim ke server. Navigasi, status, kontrol suara, haptik, serta pesan pemulihan dirancang agar dapat digunakan bersama TalkBack.
 
-BrailleMe memproses satu sel Braille pada satu waktu dan dapat menyusun satu kata hingga 12 huruf. Aplikasi tidak memindai seluruh kata, spasi, baris, halaman, atau dokumen dalam satu gambar. Setiap huruf dapat keliru dan harus diperiksa dengan sumber Braille tepercaya. Jangan gunakan hasil tanpa verifikasi untuk keputusan medis, hukum, finansial, ujian, keselamatan, atau keputusan penting lainnya.
+BrailleMe memproses satu kata Braille dasar A-Z dalam satu baris, dari 1 sampai 12 huruf. Kalimat, halaman, dokumen, singkatan Braille, angka, dan tanda baca belum didukung. Hasil dapat keliru dan harus diperiksa dengan sumber Braille tepercaya. Jangan gunakan hasil tanpa verifikasi untuk keputusan medis, hukum, finansial, ujian, keselamatan, atau keputusan penting lainnya.
 
 ## Catatan rilis pertama
 
-- Penyusunan satu kata hingga 12 huruf dari pemindaian sel Braille A-Z.
-- Koreksi melalui pindai ulang, hapus huruf terakhir, dan hapus kata.
-- Quality gate untuk cahaya, kontras, keyakinan, dan kestabilan hasil.
+- Pemindaian satu kata hingga 12 huruf dari satu foto, termasuk huruf berulang.
+- Hasil diganti secara utuh melalui Pindai ulang.
+- Pemeriksaan cahaya, kontras, keyakinan, batas kata, dan susunan satu baris.
 - Pembacaan kata dengan suara lokal dan umpan balik haptik.
 - Dukungan TalkBack, font besar, dan pemulihan nonvisual.
 - Kebijakan privasi tersedia di dalam aplikasi.

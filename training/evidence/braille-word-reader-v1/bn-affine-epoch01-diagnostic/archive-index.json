@@ -1,0 +1,26 @@
+{
+  "scope": "Read-only actual epoch1 model-array HDF5 inventory; no model loading, inference, training or checkpoint selection.",
+  "limitations": "Only epoch1 stored arrays are audited. No activation parity, accuracy, optimizer correctness, later epochs, held405, external607 or physical-camera result is established. Epoch1 is not sampling-eligible; training protocol retains eligibility after full-cycle epochs8-10.",
+  "files": [
+    {
+      "file": "audit_run24_epoch01_hdf5.py",
+      "sha256": "1c4bc981178cdc13745bcd333043bad349237ee80f78a33cb071db1f180a2305",
+      "bytes": 7569
+    },
+    {
+      "file": "report.json",
+      "sha256": "bcb24ab4a36e46970d9b7cfdc79efd4248f37eb8435913c38dc3ace321f09cb5",
+      "bytes": 219575
+    },
+    {
+      "file": "training-config.json",
+      "sha256": "acba040121d8349a5fea5693438ad47f47c61c08afea4a82638d99a4984629bc",
+      "bytes": 16692
+    },
+    {
+      "file": "validation-history-snapshot.json",
+      "sha256": "9712b0d03c52a9e4a1131159b7225a64839bf2a2efb841cf1324ae310988ca0a",
+      "bytes": 5809
+    }
+  ]
+}

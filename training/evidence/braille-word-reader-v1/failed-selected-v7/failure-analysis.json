@@ -1,0 +1,284 @@
+{
+  "scope": "Post-test failure diagnosis only; no external gradients, threshold calibration, relabeling or fixture removal.",
+  "matching": "Greedy nearest unused selected proposal center, distance <= .45 ground-truth cell height; approximate diagnostic, not detector AP.",
+  "counts": {
+    "ground_truth_cells": 2242,
+    "matched_ground_truth_cells": 1917,
+    "matched_correct_mask": 1784,
+    "unmatched_predictions": 66,
+    "unmatched_ground_truth_cells": 325,
+    "clipped_word_matched_cells": 584,
+    "clipped_word_correct_masks": 538,
+    "clipped_with_unmatched_prediction": 24
+  },
+  "quantiles": {
+    "external_gt_height": {
+      "p05": 48.338393314003085,
+      "p25": 67.6056338028169,
+      "median": 96.0,
+      "p75": 136.35215311004782,
+      "p95": 151.57894736842104
+    },
+    "matched_center_error_per_height": {
+      "p05": 0.025577574905909003,
+      "p25": 0.047389802601057525,
+      "median": 0.0660268193920826,
+      "p75": 0.08694026674557048,
+      "p95": 0.14421958768753895
+    },
+    "matched_signed_x_center_per_height": {
+      "p05": -0.05184519006226641,
+      "p25": -0.013520063672868425,
+      "median": 0.006361375456125151,
+      "p75": 0.023455109273806615,
+      "p95": 0.053344852326525985
+    },
+    "matched_signed_y_center_per_height": {
+      "p05": -0.115929488765355,
+      "p25": -0.07648413164230705,
+      "median": -0.057116747805566276,
+      "p75": -0.038099218928624515,
+      "p95": -0.009571464032473899
+    },
+    "matched_width_ratio": {
+      "p05": 1.1355931146700577,
+      "p25": 1.2901643400683127,
+      "median": 1.390941381454468,
+      "p75": 1.484035461147627,
+      "p95": 1.626443851845605
+    },
+    "matched_height_ratio": {
+      "p05": 0.8964261959398551,
+      "p25": 0.9981137911478678,
+      "median": 1.0589763936069274,
+      "p75": 1.1229218244552612,
+      "p95": 1.213896095484699
+    },
+    "matched_objectness": {
+      "p05": 0.39524711966514586,
+      "p25": 0.5248730778694153,
+      "median": 0.6363611221313477,
+      "p75": 0.7409403920173645,
+      "p95": 0.8477458238601684
+    },
+    "matched_dot_confidence": {
+      "p05": 0.7858826786279679,
+      "p25": 0.9858531951904297,
+      "median": 0.9974045753479004,
+      "p75": 0.9993342430680059,
+      "p95": 0.9998537655541441
+    },
+    "matched_true_bit_probability": {
+      "p05": 0.11631622314453142,
+      "p25": 0.9831632971763611,
+      "median": 0.9972423315048218,
+      "p75": 0.9993101600557566,
+      "p95": 0.9998522896203212
+    },
+    "external_luminance_std": {
+      "p05": 0.010091920103877782,
+      "p25": 0.016227605752646923,
+      "median": 0.023488154634833336,
+      "p75": 0.0371533390134573,
+      "p95": 0.06149426251649857
+    },
+    "train_gt_height": {
+      "p05": 36.837209302325576,
+      "p25": 46.54545454545455,
+      "median": 61.71428571428572,
+      "p75": 90.35294117647058,
+      "p95": 130.72340425531914
+    },
+    "train_luminance_std": {
+      "p05": 0.0256509680300951,
+      "p25": 0.03642259165644646,
+      "median": 0.04420585371553898,
+      "p75": 0.05303035955876112,
+      "p95": 0.07302167527377604
+    },
+    "validation_gt_height": {
+      "p05": 28.95238095238095,
+      "p25": 41.73913043478261,
+      "median": 57.60000000000001,
+      "p75": 100.056338028169,
+      "p95": 137.7391304347826
+    },
+    "validation_luminance_std": {
+      "p05": 0.02579622492194176,
+      "p25": 0.03155944589525461,
+      "median": 0.04001476801931858,
+      "p75": 0.04913508798927069,
+      "p95": 0.06501341462135315
+    }
+  },
+  "words_by_median_cell_height_pixels": {
+    "75": {
+      "words": 84,
+      "correct": 30
+    },
+    "125": {
+      "words": 228,
+      "correct": 87
+    },
+    "100": {
+      "words": 79,
+      "correct": 25
+    },
+    "150": {
+      "words": 125,
+      "correct": 45
+    },
+    "50": {
+      "words": 75,
+      "correct": 28
+    },
+    "25": {
+      "words": 16,
+      "correct": 7
+    }
+  },
+  "rejection_reasons": {
+    "low_confidence": 125,
+    "clipped": 125,
+    "gap": 27,
+    "no_grid": 55,
+    "unsupported_pattern": 7,
+    "overlapping_cells": 2,
+    "too_many_cells": 1
+  },
+  "matched_bit_errors": {
+    "1": 42,
+    "2": 34,
+    "3": 45,
+    "4": 67,
+    "5": 61,
+    "6": 26
+  },
+  "by_ground_truth_mask": {
+    "29": {
+      "total": 161,
+      "matched": 147,
+      "correct_mask": 135
+    },
+    "37": {
+      "total": 67,
+      "matched": 60,
+      "correct_mask": 60
+    },
+    "26": {
+      "total": 33,
+      "matched": 26,
+      "correct_mask": 22
+    },
+    "21": {
+      "total": 252,
+      "matched": 227,
+      "correct_mask": 220
+    },
+    "17": {
+      "total": 220,
+      "matched": 199,
+      "correct_mask": 190
+    },
+    "13": {
+      "total": 92,
+      "matched": 80,
+      "correct_mask": 75
+    },
+    "58": {
+      "total": 114,
+      "matched": 96,
+      "correct_mask": 80
+    },
+    "14": {
+      "total": 120,
+      "matched": 104,
+      "correct_mask": 96
+    },
+    "7": {
+      "total": 98,
+      "matched": 85,
+      "correct_mask": 82
+    },
+    "25": {
+      "total": 73,
+      "matched": 62,
+      "correct_mask": 55
+    },
+    "10": {
+      "total": 225,
+      "matched": 177,
+      "correct_mask": 167
+    },
+    "30": {
+      "total": 133,
+      "matched": 114,
+      "correct_mask": 110
+    },
+    "1": {
+      "total": 193,
+      "matched": 144,
+      "correct_mask": 138
+    },
+    "5": {
+      "total": 97,
+      "matched": 78,
+      "correct_mask": 76
+    },
+    "19": {
+      "total": 28,
+      "matched": 25,
+      "correct_mask": 20
+    },
+    "53": {
+      "total": 36,
+      "matched": 33,
+      "correct_mask": 27
+    },
+    "15": {
+      "total": 52,
+      "matched": 48,
+      "correct_mask": 42
+    },
+    "27": {
+      "total": 54,
+      "matched": 41,
+      "correct_mask": 33
+    },
+    "23": {
+      "total": 87,
+      "matched": 79,
+      "correct_mask": 75
+    },
+    "11": {
+      "total": 10,
+      "matched": 9,
+      "correct_mask": 8
+    },
+    "45": {
+      "total": 6,
+      "matched": 5,
+      "correct_mask": 5
+    },
+    "31": {
+      "total": 43,
+      "matched": 39,
+      "correct_mask": 32
+    },
+    "3": {
+      "total": 36,
+      "matched": 32,
+      "correct_mask": 31
+    },
+    "39": {
+      "total": 5,
+      "matched": 1,
+      "correct_mask": 1
+    },
+    "9": {
+      "total": 7,
+      "matched": 6,
+      "correct_mask": 4
+    }
+  }
+}

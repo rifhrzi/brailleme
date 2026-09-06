@@ -1,0 +1,38 @@
+{
+  "scope": "PRIVATE preparation only; never used by active run25. No new training, selection, release gate or command-line profile.",
+  "historical_range": [
+    0.55,
+    1.25
+  ],
+  "range_origin": "Unchanged historical run7 camera augmentation; no held/external threshold choice.",
+  "geometry": "Only when existing affine gate succeeds, multiply its scale_x by a per-record factor. Keep zoom, scale_y, translations, rotation and lighting RNG unchanged. Existing affine_patch handles pixels+all boxes once, and OccupiedPointState.affine receives the same scales.",
+  "stream": "SeedSequence([training seed,dataset epoch,combined manifest record index,0x48415350]); one independent uniform per record. Independent of batch grouping/order and all legacy RNG; repeated same record in an epoch repeats factor.",
+  "off": "DefaultFalse Patches flag sends factor1.0; no factor stream call and no scale_x multiply. Existing pixels/boxes/targets/order/RNG must remain exact.",
+  "intended_profile": "Current illumination=True with camera/polarity/half-turn/mirror/vertical=False. Combining with camera-only anisotropy would multiply two factors and is outside this proposal.",
+  "point_rules": "Known DSBI occupied centers only; unchanged sample-center hull and irreversible survival after each raster. All six partial labels remain unknown; unknown slots stay ignore-only; no bit or label remapping.",
+  "original_training_sources": {
+    "word_data.py": "659ab6b508a69b34bfb8dc899c5fa6e2214bd64e08281f40f9c39aa91d74996c",
+    "word_model.py": "c446732a2905a612cd6f1dd64d2d3d01303b1c71933c34552d26f3b5052fd551",
+    "word_decode.py": "bd301c5afeb4ba2e6866371665324d2de7f0a6ee252ef76ce02a5553193d63c5",
+    "word_train.py": "f472b80d0466e17cf1efcb59661b3fea300f5618d4288ec1847fa8d3b628c97b",
+    "word_sampling.py": "c234523277dba683e68a2863e14736bc68432da3b6ca65bb5d8a64bc7d9dc0fe",
+    "word_tail.py": "bdd4b5d12d56e25c1100a282483e7a31176b5a65beb353a0623ceea40a49dc0e",
+    "word_sources.py": "affb3488d8c25e3d0131eb4340cae29fcece563ac75373e071f97fef68f09acd",
+    "word_dsbi.py": "feecf16dba6d376415e15707c02c8f05fcf6650055da09ad9f4712099e6325ff",
+    "word_point_geometry.py": "2b932b320d191277b86ae13daecb82b5abbf0a46e9464d7360ee1e941aca760b",
+    "word_point_metadata.py": "de1cad0157e744f2f646010eac5355b88d1d11f52662d4b9353166661f59049f",
+    "word_geometry_head.py": "f46c8f90e7f4fc9404eed2dc27fbde6e5c823d25d4f88e4127c7e56ed6e8764e",
+    "word_geometry_init.py": "072379a1ef409d901c2478135174561c14781560cdd56a0b91b0229b8032e15e",
+    "word_geometry_parity.py": "700d9175dc627fb7bf12c0ac20f640191cf5a045e29067c310f5dad5f3bd6f0b",
+    "word_vertical_stretch.py": "336168fbfe4441bfa91e0855f473997a403a542a2b64789ca7cbd1b11b188ed5",
+    "word_bn_affine.py": "fa117f65beda3f6d159f707a5cd45d3a367b8f5b436b8c43c0d7621071297dff",
+    "word_bn_affine_init.py": "ea76999d35a6e9ba94cffce06c359adb1201cb396b54345668b7ed13afe99ce1",
+    "word_bn_affine_parity.py": "d4baba52b0993240e0b5092500ae32ee5d1b01e636d2546261a0a24996bd4a21",
+    "word_fine_branch.py": "53bff984c33a20556721328e6253fadd060019573b068deee2a671d08a530750",
+    "word_fine_init.py": "3baa5f15b2b4b74ea120dd8150ad3b8a11f59139ad3eb833d3b2089e188d1310",
+    "word_fine_parity.py": "de30cf4b3df1d8ec4bf820f6e1d98c8e40a39eb674a9ce470a3067569f3a8cbe",
+    "word_fine_validation.py": "b075760aee90afa17a84c0e8ec3a421132e0644130929f8f7a85b54b11058124"
+  },
+  "run25_config_sha256": "a337384ac622ad6c393f627cadf0a71d8c3e0b0b604c1338f8464578641df550",
+  "prerequisites": "Tests here do not demonstrate useful training or recognition accuracy. Any future integration needs its own frozen protocol and selection after run25 finishes."
+}

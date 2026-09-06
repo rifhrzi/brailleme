@@ -1,0 +1,127 @@
+{
+  "status": "passed",
+  "created_at_utc": "2026-09-05T21:04:39.860719+00:00",
+  "scope": "Six TRAIN/analytic initialization inputs, one TRAIN gradient probe; no selection or accuracy claim.",
+  "parent_checkpoint": ".braille-training-work\\word-scan-v1-20260905\\selected-v15\\best-word.keras",
+  "parent_checkpoint_sha256": "cce2432c0ddb8952c885dd58697589c285209588dafa81aacdd891b1660068b7",
+  "initial_checkpoint": ".braille-training-work\\word-scan-v1-20260905\\fine-branch-parent-v1\\fine-parent.keras",
+  "initial_checkpoint_sha256": "d29029bf8c20b91922269012fb928dc857cad15091e94e060a2ac5f3587fba4e",
+  "nonzero_diagnostic_checkpoint": ".braille-training-work\\word-scan-v1-20260905\\fine-branch-parent-v1\\nonzero-diagnostic-only.keras",
+  "nonzero_diagnostic_sha256": "a2a1c64f67d7d4ba8a4c61894795cf2e7d03988eff255132b1a02b998d698b8b",
+  "nonzero_diagnostic_must_never_be_resumed": true,
+  "source_sha256": {
+    "word_fine_branch.py": "53bff984c33a20556721328e6253fadd060019573b068deee2a671d08a530750",
+    "word_fine_init.py": "4844c510ab1c1bf4a4d3bfe7a5849495c9f3fc87767d2cc6e4b5e6a68f78e2cc",
+    "word_model.py": "c446732a2905a612cd6f1dd64d2d3d01303b1c71933c34552d26f3b5052fd551",
+    "word_data.py": "659ab6b508a69b34bfb8dc899c5fa6e2214bd64e08281f40f9c39aa91d74996c"
+  },
+  "static_audit": ".braille-training-work\\word-scan-v1-20260905\\stride2-tap-independent-static-audit\\audit.json",
+  "static_audit_sha256": "6e5cc6678d370a03eabcb883020053f1a5f2562ebbb583c1c3ad835cd97fb3fb",
+  "static_audit_loaded": true,
+  "oracle_sha256": "2c292cf7bee9824603e398e41764d18b3d0d6585f8512746e08c3a54ae388964",
+  "train_manifest_sha256": "f728b900c791433f8fd4aea08997af96f3320c0cfe5628619843a2a5b798cddc",
+  "train_inputs": [
+    {
+      "index": 0,
+      "image": "train/000000.png",
+      "source": "books/chudo_derevo_redmi/IMG_20190715_112912.labeled.jpg",
+      "sha256": "dec6b2c72152ff5eb8a87be172a7e20764eae23d427a401fd98075f19d7de1f1"
+    },
+    {
+      "index": 3163,
+      "image": "train/003163.png",
+      "source": "books/skazki/IMG_20190715_121834.labeled.jpg",
+      "sha256": "707ffff038ec67f271aee1e7e7c1bb4524ad18370c453d132f450bb84aaaedb6"
+    },
+    {
+      "index": 6326,
+      "image": "train/006326.png",
+      "source": "not_braille/misc/ul.jpg",
+      "sha256": "860bf163e12e45008a203a2d9e619d6cdfd0e555e9fe40cb567355a90938c5c3"
+    }
+  ],
+  "analytic_inputs": [
+    "black",
+    "white",
+    "seed20260905 uniform random"
+  ],
+  "fine_branch": {
+    "tap": "expanded_conv_depthwise_relu",
+    "tap_shape": [
+      null,
+      96,
+      240,
+      16
+    ],
+    "tap_stride": 2,
+    "tap_pixel_origin": 1,
+    "tap_local_support": 7,
+    "branch_output_shape": [
+      null,
+      48,
+      120,
+      64
+    ],
+    "output_stride": 4,
+    "output_pixel_origin": 3,
+    "output_local_support": 11,
+    "support_scope": "Convolution support relative to the normalized tensor; raw RGB normalization is global.",
+    "depthwise": {
+      "kernel": 3,
+      "stride": 2,
+      "padding": "same",
+      "bias": false
+    },
+    "lateral": {
+      "kernel": 1,
+      "channels": 64,
+      "bias": true
+    },
+    "addition": "Original add_1 result plus branch, before original activation",
+    "added_parameters": 1232,
+    "added_convolution_macs": 6727680,
+    "extra_batchnorm_layers": 0
+  },
+  "parameters": 830539,
+  "inherited_array_count": 280,
+  "array_count": 283,
+  "imageNormalization": {
+    "kind": "per_channel_standardize_grayscale",
+    "location": "inside_model_before_backbone_rescaling",
+    "variance": "population",
+    "stdFloor": 0.001,
+    "targetMean": 0.5,
+    "targetStd": 0.05,
+    "clip": [
+      0,
+      1
+    ],
+    "grayscale": "mean_of_standardized_channels",
+    "outputChannels": 3
+  },
+  "ordinary_frozen_batchnorm_layers": 52,
+  "all_inherited_arrays_and_trainability_equal": true,
+  "initial_train_eval_parent_outputs_equal": true,
+  "initial_save_reload_values_and_outputs_equal": true,
+  "diagnostic_save_reload_outputs_equal": true,
+  "diagnostic_only_new_lateral_changed": true,
+  "saved_parent_and_initial_unchanged": true,
+  "zero_branch_gradients": {
+    "loss": 0.1352894902229309,
+    "lateral_l1": 0.26713400334119797,
+    "depthwise_l1": 0.0
+  },
+  "after_isolated_lateral_step_gradients": {
+    "loss": 0.13528940081596375,
+    "lateral_l1": 0.2671312913298607,
+    "depthwise_l1": 7.890143024269491e-06
+  },
+  "nonzero_max_output_delta": 2.562999725341797e-06,
+  "backend": "torch",
+  "torch_version": "2.7.1+cu128",
+  "keras_version": "3.15.1",
+  "device": "cpu",
+  "threads": 2,
+  "seed": 20260905,
+  "conversion_required_before_training": "Initial and actual nonzero Torch/TF/TFLite six-input numerical and raw/effective decision parity; all builtins. Trained winner still requires full405 parity."
+}

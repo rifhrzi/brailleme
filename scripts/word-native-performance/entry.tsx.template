@@ -1,0 +1,94 @@
+import React, { useEffect, useMemo, useRef, useState } from 'react';
+import { AppRegistry, Text, View, ScrollView } from 'react-native';
+import * as SplashScreen from 'expo-splash-screen';
+import { loadImage, NitroImage, type Image } from 'react-native-nitro-image';
+import { createWorkletRuntime, getRuntimeKind, runOnRuntimeAsync } from 'react-native-worklets';
+import { resizeWordRawPixels } from './src/ml/word-image-processing';
+import fixture from './fixture.json';
+
+function decodeBase64(value: string) {
+  const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/';
+  const out = new Uint8Array((value.length * 3 / 4) - (value.endsWith('==') ? 2 : value.endsWith('=') ? 1 : 0));
+  let bits = 0, count = 0, cursor = 0;
+  for (let i = 0; i < value.length; i++) {
+    const next = alphabet.indexOf(value[i]);
+    if (next < 0) continue;
+    bits = (bits << 6) | next; count += 6;
+    if (count >= 8) { count -= 8; out[cursor++] = (bits >>> count) & 255; }
+  }
+  return out;
+}
+
+function NativePerfHarness() {
+  const runtime = useMemo(() => createWorkletRuntime({ name: 'Word resizer performance diagnostic' }), []);
+  const beats = useRef(0);
+  const maxGap = useRef(0);
+  const [heartbeat, setHeartbeat] = useState(0);
+  const [source, setSource] = useState<Image>();
+  const [report, setReport] = useState('Preparing native image and reference.');
+  useEffect(() => {
+    let last = performance.now();
+    const timer = setInterval(() => {
+      const now = performance.now();
+      maxGap.current = Math.max(maxGap.current, now - last);
+      last = now;
+      setHeartbeat(++beats.current);
+    }, 20);
+    return () => clearInterval(timer);
+  }, []);
+  useEffect(() => {
+    let image: Image | undefined;
+    let alive = true;
+    async function run() {
+      await SplashScreen.hideAsync().catch(() => undefined);
+      try {
+        const encoded = decodeBase64(fixture.sourceBase64);
+        const expected = decodeBase64(fixture.expectedBase64);
+        image = await loadImage({ encodedImageData: { buffer: encoded.buffer, width: 1440, height: 1920, imageFormat: 'png' } });
+        setSource(image);
+        await new Promise<void>((resolve) => setTimeout(resolve, 500));
+        const results = [];
+        for (let run = 0; run < 4; run++) {
+          maxGap.current = 0;
+          const startBeats = beats.current;
+          const startJs = performance.now();
+          const result = await runOnRuntimeAsync(runtime, (input: Image, reference: Uint8Array) => {
+            'worklet';
+            const start = performance.now();
+            const crop = input.crop(72, 700, 1368, 1220);
+            try {
+              const raw = crop.toRawPixelData(false);
+              const nativeMs = performance.now() - start;
+              const tensorStart = performance.now();
+              const converted = resizeWordRawPixels(raw, true);
+              const resizeMs = performance.now() - tensorStart;
+              let maxAbsError = 0, mismatchByteCount = 0;
+              for (let i = 0; i < converted.tensor.length; i++) {
+                maxAbsError = Math.max(maxAbsError, Math.abs(converted.tensor[i] - reference[i] / 255));
+                if (Math.round(converted.tensor[i] * 255) !== reference[i]) mismatchByteCount++;
+              }
+              return { runtimeKind: getRuntimeKind(), nativeMs, resizeMs, totalWorkletMs: performance.now() - start, sourceWidth: input.width, sourceHeight: input.height, cropWidth: raw.width, cropHeight: raw.height, pixelFormat: raw.pixelFormat, firstNativeBytes: Array.from(new Uint8Array(raw.buffer).slice(0, 8)), tensorLength: converted.tensor.length, maxAbsError, mismatchByteCount, meanLuminance: converted.meanLuminance, contrast: converted.contrast };
+            } finally { crop.dispose(); }
+          }, image, expected);
+          const measured = { run, ...result, totalAwaitMs: performance.now() - startJs, jsHeartbeatCount: beats.current - startBeats, maxJsHeartbeatGapMs: maxGap.current };
+          results.push(measured);
+          console.log('WORD_NATIVE_PERF_RUN ' + JSON.stringify(measured));
+          setReport(JSON.stringify(measured, null, 2));
+          await new Promise<void>((resolve) => setTimeout(resolve, 250));
+        }
+        const summary = { diagnosticOnly: true, hermes: !!globalThis.HermesInternal, sourceSha256: fixture.sourceSha256, expectedRgbSha256: fixture.expectedRgbSha256, results, passed: results.every((x) => x.maxAbsError <= 1 / 255 && x.mismatchByteCount === 0 && x.jsHeartbeatCount > 0 && x.runtimeKind === 3) };
+        console.log('WORD_NATIVE_PERF_RESULT ' + JSON.stringify(summary));
+        if (alive) setReport(JSON.stringify(summary, null, 2));
+      } catch (error) {
+        const detail = String(error) + '\n' + (error instanceof Error ? error.stack : '');
+        console.error('WORD_NATIVE_PERF_ERROR ' + detail);
+        if (alive) setReport(detail);
+      }
+    }
+    void run();
+    return () => { alive = false; /* Root diagnostic remains mounted until process exit. */ };
+  }, [runtime]);
+  return <ScrollView contentContainerStyle={{ padding: 24, gap: 12, backgroundColor: 'white' }}><Text style={{ fontSize: 24, color: 'black' }}>Diagnostic only: native word resizer</Text><Text style={{ fontSize: 20, color: 'black' }}>JS heartbeat: {heartbeat}</Text><View style={{ width: 24, height: 24, backgroundColor: heartbeat % 2 ? 'green' : 'blue' }} />{source ? <NitroImage image={source} style={{ width: 240, height: 160 }} resizeMode="contain" /> : null}<Text selectable style={{ fontFamily: 'monospace', fontSize: 11, color: 'black' }}>{report}</Text></ScrollView>;
+}
+
+AppRegistry.registerComponent('main', () => NativePerfHarness);

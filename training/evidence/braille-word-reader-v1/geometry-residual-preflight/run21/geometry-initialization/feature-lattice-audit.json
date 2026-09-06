@@ -1,0 +1,3155 @@
+{
+  "status": "passed",
+  "scope": "Nominal convolution sampling lattices from actual saved backbone graph. No model inference, training, image sampling or TFLite proof.",
+  "checkpoint_sha256": "44372fa1c73356f3ddfce6ac1001bb9124164846fdf87c12096b6afc1d2c0443",
+  "saved_config_sha256": "3259be2b7e2179f89339fb123e651c7202b46d2b2330589b689c9d15a0e02415",
+  "script_sha256": "81de7f870615b48e3ae04cc69976257b398900096c9d528846da7fcffc82ffd4",
+  "input_coordinate_space": "Pixel-index centers; first input sample is index0.",
+  "feature_axes": [
+    "y",
+    "x"
+  ],
+  "backbone_outputs": {
+    "block_3_expand_relu": {
+      "size": [
+        48,
+        120
+      ],
+      "jump": [
+        4,
+        4
+      ],
+      "origin": [
+        3.0,
+        3.0
+      ],
+      "conv_support": [
+        19,
+        19
+      ]
+    },
+    "block_6_expand_relu": {
+      "size": [
+        24,
+        60
+      ],
+      "jump": [
+        8,
+        8
+      ],
+      "origin": [
+        7.0,
+        7.0
+      ],
+      "conv_support": [
+        59,
+        59
+      ]
+    },
+    "block_13_expand_relu": {
+      "size": [
+        12,
+        30
+      ],
+      "jump": [
+        16,
+        16
+      ],
+      "origin": [
+        15.0,
+        15.0
+      ],
+      "conv_support": [
+        267,
+        267
+      ]
+    },
+    "out_relu": {
+      "size": [
+        6,
+        15
+      ],
+      "jump": [
+        32,
+        32
+      ],
+      "origin": [
+        31.0,
+        31.0
+      ],
+      "conv_support": [
+        491,
+        491
+      ]
+    }
+  },
+  "stride4_input_pixel_to_feature_index": "(input_pixel_index - 3) / 4",
+  "limitations": [
+    "Coordinates of annotation box edges and resized occupied sample centers are not interchangeable; the caller must define the tap coordinate convention.",
+    "FPN adds nearest-upsampled coarser maps with piecewise repeated centers. Origin3 is the nominal fine-branch lattice, not a claim of a single physical receptive center for the fused feature.",
+    "Per-image normalization and coarse features have wider dependencies; geometric convolution support is not a guarantee of local dot evidence.",
+    "A future sampler still needs analytic ramp/boundary and nonzero converted-graph parity tests."
+  ],
+  "layers": [
+    {
+      "name": "Conv1",
+      "class": "Conv2D",
+      "size": [
+        96,
+        240
+      ],
+      "jump": [
+        2,
+        2
+      ],
+      "origin": [
+        1.0,
+        1.0
+      ],
+      "conv_support": [
+        3,
+        3
+      ]
+    },
+    {
+      "name": "bn_Conv1",
+      "class": "BatchNormalization",
+      "size": [
+        96,
+        240
+      ],
+      "jump": [
+        2,
+        2
+      ],
+      "origin": [
+        1.0,
+        1.0
+      ],
+      "conv_support": [
+        3,
+        3
+      ]
+    },
+    {
+      "name": "Conv1_relu",
+      "class": "ReLU",
+      "size": [
+        96,
+        240
+      ],
+      "jump": [
+        2,
+        2
+      ],
+      "origin": [
+        1.0,
+        1.0
+      ],
+      "conv_support": [
+        3,
+        3
+      ]
+    },
+    {
+      "name": "expanded_conv_depthwise",
+      "class": "DepthwiseConv2D",
+      "size": [
+        96,
+        240
+      ],
+      "jump": [
+        2,
+        2
+      ],
+      "origin": [
+        1.0,
+        1.0
+      ],
+      "conv_support": [
+        7,
+        7
+      ]
+    },
+    {
+      "name": "expanded_conv_depthwise_BN",
+      "class": "BatchNormalization",
+      "size": [
+        96,
+        240
+      ],
+      "jump": [
+        2,
+        2
+      ],
+      "origin": [
+        1.0,
+        1.0
+      ],
+      "conv_support": [
+        7,
+        7
+      ]
+    },
+    {
+      "name": "expanded_conv_depthwise_relu",
+      "class": "ReLU",
+      "size": [
+        96,
+        240
+      ],
+      "jump": [
+        2,
+        2
+      ],
+      "origin": [
+        1.0,
+        1.0
+      ],
+      "conv_support": [
+        7,
+        7
+      ]
+    },
+    {
+      "name": "expanded_conv_project",
+      "class": "Conv2D",
+      "size": [
+        96,
+        240
+      ],
+      "jump": [
+        2,
+        2
+      ],
+      "origin": [
+        1.0,
+        1.0
+      ],
+      "conv_support": [
+        7,
+        7
+      ]
+    },
+    {
+      "name": "expanded_conv_project_BN",
+      "class": "BatchNormalization",
+      "size": [
+        96,
+        240
+      ],
+      "jump": [
+        2,
+        2
+      ],
+      "origin": [
+        1.0,
+        1.0
+      ],
+      "conv_support": [
+        7,
+        7
+      ]
+    },
+    {
+      "name": "block_1_expand",
+      "class": "Conv2D",
+      "size": [
+        96,
+        240
+      ],
+      "jump": [
+        2,
+        2
+      ],
+      "origin": [
+        1.0,
+        1.0
+      ],
+      "conv_support": [
+        7,
+        7
+      ]
+    },
+    {
+      "name": "block_1_expand_BN",
+      "class": "BatchNormalization",
+      "size": [
+        96,
+        240
+      ],
+      "jump": [
+        2,
+        2
+      ],
+      "origin": [
+        1.0,
+        1.0
+      ],
+      "conv_support": [
+        7,
+        7
+      ]
+    },
+    {
+      "name": "block_1_expand_relu",
+      "class": "ReLU",
+      "size": [
+        96,
+        240
+      ],
+      "jump": [
+        2,
+        2
+      ],
+      "origin": [
+        1.0,
+        1.0
+      ],
+      "conv_support": [
+        7,
+        7
+      ]
+    },
+    {
+      "name": "block_1_pad",
+      "class": "ZeroPadding2D",
+      "size": [
+        97,
+        241
+      ],
+      "jump": [
+        2,
+        2
+      ],
+      "origin": [
+        1.0,
+        1.0
+      ],
+      "conv_support": [
+        7,
+        7
+      ]
+    },
+    {
+      "name": "block_1_depthwise",
+      "class": "DepthwiseConv2D",
+      "size": [
+        48,
+        120
+      ],
+      "jump": [
+        4,
+        4
+      ],
+      "origin": [
+        3.0,
+        3.0
+      ],
+      "conv_support": [
+        11,
+        11
+      ]
+    },
+    {
+      "name": "block_1_depthwise_BN",
+      "class": "BatchNormalization",
+      "size": [
+        48,
+        120
+      ],
+      "jump": [
+        4,
+        4
+      ],
+      "origin": [
+        3.0,
+        3.0
+      ],
+      "conv_support": [
+        11,
+        11
+      ]
+    },
+    {
+      "name": "block_1_depthwise_relu",
+      "class": "ReLU",
+      "size": [
+        48,
+        120
+      ],
+      "jump": [
+        4,
+        4
+      ],
+      "origin": [
+        3.0,
+        3.0
+      ],
+      "conv_support": [
+        11,
+        11
+      ]
+    },
+    {
+      "name": "block_1_project",
+      "class": "Conv2D",
+      "size": [
+        48,
+        120
+      ],
+      "jump": [
+        4,
+        4
+      ],
+      "origin": [
+        3.0,
+        3.0
+      ],
+      "conv_support": [
+        11,
+        11
+      ]
+    },
+    {
+      "name": "block_1_project_BN",
+      "class": "BatchNormalization",
+      "size": [
+        48,
+        120
+      ],
+      "jump": [
+        4,
+        4
+      ],
+      "origin": [
+        3.0,
+        3.0
+      ],
+      "conv_support": [
+        11,
+        11
+      ]
+    },
+    {
+      "name": "block_2_expand",
+      "class": "Conv2D",
+      "size": [
+        48,
+        120
+      ],
+      "jump": [
+        4,
+        4
+      ],
+      "origin": [
+        3.0,
+        3.0
+      ],
+      "conv_support": [
+        11,
+        11
+      ]
+    },
+    {
+      "name": "block_2_expand_BN",
+      "class": "BatchNormalization",
+      "size": [
+        48,
+        120
+      ],
+      "jump": [
+        4,
+        4
+      ],
+      "origin": [
+        3.0,
+        3.0
+      ],
+      "conv_support": [
+        11,
+        11
+      ]
+    },
+    {
+      "name": "block_2_expand_relu",
+      "class": "ReLU",
+      "size": [
+        48,
+        120
+      ],
+      "jump": [
+        4,
+        4
+      ],
+      "origin": [
+        3.0,
+        3.0
+      ],
+      "conv_support": [
+        11,
+        11
+      ]
+    },
+    {
+      "name": "block_2_depthwise",
+      "class": "DepthwiseConv2D",
+      "size": [
+        48,
+        120
+      ],
+      "jump": [
+        4,
+        4
+      ],
+      "origin": [
+        3.0,
+        3.0
+      ],
+      "conv_support": [
+        19,
+        19
+      ]
+    },
+    {
+      "name": "block_2_depthwise_BN",
+      "class": "BatchNormalization",
+      "size": [
+        48,
+        120
+      ],
+      "jump": [
+        4,
+        4
+      ],
+      "origin": [
+        3.0,
+        3.0
+      ],
+      "conv_support": [
+        19,
+        19
+      ]
+    },
+    {
+      "name": "block_2_depthwise_relu",
+      "class": "ReLU",
+      "size": [
+        48,
+        120
+      ],
+      "jump": [
+        4,
+        4
+      ],
+      "origin": [
+        3.0,
+        3.0
+      ],
+      "conv_support": [
+        19,
+        19
+      ]
+    },
+    {
+      "name": "block_2_project",
+      "class": "Conv2D",
+      "size": [
+        48,
+        120
+      ],
+      "jump": [
+        4,
+        4
+      ],
+      "origin": [
+        3.0,
+        3.0
+      ],
+      "conv_support": [
+        19,
+        19
+      ]
+    },
+    {
+      "name": "block_2_project_BN",
+      "class": "BatchNormalization",
+      "size": [
+        48,
+        120
+      ],
+      "jump": [
+        4,
+        4
+      ],
+      "origin": [
+        3.0,
+        3.0
+      ],
+      "conv_support": [
+        19,
+        19
+      ]
+    },
+    {
+      "name": "block_2_add",
+      "class": "Add",
+      "size": [
+        48,
+        120
+      ],
+      "jump": [
+        4,
+        4
+      ],
+      "origin": [
+        3.0,
+        3.0
+      ],
+      "conv_support": [
+        19,
+        19
+      ]
+    },
+    {
+      "name": "block_3_expand",
+      "class": "Conv2D",
+      "size": [
+        48,
+        120
+      ],
+      "jump": [
+        4,
+        4
+      ],
+      "origin": [
+        3.0,
+        3.0
+      ],
+      "conv_support": [
+        19,
+        19
+      ]
+    },
+    {
+      "name": "block_3_expand_BN",
+      "class": "BatchNormalization",
+      "size": [
+        48,
+        120
+      ],
+      "jump": [
+        4,
+        4
+      ],
+      "origin": [
+        3.0,
+        3.0
+      ],
+      "conv_support": [
+        19,
+        19
+      ]
+    },
+    {
+      "name": "block_3_expand_relu",
+      "class": "ReLU",
+      "size": [
+        48,
+        120
+      ],
+      "jump": [
+        4,
+        4
+      ],
+      "origin": [
+        3.0,
+        3.0
+      ],
+      "conv_support": [
+        19,
+        19
+      ]
+    },
+    {
+      "name": "block_3_pad",
+      "class": "ZeroPadding2D",
+      "size": [
+        49,
+        121
+      ],
+      "jump": [
+        4,
+        4
+      ],
+      "origin": [
+        3.0,
+        3.0
+      ],
+      "conv_support": [
+        19,
+        19
+      ]
+    },
+    {
+      "name": "block_3_depthwise",
+      "class": "DepthwiseConv2D",
+      "size": [
+        24,
+        60
+      ],
+      "jump": [
+        8,
+        8
+      ],
+      "origin": [
+        7.0,
+        7.0
+      ],
+      "conv_support": [
+        27,
+        27
+      ]
+    },
+    {
+      "name": "block_3_depthwise_BN",
+      "class": "BatchNormalization",
+      "size": [
+        24,
+        60
+      ],
+      "jump": [
+        8,
+        8
+      ],
+      "origin": [
+        7.0,
+        7.0
+      ],
+      "conv_support": [
+        27,
+        27
+      ]
+    },
+    {
+      "name": "block_3_depthwise_relu",
+      "class": "ReLU",
+      "size": [
+        24,
+        60
+      ],
+      "jump": [
+        8,
+        8
+      ],
+      "origin": [
+        7.0,
+        7.0
+      ],
+      "conv_support": [
+        27,
+        27
+      ]
+    },
+    {
+      "name": "block_3_project",
+      "class": "Conv2D",
+      "size": [
+        24,
+        60
+      ],
+      "jump": [
+        8,
+        8
+      ],
+      "origin": [
+        7.0,
+        7.0
+      ],
+      "conv_support": [
+        27,
+        27
+      ]
+    },
+    {
+      "name": "block_3_project_BN",
+      "class": "BatchNormalization",
+      "size": [
+        24,
+        60
+      ],
+      "jump": [
+        8,
+        8
+      ],
+      "origin": [
+        7.0,
+        7.0
+      ],
+      "conv_support": [
+        27,
+        27
+      ]
+    },
+    {
+      "name": "block_4_expand",
+      "class": "Conv2D",
+      "size": [
+        24,
+        60
+      ],
+      "jump": [
+        8,
+        8
+      ],
+      "origin": [
+        7.0,
+        7.0
+      ],
+      "conv_support": [
+        27,
+        27
+      ]
+    },
+    {
+      "name": "block_4_expand_BN",
+      "class": "BatchNormalization",
+      "size": [
+        24,
+        60
+      ],
+      "jump": [
+        8,
+        8
+      ],
+      "origin": [
+        7.0,
+        7.0
+      ],
+      "conv_support": [
+        27,
+        27
+      ]
+    },
+    {
+      "name": "block_4_expand_relu",
+      "class": "ReLU",
+      "size": [
+        24,
+        60
+      ],
+      "jump": [
+        8,
+        8
+      ],
+      "origin": [
+        7.0,
+        7.0
+      ],
+      "conv_support": [
+        27,
+        27
+      ]
+    },
+    {
+      "name": "block_4_depthwise",
+      "class": "DepthwiseConv2D",
+      "size": [
+        24,
+        60
+      ],
+      "jump": [
+        8,
+        8
+      ],
+      "origin": [
+        7.0,
+        7.0
+      ],
+      "conv_support": [
+        43,
+        43
+      ]
+    },
+    {
+      "name": "block_4_depthwise_BN",
+      "class": "BatchNormalization",
+      "size": [
+        24,
+        60
+      ],
+      "jump": [
+        8,
+        8
+      ],
+      "origin": [
+        7.0,
+        7.0
+      ],
+      "conv_support": [
+        43,
+        43
+      ]
+    },
+    {
+      "name": "block_4_depthwise_relu",
+      "class": "ReLU",
+      "size": [
+        24,
+        60
+      ],
+      "jump": [
+        8,
+        8
+      ],
+      "origin": [
+        7.0,
+        7.0
+      ],
+      "conv_support": [
+        43,
+        43
+      ]
+    },
+    {
+      "name": "block_4_project",
+      "class": "Conv2D",
+      "size": [
+        24,
+        60
+      ],
+      "jump": [
+        8,
+        8
+      ],
+      "origin": [
+        7.0,
+        7.0
+      ],
+      "conv_support": [
+        43,
+        43
+      ]
+    },
+    {
+      "name": "block_4_project_BN",
+      "class": "BatchNormalization",
+      "size": [
+        24,
+        60
+      ],
+      "jump": [
+        8,
+        8
+      ],
+      "origin": [
+        7.0,
+        7.0
+      ],
+      "conv_support": [
+        43,
+        43
+      ]
+    },
+    {
+      "name": "block_4_add",
+      "class": "Add",
+      "size": [
+        24,
+        60
+      ],
+      "jump": [
+        8,
+        8
+      ],
+      "origin": [
+        7.0,
+        7.0
+      ],
+      "conv_support": [
+        43,
+        43
+      ]
+    },
+    {
+      "name": "block_5_expand",
+      "class": "Conv2D",
+      "size": [
+        24,
+        60
+      ],
+      "jump": [
+        8,
+        8
+      ],
+      "origin": [
+        7.0,
+        7.0
+      ],
+      "conv_support": [
+        43,
+        43
+      ]
+    },
+    {
+      "name": "block_5_expand_BN",
+      "class": "BatchNormalization",
+      "size": [
+        24,
+        60
+      ],
+      "jump": [
+        8,
+        8
+      ],
+      "origin": [
+        7.0,
+        7.0
+      ],
+      "conv_support": [
+        43,
+        43
+      ]
+    },
+    {
+      "name": "block_5_expand_relu",
+      "class": "ReLU",
+      "size": [
+        24,
+        60
+      ],
+      "jump": [
+        8,
+        8
+      ],
+      "origin": [
+        7.0,
+        7.0
+      ],
+      "conv_support": [
+        43,
+        43
+      ]
+    },
+    {
+      "name": "block_5_depthwise",
+      "class": "DepthwiseConv2D",
+      "size": [
+        24,
+        60
+      ],
+      "jump": [
+        8,
+        8
+      ],
+      "origin": [
+        7.0,
+        7.0
+      ],
+      "conv_support": [
+        59,
+        59
+      ]
+    },
+    {
+      "name": "block_5_depthwise_BN",
+      "class": "BatchNormalization",
+      "size": [
+        24,
+        60
+      ],
+      "jump": [
+        8,
+        8
+      ],
+      "origin": [
+        7.0,
+        7.0
+      ],
+      "conv_support": [
+        59,
+        59
+      ]
+    },
+    {
+      "name": "block_5_depthwise_relu",
+      "class": "ReLU",
+      "size": [
+        24,
+        60
+      ],
+      "jump": [
+        8,
+        8
+      ],
+      "origin": [
+        7.0,
+        7.0
+      ],
+      "conv_support": [
+        59,
+        59
+      ]
+    },
+    {
+      "name": "block_5_project",
+      "class": "Conv2D",
+      "size": [
+        24,
+        60
+      ],
+      "jump": [
+        8,
+        8
+      ],
+      "origin": [
+        7.0,
+        7.0
+      ],
+      "conv_support": [
+        59,
+        59
+      ]
+    },
+    {
+      "name": "block_5_project_BN",
+      "class": "BatchNormalization",
+      "size": [
+        24,
+        60
+      ],
+      "jump": [
+        8,
+        8
+      ],
+      "origin": [
+        7.0,
+        7.0
+      ],
+      "conv_support": [
+        59,
+        59
+      ]
+    },
+    {
+      "name": "block_5_add",
+      "class": "Add",
+      "size": [
+        24,
+        60
+      ],
+      "jump": [
+        8,
+        8
+      ],
+      "origin": [
+        7.0,
+        7.0
+      ],
+      "conv_support": [
+        59,
+        59
+      ]
+    },
+    {
+      "name": "block_6_expand",
+      "class": "Conv2D",
+      "size": [
+        24,
+        60
+      ],
+      "jump": [
+        8,
+        8
+      ],
+      "origin": [
+        7.0,
+        7.0
+      ],
+      "conv_support": [
+        59,
+        59
+      ]
+    },
+    {
+      "name": "block_6_expand_BN",
+      "class": "BatchNormalization",
+      "size": [
+        24,
+        60
+      ],
+      "jump": [
+        8,
+        8
+      ],
+      "origin": [
+        7.0,
+        7.0
+      ],
+      "conv_support": [
+        59,
+        59
+      ]
+    },
+    {
+      "name": "block_6_expand_relu",
+      "class": "ReLU",
+      "size": [
+        24,
+        60
+      ],
+      "jump": [
+        8,
+        8
+      ],
+      "origin": [
+        7.0,
+        7.0
+      ],
+      "conv_support": [
+        59,
+        59
+      ]
+    },
+    {
+      "name": "block_6_pad",
+      "class": "ZeroPadding2D",
+      "size": [
+        25,
+        61
+      ],
+      "jump": [
+        8,
+        8
+      ],
+      "origin": [
+        7.0,
+        7.0
+      ],
+      "conv_support": [
+        59,
+        59
+      ]
+    },
+    {
+      "name": "block_6_depthwise",
+      "class": "DepthwiseConv2D",
+      "size": [
+        12,
+        30
+      ],
+      "jump": [
+        16,
+        16
+      ],
+      "origin": [
+        15.0,
+        15.0
+      ],
+      "conv_support": [
+        75,
+        75
+      ]
+    },
+    {
+      "name": "block_6_depthwise_BN",
+      "class": "BatchNormalization",
+      "size": [
+        12,
+        30
+      ],
+      "jump": [
+        16,
+        16
+      ],
+      "origin": [
+        15.0,
+        15.0
+      ],
+      "conv_support": [
+        75,
+        75
+      ]
+    },
+    {
+      "name": "block_6_depthwise_relu",
+      "class": "ReLU",
+      "size": [
+        12,
+        30
+      ],
+      "jump": [
+        16,
+        16
+      ],
+      "origin": [
+        15.0,
+        15.0
+      ],
+      "conv_support": [
+        75,
+        75
+      ]
+    },
+    {
+      "name": "block_6_project",
+      "class": "Conv2D",
+      "size": [
+        12,
+        30
+      ],
+      "jump": [
+        16,
+        16
+      ],
+      "origin": [
+        15.0,
+        15.0
+      ],
+      "conv_support": [
+        75,
+        75
+      ]
+    },
+    {
+      "name": "block_6_project_BN",
+      "class": "BatchNormalization",
+      "size": [
+        12,
+        30
+      ],
+      "jump": [
+        16,
+        16
+      ],
+      "origin": [
+        15.0,
+        15.0
+      ],
+      "conv_support": [
+        75,
+        75
+      ]
+    },
+    {
+      "name": "block_7_expand",
+      "class": "Conv2D",
+      "size": [
+        12,
+        30
+      ],
+      "jump": [
+        16,
+        16
+      ],
+      "origin": [
+        15.0,
+        15.0
+      ],
+      "conv_support": [
+        75,
+        75
+      ]
+    },
+    {
+      "name": "block_7_expand_BN",
+      "class": "BatchNormalization",
+      "size": [
+        12,
+        30
+      ],
+      "jump": [
+        16,
+        16
+      ],
+      "origin": [
+        15.0,
+        15.0
+      ],
+      "conv_support": [
+        75,
+        75
+      ]
+    },
+    {
+      "name": "block_7_expand_relu",
+      "class": "ReLU",
+      "size": [
+        12,
+        30
+      ],
+      "jump": [
+        16,
+        16
+      ],
+      "origin": [
+        15.0,
+        15.0
+      ],
+      "conv_support": [
+        75,
+        75
+      ]
+    },
+    {
+      "name": "block_7_depthwise",
+      "class": "DepthwiseConv2D",
+      "size": [
+        12,
+        30
+      ],
+      "jump": [
+        16,
+        16
+      ],
+      "origin": [
+        15.0,
+        15.0
+      ],
+      "conv_support": [
+        107,
+        107
+      ]
+    },
+    {
+      "name": "block_7_depthwise_BN",
+      "class": "BatchNormalization",
+      "size": [
+        12,
+        30
+      ],
+      "jump": [
+        16,
+        16
+      ],
+      "origin": [
+        15.0,
+        15.0
+      ],
+      "conv_support": [
+        107,
+        107
+      ]
+    },
+    {
+      "name": "block_7_depthwise_relu",
+      "class": "ReLU",
+      "size": [
+        12,
+        30
+      ],
+      "jump": [
+        16,
+        16
+      ],
+      "origin": [
+        15.0,
+        15.0
+      ],
+      "conv_support": [
+        107,
+        107
+      ]
+    },
+    {
+      "name": "block_7_project",
+      "class": "Conv2D",
+      "size": [
+        12,
+        30
+      ],
+      "jump": [
+        16,
+        16
+      ],
+      "origin": [
+        15.0,
+        15.0
+      ],
+      "conv_support": [
+        107,
+        107
+      ]
+    },
+    {
+      "name": "block_7_project_BN",
+      "class": "BatchNormalization",
+      "size": [
+        12,
+        30
+      ],
+      "jump": [
+        16,
+        16
+      ],
+      "origin": [
+        15.0,
+        15.0
+      ],
+      "conv_support": [
+        107,
+        107
+      ]
+    },
+    {
+      "name": "block_7_add",
+      "class": "Add",
+      "size": [
+        12,
+        30
+      ],
+      "jump": [
+        16,
+        16
+      ],
+      "origin": [
+        15.0,
+        15.0
+      ],
+      "conv_support": [
+        107,
+        107
+      ]
+    },
+    {
+      "name": "block_8_expand",
+      "class": "Conv2D",
+      "size": [
+        12,
+        30
+      ],
+      "jump": [
+        16,
+        16
+      ],
+      "origin": [
+        15.0,
+        15.0
+      ],
+      "conv_support": [
+        107,
+        107
+      ]
+    },
+    {
+      "name": "block_8_expand_BN",
+      "class": "BatchNormalization",
+      "size": [
+        12,
+        30
+      ],
+      "jump": [
+        16,
+        16
+      ],
+      "origin": [
+        15.0,
+        15.0
+      ],
+      "conv_support": [
+        107,
+        107
+      ]
+    },
+    {
+      "name": "block_8_expand_relu",
+      "class": "ReLU",
+      "size": [
+        12,
+        30
+      ],
+      "jump": [
+        16,
+        16
+      ],
+      "origin": [
+        15.0,
+        15.0
+      ],
+      "conv_support": [
+        107,
+        107
+      ]
+    },
+    {
+      "name": "block_8_depthwise",
+      "class": "DepthwiseConv2D",
+      "size": [
+        12,
+        30
+      ],
+      "jump": [
+        16,
+        16
+      ],
+      "origin": [
+        15.0,
+        15.0
+      ],
+      "conv_support": [
+        139,
+        139
+      ]
+    },
+    {
+      "name": "block_8_depthwise_BN",
+      "class": "BatchNormalization",
+      "size": [
+        12,
+        30
+      ],
+      "jump": [
+        16,
+        16
+      ],
+      "origin": [
+        15.0,
+        15.0
+      ],
+      "conv_support": [
+        139,
+        139
+      ]
+    },
+    {
+      "name": "block_8_depthwise_relu",
+      "class": "ReLU",
+      "size": [
+        12,
+        30
+      ],
+      "jump": [
+        16,
+        16
+      ],
+      "origin": [
+        15.0,
+        15.0
+      ],
+      "conv_support": [
+        139,
+        139
+      ]
+    },
+    {
+      "name": "block_8_project",
+      "class": "Conv2D",
+      "size": [
+        12,
+        30
+      ],
+      "jump": [
+        16,
+        16
+      ],
+      "origin": [
+        15.0,
+        15.0
+      ],
+      "conv_support": [
+        139,
+        139
+      ]
+    },
+    {
+      "name": "block_8_project_BN",
+      "class": "BatchNormalization",
+      "size": [
+        12,
+        30
+      ],
+      "jump": [
+        16,
+        16
+      ],
+      "origin": [
+        15.0,
+        15.0
+      ],
+      "conv_support": [
+        139,
+        139
+      ]
+    },
+    {
+      "name": "block_8_add",
+      "class": "Add",
+      "size": [
+        12,
+        30
+      ],
+      "jump": [
+        16,
+        16
+      ],
+      "origin": [
+        15.0,
+        15.0
+      ],
+      "conv_support": [
+        139,
+        139
+      ]
+    },
+    {
+      "name": "block_9_expand",
+      "class": "Conv2D",
+      "size": [
+        12,
+        30
+      ],
+      "jump": [
+        16,
+        16
+      ],
+      "origin": [
+        15.0,
+        15.0
+      ],
+      "conv_support": [
+        139,
+        139
+      ]
+    },
+    {
+      "name": "block_9_expand_BN",
+      "class": "BatchNormalization",
+      "size": [
+        12,
+        30
+      ],
+      "jump": [
+        16,
+        16
+      ],
+      "origin": [
+        15.0,
+        15.0
+      ],
+      "conv_support": [
+        139,
+        139
+      ]
+    },
+    {
+      "name": "block_9_expand_relu",
+      "class": "ReLU",
+      "size": [
+        12,
+        30
+      ],
+      "jump": [
+        16,
+        16
+      ],
+      "origin": [
+        15.0,
+        15.0
+      ],
+      "conv_support": [
+        139,
+        139
+      ]
+    },
+    {
+      "name": "block_9_depthwise",
+      "class": "DepthwiseConv2D",
+      "size": [
+        12,
+        30
+      ],
+      "jump": [
+        16,
+        16
+      ],
+      "origin": [
+        15.0,
+        15.0
+      ],
+      "conv_support": [
+        171,
+        171
+      ]
+    },
+    {
+      "name": "block_9_depthwise_BN",
+      "class": "BatchNormalization",
+      "size": [
+        12,
+        30
+      ],
+      "jump": [
+        16,
+        16
+      ],
+      "origin": [
+        15.0,
+        15.0
+      ],
+      "conv_support": [
+        171,
+        171
+      ]
+    },
+    {
+      "name": "block_9_depthwise_relu",
+      "class": "ReLU",
+      "size": [
+        12,
+        30
+      ],
+      "jump": [
+        16,
+        16
+      ],
+      "origin": [
+        15.0,
+        15.0
+      ],
+      "conv_support": [
+        171,
+        171
+      ]
+    },
+    {
+      "name": "block_9_project",
+      "class": "Conv2D",
+      "size": [
+        12,
+        30
+      ],
+      "jump": [
+        16,
+        16
+      ],
+      "origin": [
+        15.0,
+        15.0
+      ],
+      "conv_support": [
+        171,
+        171
+      ]
+    },
+    {
+      "name": "block_9_project_BN",
+      "class": "BatchNormalization",
+      "size": [
+        12,
+        30
+      ],
+      "jump": [
+        16,
+        16
+      ],
+      "origin": [
+        15.0,
+        15.0
+      ],
+      "conv_support": [
+        171,
+        171
+      ]
+    },
+    {
+      "name": "block_9_add",
+      "class": "Add",
+      "size": [
+        12,
+        30
+      ],
+      "jump": [
+        16,
+        16
+      ],
+      "origin": [
+        15.0,
+        15.0
+      ],
+      "conv_support": [
+        171,
+        171
+      ]
+    },
+    {
+      "name": "block_10_expand",
+      "class": "Conv2D",
+      "size": [
+        12,
+        30
+      ],
+      "jump": [
+        16,
+        16
+      ],
+      "origin": [
+        15.0,
+        15.0
+      ],
+      "conv_support": [
+        171,
+        171
+      ]
+    },
+    {
+      "name": "block_10_expand_BN",
+      "class": "BatchNormalization",
+      "size": [
+        12,
+        30
+      ],
+      "jump": [
+        16,
+        16
+      ],
+      "origin": [
+        15.0,
+        15.0
+      ],
+      "conv_support": [
+        171,
+        171
+      ]
+    },
+    {
+      "name": "block_10_expand_relu",
+      "class": "ReLU",
+      "size": [
+        12,
+        30
+      ],
+      "jump": [
+        16,
+        16
+      ],
+      "origin": [
+        15.0,
+        15.0
+      ],
+      "conv_support": [
+        171,
+        171
+      ]
+    },
+    {
+      "name": "block_10_depthwise",
+      "class": "DepthwiseConv2D",
+      "size": [
+        12,
+        30
+      ],
+      "jump": [
+        16,
+        16
+      ],
+      "origin": [
+        15.0,
+        15.0
+      ],
+      "conv_support": [
+        203,
+        203
+      ]
+    },
+    {
+      "name": "block_10_depthwise_BN",
+      "class": "BatchNormalization",
+      "size": [
+        12,
+        30
+      ],
+      "jump": [
+        16,
+        16
+      ],
+      "origin": [
+        15.0,
+        15.0
+      ],
+      "conv_support": [
+        203,
+        203
+      ]
+    },
+    {
+      "name": "block_10_depthwise_relu",
+      "class": "ReLU",
+      "size": [
+        12,
+        30
+      ],
+      "jump": [
+        16,
+        16
+      ],
+      "origin": [
+        15.0,
+        15.0
+      ],
+      "conv_support": [
+        203,
+        203
+      ]
+    },
+    {
+      "name": "block_10_project",
+      "class": "Conv2D",
+      "size": [
+        12,
+        30
+      ],
+      "jump": [
+        16,
+        16
+      ],
+      "origin": [
+        15.0,
+        15.0
+      ],
+      "conv_support": [
+        203,
+        203
+      ]
+    },
+    {
+      "name": "block_10_project_BN",
+      "class": "BatchNormalization",
+      "size": [
+        12,
+        30
+      ],
+      "jump": [
+        16,
+        16
+      ],
+      "origin": [
+        15.0,
+        15.0
+      ],
+      "conv_support": [
+        203,
+        203
+      ]
+    },
+    {
+      "name": "block_11_expand",
+      "class": "Conv2D",
+      "size": [
+        12,
+        30
+      ],
+      "jump": [
+        16,
+        16
+      ],
+      "origin": [
+        15.0,
+        15.0
+      ],
+      "conv_support": [
+        203,
+        203
+      ]
+    },
+    {
+      "name": "block_11_expand_BN",
+      "class": "BatchNormalization",
+      "size": [
+        12,
+        30
+      ],
+      "jump": [
+        16,
+        16
+      ],
+      "origin": [
+        15.0,
+        15.0
+      ],
+      "conv_support": [
+        203,
+        203
+      ]
+    },
+    {
+      "name": "block_11_expand_relu",
+      "class": "ReLU",
+      "size": [
+        12,
+        30
+      ],
+      "jump": [
+        16,
+        16
+      ],
+      "origin": [
+        15.0,
+        15.0
+      ],
+      "conv_support": [
+        203,
+        203
+      ]
+    },
+    {
+      "name": "block_11_depthwise",
+      "class": "DepthwiseConv2D",
+      "size": [
+        12,
+        30
+      ],
+      "jump": [
+        16,
+        16
+      ],
+      "origin": [
+        15.0,
+        15.0
+      ],
+      "conv_support": [
+        235,
+        235
+      ]
+    },
+    {
+      "name": "block_11_depthwise_BN",
+      "class": "BatchNormalization",
+      "size": [
+        12,
+        30
+      ],
+      "jump": [
+        16,
+        16
+      ],
+      "origin": [
+        15.0,
+        15.0
+      ],
+      "conv_support": [
+        235,
+        235
+      ]
+    },
+    {
+      "name": "block_11_depthwise_relu",
+      "class": "ReLU",
+      "size": [
+        12,
+        30
+      ],
+      "jump": [
+        16,
+        16
+      ],
+      "origin": [
+        15.0,
+        15.0
+      ],
+      "conv_support": [
+        235,
+        235
+      ]
+    },
+    {
+      "name": "block_11_project",
+      "class": "Conv2D",
+      "size": [
+        12,
+        30
+      ],
+      "jump": [
+        16,
+        16
+      ],
+      "origin": [
+        15.0,
+        15.0
+      ],
+      "conv_support": [
+        235,
+        235
+      ]
+    },
+    {
+      "name": "block_11_project_BN",
+      "class": "BatchNormalization",
+      "size": [
+        12,
+        30
+      ],
+      "jump": [
+        16,
+        16
+      ],
+      "origin": [
+        15.0,
+        15.0
+      ],
+      "conv_support": [
+        235,
+        235
+      ]
+    },
+    {
+      "name": "block_11_add",
+      "class": "Add",
+      "size": [
+        12,
+        30
+      ],
+      "jump": [
+        16,
+        16
+      ],
+      "origin": [
+        15.0,
+        15.0
+      ],
+      "conv_support": [
+        235,
+        235
+      ]
+    },
+    {
+      "name": "block_12_expand",
+      "class": "Conv2D",
+      "size": [
+        12,
+        30
+      ],
+      "jump": [
+        16,
+        16
+      ],
+      "origin": [
+        15.0,
+        15.0
+      ],
+      "conv_support": [
+        235,
+        235
+      ]
+    },
+    {
+      "name": "block_12_expand_BN",
+      "class": "BatchNormalization",
+      "size": [
+        12,
+        30
+      ],
+      "jump": [
+        16,
+        16
+      ],
+      "origin": [
+        15.0,
+        15.0
+      ],
+      "conv_support": [
+        235,
+        235
+      ]
+    },
+    {
+      "name": "block_12_expand_relu",
+      "class": "ReLU",
+      "size": [
+        12,
+        30
+      ],
+      "jump": [
+        16,
+        16
+      ],
+      "origin": [
+        15.0,
+        15.0
+      ],
+      "conv_support": [
+        235,
+        235
+      ]
+    },
+    {
+      "name": "block_12_depthwise",
+      "class": "DepthwiseConv2D",
+      "size": [
+        12,
+        30
+      ],
+      "jump": [
+        16,
+        16
+      ],
+      "origin": [
+        15.0,
+        15.0
+      ],
+      "conv_support": [
+        267,
+        267
+      ]
+    },
+    {
+      "name": "block_12_depthwise_BN",
+      "class": "BatchNormalization",
+      "size": [
+        12,
+        30
+      ],
+      "jump": [
+        16,
+        16
+      ],
+      "origin": [
+        15.0,
+        15.0
+      ],
+      "conv_support": [
+        267,
+        267
+      ]
+    },
+    {
+      "name": "block_12_depthwise_relu",
+      "class": "ReLU",
+      "size": [
+        12,
+        30
+      ],
+      "jump": [
+        16,
+        16
+      ],
+      "origin": [
+        15.0,
+        15.0
+      ],
+      "conv_support": [
+        267,
+        267
+      ]
+    },
+    {
+      "name": "block_12_project",
+      "class": "Conv2D",
+      "size": [
+        12,
+        30
+      ],
+      "jump": [
+        16,
+        16
+      ],
+      "origin": [
+        15.0,
+        15.0
+      ],
+      "conv_support": [
+        267,
+        267
+      ]
+    },
+    {
+      "name": "block_12_project_BN",
+      "class": "BatchNormalization",
+      "size": [
+        12,
+        30
+      ],
+      "jump": [
+        16,
+        16
+      ],
+      "origin": [
+        15.0,
+        15.0
+      ],
+      "conv_support": [
+        267,
+        267
+      ]
+    },
+    {
+      "name": "block_12_add",
+      "class": "Add",
+      "size": [
+        12,
+        30
+      ],
+      "jump": [
+        16,
+        16
+      ],
+      "origin": [
+        15.0,
+        15.0
+      ],
+      "conv_support": [
+        267,
+        267
+      ]
+    },
+    {
+      "name": "block_13_expand",
+      "class": "Conv2D",
+      "size": [
+        12,
+        30
+      ],
+      "jump": [
+        16,
+        16
+      ],
+      "origin": [
+        15.0,
+        15.0
+      ],
+      "conv_support": [
+        267,
+        267
+      ]
+    },
+    {
+      "name": "block_13_expand_BN",
+      "class": "BatchNormalization",
+      "size": [
+        12,
+        30
+      ],
+      "jump": [
+        16,
+        16
+      ],
+      "origin": [
+        15.0,
+        15.0
+      ],
+      "conv_support": [
+        267,
+        267
+      ]
+    },
+    {
+      "name": "block_13_expand_relu",
+      "class": "ReLU",
+      "size": [
+        12,
+        30
+      ],
+      "jump": [
+        16,
+        16
+      ],
+      "origin": [
+        15.0,
+        15.0
+      ],
+      "conv_support": [
+        267,
+        267
+      ]
+    },
+    {
+      "name": "block_13_pad",
+      "class": "ZeroPadding2D",
+      "size": [
+        13,
+        31
+      ],
+      "jump": [
+        16,
+        16
+      ],
+      "origin": [
+        15.0,
+        15.0
+      ],
+      "conv_support": [
+        267,
+        267
+      ]
+    },
+    {
+      "name": "block_13_depthwise",
+      "class": "DepthwiseConv2D",
+      "size": [
+        6,
+        15
+      ],
+      "jump": [
+        32,
+        32
+      ],
+      "origin": [
+        31.0,
+        31.0
+      ],
+      "conv_support": [
+        299,
+        299
+      ]
+    },
+    {
+      "name": "block_13_depthwise_BN",
+      "class": "BatchNormalization",
+      "size": [
+        6,
+        15
+      ],
+      "jump": [
+        32,
+        32
+      ],
+      "origin": [
+        31.0,
+        31.0
+      ],
+      "conv_support": [
+        299,
+        299
+      ]
+    },
+    {
+      "name": "block_13_depthwise_relu",
+      "class": "ReLU",
+      "size": [
+        6,
+        15
+      ],
+      "jump": [
+        32,
+        32
+      ],
+      "origin": [
+        31.0,
+        31.0
+      ],
+      "conv_support": [
+        299,
+        299
+      ]
+    },
+    {
+      "name": "block_13_project",
+      "class": "Conv2D",
+      "size": [
+        6,
+        15
+      ],
+      "jump": [
+        32,
+        32
+      ],
+      "origin": [
+        31.0,
+        31.0
+      ],
+      "conv_support": [
+        299,
+        299
+      ]
+    },
+    {
+      "name": "block_13_project_BN",
+      "class": "BatchNormalization",
+      "size": [
+        6,
+        15
+      ],
+      "jump": [
+        32,
+        32
+      ],
+      "origin": [
+        31.0,
+        31.0
+      ],
+      "conv_support": [
+        299,
+        299
+      ]
+    },
+    {
+      "name": "block_14_expand",
+      "class": "Conv2D",
+      "size": [
+        6,
+        15
+      ],
+      "jump": [
+        32,
+        32
+      ],
+      "origin": [
+        31.0,
+        31.0
+      ],
+      "conv_support": [
+        299,
+        299
+      ]
+    },
+    {
+      "name": "block_14_expand_BN",
+      "class": "BatchNormalization",
+      "size": [
+        6,
+        15
+      ],
+      "jump": [
+        32,
+        32
+      ],
+      "origin": [
+        31.0,
+        31.0
+      ],
+      "conv_support": [
+        299,
+        299
+      ]
+    },
+    {
+      "name": "block_14_expand_relu",
+      "class": "ReLU",
+      "size": [
+        6,
+        15
+      ],
+      "jump": [
+        32,
+        32
+      ],
+      "origin": [
+        31.0,
+        31.0
+      ],
+      "conv_support": [
+        299,
+        299
+      ]
+    },
+    {
+      "name": "block_14_depthwise",
+      "class": "DepthwiseConv2D",
+      "size": [
+        6,
+        15
+      ],
+      "jump": [
+        32,
+        32
+      ],
+      "origin": [
+        31.0,
+        31.0
+      ],
+      "conv_support": [
+        363,
+        363
+      ]
+    },
+    {
+      "name": "block_14_depthwise_BN",
+      "class": "BatchNormalization",
+      "size": [
+        6,
+        15
+      ],
+      "jump": [
+        32,
+        32
+      ],
+      "origin": [
+        31.0,
+        31.0
+      ],
+      "conv_support": [
+        363,
+        363
+      ]
+    },
+    {
+      "name": "block_14_depthwise_relu",
+      "class": "ReLU",
+      "size": [
+        6,
+        15
+      ],
+      "jump": [
+        32,
+        32
+      ],
+      "origin": [
+        31.0,
+        31.0
+      ],
+      "conv_support": [
+        363,
+        363
+      ]
+    },
+    {
+      "name": "block_14_project",
+      "class": "Conv2D",
+      "size": [
+        6,
+        15
+      ],
+      "jump": [
+        32,
+        32
+      ],
+      "origin": [
+        31.0,
+        31.0
+      ],
+      "conv_support": [
+        363,
+        363
+      ]
+    },
+    {
+      "name": "block_14_project_BN",
+      "class": "BatchNormalization",
+      "size": [
+        6,
+        15
+      ],
+      "jump": [
+        32,
+        32
+      ],
+      "origin": [
+        31.0,
+        31.0
+      ],
+      "conv_support": [
+        363,
+        363
+      ]
+    },
+    {
+      "name": "block_14_add",
+      "class": "Add",
+      "size": [
+        6,
+        15
+      ],
+      "jump": [
+        32,
+        32
+      ],
+      "origin": [
+        31.0,
+        31.0
+      ],
+      "conv_support": [
+        363,
+        363
+      ]
+    },
+    {
+      "name": "block_15_expand",
+      "class": "Conv2D",
+      "size": [
+        6,
+        15
+      ],
+      "jump": [
+        32,
+        32
+      ],
+      "origin": [
+        31.0,
+        31.0
+      ],
+      "conv_support": [
+        363,
+        363
+      ]
+    },
+    {
+      "name": "block_15_expand_BN",
+      "class": "BatchNormalization",
+      "size": [
+        6,
+        15
+      ],
+      "jump": [
+        32,
+        32
+      ],
+      "origin": [
+        31.0,
+        31.0
+      ],
+      "conv_support": [
+        363,
+        363
+      ]
+    },
+    {
+      "name": "block_15_expand_relu",
+      "class": "ReLU",
+      "size": [
+        6,
+        15
+      ],
+      "jump": [
+        32,
+        32
+      ],
+      "origin": [
+        31.0,
+        31.0
+      ],
+      "conv_support": [
+        363,
+        363
+      ]
+    },
+    {
+      "name": "block_15_depthwise",
+      "class": "DepthwiseConv2D",
+      "size": [
+        6,
+        15
+      ],
+      "jump": [
+        32,
+        32
+      ],
+      "origin": [
+        31.0,
+        31.0
+      ],
+      "conv_support": [
+        427,
+        427
+      ]
+    },
+    {
+      "name": "block_15_depthwise_BN",
+      "class": "BatchNormalization",
+      "size": [
+        6,
+        15
+      ],
+      "jump": [
+        32,
+        32
+      ],
+      "origin": [
+        31.0,
+        31.0
+      ],
+      "conv_support": [
+        427,
+        427
+      ]
+    },
+    {
+      "name": "block_15_depthwise_relu",
+      "class": "ReLU",
+      "size": [
+        6,
+        15
+      ],
+      "jump": [
+        32,
+        32
+      ],
+      "origin": [
+        31.0,
+        31.0
+      ],
+      "conv_support": [
+        427,
+        427
+      ]
+    },
+    {
+      "name": "block_15_project",
+      "class": "Conv2D",
+      "size": [
+        6,
+        15
+      ],
+      "jump": [
+        32,
+        32
+      ],
+      "origin": [
+        31.0,
+        31.0
+      ],
+      "conv_support": [
+        427,
+        427
+      ]
+    },
+    {
+      "name": "block_15_project_BN",
+      "class": "BatchNormalization",
+      "size": [
+        6,
+        15
+      ],
+      "jump": [
+        32,
+        32
+      ],
+      "origin": [
+        31.0,
+        31.0
+      ],
+      "conv_support": [
+        427,
+        427
+      ]
+    },
+    {
+      "name": "block_15_add",
+      "class": "Add",
+      "size": [
+        6,
+        15
+      ],
+      "jump": [
+        32,
+        32
+      ],
+      "origin": [
+        31.0,
+        31.0
+      ],
+      "conv_support": [
+        427,
+        427
+      ]
+    },
+    {
+      "name": "block_16_expand",
+      "class": "Conv2D",
+      "size": [
+        6,
+        15
+      ],
+      "jump": [
+        32,
+        32
+      ],
+      "origin": [
+        31.0,
+        31.0
+      ],
+      "conv_support": [
+        427,
+        427
+      ]
+    },
+    {
+      "name": "block_16_expand_BN",
+      "class": "BatchNormalization",
+      "size": [
+        6,
+        15
+      ],
+      "jump": [
+        32,
+        32
+      ],
+      "origin": [
+        31.0,
+        31.0
+      ],
+      "conv_support": [
+        427,
+        427
+      ]
+    },
+    {
+      "name": "block_16_expand_relu",
+      "class": "ReLU",
+      "size": [
+        6,
+        15
+      ],
+      "jump": [
+        32,
+        32
+      ],
+      "origin": [
+        31.0,
+        31.0
+      ],
+      "conv_support": [
+        427,
+        427
+      ]
+    },
+    {
+      "name": "block_16_depthwise",
+      "class": "DepthwiseConv2D",
+      "size": [
+        6,
+        15
+      ],
+      "jump": [
+        32,
+        32
+      ],
+      "origin": [
+        31.0,
+        31.0
+      ],
+      "conv_support": [
+        491,
+        491
+      ]
+    },
+    {
+      "name": "block_16_depthwise_BN",
+      "class": "BatchNormalization",
+      "size": [
+        6,
+        15
+      ],
+      "jump": [
+        32,
+        32
+      ],
+      "origin": [
+        31.0,
+        31.0
+      ],
+      "conv_support": [
+        491,
+        491
+      ]
+    },
+    {
+      "name": "block_16_depthwise_relu",
+      "class": "ReLU",
+      "size": [
+        6,
+        15
+      ],
+      "jump": [
+        32,
+        32
+      ],
+      "origin": [
+        31.0,
+        31.0
+      ],
+      "conv_support": [
+        491,
+        491
+      ]
+    },
+    {
+      "name": "block_16_project",
+      "class": "Conv2D",
+      "size": [
+        6,
+        15
+      ],
+      "jump": [
+        32,
+        32
+      ],
+      "origin": [
+        31.0,
+        31.0
+      ],
+      "conv_support": [
+        491,
+        491
+      ]
+    },
+    {
+      "name": "block_16_project_BN",
+      "class": "BatchNormalization",
+      "size": [
+        6,
+        15
+      ],
+      "jump": [
+        32,
+        32
+      ],
+      "origin": [
+        31.0,
+        31.0
+      ],
+      "conv_support": [
+        491,
+        491
+      ]
+    },
+    {
+      "name": "Conv_1",
+      "class": "Conv2D",
+      "size": [
+        6,
+        15
+      ],
+      "jump": [
+        32,
+        32
+      ],
+      "origin": [
+        31.0,
+        31.0
+      ],
+      "conv_support": [
+        491,
+        491
+      ]
+    },
+    {
+      "name": "Conv_1_bn",
+      "class": "BatchNormalization",
+      "size": [
+        6,
+        15
+      ],
+      "jump": [
+        32,
+        32
+      ],
+      "origin": [
+        31.0,
+        31.0
+      ],
+      "conv_support": [
+        491,
+        491
+      ]
+    },
+    {
+      "name": "out_relu",
+      "class": "ReLU",
+      "size": [
+        6,
+        15
+      ],
+      "jump": [
+        32,
+        32
+      ],
+      "origin": [
+        31.0,
+        31.0
+      ],
+      "conv_support": [
+        491,
+        491
+      ]
+    }
+  ]
+}

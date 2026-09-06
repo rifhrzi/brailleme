@@ -1,0 +1,32 @@
+{
+    "memory_mib":  1536,
+    "pid":  26272,
+    "command":  "emulator.exe",
+    "arguments":  [
+                      "-avd",
+                      "BrailleMe_API_36",
+                      "-read-only",
+                      "-no-window",
+                      "-no-audio",
+                      "-no-boot-anim",
+                      "-no-snapshot",
+                      "-memory",
+                      "1536",
+                      "-cores",
+                      "2",
+                      "-gpu",
+                      "swiftshader",
+                      "-feature",
+                      "-Vulkan",
+                      "-camera-back",
+                      "imagefile:C:\\bm-word-geometry-compile-20260905\\evidence\\camera-capture\\landmark-feed.png",
+                      "-camera-front",
+                      "none",
+                      "-port",
+                      "5554"
+                  ],
+    "avd":  "BrailleMe_API_36",
+    "gpu":  "swiftshader",
+    "start_utc":  "2026-09-05T16:10:49.7127486Z",
+    "read_only":  true
+}

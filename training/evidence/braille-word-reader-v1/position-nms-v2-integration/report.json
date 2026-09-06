@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "status": "passed",
+  "created_at_utc": "2026-09-06T05:12:56.803852+00:00",
+  "decoder_version": "six-dot-word-v2",
+  "source_sha256": {
+    "training/scripts/word_decode.py": "fa2179b74459d84055b244ac60353d52d59cd12eda80b5cc279382c28f1be444",
+    "src/ml/word-decoder.ts": "f8bb0ef65a03c850c8aedccf287e00501a5bf1b4c4bba60440141567752b6c15",
+    "training/tests/word_test_predictions.py": "86942af894338de7a6626fb1df06efb1c7727a07bc5731a49d9ad1d984d935a9",
+    "training/tests/test_word_decoder_positions.py": "9cdf69cb9187a0537c59f2b4702a6cadf2b5c9dc9f78923258e904a8b20a86be",
+    "training/tests/test_word_pipeline.py": "d7994fa1f8d90da170886afdf950147ee0dc55ef930d4bd002c2194da66759f6",
+    "training/tests/test_word_benchmark.py": "863e8d83e18f48d7accf41c877b078a2688d5afb2e1865bdffc25f0281c81ba5",
+    "training/tests/test_word_selection.py": "d47769513c4baa97b6b69cd2a133f91ce18f2cba9dd1e95bf7a418475503fad0",
+    "training/tests/test_word_fixture_geometry.py": "432d7474da07087ec33259dee1f0aea512fb75672a48fec6eee5f75d7baef237",
+    "training/tests/test_word_visible_partial.py": "e3315c668e7526d9f4f847684decdd3036ee80ac0fb19998471707e850d77a91",
+    "src/ml/__tests__/word-decoder.test.ts": "5b9e52c94d03d0d4100b17a59ebf2a18b354b058ce1aeb086a5cc2fbcb5dcb28",
+    "src/ml/__tests__/word-decoder-positions.test.ts": "7cb56f1c950b0bc52ed29549fdb17362abaa1497d98de31d8b1fa2791a3b39bf",
+    "training/scripts/word_data.py": "d692b4b28620af7e4b40ebdedccda68769feb8d3f51bd1508e807487fd32b7d7",
+    "training/scripts/word_model.py": "c446732a2905a612cd6f1dd64d2d3d01303b1c71933c34552d26f3b5052fd551",
+    "training/scripts/word_select.py": "3f9567ea035de52b6a315605b38d9c52079168657d6a2cc2059c2d541ea26eb3",
+    "training/scripts/word_benchmark.py": "ad7d4f3a35a8d0dd3a530dfeb8f849fde585e97cadcde5fcb043950bedd05988",
+    "training/scripts/word_fixture.py": "377bcee2679f46a9c5195e36ab64a8c8acf20322058bd9dfe15258833d83c0d3",
+    "training/scripts/word_train.py": "e22a5302af5eca4482c8901827e06b04126c72bb6964e63db97d940254f40a38",
+    "src/ml/word-model-contract.ts": "e985d76a5d372cf4f31a325a39ca88268422dd5c0685e50c48ee1fb69dffc99f",
+    "src/ml/__tests__/fixtures/word-decoder-reference.json": "71321a35e696522ff3d1a0c33bcdd18e556a918c8c3d6609381cbed81e9a8888"
+  },
+  "changes": [
+    "Remove local 3x3 grid suppression before existing positional IoU NMS in both runtimes.",
+    "Calibration caches retain every finite raw proposal at or above minimum score; old peak-filtered caches cannot be reused.",
+    "Test-only ideal predictions score exact supervised centers; source Gaussian loss targets are preserved."
+  ],
+  "checks": {
+    "python_actual_tests": 52,
+    "jest_actual_tests": 57,
+    "python_semantics_exact_private_plus_version_constant": true,
+    "typescript_byte_exact_private": true,
+    "unchanged_training_data_model_loss_anchor_mapping_sources": true,
+    "frozen_405_manifest_unchanged": true,
+    "golden_sparse_17_case_fixture_unchanged": true,
+    "test_source_unchanged_during_execution": true
+  },
+  "proofs": {
+    "actual_test_execution": {
+      "file": ".braille-training-work/word-scan-v1-20260905/position-nms-v2-integration/test-execution.json",
+      "sha256": "51c4355745fd3e14f3f4630964cee871bd5aa6e476cd26acf991b2bfbe0c984d"
+    },
+    "private_specification": {
+      "file": ".braille-training-work/word-scan-v1-20260905/position-nms-prototype-v1/prototype-spec.json",
+      "sha256": "053caf93c4e1771c913ac370b9720b3faa832904bc69cbc7effa52185010d609"
+    },
+    "private_python_20_cases_1600_cache_trials": {
+      "file": ".braille-training-work/word-scan-v1-20260905/position-nms-prototype-v1/python-test-report.json",
+      "sha256": "c69c6d3372027995095347cf25f28ba527b04f43b815a4ef3900eee38d920692"
+    },
+    "private_typescript_20_case_parity": {
+      "file": ".braille-training-work/word-scan-v1-20260905/position-nms-prototype-v1/typescript-test-report.json",
+      "sha256": "b0c597dc23ae5e0a66e087bddc4fb5723df540c52018239d099117fcb68792dc"
+    },
+    "fixed_raw405_comparison": {
+      "file": ".braille-training-work/word-scan-v1-20260905/position-nms-prototype-v1/held405-comparison/report.json",
+      "sha256": "445f6b8df123b43c9958a579303d29d56adfac531d80b23d98dfd1a7f44fa18c"
+    },
+    "independent_private_source_review": {
+      "file": ".braille-training-work/word-scan-v1-20260905/position-nms-independent-source-review-v1/report.json",
+      "sha256": "965c7da4f9df695931acfd75e60f3e4e646ac865704fc903320174f4dd29bf5e"
+    }
+  },
+  "limits": [
+    "Correctness fix, not an accuracy claim. Prior fixed raw405 comparison changed 357 correct to 355 and accepted 362 to 359.",
+    "No model execution, new calibration, image/label modification, release gate change or checkpoint promotion in this integration.",
+    "Existing golden fixture remains historical and was executed unchanged; final model/runtime parity still belongs to subsequent selected artifacts."
+  ],
+  "script_sha256": "6e274d2e0e49dac7641e83f6bc7a8bb35b04c80ce04c75c42a5df4f7e74a015f"
+}

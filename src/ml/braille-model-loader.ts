@@ -88,14 +88,16 @@ type NativePostCropSelfTestResult = {
 
 async function runNativePostCropSelfTest(
   model: TensorflowModel,
-  fixtureUri: string,
+  fixtureModule: number,
 ): Promise<NativePostCropSelfTestResult> {
   let sourceImage: Image | undefined;
   let croppedImage: Image | undefined;
   let resizedImage: Image | undefined;
 
   try {
-    sourceImage = await loadImage({ filePath: fixtureUri });
+    // Biarkan NitroImage menyelesaikan literal require: Metro memakai URL saat
+    // development, file URI pada sebagian build, dan Android resource pada APK.
+    sourceImage = await loadImage(fixtureModule);
     ({ croppedImage, resizedImage } =
       centerCropAndResizeBrailleImage(sourceImage));
     const rawPixels = resizedImage.toRawPixelData(false);
@@ -151,17 +153,10 @@ async function loadAndValidateBrailleModel(): Promise<TensorflowModel> {
     BRAILLE_MODEL_RELEASE_VERIFIED,
   );
 
-  const [asset, nativeSelfTestAsset] = await Asset.loadAsync([
-    BRAILLE_MODEL_ASSET,
-    BRAILLE_NATIVE_SELF_TEST_ASSET,
-  ]);
+  const [asset] = await Asset.loadAsync(BRAILLE_MODEL_ASSET);
   const localUri = asset?.localUri;
-  const nativeSelfTestUri = nativeSelfTestAsset?.localUri;
 
-  if (
-    !localUri?.startsWith('file://') ||
-    !nativeSelfTestUri?.startsWith('file://')
-  ) {
+  if (!localUri?.startsWith('file://')) {
     throw new Error('Aset model tidak tersedia sebagai file lokal.');
   }
 
@@ -225,7 +220,7 @@ async function loadAndValidateBrailleModel(): Promise<TensorflowModel> {
 
     const nativeSelfTest = await runNativePostCropSelfTest(
       model,
-      nativeSelfTestUri,
+      BRAILLE_NATIVE_SELF_TEST_ASSET,
     );
     if (__DEV__ && process.env.NODE_ENV !== 'test') {
       console.info(

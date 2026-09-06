@@ -1,0 +1,67 @@
+--- original/training/scripts/word_decode.py
++++ private/training/scripts/word_decode.py
+@@ -31,12 +31,6 @@
+     sizes = {}
+     for gy, gx in np.argwhere(output[..., 0] >= t["proposalScore"]):
+         row = output[gy, gx]
+-        neighborhood = output[max(0, gy-1):gy+2, max(0, gx-1):gx+2, 0]
+-        if row[0] < neighborhood.max():
+-            continue
+-        tied = np.argwhere(neighborhood == row[0]) + [max(0, gy-1), max(0, gx-1)]
+-        if any(y*GRID_W+x < gy*GRID_W+gx for y, x in tied):
+-            continue
+         cx, cy = (gx+row[1])/GRID_W, (gy+row[2])/GRID_H
+         x, y = cx-row[3]/2, cy-row[4]/2
+         box = [x, y, x+row[3], y+row[4]]
+@@ -112,23 +106,15 @@
+ 
+ 
+ def prepare_calibration_outputs(predictions, minimum_proposal=.15):
+-    """Cache exact local maxima once; all threshold trials keep the same peaks.
++    """Cache only the minimum score filter; preserve every positional proposal.
+ 
+-    Nonmaximal objectness never becomes a proposal in decode. Preserve every
+-    geometry/dot value and malformed row; these copies are calibration-only.
++    All calibration trials must use proposalScore >= minimum_proposal. Geometry,
++    dots and malformed rows remain exact. Never apply local-grid suppression.
+     """
+     prepared=np.asarray(predictions).copy()
+     score=prepared[...,0]
+     valid=np.isfinite(prepared).all(axis=(1,2,3)) & (prepared.min(axis=(1,2,3))>=0) & (prepared.max(axis=(1,2,3))<=1)
+-    padded=np.pad(score,((0,0),(1,1),(1,1)),constant_values=-1)
+-    keep=score>=minimum_proposal
+-    for dy in (-1,0,1):
+-        for dx in (-1,0,1):
+-            if dy==dx==0:
+-                continue
+-            neighbor=padded[:,1+dy:1+dy+GRID_H,1+dx:1+dx+GRID_W]
+-            keep &= score>neighbor if (dy<0 or (dy==0 and dx<0)) else score>=neighbor
+-    prepared[...,0]=np.where(valid[:,None,None],np.where(keep,score,0),score)
++    prepared[...,0]=np.where(valid[:,None,None],np.where(score>=minimum_proposal,score,0),score)
+     return prepared
+ 
+ 
+--- original/src/ml/word-decoder.ts
++++ private/src/ml/word-decoder.ts
+@@ -83,21 +83,6 @@
+       const offset = (row * WORD_MODEL_GRID_WIDTH + column) * WORD_MODEL_OUTPUT_CHANNELS;
+       const score = output[offset]!;
+       if (score < thresholds.proposalScore) continue;
+-      let isMaximum = true;
+-      for (let dy = -1; dy <= 1 && isMaximum; dy += 1) {
+-        for (let dx = -1; dx <= 1; dx += 1) {
+-          const y = row + dy;
+-          const x = column + dx;
+-          if (y < 0 || y >= WORD_MODEL_GRID_HEIGHT || x < 0 || x >= WORD_MODEL_GRID_WIDTH || (dx === 0 && dy === 0)) continue;
+-          const neighborOffset = (y * WORD_MODEL_GRID_WIDTH + x) * WORD_MODEL_OUTPUT_CHANNELS;
+-          const neighborScore = output[neighborOffset]!;
+-          if (neighborScore > score || (neighborScore === score && neighborOffset < offset)) {
+-            isMaximum = false;
+-            break;
+-          }
+-        }
+-      }
+-      if (!isMaximum) continue;
+       const width = output[offset + 3]!;
+       const height = output[offset + 4]!;
+       const box = {

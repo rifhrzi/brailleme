@@ -1,0 +1,289 @@
+--- a/training/scripts/word_train.py
++++ b/training/scripts/word_train.py
+@@ -28,8 +28,10 @@
+ from word_fine_validation import validated_fine_branch
+ from word_horizontal_aspect import horizontal_aspect_factors, HORIZONTAL_ASPECT_RANGE, HORIZONTAL_STREAM_ID
+ from word_normalization_transition import validated_normalization_transition, training_normalization_metadata
+-
+-TRAINING_SOURCES = ('word_data.py', 'word_model.py', 'word_decode.py', 'word_train.py', 'word_sampling.py', 'word_tail.py', 'word_sources.py', 'word_dsbi.py', 'word_point_geometry.py', 'word_point_metadata.py', 'word_geometry_head.py', 'word_geometry_init.py', 'word_geometry_parity.py', 'word_vertical_stretch.py', 'word_bn_affine.py', 'word_bn_affine_init.py', 'word_bn_affine_parity.py', 'word_fine_branch.py', 'word_fine_init.py', 'word_fine_parity.py', 'word_fine_validation.py', 'word_horizontal_aspect.py', 'word_anchor_zoom.py', 'word_normalization_transition.py')
++from word_dot_aux import AUXILIARY_DOT_COEFFICIENT, wrap_dot_training
++from word_dot_aux_targets import complete_dot_queries, pad_dot_queries
++
++TRAINING_SOURCES = ('word_data.py', 'word_model.py', 'word_decode.py', 'word_train.py', 'word_sampling.py', 'word_tail.py', 'word_sources.py', 'word_dsbi.py', 'word_point_geometry.py', 'word_point_metadata.py', 'word_geometry_head.py', 'word_geometry_init.py', 'word_geometry_parity.py', 'word_vertical_stretch.py', 'word_bn_affine.py', 'word_bn_affine_init.py', 'word_bn_affine_parity.py', 'word_fine_branch.py', 'word_fine_init.py', 'word_fine_parity.py', 'word_fine_validation.py', 'word_horizontal_aspect.py', 'word_anchor_zoom.py', 'word_normalization_transition.py', 'word_dot_aux.py', 'word_dot_aux_targets.py')
+ 
+ 
+ def moving_moments_sha256(model):
+@@ -130,7 +132,7 @@
+ 
+ 
+ class Patches(keras.utils.PyDataset):
+-    def __init__(self, root, records, batch_size, training, seed, camera_augmentation=False, polarity_augmentation=False,half_turn_augmentation=False,illumination_augmentation=False,horizontal_mirror_augmentation=False,balance_source_families=False,partial_geometry_supervision=False,point_states=None,vertical_stretch_augmentation=False,horizontal_aspect_augmentation=False,anchor_zoom_cap=False):
++    def __init__(self, root, records, batch_size, training, seed, camera_augmentation=False, polarity_augmentation=False,half_turn_augmentation=False,illumination_augmentation=False,horizontal_mirror_augmentation=False,balance_source_families=False,partial_geometry_supervision=False,point_states=None,vertical_stretch_augmentation=False,horizontal_aspect_augmentation=False,anchor_zoom_cap=False,auxiliary_dot_supervision=False):
+         super().__init__(workers=2, use_multiprocessing=False, max_queue_size=2)
+         self.root, self.records, self.batch_size = root, records, batch_size
+         self.training, self.seed, self.epoch = training, seed, 0
+@@ -142,6 +144,7 @@
+         self.family_sampler=BalancedFamilyOrder(records,seed) if training and balance_source_families else None
+         self.partial_geometry_supervision=partial_geometry_supervision
+         self.point_states = point_states
++        self.auxiliary_dot_supervision = auxiliary_dot_supervision
+         self.vertical_stretch_augmentation = vertical_stretch_augmentation
+         self.horizontal_aspect_augmentation = horizontal_aspect_augmentation
+         if anchor_zoom_cap and (not illumination_augmentation or camera_augmentation or polarity_augmentation
+@@ -158,6 +161,7 @@
+     def __getitem__(self, index):
+         rng = np.random.default_rng(self.seed+self.epoch*100000+index)
+         images, labels = [], []
++        auxiliary_rows = []
+         batch_indices = self.order[index*self.batch_size:(index+1)*self.batch_size]
+         height_factors = (vertical_stretch_factors(self.seed, self.epoch, index, len(batch_indices))
+                           if self.training and self.vertical_stretch_augmentation else None)
+@@ -206,6 +210,11 @@
+             fragments = visible_partial_candidates(boxes[:positive_count], point_state)[1] if point_state is not None else None
+             labels.append(make_target(boxes[:positive_count], masks[:positive_count], eligible[:positive_count],
+                                       self.partial_geometry_supervision, ignore_boxes=boxes[positive_count:], visible_partial_boxes=fragments))
++            if self.auxiliary_dot_supervision:
++                auxiliary_rows.append(complete_dot_queries(point_state, masks[:positive_count], eligible[:positive_count]))
++        if self.auxiliary_dot_supervision:
++            queries, occupancy = pad_dot_queries(auxiliary_rows)
++            return (np.stack(images), queries), (np.stack(labels), occupancy)
+         return np.stack(images), np.stack(labels)
+ 
+     def on_epoch_end(self):
+@@ -218,7 +227,7 @@
+ 
+ 
+ class WordCheckpoint(keras.callbacks.Callback):
+-    def __init__(self, root, output, batch_size, retain_epochs=False,train_dataset=None,expected_bn_moments=None):
++    def __init__(self, root, output, batch_size, retain_epochs=False,train_dataset=None,expected_bn_moments=None,reader=None):
+         super().__init__()
+         self.output, self.batch_size = output, batch_size
+         self.retain_epochs = retain_epochs
+@@ -230,6 +239,7 @@
+         self.sampling_history=[]
+         self.sampled_indices=set()
+         self.expected_bn_moments = expected_bn_moments
++        self.reader = reader
+ 
+     def on_epoch_begin(self,epoch,logs=None):
+         self.epoch_started=time.perf_counter()
+@@ -244,12 +254,15 @@
+ 
+     def on_epoch_end(self, epoch, logs=None):
+         callback_started=time.perf_counter()
++        reader = self.reader if self.reader is not None else self.model
+         moment_hash = None
+         if self.expected_bn_moments is not None:
+-            moment_hash = moving_moments_sha256(self.model)
++            moment_hash = moving_moments_sha256(reader)
+             if moment_hash != self.expected_bn_moments:
+                 raise RuntimeError('Frozen BN moving moments changed; abort before writing a checkpoint')
+-        self.model.save(self.output/"last.keras")
++        reader.save(self.output/"last.keras")
++        if self.reader is not None:
++            self.model.save(self.output/"last-training.keras")
+         if self.retain_epochs:
+             checkpoint_folder=self.output/'retained-epochs'
+             checkpoint_folder.mkdir(exist_ok=True)
+@@ -257,7 +270,7 @@
+         if self.images is None:
+             return
+         save_finished=time.perf_counter()
+-        predictions = self.model.predict(self.images, batch_size=self.batch_size, verbose=0)
++        predictions = reader.predict(self.images, batch_size=self.batch_size, verbose=0)
+         predict_finished=time.perf_counter()
+         thresholds, metrics = calibrate(predictions, self.records)
+         calibration_finished=time.perf_counter()
+@@ -282,7 +295,7 @@
+         print("WORD_VALIDATION "+json.dumps(brief), flush=True)
+         if self.best_rank is None or rank > self.best_rank:
+             self.best_rank = rank
+-            self.model.save(self.output/"best-word.keras")
++            reader.save(self.output/"best-word.keras")
+             np.savez_compressed(self.output/"best-word-validation.npz", outputs=predictions)
+             save_json(self.output/"selected-validation.json", record)
+         record['timing_seconds']['callback_total']=time.perf_counter()-callback_started
+@@ -330,6 +343,7 @@
+     parser.add_argument('--anchor-zoom-cap', action='store_true', help='Cap existing isotropic zoom to preserve one original full known cell at the affine stage.')
+     parser.add_argument('--normalization-initialization', type=Path, help='Exact std.15 full-tail initialization report; no normalization rebuild.')
+     parser.add_argument('--normalization-runtime-proof', type=Path, help='Actual std.15 six-input Torch/TF/TFLite runtime proof.')
++    parser.add_argument('--auxiliary-dot-supervision', action='store_true', help='Training-only explicit DSBI complete-cell occupancy objective with fixed weight .25.')
+     args = parser.parse_args(argv)
+     if args.resume and args.geometry_loss is None:
+         parser.error('--resume requires explicit --geometry-loss to preserve the intended training objective')
+@@ -380,6 +394,14 @@
+             or args.geometry_head_initialization or args.bn_affine_initialization or args.fine_branch_initialization
+             or args.image_normalization is not None):
+         parser.error('Normalization transition requires its exact unchanged full-tail parent and isolated illumination/DSBI profile')
++    if args.auxiliary_dot_supervision and (not args.resume or not args.illumination_augmentation
++            or not args.dsbi_visible_partial_supervision or not args.balance_source_families
++            or args.anchor_zoom_cap or args.horizontal_aspect_augmentation or args.vertical_stretch_augmentation
++            or args.horizontal_mirror_augmentation or args.camera_augmentation or args.half_turn_augmentation
++            or args.polarity_augmentation or args.partial_geometry_supervision or args.geometry_head_initialization
++            or args.bn_affine_initialization or args.fine_branch_initialization or args.normalization_initialization
++            or args.image_normalization is not None):
++        parser.error('Auxiliary dots require the unchanged full-tail illumination/DSBI reader without other ablations')
+     return args
+ 
+ 
+@@ -418,8 +440,8 @@
+                                                             args.supplemental_negative_repeat)
+     if args.limit_train:
+         train_rows = train_rows[:args.limit_train]
+-    train = Patches(args.data, train_rows, args.batch_size, True, args.seed, args.camera_augmentation,args.polarity_augmentation,args.half_turn_augmentation,args.illumination_augmentation,args.horizontal_mirror_augmentation,args.balance_source_families,args.partial_geometry_supervision,point_states=point_states,vertical_stretch_augmentation=args.vertical_stretch_augmentation,horizontal_aspect_augmentation=args.horizontal_aspect_augmentation,anchor_zoom_cap=args.anchor_zoom_cap)
+-    validation = Patches(args.data, val_rows, args.batch_size, False, args.seed+1,partial_geometry_supervision=args.partial_geometry_supervision)
++    train = Patches(args.data, train_rows, args.batch_size, True, args.seed, args.camera_augmentation,args.polarity_augmentation,args.half_turn_augmentation,args.illumination_augmentation,args.horizontal_mirror_augmentation,args.balance_source_families,args.partial_geometry_supervision,point_states=point_states,vertical_stretch_augmentation=args.vertical_stretch_augmentation,horizontal_aspect_augmentation=args.horizontal_aspect_augmentation,anchor_zoom_cap=args.anchor_zoom_cap,auxiliary_dot_supervision=args.auxiliary_dot_supervision)
++    validation = Patches(args.data, val_rows, args.batch_size, False, args.seed+1,partial_geometry_supervision=args.partial_geometry_supervision,auxiliary_dot_supervision=args.auxiliary_dot_supervision)
+     model = keras.models.load_model(args.resume, compile=False) if args.resume else build_model()
+     normalization_transition = validated_normalization_transition(model, args.resume, args.normalization_initialization, args.normalization_runtime_proof, image_normalization_spec(model))
+     batchnorm_affine = validated_bn_affine(model, args.resume, args.bn_affine_initialization, args.bn_affine_conversion)
+@@ -465,7 +487,11 @@
+         del initial_weights
+     if (args.polarity_augmentation or args.half_turn_augmentation or args.illumination_augmentation) and image_normalization_spec(model)['kind']=='none':
+         raise ValueError('Polarity profile requires embedded per-image normalization')
+-    model.compile(optimizer=keras.optimizers.Adam(args.learning_rate, clipnorm=10.), loss=word_relative_loss if args.geometry_loss=='relative_size_huber' else word_loss, jit_compile=False)
++    if args.auxiliary_dot_supervision:
++        training_model = wrap_dot_training(model, word_relative_loss if args.geometry_loss=='relative_size_huber' else word_loss, args.learning_rate)
++    else:
++        model.compile(optimizer=keras.optimizers.Adam(args.learning_rate, clipnorm=10.), loss=word_relative_loss if args.geometry_loss=='relative_size_huber' else word_loss, jit_compile=False)
++        training_model = model
+     config = {"backend": keras.backend.backend(), "keras_version": keras.__version__, "device": device, "architecture": "MobileNetV2 alpha0.5 ImageNet, FPN stride16/8/4, joint sigmoid center/box/dots", "input_shape": [1, HEIGHT, WIDTH, 3], "normalization": "RGB float32 /255; internal Rescaling(2,-1)", "output_shape": [1, HEIGHT//4, WIDTH//4, 11], "output_channels": ["objectness", "dx", "dy", "width", "height", "dot1", "dot2", "dot3", "dot4", "dot5", "dot6"], "epochs": args.epochs, "batch_size": args.batch_size, "learning_rate": args.learning_rate, "seed": args.seed, "train_patches": len(train_rows), "validation_patches": len(val_rows), "resume": str(args.resume) if args.resume else None, "physical_camera_validated": False,
+               "started_at_utc": datetime.now(timezone.utc).isoformat(),
+               "source_sha256": {name: hashlib.sha256((Path(__file__).parent/name).read_bytes()).hexdigest() for name in TRAINING_SOURCES},
+@@ -494,6 +520,15 @@
+     config['batchnorm_affine'] = batchnorm_affine
+     config['normalization_transition'] = normalization_transition
+     config['fine_detail_branch'] = fine_branch
++    config['auxiliary_dot_supervision'] = {'enabled': args.auxiliary_dot_supervision}
++    if args.auxiliary_dot_supervision:
++        config['auxiliary_dot_supervision'].update(coefficient=AUXILIARY_DOT_COEFFICIENT,
++            target='Explicit mask bits at actual transformed DSBI TRAIN points, complete at every raster, all six positions within stride4/origin3 feature hull.',
++            unknown_policy='No points for Angelina, unknown slots or partial cells; missing auxiliary labels are -1.',
++            denominator='Separate known-point count; original main loss and denominator unchanged.',
++            validation='All validation records have ignored auxiliary queries; val_loss is the original reader loss. Whole-word callbacks use reader only.',
++            training_parameters=training_model.count_params(),
++            checkpoints='Selectable last/best/retained Keras files contain reader only; last-training.keras separately preserves full wrapper and optimizer. Reader resume starts a fresh auxiliary head and optimizer; full-state resume needs an explicit separate workflow.')
+     config['sampling']=train.family_sampler.describe() if train.family_sampler else {'strategy':'uniform_patch_shuffle'}
+     config['sampling']['keras_batch_shuffle']=not args.balance_source_families
+     config['visibility_supervision']='A cell must be complete in the original cached image and after every affine/rotation rasterization. Eligibility cannot become true again after pixels were cut.'
+@@ -575,7 +610,7 @@
+     save_json(args.output/"training-config.json", config)
+     print(json.dumps(config), flush=True)
+     start = time.time()
+-    history = model.fit(train, validation_data=validation, epochs=args.epochs, verbose=2, shuffle=not args.balance_source_families, callbacks=[WordCheckpoint(args.data, args.output, args.batch_size,args.retain_epochs,train,expected_bn_moments=batchnorm_affine.get('moving_moments_sha256')), keras.callbacks.ReduceLROnPlateau(monitor="val_loss", patience=4, factor=.5, min_lr=1e-5), keras.callbacks.TerminateOnNaN()])
++    history = training_model.fit(train, validation_data=validation, epochs=args.epochs, verbose=2, shuffle=not args.balance_source_families, callbacks=[WordCheckpoint(args.data, args.output, args.batch_size,args.retain_epochs,train,expected_bn_moments=batchnorm_affine.get('moving_moments_sha256'),reader=model if args.auxiliary_dot_supervision else None), keras.callbacks.ReduceLROnPlateau(monitor="val_loss", patience=4, factor=.5, min_lr=1e-5), keras.callbacks.TerminateOnNaN()])
+     save_json(args.output/"history.json", {"elapsed_seconds": time.time()-start, "history": {k: [float(v) for v in values] for k, values in history.history.items()}})
+ 
+ 
+--- /dev/null
++++ b/training/scripts/word_dot_aux_targets.py
+@@ -0,0 +1,53 @@
++"""Pure NumPy queries for explicit, complete DSBI TRAIN cells only."""
++import numpy as np
++
++FEATURE_ORIGIN = 3.0
++FEATURE_STRIDE = 4.0
++FEATURE_WIDTH = 120
++FEATURE_HEIGHT = 48
++
++
++def complete_dot_queries(point_state, masks, complete):
++    """Return fine-grid XY queries and explicit occupancy labels, never guess.
++
++    The caller obtains point_state only from load_point_states' hash-bound DSBI
++    TRAIN metadata. Completeness is the existing irreversible per-raster mask.
++    No point state means no auxiliary targets, including all Angelina records.
++    """
++    if point_state is None:
++        return np.empty((0, 2), np.float32), np.empty((0, 1), np.float32)
++    points = np.asarray(point_state.points, np.float64)
++    survivors = np.asarray(point_state.survivors)
++    masks = np.asarray(masks)
++    complete = np.asarray(complete)
++    count = len(masks)
++    if (points.shape != (count, 6, 2) or not np.isfinite(points).all()
++            or survivors.shape != (count, 6) or survivors.dtype != np.bool_
++            or complete.shape != (count,) or complete.dtype != np.bool_
++            or not np.issubdtype(masks.dtype, np.integer)
++            or np.any(masks < -1) or np.any(masks > 63)):
++        raise ValueError('Aligned finite points, explicit mask labels and boolean visibility are required')
++    bits = ((masks[:, None] >> np.arange(6)) & 1).astype(np.float32)
++    queries = (points - FEATURE_ORIGIN) / FEATURE_STRIDE
++    inside = ((queries[..., 0] >= 0) & (queries[..., 0] <= FEATURE_WIDTH - 1)
++              & (queries[..., 1] >= 0) & (queries[..., 1] <= FEATURE_HEIGHT - 1)).all(axis=1)
++    # False survivor means either absent or lost; only the mask defines absence.
++    occupied_survive = ((bits == 0) | survivors).all(axis=1)
++    keep = complete & (masks >= 1) & (masks <= 63) & inside & occupied_survive
++    return (queries[keep].reshape(-1, 2).astype(np.float32),
++            bits[keep].reshape(-1, 1).copy())
++
++
++def pad_dot_queries(rows):
++    """Pad to this actual batch's maximum query count; no truncation or cap."""
++    if not rows:
++        raise ValueError('A batch must contain at least one record')
++    maximum = max(1, max(len(queries) for queries, labels in rows))
++    queries = np.zeros((len(rows), maximum, 2), np.float32)
++    labels = np.full((len(rows), maximum, 1), -1, np.float32)
++    for index, (positions, values) in enumerate(rows):
++        if positions.shape != (len(values), 2) or values.shape != (len(values), 1):
++            raise ValueError('One explicit label per query is required')
++        queries[index, :len(positions)] = positions
++        labels[index, :len(values)] = values
++    return queries, labels
+--- /dev/null
++++ b/training/scripts/word_dot_aux.py
+@@ -0,0 +1,53 @@
++"""Conditional training-only occupancy head; never imported by exported reader."""
++import keras
++from keras import layers, ops
++
++from word_geometry_head import bilinear_feature_samples
++
++AUXILIARY_DOT_COEFFICIENT = .25
++AUXILIARY_DOT_INITIALIZER_SEED = 20260905
++
++
++@keras.saving.register_keras_serializable(package='BrailleMe')
++class AnnotatedDotSampler(layers.Layer):
++    def call(self, inputs):
++        logits, queries = inputs
++        return bilinear_feature_samples(logits, queries[..., 0], queries[..., 1])
++
++    def compute_output_shape(self, input_shape):
++        return input_shape[1][:2] + (1,)
++
++
++@keras.saving.register_keras_serializable(package='BrailleMe')
++def known_dot_bce(labels, logits):
++    """Stable logit BCE with an independent known-point denominator."""
++    known = ops.cast(labels >= 0, 'float32')
++    target = ops.maximum(labels, 0.)
++    bce = ops.maximum(logits, 0.) - logits * target + ops.log(1. + ops.exp(-ops.abs(logits)))
++    return ops.sum(bce * known) / ops.maximum(ops.sum(known), 1.)
++
++
++def wrap_dot_training(reader, main_loss, learning_rate):
++    """Share the exact existing reader; do not rebuild or copy its backbone."""
++    if tuple(reader.input_shape) != (None, 192, 480, 3) or tuple(reader.output_shape) != (None, 48, 120, 11):
++        raise ValueError('Unexpected reader contract')
++    normalization = reader.get_layer('camera_normalization')
++    backbone = reader.get_layer('mobilenetv2_half')
++    batchnorm = [layer for layer in backbone.layers if isinstance(layer, layers.BatchNormalization)]
++    if (reader.count_params() != 829307 or normalization.target_std != .05 or normalization.std_floor != .001
++            or sorted(192 // int(output.shape[1]) for output in backbone.outputs) != [4, 8, 16, 32]
++            or len(batchnorm) != 52 or any(layer.trainable for layer in batchnorm)):
++        raise ValueError('Require the unchanged full-tail reader with .05 normalization and frozen BatchNorm')
++    fine = reader.get_layer('fpn_4').input
++    if tuple(fine.shape[1:3]) != (48, 120):
++        raise ValueError('The existing pre-FPN stride4 feature tensor is required')
++    points = layers.Input((None, 2), name='annotated_dot_queries')
++    logits = layers.Conv2D(1, 1, activation=None, name='auxiliary_dot_logits',
++                           kernel_initializer=keras.initializers.GlorotUniform(seed=AUXILIARY_DOT_INITIALIZER_SEED),
++                           bias_initializer='zeros')(fine)
++    samples = AnnotatedDotSampler(name='annotated_dot_logits')([logits, points])
++    training = keras.Model((reader.input, points), (reader.output, samples), name='braille_reader_with_training_dot_task')
++    training.compile(optimizer=keras.optimizers.Adam(learning_rate, clipnorm=10.),
++                     loss=(main_loss, known_dot_bce), loss_weights=(1., AUXILIARY_DOT_COEFFICIENT),
++                     jit_compile=False)
++    return training

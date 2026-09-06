@@ -1,0 +1,179 @@
+{
+  "schemaVersion": 1,
+  "retainedAt": "2026-09-06",
+  "wordCheckpoint": {
+    "file": "training/checkpoints/braille-word-reader-v1/best-word.keras",
+    "origin": ".braille-training-work/word-scan-v1-20260905/run20/retained-epochs/epoch-09.keras",
+    "sha256": "cce2432c0ddb8952c885dd58697589c285209588dafa81aacdd891b1660068b7",
+    "decoderVersion": "six-dot-word-v2",
+    "model": {
+      "name": "braille-word-reader",
+      "version": "1.0.0-experimental.v26",
+      "status": "experimental_candidate",
+      "file": "word-reader.tflite",
+      "sha256": "406db0e55e8a5ba9e0d00fb22aadc24f19698219f375e4dcead9057cf3bf2230",
+      "sizeBytes": 3259716
+    },
+    "measuredResults": {
+      "passed": false,
+      "exactWordSuccessRate": 0.5321252059308073,
+      "acceptedWordAccuracy": 0.9202279202279202,
+      "evaluatedWordCount": 607,
+      "acceptedWordCount": 351,
+      "negativeImageCount": 44,
+      "negativeFalseAccepts": 0
+    },
+    "evidence": "training/evidence/braille-word-reader-v1/experimental-internal-best",
+    "dataManifests": "training/evidence/braille-word-reader-v1/data-manifests/index.json"
+  },
+  "classifierCheckpoint": {
+    "file": "training/checkpoints/braille-cell-classifier-v2/best-candidate.keras",
+    "origin": ".braille-training-work/angelina-finetune/best_candidate.keras",
+    "sha256": "8410d8694a41f1536ef29ae5bf9b63d60f9254e879f035dfa5c6270734cd1b20",
+    "purpose": "Retained separately for the existing single-cell classifier; not comparable to the word benchmark."
+  },
+  "files": [
+    {
+      "file": "training/checkpoints/braille-word-reader-v1/best-word.keras",
+      "sizeBytes": 10346677,
+      "sha256": "cce2432c0ddb8952c885dd58697589c285209588dafa81aacdd891b1660068b7"
+    },
+    {
+      "file": "training/checkpoints/braille-word-reader-v1/run20/dsbi-addition-protocol.json",
+      "sizeBytes": 37678,
+      "sha256": "ad9fe8ff96fbfb107db3aec051e7f84051c2550a8f27f7b68925daa13e13dfcf"
+    },
+    {
+      "file": "training/checkpoints/braille-word-reader-v1/run20/dsbi-visible-partial-protocol.json",
+      "sizeBytes": 4424,
+      "sha256": "95200941c5dc3e84a83c028c3f45777945c93aaaacd9f9923fcd1dc39fd9281e"
+    },
+    {
+      "file": "training/checkpoints/braille-word-reader-v1/run20/history.json",
+      "sizeBytes": 990,
+      "sha256": "451d662a72648f77f41fc3541ff474c97d0bb808d04bb37143f51bbee43117be"
+    },
+    {
+      "file": "training/checkpoints/braille-word-reader-v1/run20/preflight-tests.json",
+      "sizeBytes": 2976,
+      "sha256": "5a1f3ce69d55ee22b88c54edae82ffd5ccd99dd2fc2a39a943b0b9566125e139"
+    },
+    {
+      "file": "training/checkpoints/braille-word-reader-v1/run20/RUNNING-HANDOFF.json",
+      "sizeBytes": 2532,
+      "sha256": "0600a437f8e25dd285a278930a22bd49b12c3006c981c3532e5d9f91136b042a"
+    },
+    {
+      "file": "training/checkpoints/braille-word-reader-v1/run20/sampling-history.json",
+      "sizeBytes": 27983,
+      "sha256": "01c4d0dc071ab3b362eda303664d5c46817421a8e848a2df09ca0c2459a15739"
+    },
+    {
+      "file": "training/checkpoints/braille-word-reader-v1/run20/sampling-lineage-epoch1.json",
+      "sizeBytes": 1538,
+      "sha256": "afd55f96848e7b77ee375dd7a65b3434dcc6072cf0698757b77675d921896412"
+    },
+    {
+      "file": "training/checkpoints/braille-word-reader-v1/run20/sampling-lineage-final.json",
+      "sizeBytes": 4547,
+      "sha256": "4cc87be5de829f8be91ea1c68a6bb3b6ad6370db8509ed44a8fda55a03e40b9a"
+    },
+    {
+      "file": "training/checkpoints/braille-word-reader-v1/run20/selected-validation.json",
+      "sizeBytes": 5283,
+      "sha256": "5731b0a1facd209f64e488148310d430ac7c907ac83671d1821e546d3c828239"
+    },
+    {
+      "file": "training/checkpoints/braille-word-reader-v1/run20/source/word_data.py",
+      "sizeBytes": 25685,
+      "sha256": "abc7a31a94db497b9a48ce44bd68d96556e67014623c5645c129153844b48cb7"
+    },
+    {
+      "file": "training/checkpoints/braille-word-reader-v1/run20/source/word_decode.py",
+      "sizeBytes": 7945,
+      "sha256": "bd301c5afeb4ba2e6866371665324d2de7f0a6ee252ef76ce02a5553193d63c5"
+    },
+    {
+      "file": "training/checkpoints/braille-word-reader-v1/run20/source/word_dsbi.py",
+      "sizeBytes": 7331,
+      "sha256": "feecf16dba6d376415e15707c02c8f05fcf6650055da09ad9f4712099e6325ff"
+    },
+    {
+      "file": "training/checkpoints/braille-word-reader-v1/run20/source/word_model.py",
+      "sizeBytes": 5890,
+      "sha256": "c446732a2905a612cd6f1dd64d2d3d01303b1c71933c34552d26f3b5052fd551"
+    },
+    {
+      "file": "training/checkpoints/braille-word-reader-v1/run20/source/word_point_geometry.py",
+      "sizeBytes": 8361,
+      "sha256": "2b932b320d191277b86ae13daecb82b5abbf0a46e9464d7360ee1e941aca760b"
+    },
+    {
+      "file": "training/checkpoints/braille-word-reader-v1/run20/source/word_point_metadata.py",
+      "sizeBytes": 5280,
+      "sha256": "de1cad0157e744f2f646010eac5355b88d1d11f52662d4b9353166661f59049f"
+    },
+    {
+      "file": "training/checkpoints/braille-word-reader-v1/run20/source/word_sampling.py",
+      "sizeBytes": 4164,
+      "sha256": "c234523277dba683e68a2863e14736bc68432da3b6ca65bb5d8a64bc7d9dc0fe"
+    },
+    {
+      "file": "training/checkpoints/braille-word-reader-v1/run20/source/word_sources.py",
+      "sizeBytes": 8105,
+      "sha256": "affb3488d8c25e3d0131eb4340cae29fcece563ac75373e071f97fef68f09acd"
+    },
+    {
+      "file": "training/checkpoints/braille-word-reader-v1/run20/source/word_tail.py",
+      "sizeBytes": 8506,
+      "sha256": "bdd4b5d12d56e25c1100a282483e7a31176b5a65beb353a0623ceea40a49dc0e"
+    },
+    {
+      "file": "training/checkpoints/braille-word-reader-v1/run20/source/word_train.py",
+      "sizeBytes": 27848,
+      "sha256": "4d091c0a887cb25fffc1bc6e7bb7e7ab547880c5fda4b8a45ef3c09af87c3e15"
+    },
+    {
+      "file": "training/checkpoints/braille-word-reader-v1/run20/training-config.json",
+      "sizeBytes": 12414,
+      "sha256": "75bc0305e899aa1c13936fa8614ef42702fedefc9d3c5abfd294d60ccf30a51d"
+    },
+    {
+      "file": "training/checkpoints/braille-word-reader-v1/run20/validation-history.json",
+      "sizeBytes": 57106,
+      "sha256": "3525178329df255c99db11f15f6a1855257d3c58c75355006ee1a39375608cc7"
+    },
+    {
+      "file": "training/checkpoints/braille-cell-classifier-v2/best-candidate.keras",
+      "sizeBytes": 2975780,
+      "sha256": "8410d8694a41f1536ef29ae5bf9b63d60f9254e879f035dfa5c6270734cd1b20"
+    },
+    {
+      "file": "training/checkpoints/braille-word-reader-v1/environment/README.md",
+      "sizeBytes": 2152,
+      "sha256": "a725c1c1640f54e920bf73bb0b15fe418a2cf754e282c4deba86a1fd3e0cc2a0"
+    },
+    {
+      "file": "training/checkpoints/braille-word-reader-v1/environment/requirements-installed.txt",
+      "sizeBytes": 517,
+      "sha256": "9380efffe3520ef94588334f03eb88a0ab3684e4e10c367dc5e8df4884f7f891"
+    }
+  ],
+  "experimentNotes": {
+    "file": "training/evidence/braille-word-reader-v1/experiment-notes-20260906.zip",
+    "sha256": "49b3f48ef1ec5edcd09df6b863a3ca12a41fd317c1099a4cb88646fe3fe7baec",
+    "sizeBytes": 34920164,
+    "entries": 2316,
+    "scope": "Original experiment text, source snapshots and logs only; discarded model checkpoints and numeric prediction caches are not included."
+  },
+  "localDataDirectories": [
+    ".braille-training-work/word-scan-v1-20260905/combined-training-v5",
+    ".braille-training-work/word-scan-v1-20260905/complete-source-training-v3",
+    ".braille-training-work/word-scan-v1-20260905/data",
+    ".braille-training-work/word-scan-v1-20260905/dsbi-point-metadata-v1",
+    ".braille-training-work/word-scan-v1-20260905/dsbi-training-contexts-v2",
+    ".braille-training-work/word-scan-v1-20260905/mask16-complete-context",
+    ".braille-training-work/word-scan-v1-20260905/rejection-fixtures-v3",
+    ".braille-training-work/word-scan-v1-20260905/repetition-fixtures"
+  ]
+}

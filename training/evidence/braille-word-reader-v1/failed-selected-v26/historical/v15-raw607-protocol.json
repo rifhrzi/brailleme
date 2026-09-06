@@ -1,0 +1,20 @@
+{
+  "scope": "Counterfactual selected-box geometry only, not model accuracy/calibration or an architecture forecast. No training, model loading/inference, threshold changes, dictionary or fixture changes.",
+  "matching": "Greedy nearest unused final selected center <=.45 GT cell height in frozen GT left-to-right order. Also reverse greedy and maximum-cardinality minimum-distance assignment at the same cutoff; no cutoff tuning.",
+  "counterfactual": "Preserve the exact post-selection/post-NMS proposal identities, count, scores and six probabilities. Replace only each matched proposal XYXY/size by its GT annotation box; retain every unmatched extra box. Sort/evaluate with exact frozen decoder post-NMS statements, thresholds and image-quality rejection. Never add missed cells, drop extras, rerun NMS, change confidence, or shift labels.",
+  "strict_ceiling": "Count only full GT bijections, all correct/confident masks, no extras, with exact accepted text after GT box replacement. Also report literal text results, any lost baseline success, and the optimistic union preserving already-correct baseline results.",
+  "limits": [
+    "This conditional selected-set oracle may move a center beyond its original grid cell; real11-logit outputs may not represent that correction without moving the objectness peak.",
+    "Geometry could alter earlier selection/NMS in a real model, but this fixed-proposal experiment deliberately cannot recover those suppressed/missed proposals.",
+    "Nearest-center matching is approximate; greedy/optimal disagreements and boundary geometry failures are disclosed.",
+    "GT geometric word boundaries are not human-reviewed lexical truth; all607 are development regression, not a fresh holdout."
+  ],
+  "hashes": {
+    "selected-v15\\public-benchmark.json": "e564506480706d74826a9af404b943bacac77b15a5a0eeb8b9da5b7d073b0b19",
+    "selected-v15\\public-word-outputs.npz": "c262510395aba57e717a8ea3232d3a18cba18a8f36e9c116fa75694e2dc1b49e",
+    "selected-v15\\word_reader.tflite": "406db0e55e8a5ba9e0d00fb22aadc24f19698219f375e4dcead9057cf3bf2230",
+    "selected-v15\\source\\word_decode.py": "bd301c5afeb4ba2e6866371665324d2de7f0a6ee252ef76ce02a5553193d63c5",
+    "data\\external-words.json": "e69d7c0d9582aef7d51a2c15706f6bf62bc3cdfe35d22ad28ad007301d56b41b"
+  },
+  "script_sha256": "8d068616d4b0014426cca980890caefce36ee6c23852763563b3d2493f04b6a9"
+}

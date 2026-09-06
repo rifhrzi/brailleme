@@ -1,0 +1,193 @@
+{
+  "schema_version": 1,
+  "created_at_utc": "2026-09-05T19:05:04.336929+00:00",
+  "scope": "Failed run22 horizontal-mirror candidate held405 cached-output diagnosis; no inference, activation, external607, APK, or physical proof.",
+  "selectedControlCheckpointSha256": "cce2432c0ddb8952c885dd58697589c285209588dafa81aacdd891b1660068b7",
+  "failedMirrorCheckpointSha256": "6dfcc85d16ffccd5fda0d926aa8b93d0b49e899569a175f98039c3bd0b23e463",
+  "fixtureSha256": "e2ab968f7c4dcf7e774181fde687e1321f58d20567528af4b21fd03ff5a3e625",
+  "modelActivated": false,
+  "physicalCameraValidated": false,
+  "internalApkProduced": false,
+  "gzip": {
+    "mtime": 0,
+    "filename": "",
+    "compresslevel": 9,
+    "python": "3.12.14",
+    "zlib": "1.3.2",
+    "repeatedCompressionIdentical": true
+  },
+  "files": [
+    {
+      "file": "FINDINGS.md",
+      "sizeBytes": 3765,
+      "sha256": "68d24707c5e2cee2ede88be5d02f796b1a1125afa8b390a98727ce92eb19af28",
+      "encoding": "identity"
+    },
+    {
+      "file": "README.md",
+      "sizeBytes": 3774,
+      "sha256": "3c84cdd420ded5410ff6a7c947b9ae9fe4bccfb79ad4f70bf01abf0d6696bd32",
+      "encoding": "identity"
+    },
+    {
+      "file": "TABLES.md",
+      "sizeBytes": 2833,
+      "sha256": "e981ddfc299b0aa98b757615a9d4190339b74dc4b50acf2c62c339e3c75aa83a",
+      "encoding": "identity"
+    },
+    {
+      "file": "baseline-selected-validation-fullprecision.json",
+      "sizeBytes": 7935,
+      "sha256": "8a21e3d6c02d989acf6f521ce0b9581919cd299537213b70f4b72ddda946f765",
+      "encoding": "identity",
+      "originalFile": ".braille-training-work/word-scan-v1-20260905/selected-v17/selected-validation-fullprecision.json",
+      "originalSha256": "8a21e3d6c02d989acf6f521ce0b9581919cd299537213b70f4b72ddda946f765"
+    },
+    {
+      "file": "candidate-cache-report.json",
+      "sizeBytes": 55743,
+      "sha256": "be61e2e0968dd68e89a765f366a3524a301a29e71872d53e754a3e29b0b3b533",
+      "encoding": "identity",
+      "originalFile": ".braille-training-work/word-scan-v1-20260905/run22/held-diagnosis/cache-report.json",
+      "originalSha256": "be61e2e0968dd68e89a765f366a3524a301a29e71872d53e754a3e29b0b3b533"
+    },
+    {
+      "file": "candidate-sampling-lineage-final.json",
+      "sizeBytes": 4547,
+      "sha256": "1812ae9898c4e3efc840542f94552e44e4c3ba69463fa20d16b87220998dfe96",
+      "encoding": "identity",
+      "originalFile": ".braille-training-work/word-scan-v1-20260905/run22/sampling-lineage-final.json",
+      "originalSha256": "1812ae9898c4e3efc840542f94552e44e4c3ba69463fa20d16b87220998dfe96"
+    },
+    {
+      "file": "checkpoint-selection.json",
+      "sizeBytes": 33943,
+      "sha256": "c336b8005f56b1ef0ffd617d34af5691256ea320460a28773e1185ea02a62723",
+      "encoding": "identity",
+      "originalFile": ".braille-training-work/word-scan-v1-20260905/selected-v17/checkpoint-selection.json",
+      "originalSha256": "c336b8005f56b1ef0ffd617d34af5691256ea320460a28773e1185ea02a62723"
+    },
+    {
+      "file": "comparison.json.gz",
+      "sizeBytes": 714381,
+      "sha256": "628ba2393bbdb7005a6e7381a8b04601942f1fc696a6fd6e123e670641a95a3f",
+      "encoding": "gzip",
+      "originalFile": ".braille-training-work/word-scan-v1-20260905/run22/held-diagnosis/mirror-comparison/comparison.json",
+      "originalSha256": "072eb832e019ff416ac2d8fd7d3018d51f06b532a55fcd45a4b2e98db8a76363",
+      "uncompressedSizeBytes": 5131945,
+      "uncompressedSha256": "072eb832e019ff416ac2d8fd7d3018d51f06b532a55fcd45a4b2e98db8a76363"
+    },
+    {
+      "file": "evaluator-source/benchmark_angelina.py",
+      "sizeBytes": 26081,
+      "sha256": "6c7d63c8b5c461fec73e415b46df74d15c0bca455cc9f411c5fb6edd5d353353",
+      "encoding": "identity",
+      "originalFile": "training/scripts/benchmark_angelina.py",
+      "originalSha256": "6c7d63c8b5c461fec73e415b46df74d15c0bca455cc9f411c5fb6edd5d353353"
+    },
+    {
+      "file": "evaluator-source/word_data.py",
+      "sizeBytes": 25685,
+      "sha256": "abc7a31a94db497b9a48ce44bd68d96556e67014623c5645c129153844b48cb7",
+      "encoding": "identity",
+      "originalFile": ".braille-training-work/word-scan-v1-20260905/selected-v17/source/word_data.py",
+      "originalSha256": "abc7a31a94db497b9a48ce44bd68d96556e67014623c5645c129153844b48cb7"
+    },
+    {
+      "file": "evaluator-source/word_decode.py",
+      "sizeBytes": 7945,
+      "sha256": "bd301c5afeb4ba2e6866371665324d2de7f0a6ee252ef76ce02a5553193d63c5",
+      "encoding": "identity",
+      "originalFile": ".braille-training-work/word-scan-v1-20260905/selected-v17/source/word_decode.py",
+      "originalSha256": "bd301c5afeb4ba2e6866371665324d2de7f0a6ee252ef76ce02a5553193d63c5"
+    },
+    {
+      "file": "evaluator-source/word_geometry_head.py",
+      "sizeBytes": 5857,
+      "sha256": "f46c8f90e7f4fc9404eed2dc27fbde6e5c823d25d4f88e4127c7e56ed6e8764e",
+      "encoding": "identity",
+      "originalFile": ".braille-training-work/word-scan-v1-20260905/selected-v17/source/word_geometry_head.py",
+      "originalSha256": "f46c8f90e7f4fc9404eed2dc27fbde6e5c823d25d4f88e4127c7e56ed6e8764e"
+    },
+    {
+      "file": "evaluator-source/word_model.py",
+      "sizeBytes": 5890,
+      "sha256": "c446732a2905a612cd6f1dd64d2d3d01303b1c71933c34552d26f3b5052fd551",
+      "encoding": "identity",
+      "originalFile": ".braille-training-work/word-scan-v1-20260905/selected-v17/source/word_model.py",
+      "originalSha256": "c446732a2905a612cd6f1dd64d2d3d01303b1c71933c34552d26f3b5052fd551"
+    },
+    {
+      "file": "evaluator-source/word_select.py",
+      "sizeBytes": 8804,
+      "sha256": "715139470c08482f3d6205f90d7a3ff885ccc1c112210d9b290cff3082ccfacb",
+      "encoding": "identity",
+      "originalFile": ".braille-training-work/word-scan-v1-20260905/selected-v17/source/word_select.py",
+      "originalSha256": "715139470c08482f3d6205f90d7a3ff885ccc1c112210d9b290cff3082ccfacb"
+    },
+    {
+      "file": "generic-replay-proof.json",
+      "sizeBytes": 1137,
+      "sha256": "47ed195945347dd04844e863d9179e4b3d24b1bb108c5a3336ec3a295eb13364",
+      "encoding": "identity",
+      "originalFile": ".braille-training-work/word-scan-v1-20260905/run22/held-diagnosis/generic-replay-final/replay-proof.json",
+      "originalSha256": "47ed195945347dd04844e863d9179e4b3d24b1bb108c5a3336ec3a295eb13364"
+    },
+    {
+      "file": "original-documents/FINDINGS.md.txt",
+      "sizeBytes": 3708,
+      "sha256": "a08779981cf0faa93106edcf260b6c36460a833873cf07e627ba3f089206916d",
+      "encoding": "identity",
+      "originalFile": ".braille-training-work/word-scan-v1-20260905/run22/held-diagnosis/mirror-comparison/FINDINGS.md",
+      "originalSha256": "a08779981cf0faa93106edcf260b6c36460a833873cf07e627ba3f089206916d"
+    },
+    {
+      "file": "original-documents/README.md.txt",
+      "sizeBytes": 2831,
+      "sha256": "4ccfe29971a419e4797feb66b2cda80aaf69d6b2eae6078102c334819a64d0f3",
+      "encoding": "identity",
+      "originalFile": ".braille-training-work/word-scan-v1-20260905/run22/held-diagnosis/mirror-comparison/README.md",
+      "originalSha256": "4ccfe29971a419e4797feb66b2cda80aaf69d6b2eae6078102c334819a64d0f3"
+    },
+    {
+      "file": "pattern-followup.json",
+      "sizeBytes": 33840,
+      "sha256": "7cfbb9b7b46324db556931b4d9aa9087fd1a5af8f18fd44b14edd3b16a7ae078",
+      "encoding": "identity",
+      "originalFile": ".braille-training-work/word-scan-v1-20260905/run22/held-diagnosis/mirror-comparison/pattern-followup.json",
+      "originalSha256": "7cfbb9b7b46324db556931b4d9aa9087fd1a5af8f18fd44b14edd3b16a7ae078"
+    },
+    {
+      "file": "scripts/archive_mirror_diagnosis.py",
+      "sizeBytes": 10445,
+      "sha256": "d7a629162095bbe111cf632e6ec284ebdccf1330ceaa7529c263e018cf20a416",
+      "encoding": "identity",
+      "originalFile": ".braille-training-work/word-scan-v1-20260905/archive_mirror_diagnosis.py",
+      "originalSha256": "d7a629162095bbe111cf632e6ec284ebdccf1330ceaa7529c263e018cf20a416"
+    },
+    {
+      "file": "scripts/compare_control.py",
+      "sizeBytes": 19269,
+      "sha256": "6141ad03a98972556a85c9b17002389ac958ec008ee1121327c6b5de72cb3939",
+      "encoding": "identity",
+      "originalFile": ".braille-training-work/word-scan-v1-20260905/run22/held-diagnosis/compare_control.py",
+      "originalSha256": "6141ad03a98972556a85c9b17002389ac958ec008ee1121327c6b5de72cb3939"
+    },
+    {
+      "file": "scripts/compare_held_cache.py",
+      "sizeBytes": 21567,
+      "sha256": "ee075dffbfb17b670a500904a64cb48071131d100ff2855f30d5e7fc839a9f01",
+      "encoding": "identity",
+      "originalFile": ".braille-training-work/word-scan-v1-20260905/compare_held_cache.py",
+      "originalSha256": "ee075dffbfb17b670a500904a64cb48071131d100ff2855f30d5e7fc839a9f01"
+    },
+    {
+      "file": "scripts/pattern_followup.py",
+      "sizeBytes": 6407,
+      "sha256": "d4bf5a0ac001904ca11e5cf2ee3d184224a3a9acac564e836dce0ab615a31a82",
+      "encoding": "identity",
+      "originalFile": ".braille-training-work/word-scan-v1-20260905/run22/held-diagnosis/pattern_followup.py",
+      "originalSha256": "d4bf5a0ac001904ca11e5cf2ee3d184224a3a9acac564e836dce0ab615a31a82"
+    }
+  ]
+}

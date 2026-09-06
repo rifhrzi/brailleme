@@ -1,0 +1,655 @@
+{
+  "schema_version": 1,
+  "created_at_utc": "2026-09-05T21:13:11.645958+00:00",
+  "status": "static_rng_and_selected_lineage_verified",
+  "scope": "Read-only archived augmentation source/config, deterministic geometry RNG-prefix replay, and retained TRAIN-only annotation geometry. No pixels, model/checkpoint contents, held405 tensors, external607 tensors, training, new protocol or implementation.",
+  "conclusion": "Current selected fine-tuning lineage is isotropic from selected run11 onward; the ancestry is not wholly without horizontal aspect exposure because selected run7 used anisotropic camera augmentation.",
+  "lineage": "run7 epoch2 -> selected-v6 -> run11 epoch3 -> selected-v7 (retained v10) -> run15 epoch6 -> selected-v11 (retained v12) -> full-tail zero-residual initialization -> run18 epoch7 -> selected-v13 -> run20 epoch9 -> selected-v15. run24 is a separate BN-affine child of v15; it did not replace control.",
+  "replay_method": "For each archived profile, execute only exact affine geometry statements extracted by AST from augment_patch. Each independent trial is the first crop of a diagnostic batch RNG with seed=config.seed+1*100000+index, index 0..9999. Consume the actual Patches paired half-turn draw when illumination is enabled. Return scale/translation at affine call; execute no raster, lighting or later RNG. These are reproducible static draws, not historical full-training counts, actual batch order, or a paired causal experiment.",
+  "profiles": [
+    {
+      "run": 7,
+      "flags": {
+        "camera_augmentation": true,
+        "polarity_augmentation": false,
+        "illumination_augmentation": false,
+        "half_turn_augmentation": false,
+        "horizontal_mirror_augmentation": false,
+        "vertical_stretch_augmentation": false
+      },
+      "seed": 20260905,
+      "paired_orientation_draw_before_geometry": false,
+      "actual_replay_trials": 10000,
+      "affine_count": 8527,
+      "identity_count": 1473,
+      "scale_x": {
+        "count": 10000,
+        "minimum": 0.47186433142505047,
+        "p05": 0.6125754462815634,
+        "median": 1.0,
+        "mean": 0.9894075467350318,
+        "p95": 1.4136559979266135,
+        "maximum": 1.686163501894292
+      },
+      "scale_y": {
+        "count": 10000,
+        "minimum": 0.8500678445265576,
+        "p05": 0.8784199628500513,
+        "median": 1.055364046701397,
+        "mean": 1.0847957084230277,
+        "p95": 1.322062407434662,
+        "maximum": 1.349979104554773
+      },
+      "scale_x_over_scale_y": {
+        "count": 10000,
+        "minimum": 0.550095482300118,
+        "p05": 0.5911333840897571,
+        "median": 0.9558388246525769,
+        "mean": 0.9137196592298251,
+        "p95": 1.2069284810572318,
+        "maximum": 1.249663630259415
+      },
+      "applied_affine_ratio": {
+        "count": 8527,
+        "minimum": 0.550095482300118,
+        "p05": 0.5857387317342299,
+        "median": 0.8992154958357441,
+        "mean": 0.8988151275124018,
+        "p95": 1.2128904725094412,
+        "maximum": 1.249663630259415
+      },
+      "anisotropic_count": 8527,
+      "extracted_rng_prefix": "def augment_patch(image, boxes, rng, camera_augmentation=False):\n    if camera_augmentation and rng.random() < 0.85:\n        zoom = float(rng.uniform(0.85, 1.35))\n        return [zoom * float(rng.uniform(0.55, 1.25)), zoom, float(rng.uniform(-0.04, 0.04)) * WIDTH, float(rng.uniform(-0.04, 0.04)) * HEIGHT, True]\n    return [1.0, 1.0, 0.0, 0.0, False]",
+      "extracted_rng_prefix_sha256": "8ce82b8485b87412c3c46bab359d241e1821cc989ad8cc9da4679484867b1f7e",
+      "replay_geometry_float64_c_sha256": "bb0391985195fe09e8885d89f5c1587b175d8f734525dd3dee0ad0e8bbe7e896",
+      "first_five_scale_x_scale_y_translate_x_translate_y_applied": [
+        [
+          0.9772323288337283,
+          0.9255005506794901,
+          -7.28732723745937,
+          4.620783476402101,
+          true
+        ],
+        [
+          1.2327119201283017,
+          1.2713050367189207,
+          -11.559816064561625,
+          -5.375874602808518,
+          true
+        ],
+        [
+          0.931342796390486,
+          1.012308317552201,
+          -10.938162657656967,
+          5.271340012934006,
+          true
+        ],
+        [
+          1.0,
+          1.0,
+          0.0,
+          0.0,
+          false
+        ],
+        [
+          0.6045396221133507,
+          0.9925316108169757,
+          -17.673434954549172,
+          -3.09785337833931,
+          true
+        ]
+      ]
+    },
+    {
+      "run": 11,
+      "flags": {
+        "camera_augmentation": false,
+        "polarity_augmentation": false,
+        "illumination_augmentation": true,
+        "half_turn_augmentation": false,
+        "horizontal_mirror_augmentation": false,
+        "vertical_stretch_augmentation": false
+      },
+      "seed": 20260905,
+      "paired_orientation_draw_before_geometry": true,
+      "actual_replay_trials": 10000,
+      "affine_count": 8505,
+      "identity_count": 1495,
+      "scale_x": {
+        "count": 10000,
+        "minimum": 0.800042341568228,
+        "p05": 0.8524948363969393,
+        "median": 1.1734750986643774,
+        "mean": 1.213363178981888,
+        "p95": 1.6461855988751972,
+        "maximum": 1.6996659964954857
+      },
+      "scale_y": {
+        "count": 10000,
+        "minimum": 0.800042341568228,
+        "p05": 0.8524948363969393,
+        "median": 1.1734750986643774,
+        "mean": 1.213363178981888,
+        "p95": 1.6461855988751972,
+        "maximum": 1.6996659964954857
+      },
+      "scale_x_over_scale_y": {
+        "count": 10000,
+        "minimum": 1.0,
+        "p05": 1.0,
+        "median": 1.0,
+        "mean": 1.0,
+        "p95": 1.0,
+        "maximum": 1.0
+      },
+      "applied_affine_ratio": {
+        "count": 8505,
+        "minimum": 1.0,
+        "p05": 1.0,
+        "median": 1.0,
+        "mean": 1.0,
+        "p95": 1.0,
+        "maximum": 1.0
+      },
+      "anisotropic_count": 0,
+      "extracted_rng_prefix": "def augment_patch(image, boxes, rng, camera_augmentation=False, polarity_augmentation=False, illumination_augmentation=False, originally_complete=None):\n    controlled_light = polarity_augmentation or illumination_augmentation\n    if (camera_augmentation or controlled_light) and rng.random() < 0.85:\n        zoom = float(rng.uniform(0.8, 1.7) if controlled_light else rng.uniform(0.85, 1.35))\n        scale_x = zoom if controlled_light else zoom * float(rng.uniform(0.55, 1.25))\n        return [scale_x, zoom, float(rng.uniform(-0.04, 0.04)) * WIDTH, float(rng.uniform(-0.04, 0.04)) * HEIGHT, True]\n    return [1.0, 1.0, 0.0, 0.0, False]",
+      "extracted_rng_prefix_sha256": "cbe7307fd3aa7bd483da7eb0f23e35e730bfb961cd0494eee7ecf386bac37c7a",
+      "replay_geometry_float64_c_sha256": "55667a0a95b8cd6f99e7fdfc313e2e2788884135a7ec5f6a2fa36aa9e9556b2a",
+      "first_five_scale_x_scale_y_translate_x_translate_y_applied": [
+        [
+          1.4504377134153155,
+          1.4504377134153155,
+          -7.28732723745937,
+          4.620783476402101,
+          true
+        ],
+        [
+          1.3395408891669296,
+          1.3395408891669296,
+          -11.559816064561625,
+          -5.375874602808518,
+          true
+        ],
+        [
+          1.2757386004666142,
+          1.2757386004666142,
+          -10.938162657656967,
+          5.271340012934006,
+          true
+        ],
+        [
+          1.3216877664218507,
+          1.3216877664218507,
+          -15.486154209874163,
+          -6.486907203227623,
+          true
+        ],
+        [
+          0.8759709701252396,
+          0.8759709701252396,
+          -17.673434954549172,
+          -3.09785337833931,
+          true
+        ]
+      ]
+    },
+    {
+      "run": 15,
+      "flags": {
+        "camera_augmentation": false,
+        "polarity_augmentation": false,
+        "illumination_augmentation": true,
+        "half_turn_augmentation": false,
+        "horizontal_mirror_augmentation": false,
+        "vertical_stretch_augmentation": false
+      },
+      "seed": 20260905,
+      "paired_orientation_draw_before_geometry": true,
+      "actual_replay_trials": 10000,
+      "affine_count": 8505,
+      "identity_count": 1495,
+      "scale_x": {
+        "count": 10000,
+        "minimum": 0.800042341568228,
+        "p05": 0.8524948363969393,
+        "median": 1.1734750986643774,
+        "mean": 1.213363178981888,
+        "p95": 1.6461855988751972,
+        "maximum": 1.6996659964954857
+      },
+      "scale_y": {
+        "count": 10000,
+        "minimum": 0.800042341568228,
+        "p05": 0.8524948363969393,
+        "median": 1.1734750986643774,
+        "mean": 1.213363178981888,
+        "p95": 1.6461855988751972,
+        "maximum": 1.6996659964954857
+      },
+      "scale_x_over_scale_y": {
+        "count": 10000,
+        "minimum": 1.0,
+        "p05": 1.0,
+        "median": 1.0,
+        "mean": 1.0,
+        "p95": 1.0,
+        "maximum": 1.0
+      },
+      "applied_affine_ratio": {
+        "count": 8505,
+        "minimum": 1.0,
+        "p05": 1.0,
+        "median": 1.0,
+        "mean": 1.0,
+        "p95": 1.0,
+        "maximum": 1.0
+      },
+      "anisotropic_count": 0,
+      "extracted_rng_prefix": "def augment_patch(image, boxes, rng, camera_augmentation=False, polarity_augmentation=False, illumination_augmentation=False, originally_complete=None):\n    controlled_light = polarity_augmentation or illumination_augmentation\n    if (camera_augmentation or controlled_light) and rng.random() < 0.85:\n        zoom = float(rng.uniform(0.8, 1.7) if controlled_light else rng.uniform(0.85, 1.35))\n        scale_x = zoom if controlled_light else zoom * float(rng.uniform(0.55, 1.25))\n        return [scale_x, zoom, float(rng.uniform(-0.04, 0.04)) * WIDTH, float(rng.uniform(-0.04, 0.04)) * HEIGHT, True]\n    return [1.0, 1.0, 0.0, 0.0, False]",
+      "extracted_rng_prefix_sha256": "cbe7307fd3aa7bd483da7eb0f23e35e730bfb961cd0494eee7ecf386bac37c7a",
+      "replay_geometry_float64_c_sha256": "55667a0a95b8cd6f99e7fdfc313e2e2788884135a7ec5f6a2fa36aa9e9556b2a",
+      "first_five_scale_x_scale_y_translate_x_translate_y_applied": [
+        [
+          1.4504377134153155,
+          1.4504377134153155,
+          -7.28732723745937,
+          4.620783476402101,
+          true
+        ],
+        [
+          1.3395408891669296,
+          1.3395408891669296,
+          -11.559816064561625,
+          -5.375874602808518,
+          true
+        ],
+        [
+          1.2757386004666142,
+          1.2757386004666142,
+          -10.938162657656967,
+          5.271340012934006,
+          true
+        ],
+        [
+          1.3216877664218507,
+          1.3216877664218507,
+          -15.486154209874163,
+          -6.486907203227623,
+          true
+        ],
+        [
+          0.8759709701252396,
+          0.8759709701252396,
+          -17.673434954549172,
+          -3.09785337833931,
+          true
+        ]
+      ]
+    },
+    {
+      "run": 18,
+      "flags": {
+        "camera_augmentation": false,
+        "polarity_augmentation": false,
+        "illumination_augmentation": true,
+        "half_turn_augmentation": false,
+        "horizontal_mirror_augmentation": false,
+        "vertical_stretch_augmentation": false
+      },
+      "seed": 20260905,
+      "paired_orientation_draw_before_geometry": true,
+      "actual_replay_trials": 10000,
+      "affine_count": 8505,
+      "identity_count": 1495,
+      "scale_x": {
+        "count": 10000,
+        "minimum": 0.800042341568228,
+        "p05": 0.8524948363969393,
+        "median": 1.1734750986643774,
+        "mean": 1.213363178981888,
+        "p95": 1.6461855988751972,
+        "maximum": 1.6996659964954857
+      },
+      "scale_y": {
+        "count": 10000,
+        "minimum": 0.800042341568228,
+        "p05": 0.8524948363969393,
+        "median": 1.1734750986643774,
+        "mean": 1.213363178981888,
+        "p95": 1.6461855988751972,
+        "maximum": 1.6996659964954857
+      },
+      "scale_x_over_scale_y": {
+        "count": 10000,
+        "minimum": 1.0,
+        "p05": 1.0,
+        "median": 1.0,
+        "mean": 1.0,
+        "p95": 1.0,
+        "maximum": 1.0
+      },
+      "applied_affine_ratio": {
+        "count": 8505,
+        "minimum": 1.0,
+        "p05": 1.0,
+        "median": 1.0,
+        "mean": 1.0,
+        "p95": 1.0,
+        "maximum": 1.0
+      },
+      "anisotropic_count": 0,
+      "extracted_rng_prefix": "def augment_patch(image, boxes, rng, camera_augmentation=False, polarity_augmentation=False, illumination_augmentation=False, originally_complete=None):\n    controlled_light = polarity_augmentation or illumination_augmentation\n    if (camera_augmentation or controlled_light) and rng.random() < 0.85:\n        zoom = float(rng.uniform(0.8, 1.7) if controlled_light else rng.uniform(0.85, 1.35))\n        scale_x = zoom if controlled_light else zoom * float(rng.uniform(0.55, 1.25))\n        return [scale_x, zoom, float(rng.uniform(-0.04, 0.04)) * WIDTH, float(rng.uniform(-0.04, 0.04)) * HEIGHT, True]\n    return [1.0, 1.0, 0.0, 0.0, False]",
+      "extracted_rng_prefix_sha256": "cbe7307fd3aa7bd483da7eb0f23e35e730bfb961cd0494eee7ecf386bac37c7a",
+      "replay_geometry_float64_c_sha256": "55667a0a95b8cd6f99e7fdfc313e2e2788884135a7ec5f6a2fa36aa9e9556b2a",
+      "first_five_scale_x_scale_y_translate_x_translate_y_applied": [
+        [
+          1.4504377134153155,
+          1.4504377134153155,
+          -7.28732723745937,
+          4.620783476402101,
+          true
+        ],
+        [
+          1.3395408891669296,
+          1.3395408891669296,
+          -11.559816064561625,
+          -5.375874602808518,
+          true
+        ],
+        [
+          1.2757386004666142,
+          1.2757386004666142,
+          -10.938162657656967,
+          5.271340012934006,
+          true
+        ],
+        [
+          1.3216877664218507,
+          1.3216877664218507,
+          -15.486154209874163,
+          -6.486907203227623,
+          true
+        ],
+        [
+          0.8759709701252396,
+          0.8759709701252396,
+          -17.673434954549172,
+          -3.09785337833931,
+          true
+        ]
+      ]
+    },
+    {
+      "run": 20,
+      "flags": {
+        "camera_augmentation": false,
+        "polarity_augmentation": false,
+        "illumination_augmentation": true,
+        "half_turn_augmentation": false,
+        "horizontal_mirror_augmentation": false,
+        "vertical_stretch_augmentation": false
+      },
+      "seed": 20260905,
+      "paired_orientation_draw_before_geometry": true,
+      "actual_replay_trials": 10000,
+      "affine_count": 8505,
+      "identity_count": 1495,
+      "scale_x": {
+        "count": 10000,
+        "minimum": 0.800042341568228,
+        "p05": 0.8524948363969393,
+        "median": 1.1734750986643774,
+        "mean": 1.213363178981888,
+        "p95": 1.6461855988751972,
+        "maximum": 1.6996659964954857
+      },
+      "scale_y": {
+        "count": 10000,
+        "minimum": 0.800042341568228,
+        "p05": 0.8524948363969393,
+        "median": 1.1734750986643774,
+        "mean": 1.213363178981888,
+        "p95": 1.6461855988751972,
+        "maximum": 1.6996659964954857
+      },
+      "scale_x_over_scale_y": {
+        "count": 10000,
+        "minimum": 1.0,
+        "p05": 1.0,
+        "median": 1.0,
+        "mean": 1.0,
+        "p95": 1.0,
+        "maximum": 1.0
+      },
+      "applied_affine_ratio": {
+        "count": 8505,
+        "minimum": 1.0,
+        "p05": 1.0,
+        "median": 1.0,
+        "mean": 1.0,
+        "p95": 1.0,
+        "maximum": 1.0
+      },
+      "anisotropic_count": 0,
+      "extracted_rng_prefix": "def augment_patch(image, boxes, rng, camera_augmentation=False, polarity_augmentation=False, illumination_augmentation=False, originally_complete=None, point_state=None):\n    controlled_light = polarity_augmentation or illumination_augmentation\n    if (camera_augmentation or controlled_light) and rng.random() < 0.85:\n        zoom = float(rng.uniform(0.8, 1.7) if controlled_light else rng.uniform(0.85, 1.35))\n        scale_x = zoom if controlled_light else zoom * float(rng.uniform(0.55, 1.25))\n        translate_x, translate_y = (float(rng.uniform(-0.04, 0.04)) * WIDTH, float(rng.uniform(-0.04, 0.04)) * HEIGHT)\n        return [scale_x, zoom, translate_x, translate_y, True]\n    return [1.0, 1.0, 0.0, 0.0, False]",
+      "extracted_rng_prefix_sha256": "1dccd38670c64d535793c4ad1ca4ba4181f2bcaa2ae4d68c102103dc61a97a3c",
+      "replay_geometry_float64_c_sha256": "55667a0a95b8cd6f99e7fdfc313e2e2788884135a7ec5f6a2fa36aa9e9556b2a",
+      "first_five_scale_x_scale_y_translate_x_translate_y_applied": [
+        [
+          1.4504377134153155,
+          1.4504377134153155,
+          -7.28732723745937,
+          4.620783476402101,
+          true
+        ],
+        [
+          1.3395408891669296,
+          1.3395408891669296,
+          -11.559816064561625,
+          -5.375874602808518,
+          true
+        ],
+        [
+          1.2757386004666142,
+          1.2757386004666142,
+          -10.938162657656967,
+          5.271340012934006,
+          true
+        ],
+        [
+          1.3216877664218507,
+          1.3216877664218507,
+          -15.486154209874163,
+          -6.486907203227623,
+          true
+        ],
+        [
+          0.8759709701252396,
+          0.8759709701252396,
+          -17.673434954549172,
+          -3.09785337833931,
+          true
+        ]
+      ]
+    },
+    {
+      "run": 24,
+      "flags": {
+        "camera_augmentation": false,
+        "polarity_augmentation": false,
+        "illumination_augmentation": true,
+        "half_turn_augmentation": false,
+        "horizontal_mirror_augmentation": false,
+        "vertical_stretch_augmentation": false
+      },
+      "seed": 20260905,
+      "paired_orientation_draw_before_geometry": true,
+      "actual_replay_trials": 10000,
+      "affine_count": 8505,
+      "identity_count": 1495,
+      "scale_x": {
+        "count": 10000,
+        "minimum": 0.800042341568228,
+        "p05": 0.8524948363969393,
+        "median": 1.1734750986643774,
+        "mean": 1.213363178981888,
+        "p95": 1.6461855988751972,
+        "maximum": 1.6996659964954857
+      },
+      "scale_y": {
+        "count": 10000,
+        "minimum": 0.800042341568228,
+        "p05": 0.8524948363969393,
+        "median": 1.1734750986643774,
+        "mean": 1.213363178981888,
+        "p95": 1.6461855988751972,
+        "maximum": 1.6996659964954857
+      },
+      "scale_x_over_scale_y": {
+        "count": 10000,
+        "minimum": 1.0,
+        "p05": 1.0,
+        "median": 1.0,
+        "mean": 1.0,
+        "p95": 1.0,
+        "maximum": 1.0
+      },
+      "applied_affine_ratio": {
+        "count": 8505,
+        "minimum": 1.0,
+        "p05": 1.0,
+        "median": 1.0,
+        "mean": 1.0,
+        "p95": 1.0,
+        "maximum": 1.0
+      },
+      "anisotropic_count": 0,
+      "extracted_rng_prefix": "def augment_patch(image, boxes, rng, camera_augmentation=False, polarity_augmentation=False, illumination_augmentation=False, originally_complete=None, point_state=None, vertical_stretch=1.0):\n    controlled_light = polarity_augmentation or illumination_augmentation\n    if (camera_augmentation or controlled_light) and rng.random() < 0.85:\n        zoom = float(rng.uniform(0.8, 1.7) if controlled_light else rng.uniform(0.85, 1.35))\n        scale_x = zoom if controlled_light else zoom * float(rng.uniform(0.55, 1.25))\n        scale_y = zoom * vertical_stretch\n        translate_x, translate_y = (float(rng.uniform(-0.04, 0.04)) * WIDTH, float(rng.uniform(-0.04, 0.04)) * HEIGHT)\n        return [scale_x, scale_y, translate_x, translate_y, True]\n    return [1.0, 1.0, 0.0, 0.0, False]",
+      "extracted_rng_prefix_sha256": "ca7b3651ae91017ecdc8918969ea1f96ff867f624db54ddf2cd712604713ae32",
+      "replay_geometry_float64_c_sha256": "55667a0a95b8cd6f99e7fdfc313e2e2788884135a7ec5f6a2fa36aa9e9556b2a",
+      "first_five_scale_x_scale_y_translate_x_translate_y_applied": [
+        [
+          1.4504377134153155,
+          1.4504377134153155,
+          -7.28732723745937,
+          4.620783476402101,
+          true
+        ],
+        [
+          1.3395408891669296,
+          1.3395408891669296,
+          -11.559816064561625,
+          -5.375874602808518,
+          true
+        ],
+        [
+          1.2757386004666142,
+          1.2757386004666142,
+          -10.938162657656967,
+          5.271340012934006,
+          true
+        ],
+        [
+          1.3216877664218507,
+          1.3216877664218507,
+          -15.486154209874163,
+          -6.486907203227623,
+          true
+        ],
+        [
+          0.8759709701252396,
+          0.8759709701252396,
+          -17.673434954549172,
+          -3.09785337833931,
+          true
+        ]
+      ]
+    }
+  ],
+  "selected_metadata": {
+    "6": {
+      "source_checkpoint": ".braille-training-work\\word-scan-v1-20260905\\run7\\retained-epochs\\epoch-02.keras",
+      "checkpoint_sha256": "7d6a6f04bfa24b84531ae33e50ca0794b91dcc7e857f0fcbc8a6b0e8e61ec8ee"
+    },
+    "7": {
+      "source_checkpoint": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\run11\\retained-epochs\\epoch-03.keras",
+      "checkpoint_sha256": "a42f7952a80e1edd29c06d513ee602187865db8910d0179192f9a7d8e23f11b7"
+    },
+    "10": {
+      "source_checkpoint": ".braille-training-work\\word-scan-v1-20260905\\selected-v7\\best-word.keras",
+      "checkpoint_sha256": "a42f7952a80e1edd29c06d513ee602187865db8910d0179192f9a7d8e23f11b7"
+    },
+    "11": {
+      "source_checkpoint": ".braille-training-work\\word-scan-v1-20260905\\run15\\retained-epochs\\epoch-06.keras",
+      "checkpoint_sha256": "12b06e602e714ee1f02b86a5141b0a67e094e94e0b02106f4f829add07a6b798"
+    },
+    "12": {
+      "source_checkpoint": ".braille-training-work\\word-scan-v1-20260905\\selected-v11\\best-word.keras",
+      "checkpoint_sha256": "12b06e602e714ee1f02b86a5141b0a67e094e94e0b02106f4f829add07a6b798"
+    },
+    "13": {
+      "source_checkpoint": ".braille-training-work\\word-scan-v1-20260905\\run18\\retained-epochs\\epoch-07.keras",
+      "checkpoint_sha256": "44372fa1c73356f3ddfce6ac1001bb9124164846fdf87c12096b6afc1d2c0443"
+    },
+    "15": {
+      "source_checkpoint": ".braille-training-work\\word-scan-v1-20260905\\run20\\retained-epochs\\epoch-09.keras",
+      "checkpoint_sha256": "cce2432c0ddb8952c885dd58697589c285209588dafa81aacdd891b1660068b7"
+    }
+  },
+  "retained_train_geometry": {
+    "file": ".braille-training-work/word-scan-v1-20260905/aspect-diagnosis/train-full63.json",
+    "scope": "Existing selected full-mask63 annotation boxes only; not all TRAIN cells and not independent physical evidence.",
+    "rows": 62,
+    "source_photos": 24,
+    "all_sources_in_train_manifest": true,
+    "box_width_over_height": {
+      "count": 62,
+      "minimum": 0.5961538461538461,
+      "p05": 0.6125850340136054,
+      "median": 0.6666666666666666,
+      "mean": 0.6634170880720441,
+      "p95": 0.6976744186046512,
+      "maximum": 0.71875
+    }
+  },
+  "limitations": [
+    "Uniform affine zoom preserves local x/y aspect but changes absolute cell size. Rotation changes axis-aligned box extents; source/crop resizing and natural page geometry also vary ratios.",
+    "Camera-only augmentation explicitly uses zoom*U(.55,1.25) horizontally. Setting camera=true alongside illumination=true would still select controlled_light and bypass that anisotropic factor.",
+    "The controlled branch does not prove catastrophic forgetting of earlier anisotropy or explain a specific failure causally. No candidate performance is evaluated here.",
+    "The retained 62 TRAIN full-mask boxes are a selected subset with their own annotation convention; their ratio distribution cannot establish a physical target aspect or new augmentation bounds.",
+    "Current vertical_stretch remains 1 in the selected lineage. The separate run23 stretch experiment was not inherited by selected v15 or the run24 BN parent."
+  ],
+  "source_sha256": {
+    ".braille-training-work/word-scan-v1-20260905/run7/training-config.json": "910a52c6bbea7417b2e652813dda10a4cd89564c26cc8c77d25ea2a7c8593cd4",
+    ".braille-training-work/word-scan-v1-20260905/run7/source/word_data.py": "e1b477bd912f02214cf1f388211d645de74a537a2c50b23ade7323b8427dba64",
+    ".braille-training-work/word-scan-v1-20260905/run7/source/word_train.py": "97f3fab18a2b80f5c26c3a7473fe3710c9c74fde07c9492ba4443d5838786ef4",
+    ".braille-training-work/word-scan-v1-20260905/run11/training-config.json": "113b08879a5446144495bb153b158ac3daf13ebe4048bc5a8e363b4c44639c6d",
+    ".braille-training-work/word-scan-v1-20260905/run11/source/word_data.py": "323442c7554da1d1dc6db4eae8435c97bf462a6a62488daf6ed4c61a892fbd80",
+    ".braille-training-work/word-scan-v1-20260905/run11/source/word_train.py": "7e688aaa9d37561f0e169a2a092a4f89e44c4b91dbe8e6a49e2863f22a385993",
+    ".braille-training-work/word-scan-v1-20260905/run15/training-config.json": "38e9b2782c9adb4f8e486d2f5bf4a8177dc998a9657277a93f5a1069e4ad3d59",
+    ".braille-training-work/word-scan-v1-20260905/run15/source/word_data.py": "7abca30c315aa07983576c6a3528ac9ce0e9e18f7df672fe178b1d69d7b29296",
+    ".braille-training-work/word-scan-v1-20260905/run15/source/word_train.py": "21f3d1ec299c056d1e11c31a7f24ac45fe8b3b17f2a0e266215c51b5470c90e2",
+    ".braille-training-work/word-scan-v1-20260905/run18/training-config.json": "952a3f7ce7df663b1e2a66c9884f37afd9e8a2922ba4c9578af91340f95b2327",
+    ".braille-training-work/word-scan-v1-20260905/run18/source/word_data.py": "7c25f596b9208b14bffc7b9892bdc8b59c38f247689cca21aece8d0af96588c9",
+    ".braille-training-work/word-scan-v1-20260905/run18/source/word_train.py": "b2a3204e3783ec0006b57a40e6751e1ad5a867268e3020f2cbdc0bcbe67c5dfb",
+    ".braille-training-work/word-scan-v1-20260905/run20/training-config.json": "75bc0305e899aa1c13936fa8614ef42702fedefc9d3c5abfd294d60ccf30a51d",
+    ".braille-training-work/word-scan-v1-20260905/run20/source/word_data.py": "abc7a31a94db497b9a48ce44bd68d96556e67014623c5645c129153844b48cb7",
+    ".braille-training-work/word-scan-v1-20260905/run20/source/word_train.py": "4d091c0a887cb25fffc1bc6e7bb7e7ab547880c5fda4b8a45ef3c09af87c3e15",
+    ".braille-training-work/word-scan-v1-20260905/run24/training-config.json": "acba040121d8349a5fea5693438ad47f47c61c08afea4a82638d99a4984629bc",
+    ".braille-training-work/word-scan-v1-20260905/run24/source/word_data.py": "659ab6b508a69b34bfb8dc899c5fa6e2214bd64e08281f40f9c39aa91d74996c",
+    ".braille-training-work/word-scan-v1-20260905/run24/source/word_train.py": "c081a0e1d5f1d1f5aac19ffaed51d8229af527cf5299d99e63d28850ea69b31a",
+    ".braille-training-work/word-scan-v1-20260905/selected-v6/selected-validation-fullprecision.json": "097f2b86a82a536dd67c5d5a210aa5e2c837a27712327f1e5431d3428b17cb41",
+    ".braille-training-work/word-scan-v1-20260905/selected-v7/selected-validation-fullprecision.json": "f6c7d9d882ea49c8f7f58c9404af06073829658e5237ce13e5e1968d6e935a47",
+    ".braille-training-work/word-scan-v1-20260905/selected-v10/selected-validation-fullprecision.json": "5ea2a4f4e378dc46925c9e9a13032c6a05a0a9bd431de65dca2584c8582f490d",
+    ".braille-training-work/word-scan-v1-20260905/selected-v11/selected-validation-fullprecision.json": "6463e6ade5f364da8e251ba4587c7597f5c8edf0e0c53416d64042092b7f65cc",
+    ".braille-training-work/word-scan-v1-20260905/selected-v12/selected-validation-fullprecision.json": "1a8a48b6150cbf5aeeac9cfc189042775229c486b4d71780b99a0262b2712959",
+    ".braille-training-work/word-scan-v1-20260905/selected-v13/selected-validation-fullprecision.json": "5e13c271cf6988fcba845bf22aa0d3a10115aa72406d829f2e8af1832b948dab",
+    ".braille-training-work/word-scan-v1-20260905/selected-v15/selected-validation-fullprecision.json": "d136021888194895e3bd19cd3800ace90cb3cc83776a87799fd7fda8d9623b39",
+    ".braille-training-work/word-scan-v1-20260905/full-tail-parent-v1/full-tail-initialization.json": "de2aeca4358747871b001379186a374adebfb5cb4186f65626b1c1d8e14833d9",
+    ".braille-training-work/word-scan-v1-20260905/bn-affine-parent-v1/bn-affine-initialization.json": "b805f1091e6c59f036cd81f5253f0ca00eb0578e450727e5c105090abf99cf50",
+    ".braille-training-work/word-scan-v1-20260905/aspect-diagnosis/train-full63.json": "b78a57c4b631ee183674eb811668daf53444f6211261ef3e125210053fb3eb94",
+    ".braille-training-work/word-scan-v1-20260905/data/source-split.json": "870e1be00c8e4fa4c34e755f26b1ff6becaa3e1fdb70288b0499c2aeba8867dc",
+    "training/scripts/word_data.py": "659ab6b508a69b34bfb8dc899c5fa6e2214bd64e08281f40f9c39aa91d74996c",
+    ".braille-training-work/word-scan-v1-20260905/audit_aspect_augmentation_static.py": "9097beae4da6b80ddd22eb664c0652bb8ea5b77e339f713a89617d2910fa25c4"
+  }
+}

@@ -1,0 +1,24 @@
+# Run23 vertical stretch: diagnosis cache held405
+
+Kontrol v15 dan kandidat stretch epoch9 sama-sama membaca **357/405** blok dengan benar. Seluruh ambang kandidat dan kontrol identik. Satu blok membaik dan satu blok memburuk; tidak ada inferensi baru atau perubahan ambang dalam analisis ini.
+
+| Hasil | Kontrol | Stretch |
+|---|---:|---:|
+| Natural benar / 135 | 130 | 129 |
+| Stress benar / 270 | 227 | 228 |
+| Total benar / 405 | 357 | 357 |
+| Diterima | 362 | 361 |
+| Ketepatan hasil diterima | 98,62% | 98,89% |
+| Sel GT berpasangan / 1629 | 1518 | 1519 |
+| Mask salah pada sel berpasangan | 8 | 9 |
+
+Kontrol tetap menang menurut aturan seleksi yang memberikan bobot sama kepada kelompok natural dan stress: rata-rata keberhasilan kedua kelompok adalah 90,185% untuk kontrol dan 90,000% untuk stretch. Satu tambahan benar dari 270 varian stress tidak mengimbangi satu natural yang hilang dari 135 blok.
+
+- Blok index23, `ZWUKOW`: awalnya benar, kemudian ditolak `low_confidence`. Semua sel berpasangan dan seluruh mask tetap benar, tetapi confidence titik pada W menjadi 0,68215, di bawah ambang tetap 0,70.
+- Blok index147, `WRAQ`: kontrol melewatkan A dan menerima `WRQ`; stretch menemukan sel itu dan menghasilkan `WRAQ`.
+
+Pada 1518 sel GT yang sama-sama berpasangan, rata-rata IoU bertambah 0,00289 dan galat pusat berkurang 0,0779 piksel. Ini perubahan kecil pada matching aproksimasi; belum menunjukkan peningkatan pembacaan blok secara keseluruhan. Jumlah penolakan `clipped` tetap 4 pada kedua model.
+
+Matching menggunakan IoU >=0,25 secara satu-ke-satu, tanpa label untuk memilih pasangan; ini bukan AP. Tiga puluh gambar ditolak kualitas pada kedua model. Natural 135 dan stress 270 berbagi crop dasar, sehingga 405 bukan jumlah sumber independen. Tidak ada akses external607, hasil APK, atau bukti fisik.
+
+[Tabel per panjang/pola](TABLES.md) dan [seluruh keputusan, kotak, serta hash input/sumber](comparison.json.gz) tersedia untuk review. SHA-256 JSON setelah dekompresi: `2447c27fc97981b448e0b7dc8dc3e570981a11e187b352088fcfb93119e723d8`.

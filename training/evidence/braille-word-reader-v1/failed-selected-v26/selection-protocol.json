@@ -1,0 +1,82 @@
+{
+  "created_at_utc": "2026-09-06T05:13:22.573084+00:00",
+  "decoder_version": "six-dot-word-v2",
+  "scope": "Correct adjacent-disjoint cell suppression before new model evaluation. No training, label, quality, geometry, confidence, threshold-grid or ranking change.",
+  "old_selection_table": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\selected-v25\\checkpoint-selection.json",
+  "old_selection_table_sha256": "0341a67b961a54a8a7d9d2ecb4b8f66705206911d97bd13824d2712b128f7c0e",
+  "training_configuration": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\run29\\training-config.json",
+  "training_configuration_sha256": "c20b26876b042015fdd580d6acfaf3509d34edbfb7f1fbcc1b8709d719ac5dfb",
+  "sampling_lineage": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\run29\\sampling-lineage-final.json",
+  "sampling_lineage_sha256": "42f94148e345891fc258424a3249bb382cd60186a577314a320db9e23e02eee5",
+  "integration_audit": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\position-nms-v2-integration\\report.json",
+  "integration_audit_sha256": "b388b5943d701948c88619ccb70e9fb5666e9db467709cf2db12e02919f60ece",
+  "source_sha256": {
+    "word_select.py": "3f9567ea035de52b6a315605b38d9c52079168657d6a2cc2059c2d541ea26eb3",
+    "word_model.py": "c446732a2905a612cd6f1dd64d2d3d01303b1c71933c34552d26f3b5052fd551",
+    "word_decode.py": "fa2179b74459d84055b244ac60353d52d59cd12eda80b5cc279382c28f1be444",
+    "word_data.py": "d692b4b28620af7e4b40ebdedccda68769feb8d3f51bd1508e807487fd32b7d7",
+    "word_geometry_head.py": "f46c8f90e7f4fc9404eed2dc27fbde6e5c823d25d4f88e4127c7e56ed6e8764e",
+    "word_bn_affine.py": "fa117f65beda3f6d159f707a5cd45d3a367b8f5b436b8c43c0d7621071297dff",
+    "word_anchor_zoom.py": "d6f5337d08368b8da55948f314bd06af7b03fa1602e40240778a9b4edea26377"
+  },
+  "export_source_sha256": "b3dc133b7efde92d5fc5790ccd985e97f1b8755fb697433e024a7f5ecedeb0df",
+  "fixture": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\data\\validation-stress-selection.json",
+  "fixture_sha256": "e2ab968f7c4dcf7e774181fde687e1321f58d20567528af4b21fd03ff5a3e625",
+  "validation_words": 405,
+  "candidates": [
+    {
+      "checkpoint": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\selected-v15\\best-word.keras",
+      "sha256": "cce2432c0ddb8952c885dd58697589c285209588dafa81aacdd891b1660068b7",
+      "target_std": 0.05,
+      "eligible_epoch": null
+    },
+    {
+      "checkpoint": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\run29\\retained-epochs\\epoch-08.keras",
+      "sha256": "91afbb023178faa23c973dec1f53c25747d07de825aaa9a1c2edbdf711b13684",
+      "target_std": 0.15,
+      "eligible_epoch": 8
+    },
+    {
+      "checkpoint": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\run29\\retained-epochs\\epoch-09.keras",
+      "sha256": "5e531f4d27ee95a6d12d0c1a5a83910340616ac2decd9d2c8946987a10ddfef1",
+      "target_std": 0.15,
+      "eligible_epoch": 9
+    },
+    {
+      "checkpoint": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\run29\\retained-epochs\\epoch-10.keras",
+      "sha256": "bd225c2720d24124739a90389f415db9488f6e6f5de6fa9c75a75900a284d070",
+      "target_std": 0.15,
+      "eligible_epoch": 10
+    }
+  ],
+  "control_first": true,
+  "threshold_grid": "weak-peaks-v2",
+  "threshold_grid_values": {
+    "proposal": [
+      0.15,
+      0.25,
+      0.35
+    ],
+    "accept": [
+      0.2,
+      0.25,
+      0.3,
+      0.35,
+      0.4,
+      0.55,
+      0.65,
+      0.75
+    ],
+    "dot": [
+      0.7,
+      0.8,
+      0.9,
+      0.95
+    ]
+  },
+  "selection_rule": "Accepted precision at least .95 separately for natural and stress; maximize equal-group exact whole-word accuracy with rejects failed; ties retain first candidate.",
+  "external_outputs_used": false,
+  "historical_reports_unchanged": true,
+  "current_v2_gates_require_new_evaluation": true,
+  "launcher_sha256": "1cb6e9cd53c19ea451114eacc9a3b3e4f5358ea73bc55cb3aee40ae6ed2406d7"
+}

@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "scope": "isolated_synthetic_camera_geometry_only",
+  "generator_sha256": "1e2760829ea56c0e82a2b4202f9613f41191f9ee256754d98fc6c4508eda4fce",
+  "image": "landmark-feed.png",
+  "sha256": "c137ebbda81b003c2d325a79623981cb3aa0c87cffd1f93a2de35f7ebbf894e1",
+  "size": [
+    1920,
+    1440
+  ],
+  "markers": [
+    {
+      "id": "red",
+      "center": [
+        768,
+        576
+      ],
+      "radius": 24,
+      "rgb": [
+        230,
+        30,
+        40
+      ]
+    },
+    {
+      "id": "magenta",
+      "center": [
+        1152,
+        576
+      ],
+      "radius": 24,
+      "rgb": [
+        215,
+        35,
+        195
+      ]
+    },
+    {
+      "id": "cyan",
+      "center": [
+        1152,
+        864
+      ],
+      "radius": 24,
+      "rgb": [
+        20,
+        180,
+        200
+      ]
+    },
+    {
+      "id": "blue",
+      "center": [
+        768,
+        864
+      ],
+      "radius": 24,
+      "rgb": [
+        35,
+        65,
+        230
+      ]
+    }
+  ],
+  "tolerance_photo_pixels": 4,
+  "tolerance_preview_pixels": 3,
+  "comparison": "Actual preview landmark centroids projected via native preview sensor points and actual Photo matrix, compared with independently detected full upright photo centroids. No predicted word or fitted landmark transform is used."
+}

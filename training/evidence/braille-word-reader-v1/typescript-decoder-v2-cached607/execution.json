@@ -1,0 +1,34 @@
+[
+  {
+    "name": "python-replay",
+    "command": [
+      "C:\\bm-envs\\angelina-benchmark\\Scripts\\python.exe",
+      "-u",
+      "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\selected-v26-typescript-parity-v2\\prepare.py",
+      "--run",
+      "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\selected-v26",
+      "--data",
+      "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\data",
+      "--output",
+      "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\selected-v26-typescript-parity-v2\\replay"
+    ],
+    "started_at_utc": "2026-09-06T07:37:23.616963+00:00",
+    "ended_at_utc": "2026-09-06T07:37:35.465953+00:00",
+    "exit_code": 0,
+    "log": "python-replay.log"
+  },
+  {
+    "name": "typescript-comparison",
+    "command": [
+      "C:\\Program Files\\nodejs\\node.EXE",
+      "--max-old-space-size=192",
+      "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\selected-v26-typescript-parity-v2\\compare.cjs",
+      "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\selected-v26-typescript-parity-v2\\replay",
+      "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\selected-v26-typescript-parity-v2\\decoder-parity.json"
+    ],
+    "started_at_utc": "2026-09-06T07:37:35.469489+00:00",
+    "ended_at_utc": "2026-09-06T07:37:37.931073+00:00",
+    "exit_code": 0,
+    "log": "typescript-comparison.log"
+  }
+]
