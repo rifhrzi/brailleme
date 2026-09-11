@@ -1,0 +1,53 @@
+{
+  "counts": {
+    "total": 607,
+    "baseline_correct": 323,
+    "candidate_correct": 306,
+    "lost": 42,
+    "gained": 25,
+    "both_correct": 281,
+    "neither_correct": 259
+  },
+  "groups": {
+    "lowercase": {
+      "total": 140,
+      "accepted": 107,
+      "correct": 103,
+      "exact_word_accuracy": 0.7357142857142858,
+      "accepted_accuracy": 0.9626168224299065
+    },
+    "capital_single": {
+      "total": 140,
+      "accepted": 99,
+      "correct": 2,
+      "exact_word_accuracy": 0.014285714285714285,
+      "accepted_accuracy": 0.020202020202020204
+    },
+    "capital_word": {
+      "total": 140,
+      "accepted": 88,
+      "correct": 0,
+      "exact_word_accuracy": 0.0,
+      "accepted_accuracy": 0.0
+    },
+    "numbers": {
+      "total": 64,
+      "accepted": 43,
+      "correct": 40,
+      "exact_word_accuracy": 0.625,
+      "accepted_accuracy": 0.9302325581395349
+    },
+    "rejection": {
+      "total": 32,
+      "false_acceptances": 7,
+      "all_rejected": false
+    }
+  },
+  "numeric_symbol_gates_pass": false,
+  "selected_model_sha256": "406db0e55e8a5ba9e0d00fb22aadc24f19698219f375e4dcead9057cf3bf2230",
+  "reports": [
+    "C:\\bm-symbols-20260908\\deployment-baseline\\external-baseline-comparison.json",
+    "C:\\bm-symbols-20260908\\deployment-baseline\\deployment-selection.json",
+    "C:\\bm-symbols-20260908\\deployment-baseline\\symbol-readiness.json"
+  ]
+}

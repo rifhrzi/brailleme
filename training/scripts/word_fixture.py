@@ -73,9 +73,14 @@ def main():
     parser.add_argument("--data", type=Path, required=True)
     parser.add_argument("--dataset", type=Path, default=Path("C:/bm-datasets/AngelinaDataset"))
     parser.add_argument("--geometry-only", action="store_true", help="Audit all source crops/pixels without loading TensorFlow or a model")
+    parser.add_argument('--plain-latin-lowercase',action='store_true',help='Interpret unmarked legacy A-Z fixtures as lowercase with the Indonesian decoder')
     args = parser.parse_args()
     records = json.loads((args.data/"validation-words.json").read_text())["records"]
+    if args.plain_latin_lowercase:
+        records=[dict(row,expected=row['expected'].lower()) for row in records]
     descriptors, geometries, audit = audit_geometry(records, args.dataset, args.data)
+    if args.plain_latin_lowercase:
+        audit['expected_text_migration']='Plain A-Z masks now decode lowercase; original manifest, geometry, and source images preserved'
     save_json(args.run/"native-fixture-geometry.json", audit)
     if args.geometry_only:
         print(json.dumps({"total": audit["total"], "eligible": audit["eligible"], "excluded": [row for row in audit["rows"] if not row["eligible"]]}, indent=2), flush=True)

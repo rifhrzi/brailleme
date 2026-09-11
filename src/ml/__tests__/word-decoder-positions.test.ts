@@ -14,7 +14,7 @@ function output(cells: readonly (readonly [number, number, number, number])[]): 
 }
 
 describe('word decoder positional suppression', () => {
-  it.each([[1, 'AA'], [3, 'AB']] as const)('keeps adjacent cells with mask %s', (secondMask, text) => {
+  it.each([[1, 'aa'], [3, 'ab']] as const)('keeps adjacent cells with mask %s', (secondMask, text) => {
     for (const [firstScore, secondScore] of [[1, 1], [0.99, 0.98], [0.98, 0.99]]) {
       expect(decodeWordOutput(output([[100, 4, 1, firstScore!], [104.5, 4, secondMask, secondScore!]]), thresholds))
         .toMatchObject({ status: 'success', text });
@@ -23,9 +23,9 @@ describe('word decoder positional suppression', () => {
 
   it('removes tied overlapping duplicates and retains nonoverlapping ends of an NMS chain', () => {
     expect(decodeWordOutput(output([[100, 12, 1, 0.99], [104, 12, 1, 0.99]]), thresholds))
-      .toMatchObject({ status: 'success', text: 'A' });
+      .toMatchObject({ status: 'success', text: 'a' });
     expect(decodeWordOutput(output([[100, 7, 1, 0.99], [104, 7, 3, 0.98], [108, 7, 9, 0.97]]), thresholds))
-      .toMatchObject({ status: 'success', text: 'AC' });
+      .toMatchObject({ status: 'success', text: 'ac' });
   });
 
   it('rejects the whole word for a weak, uncertain or unsupported adjacent cell', () => {
@@ -43,7 +43,7 @@ describe('word decoder positional suppression', () => {
   it('ignores an outside-guide neighbor while rejecting a box that crosses the guide', () => {
     const values = output([[100, 4, 1, 0.9], [104.5, 4, 3, 0.99]]);
     expect(decodeWordOutput(values, thresholds, { x: 0.2, y: 0.45, width: 0.013, height: 0.1 }))
-      .toMatchObject({ status: 'success', text: 'A' });
+      .toMatchObject({ status: 'success', text: 'a' });
     expect(decodeWordOutput(values, thresholds, { x: 0.2, y: 0.45, width: 0.02, height: 0.1 }))
       .toMatchObject({ status: 'rejected', reason: 'clipped', cells: [] });
   });

@@ -1,0 +1,359 @@
+{
+  "schemaVersion": 1,
+  "retainedAt": "2026-09-10",
+  "createdAtUtc": "2026-09-10T16:38:08.304677+00:00",
+  "purpose": "Additive retention of the evaluated unpromoted ID-v4 experiment; not deletion authorization and not an accuracy/release claim",
+  "relationship": "Preserve union with every historical retention index and all referenced assets. Never rewrite historical evidence when relocating; append a relocation index and verify hashes first.",
+  "historicalIndexes": [
+    {
+      "file": "training/checkpoints/retained-models-20260908.json",
+      "pathScope": "repository_relative",
+      "sizeBytes": 62142,
+      "sha256": "29890d735d734184135c6e725a5065e46c67c827678bf66cb04534e9c53843ed"
+    },
+    {
+      "file": "training/checkpoints/retained-models.json",
+      "pathScope": "repository_relative",
+      "sizeBytes": 8018,
+      "sha256": "39e248ad1f697fde2f856467f5f26b6a22cb2781927c0a00a9c722c738120411"
+    },
+    {
+      "file": "training/checkpoints/retained-runtime-20260909.json",
+      "pathScope": "repository_relative",
+      "sizeBytes": 3201,
+      "sha256": "2388cbd7655a7bf42a000e576db5aa53221eb5df23c65747876dfdcca0b50fe5"
+    }
+  ],
+  "candidate": {
+    "status": "experimental_not_promoted",
+    "selectedRun": "run-dots",
+    "selectedEpoch": 45,
+    "targetExactAccuracy": 0.8,
+    "targetMet": false,
+    "physicalCameraValidated": false,
+    "decoderVersion": "six-dot-id-v4-experimental",
+    "artifacts": [
+      {
+        "file": "training/checkpoints/braille-word-reader-id-v4/best-word.keras",
+        "pathScope": "repository_relative",
+        "sizeBytes": 4120098,
+        "sha256": "090260a2a29f802cdcd07140344feaaf04d98bc48cd2be7a5d75e0482d6ee38c"
+      },
+      {
+        "file": "training/checkpoints/braille-word-reader-id-v4/qualification.json",
+        "pathScope": "repository_relative",
+        "sizeBytes": 15551,
+        "sha256": "f37b7ca4963e81d2215d27addcb70592e75c693682c5298e5cdefa67c76ee12c"
+      },
+      {
+        "file": "training/checkpoints/braille-word-reader-id-v4/RETENTION-COPY.json",
+        "pathScope": "repository_relative",
+        "sizeBytes": 873,
+        "sha256": "d56fde216b5dcea26d2aa43367f21bffb58b4269943fbb51ad40d465ca1d8ed3"
+      },
+      {
+        "file": "training/checkpoints/braille-word-reader-id-v4/word-reader.tflite",
+        "pathScope": "repository_relative",
+        "sizeBytes": 3239392,
+        "sha256": "e82a540e7b2e1c8d5b3bd5c3004e1cc5409367293c27b24f13f2a7c05f015325"
+      }
+    ],
+    "refinerIncludedInFinalPipeline": false
+  },
+  "evidence": {
+    "directory": "training/evidence/braille-word-reader-id-v4-20260910",
+    "pathScope": "repository_relative",
+    "preserveEntireDirectory": true,
+    "role": "Final reports, immutable source snapshots and complete experiment inventory",
+    "files": [
+      {
+        "file": "training/evidence/braille-word-reader-id-v4-20260910/DETECTOR-RETENTION-INVENTORY.json",
+        "pathScope": "repository_relative",
+        "sizeBytes": 72239,
+        "sha256": "b42468ca7cb6531447f8c3fed92cbf5b49e8dff7db259759b15fc526f15a5209"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v4-20260910/detector-selection.json",
+        "pathScope": "repository_relative",
+        "sizeBytes": 488,
+        "sha256": "4235598b3db21fc537c5741207514579fd6764644386d698688cc0ee141bc952"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v4-20260910/EVIDENCE-COPIES.json",
+        "pathScope": "repository_relative",
+        "sizeBytes": 4845,
+        "sha256": "fa6eef0156019768cb13a4a83113d6b6ed2b764fe96e4318dcb4127f7d765ef4"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v4-20260910/EXPERIMENT-INVENTORY.json",
+        "pathScope": "repository_relative",
+        "sizeBytes": 1916682,
+        "sha256": "922c6c22b5cc1dc2aa9b37f9a78a115f50947f46a270e492d8e2e05626ce32bf"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v4-20260910/export-parity.json",
+        "pathScope": "repository_relative",
+        "sizeBytes": 2187,
+        "sha256": "2ef340a0ee114098dbaf5a404166e17778fd1a5fb02df110ba946094d67388f9"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v4-20260910/final-audit.json",
+        "pathScope": "repository_relative",
+        "sizeBytes": 8508,
+        "sha256": "6c11f9913b49f56c68c69ff27b4d3e8da8a8c52de2f20e473322047bf5efd01e"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v4-20260910/final-corpus-integrity.json",
+        "pathScope": "repository_relative",
+        "sizeBytes": 165,
+        "sha256": "e58a3105e408866ea81064edd7a0ca8f864673c49d3152bc587144d8cec4457d"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v4-20260910/final-deployed-model-verify.log",
+        "pathScope": "repository_relative",
+        "sizeBytes": 710,
+        "sha256": "ba6b4947f6bae88d4b166f7c44473ddd53ec512d04b6442422e8964ee1b29460"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v4-20260910/final-method-selection.json",
+        "pathScope": "repository_relative",
+        "sizeBytes": 1637,
+        "sha256": "e75d6e8856516fc8fe4530a3ea599532b2fb6a6f0f51ef7a53cd0609ce92f39b"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v4-20260910/final-test-evaluation.json",
+        "pathScope": "repository_relative",
+        "sizeBytes": 277,
+        "sha256": "48132f5c10ea0e63b9496cd407d4b0a0535aca858273b74b10e6b29757d85633"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v4-20260910/public-regression-summary.json",
+        "pathScope": "repository_relative",
+        "sizeBytes": 11027,
+        "sha256": "51d6d74bf396ae04cbab8e7fbeacf8885a73f07acebe9f3d79d16d1e58049d2f"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v4-20260910/qualification-tests.json",
+        "pathScope": "repository_relative",
+        "sizeBytes": 10139,
+        "sha256": "5448c78b91a8e3ca85afc85805624fae8c3195810275cdd2df166985ca38ceca"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v4-20260910/qualification-tests.log",
+        "pathScope": "repository_relative",
+        "sizeBytes": 14620,
+        "sha256": "a2e9ac7942ec931209fa2f3e34c890600af92c5c6617940d0ba453f173ff86b8"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v4-20260910/refiner-pilot-selection.json",
+        "pathScope": "repository_relative",
+        "sizeBytes": 7069,
+        "sha256": "36c7167c49773f57cc15fe432c12bb61747ceb7374c6003cf25ce63fd4d0fd1c"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v4-20260910/RESULTS-ID.md",
+        "pathScope": "repository_relative",
+        "sizeBytes": 9367,
+        "sha256": "49e6c8fc035a487aadf42b089377d775f15b2b5655a79e2052b5566c81f339a2"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v4-20260910/RETENTION-PROPOSAL.json",
+        "pathScope": "repository_relative",
+        "sizeBytes": 3851,
+        "sha256": "6b8962d8e4c2164fab15ba49a8dfee44c1f691cf3296e29610ba9af4cc35d310"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v4-20260910/test-artifact-comparison-summary.json",
+        "pathScope": "repository_relative",
+        "sizeBytes": 20869,
+        "sha256": "4be3eaa7a6c2f026e8464535303567715944d74a19598836640ae8149854044d"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v4-20260910/test-evaluation-reservation.json",
+        "pathScope": "repository_relative",
+        "sizeBytes": 308,
+        "sha256": "986282043396a0a0109e181d221cd42f798c45a0b1c9b5aa3d819836c2a3aa39"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v4-20260910/test-evaluation-summary.json",
+        "pathScope": "repository_relative",
+        "sizeBytes": 7542,
+        "sha256": "2a1ea9521a28a8be3c6cae152a99bfe9f046b259e4950ed56c9f184ccfd987a3"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v4-20260910/test-source/test_word_cell_refiner_v4.py",
+        "pathScope": "repository_relative",
+        "sizeBytes": 6230,
+        "sha256": "fa91ba0b1f542cc367c0853dbdf2b68f2c884ecbdfb52c268cbdabbeb1b371e5"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v4-20260910/test-source/test_word_cell_refiner_v4_export.py",
+        "pathScope": "repository_relative",
+        "sizeBytes": 3009,
+        "sha256": "3bb19db3b68e4fb0fe8b868d2d991e83c187b7912a7061cb83f8d0d945fdd560"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v4-20260910/test-source/test_word_cell_refiner_v4_geometry_review.py",
+        "pathScope": "repository_relative",
+        "sizeBytes": 2591,
+        "sha256": "4fb181367801fe7636b993e73d97e7b3dc798d82e60879d039855405297b10a1"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v4-20260910/test-source/test_word_decode_id_v4.py",
+        "pathScope": "repository_relative",
+        "sizeBytes": 2374,
+        "sha256": "3a759afd4bcd4db8d3a0793a52e019e78136579edc3ffac6f3bb02cbb322090a"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v4-20260910/test-source/test_word_symbol_v4_export.py",
+        "pathScope": "repository_relative",
+        "sizeBytes": 2881,
+        "sha256": "37989f96bd180309a09486e62bdd9a06a1de91235b0dd89e10657a1282aa8008"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v4-20260910/test-source/test_word_symbol_v4_loss.py",
+        "pathScope": "repository_relative",
+        "sizeBytes": 7772,
+        "sha256": "354981c430d23b1bb3ecf07c176d4741ca5c444ad8f1027ecc90315acee5cfa0"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v4-20260910/test-source/test_word_symbol_v4_mine.py",
+        "pathScope": "repository_relative",
+        "sizeBytes": 5631,
+        "sha256": "d1232b6580b0cafbcac2ef913e0a54b658df408d76284e3aa280e46e3b8cdd46"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v4-20260910/test-source/test_word_symbol_v4_prepare.py",
+        "pathScope": "repository_relative",
+        "sizeBytes": 2772,
+        "sha256": "5fca80608863ffd7f1957b3e011b1fc8c7bd370ae0b43b2c555be147fd5bde14"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v4-20260910/test-source/test_word_symbol_v4_regression.py",
+        "pathScope": "repository_relative",
+        "sizeBytes": 5651,
+        "sha256": "e688c0164182c2756e598a59f5f2c24dcddf5e9d2c077e440a83d2910f62992a"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v4-20260910/test-source/test_word_symbol_v4_test_artifacts.py",
+        "pathScope": "repository_relative",
+        "sizeBytes": 9439,
+        "sha256": "3abbf99d6b9c0bb279ae3e1b9a5647a9f65655dd0b2c456ff40a4f6aeebc3c81"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v4-20260910/test-source/test_word_symbol_v4_train.py",
+        "pathScope": "repository_relative",
+        "sizeBytes": 9358,
+        "sha256": "4cfda08a809490a544b8943bcb41eaf52b236e6d4ccc8ad8a94895b54d854ce7"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v4-20260910/test-source/test_word_symbols_id_v4.py",
+        "pathScope": "repository_relative",
+        "sizeBytes": 3892,
+        "sha256": "af7a600f40a9fe8f1ed445f382ccb125236abceae1eacfbd303fa24258b0a73c"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v4-20260910/test-source/test_word_torch_port.py",
+        "pathScope": "repository_relative",
+        "sizeBytes": 5914,
+        "sha256": "8557e5d688b2532eab4c2d2362abacf6022fdc04d675f7f2e55a25e5b8a8e6a4"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v4-20260910/TEST-SOURCE-COPIES.json",
+        "pathScope": "repository_relative",
+        "sizeBytes": 3433,
+        "sha256": "9acbc1adf947d3a5fc3c16de68c20fe0b97d3637058e18a35750464d166e8230"
+      }
+    ]
+  },
+  "experiment": {
+    "directory": "C:\\bm-symbols-20260908\\accuracy80-20260910",
+    "pathScope": "absolute",
+    "preserveEntireDirectory": true,
+    "role": "All 81 complete detector epochs, 17 pilot epochs, datasets, source snapshots, logs, oracles and final evaluation",
+    "inventory": {
+      "file": "training/evidence/braille-word-reader-id-v4-20260910/EXPERIMENT-INVENTORY.json",
+      "pathScope": "repository_relative",
+      "sizeBytes": 1916682,
+      "sha256": "922c6c22b5cc1dc2aa9b37f9a78a115f50947f46a270e492d8e2e05626ce32bf"
+    },
+    "frozenDataIndexes": [
+      {
+        "file": "C:\\bm-symbols-20260908\\accuracy80-20260910\\train-image-hashes.json",
+        "pathScope": "absolute",
+        "sizeBytes": 877829,
+        "sha256": "51396aaa6d10e7f8a3fe20c9ceb4a534cb50e956970b1d76e50aaec762baa4ce"
+      },
+      {
+        "file": "C:\\bm-symbols-20260908\\accuracy80-20260910\\validation-image-hashes.json",
+        "pathScope": "absolute",
+        "sizeBytes": 80465,
+        "sha256": "88a7d4779fc1fd6a56481167b835d7c01a17d70379a22d86364ed8cee8bc9088"
+      },
+      {
+        "file": "C:\\bm-symbols-20260908\\accuracy80-20260910\\test-image-hashes.json",
+        "pathScope": "absolute",
+        "sizeBytes": 77225,
+        "sha256": "0e407a27526c8dabf502914fbdaa03f05d18e530335fec0a87d9aad6f115ede4"
+      },
+      {
+        "file": "C:\\bm-symbols-20260908\\accuracy80-20260910\\source-image-hashes.json",
+        "pathScope": "absolute",
+        "sizeBytes": 2683443,
+        "sha256": "fe3d4f090d87ee7b103085ca86e27d1999848bb4de9a99becb01300a0153c69e"
+      },
+      {
+        "file": "C:\\bm-symbols-20260908\\accuracy80-20260910\\test-download-manifest.json",
+        "pathScope": "absolute",
+        "sizeBytes": 17953,
+        "sha256": "9fb88e6b2f28aff4c726a532bc159ec88e983b632d85f40daf044be308f8ad2c"
+      }
+    ],
+    "optimizerState": "Checkpoints preserve weights; Adam state is fresh on continuation and cannot replay exact mid-stage optimizer state"
+  },
+  "protectedDirectories": [
+    {
+      "directory": ".",
+      "pathScope": "repository_relative",
+      "preserveEntireDirectory": true,
+      "role": "Primary repository; not a build folder"
+    },
+    {
+      "directory": "C:\\bm-datasets",
+      "pathScope": "absolute",
+      "preserveEntireDirectory": true,
+      "role": "Source datasets; not build folders"
+    },
+    {
+      "directory": "C:\\bm-envs",
+      "pathScope": "absolute",
+      "preserveEntireDirectory": true,
+      "role": "Existing Python training/export environments; not build folders"
+    },
+    {
+      "directory": "C:\\bm-symbols-20260908",
+      "pathScope": "absolute",
+      "preserveEntireDirectory": true,
+      "role": "Existing symbol training and evidence root; not an Android staging folder"
+    },
+    {
+      "directory": ".braille-training-work/word-scan-v1-20260905",
+      "pathScope": "repository_relative",
+      "preserveEntireDirectory": true,
+      "role": "Original continuation inputs and training environment"
+    }
+  ],
+  "buildFolders": {
+    "createdByThisTask": 0,
+    "finalRegisteredCount": 1,
+    "maxFolders": 2,
+    "verification": {
+      "file": "training/evidence/braille-word-reader-id-v4-20260910/final-audit.json",
+      "pathScope": "repository_relative",
+      "sizeBytes": 8508,
+      "sha256": "6c11f9913b49f56c68c69ff27b4d3e8da8a8c52de2f20e473322047bf5efd01e"
+    }
+  },
+  "developmentEntryPoint": "training/README-ACCURACY80-ID.md",
+  "draftPlanResolution": "This finalized index completes RETENTION-PROPOSAL.json; draft planning records remain unchanged as provenance."
+}

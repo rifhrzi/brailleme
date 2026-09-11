@@ -4,14 +4,10 @@ import { dirname, isAbsolute, relative, resolve } from "node:path";
 import { spawnSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
 import { isDeepStrictEqual } from "node:util";
+import { activeWordModelDirectory } from './word-model-active-path.mjs';
 
 const projectRoot = dirname(dirname(fileURLToPath(import.meta.url)));
-const modelDirectory = resolve(
-  projectRoot,
-  "assets",
-  "models",
-  "braille-word-reader-v1",
-);
+const modelDirectory = activeWordModelDirectory(projectRoot);
 
 function readJson(path) {
   return JSON.parse(readFileSync(path, "utf8"));

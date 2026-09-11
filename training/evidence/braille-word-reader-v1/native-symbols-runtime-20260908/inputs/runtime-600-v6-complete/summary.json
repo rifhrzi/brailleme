@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "collectionStatus": "duration_completed",
+  "elapsedSeconds": 600.0,
+  "trackingReports": 41,
+  "photoReports": 9,
+  "memorySamples": 60,
+  "pssFirstKiB": 297263,
+  "pssLastKiB": 300945,
+  "pssGrowthKiB": 3682,
+  "surfaceSamples": 538,
+  "presentedFramesObserved": 12672,
+  "surfaceFpsObserved": 21.12,
+  "surfaceHistoryGaps": 0,
+  "latestTracking": {
+    "schemaVersion": 1,
+    "elapsedMs": 80145,
+    "received": 971,
+    "admitted": 350,
+    "busyDrops": 0,
+    "throttled": 619,
+    "disabledDrops": 2,
+    "runnerDrops": 0,
+    "completed": 350,
+    "errors": 0,
+    "meanMs": 173,
+    "maxMs": 400,
+    "latencyBuckets": [
+      0,
+      13,
+      237,
+      100,
+      0,
+      0,
+      0
+    ],
+    "latencyUpperBoundsMs": [
+      50,
+      100,
+      200,
+      400,
+      800,
+      1600,
+      null
+    ]
+  },
+  "photoLatenciesMs": [
+    1877,
+    1754,
+    1831,
+    1761,
+    2098,
+    1854,
+    1892,
+    1878,
+    1848
+  ],
+  "errors": [],
+  "acceptanceResult": "not_assessed",
+  "limitations": [
+    "Surface composition is a preview FPS proxy, not proof of camera throughput.",
+    "Callback busy/throttle counters do not include CameraX hardware drops.",
+    "Latency buckets are cumulative within each mounted tracker, not exact percentiles.",
+    "No gestures, shutter actions, installation, log clearing or device changes were performed."
+  ]
+}

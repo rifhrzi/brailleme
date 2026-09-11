@@ -1,0 +1,171 @@
+C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\tensorflow\lite\python\interpreter.py:457: UserWarning:     Warning: tf.lite.Interpreter is deprecated and is scheduled for deletion in
+    TF 2.20. Please use the LiteRT interpreter from the ai_edge_litert package.
+    See the [migration guide](https://ai.google.dev/edge/litert/migration)
+    for details.
+    
+  warnings.warn(_INTERPRETER_DELETION_WARNING)
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+external 1/607
+external 101/607
+external 201/607
+external 301/607
+external 401/607
+external 501/607
+external 601/607
+{
+  "scope": "public_offline_geometric_whole_words_not_physical_camera_evidence",
+  "model_sha256": "406db0e55e8a5ba9e0d00fb22aadc24f19698219f375e4dcead9057cf3bf2230",
+  "fixture_manifest_sha256": "52db73db66f63e35e03ceda218bcb53958a644137cc50aae3f796acf9afc6603",
+  "threshold_source": "validation families only; frozen before external evaluation",
+  "thresholds": {
+    "proposalScore": 0.25,
+    "acceptScore": 0.25,
+    "dotConfidence": 0.7,
+    "nmsIou": 0.25,
+    "minCellWidth": 0.008,
+    "minCellHeight": 0.06,
+    "edgeMargin": 0.008,
+    "maxRowDeviation": 0.55,
+    "maxGapRatio": 1.2,
+    "maxOverlapRatio": 0.5
+  },
+  "whole_words": {
+    "total": 607,
+    "accepted": 351,
+    "correct": 323,
+    "exact_word_accuracy": 0.5321252059308073,
+    "accepted_accuracy": 0.9202279202279202,
+    "by_length": {
+      "1": {
+        "total": 152,
+        "accepted": 96,
+        "correct": 94,
+        "exact_word_accuracy": 0.618421052631579,
+        "accepted_accuracy": 0.9791666666666666
+      },
+      "2": {
+        "total": 109,
+        "accepted": 74,
+        "correct": 63,
+        "exact_word_accuracy": 0.5779816513761468,
+        "accepted_accuracy": 0.8513513513513513
+      },
+      "3": {
+        "total": 73,
+        "accepted": 49,
+        "correct": 42,
+        "exact_word_accuracy": 0.5753424657534246,
+        "accepted_accuracy": 0.8571428571428571
+      },
+      "4": {
+        "total": 66,
+        "accepted": 40,
+        "correct": 37,
+        "exact_word_accuracy": 0.5606060606060606,
+        "accepted_accuracy": 0.925
+      },
+      "5": {
+        "total": 70,
+        "accepted": 32,
+        "correct": 31,
+        "exact_word_accuracy": 0.44285714285714284,
+        "accepted_accuracy": 0.96875
+      },
+      "6": {
+        "total": 43,
+        "accepted": 21,
+        "correct": 19,
+        "exact_word_accuracy": 0.4418604651162791,
+        "accepted_accuracy": 0.9047619047619048
+      },
+      "7": {
+        "total": 35,
+        "accepted": 14,
+        "correct": 14,
+        "exact_word_accuracy": 0.4,
+        "accepted_accuracy": 1.0
+      },
+      "8": {
+        "total": 24,
+        "accepted": 8,
+        "correct": 7,
+        "exact_word_accuracy": 0.2916666666666667,
+        "accepted_accuracy": 0.875
+      },
+      "9": {
+        "total": 15,
+        "accepted": 6,
+        "correct": 6,
+        "exact_word_accuracy": 0.4,
+        "accepted_accuracy": 1.0
+      },
+      "10": {
+        "total": 13,
+        "accepted": 6,
+        "correct": 6,
+        "exact_word_accuracy": 0.46153846153846156,
+        "accepted_accuracy": 1.0
+      },
+      "11": {
+        "total": 5,
+        "accepted": 5,
+        "correct": 4,
+        "exact_word_accuracy": 0.8,
+        "accepted_accuracy": 0.8
+      },
+      "12": {
+        "total": 2,
+        "accepted": 0,
+        "correct": 0,
+        "exact_word_accuracy": 0.0,
+        "accepted_accuracy": null
+      }
+    },
+    "rejection_reasons": {
+      "clipped": 167,
+      "low_confidence": 58,
+      "gap": 7,
+      "unsupported_pattern": 11,
+      "no_grid": 11,
+      "overlapping_cells": 2
+    }
+  },
+  "fixture_boundary_definition": "public_annotation_space_bounded_words_not_lexical_or_camera_truth",
+  "fixture_human_boundary_reviewed": false,
+  "excluded_by_ground_truth_geometry": {
+    "unsupported_mask": 1622,
+    "uncertain_boundary_neighbor": 23,
+    "outside_length": 92,
+    "line_wrap_continuation": 30,
+    "neighboring_or_cut_cells": 13,
+    "outside_page": 3,
+    "uncertain_image_edge_boundary": 3
+  },
+  "negative_regression": {
+    "total": 44,
+    "accepted": 0,
+    "independent_holdout": false,
+    "reason": "These 44 public negatives are also training/regression inputs."
+  },
+  "legacy_arbitrary_block_regression": {
+    "total": 66,
+    "accepted": 28,
+    "correct": 20,
+    "is_complete_word_benchmark": false
+  },
+  "numerical_internal_gates_pass": false,
+  "release_ready": false,
+  "limitations": [
+    "Geometric word boundaries require visual review before acceptance authority.",
+    "PIL antialiased bilinear does not establish native Android resize parity.",
+    "No independent embossed-paper physical-camera evaluation performed.",
+    "Missed terminal cells cannot be proven absent solely by gap checks."
+  ],
+  "external_evaluation_status": "observed_development_regression",
+  "decoder_version": "six-dot-id-v3",
+  "original_fixture_manifest_sha256": "e69d7c0d9582aef7d51a2c15706f6bf62bc3cdfe35d22ad28ad007301d56b41b",
+  "external_independent_holdout": false,
+  "external_observation_note": "The unchanged 607 fixtures were first evaluated for selected-v1. Later model development may be informed by aggregate failure diagnosis; gradients and checkpoint/threshold selection remain restricted to training and frozen held validation.",
+  "quality_rejected_before_decode": 29,
+  "cached_outputs_scope": "All 607 actual model outputs; quality_reasons stores the separate original-RGB pre-decoder rejection."
+}

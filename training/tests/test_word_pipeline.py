@@ -188,13 +188,13 @@ class WordPipelineTests(unittest.TestCase):
         self.assertLess(target[16, 28, 0], 0)
 
     def test_repeated_letters_are_preserved(self):
-        self.assertEqual(decode(output_word([13, 1, 13, 1]))["text"], "MAMA")
-        self.assertEqual(decode(output_word([5, 1, 5, 1, 5]))["text"], "KAKAK")
+        self.assertEqual(decode(output_word([13, 1, 13, 1]))["text"], "mama")
+        self.assertEqual(decode(output_word([5, 1, 5, 1, 5]))["text"], "kakak")
 
     def test_one_and_twelve_letters(self):
-        self.assertEqual(decode(output_word([1]))["text"], "A")
-        self.assertEqual(decode(output_word([1]*12))["text"], "A"*12)
-        self.assertEqual(decode(output_word([1]*13))["reason"], "too_many_cells")
+        self.assertEqual(decode(output_word([1]))["text"], "a")
+        self.assertEqual(decode(output_word([1]*12))["text"], "a"*12)
+        self.assertEqual(decode(output_word([1]*13))["reason"], "too_many_characters")
 
     def test_unsupported_six_bit_pattern_rejects_whole_word(self):
         self.assertEqual(decode(output_word([1, 63, 1]))["reason"], "unsupported_pattern")
@@ -236,7 +236,7 @@ class WordPipelineTests(unittest.TestCase):
         self.assertLess(float(np.float32(.35)), .35)
         self.assertEqual(decode(output, thresholds)["reason"], "no_grid")
         output[..., 0] = np.where(output[..., 0]>.34, np.nextafter(np.float32(.35), np.float32(1)), 0)
-        self.assertEqual(decode(output, thresholds)["text"], "A")
+        self.assertEqual(decode(output, thresholds)["text"], "a")
 
     def test_word_boundary_groups_do_not_slice_cell_runs(self):
         boxes = np.asarray([[x, 50, x+20, 90] for x in (10, 38, 66, 122, 150)])
@@ -261,13 +261,30 @@ class WordPipelineTests(unittest.TestCase):
     def test_selection_ignores_other_rows_but_never_cut_cells(self):
         boxes = np.asarray([[100, 10, 120, 40], [200, 75, 220, 115], [250, 150, 270, 180]])
         output = center_predictions(make_target(boxes, np.asarray([3, 1, 9])))
-        self.assertEqual(decode(output, selection=[0, .34, 1, .66])["text"], "A")
+        self.assertEqual(decode(output, selection=[0, .34, 1, .66])["text"], "a")
         self.assertEqual(decode(output, selection=[0, .5, 1, .66])["reason"], "clipped")
 
     def test_rejections_count_as_wrong_words(self):
-        metrics = summarize([output_word([13, 1]), np.zeros((GRID_H, GRID_W, 11))], [{"expected": "MA"}, {"expected": "MA"}])
+        metrics = summarize([output_word([13, 1]), np.zeros((GRID_H, GRID_W, 11))], [{"expected": "ma"}, {"expected": "ma"}])
         self.assertEqual(metrics["exact_word_accuracy"], .5)
         self.assertEqual(metrics["accepted_accuracy"], 1.)
+
+    def test_indicators_retain_physical_cells_and_decode_case_or_integer(self):
+        for masks, text in [([32, 1, 3], 'Ab'), ([32, 32, 1, 3], 'AB'), ([60, 26, 26, 1], '001'), ([32, 1] * 12, 'A' * 12)]:
+            with self.subTest(text=text):
+                result = decode(output_word(masks))
+                self.assertEqual(result['text'], text)
+                self.assertEqual(len(result['cells']), len(masks))
+                self.assertEqual(''.join(cell['output'] for cell in result['cells']), text)
+        self.assertEqual(decode(output_word([1] * 25))['reason'], 'too_many_cells')
+
+    def test_uncertain_indicator_rejects_entire_token(self):
+        output = output_word([60, 1, 3])
+        row, column = np.argwhere(output[..., 0] >= .99)[0]
+        output[row, column, 5] = .5
+        result = decode(output)
+        self.assertEqual(result['text'], '')
+        self.assertEqual(result['reason'], 'low_confidence')
 
 
 if __name__ == "__main__":

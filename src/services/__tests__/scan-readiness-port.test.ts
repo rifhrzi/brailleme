@@ -16,7 +16,7 @@ describe('RuntimeScanReadinessPort', () => {
     await expect(port.getAvailability()).resolves.toEqual({
       available: false,
       reason: 'model_not_available',
-      message: 'Pemindai belum tersedia pada build ini.',
+      message: 'Pemindai belum tersedia pada versi aplikasi ini.',
     });
     expect(scanner.getAvailability).not.toHaveBeenCalled();
   });

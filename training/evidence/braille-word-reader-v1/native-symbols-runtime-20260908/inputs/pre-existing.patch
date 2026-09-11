@@ -1,0 +1,361 @@
+diff --git a/src/features/live/__tests__/word-photo-camera.test.tsx b/src/features/live/__tests__/word-photo-camera.test.tsx
+index 1189cbe..67bb457 100644
+--- a/src/features/live/__tests__/word-photo-camera.test.tsx
++++ b/src/features/live/__tests__/word-photo-camera.test.tsx
+@@ -11,6 +11,7 @@ const mockCapture = jest.fn();
+ const mockRecognize = jest.fn();
+ const mockGeometry = jest.fn();
+ const mockSensorPoint = jest.fn();
++const mockSetTorch = jest.fn();
+ let mockCameraProps: Record<string, unknown>;
+ let mockOutputOptions: Record<string, unknown>;
+ let mockImage: unknown;
+@@ -27,6 +28,7 @@ jest.mock('react-native-vision-camera', () => ({
+   Camera: (props: Record<string, unknown>) => {
+     mockCameraProps = props;
+     (props.ref as { current: unknown }).current = {
++      controller: { setTorchMode: mockSetTorch },
+       convertViewPointToCameraPoint: mockSensorPoint,
+       preview: { previewOutput: { currentResolution: { width: 1920, height: 1440 } } },
+     };
+@@ -77,7 +79,7 @@ const rejection = {
+   boxes: [],
+ };
+ 
+-async function setup(guideAspectRatio = 4) {
++async function setup(guideAspectRatio = 4, startPreview = true, torchEnabled = true) {
+   const handle = createRef<WordPhotoCameraHandle>();
+   const events = jest.fn();
+   const release = jest.fn();
+@@ -91,7 +93,7 @@ async function setup(guideAspectRatio = 4) {
+   const props = {
+     active: true,
+     sessionId: 'photo-session',
+-    torchEnabled: true,
++    torchEnabled,
+     guideAspectRatio,
+     cameraRef: handle,
+     onEvent: events,
+@@ -106,13 +108,14 @@ async function setup(guideAspectRatio = 4) {
+     nativeEvent: { layout: { width: 320, height: 320 } },
+   });
+   await act(() => (mockCameraProps.onStarted as () => void)());
+-  await act(() => (mockCameraProps.onPreviewStarted as () => void)());
++  if (startPreview) await act(() => (mockCameraProps.onPreviewStarted as () => void)());
+   return { handle, events, acquire, release, image, photo, view, props };
+ }
+ 
+ describe('WordPhotoCamera', () => {
+   beforeEach(() => {
+     mockCapture.mockReset();
++    mockSetTorch.mockReset().mockResolvedValue(undefined);
+     mockRecognize.mockReset().mockReturnValue(rejection);
+     mockSensorPoint.mockReset().mockImplementation((point: { x: number; y: number }) => ({ x: point.x * 4.5, y: point.y * 4.5 + 240 }));
+     mockGeometry.mockReset().mockReturnValue({ width: 1440, height: 1920, sensorToBuffer: [1, 0, 0, 0, 1, 0, 0, 0, 1], rotationDegrees: 0, isMirrored: false, cropRect: [0, 0, 1440, 1920] });
+@@ -122,7 +125,89 @@ describe('WordPhotoCamera', () => {
+     mockAppEnvironment = 'production';
+     mockHasTorch = true;
+   });
+-  afterEach(() => jest.restoreAllMocks());
++  afterEach(() => {
++    jest.restoreAllMocks();
++    jest.useRealTimers();
++  });
++
++  it('does not send torch controls while opening the camera or when the torch starts off', async () => {
++    const test = await setup(4, false, false);
++    expect(mockCameraProps).not.toHaveProperty('torchMode');
++    expect(mockSetTorch).not.toHaveBeenCalled();
++    await act(() => (mockCameraProps.onPreviewStarted as () => void)());
++    expect(mockSetTorch).not.toHaveBeenCalled();
++    expect(test.props.onAvailability).toHaveBeenLastCalledWith(true, true);
++    await test.view.rerender(<WordPhotoCamera {...test.props} torchEnabled />);
++    expect(mockSetTorch).toHaveBeenLastCalledWith('on');
++    await test.view.rerender(<WordPhotoCamera {...test.props} torchEnabled={false} />);
++    expect(mockSetTorch).toHaveBeenLastCalledWith('off');
++  });
++
++  it('keeps preview and capture usable when a phone advertises a torch but rejects the control', async () => {
++    jest.spyOn(console, 'warn').mockImplementation(() => {});
++    mockSetTorch.mockRejectedValue(new Error('Camera is not active'));
++    const test = await setup();
++    expect(test.props.onAvailability).toHaveBeenLastCalledWith(true, false);
++    expect(test.events).not.toHaveBeenCalled();
++    expect(screen.queryByText('Kamera belum dapat digunakan.')).toBeNull();
++    await act(async () => test.handle.current?.capture(1));
++    expect(mockCapture).toHaveBeenCalledTimes(1);
++    expect(mockRecognize).toHaveBeenCalledTimes(1);
++  });
++
++  it('times out a detected camera that never streams and makes retry available', async () => {
++    jest.useFakeTimers();
++    jest.spyOn(console, 'warn').mockImplementation(() => {});
++    const test = await setup(4, false, false);
++    await act(async () => jest.advanceTimersByTime(15_000));
++    expect(test.events).toHaveBeenLastCalledWith(expect.objectContaining({ status: 'error', captureId: 0 }));
++    expect(test.props.onAvailability).toHaveBeenLastCalledWith(false, false);
++    expect(screen.getByText('Kamera belum dapat digunakan.')).toBeOnTheScreen();
++    expect(screen.queryByTestId('word-guide', { includeHiddenElements: true })).toBeNull();
++  });
++
++  it('cancels the startup timeout once preview is streaming', async () => {
++    jest.useFakeTimers();
++    const test = await setup();
++    await act(async () => jest.advanceTimersByTime(20_000));
++    expect(test.events).not.toHaveBeenCalled();
++    expect(test.props.onAvailability).toHaveBeenLastCalledWith(true, true);
++  });
++
++  it('reports a real session failure and a fresh session can open and capture', async () => {
++    const log = jest.spyOn(console, 'warn').mockImplementation(() => {});
++    const first = await setup();
++    await act(() => (mockCameraProps.onError as (error: Error) => void)(new Error('Camera device unavailable')));
++    expect(first.events).toHaveBeenLastCalledWith(expect.objectContaining({ status: 'error', captureId: 0 }));
++    expect(log).toHaveBeenCalledWith('BRAILLE_WORD_CAMERA_ERROR', expect.stringContaining('Camera device unavailable'));
++    await first.view.unmount();
++    const second = await setup();
++    await act(async () => second.handle.current?.capture(1));
++    expect(mockRecognize).toHaveBeenCalledTimes(1);
++  });
++
++  it('ignores a late camera shutdown error after a photo is captured', async () => {
++    const test = await setup();
++    await act(async () => test.handle.current?.capture(1));
++    const count = test.events.mock.calls.length;
++    await act(() => (mockCameraProps.onError as (error: Error) => void)(new Error('Camera is closed')));
++    expect(test.events).toHaveBeenCalledTimes(count);
++    expect(mockImage).toBe(test.image);
++  });
++
++  it('attributes a camera failure during the shutter to the active capture so the screen can retry', async () => {
++    jest.spyOn(console, 'warn').mockImplementation(() => {});
++    const test = await setup();
++    const pending = deferred<typeof test.photo>();
++    mockCapture.mockReturnValue(pending.promise);
++    await act(() => test.handle.current?.capture(7));
++    await act(() => (mockCameraProps.onError as (error: Error) => void)(new Error('Camera disconnected')));
++    expect(test.events).toHaveBeenLastCalledWith(expect.objectContaining({ status: 'error', captureId: 7 }));
++    await test.view.unmount();
++    await act(async () => pending.resolve(test.photo));
++    expect(test.photo.dispose).toHaveBeenCalledTimes(1);
++    expect(mockRecognize).not.toHaveBeenCalled();
++  });
+ 
+   it('keeps a camera without a flash usable without sending unsupported torch commands', async () => {
+     mockHasTorch = false;
+diff --git a/src/features/live/__tests__/word-scan-screen.test.tsx b/src/features/live/__tests__/word-scan-screen.test.tsx
+index e25273f..7994f53 100644
+--- a/src/features/live/__tests__/word-scan-screen.test.tsx
++++ b/src/features/live/__tests__/word-scan-screen.test.tsx
+@@ -99,6 +99,21 @@ async function setup(
+ }
+ 
+ describe('WordScanScreen', () => {
++  it('explains a startup failure and opens a fresh camera session on retry', async () => {
++    await setup();
++    const failedSession = cameraProps.sessionId;
++    await act(() => cameraProps.onEvent({
++      schemaVersion: 3, sessionId: failedSession, captureId: 0,
++      timestampMs: performance.now(), status: 'error', reason: 'capture_error',
++      cells: [], boxes: [], decoderVersion: 'test',
++    }));
++    expect(screen.getByText(/Kamera belum dapat dibuka/)).toBeOnTheScreen();
++    expect(screen.queryByText(/Foto belum dapat diproses/)).toBeNull();
++    await fireEvent.press(screen.getByRole('button', { name: 'Pindai ulang' }));
++    expect(cameraProps.sessionId).not.toBe(failedSession);
++    await fireEvent.press(screen.getByRole('button', { name: 'Pindai kata' }));
++    expect(capture).toHaveBeenCalledTimes(1);
++  });
+   beforeEach(() => {
+     capture.mockClear();
+     resetAppPreferences();
+diff --git a/src/features/live/word-photo-camera.tsx b/src/features/live/word-photo-camera.tsx
+index 2802177..e6efeea 100644
+--- a/src/features/live/word-photo-camera.tsx
++++ b/src/features/live/word-photo-camera.tsx
+@@ -73,6 +73,18 @@ function safeDispose(value: { dispose(): void } | undefined) {
+   }
+ }
+ 
++function logCameraError(stage: string, error: unknown) {
++  try {
++    // Camera-control errors only. Never pass Photo/Image objects or scan results.
++    console.warn('BRAILLE_WORD_CAMERA_ERROR', JSON.stringify({
++      stage,
++      message: error instanceof Error ? error.message : 'Unknown camera error',
++    }));
++  } catch {
++    /* Diagnostics must not interrupt camera recovery. */
++  }
++}
++
+ function WordPhotoCamera({
+   active,
+   sessionId,
+@@ -101,12 +113,16 @@ function WordPhotoCamera({
+   const activeRef = useRef(active);
+   const busy = useRef(false);
+   const captured = useRef(false);
++  const currentCaptureId = useRef(0);
+   const imageRef = useRef<Image | undefined>(undefined);
+   const callbacks = useRef({ onEvent, onAvailability });
+   const [image, setImage] = useState<Image>();
+   const [result, setResult] = useState<WordScanEvent>();
+   const [layout, setLayout] = useState({ width: 0, height: 0 });
+   const [cameraError, setCameraError] = useState(false);
++  const [streaming, setStreaming] = useState(false);
++  const [torchFailed, setTorchFailed] = useState(false);
++  const appliedTorch = useRef(false);
+   const [captureAspectRatio, setCaptureAspectRatio] = useState<number>();
+   const [photoSelection, setPhotoSelection] = useState<NormalizedBox>();
+ 
+@@ -139,16 +155,18 @@ function WordPhotoCamera({
+         layout.height > 0 &&
+         !captured.current &&
+         !cameraError,
+-      device?.hasTorch === true,
++      device?.hasTorch === true && !torchFailed && !cameraError,
+     );
+-    if (device || !active) return;
++    if (!active || image || cameraError || streaming) return;
+     const timer = setTimeout(() => {
+-      if (!mounted.current) return;
++      if (!mounted.current || !activeRef.current || (started.current && previewStarted.current)) return;
++      logCameraError('startup', new Error(device ? 'Camera preview did not start within 15 seconds' : 'Back camera unavailable'));
+       setCameraError(true);
++      callbacks.current.onAvailability(false, false);
+       callbacks.current.onEvent({
+         schemaVersion: 3,
+         sessionId,
+-        captureId: 0,
++        captureId: currentCaptureId.current,
+         timestampMs: performance.now(),
+         status: 'error',
+         reason: 'capture_error',
+@@ -167,8 +185,33 @@ function WordPhotoCamera({
+     layout.width,
+     modelVersion,
+     sessionId,
++    image,
++    streaming,
++    torchFailed,
+   ]);
+ 
++  useEffect(() => {
++    // CameraX can reject controls before it is active. Do not send even "off"
++    // at mount; a newly opened camera already has its torch off.
++    const controller = nativeCamera.current?.controller;
++    if (!active || !streaming || image || cameraError || !device?.hasTorch || torchFailed || !controller) return;
++    if (appliedTorch.current === torchEnabled) return;
++    let cancelled = false;
++    appliedTorch.current = torchEnabled;
++    void (async () => {
++      try {
++        await controller.setTorchMode(torchEnabled ? 'on' : 'off');
++      } catch (error) {
++        if (cancelled || !mounted.current || !activeRef.current) return;
++        logCameraError('torch', error);
++        setTorchFailed(true);
++        // A failed optional control must not unmount an otherwise working camera.
++        callbacks.current.onAvailability(started.current && previewStarted.current && !captured.current, false);
++      }
++    })();
++    return () => { cancelled = true; };
++  }, [active, cameraError, device?.hasTorch, image, streaming, torchEnabled, torchFailed]);
++
+   const capture = useCallback(
+     async (captureId: number) => {
+       if (
+@@ -196,6 +239,7 @@ function WordPhotoCamera({
+       }
+       busy.current = true;
+       captured.current = true;
++      currentCaptureId.current = captureId;
+       setCaptureAspectRatio(guideAspectRatio);
+       callbacks.current.onAvailability(false, device?.hasTorch === true);
+       const base = {
+@@ -374,41 +418,50 @@ function WordPhotoCamera({
+           implementationMode="compatible"
+           resizeMode="cover"
+           enableNativeTapToFocusGesture
+-          {...(device.hasTorch
+-            ? { torchMode: active && !image && torchEnabled ? 'on' as const : 'off' as const }
+-            : {})}
+           onStarted={() => {
++            if (!mounted.current || !activeRef.current) return;
+             started.current = true;
++            setStreaming(previewStarted.current);
+             callbacks.current.onAvailability(
+               activeRef.current &&
+                 previewStarted.current &&
+                 layout.width > 0 &&
+                 layout.height > 0 &&
+                 !captured.current,
+-              device.hasTorch,
++              device.hasTorch && !torchFailed,
+             );
+           }}
+           onPreviewStarted={() => {
++            if (!mounted.current || !activeRef.current) return;
+             previewStarted.current = true;
+-            callbacks.current.onAvailability(activeRef.current && started.current && layout.width > 0 && layout.height > 0 && !captured.current, device.hasTorch);
++            setStreaming(started.current);
++            callbacks.current.onAvailability(activeRef.current && started.current && layout.width > 0 && layout.height > 0 && !captured.current, device.hasTorch && !torchFailed);
+           }}
+           onPreviewStopped={() => {
+             previewStarted.current = false;
+-            callbacks.current.onAvailability(false, device.hasTorch);
++            if (!mounted.current) return;
++            setStreaming(false);
++            callbacks.current.onAvailability(false, device.hasTorch && !torchFailed);
+           }}
+           onStopped={() => {
+             started.current = false;
+             previewStarted.current = false;
+-            callbacks.current.onAvailability(false, device.hasTorch);
+-          }}
+-          onError={() => {
++            appliedTorch.current = false;
+             if (!mounted.current) return;
++            setStreaming(false);
++            callbacks.current.onAvailability(false, device.hasTorch && !torchFailed);
++          }}
++          onError={(error) => {
++            if (!mounted.current || !activeRef.current || imageRef.current) return;
++            logCameraError('session', error);
++            started.current = false;
++            previewStarted.current = false;
+             setCameraError(true);
+             callbacks.current.onAvailability(false, false);
+             callbacks.current.onEvent({
+               schemaVersion: 3,
+               sessionId,
+-              captureId: 0,
++              captureId: currentCaptureId.current,
+               timestampMs: performance.now(),
+               status: 'error',
+               reason: 'capture_error',
+@@ -438,7 +491,7 @@ function WordPhotoCamera({
+         importantForAccessibility="no-hide-descendants"
+         style={StyleSheet.absoluteFill}
+       >
+-        {guide ? (
++        {guide && !cameraError ? (
+           <View
+             testID="word-guide"
+             style={[
+diff --git a/src/features/live/word-scan-screen.tsx b/src/features/live/word-scan-screen.tsx
+index bc05231..629c96b 100644
+--- a/src/features/live/word-scan-screen.tsx
++++ b/src/features/live/word-scan-screen.tsx
+@@ -395,7 +395,9 @@ export default function WordScanScreen({
+     : success
+       ? 'Pilih Bacakan untuk mendengar kata, atau Pindai ulang untuk mengambil foto baru.'
+       : event?.status === 'error'
+-        ? 'Foto belum dapat diproses. Coba pindai ulang atau buka Bantuan.'
++        ? event.captureId === 0
++          ? 'Kamera belum dapat dibuka. Pilih Pindai ulang untuk membuka kamera kembali. Jika masih gagal, tutup aplikasi lain yang memakai kamera lalu coba lagi.'
++          : 'Foto belum dapat diproses. Coba pindai ulang atau buka Bantuan.'
+         : failed
+           ? rejectionGuidance(event.reason)
+           : 'Tempatkan satu kata utuh dalam kotak, maksimal 12 huruf A sampai Z. Posisikan kamera tepat di atas kata. Arahkan cahaya miring dari ujung atas kertas agar bayangan titik terlihat, lalu tekan Pindai kata.';

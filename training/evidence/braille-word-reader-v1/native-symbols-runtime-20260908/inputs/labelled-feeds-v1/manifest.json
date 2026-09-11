@@ -1,0 +1,771 @@
+{
+  "created_at_utc": "2026-09-08T15:10:36.663341+00:00",
+  "generator_sha256": "bfbab2b3bd77121ea06160be5e1963d938e24355bffbb3c30777b8ace157a0e3",
+  "fixture_sha256": "e2a0298da266932b4f648458f718bead2b8e0a524eb20f810157d1b3b4f9a53f",
+  "runtime_predictions_observed": false,
+  "note": "Feed orientation/placement must be checked visually before captures; record any later placement change as a separate input.",
+  "rows": [
+    {
+      "expected": "abc",
+      "selection": "first matching fixture record, independent of predictions",
+      "source": {
+        "image": "C:\\bm-symbols-20260908\\data\\validation\\000000.png",
+        "source": "synthetic-id/validation/000000",
+        "source_family": "synthetic-id/lowercase",
+        "boxes": [
+          [
+            159,
+            63,
+            204,
+            145
+          ],
+          [
+            217,
+            63,
+            262,
+            145
+          ],
+          [
+            275,
+            63,
+            320,
+            145
+          ]
+        ],
+        "masks": [
+          1,
+          3,
+          9
+        ],
+        "expected": "abc",
+        "symbol_group": "lowercase",
+        "origin": "synthetic_recomposed_public_cell_photographs",
+        "source_cells": [
+          {
+            "source": "handwritten/ang_redmi/01.labeled.jpg",
+            "image": "validation/000515.png",
+            "box": [
+              62.3076923076923,
+              48.57831325301205,
+              124.6153846153846,
+              150.36144578313252
+            ],
+            "original_mask": 1,
+            "synthetic_transform": null
+          },
+          {
+            "source": "books/ola/IMG_5371.labeled.jpg",
+            "image": "validation/000330.png",
+            "box": [
+              342.85714285714283,
+              30.857142857142854,
+              418.2857142857143,
+              144.0
+            ],
+            "original_mask": 3,
+            "synthetic_transform": null
+          },
+          {
+            "source": "books/ola/IMG_5365.labeled.jpg",
+            "image": "validation/000101.png",
+            "box": [
+              69.93377483443709,
+              25.18032786885246,
+              136.68874172185429,
+              125.90163934426229
+            ],
+            "original_mask": 9,
+            "synthetic_transform": null
+          }
+        ]
+      },
+      "source_sha256": "54cfad38e7cf6ec7acd45cf729411b5a81ec3694cc5768aaca80a3a57fe5af52",
+      "source_size": [
+        480,
+        192
+      ],
+      "output": "lowercase-abc.png",
+      "output_sha256": "07214c3f90bc052d0b629a00d8f7ff1aa6d2761d62c23c68b50a2a09f25689a9",
+      "output_size": [
+        1024,
+        1024
+      ],
+      "scale": 2,
+      "interpolation": "pillow_bilinear",
+      "clockwise_rotation_degrees": 0,
+      "placement": [
+        32,
+        320,
+        992,
+        704
+      ],
+      "source_pixels_cropped": false,
+      "scope": "Synthetic recomposed public photo cells, further resized for static emulator feed. No natural or physical-camera claim."
+    },
+    {
+      "expected": "Abc",
+      "selection": "first matching fixture record, independent of predictions",
+      "source": {
+        "image": "C:\\bm-symbols-20260908\\data\\validation\\000140.png",
+        "source": "synthetic-id/validation/000140",
+        "source_family": "synthetic-id/capital_single",
+        "boxes": [
+          [
+            123,
+            47,
+            171,
+            134
+          ],
+          [
+            185,
+            47,
+            233,
+            134
+          ],
+          [
+            247,
+            47,
+            295,
+            134
+          ],
+          [
+            309,
+            47,
+            357,
+            134
+          ]
+        ],
+        "masks": [
+          32,
+          1,
+          3,
+          9
+        ],
+        "expected": "Abc",
+        "symbol_group": "capital_single",
+        "origin": "synthetic_recomposed_public_cell_photographs",
+        "source_cells": [
+          {
+            "source": "handwritten/ang_redmi/02.labeled.jpg",
+            "image": "validation/000551.png",
+            "box": [
+              96.60377358490567,
+              33.0,
+              172.07547169811323,
+              156.0
+            ],
+            "original_mask": 1,
+            "synthetic_transform": "half_turn"
+          },
+          {
+            "source": "books/ola/IMG_5373.labeled.jpg",
+            "image": "validation/000407.png",
+            "box": [
+              308.2306163021869,
+              75.46268656716418,
+              330.1789264413519,
+              109.85074626865672
+            ],
+            "original_mask": 1,
+            "synthetic_transform": null
+          },
+          {
+            "source": "handwritten/ang_redmi/01.labeled.jpg",
+            "image": "validation/000482.png",
+            "box": [
+              240.4848484848485,
+              5.818181818181818,
+              268.6060606060606,
+              47.515151515151516
+            ],
+            "original_mask": 3,
+            "synthetic_transform": null
+          },
+          {
+            "source": "books/ola/IMG_5367.labeled.jpg",
+            "image": "validation/000185.png",
+            "box": [
+              382.22222222222223,
+              66.97674418604652,
+              414.8148148148148,
+              116.09302325581395
+            ],
+            "original_mask": 9,
+            "synthetic_transform": null
+          }
+        ]
+      },
+      "source_sha256": "5c13a3fbaad23bbe82c41095337a7bbcac7c5993bbc348930709a5b21f062b4c",
+      "source_size": [
+        480,
+        192
+      ],
+      "output": "capital_single-Abc.png",
+      "output_sha256": "23973e492ca2f3663ed2887d50157be220cded62babb8cb4401269b1cb6afeeb",
+      "output_size": [
+        1024,
+        1024
+      ],
+      "scale": 2,
+      "interpolation": "pillow_bilinear",
+      "clockwise_rotation_degrees": 0,
+      "placement": [
+        32,
+        320,
+        992,
+        704
+      ],
+      "source_pixels_cropped": false,
+      "scope": "Synthetic recomposed public photo cells, further resized for static emulator feed. No natural or physical-camera claim."
+    },
+    {
+      "expected": "ABC",
+      "selection": "first matching fixture record, independent of predictions",
+      "source": {
+        "image": "C:\\bm-symbols-20260908\\data\\validation\\000280.png",
+        "source": "synthetic-id/validation/000280",
+        "source_family": "synthetic-id/capital_word",
+        "boxes": [
+          [
+            68,
+            41,
+            124,
+            142
+          ],
+          [
+            140,
+            41,
+            196,
+            142
+          ],
+          [
+            212,
+            41,
+            268,
+            142
+          ],
+          [
+            284,
+            41,
+            340,
+            142
+          ],
+          [
+            356,
+            41,
+            412,
+            142
+          ]
+        ],
+        "masks": [
+          32,
+          32,
+          1,
+          3,
+          9
+        ],
+        "expected": "ABC",
+        "symbol_group": "capital_word",
+        "origin": "synthetic_recomposed_public_cell_photographs",
+        "source_cells": [
+          {
+            "source": "books/ola/IMG_5369.labeled.jpg",
+            "image": "validation/000269.png",
+            "box": [
+              322.6890756302521,
+              85.51260504201682,
+              342.05042016806726,
+              113.74789915966387
+            ],
+            "original_mask": 1,
+            "synthetic_transform": "half_turn"
+          },
+          {
+            "source": "books/ola/IMG_5365.labeled.jpg",
+            "image": "validation/000110.png",
+            "box": [
+              258.2857142857143,
+              57.14285714285714,
+              310.85714285714283,
+              137.14285714285714
+            ],
+            "original_mask": 1,
+            "synthetic_transform": "half_turn"
+          },
+          {
+            "source": "books/ola/IMG_5372.labeled.jpg",
+            "image": "validation/000378.png",
+            "box": [
+              94.88372093023256,
+              72.0,
+              137.67441860465115,
+              131.0769230769231
+            ],
+            "original_mask": 1,
+            "synthetic_transform": null
+          },
+          {
+            "source": "handwritten/ang_redmi/01.labeled.jpg",
+            "image": "validation/000503.png",
+            "box": [
+              355.55555555555554,
+              38.4,
+              426.66666666666663,
+              145.92000000000002
+            ],
+            "original_mask": 3,
+            "synthetic_transform": null
+          },
+          {
+            "source": "books/ola/IMG_5371.labeled.jpg",
+            "image": "validation/000337.png",
+            "box": [
+              370.8056872037915,
+              61.71428571428571,
+              423.12796208530807,
+              139.42857142857142
+            ],
+            "original_mask": 9,
+            "synthetic_transform": null
+          }
+        ]
+      },
+      "source_sha256": "36c207cd159bbf2f08973498e876c5022c39b3333e0e9c7acd9f6cebce467957",
+      "source_size": [
+        480,
+        192
+      ],
+      "output": "capital_word-ABC.png",
+      "output_sha256": "117ac181367dbd11d47afec5629167e146fa1def55dd6646a61f68c35e453633",
+      "output_size": [
+        1024,
+        1024
+      ],
+      "scale": 2,
+      "interpolation": "pillow_bilinear",
+      "clockwise_rotation_degrees": 0,
+      "placement": [
+        32,
+        320,
+        992,
+        704
+      ],
+      "source_pixels_cropped": false,
+      "scope": "Synthetic recomposed public photo cells, further resized for static emulator feed. No natural or physical-camera claim."
+    },
+    {
+      "expected": "2026",
+      "selection": "first matching fixture record, independent of predictions",
+      "source": {
+        "image": "C:\\bm-symbols-20260908\\data\\validation\\000430.png",
+        "source": "synthetic-id/validation/000430",
+        "source_family": "synthetic-id/numbers",
+        "boxes": [
+          [
+            73,
+            41,
+            127,
+            139
+          ],
+          [
+            143,
+            41,
+            197,
+            139
+          ],
+          [
+            213,
+            41,
+            267,
+            139
+          ],
+          [
+            283,
+            41,
+            337,
+            139
+          ],
+          [
+            353,
+            41,
+            407,
+            139
+          ]
+        ],
+        "masks": [
+          60,
+          3,
+          26,
+          3,
+          11
+        ],
+        "expected": "2026",
+        "symbol_group": "numbers",
+        "origin": "synthetic_recomposed_public_cell_photographs",
+        "source_cells": [
+          {
+            "source": "books/ola/IMG_5368.labeled.jpg",
+            "image": "validation/000223.png",
+            "box": [
+              153.75,
+              45.17647058823529,
+              228.75,
+              158.11764705882354
+            ],
+            "original_mask": 60,
+            "synthetic_transform": null
+          },
+          {
+            "source": "books/ola/IMG_5201.labeled.jpg",
+            "image": "validation/000049.png",
+            "box": [
+              89.32735426008969,
+              138.06741573033707,
+              114.08071748878923,
+              175.8202247191011
+            ],
+            "original_mask": 3,
+            "synthetic_transform": null
+          },
+          {
+            "source": "books/ola/IMG_5367.labeled.jpg",
+            "image": "validation/000197.png",
+            "box": [
+              321.9512195121951,
+              17.454545454545453,
+              392.1951219512195,
+              119.27272727272728
+            ],
+            "original_mask": 26,
+            "synthetic_transform": null
+          },
+          {
+            "source": "books/ola/IMG_5374.labeled.jpg",
+            "image": "validation/000448.png",
+            "box": [
+              378.6335403726708,
+              62.03076923076924,
+              447.20496894409933,
+              162.46153846153848
+            ],
+            "original_mask": 3,
+            "synthetic_transform": null
+          },
+          {
+            "source": "books/ola/IMG_5371.labeled.jpg",
+            "image": "validation/000332.png",
+            "box": [
+              255.48387096774195,
+              15.36,
+              348.38709677419354,
+              153.6
+            ],
+            "original_mask": 11,
+            "synthetic_transform": null
+          }
+        ]
+      },
+      "source_sha256": "6707d05ad655437817b8c1eb14580567342bc4fc4caea430b1ca24288986c3db",
+      "source_size": [
+        480,
+        192
+      ],
+      "output": "numbers-2026.png",
+      "output_sha256": "534b878ef8d23b228a36b31fc8f5e52f8051314246b15d3a01fc689fd9b7fb65",
+      "output_size": [
+        1024,
+        1024
+      ],
+      "scale": 2,
+      "interpolation": "pillow_bilinear",
+      "clockwise_rotation_degrees": 0,
+      "placement": [
+        32,
+        320,
+        992,
+        704
+      ],
+      "source_pixels_cropped": false,
+      "scope": "Synthetic recomposed public photo cells, further resized for static emulator feed. No natural or physical-camera claim."
+    },
+    {
+      "expected": "001",
+      "selection": "first matching fixture record, independent of predictions",
+      "source": {
+        "image": "C:\\bm-symbols-20260908\\data\\validation\\000431.png",
+        "source": "synthetic-id/validation/000431",
+        "source_family": "synthetic-id/numbers",
+        "boxes": [
+          [
+            113,
+            51,
+            165,
+            145
+          ],
+          [
+            180,
+            51,
+            232,
+            145
+          ],
+          [
+            247,
+            51,
+            299,
+            145
+          ],
+          [
+            314,
+            51,
+            366,
+            145
+          ]
+        ],
+        "masks": [
+          60,
+          26,
+          26,
+          1
+        ],
+        "expected": "001",
+        "symbol_group": "numbers",
+        "origin": "synthetic_recomposed_public_cell_photographs",
+        "source_cells": [
+          {
+            "source": "books/ola/IMG_5372.labeled.jpg",
+            "image": "validation/000365.png",
+            "box": [
+              80.67226890756302,
+              28.595744680851062,
+              173.4453781512605,
+              167.48936170212764
+            ],
+            "original_mask": 60,
+            "synthetic_transform": null
+          },
+          {
+            "source": "books/ola/IMG_5372.labeled.jpg",
+            "image": "validation/000372.png",
+            "box": [
+              233.04347826086956,
+              52.36363636363636,
+              313.04347826086956,
+              167.56363636363636
+            ],
+            "original_mask": 26,
+            "synthetic_transform": null
+          },
+          {
+            "source": "books/ola/IMG_5371.labeled.jpg",
+            "image": "validation/000324.png",
+            "box": [
+              293.9325842696629,
+              58.666666666666664,
+              353.2584269662921,
+              149.33333333333331
+            ],
+            "original_mask": 26,
+            "synthetic_transform": null
+          },
+          {
+            "source": "books/ola/IMG_5366.labeled.jpg",
+            "image": "validation/000121.png",
+            "box": [
+              240.91954022988506,
+              66.46153846153847,
+              281.37931034482756,
+              123.6923076923077
+            ],
+            "original_mask": 1,
+            "synthetic_transform": null
+          }
+        ]
+      },
+      "source_sha256": "007c5efd55b1d66aeba92386ddd0d59a20b3848c38b9cc1c9cb5dfb6132bd223",
+      "source_size": [
+        480,
+        192
+      ],
+      "output": "numbers-001.png",
+      "output_sha256": "50185034a333736dca18602b7be04f94255f88f5009038bf072b86583c424300",
+      "output_size": [
+        1024,
+        1024
+      ],
+      "scale": 2,
+      "interpolation": "pillow_bilinear",
+      "clockwise_rotation_degrees": 0,
+      "placement": [
+        32,
+        320,
+        992,
+        704
+      ],
+      "source_pixels_cropped": false,
+      "scope": "Synthetic recomposed public photo cells, further resized for static emulator feed. No natural or physical-camera claim."
+    },
+    {
+      "expected": "a",
+      "selection": "first matching fixture record, independent of predictions",
+      "source": {
+        "image": "C:\\bm-symbols-20260908\\data\\validation\\000009.png",
+        "source": "synthetic-id/validation/000009",
+        "source_family": "synthetic-id/lowercase",
+        "boxes": [
+          [
+            214,
+            57,
+            266,
+            151
+          ]
+        ],
+        "masks": [
+          1
+        ],
+        "expected": "a",
+        "symbol_group": "lowercase",
+        "origin": "synthetic_recomposed_public_cell_photographs",
+        "source_cells": [
+          {
+            "source": "books/ola/IMG_5201.labeled.jpg",
+            "image": "validation/000064.png",
+            "box": [
+              66.3157894736842,
+              50.36065573770492,
+              135.78947368421052,
+              160.52459016393442
+            ],
+            "original_mask": 1,
+            "synthetic_transform": null
+          }
+        ]
+      },
+      "source_sha256": "5b3519c1c358de12addd8db46dee178c56277f44c85ca67db9e99433e8eb83a0",
+      "source_size": [
+        480,
+        192
+      ],
+      "output": "lowercase-a.png",
+      "output_sha256": "feda984af90268be534947ddaa524b0cf9311d36aef33e2e02eb47d144565f2c",
+      "output_size": [
+        1024,
+        1024
+      ],
+      "scale": 2,
+      "interpolation": "pillow_bilinear",
+      "clockwise_rotation_degrees": 0,
+      "placement": [
+        32,
+        320,
+        992,
+        704
+      ],
+      "source_pixels_cropped": false,
+      "scope": "Synthetic recomposed public photo cells, further resized for static emulator feed. No natural or physical-camera claim."
+    },
+    {
+      "expected": "aab",
+      "selection": "first matching fixture record, independent of predictions",
+      "source": {
+        "image": "C:\\bm-symbols-20260908\\data\\validation\\000006.png",
+        "source": "synthetic-id/validation/000006",
+        "source_family": "synthetic-id/lowercase",
+        "boxes": [
+          [
+            154,
+            56,
+            202,
+            142
+          ],
+          [
+            216,
+            56,
+            264,
+            142
+          ],
+          [
+            278,
+            56,
+            326,
+            142
+          ]
+        ],
+        "masks": [
+          1,
+          1,
+          3
+        ],
+        "expected": "aab",
+        "symbol_group": "lowercase",
+        "origin": "synthetic_recomposed_public_cell_photographs",
+        "source_cells": [
+          {
+            "source": "handwritten/ang_redmi/01.labeled.jpg",
+            "image": "validation/000482.png",
+            "box": [
+              204.60606060606062,
+              68.84848484848484,
+              232.72727272727275,
+              112.48484848484848
+            ],
+            "original_mask": 1,
+            "synthetic_transform": null
+          },
+          {
+            "source": "books/ola/IMG_5372.labeled.jpg",
+            "image": "validation/000368.png",
+            "box": [
+              81.70212765957447,
+              85.76,
+              111.06382978723404,
+              128.0
+            ],
+            "original_mask": 1,
+            "synthetic_transform": null
+          },
+          {
+            "source": "books/ola/IMG_5366.labeled.jpg",
+            "image": "validation/000119.png",
+            "box": [
+              14.826254826254827,
+              79.76811594202898,
+              37.99227799227799,
+              113.15942028985508
+            ],
+            "original_mask": 3,
+            "synthetic_transform": null
+          }
+        ]
+      },
+      "source_sha256": "6db5bf908512acf4c1de00a2852d620fa2842320315afbcb25ae97e61b6a4328",
+      "source_size": [
+        480,
+        192
+      ],
+      "output": "lowercase-aab.png",
+      "output_sha256": "6f30e8a8bd50cb166f0c6abf4a4d214ceb2db7a71da15a3b4c28b2cdbaf524e7",
+      "output_size": [
+        1024,
+        1024
+      ],
+      "scale": 2,
+      "interpolation": "pillow_bilinear",
+      "clockwise_rotation_degrees": 0,
+      "placement": [
+        32,
+        320,
+        992,
+        704
+      ],
+      "source_pixels_cropped": false,
+      "scope": "Synthetic recomposed public photo cells, further resized for static emulator feed. No natural or physical-camera claim."
+    },
+    {
+      "expected": null,
+      "expected_runtime": "searching with shutter disabled when no target exists",
+      "output": "blank.png",
+      "output_sha256": "53f46d3dd50da408bfcf65e764fa9ca14630d568d96b1731a5bc0ad16ea4f68b",
+      "scope": "Synthetic blank negative input"
+    }
+  ]
+}

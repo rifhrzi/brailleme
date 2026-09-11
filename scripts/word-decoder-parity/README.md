@@ -1,5 +1,19 @@
 # Parity decoder pada keluaran model sebenarnya
 
+## Decoder Bahasa Indonesia, kapital, dan angka
+
+`replay-id.cjs` menjalankan parser, decoder, dan validasi event aplikasi yang sekarang. Mode `--semantics` memakai fixture semantik yang ditulis terpisah dan tensor sintetis; ini tidak mengukur model atau kamera.
+
+```powershell
+node scripts/word-decoder-parity/replay-id.cjs --semantics <laporan-baru.json>
+node scripts/word-decoder-parity/replay-id.cjs <folder-oracle-python> <laporan-baru.json>
+node --test scripts/word-decoder-parity/replay-id.test.cjs
+```
+
+Folder oracle harus memuat `python-reference.json`, `outputs.f32le` (N×48×120×11 float32 little-endian), dan `inputs.rgb` (N×192×480×3 byte RGB). Referensi mengikat versi decoder/protokol, model, ambang, hash data mentah, source Python termasuk `word_symbols.py`, serta teks/alasan decoder dan pemeriksaan kualitas setiap baris. Koordinat `selection` menggunakan `[x,y,right,bottom]`. Bila `python_cells` tersedia pada hasil diterima, role, karakter keluaran, mask, dan kotak juga dibandingkan; kasus tanpa referensi sel ditandai belum dibandingkan.
+
+Harness memeriksa ukuran arsip, urutan baris, dan hash source sebelum replay; perbedaan menghasilkan laporan gagal dan exit code bukan nol. Laporan lama tidak dapat ditimpa. Hash seluruh modul TypeScript yang benar-benar dimuat ikut dicatat. Bukti decoder lama di bawah tetap historis dan tidak membuktikan dukungan kapital/angka.
+
 Harness ini memutar ulang `public-word-outputs.npz` dan gambar input dari benchmark yang sudah selesai. Tidak ada pemuatan TensorFlow, model, atau inferensi ulang. Python menjalankan decoder yang sebenarnya serta fungsi pemeriksaan kualitas yang diambil langsung dari AST `word_benchmark.py`; Node menjalankan TypeScript aplikasi melalui loader transpile yang sama dengan harness geometri.
 
 ```powershell

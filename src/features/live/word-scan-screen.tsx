@@ -1,4 +1,3 @@
-import Slider from '@react-native-community/slider';
 import * as Haptics from 'expo-haptics';
 import { useFocusEffect, useRouter } from 'expo-router';
 import {
@@ -21,11 +20,11 @@ import type {
   WordPhotoPreviewProps,
 } from '@/features/live/word-photo-camera';
 import {
-  isBrailleLetter,
+  INITIAL_WORD_DRAFT_STATE,
+  wordDraftReducer,
   type WordDraftState,
 } from '@/features/live/word-draft';
 import { WORD_DECODER_VERSION } from '@/ml/word-model-contract';
-import { WORD_MODEL_EXPERIMENTAL } from '@/ml/word-model-assets';
 import {
   cameraPermissionPort,
   ttsPort,
@@ -70,9 +69,16 @@ function rejectionGuidance(reason: string | undefined) {
     case 'multiple_rows':
       return 'Letakkan satu kata dalam satu baris mendatar di dalam kotak.';
     case 'unsupported_pattern':
-      return 'Ada pola yang belum didukung. Pindai satu kata Braille dasar A sampai Z.';
+      return 'Ada pola yang belum dapat dibaca. Pindai satu kata atau angka bulat beserta tanda bacanya. Lihat Bantuan untuk contoh yang dapat dipindai.';
+    case 'ambiguous_symbol':
+      return 'Tanda baca belum terbaca jelas. Sertakan kata dan seluruh tanda bacanya, lalu pindai ulang.';
+    case 'invalid_sequence':
+      return 'Urutan tanda belum terbaca lengkap. Sertakan tanda kapital, angka, dan seluruh tanda baca, lalu pindai ulang.';
     case 'too_many_cells':
-      return 'Pindai satu kata dengan maksimal 12 huruf.';
+    case 'too_many_characters':
+      return 'Pindai maksimal 12 karakter, termasuk tanda baca. Pilih rangkaian yang lebih pendek dan sertakan seluruh tanda Braille.';
+    case 'tracking_error':
+      return 'Bingkai otomatis belum dapat mengikuti Braille. Pilih Pindai ulang untuk mencoba kembali.';
     case 'clipped':
     case 'gap':
       return 'Sebagian kata belum terlihat utuh. Sisakan ruang di kedua ujung kata lalu pindai ulang.';
@@ -106,7 +112,7 @@ export default function WordScanScreen({
   const [ready, setReady] = useState(false);
   const [torchAvailable, setTorchAvailable] = useState(false);
   const [torchEnabled, setTorchEnabled] = useState(false);
-  const [guideAspectRatio, setGuideAspectRatio] = useState(4);
+  const [trackingStatus, setTrackingStatus] = useState<'searching' | 'detected' | 'ready'>('searching');
   const [event, setEvent] = useState<WordScanEvent | null>(null);
   const [speaking, setSpeaking] = useState(false);
   const [speechMessage, setSpeechMessage] = useState('');
@@ -123,11 +129,9 @@ export default function WordScanScreen({
 
   const replaceDraft = useCallback((text: string, evidence: string) => {
     const current = wordDraftRef.current;
-    current.onWordDraftChange?.({
-      letters: [...text].filter(isBrailleLetter),
-      consumedEvidenceKeys: evidence ? [evidence] : [],
-      revision: (current.wordDraft?.revision ?? 0) + 1,
-    });
+    current.onWordDraftChange?.(wordDraftReducer(current.wordDraft ?? INITIAL_WORD_DRAFT_STATE, {
+      type: 'replace_text', text, evidenceKey: evidence,
+    }));
   }, []);
 
   const invalidate = useCallback(() => {
@@ -139,6 +143,7 @@ export default function WordScanScreen({
     setSessionId(next);
     setEvent(null);
     setReady(false);
+    setTrackingStatus('searching');
     setTorchEnabled(false);
     setSpeaking(false);
     setSpeechMessage('');
@@ -299,10 +304,9 @@ export default function WordScanScreen({
   const registerCamera = useCallback((handle: WordPhotoCameraHandle | null) => {
     camera.current = handle;
   }, []);
-  const changeGuideWidth = (value: number) => {
-    if (!active || requestId.current !== 0 || !Number.isFinite(value)) return;
-    setGuideAspectRatio(Math.min(8, Math.max(1, value)));
-  };
+  const onTracking = useCallback((status: 'searching' | 'detected' | 'ready') => {
+    if (mounted.current && focused.current && sessionRef.current === sessionId && requestId.current === 0) setTrackingStatus(status);
+  }, [sessionId]);
 
   const scan = () => {
     if (
@@ -312,12 +316,17 @@ export default function WordScanScreen({
       requestId.current !== 0
     )
       return;
+    const captureCamera = camera.current;
+    if (!captureCamera) {
+      setReady(false);
+      return;
+    }
     requestId.current = 1;
     ++speechSequence.current;
     setSpeechMessage('');
     replaceDraft('', '');
     const capturing: WordScanEvent = {
-      schemaVersion: 3,
+      schemaVersion: 4,
       sessionId,
       captureId: 1,
       timestampMs: performance.now(),
@@ -329,7 +338,7 @@ export default function WordScanScreen({
     eventRef.current = capturing;
     setEvent(capturing);
     void tts.stop().catch(() => undefined);
-    camera.current?.capture(1);
+    captureCamera.capture(1);
   };
 
   const speak = async () => {
@@ -384,32 +393,35 @@ export default function WordScanScreen({
   const title = busy
     ? event.status === 'capturing'
       ? 'Mengambil foto'
-      : 'Membaca kata'
+      : 'Membaca Braille'
     : success
-      ? 'Kata terbaca'
+      ? 'Hasil terbaca'
       : failed
-        ? 'Pindai ulang kata'
-        : 'Siapkan satu kata';
+        ? 'Pindai ulang'
+        : trackingStatus === 'ready' ? 'Tahan kamera, lalu tekan Pindai'
+          : trackingStatus === 'detected' ? 'Braille terdeteksi' : 'Mencari Braille';
   const guidance = busy
-    ? 'Tunggu hingga seluruh kata selesai diperiksa.'
+    ? 'Tunggu hingga seluruh huruf, angka, dan tanda selesai diperiksa.'
     : success
-      ? 'Pilih Bacakan untuk mendengar kata, atau Pindai ulang untuk mengambil foto baru.'
+      ? 'Periksa hasilnya. Pilih Bacakan untuk mendengar hasil, atau Pindai ulang untuk mengambil foto baru.'
       : event?.status === 'error'
-        ? 'Foto belum dapat diproses. Coba pindai ulang atau buka Bantuan.'
+        ? event.reason === 'tracking_error'
+          ? rejectionGuidance(event.reason)
+          : event.captureId === 0
+          ? 'Kamera belum dapat dibuka. Pilih Pindai ulang untuk membuka kamera kembali. Jika masih gagal, tutup aplikasi lain yang memakai kamera lalu coba lagi.'
+          : 'Foto belum dapat diproses. Coba pindai ulang atau buka Bantuan.'
         : failed
           ? rejectionGuidance(event.reason)
-          : 'Tempatkan satu kata utuh dalam kotak, maksimal 12 huruf A sampai Z. Posisikan kamera tepat di atas kata. Arahkan cahaya miring dari ujung atas kertas agar bayangan titik terlihat, lalu tekan Pindai kata.';
+          : 'Arahkan kamera ke satu kata atau angka bulat, maksimal 12 karakter. Bingkai mengikuti Braille di dekat tengah kamera. Sertakan seluruh tanda dan sisakan ruang di kedua ujungnya.';
 
   return (
     <Screen testID="word-scan-screen">
       <Text accessibilityRole="header" selectable style={styles.title}>
-        Pindai satu kata
+        Pindai Braille
       </Text>
-      {WORD_MODEL_EXPERIMENTAL ? (
-        <Text selectable style={styles.body}>
-          Versi percobaan. Periksa kembali seluruh kata hasil pindai.
-        </Text>
-      ) : null}
+      <Text selectable style={styles.body}>
+        Cocokkan huruf, angka, dan tanda baca hasil pindai dengan sumber Braille.
+      </Text>
       {checking ? (
         <Text accessibilityLiveRegion="polite" selectable style={styles.body}>
           Memeriksa izin kamera dan suara lokal.
@@ -417,7 +429,7 @@ export default function WordScanScreen({
       ) : permission.status !== 'granted' ? (
         <SectionCard title="Izin kamera diperlukan">
           <Text selectable style={styles.body}>
-            Izinkan kamera untuk memotret satu kata Braille. Foto diproses di
+            Izinkan kamera untuk memotret kata atau angka Braille. Foto diproses di
             perangkat dan tidak disimpan.
           </Text>
           <AccessibleButton
@@ -443,72 +455,22 @@ export default function WordScanScreen({
           active={active}
           sessionId={sessionId}
           torchEnabled={torchEnabled}
-          guideAspectRatio={guideAspectRatio}
           cameraRef={registerCamera}
           onEvent={onEvent}
           onAvailability={onAvailability}
+          onTracking={onTracking}
         />
       ) : null}
       {permission.status === 'granted' && !checking ? (
         <>
           {!event ? (
             <AccessibleButton
-              accessibilityHint="Mengambil satu foto dan membaca seluruh kata dari kiri ke kanan"
-              label="Pindai kata"
+              accessibilityHint="Mengambil satu foto pada bingkai otomatis dan membaca seluruh rangkaian dari kiri ke kanan"
+              label="Pindai"
               disabled={!active || !ready}
               onPress={scan}
               variant="action"
             />
-          ) : null}
-          {!event ? (
-            <View style={styles.guideControl}>
-              <Text selectable style={styles.guideLabel}>
-                Lebar bingkai
-              </Text>
-              <Text selectable style={styles.body}>
-                Sesuaikan bingkai agar hanya memuat satu kata utuh.
-              </Text>
-              <Slider
-                accessibilityLabel="Lebar bingkai"
-                accessibilityHint="Persempit atau perlebar bingkai hingga satu kata utuh berada di dalamnya"
-                accessibilityRole="adjustable"
-                accessibilityState={{ disabled: !active || event !== null }}
-                accessibilityValue={{
-                  min: 1,
-                  max: 8,
-                  now: guideAspectRatio,
-                  text: `${Math.round((guideAspectRatio / 8) * 100)} persen lebar maksimum`,
-                }}
-                accessibilityActions={[
-                  { name: 'increment', label: 'Perlebar bingkai' },
-                  { name: 'decrement', label: 'Persempit bingkai' },
-                ]}
-                onAccessibilityAction={({ nativeEvent }) => {
-                  if (nativeEvent.actionName === 'increment')
-                    changeGuideWidth(guideAspectRatio + 0.25);
-                  else if (nativeEvent.actionName === 'decrement')
-                    changeGuideWidth(guideAspectRatio - 0.25);
-                }}
-                disabled={!active || event !== null}
-                minimumValue={1}
-                maximumValue={8}
-                step={0}
-                value={guideAspectRatio}
-                onValueChange={changeGuideWidth}
-                minimumTrackTintColor={colors.primary}
-                maximumTrackTintColor={colors.outline}
-                thumbTintColor={colors.primary}
-                style={styles.guideSlider}
-              />
-              <View style={styles.guideEnds}>
-                <Text selectable style={styles.body}>
-                  Pendek
-                </Text>
-                <Text selectable style={styles.body}>
-                  Panjang
-                </Text>
-              </View>
-            </View>
           ) : null}
           <SectionCard title={title}>
             <Text selectable style={styles.body}>
@@ -528,12 +490,12 @@ export default function WordScanScreen({
                 title={title}
                 guidance={guidance}
                 stableKey={`${sessionId}:${event?.captureId ?? 0}`}
-                stableAnnouncement="Kata terbaca. Pilih Bacakan untuk mendengar kata."
+                stableAnnouncement="Hasil terbaca. Pilih Bacakan untuk mendengar hasil."
               />
             ) : null}
             {success ? (
               <Text
-                accessibilityLabel={`Hasil kata: ${event.text}`}
+                accessibilityLabel={`Hasil: ${event.text}`}
                 selectable
                 style={styles.result}
               >
@@ -635,18 +597,6 @@ export default function WordScanScreen({
 const styles = StyleSheet.create({
   title: { ...typography.displayLargeMobile, color: colors.text },
   body: { ...typography.body, color: colors.text },
-  guideControl: { gap: spacing.xs },
-  guideLabel: { ...typography.label, color: colors.text },
-  guideSlider: {
-    width: '100%',
-    minHeight: minimumTouchTarget,
-    minWidth: minimumTouchTarget,
-  },
-  guideEnds: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    gap: spacing.md,
-  },
   result: {
     ...typography.displayLargeMobile,
     color: colors.text,

@@ -1,0 +1,21 @@
+{
+  "command": [
+    "C:\\bm-envs\\word-symbols-tensorflow\\Scripts\\python.exe",
+    "training/scripts/word_symbol_replay.py",
+    "--run",
+    "C:\\bm-symbols-20260908\\selection",
+    "--fixtures",
+    "C:\\bm-symbols-20260908\\legacy-selection-fixtures.json",
+    "--data",
+    ".",
+    "--output",
+    "C:\\bm-symbols-20260908\\selection\\replay-405",
+    "--oracle",
+    "C:\\bm-symbols-20260908\\selection\\tflite-fullprecision.npz"
+  ],
+  "started_at_utc": "2026-09-08T15:09:34.409545+00:00",
+  "finished_at_utc": "2026-09-08T15:09:45.519333+00:00",
+  "exit_code": 0,
+  "log": "C:\\bm-symbols-20260908\\evidence-replay405.log",
+  "log_sha256": "7058be558fa0ccb6f9c4a68586dbc9b643918b0cde638a686865d89deb87ebb7"
+}

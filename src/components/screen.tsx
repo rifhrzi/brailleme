@@ -1,4 +1,4 @@
-import type { PropsWithChildren } from 'react';
+import type { PropsWithChildren, Ref } from 'react';
 import {
   ScrollView,
   type ScrollViewProps,
@@ -9,13 +9,16 @@ import {
 import { colors, spacing } from '@/theme';
 
 export type ScreenProps = PropsWithChildren<
-  Omit<ScrollViewProps, 'contentInsetAdjustmentBehavior'>
+  Omit<ScrollViewProps, 'contentInsetAdjustmentBehavior'> & {
+    scrollRef?: Ref<ScrollView>;
+  }
 >;
 
 export function Screen({
   children,
   contentContainerStyle,
   keyboardShouldPersistTaps = 'handled',
+  scrollRef,
   style,
   ...scrollViewProps
 }: ScreenProps) {
@@ -25,6 +28,7 @@ export function Screen({
   return (
     <ScrollView
       {...scrollViewProps}
+      ref={scrollRef}
       contentContainerStyle={[
         styles.content,
         { paddingHorizontal: horizontalPadding },

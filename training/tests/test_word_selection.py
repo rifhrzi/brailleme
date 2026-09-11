@@ -22,7 +22,7 @@ def cell_output(mask, score=1.):
 class WordSelectionTests(unittest.TestCase):
     def test_extended_grid_can_accept_supported_weak_peaks(self):
         outputs = np.stack([cell_output(1,.25), cell_output(1,.25)])
-        rows = [{'expected':'A','validation_group':group} for group in ('natural','stress')]
+        rows = [{'expected':'a','validation_group':group} for group in ('natural','stress')]
         _, old, _, old_rank = grouped_calibration(outputs,rows)
         thresholds, new, _, new_rank = grouped_calibration(outputs,rows,'weak-peaks-v2')
         self.assertEqual(old['correct'],0)
@@ -34,7 +34,7 @@ class WordSelectionTests(unittest.TestCase):
 
     def test_pooled_precision_cannot_hide_failed_group(self):
         outputs = np.stack([cell_output(1)]*21)
-        rows = [{'expected':'A','validation_group':'natural'}]*20+[{'expected':'B','validation_group':'stress'}]
+        rows = [{'expected':'a','validation_group':'natural'}]*20+[{'expected':'b','validation_group':'stress'}]
         _, metrics, groups, rank = grouped_calibration(outputs,rows,'weak-peaks-v2')
         self.assertGreaterEqual(metrics['accepted_accuracy'],.95)
         self.assertEqual(groups['stress']['accepted_accuracy'],0.)
@@ -43,7 +43,7 @@ class WordSelectionTests(unittest.TestCase):
     def test_quality_rejected_zeros_count_in_whole_word_denominator(self):
         good=cell_output(1)
         outputs=np.stack([good,np.zeros_like(good),good])
-        rows=[{'expected':'A','validation_group':'natural'},{'expected':'A','validation_group':'natural'},{'expected':'A','validation_group':'stress'}]
+        rows=[{'expected':'a','validation_group':'natural'},{'expected':'a','validation_group':'natural'},{'expected':'a','validation_group':'stress'}]
         _,metrics,groups,rank=grouped_calibration(outputs,rows,'weak-peaks-v2')
         self.assertEqual(metrics['total'],3)
         self.assertEqual(metrics['correct'],2)

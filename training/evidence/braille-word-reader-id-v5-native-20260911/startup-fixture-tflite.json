@@ -1,0 +1,129 @@
+{
+  "status": "passed",
+  "purpose": "Prepared validation-input startup smoke; not camera geometry evidence",
+  "fixture_source": "C:\\bm-symbols-20260908\\accuracy80-20260910\\data\\validation\\000101.png",
+  "fixture_sha256": "04ad0a30730af1f1c939b85b7ee57761f912cb24ed3dd2ac09c4cd0c39a3b1d8",
+  "fixture_size": [
+    480,
+    192
+  ],
+  "expected_text": "Yys",
+  "source_split": "previously_observed_validation",
+  "test_used_for_selection": false,
+  "model_sha256": "6847c91fe186169ba5208a7444f9c8bedc753228bc42b78c691471a85453a6cb",
+  "checkpoint_sha256": "ac9e30cd27cb22ca4f97db42637d3a9e2a27ed47d13a962a661c3bb01c0e66bb",
+  "thresholds": {
+    "proposalScore": 0.25,
+    "acceptScore": 0.25,
+    "dotConfidence": 0.7,
+    "nmsIou": 0.25,
+    "minCellWidth": 0.008,
+    "minCellHeight": 0.06,
+    "edgeMargin": 0.008,
+    "maxRowDeviation": 0.55,
+    "maxGapRatio": 1.2,
+    "maxOverlapRatio": 0.5
+  },
+  "decoder_version": "six-dot-id-v4-experimental",
+  "selected_policy": "cascade_zoom_fallback",
+  "runtime": {
+    "engine": "tensorflow_lite",
+    "version": "2.20.0",
+    "threads": 4,
+    "device": "cpu"
+  },
+  "decision": {
+    "text": "Yys",
+    "reason": "",
+    "cells": [
+      {
+        "box": [
+          0.2874320335686207,
+          0.26120787921051186,
+          0.3720657043159008,
+          0.6334073847780626
+        ],
+        "score": 0.8963115811347961,
+        "dots": [
+          4.2966760815943417e-07,
+          6.988214096281808e-08,
+          0.00011516903759911656,
+          3.800024160227622e-06,
+          7.550988811999559e-07,
+          0.9999909400939941
+        ],
+        "mask": 32,
+        "dot_confidence": 0.9998848309624009,
+        "role": "capital_indicator",
+        "output": ""
+      },
+      {
+        "box": [
+          0.3920827796061834,
+          0.26002757499615353,
+          0.47642591496308645,
+          0.6364857132236164
+        ],
+        "score": 0.7435774803161621,
+        "dots": [
+          0.9975944757461548,
+          3.979657049058005e-05,
+          0.9997479915618896,
+          0.9995076656341553,
+          0.9955734610557556,
+          0.9997667670249939
+        ],
+        "mask": 61,
+        "dot_confidence": 0.9955734610557556,
+        "role": "letter",
+        "output": "Y"
+      },
+      {
+        "box": [
+          0.49790487413605056,
+          0.2544499809543292,
+          0.5820353475709756,
+          0.6435347373286884
+        ],
+        "score": 0.8794748783111572,
+        "dots": [
+          0.9999422430992126,
+          3.413607885249803e-07,
+          0.9999344348907471,
+          0.9995543956756592,
+          0.9999832510948181,
+          0.9969313740730286
+        ],
+        "mask": 61,
+        "dot_confidence": 0.9969313740730286,
+        "role": "letter",
+        "output": "y"
+      },
+      {
+        "box": [
+          0.6056605411072572,
+          0.26728849361340207,
+          0.6886604932447274,
+          0.6328692908088367
+        ],
+        "score": 0.9137446880340576,
+        "dots": [
+          4.288699528842699e-06,
+          0.9999972581863403,
+          0.9987332820892334,
+          0.9999434351921082,
+          1.2850934581365436e-05,
+          7.293784165085526e-06
+        ],
+        "mask": 14,
+        "dot_confidence": 0.9987332820892334,
+        "role": "letter",
+        "output": "s"
+      }
+    ]
+  },
+  "route": "identity",
+  "input_float32_sha256": "181df8bfd38e18256e25ee4a336a6add6a8b77ca5e1f52ce63a86e0bcaf24a0c",
+  "script_sha256": "148fe073f1b9d48559aa5f05a5a6b2c2c2103d1aa3a81755408019e05875c805",
+  "native_camera_validated": false
+}

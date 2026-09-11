@@ -6,9 +6,10 @@ import { fileURLToPath } from 'node:url';
 import { gunzipSync } from 'node:zlib';
 import ts from 'typescript';
 import { inspectTflite } from './inspect-tflite.mjs';
+import { activeWordModelDirectory } from './word-model-active-path.mjs';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
-const directory = resolve(root, 'assets/models/braille-word-reader-v1');
+const directory = activeWordModelDirectory(root);
 const manifest = JSON.parse(readFileSync(resolve(directory, 'manifest.json'), 'utf8'));
 const hash = (bytes) => createHash('sha256').update(bytes).digest('hex');
 const inside = (base, file) => {
@@ -95,7 +96,10 @@ assert.ok(t.maxGapRatio <= 1.2, 'Gap gate must catch a skipped interior cell at 
 if (manifest.artifact.status === 'experimental_candidate') {
   const { verifyExperimentalWordModel } = await import('./verify-experimental-word-model-assets.mjs');
   const metrics = verifyExperimentalWordModel({ root, directory, manifest, evidence, inside, hash });
-  console.log(`Experimental local word model integrity passed: ${metrics.correct}/${metrics.total} exact words; ${metrics.correct}/${metrics.accepted} accepted correct. Original accuracy gates FAILED; production and cloud builds blocked.`);
+  const outcome = manifest.experimentVersion === 'overall-exact-text-v5-20260911'
+    ? 'Overall benchmark target passed with the bound cascade policy; physical release gates remain unverified.'
+    : 'Original accuracy gates FAILED.';
+  console.log(`Experimental local word model integrity passed: ${metrics.correct}/${metrics.total} exact words; ${metrics.correct}/${metrics.accepted} accepted correct. ${outcome} Production and cloud builds blocked.`);
 } else {
 const benchmark = evidence(manifest.evidence?.publicBenchmark);
 const wholeWordFixtures = evidence(manifest.evidence?.wholeWordFixtures);

@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "createdUtc": "2026-09-08T18:10:40.373867+00:00",
+  "status": "preserved_experimental_targets_not_met",
+  "purpose": "Additive preservation; retain the union with the unchanged model index. No deletion or model promotion.",
+  "modelRetentionIndex": {
+    "file": "training/checkpoints/retained-models-20260908.json",
+    "sha256": "29890d735d734184135c6e725a5065e46c67c827678bf66cb04534e9c53843ed",
+    "bytes": 62142
+  },
+  "runtimeEvidence": {
+    "directory": "training/evidence/braille-word-reader-v1/native-symbols-runtime-20260908",
+    "preserveEntireDirectory": true,
+    "index": {
+      "file": "training/evidence/braille-word-reader-v1/native-symbols-runtime-20260908/index.json",
+      "sha256": "5dede540b1a9a78ac1b8584f3e33c200b06cd80a0a2640025b1666ebe27f10f6",
+      "bytes": 414315
+    }
+  },
+  "files": [
+    {
+      "file": "output/android/BrailleMe-0.3.0-symbols-auto-frame-2026-09-09.apk",
+      "sha256": "9afa6a1eb2983d0a92b4f1dcff3026f91d583bca02cda6d98cfaf91760a90259",
+      "bytes": 133317765
+    },
+    {
+      "file": "output/android/BrailleMe-0.3.0-symbols-auto-frame-2026-09-09.apk.sha256",
+      "sha256": "083859bb5f742439bd406cfd86ffb00fb3eecf0405502604077efd4d0842342f",
+      "bytes": 116
+    },
+    {
+      "file": "training/evidence/braille-word-reader-v1/native-symbols-delivery-20260909.json",
+      "sha256": "74233f51e90ea4b193fc2278914903687d222b190d332c088c9f6c68102315a5",
+      "bytes": 9895
+    },
+    {
+      "file": "docs/testing/SYMBOLS-AUTO-FRAME-RESULTS-20260908.md",
+      "sha256": "e75408a13e27f04e6267bb59ef7911c0d49240d179d59fc3aa22e65a5edd065c",
+      "bytes": 26122
+    },
+    {
+      "file": "output/update-symbols-tracking-20260908/RESULTS-before-runtime-curation-v6.md",
+      "sha256": "845da35e07a7a4b95e862c1d2e3476d2f5d7961875cf2ba9dbd212ca9d26be88",
+      "bytes": 23822
+    },
+    {
+      "file": "docs/testing/SYMBOLS-AUTO-FRAME-IMPLEMENTATION-20260908.md",
+      "sha256": "ef7d6d868c1c9ca103afb836543cb5d8c590b87db8141ce4dbdf23225d9516f6",
+      "bytes": 19021
+    },
+    {
+      "file": "docs/testing/WORD-SCAN-SELF-TEST-ID.md",
+      "sha256": "ff994ad70d1ad0ea8628ee43e12c9360debf916204b09da20fae024c013ab097",
+      "bytes": 5913
+    },
+    {
+      "file": "docs/testing/WORD-APK-NATIVE-SMOKE-ID.md",
+      "sha256": "cbd7e3cd06a5bd7a69286941c97d8fc86d012bf33e5b9ef07017a255c5b71631",
+      "bytes": 11316
+    },
+    {
+      "file": "output/update-symbols-tracking-20260908/native-symbols-delivery-20260909-before-status-correction-v1.json",
+      "sha256": "a926e4ad31027f7011a78adb2656e7e0fa8486dbb903d6cdfba1fb9f3152b4eb",
+      "bytes": 9131
+    },
+    {
+      "file": "output/update-symbols-tracking-20260908/retained-runtime-20260909-before-status-correction-v1.json",
+      "sha256": "79fd7fce6c8d5dcd94a204e43e046daca121ee1384d01a8c6c9bace9ca2d6bf6",
+      "bytes": 2728
+    }
+  ],
+  "physicalCameraValidated": false,
+  "allAcceptanceTargetsMet": false,
+  "limitations": [
+    "Application packages excluded from the runtime copy remain at their indexed original paths.",
+    "Capital accuracy, partial-word rejection, native localization and photo latency still miss required targets."
+  ]
+}

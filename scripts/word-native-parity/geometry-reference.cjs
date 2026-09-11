@@ -52,5 +52,5 @@ if (!output) throw new Error('Pass the output JSON file path');
 fs.writeFileSync(output, `${JSON.stringify({ scope: 'Actual TypeScript math with mocked native pixels; not native evidence by itself.', cases }, null, 2)}\n`);
 process.stdout.write(`TypeScript geometry: ${cases.length} cases\n`);
 }
-module.exports = { load, root, generateGeometryReference };
+module.exports = { load, root, generateGeometryReference, loadedSourcePaths: () => [...modules.keys()] };
 if (require.main === module) generateGeometryReference(process.argv[2]);

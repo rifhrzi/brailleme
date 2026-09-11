@@ -12,6 +12,7 @@ import {
 import {
   isValidWordModelThresholds, WORD_DECODER_VERSION, WORD_MODEL_INPUT_LENGTH, WORD_MODEL_INPUT_SHAPE,
   WORD_MODEL_OUTPUT_LENGTH, WORD_MODEL_OUTPUT_SHAPE, type WordModelThresholds,
+  WORD_RUNTIME_MODULE, WORD_RUNTIME_POLICY,
 } from '@/ml/word-model-contract';
 import { recognizeWordImage } from '@/ml/word-image-processing';
 import type { NormalizedBox } from '@/types/live-scan';
@@ -46,9 +47,11 @@ export function createWordModelLease(model: Pick<TensorflowModel, 'dispose'>) {
 type ReadyWordModel = {
   readonly status: 'ready';
   readonly model: TensorflowModel;
+  readonly trackingModel: TensorflowModel;
   readonly thresholds: WordModelThresholds;
   readonly modelVersion: string;
   readonly acquireModel: AcquireWordModel;
+  readonly acquireTrackingModel: AcquireWordModel;
 };
 type LoadState =
   | { readonly status: 'loading' }
@@ -65,15 +68,19 @@ type NativeWordFixture = {
 export async function loadAndValidateWordModel(): Promise<TensorflowModel> {
   if ((IS_PRODUCTION_BUILD && !WORD_MODEL_RELEASE_VERIFIED) || !WORD_MODEL_BUNDLED ||
       WORD_MODEL_ASSET === null || WORD_NATIVE_FIXTURE_ASSET === null) {
-    throw new Error('Pengenal kata belum tersedia pada build ini.');
+    throw new Error('Pemindai belum tersedia pada versi aplikasi ini.');
   }
   const thresholds = WORD_MODEL_MANIFEST.thresholds;
   if (WORD_MODEL_MANIFEST.decoderVersion !== WORD_DECODER_VERSION) {
     throw new Error('Konfigurasi pembacaan pengenal kata tidak sesuai.');
   }
+  if (WORD_MODEL_MANIFEST.runtimeContract?.module !== WORD_RUNTIME_MODULE ||
+      WORD_MODEL_MANIFEST.runtimeContract?.selectedPolicy !== WORD_RUNTIME_POLICY) {
+    throw new Error('Konfigurasi pembacaan pengenal kata tidak sesuai.');
+  }
   if (!isValidWordModelThresholds(thresholds)) throw new Error('Konfigurasi pengenal kata tidak sesuai.');
   const fixture = WORD_MODEL_MANIFEST.nativeSelfTest as NativeWordFixture | null;
-  if (!fixture || !/^[A-Z]{1,12}$/.test(fixture.expectedText)) {
+  if (!fixture || !/^(?:[A-Za-z]{1,12}|[0-9]{1,12})$/.test(fixture.expectedText)) {
     throw new Error('Pemeriksaan awal pengenal kata belum tersedia.');
   }
   const [asset] = await Asset.loadAsync(WORD_MODEL_ASSET);
@@ -128,18 +135,30 @@ export function useWordModel(): WordModelState {
   useEffect(() => {
     let active = true;
     let lease: ReturnType<typeof createWordModelLease> | undefined;
+    let trackingLease: ReturnType<typeof createWordModelLease> | undefined;
     canRetry.current = false;
-    void loadAndValidateWordModel().then((model) => {
+    void loadAndValidateWordModel().then(async (model) => {
       lease = createWordModelLease(model);
       if (!active) { lease.close(); return; }
+      let trackingModel: TensorflowModel;
+      try {
+        // Two interpreters: the live worklet never invokes the still-photo interpreter.
+        trackingModel = await loadAndValidateWordModel();
+      } catch (error) {
+        lease.close();
+        throw error;
+      }
+      trackingLease = createWordModelLease(trackingModel);
+      if (!active) { lease.close(); trackingLease.close(); return; }
       setState({ status: 'ready', model, modelVersion: WORD_MODEL_VERSION,
-        thresholds: WORD_MODEL_MANIFEST.thresholds, acquireModel: lease.acquire });
+        trackingModel, thresholds: WORD_MODEL_MANIFEST.thresholds, acquireModel: lease.acquire,
+        acquireTrackingModel: trackingLease.acquire });
     }).catch((error: unknown) => {
       if (!active) return;
       canRetry.current = true;
       setState({ status: 'error', error: error instanceof Error ? error : new Error('Pengenal kata gagal dimuat.') });
     });
-    return () => { active = false; canRetry.current = false; lease?.close(); };
+    return () => { active = false; canRetry.current = false; lease?.close(); trackingLease?.close(); };
   }, [attempt]);
   return state.status === 'error' ? { ...state, retry } : state;
 }

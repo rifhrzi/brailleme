@@ -1,0 +1,135 @@
+{
+  "schemaVersion": 1,
+  "createdUtc": "2026-09-08T17:47:56.476069+00:00",
+  "analysisKind": "initial_preview_native_buffer_and_surface_composition_rates",
+  "deviceKind": "Android emulator; not a physical camera test",
+  "package": "com.brailleme.app",
+  "pid": 9064,
+  "sources": {
+    "start": {
+      "path": "C:\\bm-symbols-apk-20260908\\evidence\\runtime-600-v6-complete\\media-camera-start.txt",
+      "sha256": "8e8e87e114dfd95f8052e8973694390ee922fe2a30802651b5d0b8138860f906",
+      "bytes": 30583
+    },
+    "end": {
+      "path": "C:\\bm-symbols-apk-20260908\\evidence\\timing-600-v6\\media-camera-initial-preview-end.txt",
+      "sha256": "5b56fb2808d1dc3279ddf8342df39b233f8818468470f87239d5d7a24c0aff63",
+      "bytes": 30584
+    },
+    "metadata": {
+      "path": "C:\\bm-symbols-apk-20260908\\evidence\\runtime-600-v6-complete\\metadata.json",
+      "sha256": "f1d49f8023189b9b7b77ff9b9de930e8d31c83b138798a8c09c7fc2e7da2a423",
+      "bytes": 655
+    },
+    "timing": {
+      "path": "C:\\bm-symbols-apk-20260908\\evidence\\timing-600-v6\\timing.json",
+      "sha256": "65d65b4e5170435133c2d78dc8740f84f087e4709054eba16c3a194ab93f2f82",
+      "bytes": 1213
+    },
+    "samplesSnapshot": {
+      "path": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\output\\update-symbols-tracking-20260908\\initial-preview-samples-v6.jsonl",
+      "sha256": "3ae4e2601da50907dfc78a16577c18738abc19016b68cd784098504aad41bb0f",
+      "bytes": 18365,
+      "sourcePath": "C:\\bm-symbols-apk-20260908\\evidence\\runtime-600-v6-complete\\samples.jsonl",
+      "selection": "Complete original JSONL lines from start through elapsedSeconds <=110; immutable bounded prefix of a live append-only collection.",
+      "sourceReadBytes": 62492,
+      "sourcePrefixAtReadMatchesSnapshot": true,
+      "sampleRecords": 121
+    },
+    "collector": {
+      "path": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\scripts\\word-android-smoke\\collect_runtime.py",
+      "sha256": "b752b24c02523596a54d95bb5b684d5bbdd93dddf29e4fb96f779bb4567d0a3c",
+      "bytes": 14657
+    },
+    "analysisScript": {
+      "path": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\output\\update-symbols-tracking-20260908\\analyze-initial-preview-v6.py",
+      "sha256": "1e3b5a0c82cff568249da4a35c2e20b7b7f0736bfe3fda8de3b18df6c1361e3f",
+      "bytes": 8883
+    }
+  },
+  "phase": {
+    "collectorStartedUtc": "2026-09-08T17:41:24.301676+00:00",
+    "cameraEndSampleStartedUtc": "2026-09-08T17:43:14.306Z",
+    "cameraEndSampleSecondsFromCollectorMetadata": 110.004324,
+    "actionStartedUtc": "2026-09-08T17:43:19.313Z",
+    "actionStartSecondsFromCollector": 115.012,
+    "cameraSnapshotPrecedesActions": true,
+    "note": "Collector elapsedSeconds uses its own monotonic loop clock initialized after startup dumps; UTC metadata is recorded earlier. Envelopes below use their respective actual clocks."
+  },
+  "nativeCameraBufferProduction": {
+    "metricKind": "camera_service_output_stream_buffers_produced",
+    "start": {
+      "streamIndex": 0,
+      "consumer": "SurfaceTexture-0-9064-1",
+      "pid": 9064,
+      "width": 1280,
+      "height": 960,
+      "pixelFormat": "0x1",
+      "framesProduced": 6122,
+      "lastTimestampNs": 1730209307164
+    },
+    "end": {
+      "streamIndex": 0,
+      "consumer": "SurfaceTexture-0-9064-1",
+      "pid": 9064,
+      "width": 1280,
+      "height": 960,
+      "pixelFormat": "0x1",
+      "framesProduced": 9389,
+      "lastTimestampNs": 1840013542339
+    },
+    "framesProducedDelta": 3267,
+    "lastTimestampDeltaNs": 109804235175,
+    "timestampEnvelopeSeconds": 109.804235175,
+    "buffersPerSecond": 29.752950738131673,
+    "formula": "(end.framesProduced - start.framesProduced) / ((end.lastTimestampNs - start.lastTimestampNs) / 1e9)",
+    "sameStreamIdentity": true,
+    "interpretation": "Rate of output buffers reported by the native camera service for the same SurfaceTexture stream, over its device-timestamp envelope. This is not a count of uniquely displayed preview images or a measurement of a physical image sensor."
+  },
+  "surfaceCompositionProxy": {
+    "metricKind": "surface_composition_proxy",
+    "surfaceLayer": "com.brailleme.app/com.brailleme.app.MainActivity#246",
+    "requestedElapsedRangeSeconds": [
+      5,
+      110
+    ],
+    "surfaceSamples": 94,
+    "first": {
+      "elapsedSeconds": 5.469,
+      "surface": {
+        "newPresentedFrames": 33,
+        "presentedFramesObserved": 186,
+        "refreshPeriodNs": 16666666
+      }
+    },
+    "last": {
+      "elapsedSeconds": 109.86,
+      "surface": {
+        "newPresentedFrames": 37,
+        "presentedFramesObserved": 3715,
+        "refreshPeriodNs": 16666666
+      }
+    },
+    "observedEnvelopeSeconds": 104.391,
+    "deduplicatedPresentedFramesDelta": 3529,
+    "sumNewPresentedFramesAfterFirstSample": 3529,
+    "framesPerSecondObserved": 33.8055962678775,
+    "maximumSamplingGapSeconds": 1.3909999999999911,
+    "medianSamplingGapSeconds": 1.1090000000000018,
+    "refreshPeriodNsValues": [
+      16666666
+    ],
+    "monotonicCountersVerified": true,
+    "formula": "(last.presentedFramesObserved - first.presentedFramesObserved) / (last.elapsedSeconds - first.elapsedSeconds)",
+    "boundaryRule": "Exclude first selected sample increment because it covers time before the first selected observation; include each later increment once.",
+    "historyCompleteness": "SurfaceFlinger exposes bounded recent timestamp histories; collector deduplicates actual-present timestamps across samples. Raw histories and per-sample history-gap flags are not stored in samples.jsonl, so completeness cannot be proved from this bounded snapshot alone. Missing history would undercount.",
+    "interpretation": "App activity surface composition proxy; UI/overlay redraws can be presented between new camera buffers. A higher surface proxy rate than native buffer production does not indicate a physical camera above 30 FPS."
+  },
+  "acceptanceResult": "not_assessed",
+  "limitations": [
+    "Initial stationary preview interval only; does not cover the full 600-second scenario sequence, capture latency, memory, or thermal behavior.",
+    "Native camera buffers and app surface presentation use different clocks and envelopes; they are reported separately and must not be combined into one FPS claim.",
+    "No physical sensor throughput or physical-device performance claim.",
+    "This analysis performs local file reads only; no ADB or application changes."
+  ]
+}

@@ -1,6 +1,6 @@
 import { Tabs } from 'expo-router';
 import { SymbolView, type SymbolViewProps } from 'expo-symbols';
-import { StyleSheet, View, type ColorValue } from 'react-native';
+import { StyleSheet, Text, View, useWindowDimensions, type ColorValue } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import { useReduceMotionEnabled } from '@/accessibility/use-accessibility-preferences';
@@ -16,15 +16,19 @@ type TabIconProps = {
 };
 
 function TabIcon({ color, focused, name, size }: TabIconProps) {
+  const { fontScale } = useWindowDimensions();
+  // Expo Symbols uses a font glyph on Android; give its scaled glyph room.
+  const iconSize = size * Math.max(1, fontScale);
   return (
     <View
       accessible={false}
-      style={[styles.iconContainer, focused && styles.iconContainerSelected]}
+      style={[styles.iconContainer, { minHeight: iconSize, minWidth: Math.max(56, iconSize) }, focused && styles.iconContainerSelected]}
     >
       <SymbolView
         accessible={false}
         name={name}
         size={size}
+        style={{ width: iconSize, height: iconSize }}
         tintColor={color}
       />
     </View>
@@ -34,6 +38,11 @@ function TabIcon({ color, focused, name, size }: TabIconProps) {
 export default function PrimaryTabsLayout() {
   const reduceMotionEnabled = useReduceMotionEnabled();
   const insets = useSafeAreaInsets();
+  const { fontScale, width } = useWindowDimensions();
+  const labelWidth = Math.max(56, width / 4 - 16);
+  const labelLines = Math.max(1, Math.ceil((72 * fontScale) / labelWidth));
+  const iconHeight = Math.max(28, 25 * fontScale);
+  const tabHeight = Math.max(TAB_BAR_CONTENT_HEIGHT, iconHeight + 12 + 16 * fontScale * labelLines);
 
   return (
     <View
@@ -51,10 +60,17 @@ export default function PrimaryTabsLayout() {
           tabBarHideOnKeyboard: true,
           tabBarInactiveTintColor: colors.text,
           tabBarItemStyle: styles.tabItem,
+          tabBarIconStyle: { height: iconHeight, width: Math.max(56, iconHeight) },
+          tabBarLabel: ({ children, color }) => (
+            <Text accessible={false} style={[styles.tabLabel, { color, maxWidth: labelWidth }]}>
+              {children}
+            </Text>
+          ),
+          tabBarLabelPosition: 'below-icon',
           tabBarLabelStyle: styles.tabLabel,
           tabBarStyle: [
             styles.tabBar,
-            { height: TAB_BAR_CONTENT_HEIGHT + insets.bottom },
+            { height: tabHeight + insets.bottom },
           ],
         }}
       >
@@ -91,9 +107,25 @@ export default function PrimaryTabsLayout() {
           }}
         />
         <Tabs.Screen
+          name="translator"
+          options={{
+            tabBarAccessibilityLabel: 'Penerjemah',
+            tabBarButtonTestID: 'tab-translator',
+            tabBarIcon: ({ color, focused, size }) => (
+              <TabIcon
+                color={color}
+                focused={focused}
+                name={{ android: 'translate', ios: 'character.bubble' }}
+                size={size}
+              />
+            ),
+            title: 'Penerjemah',
+          }}
+        />
+        <Tabs.Screen
           name="settings"
           options={{
-            tabBarAccessibilityLabel: 'Pengaturan',
+            tabBarAccessibilityLabel: 'Setelan',
             tabBarButtonTestID: 'tab-settings',
             tabBarIcon: ({ color, focused, size }) => (
               <TabIcon
@@ -133,6 +165,9 @@ const styles = StyleSheet.create({
     fontFamily: fonts.bodySemibold,
     fontSize: 12,
     fontWeight: '600',
+    lineHeight: 16,
+    textAlign: 'center',
+    flexShrink: 1,
   },
   iconContainer: {
     minHeight: 28,

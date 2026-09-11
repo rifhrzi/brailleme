@@ -8,7 +8,7 @@ const READY: ScanReadiness = Object.freeze({ available: true });
 const MODEL_NOT_AVAILABLE: ScanReadiness = Object.freeze({
   available: false,
   reason: 'model_not_available',
-  message: 'Pemindai belum tersedia pada build ini.',
+  message: 'Pemindai belum tersedia pada versi aplikasi ini.',
 });
 const SCANNER_NOT_AVAILABLE: ScanReadiness = Object.freeze({
   available: false,

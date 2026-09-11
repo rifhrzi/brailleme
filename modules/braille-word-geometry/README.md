@@ -1,6 +1,12 @@
 # Word photo geometry
 
-Android-only local Expo module with one Nitro helper. Expo autolinking discovers this directory automatically. It uses the existing VisionCamera `Photo`; it never retains the photo, reads image pixels, or changes a dependency.
+Android-only local Expo module with one stateless Nitro helper. Expo autolinking discovers this directory automatically. Geometry uses the existing VisionCamera `Photo`; the pixel method receives a caller-owned raw buffer. Neither method retains its source photo or buffer.
+
+`createWordPixelProcessor()` initializes the HybridObject on the JS runtime; pass it into a background worklet. `resizePixels(buffer, width, height, pixelFormat, androidBitmap)` returns an owning float32 `ArrayBuffer` with 480×192×3 RGB values plus mean luminance and contrast. The pure Java core matches the TypeScript/Pillow 22-bit bilinear antialias weights and rounds each pass to uint8 before float conversion. Generic BGRA keeps normal BGRA order; `androidBitmap=true` corrects only the pinned Nitro Image BGRA metadata defect. Calls allocate independent output storage and never reuse mutable buffers between worklets.
+
+The generated bindings use Nitro Modules 0.36.5 `ArrayBuffer.getBuffer(false)` only during the synchronous native call, and `ArrayBuffer.wrap` for the direct output buffer. Run `scripts/word-native-parity/pixel-resize-parity.cjs` with explicit javac, java, Python, new work directory, and new report path to compare the production Java core with actual TypeScript and independent Pillow. Its report includes RGB/channel-order, up/down/identity resize, invalid dimension/buffer, and ownership cases. Host JVM timings are not Android camera or Nitro bridge timings; verify those in the rebuilt APK.
+
+For an Android ART check without installing an APK, compile `WordPixelResize.java` and `scripts/word-native-parity/WordPixelResizeCli.java` using JDK 17, convert every resulting class with Android SDK D8, then run `scripts/word-native-parity/pixel-resize-android.cjs` with explicit adb, `emulator-5554`, `classes.dex`, the host case directory, a new output directory, and a new report path. It runs the production core through `dalvikvm`, pulls every output, and compares float32 bytes and luminance statistics with the current TypeScript and retained Pillow references. This verifies the core on ART; the Nitro wrapper, camera callback, model inference and physical phone still require their own checks. `prepare-camera-fixture.py` creates a padded camera feed with every original source pixel retained and records its transformed word ROI.
 
 `getGeometry(photo)` copies the CameraX image's sensor-to-buffer matrix, raw dimensions, clockwise rotation, mirror flag and crop rectangle while the photo is alive. `src/ml/word-camera-geometry.ts` maps the four guide corners from the preview's actual sensor coordinate system into the upright image returned by `Photo.toImageAsync`. It rejects missing or singular matrices, incompatible dimensions, invalid crop rectangles, clipped guides and nonrectangular mappings. The frozen guide is drawn from the same resulting photo ROI as inference.
 
@@ -14,7 +20,7 @@ Generate bindings from this directory:
 npx.cmd --yes nitrogen@0.36.5
 ```
 
-The 14 generated files are checked in; generation is not required during app installation or APK builds. The module was scaffolded with `create-expo-module --local`; its unused Apple/web templates were removed. There is no additional npm dependency.
+The 17 generated files are checked in; generation is not required during app installation or APK builds. The module was scaffolded with `create-expo-module --local`; its unused Apple/web templates were removed. There is no additional npm dependency.
 
 Verification before APK build:
 

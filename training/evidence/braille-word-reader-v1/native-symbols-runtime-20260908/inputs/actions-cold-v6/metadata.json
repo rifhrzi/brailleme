@@ -1,0 +1,81 @@
+{
+  "scope": "UI commands and actual observations only; no model accuracy, audio, physical-camera or release pass claim.",
+  "command": "cold-start",
+  "script_sha256": "0223b871c608342ce94d379e8ec5a8f01b5c96f16841edb77051a57df50275fc",
+  "helper_sha256": "4fd2fc17d0c506d6dd07cd0747a5dda5a8d6d1c2ff8897673c60fcd2a535555f",
+  "declared_feed": {
+    "manifest": "C:\\bm-symbols-apk-20260908\\evidence\\calibrated-feeds-v1\\manifest.json",
+    "manifest_sha256": "5616d7c7e6b88320a11f4c7903851dd75631dabf60474c606f0e65bd831ef9d7",
+    "entry": {
+      "output": "startup-multirow-context.png",
+      "source": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\assets\\models\\braille-word-reader-v1\\native-word-fixture.png",
+      "source_sha256": "5115a112aad01432f4ebdfa22d8dcb686f1330075d5030bc5c039c154dc4d164",
+      "expected_text": null,
+      "classification": "multirow_startup_context",
+      "background_rgb": [
+        83,
+        83,
+        83
+      ],
+      "symbols": null,
+      "symbol_roles_origin": "No whole-scene cell annotation asserted",
+      "roi_expected_text": "rawenstwa",
+      "roi_source_normalized": {
+        "x": 0.14288889567057292,
+        "y": 0.40029182879377434,
+        "width": 0.7142222425672743,
+        "height": 0.19941634241245138
+      },
+      "roi_annotation_origin": "Existing nativeSelfTest ROI, not a label for the whole 450x257 image",
+      "is_natural_whole_word_benchmark": false,
+      "source_size": [
+        450,
+        257
+      ],
+      "output_sha256": "2b8f6bbb873b4adb3e46621fcc7ad2be97bdc4210d81dbfc87405a4c2955270c",
+      "output_size": [
+        1024,
+        1024
+      ],
+      "scale": 1.0,
+      "realized_scale_xy": [
+        1.0,
+        1.0
+      ],
+      "scaled_size": [
+        450,
+        257
+      ],
+      "placement": [
+        62,
+        383,
+        512,
+        640
+      ],
+      "source_pixels_cropped": false,
+      "unscaled_source_pixels_exact": true,
+      "interpolation": "none",
+      "projected_screenshot_corners": [
+        [
+          158.06312443156295,
+          817.4150553119143
+        ],
+        [
+          920.0057810416984,
+          817.4264394058323
+        ],
+        [
+          920.0225415944633,
+          1252.5921551577273
+        ],
+        [
+          158.0798849843278,
+          1252.5807710638094
+        ]
+      ],
+      "prediction_observed_for_selection": false
+    },
+    "binding": "Operator-declared feed; verify actual camera orientation/placement visually."
+  },
+  "started_utc": "2026-09-08T17:37:32.544295+00:00"
+}

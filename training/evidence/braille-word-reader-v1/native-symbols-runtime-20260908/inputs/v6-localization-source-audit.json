@@ -1,0 +1,149 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-09-08T17:56:11.402424+00:00",
+  "scope": "Read-only v6 localization source audit plus one parent-authorized fixed exploratory TFLite inference; no app/model/training/deployment changes or ADB.",
+  "confirmed_coordinate_bugs": [],
+  "conclusion": "No missing crop origin or frame/upright rotation mismatch was established in the inspected source. Actual emulator misplaced-target cause remains unisolated.",
+  "checked_path": [
+    {
+      "step": "preview window to upright frame",
+      "finding": "Controls store native sensor corners. mapWordSensorBoxToFrame invokes native sensorToBuffer then applies mirror/quarter rotation with upright dimensions."
+    },
+    {
+      "step": "upright crop",
+      "finding": "inferWordContext uses floor(start)/ceil(end) and stores the resulting global normalized context. Nitro crop expects start/end coordinates and makes Bitmap.createBitmap using end-start dimensions."
+    },
+    {
+      "step": "model output to upright frame",
+      "finding": "mapRoiBox adds actual.x/y after multiplying relative proposal x/y by actual width/height. detectWordImageCells applies it before grouping and before conversion to sensor points."
+    },
+    {
+      "step": "upright frame to sensor",
+      "finding": "snapshotWordFrameBoxSensorPoints inverses the same mirror/rotation, multiplies by full upright dimensions and invokes native bufferToSensor. It does not interpret context-local output as a global box."
+    },
+    {
+      "step": "native bitmap conversion",
+      "finding": "FrameConverter calls image.toBitmap(frame.orientation,frame.isMirrored). The extension mirrors then rotates once. Installed ImageProxy.toBitmap dispatches YUV to convertYUVToBitmap; bytecode allocates full image width/height and passes allplanes/strides, without applying a cropRect origin."
+    },
+    {
+      "step": "sensor to preview/display",
+      "finding": "Each group and each cell uses native convertCameraPointToViewPoint divided by layout dp. The React view multiplies normalized coordinates back by the same layout. EMA changes display only; capture keeps the raw sensor group."
+    }
+  ],
+  "roundtrip": {
+    "cases": 8,
+    "input": "Injected synthetic dense output at a nonzero pixel-rounded crop; native pixels and affine methods mocked, no trained inference.",
+    "max_crop_mapping_error_frame_pixels": 1.6558170479186174e-06,
+    "max_sensor_roundtrip_error_frame_pixels": 5.3290705182007514e-14
+  },
+  "offset_check": {
+    "assumed_upright_frame": [
+      480,
+      640
+    ],
+    "square_preview_crop_top_frame_pixels": 80,
+    "initial_center_model_context_xyxy": [
+      0,
+      224,
+      480,
+      416
+    ],
+    "finding": "Observed approximately40 source-pixel vertical mismatch corresponds to approximately33 frame pixels under measured image scale. Neither dropping the full224px center-window origin nor dropping80px square-preview crop matches that offset. Actual adaptive window context was not logged, so this is a magnitude check, not an exclusion of every mapping fault."
+  },
+  "exploratory_replay": {
+    "inferences": 1,
+    "model_and_thresholds": "Exactly deployed baseline TFLite and current manifest thresholds, unchanged.",
+    "input": "Full frozen1024feed inverse-sampled through measured source-to-preview affine into assumed upright480x640, fixed observed brightness gain/bias, bilinear rounding; center crop[0,224,480,416].",
+    "nms_proposals": 31,
+    "groups_cell_counts": [
+      9,
+      9,
+      1,
+      5,
+      7
+    ],
+    "selected_group": "Current TS grouping/center tracking selects the9-cell middle-row group at source approximately y105-153.",
+    "selected_group_decoder": "rejected: low_confidence",
+    "comparison": "Did not reproduce actual11-green-box upper target. Input is an approximation, not real ImageAnalysis YUV pixels, and only the initial center window was replayed; no adaptive-window inference or tuning."
+  },
+  "remaining_uncertainty": [
+    "Actual ImageAnalysis frame pixels may differ from the preview-derived approximation through emulator sensor-stream mapping, YUV conversion/resampling, or native metadata.",
+    "Adaptive tracking context can change model proposals; only the observed screenshot and frozen shutter group were available, not the preceding context/output sequence.",
+    "Model localization can fail under camera preprocessing/scale; current evidence does not separate that from frame-pixel/native-coordinate disagreement."
+  ],
+  "minimum_next_discriminating_evidence": "For the same frozen public feed, retain one actual upright frame or prepared crop, its pixel-rounded context, frame metadata/sensor points and raw proposal output from the same observation. Compare local proposals to the actual crop before mapping them into sensor/preview. This is a suggestion only; nothing was instrumented or captured in this audit.",
+  "source_sha256": {
+    "src/features/live/use-word-camera-tracking.ts": "9ca80e47f6e93ec58e18c87bc572f7f89471f658bfdf1f80b0591e2b5a57bd16",
+    "src/ml/word-image-processing.ts": "5caf889b9267f81532902e5c00bed72f093b90e13862e7bf40a6293b3da86995",
+    "src/ml/word-camera-geometry.ts": "86e8d173f9c96b30ad2103496880f9556ef55c9620fb60aaed6136f4a0227623",
+    "src/ml/word-tracking.ts": "1c71189a45b31817f468ba785e87a51dcd682e4e4fb45aae3b22d6bfcdb7765c",
+    "node_modules/react-native-vision-camera/android/src/main/java/com/margelo/nitro/camera/HybridFrameConverter.kt": "48bf0d2b152e50a0fad8de071740cdb76200ccdaff4135aaf8e1725d1192c120",
+    "node_modules/react-native-vision-camera/android/src/main/java/com/margelo/nitro/camera/hybrids/instances/HybridFrame.kt": "bea3da60be9f71cb6dc23b9351dd97b6a620572f3f22524a0d228fb81f1a41e1",
+    "node_modules/react-native-vision-camera/android/src/main/java/com/margelo/nitro/camera/extensions/ImageProxy+toBitmap.kt": "731403b47454e6c61bb872f7b4d5432e476c4ffbb29afac1e372cb50b6e4941f",
+    "node_modules/react-native-nitro-image/android/src/main/java/com/margelo/nitro/image/HybridImage.kt": "b2173e506e7b4a7f90cd26b04f6a457cb9b790cb52ed637e2d2f4e9e90275d2b"
+  },
+  "line_pointers": {
+    "src/features/live/use-word-camera-tracking.ts": [
+      362,
+      415,
+      417,
+      419,
+      423,
+      424,
+      308,
+      309
+    ],
+    "src/ml/word-image-processing.ts": [
+      271,
+      354,
+      359,
+      363,
+      387
+    ],
+    "src/ml/word-camera-geometry.ts": [
+      17,
+      25,
+      28,
+      45,
+      65,
+      102
+    ],
+    "src/ml/word-tracking.ts": [
+      79,
+      96,
+      140,
+      154
+    ],
+    "node_modules/react-native-vision-camera/android/src/main/java/com/margelo/nitro/camera/HybridFrameConverter.kt": [
+      14,
+      18
+    ],
+    "node_modules/react-native-vision-camera/android/src/main/java/com/margelo/nitro/camera/hybrids/instances/HybridFrame.kt": [
+      108,
+      113
+    ],
+    "node_modules/react-native-vision-camera/android/src/main/java/com/margelo/nitro/camera/extensions/ImageProxy+toBitmap.kt": [
+      12,
+      17,
+      20,
+      28
+    ],
+    "node_modules/react-native-nitro-image/android/src/main/java/com/margelo/nitro/image/HybridImage.kt": [
+      128,
+      137
+    ]
+  },
+  "artifact_sha256": {
+    "v6-pixel-geometry-review.json": "0d6d6c850007ba38feda4ac4522a651a6c7826114f9941d6f1ef2f01eb60160d",
+    "v6-sensor-projection-check.json": "dd0b96f4b94c2a0434a25d40c0e1c9183a321bae29d986e016eec790e5eddc0a",
+    "v6-localization-roundtrip.json": "589d07cbe4d2e1ab443afae98a0f2199cfa4e9c3dcaa8918e17989f2fc1f9fed",
+    "approximate-v6-center-window-replay.json": "0c43963df409201bcf701f9894a4223f8e11377d93ea511e5393174c1f657b1e",
+    "approximate-v6-center-window-groups.json": "8d50933d255301e563750e84ba0e8130867dd316bb8a4630b18c6a326fe88c8e",
+    "approximate-v6-selected-group-decode.json": "29bccc79c6757d94286cb609ce78618beab3c48bc0a331e7dc3137e0e1ef5599"
+  },
+  "limits": [
+    "No physical-device or paper accuracy claim.",
+    "Numerical roundtrip with mocked native methods is not proof of actual frame pixels.",
+    "No additional training, weight promotion, threshold tuning or APK modification."
+  ]
+}

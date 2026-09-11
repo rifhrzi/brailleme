@@ -24,7 +24,6 @@ from typing import Iterable, Sequence
 
 import numpy as np
 from PIL import Image
-from sklearn.metrics import classification_report, confusion_matrix
 
 
 REPOSITORY_URL = "https://github.com/IlyaOvodov/AngelinaDataset"
@@ -338,6 +337,8 @@ def evaluate_cells(
     dataset_root: Path,
     records: Sequence[CellRecord],
 ) -> tuple[list[dict[str, object]], dict[str, object], dict[str, object]]:
+    from sklearn.metrics import classification_report, confusion_matrix
+
     predictions: list[dict[str, object]] = []
     expected: list[str] = []
     predicted: list[str] = []
@@ -412,6 +413,8 @@ def evaluate_cells(
 
 
 def summarize_predictions(rows: Sequence[dict[str, object]]) -> dict[str, object]:
+    from sklearn.metrics import classification_report
+
     expected = [str(item["expected_label"]) for item in rows]
     predicted = [str(item["predicted_label"]) for item in rows]
     report = classification_report(

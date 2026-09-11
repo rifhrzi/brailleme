@@ -55,6 +55,7 @@ namespace margelo::nitro::braillewordgeometry {
   public:
     // Methods
     PhotoGeometry getGeometry(const std::shared_ptr<margelo::nitro::camera::HybridPhotoSpec>& photo) override;
+    WordPixelResult resizePixels(const std::shared_ptr<ArrayBuffer>& buffer, double width, double height, const std::string& pixelFormat, bool androidBitmap) override;
 
   private:
     jni::global_ref<JHybridWordPhotoGeometrySpec::JavaPart> _javaPart;

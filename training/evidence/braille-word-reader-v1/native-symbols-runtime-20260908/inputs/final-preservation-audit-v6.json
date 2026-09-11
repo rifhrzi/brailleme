@@ -1,0 +1,2965 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-09-08T18:01:43.895181+00:00",
+  "scope": "Read-only final preservation/source audit of current bytes, retained baseline patch/snapshots and v6 binding. No ADB, source/model modification or test rerun.",
+  "inputs": {
+    "retention_index": {
+      "file": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\training\\checkpoints\\retained-models-20260908.json",
+      "sha256": "29890d735d734184135c6e725a5065e46c67c827678bf66cb04534e9c53843ed",
+      "bytes": 62142
+    },
+    "protected_hashes": {
+      "file": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\output\\update-symbols-tracking-20260908\\baseline\\protected-hashes.json",
+      "sha256": "7a0303be444a84752e9cd87d0bda6d1e425c1d1da512a15a26b70939dd509fa6",
+      "bytes": 485
+    },
+    "preexisting_patch": {
+      "file": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\output\\update-symbols-tracking-20260908\\baseline\\pre-existing.patch",
+      "sha256": "411bf68c63aa803e03bef7924e72e3eebe02208b5035ec3f6bcd34638b7a94d1",
+      "bytes": 16967
+    },
+    "v6_source_binding": {
+      "file": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\output\\stage-source-binding-v6.json",
+      "sha256": "fcd80da212e74209334e55c791df6d4de3b6d7dd199a4957bc958334ce65a357",
+      "bytes": 48146
+    },
+    "v6_source_companion": {
+      "file": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\output\\application-source-unchanged-v6.json",
+      "sha256": "d28b57873f212e70410a23025e166f6a1f5373d4cbdc29089217a226bada953a",
+      "bytes": 6784
+    },
+    "coverage_log": {
+      "file": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\output\\update-symbols-tracking-20260908\\checks-1788888766290\\test-coverage.log",
+      "sha256": "afc8d27ffebcc6d3566e961c1c44669a6f83e045952d117e34388bf74271bcb4",
+      "bytes": 23003
+    }
+  },
+  "git_head": "bbd52e158477c8f023de9493aede291375ff9d5c",
+  "preexisting_camera_work": {
+    "snapshots": [
+      {
+        "current_file": "src/features/live/__tests__/word-photo-camera.test.tsx",
+        "snapshot": {
+          "file": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\output\\update-symbols-tracking-20260908\\baseline\\word-photo-camera.test.tsx",
+          "sha256": "5f71e8888bb96ce8b5bdb313d996340938a21f00efa38ac4b971dc70aea345a0",
+          "bytes": 21268
+        },
+        "current_sha256": "91f5e08748e76cf7c489412196cf3ded3a6013e478e234380df7dbbacc0cf688",
+        "snapshot_equals_reconstructed_preexisting_patch_lf": true,
+        "patch_old_git_blob_prefix": "1189cbe",
+        "patch_new_git_blob_prefix": "67bb457",
+        "old_blob_matches": true,
+        "new_blob_matches": true,
+        "current_equals_snapshot_bytes": false,
+        "note": "Current file intentionally evolved for requested symbols/tracking update; original worktree bytes are retained in snapshot and its pre-existing diff reconstructs from HEAD."
+      },
+      {
+        "current_file": "src/features/live/__tests__/word-scan-screen.test.tsx",
+        "snapshot": {
+          "file": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\output\\update-symbols-tracking-20260908\\baseline\\word-scan-screen.test.tsx",
+          "sha256": "5ede55c8032a0889a40a269edd3dfd018c19eefc46fd39645882193a84883d8b",
+          "bytes": 16657
+        },
+        "current_sha256": "96859faacdb257c569ae7f0a407a642842d065307ae92944983a6455eb893c90",
+        "snapshot_equals_reconstructed_preexisting_patch_lf": true,
+        "patch_old_git_blob_prefix": "e25273f",
+        "patch_new_git_blob_prefix": "7994f53",
+        "old_blob_matches": true,
+        "new_blob_matches": true,
+        "current_equals_snapshot_bytes": false,
+        "note": "Current file intentionally evolved for requested symbols/tracking update; original worktree bytes are retained in snapshot and its pre-existing diff reconstructs from HEAD."
+      },
+      {
+        "current_file": "src/features/live/word-photo-camera.tsx",
+        "snapshot": {
+          "file": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\output\\update-symbols-tracking-20260908\\baseline\\word-photo-camera.tsx",
+          "sha256": "5ac68df6c58ba08a4fc8deea37bf3b105e6f11f25b9d3252d7fba186159d8378",
+          "bytes": 18344
+        },
+        "current_sha256": "f2204a5c3889c59ee156d0c1800ba2023bfe6973d8d0b6a446681806a7224cf8",
+        "snapshot_equals_reconstructed_preexisting_patch_lf": true,
+        "patch_old_git_blob_prefix": "2802177",
+        "patch_new_git_blob_prefix": "e6efeea",
+        "old_blob_matches": true,
+        "new_blob_matches": true,
+        "current_equals_snapshot_bytes": false,
+        "note": "Current file intentionally evolved for requested symbols/tracking update; original worktree bytes are retained in snapshot and its pre-existing diff reconstructs from HEAD."
+      },
+      {
+        "current_file": "src/features/live/word-scan-screen.tsx",
+        "snapshot": {
+          "file": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\output\\update-symbols-tracking-20260908\\baseline\\word-scan-screen.tsx",
+          "sha256": "036192ed45c9572a13e5b4f2b74c157867c7dfb386f6fb39eb694e9981bfe09f",
+          "bytes": 22076
+        },
+        "current_sha256": "5a0934e805bfb5edf885f4a281d170cbaefb760317ac04611047a42d6e3b0555",
+        "snapshot_equals_reconstructed_preexisting_patch_lf": true,
+        "patch_old_git_blob_prefix": "bc05231",
+        "patch_new_git_blob_prefix": "629c96b",
+        "old_blob_matches": true,
+        "new_blob_matches": true,
+        "current_equals_snapshot_bytes": false,
+        "note": "Current file intentionally evolved for requested symbols/tracking update; original worktree bytes are retained in snapshot and its pre-existing diff reconstructs from HEAD."
+      }
+    ],
+    "preservation_scope": "Original four worktree files and diff retained; current application files intentionally changed for the requested update. This is not a claim of current byte identity to pre-task code.",
+    "eight_startup_torch_regression_titles": [
+      {
+        "title": "does not send torch controls while opening the camera or when the torch starts off",
+        "still_present": true
+      },
+      {
+        "title": "keeps preview and capture usable when a phone advertises a torch but rejects the control",
+        "still_present": true
+      },
+      {
+        "title": "times out a detected camera that never streams and makes retry available",
+        "still_present": true
+      },
+      {
+        "title": "cancels the startup timeout once preview is streaming",
+        "still_present": true
+      },
+      {
+        "title": "reports a real session failure and a fresh session can open and capture",
+        "still_present": true
+      },
+      {
+        "title": "ignores a late camera shutdown error after a photo is captured",
+        "still_present": true
+      },
+      {
+        "title": "attributes a camera failure during the shutter to the active capture so the screen can retry",
+        "still_present": true
+      },
+      {
+        "title": "explains a startup failure and opens a fresh camera session on retry",
+        "still_present": true
+      }
+    ],
+    "latest_v6_test_evidence": {
+      "suites": 38,
+      "tests": 671,
+      "summary_present": true,
+      "camera_test_suite_present": true,
+      "screen_test_suite_present": true
+    }
+  },
+  "preexisting_untracked_startup_document": {
+    "file": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\docs\\testing\\CAMERA-STARTUP-FIX-20260907.md",
+    "sha256": "76f5f1597acad1f9ce9539d4eaef1eb66970752805f792b066a498f6fe75f029",
+    "bytes": 4315,
+    "git_status": "?? docs/testing/CAMERA-STARTUP-FIX-20260907.md",
+    "initial_hash_available": false,
+    "initial_byte_identity_assessed": false,
+    "same_as_retained_staging_copy": true,
+    "limit": "Current presence/hash and matching staging copy verified. No independent pre-task hash exists in supplied baseline, so byte-unchanged since task start is not asserted."
+  },
+  "retention": {
+    "repository_file_rows": 168,
+    "matching_rows": 168,
+    "mismatches": [],
+    "rows": [
+      {
+        "file": "training/checkpoints/retained-models.json",
+        "expected_sha256": "39e248ad1f697fde2f856467f5f26b6a22cb2781927c0a00a9c722c738120411",
+        "actual_sha256": "39e248ad1f697fde2f856467f5f26b6a22cb2781927c0a00a9c722c738120411",
+        "expected_bytes": 8018,
+        "actual_bytes": 8018,
+        "matches": true
+      },
+      {
+        "file": "training/checkpoints/braille-word-reader-v1/best-word.keras",
+        "expected_sha256": "cce2432c0ddb8952c885dd58697589c285209588dafa81aacdd891b1660068b7",
+        "actual_sha256": "cce2432c0ddb8952c885dd58697589c285209588dafa81aacdd891b1660068b7",
+        "expected_bytes": 10346677,
+        "actual_bytes": 10346677,
+        "matches": true
+      },
+      {
+        "file": "assets/models/braille-word-reader-v1/word-reader.tflite",
+        "expected_sha256": "406db0e55e8a5ba9e0d00fb22aadc24f19698219f375e4dcead9057cf3bf2230",
+        "actual_sha256": "406db0e55e8a5ba9e0d00fb22aadc24f19698219f375e4dcead9057cf3bf2230",
+        "expected_bytes": 3259716,
+        "actual_bytes": 3259716,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-baseline-20260908/deployment-selection.json",
+        "expected_sha256": "cb5b2070d5c6db08d07beababb9e70b1c47e46f0c5eaf91120f9a5150f43718a",
+        "actual_sha256": "cb5b2070d5c6db08d07beababb9e70b1c47e46f0c5eaf91120f9a5150f43718a",
+        "expected_bytes": 1715,
+        "actual_bytes": 1715,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-baseline-20260908/baseline-evaluation.json",
+        "expected_sha256": "ea1dee05c2c28056720ef645c88a6b7af124ae5063eee3cda050287e98abf489",
+        "actual_sha256": "ea1dee05c2c28056720ef645c88a6b7af124ae5063eee3cda050287e98abf489",
+        "expected_bytes": 161037,
+        "actual_bytes": 161037,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-baseline-20260908/baseline-freeze.json",
+        "expected_sha256": "22a1f799a317146cf2b88c0584903f56a5cbe3e91c02d97f7fb9e031b3c8ab00",
+        "actual_sha256": "22a1f799a317146cf2b88c0584903f56a5cbe3e91c02d97f7fb9e031b3c8ab00",
+        "expected_bytes": 368545,
+        "actual_bytes": 368545,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-baseline-20260908/baseline-restoration-evaluation.json",
+        "expected_sha256": "27c53d2e2759f3dcd11fb4c2fbda89312a008261b4ce47ed699de9a2e4a50f1d",
+        "actual_sha256": "27c53d2e2759f3dcd11fb4c2fbda89312a008261b4ce47ed699de9a2e4a50f1d",
+        "expected_bytes": 161228,
+        "actual_bytes": 161228,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-baseline-20260908/checkpoint-selection.json",
+        "expected_sha256": "8346eab5df475a18a3ecba93ca8f4dbc365c19a0b847764414b5d34ee196ddd9",
+        "actual_sha256": "8346eab5df475a18a3ecba93ca8f4dbc365c19a0b847764414b5d34ee196ddd9",
+        "expected_bytes": 22444,
+        "actual_bytes": 22444,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-baseline-20260908/corpus-audit.json",
+        "expected_sha256": "92d6af2b61b7b34bfdd5eaaba8c83c972959f66e2a82ec7134af93fd41c7cf66",
+        "actual_sha256": "92d6af2b61b7b34bfdd5eaaba8c83c972959f66e2a82ec7134af93fd41c7cf66",
+        "expected_bytes": 21953,
+        "actual_bytes": 21953,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-baseline-20260908/corpus-image-hashes.json",
+        "expected_sha256": "796ce0e32af598dd60f02255677d1af235ac31cee8b0bea790746b83b15d8a07",
+        "actual_sha256": "796ce0e32af598dd60f02255677d1af235ac31cee8b0bea790746b83b15d8a07",
+        "expected_bytes": 779480,
+        "actual_bytes": 779480,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-baseline-20260908/dataset-restoration.json",
+        "expected_sha256": "f3b1768fce182e35f333c753f06e89dc4d8253964825d681bfcf40651ea7cb0f",
+        "actual_sha256": "f3b1768fce182e35f333c753f06e89dc4d8253964825d681bfcf40651ea7cb0f",
+        "expected_bytes": 468,
+        "actual_bytes": 468,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-baseline-20260908/decoder-parity-id-v3.json",
+        "expected_sha256": "f708bc9fe5e551ec23e766ea2300fde6bd0d624e8b581fbf8641c7f0bd9c3fe6",
+        "actual_sha256": "f708bc9fe5e551ec23e766ea2300fde6bd0d624e8b581fbf8641c7f0bd9c3fe6",
+        "expected_bytes": 48736,
+        "actual_bytes": 48736,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-baseline-20260908/deployment-final-input-integrity.json",
+        "expected_sha256": "fdedb350da5e34264f3a0af7d5c7774c5356f089907e89190e5256649c8da240",
+        "actual_sha256": "fdedb350da5e34264f3a0af7d5c7774c5356f089907e89190e5256649c8da240",
+        "expected_bytes": 576,
+        "actual_bytes": 576,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-baseline-20260908/deployment-selection.json",
+        "expected_sha256": "cb5b2070d5c6db08d07beababb9e70b1c47e46f0c5eaf91120f9a5150f43718a",
+        "actual_sha256": "cb5b2070d5c6db08d07beababb9e70b1c47e46f0c5eaf91120f9a5150f43718a",
+        "expected_bytes": 1715,
+        "actual_bytes": 1715,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-baseline-20260908/dsbi-restoration.json",
+        "expected_sha256": "279bea52ee7b96f1d51a9fbb6c36f77966026c471ca3aadc519ec9c947620be8",
+        "actual_sha256": "279bea52ee7b96f1d51a9fbb6c36f77966026c471ca3aadc519ec9c947620be8",
+        "expected_bytes": 8249,
+        "actual_bytes": 8249,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-baseline-20260908/environment.json",
+        "expected_sha256": "9871cca234996b5ea1b552a8741a7ea62031d903cfea06a0b5a306b066e74952",
+        "actual_sha256": "9871cca234996b5ea1b552a8741a7ea62031d903cfea06a0b5a306b066e74952",
+        "expected_bytes": 878,
+        "actual_bytes": 878,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-baseline-20260908/epoch-history.json",
+        "expected_sha256": "f202a2541b6d2a1c2acdf995c77423f840bd7558d0e0dfe7536a6eda8d828470",
+        "actual_sha256": "f202a2541b6d2a1c2acdf995c77423f840bd7558d0e0dfe7536a6eda8d828470",
+        "expected_bytes": 17332,
+        "actual_bytes": 17332,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-baseline-20260908/executions/evidence-baseline-current-decoder607.execution.json",
+        "expected_sha256": "6739f0a688a8cd3940094e336d4ab6df1ebd928eb405de8c142b663d9d919c55",
+        "actual_sha256": "6739f0a688a8cd3940094e336d4ab6df1ebd928eb405de8c142b663d9d919c55",
+        "expected_bytes": 784,
+        "actual_bytes": 784,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-baseline-20260908/executions/evidence-baseline-current-decoder607.log",
+        "expected_sha256": "209d4512542a0534b9380b48650a9573bed67afa2e7ee8f92ab29d6bf01ece50",
+        "actual_sha256": "209d4512542a0534b9380b48650a9573bed67afa2e7ee8f92ab29d6bf01ece50",
+        "expected_bytes": 5705,
+        "actual_bytes": 5705,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-baseline-20260908/executions/evidence-benchmark.execution.json",
+        "expected_sha256": "cb8f3808e4cffdb46be572c2d3c633646217b5b79a39911ccc1ed6c424e49793",
+        "actual_sha256": "cb8f3808e4cffdb46be572c2d3c633646217b5b79a39911ccc1ed6c424e49793",
+        "expected_bytes": 751,
+        "actual_bytes": 751,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-baseline-20260908/executions/evidence-benchmark.log",
+        "expected_sha256": "12fd15fcb24418303858c0423f41d8bdca21de1e06055d9d6364f12bd4429ede",
+        "actual_sha256": "12fd15fcb24418303858c0423f41d8bdca21de1e06055d9d6364f12bd4429ede",
+        "expected_bytes": 5729,
+        "actual_bytes": 5729,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-baseline-20260908/executions/evidence-deployment-baseline-torch.execution.json",
+        "expected_sha256": "a3d4d5f90f1270466ca57b6412de8fe252450eea2f75b412165633702569530e",
+        "actual_sha256": "a3d4d5f90f1270466ca57b6412de8fe252450eea2f75b412165633702569530e",
+        "expected_bytes": 566,
+        "actual_bytes": 566,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-baseline-20260908/executions/evidence-deployment-baseline-torch.log",
+        "expected_sha256": "5a9aeee89633d984f11e02165904fc1d16b5b1c1d5f27764c2769ca16f8faadc",
+        "actual_sha256": "5a9aeee89633d984f11e02165904fc1d16b5b1c1d5f27764c2769ca16f8faadc",
+        "expected_bytes": 1034,
+        "actual_bytes": 1034,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-baseline-20260908/executions/evidence-deployment-benchmark.execution.json",
+        "expected_sha256": "99b7bc67bf95947d423c8a88f0331364221ba7755f1a102ee203210fdfb611ee",
+        "actual_sha256": "99b7bc67bf95947d423c8a88f0331364221ba7755f1a102ee203210fdfb611ee",
+        "expected_bytes": 772,
+        "actual_bytes": 772,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-baseline-20260908/executions/evidence-deployment-benchmark.log",
+        "expected_sha256": "209d4512542a0534b9380b48650a9573bed67afa2e7ee8f92ab29d6bf01ece50",
+        "actual_sha256": "209d4512542a0534b9380b48650a9573bed67afa2e7ee8f92ab29d6bf01ece50",
+        "expected_bytes": 5705,
+        "actual_bytes": 5705,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-baseline-20260908/executions/evidence-deployment-export.execution.json",
+        "expected_sha256": "a4274d0cd1ddccd2dc138837d1433bccacaa2a6341b25aabc63944ada1ca1c66",
+        "actual_sha256": "a4274d0cd1ddccd2dc138837d1433bccacaa2a6341b25aabc63944ada1ca1c66",
+        "expected_bytes": 560,
+        "actual_bytes": 560,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-baseline-20260908/executions/evidence-deployment-export.log",
+        "expected_sha256": "cfff3a4a1cc6dbba77fe4023549fdfc280adb6971f23d8b6fa14e51c230cc30c",
+        "actual_sha256": "cfff3a4a1cc6dbba77fe4023549fdfc280adb6971f23d8b6fa14e51c230cc30c",
+        "expected_bytes": 4027,
+        "actual_bytes": 4027,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-baseline-20260908/executions/evidence-deployment-natural-numbers.execution.json",
+        "expected_sha256": "bb0ccbaa7921a4f13b4cf9ba588a2d999fb99d164112312575f6997016938c3b",
+        "actual_sha256": "bb0ccbaa7921a4f13b4cf9ba588a2d999fb99d164112312575f6997016938c3b",
+        "expected_bytes": 646,
+        "actual_bytes": 646,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-baseline-20260908/executions/evidence-deployment-natural-numbers.log",
+        "expected_sha256": "2b00559c8ddeec5c512031e4c24ff3b67bfd1e2e3fe0c910c136f85d61314feb",
+        "actual_sha256": "2b00559c8ddeec5c512031e4c24ff3b67bfd1e2e3fe0c910c136f85d61314feb",
+        "expected_bytes": 3173,
+        "actual_bytes": 3173,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-baseline-20260908/executions/evidence-deployment-python-tests-tensorflow.execution.json",
+        "expected_sha256": "1fefdc4e55dc4f570e8b496adb64d0147669c6d27f30ddd10d01d536884b8f32",
+        "actual_sha256": "1fefdc4e55dc4f570e8b496adb64d0147669c6d27f30ddd10d01d536884b8f32",
+        "expected_bytes": 476,
+        "actual_bytes": 476,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-baseline-20260908/executions/evidence-deployment-python-tests-tensorflow.log",
+        "expected_sha256": "8be995be3f4ce72cccc7d7997f371509890a78ea5458112c296017fd2171fbe7",
+        "actual_sha256": "8be995be3f4ce72cccc7d7997f371509890a78ea5458112c296017fd2171fbe7",
+        "expected_bytes": 3383,
+        "actual_bytes": 3383,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-baseline-20260908/executions/evidence-deployment-python-tests-torch.execution.json",
+        "expected_sha256": "60c3116609a6e07c2aff9211ea4a195f37e5f76ad72a293194ecd8496c1daad4",
+        "actual_sha256": "60c3116609a6e07c2aff9211ea4a195f37e5f76ad72a293194ecd8496c1daad4",
+        "expected_bytes": 466,
+        "actual_bytes": 466,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-baseline-20260908/executions/evidence-deployment-python-tests-torch.log",
+        "expected_sha256": "ff335c5542695345d2a4b8aadce304810e888019c4961cb4dd2509ac27edb145",
+        "actual_sha256": "ff335c5542695345d2a4b8aadce304810e888019c4961cb4dd2509ac27edb145",
+        "expected_bytes": 292,
+        "actual_bytes": 292,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-baseline-20260908/executions/evidence-deployment-python-tests.execution.json",
+        "expected_sha256": "d747a234409a5b45c33403775e415d0fdfc21dbba68fcb09fc7a233b9c742903",
+        "actual_sha256": "d747a234409a5b45c33403775e415d0fdfc21dbba68fcb09fc7a233b9c742903",
+        "expected_bytes": 465,
+        "actual_bytes": 465,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-baseline-20260908/executions/evidence-deployment-python-tests.log",
+        "expected_sha256": "cf7986fed9c54577c8342baa2d5f717f503140a28d78e866aea1fff3a1cacbed",
+        "actual_sha256": "cf7986fed9c54577c8342baa2d5f717f503140a28d78e866aea1fff3a1cacbed",
+        "expected_bytes": 35961,
+        "actual_bytes": 35961,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-baseline-20260908/executions/evidence-deployment-rejection.execution.json",
+        "expected_sha256": "5a565858f26732b6bf75b778a0a99bfa088525ea35338c54b21656c756d78e0f",
+        "actual_sha256": "5a565858f26732b6bf75b778a0a99bfa088525ea35338c54b21656c756d78e0f",
+        "expected_bytes": 644,
+        "actual_bytes": 644,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-baseline-20260908/executions/evidence-deployment-rejection.log",
+        "expected_sha256": "b952808b707386abd32c1ed6ed318d4d4416c9436eb6cc2cf315d79dc709f804",
+        "actual_sha256": "b952808b707386abd32c1ed6ed318d4d4416c9436eb6cc2cf315d79dc709f804",
+        "expected_bytes": 7397,
+        "actual_bytes": 7397,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-baseline-20260908/executions/evidence-deployment-repetition.execution.json",
+        "expected_sha256": "673ba0f759129aa46c4f3ff15efd3469a31abcb7839eb31523e9530abb78937b",
+        "actual_sha256": "673ba0f759129aa46c4f3ff15efd3469a31abcb7839eb31523e9530abb78937b",
+        "expected_bytes": 634,
+        "actual_bytes": 634,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-baseline-20260908/executions/evidence-deployment-repetition.log",
+        "expected_sha256": "1d8b56670de40a0673f78edc2a7e746466e8b96d6fc01de2aaa8a258c65eb400",
+        "actual_sha256": "1d8b56670de40a0673f78edc2a7e746466e8b96d6fc01de2aaa8a258c65eb400",
+        "expected_bytes": 6252,
+        "actual_bytes": 6252,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-baseline-20260908/executions/evidence-deployment-replay405.execution.json",
+        "expected_sha256": "4dd6406973907d88ecc1177db5382179f73dd282da194ad275c521ea59da59e5",
+        "actual_sha256": "4dd6406973907d88ecc1177db5382179f73dd282da194ad275c521ea59da59e5",
+        "expected_bytes": 783,
+        "actual_bytes": 783,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-baseline-20260908/executions/evidence-deployment-replay405.log",
+        "expected_sha256": "d8ab2e973dd23db5ece6618eb72c1ae0362f19284772d20bb58c28a70264e9dd",
+        "actual_sha256": "d8ab2e973dd23db5ece6618eb72c1ae0362f19284772d20bb58c28a70264e9dd",
+        "expected_bytes": 49,
+        "actual_bytes": 49,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-baseline-20260908/executions/evidence-deployment-replay516.execution.json",
+        "expected_sha256": "21a89cfd1c7edd92e3d8fd43805cdbf2fc6e81f46ac8f51f7e087aa466d74fe9",
+        "actual_sha256": "21a89cfd1c7edd92e3d8fd43805cdbf2fc6e81f46ac8f51f7e087aa466d74fe9",
+        "expected_bytes": 688,
+        "actual_bytes": 688,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-baseline-20260908/executions/evidence-deployment-replay516.log",
+        "expected_sha256": "bebdeeb1c0d9e06e951deed507c426854a5d37eb2550d55dc81d97f96072e2fa",
+        "actual_sha256": "bebdeeb1c0d9e06e951deed507c426854a5d37eb2550d55dc81d97f96072e2fa",
+        "expected_bytes": 524,
+        "actual_bytes": 524,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-baseline-20260908/executions/evidence-deployment-selection.execution.json",
+        "expected_sha256": "21be5745cc98b9e9405dd93675b092075d9857857103d85c444317786e16f595",
+        "actual_sha256": "21be5745cc98b9e9405dd93675b092075d9857857103d85c444317786e16f595",
+        "expected_bytes": 563,
+        "actual_bytes": 563,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-baseline-20260908/executions/evidence-deployment-selection.log",
+        "expected_sha256": "33dab08faa8b68a6f3b0dec0a0e9bfa20b6832e4947530efbb97f7918184ff72",
+        "actual_sha256": "33dab08faa8b68a6f3b0dec0a0e9bfa20b6832e4947530efbb97f7918184ff72",
+        "expected_bytes": 1454,
+        "actual_bytes": 1454,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-baseline-20260908/executions/evidence-deployment-startup.execution.json",
+        "expected_sha256": "31505fdce8fb2ddc65a866cc3f663d4455625e51582615f30cf33649dd119a01",
+        "actual_sha256": "31505fdce8fb2ddc65a866cc3f663d4455625e51582615f30cf33649dd119a01",
+        "expected_bytes": 653,
+        "actual_bytes": 653,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-baseline-20260908/executions/evidence-deployment-startup.log",
+        "expected_sha256": "b59fe6d0effb63f87394106a746889e303f94f5a640d6f9c09becf2e8b67cfee",
+        "actual_sha256": "b59fe6d0effb63f87394106a746889e303f94f5a640d6f9c09becf2e8b67cfee",
+        "expected_bytes": 3438,
+        "actual_bytes": 3438,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-baseline-20260908/executions/evidence-export.execution.json",
+        "expected_sha256": "84997fe28248e4b954f0b0fd735bc58fc1476ac8ee349c8831d9283f0fb891d0",
+        "actual_sha256": "84997fe28248e4b954f0b0fd735bc58fc1476ac8ee349c8831d9283f0fb891d0",
+        "expected_bytes": 539,
+        "actual_bytes": 539,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-baseline-20260908/executions/evidence-export.log",
+        "expected_sha256": "c2698915f0f11465925db7b41cb2017fb27ccbd6775b11bebe07c6bf67c20472",
+        "actual_sha256": "c2698915f0f11465925db7b41cb2017fb27ccbd6775b11bebe07c6bf67c20472",
+        "expected_bytes": 4028,
+        "actual_bytes": 4028,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-baseline-20260908/executions/evidence-natural-numbers.execution.json",
+        "expected_sha256": "e802d6099b2ba0d5a0631397d1f559959017b7b914af421b2070c60d5f5e4d78",
+        "actual_sha256": "e802d6099b2ba0d5a0631397d1f559959017b7b914af421b2070c60d5f5e4d78",
+        "expected_bytes": 625,
+        "actual_bytes": 625,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-baseline-20260908/executions/evidence-natural-numbers.log",
+        "expected_sha256": "dd0757246aab68117164cac68f9af1c754a99d1d0f794a52086403c43d57f2cf",
+        "actual_sha256": "dd0757246aab68117164cac68f9af1c754a99d1d0f794a52086403c43d57f2cf",
+        "expected_bytes": 3173,
+        "actual_bytes": 3173,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-baseline-20260908/executions/evidence-rejection.execution.json",
+        "expected_sha256": "33204dade002b197b6e0c29b84eab67a51684ac9003408616a4d0cbee9baeff8",
+        "actual_sha256": "33204dade002b197b6e0c29b84eab67a51684ac9003408616a4d0cbee9baeff8",
+        "expected_bytes": 623,
+        "actual_bytes": 623,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-baseline-20260908/executions/evidence-rejection.log",
+        "expected_sha256": "65cdbcf128d9814e44c4afb72a3c4b5fe563091fd2dfc063644783f9c6944216",
+        "actual_sha256": "65cdbcf128d9814e44c4afb72a3c4b5fe563091fd2dfc063644783f9c6944216",
+        "expected_bytes": 7398,
+        "actual_bytes": 7398,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-baseline-20260908/executions/evidence-repetition.execution.json",
+        "expected_sha256": "4083ece6a2d537903cb55be1a89990fc9b64293735407501d391e62b59054b8a",
+        "actual_sha256": "4083ece6a2d537903cb55be1a89990fc9b64293735407501d391e62b59054b8a",
+        "expected_bytes": 613,
+        "actual_bytes": 613,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-baseline-20260908/executions/evidence-repetition.log",
+        "expected_sha256": "0481c4a3ce4a66836f1b8c1983691e3a953cc21592d63093fed14461959084ce",
+        "actual_sha256": "0481c4a3ce4a66836f1b8c1983691e3a953cc21592d63093fed14461959084ce",
+        "expected_bytes": 6256,
+        "actual_bytes": 6256,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-baseline-20260908/executions/evidence-replay405.execution.json",
+        "expected_sha256": "28b89743eb3fd680990b0c646cc5f523f10a466445d6ae6f6fb8e4c10852c737",
+        "actual_sha256": "28b89743eb3fd680990b0c646cc5f523f10a466445d6ae6f6fb8e4c10852c737",
+        "expected_bytes": 742,
+        "actual_bytes": 742,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-baseline-20260908/executions/evidence-replay405.log",
+        "expected_sha256": "7058be558fa0ccb6f9c4a68586dbc9b643918b0cde638a686865d89deb87ebb7",
+        "actual_sha256": "7058be558fa0ccb6f9c4a68586dbc9b643918b0cde638a686865d89deb87ebb7",
+        "expected_bytes": 49,
+        "actual_bytes": 49,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-baseline-20260908/executions/evidence-replay516.execution.json",
+        "expected_sha256": "39c66c6473abf782af169a0b9c13dfa9d288ccf8f602be08e38e212ef0b16217",
+        "actual_sha256": "39c66c6473abf782af169a0b9c13dfa9d288ccf8f602be08e38e212ef0b16217",
+        "expected_bytes": 657,
+        "actual_bytes": 657,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-baseline-20260908/executions/evidence-replay516.log",
+        "expected_sha256": "1d79ca070d9d4e0e8a1b6284df8a0ddb716deef1527518df6382b4ac3716e9e7",
+        "actual_sha256": "1d79ca070d9d4e0e8a1b6284df8a0ddb716deef1527518df6382b4ac3716e9e7",
+        "expected_bytes": 524,
+        "actual_bytes": 524,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-baseline-20260908/executions/evidence-startup.execution.json",
+        "expected_sha256": "8cbf333acd08c116b28a0d977384873112a380dcd4a1f712bf44e954a3df58e7",
+        "actual_sha256": "8cbf333acd08c116b28a0d977384873112a380dcd4a1f712bf44e954a3df58e7",
+        "expected_bytes": 632,
+        "actual_bytes": 632,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-baseline-20260908/executions/evidence-startup.log",
+        "expected_sha256": "a319de6c37ec4048554483be056ef463a35c0b8e5336c62453f775661b41170d",
+        "actual_sha256": "a319de6c37ec4048554483be056ef463a35c0b8e5336c62453f775661b41170d",
+        "expected_bytes": 3438,
+        "actual_bytes": 3438,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-baseline-20260908/executions/evidence-symbol-readiness.execution.json",
+        "expected_sha256": "4a00c72e9897e51ed8f6a1197450675c1e050e7d07613ed2a59670c2e88f5229",
+        "actual_sha256": "4a00c72e9897e51ed8f6a1197450675c1e050e7d07613ed2a59670c2e88f5229",
+        "expected_bytes": 561,
+        "actual_bytes": 561,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-baseline-20260908/executions/evidence-symbol-readiness.log",
+        "expected_sha256": "5a9fcc9798225c7e1597daf27793c0e1a358f550888188c5cdc73881e50f57e9",
+        "actual_sha256": "5a9fcc9798225c7e1597daf27793c0e1a358f550888188c5cdc73881e50f57e9",
+        "expected_bytes": 1084,
+        "actual_bytes": 1084,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-baseline-20260908/EXPERIMENT-ID.md",
+        "expected_sha256": "423bde304e344377be29ad61b977af842af434f2585f4874a50ad38cf7a5307a",
+        "actual_sha256": "423bde304e344377be29ad61b977af842af434f2585f4874a50ad38cf7a5307a",
+        "expected_bytes": 6222,
+        "actual_bytes": 6222,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-baseline-20260908/export-report.json",
+        "expected_sha256": "20279ca1d4258f9a060c8782de43942fd899379200de1ea14c924442e91ef5ab",
+        "actual_sha256": "20279ca1d4258f9a060c8782de43942fd899379200de1ea14c924442e91ef5ab",
+        "expected_bytes": 2315,
+        "actual_bytes": 2315,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-baseline-20260908/external-baseline-comparison.json",
+        "expected_sha256": "e0edb7b9606b29fd41e5869d29371b511c564828399d7f03f8f29efe59523a38",
+        "actual_sha256": "e0edb7b9606b29fd41e5869d29371b511c564828399d7f03f8f29efe59523a38",
+        "expected_bytes": 336742,
+        "actual_bytes": 336742,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-baseline-20260908/external-words.json",
+        "expected_sha256": "52db73db66f63e35e03ceda218bcb53958a644137cc50aae3f796acf9afc6603",
+        "actual_sha256": "52db73db66f63e35e03ceda218bcb53958a644137cc50aae3f796acf9afc6603",
+        "expected_bytes": 1380588,
+        "actual_bytes": 1380588,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-baseline-20260908/legacy-selection-fixtures.json",
+        "expected_sha256": "05b51db63457743993e0702204b7abb8771e5bf4a12427b07a1d2b3f642eb2bf",
+        "actual_sha256": "05b51db63457743993e0702204b7abb8771e5bf4a12427b07a1d2b3f642eb2bf",
+        "expected_bytes": 1170201,
+        "actual_bytes": 1170201,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-baseline-20260908/native-fixture-geometry.json",
+        "expected_sha256": "97d6bb2b15847450c8eb9a30b191a0954e0d80d2e004adde2aa947056db29ddd",
+        "actual_sha256": "97d6bb2b15847450c8eb9a30b191a0954e0d80d2e004adde2aa947056db29ddd",
+        "expected_bytes": 58563,
+        "actual_bytes": 58563,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-baseline-20260908/native-fixture.json",
+        "expected_sha256": "4fd2a0d0693f5df5197bab494d1aa62b38cc8155930ba9132a185546bdbcf764",
+        "actual_sha256": "4fd2a0d0693f5df5197bab494d1aa62b38cc8155930ba9132a185546bdbcf764",
+        "expected_bytes": 2963,
+        "actual_bytes": 2963,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-baseline-20260908/native-word-fixture.png",
+        "expected_sha256": "5115a112aad01432f4ebdfa22d8dcb686f1330075d5030bc5c039c154dc4d164",
+        "actual_sha256": "5115a112aad01432f4ebdfa22d8dcb686f1330075d5030bc5c039c154dc4d164",
+        "expected_bytes": 99122,
+        "actual_bytes": 99122,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-baseline-20260908/natural-number-diagnostics.json",
+        "expected_sha256": "d93dbbfb26423159e1fc9dbc0a76b26f753a4c607848550f835627c96b96cb91",
+        "actual_sha256": "d93dbbfb26423159e1fc9dbc0a76b26f753a4c607848550f835627c96b96cb91",
+        "expected_bytes": 2698,
+        "actual_bytes": 2698,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-baseline-20260908/natural-number-regression.json",
+        "expected_sha256": "f025c127b88f6ef797e9cd236818d8177700b66e737a7472d53b517a7afb1f35",
+        "actual_sha256": "f025c127b88f6ef797e9cd236818d8177700b66e737a7472d53b517a7afb1f35",
+        "expected_bytes": 6932,
+        "actual_bytes": 6932,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-baseline-20260908/public-benchmark.json",
+        "expected_sha256": "9480330be9c4f69a0c1b02254fd6a6e3c79af22fce04b8122db37724a1561a92",
+        "actual_sha256": "9480330be9c4f69a0c1b02254fd6a6e3c79af22fce04b8122db37724a1561a92",
+        "expected_bytes": 2614605,
+        "actual_bytes": 2614605,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-baseline-20260908/python-tests-deployment.json",
+        "expected_sha256": "ba979e8a53589a4684dbb1059a32d2582aa6368b87d944318849188c1e800aa5",
+        "actual_sha256": "ba979e8a53589a4684dbb1059a32d2582aa6368b87d944318849188c1e800aa5",
+        "expected_bytes": 684,
+        "actual_bytes": 684,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-baseline-20260908/python-tests-final.json",
+        "expected_sha256": "c832c2de34fdbccefdd03521ac5df7412bea85900b8b1e00e5985053b6830d6f",
+        "actual_sha256": "c832c2de34fdbccefdd03521ac5df7412bea85900b8b1e00e5985053b6830d6f",
+        "expected_bytes": 647,
+        "actual_bytes": 647,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-baseline-20260908/python-tests-final.log",
+        "expected_sha256": "cddda2606fd9a7fdfa791f002f025415a0f09d7aff1c103bd5d34aeb6af9dffe",
+        "actual_sha256": "cddda2606fd9a7fdfa791f002f025415a0f09d7aff1c103bd5d34aeb6af9dffe",
+        "expected_bytes": 288,
+        "actual_bytes": 288,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-baseline-20260908/rejection-diagnostics.json",
+        "expected_sha256": "4125a41823fb29143eb6128f457a7a4f2dc2d7cc671e3a890a04aab2d4aece81",
+        "actual_sha256": "4125a41823fb29143eb6128f457a7a4f2dc2d7cc671e3a890a04aab2d4aece81",
+        "expected_bytes": 6922,
+        "actual_bytes": 6922,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-baseline-20260908/rejection-fixtures-id-v1.json",
+        "expected_sha256": "a93d209dbc4f64d2c20b1f357a662bb395df8c1942e2509f666ede59d8a2809d",
+        "actual_sha256": "a93d209dbc4f64d2c20b1f357a662bb395df8c1942e2509f666ede59d8a2809d",
+        "expected_bytes": 112417,
+        "actual_bytes": 112417,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-baseline-20260908/repetition-diagnostics.json",
+        "expected_sha256": "bdd3f353ea999a966eada021951881a993e28755fdb1e1d63b2a2e0fb126c8eb",
+        "actual_sha256": "bdd3f353ea999a966eada021951881a993e28755fdb1e1d63b2a2e0fb126c8eb",
+        "expected_bytes": 5777,
+        "actual_bytes": 5777,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-baseline-20260908/selected-validation-fullprecision.json",
+        "expected_sha256": "944153b5f79e8c58ba39f053e7c75f154d9ba0d1a1c7c2b19c4b23c3ce029fc9",
+        "actual_sha256": "944153b5f79e8c58ba39f053e7c75f154d9ba0d1a1c7c2b19c4b23c3ce029fc9",
+        "expected_bytes": 6582,
+        "actual_bytes": 6582,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-baseline-20260908/symbol-decoder-parity-516.json",
+        "expected_sha256": "01030abea51cdd02a6913b8761cc4d6585194a4e876086e5c86e32bd7c63dbf7",
+        "actual_sha256": "01030abea51cdd02a6913b8761cc4d6585194a4e876086e5c86e32bd7c63dbf7",
+        "expected_bytes": 317799,
+        "actual_bytes": 317799,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-baseline-20260908/symbol-readiness.json",
+        "expected_sha256": "1b3ff083d4ff1bce0171546c56fea8fbdd542e141fd0c0d9e80d0a2a33f589b2",
+        "actual_sha256": "1b3ff083d4ff1bce0171546c56fea8fbdd542e141fd0c0d9e80d0a2a33f589b2",
+        "expected_bytes": 164392,
+        "actual_bytes": 164392,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-baseline-20260908/synthetic-transform-audit.json",
+        "expected_sha256": "2aa28396767ef4eed88b87649fee7aac11b956d830ebc3b938c7ffd3c9f5daa9",
+        "actual_sha256": "2aa28396767ef4eed88b87649fee7aac11b956d830ebc3b938c7ffd3c9f5daa9",
+        "expected_bytes": 264,
+        "actual_bytes": 264,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-baseline-20260908/tensorflow-environment.json",
+        "expected_sha256": "33165c6e81ae7ca9f35c6f1d8e6f451543f732dbf83b669130f25199ccd7e028",
+        "actual_sha256": "33165c6e81ae7ca9f35c6f1d8e6f451543f732dbf83b669130f25199ccd7e028",
+        "expected_bytes": 1412,
+        "actual_bytes": 1412,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-baseline-20260908/training-config.json",
+        "expected_sha256": "446b0bb8a88ad85f96f2219f23686b029d52573d228222b76c3458afc09ef103",
+        "actual_sha256": "446b0bb8a88ad85f96f2219f23686b029d52573d228222b76c3458afc09ef103",
+        "expected_bytes": 2220,
+        "actual_bytes": 2220,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-baseline-20260908/training-console.log",
+        "expected_sha256": "e9365a96fad6616d6f70e2a210157601764cfb8d840fbb3da130f0441eb96118",
+        "actual_sha256": "e9365a96fad6616d6f70e2a210157601764cfb8d840fbb3da130f0441eb96118",
+        "expected_bytes": 35696,
+        "actual_bytes": 35696,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-baseline-20260908/training-data-audit.json",
+        "expected_sha256": "30ee32c81f3024392dac0f6e54ca502bfaf97b1a3d1066ade18ce72348dfdcd5",
+        "actual_sha256": "30ee32c81f3024392dac0f6e54ca502bfaf97b1a3d1066ade18ce72348dfdcd5",
+        "expected_bytes": 3204,
+        "actual_bytes": 3204,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-baseline-20260908/typescript-parity-405.json",
+        "expected_sha256": "ae5d611e94fd5913b3c84285c5a9ca002f9a035a903db4c3fe34e089615f0200",
+        "actual_sha256": "ae5d611e94fd5913b3c84285c5a9ca002f9a035a903db4c3fe34e089615f0200",
+        "expected_bytes": 289497,
+        "actual_bytes": 289497,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-baseline-20260908/validation-symbols.json",
+        "expected_sha256": "e2a0298da266932b4f648458f718bead2b8e0a524eb20f810157d1b3b4f9a53f",
+        "actual_sha256": "e2a0298da266932b4f648458f718bead2b8e0a524eb20f810157d1b3b4f9a53f",
+        "expected_bytes": 924883,
+        "actual_bytes": 924883,
+        "matches": true
+      },
+      {
+        "file": "training/checkpoints/braille-word-reader-id-v3/best-word.keras",
+        "expected_sha256": "0ae8497660efa3378d81b959cf585f83c6af3c07514f45fb2b1fb1a90382a6c2",
+        "actual_sha256": "0ae8497660efa3378d81b959cf585f83c6af3c07514f45fb2b1fb1a90382a6c2",
+        "expected_bytes": 10346677,
+        "actual_bytes": 10346677,
+        "matches": true
+      },
+      {
+        "file": "training/checkpoints/braille-word-reader-id-v3/best-word.keras",
+        "expected_sha256": "0ae8497660efa3378d81b959cf585f83c6af3c07514f45fb2b1fb1a90382a6c2",
+        "actual_sha256": "0ae8497660efa3378d81b959cf585f83c6af3c07514f45fb2b1fb1a90382a6c2",
+        "expected_bytes": 10346677,
+        "actual_bytes": 10346677,
+        "matches": true
+      },
+      {
+        "file": "training/checkpoints/braille-word-reader-id-v3/checkpoint-selection.json",
+        "expected_sha256": "8346eab5df475a18a3ecba93ca8f4dbc365c19a0b847764414b5d34ee196ddd9",
+        "actual_sha256": "8346eab5df475a18a3ecba93ca8f4dbc365c19a0b847764414b5d34ee196ddd9",
+        "expected_bytes": 22444,
+        "actual_bytes": 22444,
+        "matches": true
+      },
+      {
+        "file": "training/checkpoints/braille-word-reader-id-v3/run-batch24/baseline-evaluation.json",
+        "expected_sha256": "ea1dee05c2c28056720ef645c88a6b7af124ae5063eee3cda050287e98abf489",
+        "actual_sha256": "ea1dee05c2c28056720ef645c88a6b7af124ae5063eee3cda050287e98abf489",
+        "expected_bytes": 161037,
+        "actual_bytes": 161037,
+        "matches": true
+      },
+      {
+        "file": "training/checkpoints/braille-word-reader-id-v3/run-batch24/environment.json",
+        "expected_sha256": "9871cca234996b5ea1b552a8741a7ea62031d903cfea06a0b5a306b066e74952",
+        "actual_sha256": "9871cca234996b5ea1b552a8741a7ea62031d903cfea06a0b5a306b066e74952",
+        "expected_bytes": 878,
+        "actual_bytes": 878,
+        "matches": true
+      },
+      {
+        "file": "training/checkpoints/braille-word-reader-id-v3/run-batch24/epoch-history.json",
+        "expected_sha256": "f202a2541b6d2a1c2acdf995c77423f840bd7558d0e0dfe7536a6eda8d828470",
+        "actual_sha256": "f202a2541b6d2a1c2acdf995c77423f840bd7558d0e0dfe7536a6eda8d828470",
+        "expected_bytes": 17332,
+        "actual_bytes": 17332,
+        "matches": true
+      },
+      {
+        "file": "training/checkpoints/braille-word-reader-id-v3/run-batch24/source/word_anchor_zoom.py",
+        "expected_sha256": "d6f5337d08368b8da55948f314bd06af7b03fa1602e40240778a9b4edea26377",
+        "actual_sha256": "d6f5337d08368b8da55948f314bd06af7b03fa1602e40240778a9b4edea26377",
+        "expected_bytes": 2830,
+        "actual_bytes": 2830,
+        "matches": true
+      },
+      {
+        "file": "training/checkpoints/braille-word-reader-id-v3/run-batch24/source/word_bn_affine.py",
+        "expected_sha256": "fa117f65beda3f6d159f707a5cd45d3a367b8f5b436b8c43c0d7621071297dff",
+        "actual_sha256": "fa117f65beda3f6d159f707a5cd45d3a367b8f5b436b8c43c0d7621071297dff",
+        "expected_bytes": 5135,
+        "actual_bytes": 5135,
+        "matches": true
+      },
+      {
+        "file": "training/checkpoints/braille-word-reader-id-v3/run-batch24/source/word_data.py",
+        "expected_sha256": "d692b4b28620af7e4b40ebdedccda68769feb8d3f51bd1508e807487fd32b7d7",
+        "actual_sha256": "d692b4b28620af7e4b40ebdedccda68769feb8d3f51bd1508e807487fd32b7d7",
+        "expected_bytes": 27515,
+        "actual_bytes": 27515,
+        "matches": true
+      },
+      {
+        "file": "training/checkpoints/braille-word-reader-id-v3/run-batch24/source/word_decode.py",
+        "expected_sha256": "20fb305b3fbcad7595129b17ff9f4875fbb52445409a498f917fc239b7b3c606",
+        "actual_sha256": "20fb305b3fbcad7595129b17ff9f4875fbb52445409a498f917fc239b7b3c606",
+        "expected_bytes": 7553,
+        "actual_bytes": 7553,
+        "matches": true
+      },
+      {
+        "file": "training/checkpoints/braille-word-reader-id-v3/run-batch24/source/word_geometry_head.py",
+        "expected_sha256": "f46c8f90e7f4fc9404eed2dc27fbde6e5c823d25d4f88e4127c7e56ed6e8764e",
+        "actual_sha256": "f46c8f90e7f4fc9404eed2dc27fbde6e5c823d25d4f88e4127c7e56ed6e8764e",
+        "expected_bytes": 5857,
+        "actual_bytes": 5857,
+        "matches": true
+      },
+      {
+        "file": "training/checkpoints/braille-word-reader-id-v3/run-batch24/source/word_model.py",
+        "expected_sha256": "c446732a2905a612cd6f1dd64d2d3d01303b1c71933c34552d26f3b5052fd551",
+        "actual_sha256": "c446732a2905a612cd6f1dd64d2d3d01303b1c71933c34552d26f3b5052fd551",
+        "expected_bytes": 5890,
+        "actual_bytes": 5890,
+        "matches": true
+      },
+      {
+        "file": "training/checkpoints/braille-word-reader-id-v3/run-batch24/source/word_point_metadata.py",
+        "expected_sha256": "de1cad0157e744f2f646010eac5355b88d1d11f52662d4b9353166661f59049f",
+        "actual_sha256": "de1cad0157e744f2f646010eac5355b88d1d11f52662d4b9353166661f59049f",
+        "expected_bytes": 5280,
+        "actual_bytes": 5280,
+        "matches": true
+      },
+      {
+        "file": "training/checkpoints/braille-word-reader-id-v3/run-batch24/source/word_sources.py",
+        "expected_sha256": "affb3488d8c25e3d0131eb4340cae29fcece563ac75373e071f97fef68f09acd",
+        "actual_sha256": "affb3488d8c25e3d0131eb4340cae29fcece563ac75373e071f97fef68f09acd",
+        "expected_bytes": 8105,
+        "actual_bytes": 8105,
+        "matches": true
+      },
+      {
+        "file": "training/checkpoints/braille-word-reader-id-v3/run-batch24/source/word_symbol_prepare.py",
+        "expected_sha256": "2deb5a9993f1d1de1c54588c28db650a3101e37840b6103c472ddfcdba63e538",
+        "actual_sha256": "2deb5a9993f1d1de1c54588c28db650a3101e37840b6103c472ddfcdba63e538",
+        "expected_bytes": 10926,
+        "actual_bytes": 10926,
+        "matches": true
+      },
+      {
+        "file": "training/checkpoints/braille-word-reader-id-v3/run-batch24/source/word_symbol_train.py",
+        "expected_sha256": "918d3673c46a37ddb2b30cad62262e9c7ff9a5e7e35166a84e14edb9b12fda6b",
+        "actual_sha256": "918d3673c46a37ddb2b30cad62262e9c7ff9a5e7e35166a84e14edb9b12fda6b",
+        "expected_bytes": 13935,
+        "actual_bytes": 13935,
+        "matches": true
+      },
+      {
+        "file": "training/checkpoints/braille-word-reader-id-v3/run-batch24/source/word_symbols.py",
+        "expected_sha256": "9e43dc9484f035ba3bbfcb49344050714dfd1c636d107b92cb2ce1faded29ba3",
+        "actual_sha256": "9e43dc9484f035ba3bbfcb49344050714dfd1c636d107b92cb2ce1faded29ba3",
+        "expected_bytes": 2446,
+        "actual_bytes": 2446,
+        "matches": true
+      },
+      {
+        "file": "training/checkpoints/braille-word-reader-id-v3/run-batch24/source/word_train.py",
+        "expected_sha256": "60ca41ffebcea96567bad08859627664de1c98bce3c41a486e7280c842861e74",
+        "actual_sha256": "60ca41ffebcea96567bad08859627664de1c98bce3c41a486e7280c842861e74",
+        "expected_bytes": 54049,
+        "actual_bytes": 54049,
+        "matches": true
+      },
+      {
+        "file": "training/checkpoints/braille-word-reader-id-v3/run-batch24/training-config.json",
+        "expected_sha256": "446b0bb8a88ad85f96f2219f23686b029d52573d228222b76c3458afc09ef103",
+        "actual_sha256": "446b0bb8a88ad85f96f2219f23686b029d52573d228222b76c3458afc09ef103",
+        "expected_bytes": 2220,
+        "actual_bytes": 2220,
+        "matches": true
+      },
+      {
+        "file": "training/checkpoints/braille-word-reader-id-v3/run-batch24/training-data-audit.json",
+        "expected_sha256": "30ee32c81f3024392dac0f6e54ca502bfaf97b1a3d1066ade18ce72348dfdcd5",
+        "actual_sha256": "30ee32c81f3024392dac0f6e54ca502bfaf97b1a3d1066ade18ce72348dfdcd5",
+        "expected_bytes": 3204,
+        "actual_bytes": 3204,
+        "matches": true
+      },
+      {
+        "file": "training/checkpoints/braille-word-reader-id-v3/selected-validation-fullprecision.json",
+        "expected_sha256": "57ba8b37fbd7fc8405e56706ca1810450404598aa3af4a850f9b2c92450167bd",
+        "actual_sha256": "57ba8b37fbd7fc8405e56706ca1810450404598aa3af4a850f9b2c92450167bd",
+        "expected_bytes": 6375,
+        "actual_bytes": 6375,
+        "matches": true
+      },
+      {
+        "file": "training/checkpoints/braille-word-reader-id-v3/tensorflow-environment.json",
+        "expected_sha256": "33165c6e81ae7ca9f35c6f1d8e6f451543f732dbf83b669130f25199ccd7e028",
+        "actual_sha256": "33165c6e81ae7ca9f35c6f1d8e6f451543f732dbf83b669130f25199ccd7e028",
+        "expected_bytes": 1412,
+        "actual_bytes": 1412,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-20260908/baseline-evaluation.json",
+        "expected_sha256": "ea1dee05c2c28056720ef645c88a6b7af124ae5063eee3cda050287e98abf489",
+        "actual_sha256": "ea1dee05c2c28056720ef645c88a6b7af124ae5063eee3cda050287e98abf489",
+        "expected_bytes": 161037,
+        "actual_bytes": 161037,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-20260908/baseline-freeze.json",
+        "expected_sha256": "22a1f799a317146cf2b88c0584903f56a5cbe3e91c02d97f7fb9e031b3c8ab00",
+        "actual_sha256": "22a1f799a317146cf2b88c0584903f56a5cbe3e91c02d97f7fb9e031b3c8ab00",
+        "expected_bytes": 368545,
+        "actual_bytes": 368545,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-20260908/checkpoint-selection.json",
+        "expected_sha256": "8346eab5df475a18a3ecba93ca8f4dbc365c19a0b847764414b5d34ee196ddd9",
+        "actual_sha256": "8346eab5df475a18a3ecba93ca8f4dbc365c19a0b847764414b5d34ee196ddd9",
+        "expected_bytes": 22444,
+        "actual_bytes": 22444,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-20260908/corpus-audit.json",
+        "expected_sha256": "92d6af2b61b7b34bfdd5eaaba8c83c972959f66e2a82ec7134af93fd41c7cf66",
+        "actual_sha256": "92d6af2b61b7b34bfdd5eaaba8c83c972959f66e2a82ec7134af93fd41c7cf66",
+        "expected_bytes": 21953,
+        "actual_bytes": 21953,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-20260908/corpus-image-hashes.json",
+        "expected_sha256": "796ce0e32af598dd60f02255677d1af235ac31cee8b0bea790746b83b15d8a07",
+        "actual_sha256": "796ce0e32af598dd60f02255677d1af235ac31cee8b0bea790746b83b15d8a07",
+        "expected_bytes": 779480,
+        "actual_bytes": 779480,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-20260908/dataset-restoration.json",
+        "expected_sha256": "f3b1768fce182e35f333c753f06e89dc4d8253964825d681bfcf40651ea7cb0f",
+        "actual_sha256": "f3b1768fce182e35f333c753f06e89dc4d8253964825d681bfcf40651ea7cb0f",
+        "expected_bytes": 468,
+        "actual_bytes": 468,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-20260908/decoder-parity-id-v3.json",
+        "expected_sha256": "84287cfa4957336cd665b790f0c1bf24cb66e440bd7d9d69c3f05bcde8de8c95",
+        "actual_sha256": "84287cfa4957336cd665b790f0c1bf24cb66e440bd7d9d69c3f05bcde8de8c95",
+        "expected_bytes": 48690,
+        "actual_bytes": 48690,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-20260908/dsbi-restoration.json",
+        "expected_sha256": "279bea52ee7b96f1d51a9fbb6c36f77966026c471ca3aadc519ec9c947620be8",
+        "actual_sha256": "279bea52ee7b96f1d51a9fbb6c36f77966026c471ca3aadc519ec9c947620be8",
+        "expected_bytes": 8249,
+        "actual_bytes": 8249,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-20260908/environment.json",
+        "expected_sha256": "9871cca234996b5ea1b552a8741a7ea62031d903cfea06a0b5a306b066e74952",
+        "actual_sha256": "9871cca234996b5ea1b552a8741a7ea62031d903cfea06a0b5a306b066e74952",
+        "expected_bytes": 878,
+        "actual_bytes": 878,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-20260908/epoch-history.json",
+        "expected_sha256": "f202a2541b6d2a1c2acdf995c77423f840bd7558d0e0dfe7536a6eda8d828470",
+        "actual_sha256": "f202a2541b6d2a1c2acdf995c77423f840bd7558d0e0dfe7536a6eda8d828470",
+        "expected_bytes": 17332,
+        "actual_bytes": 17332,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-20260908/executions/evidence-benchmark.execution.json",
+        "expected_sha256": "cb8f3808e4cffdb46be572c2d3c633646217b5b79a39911ccc1ed6c424e49793",
+        "actual_sha256": "cb8f3808e4cffdb46be572c2d3c633646217b5b79a39911ccc1ed6c424e49793",
+        "expected_bytes": 751,
+        "actual_bytes": 751,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-20260908/executions/evidence-benchmark.log",
+        "expected_sha256": "12fd15fcb24418303858c0423f41d8bdca21de1e06055d9d6364f12bd4429ede",
+        "actual_sha256": "12fd15fcb24418303858c0423f41d8bdca21de1e06055d9d6364f12bd4429ede",
+        "expected_bytes": 5729,
+        "actual_bytes": 5729,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-20260908/executions/evidence-export.execution.json",
+        "expected_sha256": "84997fe28248e4b954f0b0fd735bc58fc1476ac8ee349c8831d9283f0fb891d0",
+        "actual_sha256": "84997fe28248e4b954f0b0fd735bc58fc1476ac8ee349c8831d9283f0fb891d0",
+        "expected_bytes": 539,
+        "actual_bytes": 539,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-20260908/executions/evidence-export.log",
+        "expected_sha256": "c2698915f0f11465925db7b41cb2017fb27ccbd6775b11bebe07c6bf67c20472",
+        "actual_sha256": "c2698915f0f11465925db7b41cb2017fb27ccbd6775b11bebe07c6bf67c20472",
+        "expected_bytes": 4028,
+        "actual_bytes": 4028,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-20260908/executions/evidence-natural-numbers.execution.json",
+        "expected_sha256": "e802d6099b2ba0d5a0631397d1f559959017b7b914af421b2070c60d5f5e4d78",
+        "actual_sha256": "e802d6099b2ba0d5a0631397d1f559959017b7b914af421b2070c60d5f5e4d78",
+        "expected_bytes": 625,
+        "actual_bytes": 625,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-20260908/executions/evidence-natural-numbers.log",
+        "expected_sha256": "dd0757246aab68117164cac68f9af1c754a99d1d0f794a52086403c43d57f2cf",
+        "actual_sha256": "dd0757246aab68117164cac68f9af1c754a99d1d0f794a52086403c43d57f2cf",
+        "expected_bytes": 3173,
+        "actual_bytes": 3173,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-20260908/executions/evidence-rejection.execution.json",
+        "expected_sha256": "33204dade002b197b6e0c29b84eab67a51684ac9003408616a4d0cbee9baeff8",
+        "actual_sha256": "33204dade002b197b6e0c29b84eab67a51684ac9003408616a4d0cbee9baeff8",
+        "expected_bytes": 623,
+        "actual_bytes": 623,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-20260908/executions/evidence-rejection.log",
+        "expected_sha256": "65cdbcf128d9814e44c4afb72a3c4b5fe563091fd2dfc063644783f9c6944216",
+        "actual_sha256": "65cdbcf128d9814e44c4afb72a3c4b5fe563091fd2dfc063644783f9c6944216",
+        "expected_bytes": 7398,
+        "actual_bytes": 7398,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-20260908/executions/evidence-repetition.execution.json",
+        "expected_sha256": "4083ece6a2d537903cb55be1a89990fc9b64293735407501d391e62b59054b8a",
+        "actual_sha256": "4083ece6a2d537903cb55be1a89990fc9b64293735407501d391e62b59054b8a",
+        "expected_bytes": 613,
+        "actual_bytes": 613,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-20260908/executions/evidence-repetition.log",
+        "expected_sha256": "0481c4a3ce4a66836f1b8c1983691e3a953cc21592d63093fed14461959084ce",
+        "actual_sha256": "0481c4a3ce4a66836f1b8c1983691e3a953cc21592d63093fed14461959084ce",
+        "expected_bytes": 6256,
+        "actual_bytes": 6256,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-20260908/executions/evidence-replay405.execution.json",
+        "expected_sha256": "28b89743eb3fd680990b0c646cc5f523f10a466445d6ae6f6fb8e4c10852c737",
+        "actual_sha256": "28b89743eb3fd680990b0c646cc5f523f10a466445d6ae6f6fb8e4c10852c737",
+        "expected_bytes": 742,
+        "actual_bytes": 742,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-20260908/executions/evidence-replay405.log",
+        "expected_sha256": "7058be558fa0ccb6f9c4a68586dbc9b643918b0cde638a686865d89deb87ebb7",
+        "actual_sha256": "7058be558fa0ccb6f9c4a68586dbc9b643918b0cde638a686865d89deb87ebb7",
+        "expected_bytes": 49,
+        "actual_bytes": 49,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-20260908/executions/evidence-replay516.execution.json",
+        "expected_sha256": "39c66c6473abf782af169a0b9c13dfa9d288ccf8f602be08e38e212ef0b16217",
+        "actual_sha256": "39c66c6473abf782af169a0b9c13dfa9d288ccf8f602be08e38e212ef0b16217",
+        "expected_bytes": 657,
+        "actual_bytes": 657,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-20260908/executions/evidence-replay516.log",
+        "expected_sha256": "1d79ca070d9d4e0e8a1b6284df8a0ddb716deef1527518df6382b4ac3716e9e7",
+        "actual_sha256": "1d79ca070d9d4e0e8a1b6284df8a0ddb716deef1527518df6382b4ac3716e9e7",
+        "expected_bytes": 524,
+        "actual_bytes": 524,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-20260908/executions/evidence-startup.execution.json",
+        "expected_sha256": "8cbf333acd08c116b28a0d977384873112a380dcd4a1f712bf44e954a3df58e7",
+        "actual_sha256": "8cbf333acd08c116b28a0d977384873112a380dcd4a1f712bf44e954a3df58e7",
+        "expected_bytes": 632,
+        "actual_bytes": 632,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-20260908/executions/evidence-startup.log",
+        "expected_sha256": "a319de6c37ec4048554483be056ef463a35c0b8e5336c62453f775661b41170d",
+        "actual_sha256": "a319de6c37ec4048554483be056ef463a35c0b8e5336c62453f775661b41170d",
+        "expected_bytes": 3438,
+        "actual_bytes": 3438,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-20260908/executions/evidence-symbol-readiness.execution.json",
+        "expected_sha256": "4a00c72e9897e51ed8f6a1197450675c1e050e7d07613ed2a59670c2e88f5229",
+        "actual_sha256": "4a00c72e9897e51ed8f6a1197450675c1e050e7d07613ed2a59670c2e88f5229",
+        "expected_bytes": 561,
+        "actual_bytes": 561,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-20260908/executions/evidence-symbol-readiness.log",
+        "expected_sha256": "5a9fcc9798225c7e1597daf27793c0e1a358f550888188c5cdc73881e50f57e9",
+        "actual_sha256": "5a9fcc9798225c7e1597daf27793c0e1a358f550888188c5cdc73881e50f57e9",
+        "expected_bytes": 1084,
+        "actual_bytes": 1084,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-20260908/EXPERIMENT-ID.md",
+        "expected_sha256": "dd3831fd145faf19203298cfc57042abbd18aed748fd75215c5d8688cf9e137d",
+        "actual_sha256": "dd3831fd145faf19203298cfc57042abbd18aed748fd75215c5d8688cf9e137d",
+        "expected_bytes": 7111,
+        "actual_bytes": 7111,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-20260908/export-report.json",
+        "expected_sha256": "916583b0c78296df27ae8d0ad182af54b4c36762047704e00d223f12a8af9682",
+        "actual_sha256": "916583b0c78296df27ae8d0ad182af54b4c36762047704e00d223f12a8af9682",
+        "expected_bytes": 2316,
+        "actual_bytes": 2316,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-20260908/external-words.json",
+        "expected_sha256": "52db73db66f63e35e03ceda218bcb53958a644137cc50aae3f796acf9afc6603",
+        "actual_sha256": "52db73db66f63e35e03ceda218bcb53958a644137cc50aae3f796acf9afc6603",
+        "expected_bytes": 1380588,
+        "actual_bytes": 1380588,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-20260908/final-input-integrity.json",
+        "expected_sha256": "9aa7112d235d5e81e61b4cb453375c53522d55bb1cc4cc41e78c4293453d8b06",
+        "actual_sha256": "9aa7112d235d5e81e61b4cb453375c53522d55bb1cc4cc41e78c4293453d8b06",
+        "expected_bytes": 576,
+        "actual_bytes": 576,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-20260908/legacy-selection-fixtures.json",
+        "expected_sha256": "05b51db63457743993e0702204b7abb8771e5bf4a12427b07a1d2b3f642eb2bf",
+        "actual_sha256": "05b51db63457743993e0702204b7abb8771e5bf4a12427b07a1d2b3f642eb2bf",
+        "expected_bytes": 1170201,
+        "actual_bytes": 1170201,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-20260908/native-fixture-geometry.json",
+        "expected_sha256": "97d6bb2b15847450c8eb9a30b191a0954e0d80d2e004adde2aa947056db29ddd",
+        "actual_sha256": "97d6bb2b15847450c8eb9a30b191a0954e0d80d2e004adde2aa947056db29ddd",
+        "expected_bytes": 58563,
+        "actual_bytes": 58563,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-20260908/native-fixture.json",
+        "expected_sha256": "c022b70ff22b327f1b8c3cc45f6238085f4dbf9c50f9f903380d7f50f0e0f7f6",
+        "actual_sha256": "c022b70ff22b327f1b8c3cc45f6238085f4dbf9c50f9f903380d7f50f0e0f7f6",
+        "expected_bytes": 2963,
+        "actual_bytes": 2963,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-20260908/native-word-fixture.png",
+        "expected_sha256": "5115a112aad01432f4ebdfa22d8dcb686f1330075d5030bc5c039c154dc4d164",
+        "actual_sha256": "5115a112aad01432f4ebdfa22d8dcb686f1330075d5030bc5c039c154dc4d164",
+        "expected_bytes": 99122,
+        "actual_bytes": 99122,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-20260908/natural-number-diagnostics.json",
+        "expected_sha256": "94832c68bf7e5e2941abf64485da377a05413297b57e0fb17f9865708a766ffa",
+        "actual_sha256": "94832c68bf7e5e2941abf64485da377a05413297b57e0fb17f9865708a766ffa",
+        "expected_bytes": 2698,
+        "actual_bytes": 2698,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-20260908/natural-number-regression.json",
+        "expected_sha256": "f025c127b88f6ef797e9cd236818d8177700b66e737a7472d53b517a7afb1f35",
+        "actual_sha256": "f025c127b88f6ef797e9cd236818d8177700b66e737a7472d53b517a7afb1f35",
+        "expected_bytes": 6932,
+        "actual_bytes": 6932,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-20260908/public-benchmark.json",
+        "expected_sha256": "7f03eb6484d1a29cc2d078e904805f9506a42a885c5ff34ac82129541f84d3b9",
+        "actual_sha256": "7f03eb6484d1a29cc2d078e904805f9506a42a885c5ff34ac82129541f84d3b9",
+        "expected_bytes": 2635178,
+        "actual_bytes": 2635178,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-20260908/python-tests-final.json",
+        "expected_sha256": "c832c2de34fdbccefdd03521ac5df7412bea85900b8b1e00e5985053b6830d6f",
+        "actual_sha256": "c832c2de34fdbccefdd03521ac5df7412bea85900b8b1e00e5985053b6830d6f",
+        "expected_bytes": 647,
+        "actual_bytes": 647,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-20260908/python-tests-final.log",
+        "expected_sha256": "cddda2606fd9a7fdfa791f002f025415a0f09d7aff1c103bd5d34aeb6af9dffe",
+        "actual_sha256": "cddda2606fd9a7fdfa791f002f025415a0f09d7aff1c103bd5d34aeb6af9dffe",
+        "expected_bytes": 288,
+        "actual_bytes": 288,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-20260908/rejection-diagnostics.json",
+        "expected_sha256": "fe52b3bccb0e1d633906dc6904a25114abec89987fb62fc0ea766c46502c0e21",
+        "actual_sha256": "fe52b3bccb0e1d633906dc6904a25114abec89987fb62fc0ea766c46502c0e21",
+        "expected_bytes": 6923,
+        "actual_bytes": 6923,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-20260908/rejection-fixtures-id-v1.json",
+        "expected_sha256": "a93d209dbc4f64d2c20b1f357a662bb395df8c1942e2509f666ede59d8a2809d",
+        "actual_sha256": "a93d209dbc4f64d2c20b1f357a662bb395df8c1942e2509f666ede59d8a2809d",
+        "expected_bytes": 112417,
+        "actual_bytes": 112417,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-20260908/repetition-diagnostics.json",
+        "expected_sha256": "46266fec723e6cd348a71a46b05617d9cef72e2bc3906db54f445cca8a56401a",
+        "actual_sha256": "46266fec723e6cd348a71a46b05617d9cef72e2bc3906db54f445cca8a56401a",
+        "expected_bytes": 5781,
+        "actual_bytes": 5781,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-20260908/selected-validation-fullprecision.json",
+        "expected_sha256": "57ba8b37fbd7fc8405e56706ca1810450404598aa3af4a850f9b2c92450167bd",
+        "actual_sha256": "57ba8b37fbd7fc8405e56706ca1810450404598aa3af4a850f9b2c92450167bd",
+        "expected_bytes": 6375,
+        "actual_bytes": 6375,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-20260908/symbol-decoder-parity-516.json",
+        "expected_sha256": "eb13487f70251680f1ee36ba1231d8df51018fd575a20a1f025b80ed3dc93798",
+        "actual_sha256": "eb13487f70251680f1ee36ba1231d8df51018fd575a20a1f025b80ed3dc93798",
+        "expected_bytes": 318052,
+        "actual_bytes": 318052,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-20260908/symbol-readiness.json",
+        "expected_sha256": "c5ba1291853cce423abcb0e9b3cc1600274381920ff751c7380857e4923c0f56",
+        "actual_sha256": "c5ba1291853cce423abcb0e9b3cc1600274381920ff751c7380857e4923c0f56",
+        "expected_bytes": 169198,
+        "actual_bytes": 169198,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-20260908/synthetic-transform-audit.json",
+        "expected_sha256": "2aa28396767ef4eed88b87649fee7aac11b956d830ebc3b938c7ffd3c9f5daa9",
+        "actual_sha256": "2aa28396767ef4eed88b87649fee7aac11b956d830ebc3b938c7ffd3c9f5daa9",
+        "expected_bytes": 264,
+        "actual_bytes": 264,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-20260908/tensorflow-environment.json",
+        "expected_sha256": "33165c6e81ae7ca9f35c6f1d8e6f451543f732dbf83b669130f25199ccd7e028",
+        "actual_sha256": "33165c6e81ae7ca9f35c6f1d8e6f451543f732dbf83b669130f25199ccd7e028",
+        "expected_bytes": 1412,
+        "actual_bytes": 1412,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-20260908/training-config.json",
+        "expected_sha256": "446b0bb8a88ad85f96f2219f23686b029d52573d228222b76c3458afc09ef103",
+        "actual_sha256": "446b0bb8a88ad85f96f2219f23686b029d52573d228222b76c3458afc09ef103",
+        "expected_bytes": 2220,
+        "actual_bytes": 2220,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-20260908/training-console.log",
+        "expected_sha256": "e9365a96fad6616d6f70e2a210157601764cfb8d840fbb3da130f0441eb96118",
+        "actual_sha256": "e9365a96fad6616d6f70e2a210157601764cfb8d840fbb3da130f0441eb96118",
+        "expected_bytes": 35696,
+        "actual_bytes": 35696,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-20260908/training-data-audit.json",
+        "expected_sha256": "30ee32c81f3024392dac0f6e54ca502bfaf97b1a3d1066ade18ce72348dfdcd5",
+        "actual_sha256": "30ee32c81f3024392dac0f6e54ca502bfaf97b1a3d1066ade18ce72348dfdcd5",
+        "expected_bytes": 3204,
+        "actual_bytes": 3204,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-20260908/typescript-parity-405.json",
+        "expected_sha256": "ae5ab42399d38762a88aed77c8cc1866d586ebe88c1002cd93f672c016906b92",
+        "actual_sha256": "ae5ab42399d38762a88aed77c8cc1866d586ebe88c1002cd93f672c016906b92",
+        "expected_bytes": 289424,
+        "actual_bytes": 289424,
+        "matches": true
+      },
+      {
+        "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-20260908/validation-symbols.json",
+        "expected_sha256": "e2a0298da266932b4f648458f718bead2b8e0a524eb20f810157d1b3b4f9a53f",
+        "actual_sha256": "e2a0298da266932b4f648458f718bead2b8e0a524eb20f810157d1b3b4f9a53f",
+        "expected_bytes": 924883,
+        "actual_bytes": 924883,
+        "matches": true
+      },
+      {
+        "file": "training/checkpoints/braille-word-reader-id-v3/run-batch24/environment.json",
+        "expected_sha256": "9871cca234996b5ea1b552a8741a7ea62031d903cfea06a0b5a306b066e74952",
+        "actual_sha256": "9871cca234996b5ea1b552a8741a7ea62031d903cfea06a0b5a306b066e74952",
+        "expected_bytes": 878,
+        "actual_bytes": 878,
+        "matches": true
+      },
+      {
+        "file": "training/checkpoints/braille-word-reader-id-v3/tensorflow-environment.json",
+        "expected_sha256": "33165c6e81ae7ca9f35c6f1d8e6f451543f732dbf83b669130f25199ccd7e028",
+        "actual_sha256": "33165c6e81ae7ca9f35c6f1d8e6f451543f732dbf83b669130f25199ccd7e028",
+        "expected_bytes": 1412,
+        "actual_bytes": 1412,
+        "matches": true
+      }
+    ],
+    "baseline_checkpoint": {
+      "file": "training/checkpoints/braille-word-reader-v1/best-word.keras",
+      "expected_sha256": "cce2432c0ddb8952c885dd58697589c285209588dafa81aacdd891b1660068b7",
+      "actual_sha256": "cce2432c0ddb8952c885dd58697589c285209588dafa81aacdd891b1660068b7",
+      "expected_bytes": 10346677,
+      "actual_bytes": 10346677,
+      "matches": true
+    },
+    "candidate_checkpoint": {
+      "file": "training/checkpoints/braille-word-reader-id-v3/best-word.keras",
+      "expected_sha256": "0ae8497660efa3378d81b959cf585f83c6af3c07514f45fb2b1fb1a90382a6c2",
+      "actual_sha256": "0ae8497660efa3378d81b959cf585f83c6af3c07514f45fb2b1fb1a90382a6c2",
+      "expected_bytes": 10346677,
+      "actual_bytes": 10346677,
+      "matches": true
+    },
+    "old_retention_index": {
+      "file": "training/checkpoints/retained-models.json",
+      "expected_sha256": "39e248ad1f697fde2f856467f5f26b6a22cb2781927c0a00a9c722c738120411",
+      "actual_sha256": "39e248ad1f697fde2f856467f5f26b6a22cb2781927c0a00a9c722c738120411",
+      "expected_bytes": 8018,
+      "actual_bytes": 8018,
+      "matches": true
+    },
+    "protected_old_hashes": [
+      {
+        "file": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\assets\\models\\braille-word-reader-v1\\word-reader.tflite",
+        "expected_sha256": "406db0e55e8a5ba9e0d00fb22aadc24f19698219f375e4dcead9057cf3bf2230",
+        "actual_sha256": "406db0e55e8a5ba9e0d00fb22aadc24f19698219f375e4dcead9057cf3bf2230",
+        "matches": true
+      },
+      {
+        "file": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\training\\checkpoints\\braille-word-reader-v1\\best-word.keras",
+        "expected_sha256": "cce2432c0ddb8952c885dd58697589c285209588dafa81aacdd891b1660068b7",
+        "actual_sha256": "cce2432c0ddb8952c885dd58697589c285209588dafa81aacdd891b1660068b7",
+        "matches": true
+      }
+    ]
+  },
+  "v6_source_binding": {
+    "baseline_selected_count": 227,
+    "current_selected_count": 227,
+    "unchanged_workspace_count": 224,
+    "matching_staging_count": 227,
+    "changed_workspace_paths": [
+      {
+        "path": "scripts/word-android-smoke/collect_runtime.py",
+        "v6_sha256": "8bf61a4ce53da8249f6b62dd0fd6d497285f41f855d79176bdcc07e3d293715b",
+        "current_sha256": "b752b24c02523596a54d95bb5b684d5bbdd93dddf29e4fb96f779bb4567d0a3c",
+        "stage_sha256": "8bf61a4ce53da8249f6b62dd0fd6d497285f41f855d79176bdcc07e3d293715b"
+      },
+      {
+        "path": "scripts/word-android-smoke/test_collect_runtime.py",
+        "v6_sha256": "de5ab1ec856fb2725add10e4be53a3aa00ed6309711df005f8500a88da768712",
+        "current_sha256": "5e26d375c67f5b5e83feaa02349b2cbb794b0b65c83b80bb41989947510ffd6a",
+        "stage_sha256": "de5ab1ec856fb2725add10e4be53a3aa00ed6309711df005f8500a88da768712"
+      },
+      {
+        "path": "scripts/word-android-smoke/README.md",
+        "v6_sha256": "938552016e7c8bb3321182fba5c478cbd5b901aad14c1afe6dcfc78bcd7de068",
+        "current_sha256": "ac25b20e1d7ed845a5796b1e162329ed5ed3d7dd26cc81122892c26589220917",
+        "stage_sha256": "938552016e7c8bb3321182fba5c478cbd5b901aad14c1afe6dcfc78bcd7de068"
+      }
+    ],
+    "changed_staging_paths": [],
+    "matches_prior_companion_classification": true,
+    "unexpected_changes": [],
+    "added_selected_paths": [],
+    "removed_selected_paths": [],
+    "unchanged_workspace_rows": [
+      {
+        "path": "modules/braille-word-geometry/android/src/main/java/com/margelo/nitro/braillewordgeometry/WordPixelResize.java",
+        "v6_sha256": "9b48ca512bbef8e51e98cfc5a7c7757b1e7385bd4a904c322d3ce878585db174",
+        "current_sha256": "9b48ca512bbef8e51e98cfc5a7c7757b1e7385bd4a904c322d3ce878585db174",
+        "stage_sha256": "9b48ca512bbef8e51e98cfc5a7c7757b1e7385bd4a904c322d3ce878585db174"
+      },
+      {
+        "path": "modules/braille-word-geometry/nitrogen/generated/android/c++/JWordPixelResult.hpp",
+        "v6_sha256": "ad3bd8a69dd6e37897ddb143e6332b8c51f016cea146aaec246811ed7f752dbb",
+        "current_sha256": "ad3bd8a69dd6e37897ddb143e6332b8c51f016cea146aaec246811ed7f752dbb",
+        "stage_sha256": "ad3bd8a69dd6e37897ddb143e6332b8c51f016cea146aaec246811ed7f752dbb"
+      },
+      {
+        "path": "modules/braille-word-geometry/nitrogen/generated/android/kotlin/com/margelo/nitro/braillewordgeometry/WordPixelResult.kt",
+        "v6_sha256": "ef0e65e2ece1a8f1d5d0b4e6d70e9470960a7df20d9ae7b974c703fee9c30410",
+        "current_sha256": "ef0e65e2ece1a8f1d5d0b4e6d70e9470960a7df20d9ae7b974c703fee9c30410",
+        "stage_sha256": "ef0e65e2ece1a8f1d5d0b4e6d70e9470960a7df20d9ae7b974c703fee9c30410"
+      },
+      {
+        "path": "modules/braille-word-geometry/nitrogen/generated/shared/c++/WordPixelResult.hpp",
+        "v6_sha256": "353786d191be71415a19d598fb731165baca7d32bd4f30818e92a47bababc426",
+        "current_sha256": "353786d191be71415a19d598fb731165baca7d32bd4f30818e92a47bababc426",
+        "stage_sha256": "353786d191be71415a19d598fb731165baca7d32bd4f30818e92a47bababc426"
+      },
+      {
+        "path": "scripts/word-android-smoke/test_verify_apk.py",
+        "v6_sha256": "22a5558f2f77a9632cf27acb841452243a2c0ee34640fec20bff93a8267276a6",
+        "current_sha256": "22a5558f2f77a9632cf27acb841452243a2c0ee34640fec20bff93a8267276a6",
+        "stage_sha256": "22a5558f2f77a9632cf27acb841452243a2c0ee34640fec20bff93a8267276a6"
+      },
+      {
+        "path": "scripts/word-android-smoke/verify_apk.py",
+        "v6_sha256": "1374195c4f27173d90638b1bcb5dfae6c148c50e514677a5bd068d701ca13262",
+        "current_sha256": "1374195c4f27173d90638b1bcb5dfae6c148c50e514677a5bd068d701ca13262",
+        "stage_sha256": "1374195c4f27173d90638b1bcb5dfae6c148c50e514677a5bd068d701ca13262"
+      },
+      {
+        "path": "scripts/word-decoder-parity/replay-id.cjs",
+        "v6_sha256": "f8f0f91298f50392f338d6193e99a1ea47260f66a837d5e812341358455d9f92",
+        "current_sha256": "f8f0f91298f50392f338d6193e99a1ea47260f66a837d5e812341358455d9f92",
+        "stage_sha256": "f8f0f91298f50392f338d6193e99a1ea47260f66a837d5e812341358455d9f92"
+      },
+      {
+        "path": "scripts/word-decoder-parity/replay-id.test.cjs",
+        "v6_sha256": "58197b7bd8358e55248e33c02dcda87780831fdc1eb99e2cab7c62d19dd73c4b",
+        "current_sha256": "58197b7bd8358e55248e33c02dcda87780831fdc1eb99e2cab7c62d19dd73c4b",
+        "stage_sha256": "58197b7bd8358e55248e33c02dcda87780831fdc1eb99e2cab7c62d19dd73c4b"
+      },
+      {
+        "path": "scripts/word-native-parity/WordPixelResizeCli.java",
+        "v6_sha256": "11af40d967e174ad4872b0e2de7ca028678f74154c5bfd8b909b7abae7caba71",
+        "current_sha256": "11af40d967e174ad4872b0e2de7ca028678f74154c5bfd8b909b7abae7caba71",
+        "stage_sha256": "11af40d967e174ad4872b0e2de7ca028678f74154c5bfd8b909b7abae7caba71"
+      },
+      {
+        "path": "scripts/word-native-parity/pixel-resize-android.cjs",
+        "v6_sha256": "924665094222739dc8c72540e238863620b7a9b4886641dcdbc582436cf05487",
+        "current_sha256": "924665094222739dc8c72540e238863620b7a9b4886641dcdbc582436cf05487",
+        "stage_sha256": "924665094222739dc8c72540e238863620b7a9b4886641dcdbc582436cf05487"
+      },
+      {
+        "path": "scripts/word-native-parity/pixel-resize-parity.cjs",
+        "v6_sha256": "d7c9ebfbfb833f9f1b400c74795faafaf67238e6c2e16db9f68ff2d7fb500152",
+        "current_sha256": "d7c9ebfbfb833f9f1b400c74795faafaf67238e6c2e16db9f68ff2d7fb500152",
+        "stage_sha256": "d7c9ebfbfb833f9f1b400c74795faafaf67238e6c2e16db9f68ff2d7fb500152"
+      },
+      {
+        "path": "scripts/word-native-parity/pixel-resize-reference.py",
+        "v6_sha256": "1f284916ad7d1914b6b18680b87ff58fa00f9a47bf869c6e989d4f39a57a922f",
+        "current_sha256": "1f284916ad7d1914b6b18680b87ff58fa00f9a47bf869c6e989d4f39a57a922f",
+        "stage_sha256": "1f284916ad7d1914b6b18680b87ff58fa00f9a47bf869c6e989d4f39a57a922f"
+      },
+      {
+        "path": "scripts/word-native-parity/prepare-camera-fixture.py",
+        "v6_sha256": "06f7652e3d23fff217ec704acaf612f0e6b2cf0777f34477ec81e39dfccdfc5e",
+        "current_sha256": "06f7652e3d23fff217ec704acaf612f0e6b2cf0777f34477ec81e39dfccdfc5e",
+        "stage_sha256": "06f7652e3d23fff217ec704acaf612f0e6b2cf0777f34477ec81e39dfccdfc5e"
+      },
+      {
+        "path": "src/features/live/__tests__/use-word-camera-tracking.test.tsx",
+        "v6_sha256": "46786ceb63d5cc88d3fd1e9478f9d882265970f5c6f39fd5a768f71b2388088f",
+        "current_sha256": "46786ceb63d5cc88d3fd1e9478f9d882265970f5c6f39fd5a768f71b2388088f",
+        "stage_sha256": "46786ceb63d5cc88d3fd1e9478f9d882265970f5c6f39fd5a768f71b2388088f"
+      },
+      {
+        "path": "src/features/live/use-word-camera-tracking.ts",
+        "v6_sha256": "9ca80e47f6e93ec58e18c87bc572f7f89471f658bfdf1f80b0591e2b5a57bd16",
+        "current_sha256": "9ca80e47f6e93ec58e18c87bc572f7f89471f658bfdf1f80b0591e2b5a57bd16",
+        "stage_sha256": "9ca80e47f6e93ec58e18c87bc572f7f89471f658bfdf1f80b0591e2b5a57bd16"
+      },
+      {
+        "path": "src/ml/__tests__/word-symbols.test.ts",
+        "v6_sha256": "ef9af13044d6ce0237cc380960c4550c8dce22a2eece5ccdadae6086e0fde258",
+        "current_sha256": "ef9af13044d6ce0237cc380960c4550c8dce22a2eece5ccdadae6086e0fde258",
+        "stage_sha256": "ef9af13044d6ce0237cc380960c4550c8dce22a2eece5ccdadae6086e0fde258"
+      },
+      {
+        "path": "src/ml/__tests__/word-tracked-image.test.ts",
+        "v6_sha256": "26fb63fc39a1c06f19c06c6532ade52d5f1cdb14c696d3f9fa5bf08005988e57",
+        "current_sha256": "26fb63fc39a1c06f19c06c6532ade52d5f1cdb14c696d3f9fa5bf08005988e57",
+        "stage_sha256": "26fb63fc39a1c06f19c06c6532ade52d5f1cdb14c696d3f9fa5bf08005988e57"
+      },
+      {
+        "path": "src/ml/__tests__/word-tracking.test.ts",
+        "v6_sha256": "33add887ded942f2e1b5b35b4ed3f11b7e6eeb3bb911a2d698e371849615ba93",
+        "current_sha256": "33add887ded942f2e1b5b35b4ed3f11b7e6eeb3bb911a2d698e371849615ba93",
+        "stage_sha256": "33add887ded942f2e1b5b35b4ed3f11b7e6eeb3bb911a2d698e371849615ba93"
+      },
+      {
+        "path": "src/ml/word-symbols.ts",
+        "v6_sha256": "bc4c62222f4b57b07ae19b37e2add60931747129e49589054255363b0da49860",
+        "current_sha256": "bc4c62222f4b57b07ae19b37e2add60931747129e49589054255363b0da49860",
+        "stage_sha256": "bc4c62222f4b57b07ae19b37e2add60931747129e49589054255363b0da49860"
+      },
+      {
+        "path": "src/ml/word-tracking.ts",
+        "v6_sha256": "1c71189a45b31817f468ba785e87a51dcd682e4e4fb45aae3b22d6bfcdb7765c",
+        "current_sha256": "1c71189a45b31817f468ba785e87a51dcd682e4e4fb45aae3b22d6bfcdb7765c",
+        "stage_sha256": "1c71189a45b31817f468ba785e87a51dcd682e4e4fb45aae3b22d6bfcdb7765c"
+      },
+      {
+        "path": ".gitattributes",
+        "v6_sha256": "f8d4e2d4f133902c2d663ae1ee0c459de67af99e253c576fef1d32add83d7666",
+        "current_sha256": "f8d4e2d4f133902c2d663ae1ee0c459de67af99e253c576fef1d32add83d7666",
+        "stage_sha256": "f8d4e2d4f133902c2d663ae1ee0c459de67af99e253c576fef1d32add83d7666"
+      },
+      {
+        "path": ".gitignore",
+        "v6_sha256": "c813e45268b33bcb5c3e929024b21d60e8cbf4e4faeff3741011f0cc2cebe5eb",
+        "current_sha256": "c813e45268b33bcb5c3e929024b21d60e8cbf4e4faeff3741011f0cc2cebe5eb",
+        "stage_sha256": "c813e45268b33bcb5c3e929024b21d60e8cbf4e4faeff3741011f0cc2cebe5eb"
+      },
+      {
+        "path": ".npmrc",
+        "v6_sha256": "a093bb2fed59d699b7f9a62a5203cc196054c624e9c39c6d908c9e7db5dd2464",
+        "current_sha256": "a093bb2fed59d699b7f9a62a5203cc196054c624e9c39c6d908c9e7db5dd2464",
+        "stage_sha256": "a093bb2fed59d699b7f9a62a5203cc196054c624e9c39c6d908c9e7db5dd2464"
+      },
+      {
+        "path": "LICENSE",
+        "v6_sha256": "fb3ca4a837f5779e83cef89b78253a8949cfb9429c340309f62d0465ec6610b4",
+        "current_sha256": "fb3ca4a837f5779e83cef89b78253a8949cfb9429c340309f62d0465ec6610b4",
+        "stage_sha256": "fb3ca4a837f5779e83cef89b78253a8949cfb9429c340309f62d0465ec6610b4"
+      },
+      {
+        "path": "README.md",
+        "v6_sha256": "5ed482e0a6474b634550a56477df892bda243dd617d46dda342c52c1e5f2d54f",
+        "current_sha256": "5ed482e0a6474b634550a56477df892bda243dd617d46dda342c52c1e5f2d54f",
+        "stage_sha256": "5ed482e0a6474b634550a56477df892bda243dd617d46dda342c52c1e5f2d54f"
+      },
+      {
+        "path": "app.config.ts",
+        "v6_sha256": "43a0c4acdfab113fbf20f66e7ad75152737013765bc116f83d8d6708f32e363f",
+        "current_sha256": "43a0c4acdfab113fbf20f66e7ad75152737013765bc116f83d8d6708f32e363f",
+        "stage_sha256": "43a0c4acdfab113fbf20f66e7ad75152737013765bc116f83d8d6708f32e363f"
+      },
+      {
+        "path": "app.json",
+        "v6_sha256": "b92fd43e716956ccb05d10fc4abd021ea50dd48c00170b51e0dfcf9a59091877",
+        "current_sha256": "b92fd43e716956ccb05d10fc4abd021ea50dd48c00170b51e0dfcf9a59091877",
+        "stage_sha256": "b92fd43e716956ccb05d10fc4abd021ea50dd48c00170b51e0dfcf9a59091877"
+      },
+      {
+        "path": "app/(tabs)/_layout.tsx",
+        "v6_sha256": "64fd730eaed77fdc681c51cf70b81f51f2968bff8b450c7cb71b621a9d89cab4",
+        "current_sha256": "64fd730eaed77fdc681c51cf70b81f51f2968bff8b450c7cb71b621a9d89cab4",
+        "stage_sha256": "64fd730eaed77fdc681c51cf70b81f51f2968bff8b450c7cb71b621a9d89cab4"
+      },
+      {
+        "path": "app/(tabs)/index.tsx",
+        "v6_sha256": "c27185c4a843918ea3e28270c0ddbba3ffdce27e0f664ae82062703a5efd3908",
+        "current_sha256": "c27185c4a843918ea3e28270c0ddbba3ffdce27e0f664ae82062703a5efd3908",
+        "stage_sha256": "c27185c4a843918ea3e28270c0ddbba3ffdce27e0f664ae82062703a5efd3908"
+      },
+      {
+        "path": "app/(tabs)/live.tsx",
+        "v6_sha256": "40cffa9852d4c29925d598f8d3879d9b87dd79df8f47702a83b9f6ec8b552dff",
+        "current_sha256": "40cffa9852d4c29925d598f8d3879d9b87dd79df8f47702a83b9f6ec8b552dff",
+        "stage_sha256": "40cffa9852d4c29925d598f8d3879d9b87dd79df8f47702a83b9f6ec8b552dff"
+      },
+      {
+        "path": "app/(tabs)/settings.tsx",
+        "v6_sha256": "d7c9d1ad14bfd0b74bfd3ec3724dfb60e1897c0bf9ca58f5c8d93b8bf9868082",
+        "current_sha256": "d7c9d1ad14bfd0b74bfd3ec3724dfb60e1897c0bf9ca58f5c8d93b8bf9868082",
+        "stage_sha256": "d7c9d1ad14bfd0b74bfd3ec3724dfb60e1897c0bf9ca58f5c8d93b8bf9868082"
+      },
+      {
+        "path": "app/+not-found.tsx",
+        "v6_sha256": "98faaa02445053a9af4885b1279dd019c8cc7142420ceb5caf65be3e4a7a2d2e",
+        "current_sha256": "98faaa02445053a9af4885b1279dd019c8cc7142420ceb5caf65be3e4a7a2d2e",
+        "stage_sha256": "98faaa02445053a9af4885b1279dd019c8cc7142420ceb5caf65be3e4a7a2d2e"
+      },
+      {
+        "path": "app/_layout.tsx",
+        "v6_sha256": "3e7342327476328464b7964854c73b55baffa6bd74216940ab3069eaee1d8904",
+        "current_sha256": "3e7342327476328464b7964854c73b55baffa6bd74216940ab3069eaee1d8904",
+        "stage_sha256": "3e7342327476328464b7964854c73b55baffa6bd74216940ab3069eaee1d8904"
+      },
+      {
+        "path": "app/help.tsx",
+        "v6_sha256": "2e2ba1527899937726d5b4d43e70b05359b63de973c03afffde98933771bdc74",
+        "current_sha256": "2e2ba1527899937726d5b4d43e70b05359b63de973c03afffde98933771bdc74",
+        "stage_sha256": "2e2ba1527899937726d5b4d43e70b05359b63de973c03afffde98933771bdc74"
+      },
+      {
+        "path": "app/onboarding.tsx",
+        "v6_sha256": "caddf73d3a7000847bbf88dd154fad31b74a9c7884d066ee9d7036538c550f1e",
+        "current_sha256": "caddf73d3a7000847bbf88dd154fad31b74a9c7884d066ee9d7036538c550f1e",
+        "stage_sha256": "caddf73d3a7000847bbf88dd154fad31b74a9c7884d066ee9d7036538c550f1e"
+      },
+      {
+        "path": "app/privacy.tsx",
+        "v6_sha256": "931b8fc8ed52e3a529ba612656dd74a8d0ac5e723a27682a6eac1e5c9e4b7ae8",
+        "current_sha256": "931b8fc8ed52e3a529ba612656dd74a8d0ac5e723a27682a6eac1e5c9e4b7ae8",
+        "stage_sha256": "931b8fc8ed52e3a529ba612656dd74a8d0ac5e723a27682a6eac1e5c9e4b7ae8"
+      },
+      {
+        "path": "assets/adaptive-icon.png",
+        "v6_sha256": "b57cc68585c3adc8efa463b4d47a8aaf508f9799fc7466206be2d0843a387d06",
+        "current_sha256": "b57cc68585c3adc8efa463b4d47a8aaf508f9799fc7466206be2d0843a387d06",
+        "stage_sha256": "b57cc68585c3adc8efa463b4d47a8aaf508f9799fc7466206be2d0843a387d06"
+      },
+      {
+        "path": "assets/icon-brand.png",
+        "v6_sha256": "c48a31e8266244f5dc84abe95c1d5388e3d898dc777c90743e8bc8c8cc1f4015",
+        "current_sha256": "c48a31e8266244f5dc84abe95c1d5388e3d898dc777c90743e8bc8c8cc1f4015",
+        "stage_sha256": "c48a31e8266244f5dc84abe95c1d5388e3d898dc777c90743e8bc8c8cc1f4015"
+      },
+      {
+        "path": "assets/models/braille-cell-classifier-v1/braille_model.tflite",
+        "v6_sha256": "9e07b5c56e2e4107a116370c6f0a2203ec83afe4b2e42d099b1780e75e72d7dc",
+        "current_sha256": "9e07b5c56e2e4107a116370c6f0a2203ec83afe4b2e42d099b1780e75e72d7dc",
+        "stage_sha256": "9e07b5c56e2e4107a116370c6f0a2203ec83afe4b2e42d099b1780e75e72d7dc"
+      },
+      {
+        "path": "assets/models/braille-cell-classifier-v1/label.json",
+        "v6_sha256": "d5cc50edf38a77014015627e64ddac8dece4ccfc1e4b3c54af64d4828552a25f",
+        "current_sha256": "d5cc50edf38a77014015627e64ddac8dece4ccfc1e4b3c54af64d4828552a25f",
+        "stage_sha256": "d5cc50edf38a77014015627e64ddac8dece4ccfc1e4b3c54af64d4828552a25f"
+      },
+      {
+        "path": "assets/models/braille-cell-classifier-v1/manifest.json",
+        "v6_sha256": "c457ce6c61c28f70b29f037b6388c3104784007a07e209fa8f7d07d040fce970",
+        "current_sha256": "c457ce6c61c28f70b29f037b6388c3104784007a07e209fa8f7d07d040fce970",
+        "stage_sha256": "c457ce6c61c28f70b29f037b6388c3104784007a07e209fa8f7d07d040fce970"
+      },
+      {
+        "path": "assets/models/braille-cell-classifier-v2/braille_model.tflite",
+        "v6_sha256": "7a41942cf330c9558884385221deb69f282adfd8d39be00a257c75ec9572c318",
+        "current_sha256": "7a41942cf330c9558884385221deb69f282adfd8d39be00a257c75ec9572c318",
+        "stage_sha256": "7a41942cf330c9558884385221deb69f282adfd8d39be00a257c75ec9572c318"
+      },
+      {
+        "path": "assets/models/braille-cell-classifier-v2/label.json",
+        "v6_sha256": "d5cc50edf38a77014015627e64ddac8dece4ccfc1e4b3c54af64d4828552a25f",
+        "current_sha256": "d5cc50edf38a77014015627e64ddac8dece4ccfc1e4b3c54af64d4828552a25f",
+        "stage_sha256": "d5cc50edf38a77014015627e64ddac8dece4ccfc1e4b3c54af64d4828552a25f"
+      },
+      {
+        "path": "assets/models/braille-cell-classifier-v2/manifest.json",
+        "v6_sha256": "237481a32c3cd709b6038ef2007d882a1536240c22de80c2994abcef1de86d4b",
+        "current_sha256": "237481a32c3cd709b6038ef2007d882a1536240c22de80c2994abcef1de86d4b",
+        "stage_sha256": "237481a32c3cd709b6038ef2007d882a1536240c22de80c2994abcef1de86d4b"
+      },
+      {
+        "path": "assets/models/braille-cell-classifier-v2/native-self-test-v.png",
+        "v6_sha256": "08e20f52ef72517734e5595e9fd8b2222467a3248bf6c9f477ce564817b76901",
+        "current_sha256": "08e20f52ef72517734e5595e9fd8b2222467a3248bf6c9f477ce564817b76901",
+        "stage_sha256": "08e20f52ef72517734e5595e9fd8b2222467a3248bf6c9f477ce564817b76901"
+      },
+      {
+        "path": "assets/models/braille-word-reader-v1/manifest.json",
+        "v6_sha256": "419f459f01970a56e745cbdaecd00b505daf5a46c534822febff7e91155e50da",
+        "current_sha256": "419f459f01970a56e745cbdaecd00b505daf5a46c534822febff7e91155e50da",
+        "stage_sha256": "419f459f01970a56e745cbdaecd00b505daf5a46c534822febff7e91155e50da"
+      },
+      {
+        "path": "assets/models/braille-word-reader-v1/native-word-fixture.png",
+        "v6_sha256": "5115a112aad01432f4ebdfa22d8dcb686f1330075d5030bc5c039c154dc4d164",
+        "current_sha256": "5115a112aad01432f4ebdfa22d8dcb686f1330075d5030bc5c039c154dc4d164",
+        "stage_sha256": "5115a112aad01432f4ebdfa22d8dcb686f1330075d5030bc5c039c154dc4d164"
+      },
+      {
+        "path": "assets/models/braille-word-reader-v1/word-reader.tflite",
+        "v6_sha256": "406db0e55e8a5ba9e0d00fb22aadc24f19698219f375e4dcead9057cf3bf2230",
+        "current_sha256": "406db0e55e8a5ba9e0d00fb22aadc24f19698219f375e4dcead9057cf3bf2230",
+        "stage_sha256": "406db0e55e8a5ba9e0d00fb22aadc24f19698219f375e4dcead9057cf3bf2230"
+      },
+      {
+        "path": "assets/monochrome-icon.png",
+        "v6_sha256": "7dd4147898560d2ff48963323d1675db22d032a036314a1f707503ef81b4d9c8",
+        "current_sha256": "7dd4147898560d2ff48963323d1675db22d032a036314a1f707503ef81b4d9c8",
+        "stage_sha256": "7dd4147898560d2ff48963323d1675db22d032a036314a1f707503ef81b4d9c8"
+      },
+      {
+        "path": "assets/splashscreen_logo.xml",
+        "v6_sha256": "093bd480051d15a1cdd09eccacdcb38a2c56d08d1f57e1892674c145b8841585",
+        "current_sha256": "093bd480051d15a1cdd09eccacdcb38a2c56d08d1f57e1892674c145b8841585",
+        "stage_sha256": "093bd480051d15a1cdd09eccacdcb38a2c56d08d1f57e1892674c145b8841585"
+      },
+      {
+        "path": "eas.json",
+        "v6_sha256": "683bb9abba8b5ac4a4a2ce47390ed78228a06d98ac5ed891b8f23c69bab73e5e",
+        "current_sha256": "683bb9abba8b5ac4a4a2ce47390ed78228a06d98ac5ed891b8f23c69bab73e5e",
+        "stage_sha256": "683bb9abba8b5ac4a4a2ce47390ed78228a06d98ac5ed891b8f23c69bab73e5e"
+      },
+      {
+        "path": "eslint.config.js",
+        "v6_sha256": "4b6e987b636d82f405e3be02f2958271b42d964feffe2c430d2537d7bb8d649a",
+        "current_sha256": "4b6e987b636d82f405e3be02f2958271b42d964feffe2c430d2537d7bb8d649a",
+        "stage_sha256": "4b6e987b636d82f405e3be02f2958271b42d964feffe2c430d2537d7bb8d649a"
+      },
+      {
+        "path": "jest.config.js",
+        "v6_sha256": "27c7852cdab7e5a9e08cb0f3bcfb4228b66bee68ecafe63b78ba644091323329",
+        "current_sha256": "27c7852cdab7e5a9e08cb0f3bcfb4228b66bee68ecafe63b78ba644091323329",
+        "stage_sha256": "27c7852cdab7e5a9e08cb0f3bcfb4228b66bee68ecafe63b78ba644091323329"
+      },
+      {
+        "path": "jest.setup.ts",
+        "v6_sha256": "a12822c68d64eaea3f4d4fe93cbb7e3789d151e602a3b69403d87da0c1aa1d43",
+        "current_sha256": "a12822c68d64eaea3f4d4fe93cbb7e3789d151e602a3b69403d87da0c1aa1d43",
+        "stage_sha256": "a12822c68d64eaea3f4d4fe93cbb7e3789d151e602a3b69403d87da0c1aa1d43"
+      },
+      {
+        "path": "metro.config.js",
+        "v6_sha256": "61b7ab1d3e01e1bebd9784e22d5172bb31997b7ebb76cd79ef75cde30237d618",
+        "current_sha256": "61b7ab1d3e01e1bebd9784e22d5172bb31997b7ebb76cd79ef75cde30237d618",
+        "stage_sha256": "61b7ab1d3e01e1bebd9784e22d5172bb31997b7ebb76cd79ef75cde30237d618"
+      },
+      {
+        "path": "modules/braille-local-voice/LICENSE",
+        "v6_sha256": "fb3ca4a837f5779e83cef89b78253a8949cfb9429c340309f62d0465ec6610b4",
+        "current_sha256": "fb3ca4a837f5779e83cef89b78253a8949cfb9429c340309f62d0465ec6610b4",
+        "stage_sha256": "fb3ca4a837f5779e83cef89b78253a8949cfb9429c340309f62d0465ec6610b4"
+      },
+      {
+        "path": "modules/braille-local-voice/android/build.gradle",
+        "v6_sha256": "eac0b2f7f290baf4c1fc74d4e569ad0f4376dce21f6c3a3ab759c7317a3bf7e4",
+        "current_sha256": "eac0b2f7f290baf4c1fc74d4e569ad0f4376dce21f6c3a3ab759c7317a3bf7e4",
+        "stage_sha256": "eac0b2f7f290baf4c1fc74d4e569ad0f4376dce21f6c3a3ab759c7317a3bf7e4"
+      },
+      {
+        "path": "modules/braille-local-voice/android/src/main/AndroidManifest.xml",
+        "v6_sha256": "21058c692532098e42afc39cf09de946c38229ec414bb7ac32f4fc90ba9a5f45",
+        "current_sha256": "21058c692532098e42afc39cf09de946c38229ec414bb7ac32f4fc90ba9a5f45",
+        "stage_sha256": "21058c692532098e42afc39cf09de946c38229ec414bb7ac32f4fc90ba9a5f45"
+      },
+      {
+        "path": "modules/braille-local-voice/android/src/main/java/expo/modules/braillelocalvoice/BrailleLocalVoiceModule.kt",
+        "v6_sha256": "167134668473ce0cbc99c3667e06ab6ac7a1187cf8f21e6c75946abf566fe2b6",
+        "current_sha256": "167134668473ce0cbc99c3667e06ab6ac7a1187cf8f21e6c75946abf566fe2b6",
+        "stage_sha256": "167134668473ce0cbc99c3667e06ab6ac7a1187cf8f21e6c75946abf566fe2b6"
+      },
+      {
+        "path": "modules/braille-local-voice/expo-module.config.json",
+        "v6_sha256": "95dbf288740364f6a988ceff06e900fb05ee95767950f2978c0fd5e49c6abe0b",
+        "current_sha256": "95dbf288740364f6a988ceff06e900fb05ee95767950f2978c0fd5e49c6abe0b",
+        "stage_sha256": "95dbf288740364f6a988ceff06e900fb05ee95767950f2978c0fd5e49c6abe0b"
+      },
+      {
+        "path": "modules/braille-local-voice/src/BrailleLocalVoice.types.ts",
+        "v6_sha256": "f50555dc9a3e3ab9b6e56e23d046cec24c5bf0232509b10b9f6d44838c58509a",
+        "current_sha256": "f50555dc9a3e3ab9b6e56e23d046cec24c5bf0232509b10b9f6d44838c58509a",
+        "stage_sha256": "f50555dc9a3e3ab9b6e56e23d046cec24c5bf0232509b10b9f6d44838c58509a"
+      },
+      {
+        "path": "modules/braille-local-voice/src/BrailleLocalVoiceModule.ts",
+        "v6_sha256": "9acc240030d2f38fc2d66934039a2afa32e499b0c2c9581634793588724160b7",
+        "current_sha256": "9acc240030d2f38fc2d66934039a2afa32e499b0c2c9581634793588724160b7",
+        "stage_sha256": "9acc240030d2f38fc2d66934039a2afa32e499b0c2c9581634793588724160b7"
+      },
+      {
+        "path": "modules/braille-word-geometry/LICENSE",
+        "v6_sha256": "fb3ca4a837f5779e83cef89b78253a8949cfb9429c340309f62d0465ec6610b4",
+        "current_sha256": "fb3ca4a837f5779e83cef89b78253a8949cfb9429c340309f62d0465ec6610b4",
+        "stage_sha256": "fb3ca4a837f5779e83cef89b78253a8949cfb9429c340309f62d0465ec6610b4"
+      },
+      {
+        "path": "modules/braille-word-geometry/README.md",
+        "v6_sha256": "475fa2b23be3cc9f8d73a11c16d3ea3b2be8ef66035ae43232af6e2db75aa0f0",
+        "current_sha256": "475fa2b23be3cc9f8d73a11c16d3ea3b2be8ef66035ae43232af6e2db75aa0f0",
+        "stage_sha256": "475fa2b23be3cc9f8d73a11c16d3ea3b2be8ef66035ae43232af6e2db75aa0f0"
+      },
+      {
+        "path": "modules/braille-word-geometry/android/CMakeLists.txt",
+        "v6_sha256": "2e9cc14c2588fb27ba7530ec452b6f49e5274c614a24f65f3e01c3f320097845",
+        "current_sha256": "2e9cc14c2588fb27ba7530ec452b6f49e5274c614a24f65f3e01c3f320097845",
+        "stage_sha256": "2e9cc14c2588fb27ba7530ec452b6f49e5274c614a24f65f3e01c3f320097845"
+      },
+      {
+        "path": "modules/braille-word-geometry/android/build.gradle",
+        "v6_sha256": "02e2dcbda4ced239902b37f610934ccf3e26e8b31952f0005997970fef270c41",
+        "current_sha256": "02e2dcbda4ced239902b37f610934ccf3e26e8b31952f0005997970fef270c41",
+        "stage_sha256": "02e2dcbda4ced239902b37f610934ccf3e26e8b31952f0005997970fef270c41"
+      },
+      {
+        "path": "modules/braille-word-geometry/android/consumer-rules.pro",
+        "v6_sha256": "f63e5bb960568fdd3c9f773ad8fe5e264e738202ee888a474a1a8351dfe69e5d",
+        "current_sha256": "f63e5bb960568fdd3c9f773ad8fe5e264e738202ee888a474a1a8351dfe69e5d",
+        "stage_sha256": "f63e5bb960568fdd3c9f773ad8fe5e264e738202ee888a474a1a8351dfe69e5d"
+      },
+      {
+        "path": "modules/braille-word-geometry/android/src/main/AndroidManifest.xml",
+        "v6_sha256": "21058c692532098e42afc39cf09de946c38229ec414bb7ac32f4fc90ba9a5f45",
+        "current_sha256": "21058c692532098e42afc39cf09de946c38229ec414bb7ac32f4fc90ba9a5f45",
+        "stage_sha256": "21058c692532098e42afc39cf09de946c38229ec414bb7ac32f4fc90ba9a5f45"
+      },
+      {
+        "path": "modules/braille-word-geometry/android/src/main/cpp/cpp-adapter.cpp",
+        "v6_sha256": "1b60e23d0aa1b1ecbc3eb041ab87fa1099590c674accbdf27c5b0c62699e7be2",
+        "current_sha256": "1b60e23d0aa1b1ecbc3eb041ab87fa1099590c674accbdf27c5b0c62699e7be2",
+        "stage_sha256": "1b60e23d0aa1b1ecbc3eb041ab87fa1099590c674accbdf27c5b0c62699e7be2"
+      },
+      {
+        "path": "modules/braille-word-geometry/android/src/main/java/com/margelo/nitro/braillewordgeometry/HybridWordPhotoGeometry.kt",
+        "v6_sha256": "b3fd06c5b5fde79d5a1deaa1abc0892fe33e7ba0aafebe7bf45763e53aba2219",
+        "current_sha256": "b3fd06c5b5fde79d5a1deaa1abc0892fe33e7ba0aafebe7bf45763e53aba2219",
+        "stage_sha256": "b3fd06c5b5fde79d5a1deaa1abc0892fe33e7ba0aafebe7bf45763e53aba2219"
+      },
+      {
+        "path": "modules/braille-word-geometry/android/src/main/java/expo/modules/braillewordgeometry/BrailleWordGeometryModule.kt",
+        "v6_sha256": "417fc6eb0bd4952c3ffb3f100b49a7d3eb9a3cb980656ad23bfd4e399f12429f",
+        "current_sha256": "417fc6eb0bd4952c3ffb3f100b49a7d3eb9a3cb980656ad23bfd4e399f12429f",
+        "stage_sha256": "417fc6eb0bd4952c3ffb3f100b49a7d3eb9a3cb980656ad23bfd4e399f12429f"
+      },
+      {
+        "path": "modules/braille-word-geometry/expo-module.config.json",
+        "v6_sha256": "397647d0f20ccb6bc029987a27da172210bc3be08cd47c80d14b1fd361cf9b8f",
+        "current_sha256": "397647d0f20ccb6bc029987a27da172210bc3be08cd47c80d14b1fd361cf9b8f",
+        "stage_sha256": "397647d0f20ccb6bc029987a27da172210bc3be08cd47c80d14b1fd361cf9b8f"
+      },
+      {
+        "path": "modules/braille-word-geometry/nitro.json",
+        "v6_sha256": "f8607d1bd91a1842163df16d6d21b685d52fc5d337c74f0b74f855a6ed7ac11e",
+        "current_sha256": "f8607d1bd91a1842163df16d6d21b685d52fc5d337c74f0b74f855a6ed7ac11e",
+        "stage_sha256": "f8607d1bd91a1842163df16d6d21b685d52fc5d337c74f0b74f855a6ed7ac11e"
+      },
+      {
+        "path": "modules/braille-word-geometry/nitrogen/generated/.gitattributes",
+        "v6_sha256": "8401d61d91c8f286601668b1b3c8e90e324d3f09d45a22bc72712c9b5f18e348",
+        "current_sha256": "8401d61d91c8f286601668b1b3c8e90e324d3f09d45a22bc72712c9b5f18e348",
+        "stage_sha256": "8401d61d91c8f286601668b1b3c8e90e324d3f09d45a22bc72712c9b5f18e348"
+      },
+      {
+        "path": "modules/braille-word-geometry/nitrogen/generated/android/BrailleWordGeometry+autolinking.cmake",
+        "v6_sha256": "92474ba23df6fd03faab221195f2f26d966a22d48caec13623b1836110c141bf",
+        "current_sha256": "92474ba23df6fd03faab221195f2f26d966a22d48caec13623b1836110c141bf",
+        "stage_sha256": "92474ba23df6fd03faab221195f2f26d966a22d48caec13623b1836110c141bf"
+      },
+      {
+        "path": "modules/braille-word-geometry/nitrogen/generated/android/BrailleWordGeometry+autolinking.gradle",
+        "v6_sha256": "f7808458852b7208f1b8a831f51c8b6f8fc3d7529ecb6ea77fc27030e898b44c",
+        "current_sha256": "f7808458852b7208f1b8a831f51c8b6f8fc3d7529ecb6ea77fc27030e898b44c",
+        "stage_sha256": "f7808458852b7208f1b8a831f51c8b6f8fc3d7529ecb6ea77fc27030e898b44c"
+      },
+      {
+        "path": "modules/braille-word-geometry/nitrogen/generated/android/BrailleWordGeometryOnLoad.cpp",
+        "v6_sha256": "852c47e99b04bf66540bb2259c24f1ba9bb55fd80167e76fd429b4a6764f6ffe",
+        "current_sha256": "852c47e99b04bf66540bb2259c24f1ba9bb55fd80167e76fd429b4a6764f6ffe",
+        "stage_sha256": "852c47e99b04bf66540bb2259c24f1ba9bb55fd80167e76fd429b4a6764f6ffe"
+      },
+      {
+        "path": "modules/braille-word-geometry/nitrogen/generated/android/BrailleWordGeometryOnLoad.hpp",
+        "v6_sha256": "d372a0fcb36e94516ead97febe0ecdaaf31a4f20f2b1dfb7f3562534e41733f0",
+        "current_sha256": "d372a0fcb36e94516ead97febe0ecdaaf31a4f20f2b1dfb7f3562534e41733f0",
+        "stage_sha256": "d372a0fcb36e94516ead97febe0ecdaaf31a4f20f2b1dfb7f3562534e41733f0"
+      },
+      {
+        "path": "modules/braille-word-geometry/nitrogen/generated/android/c++/JHybridWordPhotoGeometrySpec.cpp",
+        "v6_sha256": "ff87f503fe7a8db3353c4f7b6d53702bea839b040ab37004c43b544447be0322",
+        "current_sha256": "ff87f503fe7a8db3353c4f7b6d53702bea839b040ab37004c43b544447be0322",
+        "stage_sha256": "ff87f503fe7a8db3353c4f7b6d53702bea839b040ab37004c43b544447be0322"
+      },
+      {
+        "path": "modules/braille-word-geometry/nitrogen/generated/android/c++/JHybridWordPhotoGeometrySpec.hpp",
+        "v6_sha256": "0ac62432cbe3db21d20deb1df0fd109b0086ccae8e7cc4ddc5c590ff65d7f054",
+        "current_sha256": "0ac62432cbe3db21d20deb1df0fd109b0086ccae8e7cc4ddc5c590ff65d7f054",
+        "stage_sha256": "0ac62432cbe3db21d20deb1df0fd109b0086ccae8e7cc4ddc5c590ff65d7f054"
+      },
+      {
+        "path": "modules/braille-word-geometry/nitrogen/generated/android/c++/JPhotoGeometry.hpp",
+        "v6_sha256": "55db880d62679fb27013ff605b7130fa1d0f37de0023fe5044b2ced0d6100dda",
+        "current_sha256": "55db880d62679fb27013ff605b7130fa1d0f37de0023fe5044b2ced0d6100dda",
+        "stage_sha256": "55db880d62679fb27013ff605b7130fa1d0f37de0023fe5044b2ced0d6100dda"
+      },
+      {
+        "path": "modules/braille-word-geometry/nitrogen/generated/android/kotlin/com/margelo/nitro/braillewordgeometry/BrailleWordGeometryOnLoad.kt",
+        "v6_sha256": "01254773c574d84736b27b0bda3604a9d8b61d5c754a6ed6eaa9560d625fac9c",
+        "current_sha256": "01254773c574d84736b27b0bda3604a9d8b61d5c754a6ed6eaa9560d625fac9c",
+        "stage_sha256": "01254773c574d84736b27b0bda3604a9d8b61d5c754a6ed6eaa9560d625fac9c"
+      },
+      {
+        "path": "modules/braille-word-geometry/nitrogen/generated/android/kotlin/com/margelo/nitro/braillewordgeometry/HybridWordPhotoGeometrySpec.kt",
+        "v6_sha256": "8a99b07f753172d6a68a4032dfc07130101b34784a09995936cf0f493c5d66c8",
+        "current_sha256": "8a99b07f753172d6a68a4032dfc07130101b34784a09995936cf0f493c5d66c8",
+        "stage_sha256": "8a99b07f753172d6a68a4032dfc07130101b34784a09995936cf0f493c5d66c8"
+      },
+      {
+        "path": "modules/braille-word-geometry/nitrogen/generated/android/kotlin/com/margelo/nitro/braillewordgeometry/PhotoGeometry.kt",
+        "v6_sha256": "ad148255a6136bf9841b6d4a38d41d08c5ba31dde4678dac0d1dea8ed20c1bf7",
+        "current_sha256": "ad148255a6136bf9841b6d4a38d41d08c5ba31dde4678dac0d1dea8ed20c1bf7",
+        "stage_sha256": "ad148255a6136bf9841b6d4a38d41d08c5ba31dde4678dac0d1dea8ed20c1bf7"
+      },
+      {
+        "path": "modules/braille-word-geometry/nitrogen/generated/shared/c++/HybridWordPhotoGeometrySpec.cpp",
+        "v6_sha256": "702a255fa4c5e022415ad667c922946284c075f89570d24841074b26e322b124",
+        "current_sha256": "702a255fa4c5e022415ad667c922946284c075f89570d24841074b26e322b124",
+        "stage_sha256": "702a255fa4c5e022415ad667c922946284c075f89570d24841074b26e322b124"
+      },
+      {
+        "path": "modules/braille-word-geometry/nitrogen/generated/shared/c++/HybridWordPhotoGeometrySpec.hpp",
+        "v6_sha256": "2d8e48627a4fcb3eb9dd584e9c94bf775cf3691df0875a28375f4391b5b13ebf",
+        "current_sha256": "2d8e48627a4fcb3eb9dd584e9c94bf775cf3691df0875a28375f4391b5b13ebf",
+        "stage_sha256": "2d8e48627a4fcb3eb9dd584e9c94bf775cf3691df0875a28375f4391b5b13ebf"
+      },
+      {
+        "path": "modules/braille-word-geometry/nitrogen/generated/shared/c++/PhotoGeometry.hpp",
+        "v6_sha256": "ea786b4d6a90fc35b6bc501b0ec962e9367c7f7e772d1e9f4b74dd73828a74c1",
+        "current_sha256": "ea786b4d6a90fc35b6bc501b0ec962e9367c7f7e772d1e9f4b74dd73828a74c1",
+        "stage_sha256": "ea786b4d6a90fc35b6bc501b0ec962e9367c7f7e772d1e9f4b74dd73828a74c1"
+      },
+      {
+        "path": "modules/braille-word-geometry/src/WordPhotoGeometry.nitro.ts",
+        "v6_sha256": "4f003678cd6f37dbe2d3bac02a96414c6edadba5fef4a8ad8cf823245258b76e",
+        "current_sha256": "4f003678cd6f37dbe2d3bac02a96414c6edadba5fef4a8ad8cf823245258b76e",
+        "stage_sha256": "4f003678cd6f37dbe2d3bac02a96414c6edadba5fef4a8ad8cf823245258b76e"
+      },
+      {
+        "path": "modules/braille-word-geometry/src/index.ts",
+        "v6_sha256": "1b822d18ef8932e837abbdfaf7e7472520c47cead044b5376070ce468fa054b3",
+        "current_sha256": "1b822d18ef8932e837abbdfaf7e7472520c47cead044b5376070ce468fa054b3",
+        "stage_sha256": "1b822d18ef8932e837abbdfaf7e7472520c47cead044b5376070ce468fa054b3"
+      },
+      {
+        "path": "package-lock.json",
+        "v6_sha256": "ff9a337033007d9ee7d1b6e6530a33ec004e1e5aa02e50b8fda259371a915b39",
+        "current_sha256": "ff9a337033007d9ee7d1b6e6530a33ec004e1e5aa02e50b8fda259371a915b39",
+        "stage_sha256": "ff9a337033007d9ee7d1b6e6530a33ec004e1e5aa02e50b8fda259371a915b39"
+      },
+      {
+        "path": "package.json",
+        "v6_sha256": "369008dd6f3ad8fd0d2e4e47e31952732c6d0bb6a0cb90a59c72b04d5188a631",
+        "current_sha256": "369008dd6f3ad8fd0d2e4e47e31952732c6d0bb6a0cb90a59c72b04d5188a631",
+        "stage_sha256": "369008dd6f3ad8fd0d2e4e47e31952732c6d0bb6a0cb90a59c72b04d5188a631"
+      },
+      {
+        "path": "scripts/inspect-tflite.mjs",
+        "v6_sha256": "be4e7746ea23cff2baa562fe407880af8e453aefcdcc2af77776249b7e50c797",
+        "current_sha256": "be4e7746ea23cff2baa562fe407880af8e453aefcdcc2af77776249b7e50c797",
+        "stage_sha256": "be4e7746ea23cff2baa562fe407880af8e453aefcdcc2af77776249b7e50c797"
+      },
+      {
+        "path": "scripts/jest-model-asset.cjs",
+        "v6_sha256": "272db4192327e243edc48c31ba97be7a5771e36334213706a3787e016224679d",
+        "current_sha256": "272db4192327e243edc48c31ba97be7a5771e36334213706a3787e016224679d",
+        "stage_sha256": "272db4192327e243edc48c31ba97be7a5771e36334213706a3787e016224679d"
+      },
+      {
+        "path": "scripts/run-expo-doctor.mjs",
+        "v6_sha256": "7ad74d284a3d925974af1a3bd5c93e8f2865e3864a8589913fd3f35e72a095de",
+        "current_sha256": "7ad74d284a3d925974af1a3bd5c93e8f2865e3864a8589913fd3f35e72a095de",
+        "stage_sha256": "7ad74d284a3d925974af1a3bd5c93e8f2865e3864a8589913fd3f35e72a095de"
+      },
+      {
+        "path": "scripts/submit-eas-build.mjs",
+        "v6_sha256": "9ef701d396afbbe78a8c6d90edd5c29ef1bfebc93d692673be9eca6aa9f64546",
+        "current_sha256": "9ef701d396afbbe78a8c6d90edd5c29ef1bfebc93d692673be9eca6aa9f64546",
+        "stage_sha256": "9ef701d396afbbe78a8c6d90edd5c29ef1bfebc93d692673be9eca6aa9f64546"
+      },
+      {
+        "path": "scripts/test-experimental-word-model-verifier.mjs",
+        "v6_sha256": "58e7c60ed6172d9b4ff8c9cb2eeac11952bfd439f8121834852c7a9f036ae615",
+        "current_sha256": "58e7c60ed6172d9b4ff8c9cb2eeac11952bfd439f8121834852c7a9f036ae615",
+        "stage_sha256": "58e7c60ed6172d9b4ff8c9cb2eeac11952bfd439f8121834852c7a9f036ae615"
+      },
+      {
+        "path": "scripts/test-word-model-verifier.mjs",
+        "v6_sha256": "350530e9e4f31eb21c1f27de7863aab171b3afe5f0621d9fa8715610333d58f2",
+        "current_sha256": "350530e9e4f31eb21c1f27de7863aab171b3afe5f0621d9fa8715610333d58f2",
+        "stage_sha256": "350530e9e4f31eb21c1f27de7863aab171b3afe5f0621d9fa8715610333d58f2"
+      },
+      {
+        "path": "scripts/verify-eas-build-profile.mjs",
+        "v6_sha256": "fd64d5701d09535a4ebadc2012a776d9211017dcba20a591b430166a646d4cc1",
+        "current_sha256": "fd64d5701d09535a4ebadc2012a776d9211017dcba20a591b430166a646d4cc1",
+        "stage_sha256": "fd64d5701d09535a4ebadc2012a776d9211017dcba20a591b430166a646d4cc1"
+      },
+      {
+        "path": "scripts/verify-experimental-word-model-assets.mjs",
+        "v6_sha256": "b263faf4c283d5b2c07a3849a0478ddd9eb9fdaa997db90ee7da92466fc39ce0",
+        "current_sha256": "b263faf4c283d5b2c07a3849a0478ddd9eb9fdaa997db90ee7da92466fc39ce0",
+        "stage_sha256": "b263faf4c283d5b2c07a3849a0478ddd9eb9fdaa997db90ee7da92466fc39ce0"
+      },
+      {
+        "path": "scripts/verify-model-assets.mjs",
+        "v6_sha256": "914e36096ded0b4c0b40f1685964bc0b969b4be9f601892944b10cf4e90a1ed4",
+        "current_sha256": "914e36096ded0b4c0b40f1685964bc0b969b4be9f601892944b10cf4e90a1ed4",
+        "stage_sha256": "914e36096ded0b4c0b40f1685964bc0b969b4be9f601892944b10cf4e90a1ed4"
+      },
+      {
+        "path": "scripts/verify-model-release-evidence.mjs",
+        "v6_sha256": "483fbbb4a7293bd257b5c697d4544cd989e1d83f85fb513fb43b110057851263",
+        "current_sha256": "483fbbb4a7293bd257b5c697d4544cd989e1d83f85fb513fb43b110057851263",
+        "stage_sha256": "483fbbb4a7293bd257b5c697d4544cd989e1d83f85fb513fb43b110057851263"
+      },
+      {
+        "path": "scripts/verify-model-release.mjs",
+        "v6_sha256": "03ff40262be7e26fe2480a33157dc5efe292cb152c305aefa1c672aeba0ebc08",
+        "current_sha256": "03ff40262be7e26fe2480a33157dc5efe292cb152c305aefa1c672aeba0ebc08",
+        "stage_sha256": "03ff40262be7e26fe2480a33157dc5efe292cb152c305aefa1c672aeba0ebc08"
+      },
+      {
+        "path": "scripts/verify-release-config.mjs",
+        "v6_sha256": "eed5c9808d3460d7a3a6019d30b4a7d535b163f53fe78469ba26ad3cd24f7ecf",
+        "current_sha256": "eed5c9808d3460d7a3a6019d30b4a7d535b163f53fe78469ba26ad3cd24f7ecf",
+        "stage_sha256": "eed5c9808d3460d7a3a6019d30b4a7d535b163f53fe78469ba26ad3cd24f7ecf"
+      },
+      {
+        "path": "scripts/verify-word-model-assets.mjs",
+        "v6_sha256": "b85b60cafa58513fa5460f5a7bea57e3066a52d9be6e166ef612aed7eff4603f",
+        "current_sha256": "b85b60cafa58513fa5460f5a7bea57e3066a52d9be6e166ef612aed7eff4603f",
+        "stage_sha256": "b85b60cafa58513fa5460f5a7bea57e3066a52d9be6e166ef612aed7eff4603f"
+      },
+      {
+        "path": "scripts/word-android-smoke/smoke.py",
+        "v6_sha256": "4fd2fc17d0c506d6dd07cd0747a5dda5a8d6d1c2ff8897673c60fcd2a535555f",
+        "current_sha256": "4fd2fc17d0c506d6dd07cd0747a5dda5a8d6d1c2ff8897673c60fcd2a535555f",
+        "stage_sha256": "4fd2fc17d0c506d6dd07cd0747a5dda5a8d6d1c2ff8897673c60fcd2a535555f"
+      },
+      {
+        "path": "scripts/word-android-smoke/test_smoke.py",
+        "v6_sha256": "58fe2679cf31cb5ae84024f7f0b27e61d0d410ffd59a280f832c929490a9d181",
+        "current_sha256": "58fe2679cf31cb5ae84024f7f0b27e61d0d410ffd59a280f832c929490a9d181",
+        "stage_sha256": "58fe2679cf31cb5ae84024f7f0b27e61d0d410ffd59a280f832c929490a9d181"
+      },
+      {
+        "path": "scripts/word-decoder-parity/README.md",
+        "v6_sha256": "82d0f71f14b3234fa0e324b1bf8b595cabd49e1477bbe40cf97aa5f5da06149e",
+        "current_sha256": "82d0f71f14b3234fa0e324b1bf8b595cabd49e1477bbe40cf97aa5f5da06149e",
+        "stage_sha256": "82d0f71f14b3234fa0e324b1bf8b595cabd49e1477bbe40cf97aa5f5da06149e"
+      },
+      {
+        "path": "scripts/word-decoder-parity/compare.cjs",
+        "v6_sha256": "bf189ba36f64e8769239f7bbd6e5c68788c43c636612a59608b81200d6b0797c",
+        "current_sha256": "bf189ba36f64e8769239f7bbd6e5c68788c43c636612a59608b81200d6b0797c",
+        "stage_sha256": "bf189ba36f64e8769239f7bbd6e5c68788c43c636612a59608b81200d6b0797c"
+      },
+      {
+        "path": "scripts/word-decoder-parity/geometry-ceiling.cjs",
+        "v6_sha256": "d18d98b10285a43d932d8bacbef7d958580763d2874b062ddf15eed750521eb5",
+        "current_sha256": "d18d98b10285a43d932d8bacbef7d958580763d2874b062ddf15eed750521eb5",
+        "stage_sha256": "d18d98b10285a43d932d8bacbef7d958580763d2874b062ddf15eed750521eb5"
+      },
+      {
+        "path": "scripts/word-decoder-parity/geometry-ceiling.py",
+        "v6_sha256": "cc0d041b9249f37e4c823674b32340bbacdea7009dd22a93647a341181ac1841",
+        "current_sha256": "cc0d041b9249f37e4c823674b32340bbacdea7009dd22a93647a341181ac1841",
+        "stage_sha256": "cc0d041b9249f37e4c823674b32340bbacdea7009dd22a93647a341181ac1841"
+      },
+      {
+        "path": "scripts/word-decoder-parity/geometry-ceiling.test.cjs",
+        "v6_sha256": "335618ff31239d975e97bc4148b17ce695ed58236df6d513124b365f2d30ffe8",
+        "current_sha256": "335618ff31239d975e97bc4148b17ce695ed58236df6d513124b365f2d30ffe8",
+        "stage_sha256": "335618ff31239d975e97bc4148b17ce695ed58236df6d513124b365f2d30ffe8"
+      },
+      {
+        "path": "scripts/word-decoder-parity/numerical-boundaries.cjs",
+        "v6_sha256": "4bec4b657fb9f09a34cae996f6e1946449ee7cadce49b349645cf5b478e9de4a",
+        "current_sha256": "4bec4b657fb9f09a34cae996f6e1946449ee7cadce49b349645cf5b478e9de4a",
+        "stage_sha256": "4bec4b657fb9f09a34cae996f6e1946449ee7cadce49b349645cf5b478e9de4a"
+      },
+      {
+        "path": "scripts/word-decoder-parity/numerical-boundaries.py",
+        "v6_sha256": "ba63554a7bdbde79e0b86112d8972355c0a648b1cc6c6c8a8d343df5bb88fb34",
+        "current_sha256": "ba63554a7bdbde79e0b86112d8972355c0a648b1cc6c6c8a8d343df5bb88fb34",
+        "stage_sha256": "ba63554a7bdbde79e0b86112d8972355c0a648b1cc6c6c8a8d343df5bb88fb34"
+      },
+      {
+        "path": "scripts/word-decoder-parity/prepare.py",
+        "v6_sha256": "863b2d79d3e64532bbba19cfc9799dd321b298914c7424c102962871aaf123a6",
+        "current_sha256": "863b2d79d3e64532bbba19cfc9799dd321b298914c7424c102962871aaf123a6",
+        "stage_sha256": "863b2d79d3e64532bbba19cfc9799dd321b298914c7424c102962871aaf123a6"
+      },
+      {
+        "path": "scripts/word-native-capture/README.md",
+        "v6_sha256": "0ba0c1e3e69e52c2d021e791cabe8b7639625c5c59a81e1ae01b071603508638",
+        "current_sha256": "0ba0c1e3e69e52c2d021e791cabe8b7639625c5c59a81e1ae01b071603508638",
+        "stage_sha256": "0ba0c1e3e69e52c2d021e791cabe8b7639625c5c59a81e1ae01b071603508638"
+      },
+      {
+        "path": "scripts/word-native-capture/verify_archive.py",
+        "v6_sha256": "2019fd0be5e9e22fe1c71b6cdf0641713a47b127f93a7aecf419dbf07ad01ba3",
+        "current_sha256": "2019fd0be5e9e22fe1c71b6cdf0641713a47b127f93a7aecf419dbf07ad01ba3",
+        "stage_sha256": "2019fd0be5e9e22fe1c71b6cdf0641713a47b127f93a7aecf419dbf07ad01ba3"
+      },
+      {
+        "path": "scripts/word-native-interpreter/README.md",
+        "v6_sha256": "16bd8bc0a063148155ab30ffa853c5347ba408c0244db14794dfa0a776ba7b4b",
+        "current_sha256": "16bd8bc0a063148155ab30ffa853c5347ba408c0244db14794dfa0a776ba7b4b",
+        "stage_sha256": "16bd8bc0a063148155ab30ffa853c5347ba408c0244db14794dfa0a776ba7b4b"
+      },
+      {
+        "path": "scripts/word-native-interpreter/compare.cjs",
+        "v6_sha256": "4fa8ade36a97e4ea36e10aa6d8aef20f62cf4c80c4c3eca3837507255f6936e7",
+        "current_sha256": "4fa8ade36a97e4ea36e10aa6d8aef20f62cf4c80c4c3eca3837507255f6936e7",
+        "stage_sha256": "4fa8ade36a97e4ea36e10aa6d8aef20f62cf4c80c4c3eca3837507255f6936e7"
+      },
+      {
+        "path": "scripts/word-native-interpreter/compare.test.cjs",
+        "v6_sha256": "b678a95bec27fa30db90c9d7da694762fce6a0aa1f48ed9f9b1656806ad5596f",
+        "current_sha256": "b678a95bec27fa30db90c9d7da694762fce6a0aa1f48ed9f9b1656806ad5596f",
+        "stage_sha256": "b678a95bec27fa30db90c9d7da694762fce6a0aa1f48ed9f9b1656806ad5596f"
+      },
+      {
+        "path": "scripts/word-native-interpreter/compile.py",
+        "v6_sha256": "793c0b0a96bb650f541705e7df458af8d042f4e80f19c1d47c4fe06ba7a36627",
+        "current_sha256": "793c0b0a96bb650f541705e7df458af8d042f4e80f19c1d47c4fe06ba7a36627",
+        "stage_sha256": "793c0b0a96bb650f541705e7df458af8d042f4e80f19c1d47c4fe06ba7a36627"
+      },
+      {
+        "path": "scripts/word-native-interpreter/prepare.py",
+        "v6_sha256": "d9ce8999b4a1c3dec1313b3c8abcd804abefae78aa87abbb594a4c899522dc5c",
+        "current_sha256": "d9ce8999b4a1c3dec1313b3c8abcd804abefae78aa87abbb594a4c899522dc5c",
+        "stage_sha256": "d9ce8999b4a1c3dec1313b3c8abcd804abefae78aa87abbb594a4c899522dc5c"
+      },
+      {
+        "path": "scripts/word-native-interpreter/run.py",
+        "v6_sha256": "67e66176835809dbf5b5edbaab2678c2dd90678db9804334264f4e2f284a9e96",
+        "current_sha256": "67e66176835809dbf5b5edbaab2678c2dd90678db9804334264f4e2f284a9e96",
+        "stage_sha256": "67e66176835809dbf5b5edbaab2678c2dd90678db9804334264f4e2f284a9e96"
+      },
+      {
+        "path": "scripts/word-native-interpreter/word_interpreter.c",
+        "v6_sha256": "bb09f22771ea633f7706ba7ec5ea82f5d169548b904f685df37f834d3a7fdd2c",
+        "current_sha256": "bb09f22771ea633f7706ba7ec5ea82f5d169548b904f685df37f834d3a7fdd2c",
+        "stage_sha256": "bb09f22771ea633f7706ba7ec5ea82f5d169548b904f685df37f834d3a7fdd2c"
+      },
+      {
+        "path": "scripts/word-native-parity/README.md",
+        "v6_sha256": "4c141afd08f8903b84544ad7ed08024b8538a03a7ba59ee5cb92f93a52b73c39",
+        "current_sha256": "4c141afd08f8903b84544ad7ed08024b8538a03a7ba59ee5cb92f93a52b73c39",
+        "stage_sha256": "4c141afd08f8903b84544ad7ed08024b8538a03a7ba59ee5cb92f93a52b73c39"
+      },
+      {
+        "path": "scripts/word-native-parity/WordNativeParity.java",
+        "v6_sha256": "4ebc7cbee92c591237a66b915f24fb580fcf19c4e0d8fbc5fd16f6d15eab57e6",
+        "current_sha256": "4ebc7cbee92c591237a66b915f24fb580fcf19c4e0d8fbc5fd16f6d15eab57e6",
+        "stage_sha256": "4ebc7cbee92c591237a66b915f24fb580fcf19c4e0d8fbc5fd16f6d15eab57e6"
+      },
+      {
+        "path": "scripts/word-native-parity/compare.py",
+        "v6_sha256": "39c7db3659490b99f4acff62b869976cd0ccf31966e5feb75db609c6e81c4e90",
+        "current_sha256": "39c7db3659490b99f4acff62b869976cd0ccf31966e5feb75db609c6e81c4e90",
+        "stage_sha256": "39c7db3659490b99f4acff62b869976cd0ccf31966e5feb75db609c6e81c4e90"
+      },
+      {
+        "path": "scripts/word-native-parity/fixture-geometry.cjs",
+        "v6_sha256": "f5ac9307f93515e7463484a767d6da9c8ab40f644d03b7653ba418411e71dbd8",
+        "current_sha256": "f5ac9307f93515e7463484a767d6da9c8ab40f644d03b7653ba418411e71dbd8",
+        "stage_sha256": "f5ac9307f93515e7463484a767d6da9c8ab40f644d03b7653ba418411e71dbd8"
+      },
+      {
+        "path": "scripts/word-native-parity/geometry-reference.cjs",
+        "v6_sha256": "822a7f7c9924696398505e22dca2465986d5f30ae3981b71b9177d4d02f29f37",
+        "current_sha256": "822a7f7c9924696398505e22dca2465986d5f30ae3981b71b9177d4d02f29f37",
+        "stage_sha256": "822a7f7c9924696398505e22dca2465986d5f30ae3981b71b9177d4d02f29f37"
+      },
+      {
+        "path": "scripts/word-native-parity/pixel-reference.cjs",
+        "v6_sha256": "602041a3e60ae2db5e8214c589d52af58b07ef6227e40154e6321968e78ad9e1",
+        "current_sha256": "602041a3e60ae2db5e8214c589d52af58b07ef6227e40154e6321968e78ad9e1",
+        "stage_sha256": "602041a3e60ae2db5e8214c589d52af58b07ef6227e40154e6321968e78ad9e1"
+      },
+      {
+        "path": "scripts/word-native-parity/run.ps1",
+        "v6_sha256": "1fc2ff58c7fc31de26087d4afb39458f4eb0d0f2a93543af4b08fe3a9a82d765",
+        "current_sha256": "1fc2ff58c7fc31de26087d4afb39458f4eb0d0f2a93543af4b08fe3a9a82d765",
+        "stage_sha256": "1fc2ff58c7fc31de26087d4afb39458f4eb0d0f2a93543af4b08fe3a9a82d765"
+      },
+      {
+        "path": "scripts/word-native-performance/README.md",
+        "v6_sha256": "4905edb0834c2365381bff0021e15d840ddea6d9d1d9a22fe2cd7e6af25772bc",
+        "current_sha256": "4905edb0834c2365381bff0021e15d840ddea6d9d1d9a22fe2cd7e6af25772bc",
+        "stage_sha256": "4905edb0834c2365381bff0021e15d840ddea6d9d1d9a22fe2cd7e6af25772bc"
+      },
+      {
+        "path": "scripts/word-native-performance/entry.tsx.template",
+        "v6_sha256": "0777ffb6eba608a042a7fa44ec8044e75aea0d13ac719b4a36d64b1943966859",
+        "current_sha256": "0777ffb6eba608a042a7fa44ec8044e75aea0d13ac719b4a36d64b1943966859",
+        "stage_sha256": "0777ffb6eba608a042a7fa44ec8044e75aea0d13ac719b4a36d64b1943966859"
+      },
+      {
+        "path": "scripts/word-native-performance/metro.config.js.template",
+        "v6_sha256": "61b7ab1d3e01e1bebd9784e22d5172bb31997b7ebb76cd79ef75cde30237d618",
+        "current_sha256": "61b7ab1d3e01e1bebd9784e22d5172bb31997b7ebb76cd79ef75cde30237d618",
+        "stage_sha256": "61b7ab1d3e01e1bebd9784e22d5172bb31997b7ebb76cd79ef75cde30237d618"
+      },
+      {
+        "path": "scripts/word-native-performance/prepare.py",
+        "v6_sha256": "805e602434f57cb4be4674964c68d770a9b44921a3b1f7522606d0cd459c2566",
+        "current_sha256": "805e602434f57cb4be4674964c68d770a9b44921a3b1f7522606d0cd459c2566",
+        "stage_sha256": "805e602434f57cb4be4674964c68d770a9b44921a3b1f7522606d0cd459c2566"
+      },
+      {
+        "path": "scripts/word-native-performance/rebundle.py",
+        "v6_sha256": "d05435ac6758f5f23acb8ec719351109773575ff1b8e04dea9e5cf773b83fbb5",
+        "current_sha256": "d05435ac6758f5f23acb8ec719351109773575ff1b8e04dea9e5cf773b83fbb5",
+        "stage_sha256": "d05435ac6758f5f23acb8ec719351109773575ff1b8e04dea9e5cf773b83fbb5"
+      },
+      {
+        "path": "scripts/word-normalization-sensitivity.py",
+        "v6_sha256": "77d257fee112458a3e07cec050a7a2e915a4883f3b8bb93991c42d3c9209ed25",
+        "current_sha256": "77d257fee112458a3e07cec050a7a2e915a4883f3b8bb93991c42d3c9209ed25",
+        "stage_sha256": "77d257fee112458a3e07cec050a7a2e915a4883f3b8bb93991c42d3c9209ed25"
+      },
+      {
+        "path": "src/accessibility/use-accessibility-preferences.ts",
+        "v6_sha256": "335f18efede07e4150c5a2f6c223fc9ad069241e9d386336ef25c3655537cffe",
+        "current_sha256": "335f18efede07e4150c5a2f6c223fc9ad069241e9d386336ef25c3655537cffe",
+        "stage_sha256": "335f18efede07e4150c5a2f6c223fc9ad069241e9d386336ef25c3655537cffe"
+      },
+      {
+        "path": "src/components/__tests__/accessible-button.test.tsx",
+        "v6_sha256": "95b3b13ab18b532c991370c273744dd7abaa3f9721a0c2eecd381f53ee7b4de7",
+        "current_sha256": "95b3b13ab18b532c991370c273744dd7abaa3f9721a0c2eecd381f53ee7b4de7",
+        "stage_sha256": "95b3b13ab18b532c991370c273744dd7abaa3f9721a0c2eecd381f53ee7b4de7"
+      },
+      {
+        "path": "src/components/__tests__/primary-page.test.tsx",
+        "v6_sha256": "841da02f916c6444e4a514e373a252788c392c1e238b90caeecc19a6d93f9cf1",
+        "current_sha256": "841da02f916c6444e4a514e373a252788c392c1e238b90caeecc19a6d93f9cf1",
+        "stage_sha256": "841da02f916c6444e4a514e373a252788c392c1e238b90caeecc19a6d93f9cf1"
+      },
+      {
+        "path": "src/components/__tests__/status-announcer.test.tsx",
+        "v6_sha256": "3634a72a394e9d994f5f015be13892e48f0b119590181fe932979f9d815a647f",
+        "current_sha256": "3634a72a394e9d994f5f015be13892e48f0b119590181fe932979f9d815a647f",
+        "stage_sha256": "3634a72a394e9d994f5f015be13892e48f0b119590181fe932979f9d815a647f"
+      },
+      {
+        "path": "src/components/accessible-button.tsx",
+        "v6_sha256": "7bbfff872fb2da89c648a8c84d2742f8bc13226bd1f96b4bab56595ee8952137",
+        "current_sha256": "7bbfff872fb2da89c648a8c84d2742f8bc13226bd1f96b4bab56595ee8952137",
+        "stage_sha256": "7bbfff872fb2da89c648a8c84d2742f8bc13226bd1f96b4bab56595ee8952137"
+      },
+      {
+        "path": "src/components/index.ts",
+        "v6_sha256": "3f42e88597b55159164576c83d464b23e8f91981e45b10b6ef63e648d87d47b9",
+        "current_sha256": "3f42e88597b55159164576c83d464b23e8f91981e45b10b6ef63e648d87d47b9",
+        "stage_sha256": "3f42e88597b55159164576c83d464b23e8f91981e45b10b6ef63e648d87d47b9"
+      },
+      {
+        "path": "src/components/primary-page.tsx",
+        "v6_sha256": "7f5dea04169806c9c33d8daea989bcfd13f5b649bb0a51245676e9f5173107e4",
+        "current_sha256": "7f5dea04169806c9c33d8daea989bcfd13f5b649bb0a51245676e9f5173107e4",
+        "stage_sha256": "7f5dea04169806c9c33d8daea989bcfd13f5b649bb0a51245676e9f5173107e4"
+      },
+      {
+        "path": "src/components/screen.tsx",
+        "v6_sha256": "693ef68273766029436b4233498f43d7c55e2e426e5fa01ab87f5911c6009de6",
+        "current_sha256": "693ef68273766029436b4233498f43d7c55e2e426e5fa01ab87f5911c6009de6",
+        "stage_sha256": "693ef68273766029436b4233498f43d7c55e2e426e5fa01ab87f5911c6009de6"
+      },
+      {
+        "path": "src/components/section-card.tsx",
+        "v6_sha256": "452cfd11f0f102c5782a94bf6450461530736a14b21e00d9a309d50bdf6fbaf2",
+        "current_sha256": "452cfd11f0f102c5782a94bf6450461530736a14b21e00d9a309d50bdf6fbaf2",
+        "stage_sha256": "452cfd11f0f102c5782a94bf6450461530736a14b21e00d9a309d50bdf6fbaf2"
+      },
+      {
+        "path": "src/components/setting-row.tsx",
+        "v6_sha256": "acb812c948d3ff4aed5d5e6eb7c2324364868498c71c25f3f1fa03fcd4eeeb83",
+        "current_sha256": "acb812c948d3ff4aed5d5e6eb7c2324364868498c71c25f3f1fa03fcd4eeeb83",
+        "stage_sha256": "acb812c948d3ff4aed5d5e6eb7c2324364868498c71c25f3f1fa03fcd4eeeb83"
+      },
+      {
+        "path": "src/components/status-announcer.tsx",
+        "v6_sha256": "a391597b9c235d6456fbe1dc0b8faffbedb45c68242fe3906ec0cdb4f2284729",
+        "current_sha256": "a391597b9c235d6456fbe1dc0b8faffbedb45c68242fe3906ec0cdb4f2284729",
+        "stage_sha256": "a391597b9c235d6456fbe1dc0b8faffbedb45c68242fe3906ec0cdb4f2284729"
+      },
+      {
+        "path": "src/config/app-environment.ts",
+        "v6_sha256": "154a693055ef33cbf90d084ffcf5ab0a103e03737be5a9c78d3e23e5aa2013a9",
+        "current_sha256": "154a693055ef33cbf90d084ffcf5ab0a103e03737be5a9c78d3e23e5aa2013a9",
+        "stage_sha256": "154a693055ef33cbf90d084ffcf5ab0a103e03737be5a9c78d3e23e5aa2013a9"
+      },
+      {
+        "path": "src/config/index.ts",
+        "v6_sha256": "1349143da8fc8f439ab671c67cbcaef9553a9ff6916eb5cbe9c355501484a002",
+        "current_sha256": "1349143da8fc8f439ab671c67cbcaef9553a9ff6916eb5cbe9c355501484a002",
+        "stage_sha256": "1349143da8fc8f439ab671c67cbcaef9553a9ff6916eb5cbe9c355501484a002"
+      },
+      {
+        "path": "src/features/help/help-screen.tsx",
+        "v6_sha256": "a92e38454645762d09ef0c5eefcfda58c288f4bf78e6336a8ced37a214748402",
+        "current_sha256": "a92e38454645762d09ef0c5eefcfda58c288f4bf78e6336a8ced37a214748402",
+        "stage_sha256": "a92e38454645762d09ef0c5eefcfda58c288f4bf78e6336a8ced37a214748402"
+      },
+      {
+        "path": "src/features/home/__tests__/home-screen.test.tsx",
+        "v6_sha256": "e824a6aca251b2236b33ebed2695f8443b693316dbafe445e24ef57312ffabf0",
+        "current_sha256": "e824a6aca251b2236b33ebed2695f8443b693316dbafe445e24ef57312ffabf0",
+        "stage_sha256": "e824a6aca251b2236b33ebed2695f8443b693316dbafe445e24ef57312ffabf0"
+      },
+      {
+        "path": "src/features/home/home-screen.tsx",
+        "v6_sha256": "a5ced33f7ab8f23efacf3de6dfa53836254c4f79dc2dd14f8a0a532e367cd472",
+        "current_sha256": "a5ced33f7ab8f23efacf3de6dfa53836254c4f79dc2dd14f8a0a532e367cd472",
+        "stage_sha256": "a5ced33f7ab8f23efacf3de6dfa53836254c4f79dc2dd14f8a0a532e367cd472"
+      },
+      {
+        "path": "src/features/live/__tests__/live-runtime-screen.test.tsx",
+        "v6_sha256": "dc335c543e93f7119431962c25222a92ea9ea1c7ea59175a810d9901803a1ae5",
+        "current_sha256": "dc335c543e93f7119431962c25222a92ea9ea1c7ea59175a810d9901803a1ae5",
+        "stage_sha256": "dc335c543e93f7119431962c25222a92ea9ea1c7ea59175a810d9901803a1ae5"
+      },
+      {
+        "path": "src/features/live/__tests__/live-screen.test.tsx",
+        "v6_sha256": "473dbfcb1be5edaacbefda39226f369a063057d89c643c094767f7cb58bc786d",
+        "current_sha256": "473dbfcb1be5edaacbefda39226f369a063057d89c643c094767f7cb58bc786d",
+        "stage_sha256": "473dbfcb1be5edaacbefda39226f369a063057d89c643c094767f7cb58bc786d"
+      },
+      {
+        "path": "src/features/live/__tests__/live-single-cell-camera.test.tsx",
+        "v6_sha256": "4b809268fdc525f056c5cfe51cfa91cb51357f376ad7ea5cb86a1aa2bff2037b",
+        "current_sha256": "4b809268fdc525f056c5cfe51cfa91cb51357f376ad7ea5cb86a1aa2bff2037b",
+        "stage_sha256": "4b809268fdc525f056c5cfe51cfa91cb51357f376ad7ea5cb86a1aa2bff2037b"
+      },
+      {
+        "path": "src/features/live/__tests__/word-draft.test.ts",
+        "v6_sha256": "ff2ecf4724b5e3d3a93fdde7c377fe0f42b25aec8a1e06d85b6036b1184389b9",
+        "current_sha256": "ff2ecf4724b5e3d3a93fdde7c377fe0f42b25aec8a1e06d85b6036b1184389b9",
+        "stage_sha256": "ff2ecf4724b5e3d3a93fdde7c377fe0f42b25aec8a1e06d85b6036b1184389b9"
+      },
+      {
+        "path": "src/features/live/__tests__/word-photo-camera.test.tsx",
+        "v6_sha256": "91f5e08748e76cf7c489412196cf3ded3a6013e478e234380df7dbbacc0cf688",
+        "current_sha256": "91f5e08748e76cf7c489412196cf3ded3a6013e478e234380df7dbbacc0cf688",
+        "stage_sha256": "91f5e08748e76cf7c489412196cf3ded3a6013e478e234380df7dbbacc0cf688"
+      },
+      {
+        "path": "src/features/live/__tests__/word-scan-screen.test.tsx",
+        "v6_sha256": "96859faacdb257c569ae7f0a407a642842d065307ae92944983a6455eb893c90",
+        "current_sha256": "96859faacdb257c569ae7f0a407a642842d065307ae92944983a6455eb893c90",
+        "stage_sha256": "96859faacdb257c569ae7f0a407a642842d065307ae92944983a6455eb893c90"
+      },
+      {
+        "path": "src/features/live/live-runtime-screen.tsx",
+        "v6_sha256": "bfa141d3941efe2af0906982a8b062655e98a9583a260fef8857e30cdc42296b",
+        "current_sha256": "bfa141d3941efe2af0906982a8b062655e98a9583a260fef8857e30cdc42296b",
+        "stage_sha256": "bfa141d3941efe2af0906982a8b062655e98a9583a260fef8857e30cdc42296b"
+      },
+      {
+        "path": "src/features/live/live-screen.tsx",
+        "v6_sha256": "51025a8300eea1c83ee53030f205f3e0a1a2b7d3f5811fae8d2152a4474803e7",
+        "current_sha256": "51025a8300eea1c83ee53030f205f3e0a1a2b7d3f5811fae8d2152a4474803e7",
+        "stage_sha256": "51025a8300eea1c83ee53030f205f3e0a1a2b7d3f5811fae8d2152a4474803e7"
+      },
+      {
+        "path": "src/features/live/live-single-cell-camera.tsx",
+        "v6_sha256": "39895f4798a0e9997a43b97187f12c4347ae21366eb4ae52cf25c1eda8dc030f",
+        "current_sha256": "39895f4798a0e9997a43b97187f12c4347ae21366eb4ae52cf25c1eda8dc030f",
+        "stage_sha256": "39895f4798a0e9997a43b97187f12c4347ae21366eb4ae52cf25c1eda8dc030f"
+      },
+      {
+        "path": "src/features/live/word-draft.ts",
+        "v6_sha256": "1b3a409bfd7535d7e853308556abfc3d19419c2f1ce9910e2a6b0fd6b717e196",
+        "current_sha256": "1b3a409bfd7535d7e853308556abfc3d19419c2f1ce9910e2a6b0fd6b717e196",
+        "stage_sha256": "1b3a409bfd7535d7e853308556abfc3d19419c2f1ce9910e2a6b0fd6b717e196"
+      },
+      {
+        "path": "src/features/live/word-photo-camera.tsx",
+        "v6_sha256": "f2204a5c3889c59ee156d0c1800ba2023bfe6973d8d0b6a446681806a7224cf8",
+        "current_sha256": "f2204a5c3889c59ee156d0c1800ba2023bfe6973d8d0b6a446681806a7224cf8",
+        "stage_sha256": "f2204a5c3889c59ee156d0c1800ba2023bfe6973d8d0b6a446681806a7224cf8"
+      },
+      {
+        "path": "src/features/live/word-scan-screen.tsx",
+        "v6_sha256": "5a0934e805bfb5edf885f4a281d170cbaefb760317ac04611047a42d6e3b0555",
+        "current_sha256": "5a0934e805bfb5edf885f4a281d170cbaefb760317ac04611047a42d6e3b0555",
+        "stage_sha256": "5a0934e805bfb5edf885f4a281d170cbaefb760317ac04611047a42d6e3b0555"
+      },
+      {
+        "path": "src/features/not-found/not-found-screen.tsx",
+        "v6_sha256": "a3219df0c0c5497906bc2a1b45bb9a8fede6bac9a949b596921a779a7ea1cb21",
+        "current_sha256": "a3219df0c0c5497906bc2a1b45bb9a8fede6bac9a949b596921a779a7ea1cb21",
+        "stage_sha256": "a3219df0c0c5497906bc2a1b45bb9a8fede6bac9a949b596921a779a7ea1cb21"
+      },
+      {
+        "path": "src/features/onboarding/__tests__/onboarding-flow.test.tsx",
+        "v6_sha256": "db07fe8dd352799fec4bca731e1c3027697cf1ee7bab744b2ca49a1fcce6dab9",
+        "current_sha256": "db07fe8dd352799fec4bca731e1c3027697cf1ee7bab744b2ca49a1fcce6dab9",
+        "stage_sha256": "db07fe8dd352799fec4bca731e1c3027697cf1ee7bab744b2ca49a1fcce6dab9"
+      },
+      {
+        "path": "src/features/onboarding/onboarding-screen.tsx",
+        "v6_sha256": "a7a0224b8307180751c36250b7b8a102909b4c8bd5cec6bbf5bf2895c4603b3f",
+        "current_sha256": "a7a0224b8307180751c36250b7b8a102909b4c8bd5cec6bbf5bf2895c4603b3f",
+        "stage_sha256": "a7a0224b8307180751c36250b7b8a102909b4c8bd5cec6bbf5bf2895c4603b3f"
+      },
+      {
+        "path": "src/features/privacy/__tests__/privacy-screen.test.tsx",
+        "v6_sha256": "fffa3601b5cc228579fb91a629d11aa657bb5a3447954820abdf728f1f73d637",
+        "current_sha256": "fffa3601b5cc228579fb91a629d11aa657bb5a3447954820abdf728f1f73d637",
+        "stage_sha256": "fffa3601b5cc228579fb91a629d11aa657bb5a3447954820abdf728f1f73d637"
+      },
+      {
+        "path": "src/features/privacy/privacy-screen.tsx",
+        "v6_sha256": "47d9c90ee009c3fc4897ce13fdf962e3cbafa287a01be42a9ed2b341e1d3dc35",
+        "current_sha256": "47d9c90ee009c3fc4897ce13fdf962e3cbafa287a01be42a9ed2b341e1d3dc35",
+        "stage_sha256": "47d9c90ee009c3fc4897ce13fdf962e3cbafa287a01be42a9ed2b341e1d3dc35"
+      },
+      {
+        "path": "src/features/settings/__tests__/settings-screen.test.tsx",
+        "v6_sha256": "b5bdb247a1267edf3d083c7d015306cce48688a4b5ee535a16221ef840f835e5",
+        "current_sha256": "b5bdb247a1267edf3d083c7d015306cce48688a4b5ee535a16221ef840f835e5",
+        "stage_sha256": "b5bdb247a1267edf3d083c7d015306cce48688a4b5ee535a16221ef840f835e5"
+      },
+      {
+        "path": "src/features/settings/settings-screen.tsx",
+        "v6_sha256": "0ab518218c89039ea468a663fec024b16035021c237d9fbc66e5d120cca56f6b",
+        "current_sha256": "0ab518218c89039ea468a663fec024b16035021c237d9fbc66e5d120cca56f6b",
+        "stage_sha256": "0ab518218c89039ea468a663fec024b16035021c237d9fbc66e5d120cca56f6b"
+      },
+      {
+        "path": "src/ml/__tests__/braille-model-contract.test.ts",
+        "v6_sha256": "5cc9853550e65a4128d3db84a86936210e8ca7e083f8610b8cd5f3eaf06e485d",
+        "current_sha256": "5cc9853550e65a4128d3db84a86936210e8ca7e083f8610b8cd5f3eaf06e485d",
+        "stage_sha256": "5cc9853550e65a4128d3db84a86936210e8ca7e083f8610b8cd5f3eaf06e485d"
+      },
+      {
+        "path": "src/ml/__tests__/braille-model-loader.test.ts",
+        "v6_sha256": "10aba3d1278688837ba9425bd586afdf6cb33c06b64a0c6a726c2fa7aed3534d",
+        "current_sha256": "10aba3d1278688837ba9425bd586afdf6cb33c06b64a0c6a726c2fa7aed3534d",
+        "stage_sha256": "10aba3d1278688837ba9425bd586afdf6cb33c06b64a0c6a726c2fa7aed3534d"
+      },
+      {
+        "path": "src/ml/__tests__/fixtures/word-decoder-reference.json",
+        "v6_sha256": "71321a35e696522ff3d1a0c33bcdd18e556a918c8c3d6609381cbed81e9a8888",
+        "current_sha256": "71321a35e696522ff3d1a0c33bcdd18e556a918c8c3d6609381cbed81e9a8888",
+        "stage_sha256": "71321a35e696522ff3d1a0c33bcdd18e556a918c8c3d6609381cbed81e9a8888"
+      },
+      {
+        "path": "src/ml/__tests__/fixtures/word-resize-reference.json",
+        "v6_sha256": "efddabcc8dd5bf068afded7e55b2219df4ecace8b211d00c78b1d4eac45203bf",
+        "current_sha256": "efddabcc8dd5bf068afded7e55b2219df4ecace8b211d00c78b1d4eac45203bf",
+        "stage_sha256": "efddabcc8dd5bf068afded7e55b2219df4ecace8b211d00c78b1d4eac45203bf"
+      },
+      {
+        "path": "src/ml/__tests__/frame-preprocessing.test.ts",
+        "v6_sha256": "6c13ac3ed057a47140a3cebc755e7b1474219ca5938cc3486bf124fccb454290",
+        "current_sha256": "6c13ac3ed057a47140a3cebc755e7b1474219ca5938cc3486bf124fccb454290",
+        "stage_sha256": "6c13ac3ed057a47140a3cebc755e7b1474219ca5938cc3486bf124fccb454290"
+      },
+      {
+        "path": "src/ml/__tests__/frame-quality.test.ts",
+        "v6_sha256": "42823224460195006c2c589f2be65538dc70be0c4b212d0360132d3c04c2f87e",
+        "current_sha256": "42823224460195006c2c589f2be65538dc70be0c4b212d0360132d3c04c2f87e",
+        "stage_sha256": "42823224460195006c2c589f2be65538dc70be0c4b212d0360132d3c04c2f87e"
+      },
+      {
+        "path": "src/ml/__tests__/prediction-stabilizer.test.ts",
+        "v6_sha256": "0794db49ca3b9b2faf14bde75933fff954a29e7a36da278bb7d61afed826382d",
+        "current_sha256": "0794db49ca3b9b2faf14bde75933fff954a29e7a36da278bb7d61afed826382d",
+        "stage_sha256": "0794db49ca3b9b2faf14bde75933fff954a29e7a36da278bb7d61afed826382d"
+      },
+      {
+        "path": "src/ml/__tests__/word-camera-geometry.test.ts",
+        "v6_sha256": "cf380216e24999af07a35e352ab69539ad4ae9a826108bd2858eab6843290622",
+        "current_sha256": "cf380216e24999af07a35e352ab69539ad4ae9a826108bd2858eab6843290622",
+        "stage_sha256": "cf380216e24999af07a35e352ab69539ad4ae9a826108bd2858eab6843290622"
+      },
+      {
+        "path": "src/ml/__tests__/word-decoder-positions.test.ts",
+        "v6_sha256": "2cce3800cc174473cc9bf739a0f7185a9cc2acdcabde01bc28b6809944690502",
+        "current_sha256": "2cce3800cc174473cc9bf739a0f7185a9cc2acdcabde01bc28b6809944690502",
+        "stage_sha256": "2cce3800cc174473cc9bf739a0f7185a9cc2acdcabde01bc28b6809944690502"
+      },
+      {
+        "path": "src/ml/__tests__/word-decoder.test.ts",
+        "v6_sha256": "4afcf97a8da3e736ca68e5c6f5ee34657f55fefe046e2ce354593585350c2b47",
+        "current_sha256": "4afcf97a8da3e736ca68e5c6f5ee34657f55fefe046e2ce354593585350c2b47",
+        "stage_sha256": "4afcf97a8da3e736ca68e5c6f5ee34657f55fefe046e2ce354593585350c2b47"
+      },
+      {
+        "path": "src/ml/__tests__/word-image-processing.test.ts",
+        "v6_sha256": "9268b1483b98a73e2456f20a26efd0e0f30d9c7ec2526eefa1856527483569d5",
+        "current_sha256": "9268b1483b98a73e2456f20a26efd0e0f30d9c7ec2526eefa1856527483569d5",
+        "stage_sha256": "9268b1483b98a73e2456f20a26efd0e0f30d9c7ec2526eefa1856527483569d5"
+      },
+      {
+        "path": "src/ml/__tests__/word-image-resize.test.ts",
+        "v6_sha256": "6215ba57ac85adb949955d5bd4776b793115007520143901dcc427aa0f44744b",
+        "current_sha256": "6215ba57ac85adb949955d5bd4776b793115007520143901dcc427aa0f44744b",
+        "stage_sha256": "6215ba57ac85adb949955d5bd4776b793115007520143901dcc427aa0f44744b"
+      },
+      {
+        "path": "src/ml/__tests__/word-model-loader.test.ts",
+        "v6_sha256": "c391c09a6ebabd2c1e98bf5f7eb11e6ca3a6e0acd6e05fc2a77604015eaafa26",
+        "current_sha256": "c391c09a6ebabd2c1e98bf5f7eb11e6ca3a6e0acd6e05fc2a77604015eaafa26",
+        "stage_sha256": "c391c09a6ebabd2c1e98bf5f7eb11e6ca3a6e0acd6e05fc2a77604015eaafa26"
+      },
+      {
+        "path": "src/ml/braille-model-contract.ts",
+        "v6_sha256": "5e5181612225d406cc12dadfa69edd85efaaea51a010a6eaf10131c4a60420cd",
+        "current_sha256": "5e5181612225d406cc12dadfa69edd85efaaea51a010a6eaf10131c4a60420cd",
+        "stage_sha256": "5e5181612225d406cc12dadfa69edd85efaaea51a010a6eaf10131c4a60420cd"
+      },
+      {
+        "path": "src/ml/braille-model-loader.ts",
+        "v6_sha256": "95495da20c0dd2e2572ea9cd6f532fbd6818ec99a3ea4adf244559a1f0b97dc6",
+        "current_sha256": "95495da20c0dd2e2572ea9cd6f532fbd6818ec99a3ea4adf244559a1f0b97dc6",
+        "stage_sha256": "95495da20c0dd2e2572ea9cd6f532fbd6818ec99a3ea4adf244559a1f0b97dc6"
+      },
+      {
+        "path": "src/ml/braille-model-runtime-policy.ts",
+        "v6_sha256": "fe9328dda579f2ba3e99472d6286b52ed167c521952951829831f0969e252ad5",
+        "current_sha256": "fe9328dda579f2ba3e99472d6286b52ed167c521952951829831f0969e252ad5",
+        "stage_sha256": "fe9328dda579f2ba3e99472d6286b52ed167c521952951829831f0969e252ad5"
+      },
+      {
+        "path": "src/ml/frame-preprocessing.ts",
+        "v6_sha256": "e200f69e08ee1426430116d26e951359fa1dadbecf3631af06c926f9d718cfb0",
+        "current_sha256": "e200f69e08ee1426430116d26e951359fa1dadbecf3631af06c926f9d718cfb0",
+        "stage_sha256": "e200f69e08ee1426430116d26e951359fa1dadbecf3631af06c926f9d718cfb0"
+      },
+      {
+        "path": "src/ml/frame-quality.ts",
+        "v6_sha256": "dc34d5116cc9c91a271e1a9d33b7664a0bcdb8a53aefbbd2ad5c112f2bb3b16a",
+        "current_sha256": "dc34d5116cc9c91a271e1a9d33b7664a0bcdb8a53aefbbd2ad5c112f2bb3b16a",
+        "stage_sha256": "dc34d5116cc9c91a271e1a9d33b7664a0bcdb8a53aefbbd2ad5c112f2bb3b16a"
+      },
+      {
+        "path": "src/ml/index.ts",
+        "v6_sha256": "3ce4e4b2af50c9fab2cdc62e620de526716e1c11a84b758f6e0169ac42498f92",
+        "current_sha256": "3ce4e4b2af50c9fab2cdc62e620de526716e1c11a84b758f6e0169ac42498f92",
+        "stage_sha256": "3ce4e4b2af50c9fab2cdc62e620de526716e1c11a84b758f6e0169ac42498f92"
+      },
+      {
+        "path": "src/ml/prediction-stabilizer.ts",
+        "v6_sha256": "105e9e1b12bfc405c359ac1be6e750c12c731fd0fd3fc57aa2dcf85a48bb6376",
+        "current_sha256": "105e9e1b12bfc405c359ac1be6e750c12c731fd0fd3fc57aa2dcf85a48bb6376",
+        "stage_sha256": "105e9e1b12bfc405c359ac1be6e750c12c731fd0fd3fc57aa2dcf85a48bb6376"
+      },
+      {
+        "path": "src/ml/word-camera-geometry.ts",
+        "v6_sha256": "86e8d173f9c96b30ad2103496880f9556ef55c9620fb60aaed6136f4a0227623",
+        "current_sha256": "86e8d173f9c96b30ad2103496880f9556ef55c9620fb60aaed6136f4a0227623",
+        "stage_sha256": "86e8d173f9c96b30ad2103496880f9556ef55c9620fb60aaed6136f4a0227623"
+      },
+      {
+        "path": "src/ml/word-decoder.ts",
+        "v6_sha256": "f4f07829eb0f207d075477107e36daf241ed9821763ce44fb580b7b73cce7ffa",
+        "current_sha256": "f4f07829eb0f207d075477107e36daf241ed9821763ce44fb580b7b73cce7ffa",
+        "stage_sha256": "f4f07829eb0f207d075477107e36daf241ed9821763ce44fb580b7b73cce7ffa"
+      },
+      {
+        "path": "src/ml/word-image-processing.ts",
+        "v6_sha256": "5caf889b9267f81532902e5c00bed72f093b90e13862e7bf40a6293b3da86995",
+        "current_sha256": "5caf889b9267f81532902e5c00bed72f093b90e13862e7bf40a6293b3da86995",
+        "stage_sha256": "5caf889b9267f81532902e5c00bed72f093b90e13862e7bf40a6293b3da86995"
+      },
+      {
+        "path": "src/ml/word-model-assets.ts",
+        "v6_sha256": "3d11985839ee93e5780ffcdffbbcee7b37018ea37dca533e8865900478c3825c",
+        "current_sha256": "3d11985839ee93e5780ffcdffbbcee7b37018ea37dca533e8865900478c3825c",
+        "stage_sha256": "3d11985839ee93e5780ffcdffbbcee7b37018ea37dca533e8865900478c3825c"
+      },
+      {
+        "path": "src/ml/word-model-contract.ts",
+        "v6_sha256": "e01dd5f2e496300bc7ff46181ba470c7d7931e52558f893b84dbbf6348466932",
+        "current_sha256": "e01dd5f2e496300bc7ff46181ba470c7d7931e52558f893b84dbbf6348466932",
+        "stage_sha256": "e01dd5f2e496300bc7ff46181ba470c7d7931e52558f893b84dbbf6348466932"
+      },
+      {
+        "path": "src/ml/word-model-loader.ts",
+        "v6_sha256": "0fb3461342e54ef1ea680062ee06ad15cd3f2f6ca6f08ada8f03c2d4c8284bf7",
+        "current_sha256": "0fb3461342e54ef1ea680062ee06ad15cd3f2f6ca6f08ada8f03c2d4c8284bf7",
+        "stage_sha256": "0fb3461342e54ef1ea680062ee06ad15cd3f2f6ca6f08ada8f03c2d4c8284bf7"
+      },
+      {
+        "path": "src/routing/__tests__/route-guards.test.tsx",
+        "v6_sha256": "63d2588d8c64d7dd237e0ed5a39037df0bdf283d10ee6ffbbbdfea088ddc7af5",
+        "current_sha256": "63d2588d8c64d7dd237e0ed5a39037df0bdf283d10ee6ffbbbdfea088ddc7af5",
+        "stage_sha256": "63d2588d8c64d7dd237e0ed5a39037df0bdf283d10ee6ffbbbdfea088ddc7af5"
+      },
+      {
+        "path": "src/routing/__tests__/tabs-layout.test.tsx",
+        "v6_sha256": "979efc724e9773ca6d4e3e817f6e8753069d65d22923d1571fef892ffb231aed",
+        "current_sha256": "979efc724e9773ca6d4e3e817f6e8753069d65d22923d1571fef892ffb231aed",
+        "stage_sha256": "979efc724e9773ca6d4e3e817f6e8753069d65d22923d1571fef892ffb231aed"
+      },
+      {
+        "path": "src/services/__tests__/expo-speech-tts-port.test.ts",
+        "v6_sha256": "8f625177eb6944e4fdaeddb373f1b108ffb7a714bc10e72132c7c878833ca32a",
+        "current_sha256": "8f625177eb6944e4fdaeddb373f1b108ffb7a714bc10e72132c7c878833ca32a",
+        "stage_sha256": "8f625177eb6944e4fdaeddb373f1b108ffb7a714bc10e72132c7c878833ca32a"
+      },
+      {
+        "path": "src/services/__tests__/scan-readiness-port.test.ts",
+        "v6_sha256": "0fc0d20e05154472237ecf2ac5222c6adff036dcb826c0f7d8d240df9208eef9",
+        "current_sha256": "0fc0d20e05154472237ecf2ac5222c6adff036dcb826c0f7d8d240df9208eef9",
+        "stage_sha256": "0fc0d20e05154472237ecf2ac5222c6adff036dcb826c0f7d8d240df9208eef9"
+      },
+      {
+        "path": "src/services/__tests__/single-cell-scanner-port.test.ts",
+        "v6_sha256": "5b92e9cba15b3b728edb7d75be3fa68aed4583c53a7ad3714f02984052d99425",
+        "current_sha256": "5b92e9cba15b3b728edb7d75be3fa68aed4583c53a7ad3714f02984052d99425",
+        "stage_sha256": "5b92e9cba15b3b728edb7d75be3fa68aed4583c53a7ad3714f02984052d99425"
+      },
+      {
+        "path": "src/services/__tests__/vision-camera-permission-port.test.ts",
+        "v6_sha256": "545c95916c729ee4c03e047e286dfe2d51c5bd4808112aa25fc0fb07471ab8f4",
+        "current_sha256": "545c95916c729ee4c03e047e286dfe2d51c5bd4808112aa25fc0fb07471ab8f4",
+        "stage_sha256": "545c95916c729ee4c03e047e286dfe2d51c5bd4808112aa25fc0fb07471ab8f4"
+      },
+      {
+        "path": "src/services/expo-speech-tts-port.ts",
+        "v6_sha256": "b4f76363ebd500b45b1f214c6b1c0c0f796c80f18ab17a4d2f03641a962a4586",
+        "current_sha256": "b4f76363ebd500b45b1f214c6b1c0c0f796c80f18ab17a4d2f03641a962a4586",
+        "stage_sha256": "b4f76363ebd500b45b1f214c6b1c0c0f796c80f18ab17a4d2f03641a962a4586"
+      },
+      {
+        "path": "src/services/index.ts",
+        "v6_sha256": "3a434ef744157488a0830bd8ef633e3d536678fbaa1e06497eb45c2e9827f4d4",
+        "current_sha256": "3a434ef744157488a0830bd8ef633e3d536678fbaa1e06497eb45c2e9827f4d4",
+        "stage_sha256": "3a434ef744157488a0830bd8ef633e3d536678fbaa1e06497eb45c2e9827f4d4"
+      },
+      {
+        "path": "src/services/ports.ts",
+        "v6_sha256": "e2a7d3f27db891080c82dd05a43bee162f8647f948d88e3b8fa478e858628b75",
+        "current_sha256": "e2a7d3f27db891080c82dd05a43bee162f8647f948d88e3b8fa478e858628b75",
+        "stage_sha256": "e2a7d3f27db891080c82dd05a43bee162f8647f948d88e3b8fa478e858628b75"
+      },
+      {
+        "path": "src/services/scan-readiness-port.ts",
+        "v6_sha256": "a53927e57bb4dd02b0e7950c034939867ccb0dbc99c923176c6ca15dbcb6203e",
+        "current_sha256": "a53927e57bb4dd02b0e7950c034939867ccb0dbc99c923176c6ca15dbcb6203e",
+        "stage_sha256": "a53927e57bb4dd02b0e7950c034939867ccb0dbc99c923176c6ca15dbcb6203e"
+      },
+      {
+        "path": "src/services/single-cell-scanner-port.ts",
+        "v6_sha256": "eeee8e09453b4dd84f65521514caabe73aa69e11d002d472f48c1c590e6848a0",
+        "current_sha256": "eeee8e09453b4dd84f65521514caabe73aa69e11d002d472f48c1c590e6848a0",
+        "stage_sha256": "eeee8e09453b4dd84f65521514caabe73aa69e11d002d472f48c1c590e6848a0"
+      },
+      {
+        "path": "src/services/vision-camera-permission-port.ts",
+        "v6_sha256": "862c1da1f4e9c415d7b67208c53f2de8ee06fbe46da7827844e1b1f6bf162512",
+        "current_sha256": "862c1da1f4e9c415d7b67208c53f2de8ee06fbe46da7827844e1b1f6bf162512",
+        "stage_sha256": "862c1da1f4e9c415d7b67208c53f2de8ee06fbe46da7827844e1b1f6bf162512"
+      },
+      {
+        "path": "src/storage/__tests__/app-preferences-schema.test.ts",
+        "v6_sha256": "94fd0de66e920b0378d30e5d8535f5c0cf64d05167c5ea02da57a12835b4a3ad",
+        "current_sha256": "94fd0de66e920b0378d30e5d8535f5c0cf64d05167c5ea02da57a12835b4a3ad",
+        "stage_sha256": "94fd0de66e920b0378d30e5d8535f5c0cf64d05167c5ea02da57a12835b4a3ad"
+      },
+      {
+        "path": "src/storage/__tests__/app-preferences-store.test.ts",
+        "v6_sha256": "9057c69298c0dd7c38a6228cc690c90fb9c81c4e3745e4815d74c5a29a28ae78",
+        "current_sha256": "9057c69298c0dd7c38a6228cc690c90fb9c81c4e3745e4815d74c5a29a28ae78",
+        "stage_sha256": "9057c69298c0dd7c38a6228cc690c90fb9c81c4e3745e4815d74c5a29a28ae78"
+      },
+      {
+        "path": "src/storage/app-preferences-schema.ts",
+        "v6_sha256": "1635fd4d03c8375a4d5b8c8925fe1953e79bddd4246f9fb3dce385563e1246b7",
+        "current_sha256": "1635fd4d03c8375a4d5b8c8925fe1953e79bddd4246f9fb3dce385563e1246b7",
+        "stage_sha256": "1635fd4d03c8375a4d5b8c8925fe1953e79bddd4246f9fb3dce385563e1246b7"
+      },
+      {
+        "path": "src/storage/app-preferences-store.ts",
+        "v6_sha256": "25f98939fab01a70baa5c78a42e0fd7ac10cf3142588adaca6f2607476d7f668",
+        "current_sha256": "25f98939fab01a70baa5c78a42e0fd7ac10cf3142588adaca6f2607476d7f668",
+        "stage_sha256": "25f98939fab01a70baa5c78a42e0fd7ac10cf3142588adaca6f2607476d7f668"
+      },
+      {
+        "path": "src/storage/index.ts",
+        "v6_sha256": "e29e1cb2d98baa74df5b06c4b2c3b76f35dec4f99754acf445dc0147c7113201",
+        "current_sha256": "e29e1cb2d98baa74df5b06c4b2c3b76f35dec4f99754acf445dc0147c7113201",
+        "stage_sha256": "e29e1cb2d98baa74df5b06c4b2c3b76f35dec4f99754acf445dc0147c7113201"
+      },
+      {
+        "path": "src/theme/index.ts",
+        "v6_sha256": "c706c2e43dd9f5fb8f192518aad9c866a334de52aa8ad95048dd53aa377c9510",
+        "current_sha256": "c706c2e43dd9f5fb8f192518aad9c866a334de52aa8ad95048dd53aa377c9510",
+        "stage_sha256": "c706c2e43dd9f5fb8f192518aad9c866a334de52aa8ad95048dd53aa377c9510"
+      },
+      {
+        "path": "src/theme/tokens.ts",
+        "v6_sha256": "c3406cbb03fdc665563c95784f87d560af28970d0439452272c505433dc50ada",
+        "current_sha256": "c3406cbb03fdc665563c95784f87d560af28970d0439452272c505433dc50ada",
+        "stage_sha256": "c3406cbb03fdc665563c95784f87d560af28970d0439452272c505433dc50ada"
+      },
+      {
+        "path": "src/types/__tests__/live-scan.test.ts",
+        "v6_sha256": "bbf0a29156b7bb9b4ee0a337f1a8c52f74bc9173081505ffab55f0e5f190de36",
+        "current_sha256": "bbf0a29156b7bb9b4ee0a337f1a8c52f74bc9173081505ffab55f0e5f190de36",
+        "stage_sha256": "bbf0a29156b7bb9b4ee0a337f1a8c52f74bc9173081505ffab55f0e5f190de36"
+      },
+      {
+        "path": "src/types/__tests__/word-scan.test.ts",
+        "v6_sha256": "a10644111fe825c31b773ba098fc3ed57cd63271b01256266eabf208c5a00ddc",
+        "current_sha256": "a10644111fe825c31b773ba098fc3ed57cd63271b01256266eabf208c5a00ddc",
+        "stage_sha256": "a10644111fe825c31b773ba098fc3ed57cd63271b01256266eabf208c5a00ddc"
+      },
+      {
+        "path": "src/types/app-preferences.ts",
+        "v6_sha256": "6781813d5d2f809086879536848fcc90078c4e5dc70e1a281ed4286f3e64845b",
+        "current_sha256": "6781813d5d2f809086879536848fcc90078c4e5dc70e1a281ed4286f3e64845b",
+        "stage_sha256": "6781813d5d2f809086879536848fcc90078c4e5dc70e1a281ed4286f3e64845b"
+      },
+      {
+        "path": "src/types/index.ts",
+        "v6_sha256": "869ed9718c967fc5d93ce3ac9ae3833df9e786ed4062e241adaaf6b40ab8eda6",
+        "current_sha256": "869ed9718c967fc5d93ce3ac9ae3833df9e786ed4062e241adaaf6b40ab8eda6",
+        "stage_sha256": "869ed9718c967fc5d93ce3ac9ae3833df9e786ed4062e241adaaf6b40ab8eda6"
+      },
+      {
+        "path": "src/types/live-scan.ts",
+        "v6_sha256": "bfcb958421baa9492aad2c8e6dddda26b78a25f93e63494eb9f919bc9668e5b9",
+        "current_sha256": "bfcb958421baa9492aad2c8e6dddda26b78a25f93e63494eb9f919bc9668e5b9",
+        "stage_sha256": "bfcb958421baa9492aad2c8e6dddda26b78a25f93e63494eb9f919bc9668e5b9"
+      },
+      {
+        "path": "src/types/runtime.ts",
+        "v6_sha256": "3eae08216a14976fab69a0ef4ce2642ee3c35d2f8338007a98454d2679b176b9",
+        "current_sha256": "3eae08216a14976fab69a0ef4ce2642ee3c35d2f8338007a98454d2679b176b9",
+        "stage_sha256": "3eae08216a14976fab69a0ef4ce2642ee3c35d2f8338007a98454d2679b176b9"
+      },
+      {
+        "path": "src/types/word-scan.ts",
+        "v6_sha256": "09a0b7ad15ecc0e3176ee8f27939931da7506334a02a1d84d7f260b664804a28",
+        "current_sha256": "09a0b7ad15ecc0e3176ee8f27939931da7506334a02a1d84d7f260b664804a28",
+        "stage_sha256": "09a0b7ad15ecc0e3176ee8f27939931da7506334a02a1d84d7f260b664804a28"
+      },
+      {
+        "path": "tsconfig.json",
+        "v6_sha256": "fb92d9cc7d07a86596e6e172740b22d0dd11ab63cbaa663c57aeba199074f89f",
+        "current_sha256": "fb92d9cc7d07a86596e6e172740b22d0dd11ab63cbaa663c57aeba199074f89f",
+        "stage_sha256": "fb92d9cc7d07a86596e6e172740b22d0dd11ab63cbaa663c57aeba199074f89f"
+      }
+    ]
+  },
+  "documentation_differences_from_staging": [
+    {
+      "path": "docs/testing/SYMBOLS-AUTO-FRAME-IMPLEMENTATION-20260908.md",
+      "current_sha256": "ef7d6d868c1c9ca103afb836543cb5d8c590b87db8141ce4dbdf23225d9516f6",
+      "staging_sha256": null,
+      "comparison": "not_in_staging_copy",
+      "scope": "Docs excluded from v6 app/build selection; no initial doc hash asserted."
+    },
+    {
+      "path": "docs/testing/SYMBOLS-AUTO-FRAME-RESULTS-20260908.md",
+      "current_sha256": "a8d4d68d3f7da46beb2331ea534471d394825e402f8e4eed9506eea534df47e0",
+      "staging_sha256": null,
+      "comparison": "not_in_staging_copy",
+      "scope": "Docs excluded from v6 app/build selection; no initial doc hash asserted."
+    },
+    {
+      "path": "docs/testing/WORD-APK-NATIVE-SMOKE-ID.md",
+      "current_sha256": "cbd7e3cd06a5bd7a69286941c97d8fc86d012bf33e5b9ef07017a255c5b71631",
+      "staging_sha256": "38d4c6610e5967d3e8dbcfb848249478285ac2b58dc2ba3000dd53a36cc7cda1",
+      "comparison": "different_from_staging_copy",
+      "scope": "Docs excluded from v6 app/build selection; no initial doc hash asserted."
+    },
+    {
+      "path": "docs/testing/WORD-SCAN-SELF-TEST-ID.md",
+      "current_sha256": "ff994ad70d1ad0ea8628ee43e12c9360debf916204b09da20fae024c013ab097",
+      "staging_sha256": "fae2213512b222503a8632c54fc879b79aaa2104e2b5387b25b1573e625764a2",
+      "comparison": "different_from_staging_copy",
+      "scope": "Docs excluded from v6 app/build selection; no initial doc hash asserted."
+    }
+  ],
+  "excluded_output_scope": "New/updated output evidence and delivery metadata are intentionally outside stage-source selection. This audit enumerates the selected source/helper drift and docs differences, not all output artifacts.",
+  "results": {
+    "original_four_snapshots_and_patch_reconstruct": true,
+    "preexisting_regression_tests_still_present": true,
+    "retention_168_match": true,
+    "protected_old_weights_match": true,
+    "workspace_224_unchanged": true,
+    "stage_227_unchanged": true,
+    "no_unexpected_selected_source_drift": true,
+    "startup_doc_initial_hash_unavailable": true
+  }
+}

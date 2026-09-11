@@ -46,7 +46,7 @@ describe('guard dan pemulihan route', () => {
       name: 'Aktifkan kamera',
     });
     expect(activationButton.props.accessibilityHint).toBe(
-      'Membuka pratinjau kamera untuk memindai satu foto kata',
+      'Membuka pratinjau kamera untuk memindai satu kata atau rangkaian angka',
     );
     expect(activationButton).toHaveStyle({
       minHeight: minimumTouchTarget,
@@ -158,7 +158,7 @@ describe('guard dan pemulihan route', () => {
 
     expect(
       screen.getByRole('alert', {
-        name: /Tidak ada gambar atau hasil yang dibuat/i,
+        name: /Coba buka kembali pemindai/i,
       }),
     ).toBeOnTheScreen();
     await user.press(screen.getByRole('button', { name: 'Coba lagi' }));

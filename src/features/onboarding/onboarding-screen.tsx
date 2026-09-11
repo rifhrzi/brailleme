@@ -30,27 +30,27 @@ export default function OnboardingScreen() {
           Tiga hal penting sebelum mulai.
         </Text>
 
-        <SectionCard title="Pindai satu kata" variant="plain">
+        <SectionCard title="Pindai kata dan angka" variant="plain">
           <Text selectable style={styles.body}>
-            Tempatkan satu kata Braille di dalam bingkai, dengan kamera tepat di
-            atasnya dan cahaya miring dari ujung atas kertas. Tekan Pindai kata.
-            Aplikasi membaca huruf dari kiri ke kanan. Gunakan satu baris A sampai Z,
-            maksimal 12 huruf, lalu periksa hasil sebelum memilih Bacakan.
+            Arahkan kamera tepat di atas satu kata atau angka Braille, dengan
+            cahaya miring dari ujung atas kertas. Bingkai akan mengikuti posisinya.
+            Sertakan tanda kapital, angka, dan tanda baca. Tahan kamera, lalu tekan Pindai.
+            Gunakan satu baris, maksimal 12 karakter, lalu periksa hasil sebelum
+            memilih Bacakan.
           </Text>
         </SectionCard>
 
-        <SectionCard title="Privasi dan offline" variant="plain">
+        <SectionCard title="Bisa digunakan tanpa internet" variant="plain">
           <Text selectable style={styles.body}>
-            Gambar, huruf, dan kata hasil pemindaian tidak disimpan atau dikirim
-            ke cloud. Hanya preferensi aplikasi yang tersimpan di perangkat.
+            Foto dan hasil pemindaian diproses di perangkat, tanpa disimpan atau
+            dikirim. Hanya pengaturan aplikasi yang tersimpan.
           </Text>
         </SectionCard>
 
         <SectionCard title="Periksa setiap hasil" variant="plain">
           <Text selectable style={styles.body}>
-            Setiap huruf dapat salah. Cocokkan kata dengan sumber Braille atau
-            minta bantuan orang yang memahaminya sebelum memakai hasil untuk
-            keputusan penting.
+            Cocokkan huruf, angka, dan tanda baca dengan sumber Braille. Jika
+            hasilnya belum sesuai, perbaiki posisi atau cahaya lalu pindai ulang.
           </Text>
         </SectionCard>
       </Screen>

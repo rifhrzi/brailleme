@@ -1,0 +1,55 @@
+{
+  "scope": "Independent arithmetic replay of actual logged sensorToBuffer + mirror=false + clockwise90 metadata, not native pixel validation.",
+  "source_report": "v6-pixel-geometry-review.json",
+  "source_report_sha256": "0d6d6c850007ba38feda4ac4522a651a6c7826114f9941d6f1ef2f01eb60160d",
+  "raw_buffer_sensor_corners_xy": [
+    [
+      621.3661499023438,
+      109.966796875
+    ],
+    [
+      621.3661499023438,
+      717.692626953125
+    ],
+    [
+      529.1320190429688,
+      717.692626953125
+    ],
+    [
+      529.1320190429688,
+      109.966796875
+    ]
+  ],
+  "upright_corners_xy": [
+    [
+      850.033203125,
+      621.3661499023438
+    ],
+    [
+      242.307373046875,
+      621.3661499023438
+    ],
+    [
+      242.307373046875,
+      529.1320190429688
+    ],
+    [
+      850.033203125,
+      529.1320190429688
+    ]
+  ],
+  "recomputed_upright_roi_xyxy": [
+    242.307373046875,
+    529.1320190429688,
+    850.033203125,
+    621.3661499023438
+  ],
+  "recorded_upright_roi_xyxy": [
+    242.307373046875,
+    529.1320190429688,
+    850.033203125,
+    621.3661499023438
+  ],
+  "maximum_absolute_difference_photo_pixels": 0.0,
+  "conclusion": "Logged normalized photo ROI exactly reconstructs from the logged sensor points and image transform. This does not verify where frame inference proposals should have landed."
+}

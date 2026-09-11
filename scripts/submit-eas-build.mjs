@@ -5,6 +5,7 @@ import { createRequire } from "node:module";
 import { dirname, join, resolve } from "node:path";
 import { Readable } from "node:stream";
 import { fileURLToPath } from "node:url";
+import { activeWordModelDirectory } from './word-model-active-path.mjs';
 
 const require = createRequire(import.meta.url);
 const projectRoot = dirname(dirname(fileURLToPath(import.meta.url)));
@@ -130,13 +131,7 @@ for await (const chunk of Readable.fromWeb(response.body)) {
 }
 if (artifactBytes === 0) fail("artefak EAS kosong");
 
-const modelManifestPath = resolve(
-  projectRoot,
-  "assets",
-  "models",
-  "braille-word-reader-v1",
-  "manifest.json",
-);
+const modelManifestPath = resolve(activeWordModelDirectory(projectRoot), 'manifest.json');
 if (!existsSync(modelManifestPath)) fail("manifest model aktif tidak ditemukan");
 const modelManifest = JSON.parse(readFileSync(modelManifestPath, "utf8"));
 const attestation = {

@@ -3,7 +3,7 @@ import { StyleSheet, View } from 'react-native';
 
 import { colors } from '@/theme';
 
-export type PrimaryPageName = 'home' | 'scan' | 'settings';
+export type PrimaryPageName = 'home' | 'scan' | 'translator' | 'settings';
 
 export type PrimaryPageProps = PropsWithChildren<{
   page: PrimaryPageName;

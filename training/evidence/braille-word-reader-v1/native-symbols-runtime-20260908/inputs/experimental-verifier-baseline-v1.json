@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "created_at_utc": "2026-09-08T15:23:44.839Z",
+  "status": "passed",
+  "command": "node scripts/test-experimental-word-model-verifier.mjs",
+  "exit_code": 0,
+  "total": 42,
+  "passed": 42,
+  "scope": "Actual bound baseline manifest and evidence plus in-memory negative mutations; no model inference or camera execution.",
+  "manifest_sha256": "419f459f01970a56e745cbdaecd00b505daf5a46c534822febff7e91155e50da",
+  "model_sha256": "406db0e55e8a5ba9e0d00fb22aadc24f19698219f375e4dcead9057cf3bf2230",
+  "decoder_version": "six-dot-id-v3",
+  "log": {
+    "file": "C:/bm-symbols-apk-20260908/evidence/experimental-verifier-baseline-v1.log",
+    "sha256": "031219bf563495450cf36087b7cd2c381477efa7baf45e6c99cb19923a94d29b"
+  },
+  "source_sha256": {
+    "scripts/verify-experimental-word-model-assets.mjs": "b263faf4c283d5b2c07a3849a0478ddd9eb9fdaa997db90ee7da92466fc39ce0",
+    "scripts/test-experimental-word-model-verifier.mjs": "58e7c60ed6172d9b4ff8c9cb2eeac11952bfd439f8121834852c7a9f036ae615"
+  }
+}

@@ -74,7 +74,8 @@ def row_ids(boxes):
     return ids
 
 
-def candidates(image, boxes, masks, category):
+def candidates(image, boxes, masks, category, supported_masks=None):
+    supported_masks=set(LETTER_BY_MASK) if supported_masks is None else set(supported_masks)
     groups = word_groups(boxes)
     groups.sort(key=lambda group: (min(boxes[group, 1]), min(boxes[group, 0])))
     rows = row_ids(boxes)
@@ -93,7 +94,7 @@ def candidates(image, boxes, masks, category):
     else:
         for group in groups:
             if category == "unsupported_pattern":
-                unsupported = [i for i in group if int(masks[i]) not in LETTER_BY_MASK]
+                unsupported = [i for i in group if int(masks[i]) not in supported_masks]
                 if not (3 <= len(group) <= 7 and len(unsupported) == 1
                         and int(masks[unsupported[0]]).bit_count() >= 3):
                     continue
@@ -107,6 +108,8 @@ def candidates(image, boxes, masks, category):
                 if int(masks[last]) & 7 and int(masks[last]) & 56:
                     choices.append((group, last))
             elif category == "over_limit" and len(group) >= 13:
+                if {32,60}.issubset(supported_masks) and sum(int(masks[i]) not in (32,60) for i in group)<13:
+                    continue
                 choices.append((group, None))
     for indices, cut_index in choices:
         guide = guide_for(boxes, indices)
@@ -134,7 +137,8 @@ def candidates(image, boxes, masks, category):
                "row_ids": rows, "cut_index": cut_index}
 
 
-def write_record(output, source, image, boxes, masks, choice, category, ordinal, dataset):
+def write_record(output, source, image, boxes, masks, choice, category, ordinal, dataset, supported_masks=None):
+    supported_masks=set(LETTER_BY_MASK) if supported_masks is None else set(supported_masks)
     stem = f"{category}-{ordinal:02d}"
     crop, guide, indices = choice["crop"], choice["guide"], choice["indices"]
     patch = image.crop(crop)
@@ -167,7 +171,7 @@ def write_record(output, source, image, boxes, masks, choice, category, ordinal,
         "context_masks": masks[context_indices].tolist(),
         "context_complete_in_crop": complete(boxes[context_indices], crop).tolist(),
         "cut_annotation_row": None if choice["cut_index"] is None else int(choice["cut_index"]) + 1,
-        "unsupported_annotation_rows": [int(i) + 1 for i in indices if int(masks[i]) not in LETTER_BY_MASK],
+        "unsupported_annotation_rows": [int(i) + 1 for i in indices if int(masks[i]) not in supported_masks],
         "natural_pixels_only": True, "model_predictions_used": False,
     }
     preview = model_image.copy()
@@ -186,6 +190,7 @@ def main():
     parser.add_argument("--source-split", type=Path, required=True)
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--metadata", type=Path)
+    parser.add_argument('--indonesian-symbols',action='store_true',help='Exclude newly supported indicator patterns from unsupported diagnostics; overlimit counts output characters')
     args = parser.parse_args()
     if args.output.exists():
         raise SystemExit("Use a new output folder; never overwrite frozen diagnostic fixtures")
@@ -206,6 +211,7 @@ def main():
         masks = annotations[:, 4].astype(int)
         pages[source] = image, boxes, masks
     records = []
+    supported_masks=set(LETTER_BY_MASK)|({32,60} if args.indonesian_symbols else set())
     for category in CATEGORIES:
         # Prefer one case from each held family, then a third distinct photo.
         selected_sources, used_families = set(), set()
@@ -214,13 +220,13 @@ def main():
                 family = "/".join(source.split("/")[:2])
                 if source in selected_sources or (require_new_family and family in used_families):
                     continue
-                choice = next(candidates(image, boxes, masks, category), None)
+                choice = next(candidates(image, boxes, masks, category,supported_masks), None)
                 if choice is None:
                     continue
                 selected_sources.add(source)
                 used_families.add(family)
                 records.append(write_record(args.output, source, image, boxes, masks,
-                                            choice, category, len(selected_sources), args.dataset))
+                                            choice, category, len(selected_sources), args.dataset,supported_masks))
                 if len(selected_sources) == 3:
                     break
             if len(selected_sources) == 3:
@@ -250,6 +256,10 @@ def main():
         "category_counts": dict(Counter(record["category"] for record in records)), "records": records,
     }
     serialized = json.dumps(manifest, indent=2) + "\n"
+    if args.indonesian_symbols:
+        manifest['symbol_protocol']='indonesian-basic-v1'
+        manifest['selection_method']=manifest['selection_method'].replace('one non-A-Z mask','one mask outside A-Z/32/60').replace('at least 13 consecutive cells','at least 13 output-bearing cells excluding indicators32/60')
+        serialized=json.dumps(manifest,indent=2)+'\n'
     (args.output / "manifest.json").write_text(serialized, encoding="utf-8")
     if args.metadata:
         args.metadata.parent.mkdir(parents=True, exist_ok=True)

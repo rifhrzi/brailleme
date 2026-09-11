@@ -1,0 +1,232 @@
+{
+  "created_utc": "2026-09-10T16:32:32.320718+00:00",
+  "status": "passed",
+  "issues": [],
+  "audit_scope": "Independent recorded-row arithmetic, artifact/source hashes, retention and chronology; no inference rerun",
+  "chosen": {
+    "run": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots",
+    "epoch": 45,
+    "checkpoint_sha256": "090260a2a29f802cdcd07140344feaaf04d98bc48cd2be7a5d75e0482d6ee38c",
+    "tflite_sha256": "e82a540e7b2e1c8d5b3bd5c3004e1cc5409367293c27b24f13f2a7c05f015325",
+    "refiner_used": false
+  },
+  "test": {
+    "samples": 540,
+    "positive_rows": 500,
+    "positive_exact_correct": 350,
+    "positive_exact_accuracy": 0.7,
+    "positive_accepted": 400,
+    "positive_accepted_precision": 0.875,
+    "groups": {
+      "capital_single": {
+        "total": 100,
+        "positive_total": 100,
+        "correct": 73,
+        "accepted": 83,
+        "exact_accuracy": 0.73,
+        "accepted_precision": 0.8795180722891566,
+        "rejection_total": 0,
+        "false_accepts": 0
+      },
+      "capital_word": {
+        "total": 100,
+        "positive_total": 100,
+        "correct": 69,
+        "accepted": 82,
+        "exact_accuracy": 0.69,
+        "accepted_precision": 0.8414634146341463,
+        "rejection_total": 0,
+        "false_accepts": 0
+      },
+      "lowercase": {
+        "total": 100,
+        "positive_total": 100,
+        "correct": 71,
+        "accepted": 79,
+        "exact_accuracy": 0.71,
+        "accepted_precision": 0.8987341772151899,
+        "rejection_total": 0,
+        "false_accepts": 0
+      },
+      "numbers": {
+        "total": 100,
+        "positive_total": 100,
+        "correct": 78,
+        "accepted": 84,
+        "exact_accuracy": 0.78,
+        "accepted_precision": 0.9285714285714286,
+        "rejection_total": 0,
+        "false_accepts": 0
+      },
+      "punctuation": {
+        "total": 100,
+        "positive_total": 100,
+        "correct": 59,
+        "accepted": 72,
+        "exact_accuracy": 0.59,
+        "accepted_precision": 0.8194444444444444,
+        "rejection_total": 0,
+        "false_accepts": 0
+      },
+      "rejection": {
+        "total": 40,
+        "positive_total": 0,
+        "correct": 0,
+        "accepted": 0,
+        "exact_accuracy": null,
+        "accepted_precision": 0.0,
+        "rejection_total": 40,
+        "false_accepts": 1
+      }
+    },
+    "baseline_correct": {
+      "capital_single": 1,
+      "capital_word": 1,
+      "lowercase": 9,
+      "numbers": 2,
+      "punctuation": 6
+    },
+    "target80_met": false,
+    "physical_camera_validated": false
+  },
+  "export": {
+    "samples": 540,
+    "status": "passed",
+    "atol": 0.0001,
+    "rtol": 0.0001,
+    "torch_tf_max_abs": 8.19861888885498e-05,
+    "torch_tflite_max_abs": 0.0001417398452758789,
+    "combined_tolerance_explanation": "allclose uses atol+rtol*abs(reference), so a max absolute delta above1e-4 is not automatically a violation",
+    "numerical_inference_recomputed": false,
+    "full_validation_semantic_parity_recorded": true,
+    "test_summary_parity_independently_recounted": true,
+    "test_full_semantic_sequence_parity_claimed": false
+  },
+  "regression": {
+    "external607": {
+      "baseline": {
+        "total": 607,
+        "positive_total": 607,
+        "correct": 323,
+        "accepted": 353,
+        "exact_accuracy": 0.5321252059308073,
+        "accepted_precision": 0.9150141643059491,
+        "rejection_total": 0,
+        "false_accepts": 0
+      },
+      "candidate": {
+        "total": 607,
+        "positive_total": 607,
+        "correct": 309,
+        "accepted": 360,
+        "exact_accuracy": 0.5090609555189456,
+        "accepted_precision": 0.8583333333333333,
+        "rejection_total": 0,
+        "false_accepts": 0
+      },
+      "lost": 76,
+      "gained": 62
+    },
+    "legacy405": {
+      "baseline": {
+        "total": 405,
+        "positive_total": 405,
+        "correct": 355,
+        "accepted": 362,
+        "exact_accuracy": 0.8765432098765432,
+        "accepted_precision": 0.9806629834254144,
+        "rejection_total": 0,
+        "false_accepts": 0
+      },
+      "candidate": {
+        "total": 405,
+        "positive_total": 405,
+        "correct": 318,
+        "accepted": 333,
+        "exact_accuracy": 0.7851851851851852,
+        "accepted_precision": 0.954954954954955,
+        "rejection_total": 0,
+        "false_accepts": 0
+      },
+      "lost": 42,
+      "gained": 5
+    },
+    "negative44": {
+      "baseline": {
+        "total": 44,
+        "positive_total": 0,
+        "correct": 0,
+        "accepted": 0,
+        "exact_accuracy": null,
+        "accepted_precision": null,
+        "rejection_total": 44,
+        "false_accepts": 0
+      },
+      "candidate": {
+        "total": 44,
+        "positive_total": 0,
+        "correct": 0,
+        "accepted": 0,
+        "exact_accuracy": null,
+        "accepted_precision": null,
+        "rejection_total": 44,
+        "false_accepts": 0
+      },
+      "lost": 0,
+      "gained": 0
+    }
+  },
+  "decision": "NOT_PROMOTED: TEST below80%, invalid-sequence acceptance, and legacy accuracy/precision regression",
+  "chronology": {
+    "method_selected_utc": "2026-09-10T16:27:47.184777+00:00",
+    "test_reserved_utc": "2026-09-10T16:27:48.983172+00:00",
+    "method_precedes_test_seconds": 1.798395,
+    "run_created_utc": {
+      "run-cell-refiner-pilot": "2026-09-10T16:24:24.031819+00:00",
+      "run-dots": "2026-09-10T15:45:21.877242+00:00",
+      "run-finetune": "2026-09-10T15:24:04.568879+00:00",
+      "run-heads": "2026-09-10T15:14:43.604802+00:00"
+    },
+    "post_test_training_artifact_updates": [],
+    "no_post_test_tuning_observed": true
+  },
+  "preservation": {
+    "frozen_input_count": 10,
+    "source_snapshot_count": 69,
+    "protected_entries": 8,
+    "retention_indices_checked": [
+      "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\training\\checkpoints\\retained-models-20260908.json",
+      "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\training\\checkpoints\\retained-models.json",
+      "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\training\\checkpoints\\retained-runtime-20260909.json"
+    ],
+    "retained_file_references_checked": 224,
+    "scope": "Three preexisting complete indexes fixed at audit start; newly written retention index intentionally excluded"
+  },
+  "build_folder_status": {
+    "maxFolders": 2,
+    "withinLimit": true,
+    "folders": [
+      {
+        "path": "C:\\bm-symbols-apk-20260908",
+        "registered": true,
+        "createdUtc": "2026-09-08T14:13:32.7791562Z"
+      }
+    ],
+    "count": 1
+  },
+  "evidence_sha256": {
+    "C:\\bm-symbols-20260908\\accuracy80-20260910\\final-method-selection.json": "e75d6e8856516fc8fe4530a3ea599532b2fb6a6f0f51ef7a53cd0609ce92f39b",
+    "C:\\bm-symbols-20260908\\accuracy80-20260910\\test-evaluation-reservation.json": "986282043396a0a0109e181d221cd42f798c45a0b1c9b5aa3d819836c2a3aa39",
+    "C:\\bm-symbols-20260908\\accuracy80-20260910\\regression-evaluation-reservation.json": "23f092d03c72be60eeecd9a411cc5e938b82dfae031371789747fb1315ca7f73",
+    "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\selection.json": "4235598b3db21fc537c5741207514579fd6764644386d698688cc0ee141bc952",
+    "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\training-config.json": "f24d1789de9df2b1412e206111b6169a06bdc9cb3b6d05155b713682e8819a4c",
+    "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\test-evaluation.json": "742ae8db8d5ffd7303765be3e88f97efa6371a2c4917d723f1c5e3dcba03a21a",
+    "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\test-artifact-comparison.json": "ac9da16a8e910f5fb049bb6f79742ea2fdcd8f03fe7edfe1692194e51ec78c75",
+    "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\export\\export-parity.json": "2ef340a0ee114098dbaf5a404166e17778fd1a5fb02df110ba946094d67388f9",
+    "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\export\\torch-oracle.json": "31092ff690073ee5454a62efcdf070ea84614352fae67c0cc744449ee7f37b29",
+    "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\public-regression-v4.json": "f35716eec4e5dbbaf2ccfe68e76ef096f9a0a8ac00faf5bbd1cb544b9fdc5fb3"
+  },
+  "total_bound_paths_checked": 1751,
+  "model_inference_performed": false,
+  "existing_reports_modified": false
+}

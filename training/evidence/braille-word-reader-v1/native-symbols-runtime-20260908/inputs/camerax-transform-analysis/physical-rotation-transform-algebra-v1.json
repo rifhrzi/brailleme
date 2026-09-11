@@ -1,0 +1,250 @@
+{
+  "schema_version": 1,
+  "observed_utc": "2026-09-08T17:33:23.725676+00:00",
+  "status": "algebra_verified_against_installed_bytecode",
+  "scope": "Read-only installed library bytecode plus exact matrix algebra; only output evidence files written. No ADB, ART execution or new APK success claim.",
+  "library": {
+    "artifact": "androidx.camera:camera-core:1.7.0-alpha02",
+    "aar": {
+      "file": "C:\\Users\\rifqi\\.gradle\\caches\\modules-2\\files-2.1\\androidx.camera\\camera-core\\1.7.0-alpha02\\5ae7ba92cc0ac092d2abeaba8d0f96b1e74d7c40\\camera-core-1.7.0-alpha02.aar",
+      "bytes": 1233273,
+      "sha256": "e24c7201e367ccb53a382eb4b505c5e80369f101c818d72d4bee925f1604e4a6"
+    },
+    "classes_jar": {
+      "file": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\output\\update-symbols-tracking-20260908\\camerax-transform-analysis\\camera-core-1.7.0-alpha02-classes.jar",
+      "bytes": 1240592,
+      "sha256": "c2d760e10bf6284e7c5a49b856f37f1a3023619c7fdc1b3dd810e9823ac0d8ad"
+    },
+    "javap_output": {
+      "file": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\output\\update-symbols-tracking-20260908\\camerax-transform-analysis\\ImageAnalysisAbstractAnalyzer.javap.txt",
+      "bytes": 40078,
+      "sha256": "b0d44dcc925c46b389e668c62923ffc84ac638998335070dc8683d7014159bf0"
+    },
+    "method": "recalculateTransformMatrixAndCropRect",
+    "observed_setConcat_argument_order": [
+      "mOriginalSensorToBufferTransformMatrix",
+      "additionalTransformMatrix"
+    ]
+  },
+  "primary_sources": [
+    {
+      "url": "https://android.googlesource.com/platform/frameworks/support/+/efd0507cd0c5579b162875811c1bcaa763eccdf8/camera/camera-core/src/main/java/androidx/camera/core/ImageAnalysisAbstractAnalyzer.java",
+      "retrieved_source": {
+        "file": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\output\\update-symbols-tracking-20260908\\camerax-transform-analysis\\ImageAnalysisAbstractAnalyzer.primary-source.java",
+        "bytes": 24617,
+        "sha256": "1a9c1c823956f8dcacf9f1a4ef1620c4f7629833293b4d527e8a800fd0f13b33"
+      },
+      "relevant_lines": [
+        550,
+        551
+      ],
+      "note": "Primary CameraX source has the same composition order confirmed in the installed AAR bytecode; source revision is separately pinned and is not asserted to be the exact AAR source revision."
+    },
+    {
+      "url": "https://android.googlesource.com/platform/frameworks/base/+/c767333/core/jni/android/graphics/Matrix.cpp",
+      "note": "Android Matrix JNI forwards setConcat(a,b) to SkMatrix.setConcat(a,b)."
+    },
+    {
+      "url": "https://api.skia.org/classSkMatrix.html",
+      "section": "setConcat",
+      "note": "Skia documents setConcat(a,b) as a multiplied by b, with a on the left."
+    }
+  ],
+  "current_v5_runtime_evidence": {
+    "log": {
+      "file": "C:\\bm-symbols-apk-20260908\\evidence\\actions-prepare-v5\\20260908T173038529473Z-prepare-02-ed62c3.log",
+      "bytes": 165641,
+      "sha256": "65ff4371b715ad15ed6c68b6ccfb1b7d26ed3f07188b361f7bbb753c16f91344"
+    },
+    "excerpts": [
+      {
+        "line": 977,
+        "text": "1788888636.364  8008  8008 D Preview : onSuggestedStreamSpecUpdated: primaryStreamSpec = StreamSpec{resolution=1280x960, originalConfiguredResolution=1280x960, dynamicRange=DynamicRange@376d7{encoding=SDR, bitDepth=8}, sessionType=0, expectedFrameRateRange=[0, 0], implementationOptions=androidx.camera.camera2.impl.Camera2ImplConfig@71f0351, zslDisabled=false}, secondaryStreamSpec null"
+      },
+      {
+        "line": 987,
+        "text": "1788888636.371  8008  8008 D ImageAnalysis: onSuggestedStreamSpecUpdated: primaryStreamSpec = StreamSpec{resolution=640x480, originalConfiguredResolution=640x480, dynamicRange=DynamicRange@376d7{encoding=SDR, bitDepth=8}, sessionType=0, expectedFrameRateRange=[0, 0], implementationOptions=androidx.camera.camera2.impl.Camera2ImplConfig@6bb9e9a, zslDisabled=false}, secondaryStreamSpec null"
+      },
+      {
+        "line": 1063,
+        "text": "1788888636.413  8008  8008 D PreviewView: Preview transformation info updated. TransformationInfo{getCropRect=Rect(0, 0 - 1280, 960), getRotationDegrees=90, getTargetRotation=-1, hasCameraTransform=true, getSensorToBufferTransform=Matrix{[1.0, 0.0, 0.0][0.0, 1.0, 0.0][0.0, 0.0, 1.0]}, isMirroring=false}"
+      },
+      {
+        "line": 1228,
+        "text": "1788888636.831  8008  8027 I ReactNativeJS: 'BRAILLE_WORD_TRACKING_FAILURE', '{\"stage\":\"frame-transform\",\"code\":\"preview_outside_large\",\"errorName\":\"Error\",\"frameWidth\":480,\"frameHeight\":640,\"frameOrientation\":\"up\"}'"
+      }
+    ],
+    "native_stream_dimensions": {
+      "preview": [
+        1280,
+        960
+      ],
+      "analysis_unrotated": [
+        640,
+        480
+      ],
+      "analysis_physically_rotated": [
+        480,
+        640
+      ]
+    },
+    "frame_orientation": "up",
+    "failure_code": "preview_outside_large"
+  },
+  "algebra": {
+    "convention": "3x3 row-major matrices acting on homogeneous column points; A*B applies B first.",
+    "dimension_example": {
+      "sensor_and_preview": [
+        1280,
+        960
+      ],
+      "raw_analysis": [
+        640,
+        480
+      ],
+      "upright_output": [
+        480,
+        640
+      ],
+      "clockwise_rotation_degrees": 90
+    },
+    "S_sensor_to_raw": [
+      [
+        0.5,
+        0,
+        0
+      ],
+      [
+        0,
+        0.5,
+        0
+      ],
+      [
+        0,
+        0,
+        1
+      ]
+    ],
+    "R_raw_to_upright": [
+      [
+        0,
+        -1,
+        480
+      ],
+      [
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        1
+      ]
+    ],
+    "expected_R_times_S": [
+      [
+        0.0,
+        -0.5,
+        480
+      ],
+      [
+        0.5,
+        0.0,
+        0
+      ],
+      [
+        0.0,
+        0.0,
+        1
+      ]
+    ],
+    "installed_S_times_R": [
+      [
+        0.0,
+        -0.5,
+        240.0
+      ],
+      [
+        0.5,
+        0.0,
+        0.0
+      ],
+      [
+        0,
+        0,
+        1
+      ]
+    ],
+    "expected_full_sensor_bounds": {
+      "left": 0.0,
+      "top": 0.0,
+      "right": 480.0,
+      "bottom": 640.0
+    },
+    "installed_full_sensor_bounds": {
+      "left": -240.0,
+      "top": 0.0,
+      "right": 240.0,
+      "bottom": 640.0
+    },
+    "translation_error_x_pixels": -240,
+    "example_center_search_sensor_corners": [
+      [
+        448,
+        0
+      ],
+      [
+        832,
+        0
+      ],
+      [
+        832,
+        960
+      ],
+      [
+        448,
+        960
+      ]
+    ],
+    "expected_center_search_upright_bounds": {
+      "left": 0.0,
+      "top": 224.0,
+      "right": 480.0,
+      "bottom": 416.0
+    },
+    "installed_center_search_upright_bounds": {
+      "left": -240.0,
+      "top": 224.0,
+      "right": 240.0,
+      "bottom": 416.0
+    },
+    "metadata_path_R_of_S_matches_expected_for_every_example_corner": true
+  },
+  "inference_boundary": "The half-scale zero-origin example follows the observed full1280x960 preview and640x480 analysis dimensions. v5 did not log the complete live sensor-to-frame matrix, so those numeric matrix entries are an explicit source-based example rather than directly measured frame coefficients. The wrong composition order is confirmed in the installed bytecode.",
+  "fix_rationale": "Disable CameraX physical buffer rotation. CameraX then returns raw pixels with its original sensor-to-buffer transform and orientation metadata. Existing TS geometry applies the orientation after mapping raw frame coordinates, while native FrameConverter mirrors/rotates the bitmap using the same metadata. This yields R*S without a heuristic translation or relaxed clipping rule.",
+  "local_conversion_sources": [
+    {
+      "file": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\node_modules\\react-native-vision-camera\\android\\src\\main\\java\\com\\margelo\\nitro\\camera\\HybridFrameConverter.kt",
+      "bytes": 1417,
+      "sha256": "48bf0d2b152e50a0fad8de071740cdb76200ccdaff4135aaf8e1725d1192c120"
+    },
+    {
+      "file": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\node_modules\\react-native-vision-camera\\android\\src\\main\\java\\com\\margelo\\nitro\\camera\\extensions\\ImageProxy+toBitmap.kt",
+      "bytes": 876,
+      "sha256": "731403b47454e6c61bb872f7b4d5432e476c4ffbb29afac1e372cb50b6e4941f"
+    },
+    {
+      "file": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\node_modules\\react-native-vision-camera\\android\\src\\main\\java\\com\\margelo\\nitro\\camera\\hybrids\\instances\\HybridFrame.kt",
+      "bytes": 3586,
+      "sha256": "bea3da60be9f71cb6dc23b9351dd97b6a620572f3f22524a0d228fb81f1a41e1"
+    },
+    {
+      "file": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\src\\ml\\word-camera-geometry.ts",
+      "bytes": 10761,
+      "sha256": "86e8d173f9c96b30ad2103496880f9556ef55c9620fb60aaed6136f4a0227623"
+    }
+  ],
+  "runtime_after_fix_assessed": false,
+  "physical_device_assessed": false
+}

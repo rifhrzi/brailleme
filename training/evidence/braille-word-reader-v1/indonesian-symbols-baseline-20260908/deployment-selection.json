@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "decoder_version": "six-dot-id-v3",
+  "thresholds": {
+    "proposalScore": 0.25,
+    "acceptScore": 0.25,
+    "dotConfidence": 0.7,
+    "nmsIou": 0.25,
+    "minCellWidth": 0.008,
+    "minCellHeight": 0.06,
+    "edgeMargin": 0.008,
+    "maxRowDeviation": 0.55,
+    "maxGapRatio": 1.2,
+    "maxOverlapRatio": 0.5
+  },
+  "fixture_manifest_sha256": "52db73db66f63e35e03ceda218bcb53958a644137cc50aae3f796acf9afc6603",
+  "training_selection_sha256": "8346eab5df475a18a3ecba93ca8f4dbc365c19a0b847764414b5d34ee196ddd9",
+  "baseline": {
+    "checkpoint_sha256": "cce2432c0ddb8952c885dd58697589c285209588dafa81aacdd891b1660068b7",
+    "model_sha256": "406db0e55e8a5ba9e0d00fb22aadc24f19698219f375e4dcead9057cf3bf2230",
+    "benchmark_sha256": "9480330be9c4f69a0c1b02254fd6a6e3c79af22fce04b8122db37724a1561a92"
+  },
+  "candidate": {
+    "checkpoint_sha256": "0ae8497660efa3378d81b959cf585f83c6af3c07514f45fb2b1fb1a90382a6c2",
+    "model_sha256": "659a235c0ee32f6ee59b7388dc278abcbba4711b8c742380619f3b7a1682f715",
+    "benchmark_sha256": "7f03eb6484d1a29cc2d078e904805f9506a42a885c5ff34ac82129541f84d3b9"
+  },
+  "selected_checkpoint_sha256": "cce2432c0ddb8952c885dd58697589c285209588dafa81aacdd891b1660068b7",
+  "selected_model_sha256": "406db0e55e8a5ba9e0d00fb22aadc24f19698219f375e4dcead9057cf3bf2230",
+  "status": "baseline_retained_after_external_regression",
+  "reason_codes": [
+    "external_exact_accuracy_regressed"
+  ],
+  "comparison_sha256": "e0edb7b9606b29fd41e5869d29371b511c564828399d7f03f8f29efe59523a38",
+  "note": "External results veto promotion only; no gradients, additional training, threshold tuning or epoch reranking. Original epoch10 training selection remains unchanged."
+}

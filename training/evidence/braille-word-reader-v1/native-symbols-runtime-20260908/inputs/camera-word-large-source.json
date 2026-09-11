@@ -1,0 +1,118 @@
+{
+  "schema_version": 1,
+  "created_at_utc": "2026-09-08T14:26:17.667260+00:00",
+  "scope": "Synthetic 2x bilinear full-source emulator feed with no cropping. No camera recognition or physical-device evidence.",
+  "expected_text_current_decoder": "rawenstwa",
+  "source_file": "assets/models/braille-word-reader-v1/native-word-fixture.png",
+  "source_file_sha256": "5115a112aad01432f4ebdfa22d8dcb686f1330075d5030bc5c039c154dc4d164",
+  "source_size": [
+    450,
+    257
+  ],
+  "source_rgb_sha256": "e02b70e7d2832602ae660fb3a201ebeaf394cb9855b4629bea415c454cb2721e",
+  "source_native_self_test_metadata": {
+    "expectedText": "RAWENSTWA",
+    "file": "native-word-fixture.png",
+    "sha256": "5115a112aad01432f4ebdfa22d8dcb686f1330075d5030bc5c039c154dc4d164",
+    "roi": {
+      "x": 0.14288889567057292,
+      "y": 0.40029182879377434,
+      "width": 0.7142222425672743,
+      "height": 0.19941634241245138
+    },
+    "source": "books/ola/IMG_5365.labeled.jpg",
+    "source_sha256": "07f8a7610c881ed21faccebdc55f68585c11fd927039397c616d42ad13761b87",
+    "source_crop": [
+      22,
+      1083,
+      472,
+      1340
+    ],
+    "source_model_context_crop": [
+      86,
+      1147,
+      408,
+      1276
+    ],
+    "width": 450,
+    "height": 257,
+    "guideAspect": 6.271219512195121,
+    "purpose": "Original RGB source crop with surrounding pixels; not an already resized 480x192 model input.",
+    "native_validated": false,
+    "runtime_input_reference": {
+      "crop": [
+        64,
+        64,
+        386,
+        193
+      ],
+      "selection": {
+        "x": 0.0009316864961422777,
+        "y": 0.30135658914728686,
+        "width": 0.9981366743952592,
+        "height": 0.3972868217054264
+      },
+      "quality_reason": "",
+      "input_float32_sha256": "88e89e4e9854e0c1cd62d21842b4c24642b22de76fb5cc22a8f8a869df68970b",
+      "cached_output_sha256": "fecec0daeff85c1bd90f93d9c4b5b98a86cd0c63ac0618a06b48375723042c39",
+      "decoded_text": "RAWENSTWA",
+      "rejection": "",
+      "input_rgb_sha256": "da834ef8e57904ccfbae2f15f5dcff9d4e6eff7ca56cb9893a7f0140d84c3c44",
+      "cached_validation_image": "validation-words/000049.png",
+      "exact_cached_pixels": true,
+      "model_sha256": "406db0e55e8a5ba9e0d00fb22aadc24f19698219f375e4dcead9057cf3bf2230",
+      "thresholds": {
+        "proposalScore": 0.25,
+        "acceptScore": 0.25,
+        "dotConfidence": 0.7,
+        "nmsIou": 0.25,
+        "minCellWidth": 0.008,
+        "minCellHeight": 0.06,
+        "edgeMargin": 0.008,
+        "maxRowDeviation": 0.55,
+        "maxGapRatio": 1.2,
+        "maxOverlapRatio": 0.5
+      },
+      "source_sha256": {
+        "src/ml/word-image-processing.ts": "e97bf56d549c20f9d849c11fb5ac26c0abacf48030e847def46dbeb3e8e8248f",
+        "src/ml/word-model-contract.ts": "e985d76a5d372cf4f31a325a39ca88268422dd5c0685e50c48ee1fb69dffc99f",
+        "src/ml/word-decoder.ts": "f8bb0ef65a03c850c8aedccf287e00501a5bf1b4c4bba60440141567752b6c15",
+        "src/types/word-scan.ts": "f6b8ac0cf1072b3ec99f23ac8407e5d8e38c7e801a7c90f4cc2a3503761a1964",
+        "scripts/word-native-parity/geometry-reference.cjs": "a4dbeee051f06aa7d2459070e3e213ee4d28ea63d69c639cb7247d69fc751cca",
+        "scripts/word-native-parity/fixture-geometry.cjs": "b6c82d2e38d980ae1fafa579df2a6dbc070cd177c86988e9db9cadde6c1aa16b",
+        "training/scripts/word_fixture.py": "377bcee2679f46a9c5195e36ab64a8c8acf20322058bd9dfe15258833d83c0d3"
+      }
+    }
+  },
+  "output_size": [
+    1024,
+    1024
+  ],
+  "source_placement_pixels": [
+    62,
+    255,
+    962,
+    769
+  ],
+  "source_pixels_preserved_exactly": false,
+  "scale": 2,
+  "clockwise_rotation_degrees": 0,
+  "orientation_observed_in_new_apk": false,
+  "neutral_padding_rgb": [
+    83,
+    83,
+    83
+  ],
+  "word_roi_in_camera_feed": {
+    "x": 0.18613281846046448,
+    "y": 0.449951171875,
+    "width": 0.6277343928813934,
+    "height": 0.10009765625
+  },
+  "camera_word_sha256": "8756d10697609838409ea6a5f5fbe3c1c5f7a11c30469d3dbf94f9aa4d01e1f8",
+  "generator_sha256": "84a8f0f9370671740496ec83f000e3527a4af6ae2f52283311095ffda60c9291",
+  "full_source_extent_retained": true,
+  "interpolation": "Pillow BILINEAR",
+  "enlarged_source_rgb_sha256": "831108cbaa67231ed72896759e47599daa585ccd929f4ebfcc6fd76e81ec5859",
+  "emulator_running_feed_changed": false
+}

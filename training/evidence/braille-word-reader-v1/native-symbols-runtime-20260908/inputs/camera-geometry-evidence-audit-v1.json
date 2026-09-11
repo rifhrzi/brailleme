@@ -1,0 +1,330 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-09-08T17:27:42.574560+00:00",
+  "scope": "Read-only audit of current linked evidence and retained v4 runtime observations; no inference, ADB, source edits or acceptance claim.",
+  "audited_module": {
+    "path": "src/ml/word-camera-geometry.ts",
+    "sha256_at_audit": "86e8d173f9c96b30ad2103496880f9556ef55c9620fb60aaed6136f4a0227623",
+    "note": "Concurrent geometry implementation may change this file after this audit."
+  },
+  "manifest": {
+    "path": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\assets\\models\\braille-word-reader-v1\\manifest.json",
+    "sha256": "419f459f01970a56e745cbdaecd00b505daf5a46c534822febff7e91155e50da"
+  },
+  "linked_model_evidence": [
+    {
+      "name": "publicBenchmark",
+      "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-baseline-20260908/public-benchmark.json",
+      "sha256": "9480330be9c4f69a0c1b02254fd6a6e3c79af22fce04b8122db37724a1561a92",
+      "actual_sha256": "9480330be9c4f69a0c1b02254fd6a6e3c79af22fce04b8122db37724a1561a92",
+      "contains_camera_geometry_path": false
+    },
+    {
+      "name": "wholeWordFixtures",
+      "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-baseline-20260908/external-words.json",
+      "sha256": "52db73db66f63e35e03ceda218bcb53958a644137cc50aae3f796acf9afc6603",
+      "actual_sha256": "52db73db66f63e35e03ceda218bcb53958a644137cc50aae3f796acf9afc6603",
+      "contains_camera_geometry_path": false
+    },
+    {
+      "name": "conversion",
+      "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-baseline-20260908/export-report.json",
+      "sha256": "20279ca1d4258f9a060c8782de43942fd899379200de1ea14c924442e91ef5ab",
+      "actual_sha256": "20279ca1d4258f9a060c8782de43942fd899379200de1ea14c924442e91ef5ab",
+      "contains_camera_geometry_path": false
+    },
+    {
+      "name": "validationSelection",
+      "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-baseline-20260908/selected-validation-fullprecision.json",
+      "sha256": "944153b5f79e8c58ba39f053e7c75f154d9ba0d1a1c7c2b19c4b23c3ce029fc9",
+      "actual_sha256": "944153b5f79e8c58ba39f053e7c75f154d9ba0d1a1c7c2b19c4b23c3ce029fc9",
+      "contains_camera_geometry_path": false
+    },
+    {
+      "name": "repetitionDiagnostics",
+      "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-baseline-20260908/repetition-diagnostics.json",
+      "sha256": "bdd3f353ea999a966eada021951881a993e28755fdb1e1d63b2a2e0fb126c8eb",
+      "actual_sha256": "bdd3f353ea999a966eada021951881a993e28755fdb1e1d63b2a2e0fb126c8eb",
+      "contains_camera_geometry_path": false
+    },
+    {
+      "name": "rejectionDiagnostics",
+      "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-baseline-20260908/rejection-diagnostics.json",
+      "sha256": "4125a41823fb29143eb6128f457a7a4f2dc2d7cc671e3a890a04aab2d4aece81",
+      "actual_sha256": "4125a41823fb29143eb6128f457a7a4f2dc2d7cc671e3a890a04aab2d4aece81",
+      "contains_camera_geometry_path": false
+    },
+    {
+      "name": "decoderParity",
+      "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-baseline-20260908/decoder-parity-id-v3.json",
+      "sha256": "f708bc9fe5e551ec23e766ea2300fde6bd0d624e8b581fbf8641c7f0bd9c3fe6",
+      "actual_sha256": "f708bc9fe5e551ec23e766ea2300fde6bd0d624e8b581fbf8641c7f0bd9c3fe6",
+      "contains_camera_geometry_path": false
+    },
+    {
+      "name": "nativeFixtureGeometry",
+      "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-baseline-20260908/native-fixture-geometry.json",
+      "sha256": "97d6bb2b15847450c8eb9a30b191a0954e0d80d2e004adde2aa947056db29ddd",
+      "actual_sha256": "97d6bb2b15847450c8eb9a30b191a0954e0d80d2e004adde2aa947056db29ddd",
+      "contains_camera_geometry_path": false
+    },
+    {
+      "name": "symbolReadiness",
+      "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-baseline-20260908/symbol-readiness.json",
+      "sha256": "1b3ff083d4ff1bce0171546c56fea8fbdd542e141fd0c0d9e80d0a2a33f589b2",
+      "actual_sha256": "1b3ff083d4ff1bce0171546c56fea8fbdd542e141fd0c0d9e80d0a2a33f589b2",
+      "contains_camera_geometry_path": false
+    },
+    {
+      "name": "checkpointSelection",
+      "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-20260908/checkpoint-selection.json",
+      "sha256": "8346eab5df475a18a3ecba93ca8f4dbc365c19a0b847764414b5d34ee196ddd9",
+      "actual_sha256": "8346eab5df475a18a3ecba93ca8f4dbc365c19a0b847764414b5d34ee196ddd9",
+      "contains_camera_geometry_path": false
+    },
+    {
+      "name": "deploymentSelection",
+      "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-baseline-20260908/deployment-selection.json",
+      "sha256": "cb5b2070d5c6db08d07beababb9e70b1c47e46f0c5eaf91120f9a5150f43718a",
+      "actual_sha256": "cb5b2070d5c6db08d07beababb9e70b1c47e46f0c5eaf91120f9a5150f43718a",
+      "contains_camera_geometry_path": false
+    },
+    {
+      "name": "baselineBenchmark",
+      "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-baseline-20260908/public-benchmark.json",
+      "sha256": "9480330be9c4f69a0c1b02254fd6a6e3c79af22fce04b8122db37724a1561a92",
+      "actual_sha256": "9480330be9c4f69a0c1b02254fd6a6e3c79af22fce04b8122db37724a1561a92",
+      "contains_camera_geometry_path": false
+    },
+    {
+      "name": "candidateBenchmark",
+      "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-20260908/public-benchmark.json",
+      "sha256": "7f03eb6484d1a29cc2d078e904805f9506a42a885c5ff34ac82129541f84d3b9",
+      "actual_sha256": "7f03eb6484d1a29cc2d078e904805f9506a42a885c5ff34ac82129541f84d3b9",
+      "contains_camera_geometry_path": false
+    },
+    {
+      "name": "typescriptParity",
+      "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-baseline-20260908/typescript-parity-405.json",
+      "sha256": "ae5d611e94fd5913b3c84285c5a9ca002f9a035a903db4c3fe34e089615f0200",
+      "actual_sha256": "ae5d611e94fd5913b3c84285c5a9ca002f9a035a903db4c3fe34e089615f0200",
+      "contains_camera_geometry_path": false
+    },
+    {
+      "name": "symbolDecoderParity",
+      "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-baseline-20260908/symbol-decoder-parity-516.json",
+      "sha256": "01030abea51cdd02a6913b8761cc4d6585194a4e876086e5c86e32bd7c63dbf7",
+      "actual_sha256": "01030abea51cdd02a6913b8761cc4d6585194a4e876086e5c86e32bd7c63dbf7",
+      "contains_camera_geometry_path": false
+    },
+    {
+      "name": "symbolCorpusAudit",
+      "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-baseline-20260908/corpus-audit.json",
+      "sha256": "92d6af2b61b7b34bfdd5eaaba8c83c972959f66e2a82ec7134af93fd41c7cf66",
+      "actual_sha256": "92d6af2b61b7b34bfdd5eaaba8c83c972959f66e2a82ec7134af93fd41c7cf66",
+      "contains_camera_geometry_path": false
+    },
+    {
+      "name": "symbolTransformAudit",
+      "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-baseline-20260908/synthetic-transform-audit.json",
+      "sha256": "2aa28396767ef4eed88b87649fee7aac11b956d830ebc3b938c7ffd3c9f5daa9",
+      "actual_sha256": "2aa28396767ef4eed88b87649fee7aac11b956d830ebc3b938c7ffd3c9f5daa9",
+      "contains_camera_geometry_path": false
+    },
+    {
+      "name": "symbolFixtures",
+      "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-baseline-20260908/validation-symbols.json",
+      "sha256": "e2a0298da266932b4f648458f718bead2b8e0a524eb20f810157d1b3b4f9a53f",
+      "actual_sha256": "e2a0298da266932b4f648458f718bead2b8e0a524eb20f810157d1b3b4f9a53f",
+      "contains_camera_geometry_path": false
+    },
+    {
+      "name": "symbolSemantics",
+      "file": "training/evidence/braille-word-reader-v1/indonesian-basic-20260908/typescript-symbol-semantics-v2.json",
+      "sha256": "2bf82d930f2618a2e2f6ef8cfa847565a5cdac96c7238c12964473466d350228",
+      "actual_sha256": "2bf82d930f2618a2e2f6ef8cfa847565a5cdac96c7238c12964473466d350228",
+      "contains_camera_geometry_path": false
+    },
+    {
+      "name": "nativePixelParity",
+      "file": "training/evidence/braille-word-reader-v1/indonesian-basic-20260908/native-pixel-resize-host-v1.json",
+      "sha256": "f1a68d4931fdb6954dceba07a998d00bd184e3685a82c5e251b8735626e5f90f",
+      "actual_sha256": "f1a68d4931fdb6954dceba07a998d00bd184e3685a82c5e251b8735626e5f90f",
+      "contains_camera_geometry_path": false
+    }
+  ],
+  "native_startup_reference_source_keys": [
+    "src/ml/word-image-processing.ts",
+    "src/ml/word-decoder.ts",
+    "src/ml/word-model-contract.ts",
+    "src/ml/word-symbols.ts",
+    "src/types/word-scan.ts",
+    "src/ml/word-tracking.ts",
+    "scripts/word-native-parity/geometry-reference.cjs",
+    "scripts/word-native-parity/fixture-geometry.cjs",
+    "training/scripts/word_fixture.py"
+  ],
+  "verifier": {
+    "path": "scripts/verify-experimental-word-model-assets.mjs",
+    "sha256": "b263faf4c283d5b2c07a3849a0478ddd9eb9fdaa997db90ee7da92466fc39ce0",
+    "camera_geometry_explicitly_required": false
+  },
+  "history": [
+    {
+      "path": "training/evidence/braille-word-reader-v1/preview-photo-geometry-source-verification.json",
+      "binding": "applicationFiles records an earlier source hash; historical source/compile proof, not active model evidence"
+    },
+    {
+      "path": "training/evidence/braille-word-reader-v1/native-camera-capture-diagnostic-v3/report.json",
+      "binding": "frozen copied source and bundle; its archive verifier checks archived sources, not current app geometry. replay_sources bind only README and verify_archive.py"
+    },
+    {
+      "path": "training/evidence/braille-word-reader-v1/indonesian-symbols-baseline-20260908/baseline-freeze.json",
+      "binding": "historical pre-change hash inventory; never relabel as current source"
+    }
+  ],
+  "regeneration_if_only_camera_geometry_ts_changes": {
+    "model_evidence_to_regenerate": [],
+    "required_fresh_evidence": [
+      "geometry unit tests and tracking/camera integration checks",
+      "lint/typecheck and final source coverage",
+      "new build and staged-source snapshot",
+      "new APK integrity and installed APK hash",
+      "actual main-app frame/preview/photo mapping and tracking smoke, then requested runtime/performance cases"
+    ],
+    "historical_evidence_action": "Preserve original reports and hashes. Write new camera runtime/source evidence in a new directory.",
+    "limits": "Existing nativeFixtureGeometry is image crop/decoder replay with mocked native pixels, not actual camera-to-frame mapping."
+  },
+  "if_other_files_change": {
+    "HybridWordPhotoGeometry.kt_or_WordPixelResize.java_or_WordPhotoGeometry.nitro.ts": "Regenerate nativePixelParity with actual changed native implementation, then update linked report/file hash. TS/Python model replay remains unchanged if its own sources/model unchanged.",
+    "word-image-processing.ts_or_word-tracking.ts": "Regenerate 405/516 TS replay, nativeFixtureGeometry/runtime startup reference and nativePixelParity because these source closures include them. Review all source maps again.",
+    "word-decoder.ts_or_word-symbols.ts_or_types/word-scan.ts": "Regenerate source-bound semantic/405/516/native fixture/native pixel evidence; changed semantics additionally require aligned Python evaluation and decoder parity."
+  },
+  "v4_source_checks": {
+    "directory": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\output\\update-symbols-tracking-20260908\\checks-1788887739700",
+    "checks_sha256": "81c0ef544994ce25a3eca119d254b648532fb9fad9bc2c2c4be09f1227b6d520",
+    "checks": [
+      {
+        "name": "model:verify",
+        "started": "2026-09-08T17:15:39.700Z",
+        "completed": "2026-09-08T17:15:40.757Z",
+        "exitCode": 0,
+        "log": "model-verify.log"
+      },
+      {
+        "name": "release:config:verify",
+        "started": "2026-09-08T17:15:40.759Z",
+        "completed": "2026-09-08T17:15:45.807Z",
+        "exitCode": 0,
+        "log": "release-config-verify.log"
+      },
+      {
+        "name": "lint",
+        "started": "2026-09-08T17:15:45.807Z",
+        "completed": "2026-09-08T17:15:57.115Z",
+        "exitCode": 0,
+        "log": "lint.log"
+      },
+      {
+        "name": "typecheck",
+        "started": "2026-09-08T17:15:57.115Z",
+        "completed": "2026-09-08T17:16:01.127Z",
+        "exitCode": 0,
+        "log": "typecheck.log"
+      },
+      {
+        "name": "test:coverage",
+        "started": "2026-09-08T17:16:01.128Z",
+        "completed": "2026-09-08T17:16:35.809Z",
+        "exitCode": 0,
+        "log": "test-coverage.log"
+      }
+    ],
+    "suites_passed": 38,
+    "tests_passed": 656,
+    "coverage_percent": {
+      "statements": 91.18,
+      "branches": 86.06,
+      "functions": 90.03,
+      "lines": 92.26
+    },
+    "camera_geometry_coverage_percent": {
+      "statements": 93.24,
+      "branches": 93.2,
+      "functions": 100,
+      "lines": 98.01
+    },
+    "coverage_log_sha256": "926295047927c699b60f26e441bba3f61009eb9f6ec0f261f1e04078f9324f05",
+    "source_identity_limit": "checks.json timestamps/log hashes do not independently bind every test source into the APK. staged-source/build/integrity are separate evidence."
+  },
+  "v4_runtime": {
+    "integrity_report": "C:\\bm-symbols-apk-20260908\\evidence\\apk-integrity-v4\\report.json",
+    "integrity_report_sha256": "3eb7a8db4b427ae6462f27ab6142c136814c3294489989207be79144f369ff78",
+    "integrity_passed": true,
+    "integrity_checks_passed": 27,
+    "integrity_source_keys": [
+      "assets/models/braille-word-reader-v1/manifest.json",
+      "assets/models/braille-word-reader-v1/word-reader.tflite",
+      "assets/models/braille-word-reader-v1/native-word-fixture.png"
+    ],
+    "integrity_source_scope": "Model manifest, TFLite and startup PNG only; no app source-to-bundle assertion.",
+    "build": {
+      "stage": "C:\\bm-symbols-apk-20260908",
+      "appEnvironment": "preview",
+      "exitCode": 0,
+      "javaHome": "C:\\Users\\rifqi\\.jdks\\brailleme-temurin-17\\jdk-17.0.20+8",
+      "completedUtc": "2026-09-08T17:19:09.6562297Z",
+      "sdk": "C:\\Users\\rifqi\\AppData\\Local\\Android\\Sdk",
+      "command": [
+        "gradlew.bat",
+        "assembleRelease",
+        "--no-daemon",
+        "--no-parallel",
+        "--max-workers=1",
+        "--console=plain",
+        "-PreactNativeArchitectures=arm64-v8a,x86_64",
+        "-Pkotlin.compiler.execution.strategy=in-process",
+        "--init-script",
+        "C:\\bm-symbols-apk-20260908\\evidence\\build-20260908T171709Z\\limit-native-jobs.gradle"
+      ],
+      "startedUtc": "2026-09-08T17:17:09.5393277Z"
+    },
+    "install": {
+      "startedUtc": "2026-09-08T17:19:44.1850449Z",
+      "completedUtc": "2026-09-08T17:20:04.6841939Z",
+      "avd": "BrailleMe_API_36\n\nOK\n",
+      "installedHashMatches": true,
+      "installedPath": "/data/app/~~iWfXxQ4O2Zg4IiANGo3x1g==/com.brailleme.app-z-GYOgh_KzQswcfr7GbBOA==/base.apk",
+      "apk": "C:\\bm-symbols-apk-20260908\\evidence\\apk-integrity-v4\\verified.apk",
+      "output": "Performing Streamed Install\nSuccess",
+      "sha256": "f9996a478d2beed53a1485e230c01f1a989eed5e780fff87f11f999b2e072667",
+      "exitCode": 0,
+      "serial": "emulator-5554",
+      "installedHashOutput": "f9996a478d2beed53a1485e230c01f1a989eed5e780fff87f11f999b2e072667  /data/app/~~iWfXxQ4O2Zg4IiANGo3x1g==/com.brailleme.app-z-GYOgh_KzQswcfr7GbBOA==/base.apk"
+    },
+    "log": "C:\\bm-symbols-apk-20260908\\evidence\\actions-prepare-v4\\20260908T172048267394Z-prepare-02-909348.log",
+    "log_sha256": "630bc89d968579c74bad85dedd5af424ef650949a80d144dbb9acbd1cf390beb",
+    "observed_lines": [
+      "1788888043.328  6683  6683 D StreamStateObserver: Update Preview stream state to STREAMING",
+      "1788888043.422  6683  6683 I HybridPreviewViewSpec: PreviewView started!",
+      "1788888043.583  6683  6707 I ReactNativeJS: 'BRAILLE_WORD_TRACKING_FAILURE', '{\"stage\":\"frame-transform\",\"code\":\"preview_outside_frame\",\"errorName\":\"Error\",\"frameWidth\":480,\"frameHeight\":640,\"frameOrientation\":\"up\"}'",
+      "1788888043.598  6683  6707 I ReactNativeJS: 'BRAILLE_WORD_TRACKING_METRICS', '{\"schemaVersion\":1,\"elapsedMs\":139,\"received\":7,\"admitted\":1,\"busyDrops\":0,\"throttled\":4,\"disabledDrops\":2,\"runnerDrops\":0,\"completed\":1,\"errors\":1,\"meanMs\":1,\"maxMs\":1,\"latencyUpperBoundsMs\":[50,100,200,400,800,1600,null],\"latencyBuckets\":[1,0,0,0,0,0,0]}'"
+    ],
+    "summary": "Camera preview streams, but one admitted frame fails preview_outside_frame at frame-transform (480x640/up); the UI shows Pindai ulang without a result or enabled shutter.",
+    "not_demonstrated": [
+      "successful tracking",
+      "successful capture-to-result",
+      "ten-minute preview/memory stability",
+      "24 FPS target",
+      "p95 capture-to-result <=2s",
+      "physical camera accuracy"
+    ]
+  },
+  "retention": {
+    "historical_index": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\training\\checkpoints\\retained-models-20260908.json",
+    "sha256": "29890d735d734184135c6e725a5065e46c67c827678bf66cb04534e9c53843ed",
+    "repository_file_rows_verified": 168,
+    "mismatches": [],
+    "action": "Do not rewrite this dated index. Add a later companion index for final runtime archive/index hashes, APK delivery hash/path, source/build evidence and final documentation; retain prior indexes as history."
+  }
+}

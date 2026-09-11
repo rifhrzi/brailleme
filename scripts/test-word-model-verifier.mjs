@@ -861,7 +861,7 @@ function writeFixture(data) {
 
 try {
   mkdirSync(join(stage, 'scripts'));
-  for (const name of ['verify-word-model-assets.mjs', 'inspect-tflite.mjs']) copyFileSync(join(root, 'scripts', name), join(stage, 'scripts', name));
+  for (const name of ['verify-word-model-assets.mjs', 'inspect-tflite.mjs', 'word-model-active-path.mjs']) copyFileSync(join(root, 'scripts', name), join(stage, 'scripts', name));
   symlinkSync(join(root, 'node_modules'), join(stage, 'node_modules'), 'junction');
   const model = metadataOnlyModel();
   assert.deepEqual(inspectTflite(model).inputs[0].shape, [1, 192, 480, 3]);

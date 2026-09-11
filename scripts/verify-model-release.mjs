@@ -1,6 +1,8 @@
-import { readFileSync } from 'node:fs';
+import { dirname, resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { activeWordModelManifest } from './word-model-active-path.mjs';
 
-const word = JSON.parse(readFileSync(new URL('../assets/models/braille-word-reader-v1/manifest.json', import.meta.url), 'utf8'));
+const word = activeWordModelManifest(resolve(dirname(fileURLToPath(import.meta.url)), '..'));
 if (word.artifact.status !== 'verified' || word.physicalCameraValidated !== true) {
   throw new Error('Production ditolak: pengenal kata belum memiliki validasi kertas timbul, parity kamera native, holdout independen, aksesibilitas, dan benchmark perangkat pada model yang sama. Bukti classifier lama tidak memverifikasi pengenal kata.');
 }

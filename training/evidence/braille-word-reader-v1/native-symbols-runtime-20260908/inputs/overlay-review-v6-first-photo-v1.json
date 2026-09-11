@@ -1,0 +1,198 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-09-08T17:38:47.461067+00:00",
+  "scope": "Offline pixel geometry review, not model/physical-camera/readiness acceptance.",
+  "script_sha256": "f492dd41e94e150a744fd62a2817eb94e169a9799f77c845093d0ccdec477299",
+  "inputs": {
+    "screenshot": {
+      "path": "C:\\bm-symbols-apk-20260908\\evidence\\v6-first-photo.png",
+      "sha256": "15eeddfa49c51385d1aa86f16212340c2e421c3a39fbbf5402b01738e2fa0c68"
+    },
+    "manifest": {
+      "path": "C:\\bm-symbols-apk-20260908\\evidence\\calibrated-feeds-v1\\manifest.json",
+      "sha256": "5616d7c7e6b88320a11f4c7903851dd75631dabf60474c606f0e65bd831ef9d7"
+    },
+    "calibration": {
+      "path": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\output\\update-symbols-tracking-20260908\\feed-mapping-v1.json",
+      "sha256": "82954b50b3b5dac9a68b8db2d8b956deefaf3aa61e50d9a5e5df39b3185be432"
+    },
+    "feed": {
+      "path": "C:\\bm-symbols-apk-20260908\\evidence\\calibrated-feeds-v1\\startup-multirow-context.png",
+      "sha256": "2b8f6bbb873b4adb3e46621fcc7ad2be97bdc4210d81dbfc87405a4c2955270c"
+    },
+    "source": {
+      "path": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\assets\\models\\braille-word-reader-v1\\native-word-fixture.png",
+      "sha256": "5115a112aad01432f4ebdfa22d8dcb686f1330075d5030bc5c039c154dc4d164"
+    }
+  },
+  "entry": "startup-multirow-context.png",
+  "expected_text": null,
+  "classification": "multirow_startup_context",
+  "preview_xywh": [
+    53,
+    548,
+    975,
+    975
+  ],
+  "screen_size": [
+    1080,
+    2400
+  ],
+  "green_detection": {
+    "rgb": [
+      8,
+      116,
+      67
+    ],
+    "euclidean_tolerance": 32,
+    "mask_pixels": 0,
+    "masked_from_alignment_with_dilation_px": 8,
+    "components": []
+  },
+  "white_overlay_mask": {
+    "minimum_channel": 235,
+    "maximum_channel_spread": 16,
+    "mask_pixels": 2228,
+    "dilation_px": 8,
+    "limit": "Any equally bright source pixels are excluded too; no source texture is invented."
+  },
+  "fit": {
+    "status": "usable_pixel_alignment",
+    "converged": true,
+    "samples": 36036,
+    "parameters": [
+      1.6931407372395755,
+      8.723991864955563e-05,
+      2.3882400440918884e-05,
+      1.6930536296263592,
+      53.11306377564194,
+      169.49564648656752,
+      0.8492831432575207,
+      0.0628154109093578
+    ],
+    "matrix": [
+      [
+        1.6931407372395755,
+        8.723991864955563e-05
+      ],
+      [
+        2.3882400440918884e-05,
+        1.6930536296263592
+      ]
+    ],
+    "translation": [
+      53.11306377564194,
+      169.49564648656752
+    ],
+    "correlation": 0.9987151450608882,
+    "rmse_8bit": 0.6614034497047422,
+    "p95_abs_residual_8bit": 1.3389446677789785,
+    "sample_bounds_xyxy": [
+      162,
+      821,
+      916,
+      1248
+    ],
+    "sample_stride": 3
+  },
+  "spatial_sensitivity_fits": [
+    {
+      "status": "usable_pixel_alignment",
+      "converged": true,
+      "samples": 18018,
+      "parameters": [
+        1.6931598766205915,
+        0.00011060697683825848,
+        5.259186947819955e-05,
+        1.6931921246272459,
+        53.09612433133196,
+        169.420107941433,
+        0.849466970137845,
+        0.06260365068342995
+      ],
+      "matrix": [
+        [
+          1.6931598766205915,
+          0.00011060697683825848
+        ],
+        [
+          5.259186947819955e-05,
+          1.6931921246272459
+        ]
+      ],
+      "translation": [
+        53.09612433133196,
+        169.420107941433
+      ],
+      "correlation": 0.9986517004400057,
+      "rmse_8bit": 0.6346557612884052,
+      "p95_abs_residual_8bit": 1.2725822384105079,
+      "sample_bounds_xyxy": [
+        162,
+        821,
+        539,
+        1248
+      ],
+      "sample_stride": 3
+    },
+    {
+      "status": "usable_pixel_alignment",
+      "converged": true,
+      "samples": 18018,
+      "parameters": [
+        1.6929118042858038,
+        -0.00021679174083156152,
+        -1.054082885393653e-05,
+        1.6929891081226052,
+        53.3166061279456,
+        169.53340055096388,
+        0.8408849396739907,
+        0.0658641279371422
+      ],
+      "matrix": [
+        [
+          1.6929118042858038,
+          -0.00021679174083156152
+        ],
+        [
+          -1.054082885393653e-05,
+          1.6929891081226052
+        ]
+      ],
+      "translation": [
+        53.3166061279456,
+        169.53340055096388
+      ],
+      "correlation": 0.997718472168171,
+      "rmse_8bit": 0.6804732473302565,
+      "p95_abs_residual_8bit": 1.4286967574966505,
+      "sample_bounds_xyxy": [
+        539,
+        821,
+        916,
+        1248
+      ],
+      "sample_stride": 3
+    }
+  ],
+  "projected_annotation_cells_xyxy": [],
+  "projected_startup_roi_xyxy": [
+    266.99913175152966,
+    992.1110951285234,
+    811.1790512473265,
+    1078.8877694505945
+  ],
+  "overlay_annotation_comparisons": [],
+  "matched_annotation_count": 0,
+  "unmatched_annotation_count": 0,
+  "comparison_status": "not_assessed_no_usable_alignment_or_cell_annotations",
+  "limits": [
+    "Alignment uses only grayscale source/screenshot pixels with green and near-white overlays masked; model predictions never determine fitting or input choice.",
+    "Fit is local to frozen calibration (matrix \u00b14%, translation \u00b130px); poor correlation/RMSE or little texture keeps annotation comparison unassessed.",
+    "Source annotations bound original cell patches, not the physical relief-dot ink extents. Green border thickness changes bounding boxes by several screen pixels.",
+    "Closed green components are candidates; touching/overlapping rectangles may merge and cannot be separated confidently by this helper.",
+    "Affine sensitivity across left/right image subsets is empirical variation, not a confidence interval; retain at least one screenshot pixel edge uncertainty.",
+    "A single screenshot cannot validate temporal tracking, native sensor transforms, photo mapping, text accuracy or physical paper.",
+    "Startup context has no complete cell annotation: ROI and overlay positions alone are not individual-cell correctness."
+  ]
+}

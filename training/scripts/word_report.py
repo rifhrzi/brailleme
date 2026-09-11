@@ -18,7 +18,7 @@ REPORT_NAMES = ('public-benchmark.json', 'export-report.json', 'checkpoint-selec
                 'selected-validation-fullprecision.json', 'repetition-diagnostics.json', 'rejection-diagnostics.json')
 REASONS = {'dark', 'glare', 'blur', 'too_far', 'no_grid', 'low_confidence', 'clipped',
            'multiple_rows', 'gap', 'overlapping_cells', 'too_many_cells', 'unsupported_pattern',
-           'processing_error', 'capture_error'}
+           'too_many_characters', 'invalid_sequence', 'processing_error', 'capture_error'}
 
 
 def require(condition, message):
@@ -65,13 +65,13 @@ def check_metrics(actual, expected, context, keys=None):
 def check_rows(rows, context, *, expected=False, max_expected=12):
     for index, row in enumerate(rows):
         predicted, reason = row.get('predicted'), row.get('rejection')
-        require(isinstance(predicted, str) and (not predicted or re.fullmatch('[A-Z]{1,12}', predicted)),
+        require(isinstance(predicted, str) and (not predicted or re.fullmatch('[A-Za-z0-9]{1,12}', predicted)),
                 f'{context} row {index}: invalid predicted word')
         require(isinstance(reason, str) and ((bool(predicted) and reason == '') or
                 (not predicted and reason in REASONS)), f'{context} row {index}: contradictory acceptance/rejection')
         if expected:
             target = row.get('expected')
-            require(isinstance(target, str) and re.fullmatch('[A-Z]+', target) and 1 <= len(target) <= max_expected,
+            require(isinstance(target, str) and re.fullmatch('[A-Za-z0-9]+', target) and 1 <= len(target) <= max_expected,
                     f'{context} row {index}: invalid expected word')
 
 

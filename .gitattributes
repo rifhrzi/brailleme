@@ -1,6 +1,12 @@
 # Word-model evidence is hashed byte-for-byte in its manifest. Preserve the
 # recorded bytes across Windows/Linux checkouts, including source snapshots.
 training/evidence/braille-word-reader-v1/** -text
+training/evidence/braille-word-reader-id-v4-20260910/** -text
+training/evidence/braille-word-reader-id-v5-20260911/** -text
+training/evidence/braille-word-reader-id-v5-native-20260911/** -text
+assets/models/braille-word-reader-id-v5/** -text
+src/ml/__tests__/word-runtime-v5.test.ts -text
+src/ml/__tests__/fixtures/word-v5-runtime-reference.json -text
 docs/evidence/2026-09-05-word-native-preprocessing.* -text
 scripts/word-native-parity/** -text
 scripts/word-native-performance/** -text
@@ -10,6 +16,8 @@ scripts/word-decoder-parity/** -text
 scripts/word-normalization-sensitivity.py -text
 src/ml/word-*.ts -text
 src/features/live/word-photo-camera.tsx -text
+src/features/live/use-word-camera-tracking.ts -text
+training/fixtures/** -text
 modules/braille-word-geometry/** -text
 src/types/word-scan.ts -text
 training/scripts/word_*.py -text

@@ -1,7 +1,6 @@
 import {
   isValidWordModelThresholds,
-  WORD_LATIN_MASKS,
-  WORD_MAX_LETTERS,
+  WORD_MAX_CELLS,
   WORD_MODEL_GRID_HEIGHT,
   WORD_MODEL_GRID_WIDTH,
   WORD_MODEL_INPUT_HEIGHT,
@@ -10,13 +9,17 @@ import {
   WORD_MODEL_OUTPUT_LENGTH,
   type WordModelThresholds,
 } from '@/ml/word-model-contract';
+import { parseWordMasks } from '@/ml/word-symbols';
 import type { NormalizedBox } from '@/types/live-scan';
 import { isNormalizedWordBox, type WordCell, type WordImageResult, type WordRejectionReason } from '@/types/word-scan';
 
-type Proposal = {
+export type WordProposal = {
   readonly score: number;
   readonly box: NormalizedBox;
   readonly offset: number;
+  readonly mask: number;
+  readonly confidence: number;
+  readonly dotConfidence: number;
 };
 
 /** Also used for loader warmup; it asserts only the tensor contract. */
@@ -56,7 +59,7 @@ function visibleBox(box: NormalizedBox): NormalizedBox | undefined {
   return width > 0 && height > 0 ? { x, y, width, height } : undefined;
 }
 
-function rejected(reason: WordRejectionReason, proposals: readonly Proposal[]): WordImageResult {
+function rejected(reason: WordRejectionReason, proposals: readonly WordProposal[]): WordImageResult {
   'worklet';
   const boxes: NormalizedBox[] = [];
   for (const proposal of proposals) {
@@ -66,18 +69,22 @@ function rejected(reason: WordRejectionReason, proposals: readonly Proposal[]): 
   return { status: 'rejected', reason, cells: [], boxes };
 }
 
-/** Pure six-dot decoder. Any retained uncertain cell rejects the entire word. */
-export function decodeWordOutput(
+/** Position-only NMS keeps weak, indicator and unsupported cells for tracking. */
+export function detectWordProposals(
   output: ArrayLike<number>,
   thresholds: WordModelThresholds,
   selection: NormalizedBox = { x: 0, y: 0, width: 1, height: 1 },
-): WordImageResult {
+  projectedViewSelection = false,
+): readonly WordProposal[] {
   'worklet';
   assertWordModelOutput(output);
   if (!isValidWordModelThresholds(thresholds)) throw new Error('Ambang model kata tidak valid.');
-  if (!isNormalizedWordBox(selection)) throw new Error('Area pilihan kata tidak valid.');
+  // Center zoom may project the user's selection beyond the image. Only the
+  // internal view matcher uses this; public decoding still requires normalized ROI.
+  const validProjected = [selection.x, selection.y, selection.width, selection.height].every(Number.isFinite) && selection.width > 0 && selection.height > 0;
+  if (projectedViewSelection ? !validProjected : !isNormalizedWordBox(selection)) throw new Error('Area pilihan kata tidak valid.');
 
-  const proposals: Proposal[] = [];
+  const proposals: WordProposal[] = [];
   for (let row = 0; row < WORD_MODEL_GRID_HEIGHT; row += 1) {
     for (let column = 0; column < WORD_MODEL_GRID_WIDTH; column += 1) {
       const offset = (row * WORD_MODEL_GRID_WIDTH + column) * WORD_MODEL_OUTPUT_CHANNELS;
@@ -94,18 +101,36 @@ export function decodeWordOutput(
       // A proposal intersecting the guide is retained and later rejected if clipped.
       if (box.x + box.width <= selection.x || box.x >= selection.x + selection.width ||
           box.y + box.height <= selection.y || box.y >= selection.y + selection.height) continue;
-      proposals.push({ score, offset, box });
+      let mask = 0;
+      let dotConfidence = 1;
+      for (let dot = 0; dot < 6; dot += 1) {
+        const probability = output[offset + 5 + dot]!;
+        dotConfidence = Math.min(dotConfidence, Math.max(probability, 1 - probability));
+        if (probability >= 0.5) mask |= 1 << dot;
+      }
+      proposals.push({ score, offset, box, mask, dotConfidence, confidence: Math.min(score, dotConfidence) });
     }
   }
   proposals.sort((a, b) => b.score - a.score || a.offset - b.offset);
-  const retained: Proposal[] = [];
+  const retained: WordProposal[] = [];
   for (const proposal of proposals) {
     if (!retained.some((other) => wordBoxIou(proposal.box, other.box) > thresholds.nmsIou)) retained.push(proposal);
   }
   retained.sort((a, b) => (a.box.x + a.box.width / 2) - (b.box.x + b.box.width / 2));
+  return retained;
+}
+
+/** Any uncertain physical cell, including an indicator, rejects the token. */
+export function decodeWordOutput(
+  output: ArrayLike<number>,
+  thresholds: WordModelThresholds,
+  selection: NormalizedBox = { x: 0, y: 0, width: 1, height: 1 },
+): WordImageResult {
+  'worklet';
+  const retained = detectWordProposals(output, thresholds, selection);
 
   if (retained.length === 0) return rejected('no_grid', retained);
-  if (retained.length > WORD_MAX_LETTERS) return rejected('too_many_cells', retained);
+  if (retained.length > WORD_MAX_CELLS) return rejected('too_many_cells', retained);
   if (retained.some(({ box }) => box.width < thresholds.minCellWidth || box.height < thresholds.minCellHeight)) return rejected('too_far', retained);
   if (retained.some(({ box }) => box.x < thresholds.edgeMargin || box.y < thresholds.edgeMargin ||
       box.x + box.width > 1 - thresholds.edgeMargin || box.y + box.height > 1 - thresholds.edgeMargin ||
@@ -125,24 +150,15 @@ export function decodeWordOutput(
     if (centerGap <= 0 || intersection > thresholds.maxOverlapRatio * Math.min(previous.width, current.width)) return rejected('overlapping_cells', retained);
   }
 
-  const cells: WordCell[] = [];
-  for (const proposal of retained) {
-    let mask = 0;
-    let confidence = proposal.score;
-    for (let dot = 0; dot < 6; dot += 1) {
-      const probability = output[proposal.offset + 5 + dot]!;
-      const selectedProbability = Math.max(probability, 1 - probability);
-      if (selectedProbability < thresholds.dotConfidence) return rejected('low_confidence', retained);
-      if (probability >= 0.5) mask |= 1 << dot;
-      confidence = Math.min(confidence, selectedProbability);
-    }
-    const letterIndex = WORD_LATIN_MASKS.findIndex((candidate) => candidate === mask);
-    if (letterIndex < 0) return rejected('unsupported_pattern', retained);
-    cells.push({ letter: String.fromCharCode(65 + letterIndex), mask, confidence, box: proposal.box });
-  }
+  if (retained.some(({ dotConfidence }) => dotConfidence < thresholds.dotConfidence)) return rejected('low_confidence', retained);
+  const parsed = parseWordMasks(retained.map(({ mask }) => mask));
+  if (parsed.status === 'rejected') return rejected(parsed.reason, retained);
+  const cells: WordCell[] = retained.map((proposal, index) => ({
+    ...parsed.symbols[index]!, confidence: proposal.confidence, box: proposal.box,
+  }));
   return {
     status: 'success',
-    text: cells.map(({ letter }) => letter).join(''),
+    text: parsed.text,
     confidence: Math.min(...cells.map(({ confidence }) => confidence)),
     cells,
     boxes: cells.map(({ box }) => box),

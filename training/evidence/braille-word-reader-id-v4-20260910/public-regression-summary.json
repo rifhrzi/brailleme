@@ -1,0 +1,273 @@
+{
+  "sourceFile": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\public-regression-v4.json",
+  "sourceSha256": "f35716eec4e5dbbaf2ccfe68e76ef096f9a0a8ac00faf5bbd1cb544b9fdc5fb3",
+  "sourceSizeBytes": 868357,
+  "summaryScope": "Exact report metadata/metrics retained; row decisions remain in hash-bound original evidence",
+  "report": {
+    "created_utc": "2026-09-10T16:28:26.436339+00:00",
+    "candidate_sha256": "090260a2a29f802cdcd07140344feaaf04d98bc48cd2be7a5d75e0482d6ee38c",
+    "baseline_sha256": "cce2432c0ddb8952c885dd58697589c285209588dafa81aacdd891b1660068b7",
+    "thresholds": {
+      "proposalScore": 0.25,
+      "acceptScore": 0.25,
+      "dotConfidence": 0.7,
+      "nmsIou": 0.25,
+      "minCellWidth": 0.008,
+      "minCellHeight": 0.06,
+      "edgeMargin": 0.008,
+      "maxRowDeviation": 0.55,
+      "maxGapRatio": 1.2,
+      "maxOverlapRatio": 0.5
+    },
+    "decoder_version": "six-dot-id-v4-experimental",
+    "input_sha256": {
+      "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\best-word.keras": "090260a2a29f802cdcd07140344feaaf04d98bc48cd2be7a5d75e0482d6ee38c",
+      "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\selection.json": "4235598b3db21fc537c5741207514579fd6764644386d698688cc0ee141bc952",
+      "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\training-config.json": "f24d1789de9df2b1412e206111b6169a06bdc9cb3b6d05155b713682e8819a4c",
+      "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\training\\checkpoints\\braille-word-reader-v1\\best-word.keras": "cce2432c0ddb8952c885dd58697589c285209588dafa81aacdd891b1660068b7",
+      "C:\\bm-symbols-20260908\\deployment-baseline\\best-word.keras": "cce2432c0ddb8952c885dd58697589c285209588dafa81aacdd891b1660068b7",
+      "C:\\bm-symbols-20260908\\deployment-baseline\\word_reader.tflite": "406db0e55e8a5ba9e0d00fb22aadc24f19698219f375e4dcead9057cf3bf2230",
+      "C:\\bm-symbols-20260908\\deployment-baseline\\external-words.json": "52db73db66f63e35e03ceda218bcb53958a644137cc50aae3f796acf9afc6603",
+      "C:\\bm-symbols-20260908\\legacy-selection-fixtures.json": "05b51db63457743993e0702204b7abb8771e5bf4a12427b07a1d2b3f642eb2bf",
+      "C:\\bm-symbols-20260908\\deployment-baseline\\public-word-outputs.npz": "495a07433292783b0c7519a3906d7dc3ae05291511187b42f329e56dda787ad3",
+      "C:\\bm-symbols-20260908\\deployment-baseline\\backend-fullprecision.npz": "69dd5aa4a7c7e866afbf5735b74d46d9abd46bdb8bd0dd92f08cfac048d9e9d5",
+      "C:\\bm-datasets\\AngelinaDataset\\not_braille\\train.txt": "2290477bb8dfb1ddd2e102cae6da07342eb26188b215881fed330f31fa11fa3b"
+    },
+    "source_sha256": {
+      "word_torch_port.py": "6bb8812dbdfbf517bbb3367fac3f5357f69f03b7a190e7575c2ce12b21f0f329",
+      "word_decode_id_v4.py": "e7a52d92c4c1bd8266ef95575d939fb0a96f9eacefe237a23c66f36cfd7d7868",
+      "word_symbols_id_v4.py": "0b85da03fa8d3b921fea444adf6a68ba95b56fda76db710b9edc5f6b8a9937b9",
+      "word_symbols.py": "9e43dc9484f035ba3bbfcb49344050714dfd1c636d107b92cb2ce1faded29ba3",
+      "word_data.py": "d692b4b28620af7e4b40ebdedccda68769feb8d3f51bd1508e807487fd32b7d7",
+      "word_symbol_v4_regression.py": "6a4ceb1024738aee7dbe2e740566fcac2de50df6c88b2c0f54fa5929374324bc"
+    },
+    "regression_veto": true,
+    "baseline_engines": {
+      "external607": "cached_tflite",
+      "legacy405": "cached_torch",
+      "negative44": "native_torch"
+    },
+    "candidate_engine": "native_torch",
+    "torch": "2.7.1+cu128",
+    "policy": "Veto only; no alternate checkpoint selected or trained; original selection remains unchanged",
+    "scope": "previously_observed_public_regression_not_independent_holdout",
+    "fresh_symbol_test_opened": false,
+    "fresh_symbol_test": {
+      "opened_by_this_evaluation": false,
+      "reserved_before_this_evaluation": true,
+      "completed_before_this_evaluation": true
+    },
+    "fresh_symbol_test_opened_field_scope": "Compatibility field describes this regression only; prior experiment exposure is reported in fresh_symbol_test",
+    "physical_camera_validated": false,
+    "deployment_authorized": false,
+    "limitations": [
+      "Legacy caches bind model and fixture bytes; their historical records do not include per-image hashes.",
+      "Image hashes here record current regression inputs; PIL resize is not Android native resize proof.",
+      "External607 baseline uses cached TFLite while candidate uses Torch; final candidate export parity is separate."
+    ],
+    "results": {
+      "external607": {
+        "summary": {
+          "total": 607,
+          "baseline": {
+            "positive_total": 607,
+            "correct": 323,
+            "accepted": 353,
+            "exact_accuracy": 0.5321252059308073,
+            "accepted_precision": 0.9150141643059491,
+            "negative_total": 0,
+            "false_accepts": 0
+          },
+          "candidate": {
+            "positive_total": 607,
+            "correct": 309,
+            "accepted": 360,
+            "exact_accuracy": 0.5090609555189456,
+            "accepted_precision": 0.8583333333333333,
+            "negative_total": 0,
+            "false_accepts": 0
+          },
+          "lost": 76,
+          "gained": 62,
+          "regression_veto": true,
+          "reason_codes": [
+            "exact_accuracy_regressed",
+            "accepted_precision_regressed"
+          ],
+          "groups": {
+            "all": {
+              "total": 607,
+              "baseline": {
+                "positive_total": 607,
+                "correct": 323,
+                "accepted": 353,
+                "exact_accuracy": 0.5321252059308073,
+                "accepted_precision": 0.9150141643059491,
+                "negative_total": 0,
+                "false_accepts": 0
+              },
+              "candidate": {
+                "positive_total": 607,
+                "correct": 309,
+                "accepted": 360,
+                "exact_accuracy": 0.5090609555189456,
+                "accepted_precision": 0.8583333333333333,
+                "negative_total": 0,
+                "false_accepts": 0
+              },
+              "lost": 76,
+              "gained": 62,
+              "regression_veto": true,
+              "reason_codes": [
+                "exact_accuracy_regressed",
+                "accepted_precision_regressed"
+              ]
+            }
+          }
+        }
+      },
+      "legacy405": {
+        "summary": {
+          "total": 405,
+          "baseline": {
+            "positive_total": 405,
+            "correct": 355,
+            "accepted": 362,
+            "exact_accuracy": 0.8765432098765432,
+            "accepted_precision": 0.9806629834254144,
+            "negative_total": 0,
+            "false_accepts": 0
+          },
+          "candidate": {
+            "positive_total": 405,
+            "correct": 318,
+            "accepted": 333,
+            "exact_accuracy": 0.7851851851851852,
+            "accepted_precision": 0.954954954954955,
+            "negative_total": 0,
+            "false_accepts": 0
+          },
+          "lost": 42,
+          "gained": 5,
+          "regression_veto": true,
+          "reason_codes": [
+            "exact_accuracy_regressed",
+            "accepted_precision_regressed"
+          ],
+          "groups": {
+            "natural": {
+              "total": 135,
+              "baseline": {
+                "positive_total": 135,
+                "correct": 129,
+                "accepted": 130,
+                "exact_accuracy": 0.9555555555555556,
+                "accepted_precision": 0.9923076923076923,
+                "negative_total": 0,
+                "false_accepts": 0
+              },
+              "candidate": {
+                "positive_total": 135,
+                "correct": 118,
+                "accepted": 122,
+                "exact_accuracy": 0.8740740740740741,
+                "accepted_precision": 0.9672131147540983,
+                "negative_total": 0,
+                "false_accepts": 0
+              },
+              "lost": 12,
+              "gained": 1,
+              "regression_veto": true,
+              "reason_codes": [
+                "exact_accuracy_regressed",
+                "accepted_precision_regressed"
+              ]
+            },
+            "stress": {
+              "total": 270,
+              "baseline": {
+                "positive_total": 270,
+                "correct": 226,
+                "accepted": 232,
+                "exact_accuracy": 0.837037037037037,
+                "accepted_precision": 0.9741379310344828,
+                "negative_total": 0,
+                "false_accepts": 0
+              },
+              "candidate": {
+                "positive_total": 270,
+                "correct": 200,
+                "accepted": 211,
+                "exact_accuracy": 0.7407407407407407,
+                "accepted_precision": 0.9478672985781991,
+                "negative_total": 0,
+                "false_accepts": 0
+              },
+              "lost": 30,
+              "gained": 4,
+              "regression_veto": true,
+              "reason_codes": [
+                "exact_accuracy_regressed",
+                "accepted_precision_regressed"
+              ]
+            }
+          }
+        }
+      },
+      "negative44": {
+        "summary": {
+          "total": 44,
+          "baseline": {
+            "positive_total": 0,
+            "correct": 0,
+            "accepted": 0,
+            "exact_accuracy": null,
+            "accepted_precision": null,
+            "negative_total": 44,
+            "false_accepts": 0
+          },
+          "candidate": {
+            "positive_total": 0,
+            "correct": 0,
+            "accepted": 0,
+            "exact_accuracy": null,
+            "accepted_precision": null,
+            "negative_total": 44,
+            "false_accepts": 0
+          },
+          "lost": 0,
+          "gained": 0,
+          "regression_veto": false,
+          "reason_codes": [],
+          "groups": {
+            "all": {
+              "total": 44,
+              "baseline": {
+                "positive_total": 0,
+                "correct": 0,
+                "accepted": 0,
+                "exact_accuracy": null,
+                "accepted_precision": null,
+                "negative_total": 44,
+                "false_accepts": 0
+              },
+              "candidate": {
+                "positive_total": 0,
+                "correct": 0,
+                "accepted": 0,
+                "exact_accuracy": null,
+                "accepted_precision": null,
+                "negative_total": 44,
+                "false_accepts": 0
+              },
+              "lost": 0,
+              "gained": 0,
+              "regression_veto": false,
+              "reason_codes": []
+            }
+          }
+        }
+      }
+    }
+  }
+}

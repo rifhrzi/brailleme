@@ -1,0 +1,73 @@
+{
+  "source_audit": {
+    "status": "passed",
+    "preserved_base_manifest": "..\\complete-source-training-v3\\combined-training-manifest.json",
+    "preserved_base_manifest_sha256": "b8e959ccb9eb3cfa60fdf61cb716e3b606430d500f4770d0c2a1ef5d5082772c",
+    "original_source_split_sha256": "870e1be00c8e4fa4c34e755f26b1ff6becaa3e1fdb70288b0499c2aeba8867dc",
+    "supplemental_sources": [
+      "dsbi/Massage/M+1+recto.jpg",
+      "dsbi/Massage/M+10+recto.jpg",
+      "dsbi/Massage/M+2+recto.jpg",
+      "dsbi/Massage/M+3+recto.jpg",
+      "dsbi/Massage/M+4+recto.jpg",
+      "dsbi/Massage/M+5+recto.jpg",
+      "dsbi/Massage/M+6+recto.jpg",
+      "dsbi/Massage/M+7+recto.jpg",
+      "dsbi/Massage/M+8+recto.jpg",
+      "dsbi/Massage/M+9+recto.jpg",
+      "dsbi/Math/math+1+recto.jpg",
+      "dsbi/Math/math+10+recto.jpg",
+      "dsbi/Math/math+2+recto.jpg",
+      "dsbi/Math/math+3+recto.jpg",
+      "dsbi/Math/math+4+recto.jpg",
+      "dsbi/Math/math+5+recto.jpg",
+      "dsbi/Math/math+6+recto.jpg",
+      "dsbi/Math/math+7+recto.jpg",
+      "dsbi/Math/math+8+recto.jpg",
+      "dsbi/Math/math+9+recto.jpg",
+      "dsbi/Ordinary Printed Document/OPD+1+recto.jpg",
+      "dsbi/Ordinary Printed Document/OPD+2+recto.jpg",
+      "dsbi/Ordinary Printed Document/OPD+3+recto.jpg",
+      "dsbi/Shaver Yang Fengting/SYF+3+recto.jpg",
+      "dsbi/Shaver Yang Fengting/SYF+4+recto.jpg",
+      "dsbi/Shaver Yang Fengting/SYF+5+recto.jpg"
+    ],
+    "indexes": [
+      {
+        "path": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\dsbi-training-contexts-v2\\source-index.json",
+        "sha256": "8d62cf1850308fb864449bbcabc4399ef4e9a9aab62216b35c8064fa634450a6",
+        "dataset": "DSBI",
+        "revision": "6937eb8973efe5ff337e5c018485cb626303f5c2",
+        "generated_manifest_sha256": "21dc4f93821b2282b8c0f0967430f22b44fc868d26b4a3265e6fd57995892a44",
+        "sources": 26,
+        "families": [
+          "dsbi/Massage",
+          "dsbi/Math",
+          "dsbi/Ordinary Printed Document",
+          "dsbi/Shaver Yang Fengting"
+        ],
+        "records": 2338
+      }
+    ],
+    "combined_records": 23691,
+    "scope": "Exact append-only records, split membership and original/cached pixel hashes; no label or validation changes."
+  },
+  "point_audit": {
+    "path": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\dsbi-point-metadata-v1\\points.json",
+    "sha256": "ea9592a727f7f3abcc6b017f8f22e143e90ae1541f623c43adf30104021937e8",
+    "records": 2338,
+    "known_cell_occurrences": 27055,
+    "source_verification": "Exact equality with freshly parsed hash-bound DSBI TRAIN annotations; no inferred dot positions."
+  },
+  "negative_expansion": {
+    "base_unique_negative_records": 44,
+    "base_repeat": 27,
+    "supplemental_unique_negative_records": 47,
+    "supplemental_repeat": 2,
+    "negative_draws": 1282,
+    "total_epoch_records": 24882
+  },
+  "synthetic_count": 3096,
+  "epoch_record_count": 27978,
+  "symbol_manifest_sha256": "dbf91f402b08154e1f9016852ef722d857499f1a550facb029b76f439e932d06"
+}

@@ -1,0 +1,29 @@
+{
+  "status": "action_or_observation_incomplete",
+  "error": "Command '['C:\\\\Users\\\\rifqi\\\\AppData\\\\Local\\\\Android\\\\Sdk\\\\platform-tools\\\\adb.exe', '-s', 'emulator-5554', 'pull', '/sdcard/brailleme-smoke-77f9f4d881e442bba9d16ca547b760ff.png', 'C:\\\\bm-symbols-apk-20260908\\\\evidence\\\\actions-abc-exercise-v6\\\\20260908T175931353950Z-cycle-01-before-486b30.png']' timed out after 8.0 seconds",
+  "acceptanceResult": "not_assessed",
+  "action_counts": {},
+  "observations": [
+    {
+      "label": "cycle-00-before",
+      "utc": "2026-09-08T17:59:17.446946+00:00",
+      "pid": "4482",
+      "xml": "C:\\bm-symbols-apk-20260908\\evidence\\actions-abc-exercise-v6\\20260908T175914791122Z-cycle-00-before-5258c9.xml",
+      "screenshot": "C:\\bm-symbols-apk-20260908\\evidence\\actions-abc-exercise-v6\\20260908T175916012280Z-cycle-00-before-d1ef9c.png",
+      "logcat": "C:\\bm-symbols-apk-20260908\\evidence\\actions-abc-exercise-v6\\20260908T175917445437Z-cycle-00-before-81b506.log",
+      "app_process_required": true,
+      "visible_states": [
+        "Mencari Braille"
+      ],
+      "result_texts": [],
+      "shutter_visible": true,
+      "shutter_enabled": false,
+      "rescan_visible": false,
+      "processing_visible": false
+    }
+  ],
+  "finished_utc": "2026-09-08T17:59:40.134225+00:00",
+  "command": "exercise",
+  "runtime_collector_coordination": "operator_managed",
+  "note": "Run cold-start/font separately; the existing runtime collector stops when the app PID changes."
+}

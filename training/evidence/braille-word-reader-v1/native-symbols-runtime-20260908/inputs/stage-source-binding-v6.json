@@ -1,0 +1,1283 @@
+{
+  "schema_version": 1,
+  "observed_utc": "2026-09-08T17:35:52.787051+00:00",
+  "workspace": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme",
+  "stage": "C:\\bm-symbols-apk-20260908",
+  "selection": {
+    "script": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\output\\update-symbols-tracking-20260908\\stage-source.cjs",
+    "sha256": "accb2478e28ddc0b73f302df9787726603a401ff2ab398265c4b963d3034cddf",
+    "git_command": [
+      "git",
+      "ls-files",
+      "-c",
+      "-o",
+      "--exclude-standard",
+      "-z"
+    ],
+    "excluded_pattern": "^(training|docs|output|artifacts|\\.github)/",
+    "excluded_counts": {
+      "docs": 16,
+      "training": 2270,
+      ".github": 1
+    },
+    "missing_or_nonfile_workspace_entries_skipped": []
+  },
+  "selected_count": 227,
+  "matched_count": 227,
+  "mismatches": [],
+  "matching_files": [
+    {
+      "path": "modules/braille-word-geometry/android/src/main/java/com/margelo/nitro/braillewordgeometry/WordPixelResize.java",
+      "bytes": 6338,
+      "sha256": "9b48ca512bbef8e51e98cfc5a7c7757b1e7385bd4a904c322d3ce878585db174"
+    },
+    {
+      "path": "modules/braille-word-geometry/nitrogen/generated/android/c++/JWordPixelResult.hpp",
+      "bytes": 2260,
+      "sha256": "ad3bd8a69dd6e37897ddb143e6332b8c51f016cea146aaec246811ed7f752dbb"
+    },
+    {
+      "path": "modules/braille-word-geometry/nitrogen/generated/android/kotlin/com/margelo/nitro/braillewordgeometry/WordPixelResult.kt",
+      "bytes": 1447,
+      "sha256": "ef0e65e2ece1a8f1d5d0b4e6d70e9470960a7df20d9ae7b974c703fee9c30410"
+    },
+    {
+      "path": "modules/braille-word-geometry/nitrogen/generated/shared/c++/WordPixelResult.hpp",
+      "bytes": 3887,
+      "sha256": "353786d191be71415a19d598fb731165baca7d32bd4f30818e92a47bababc426"
+    },
+    {
+      "path": "scripts/word-android-smoke/collect_runtime.py",
+      "bytes": 13718,
+      "sha256": "8bf61a4ce53da8249f6b62dd0fd6d497285f41f855d79176bdcc07e3d293715b"
+    },
+    {
+      "path": "scripts/word-android-smoke/test_collect_runtime.py",
+      "bytes": 6453,
+      "sha256": "de5ab1ec856fb2725add10e4be53a3aa00ed6309711df005f8500a88da768712"
+    },
+    {
+      "path": "scripts/word-android-smoke/test_verify_apk.py",
+      "bytes": 11291,
+      "sha256": "22a5558f2f77a9632cf27acb841452243a2c0ee34640fec20bff93a8267276a6"
+    },
+    {
+      "path": "scripts/word-android-smoke/verify_apk.py",
+      "bytes": 18104,
+      "sha256": "1374195c4f27173d90638b1bcb5dfae6c148c50e514677a5bd068d701ca13262"
+    },
+    {
+      "path": "scripts/word-decoder-parity/replay-id.cjs",
+      "bytes": 13375,
+      "sha256": "f8f0f91298f50392f338d6193e99a1ea47260f66a837d5e812341358455d9f92"
+    },
+    {
+      "path": "scripts/word-decoder-parity/replay-id.test.cjs",
+      "bytes": 3858,
+      "sha256": "58197b7bd8358e55248e33c02dcda87780831fdc1eb99e2cab7c62d19dd73c4b"
+    },
+    {
+      "path": "scripts/word-native-parity/WordPixelResizeCli.java",
+      "bytes": 3464,
+      "sha256": "11af40d967e174ad4872b0e2de7ca028678f74154c5bfd8b909b7abae7caba71"
+    },
+    {
+      "path": "scripts/word-native-parity/pixel-resize-android.cjs",
+      "bytes": 5615,
+      "sha256": "924665094222739dc8c72540e238863620b7a9b4886641dcdbc582436cf05487"
+    },
+    {
+      "path": "scripts/word-native-parity/pixel-resize-parity.cjs",
+      "bytes": 5872,
+      "sha256": "d7c9ebfbfb833f9f1b400c74795faafaf67238e6c2e16db9f68ff2d7fb500152"
+    },
+    {
+      "path": "scripts/word-native-parity/pixel-resize-reference.py",
+      "bytes": 1255,
+      "sha256": "1f284916ad7d1914b6b18680b87ff58fa00f9a47bf869c6e989d4f39a57a922f"
+    },
+    {
+      "path": "scripts/word-native-parity/prepare-camera-fixture.py",
+      "bytes": 2968,
+      "sha256": "06f7652e3d23fff217ec704acaf612f0e6b2cf0777f34477ec81e39dfccdfc5e"
+    },
+    {
+      "path": "src/features/live/__tests__/use-word-camera-tracking.test.tsx",
+      "bytes": 26774,
+      "sha256": "46786ceb63d5cc88d3fd1e9478f9d882265970f5c6f39fd5a768f71b2388088f"
+    },
+    {
+      "path": "src/features/live/use-word-camera-tracking.ts",
+      "bytes": 27389,
+      "sha256": "9ca80e47f6e93ec58e18c87bc572f7f89471f658bfdf1f80b0591e2b5a57bd16"
+    },
+    {
+      "path": "src/ml/__tests__/word-symbols.test.ts",
+      "bytes": 2329,
+      "sha256": "ef9af13044d6ce0237cc380960c4550c8dce22a2eece5ccdadae6086e0fde258"
+    },
+    {
+      "path": "src/ml/__tests__/word-tracked-image.test.ts",
+      "bytes": 7156,
+      "sha256": "26fb63fc39a1c06f19c06c6532ade52d5f1cdb14c696d3f9fa5bf08005988e57"
+    },
+    {
+      "path": "src/ml/__tests__/word-tracking.test.ts",
+      "bytes": 7013,
+      "sha256": "33add887ded942f2e1b5b35b4ed3f11b7e6eeb3bb911a2d698e371849615ba93"
+    },
+    {
+      "path": "src/ml/word-symbols.ts",
+      "bytes": 2800,
+      "sha256": "bc4c62222f4b57b07ae19b37e2add60931747129e49589054255363b0da49860"
+    },
+    {
+      "path": "src/ml/word-tracking.ts",
+      "bytes": 9737,
+      "sha256": "1c71189a45b31817f468ba785e87a51dcd682e4e4fb45aae3b22d6bfcdb7765c"
+    },
+    {
+      "path": ".gitattributes",
+      "bytes": 862,
+      "sha256": "f8d4e2d4f133902c2d663ae1ee0c459de67af99e253c576fef1d32add83d7666"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 862,
+      "sha256": "c813e45268b33bcb5c3e929024b21d60e8cbf4e4faeff3741011f0cc2cebe5eb"
+    },
+    {
+      "path": ".npmrc",
+      "bytes": 22,
+      "sha256": "a093bb2fed59d699b7f9a62a5203cc196054c624e9c39c6d908c9e7db5dd2464"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1106,
+      "sha256": "fb3ca4a837f5779e83cef89b78253a8949cfb9429c340309f62d0465ec6610b4"
+    },
+    {
+      "path": "README.md",
+      "bytes": 10994,
+      "sha256": "5ed482e0a6474b634550a56477df892bda243dd617d46dda342c52c1e5f2d54f"
+    },
+    {
+      "path": "app.config.ts",
+      "bytes": 1147,
+      "sha256": "43a0c4acdfab113fbf20f66e7ad75152737013765bc116f83d8d6708f32e363f"
+    },
+    {
+      "path": "app.json",
+      "bytes": 1423,
+      "sha256": "b92fd43e716956ccb05d10fc4abd021ea50dd48c00170b51e0dfcf9a59091877"
+    },
+    {
+      "path": "app/(tabs)/_layout.tsx",
+      "bytes": 3988,
+      "sha256": "64fd730eaed77fdc681c51cf70b81f51f2968bff8b450c7cb71b621a9d89cab4"
+    },
+    {
+      "path": "app/(tabs)/index.tsx",
+      "bytes": 225,
+      "sha256": "c27185c4a843918ea3e28270c0ddbba3ffdce27e0f664ae82062703a5efd3908"
+    },
+    {
+      "path": "app/(tabs)/live.tsx",
+      "bytes": 5626,
+      "sha256": "40cffa9852d4c29925d598f8d3879d9b87dd79df8f47702a83b9f6ec8b552dff"
+    },
+    {
+      "path": "app/(tabs)/settings.tsx",
+      "bytes": 249,
+      "sha256": "d7c9d1ad14bfd0b74bfd3ec3724dfb60e1897c0bf9ca58f5c8d93b8bf9868082"
+    },
+    {
+      "path": "app/+not-found.tsx",
+      "bytes": 65,
+      "sha256": "98faaa02445053a9af4885b1279dd019c8cc7142420ceb5caf65be3e4a7a2d2e"
+    },
+    {
+      "path": "app/_layout.tsx",
+      "bytes": 3758,
+      "sha256": "3e7342327476328464b7964854c73b55baffa6bd74216940ab3069eaee1d8904"
+    },
+    {
+      "path": "app/help.tsx",
+      "bytes": 55,
+      "sha256": "2e2ba1527899937726d5b4d43e70b05359b63de973c03afffde98933771bdc74"
+    },
+    {
+      "path": "app/onboarding.tsx",
+      "bytes": 67,
+      "sha256": "caddf73d3a7000847bbf88dd154fad31b74a9c7884d066ee9d7036538c550f1e"
+    },
+    {
+      "path": "app/privacy.tsx",
+      "bytes": 61,
+      "sha256": "931b8fc8ed52e3a529ba612656dd74a8d0ac5e723a27682a6eac1e5c9e4b7ae8"
+    },
+    {
+      "path": "assets/adaptive-icon.png",
+      "bytes": 19511,
+      "sha256": "b57cc68585c3adc8efa463b4d47a8aaf508f9799fc7466206be2d0843a387d06"
+    },
+    {
+      "path": "assets/icon-brand.png",
+      "bytes": 24020,
+      "sha256": "c48a31e8266244f5dc84abe95c1d5388e3d898dc777c90743e8bc8c8cc1f4015"
+    },
+    {
+      "path": "assets/models/braille-cell-classifier-v1/braille_model.tflite",
+      "bytes": 981768,
+      "sha256": "9e07b5c56e2e4107a116370c6f0a2203ec83afe4b2e42d099b1780e75e72d7dc"
+    },
+    {
+      "path": "assets/models/braille-cell-classifier-v1/label.json",
+      "bytes": 185,
+      "sha256": "d5cc50edf38a77014015627e64ddac8dece4ccfc1e4b3c54af64d4828552a25f"
+    },
+    {
+      "path": "assets/models/braille-cell-classifier-v1/manifest.json",
+      "bytes": 2678,
+      "sha256": "c457ce6c61c28f70b29f037b6388c3104784007a07e209fa8f7d07d040fce970"
+    },
+    {
+      "path": "assets/models/braille-cell-classifier-v2/braille_model.tflite",
+      "bytes": 982368,
+      "sha256": "7a41942cf330c9558884385221deb69f282adfd8d39be00a257c75ec9572c318"
+    },
+    {
+      "path": "assets/models/braille-cell-classifier-v2/label.json",
+      "bytes": 185,
+      "sha256": "d5cc50edf38a77014015627e64ddac8dece4ccfc1e4b3c54af64d4828552a25f"
+    },
+    {
+      "path": "assets/models/braille-cell-classifier-v2/manifest.json",
+      "bytes": 4379,
+      "sha256": "237481a32c3cd709b6038ef2007d882a1536240c22de80c2994abcef1de86d4b"
+    },
+    {
+      "path": "assets/models/braille-cell-classifier-v2/native-self-test-v.png",
+      "bytes": 1529,
+      "sha256": "08e20f52ef72517734e5595e9fd8b2222467a3248bf6c9f477ce564817b76901"
+    },
+    {
+      "path": "assets/models/braille-word-reader-v1/manifest.json",
+      "bytes": 11446,
+      "sha256": "419f459f01970a56e745cbdaecd00b505daf5a46c534822febff7e91155e50da"
+    },
+    {
+      "path": "assets/models/braille-word-reader-v1/native-word-fixture.png",
+      "bytes": 99122,
+      "sha256": "5115a112aad01432f4ebdfa22d8dcb686f1330075d5030bc5c039c154dc4d164"
+    },
+    {
+      "path": "assets/models/braille-word-reader-v1/word-reader.tflite",
+      "bytes": 3259716,
+      "sha256": "406db0e55e8a5ba9e0d00fb22aadc24f19698219f375e4dcead9057cf3bf2230"
+    },
+    {
+      "path": "assets/monochrome-icon.png",
+      "bytes": 7827,
+      "sha256": "7dd4147898560d2ff48963323d1675db22d032a036314a1f707503ef81b4d9c8"
+    },
+    {
+      "path": "assets/splashscreen_logo.xml",
+      "bytes": 1635,
+      "sha256": "093bd480051d15a1cdd09eccacdcb38a2c56d08d1f57e1892674c145b8841585"
+    },
+    {
+      "path": "eas.json",
+      "bytes": 1160,
+      "sha256": "683bb9abba8b5ac4a4a2ce47390ed78228a06d98ac5ed891b8f23c69bab73e5e"
+    },
+    {
+      "path": "eslint.config.js",
+      "bytes": 303,
+      "sha256": "4b6e987b636d82f405e3be02f2958271b42d964feffe2c430d2537d7bb8d649a"
+    },
+    {
+      "path": "jest.config.js",
+      "bytes": 892,
+      "sha256": "27c7852cdab7e5a9e08cb0f3bcfb4228b66bee68ecafe63b78ba644091323329"
+    },
+    {
+      "path": "jest.setup.ts",
+      "bytes": 4913,
+      "sha256": "a12822c68d64eaea3f4d4fe93cbb7e3789d151e602a3b69403d87da0c1aa1d43"
+    },
+    {
+      "path": "metro.config.js",
+      "bytes": 230,
+      "sha256": "61b7ab1d3e01e1bebd9784e22d5172bb31997b7ebb76cd79ef75cde30237d618"
+    },
+    {
+      "path": "modules/braille-local-voice/LICENSE",
+      "bytes": 1106,
+      "sha256": "fb3ca4a837f5779e83cef89b78253a8949cfb9429c340309f62d0465ec6610b4"
+    },
+    {
+      "path": "modules/braille-local-voice/android/build.gradle",
+      "bytes": 254,
+      "sha256": "eac0b2f7f290baf4c1fc74d4e569ad0f4376dce21f6c3a3ab759c7317a3bf7e4"
+    },
+    {
+      "path": "modules/braille-local-voice/android/src/main/AndroidManifest.xml",
+      "bytes": 23,
+      "sha256": "21058c692532098e42afc39cf09de946c38229ec414bb7ac32f4fc90ba9a5f45"
+    },
+    {
+      "path": "modules/braille-local-voice/android/src/main/java/expo/modules/braillelocalvoice/BrailleLocalVoiceModule.kt",
+      "bytes": 7583,
+      "sha256": "167134668473ce0cbc99c3667e06ab6ac7a1187cf8f21e6c75946abf566fe2b6"
+    },
+    {
+      "path": "modules/braille-local-voice/expo-module.config.json",
+      "bytes": 125,
+      "sha256": "95dbf288740364f6a988ceff06e900fb05ee95767950f2978c0fd5e49c6abe0b"
+    },
+    {
+      "path": "modules/braille-local-voice/src/BrailleLocalVoice.types.ts",
+      "bytes": 122,
+      "sha256": "f50555dc9a3e3ab9b6e56e23d046cec24c5bf0232509b10b9f6d44838c58509a"
+    },
+    {
+      "path": "modules/braille-local-voice/src/BrailleLocalVoiceModule.ts",
+      "bytes": 373,
+      "sha256": "9acc240030d2f38fc2d66934039a2afa32e499b0c2c9581634793588724160b7"
+    },
+    {
+      "path": "modules/braille-word-geometry/LICENSE",
+      "bytes": 1106,
+      "sha256": "fb3ca4a837f5779e83cef89b78253a8949cfb9429c340309f62d0465ec6610b4"
+    },
+    {
+      "path": "modules/braille-word-geometry/README.md",
+      "bytes": 5923,
+      "sha256": "475fa2b23be3cc9f8d73a11c16d3ea3b2be8ef66035ae43232af6e2db75aa0f0"
+    },
+    {
+      "path": "modules/braille-word-geometry/android/CMakeLists.txt",
+      "bytes": 497,
+      "sha256": "2e9cc14c2588fb27ba7530ec452b6f49e5274c614a24f65f3e01c3f320097845"
+    },
+    {
+      "path": "modules/braille-word-geometry/android/build.gradle",
+      "bytes": 1363,
+      "sha256": "02e2dcbda4ced239902b37f610934ccf3e26e8b31952f0005997970fef270c41"
+    },
+    {
+      "path": "modules/braille-word-geometry/android/consumer-rules.pro",
+      "bytes": 170,
+      "sha256": "f63e5bb960568fdd3c9f773ad8fe5e264e738202ee888a474a1a8351dfe69e5d"
+    },
+    {
+      "path": "modules/braille-word-geometry/android/src/main/AndroidManifest.xml",
+      "bytes": 23,
+      "sha256": "21058c692532098e42afc39cf09de946c38229ec414bb7ac32f4fc90ba9a5f45"
+    },
+    {
+      "path": "modules/braille-word-geometry/android/src/main/cpp/cpp-adapter.cpp",
+      "bytes": 256,
+      "sha256": "1b60e23d0aa1b1ecbc3eb041ab87fa1099590c674accbdf27c5b0c62699e7be2"
+    },
+    {
+      "path": "modules/braille-word-geometry/android/src/main/java/com/margelo/nitro/braillewordgeometry/HybridWordPhotoGeometry.kt",
+      "bytes": 1422,
+      "sha256": "b3fd06c5b5fde79d5a1deaa1abc0892fe33e7ba0aafebe7bf45763e53aba2219"
+    },
+    {
+      "path": "modules/braille-word-geometry/android/src/main/java/expo/modules/braillewordgeometry/BrailleWordGeometryModule.kt",
+      "bytes": 352,
+      "sha256": "417fc6eb0bd4952c3ffb3f100b49a7d3eb9a3cb980656ad23bfd4e399f12429f"
+    },
+    {
+      "path": "modules/braille-word-geometry/expo-module.config.json",
+      "bytes": 129,
+      "sha256": "397647d0f20ccb6bc029987a27da172210bc3be08cd47c80d14b1fd361cf9b8f"
+    },
+    {
+      "path": "modules/braille-word-geometry/nitro.json",
+      "bytes": 466,
+      "sha256": "f8607d1bd91a1842163df16d6d21b685d52fc5d337c74f0b74f855a6ed7ac11e"
+    },
+    {
+      "path": "modules/braille-word-geometry/nitrogen/generated/.gitattributes",
+      "bytes": 27,
+      "sha256": "8401d61d91c8f286601668b1b3c8e90e324d3f09d45a22bc72712c9b5f18e348"
+    },
+    {
+      "path": "modules/braille-word-geometry/nitrogen/generated/android/BrailleWordGeometry+autolinking.cmake",
+      "bytes": 2958,
+      "sha256": "92474ba23df6fd03faab221195f2f26d966a22d48caec13623b1836110c141bf"
+    },
+    {
+      "path": "modules/braille-word-geometry/nitrogen/generated/android/BrailleWordGeometry+autolinking.gradle",
+      "bytes": 711,
+      "sha256": "f7808458852b7208f1b8a831f51c8b6f8fc3d7529ecb6ea77fc27030e898b44c"
+    },
+    {
+      "path": "modules/braille-word-geometry/nitrogen/generated/android/BrailleWordGeometryOnLoad.cpp",
+      "bytes": 1989,
+      "sha256": "852c47e99b04bf66540bb2259c24f1ba9bb55fd80167e76fd429b4a6764f6ffe"
+    },
+    {
+      "path": "modules/braille-word-geometry/nitrogen/generated/android/BrailleWordGeometryOnLoad.hpp",
+      "bytes": 1083,
+      "sha256": "d372a0fcb36e94516ead97febe0ecdaaf31a4f20f2b1dfb7f3562534e41733f0"
+    },
+    {
+      "path": "modules/braille-word-geometry/nitrogen/generated/android/c++/JHybridWordPhotoGeometrySpec.cpp",
+      "bytes": 3649,
+      "sha256": "ff87f503fe7a8db3353c4f7b6d53702bea839b040ab37004c43b544447be0322"
+    },
+    {
+      "path": "modules/braille-word-geometry/nitrogen/generated/android/c++/JHybridWordPhotoGeometrySpec.hpp",
+      "bytes": 2389,
+      "sha256": "0ac62432cbe3db21d20deb1df0fd109b0086ccae8e7cc4ddc5c590ff65d7f054"
+    },
+    {
+      "path": "modules/braille-word-geometry/nitrogen/generated/android/c++/JPhotoGeometry.hpp",
+      "bytes": 3656,
+      "sha256": "55db880d62679fb27013ff605b7130fa1d0f37de0023fe5044b2ced0d6100dda"
+    },
+    {
+      "path": "modules/braille-word-geometry/nitrogen/generated/android/kotlin/com/margelo/nitro/braillewordgeometry/BrailleWordGeometryOnLoad.kt",
+      "bytes": 1114,
+      "sha256": "01254773c574d84736b27b0bda3604a9d8b61d5c754a6ed6eaa9560d625fac9c"
+    },
+    {
+      "path": "modules/braille-word-geometry/nitrogen/generated/android/kotlin/com/margelo/nitro/braillewordgeometry/HybridWordPhotoGeometrySpec.kt",
+      "bytes": 1883,
+      "sha256": "8a99b07f753172d6a68a4032dfc07130101b34784a09995936cf0f493c5d66c8"
+    },
+    {
+      "path": "modules/braille-word-geometry/nitrogen/generated/android/kotlin/com/margelo/nitro/braillewordgeometry/PhotoGeometry.kt",
+      "bytes": 1895,
+      "sha256": "ad148255a6136bf9841b6d4a38d41d08c5ba31dde4678dac0d1dea8ed20c1bf7"
+    },
+    {
+      "path": "modules/braille-word-geometry/nitrogen/generated/shared/c++/HybridWordPhotoGeometrySpec.cpp",
+      "bytes": 764,
+      "sha256": "702a255fa4c5e022415ad667c922946284c075f89570d24841074b26e322b124"
+    },
+    {
+      "path": "modules/braille-word-geometry/nitrogen/generated/shared/c++/HybridWordPhotoGeometrySpec.hpp",
+      "bytes": 2369,
+      "sha256": "2d8e48627a4fcb3eb9dd584e9c94bf775cf3691df0875a28375f4391b5b13ebf"
+    },
+    {
+      "path": "modules/braille-word-geometry/nitrogen/generated/shared/c++/PhotoGeometry.hpp",
+      "bytes": 5276,
+      "sha256": "ea786b4d6a90fc35b6bc501b0ec962e9367c7f7e772d1e9f4b74dd73828a74c1"
+    },
+    {
+      "path": "modules/braille-word-geometry/src/WordPhotoGeometry.nitro.ts",
+      "bytes": 751,
+      "sha256": "4f003678cd6f37dbe2d3bac02a96414c6edadba5fef4a8ad8cf823245258b76e"
+    },
+    {
+      "path": "modules/braille-word-geometry/src/index.ts",
+      "bytes": 756,
+      "sha256": "1b822d18ef8932e837abbdfaf7e7472520c47cead044b5376070ce468fa054b3"
+    },
+    {
+      "path": "package-lock.json",
+      "bytes": 733677,
+      "sha256": "ff9a337033007d9ee7d1b6e6530a33ec004e1e5aa02e50b8fda259371a915b39"
+    },
+    {
+      "path": "package.json",
+      "bytes": 3795,
+      "sha256": "369008dd6f3ad8fd0d2e4e47e31952732c6d0bb6a0cb90a59c72b04d5188a631"
+    },
+    {
+      "path": "scripts/inspect-tflite.mjs",
+      "bytes": 2113,
+      "sha256": "be4e7746ea23cff2baa562fe407880af8e453aefcdcc2af77776249b7e50c797"
+    },
+    {
+      "path": "scripts/jest-model-asset.cjs",
+      "bytes": 166,
+      "sha256": "272db4192327e243edc48c31ba97be7a5771e36334213706a3787e016224679d"
+    },
+    {
+      "path": "scripts/run-expo-doctor.mjs",
+      "bytes": 2329,
+      "sha256": "7ad74d284a3d925974af1a3bd5c93e8f2865e3864a8589913fd3f35e72a095de"
+    },
+    {
+      "path": "scripts/submit-eas-build.mjs",
+      "bytes": 6226,
+      "sha256": "9ef701d396afbbe78a8c6d90edd5c29ef1bfebc93d692673be9eca6aa9f64546"
+    },
+    {
+      "path": "scripts/test-experimental-word-model-verifier.mjs",
+      "bytes": 12162,
+      "sha256": "58e7c60ed6172d9b4ff8c9cb2eeac11952bfd439f8121834852c7a9f036ae615"
+    },
+    {
+      "path": "scripts/test-word-model-verifier.mjs",
+      "bytes": 120905,
+      "sha256": "350530e9e4f31eb21c1f27de7863aab171b3afe5f0621d9fa8715610333d58f2"
+    },
+    {
+      "path": "scripts/verify-eas-build-profile.mjs",
+      "bytes": 2214,
+      "sha256": "fd64d5701d09535a4ebadc2012a776d9211017dcba20a591b430166a646d4cc1"
+    },
+    {
+      "path": "scripts/verify-experimental-word-model-assets.mjs",
+      "bytes": 32527,
+      "sha256": "b263faf4c283d5b2c07a3849a0478ddd9eb9fdaa997db90ee7da92466fc39ce0"
+    },
+    {
+      "path": "scripts/verify-model-assets.mjs",
+      "bytes": 5187,
+      "sha256": "914e36096ded0b4c0b40f1685964bc0b969b4be9f601892944b10cf4e90a1ed4"
+    },
+    {
+      "path": "scripts/verify-model-release-evidence.mjs",
+      "bytes": 18660,
+      "sha256": "483fbbb4a7293bd257b5c697d4544cd989e1d83f85fb513fb43b110057851263"
+    },
+    {
+      "path": "scripts/verify-model-release.mjs",
+      "bytes": 747,
+      "sha256": "03ff40262be7e26fe2480a33157dc5efe292cb152c305aefa1c672aeba0ebc08"
+    },
+    {
+      "path": "scripts/verify-release-config.mjs",
+      "bytes": 11941,
+      "sha256": "eed5c9808d3460d7a3a6019d30b4a7d535b163f53fe78469ba26ad3cd24f7ecf"
+    },
+    {
+      "path": "scripts/verify-word-model-assets.mjs",
+      "bytes": 140416,
+      "sha256": "b85b60cafa58513fa5460f5a7bea57e3066a52d9be6e166ef612aed7eff4603f"
+    },
+    {
+      "path": "scripts/word-android-smoke/README.md",
+      "bytes": 8002,
+      "sha256": "938552016e7c8bb3321182fba5c478cbd5b901aad14c1afe6dcfc78bcd7de068"
+    },
+    {
+      "path": "scripts/word-android-smoke/smoke.py",
+      "bytes": 11721,
+      "sha256": "4fd2fc17d0c506d6dd07cd0747a5dda5a8d6d1c2ff8897673c60fcd2a535555f"
+    },
+    {
+      "path": "scripts/word-android-smoke/test_smoke.py",
+      "bytes": 6227,
+      "sha256": "58fe2679cf31cb5ae84024f7f0b27e61d0d410ffd59a280f832c929490a9d181"
+    },
+    {
+      "path": "scripts/word-decoder-parity/README.md",
+      "bytes": 8639,
+      "sha256": "82d0f71f14b3234fa0e324b1bf8b595cabd49e1477bbe40cf97aa5f5da06149e"
+    },
+    {
+      "path": "scripts/word-decoder-parity/compare.cjs",
+      "bytes": 7078,
+      "sha256": "bf189ba36f64e8769239f7bbd6e5c68788c43c636612a59608b81200d6b0797c"
+    },
+    {
+      "path": "scripts/word-decoder-parity/geometry-ceiling.cjs",
+      "bytes": 10088,
+      "sha256": "d18d98b10285a43d932d8bacbef7d958580763d2874b062ddf15eed750521eb5"
+    },
+    {
+      "path": "scripts/word-decoder-parity/geometry-ceiling.py",
+      "bytes": 2485,
+      "sha256": "cc0d041b9249f37e4c823674b32340bbacdea7009dd22a93647a341181ac1841"
+    },
+    {
+      "path": "scripts/word-decoder-parity/geometry-ceiling.test.cjs",
+      "bytes": 2017,
+      "sha256": "335618ff31239d975e97bc4148b17ce695ed58236df6d513124b365f2d30ffe8"
+    },
+    {
+      "path": "scripts/word-decoder-parity/numerical-boundaries.cjs",
+      "bytes": 12709,
+      "sha256": "4bec4b657fb9f09a34cae996f6e1946449ee7cadce49b349645cf5b478e9de4a"
+    },
+    {
+      "path": "scripts/word-decoder-parity/numerical-boundaries.py",
+      "bytes": 1357,
+      "sha256": "ba63554a7bdbde79e0b86112d8972355c0a648b1cc6c6c8a8d343df5bb88fb34"
+    },
+    {
+      "path": "scripts/word-decoder-parity/prepare.py",
+      "bytes": 5391,
+      "sha256": "863b2d79d3e64532bbba19cfc9799dd321b298914c7424c102962871aaf123a6"
+    },
+    {
+      "path": "scripts/word-native-capture/README.md",
+      "bytes": 2410,
+      "sha256": "0ba0c1e3e69e52c2d021e791cabe8b7639625c5c59a81e1ae01b071603508638"
+    },
+    {
+      "path": "scripts/word-native-capture/verify_archive.py",
+      "bytes": 5807,
+      "sha256": "2019fd0be5e9e22fe1c71b6cdf0641713a47b127f93a7aecf419dbf07ad01ba3"
+    },
+    {
+      "path": "scripts/word-native-interpreter/README.md",
+      "bytes": 7739,
+      "sha256": "16bd8bc0a063148155ab30ffa853c5347ba408c0244db14794dfa0a776ba7b4b"
+    },
+    {
+      "path": "scripts/word-native-interpreter/compare.cjs",
+      "bytes": 7627,
+      "sha256": "4fa8ade36a97e4ea36e10aa6d8aef20f62cf4c80c4c3eca3837507255f6936e7"
+    },
+    {
+      "path": "scripts/word-native-interpreter/compare.test.cjs",
+      "bytes": 5578,
+      "sha256": "b678a95bec27fa30db90c9d7da694762fce6a0aa1f48ed9f9b1656806ad5596f"
+    },
+    {
+      "path": "scripts/word-native-interpreter/compile.py",
+      "bytes": 5057,
+      "sha256": "793c0b0a96bb650f541705e7df458af8d042f4e80f19c1d47c4fe06ba7a36627"
+    },
+    {
+      "path": "scripts/word-native-interpreter/prepare.py",
+      "bytes": 6330,
+      "sha256": "d9ce8999b4a1c3dec1313b3c8abcd804abefae78aa87abbb594a4c899522dc5c"
+    },
+    {
+      "path": "scripts/word-native-interpreter/run.py",
+      "bytes": 5185,
+      "sha256": "67e66176835809dbf5b5edbaab2678c2dd90678db9804334264f4e2f284a9e96"
+    },
+    {
+      "path": "scripts/word-native-interpreter/word_interpreter.c",
+      "bytes": 5993,
+      "sha256": "bb09f22771ea633f7706ba7ec5ea82f5d169548b904f685df37f834d3a7fdd2c"
+    },
+    {
+      "path": "scripts/word-native-parity/README.md",
+      "bytes": 3638,
+      "sha256": "4c141afd08f8903b84544ad7ed08024b8538a03a7ba59ee5cb92f93a52b73c39"
+    },
+    {
+      "path": "scripts/word-native-parity/WordNativeParity.java",
+      "bytes": 7429,
+      "sha256": "4ebc7cbee92c591237a66b915f24fb580fcf19c4e0d8fbc5fd16f6d15eab57e6"
+    },
+    {
+      "path": "scripts/word-native-parity/compare.py",
+      "bytes": 6758,
+      "sha256": "39c7db3659490b99f4acff62b869976cd0ccf31966e5feb75db609c6e81c4e90"
+    },
+    {
+      "path": "scripts/word-native-parity/fixture-geometry.cjs",
+      "bytes": 4039,
+      "sha256": "f5ac9307f93515e7463484a767d6da9c8ab40f644d03b7653ba418411e71dbd8"
+    },
+    {
+      "path": "scripts/word-native-parity/geometry-reference.cjs",
+      "bytes": 2910,
+      "sha256": "822a7f7c9924696398505e22dca2465986d5f30ae3981b71b9177d4d02f29f37"
+    },
+    {
+      "path": "scripts/word-native-parity/pixel-reference.cjs",
+      "bytes": 1534,
+      "sha256": "602041a3e60ae2db5e8214c589d52af58b07ef6227e40154e6321968e78ad9e1"
+    },
+    {
+      "path": "scripts/word-native-parity/run.ps1",
+      "bytes": 2396,
+      "sha256": "1fc2ff58c7fc31de26087d4afb39458f4eb0d0f2a93543af4b08fe3a9a82d765"
+    },
+    {
+      "path": "scripts/word-native-performance/README.md",
+      "bytes": 5081,
+      "sha256": "4905edb0834c2365381bff0021e15d840ddea6d9d1d9a22fe2cd7e6af25772bc"
+    },
+    {
+      "path": "scripts/word-native-performance/entry.tsx.template",
+      "bytes": 5686,
+      "sha256": "0777ffb6eba608a042a7fa44ec8044e75aea0d13ac719b4a36d64b1943966859"
+    },
+    {
+      "path": "scripts/word-native-performance/metro.config.js.template",
+      "bytes": 230,
+      "sha256": "61b7ab1d3e01e1bebd9784e22d5172bb31997b7ebb76cd79ef75cde30237d618"
+    },
+    {
+      "path": "scripts/word-native-performance/prepare.py",
+      "bytes": 2507,
+      "sha256": "805e602434f57cb4be4674964c68d770a9b44921a3b1f7522606d0cd459c2566"
+    },
+    {
+      "path": "scripts/word-native-performance/rebundle.py",
+      "bytes": 1326,
+      "sha256": "d05435ac6758f5f23acb8ec719351109773575ff1b8e04dea9e5cf773b83fbb5"
+    },
+    {
+      "path": "scripts/word-normalization-sensitivity.py",
+      "bytes": 10185,
+      "sha256": "77d257fee112458a3e07cec050a7a2e915a4883f3b8bb93991c42d3c9209ed25"
+    },
+    {
+      "path": "src/accessibility/use-accessibility-preferences.ts",
+      "bytes": 584,
+      "sha256": "335f18efede07e4150c5a2f6c223fc9ad069241e9d386336ef25c3655537cffe"
+    },
+    {
+      "path": "src/components/__tests__/accessible-button.test.tsx",
+      "bytes": 1614,
+      "sha256": "95b3b13ab18b532c991370c273744dd7abaa3f9721a0c2eecd381f53ee7b4de7"
+    },
+    {
+      "path": "src/components/__tests__/primary-page.test.tsx",
+      "bytes": 749,
+      "sha256": "841da02f916c6444e4a514e373a252788c392c1e238b90caeecc19a6d93f9cf1"
+    },
+    {
+      "path": "src/components/__tests__/status-announcer.test.tsx",
+      "bytes": 3848,
+      "sha256": "3634a72a394e9d994f5f015be13892e48f0b119590181fe932979f9d815a647f"
+    },
+    {
+      "path": "src/components/accessible-button.tsx",
+      "bytes": 3771,
+      "sha256": "7bbfff872fb2da89c648a8c84d2742f8bc13226bd1f96b4bab56595ee8952137"
+    },
+    {
+      "path": "src/components/index.ts",
+      "bytes": 517,
+      "sha256": "3f42e88597b55159164576c83d464b23e8f91981e45b10b6ef63e648d87d47b9"
+    },
+    {
+      "path": "src/components/primary-page.tsx",
+      "bytes": 557,
+      "sha256": "7f5dea04169806c9c33d8daea989bcfd13f5b649bb0a51245676e9f5173107e4"
+    },
+    {
+      "path": "src/components/screen.tsx",
+      "bytes": 1238,
+      "sha256": "693ef68273766029436b4233498f43d7c55e2e426e5fa01ab87f5911c6009de6"
+    },
+    {
+      "path": "src/components/section-card.tsx",
+      "bytes": 1826,
+      "sha256": "452cfd11f0f102c5782a94bf6450461530736a14b21e00d9a309d50bdf6fbaf2"
+    },
+    {
+      "path": "src/components/setting-row.tsx",
+      "bytes": 2746,
+      "sha256": "acb812c948d3ff4aed5d5e6eb7c2324364868498c71c25f3f1fa03fcd4eeeb83"
+    },
+    {
+      "path": "src/components/status-announcer.tsx",
+      "bytes": 4327,
+      "sha256": "a391597b9c235d6456fbe1dc0b8faffbedb45c68242fe3906ec0cdb4f2284729"
+    },
+    {
+      "path": "src/config/app-environment.ts",
+      "bytes": 435,
+      "sha256": "154a693055ef33cbf90d084ffcf5ab0a103e03737be5a9c78d3e23e5aa2013a9"
+    },
+    {
+      "path": "src/config/index.ts",
+      "bytes": 42,
+      "sha256": "1349143da8fc8f439ab671c67cbcaef9553a9ff6916eb5cbe9c355501484a002"
+    },
+    {
+      "path": "src/features/help/help-screen.tsx",
+      "bytes": 3546,
+      "sha256": "a92e38454645762d09ef0c5eefcfda58c288f4bf78e6336a8ced37a214748402"
+    },
+    {
+      "path": "src/features/home/__tests__/home-screen.test.tsx",
+      "bytes": 2366,
+      "sha256": "e824a6aca251b2236b33ebed2695f8443b693316dbafe445e24ef57312ffabf0"
+    },
+    {
+      "path": "src/features/home/home-screen.tsx",
+      "bytes": 9643,
+      "sha256": "a5ced33f7ab8f23efacf3de6dfa53836254c4f79dc2dd14f8a0a532e367cd472"
+    },
+    {
+      "path": "src/features/live/__tests__/live-runtime-screen.test.tsx",
+      "bytes": 5517,
+      "sha256": "dc335c543e93f7119431962c25222a92ea9ea1c7ea59175a810d9901803a1ae5"
+    },
+    {
+      "path": "src/features/live/__tests__/live-screen.test.tsx",
+      "bytes": 50617,
+      "sha256": "473dbfcb1be5edaacbefda39226f369a063057d89c643c094767f7cb58bc786d"
+    },
+    {
+      "path": "src/features/live/__tests__/live-single-cell-camera.test.tsx",
+      "bytes": 19748,
+      "sha256": "4b809268fdc525f056c5cfe51cfa91cb51357f376ad7ea5cb86a1aa2bff2037b"
+    },
+    {
+      "path": "src/features/live/__tests__/word-draft.test.ts",
+      "bytes": 4270,
+      "sha256": "ff2ecf4724b5e3d3a93fdde7c377fe0f42b25aec8a1e06d85b6036b1184389b9"
+    },
+    {
+      "path": "src/features/live/__tests__/word-photo-camera.test.tsx",
+      "bytes": 25890,
+      "sha256": "91f5e08748e76cf7c489412196cf3ded3a6013e478e234380df7dbbacc0cf688"
+    },
+    {
+      "path": "src/features/live/__tests__/word-scan-screen.test.tsx",
+      "bytes": 16330,
+      "sha256": "96859faacdb257c569ae7f0a407a642842d065307ae92944983a6455eb893c90"
+    },
+    {
+      "path": "src/features/live/live-runtime-screen.tsx",
+      "bytes": 3417,
+      "sha256": "bfa141d3941efe2af0906982a8b062655e98a9583a260fef8857e30cdc42296b"
+    },
+    {
+      "path": "src/features/live/live-screen.tsx",
+      "bytes": 50848,
+      "sha256": "51025a8300eea1c83ee53030f205f3e0a1a2b7d3f5811fae8d2152a4474803e7"
+    },
+    {
+      "path": "src/features/live/live-single-cell-camera.tsx",
+      "bytes": 19016,
+      "sha256": "39895f4798a0e9997a43b97187f12c4347ae21366eb4ae52cf25c1eda8dc030f"
+    },
+    {
+      "path": "src/features/live/word-draft.ts",
+      "bytes": 3295,
+      "sha256": "1b3a409bfd7535d7e853308556abfc3d19419c2f1ce9910e2a6b0fd6b717e196"
+    },
+    {
+      "path": "src/features/live/word-photo-camera.tsx",
+      "bytes": 21261,
+      "sha256": "f2204a5c3889c59ee156d0c1800ba2023bfe6973d8d0b6a446681806a7224cf8"
+    },
+    {
+      "path": "src/features/live/word-scan-screen.tsx",
+      "bytes": 20366,
+      "sha256": "5a0934e805bfb5edf885f4a281d170cbaefb760317ac04611047a42d6e3b0555"
+    },
+    {
+      "path": "src/features/not-found/not-found-screen.tsx",
+      "bytes": 654,
+      "sha256": "a3219df0c0c5497906bc2a1b45bb9a8fede6bac9a949b596921a779a7ea1cb21"
+    },
+    {
+      "path": "src/features/onboarding/__tests__/onboarding-flow.test.tsx",
+      "bytes": 5065,
+      "sha256": "db07fe8dd352799fec4bca731e1c3027697cf1ee7bab744b2ca49a1fcce6dab9"
+    },
+    {
+      "path": "src/features/onboarding/onboarding-screen.tsx",
+      "bytes": 3176,
+      "sha256": "a7a0224b8307180751c36250b7b8a102909b4c8bd5cec6bbf5bf2895c4603b3f"
+    },
+    {
+      "path": "src/features/privacy/__tests__/privacy-screen.test.tsx",
+      "bytes": 638,
+      "sha256": "fffa3601b5cc228579fb91a629d11aa657bb5a3447954820abdf728f1f73d637"
+    },
+    {
+      "path": "src/features/privacy/privacy-screen.tsx",
+      "bytes": 2618,
+      "sha256": "47d9c90ee009c3fc4897ce13fdf962e3cbafa287a01be42a9ed2b341e1d3dc35"
+    },
+    {
+      "path": "src/features/settings/__tests__/settings-screen.test.tsx",
+      "bytes": 8102,
+      "sha256": "b5bdb247a1267edf3d083c7d015306cce48688a4b5ee535a16221ef840f835e5"
+    },
+    {
+      "path": "src/features/settings/settings-screen.tsx",
+      "bytes": 14033,
+      "sha256": "0ab518218c89039ea468a663fec024b16035021c237d9fbc66e5d120cca56f6b"
+    },
+    {
+      "path": "src/ml/__tests__/braille-model-contract.test.ts",
+      "bytes": 3621,
+      "sha256": "5cc9853550e65a4128d3db84a86936210e8ca7e083f8610b8cd5f3eaf06e485d"
+    },
+    {
+      "path": "src/ml/__tests__/braille-model-loader.test.ts",
+      "bytes": 16905,
+      "sha256": "10aba3d1278688837ba9425bd586afdf6cb33c06b64a0c6a726c2fa7aed3534d"
+    },
+    {
+      "path": "src/ml/__tests__/fixtures/word-decoder-reference.json",
+      "bytes": 33776,
+      "sha256": "71321a35e696522ff3d1a0c33bcdd18e556a918c8c3d6609381cbed81e9a8888"
+    },
+    {
+      "path": "src/ml/__tests__/fixtures/word-resize-reference.json",
+      "bytes": 1831,
+      "sha256": "efddabcc8dd5bf068afded7e55b2219df4ecace8b211d00c78b1d4eac45203bf"
+    },
+    {
+      "path": "src/ml/__tests__/frame-preprocessing.test.ts",
+      "bytes": 5976,
+      "sha256": "6c13ac3ed057a47140a3cebc755e7b1474219ca5938cc3486bf124fccb454290"
+    },
+    {
+      "path": "src/ml/__tests__/frame-quality.test.ts",
+      "bytes": 999,
+      "sha256": "42823224460195006c2c589f2be65538dc70be0c4b212d0360132d3c04c2f87e"
+    },
+    {
+      "path": "src/ml/__tests__/prediction-stabilizer.test.ts",
+      "bytes": 8499,
+      "sha256": "0794db49ca3b9b2faf14bde75933fff954a29e7a36da278bb7d61afed826382d"
+    },
+    {
+      "path": "src/ml/__tests__/word-camera-geometry.test.ts",
+      "bytes": 9372,
+      "sha256": "cf380216e24999af07a35e352ab69539ad4ae9a826108bd2858eab6843290622"
+    },
+    {
+      "path": "src/ml/__tests__/word-decoder-positions.test.ts",
+      "bytes": 2782,
+      "sha256": "2cce3800cc174473cc9bf739a0f7185a9cc2acdcabde01bc28b6809944690502"
+    },
+    {
+      "path": "src/ml/__tests__/word-decoder.test.ts",
+      "bytes": 12210,
+      "sha256": "4afcf97a8da3e736ca68e5c6f5ee34657f55fefe046e2ce354593585350c2b47"
+    },
+    {
+      "path": "src/ml/__tests__/word-image-processing.test.ts",
+      "bytes": 14365,
+      "sha256": "9268b1483b98a73e2456f20a26efd0e0f30d9c7ec2526eefa1856527483569d5"
+    },
+    {
+      "path": "src/ml/__tests__/word-image-resize.test.ts",
+      "bytes": 3130,
+      "sha256": "6215ba57ac85adb949955d5bd4776b793115007520143901dcc427aa0f44744b"
+    },
+    {
+      "path": "src/ml/__tests__/word-model-loader.test.ts",
+      "bytes": 13398,
+      "sha256": "c391c09a6ebabd2c1e98bf5f7eb11e6ca3a6e0acd6e05fc2a77604015eaafa26"
+    },
+    {
+      "path": "src/ml/braille-model-contract.ts",
+      "bytes": 4200,
+      "sha256": "5e5181612225d406cc12dadfa69edd85efaaea51a010a6eaf10131c4a60420cd"
+    },
+    {
+      "path": "src/ml/braille-model-loader.ts",
+      "bytes": 9082,
+      "sha256": "95495da20c0dd2e2572ea9cd6f532fbd6818ec99a3ea4adf244559a1f0b97dc6"
+    },
+    {
+      "path": "src/ml/braille-model-runtime-policy.ts",
+      "bytes": 464,
+      "sha256": "fe9328dda579f2ba3e99472d6286b52ed167c521952951829831f0969e252ad5"
+    },
+    {
+      "path": "src/ml/frame-preprocessing.ts",
+      "bytes": 4558,
+      "sha256": "e200f69e08ee1426430116d26e951359fa1dadbecf3631af06c926f9d718cfb0"
+    },
+    {
+      "path": "src/ml/frame-quality.ts",
+      "bytes": 789,
+      "sha256": "dc34d5116cc9c91a271e1a9d33b7664a0bcdb8a53aefbbd2ad5c112f2bb3b16a"
+    },
+    {
+      "path": "src/ml/index.ts",
+      "bytes": 210,
+      "sha256": "3ce4e4b2af50c9fab2cdc62e620de526716e1c11a84b758f6e0169ac42498f92"
+    },
+    {
+      "path": "src/ml/prediction-stabilizer.ts",
+      "bytes": 4385,
+      "sha256": "105e9e1b12bfc405c359ac1be6e750c12c731fd0fd3fc57aa2dcf85a48bb6376"
+    },
+    {
+      "path": "src/ml/word-camera-geometry.ts",
+      "bytes": 10761,
+      "sha256": "86e8d173f9c96b30ad2103496880f9556ef55c9620fb60aaed6136f4a0227623"
+    },
+    {
+      "path": "src/ml/word-decoder.ts",
+      "bytes": 7900,
+      "sha256": "f4f07829eb0f207d075477107e36daf241ed9821763ce44fb580b7b73cce7ffa"
+    },
+    {
+      "path": "src/ml/word-image-processing.ts",
+      "bytes": 25322,
+      "sha256": "5caf889b9267f81532902e5c00bed72f093b90e13862e7bf40a6293b3da86995"
+    },
+    {
+      "path": "src/ml/word-model-assets.ts",
+      "bytes": 1431,
+      "sha256": "3d11985839ee93e5780ffcdffbbcee7b37018ea37dca533e8865900478c3825c"
+    },
+    {
+      "path": "src/ml/word-model-contract.ts",
+      "bytes": 4058,
+      "sha256": "e01dd5f2e496300bc7ff46181ba470c7d7931e52558f893b84dbbf6348466932"
+    },
+    {
+      "path": "src/ml/word-model-loader.ts",
+      "bytes": 6879,
+      "sha256": "0fb3461342e54ef1ea680062ee06ad15cd3f2f6ca6f08ada8f03c2d4c8284bf7"
+    },
+    {
+      "path": "src/routing/__tests__/route-guards.test.tsx",
+      "bytes": 5776,
+      "sha256": "63d2588d8c64d7dd237e0ed5a39037df0bdf283d10ee6ffbbbdfea088ddc7af5"
+    },
+    {
+      "path": "src/routing/__tests__/tabs-layout.test.tsx",
+      "bytes": 1767,
+      "sha256": "979efc724e9773ca6d4e3e817f6e8753069d65d22923d1571fef892ffb231aed"
+    },
+    {
+      "path": "src/services/__tests__/expo-speech-tts-port.test.ts",
+      "bytes": 23371,
+      "sha256": "8f625177eb6944e4fdaeddb373f1b108ffb7a714bc10e72132c7c878833ca32a"
+    },
+    {
+      "path": "src/services/__tests__/scan-readiness-port.test.ts",
+      "bytes": 2301,
+      "sha256": "0fc0d20e05154472237ecf2ac5222c6adff036dcb826c0f7d8d240df9208eef9"
+    },
+    {
+      "path": "src/services/__tests__/single-cell-scanner-port.test.ts",
+      "bytes": 8061,
+      "sha256": "5b92e9cba15b3b728edb7d75be3fa68aed4583c53a7ad3714f02984052d99425"
+    },
+    {
+      "path": "src/services/__tests__/vision-camera-permission-port.test.ts",
+      "bytes": 6512,
+      "sha256": "545c95916c729ee4c03e047e286dfe2d51c5bd4808112aa25fc0fb07471ab8f4"
+    },
+    {
+      "path": "src/services/expo-speech-tts-port.ts",
+      "bytes": 15131,
+      "sha256": "b4f76363ebd500b45b1f214c6b1c0c0f796c80f18ab17a4d2f03641a962a4586"
+    },
+    {
+      "path": "src/services/index.ts",
+      "bytes": 194,
+      "sha256": "3a434ef744157488a0830bd8ef633e3d536678fbaa1e06497eb45c2e9827f4d4"
+    },
+    {
+      "path": "src/services/ports.ts",
+      "bytes": 2431,
+      "sha256": "e2a7d3f27db891080c82dd05a43bee162f8647f948d88e3b8fa478e858628b75"
+    },
+    {
+      "path": "src/services/scan-readiness-port.ts",
+      "bytes": 1907,
+      "sha256": "a53927e57bb4dd02b0e7950c034939867ccb0dbc99c923176c6ca15dbcb6203e"
+    },
+    {
+      "path": "src/services/single-cell-scanner-port.ts",
+      "bytes": 4229,
+      "sha256": "eeee8e09453b4dd84f65521514caabe73aa69e11d002d472f48c1c590e6848a0"
+    },
+    {
+      "path": "src/services/vision-camera-permission-port.ts",
+      "bytes": 3405,
+      "sha256": "862c1da1f4e9c415d7b67208c53f2de8ee06fbe46da7827844e1b1f6bf162512"
+    },
+    {
+      "path": "src/storage/__tests__/app-preferences-schema.test.ts",
+      "bytes": 2455,
+      "sha256": "94fd0de66e920b0378d30e5d8535f5c0cf64d05167c5ea02da57a12835b4a3ad"
+    },
+    {
+      "path": "src/storage/__tests__/app-preferences-store.test.ts",
+      "bytes": 6207,
+      "sha256": "9057c69298c0dd7c38a6228cc690c90fb9c81c4e3745e4815d74c5a29a28ae78"
+    },
+    {
+      "path": "src/storage/app-preferences-schema.ts",
+      "bytes": 3918,
+      "sha256": "1635fd4d03c8375a4d5b8c8925fe1953e79bddd4246f9fb3dce385563e1246b7"
+    },
+    {
+      "path": "src/storage/app-preferences-store.ts",
+      "bytes": 5460,
+      "sha256": "25f98939fab01a70baa5c78a42e0fd7ac10cf3142588adaca6f2607476d7f668"
+    },
+    {
+      "path": "src/storage/index.ts",
+      "bytes": 99,
+      "sha256": "e29e1cb2d98baa74df5b06c4b2c3b76f35dec4f99754acf445dc0147c7113201"
+    },
+    {
+      "path": "src/theme/index.ts",
+      "bytes": 103,
+      "sha256": "c706c2e43dd9f5fb8f192518aad9c866a334de52aa8ad95048dd53aa377c9510"
+    },
+    {
+      "path": "src/theme/tokens.ts",
+      "bytes": 2850,
+      "sha256": "c3406cbb03fdc665563c95784f87d560af28970d0439452272c505433dc50ada"
+    },
+    {
+      "path": "src/types/__tests__/live-scan.test.ts",
+      "bytes": 1254,
+      "sha256": "bbf0a29156b7bb9b4ee0a337f1a8c52f74bc9173081505ffab55f0e5f190de36"
+    },
+    {
+      "path": "src/types/__tests__/word-scan.test.ts",
+      "bytes": 5222,
+      "sha256": "a10644111fe825c31b773ba098fc3ed57cd63271b01256266eabf208c5a00ddc"
+    },
+    {
+      "path": "src/types/app-preferences.ts",
+      "bytes": 920,
+      "sha256": "6781813d5d2f809086879536848fcc90078c4e5dc70e1a281ed4286f3e64845b"
+    },
+    {
+      "path": "src/types/index.ts",
+      "bytes": 109,
+      "sha256": "869ed9718c967fc5d93ce3ac9ae3833df9e786ed4062e241adaaf6b40ab8eda6"
+    },
+    {
+      "path": "src/types/live-scan.ts",
+      "bytes": 3839,
+      "sha256": "bfcb958421baa9492aad2c8e6dddda26b78a25f93e63494eb9f919bc9668e5b9"
+    },
+    {
+      "path": "src/types/runtime.ts",
+      "bytes": 1453,
+      "sha256": "3eae08216a14976fab69a0ef4ce2642ee3c35d2f8338007a98454d2679b176b9"
+    },
+    {
+      "path": "src/types/word-scan.ts",
+      "bytes": 5575,
+      "sha256": "09a0b7ad15ecc0e3176ee8f27939931da7506334a02a1d84d7f260b664804a28"
+    },
+    {
+      "path": "tsconfig.json",
+      "bytes": 495,
+      "sha256": "fb92d9cc7d07a86596e6e172740b22d0dd11ab63cbaa663c57aeba199074f89f"
+    }
+  ],
+  "stage_selection_manifest": {
+    "file": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\output\\update-symbols-tracking-20260908\\staged-source.json",
+    "sha256": "d2c35f50a307e76ca64718f909d3b0140fe12e2e3f1d3b664c649fdcefd93896",
+    "bytes": 27226,
+    "selected_count": 227,
+    "matches_current_workspace_and_stage": true
+  },
+  "apk": {
+    "file": "C:\\bm-symbols-apk-20260908\\android\\app\\build\\outputs\\apk\\release\\app-release.apk",
+    "sha256": "9afa6a1eb2983d0a92b4f1dcff3026f91d583bca02cda6d98cfaf91760a90259",
+    "bytes": 133317765,
+    "matches_expected_verified_apk": true,
+    "integrity_report": "C:\\bm-symbols-apk-20260908\\evidence\\apk-integrity-v6\\report.json",
+    "integrity_report_sha256": "e87e13534911ab88375b769573b9b7634a8a8e0688d9da8312b7294171295da2",
+    "matches_integrity_report": true,
+    "integrity_passed": true,
+    "verified_copy": "C:\\bm-symbols-apk-20260908\\evidence\\apk-integrity-v6\\verified.apk",
+    "verified_copy_sha256": "9afa6a1eb2983d0a92b4f1dcff3026f91d583bca02cda6d98cfaf91760a90259",
+    "matches_verified_copy": true,
+    "installed_proof": "C:\\bm-symbols-apk-20260908\\evidence\\apk-integrity-v6\\install.json",
+    "installed_proof_sha256": "6db736203c1094503353c2e23ca678e49f715c02328bf46fb091178db5a7ed28",
+    "recorded_install_completed_utc": "2026-09-08T17:35:02.5697410Z",
+    "matches_recorded_installed_sha": true,
+    "embedded_bundle": {
+      "entry": "assets/index.android.bundle",
+      "bytes": 2628356,
+      "sha256": "c3c53b84e0b5f75d7e5978ee3bcc284b19b55a6ff1edf1e88c52a8db614686b0"
+    },
+    "embedded_model_source_bindings_match_current_selection": true
+  },
+  "build": {
+    "file": "C:\\bm-symbols-apk-20260908\\evidence\\build-20260908T173305Z\\build.json",
+    "sha256": "c19d2e1e0eab43e891629de96795503d9e9ba39b9523af19ca81248a5b2523a0",
+    "bytes": 919,
+    "exit_code": 0,
+    "started_utc": "2026-09-08T17:33:05.5313099Z",
+    "completed_utc": "2026-09-08T17:34:44.5911872Z"
+  },
+  "source_checks": {
+    "file": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\output\\update-symbols-tracking-20260908\\checks-1788888766290\\checks.json",
+    "sha256": "5ae38504db0539b6ed127e324ea44313137139bd176041fef5924394461e8405",
+    "bytes": 870,
+    "all_exit_codes_zero": true,
+    "checks": [
+      {
+        "name": "model:verify",
+        "exit_code": 0,
+        "log_sha256": "b96cdc5a23f169eeebf3408610270af13190771712e6b1f487a3968fa6392c0e"
+      },
+      {
+        "name": "release:config:verify",
+        "exit_code": 0,
+        "log_sha256": "fcc46bc4dea71bd9525cdeedd9efa54963334335b8acb08ad816083a24974648"
+      },
+      {
+        "name": "lint",
+        "exit_code": 0,
+        "log_sha256": "6b3c9ae8ed1bc6d6b0fe7f25853f52f4bb53adc5c990b36fac65b5cfeccfd2c1"
+      },
+      {
+        "name": "typecheck",
+        "exit_code": 0,
+        "log_sha256": "ade5878bbdd6918d5bfcb6b0ea4f6394d7537d118fea4b7b015f5f51a53fd435"
+      },
+      {
+        "name": "test:coverage",
+        "exit_code": 0,
+        "log_sha256": "afc8d27ffebcc6d3566e961c1c44669a6f83e045952d117e34388bf74271bcb4"
+      }
+    ]
+  },
+  "generated_stage_configuration_observed": [
+    {
+      "path": "android/gradle.properties",
+      "sha256": "c81d642ddcfa2c2329022760064a201169400045a1a6429c9ccd6c36cdbd2336",
+      "bytes": 2684
+    },
+    {
+      "path": "android/app/build.gradle",
+      "sha256": "f87c5c30b571f4a8732d06d5b12a326138f40a9b4bb3afd2a2ca796064da7611",
+      "bytes": 8196
+    },
+    {
+      "path": "android/settings.gradle",
+      "sha256": "7d7f0279261df414e6b1cfe864413ccdac540bd436583125d1c1f27469965c86",
+      "bytes": 1262
+    },
+    {
+      "path": "android/gradle/wrapper/gradle-wrapper.properties",
+      "sha256": "a180163249c7252412ddaee1c7adcf59f6494b1183136f690fbd9a3b8aaed00e",
+      "bytes": 252
+    },
+    {
+      "path": "android/app/src/main/AndroidManifest.xml",
+      "sha256": "9c4f306482660ad6bcf1ef9e541bbe6c4a24d4d02e8f909ab25254c68fc23b4f",
+      "bytes": 2598
+    },
+    {
+      "path": "android/app/src/main/java/com/brailleme/app/MainActivity.kt",
+      "sha256": "9df263d67af8b04636b5d5339c7bf11f4673b37a4ce15a0bee5d4328dd15a321",
+      "bytes": 2452
+    },
+    {
+      "path": "android/app/src/main/java/com/brailleme/app/MainApplication.kt",
+      "sha256": "5763dc20b9145f2e273ed4c3e1f4e47237d14aa283344210c65af8addbe38b3e",
+      "bytes": 1489
+    }
+  ],
+  "notes": [
+    "Source selection exactly mirrors stage-source.cjs without executing its copying/writing behavior.",
+    "Ignored node_modules and generated android/ios/build trees are not selected by git ls-files; generated Android configuration above is hashed separately.",
+    "The stage copier does not remove historical extra files. This comparison proves selected current file identity only, not absence of every unselected stage file.",
+    "Workspace-stage identity is an observation after build, not a reproducible-build proof. Pair with actual build logs and installed APK identity.",
+    "Read-only source/APK/stage audit; only this new report is written. No ADB, UI, prebuild, copying or source mutation.",
+    "This v6 report does not update or replace the delivered v2 APK. Functional runtime, screenshot alignment and 10-minute measurements are assessed separately.",
+    "Installed identity is checked against the saved v6 install proof only; no new ADB or app operation was performed."
+  ],
+  "binding_passed": true
+}

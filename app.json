@@ -2,7 +2,7 @@
   "expo": {
     "name": "BrailleMe",
     "slug": "brailleme",
-    "version": "0.2.0",
+    "version": "0.3.0",
     "icon": "./assets/icon-brand.png",
     "orientation": "default",
     "scheme": "brailleme",
@@ -12,7 +12,7 @@
     "userInterfaceStyle": "light",
     "android": {
       "package": "com.brailleme.app",
-      "versionCode": 2,
+      "versionCode": 3,
       "backgroundColor": "#F5F7FA",
       "userInterfaceStyle": "light",
       "adaptiveIcon": {
@@ -34,7 +34,8 @@
             "minSdkVersion": 29,
             "compileSdkVersion": 36,
             "targetSdkVersion": 36,
-            "buildToolsVersion": "36.0.0"
+            "buildToolsVersion": "36.0.0",
+            "enablePngCrunchInReleaseBuilds": false
           }
         }
       ],

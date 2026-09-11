@@ -1,0 +1,471 @@
+.....E..EE.............................E....EEE.....................................................................E..........................E....E
+======================================================================
+ERROR: test_word_anchor_zoom (unittest.loader._FailedTest.test_word_anchor_zoom)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_word_anchor_zoom
+Traceback (most recent call last):
+  File "C:\Users\rifqi\AppData\Roaming\uv\python\cpython-3.12.14-windows-x86_64-none\Lib\unittest\loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rifqi\AppData\Roaming\uv\python\cpython-3.12.14-windows-x86_64-none\Lib\unittest\loader.py", line 339, in _get_module_from_name
+    __import__(name)
+  File "C:\Users\rifqi\OneDrive\Documents\Github\brailleme\training\tests\test_word_anchor_zoom.py", line 18, in <module>
+    from word_train import Patches,parse_args
+  File "C:\Users\rifqi\OneDrive\Documents\Github\brailleme\training\scripts\word_train.py", line 16, in <module>
+    import keras
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\__init__.py", line 7, in <module>
+    from keras import _tf_keras as _tf_keras
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\_tf_keras\__init__.py", line 1, in <module>
+    from keras._tf_keras import keras
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\_tf_keras\keras\__init__.py", line 7, in <module>
+    from keras import activations as activations
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\activations\__init__.py", line 7, in <module>
+    from keras.src.activations import deserialize as deserialize
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\src\__init__.py", line 1, in <module>
+    from keras.src import activations
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\src\activations\__init__.py", line 3, in <module>
+    from keras.src.activations.activations import celu
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\src\activations\activations.py", line 1, in <module>
+    from keras.src import backend
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\src\backend\__init__.py", line 1, in <module>
+    from keras.src.backend.config import backend
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\src\backend\config.py", line 463, in <module>
+    set_nnx_enabled(_NNX_ENABLED)
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\src\backend\config.py", line 249, in set_nnx_enabled
+    from keras.src.backend.common import global_state
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\src\backend\common\__init__.py", line 2, in <module>
+    from keras.src.backend.common.dtypes import result_type
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\src\backend\common\dtypes.py", line 5, in <module>
+    from keras.src.backend.common.variables import standardize_dtype
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\src\backend\common\variables.py", line 11, in <module>
+    from keras.src.utils.module_utils import tensorflow as tf
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\src\utils\__init__.py", line 1, in <module>
+    from keras.src.utils.audio_dataset_utils import audio_dataset_from_directory
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\src\utils\audio_dataset_utils.py", line 4, in <module>
+    from keras.src.utils import dataset_utils
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\src\utils\dataset_utils.py", line 10, in <module>
+    from keras.src import tree
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\src\tree\__init__.py", line 1, in <module>
+    from keras.src.tree.tree_api import assert_same_paths
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\src\tree\tree_api.py", line 11, in <module>
+    from keras.src.tree import torchtree_impl as tree_impl
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\src\tree\torchtree_impl.py", line 3, in <module>
+    from torch.utils import _pytree as torch_tree
+ModuleNotFoundError: No module named 'torch'
+
+
+======================================================================
+ERROR: test_word_bn_affine (unittest.loader._FailedTest.test_word_bn_affine)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_word_bn_affine
+Traceback (most recent call last):
+  File "C:\Users\rifqi\AppData\Roaming\uv\python\cpython-3.12.14-windows-x86_64-none\Lib\unittest\loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rifqi\AppData\Roaming\uv\python\cpython-3.12.14-windows-x86_64-none\Lib\unittest\loader.py", line 339, in _get_module_from_name
+    __import__(name)
+  File "C:\Users\rifqi\OneDrive\Documents\Github\brailleme\training\tests\test_word_bn_affine.py", line 10, in <module>
+    import keras
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\__init__.py", line 7, in <module>
+    from keras import _tf_keras as _tf_keras
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\_tf_keras\__init__.py", line 1, in <module>
+    from keras._tf_keras import keras
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\_tf_keras\keras\__init__.py", line 7, in <module>
+    from keras import activations as activations
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\activations\__init__.py", line 7, in <module>
+    from keras.src.activations import deserialize as deserialize
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\src\__init__.py", line 1, in <module>
+    from keras.src import activations
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\src\activations\__init__.py", line 3, in <module>
+    from keras.src.activations.activations import celu
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\src\activations\activations.py", line 1, in <module>
+    from keras.src import backend
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\src\backend\__init__.py", line 1, in <module>
+    from keras.src.backend.config import backend
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\src\backend\config.py", line 463, in <module>
+    set_nnx_enabled(_NNX_ENABLED)
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\src\backend\config.py", line 249, in set_nnx_enabled
+    from keras.src.backend.common import global_state
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\src\backend\common\__init__.py", line 2, in <module>
+    from keras.src.backend.common.dtypes import result_type
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\src\backend\common\dtypes.py", line 5, in <module>
+    from keras.src.backend.common.variables import standardize_dtype
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\src\backend\common\variables.py", line 12, in <module>
+    from keras.src.utils.naming import auto_name
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\src\utils\__init__.py", line 1, in <module>
+    from keras.src.utils.audio_dataset_utils import audio_dataset_from_directory
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\src\utils\audio_dataset_utils.py", line 4, in <module>
+    from keras.src.utils import dataset_utils
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\src\utils\dataset_utils.py", line 10, in <module>
+    from keras.src import tree
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\src\tree\__init__.py", line 1, in <module>
+    from keras.src.tree.tree_api import assert_same_paths
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\src\tree\tree_api.py", line 11, in <module>
+    from keras.src.tree import torchtree_impl as tree_impl
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\src\tree\torchtree_impl.py", line 3, in <module>
+    from torch.utils import _pytree as torch_tree
+ModuleNotFoundError: No module named 'torch'
+
+
+======================================================================
+ERROR: test_word_bn_affine_checkpoint (unittest.loader._FailedTest.test_word_bn_affine_checkpoint)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_word_bn_affine_checkpoint
+Traceback (most recent call last):
+  File "C:\Users\rifqi\AppData\Roaming\uv\python\cpython-3.12.14-windows-x86_64-none\Lib\unittest\loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rifqi\AppData\Roaming\uv\python\cpython-3.12.14-windows-x86_64-none\Lib\unittest\loader.py", line 339, in _get_module_from_name
+    __import__(name)
+  File "C:\Users\rifqi\OneDrive\Documents\Github\brailleme\training\tests\test_word_bn_affine_checkpoint.py", line 12, in <module>
+    import keras
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\__init__.py", line 7, in <module>
+    from keras import _tf_keras as _tf_keras
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\_tf_keras\__init__.py", line 1, in <module>
+    from keras._tf_keras import keras
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\_tf_keras\keras\__init__.py", line 7, in <module>
+    from keras import activations as activations
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\activations\__init__.py", line 7, in <module>
+    from keras.src.activations import deserialize as deserialize
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\src\__init__.py", line 1, in <module>
+    from keras.src import activations
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\src\activations\__init__.py", line 3, in <module>
+    from keras.src.activations.activations import celu
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\src\activations\activations.py", line 1, in <module>
+    from keras.src import backend
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\src\backend\__init__.py", line 1, in <module>
+    from keras.src.backend.config import backend
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\src\backend\config.py", line 463, in <module>
+    set_nnx_enabled(_NNX_ENABLED)
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\src\backend\config.py", line 249, in set_nnx_enabled
+    from keras.src.backend.common import global_state
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\src\backend\common\__init__.py", line 2, in <module>
+    from keras.src.backend.common.dtypes import result_type
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\src\backend\common\dtypes.py", line 5, in <module>
+    from keras.src.backend.common.variables import standardize_dtype
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\src\backend\common\variables.py", line 12, in <module>
+    from keras.src.utils.naming import auto_name
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\src\utils\__init__.py", line 1, in <module>
+    from keras.src.utils.audio_dataset_utils import audio_dataset_from_directory
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\src\utils\audio_dataset_utils.py", line 4, in <module>
+    from keras.src.utils import dataset_utils
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\src\utils\dataset_utils.py", line 10, in <module>
+    from keras.src import tree
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\src\tree\__init__.py", line 1, in <module>
+    from keras.src.tree.tree_api import assert_same_paths
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\src\tree\tree_api.py", line 11, in <module>
+    from keras.src.tree import torchtree_impl as tree_impl
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\src\tree\torchtree_impl.py", line 3, in <module>
+    from torch.utils import _pytree as torch_tree
+ModuleNotFoundError: No module named 'torch'
+
+
+======================================================================
+ERROR: test_word_geometry_head (unittest.loader._FailedTest.test_word_geometry_head)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_word_geometry_head
+Traceback (most recent call last):
+  File "C:\Users\rifqi\AppData\Roaming\uv\python\cpython-3.12.14-windows-x86_64-none\Lib\unittest\loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rifqi\AppData\Roaming\uv\python\cpython-3.12.14-windows-x86_64-none\Lib\unittest\loader.py", line 339, in _get_module_from_name
+    __import__(name)
+  File "C:\Users\rifqi\OneDrive\Documents\Github\brailleme\training\tests\test_word_geometry_head.py", line 10, in <module>
+    import keras
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\__init__.py", line 7, in <module>
+    from keras import _tf_keras as _tf_keras
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\_tf_keras\__init__.py", line 1, in <module>
+    from keras._tf_keras import keras
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\_tf_keras\keras\__init__.py", line 7, in <module>
+    from keras import activations as activations
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\activations\__init__.py", line 7, in <module>
+    from keras.src.activations import deserialize as deserialize
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\src\__init__.py", line 1, in <module>
+    from keras.src import activations
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\src\activations\__init__.py", line 3, in <module>
+    from keras.src.activations.activations import celu
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\src\activations\activations.py", line 1, in <module>
+    from keras.src import backend
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\src\backend\__init__.py", line 1, in <module>
+    from keras.src.backend.config import backend
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\src\backend\config.py", line 463, in <module>
+    set_nnx_enabled(_NNX_ENABLED)
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\src\backend\config.py", line 249, in set_nnx_enabled
+    from keras.src.backend.common import global_state
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\src\backend\common\__init__.py", line 2, in <module>
+    from keras.src.backend.common.dtypes import result_type
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\src\backend\common\dtypes.py", line 5, in <module>
+    from keras.src.backend.common.variables import standardize_dtype
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\src\backend\common\variables.py", line 12, in <module>
+    from keras.src.utils.naming import auto_name
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\src\utils\__init__.py", line 1, in <module>
+    from keras.src.utils.audio_dataset_utils import audio_dataset_from_directory
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\src\utils\audio_dataset_utils.py", line 4, in <module>
+    from keras.src.utils import dataset_utils
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\src\utils\dataset_utils.py", line 10, in <module>
+    from keras.src import tree
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\src\tree\__init__.py", line 1, in <module>
+    from keras.src.tree.tree_api import assert_same_paths
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\src\tree\tree_api.py", line 11, in <module>
+    from keras.src.tree import torchtree_impl as tree_impl
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\src\tree\torchtree_impl.py", line 3, in <module>
+    from torch.utils import _pytree as torch_tree
+ModuleNotFoundError: No module named 'torch'
+
+
+======================================================================
+ERROR: test_word_ignored_slots (unittest.loader._FailedTest.test_word_ignored_slots)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_word_ignored_slots
+Traceback (most recent call last):
+  File "C:\Users\rifqi\AppData\Roaming\uv\python\cpython-3.12.14-windows-x86_64-none\Lib\unittest\loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rifqi\AppData\Roaming\uv\python\cpython-3.12.14-windows-x86_64-none\Lib\unittest\loader.py", line 339, in _get_module_from_name
+    __import__(name)
+  File "C:\Users\rifqi\OneDrive\Documents\Github\brailleme\training\tests\test_word_ignored_slots.py", line 14, in <module>
+    from word_train import Patches
+  File "C:\Users\rifqi\OneDrive\Documents\Github\brailleme\training\scripts\word_train.py", line 16, in <module>
+    import keras
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\__init__.py", line 7, in <module>
+    from keras import _tf_keras as _tf_keras
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\_tf_keras\__init__.py", line 1, in <module>
+    from keras._tf_keras import keras
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\_tf_keras\keras\__init__.py", line 7, in <module>
+    from keras import activations as activations
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\activations\__init__.py", line 7, in <module>
+    from keras.src.activations import deserialize as deserialize
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\src\__init__.py", line 1, in <module>
+    from keras.src import activations
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\src\activations\__init__.py", line 3, in <module>
+    from keras.src.activations.activations import celu
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\src\activations\activations.py", line 1, in <module>
+    from keras.src import backend
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\src\backend\__init__.py", line 1, in <module>
+    from keras.src.backend.config import backend
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\src\backend\config.py", line 463, in <module>
+    set_nnx_enabled(_NNX_ENABLED)
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\src\backend\config.py", line 249, in set_nnx_enabled
+    from keras.src.backend.common import global_state
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\src\backend\common\__init__.py", line 2, in <module>
+    from keras.src.backend.common.dtypes import result_type
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\src\backend\common\dtypes.py", line 5, in <module>
+    from keras.src.backend.common.variables import standardize_dtype
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\src\backend\common\variables.py", line 12, in <module>
+    from keras.src.utils.naming import auto_name
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\src\utils\__init__.py", line 1, in <module>
+    from keras.src.utils.audio_dataset_utils import audio_dataset_from_directory
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\src\utils\audio_dataset_utils.py", line 4, in <module>
+    from keras.src.utils import dataset_utils
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\src\utils\dataset_utils.py", line 10, in <module>
+    from keras.src import tree
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\src\tree\__init__.py", line 1, in <module>
+    from keras.src.tree.tree_api import assert_same_paths
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\src\tree\tree_api.py", line 11, in <module>
+    from keras.src.tree import torchtree_impl as tree_impl
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\src\tree\torchtree_impl.py", line 3, in <module>
+    from torch.utils import _pytree as torch_tree
+ModuleNotFoundError: No module named 'torch'
+
+
+======================================================================
+ERROR: test_word_loss (unittest.loader._FailedTest.test_word_loss)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_word_loss
+Traceback (most recent call last):
+  File "C:\Users\rifqi\AppData\Roaming\uv\python\cpython-3.12.14-windows-x86_64-none\Lib\unittest\loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rifqi\AppData\Roaming\uv\python\cpython-3.12.14-windows-x86_64-none\Lib\unittest\loader.py", line 339, in _get_module_from_name
+    __import__(name)
+  File "C:\Users\rifqi\OneDrive\Documents\Github\brailleme\training\tests\test_word_loss.py", line 11, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+
+
+======================================================================
+ERROR: test_word_normalization_transition (unittest.loader._FailedTest.test_word_normalization_transition)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_word_normalization_transition
+Traceback (most recent call last):
+  File "C:\Users\rifqi\AppData\Roaming\uv\python\cpython-3.12.14-windows-x86_64-none\Lib\unittest\loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rifqi\AppData\Roaming\uv\python\cpython-3.12.14-windows-x86_64-none\Lib\unittest\loader.py", line 339, in _get_module_from_name
+    __import__(name)
+  File "C:\Users\rifqi\OneDrive\Documents\Github\brailleme\training\tests\test_word_normalization_transition.py", line 12, in <module>
+    from word_train import parse_args
+  File "C:\Users\rifqi\OneDrive\Documents\Github\brailleme\training\scripts\word_train.py", line 16, in <module>
+    import keras
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\__init__.py", line 7, in <module>
+    from keras import _tf_keras as _tf_keras
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\_tf_keras\__init__.py", line 1, in <module>
+    from keras._tf_keras import keras
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\_tf_keras\keras\__init__.py", line 7, in <module>
+    from keras import activations as activations
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\activations\__init__.py", line 7, in <module>
+    from keras.src.activations import deserialize as deserialize
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\src\__init__.py", line 1, in <module>
+    from keras.src import activations
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\src\activations\__init__.py", line 3, in <module>
+    from keras.src.activations.activations import celu
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\src\activations\activations.py", line 1, in <module>
+    from keras.src import backend
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\src\backend\__init__.py", line 1, in <module>
+    from keras.src.backend.config import backend
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\src\backend\config.py", line 463, in <module>
+    set_nnx_enabled(_NNX_ENABLED)
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\src\backend\config.py", line 249, in set_nnx_enabled
+    from keras.src.backend.common import global_state
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\src\backend\common\__init__.py", line 2, in <module>
+    from keras.src.backend.common.dtypes import result_type
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\src\backend\common\dtypes.py", line 5, in <module>
+    from keras.src.backend.common.variables import standardize_dtype
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\src\backend\common\variables.py", line 12, in <module>
+    from keras.src.utils.naming import auto_name
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\src\utils\__init__.py", line 1, in <module>
+    from keras.src.utils.audio_dataset_utils import audio_dataset_from_directory
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\src\utils\audio_dataset_utils.py", line 4, in <module>
+    from keras.src.utils import dataset_utils
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\src\utils\dataset_utils.py", line 10, in <module>
+    from keras.src import tree
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\src\tree\__init__.py", line 1, in <module>
+    from keras.src.tree.tree_api import assert_same_paths
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\src\tree\tree_api.py", line 11, in <module>
+    from keras.src.tree import torchtree_impl as tree_impl
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\src\tree\torchtree_impl.py", line 3, in <module>
+    from torch.utils import _pytree as torch_tree
+ModuleNotFoundError: No module named 'torch'
+
+
+======================================================================
+ERROR: test_word_selection (unittest.loader._FailedTest.test_word_selection)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_word_selection
+Traceback (most recent call last):
+  File "C:\Users\rifqi\AppData\Roaming\uv\python\cpython-3.12.14-windows-x86_64-none\Lib\unittest\loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rifqi\AppData\Roaming\uv\python\cpython-3.12.14-windows-x86_64-none\Lib\unittest\loader.py", line 339, in _get_module_from_name
+    __import__(name)
+  File "C:\Users\rifqi\OneDrive\Documents\Github\brailleme\training\tests\test_word_selection.py", line 12, in <module>
+    from word_select import grouped_calibration
+  File "C:\Users\rifqi\OneDrive\Documents\Github\brailleme\training\scripts\word_select.py", line 13, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+
+
+======================================================================
+ERROR: test_word_training_config (unittest.loader._FailedTest.test_word_training_config)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_word_training_config
+Traceback (most recent call last):
+  File "C:\Users\rifqi\AppData\Roaming\uv\python\cpython-3.12.14-windows-x86_64-none\Lib\unittest\loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rifqi\AppData\Roaming\uv\python\cpython-3.12.14-windows-x86_64-none\Lib\unittest\loader.py", line 339, in _get_module_from_name
+    __import__(name)
+  File "C:\Users\rifqi\OneDrive\Documents\Github\brailleme\training\tests\test_word_training_config.py", line 13, in <module>
+    from word_train import parse_args
+  File "C:\Users\rifqi\OneDrive\Documents\Github\brailleme\training\scripts\word_train.py", line 16, in <module>
+    import keras
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\__init__.py", line 7, in <module>
+    from keras import _tf_keras as _tf_keras
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\_tf_keras\__init__.py", line 1, in <module>
+    from keras._tf_keras import keras
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\_tf_keras\keras\__init__.py", line 7, in <module>
+    from keras import activations as activations
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\activations\__init__.py", line 7, in <module>
+    from keras.src.activations import deserialize as deserialize
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\src\__init__.py", line 1, in <module>
+    from keras.src import activations
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\src\activations\__init__.py", line 3, in <module>
+    from keras.src.activations.activations import celu
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\src\activations\activations.py", line 1, in <module>
+    from keras.src import backend
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\src\backend\__init__.py", line 1, in <module>
+    from keras.src.backend.config import backend
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\src\backend\config.py", line 463, in <module>
+    set_nnx_enabled(_NNX_ENABLED)
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\src\backend\config.py", line 249, in set_nnx_enabled
+    from keras.src.backend.common import global_state
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\src\backend\common\__init__.py", line 2, in <module>
+    from keras.src.backend.common.dtypes import result_type
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\src\backend\common\dtypes.py", line 5, in <module>
+    from keras.src.backend.common.variables import standardize_dtype
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\src\backend\common\variables.py", line 12, in <module>
+    from keras.src.utils.naming import auto_name
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\src\utils\__init__.py", line 1, in <module>
+    from keras.src.utils.audio_dataset_utils import audio_dataset_from_directory
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\src\utils\audio_dataset_utils.py", line 4, in <module>
+    from keras.src.utils import dataset_utils
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\src\utils\dataset_utils.py", line 10, in <module>
+    from keras.src import tree
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\src\tree\__init__.py", line 1, in <module>
+    from keras.src.tree.tree_api import assert_same_paths
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\src\tree\tree_api.py", line 11, in <module>
+    from keras.src.tree import torchtree_impl as tree_impl
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\src\tree\torchtree_impl.py", line 3, in <module>
+    from torch.utils import _pytree as torch_tree
+ModuleNotFoundError: No module named 'torch'
+
+
+======================================================================
+ERROR: test_word_visible_partial (unittest.loader._FailedTest.test_word_visible_partial)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_word_visible_partial
+Traceback (most recent call last):
+  File "C:\Users\rifqi\AppData\Roaming\uv\python\cpython-3.12.14-windows-x86_64-none\Lib\unittest\loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rifqi\AppData\Roaming\uv\python\cpython-3.12.14-windows-x86_64-none\Lib\unittest\loader.py", line 339, in _get_module_from_name
+    __import__(name)
+  File "C:\Users\rifqi\OneDrive\Documents\Github\brailleme\training\tests\test_word_visible_partial.py", line 18, in <module>
+    from word_train import Patches, parse_args
+  File "C:\Users\rifqi\OneDrive\Documents\Github\brailleme\training\scripts\word_train.py", line 16, in <module>
+    import keras
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\__init__.py", line 7, in <module>
+    from keras import _tf_keras as _tf_keras
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\_tf_keras\__init__.py", line 1, in <module>
+    from keras._tf_keras import keras
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\_tf_keras\keras\__init__.py", line 7, in <module>
+    from keras import activations as activations
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\activations\__init__.py", line 7, in <module>
+    from keras.src.activations import deserialize as deserialize
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\src\__init__.py", line 1, in <module>
+    from keras.src import activations
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\src\activations\__init__.py", line 3, in <module>
+    from keras.src.activations.activations import celu
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\src\activations\activations.py", line 1, in <module>
+    from keras.src import backend
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\src\backend\__init__.py", line 1, in <module>
+    from keras.src.backend.config import backend
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\src\backend\config.py", line 463, in <module>
+    set_nnx_enabled(_NNX_ENABLED)
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\src\backend\config.py", line 249, in set_nnx_enabled
+    from keras.src.backend.common import global_state
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\src\backend\common\__init__.py", line 2, in <module>
+    from keras.src.backend.common.dtypes import result_type
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\src\backend\common\dtypes.py", line 5, in <module>
+    from keras.src.backend.common.variables import standardize_dtype
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\src\backend\common\variables.py", line 12, in <module>
+    from keras.src.utils.naming import auto_name
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\src\utils\__init__.py", line 1, in <module>
+    from keras.src.utils.audio_dataset_utils import audio_dataset_from_directory
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\src\utils\audio_dataset_utils.py", line 4, in <module>
+    from keras.src.utils import dataset_utils
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\src\utils\dataset_utils.py", line 10, in <module>
+    from keras.src import tree
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\src\tree\__init__.py", line 1, in <module>
+    from keras.src.tree.tree_api import assert_same_paths
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\src\tree\tree_api.py", line 11, in <module>
+    from keras.src.tree import torchtree_impl as tree_impl
+  File "C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\keras\src\tree\torchtree_impl.py", line 3, in <module>
+    from torch.utils import _pytree as torch_tree
+ModuleNotFoundError: No module named 'torch'
+
+
+----------------------------------------------------------------------
+Ran 149 tests in 15.667s
+
+FAILED (errors=10)

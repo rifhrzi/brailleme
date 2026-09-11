@@ -1,15 +1,9 @@
 import { spawnSync } from 'node:child_process';
-import { readFileSync } from 'node:fs';
+import { dirname, resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { activeWordModelManifest } from './word-model-active-path.mjs';
 
-const modelManifest = JSON.parse(
-  readFileSync(
-    new URL(
-      '../assets/models/braille-word-reader-v1/manifest.json',
-      import.meta.url,
-    ),
-    'utf8',
-  ),
-);
+const modelManifest = activeWordModelManifest(resolve(dirname(fileURLToPath(import.meta.url)), '..'));
 
 const buildProfile = process.env.EAS_BUILD_PROFILE;
 const appEnvironment = process.env.APP_ENV;

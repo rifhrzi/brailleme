@@ -1,0 +1,553 @@
+{
+  "status": "experimental_retained_not_promoted",
+  "protocol_version": "overall-exact-text-v5-20260911",
+  "model_version": "braille-word-reader-id-v5",
+  "decoder_version": "six-dot-id-v4-experimental",
+  "primary_overall_target_met": true,
+  "primary_overall_exact_accuracy": 0.876,
+  "primary_exact_correct": 438,
+  "primary_positive_total": 500,
+  "accepted_precision": 0.9240506329113924,
+  "precision95_met": false,
+  "invalid_total": 40,
+  "invalid_false_accepts": 0,
+  "invalid_rejection_met": true,
+  "per_group": {
+    "capital_single": {
+      "total": 100,
+      "positive_total": 100,
+      "exact_correct": 87,
+      "overall_exact_accuracy": 0.87,
+      "accepted_positive_total": 97,
+      "accepted_precision": 0.8969072164948454,
+      "invalid_total": 0,
+      "invalid_false_accepts": 0
+    },
+    "capital_word": {
+      "total": 100,
+      "positive_total": 100,
+      "exact_correct": 82,
+      "overall_exact_accuracy": 0.82,
+      "accepted_positive_total": 92,
+      "accepted_precision": 0.8913043478260869,
+      "invalid_total": 0,
+      "invalid_false_accepts": 0
+    },
+    "lowercase": {
+      "total": 100,
+      "positive_total": 100,
+      "exact_correct": 84,
+      "overall_exact_accuracy": 0.84,
+      "accepted_positive_total": 95,
+      "accepted_precision": 0.8842105263157894,
+      "invalid_total": 0,
+      "invalid_false_accepts": 0
+    },
+    "numbers": {
+      "total": 100,
+      "positive_total": 100,
+      "exact_correct": 94,
+      "overall_exact_accuracy": 0.94,
+      "accepted_positive_total": 95,
+      "accepted_precision": 0.9894736842105263,
+      "invalid_total": 0,
+      "invalid_false_accepts": 0
+    },
+    "punctuation": {
+      "total": 100,
+      "positive_total": 100,
+      "exact_correct": 91,
+      "overall_exact_accuracy": 0.91,
+      "accepted_positive_total": 95,
+      "accepted_precision": 0.9578947368421052,
+      "invalid_total": 0,
+      "invalid_false_accepts": 0
+    },
+    "rejection": {
+      "total": 40,
+      "positive_total": 0,
+      "exact_correct": 0,
+      "overall_exact_accuracy": null,
+      "accepted_positive_total": 0,
+      "accepted_precision": null,
+      "invalid_total": 40,
+      "invalid_false_accepts": 0
+    }
+  },
+  "native_context": {
+    "total": 200,
+    "positive_total": 200,
+    "exact_correct": 185,
+    "overall_exact_accuracy": 0.925,
+    "accepted_positive_total": 191,
+    "accepted_precision": 0.9685863874345549,
+    "invalid_total": 0,
+    "invalid_false_accepts": 0,
+    "groups": {
+      "lowercase": {
+        "total": 151,
+        "positive_total": 151,
+        "exact_correct": 141,
+        "overall_exact_accuracy": 0.9337748344370861,
+        "accepted_positive_total": 143,
+        "accepted_precision": 0.986013986013986,
+        "invalid_total": 0,
+        "invalid_false_accepts": 0
+      },
+      "numbers": {
+        "total": 4,
+        "positive_total": 4,
+        "exact_correct": 4,
+        "overall_exact_accuracy": 1.0,
+        "accepted_positive_total": 4,
+        "accepted_precision": 1.0,
+        "invalid_total": 0,
+        "invalid_false_accepts": 0
+      },
+      "punctuation": {
+        "total": 45,
+        "positive_total": 45,
+        "exact_correct": 40,
+        "overall_exact_accuracy": 0.8888888888888888,
+        "accepted_positive_total": 44,
+        "accepted_precision": 0.9090909090909091,
+        "invalid_total": 0,
+        "invalid_false_accepts": 0
+      }
+    },
+    "by_printed_length": {
+      "2": {
+        "total": 142,
+        "positive_total": 142,
+        "exact_correct": 135,
+        "overall_exact_accuracy": 0.9507042253521126,
+        "accepted_positive_total": 138,
+        "accepted_precision": 0.9782608695652174,
+        "invalid_total": 0,
+        "invalid_false_accepts": 0
+      },
+      "3": {
+        "total": 48,
+        "positive_total": 48,
+        "exact_correct": 43,
+        "overall_exact_accuracy": 0.8958333333333334,
+        "accepted_positive_total": 44,
+        "accepted_precision": 0.9772727272727273,
+        "invalid_total": 0,
+        "invalid_false_accepts": 0
+      },
+      "4": {
+        "total": 8,
+        "positive_total": 8,
+        "exact_correct": 7,
+        "overall_exact_accuracy": 0.875,
+        "accepted_positive_total": 7,
+        "accepted_precision": 1.0,
+        "invalid_total": 0,
+        "invalid_false_accepts": 0
+      },
+      "5": {
+        "total": 2,
+        "positive_total": 2,
+        "exact_correct": 0,
+        "overall_exact_accuracy": 0.0,
+        "accepted_positive_total": 2,
+        "accepted_precision": 0.0,
+        "invalid_total": 0,
+        "invalid_false_accepts": 0
+      }
+    },
+    "by_punctuation": {
+      ".": {
+        "total": 5,
+        "positive_total": 5,
+        "exact_correct": 4,
+        "overall_exact_accuracy": 0.8,
+        "accepted_positive_total": 5,
+        "accepted_precision": 0.8,
+        "invalid_total": 0,
+        "invalid_false_accepts": 0
+      },
+      ",": {
+        "total": 4,
+        "positive_total": 4,
+        "exact_correct": 3,
+        "overall_exact_accuracy": 0.75,
+        "accepted_positive_total": 4,
+        "accepted_precision": 0.75,
+        "invalid_total": 0,
+        "invalid_false_accepts": 0
+      },
+      "?": {
+        "total": 8,
+        "positive_total": 8,
+        "exact_correct": 7,
+        "overall_exact_accuracy": 0.875,
+        "accepted_positive_total": 8,
+        "accepted_precision": 0.875,
+        "invalid_total": 0,
+        "invalid_false_accepts": 0
+      },
+      "!": {
+        "total": 10,
+        "positive_total": 10,
+        "exact_correct": 10,
+        "overall_exact_accuracy": 1.0,
+        "accepted_positive_total": 10,
+        "accepted_precision": 1.0,
+        "invalid_total": 0,
+        "invalid_false_accepts": 0
+      },
+      ":": {
+        "total": 8,
+        "positive_total": 8,
+        "exact_correct": 7,
+        "overall_exact_accuracy": 0.875,
+        "accepted_positive_total": 8,
+        "accepted_precision": 0.875,
+        "invalid_total": 0,
+        "invalid_false_accepts": 0
+      },
+      ";": {
+        "total": 10,
+        "positive_total": 10,
+        "exact_correct": 9,
+        "overall_exact_accuracy": 0.9,
+        "accepted_positive_total": 9,
+        "accepted_precision": 1.0,
+        "invalid_total": 0,
+        "invalid_false_accepts": 0
+      },
+      "-": {
+        "total": 0,
+        "positive_total": 0,
+        "exact_correct": 0,
+        "overall_exact_accuracy": null,
+        "accepted_positive_total": 0,
+        "accepted_precision": null,
+        "invalid_total": 0,
+        "invalid_false_accepts": 0
+      },
+      "(": {
+        "total": 0,
+        "positive_total": 0,
+        "exact_correct": 0,
+        "overall_exact_accuracy": null,
+        "accepted_positive_total": 0,
+        "accepted_precision": null,
+        "invalid_total": 0,
+        "invalid_false_accepts": 0
+      },
+      ")": {
+        "total": 0,
+        "positive_total": 0,
+        "exact_correct": 0,
+        "overall_exact_accuracy": null,
+        "accepted_positive_total": 0,
+        "accepted_precision": null,
+        "invalid_total": 0,
+        "invalid_false_accepts": 0
+      }
+    },
+    "rejection_reasons": {
+      "unsupported_pattern": 6,
+      "low_confidence": 2,
+      "ambiguous_symbol": 1
+    },
+    "routing_counts": {
+      "identity": 192,
+      "zoom_logit_mean": 2,
+      "matched_logit_four": 4,
+      "matched_prob_half_turn": 1,
+      "matched_prob_horizontal": 1
+    }
+  },
+  "historical_regression": {
+    "external607": {
+      "baseline": {
+        "total": 607,
+        "positive_total": 607,
+        "exact_correct": 323,
+        "overall_exact_accuracy": 0.5321252059308073,
+        "accepted_positive_total": 353,
+        "accepted_precision": 0.9150141643059491,
+        "invalid_total": 0,
+        "invalid_false_accepts": 0
+      },
+      "candidate": {
+        "total": 607,
+        "positive_total": 607,
+        "exact_correct": 350,
+        "overall_exact_accuracy": 0.5766062602965404,
+        "accepted_positive_total": 395,
+        "accepted_precision": 0.8860759493670886,
+        "invalid_total": 0,
+        "invalid_false_accepts": 0
+      },
+      "lost": 53,
+      "gained": 80,
+      "regression_observed": true,
+      "flags": {
+        "exact_regressed": false,
+        "precision_regressed": true,
+        "invalid_false_accepts_regressed": false
+      }
+    },
+    "legacy405": {
+      "baseline": {
+        "total": 405,
+        "positive_total": 405,
+        "exact_correct": 355,
+        "overall_exact_accuracy": 0.8765432098765432,
+        "accepted_positive_total": 362,
+        "accepted_precision": 0.9806629834254144,
+        "invalid_total": 0,
+        "invalid_false_accepts": 0
+      },
+      "candidate": {
+        "total": 405,
+        "positive_total": 405,
+        "exact_correct": 343,
+        "overall_exact_accuracy": 0.8469135802469135,
+        "accepted_positive_total": 356,
+        "accepted_precision": 0.9634831460674157,
+        "invalid_total": 0,
+        "invalid_false_accepts": 0
+      },
+      "lost": 19,
+      "gained": 7,
+      "regression_observed": true,
+      "flags": {
+        "exact_regressed": true,
+        "precision_regressed": true,
+        "invalid_false_accepts_regressed": false
+      }
+    },
+    "negative44": {
+      "baseline": {
+        "total": 44,
+        "positive_total": 0,
+        "exact_correct": 0,
+        "overall_exact_accuracy": null,
+        "accepted_positive_total": 0,
+        "accepted_precision": null,
+        "invalid_total": 44,
+        "invalid_false_accepts": 0
+      },
+      "candidate": {
+        "total": 44,
+        "positive_total": 0,
+        "exact_correct": 0,
+        "overall_exact_accuracy": null,
+        "accepted_positive_total": 0,
+        "accepted_precision": null,
+        "invalid_total": 44,
+        "invalid_false_accepts": 0
+      },
+      "lost": 0,
+      "gained": 0,
+      "regression_observed": false,
+      "flags": {
+        "exact_regressed": false,
+        "precision_regressed": false,
+        "invalid_false_accepts_regressed": false
+      }
+    }
+  },
+  "validation_export_parity": {
+    "status": "passed",
+    "samples": 540,
+    "views": [
+      "identity",
+      "horizontal",
+      "vertical",
+      "half_turn",
+      "zoom125",
+      "zoom150"
+    ],
+    "inference_count": 3240,
+    "allclose": true,
+    "atol": 0.0003,
+    "rtol": 0.0,
+    "maximum_absolute_error": 0.00025159120559692383,
+    "original_numerical_gate_passed": false,
+    "original_numerical_gate": {
+      "status": "failed",
+      "allclose": false,
+      "atol": 0.0001,
+      "rtol": 0.0001
+    },
+    "qualification": {
+      "reviewer": "independent evaluation_audit agent; parent-approved pre-TEST empirical qualification",
+      "kind": "data_only_review_of_preserved_complete_validation_maximum",
+      "original_numerical_failure_preserved": true,
+      "additional_inference_performed": false,
+      "reconversion_performed": false,
+      "model_changed": false,
+      "runtime_changed": false,
+      "decoder_thresholds_changed": false,
+      "test_opened": false,
+      "scalar_comparisons": 205286400,
+      "strict_full_policy_decisions": 2700,
+      "maximum_absolute_error": 0.00025159120559692383,
+      "revised_absolute_tolerance": 0.0003,
+      "relative_tolerance": 0.0,
+      "mathematical_certificate": "All recorded absolute errors are <= the complete-domain maximum <= 0.0003; rtol=0.",
+      "probability_percentage_point_bound": 0.025159120559692383,
+      "same_grid_box_edge_pixel_bounds": {
+        "x": 0.06138825416564942,
+        "y": 0.025159120559692383
+      },
+      "rationale": [
+        "All 205286400 finite raw scalar outputs were compared by the hash-bound original exporter.",
+        "All 2700 policy decisions preserve text, rejection, ordered semantic and physical masks, roles, outputs, and selected route.",
+        "The original 1e-4 absolute plus 1e-4 relative gate failed; this separate gate is reviewed before any fresh TEST exposure.",
+        "Final primary accuracy will use this unchanged actual TFLite artifact; no detector confidence, geometry, or parser threshold is relaxed."
+      ],
+      "limitations": [
+        "This is an empirical validation qualification, not bitwise equality or a universal float32 error bound.",
+        "An unseen value arbitrarily close to a decision threshold may still change discrete behavior; strict backend TEST confirmation remains separate."
+      ]
+    }
+  },
+  "final_backend_confirmation": {
+    "final-test-torch-confirmation.json": "passed"
+  },
+  "selected_policy": "cascade_zoom_fallback",
+  "runtime_module": "word_overall_v5_zoom",
+  "tta_method": {
+    "version": "overall-v5-fixed-flip-zoom-fallback-1",
+    "runtime_module": "word_overall_v5_zoom",
+    "views": [
+      "identity",
+      "horizontal",
+      "vertical",
+      "half_turn",
+      "zoom125",
+      "zoom150"
+    ],
+    "policies": {
+      "identity": [
+        "identity"
+      ],
+      "simple_fallback": [
+        "identity",
+        "matched_logit_four"
+      ],
+      "cascade": [
+        "identity",
+        "matched_logit_four",
+        "matched_prob_four",
+        "matched_prob_vertical",
+        "matched_prob_half_turn",
+        "matched_prob_horizontal"
+      ],
+      "zoom_fallback": [
+        "identity",
+        "zoom_logit_mean",
+        "zoom_probability_mean"
+      ],
+      "cascade_zoom_fallback": [
+        "identity",
+        "matched_logit_four",
+        "matched_prob_four",
+        "matched_prob_vertical",
+        "matched_prob_half_turn",
+        "matched_prob_horizontal",
+        "zoom_logit_mean",
+        "zoom_probability_mean"
+      ]
+    },
+    "flip_transforms": {
+      "identity": [
+        false,
+        false,
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      ],
+      "horizontal": [
+        true,
+        false,
+        [
+          3,
+          4,
+          5,
+          0,
+          1,
+          2
+        ]
+      ],
+      "vertical": [
+        false,
+        true,
+        [
+          2,
+          1,
+          0,
+          5,
+          4,
+          3
+        ]
+      ],
+      "half_turn": [
+        true,
+        true,
+        [
+          5,
+          4,
+          3,
+          2,
+          1,
+          0
+        ]
+      ]
+    },
+    "scales": {
+      "zoom125": 1.25,
+      "zoom150": 1.5
+    },
+    "pixel_transform": "Bilinear inverse sampling at pixel centers; float64 coordinates and float32 interpolation; outside=source RGBmean",
+    "box_transform": "zoom=(original-.5)*scale+.5; inverse=(zoom-.5)/scale+.5",
+    "matching": "Actual NMS proposals only; both zoom proposal and projected original box complete within frozen edgeMargin; one-to-one greedy IoU>=.5",
+    "dot_combination": "Original and matched zoom dots: logit mean then probability mean; unmatched original dots stay unchanged",
+    "routing": "First accepted text in fixed order; original geometry, scores and quality check unchanged; no GT access",
+    "selection_rank": [
+      "overall_exact_accuracy",
+      "accepted_precision",
+      "negative_invalid_false_accepts"
+    ],
+    "tie_break": "earlier policy in declared order",
+    "threshold_changes": false,
+    "geometry_changes": false,
+    "quality_changes": false,
+    "actual_selected_zoom_execution": "Only if the selected policy still rejects after its identity/flip prefix"
+  },
+  "thresholds": {
+    "proposalScore": 0.25,
+    "acceptScore": 0.25,
+    "dotConfidence": 0.7,
+    "nmsIou": 0.25,
+    "minCellWidth": 0.008,
+    "minCellHeight": 0.06,
+    "edgeMargin": 0.008,
+    "maxRowDeviation": 0.55,
+    "maxGapRatio": 1.2,
+    "maxOverlapRatio": 0.5
+  },
+  "checkpoint_sha256": "ac9e30cd27cb22ca4f97db42637d3a9e2a27ed47d13a962a661c3bb01c0e66bb",
+  "tflite_sha256": "6847c91fe186169ba5208a7444f9c8bedc753228bc42b78c691471a85453a6cb",
+  "scope": "fresh_source_disjoint_recomposed_public_flatbed_scans_not_physical_phone_camera",
+  "physical_camera_validated": false,
+  "native_runtime_validated": false,
+  "app_promoted": false,
+  "deployed_assets_changed": false,
+  "build_folders_created": 0,
+  "interpretation": "Overall80 is a measured benchmark outcome. Precision, invalid rejection, native-context coverage, historical regression, and physical camera readiness remain separate outcomes.",
+  "inference_requirement": "Use this checkpoint plus the exact selected TTA policy, v4 parser and thresholds; model weights alone do not reproduce the reported method"
+}

@@ -1,0 +1,2915 @@
+{
+  "schema_version": 1,
+  "created_at_utc": "2026-09-08T14:15:04.589Z",
+  "decoder_version": "six-dot-id-v3",
+  "symbol_protocol": "indonesian-basic-v1",
+  "scope": "Actual TypeScript parser, decoder, proposal extraction and event validation on authored synthetic tensors. No model or camera inference.",
+  "source_sha256": {
+    "training/fixtures/word-symbols-id-v1.json": "3be0d81d5a8a2db7800ce7bfdf41caec22443c11a5ce39c8bcef5cce33df422c",
+    "src/ml/word-model-contract.ts": "e01dd5f2e496300bc7ff46181ba470c7d7931e52558f893b84dbbf6348466932",
+    "src/ml/word-decoder.ts": "f4f07829eb0f207d075477107e36daf241ed9821763ce44fb580b7b73cce7ffa",
+    "src/ml/word-symbols.ts": "bc4c62222f4b57b07ae19b37e2add60931747129e49589054255363b0da49860",
+    "src/types/word-scan.ts": "09a0b7ad15ecc0e3176ee8f27939931da7506334a02a1d84d7f260b664804a28",
+    "scripts/word-native-parity/geometry-reference.cjs": "822a7f7c9924696398505e22dca2465986d5f30ae3981b71b9177d4d02f29f37",
+    "scripts/word-decoder-parity/replay-id.cjs": "f8f0f91298f50392f338d6193e99a1ea47260f66a837d5e812341358455d9f92"
+  },
+  "fixture_sha256": "3be0d81d5a8a2db7800ce7bfdf41caec22443c11a5ce39c8bcef5cce33df422c",
+  "total": 87,
+  "parity_passed": true,
+  "mismatch_count": 0,
+  "first_mismatches": [],
+  "rows": [
+    {
+      "index": 0,
+      "name": "unmarked letters",
+      "masks": [
+        1,
+        3,
+        9
+      ],
+      "expected": "abc",
+      "expected_reason": "",
+      "parser": {
+        "status": "success",
+        "text": "abc",
+        "symbols": [
+          {
+            "mask": 1,
+            "role": "letter",
+            "output": "a"
+          },
+          {
+            "mask": 3,
+            "role": "letter",
+            "output": "b"
+          },
+          {
+            "mask": 9,
+            "role": "letter",
+            "output": "c"
+          }
+        ]
+      },
+      "decoder_text": "abc",
+      "decoder_reason": "",
+      "proposal_count": 3,
+      "parser_match": true,
+      "decoder_match": true,
+      "event_valid": true,
+      "tensor_sha256": "84581403d92ea963d671ab219e44473b8ea854bb4bbe668c733171bbbf978807"
+    },
+    {
+      "index": 1,
+      "name": "initial capital",
+      "masks": [
+        32,
+        1,
+        3,
+        9
+      ],
+      "expected": "Abc",
+      "expected_reason": "",
+      "parser": {
+        "status": "success",
+        "text": "Abc",
+        "symbols": [
+          {
+            "mask": 32,
+            "role": "capital_indicator",
+            "output": ""
+          },
+          {
+            "mask": 1,
+            "role": "letter",
+            "output": "A"
+          },
+          {
+            "mask": 3,
+            "role": "letter",
+            "output": "b"
+          },
+          {
+            "mask": 9,
+            "role": "letter",
+            "output": "c"
+          }
+        ]
+      },
+      "decoder_text": "Abc",
+      "decoder_reason": "",
+      "proposal_count": 4,
+      "parser_match": true,
+      "decoder_match": true,
+      "event_valid": true,
+      "tensor_sha256": "e77c4919f45af5513ed2c6be242c3f4d80e07920a90887f4952fee830be66458"
+    },
+    {
+      "index": 2,
+      "name": "capital word",
+      "masks": [
+        32,
+        32,
+        1,
+        3,
+        9
+      ],
+      "expected": "ABC",
+      "expected_reason": "",
+      "parser": {
+        "status": "success",
+        "text": "ABC",
+        "symbols": [
+          {
+            "mask": 32,
+            "role": "capital_indicator",
+            "output": ""
+          },
+          {
+            "mask": 32,
+            "role": "capital_indicator",
+            "output": ""
+          },
+          {
+            "mask": 1,
+            "role": "letter",
+            "output": "A"
+          },
+          {
+            "mask": 3,
+            "role": "letter",
+            "output": "B"
+          },
+          {
+            "mask": 9,
+            "role": "letter",
+            "output": "C"
+          }
+        ]
+      },
+      "decoder_text": "ABC",
+      "decoder_reason": "",
+      "proposal_count": 5,
+      "parser_match": true,
+      "decoder_match": true,
+      "event_valid": true,
+      "tensor_sha256": "5b4ee576371e1b9c433d24c8abd38dd9ea3fc48eeb063ef2debf7f6fa813cb11"
+    },
+    {
+      "index": 3,
+      "name": "capital within word",
+      "masks": [
+        10,
+        32,
+        15,
+        19,
+        21,
+        29,
+        17
+      ],
+      "expected": "iPhone",
+      "expected_reason": "",
+      "parser": {
+        "status": "success",
+        "text": "iPhone",
+        "symbols": [
+          {
+            "mask": 10,
+            "role": "letter",
+            "output": "i"
+          },
+          {
+            "mask": 32,
+            "role": "capital_indicator",
+            "output": ""
+          },
+          {
+            "mask": 15,
+            "role": "letter",
+            "output": "P"
+          },
+          {
+            "mask": 19,
+            "role": "letter",
+            "output": "h"
+          },
+          {
+            "mask": 21,
+            "role": "letter",
+            "output": "o"
+          },
+          {
+            "mask": 29,
+            "role": "letter",
+            "output": "n"
+          },
+          {
+            "mask": 17,
+            "role": "letter",
+            "output": "e"
+          }
+        ]
+      },
+      "decoder_text": "iPhone",
+      "decoder_reason": "",
+      "proposal_count": 7,
+      "parser_match": true,
+      "decoder_match": true,
+      "event_valid": true,
+      "tensor_sha256": "71ae513e5a0ecaf811a16349cf8ff0a9ef65241d1f7b189e5226de729f94b617"
+    },
+    {
+      "index": 4,
+      "name": "individual capitals",
+      "masks": [
+        32,
+        1,
+        32,
+        3
+      ],
+      "expected": "AB",
+      "expected_reason": "",
+      "parser": {
+        "status": "success",
+        "text": "AB",
+        "symbols": [
+          {
+            "mask": 32,
+            "role": "capital_indicator",
+            "output": ""
+          },
+          {
+            "mask": 1,
+            "role": "letter",
+            "output": "A"
+          },
+          {
+            "mask": 32,
+            "role": "capital_indicator",
+            "output": ""
+          },
+          {
+            "mask": 3,
+            "role": "letter",
+            "output": "B"
+          }
+        ]
+      },
+      "decoder_text": "AB",
+      "decoder_reason": "",
+      "proposal_count": 4,
+      "parser_match": true,
+      "decoder_match": true,
+      "event_valid": true,
+      "tensor_sha256": "0736ea400ebf30d0383608baa3b931d291cdecd26fd75b954d16d9e84223b05f"
+    },
+    {
+      "index": 5,
+      "name": "zero",
+      "masks": [
+        60,
+        26
+      ],
+      "expected": "0",
+      "expected_reason": "",
+      "parser": {
+        "status": "success",
+        "text": "0",
+        "symbols": [
+          {
+            "mask": 60,
+            "role": "number_indicator",
+            "output": ""
+          },
+          {
+            "mask": 26,
+            "role": "digit",
+            "output": "0"
+          }
+        ]
+      },
+      "decoder_text": "0",
+      "decoder_reason": "",
+      "proposal_count": 2,
+      "parser_match": true,
+      "decoder_match": true,
+      "event_valid": true,
+      "tensor_sha256": "d47bf4c223fcb3353c75b899b46d4d3a71f2b66a18df863c06b0b250ac97fdf9"
+    },
+    {
+      "index": 6,
+      "name": "all digits",
+      "masks": [
+        60,
+        1,
+        3,
+        9,
+        25,
+        17,
+        11,
+        27,
+        19,
+        10,
+        26
+      ],
+      "expected": "1234567890",
+      "expected_reason": "",
+      "parser": {
+        "status": "success",
+        "text": "1234567890",
+        "symbols": [
+          {
+            "mask": 60,
+            "role": "number_indicator",
+            "output": ""
+          },
+          {
+            "mask": 1,
+            "role": "digit",
+            "output": "1"
+          },
+          {
+            "mask": 3,
+            "role": "digit",
+            "output": "2"
+          },
+          {
+            "mask": 9,
+            "role": "digit",
+            "output": "3"
+          },
+          {
+            "mask": 25,
+            "role": "digit",
+            "output": "4"
+          },
+          {
+            "mask": 17,
+            "role": "digit",
+            "output": "5"
+          },
+          {
+            "mask": 11,
+            "role": "digit",
+            "output": "6"
+          },
+          {
+            "mask": 27,
+            "role": "digit",
+            "output": "7"
+          },
+          {
+            "mask": 19,
+            "role": "digit",
+            "output": "8"
+          },
+          {
+            "mask": 10,
+            "role": "digit",
+            "output": "9"
+          },
+          {
+            "mask": 26,
+            "role": "digit",
+            "output": "0"
+          }
+        ]
+      },
+      "decoder_text": "1234567890",
+      "decoder_reason": "",
+      "proposal_count": 11,
+      "parser_match": true,
+      "decoder_match": true,
+      "event_valid": true,
+      "tensor_sha256": "1639db46a704cbb57b4a624fd9d9ced80f4a1d1dcb233da4b94869c166a7439d"
+    },
+    {
+      "index": 7,
+      "name": "leading zeros",
+      "masks": [
+        60,
+        26,
+        26,
+        1
+      ],
+      "expected": "001",
+      "expected_reason": "",
+      "parser": {
+        "status": "success",
+        "text": "001",
+        "symbols": [
+          {
+            "mask": 60,
+            "role": "number_indicator",
+            "output": ""
+          },
+          {
+            "mask": 26,
+            "role": "digit",
+            "output": "0"
+          },
+          {
+            "mask": 26,
+            "role": "digit",
+            "output": "0"
+          },
+          {
+            "mask": 1,
+            "role": "digit",
+            "output": "1"
+          }
+        ]
+      },
+      "decoder_text": "001",
+      "decoder_reason": "",
+      "proposal_count": 4,
+      "parser_match": true,
+      "decoder_match": true,
+      "event_valid": true,
+      "tensor_sha256": "522e30fc402718e63d1fcc935d8c56d16324de86ade73174befb88ece8c1ebd0"
+    },
+    {
+      "index": 8,
+      "name": "no number guessing",
+      "masks": [
+        26,
+        26,
+        1
+      ],
+      "expected": "jja",
+      "expected_reason": "",
+      "parser": {
+        "status": "success",
+        "text": "jja",
+        "symbols": [
+          {
+            "mask": 26,
+            "role": "letter",
+            "output": "j"
+          },
+          {
+            "mask": 26,
+            "role": "letter",
+            "output": "j"
+          },
+          {
+            "mask": 1,
+            "role": "letter",
+            "output": "a"
+          }
+        ]
+      },
+      "decoder_text": "jja",
+      "decoder_reason": "",
+      "proposal_count": 3,
+      "parser_match": true,
+      "decoder_match": true,
+      "event_valid": true,
+      "tensor_sha256": "6b42824d08d4c5e07873263f2911fc6a40ddb35feeb817ded950bba06a78ecca"
+    },
+    {
+      "index": 9,
+      "name": "empty",
+      "masks": [],
+      "expected": "",
+      "expected_reason": "invalid_sequence",
+      "parser": {
+        "status": "rejected",
+        "reason": "invalid_sequence"
+      },
+      "decoder_text": "",
+      "decoder_reason": "no_grid",
+      "proposal_count": 0,
+      "parser_match": true,
+      "decoder_match": true,
+      "event_valid": true,
+      "tensor_sha256": "3b7e83a686ac0e2c229796c28b81f7086d81ee57fd09f4eeb7a1fcf4726cb54d"
+    },
+    {
+      "index": 10,
+      "name": "capital only",
+      "masks": [
+        32
+      ],
+      "expected": "",
+      "expected_reason": "invalid_sequence",
+      "parser": {
+        "status": "rejected",
+        "reason": "invalid_sequence"
+      },
+      "decoder_text": "",
+      "decoder_reason": "invalid_sequence",
+      "proposal_count": 1,
+      "parser_match": true,
+      "decoder_match": true,
+      "event_valid": true,
+      "tensor_sha256": "0c8d6d52ad9674ee6d672b40ddf2254302caee7c013bbd392fde45a28552e71a"
+    },
+    {
+      "index": 11,
+      "name": "capital word only",
+      "masks": [
+        32,
+        32
+      ],
+      "expected": "",
+      "expected_reason": "invalid_sequence",
+      "parser": {
+        "status": "rejected",
+        "reason": "invalid_sequence"
+      },
+      "decoder_text": "",
+      "decoder_reason": "invalid_sequence",
+      "proposal_count": 2,
+      "parser_match": true,
+      "decoder_match": true,
+      "event_valid": true,
+      "tensor_sha256": "e2c3ca1ad9de805f2faf8c2ef1f02e42f4259890a374a3bef53192c0b3965050"
+    },
+    {
+      "index": 12,
+      "name": "number only",
+      "masks": [
+        60
+      ],
+      "expected": "",
+      "expected_reason": "invalid_sequence",
+      "parser": {
+        "status": "rejected",
+        "reason": "invalid_sequence"
+      },
+      "decoder_text": "",
+      "decoder_reason": "invalid_sequence",
+      "proposal_count": 1,
+      "parser_match": true,
+      "decoder_match": true,
+      "event_valid": true,
+      "tensor_sha256": "8b4b6107307b2ddd6c179ef0c0c6966571fb03fb39d2276085813819d17b51c5"
+    },
+    {
+      "index": 13,
+      "name": "trailing capital",
+      "masks": [
+        1,
+        32
+      ],
+      "expected": "",
+      "expected_reason": "invalid_sequence",
+      "parser": {
+        "status": "rejected",
+        "reason": "invalid_sequence"
+      },
+      "decoder_text": "",
+      "decoder_reason": "invalid_sequence",
+      "proposal_count": 2,
+      "parser_match": true,
+      "decoder_match": true,
+      "event_valid": true,
+      "tensor_sha256": "94a0a3393fe356d47e6331bd2161933f05016c7fa2773fd76bcf35961e4aa633"
+    },
+    {
+      "index": 14,
+      "name": "passage capitals",
+      "masks": [
+        32,
+        32,
+        32,
+        1
+      ],
+      "expected": "",
+      "expected_reason": "invalid_sequence",
+      "parser": {
+        "status": "rejected",
+        "reason": "invalid_sequence"
+      },
+      "decoder_text": "",
+      "decoder_reason": "invalid_sequence",
+      "proposal_count": 4,
+      "parser_match": true,
+      "decoder_match": true,
+      "event_valid": true,
+      "tensor_sha256": "331bd4f01122ce97d119e7db6097aa552b1732e4ca7d6bcd7641ee1351dc5dc9"
+    },
+    {
+      "index": 15,
+      "name": "word capitals inside token",
+      "masks": [
+        1,
+        32,
+        32,
+        3
+      ],
+      "expected": "",
+      "expected_reason": "invalid_sequence",
+      "parser": {
+        "status": "rejected",
+        "reason": "invalid_sequence"
+      },
+      "decoder_text": "",
+      "decoder_reason": "invalid_sequence",
+      "proposal_count": 4,
+      "parser_match": true,
+      "decoder_match": true,
+      "event_valid": true,
+      "tensor_sha256": "7bc2dbdf001c7794fa296d999a0367f4cd2bbe3c0dc68145bb2702e9ee8a2acf"
+    },
+    {
+      "index": 16,
+      "name": "capital after word capitals",
+      "masks": [
+        32,
+        32,
+        1,
+        32,
+        3
+      ],
+      "expected": "",
+      "expected_reason": "invalid_sequence",
+      "parser": {
+        "status": "rejected",
+        "reason": "invalid_sequence"
+      },
+      "decoder_text": "",
+      "decoder_reason": "invalid_sequence",
+      "proposal_count": 5,
+      "parser_match": true,
+      "decoder_match": true,
+      "event_valid": true,
+      "tensor_sha256": "afc35f0d2401fc6e800e97685616e400d6049eb05a71adff152be5caa1a455b5"
+    },
+    {
+      "index": 17,
+      "name": "number after letter",
+      "masks": [
+        1,
+        60,
+        3
+      ],
+      "expected": "",
+      "expected_reason": "invalid_sequence",
+      "parser": {
+        "status": "rejected",
+        "reason": "invalid_sequence"
+      },
+      "decoder_text": "",
+      "decoder_reason": "invalid_sequence",
+      "proposal_count": 3,
+      "parser_match": true,
+      "decoder_match": true,
+      "event_valid": true,
+      "tensor_sha256": "a9ea33e11251000a0182dddcc320ecc0d7798a68b53f0ab600e7b0d8626d0a7e"
+    },
+    {
+      "index": 18,
+      "name": "letter after number",
+      "masks": [
+        60,
+        1,
+        5
+      ],
+      "expected": "",
+      "expected_reason": "invalid_sequence",
+      "parser": {
+        "status": "rejected",
+        "reason": "invalid_sequence"
+      },
+      "decoder_text": "",
+      "decoder_reason": "invalid_sequence",
+      "proposal_count": 3,
+      "parser_match": true,
+      "decoder_match": true,
+      "event_valid": true,
+      "tensor_sha256": "5d3d0ee9a6ad543f572ba4e4fa1368330f57b70a1033a1f127a39f0b6aa7b13d"
+    },
+    {
+      "index": 19,
+      "name": "capital after number",
+      "masks": [
+        60,
+        1,
+        32,
+        3
+      ],
+      "expected": "",
+      "expected_reason": "invalid_sequence",
+      "parser": {
+        "status": "rejected",
+        "reason": "invalid_sequence"
+      },
+      "decoder_text": "",
+      "decoder_reason": "invalid_sequence",
+      "proposal_count": 4,
+      "parser_match": true,
+      "decoder_match": true,
+      "event_valid": true,
+      "tensor_sha256": "6dec8a98dfb6a5deaae742a634e6ac6f011fa7784311a3b53d5bab762107d38b"
+    },
+    {
+      "index": 20,
+      "name": "number after capital",
+      "masks": [
+        32,
+        60,
+        1
+      ],
+      "expected": "",
+      "expected_reason": "invalid_sequence",
+      "parser": {
+        "status": "rejected",
+        "reason": "invalid_sequence"
+      },
+      "decoder_text": "",
+      "decoder_reason": "invalid_sequence",
+      "proposal_count": 3,
+      "parser_match": true,
+      "decoder_match": true,
+      "event_valid": true,
+      "tensor_sha256": "9d47a7ea020534bfef1ba0703a8b338131af23dfad7430390166cf72c528f4e6"
+    },
+    {
+      "index": 21,
+      "name": "repeated number indicator",
+      "masks": [
+        60,
+        1,
+        60,
+        3
+      ],
+      "expected": "",
+      "expected_reason": "invalid_sequence",
+      "parser": {
+        "status": "rejected",
+        "reason": "invalid_sequence"
+      },
+      "decoder_text": "",
+      "decoder_reason": "invalid_sequence",
+      "proposal_count": 4,
+      "parser_match": true,
+      "decoder_match": true,
+      "event_valid": true,
+      "tensor_sha256": "3377d97e3c9e949cf56eb1b2d5a24d12ef1ca63ace221784dcebd735e4d66cc4"
+    },
+    {
+      "index": 22,
+      "name": "decimal separator",
+      "masks": [
+        60,
+        1,
+        2,
+        3
+      ],
+      "expected": "",
+      "expected_reason": "unsupported_pattern",
+      "parser": {
+        "status": "rejected",
+        "reason": "unsupported_pattern"
+      },
+      "decoder_text": "",
+      "decoder_reason": "unsupported_pattern",
+      "proposal_count": 4,
+      "parser_match": true,
+      "decoder_match": true,
+      "event_valid": true,
+      "tensor_sha256": "bcd29ae800c4ace4637b0d995a7f8841889813191373418fa2302b3871cd12c4"
+    },
+    {
+      "index": 23,
+      "name": "negative sign",
+      "masks": [
+        36,
+        60,
+        1
+      ],
+      "expected": "",
+      "expected_reason": "unsupported_pattern",
+      "parser": {
+        "status": "rejected",
+        "reason": "unsupported_pattern"
+      },
+      "decoder_text": "",
+      "decoder_reason": "unsupported_pattern",
+      "proposal_count": 3,
+      "parser_match": true,
+      "decoder_match": true,
+      "event_valid": true,
+      "tensor_sha256": "f732749a1cdec9fe129d22d2663b3ba8dbfce42ec95452db1524861fdc779c0f"
+    },
+    {
+      "index": 24,
+      "name": "Russian capital is unsupported",
+      "masks": [
+        24,
+        1
+      ],
+      "expected": "",
+      "expected_reason": "unsupported_pattern",
+      "parser": {
+        "status": "rejected",
+        "reason": "unsupported_pattern"
+      },
+      "decoder_text": "",
+      "decoder_reason": "unsupported_pattern",
+      "proposal_count": 2,
+      "parser_match": true,
+      "decoder_match": true,
+      "event_valid": true,
+      "tensor_sha256": "6565569eca6c9d4d9019f46f3f9681cff9cc37cb7512e602e04c26755b04a1db"
+    },
+    {
+      "index": 25,
+      "name": "empty cell is unsupported",
+      "masks": [
+        0
+      ],
+      "expected": "",
+      "expected_reason": "unsupported_pattern",
+      "parser": {
+        "status": "rejected",
+        "reason": "unsupported_pattern"
+      },
+      "decoder_text": "",
+      "decoder_reason": "unsupported_pattern",
+      "proposal_count": 1,
+      "parser_match": true,
+      "decoder_match": true,
+      "event_valid": true,
+      "tensor_sha256": "a39b8ab9a3e1fe11aa4ae1933d60652b674a096f3fcfaac6fe07f2be58043e77"
+    },
+    {
+      "index": 26,
+      "name": "unsupported suffix rejects all",
+      "masks": [
+        1,
+        63
+      ],
+      "expected": "",
+      "expected_reason": "unsupported_pattern",
+      "parser": {
+        "status": "rejected",
+        "reason": "unsupported_pattern"
+      },
+      "decoder_text": "",
+      "decoder_reason": "unsupported_pattern",
+      "proposal_count": 2,
+      "parser_match": true,
+      "decoder_match": true,
+      "event_valid": true,
+      "tensor_sha256": "d544faddc526961125621470e55ac8bca6b5b266da63759606ceda0ba4ddfa86"
+    },
+    {
+      "index": 27,
+      "name": "lowercase-a",
+      "masks": [
+        1
+      ],
+      "expected": "a",
+      "expected_reason": "",
+      "parser": {
+        "status": "success",
+        "text": "a",
+        "symbols": [
+          {
+            "mask": 1,
+            "role": "letter",
+            "output": "a"
+          }
+        ]
+      },
+      "decoder_text": "a",
+      "decoder_reason": "",
+      "proposal_count": 1,
+      "parser_match": true,
+      "decoder_match": true,
+      "event_valid": true,
+      "tensor_sha256": "711cfa8366892ad546f4b339ae8a1a0c031b8db71beb26859cb209d2c2576a80"
+    },
+    {
+      "index": 28,
+      "name": "capital-a",
+      "masks": [
+        32,
+        1
+      ],
+      "expected": "A",
+      "expected_reason": "",
+      "parser": {
+        "status": "success",
+        "text": "A",
+        "symbols": [
+          {
+            "mask": 32,
+            "role": "capital_indicator",
+            "output": ""
+          },
+          {
+            "mask": 1,
+            "role": "letter",
+            "output": "A"
+          }
+        ]
+      },
+      "decoder_text": "A",
+      "decoder_reason": "",
+      "proposal_count": 2,
+      "parser_match": true,
+      "decoder_match": true,
+      "event_valid": true,
+      "tensor_sha256": "a13177991ad9c1b8b4ac80c68492861ab2007533b008e75b0505ae73c41cf333"
+    },
+    {
+      "index": 29,
+      "name": "lowercase-b",
+      "masks": [
+        3
+      ],
+      "expected": "b",
+      "expected_reason": "",
+      "parser": {
+        "status": "success",
+        "text": "b",
+        "symbols": [
+          {
+            "mask": 3,
+            "role": "letter",
+            "output": "b"
+          }
+        ]
+      },
+      "decoder_text": "b",
+      "decoder_reason": "",
+      "proposal_count": 1,
+      "parser_match": true,
+      "decoder_match": true,
+      "event_valid": true,
+      "tensor_sha256": "e5ff8ac13a4c4d039b5563a0c3ae65c3dfc39c85138ad7230b6ae0092f7ac0f2"
+    },
+    {
+      "index": 30,
+      "name": "capital-b",
+      "masks": [
+        32,
+        3
+      ],
+      "expected": "B",
+      "expected_reason": "",
+      "parser": {
+        "status": "success",
+        "text": "B",
+        "symbols": [
+          {
+            "mask": 32,
+            "role": "capital_indicator",
+            "output": ""
+          },
+          {
+            "mask": 3,
+            "role": "letter",
+            "output": "B"
+          }
+        ]
+      },
+      "decoder_text": "B",
+      "decoder_reason": "",
+      "proposal_count": 2,
+      "parser_match": true,
+      "decoder_match": true,
+      "event_valid": true,
+      "tensor_sha256": "32b1646b3d2b999a515990ac1715cecfc7c4d5ace3517ce3895a03991f238eae"
+    },
+    {
+      "index": 31,
+      "name": "lowercase-c",
+      "masks": [
+        9
+      ],
+      "expected": "c",
+      "expected_reason": "",
+      "parser": {
+        "status": "success",
+        "text": "c",
+        "symbols": [
+          {
+            "mask": 9,
+            "role": "letter",
+            "output": "c"
+          }
+        ]
+      },
+      "decoder_text": "c",
+      "decoder_reason": "",
+      "proposal_count": 1,
+      "parser_match": true,
+      "decoder_match": true,
+      "event_valid": true,
+      "tensor_sha256": "6a16fbb0881421df42bb06233b7cfed7a102749083e1549ab3d2f58f8dcb3d5a"
+    },
+    {
+      "index": 32,
+      "name": "capital-c",
+      "masks": [
+        32,
+        9
+      ],
+      "expected": "C",
+      "expected_reason": "",
+      "parser": {
+        "status": "success",
+        "text": "C",
+        "symbols": [
+          {
+            "mask": 32,
+            "role": "capital_indicator",
+            "output": ""
+          },
+          {
+            "mask": 9,
+            "role": "letter",
+            "output": "C"
+          }
+        ]
+      },
+      "decoder_text": "C",
+      "decoder_reason": "",
+      "proposal_count": 2,
+      "parser_match": true,
+      "decoder_match": true,
+      "event_valid": true,
+      "tensor_sha256": "4a1823d8416cd21247e59c9eb72e2872b4bb17a1f8a2d99d0dd881a3a9444835"
+    },
+    {
+      "index": 33,
+      "name": "lowercase-d",
+      "masks": [
+        25
+      ],
+      "expected": "d",
+      "expected_reason": "",
+      "parser": {
+        "status": "success",
+        "text": "d",
+        "symbols": [
+          {
+            "mask": 25,
+            "role": "letter",
+            "output": "d"
+          }
+        ]
+      },
+      "decoder_text": "d",
+      "decoder_reason": "",
+      "proposal_count": 1,
+      "parser_match": true,
+      "decoder_match": true,
+      "event_valid": true,
+      "tensor_sha256": "65ab591632c7cefe302ea7fe915fe5b288b95fd52055be542fc5443346a3c5ba"
+    },
+    {
+      "index": 34,
+      "name": "capital-d",
+      "masks": [
+        32,
+        25
+      ],
+      "expected": "D",
+      "expected_reason": "",
+      "parser": {
+        "status": "success",
+        "text": "D",
+        "symbols": [
+          {
+            "mask": 32,
+            "role": "capital_indicator",
+            "output": ""
+          },
+          {
+            "mask": 25,
+            "role": "letter",
+            "output": "D"
+          }
+        ]
+      },
+      "decoder_text": "D",
+      "decoder_reason": "",
+      "proposal_count": 2,
+      "parser_match": true,
+      "decoder_match": true,
+      "event_valid": true,
+      "tensor_sha256": "60fbb5a9de0f56f533de2d0be01702259e755c0ecbfecf811cfdcf0694c6a40e"
+    },
+    {
+      "index": 35,
+      "name": "lowercase-e",
+      "masks": [
+        17
+      ],
+      "expected": "e",
+      "expected_reason": "",
+      "parser": {
+        "status": "success",
+        "text": "e",
+        "symbols": [
+          {
+            "mask": 17,
+            "role": "letter",
+            "output": "e"
+          }
+        ]
+      },
+      "decoder_text": "e",
+      "decoder_reason": "",
+      "proposal_count": 1,
+      "parser_match": true,
+      "decoder_match": true,
+      "event_valid": true,
+      "tensor_sha256": "683634c7fcd94e31fa7c66be084f2f23e15b2c9d1f7b1f46a255c259788ecac0"
+    },
+    {
+      "index": 36,
+      "name": "capital-e",
+      "masks": [
+        32,
+        17
+      ],
+      "expected": "E",
+      "expected_reason": "",
+      "parser": {
+        "status": "success",
+        "text": "E",
+        "symbols": [
+          {
+            "mask": 32,
+            "role": "capital_indicator",
+            "output": ""
+          },
+          {
+            "mask": 17,
+            "role": "letter",
+            "output": "E"
+          }
+        ]
+      },
+      "decoder_text": "E",
+      "decoder_reason": "",
+      "proposal_count": 2,
+      "parser_match": true,
+      "decoder_match": true,
+      "event_valid": true,
+      "tensor_sha256": "741a21827823e8391a02781a0efc2ce9920d242d72bd0e57d91ccaa2e3f571d3"
+    },
+    {
+      "index": 37,
+      "name": "lowercase-f",
+      "masks": [
+        11
+      ],
+      "expected": "f",
+      "expected_reason": "",
+      "parser": {
+        "status": "success",
+        "text": "f",
+        "symbols": [
+          {
+            "mask": 11,
+            "role": "letter",
+            "output": "f"
+          }
+        ]
+      },
+      "decoder_text": "f",
+      "decoder_reason": "",
+      "proposal_count": 1,
+      "parser_match": true,
+      "decoder_match": true,
+      "event_valid": true,
+      "tensor_sha256": "26ec5e9de70398120005eb1c9ec101a3dd9cbd8ae2b11db7594fac5a03abed4d"
+    },
+    {
+      "index": 38,
+      "name": "capital-f",
+      "masks": [
+        32,
+        11
+      ],
+      "expected": "F",
+      "expected_reason": "",
+      "parser": {
+        "status": "success",
+        "text": "F",
+        "symbols": [
+          {
+            "mask": 32,
+            "role": "capital_indicator",
+            "output": ""
+          },
+          {
+            "mask": 11,
+            "role": "letter",
+            "output": "F"
+          }
+        ]
+      },
+      "decoder_text": "F",
+      "decoder_reason": "",
+      "proposal_count": 2,
+      "parser_match": true,
+      "decoder_match": true,
+      "event_valid": true,
+      "tensor_sha256": "811a6a5b02de60422583006c8cfc93e28ad16f2953932f17db11a6c163482bf0"
+    },
+    {
+      "index": 39,
+      "name": "lowercase-g",
+      "masks": [
+        27
+      ],
+      "expected": "g",
+      "expected_reason": "",
+      "parser": {
+        "status": "success",
+        "text": "g",
+        "symbols": [
+          {
+            "mask": 27,
+            "role": "letter",
+            "output": "g"
+          }
+        ]
+      },
+      "decoder_text": "g",
+      "decoder_reason": "",
+      "proposal_count": 1,
+      "parser_match": true,
+      "decoder_match": true,
+      "event_valid": true,
+      "tensor_sha256": "f96e75b1199cbd21d2785adcbaa922570fa5bc37c2b6bbb57672e2b9a0a3e473"
+    },
+    {
+      "index": 40,
+      "name": "capital-g",
+      "masks": [
+        32,
+        27
+      ],
+      "expected": "G",
+      "expected_reason": "",
+      "parser": {
+        "status": "success",
+        "text": "G",
+        "symbols": [
+          {
+            "mask": 32,
+            "role": "capital_indicator",
+            "output": ""
+          },
+          {
+            "mask": 27,
+            "role": "letter",
+            "output": "G"
+          }
+        ]
+      },
+      "decoder_text": "G",
+      "decoder_reason": "",
+      "proposal_count": 2,
+      "parser_match": true,
+      "decoder_match": true,
+      "event_valid": true,
+      "tensor_sha256": "5a4439057b75d6aa97becf73fac6dcbd76ee4b3a5dfde0cffb8d0f3b107f6a56"
+    },
+    {
+      "index": 41,
+      "name": "lowercase-h",
+      "masks": [
+        19
+      ],
+      "expected": "h",
+      "expected_reason": "",
+      "parser": {
+        "status": "success",
+        "text": "h",
+        "symbols": [
+          {
+            "mask": 19,
+            "role": "letter",
+            "output": "h"
+          }
+        ]
+      },
+      "decoder_text": "h",
+      "decoder_reason": "",
+      "proposal_count": 1,
+      "parser_match": true,
+      "decoder_match": true,
+      "event_valid": true,
+      "tensor_sha256": "dcad132d25fc82ec012c172ccc02d08fea9d1773c778c15c08a2eb59d36cd18c"
+    },
+    {
+      "index": 42,
+      "name": "capital-h",
+      "masks": [
+        32,
+        19
+      ],
+      "expected": "H",
+      "expected_reason": "",
+      "parser": {
+        "status": "success",
+        "text": "H",
+        "symbols": [
+          {
+            "mask": 32,
+            "role": "capital_indicator",
+            "output": ""
+          },
+          {
+            "mask": 19,
+            "role": "letter",
+            "output": "H"
+          }
+        ]
+      },
+      "decoder_text": "H",
+      "decoder_reason": "",
+      "proposal_count": 2,
+      "parser_match": true,
+      "decoder_match": true,
+      "event_valid": true,
+      "tensor_sha256": "1027acfd2aa1d05f9a839770c1af6e5264105318d3322cd2848cf9017bdde3e0"
+    },
+    {
+      "index": 43,
+      "name": "lowercase-i",
+      "masks": [
+        10
+      ],
+      "expected": "i",
+      "expected_reason": "",
+      "parser": {
+        "status": "success",
+        "text": "i",
+        "symbols": [
+          {
+            "mask": 10,
+            "role": "letter",
+            "output": "i"
+          }
+        ]
+      },
+      "decoder_text": "i",
+      "decoder_reason": "",
+      "proposal_count": 1,
+      "parser_match": true,
+      "decoder_match": true,
+      "event_valid": true,
+      "tensor_sha256": "4b1215269e4b91fcb4c94d071c361fe02f5d6d57da0b5f4c125250bf61a8d180"
+    },
+    {
+      "index": 44,
+      "name": "capital-i",
+      "masks": [
+        32,
+        10
+      ],
+      "expected": "I",
+      "expected_reason": "",
+      "parser": {
+        "status": "success",
+        "text": "I",
+        "symbols": [
+          {
+            "mask": 32,
+            "role": "capital_indicator",
+            "output": ""
+          },
+          {
+            "mask": 10,
+            "role": "letter",
+            "output": "I"
+          }
+        ]
+      },
+      "decoder_text": "I",
+      "decoder_reason": "",
+      "proposal_count": 2,
+      "parser_match": true,
+      "decoder_match": true,
+      "event_valid": true,
+      "tensor_sha256": "9533bdc06cfd72253b6c00327f415c39c7a2a6f4872646eb146ac1b2be4bd4bf"
+    },
+    {
+      "index": 45,
+      "name": "lowercase-j",
+      "masks": [
+        26
+      ],
+      "expected": "j",
+      "expected_reason": "",
+      "parser": {
+        "status": "success",
+        "text": "j",
+        "symbols": [
+          {
+            "mask": 26,
+            "role": "letter",
+            "output": "j"
+          }
+        ]
+      },
+      "decoder_text": "j",
+      "decoder_reason": "",
+      "proposal_count": 1,
+      "parser_match": true,
+      "decoder_match": true,
+      "event_valid": true,
+      "tensor_sha256": "0473984793fc487196e48f26c9e0e9d95ea496d716624fc3eccafac9233b3a9f"
+    },
+    {
+      "index": 46,
+      "name": "capital-j",
+      "masks": [
+        32,
+        26
+      ],
+      "expected": "J",
+      "expected_reason": "",
+      "parser": {
+        "status": "success",
+        "text": "J",
+        "symbols": [
+          {
+            "mask": 32,
+            "role": "capital_indicator",
+            "output": ""
+          },
+          {
+            "mask": 26,
+            "role": "letter",
+            "output": "J"
+          }
+        ]
+      },
+      "decoder_text": "J",
+      "decoder_reason": "",
+      "proposal_count": 2,
+      "parser_match": true,
+      "decoder_match": true,
+      "event_valid": true,
+      "tensor_sha256": "c9941a2526a0e5b38b1abf4ac928d5b12486d70f5e2996fc2d12609734708967"
+    },
+    {
+      "index": 47,
+      "name": "lowercase-k",
+      "masks": [
+        5
+      ],
+      "expected": "k",
+      "expected_reason": "",
+      "parser": {
+        "status": "success",
+        "text": "k",
+        "symbols": [
+          {
+            "mask": 5,
+            "role": "letter",
+            "output": "k"
+          }
+        ]
+      },
+      "decoder_text": "k",
+      "decoder_reason": "",
+      "proposal_count": 1,
+      "parser_match": true,
+      "decoder_match": true,
+      "event_valid": true,
+      "tensor_sha256": "e517dc88025187d9acdfc9fea8057661ffd5e1c3f8c840cd757f04e1679bf368"
+    },
+    {
+      "index": 48,
+      "name": "capital-k",
+      "masks": [
+        32,
+        5
+      ],
+      "expected": "K",
+      "expected_reason": "",
+      "parser": {
+        "status": "success",
+        "text": "K",
+        "symbols": [
+          {
+            "mask": 32,
+            "role": "capital_indicator",
+            "output": ""
+          },
+          {
+            "mask": 5,
+            "role": "letter",
+            "output": "K"
+          }
+        ]
+      },
+      "decoder_text": "K",
+      "decoder_reason": "",
+      "proposal_count": 2,
+      "parser_match": true,
+      "decoder_match": true,
+      "event_valid": true,
+      "tensor_sha256": "6c12f944698858924d014c6ec8e909c86246900eb600bddd9cb1c09f26678234"
+    },
+    {
+      "index": 49,
+      "name": "lowercase-l",
+      "masks": [
+        7
+      ],
+      "expected": "l",
+      "expected_reason": "",
+      "parser": {
+        "status": "success",
+        "text": "l",
+        "symbols": [
+          {
+            "mask": 7,
+            "role": "letter",
+            "output": "l"
+          }
+        ]
+      },
+      "decoder_text": "l",
+      "decoder_reason": "",
+      "proposal_count": 1,
+      "parser_match": true,
+      "decoder_match": true,
+      "event_valid": true,
+      "tensor_sha256": "5806fd89f9bc0a4f8353058f79efca5c40666d3e1182c95a4948cc24d6c7fcee"
+    },
+    {
+      "index": 50,
+      "name": "capital-l",
+      "masks": [
+        32,
+        7
+      ],
+      "expected": "L",
+      "expected_reason": "",
+      "parser": {
+        "status": "success",
+        "text": "L",
+        "symbols": [
+          {
+            "mask": 32,
+            "role": "capital_indicator",
+            "output": ""
+          },
+          {
+            "mask": 7,
+            "role": "letter",
+            "output": "L"
+          }
+        ]
+      },
+      "decoder_text": "L",
+      "decoder_reason": "",
+      "proposal_count": 2,
+      "parser_match": true,
+      "decoder_match": true,
+      "event_valid": true,
+      "tensor_sha256": "c5298c320521fd00938f3c763f2cb7ddd54d7cccaf39c56f1359e8433865db56"
+    },
+    {
+      "index": 51,
+      "name": "lowercase-m",
+      "masks": [
+        13
+      ],
+      "expected": "m",
+      "expected_reason": "",
+      "parser": {
+        "status": "success",
+        "text": "m",
+        "symbols": [
+          {
+            "mask": 13,
+            "role": "letter",
+            "output": "m"
+          }
+        ]
+      },
+      "decoder_text": "m",
+      "decoder_reason": "",
+      "proposal_count": 1,
+      "parser_match": true,
+      "decoder_match": true,
+      "event_valid": true,
+      "tensor_sha256": "8591acad41f859361656bde79b384ad02e81e15a19985765be0dc9f237f68f50"
+    },
+    {
+      "index": 52,
+      "name": "capital-m",
+      "masks": [
+        32,
+        13
+      ],
+      "expected": "M",
+      "expected_reason": "",
+      "parser": {
+        "status": "success",
+        "text": "M",
+        "symbols": [
+          {
+            "mask": 32,
+            "role": "capital_indicator",
+            "output": ""
+          },
+          {
+            "mask": 13,
+            "role": "letter",
+            "output": "M"
+          }
+        ]
+      },
+      "decoder_text": "M",
+      "decoder_reason": "",
+      "proposal_count": 2,
+      "parser_match": true,
+      "decoder_match": true,
+      "event_valid": true,
+      "tensor_sha256": "e823dccb4765d5eda810674897f100025f77a2395895025c3e5bae8161ff855d"
+    },
+    {
+      "index": 53,
+      "name": "lowercase-n",
+      "masks": [
+        29
+      ],
+      "expected": "n",
+      "expected_reason": "",
+      "parser": {
+        "status": "success",
+        "text": "n",
+        "symbols": [
+          {
+            "mask": 29,
+            "role": "letter",
+            "output": "n"
+          }
+        ]
+      },
+      "decoder_text": "n",
+      "decoder_reason": "",
+      "proposal_count": 1,
+      "parser_match": true,
+      "decoder_match": true,
+      "event_valid": true,
+      "tensor_sha256": "197a6c8e1303d68fd9b5a8bbf2f77d05b60995be41454f42112f4cabb226b885"
+    },
+    {
+      "index": 54,
+      "name": "capital-n",
+      "masks": [
+        32,
+        29
+      ],
+      "expected": "N",
+      "expected_reason": "",
+      "parser": {
+        "status": "success",
+        "text": "N",
+        "symbols": [
+          {
+            "mask": 32,
+            "role": "capital_indicator",
+            "output": ""
+          },
+          {
+            "mask": 29,
+            "role": "letter",
+            "output": "N"
+          }
+        ]
+      },
+      "decoder_text": "N",
+      "decoder_reason": "",
+      "proposal_count": 2,
+      "parser_match": true,
+      "decoder_match": true,
+      "event_valid": true,
+      "tensor_sha256": "0ce4e6e50ed4ced7efa9eeb45303f171f405b5685dd367bd4235489b0946aec3"
+    },
+    {
+      "index": 55,
+      "name": "lowercase-o",
+      "masks": [
+        21
+      ],
+      "expected": "o",
+      "expected_reason": "",
+      "parser": {
+        "status": "success",
+        "text": "o",
+        "symbols": [
+          {
+            "mask": 21,
+            "role": "letter",
+            "output": "o"
+          }
+        ]
+      },
+      "decoder_text": "o",
+      "decoder_reason": "",
+      "proposal_count": 1,
+      "parser_match": true,
+      "decoder_match": true,
+      "event_valid": true,
+      "tensor_sha256": "d1cf048ac1047608d0c99d96d03fa709c118d7f4814d2278b7bd20e464996a87"
+    },
+    {
+      "index": 56,
+      "name": "capital-o",
+      "masks": [
+        32,
+        21
+      ],
+      "expected": "O",
+      "expected_reason": "",
+      "parser": {
+        "status": "success",
+        "text": "O",
+        "symbols": [
+          {
+            "mask": 32,
+            "role": "capital_indicator",
+            "output": ""
+          },
+          {
+            "mask": 21,
+            "role": "letter",
+            "output": "O"
+          }
+        ]
+      },
+      "decoder_text": "O",
+      "decoder_reason": "",
+      "proposal_count": 2,
+      "parser_match": true,
+      "decoder_match": true,
+      "event_valid": true,
+      "tensor_sha256": "6a2ae9aacb45d18ff4a68067861c2f2bd5ff06c3c2fef030f1b90563c9d7b94e"
+    },
+    {
+      "index": 57,
+      "name": "lowercase-p",
+      "masks": [
+        15
+      ],
+      "expected": "p",
+      "expected_reason": "",
+      "parser": {
+        "status": "success",
+        "text": "p",
+        "symbols": [
+          {
+            "mask": 15,
+            "role": "letter",
+            "output": "p"
+          }
+        ]
+      },
+      "decoder_text": "p",
+      "decoder_reason": "",
+      "proposal_count": 1,
+      "parser_match": true,
+      "decoder_match": true,
+      "event_valid": true,
+      "tensor_sha256": "a02f3016f2e8f619084ca806d22ab10023c29c95046e8f86a0a37e843f2367cf"
+    },
+    {
+      "index": 58,
+      "name": "capital-p",
+      "masks": [
+        32,
+        15
+      ],
+      "expected": "P",
+      "expected_reason": "",
+      "parser": {
+        "status": "success",
+        "text": "P",
+        "symbols": [
+          {
+            "mask": 32,
+            "role": "capital_indicator",
+            "output": ""
+          },
+          {
+            "mask": 15,
+            "role": "letter",
+            "output": "P"
+          }
+        ]
+      },
+      "decoder_text": "P",
+      "decoder_reason": "",
+      "proposal_count": 2,
+      "parser_match": true,
+      "decoder_match": true,
+      "event_valid": true,
+      "tensor_sha256": "22c1b036bd9e49a9a522298bb6fa095aadb5cafaa6d0097977d26aef947f4072"
+    },
+    {
+      "index": 59,
+      "name": "lowercase-q",
+      "masks": [
+        31
+      ],
+      "expected": "q",
+      "expected_reason": "",
+      "parser": {
+        "status": "success",
+        "text": "q",
+        "symbols": [
+          {
+            "mask": 31,
+            "role": "letter",
+            "output": "q"
+          }
+        ]
+      },
+      "decoder_text": "q",
+      "decoder_reason": "",
+      "proposal_count": 1,
+      "parser_match": true,
+      "decoder_match": true,
+      "event_valid": true,
+      "tensor_sha256": "582c5fb8ce49eb4b502d78f9fac1729d39a23fd2055958829340de03f19a5573"
+    },
+    {
+      "index": 60,
+      "name": "capital-q",
+      "masks": [
+        32,
+        31
+      ],
+      "expected": "Q",
+      "expected_reason": "",
+      "parser": {
+        "status": "success",
+        "text": "Q",
+        "symbols": [
+          {
+            "mask": 32,
+            "role": "capital_indicator",
+            "output": ""
+          },
+          {
+            "mask": 31,
+            "role": "letter",
+            "output": "Q"
+          }
+        ]
+      },
+      "decoder_text": "Q",
+      "decoder_reason": "",
+      "proposal_count": 2,
+      "parser_match": true,
+      "decoder_match": true,
+      "event_valid": true,
+      "tensor_sha256": "d2bcda2bc001847b3434a7206781e518ac9168ecbe4af320f0510398d3336d32"
+    },
+    {
+      "index": 61,
+      "name": "lowercase-r",
+      "masks": [
+        23
+      ],
+      "expected": "r",
+      "expected_reason": "",
+      "parser": {
+        "status": "success",
+        "text": "r",
+        "symbols": [
+          {
+            "mask": 23,
+            "role": "letter",
+            "output": "r"
+          }
+        ]
+      },
+      "decoder_text": "r",
+      "decoder_reason": "",
+      "proposal_count": 1,
+      "parser_match": true,
+      "decoder_match": true,
+      "event_valid": true,
+      "tensor_sha256": "16feb5e574b2a0abb95ebe6261d55808f73e149ce1c4ec2cc357c9a48e73c0fc"
+    },
+    {
+      "index": 62,
+      "name": "capital-r",
+      "masks": [
+        32,
+        23
+      ],
+      "expected": "R",
+      "expected_reason": "",
+      "parser": {
+        "status": "success",
+        "text": "R",
+        "symbols": [
+          {
+            "mask": 32,
+            "role": "capital_indicator",
+            "output": ""
+          },
+          {
+            "mask": 23,
+            "role": "letter",
+            "output": "R"
+          }
+        ]
+      },
+      "decoder_text": "R",
+      "decoder_reason": "",
+      "proposal_count": 2,
+      "parser_match": true,
+      "decoder_match": true,
+      "event_valid": true,
+      "tensor_sha256": "88619b41464124f676f6eb01d5d47bac8b9783c1eca5f0d77a2242c13976716b"
+    },
+    {
+      "index": 63,
+      "name": "lowercase-s",
+      "masks": [
+        14
+      ],
+      "expected": "s",
+      "expected_reason": "",
+      "parser": {
+        "status": "success",
+        "text": "s",
+        "symbols": [
+          {
+            "mask": 14,
+            "role": "letter",
+            "output": "s"
+          }
+        ]
+      },
+      "decoder_text": "s",
+      "decoder_reason": "",
+      "proposal_count": 1,
+      "parser_match": true,
+      "decoder_match": true,
+      "event_valid": true,
+      "tensor_sha256": "76330765b5972e8adde1939193f3fcdc865aa3e755c38ed8085106f473a20a51"
+    },
+    {
+      "index": 64,
+      "name": "capital-s",
+      "masks": [
+        32,
+        14
+      ],
+      "expected": "S",
+      "expected_reason": "",
+      "parser": {
+        "status": "success",
+        "text": "S",
+        "symbols": [
+          {
+            "mask": 32,
+            "role": "capital_indicator",
+            "output": ""
+          },
+          {
+            "mask": 14,
+            "role": "letter",
+            "output": "S"
+          }
+        ]
+      },
+      "decoder_text": "S",
+      "decoder_reason": "",
+      "proposal_count": 2,
+      "parser_match": true,
+      "decoder_match": true,
+      "event_valid": true,
+      "tensor_sha256": "3986e2fb8602f5ca284269ec53580af1d878ef92cebf192a496e36fa7da418f2"
+    },
+    {
+      "index": 65,
+      "name": "lowercase-t",
+      "masks": [
+        30
+      ],
+      "expected": "t",
+      "expected_reason": "",
+      "parser": {
+        "status": "success",
+        "text": "t",
+        "symbols": [
+          {
+            "mask": 30,
+            "role": "letter",
+            "output": "t"
+          }
+        ]
+      },
+      "decoder_text": "t",
+      "decoder_reason": "",
+      "proposal_count": 1,
+      "parser_match": true,
+      "decoder_match": true,
+      "event_valid": true,
+      "tensor_sha256": "57422b99adb90976c795d1531bfd4ca0aba9e186ceadc04c50601df5cd3c36ac"
+    },
+    {
+      "index": 66,
+      "name": "capital-t",
+      "masks": [
+        32,
+        30
+      ],
+      "expected": "T",
+      "expected_reason": "",
+      "parser": {
+        "status": "success",
+        "text": "T",
+        "symbols": [
+          {
+            "mask": 32,
+            "role": "capital_indicator",
+            "output": ""
+          },
+          {
+            "mask": 30,
+            "role": "letter",
+            "output": "T"
+          }
+        ]
+      },
+      "decoder_text": "T",
+      "decoder_reason": "",
+      "proposal_count": 2,
+      "parser_match": true,
+      "decoder_match": true,
+      "event_valid": true,
+      "tensor_sha256": "57c4d2d4014098421f6a7115afaf3c12267ea86abe6e452406cb29540dad43ca"
+    },
+    {
+      "index": 67,
+      "name": "lowercase-u",
+      "masks": [
+        37
+      ],
+      "expected": "u",
+      "expected_reason": "",
+      "parser": {
+        "status": "success",
+        "text": "u",
+        "symbols": [
+          {
+            "mask": 37,
+            "role": "letter",
+            "output": "u"
+          }
+        ]
+      },
+      "decoder_text": "u",
+      "decoder_reason": "",
+      "proposal_count": 1,
+      "parser_match": true,
+      "decoder_match": true,
+      "event_valid": true,
+      "tensor_sha256": "13fdf2e7291595987511b194dfe23f30ca91fb1cd0bb61b59f824ee11f024caa"
+    },
+    {
+      "index": 68,
+      "name": "capital-u",
+      "masks": [
+        32,
+        37
+      ],
+      "expected": "U",
+      "expected_reason": "",
+      "parser": {
+        "status": "success",
+        "text": "U",
+        "symbols": [
+          {
+            "mask": 32,
+            "role": "capital_indicator",
+            "output": ""
+          },
+          {
+            "mask": 37,
+            "role": "letter",
+            "output": "U"
+          }
+        ]
+      },
+      "decoder_text": "U",
+      "decoder_reason": "",
+      "proposal_count": 2,
+      "parser_match": true,
+      "decoder_match": true,
+      "event_valid": true,
+      "tensor_sha256": "e30bb69b5cb21ea7f4cdd3da6be6d8c46f9f7fad7a7b344e4842172d6a20194b"
+    },
+    {
+      "index": 69,
+      "name": "lowercase-v",
+      "masks": [
+        39
+      ],
+      "expected": "v",
+      "expected_reason": "",
+      "parser": {
+        "status": "success",
+        "text": "v",
+        "symbols": [
+          {
+            "mask": 39,
+            "role": "letter",
+            "output": "v"
+          }
+        ]
+      },
+      "decoder_text": "v",
+      "decoder_reason": "",
+      "proposal_count": 1,
+      "parser_match": true,
+      "decoder_match": true,
+      "event_valid": true,
+      "tensor_sha256": "d558029ad18d67c60f1fff5ed4a7536f52af971c258ab0fcf6433df9a388968e"
+    },
+    {
+      "index": 70,
+      "name": "capital-v",
+      "masks": [
+        32,
+        39
+      ],
+      "expected": "V",
+      "expected_reason": "",
+      "parser": {
+        "status": "success",
+        "text": "V",
+        "symbols": [
+          {
+            "mask": 32,
+            "role": "capital_indicator",
+            "output": ""
+          },
+          {
+            "mask": 39,
+            "role": "letter",
+            "output": "V"
+          }
+        ]
+      },
+      "decoder_text": "V",
+      "decoder_reason": "",
+      "proposal_count": 2,
+      "parser_match": true,
+      "decoder_match": true,
+      "event_valid": true,
+      "tensor_sha256": "9cb60aee8224be0a74c66e84319ea1bb2fef535149beb380651bd1c964fd717e"
+    },
+    {
+      "index": 71,
+      "name": "lowercase-w",
+      "masks": [
+        58
+      ],
+      "expected": "w",
+      "expected_reason": "",
+      "parser": {
+        "status": "success",
+        "text": "w",
+        "symbols": [
+          {
+            "mask": 58,
+            "role": "letter",
+            "output": "w"
+          }
+        ]
+      },
+      "decoder_text": "w",
+      "decoder_reason": "",
+      "proposal_count": 1,
+      "parser_match": true,
+      "decoder_match": true,
+      "event_valid": true,
+      "tensor_sha256": "294030af7351039d467678806f0dc18564874cb4c4ad18c2075a1789749d05fe"
+    },
+    {
+      "index": 72,
+      "name": "capital-w",
+      "masks": [
+        32,
+        58
+      ],
+      "expected": "W",
+      "expected_reason": "",
+      "parser": {
+        "status": "success",
+        "text": "W",
+        "symbols": [
+          {
+            "mask": 32,
+            "role": "capital_indicator",
+            "output": ""
+          },
+          {
+            "mask": 58,
+            "role": "letter",
+            "output": "W"
+          }
+        ]
+      },
+      "decoder_text": "W",
+      "decoder_reason": "",
+      "proposal_count": 2,
+      "parser_match": true,
+      "decoder_match": true,
+      "event_valid": true,
+      "tensor_sha256": "56966b7e3b4ab57674b84a11f7f719ad3fde92a134e9b75ed38413d2eacecabd"
+    },
+    {
+      "index": 73,
+      "name": "lowercase-x",
+      "masks": [
+        45
+      ],
+      "expected": "x",
+      "expected_reason": "",
+      "parser": {
+        "status": "success",
+        "text": "x",
+        "symbols": [
+          {
+            "mask": 45,
+            "role": "letter",
+            "output": "x"
+          }
+        ]
+      },
+      "decoder_text": "x",
+      "decoder_reason": "",
+      "proposal_count": 1,
+      "parser_match": true,
+      "decoder_match": true,
+      "event_valid": true,
+      "tensor_sha256": "4bae239aa1c6addc611a17c967a02c4b2d36df081d1da00b462e20b7d93af8db"
+    },
+    {
+      "index": 74,
+      "name": "capital-x",
+      "masks": [
+        32,
+        45
+      ],
+      "expected": "X",
+      "expected_reason": "",
+      "parser": {
+        "status": "success",
+        "text": "X",
+        "symbols": [
+          {
+            "mask": 32,
+            "role": "capital_indicator",
+            "output": ""
+          },
+          {
+            "mask": 45,
+            "role": "letter",
+            "output": "X"
+          }
+        ]
+      },
+      "decoder_text": "X",
+      "decoder_reason": "",
+      "proposal_count": 2,
+      "parser_match": true,
+      "decoder_match": true,
+      "event_valid": true,
+      "tensor_sha256": "5deabb5f3cc4c51f1dc43d9ba0bc6f3bfc8821492e8e8504398fd09c70ceb937"
+    },
+    {
+      "index": 75,
+      "name": "lowercase-y",
+      "masks": [
+        61
+      ],
+      "expected": "y",
+      "expected_reason": "",
+      "parser": {
+        "status": "success",
+        "text": "y",
+        "symbols": [
+          {
+            "mask": 61,
+            "role": "letter",
+            "output": "y"
+          }
+        ]
+      },
+      "decoder_text": "y",
+      "decoder_reason": "",
+      "proposal_count": 1,
+      "parser_match": true,
+      "decoder_match": true,
+      "event_valid": true,
+      "tensor_sha256": "1a9846f87c0bbf4341386c59a45c4344303248eeedfb5952ed44d21cdb70d1c2"
+    },
+    {
+      "index": 76,
+      "name": "capital-y",
+      "masks": [
+        32,
+        61
+      ],
+      "expected": "Y",
+      "expected_reason": "",
+      "parser": {
+        "status": "success",
+        "text": "Y",
+        "symbols": [
+          {
+            "mask": 32,
+            "role": "capital_indicator",
+            "output": ""
+          },
+          {
+            "mask": 61,
+            "role": "letter",
+            "output": "Y"
+          }
+        ]
+      },
+      "decoder_text": "Y",
+      "decoder_reason": "",
+      "proposal_count": 2,
+      "parser_match": true,
+      "decoder_match": true,
+      "event_valid": true,
+      "tensor_sha256": "e3dbf27524f845fe8e90cc6c06192641321ccbf53897901bdedd405ab263ffbe"
+    },
+    {
+      "index": 77,
+      "name": "lowercase-z",
+      "masks": [
+        53
+      ],
+      "expected": "z",
+      "expected_reason": "",
+      "parser": {
+        "status": "success",
+        "text": "z",
+        "symbols": [
+          {
+            "mask": 53,
+            "role": "letter",
+            "output": "z"
+          }
+        ]
+      },
+      "decoder_text": "z",
+      "decoder_reason": "",
+      "proposal_count": 1,
+      "parser_match": true,
+      "decoder_match": true,
+      "event_valid": true,
+      "tensor_sha256": "85c02ce08d0ac4af7c3992f406e95de6ab9e45113a895bd694381090038a6284"
+    },
+    {
+      "index": 78,
+      "name": "capital-z",
+      "masks": [
+        32,
+        53
+      ],
+      "expected": "Z",
+      "expected_reason": "",
+      "parser": {
+        "status": "success",
+        "text": "Z",
+        "symbols": [
+          {
+            "mask": 32,
+            "role": "capital_indicator",
+            "output": ""
+          },
+          {
+            "mask": 53,
+            "role": "letter",
+            "output": "Z"
+          }
+        ]
+      },
+      "decoder_text": "Z",
+      "decoder_reason": "",
+      "proposal_count": 2,
+      "parser_match": true,
+      "decoder_match": true,
+      "event_valid": true,
+      "tensor_sha256": "f89c88d70860491138fe29f1500145956ba6896c0a1161a624f9d5b14079e2a3"
+    },
+    {
+      "index": 79,
+      "name": "12-capital-individual",
+      "masks": [
+        32,
+        1,
+        32,
+        1,
+        32,
+        1,
+        32,
+        1,
+        32,
+        1,
+        32,
+        1,
+        32,
+        1,
+        32,
+        1,
+        32,
+        1,
+        32,
+        1,
+        32,
+        1,
+        32,
+        1
+      ],
+      "expected": "AAAAAAAAAAAA",
+      "expected_reason": "",
+      "parser": {
+        "status": "success",
+        "text": "AAAAAAAAAAAA",
+        "symbols": [
+          {
+            "mask": 32,
+            "role": "capital_indicator",
+            "output": ""
+          },
+          {
+            "mask": 1,
+            "role": "letter",
+            "output": "A"
+          },
+          {
+            "mask": 32,
+            "role": "capital_indicator",
+            "output": ""
+          },
+          {
+            "mask": 1,
+            "role": "letter",
+            "output": "A"
+          },
+          {
+            "mask": 32,
+            "role": "capital_indicator",
+            "output": ""
+          },
+          {
+            "mask": 1,
+            "role": "letter",
+            "output": "A"
+          },
+          {
+            "mask": 32,
+            "role": "capital_indicator",
+            "output": ""
+          },
+          {
+            "mask": 1,
+            "role": "letter",
+            "output": "A"
+          },
+          {
+            "mask": 32,
+            "role": "capital_indicator",
+            "output": ""
+          },
+          {
+            "mask": 1,
+            "role": "letter",
+            "output": "A"
+          },
+          {
+            "mask": 32,
+            "role": "capital_indicator",
+            "output": ""
+          },
+          {
+            "mask": 1,
+            "role": "letter",
+            "output": "A"
+          },
+          {
+            "mask": 32,
+            "role": "capital_indicator",
+            "output": ""
+          },
+          {
+            "mask": 1,
+            "role": "letter",
+            "output": "A"
+          },
+          {
+            "mask": 32,
+            "role": "capital_indicator",
+            "output": ""
+          },
+          {
+            "mask": 1,
+            "role": "letter",
+            "output": "A"
+          },
+          {
+            "mask": 32,
+            "role": "capital_indicator",
+            "output": ""
+          },
+          {
+            "mask": 1,
+            "role": "letter",
+            "output": "A"
+          },
+          {
+            "mask": 32,
+            "role": "capital_indicator",
+            "output": ""
+          },
+          {
+            "mask": 1,
+            "role": "letter",
+            "output": "A"
+          },
+          {
+            "mask": 32,
+            "role": "capital_indicator",
+            "output": ""
+          },
+          {
+            "mask": 1,
+            "role": "letter",
+            "output": "A"
+          },
+          {
+            "mask": 32,
+            "role": "capital_indicator",
+            "output": ""
+          },
+          {
+            "mask": 1,
+            "role": "letter",
+            "output": "A"
+          }
+        ]
+      },
+      "decoder_text": "AAAAAAAAAAAA",
+      "decoder_reason": "",
+      "proposal_count": 24,
+      "parser_match": true,
+      "decoder_match": true,
+      "event_valid": true,
+      "tensor_sha256": "1a31667a635950fd0b2dfc3c67d7154a39154e9b4916ff62bf1c531ca8870d43"
+    },
+    {
+      "index": 80,
+      "name": "12-capital-word",
+      "masks": [
+        32,
+        32,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "expected": "AAAAAAAAAAAA",
+      "expected_reason": "",
+      "parser": {
+        "status": "success",
+        "text": "AAAAAAAAAAAA",
+        "symbols": [
+          {
+            "mask": 32,
+            "role": "capital_indicator",
+            "output": ""
+          },
+          {
+            "mask": 32,
+            "role": "capital_indicator",
+            "output": ""
+          },
+          {
+            "mask": 1,
+            "role": "letter",
+            "output": "A"
+          },
+          {
+            "mask": 1,
+            "role": "letter",
+            "output": "A"
+          },
+          {
+            "mask": 1,
+            "role": "letter",
+            "output": "A"
+          },
+          {
+            "mask": 1,
+            "role": "letter",
+            "output": "A"
+          },
+          {
+            "mask": 1,
+            "role": "letter",
+            "output": "A"
+          },
+          {
+            "mask": 1,
+            "role": "letter",
+            "output": "A"
+          },
+          {
+            "mask": 1,
+            "role": "letter",
+            "output": "A"
+          },
+          {
+            "mask": 1,
+            "role": "letter",
+            "output": "A"
+          },
+          {
+            "mask": 1,
+            "role": "letter",
+            "output": "A"
+          },
+          {
+            "mask": 1,
+            "role": "letter",
+            "output": "A"
+          },
+          {
+            "mask": 1,
+            "role": "letter",
+            "output": "A"
+          },
+          {
+            "mask": 1,
+            "role": "letter",
+            "output": "A"
+          }
+        ]
+      },
+      "decoder_text": "AAAAAAAAAAAA",
+      "decoder_reason": "",
+      "proposal_count": 14,
+      "parser_match": true,
+      "decoder_match": true,
+      "event_valid": true,
+      "tensor_sha256": "14aab9deb41ce32ba219d602e7a3ee8b6706a983480812d527c62dfebd75a087"
+    },
+    {
+      "index": 81,
+      "name": "12-digit-integer",
+      "masks": [
+        60,
+        26,
+        26,
+        26,
+        26,
+        26,
+        26,
+        26,
+        26,
+        26,
+        26,
+        26,
+        26
+      ],
+      "expected": "000000000000",
+      "expected_reason": "",
+      "parser": {
+        "status": "success",
+        "text": "000000000000",
+        "symbols": [
+          {
+            "mask": 60,
+            "role": "number_indicator",
+            "output": ""
+          },
+          {
+            "mask": 26,
+            "role": "digit",
+            "output": "0"
+          },
+          {
+            "mask": 26,
+            "role": "digit",
+            "output": "0"
+          },
+          {
+            "mask": 26,
+            "role": "digit",
+            "output": "0"
+          },
+          {
+            "mask": 26,
+            "role": "digit",
+            "output": "0"
+          },
+          {
+            "mask": 26,
+            "role": "digit",
+            "output": "0"
+          },
+          {
+            "mask": 26,
+            "role": "digit",
+            "output": "0"
+          },
+          {
+            "mask": 26,
+            "role": "digit",
+            "output": "0"
+          },
+          {
+            "mask": 26,
+            "role": "digit",
+            "output": "0"
+          },
+          {
+            "mask": 26,
+            "role": "digit",
+            "output": "0"
+          },
+          {
+            "mask": 26,
+            "role": "digit",
+            "output": "0"
+          },
+          {
+            "mask": 26,
+            "role": "digit",
+            "output": "0"
+          },
+          {
+            "mask": 26,
+            "role": "digit",
+            "output": "0"
+          }
+        ]
+      },
+      "decoder_text": "000000000000",
+      "decoder_reason": "",
+      "proposal_count": 13,
+      "parser_match": true,
+      "decoder_match": true,
+      "event_valid": true,
+      "tensor_sha256": "765c45b71e59d1aa7a29ad464d5e815757498eaad7066423bcf7795fd667c106"
+    },
+    {
+      "index": 82,
+      "name": "13-characters",
+      "masks": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "expected": "",
+      "expected_reason": "too_many_characters",
+      "parser": {
+        "status": "rejected",
+        "reason": "too_many_characters"
+      },
+      "decoder_text": "",
+      "decoder_reason": "too_many_characters",
+      "proposal_count": 13,
+      "parser_match": true,
+      "decoder_match": true,
+      "event_valid": true,
+      "tensor_sha256": "10721737c7436fce038921c81e416376c038eca147b73e2a8237673310619011"
+    },
+    {
+      "index": 83,
+      "name": "25-physical-cells",
+      "masks": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "expected": "",
+      "expected_reason": "too_many_cells",
+      "parser": {
+        "status": "rejected",
+        "reason": "too_many_cells"
+      },
+      "decoder_text": "",
+      "decoder_reason": "too_many_cells",
+      "proposal_count": 25,
+      "parser_match": true,
+      "decoder_match": true,
+      "event_valid": true,
+      "tensor_sha256": "84274378efd1e49a5ab7c241921f750121c168b5eb271410067cfc798f31f607"
+    },
+    {
+      "index": 84,
+      "name": "weak-physical-32",
+      "masks": [
+        32,
+        1
+      ],
+      "expected": "",
+      "expected_reason": "low_confidence",
+      "decoder_text": "",
+      "decoder_reason": "low_confidence",
+      "proposal_count": 2,
+      "parser_match": true,
+      "decoder_match": true,
+      "event_valid": true,
+      "tensor_sha256": "c92cba20a272a39579ddb0852d28f8ab4c54b746faa83ae74cfe4b25c29ecc30"
+    },
+    {
+      "index": 85,
+      "name": "weak-physical-60",
+      "masks": [
+        60,
+        1
+      ],
+      "expected": "",
+      "expected_reason": "low_confidence",
+      "decoder_text": "",
+      "decoder_reason": "low_confidence",
+      "proposal_count": 2,
+      "parser_match": true,
+      "decoder_match": true,
+      "event_valid": true,
+      "tensor_sha256": "6693cb58e092a27b8a6252cb551d733d91c882b0a66c7ffb7e4ed92bc5087f6b"
+    },
+    {
+      "index": 86,
+      "name": "weak-physical-63",
+      "masks": [
+        63,
+        1
+      ],
+      "expected": "",
+      "expected_reason": "low_confidence",
+      "decoder_text": "",
+      "decoder_reason": "low_confidence",
+      "proposal_count": 2,
+      "parser_match": true,
+      "decoder_match": true,
+      "event_valid": true,
+      "tensor_sha256": "f3826830b796b340ec4e4d8394a5251928199823784cba9cd3e80e6257bca043"
+    }
+  ]
+}

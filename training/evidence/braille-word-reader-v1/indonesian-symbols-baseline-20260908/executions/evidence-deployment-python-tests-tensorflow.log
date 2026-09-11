@@ -1,0 +1,53 @@
+...............E................................2026-09-08 22:23:38.081507: E tensorflow/core/util/util.cc:131] oneDNN supports DT_INT64 only on platforms with AVX-512. Falling back to the default Eigen-based implementation if present.
+.s.s.........E...........................................................................E..........................................
+======================================================================
+ERROR: test_word_bn_affine (unittest.loader._FailedTest.test_word_bn_affine)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_word_bn_affine
+Traceback (most recent call last):
+  File "C:\Users\rifqi\AppData\Roaming\uv\python\cpython-3.12.14-windows-x86_64-none\Lib\unittest\loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rifqi\AppData\Roaming\uv\python\cpython-3.12.14-windows-x86_64-none\Lib\unittest\loader.py", line 339, in _get_module_from_name
+    __import__(name)
+  File "C:\Users\rifqi\OneDrive\Documents\Github\brailleme\training\tests\test_word_bn_affine.py", line 12, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+
+
+======================================================================
+ERROR: test_word_loss (unittest.loader._FailedTest.test_word_loss)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_word_loss
+Traceback (most recent call last):
+  File "C:\Users\rifqi\AppData\Roaming\uv\python\cpython-3.12.14-windows-x86_64-none\Lib\unittest\loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rifqi\AppData\Roaming\uv\python\cpython-3.12.14-windows-x86_64-none\Lib\unittest\loader.py", line 339, in _get_module_from_name
+    __import__(name)
+  File "C:\Users\rifqi\OneDrive\Documents\Github\brailleme\training\tests\test_word_loss.py", line 11, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+
+
+======================================================================
+ERROR: test_word_selection (unittest.loader._FailedTest.test_word_selection)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_word_selection
+Traceback (most recent call last):
+  File "C:\Users\rifqi\AppData\Roaming\uv\python\cpython-3.12.14-windows-x86_64-none\Lib\unittest\loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rifqi\AppData\Roaming\uv\python\cpython-3.12.14-windows-x86_64-none\Lib\unittest\loader.py", line 339, in _get_module_from_name
+    __import__(name)
+  File "C:\Users\rifqi\OneDrive\Documents\Github\brailleme\training\tests\test_word_selection.py", line 12, in <module>
+    from word_select import grouped_calibration
+  File "C:\Users\rifqi\OneDrive\Documents\Github\brailleme\training\scripts\word_select.py", line 13, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+
+
+----------------------------------------------------------------------
+Ran 180 tests in 20.036s
+
+FAILED (errors=3, skipped=2)

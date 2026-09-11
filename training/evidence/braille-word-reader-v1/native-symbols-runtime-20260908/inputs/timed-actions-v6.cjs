@@ -1,0 +1,31 @@
+const fs = require('node:fs');
+const cp = require('node:child_process');
+const path = require('node:path');
+const base = 'C:/bm-symbols-apk-20260908/evidence';
+const timing = path.join(base, 'timing-600-v6');
+fs.mkdirSync(timing);
+const collector = JSON.parse(fs.readFileSync(path.join(base, 'runtime-600-v6-complete/metadata.json'), 'utf8'));
+const start = Date.parse(collector.startedUtc);
+const adb = 'C:/Users/rifqi/AppData/Local/Android/Sdk/platform-tools/adb.exe';
+const record = {collectorStartedUtc: collector.startedUtc, coordinatorStartedUtc: new Date().toISOString(), plannedCameraSampleSeconds: 110, plannedActionStartSeconds: 115, actionDurationSeconds: 480};
+const save = () => fs.writeFileSync(path.join(timing, 'timing.json'), JSON.stringify(record, null, 2));
+save();
+setTimeout(() => {
+  record.cameraSampleStartedUtc = new Date().toISOString();
+  const r = cp.spawnSync(adb, ['-s', 'emulator-5554', 'shell', 'dumpsys', 'media.camera'], {encoding:'utf8', windowsHide:true, timeout:5000});
+  fs.writeFileSync(path.join(timing, 'media-camera-initial-preview-end.txt'), r.stdout || '');
+  record.cameraSampleExitCode = r.status;
+  record.cameraSampleCompletedUtc = new Date().toISOString(); save();
+}, Math.max(0, start + 110000 - Date.now()));
+setTimeout(() => {
+  record.actionStartedUtc = new Date().toISOString();
+  record.actionStartSecondsFromCollector = (Date.now() - start) / 1000; save();
+  const args = ['-B','output/update-symbols-tracking-20260908/runtime-actions.py','--adb',adb,'--serial','emulator-5554','--component','com.brailleme.app/.MainActivity','--output',path.join(base,'actions-600-v6'),'--feed-manifest',path.join(base,'calibrated-feeds-v1/manifest.json'),'--feed-name','startup-multirow-context.png','--ui-dump-dex','/data/local/tmp/brailleme-ui-dump-v3.dex','--ui-dump-sha256','79e234d57492167293889ef7df22815d53caa2f376b8e1ccaf1da031f4dee30a','--duration','480','--interval','30','exercise'];
+  record.actionArgv = args; save();
+  const child = cp.spawn('C:/bm-envs/word-symbols-tensorflow/Scripts/python.exe', args, {cwd:process.cwd(),windowsHide:true,stdio:['ignore','pipe','pipe']});
+  const log = fs.createWriteStream(path.join(timing,'actions-console.log'));
+  child.stdout.on('data', b => {process.stdout.write(b);log.write(b);});
+  child.stderr.on('data', b => {process.stderr.write(b);log.write(b);});
+  child.on('error', error => {record.actionSpawnError = error.message;save();});
+  child.on('close', code => {record.actionExitCode=code;record.actionCompletedUtc=new Date().toISOString();save();log.end();process.exitCode=code===0?0:1;});
+}, Math.max(0, start + 115000 - Date.now()));

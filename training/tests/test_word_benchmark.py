@@ -25,7 +25,7 @@ class WordBenchmarkTests(unittest.TestCase):
         quality_reasons += ["", "", ""]
         one = word_output([1])
         raw_outputs = [one, one, one, np.zeros_like(one), one, word_output([1, 3])]
-        records = [{"expected": text} for text in ("A", "A", "A", "A", "A", "AC")]
+        records = [{"expected": text} for text in ("a", "a", "a", "a", "a", "ac")]
         predictions, rows = [], []
         for output, reason in zip(raw_outputs, quality_reasons):
             result = {"text": "", "reason": reason} if reason else decode(output)
@@ -45,7 +45,7 @@ class WordBenchmarkTests(unittest.TestCase):
 
     def test_reports_without_quality_rejection_are_unchanged(self):
         predictions = [word_output([1]), np.zeros_like(word_output([1]))]
-        records = [{"expected": "A"}, {"expected": "AB"}]
+        records = [{"expected": "a"}, {"expected": "ab"}]
         results = [decode(output) for output in predictions]
         rows = [{"predicted": result["text"], "rejection": result["reason"]} for result in results]
         self.assertEqual(summarize_public_words(predictions, records, None, rows), summarize(predictions, records))

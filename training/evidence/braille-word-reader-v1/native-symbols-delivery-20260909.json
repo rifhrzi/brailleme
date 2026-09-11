@@ -1,0 +1,193 @@
+{
+  "physicalCameraValidated": false,
+  "promotionScriptSha256": "e1c62e532f7c88963f7d8679be8f85dfba81b8ce6eacbc8eb3a5159468cf1667",
+  "createdUtc": "2026-09-08T17:48:12.0233212Z",
+  "previousDeliveryArchiveSha256": "5f84deef061ae25fd276bc85bb9a2028d926cb7455b3d8a5002d4df81a99d89d",
+  "sha256": "9afa6a1eb2983d0a92b4f1dcff3026f91d583bca02cda6d98cfaf91760a90259",
+  "installedApkProofSha256": "6db736203c1094503353c2e23ca678e49f715c02328bf46fb091178db5a7ed28",
+  "bytes": 133317765,
+  "integrityReport": "training/evidence/braille-word-reader-v1/native-symbols-runtime-20260908/inputs/apk-integrity-v6/report.json",
+  "integrityReportSha256": "e87e13534911ab88375b769573b9b7634a8a8e0688d9da8312b7294171295da2",
+  "limitations": [
+    "Internal Android Debug signature; not a production release.",
+    "Capital recognition and whole-word localization remain experimental; no successful recognition among nine terminal photos in this 600-second run.",
+    "All-status photo p95 is 2098 ms, exceeding the <=2000ms target. One of 10 Pindai attempts has no observed terminal result.",
+    "Tracking logs report no errors and observations retain one PID; this is not an exhaustive no-crash/no-ANR claim.",
+    "Whole-run 21.12 Hz surface composition includes paused result screens; initial preview rates are reported separately.",
+    "PSS grew 3682 KiB; sampled memory does not establish or exclude a leak.",
+    "Runtime archive is complete and hash-verified. Torch, offline TTS audio, TalkBack, complete rotation/alignment checks and physical-camera validation remain unverified.",
+    "Additional abc and 2026 feeds produced no photo results; rotation changed/restored settings but did not validate box alignment. No causal diagnosis of the missing acquisition is established."
+  ],
+  "installedApkProof": "training/evidence/braille-word-reader-v1/native-symbols-runtime-20260908/inputs/apk-integrity-v6/install.json",
+  "sourceApk": "C:\\bm-symbols-apk-20260908\\evidence\\apk-integrity-v6\\verified.apk",
+  "apk": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\output\\android\\BrailleMe-0.3.0-symbols-auto-frame-2026-09-09.apk",
+  "schemaVersion": 3,
+  "sha256File": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\output\\android\\BrailleMe-0.3.0-symbols-auto-frame-2026-09-09.apk.sha256",
+  "installedHashMatches": true,
+  "runtimeMeasurementsComplete": true,
+  "status": "experimental_validation_complete_targets_not_met",
+  "previousDeliveryArchive": "training/evidence/braille-word-reader-v1/native-symbols-runtime-20260908/inputs/replaced-delivery-v2/archive-index.json",
+  "updatedUtc": "2026-09-08T18:08:22.364411+00:00",
+  "runtimeMeasurementScope": "Initial-preview and 600-second emulator collection complete; additional bounded UI outcomes and remaining unvalidated cases are reported separately.",
+  "previousMetadata": "training/evidence/braille-word-reader-v1/native-symbols-runtime-20260908/inputs/apk-delivery-history-v6-before-labelled-feed-review.json",
+  "previousMetadataSha256": "ec86a803d2110c345ff9e5b0f1257d9ffc51c8cb15583494660a49a2ced4ce56",
+  "runtimeEvidence": {
+    "runtimeAnalysis": {
+      "path": "training/evidence/braille-word-reader-v1/native-symbols-runtime-20260908/inputs/runtime-600-analysis-v6.json",
+      "sha256": "44aab8efa6823340f990665c89a71e8bd2eafa71f051410ae5f40e557239be46"
+    },
+    "independentRuntimeReview": {
+      "path": "training/evidence/braille-word-reader-v1/native-symbols-runtime-20260908/inputs/runtime-600-independent-review-v6.json",
+      "sha256": "40a58e2cfa503a603ad52d86ad6ac9065faf1c8629650d71d0377ab839e25386"
+    },
+    "initialPreviewAnalysis": {
+      "path": "training/evidence/braille-word-reader-v1/native-symbols-runtime-20260908/inputs/initial-preview-analysis-v6.json",
+      "sha256": "c93bdd8bef2f2f7d30374464aa674be3af1daecf6ca026e64ac72d07553d39a5"
+    },
+    "backgroundActions": {
+      "path": "training/evidence/braille-word-reader-v1/native-symbols-runtime-20260908/inputs/actions-background-v6/summary.json",
+      "sha256": "8278a64f5196d1f0809ab566005aae3065d05aeb12a5619d2d88201781dc3fa5"
+    },
+    "coldStartActions": {
+      "path": "training/evidence/braille-word-reader-v1/native-symbols-runtime-20260908/inputs/actions-cold-complete-v6/summary.json",
+      "sha256": "ae0a7ba2feb262c7464a4868b84a7b97219b49874d9b04eebe363a9861a1054c"
+    },
+    "font200Actions": {
+      "path": "training/evidence/braille-word-reader-v1/native-symbols-runtime-20260908/inputs/actions-font200-v6/summary.json",
+      "sha256": "561714f10cfcf3388c79a0bd6ede264d1fac3eacffc90543360c9e4e6937a4af"
+    },
+    "runtimeHarnessTests": {
+      "path": "training/evidence/braille-word-reader-v1/native-symbols-runtime-20260908/inputs/runtime-actions-tests-v4/report.json",
+      "sha256": "7a94a806a416e32aa3f2a7848c863fcd30fe30257b0ea2d9865fc5176ef0f2f2"
+    },
+    "font200ScrollReview": {
+      "path": "training/evidence/braille-word-reader-v1/native-symbols-runtime-20260908/inputs/font200-ui-review-v6.json",
+      "sha256": "8798c53aa23a528011171058b76a8afb408b8dd97e2f8b9448c8496edde49bbd"
+    },
+    "labelledFeedAndOrientationReview": {
+      "path": "training/evidence/braille-word-reader-v1/native-symbols-runtime-20260908/inputs/labelled-feed-orientation-runtime-review-v6.json",
+      "sha256": "2375032b74ae0efa30782d536e08e63a4bf6128e8c52a2d5cd0def07188febb2"
+    }
+  },
+  "runtime600": {
+    "elapsedSeconds": 600,
+    "pid": 9064,
+    "observationsSamePid": 59,
+    "trackingReports": 41,
+    "trackingCompletedDeltaLowerBound": 1247,
+    "reportedTrackingErrors": 0,
+    "trackingObservedDeltaP95Ms": {
+      "greaterThan": 200,
+      "lessThanOrEqual": 400
+    },
+    "photoTerminalRecords": 9,
+    "photoStatuses": {
+      "success": 0,
+      "rejected": 9,
+      "error": 0
+    },
+    "photoNearestRankP95Ms": 2098,
+    "photoP95TargetMs": 2000,
+    "photoP95TargetMet": false,
+    "pindaiActionsSent": 10,
+    "pindaiUlangActionsSent": 9,
+    "missingTerminalOutcomeAttempts": 1,
+    "surfaceCompositionProxyHz": 21.12,
+    "surfaceHistoryGapsReported": 0,
+    "pssFirstKiB": 297263,
+    "pssLastKiB": 300945,
+    "pssPeakKiB": 328811,
+    "pssGrowthKiB": 3682
+  },
+  "initialPreview": {
+    "nativeOutputBuffersPerSecond": 29.752950738131673,
+    "nativeBufferDelta": 3267,
+    "nativeDeviceTimestampSpanSeconds": 109.804235175,
+    "surfaceCompositionProxyHz": 33.8055962678775,
+    "surfaceEnvelopeSeconds": [
+      5.469,
+      109.86
+    ],
+    "metricCaveat": "Emulator native output-buffer production and app surface presentations are separate metrics; neither establishes physical sensor FPS."
+  },
+  "boundedUiCases": {
+    "backgroundResume": "actions_completed_same_pid9064_scanner_visible",
+    "coldStart": "actions_completed_pid9064_stopped_new_pid16978_scanner_visible",
+    "font200": "bounded_result_scroll_and_rescan_passed_pid16978_ready_shutter_enabled_font_restored_1.0",
+    "remaining": [
+      "torch",
+      "rotation_box_alignment_and_landscape_control_reachability",
+      "offline_TTS_audio",
+      "TalkBack",
+      "physical_camera_and_embossed_paper"
+    ],
+    "lowercaseAbc": "one_searching_disabled_observation_no_shutter_action_then_host_screenshot_pull_timeout_8_seconds",
+    "numbers2026": "60_second_exercise_complete_four_searching_disabled_observations_no_shutter_action",
+    "orientation": "actual_display_rotation_0_1_0_same_pid4277_settings_restored_no_box_alignment_or_landscape_control_reachability_pass",
+    "noFurtherDeviceActionsPlannedForThisEvidenceSnapshot": true
+  },
+  "runtimeEvidenceCuration": "complete_hashes_verified",
+  "allAcceptanceTargetsMet": false,
+  "additionalColdBootTrackingSnapshots": {
+    "scope": "Separate emulator boots and feeds; cumulative snapshots, excluded from original600-second metrics.",
+    "abc": {
+      "pid": 4482,
+      "elapsedMs": 20026,
+      "completed": 42,
+      "meanMs": 455,
+      "maxMs": 826,
+      "errors": 0
+    },
+    "numbersExercise": {
+      "pid": 4277,
+      "elapsedMs": 90145,
+      "completed": 233,
+      "meanMs": 374,
+      "maxMs": 931,
+      "errors": 0
+    },
+    "numbersOrientation": {
+      "pid": 4277,
+      "elapsedMs": 170301,
+      "completed": 442,
+      "meanMs": 374,
+      "maxMs": 1196,
+      "errors": 0
+    }
+  },
+  "finalizedUtc": "2026-09-08T18:10:39.064697+00:00",
+  "runtimeArchive": {
+    "index": {
+      "file": "training/evidence/braille-word-reader-v1/native-symbols-runtime-20260908/index.json",
+      "sha256": "5dede540b1a9a78ac1b8584f3e33c200b06cd80a0a2640025b1666ebe27f10f6",
+      "bytes": 414315
+    },
+    "copiedFiles": 798,
+    "skippedFiles": 2,
+    "copiedBytes": 105979536,
+    "skippedBytes": 266629238,
+    "preserveEntireDirectory": true
+  },
+  "precedingDeliverySnapshot": {
+    "file": "training/evidence/braille-word-reader-v1/native-symbols-runtime-20260908/inputs/apk-delivery.json",
+    "sha256": "7ae32ce2b3ed637d6b119bb526bda944f8826cdc24d84c81427f9058ee7b5b74",
+    "bytes": 8202
+  },
+  "changeReport": "docs/testing/SYMBOLS-AUTO-FRAME-RESULTS-20260908.md",
+  "retentionCompanion": "training/checkpoints/retained-runtime-20260909.json",
+  "finalizationScriptSha256": "6c22eedfd585cf630e97b922cb2ddaf16f489767ffd6ffcf0213ea12c0ee625f",
+  "statusCorrection": {
+    "utc": "2026-09-08T18:11:52.265142+00:00",
+    "priorMetadata": {
+      "file": "output/update-symbols-tracking-20260908/native-symbols-delivery-20260909-before-status-correction-v1.json",
+      "sha256": "a926e4ad31027f7011a78adb2656e7e0fa8486dbb903d6cdfba1fb9f3152b4eb",
+      "bytes": 9131
+    },
+    "reason": "Replace stale pending-archive wording; no artifact, metric, accuracy or acceptance change.",
+    "script": {
+      "file": "output/update-symbols-tracking-20260908/correct-final-delivery-limitation-v2.py",
+      "sha256": "ea2f5d4b05c472ad4c85953aae5bad766a2c589a896d5aed554a7e84f175407a",
+      "bytes": 2738
+    }
+  }
+}

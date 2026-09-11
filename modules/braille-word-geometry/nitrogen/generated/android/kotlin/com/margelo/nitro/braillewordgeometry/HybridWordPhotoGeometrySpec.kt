@@ -12,6 +12,7 @@ import com.facebook.jni.HybridData
 import com.facebook.proguard.annotations.DoNotStrip
 import dalvik.annotation.optimization.FastNative
 import com.margelo.nitro.camera.HybridPhotoSpec
+import com.margelo.nitro.core.ArrayBuffer
 import com.margelo.nitro.core.HybridObject
 
 /**
@@ -27,12 +28,16 @@ import com.margelo.nitro.core.HybridObject
 )
 abstract class HybridWordPhotoGeometrySpec: HybridObject() {
   // Properties
-  
+
 
   // Methods
   @DoNotStrip
   @Keep
   abstract fun getGeometry(photo: com.margelo.nitro.camera.HybridPhotoSpec): PhotoGeometry
+
+  @DoNotStrip
+  @Keep
+  abstract fun resizePixels(buffer: ArrayBuffer, width: Double, height: Double, pixelFormat: String, androidBitmap: Boolean): WordPixelResult
 
   // Default implementation of `HybridObject.toString()`
   override fun toString(): String {

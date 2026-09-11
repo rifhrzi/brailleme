@@ -1,0 +1,81 @@
+{
+  "status": "unverified_candidate",
+  "source_checkpoint_sha256": "cce2432c0ddb8952c885dd58697589c285209588dafa81aacdd891b1660068b7",
+  "artifact_sha256": "406db0e55e8a5ba9e0d00fb22aadc24f19698219f375e4dcead9057cf3bf2230",
+  "artifact_bytes": 3259716,
+  "input_shape": [
+    1,
+    192,
+    480,
+    3
+  ],
+  "output_shape": [
+    1,
+    48,
+    120,
+    11
+  ],
+  "dtype": "<class 'numpy.float32'>",
+  "parity_samples": 405,
+  "parity_fixture_sha256": "05b51db63457743993e0702204b7abb8771e5bf4a12427b07a1d2b3f642eb2bf",
+  "training_backend_vs_tensorflow_max_abs": 2.7298927307128906e-05,
+  "tensorflow_vs_tflite_max_abs": 5.429983139038086e-05,
+  "decoded_text_parity": true,
+  "decoded_rejection_parity": true,
+  "parity_pass": true,
+  "native_preprocessing_parity_validated": false,
+  "physical_camera_validated": false,
+  "thresholds": {
+    "proposalScore": 0.25,
+    "acceptScore": 0.25,
+    "dotConfidence": 0.7,
+    "nmsIou": 0.25,
+    "minCellWidth": 0.008,
+    "minCellHeight": 0.06,
+    "edgeMargin": 0.008,
+    "maxRowDeviation": 0.55,
+    "maxGapRatio": 1.2,
+    "maxOverlapRatio": 0.5
+  },
+  "imageNormalization": {
+    "kind": "per_channel_standardize_grayscale",
+    "location": "inside_model_before_backbone_rescaling",
+    "variance": "population",
+    "stdFloor": 0.001,
+    "targetMean": 0.5,
+    "targetStd": 0.05,
+    "clip": [
+      0,
+      1
+    ],
+    "grayscale": "mean_of_standardized_channels",
+    "outputChannels": 3
+  },
+  "decoder_version": "six-dot-id-v3",
+  "training_backend_vs_tflite_max_abs": 4.553794860839844e-05,
+  "actual_lite_interpreter_version": "2.20.0",
+  "artifact_reused_without_reconversion": false,
+  "actual_execution_script_sha256": "fdaea2e145d73503eb23a64ed9b8c1c45ac227f144abebe3da9dc6cce2588357",
+  "operators": [
+    "ADD",
+    "CONCATENATION",
+    "CONV_2D",
+    "DELEGATE",
+    "DEPTHWISE_CONV_2D",
+    "LOGISTIC",
+    "MAXIMUM",
+    "MEAN",
+    "MINIMUM",
+    "MUL",
+    "RELU",
+    "RESHAPE",
+    "RSQRT",
+    "SQUARED_DIFFERENCE",
+    "STRIDED_SLICE",
+    "SUB",
+    "TILE"
+  ],
+  "builtins_only": true,
+  "actual_tflite_oracle_sha256": "2bc5acbbd19a150cfa89efe35e0d4db9a7704327adb2e871f3f6db74e4637ba8",
+  "all_three_backend_raw_and_effective_decisions_equal": true
+}

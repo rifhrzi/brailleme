@@ -1,0 +1,426 @@
+{
+  "schemaVersion": 1,
+  "createdAtUtc": "2026-09-08T17:06:00.998142+00:00",
+  "scope": "offline_pixel_alignment_of_one_emulator_screenshot_only",
+  "inputs": {
+    "feed": {
+      "path": "C:\\bm-symbols-apk-20260908\\evidence\\camera-word.png",
+      "sha256": "6743f2ca4e76a3274b7f8131f8b0858375fe52db0157c0ef670cc895355c9d4a",
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    "screenshot": {
+      "path": "C:\\bm-symbols-apk-20260908\\evidence\\actions-prepare-v2\\20260908T165746496942Z-prepare-02-e4898b.png",
+      "sha256": "99c56f4ae8ab6d3a47a32b29fd0110c55f04edc871a636c5917b1ad984b9302e",
+      "size": [
+        1080,
+        2400
+      ]
+    },
+    "source": {
+      "path": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\assets\\models\\braille-word-reader-v1\\native-word-fixture.png",
+      "sha256": "5115a112aad01432f4ebdfa22d8dcb686f1330075d5030bc5c039c154dc4d164",
+      "size": [
+        450,
+        257
+      ],
+      "exact_feed_placement": [
+        287,
+        383,
+        737,
+        640
+      ],
+      "placement_pixels_identical": true
+    }
+  },
+  "preview_rectangle_xywh": [
+    53.0,
+    548.0,
+    975.0,
+    975.0
+  ],
+  "preview_rectangle_origin": "Provided screenshot pixel bounds; not native camera transform metadata",
+  "method": {
+    "description": "Robust grayscale pixel alignment with six affine geometry parameters plus brightness gain/bias; bilinear sampling and matched Gaussian smoothing tolerate YUV/brightness differences.",
+    "pixel_coordinates": "Integer pixel-center indices; rectangle extent interpretation has approximately one-pixel edge uncertainty.",
+    "excludes": "No model output, expected text, ADB, emulator state, or app source is used to fit geometry."
+  },
+  "fit": {
+    "parameters": [
+      1.6932059035780787,
+      6.521615861806739e-05,
+      2.529798648427961e-05,
+      1.6932518122641826,
+      539.0344527366307,
+      817.4207473588733,
+      0.9821252232886691,
+      0.0018964655707315423
+    ],
+    "samples": 51333,
+    "converged": true,
+    "rmse_8bit": 0.7305965861534546,
+    "correlation": 0.9987329771310662,
+    "residual_p95_abs_8bit": 1.4958464771186608,
+    "source_blur_sigma": 0.45,
+    "screenshot_roi": [
+      542,
+      821,
+      1023,
+      1247
+    ],
+    "stride": 2
+  },
+  "sensitivity_fits": [
+    {
+      "parameters": [
+        1.693418260736414,
+        0.00015176302994043863,
+        3.300500663560509e-05,
+        1.6930120367491095,
+        538.9675825810555,
+        817.4761715869955,
+        0.9842572044242173,
+        0.0013058836362228805
+      ],
+      "samples": 51333,
+      "converged": true,
+      "rmse_8bit": 1.0908706750349562,
+      "correlation": 0.9972460982584556,
+      "residual_p95_abs_8bit": 2.3297405299437797,
+      "source_blur_sigma": 0.2,
+      "screenshot_roi": [
+        542,
+        821,
+        1023,
+        1247
+      ],
+      "stride": 2
+    },
+    {
+      "parameters": [
+        1.693107497752735,
+        4.596780475648175e-06,
+        4.484200876028984e-05,
+        1.6932099169525225,
+        539.0658604994414,
+        817.4196127966635,
+        0.985966558699306,
+        0.0007615596491931874
+      ],
+      "samples": 51333,
+      "converged": true,
+      "rmse_8bit": 0.47582068239998854,
+      "correlation": 0.9994434860699598,
+      "residual_p95_abs_8bit": 0.8742316601365198,
+      "source_blur_sigma": 0.7,
+      "screenshot_roi": [
+        542,
+        821,
+        1023,
+        1247
+      ],
+      "stride": 2
+    },
+    {
+      "parameters": [
+        1.6929772595281014,
+        0.00015858607034819589,
+        -6.196890304389865e-06,
+        1.6931638974304557,
+        539.0674490851818,
+        817.4398845092885,
+        0.9807650178013327,
+        0.002335131830372197
+      ],
+      "samples": 47765,
+      "converged": true,
+      "rmse_8bit": 0.7311280484070782,
+      "correlation": 0.9986516897200916,
+      "residual_p95_abs_8bit": 1.5058418929274244,
+      "source_blur_sigma": 0.45,
+      "screenshot_roi": [
+        550,
+        829,
+        1015,
+        1239
+      ],
+      "stride": 2
+    },
+    {
+      "parameters": [
+        1.6931957604886219,
+        -3.0150932632070196e-05,
+        8.86406551939027e-05,
+        1.6931984248496432,
+        539.04319369299,
+        817.4145177250596,
+        0.978919343502172,
+        0.0029888437096740102
+      ],
+      "samples": 25787,
+      "converged": true,
+      "rmse_8bit": 0.7952548835646748,
+      "correlation": 0.9985361894208983,
+      "residual_p95_abs_8bit": 1.6888718563652787,
+      "source_blur_sigma": 0.45,
+      "screenshot_roi": [
+        542,
+        821,
+        1023,
+        1034
+      ],
+      "stride": 2
+    },
+    {
+      "parameters": [
+        1.6932215179731547,
+        0.0002208280196673215,
+        -7.799981407046525e-05,
+        1.6929027814286595,
+        538.9999182097779,
+        817.5084293543749,
+        0.9845862399355025,
+        0.0011055797850614444
+      ],
+      "samples": 25787,
+      "converged": true,
+      "rmse_8bit": 0.6665220850745719,
+      "correlation": 0.9988168286147957,
+      "residual_p95_abs_8bit": 1.3081665473239639,
+      "source_blur_sigma": 0.45,
+      "screenshot_roi": [
+        542,
+        1034,
+        1023,
+        1247
+      ],
+      "stride": 2
+    },
+    {
+      "parameters": [
+        1.6933607444368313,
+        5.275406730601181e-05,
+        0.00022759919214869516,
+        1.6933396807012786,
+        539.0295256218592,
+        817.3942980184218,
+        0.9829163031986458,
+        0.0013580807643243144
+      ],
+      "samples": 25560,
+      "converged": true,
+      "rmse_8bit": 0.690527374983769,
+      "correlation": 0.9987374425861466,
+      "residual_p95_abs_8bit": 1.3672740381011472,
+      "source_blur_sigma": 0.45,
+      "screenshot_roi": [
+        542,
+        821,
+        782,
+        1247
+      ],
+      "stride": 2
+    },
+    {
+      "parameters": [
+        1.693176501230213,
+        5.228477424668105e-05,
+        2.1058665210858078e-05,
+        1.6931561812975278,
+        539.0411406985256,
+        817.4368974933932,
+        0.9699080314892774,
+        0.006161850313810601
+      ],
+      "samples": 25773,
+      "converged": true,
+      "rmse_8bit": 0.7404508419600621,
+      "correlation": 0.9979374817375787,
+      "residual_p95_abs_8bit": 1.5828808945190838,
+      "source_blur_sigma": 0.45,
+      "screenshot_roi": [
+        782,
+        821,
+        1023,
+        1247
+      ],
+      "stride": 2
+    }
+  ],
+  "feed_to_screenshot": {
+    "matrix": [
+      [
+        1.6932059035780787,
+        6.521615861806739e-05
+      ],
+      [
+        2.529798648427961e-05,
+        1.6932518122641826
+      ]
+    ],
+    "translation": [
+      53.05938062097135,
+      168.89804273957043
+    ],
+    "equation": "screenshot_xy = matrix @ feed_xy + translation"
+  },
+  "feed_to_preview": {
+    "matrix": [
+      [
+        1.6932059035780787,
+        6.521615861806739e-05
+      ],
+      [
+        2.529798648427961e-05,
+        1.6932518122641826
+      ]
+    ],
+    "translation": [
+      0.05938062097135344,
+      -379.1019572604296
+    ]
+  },
+  "observed_visible_feed_polygon": [
+    [
+      -0.04369336254654201,
+      223.88988785953583
+    ],
+    [
+      575.7870419902532,
+      223.88128467479115
+    ],
+    [
+      575.764863677316,
+      799.6964076819924
+    ],
+    [
+      -0.06587167548377183,
+      799.705010866737
+    ]
+  ],
+  "estimated_visible_feed_center": [
+    287.8605851573847,
+    511.79314777076405
+  ],
+  "sensitivity": {
+    "note": "Empirical variation across blur and spatial subsets, not a statistical confidence interval. Add at least one screenshot pixel for preview-edge uncertainty.",
+    "matrix_min": [
+      [
+        1.6929772595281014,
+        -3.0150932632070196e-05
+      ],
+      [
+        -7.799981407046525e-05,
+        1.6929027814286595
+      ]
+    ],
+    "matrix_max": [
+      [
+        1.693418260736414,
+        0.0002208280196673215
+      ],
+      [
+        0.00022759919214869516,
+        1.6933396807012786
+      ]
+    ],
+    "translation_min": [
+      52.89841650923745,
+      168.7798793416854
+    ],
+    "translation_max": [
+      53.14224807748434,
+      169.1490500138366
+    ],
+    "visible_corner_min": [
+      [
+        -0.09317254730748568,
+        223.7877766361221
+      ],
+      [
+        575.7623742928434,
+        223.81430756057938
+      ],
+      [
+        575.7442941949234,
+        799.6559090429408
+      ],
+      [
+        -0.1471136138267965,
+        799.705010866737
+      ]
+    ],
+    "visible_corner_max": [
+      [
+        0.03992721387941396,
+        223.9480528069031
+      ],
+      [
+        575.8194068291991,
+        223.88128467479115
+      ],
+      [
+        575.7849011224492,
+        799.7481443036529
+      ],
+      [
+        -0.011684267033395115,
+        799.7332984930033
+      ]
+    ]
+  },
+  "proposed_calibration_composition": {
+    "canvas_size": [
+      1024,
+      1024
+    ],
+    "background_rgb": [
+      83,
+      83,
+      83
+    ],
+    "source": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\assets\\models\\braille-word-reader-v1\\native-word-fixture.png",
+    "source_sha256": "5115a112aad01432f4ebdfa22d8dcb686f1330075d5030bc5c039c154dc4d164",
+    "source_size": [
+      450,
+      257
+    ],
+    "scale": 1,
+    "placement": [
+      62,
+      383,
+      512,
+      640
+    ],
+    "source_pixels_cropped": false,
+    "rule": "Place the unchanged full source at floor(inverse-affine preview center minus half source size). Freeze this geometry before any prediction.",
+    "predicted_screenshot_corners": [
+      [
+        158.06312443156295,
+        817.4150553119144
+      ],
+      [
+        920.0057810416984,
+        817.4264394058323
+      ],
+      [
+        920.0225415944633,
+        1252.5921551577273
+      ],
+      [
+        158.0798849843278,
+        1252.5807710638094
+      ]
+    ],
+    "new_file_created": false
+  },
+  "limitations": [
+    "Only one screenshot was fitted; mapping can change with camera mode, layout, feed size, or orientation.",
+    "The right source region is clipped in this screenshot; its position is an affine extrapolation.",
+    "This measurement does not identify whether the app, emulator feed, native camera, or preview layer caused the mapping.",
+    "Full source visibility is a geometry calibration only and is not model or physical-camera acceptance."
+  ],
+  "analysis_script_sha256": "b5218eec389abbcdc304d2665b31757dab1967c8acee67a04d62bc95bf21d2ce"
+}

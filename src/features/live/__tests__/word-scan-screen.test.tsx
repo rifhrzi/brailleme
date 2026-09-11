@@ -9,7 +9,8 @@ import {
 
 import type { WordPhotoPreviewProps } from '@/features/live/word-photo-camera';
 import WordScanScreen from '@/features/live/word-scan-screen';
-import { WORD_LATIN_MASKS } from '@/ml/word-model-contract';
+import { WORD_DECODER_VERSION, WORD_LATIN_MASKS } from '@/ml/word-model-contract';
+import { parseWordMasks } from '@/ml/word-symbols';
 import type { CameraPermissionPort, TtsPort } from '@/services';
 import type { TtsPlaybackListener } from '@/services/ports';
 import { resetAppPreferences, updateAppPreferences } from '@/storage';
@@ -36,15 +37,23 @@ function CameraHarness(props: WordPhotoPreviewProps) {
 function createSuccess(
   text: string,
   overrides: Partial<WordScanEvent> = {},
+  physicalMasks?: readonly number[],
 ): WordScanEvent {
-  const cells = [...text].map((letter, index) => ({
-    letter,
-    mask: WORD_LATIN_MASKS[letter.charCodeAt(0) - 65]!,
+  const masks = physicalMasks ?? (/^\d+$/.test(text)
+    ? [60, ...[...text].map((digit) => WORD_LATIN_MASKS['1234567890'.indexOf(digit)]!)]
+    : [...text].flatMap((letter) => [
+      ...(letter === letter.toUpperCase() ? [32] : []),
+      WORD_LATIN_MASKS[letter.toUpperCase().charCodeAt(0) - 65]!,
+    ]));
+  const parsed = parseWordMasks(masks);
+  if (parsed.status !== 'success' || parsed.text !== text) throw new Error('Invalid test token');
+  const cells = parsed.symbols.map((symbol, index) => ({
+    ...symbol,
     confidence: 0.98,
-    box: { x: 0.1 + index * 0.07, y: 0.4, width: 0.05, height: 0.15 },
+    box: { x: 0.1 + index * 0.03, y: 0.4, width: 0.025, height: 0.15 },
   }));
   return {
-    schemaVersion: 3,
+    schemaVersion: 4,
     sessionId: cameraProps.sessionId,
     captureId: 1,
     timestampMs: 1000,
@@ -53,7 +62,7 @@ function createSuccess(
     confidence: 0.98,
     cells,
     boxes: cells.map((cell) => cell.box),
-    decoderVersion: 'six-dot-word-v2',
+    decoderVersion: WORD_DECODER_VERSION,
     ...overrides,
   };
 }
@@ -99,6 +108,33 @@ async function setup(
 }
 
 describe('WordScanScreen', () => {
+  it('does not enter an endless capture when the camera handle disappears before the tap', async () => {
+    await setup();
+    await act(() => {
+      if (typeof cameraProps.cameraRef !== 'function') throw new Error('Expected callback camera ref');
+      cameraProps.cameraRef(null);
+    });
+    await fireEvent.press(screen.getByRole('button', { name: 'Pindai' }));
+    expect(capture).not.toHaveBeenCalled();
+    expect(screen.queryByText('Memproses foto')).toBeNull();
+    expect(screen.getByRole('button', { name: 'Pindai' })).toBeDisabled();
+  });
+
+  it('explains a startup failure and opens a fresh camera session on retry', async () => {
+    await setup();
+    const failedSession = cameraProps.sessionId;
+    await act(() => cameraProps.onEvent({
+      schemaVersion: 4, sessionId: failedSession, captureId: 0,
+      timestampMs: performance.now(), status: 'error', reason: 'capture_error',
+      cells: [], boxes: [], decoderVersion: WORD_DECODER_VERSION,
+    }));
+    expect(screen.getByText(/Kamera belum dapat dibuka/)).toBeOnTheScreen();
+    expect(screen.queryByText(/Foto belum dapat diproses/)).toBeNull();
+    await fireEvent.press(screen.getByRole('button', { name: 'Pindai ulang' }));
+    expect(cameraProps.sessionId).not.toBe(failedSession);
+    await fireEvent.press(screen.getByRole('button', { name: 'Pindai' }));
+    expect(capture).toHaveBeenCalledTimes(1);
+  });
   beforeEach(() => {
     capture.mockClear();
     resetAppPreferences();
@@ -112,7 +148,7 @@ describe('WordScanScreen', () => {
     const test = await setup();
     expect(capture).not.toHaveBeenCalled();
     expect(screen.queryByRole('button', { name: 'Tambah huruf' })).toBeNull();
-    await fireEvent.press(screen.getByRole('button', { name: 'Pindai kata' }));
+    await fireEvent.press(screen.getByRole('button', { name: 'Pindai' }));
     expect(capture).toHaveBeenCalledTimes(1);
     await act(() => cameraProps.onEvent(createSuccess('MAMA')));
     expect(screen.getByText('MAMA')).toBeOnTheScreen();
@@ -123,7 +159,7 @@ describe('WordScanScreen', () => {
     expect(test.tts.speak).toHaveBeenCalledWith('MAMA', { rate: 1, volume: 1 });
     await fireEvent.press(screen.getByRole('button', { name: 'Pindai ulang' }));
     expect(screen.queryByText('MAMA')).toBeNull();
-    await fireEvent.press(screen.getByRole('button', { name: 'Pindai kata' }));
+    await fireEvent.press(screen.getByRole('button', { name: 'Pindai' }));
     await act(() => cameraProps.onEvent(createSuccess('KAKAK')));
     expect(screen.getByText('KAKAK')).toBeOnTheScreen();
     expect(test.onWordDraftChange).toHaveBeenLastCalledWith(
@@ -131,9 +167,9 @@ describe('WordScanScreen', () => {
     );
   });
 
-  it('rejects stale and partial results and never enables speech for uncertain captures', async () => {
+  it.each(['low_confidence', 'ambiguous_symbol'] as const)('rejects stale and partial results and never enables speech for %s captures', async (reason) => {
     await setup();
-    await fireEvent.press(screen.getByRole('button', { name: 'Pindai kata' }));
+    await fireEvent.press(screen.getByRole('button', { name: 'Pindai' }));
     const stale = createSuccess('MAMA');
     await act(() =>
       cameraProps.onEvent({ ...stale, boxes: stale.boxes.slice(1) }),
@@ -141,22 +177,22 @@ describe('WordScanScreen', () => {
     expect(screen.queryByText('MAMA')).toBeNull();
     await act(() =>
       cameraProps.onEvent({
-        schemaVersion: 3,
+        schemaVersion: 4,
         sessionId: cameraProps.sessionId,
         captureId: 1,
         timestampMs: 1000,
         status: 'rejected',
-        reason: 'low_confidence',
+        reason,
         cells: [],
         boxes: [],
-        decoderVersion: 'test',
+        decoderVersion: WORD_DECODER_VERSION,
       }),
     );
     expect(screen.queryByRole('button', { name: 'Bacakan' })).toBeNull();
     await fireEvent.press(screen.getByRole('button', { name: 'Pindai ulang' }));
     await act(() => cameraProps.onEvent(stale));
     expect(screen.queryByText('MAMA')).toBeNull();
-    expect(screen.getByRole('button', { name: 'Pindai kata' })).toBeEnabled();
+    expect(screen.getByRole('button', { name: 'Pindai' })).toBeEnabled();
   });
 
   it('does not create the camera with denied permission and offers recovery', async () => {
@@ -178,7 +214,7 @@ describe('WordScanScreen', () => {
 
   it('clears the result and stops speech when the route loses focus', async () => {
     const test = await setup();
-    await fireEvent.press(screen.getByRole('button', { name: 'Pindai kata' }));
+    await fireEvent.press(screen.getByRole('button', { name: 'Pindai' }));
     const stale = createSuccess('A');
     await act(() => cameraProps.onEvent(stale));
     const router = jest.requireMock<{
@@ -203,7 +239,7 @@ describe('WordScanScreen', () => {
     try {
       const test = await setup();
       await fireEvent.press(
-        screen.getByRole('button', { name: 'Pindai kata' }),
+        screen.getByRole('button', { name: 'Pindai' }),
       );
       const abandoned = createSuccess('MAMA');
       await act(() => onAppState?.('background'));
@@ -227,7 +263,7 @@ describe('WordScanScreen', () => {
 
   it('disables reading when muted and allows it again after speech is stopped', async () => {
     const test = await setup();
-    await fireEvent.press(screen.getByRole('button', { name: 'Pindai kata' }));
+    await fireEvent.press(screen.getByRole('button', { name: 'Pindai' }));
     await act(() => cameraProps.onEvent(createSuccess('MAMA')));
     await fireEvent.press(screen.getByRole('button', { name: 'Bacakan' }));
     await act(() => updateAppPreferences({ muted: true }));
@@ -237,79 +273,37 @@ describe('WordScanScreen', () => {
     expect(test.tts.stop).toHaveBeenCalled();
   });
 
-  it('hides the width control after the shutter and restores the selected width on rescan', async () => {
+  it('shows tracking states without a slider and requires an explicit shutter', async () => {
     await setup();
-    const slider = () =>
-      screen.getByRole('adjustable', { name: 'Lebar bingkai' });
-    expect(cameraProps.guideAspectRatio).toBe(4);
-    expect(slider()).toHaveAccessibilityValue({
-      min: 1,
-      max: 8,
-      now: 4,
-      text: '50 persen lebar maksimum',
-    });
-    await fireEvent(slider(), 'valueChange', 6.35);
-    expect(cameraProps.guideAspectRatio).toBe(6.35);
-    const lateWidthChange = slider().props.onValueChange;
-    await fireEvent.press(screen.getByRole('button', { name: 'Pindai kata' }));
-    expect(
-      screen.queryByRole('adjustable', { name: 'Lebar bingkai' }),
-    ).toBeNull();
-    expect(screen.queryByText('Lebar bingkai')).toBeNull();
-    expect(
-      screen.queryByText('Sesuaikan bingkai agar hanya memuat satu kata utuh.'),
-    ).toBeNull();
-    expect(screen.queryByText('Pendek')).toBeNull();
-    expect(screen.queryByText('Panjang')).toBeNull();
-    await act(() => lateWidthChange(1));
-    expect(cameraProps.guideAspectRatio).toBe(6.35);
-    await act(() =>
-      cameraProps.onEvent({
-        schemaVersion: 3,
-        sessionId: cameraProps.sessionId,
-        captureId: 1,
-        timestampMs: 900,
-        status: 'processing',
-        cells: [],
-        boxes: [],
-        decoderVersion: 'six-dot-word-v2',
-      }),
-    );
-    expect(
-      screen.queryByRole('adjustable', { name: 'Lebar bingkai' }),
-    ).toBeNull();
-    await act(() => cameraProps.onEvent(createSuccess('MAMA')));
-    expect(
-      screen.queryByRole('adjustable', { name: 'Lebar bingkai' }),
-    ).toBeNull();
-    await fireEvent.press(screen.getByRole('button', { name: 'Pindai ulang' }));
-    expect(slider()).toBeEnabled();
-    expect(slider()).toHaveAccessibilityValue({ now: 6.35 });
-    expect(cameraProps.guideAspectRatio).toBe(6.35);
-    await fireEvent(slider(), 'valueChange', 1);
-    expect(cameraProps.guideAspectRatio).toBe(1);
+    expect(screen.queryByRole('adjustable')).toBeNull();
+    await act(() => cameraProps.onTracking('searching'));
+    await act(() => cameraProps.onAvailability(false, true));
+    expect(screen.getByText('Mencari Braille')).toBeOnTheScreen();
+    expect(screen.getByRole('button', { name: 'Pindai' })).toBeDisabled();
+    await act(() => cameraProps.onTracking('detected'));
+    expect(screen.getByText('Braille terdeteksi')).toBeOnTheScreen();
+    await act(() => cameraProps.onTracking('ready'));
+    await act(() => cameraProps.onAvailability(true, true));
+    expect(screen.getByText('Tahan kamera, lalu tekan Pindai')).toBeOnTheScreen();
+    expect(capture).not.toHaveBeenCalled();
+    await fireEvent.press(screen.getByRole('button', { name: 'Pindai' }));
+    expect(capture).toHaveBeenCalledTimes(1);
   });
 
-  it('supports accessible frame adjustment and clamps its range', async () => {
-    await setup();
-    const slider = () =>
-      screen.getByRole('adjustable', { name: 'Lebar bingkai' });
-    await fireEvent(slider(), 'accessibilityAction', {
-      nativeEvent: { actionName: 'increment' },
-    });
-    expect(cameraProps.guideAspectRatio).toBe(4.25);
-    await fireEvent(slider(), 'accessibilityAction', {
-      nativeEvent: { actionName: 'decrement' },
-    });
-    expect(cameraProps.guideAspectRatio).toBe(4);
-    await fireEvent(slider(), 'valueChange', 20);
-    expect(cameraProps.guideAspectRatio).toBe(8);
-    await fireEvent(slider(), 'valueChange', -2);
-    expect(cameraProps.guideAspectRatio).toBe(1);
-    await fireEvent(slider(), 'valueChange', Number.NaN);
-    expect(cameraProps.guideAspectRatio).toBe(1);
-  });
-
+  it.each([
+    ['abc', undefined], ['Abc', undefined], ['ABC', undefined], ['2026', undefined], ['001', undefined],
+    ['Baca?', [32, 3, 1, 9, 1, 38]], ['ABC!', [32, 32, 1, 3, 9, 22]], ['(001)', [54, 60, 26, 26, 1, 54]],
+  ] as const)(
+    'preserves %s in the result, draft, and speech request', async (text, masks) => {
+      const test = await setup();
+      await fireEvent.press(screen.getByRole('button', { name: 'Pindai' }));
+      await act(() => cameraProps.onEvent(createSuccess(text, {}, masks)));
+      expect(screen.getByText(text)).toBeOnTheScreen();
+      expect(test.onWordDraftChange).toHaveBeenLastCalledWith(expect.objectContaining({ letters: [...text] }));
+      await fireEvent.press(screen.getByRole('button', { name: 'Bacakan' }));
+      expect(test.tts.speak).toHaveBeenLastCalledWith(text, { rate: 1, volume: 1 });
+    },
+  );
   it.each(['background', 'blur'] as const)(
     'cancels queued TalkBack guidance on %s',
     async (exitKind) => {
@@ -323,10 +317,10 @@ describe('WordScanScreen', () => {
       });
       try {
         const test = await setup();
-        await fireEvent.press(screen.getByRole('button', { name: 'Pindai kata' }));
+        await fireEvent.press(screen.getByRole('button', { name: 'Pindai' }));
         await act(() =>
           cameraProps.onEvent({
-            schemaVersion: 3,
+            schemaVersion: 4,
             sessionId: cameraProps.sessionId,
             captureId: 1,
             timestampMs: 1000,
@@ -334,7 +328,7 @@ describe('WordScanScreen', () => {
             reason: 'dark',
             cells: [],
             boxes: [],
-            decoderVersion: 'test',
+            decoderVersion: WORD_DECODER_VERSION,
           }),
         );
         // The rejected guidance is throttled behind the initial camera hint.
@@ -371,7 +365,7 @@ describe('WordScanScreen', () => {
         return jest.fn();
       },
     });
-    await fireEvent.press(screen.getByRole('button', { name: 'Pindai kata' }));
+    await fireEvent.press(screen.getByRole('button', { name: 'Pindai' }));
     await act(() => cameraProps.onEvent(createSuccess('MAMA')));
     await fireEvent.press(screen.getByRole('button', { name: 'Bacakan' }));
     await act(() => onPlayback?.({ status: 'speaking', text: 'MAMA' }));
@@ -380,7 +374,7 @@ describe('WordScanScreen', () => {
     expect(screen.queryByRole('button', { name: 'Bacakan' })).toBeNull();
     await act(() => finishSpeech?.({ ok: true }));
     expect(screen.queryByRole('button', { name: 'Hentikan suara' })).toBeNull();
-    await fireEvent.press(screen.getByRole('button', { name: 'Pindai kata' }));
+    await fireEvent.press(screen.getByRole('button', { name: 'Pindai' }));
     await act(() => cameraProps.onEvent(createSuccess('KAKAK')));
     expect(screen.getByRole('button', { name: 'Bacakan' })).toBeEnabled();
     await fireEvent.press(screen.getByRole('button', { name: 'Bacakan' }));
@@ -395,7 +389,7 @@ describe('WordScanScreen', () => {
         message: 'Only network voice',
       })),
     });
-    await fireEvent.press(screen.getByRole('button', { name: 'Pindai kata' }));
+    await fireEvent.press(screen.getByRole('button', { name: 'Pindai' }));
     await act(() => cameraProps.onEvent(createSuccess('A')));
     expect(screen.getByRole('button', { name: 'Bacakan' })).toBeDisabled();
     await fireEvent.press(screen.getByRole('button', { name: 'Bacakan' }));

@@ -1,0 +1,125 @@
+{
+  "schemaVersion": 1,
+  "executedAt": "2026-09-08T17:15:12.409Z",
+  "nodeVersion": "v22.23.2",
+  "status": "reproduced",
+  "observations": {
+    "firstRuntimeType": "function",
+    "firstRuntimeResult": 42,
+    "firstRuntimeEnumerableKeys": [],
+    "secondRuntimeType": "object",
+    "secondRuntimeEnumerableKeys": [],
+    "secondRuntimeErrorName": "TypeError"
+  },
+  "limitation": "Source-level Node reproduction with the native serialization factory stubbed. This is not a native camera or APK success test.",
+  "interpretation": "The first worker binds the helper without enumerable worklet metadata. The installed worker-to-worker serializer converts that callable to an empty object, so the second runtime cannot call it.",
+  "fix": "Keep admitted processing on the dedicated VisionCamera frame thread; avoid the second runtime transfer. Share interpreter ownership atomically across sessions and guard lease admission against unmount.",
+  "sources": [
+    {
+      "path": "node_modules/react-native-worklets/src/memory/valueUnpacker.native.ts",
+      "sha256": "d852241cfb39e1159109a39113b92b5dbbb3d51dd9cc9d50add07c82f06484c0",
+      "excerpts": [
+        {
+          "line": 52,
+          "text": "const functionInstance = workletFun!.bind(objectToUnpack);"
+        },
+        {
+          "line": 54,
+          "text": "return functionInstance;"
+        }
+      ]
+    },
+    {
+      "path": "node_modules/react-native-worklets/src/memory/serializable.native.ts",
+      "sha256": "a47d3e568e16b778f723006f2883c9c594c5279dab26b843f89aaac3c532c70c",
+      "excerpts": [
+        {
+          "line": 704,
+          "text": "function makeShareableCloneOnUIRecursiveLEGACY<TValue>("
+        },
+        {
+          "line": 355,
+          "text": "for (const [key, element] of Object.entries(value)) {"
+        },
+        {
+          "line": 821,
+          "text": "return globalThis.__workletsModuleProxy.createSerializableLEGACY("
+        }
+      ]
+    },
+    {
+      "path": "node_modules/react-native-worklets/Common/cpp/worklets/SharedItems/Serializable.cpp",
+      "sha256": "430f8e2d2f050c2ba50c23a02f7ce3766fdb09e60874b41c5029ae3e75ac754e",
+      "excerpts": [
+        {
+          "line": 36,
+          "text": "if (!object.getProperty(rt, \"__workletHash\").isUndefined()) {"
+        },
+        {
+          "line": 70,
+          "text": "serializable = std::make_shared<SerializableObject>(rt, object, nativeStateSource);"
+        }
+      ]
+    },
+    {
+      "path": "node_modules/react-native-vision-camera-worklets/src/createAsyncRunner.ts",
+      "sha256": "a964e68186f4f87346536ba53e4bae7b2cbf8dba7e4ce021fd22a252d1063ffc",
+      "excerpts": [
+        {
+          "line": 50,
+          "text": "scheduleOnRuntime(workletRuntime, () => {"
+        },
+        {
+          "line": 52,
+          "text": "task()"
+        }
+      ]
+    },
+    {
+      "path": "node_modules/react-native-vision-camera/android/src/main/java/com/margelo/nitro/camera/hybrids/outputs/HybridFrameOutput.kt",
+      "sha256": "bfc37b8fe6a70e2f167aaec2a556d3ccbaf86153f7739635fbad252349343578",
+      "excerpts": [
+        {
+          "line": 29,
+          "text": "private val executor = IdentifiableExecutor(\"com.margelo.camera.frame\")"
+        },
+        {
+          "line": 117,
+          "text": "imageAnalysis.setAnalyzer(executor) { image ->"
+        }
+      ]
+    },
+    {
+      "path": "node_modules/react-native-vision-camera/android/src/main/java/com/margelo/nitro/camera/extensions/ImageAnalysisBuilder+setAllowDroppingLateFrames.kt",
+      "sha256": "bafbe7493702b947e0fcb32f2530311b719c483673f6c14e81fa425c2fe30b0b",
+      "excerpts": [
+        {
+          "line": 8,
+          "text": "return this.setBackpressureStrategy(ImageAnalysis.STRATEGY_KEEP_ONLY_LATEST)"
+        }
+      ]
+    },
+    {
+      "path": "src/features/live/use-word-camera-tracking.ts",
+      "sha256": "4ada25f7ed2895c2cdef005695a5c8e2bd1b0c34a47c6690b91e31252bfb3691",
+      "excerpts": [
+        {
+          "line": 77,
+          "text": "const modelBusyFlags = new WeakMap<TensorflowModel, Synchronizable<boolean>>();"
+        },
+        {
+          "line": 162,
+          "text": "busy.lock();"
+        },
+        {
+          "line": 335,
+          "text": "modelBusy.lock();"
+        },
+        {
+          "line": 351,
+          "text": "const result = detectWordImageCells(source, model, thresholds, context, pixelProcessor);"
+        }
+      ]
+    }
+  ]
+}

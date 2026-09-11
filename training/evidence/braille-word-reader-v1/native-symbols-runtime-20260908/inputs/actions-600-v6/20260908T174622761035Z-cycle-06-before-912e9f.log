@@ -1,0 +1,1098 @@
+--------- beginning of main
+         1788889491.216  9064  9223 D CXCP    : Configured androidx.camera.camera2.impl.UseCaseCameraRequestControlImpl@59c5853
+         1788889491.217  9064  9223 D CXCP    : UseCaseCameraRequestControlImpl#setParametersAsync: [DEFAULT] values = {CaptureRequest.Key(android.control.zoomRatio)=1.0}, optionPriority = OPTIONAL
+         1788889491.217  9064  9360 D CXCP    : PruningProcessingQueue: Pruning [RequestOpen(virtualCamera=VirtualCamera-4, sharedCameraIds=[], graphListener=GraphProcessor(cameraGraph: CameraGraph-4), isPrewarm=false, isForegroundObserver=androidx.camera.camera2.pipe.compat.Camera2CameraController$$ExternalSyntheticLambda1@9ad1590)]
+         1788889491.217  9064  9360 D CXCP    : PruningProcessingQueue: Processing RequestOpen(virtualCamera=VirtualCamera-4, sharedCameraIds=[], graphListener=GraphProcessor(cameraGraph: CameraGraph-4), isPrewarm=false, isForegroundObserver=androidx.camera.camera2.pipe.compat.Camera2CameraController$$ExternalSyntheticLambda1@9ad1590)
+         1788889491.217  9064  9360 D CXCP    : Camera2DeviceManagerImpl#processRequestOpen(CameraId-10)
+         1788889491.217  9064  9360 D CXCP    : Opening CameraId-10 with retries...
+         1788889491.217  9064  9360 I CXCP    : Opening CameraId-10
+         1788889491.217  9064  9223 D CXCP    : UseCaseCameraState#updateState: parameters = {CaptureRequest.Key(android.control.zoomRatio)=1.0}, internalParameters = {Metadata.Key(camerax.tag_bundle)=android.hardware.camera2.CaptureRequest.setTag.CX}, streams = null, template = RequestTemplate(value=1)
+         1788889491.218  9064  9223 D CXCP    : UseCaseCameraRequestControlImpl#setParametersAsync: [DEFAULT] values = {CaptureRequest.Key(android.control.aeExposureCompensation)=0}, optionPriority = OPTIONAL
+         1788889491.218  9064  9223 D CXCP    : UseCaseCameraState#updateState: parameters = {CaptureRequest.Key(android.control.aeExposureCompensation)=0, CaptureRequest.Key(android.control.zoomRatio)=1.0}, internalParameters = {Metadata.Key(camerax.tag_bundle)=android.hardware.camera2.CaptureRequest.setTag.CX}, streams = null, template = RequestTemplate(value=1)
+         1788889491.218  9064  9223 D CXCP    : UseCaseCameraRequestControlImpl#updateCamera2ConfigAsync
+         1788889491.218  9064  9223 D CXCP    : UseCaseCameraState#updateState: parameters = {CaptureRequest.Key(android.control.aeExposureCompensation)=0, CaptureRequest.Key(android.control.zoomRatio)=1.0}, internalParameters = {Metadata.Key(camerax.tag_bundle)=android.hardware.camera2.CaptureRequest.setTag.CX}, streams = null, template = RequestTemplate(value=1)
+         1788889491.218  9064  9223 D CXCP    : UseCaseCameraRequestControlImpl: Building SessionConfig...
+         1788889491.219  9064  9223 D CXCP    : UseCaseCameraRequestControlImpl: SessionConfig built. Updating state...
+         1788889491.219  9064  9223 D CXCP    : UseCaseCameraRequestControlImpl: State update processing.
+         1788889491.219  9064  9223 D CXCP    : UseCaseCameraState#updateState: parameters = {CaptureRequest.Key(android.control.aeExposureCompensation)=0, CaptureRequest.Key(android.control.zoomRatio)=1.0}, internalParameters = {Metadata.Key(camerax.tag_bundle)=android.hardware.camera2.CaptureRequest.setTag.CX}, streams = [Stream-10], template = RequestTemplate(value=1)
+         1788889491.219  9064  9223 D CXCP    : Update RepeatingRequest: Request(streams=[Stream-10], template=RequestTemplate(value=1))@ff28e8e
+         1788889491.219  9064  9223 D CXCP    : State3AControl.getFinalPreferredAeMode: preferAeMode = 1
+         1788889491.219  9064  9223 D CXCP    : UseCaseCameraRequestControlImpl#setParametersAsync: [DEFAULT] values = {CaptureRequest.Key(android.control.aeMode)=1, CaptureRequest.Key(android.control.afMode)=1, CaptureRequest.Key(android.control.awbMode)=1}, optionPriority = OPTIONAL
+         1788889491.219  9064  9223 D CXCP    : UseCaseCameraState#updateState: parameters = {CaptureRequest.Key(android.control.aeExposureCompensation)=0, CaptureRequest.Key(android.control.aeMode)=1, CaptureRequest.Key(android.control.afMode)=1, CaptureRequest.Key(android.control.awbMode)=1, CaptureRequest.Key(android.control.zoomRatio)=1.0}, internalParameters = {Metadata.Key(camerax.tag_bundle)=android.hardware.camera2.CaptureRequest.setTag.CX}, streams = null, template = RequestTemplate(value=1)
+         1788889491.219  9064  9223 D CXCP    : Update RepeatingRequest: Request(streams=[Stream-10], template=RequestTemplate(value=1))@18a26af
+         1788889491.219  9064  9223 D CXCP    : UseCaseCameraState: Updating 3A modes: AE(AeMode(value=1), changed=true), AF(AfMode(value=1), changed=true), AWB(AwbMode(value=1), changed=true)
+         1788889491.219  9064  9223 D CXCP    : Controller3A#update3A: cancelling previous request null
+         1788889491.219  9064  9223 D CXCP    : UseCaseCameraRequestControlImpl#updateCamera2ConfigAsync
+         1788889491.220  9064  9223 D CXCP    : UseCaseCameraState#updateState: parameters = {CaptureRequest.Key(android.control.aeExposureCompensation)=0, CaptureRequest.Key(android.control.aeMode)=1, CaptureRequest.Key(android.control.afMode)=1, CaptureRequest.Key(android.control.awbMode)=1, CaptureRequest.Key(android.control.zoomRatio)=1.0}, internalParameters = {Metadata.Key(camerax.tag_bundle)=android.hardware.camera2.CaptureRequest.setTag.CX}, streams = null, template = RequestTemplate(value=1)
+         1788889491.220  9064  9223 D CXCP    : Update RepeatingRequest: Request(streams=[Stream-10], template=RequestTemplate(value=1))@9f5fabc
+         1788889491.220  9064  9223 D CXCP    : Configured Surface(name=android.graphics.SurfaceTexture@1e3a8db mNativeObject=127947648203856)/@0xe661651 for Stream-10
+         1788889491.220  9064  9223 I CXCP    : Configured Stream-10 with Surface(name=android.graphics.SurfaceTexture@1e3a8db mNativeObject=127947648203856)/@0xe661651
+         1788889491.220  9064  9223 D CXCP    : SurfaceActive androidx.camera.core.SurfaceRequest$2@4d23f30 in androidx.camera.camera2.impl.UseCaseSurfaceManager@f8606a8
+         1788889491.220  9064  9223 D DeferrableSurface: use count+1, useCount=3 androidx.camera.core.SurfaceRequest$2@4d23f30
+         1788889491.220  9064  9223 D CXCP    : Configured Surface(name=null mNativeObject=127947648103328)/@0x58d059a for Stream-11
+         1788889491.220  9064  9223 I CXCP    : Configured Stream-11 with Surface(name=null mNativeObject=127947648103328)/@0x58d059a
+         1788889491.220  9064  9223 D CXCP    : SurfaceActive androidx.camera.core.impl.ImmediateSurface@6a1d22c in androidx.camera.camera2.impl.UseCaseSurfaceManager@f8606a8
+         1788889491.220  9064  9223 D DeferrableSurface: use count+1, useCount=2 androidx.camera.core.impl.ImmediateSurface@6a1d22c
+         1788889491.220  9064  9223 D CXCP    : Configured Surface(name=null mNativeObject=127947648109920)/@0x3dc7ecb for Stream-12
+         1788889491.220  9064  9223 I CXCP    : Configured Stream-12 with Surface(name=null mNativeObject=127947648109920)/@0x3dc7ecb
+         1788889491.220  9064  9223 D CXCP    : SurfaceActive androidx.camera.core.impl.ImmediateSurface@d4210fb in androidx.camera.camera2.impl.UseCaseSurfaceManager@f8606a8
+         1788889491.220  9064  9223 D DeferrableSurface: use count+1, useCount=2 androidx.camera.core.impl.ImmediateSurface@d4210fb
+         1788889491.220  9064  9223 I CXCP    : Surface setup complete
+         1788889491.220  9064  9223 D DeferrableSurface: use count-1,  useCount=2 closed=false androidx.camera.core.SurfaceRequest$2@4d23f30
+         1788889491.220  9064  9223 D DeferrableSurface: use count-1,  useCount=1 closed=false androidx.camera.core.impl.ImmediateSurface@6a1d22c
+         1788889491.220  9064  9223 D DeferrableSurface: use count-1,  useCount=1 closed=false androidx.camera.core.impl.ImmediateSurface@d4210fb
+         1788889491.231  9064  9375 D CXCP    : CameraId-10 has become available! Notifying listeners...
+         1788889491.238  9064  9363 I CXCP    : Unavailable camera 10 detected
+         1788889491.238  9064  9363 W CXCP    : Failed to query camera ID list: Invalid list returned: [CameraId-10].
+         1788889491.249  9064  9223 I CXCP    : Opened CameraId-10 in 31.735 ms
+         1788889491.251  9064  9359 I CXCP    : Camera open completed: OpenCameraResult(cameraState=CameraState-3, errorCode=null)
+         1788889491.251  9064  9223 D CXCP    : UseCaseCameraRequestControlImpl: Building SessionConfig...
+         1788889491.251  9064  9223 D CXCP    : UseCaseCameraRequestControlImpl: SessionConfig built. Updating state...
+         1788889491.251  9064  9223 D CXCP    : UseCaseCameraRequestControlImpl: State update processing.
+         1788889491.252  9064  9223 D CXCP    : UseCaseCameraState#updateState: parameters = {CaptureRequest.Key(android.control.aeExposureCompensation)=0, CaptureRequest.Key(android.control.aeMode)=1, CaptureRequest.Key(android.control.afMode)=1, CaptureRequest.Key(android.control.awbMode)=1, CaptureRequest.Key(android.control.zoomRatio)=1.0}, internalParameters = {Metadata.Key(camerax.tag_bundle)=android.hardware.camera2.CaptureRequest.setTag.CX}, streams = [Stream-10, Stream-12], template = RequestTemplate(value=1)
+         1788889491.252  9064  9223 D CXCP    : Update RepeatingRequest: Request(streams=[Stream-10, Stream-12], template=RequestTemplate(value=1))@43902c0
+         1788889491.252  9064  9360 I CXCP    : PruningCameraDeviceManager: CameraId-10 opened successfully
+         1788889491.253  9064 11296 D CCodecBufferChannel: [c2.android.vorbis.decoder#527] MediaCodec discarded an unknown buffer
+         1788889491.253  9064 11296 D CCodecBufferChannel: [c2.android.vorbis.decoder#527] MediaCodec discarded an unknown buffer
+         1788889491.253  9064 11296 D CCodecBufferChannel: [c2.android.vorbis.decoder#527] MediaCodec discarded an unknown buffer
+         1788889491.253  9064  9360 I CXCP    : Creating CameraCaptureSession from CameraId-10 using CaptureSessionState-4 with: 
+         1788889491.253  9064  9360 I CXCP    :  Stream-10 -> Surface(name=android.graphics.SurfaceTexture@1e3a8db mNativeObject=127947648203856)/@0xe661651
+         1788889491.253  9064  9360 I CXCP    :  Stream-11 -> Surface(name=null mNativeObject=127947648103328)/@0x58d059a
+         1788889491.253  9064  9360 I CXCP    :  Stream-12 -> Surface(name=null mNativeObject=127947648109920)/@0x3dc7ecb
+         1788889491.254  9064 11296 I hw-BpHwBinder: onLastStrongRef automatically unlinking death recipients
+         1788889491.283  9064  9360 D CXCP    : CXCP#createCaptureSession-10 - 29.873 ms
+         1788889491.283  9064  9223 D CXCP    : CaptureSessionState-4 Configured
+         1788889491.283  9064  9223 I CXCP    : Configured CaptureSessionState-4 in 30.317 ms
+         1788889491.283  9064  9223 D CXCP    : GraphProcessor(cameraGraph: CameraGraph-4) onGraphStarted
+         1788889491.283  9064  9223 D CXCP    : CameraGraph-4 state updated to GRAPH_STARTED
+         1788889491.284  9064  9223 D CXCP    : Updated current camera internal state: OPEN to CombinedCameraState(state=OPEN, error=null)
+         1788889491.284  9064  9358 D CXCP    : Building CaptureRequest for Request(streams=[Stream-10, Stream-12], template=RequestTemplate(value=1))@43902c0
+         1788889491.284  9064  9223 D CXCP    : CaptureSessionState-4 Ready
+         1788889491.284  9064  9064 I ActiveCameraSessionSingle: Camera #CameraId-10 State changed! Type: OPEN | Error: null
+         1788889491.284  9064  9358 D CXCP    : CXCP#createCaptureRequest-10 - 0.519 ms
+         1788889491.284  9064  9358 D CXCP    : GraphRequestProcessor-3 submitting Camera2CaptureSequence-14
+         1788889491.286  9064  9358 D CXCP    : CXCP#setRepeatingRequest-10 - 1.206 ms
+         1788889491.286  9064  9223 D CXCP    : CaptureSessionState-4 Active
+         1788889491.286  9064  9358 D CXCP    : GraphRequestProcessor-3 submitted Camera2CaptureSequence-14
+         1788889491.324  9064  9064 D StreamStateObserver: Update Preview stream state to STREAMING
+         1788889491.333  9064  9064 I HybridPreviewViewSpec: PreviewView started!
+         1788889493.013  9064  9068 I m.brailleme.app: Background concurrent mark compact GC freed 3270KB AllocSpace bytes, 20(5188KB) LOS objects, 46% free, 27MB/51MB, paused 1.302ms,1.292ms total 180.327ms
+         1788889495.457  9064  9068 I m.brailleme.app: Background concurrent mark compact GC freed 2982KB AllocSpace bytes, 44(17MB) LOS objects, 42% free, 32MB/56MB, paused 1.315ms,2.225ms total 237.508ms
+         1788889496.115  9064  9290 D BufferPoolAccessor2.0: evictor expired: 1, evicted: 0
+         1788889497.116  9064  9290 D BufferPoolAccessor2.0: bufferpool2 0x745dd2146e78 : 0(0 size) total buffers - 0(0 size) used buffers - 2/7 (recycle/alloc) - 5/74 (fetch/transfer)
+         1788889497.116  9064  9290 D BufferPoolAccessor2.0: evictor expired: 1, evicted: 1
+         1788889498.137  9064  9384 I m.brailleme.app: Waiting for a blocking GC Explicit
+         1788889498.171  9064  9068 I m.brailleme.app: Background concurrent mark compact GC freed 3326KB AllocSpace bytes, 53(21MB) LOS objects, 40% free, 34MB/58MB, paused 1.794ms,6.201ms total 249.485ms
+         1788889498.172  9064  9384 I m.brailleme.app: WaitForGcToComplete blocked Explicit on Background for 34.533ms
+         1788889498.437  9064  9064 W m.brailleme.app: Weak pointer dereference blocked for 16 milliseconds.
+         1788889498.437  9064  9076 W m.brailleme.app: Weak pointer dereference blocked for 16 milliseconds.
+         1788889498.510  9064  9384 I m.brailleme.app: Explicit concurrent mark compact GC freed 792KB AllocSpace bytes, 15(12MB) LOS objects, 49% free, 21MB/43MB, paused 36ms,1.349ms total 337.932ms
+         1788889498.510  9064  9068 I m.brailleme.app: WaitForGcToComplete blocked HeapTrim on Explicit for 311.804ms
+         1788889499.597  9064  9090 I HybridCameraPhotoOutputSpec: Capturing Photo in-memory...
+         1788889499.597  9064  9090 D ImageCapture: setFlashMode: flashMode = 2
+         1788889499.597  9064  9090 D CXCP    : setFlashAsync: flashMode = 2, requestControl = androidx.camera.camera2.impl.DeferredUseCaseCameraRequestControl@6352eeb
+         1788889499.607  9064  9223 D CXCP    : State3AControl.getFinalPreferredAeMode: preferAeMode = 1
+         1788889499.607  9064  9223 D CXCP    : UseCaseCameraRequestControlImpl#setParametersAsync: [DEFAULT] values = {CaptureRequest.Key(android.control.aeMode)=1, CaptureRequest.Key(android.control.afMode)=1, CaptureRequest.Key(android.control.awbMode)=1}, optionPriority = OPTIONAL
+         1788889499.607  9064  9223 D CXCP    : UseCaseCameraState#updateState: parameters = {CaptureRequest.Key(android.control.aeExposureCompensation)=0, CaptureRequest.Key(android.control.aeMode)=1, CaptureRequest.Key(android.control.afMode)=1, CaptureRequest.Key(android.control.awbMode)=1, CaptureRequest.Key(android.control.zoomRatio)=1.0}, internalParameters = {Metadata.Key(camerax.tag_bundle)=android.hardware.camera2.CaptureRequest.setTag.CX}, streams = null, template = RequestTemplate(value=1)
+         1788889499.607  9064  9223 D CXCP    : Update RepeatingRequest: Request(streams=[Stream-10, Stream-12], template=RequestTemplate(value=1))@62f3f4a
+         1788889499.611  9064  9361 D CXCP    : Building CaptureRequest for Request(streams=[Stream-10, Stream-12], template=RequestTemplate(value=1))@62f3f4a
+         1788889499.619  9064  9361 D CXCP    : CXCP#createCaptureRequest-10 - 1.074 ms
+         1788889499.619  9064  9361 D CXCP    : GraphRequestProcessor-3 submitting Camera2CaptureSequence-15
+         1788889499.620  9064  9361 D CXCP    : CXCP#setRepeatingRequest-10 - 0.344 ms
+         1788889499.620  9064  9361 D CXCP    : GraphRequestProcessor-3 submitted Camera2CaptureSequence-15
+         1788889499.630  9064  9064 D ImageCapture: takePictureInternal
+         1788889499.631  9064  9064 D TakePictureManagerImpl: Issue the next TakePictureRequest.
+         1788889499.631  9064  9064 D ProcessingRequest: ProcessingRequest: mRequestId = 2, mTagBundleKey = 218537736
+         1788889499.631  9064  9223 D CXCP    : StillCaptureRequestControl: submitting CaptureRequest(captureConfigs=[androidx.camera.core.impl.CaptureConfig@647887], captureMode=0, flashType=0, result=CompletableDeferredImpl{Active}@6eaa3b4) at androidx.camera.camera2.impl.DeferredUseCaseCameraRequestControl@6352eeb
+         1788889499.642  9064  9223 D CXCP    : FlashControl: Waiting for any ongoing update to be completed
+         1788889499.809  9064  9223 D CXCP    : awaitFlashModeUpdate: initialFlashMode = 2
+         1788889499.809  9064  9223 D CXCP    : StillCaptureRequestControl: Issuing single capture
+         1788889499.810  9064  9223 D CXCP    : UseCaseCameraRequestControlImpl#issueSingleCaptureAsync
+         1788889499.810  9064  9223 D CXCP    : UseCaseCameraRequestControl: Submitting still captures to capture pipeline
+         1788889499.810  9064  9223 D CXCP    : CapturePipeline#invokeCaptureTasks: tasks = [PRE_CAPTURE, MAIN_CAPTURE, POST_CAPTURE], captureMode = 0, flashMode = 2, flashType = 0
+         1788889499.810  9064  9223 D CXCP    : CapturePipeline#defaultNoFlashCapture
+         1788889499.810  9064  9223 D CXCP    : CapturePipeline#List<PipelineTask>.invoke: tasks = [PRE_CAPTURE, MAIN_CAPTURE, POST_CAPTURE]
+         1788889499.810  9064  9223 D CXCP    : CapturePipeline#List<PipelineTask>.invoke: starting PRE_CAPTURE
+         1788889499.811  9064  9223 D CXCP    : CapturePipeline#defaultNoFlashCapture: Locking 3A
+         1788889499.812  9064  9223 D CXCP    : lock3A - waiting for af to converge before locking them. Custom converge condition isSet=true.
+         1788889499.812  9064  9359 D CXCP    : Building CaptureRequest for Request(streams=[Stream-10, Stream-12], template=RequestTemplate(value=1))@62f3f4a
+         1788889499.812  9064  9223 D CXCP    : StillCaptureRequestControl: Waiting for deferred list from CaptureRequest(captureConfigs=[androidx.camera.core.impl.CaptureConfig@647887], captureMode=0, flashType=0, result=CompletableDeferredImpl{Active}@6eaa3b4)
+         1788889499.812  9064  9359 D CXCP    : CXCP#createCaptureRequest-10 - 0.357 ms
+         1788889499.813  9064  9359 D CXCP    : GraphRequestProcessor-3 submitting Camera2CaptureSequence-16
+         1788889499.814  9064  9359 D CXCP    : CXCP#setRepeatingRequest-10 - 0.786 ms
+         1788889499.814  9064  9359 D CXCP    : GraphRequestProcessor-3 submitted Camera2CaptureSequence-16
+         1788889500.014  9064  9363 D ConvergenceUtils: checkCaptureResult: AE =CONVERGED, AF =INACTIVE, AWB=CONVERGED, required3aModes = 7
+         1788889500.014  9064  9363 D ConvergenceUtils: checkCaptureResult: AE =CONVERGED, AF =INACTIVE, AWB=CONVERGED, required3aModes = 7
+         1788889500.042  9064  9363 D ConvergenceUtils: checkCaptureResult: AE =CONVERGED, AF =INACTIVE, AWB=CONVERGED, required3aModes = 7
+         1788889500.042  9064  9363 D ConvergenceUtils: checkCaptureResult: AE =CONVERGED, AF =INACTIVE, AWB=CONVERGED, required3aModes = 7
+         1788889500.082  9064  9363 D ConvergenceUtils: checkCaptureResult: AE =CONVERGED, AF =INACTIVE, AWB=CONVERGED, required3aModes = 7
+         1788889500.082  9064  9363 D ConvergenceUtils: checkCaptureResult: AE =CONVERGED, AF =INACTIVE, AWB=CONVERGED, required3aModes = 7
+         1788889500.111  9064  9363 D ConvergenceUtils: checkCaptureResult: AE =CONVERGED, AF =INACTIVE, AWB=CONVERGED, required3aModes = 7
+         1788889500.111  9064  9363 D ConvergenceUtils: checkCaptureResult: AE =CONVERGED, AF =INACTIVE, AWB=CONVERGED, required3aModes = 7
+         1788889500.145  9064  9363 D ConvergenceUtils: checkCaptureResult: AE =CONVERGED, AF =INACTIVE, AWB=CONVERGED, required3aModes = 7
+         1788889500.146  9064  9363 D ConvergenceUtils: checkCaptureResult: AE =CONVERGED, AF =INACTIVE, AWB=CONVERGED, required3aModes = 7
+         1788889500.182  9064  9363 D ConvergenceUtils: checkCaptureResult: AE =CONVERGED, AF =INACTIVE, AWB=CONVERGED, required3aModes = 7
+         1788889500.183  9064  9363 D ConvergenceUtils: checkCaptureResult: AE =CONVERGED, AF =INACTIVE, AWB=CONVERGED, required3aModes = 7
+         1788889500.214  9064  9363 D ConvergenceUtils: checkCaptureResult: AE =CONVERGED, AF =INACTIVE, AWB=CONVERGED, required3aModes = 7
+         1788889500.214  9064  9363 D ConvergenceUtils: checkCaptureResult: AE =CONVERGED, AF =INACTIVE, AWB=CONVERGED, required3aModes = 7
+         1788889500.247  9064  9363 D ConvergenceUtils: checkCaptureResult: AE =CONVERGED, AF =INACTIVE, AWB=CONVERGED, required3aModes = 7
+         1788889500.247  9064  9363 D ConvergenceUtils: checkCaptureResult: AE =CONVERGED, AF =INACTIVE, AWB=CONVERGED, required3aModes = 7
+         1788889500.278  9064  9363 D ConvergenceUtils: checkCaptureResult: AE =CONVERGED, AF =INACTIVE, AWB=CONVERGED, required3aModes = 7
+         1788889500.278  9064  9363 D ConvergenceUtils: checkCaptureResult: AE =CONVERGED, AF =INACTIVE, AWB=CONVERGED, required3aModes = 7
+         1788889500.323  9064  9363 D ConvergenceUtils: checkCaptureResult: AE =CONVERGED, AF =INACTIVE, AWB=CONVERGED, required3aModes = 7
+         1788889500.323  9064  9363 D ConvergenceUtils: checkCaptureResult: AE =CONVERGED, AF =INACTIVE, AWB=CONVERGED, required3aModes = 7
+         1788889500.373  9064  9363 D ConvergenceUtils: checkCaptureResult: AE =CONVERGED, AF =INACTIVE, AWB=CONVERGED, required3aModes = 7
+         1788889500.373  9064  9363 D ConvergenceUtils: checkCaptureResult: AE =CONVERGED, AF =INACTIVE, AWB=CONVERGED, required3aModes = 7
+         1788889500.384  9064  9363 D ConvergenceUtils: checkCaptureResult: AE =CONVERGED, AF =INACTIVE, AWB=CONVERGED, required3aModes = 7
+         1788889500.384  9064  9363 D ConvergenceUtils: checkCaptureResult: AE =CONVERGED, AF =INACTIVE, AWB=CONVERGED, required3aModes = 7
+         1788889500.417  9064  9363 D ConvergenceUtils: checkCaptureResult: AE =CONVERGED, AF =INACTIVE, AWB=CONVERGED, required3aModes = 7
+         1788889500.417  9064  9363 D ConvergenceUtils: checkCaptureResult: AE =CONVERGED, AF =INACTIVE, AWB=CONVERGED, required3aModes = 7
+         1788889500.473  9064  9363 D ConvergenceUtils: checkCaptureResult: AE =CONVERGED, AF =INACTIVE, AWB=CONVERGED, required3aModes = 7
+         1788889500.477  9064  9363 D ConvergenceUtils: checkCaptureResult: AE =CONVERGED, AF =INACTIVE, AWB=CONVERGED, required3aModes = 7
+         1788889500.488  9064  9363 D ConvergenceUtils: checkCaptureResult: AE =CONVERGED, AF =INACTIVE, AWB=CONVERGED, required3aModes = 7
+         1788889500.488  9064  9363 D ConvergenceUtils: checkCaptureResult: AE =CONVERGED, AF =INACTIVE, AWB=CONVERGED, required3aModes = 7
+         1788889500.510  9064  9363 D ConvergenceUtils: checkCaptureResult: AE =CONVERGED, AF =INACTIVE, AWB=CONVERGED, required3aModes = 7
+         1788889500.510  9064  9363 D ConvergenceUtils: checkCaptureResult: AE =CONVERGED, AF =INACTIVE, AWB=CONVERGED, required3aModes = 7
+         1788889500.547  9064  9363 D ConvergenceUtils: checkCaptureResult: AE =CONVERGED, AF =INACTIVE, AWB=CONVERGED, required3aModes = 7
+         1788889500.547  9064  9363 D ConvergenceUtils: checkCaptureResult: AE =CONVERGED, AF =INACTIVE, AWB=CONVERGED, required3aModes = 7
+         1788889500.587  9064  9363 D ConvergenceUtils: checkCaptureResult: AE =CONVERGED, AF =INACTIVE, AWB=CONVERGED, required3aModes = 7
+         1788889500.587  9064  9363 D ConvergenceUtils: checkCaptureResult: AE =CONVERGED, AF =INACTIVE, AWB=CONVERGED, required3aModes = 7
+         1788889500.613  9064  9363 D ConvergenceUtils: checkCaptureResult: AE =CONVERGED, AF =INACTIVE, AWB=CONVERGED, required3aModes = 7
+         1788889500.614  9064  9363 D ConvergenceUtils: checkCaptureResult: AE =CONVERGED, AF =INACTIVE, AWB=CONVERGED, required3aModes = 7
+         1788889500.651  9064  9363 D ConvergenceUtils: checkCaptureResult: AE =CONVERGED, AF =INACTIVE, AWB=CONVERGED, required3aModes = 7
+         1788889500.651  9064  9363 D ConvergenceUtils: checkCaptureResult: AE =CONVERGED, AF =INACTIVE, AWB=CONVERGED, required3aModes = 7
+         1788889500.680  9064  9363 D ConvergenceUtils: checkCaptureResult: AE =CONVERGED, AF =INACTIVE, AWB=CONVERGED, required3aModes = 7
+         1788889500.680  9064  9363 D ConvergenceUtils: checkCaptureResult: AE =CONVERGED, AF =INACTIVE, AWB=CONVERGED, required3aModes = 7
+         1788889500.710  9064  9363 D ConvergenceUtils: checkCaptureResult: AE =CONVERGED, AF =INACTIVE, AWB=CONVERGED, required3aModes = 7
+         1788889500.710  9064  9363 D ConvergenceUtils: checkCaptureResult: AE =CONVERGED, AF =INACTIVE, AWB=CONVERGED, required3aModes = 7
+         1788889500.745  9064  9363 D ConvergenceUtils: checkCaptureResult: AE =CONVERGED, AF =INACTIVE, AWB=CONVERGED, required3aModes = 7
+         1788889500.746  9064  9363 D ConvergenceUtils: checkCaptureResult: AE =CONVERGED, AF =INACTIVE, AWB=CONVERGED, required3aModes = 7
+         1788889500.778  9064  9363 D ConvergenceUtils: checkCaptureResult: AE =CONVERGED, AF =INACTIVE, AWB=CONVERGED, required3aModes = 7
+         1788889500.779  9064  9363 D ConvergenceUtils: checkCaptureResult: AE =CONVERGED, AF =INACTIVE, AWB=CONVERGED, required3aModes = 7
+         1788889500.814  9064  9363 D ConvergenceUtils: checkCaptureResult: AE =CONVERGED, AF =INACTIVE, AWB=CONVERGED, required3aModes = 7
+         1788889500.815  9064  9363 D ConvergenceUtils: checkCaptureResult: AE =CONVERGED, AF =INACTIVE, AWB=CONVERGED, required3aModes = 7
+         1788889500.847  9064  9363 D ConvergenceUtils: checkCaptureResult: AE =CONVERGED, AF =INACTIVE, AWB=CONVERGED, required3aModes = 7
+         1788889500.847  9064  9363 D ConvergenceUtils: checkCaptureResult: AE =CONVERGED, AF =INACTIVE, AWB=CONVERGED, required3aModes = 7
+         1788889500.886  9064  9363 D ConvergenceUtils: checkCaptureResult: AE =CONVERGED, AF =INACTIVE, AWB=CONVERGED, required3aModes = 7
+         1788889500.887  9064  9363 D ConvergenceUtils: checkCaptureResult: AE =CONVERGED, AF =INACTIVE, AWB=CONVERGED, required3aModes = 7
+         1788889500.913  9064  9363 D ConvergenceUtils: checkCaptureResult: AE =CONVERGED, AF =INACTIVE, AWB=CONVERGED, required3aModes = 7
+         1788889500.913  9064  9363 D ConvergenceUtils: checkCaptureResult: AE =CONVERGED, AF =INACTIVE, AWB=CONVERGED, required3aModes = 7
+         1788889500.951  9064  9363 D ConvergenceUtils: checkCaptureResult: AE =CONVERGED, AF =INACTIVE, AWB=CONVERGED, required3aModes = 7
+         1788889500.951  9064  9363 D ConvergenceUtils: checkCaptureResult: AE =CONVERGED, AF =INACTIVE, AWB=CONVERGED, required3aModes = 7
+         1788889501.018  9064  9363 D ConvergenceUtils: checkCaptureResult: AE =CONVERGED, AF =INACTIVE, AWB=CONVERGED, required3aModes = 7
+         1788889501.018  9064  9363 D ConvergenceUtils: checkCaptureResult: AE =CONVERGED, AF =INACTIVE, AWB=CONVERGED, required3aModes = 7
+         1788889501.052  9064  9223 D CXCP    : lock3A - converged at frame number=270, status=Status(value=2)
+         1788889501.052  9064  9223 D CXCP    : CapturePipeline#defaultNoFlashCapture: Locking 3A done
+         1788889501.052  9064  9223 D CXCP    : CapturePipeline#List<PipelineTask>.invoke: PRE_CAPTURE completed
+         1788889501.052  9064  9223 D CXCP    : CapturePipeline#List<PipelineTask>.invoke: starting MAIN_CAPTURE
+         1788889501.052  9064  9223 D CXCP    : CapturePipeline#submitRequestInternal; Submitting [androidx.camera.core.impl.CaptureConfig@647887] with CameraPipe
+         1788889501.053  9064  9223 D CXCP    : CapturePipeline#List<PipelineTask>.invoke: MAIN_CAPTURE completed
+         1788889501.053  9064  9223 D CXCP    : CapturePipeline#submitRequestInternal: Acquiring session for submitting requests
+         1788889501.053  9064  9223 D CXCP    : CapturePipeline#submitRequestInternal: Submitting [Request(streams=[Stream-11], template=RequestTemplate(value=2))@868980d]
+         1788889501.053  9064  9223 D CXCP    : CapturePipeline#List<PipelineTask>.invoke: Waiting for POST_CAPTURE signal
+         1788889501.054  9064  9360 D CXCP    : Building CaptureRequest for Request(streams=[Stream-11], template=RequestTemplate(value=2))@868980d
+         1788889501.056  9064  9360 D CXCP    : CXCP#createCaptureRequest-10 - 2.251 ms
+         1788889501.056  9064  9360 D CXCP    : GraphRequestProcessor-3 submitting Camera2CaptureSequence-17
+         1788889501.057  9064  9360 D CXCP    : CXCP#capture-10 - 0.266 ms
+         1788889501.057  9064  9360 D CXCP    : GraphRequestProcessor-3 submitted Camera2CaptureSequence-17
+         1788889501.068  9064  9223 D CXCP    : CaptureSessionState-4 CaptureQueueEmpty
+         1788889501.229  9064  9223 D CXCP    : StillCaptureRequestControl: Waiting for deferred list from CaptureRequest(captureConfigs=[androidx.camera.core.impl.CaptureConfig@647887], captureMode=0, flashType=0, result=CompletableDeferredImpl{Active}@6eaa3b4) done
+         1788889501.230  9064  9223 D CXCP    : CapturePipeline#List<PipelineTask>.invoke: Waiting for POST_CAPTURE signal done
+         1788889501.231  9064  9223 D CXCP    : CapturePipeline#defaultNoFlashCapture: Unlocking 3A
+         1788889501.231  9064  9223 D CXCP    : unlock3A - sending a request to unlock af first.
+         1788889501.232  9064  9358 D CXCP    : Building CaptureRequest for Request(streams=[Stream-10, Stream-12], template=RequestTemplate(value=1))@62f3f4a
+         1788889501.232  9064  9358 D CXCP    : CXCP#createCaptureRequest-10 - 0.199 ms
+         1788889501.233  9064  9358 D CXCP    : GraphRequestProcessor-3 submitting Camera2CaptureSequence-18
+         1788889501.233  9064  9358 D CXCP    : CXCP#capture-10 - 0.191 ms
+         1788889501.233  9064  9358 D CXCP    : GraphRequestProcessor-3 submitted Camera2CaptureSequence-18
+         1788889501.233  9064  9358 D CXCP    : Building CaptureRequest for Request(streams=[Stream-10, Stream-12], template=RequestTemplate(value=1))@62f3f4a
+         1788889501.233  9064  9358 D CXCP    : CXCP#createCaptureRequest-10 - 0.107 ms
+         1788889501.234  9064  9358 D CXCP    : GraphRequestProcessor-3 submitting Camera2CaptureSequence-19
+         1788889501.235  9064  9358 D CXCP    : CXCP#setRepeatingRequest-10 - 1.017 ms
+         1788889501.235  9064  9358 D CXCP    : GraphRequestProcessor-3 submitted Camera2CaptureSequence-19
+         1788889501.237  9064  9064 D ProcessingRequest: onCaptureStarted: request ID = 2
+         1788889501.239  9064  9064 D CaptureNode: OnImageAvailableListener: mCurrentRequest ID = 2, image.isNull = false
+         1788889501.239  9064  9064 I ProcessingRequest: onImageCaptured: request ID = 2
+         1788889501.239  9064  9064 D TakePictureManagerImpl: Issue the next TakePictureRequest.
+         1788889501.239  9064  9064 D TakePictureManagerImpl: No new request.
+         1788889501.240  9064 10414 D ProcessingNode: processInMemoryCapture: request ID = 2
+         1788889501.242  9064  9064 I ProcessingRequest: onFinalResult(ImageProxy): request ID = 2
+         1788889501.263  9064  9089 W HWUI    : Image decoding logging dropped!
+         1788889501.278  9064  9081 I ReactNativeJS: 'BRAILLE_WORD_CAPTURE_GEOMETRY', '{"schemaVersion":1,"captureId":1,"preview":{"widthDp":371.4285888671875,"heightDp":371.4285888671875,"resolution":{"width":1280,"height":960},"sensorPoints":[{"x":617.5745239257812,"y":111.13249969482422},{"x":617.5745239257812,"y":714.9627685546875},{"x":531.0852661132812,"y":714.9627685546875},{"x":531.0852661132812,"y":111.13249969482422}]},"photo":{"width":1280,"height":960,"sensorToBuffer":[1,0,0,0,1,0,0,0,1],"cropRect":[0,0,1280,960],"rotationDegrees":90,"isMirrored":false},"upright":{"width":960,"height":1280},"roi":{"x":0.2552471160888672,"y":0.41491036415100097,"width":0.628989863395691,"height":0.06756973266601562}}'
+         1788889501.296  9064  9081 I ReactNativeJS: 'BRAILLE_WORD_TRACKING_METRICS', '{"schemaVersion":1,"elapsedMs":9948,"received":114,"admitted":34,"busyDrops":0,"throttled":34,"disabledDrops":46,"runnerDrops":0,"completed":34,"errors":0,"meanMs":210,"maxMs":408,"latencyUpperBoundsMs":[50,100,200,400,800,1600,null],"latencyBuckets":[0,0,16,17,1,0,0]}'
+         1788889501.298  9064  9223 D CXCP    : CaptureSessionState-4 CaptureQueueEmpty
+         1788889501.300  9064  9064 I CustomLifecycle: Switching lifecycle state from RESUMED to CREATED...
+         1788889501.300  9064  9064 D CXCP    : Detaching [Preview:androidx.camera.core.Preview-80442fdc-c5b0-45b1-b17f-c5b6d8e9365a, ImageCapture:androidx.camera.core.ImageCapture-7d11dbbb-49ef-4611-9c00-493893346e95, ImageAnalysis:androidx.camera.core.ImageAnalysis-3814e789-a1cf-4387-a034-885ab222dcd1] from UseCaseManager<CameraGraphConfigProvider<CameraId-10>>
+         1788889501.300  9064  9064 W ScreenFlashWrapper: completePendingScreenFlashClear: none pending!
+         1788889501.300  9064  9064 D CXCP    : reset: videoUsage = 0
+         1788889501.300  9064  9064 D CXCP    : setFlashAsync: flashMode = 2, requestControl = null
+         1788889501.300  9064  9223 D CXCP    : UseCaseCameraRequestControl: closed
+         1788889501.300  9064  9064 D CXCP    : setFlashAsync: flashMode = 2, requestControl = null
+         1788889501.300  9064  9223 D CXCP    : Closing UseCaseCamera-4
+         1788889501.300  9064  9223 I CXCP    : Closing CameraGraph-4
+         1788889501.300  9064  9064 D CXCP    : LowLightBoostControl#setLowLightBoostAsync: lowLightBoost = false
+         1788889501.301  9064  9223 D CXCP    : Closed Camera2CameraController(CameraGraph-4)
+         1788889501.301  9064  9361 D CXCP    : Closing GraphRequestProcessor-3
+         1788889501.302  9064  9361 D CXCP    : Closing GraphRequestProcessor-3
+         1788889501.302  9064  9361 D CXCP    : GraphProcessor(cameraGraph: CameraGraph-4) onGraphStopping
+         1788889501.302  9064  9361 D CXCP    : CameraGraph-4 state updated to GRAPH_STOPPING
+         1788889501.303  9064  9361 W CXCP    : Impermissible state transition: current camera internal state: CLOSED, received graph state: GRAPH_STOPPING
+         1788889501.303  9064  9361 D CXCP    : CaptureSessionState-4 Shutdown
+         1788889501.303  9064  9064 I ActiveCameraSessionSingle: Camera #CameraId-10 State changed! Type: CLOSED | Error: null
+         1788889501.303  9064  9223 D CXCP    : CapturePipeline#defaultNoFlashCapture: Unlocking 3A done
+         1788889501.303  9064  9366 D CXCP    : Camera2CaptureSequenceProcessor-3#stopRepeating
+         1788889501.306  9064  9366 D CXCP    : CXCP#stopRepeating-10 - 2.833 ms
+         1788889501.306  9064  9366 D CXCP    : Camera2CaptureSequenceProcessor-3#abortCaptures
+         1788889501.312  9064  9064 D StreamStateObserver: Update Preview stream state to IDLE
+         1788889501.312  9064  9064 I HybridPreviewViewSpec: PreviewView stopped!
+         1788889501.363  9064  9366 D CXCP    : CXCP#abortCaptures-10 - 52.438 ms
+         1788889501.365  9064  9223 D CXCP    : CaptureSessionState-4 Ready
+         1788889501.379  9064  9373 D CXCP    : Closing capture session for CaptureSessionState-4
+         1788889501.380  9064  9223 D CXCP    : CaptureSessionState-4 Closed
+         1788889501.380  9064  9361 D CXCP    : GraphProcessor(cameraGraph: CameraGraph-4) onGraphStopped
+         1788889501.380  9064  9223 D CXCP    : CaptureSessionState-4 session finalizing
+         1788889501.380  9064  9361 D CXCP    : CameraGraph-4 state updated to GRAPH_STOPPED
+         1788889501.380  9064  9361 W CXCP    : Impermissible state transition: current camera internal state: CLOSED, received graph state: GRAPH_STOPPED
+         1788889501.380  9064  9223 D CXCP    : Finalizing CaptureSessionState-4
+         1788889501.380  9064  9361 D CXCP    : Disconnecting VirtualCamera-4
+         1788889501.380  9064  9361 D CXCP    : Camera2CameraController(CameraGraph-4) is closed
+         1788889501.380  9064  9361 D CXCP    : Camera2CameraController(CameraGraph-4) finalized
+         1788889501.380  9064  9223 D CXCP    : SurfaceInactive androidx.camera.core.SurfaceRequest$2@4d23f30 in androidx.camera.camera2.impl.UseCaseSurfaceManager@f8606a8
+         1788889501.381  9064  9223 D DeferrableSurface: use count-1,  useCount=1 closed=false androidx.camera.core.SurfaceRequest$2@4d23f30
+         1788889501.381  9064  9223 D CXCP    : SurfaceInactive androidx.camera.core.impl.ImmediateSurface@6a1d22c in androidx.camera.camera2.impl.UseCaseSurfaceManager@f8606a8
+         1788889501.381  9064  9223 D DeferrableSurface: use count-1,  useCount=0 closed=false androidx.camera.core.impl.ImmediateSurface@6a1d22c
+         1788889501.381  9064  9223 D DeferrableSurface: Surface no longer in use[total_surfaces=4, used_surfaces=2](androidx.camera.core.impl.ImmediateSurface@6a1d22c}
+         1788889501.382  9064  9223 D CXCP    : SurfaceInactive androidx.camera.core.impl.ImmediateSurface@d4210fb in androidx.camera.camera2.impl.UseCaseSurfaceManager@f8606a8
+         1788889501.382  9064  9223 D DeferrableSurface: use count-1,  useCount=0 closed=false androidx.camera.core.impl.ImmediateSurface@d4210fb
+         1788889501.382  9064  9223 D DeferrableSurface: Surface no longer in use[total_surfaces=4, used_surfaces=1](androidx.camera.core.impl.ImmediateSurface@d4210fb}
+         1788889501.382  9064  9223 D CXCP    : androidx.camera.camera2.impl.UseCaseSurfaceManager@f8606a8 remove surface listener
+         1788889501.416  9064  9081 I ReactNativeJS: 'BRAILLE_WORD_PHOTO_METRICS', '{"schemaVersion":1,"captureId":1,"elapsedMs":1831,"status":"rejected"}'
+         1788889502.383  9064  9361 D CXCP    : PruningProcessingQueue: Pruning [RequestClose(activeCamera=ActiveCamera(cameraId=CameraId-10)@b9cdbf9)]
+         1788889502.383  9064  9361 D CXCP    : PruningProcessingQueue: Processing RequestClose(activeCamera=ActiveCamera(cameraId=CameraId-10)@b9cdbf9)
+         1788889502.383  9064  9361 D CXCP    : Camera2DeviceManagerImpl#processRequestClose(CameraId-10)
+         1788889502.383  9064  9361 D CXCP    : handleQuirksBeforeClosing(android.hardware.camera2.impl.CameraDeviceImpl@5fb99cd)
+         1788889502.383  9064  9361 D CXCP    : CaptureSessionState-4 session disconnecting
+         1788889502.383  9064  9375 I CXCP    : Closing Camera 10
+         1788889502.392  9064  9375 D CXCP    : CXCP#CameraDevice-10#close - 7.993 ms
+         1788889502.392  9064  9363 I CXCP    : New camera 10 detected
+         1788889502.392  9064  9363 W CXCP    : Failed to query camera ID list: Invalid list returned: [CameraId-10].
+         1788889502.393  9064  9223 D CXCP    : CameraId-10: onClosed
+         1788889502.393  9064  9223 D CXCP    : CameraState-3: onFinalized
+         1788889507.902  9064  9377 I m.brailleme.app: Explicit concurrent mark compact GC freed 4315KB AllocSpace bytes, 37(12MB) LOS objects, 49% free, 23MB/47MB, paused 1.185ms,1.510ms total 35.017ms
+         1788889518.133  9064  9377 I m.brailleme.app: Explicit concurrent mark compact GC freed 548KB AllocSpace bytes, 6(5440KB) LOS objects, 49% free, 18MB/36MB, paused 967us,1.812ms total 31.378ms
+         1788889521.069  9064 11677 D MediaCodecList: codecHandlesFormat: no format, so no extra checks
+         1788889521.070  9064 11681 D CCodec  : allocate(c2.android.vorbis.decoder)
+         1788889521.071  9064 11681 I CCodec  : setting up 'default' as default (vendor) store
+         1788889521.073  9064  9291 D BufferPoolAccessor2.0: bufferpool2 0x745dd2146e78 : 0(0 size) total buffers - 0(0 size) used buffers - 2/7 (recycle/alloc) - 5/74 (fetch/transfer)
+         1788889521.073  9064  9291 D BufferPoolAccessor2.0: Destruction - bufferpool2 0x745dd2146e78 cached: 0/0M, 0/0% in use; allocs: 7, 29% recycled; transfers: 74, 93% unfetched
+         1788889521.074  9064 11681 I CCodec  : Created component [c2.android.vorbis.decoder] for [c2.android.vorbis.decoder]
+         1788889521.075  9064 11681 D CCodecConfig: read media type: audio/vorbis
+         1788889521.078  9064 11681 D ReflectedParamUpdater: extent() != 1 for single value type: algo.buffers.max-count.values
+         1788889521.078  9064 11681 D ReflectedParamUpdater: extent() != 1 for single value type: output.subscribed-indices.values
+         1788889521.078  9064 11681 D ReflectedParamUpdater: extent() != 1 for single value type: input.buffers.allocator-ids.values
+         1788889521.078  9064 11681 D ReflectedParamUpdater: extent() != 1 for single value type: output.buffers.allocator-ids.values
+         1788889521.079  9064 11681 D ReflectedParamUpdater: extent() != 1 for single value type: algo.buffers.allocator-ids.values
+         1788889521.079  9064 11681 D ReflectedParamUpdater: extent() != 1 for single value type: output.buffers.pool-ids.values
+         1788889521.079  9064 11681 D ReflectedParamUpdater: extent() != 1 for single value type: algo.buffers.pool-ids.values
+         1788889521.081  9064 11681 I CCodecConfig: query failed after returning 8 values (BAD_INDEX)
+         1788889521.081  9064 11681 D CCodecConfig: c2 config diff is Dict {
+         1788889521.081  9064 11681 D CCodecConfig:   c2::u32 coded.bitrate.value = 64000
+         1788889521.081  9064 11681 D CCodecConfig:   c2::u32 input.buffers.max-size.value = 32768
+         1788889521.081  9064 11681 D CCodecConfig:   c2::u32 input.delay.value = 0
+         1788889521.081  9064 11681 D CCodecConfig:   string input.media-type.value = "audio/vorbis"
+         1788889521.081  9064 11681 D CCodecConfig:   c2::u32 output.large-frame.max-size = 0
+         1788889521.081  9064 11681 D CCodecConfig:   c2::u32 output.large-frame.threshold-size = 0
+         1788889521.081  9064 11681 D CCodecConfig:   string output.media-type.value = "audio/raw"
+         1788889521.081  9064 11681 D CCodecConfig:   c2::u32 raw.channel-count.value = 1
+         1788889521.081  9064 11681 D CCodecConfig:   c2::u32 raw.sample-rate.value = 48000
+         1788889521.081  9064 11681 D CCodecConfig: }
+         1788889521.084  9064 11677 E MediaCodec: Media Quality Service not found.
+         1788889521.085  9064 11681 D CCodec  : [c2.android.vorbis.decoder] buffers are bound to CCodec for this session
+         1788889521.085  9064 11681 D CCodecConfig: no c2 equivalents for durationUs
+         1788889521.085  9064 11681 D CCodecConfig: no c2 equivalents for track-id
+         1788889521.085  9064 11681 D CCodecConfig: no c2 equivalents for csd-1
+         1788889521.085  9064 11681 D CCodecConfig: no c2 equivalents for flags
+         1788889521.086  9064 11681 D CCodecConfig: c2 config diff is   c2::u32 coded.bitrate.value = 48000
+         1788889521.086  9064 11681 W Codec2Client: query -- param skipped: index = 1107298332.
+         1788889521.086  9064 11681 D CCodec  : encoding statistics level = 0
+         1788889521.086  9064 11681 D CCodec  : setup formats input: AMessage(what = 0x00000000) = {
+         1788889521.086  9064 11681 D CCodec  :   int32_t bitrate = 48000
+         1788889521.086  9064 11681 D CCodec  :   int32_t channel-count = 1
+         1788889521.086  9064 11681 D CCodec  :   int32_t max-input-size = 32768
+         1788889521.086  9064 11681 D CCodec  :   string mime = "audio/vorbis"
+         1788889521.086  9064 11681 D CCodec  :   int32_t sample-rate = 48000
+         1788889521.086  9064 11681 D CCodec  : }
+         1788889521.086  9064 11681 D CCodec  : setup formats output: AMessage(what = 0x00000000) = {
+         1788889521.086  9064 11681 D CCodec  :   int32_t buffer-batch-max-output-size = 0
+         1788889521.086  9064 11681 D CCodec  :   int32_t buffer-batch-threshold-output-size = 0
+         1788889521.086  9064 11681 D CCodec  :   int32_t channel-count = 1
+         1788889521.086  9064 11681 D CCodec  :   string mime = "audio/raw"
+         1788889521.086  9064 11681 D CCodec  :   int32_t sample-rate = 48000
+         1788889521.086  9064 11681 D CCodec  :   int32_t channel-mask = 1
+         1788889521.086  9064 11681 D CCodec  :   int32_t android._config-pcm-encoding = 2
+         1788889521.086  9064 11681 D CCodec  : }
+         1788889521.086  9064  9081 W HWUI    : Image decoding logging dropped!
+         1788889521.086  9064 11681 I CCodecConfig: query failed after returning 8 values (BAD_INDEX)
+         1788889521.086  9064 11681 E m.brailleme.app: Failed to query component interface for required system resources: 6
+         1788889521.087  9064  9081 W HWUI    : Image decoding logging dropped!
+         1788889521.087  9064  9081 W HWUI    : Image decoding logging dropped!
+         1788889521.087  9064 11681 W Codec2Client: query -- param skipped: index = 1342179345.
+         1788889521.088  9064 11681 W Codec2Client: query -- param skipped: index = 2415921170.
+         1788889521.091  9064 11681 D CCodecBufferChannel: [c2.android.vorbis.decoder#20] Created input block pool with allocatorID 16 => poolID 20 - OK (0)
+         1788889521.092  9064 11681 I CCodecBufferChannel: [c2.android.vorbis.decoder#20] Created output block pool with allocatorID 16 => poolID 48 - OK
+         1788889521.092  9064 11681 D CCodecBufferChannel: [c2.android.vorbis.decoder#20] Configured output block pool ids 48 => OK
+         1788889521.101  9064  9064 W Bitmap  : Called hasAlpha() on a recycle()'d bitmap! This is undefined behavior!
+         1788889521.116  9064  9064 I HybridCameraSessionSpec: Reconfiguring CameraSession with 0 connection(s)...
+         1788889521.117  9064  9064 W CXCP    : Detaching [] from UseCaseManager<CameraGraphConfigProvider<CameraId-10>> (Ignored)
+         1788889521.117  9064  9064 W CXCP    : Detaching [] from UseCaseManager<CameraGraphConfigProvider<CameraId-10>> (Ignored)
+         1788889521.117  9064  9064 D DeferrableSurface: surface closed,  useCount=1 closed=true androidx.camera.core.SurfaceRequest$2@4d23f30
+         1788889521.117  9064  9064 D DeferrableSurface: surface closed,  useCount=0 closed=true androidx.camera.core.processing.SurfaceEdge$SettableSurface@20a3ac4
+         1788889521.117  9064  9064 D DeferrableSurface: Surface terminated[total_surfaces=3, used_surfaces=1](androidx.camera.core.processing.SurfaceEdge$SettableSurface@20a3ac4}
+         1788889521.118  9064  9064 D DeferrableSurface: use count-1,  useCount=0 closed=true androidx.camera.core.SurfaceRequest$2@4d23f30
+         1788889521.118  9064  9064 D DeferrableSurface: Surface no longer in use[total_surfaces=3, used_surfaces=0](androidx.camera.core.SurfaceRequest$2@4d23f30}
+         1788889521.118  9064  9064 D DeferrableSurface: Surface terminated[total_surfaces=2, used_surfaces=0](androidx.camera.core.SurfaceRequest$2@4d23f30}
+         1788889521.118  9064  9064 W ScreenFlashWrapper: completePendingScreenFlashClear: none pending!
+         1788889521.118  9064  9064 D ImageCapture: clearPipeline
+         1788889521.118  9064  9064 D DeferrableSurface: surface closed,  useCount=0 closed=true androidx.camera.core.impl.ImmediateSurface@6a1d22c
+         1788889521.118  9064  9064 D DeferrableSurface: Surface terminated[total_surfaces=1, used_surfaces=0](androidx.camera.core.impl.ImmediateSurface@6a1d22c}
+         1788889521.118  9064  9064 D DeferrableSurface: surface closed,  useCount=0 closed=true androidx.camera.core.impl.ImmediateSurface@d4210fb
+         1788889521.118  9064  9064 D DeferrableSurface: Surface terminated[total_surfaces=0, used_surfaces=0](androidx.camera.core.impl.ImmediateSurface@d4210fb}
+         1788889521.118  9064  9064 D CXCP    : Detaching [Preview:androidx.camera.core.Preview-80442fdc-c5b0-45b1-b17f-c5b6d8e9365a, ImageCapture:androidx.camera.core.ImageCapture-7d11dbbb-49ef-4611-9c00-493893346e95, ImageAnalysis:androidx.camera.core.ImageAnalysis-3814e789-a1cf-4387-a034-885ab222dcd1] from UseCaseManager<CameraGraphConfigProvider<CameraId-10>>
+         1788889521.119  9064  9064 I CustomLifecycle: Switching lifecycle state from INITIALIZED to CREATED...
+         1788889521.119  9064  9064 I HybridCameraSessionSpec: Reconfiguring CameraSession with 1 connection(s)...
+         1788889521.119  9064  9064 W CXCP    : Detaching [] from UseCaseManager<CameraGraphConfigProvider<CameraId-10>> (Ignored)
+         1788889521.120  9064  9064 W CXCP    : Detaching [] from UseCaseManager<CameraGraphConfigProvider<CameraId-10>> (Ignored)
+         1788889521.120  9064  9064 W CXCP    : Detaching [] from UseCaseManager<CameraGraphConfigProvider<CameraId-10>> (Ignored)
+         1788889521.120  9064  9064 D ResolvedFeatureGroup: resolveFeatureGroup: sessionConfig = SessionConfig@121f11d {useCases=[Preview:androidx.camera.core.Preview-d09a0c6b-7a4f-49cf-a483-e2daa976156b, ImageCapture:androidx.camera.core.ImageCapture-c850c941-b40e-464c-92c4-27e74cf9efdd, ImageAnalysis:androidx.camera.core.ImageAnalysis-4f4c103b-3c9e-4467-affb-09f95bafed0e], frameRateRange=[0, 0], requiredFeatureGroup=[], preferredFeatureGroup=[], effects=[], viewPort=null}, lensFacing = 1
+         1788889521.122  9064  9064 D CameraUseCaseAdapter: simulateAddUseCases: appUseCasesToAdd = [Preview:androidx.camera.core.Preview-d09a0c6b-7a4f-49cf-a483-e2daa976156b, ImageCapture:androidx.camera.core.ImageCapture-c850c941-b40e-464c-92c4-27e74cf9efdd, ImageAnalysis:androidx.camera.core.ImageAnalysis-4f4c103b-3c9e-4467-affb-09f95bafed0e], featureGroup = null
+         1788889521.122  9064  9064 D CXCP    : Creating config for PREVIEW
+         1788889521.122  9064  9064 D CXCP    : Creating config for IMAGE_CAPTURE
+         1788889521.123  9064  9064 D CXCP    : Creating config for IMAGE_ANALYSIS
+         1788889521.124  9064  9064 D CXCP    : Creating config for PREVIEW
+         1788889521.125  9064  9064 D CXCP    : Creating config for IMAGE_CAPTURE
+         1788889521.125  9064  9064 D CXCP    : Creating config for IMAGE_ANALYSIS
+         1788889521.127  9064  9064 D UseCase : applyFeaturesToConfig: mFeatureGroup = null, this = Preview:androidx.camera.core.Preview-d09a0c6b-7a4f-49cf-a483-e2daa976156b
+         1788889521.127  9064  9064 D SupportedOutputSizesCollector: useCaseConfig = androidx.camera.core.impl.PreviewConfig@c58af92, candidateSizes = [1280x960, 1280x720, 640x480, 352x288, 320x240]
+         1788889521.128  9064  9064 D UseCase : applyFeaturesToConfig: mFeatureGroup = null, this = ImageCapture:androidx.camera.core.ImageCapture-c850c941-b40e-464c-92c4-27e74cf9efdd
+         1788889521.129  9064  9064 D SupportedOutputSizesCollector: useCaseConfig = androidx.camera.core.impl.ImageCaptureConfig@42d6d63, candidateSizes = [1280x960, 1280x720, 640x480, 352x288, 320x240]
+         1788889521.129  9064  9064 D UseCase : applyFeaturesToConfig: mFeatureGroup = null, this = ImageAnalysis:androidx.camera.core.ImageAnalysis-4f4c103b-3c9e-4467-affb-09f95bafed0e
+         1788889521.129  9064  9064 D SupportedOutputSizesCollector: useCaseConfig = androidx.camera.core.impl.ImageAnalysisConfig@c3ded60, candidateSizes = [1280x960, 1280x720, 640x480, 352x288, 320x240]
+         1788889521.130  9064  9064 D UseCase : applyFeaturesToConfig: mFeatureGroup = null, this = Preview:androidx.camera.core.Preview-d09a0c6b-7a4f-49cf-a483-e2daa976156b
+         1788889521.130  9064  9064 D UseCase : applyFeaturesToConfig: mFeatureGroup = null, this = ImageCapture:androidx.camera.core.ImageCapture-c850c941-b40e-464c-92c4-27e74cf9efdd
+         1788889521.131  9064  9064 D UseCase : applyFeaturesToConfig: mFeatureGroup = null, this = ImageAnalysis:androidx.camera.core.ImageAnalysis-4f4c103b-3c9e-4467-affb-09f95bafed0e
+         1788889521.131  9064  9064 D UseCase : applyFeaturesToConfig: mFeatureGroup = null, this = Preview:androidx.camera.core.Preview-d09a0c6b-7a4f-49cf-a483-e2daa976156b
+         1788889521.131  9064  9064 D UseCase : applyFeaturesToConfig: mFeatureGroup = null, this = ImageCapture:androidx.camera.core.ImageCapture-c850c941-b40e-464c-92c4-27e74cf9efdd
+         1788889521.131  9064  9064 D UseCase : applyFeaturesToConfig: mFeatureGroup = null, this = ImageAnalysis:androidx.camera.core.ImageAnalysis-4f4c103b-3c9e-4467-affb-09f95bafed0e
+         1788889521.131  9064  9064 D CXCP    : DynamicRangeResolver: Resolved dynamic range for use case androidx.camera.core.Preview-d09a0c6b-7a4f-49cf-a483-e2daa976156b to no compatible HDR dynamic ranges.
+         1788889521.131  9064  9064 D CXCP    : DynamicRange@d90c143{encoding=UNSPECIFIED, bitDepth=0}
+         1788889521.131  9064  9064 D CXCP    : ->
+         1788889521.131  9064  9064 D CXCP    : DynamicRange@b6766f2{encoding=SDR, bitDepth=8}
+         1788889521.132  9064  9064 D CXCP    : resolvedDynamicRanges = {androidx.camera.core.impl.ImageCaptureConfig@42d6d63=DynamicRange@b6766f2{encoding=SDR, bitDepth=8}, androidx.camera.core.impl.ImageAnalysisConfig@c3ded60=DynamicRange@b6766f2{encoding=SDR, bitDepth=8}, androidx.camera.core.impl.PreviewConfig@c58af92=DynamicRange@b6766f2{encoding=SDR, bitDepth=8}}
+         1788889521.132  9064  9064 D CXCP    : getSuggestedStreamSpecifications: isPreviewStabilizationSupported = false, isFeatureComboInvocation = false
+         1788889521.132  9064  9064 D CXCP    : resolveSpecsByCheckingMethod: checkingMethod = WITHOUT_FEATURE_COMBO
+         1788889521.132  9064  9064 D CXCP    : resolveSpecsBySettings: featureSettings = FeatureSettings(cameraMode=0, requiredMaxBitDepth=8, hasVideoCapture=false, videoStabilization=OFF, isUltraHdrOn=false, isHighSpeedOn=false, isFeatureComboInvocation=false, requiresFeatureComboQuery=false, targetFpsRange=[0, 0], isStrictFpsRequired=false)
+         1788889521.132  9064  9064 D CameraQuirks: camera2 CameraQuirks = CloseCaptureSessionOnVideoQuirk | FinalizeSessionOnCloseQuirk
+         1788889521.132  9064  9064 D CameraQuirks: camera2 CameraQuirks = CloseCaptureSessionOnVideoQuirk | FinalizeSessionOnCloseQuirk
+         1788889521.132  9064  9064 D CameraQuirks: camera2 CameraQuirks = CloseCaptureSessionOnVideoQuirk | FinalizeSessionOnCloseQuirk
+         1788889521.133  9064  9064 D CXCP    : resolveSpecsBySettings: bestSizesAndFps = BestSizesAndMaxFpsForConfigs(bestSizes=[1280x960, 1280x960, 640x480], bestSizesForStreamUseCase=null, maxFpsForBestSizes=30, maxFpsForStreamUseCase=2147483647, maxFpsForAllSizes=2147483647)
+         1788889521.133  9064  9064 I ConstraintResolver: Resolved constraints to: Config(fpsRange=null, previewStabilizationMode=OFF, videoStabilizationMode=null, videoDynamicRange=null, photoHDR=null)
+         1788889521.134  9064  9064 I HybridCameraSessionSpec: Binding use-cases: [Preview:androidx.camera.core.Preview-d09a0c6b-7a4f-49cf-a483-e2daa976156b, ImageCapture:androidx.camera.core.ImageCapture-c850c941-b40e-464c-92c4-27e74cf9efdd, ImageAnalysis:androidx.camera.core.ImageAnalysis-4f4c103b-3c9e-4467-affb-09f95bafed0e]
+         1788889521.134  9064  9064 W CXCP    : Detaching [] from UseCaseManager<CameraGraphConfigProvider<CameraId-10>> (Ignored)
+         1788889521.135  9064  9064 D ResolvedFeatureGroup: resolveFeatureGroup: sessionConfig = SessionConfig@121f11d {useCases=[Preview:androidx.camera.core.Preview-d09a0c6b-7a4f-49cf-a483-e2daa976156b, ImageCapture:androidx.camera.core.ImageCapture-c850c941-b40e-464c-92c4-27e74cf9efdd, ImageAnalysis:androidx.camera.core.ImageAnalysis-4f4c103b-3c9e-4467-affb-09f95bafed0e], frameRateRange=[0, 0], requiredFeatureGroup=[], preferredFeatureGroup=[], effects=[], viewPort=null}, lensFacing = 1
+         1788889521.136  9064  9064 D CameraUseCaseAdapter: addUseCases: appUseCasesToAdd = [Preview:androidx.camera.core.Preview-d09a0c6b-7a4f-49cf-a483-e2daa976156b, ImageCapture:androidx.camera.core.ImageCapture-c850c941-b40e-464c-92c4-27e74cf9efdd, ImageAnalysis:androidx.camera.core.ImageAnalysis-4f4c103b-3c9e-4467-affb-09f95bafed0e], featureGroup = null
+         1788889521.136  9064  9064 D CXCP    : Creating config for PREVIEW
+         1788889521.136  9064  9064 D CXCP    : Creating config for IMAGE_CAPTURE
+         1788889521.136  9064  9064 D CXCP    : Creating config for IMAGE_ANALYSIS
+         1788889521.137  9064  9064 D CXCP    : Creating config for PREVIEW
+         1788889521.137  9064  9064 D CXCP    : Creating config for IMAGE_CAPTURE
+         1788889521.137  9064  9064 D CXCP    : Creating config for IMAGE_ANALYSIS
+         1788889521.137  9064  9064 D UseCase : applyFeaturesToConfig: mFeatureGroup = null, this = Preview:androidx.camera.core.Preview-d09a0c6b-7a4f-49cf-a483-e2daa976156b
+         1788889521.138  9064  9064 D SupportedOutputSizesCollector: useCaseConfig = androidx.camera.core.impl.PreviewConfig@4b925db, candidateSizes = [1280x960, 1280x720, 640x480, 352x288, 320x240]
+         1788889521.138  9064  9064 D UseCase : applyFeaturesToConfig: mFeatureGroup = null, this = ImageCapture:androidx.camera.core.ImageCapture-c850c941-b40e-464c-92c4-27e74cf9efdd
+         1788889521.139  9064  9064 D SupportedOutputSizesCollector: useCaseConfig = androidx.camera.core.impl.ImageCaptureConfig@ec00878, candidateSizes = [1280x960, 1280x720, 640x480, 352x288, 320x240]
+         1788889521.139  9064  9064 D UseCase : applyFeaturesToConfig: mFeatureGroup = null, this = ImageAnalysis:androidx.camera.core.ImageAnalysis-4f4c103b-3c9e-4467-affb-09f95bafed0e
+         1788889521.139  9064  9064 D SupportedOutputSizesCollector: useCaseConfig = androidx.camera.core.impl.ImageAnalysisConfig@f285b51, candidateSizes = [1280x960, 1280x720, 640x480, 352x288, 320x240]
+         1788889521.144  9064  9064 D UseCase : applyFeaturesToConfig: mFeatureGroup = null, this = Preview:androidx.camera.core.Preview-d09a0c6b-7a4f-49cf-a483-e2daa976156b
+         1788889521.144  9064  9064 D UseCase : applyFeaturesToConfig: mFeatureGroup = null, this = ImageCapture:androidx.camera.core.ImageCapture-c850c941-b40e-464c-92c4-27e74cf9efdd
+         1788889521.145  9064  9064 D UseCase : applyFeaturesToConfig: mFeatureGroup = null, this = ImageAnalysis:androidx.camera.core.ImageAnalysis-4f4c103b-3c9e-4467-affb-09f95bafed0e
+         1788889521.145  9064  9064 D UseCase : applyFeaturesToConfig: mFeatureGroup = null, this = Preview:androidx.camera.core.Preview-d09a0c6b-7a4f-49cf-a483-e2daa976156b
+         1788889521.146  9064  9064 D UseCase : applyFeaturesToConfig: mFeatureGroup = null, this = ImageCapture:androidx.camera.core.ImageCapture-c850c941-b40e-464c-92c4-27e74cf9efdd
+         1788889521.146  9064  9064 D UseCase : applyFeaturesToConfig: mFeatureGroup = null, this = ImageAnalysis:androidx.camera.core.ImageAnalysis-4f4c103b-3c9e-4467-affb-09f95bafed0e
+         1788889521.147  9064  9064 D CXCP    : DynamicRangeResolver: Resolved dynamic range for use case androidx.camera.core.Preview-d09a0c6b-7a4f-49cf-a483-e2daa976156b to no compatible HDR dynamic ranges.
+         1788889521.147  9064  9064 D CXCP    : DynamicRange@d90c143{encoding=UNSPECIFIED, bitDepth=0}
+         1788889521.147  9064  9064 D CXCP    : ->
+         1788889521.147  9064  9064 D CXCP    : DynamicRange@b6766f2{encoding=SDR, bitDepth=8}
+         1788889521.147  9064  9064 D CXCP    : resolvedDynamicRanges = {androidx.camera.core.impl.ImageCaptureConfig@ec00878=DynamicRange@b6766f2{encoding=SDR, bitDepth=8}, androidx.camera.core.impl.ImageAnalysisConfig@f285b51=DynamicRange@b6766f2{encoding=SDR, bitDepth=8}, androidx.camera.core.impl.PreviewConfig@4b925db=DynamicRange@b6766f2{encoding=SDR, bitDepth=8}}
+         1788889521.147  9064  9064 D CXCP    : getSuggestedStreamSpecifications: isPreviewStabilizationSupported = false, isFeatureComboInvocation = false
+         1788889521.147  9064  9064 D CXCP    : resolveSpecsByCheckingMethod: checkingMethod = WITHOUT_FEATURE_COMBO
+         1788889521.147  9064  9064 D CXCP    : resolveSpecsBySettings: featureSettings = FeatureSettings(cameraMode=0, requiredMaxBitDepth=8, hasVideoCapture=false, videoStabilization=OFF, isUltraHdrOn=false, isHighSpeedOn=false, isFeatureComboInvocation=false, requiresFeatureComboQuery=false, targetFpsRange=[0, 0], isStrictFpsRequired=false)
+         1788889521.147  9064  9064 D CameraQuirks: camera2 CameraQuirks = CloseCaptureSessionOnVideoQuirk | FinalizeSessionOnCloseQuirk
+         1788889521.148  9064  9064 D CameraQuirks: camera2 CameraQuirks = CloseCaptureSessionOnVideoQuirk | FinalizeSessionOnCloseQuirk
+         1788889521.148  9064  9064 D CameraQuirks: camera2 CameraQuirks = CloseCaptureSessionOnVideoQuirk | FinalizeSessionOnCloseQuirk
+         1788889521.148  9064  9064 D CXCP    : resolveSpecsBySettings: bestSizesAndFps = BestSizesAndMaxFpsForConfigs(bestSizes=[1280x960, 1280x960, 640x480], bestSizesForStreamUseCase=null, maxFpsForBestSizes=30, maxFpsForStreamUseCase=2147483647, maxFpsForAllSizes=2147483647)
+         1788889521.148  9064  9064 W CXCP    : Detaching [] from UseCaseManager<CameraGraphConfigProvider<CameraId-10>> (Ignored)
+         1788889521.149  9064  9064 D UseCase : applyFeaturesToConfig: mFeatureGroup = null, this = Preview:androidx.camera.core.Preview-d09a0c6b-7a4f-49cf-a483-e2daa976156b
+         1788889521.149  9064  9064 D Preview : onSuggestedStreamSpecUpdated: primaryStreamSpec = StreamSpec{resolution=1280x960, originalConfiguredResolution=1280x960, dynamicRange=DynamicRange@b6766f2{encoding=SDR, bitDepth=8}, sessionType=0, expectedFrameRateRange=[0, 0], implementationOptions=androidx.camera.camera2.impl.Camera2ImplConfig@d9a44b7, zslDisabled=false}, secondaryStreamSpec null
+         1788889521.149  9064  9064 D DeferrableSurface: Surface created[total_surfaces=1, used_surfaces=0](androidx.camera.core.processing.SurfaceEdge$SettableSurface@8293424}
+         1788889521.150  9064  9064 D DeferrableSurface: Surface created[total_surfaces=2, used_surfaces=0](androidx.camera.core.SurfaceRequest$2@2d76e90}
+         1788889521.150  9064  9064 D DeferrableSurface: New surface in use[total_surfaces=2, used_surfaces=1](androidx.camera.core.SurfaceRequest$2@2d76e90}
+         1788889521.150  9064  9064 D DeferrableSurface: use count+1, useCount=1 androidx.camera.core.SurfaceRequest$2@2d76e90
+         1788889521.150  9064  9064 D UseCase : applyFeaturesToConfig: mFeatureGroup = null, this = ImageCapture:androidx.camera.core.ImageCapture-c850c941-b40e-464c-92c4-27e74cf9efdd
+         1788889521.150  9064  9064 D ImageCapture: onSuggestedStreamSpecUpdated: primaryStreamSpec = StreamSpec{resolution=1280x960, originalConfiguredResolution=1280x960, dynamicRange=DynamicRange@b6766f2{encoding=SDR, bitDepth=8}, sessionType=0, expectedFrameRateRange=[0, 0], implementationOptions=androidx.camera.camera2.impl.Camera2ImplConfig@aa86f45, zslDisabled=false}, secondaryStreamSpec null
+         1788889521.150  9064  9064 D ImageCapture: createPipeline(cameraId: 10, streamSpec: StreamSpec{resolution=1280x960, originalConfiguredResolution=1280x960, dynamicRange=DynamicRange@b6766f2{encoding=SDR, bitDepth=8}, sessionType=0, expectedFrameRateRange=[0, 0], implementationOptions=androidx.camera.camera2.impl.Camera2ImplConfig@aa86f45, zslDisabled=false})
+         1788889521.151  9064  9064 D DeferrableSurface: Surface created[total_surfaces=3, used_surfaces=1](androidx.camera.core.impl.ImmediateSurface@ffc969a}
+         1788889521.151  9064  9064 D UseCase : applyFeaturesToConfig: mFeatureGroup = null, this = ImageAnalysis:androidx.camera.core.ImageAnalysis-4f4c103b-3c9e-4467-affb-09f95bafed0e
+         1788889521.151  9064  9064 D ImageAnalysis: onSuggestedStreamSpecUpdated: primaryStreamSpec = StreamSpec{resolution=640x480, originalConfiguredResolution=640x480, dynamicRange=DynamicRange@b6766f2{encoding=SDR, bitDepth=8}, sessionType=0, expectedFrameRateRange=[0, 0], implementationOptions=androidx.camera.camera2.impl.Camera2ImplConfig@6827fa8, zslDisabled=false}, secondaryStreamSpec null
+         1788889521.151  9064  9064 D DeferrableSurface: Surface created[total_surfaces=4, used_surfaces=1](androidx.camera.core.impl.ImmediateSurface@c65bac1}
+         1788889521.152  9064  9064 D DeferrableSurface: surface closed,  useCount=1 closed=true androidx.camera.core.SurfaceRequest$2@2d76e90
+         1788889521.152  9064  9064 D DeferrableSurface: surface closed,  useCount=0 closed=true androidx.camera.core.processing.SurfaceEdge$SettableSurface@8293424
+         1788889521.152  9064  9064 D DeferrableSurface: Surface terminated[total_surfaces=3, used_surfaces=1](androidx.camera.core.processing.SurfaceEdge$SettableSurface@8293424}
+         1788889521.152  9064  9064 D DeferrableSurface: use count-1,  useCount=0 closed=true androidx.camera.core.SurfaceRequest$2@2d76e90
+         1788889521.152  9064  9064 D DeferrableSurface: Surface no longer in use[total_surfaces=3, used_surfaces=0](androidx.camera.core.SurfaceRequest$2@2d76e90}
+         1788889521.152  9064  9064 D DeferrableSurface: Surface terminated[total_surfaces=2, used_surfaces=0](androidx.camera.core.SurfaceRequest$2@2d76e90}
+         1788889521.152  9064  9064 D DeferrableSurface: Surface created[total_surfaces=3, used_surfaces=0](androidx.camera.core.processing.SurfaceEdge$SettableSurface@ccf5ef2}
+         1788889521.152  9064  9064 D DeferrableSurface: Surface created[total_surfaces=4, used_surfaces=0](androidx.camera.core.SurfaceRequest$2@5f0783e}
+         1788889521.152  9064  9064 D DeferrableSurface: New surface in use[total_surfaces=4, used_surfaces=1](androidx.camera.core.SurfaceRequest$2@5f0783e}
+         1788889521.152  9064  9064 D DeferrableSurface: use count+1, useCount=1 androidx.camera.core.SurfaceRequest$2@5f0783e
+         1788889521.152  9064  9064 I ActiveCameraSessionSingle: Camera #CameraId-10 State changed! Type: CLOSED | Error: null
+         1788889521.159  9064  9064 D TextureViewImpl: Safe to release surface.
+         1788889521.160  9064  9064 D TextureViewImpl: SurfaceTexture about to manually be destroyed
+         1788889521.160  9064  9064 D PreviewView: Surface requested by Preview.
+         1788889521.161  9064  9064 D PreviewView: Preview transformation info updated. TransformationInfo{getCropRect=Rect(0, 0 - 1280, 960), getRotationDegrees=90, getTargetRotation=-1, hasCameraTransform=true, getSensorToBufferTransform=Matrix{[1.0, 0.0, 0.0][0.0, 1.0, 0.0][0.0, 0.0, 1.0]}, isMirroring=false}
+         1788889521.161  9064  9064 D PreviewTransform: Transformation info set: TransformationInfo{getCropRect=Rect(0, 0 - 1280, 960), getRotationDegrees=90, getTargetRotation=-1, hasCameraTransform=true, getSensorToBufferTransform=Matrix{[1.0, 0.0, 0.0][0.0, 1.0, 0.0][0.0, 0.0, 1.0]}, isMirroring=false} 1280x960 false
+         1788889521.168  9064  9064 I CustomLifecycle: Switching lifecycle state from CREATED to RESUMED...
+         1788889521.168  9064  9064 D CXCP    : Attaching [Preview:androidx.camera.core.Preview-d09a0c6b-7a4f-49cf-a483-e2daa976156b, ImageCapture:androidx.camera.core.ImageCapture-c850c941-b40e-464c-92c4-27e74cf9efdd, ImageAnalysis:androidx.camera.core.ImageAnalysis-4f4c103b-3c9e-4467-affb-09f95bafed0e] from UseCaseManager<CameraGraphConfigProvider<CameraId-10>>
+         1788889521.169  9064  9064 D CXCP    : Prepared UseCaseCameraContext (Deferred)
+         1788889521.169  9064  9064 D CXCP    : Configured UseCaseCamera-5
+         1788889521.169  9064  9064 D CXCP    : setFlashAsync: flashMode = 2, requestControl = androidx.camera.camera2.impl.DeferredUseCaseCameraRequestControl@2286a97
+         1788889521.171  9064  9064 D CXCP    : Notifying [] camera control ready
+         1788889521.171  9064  9064 D ImageCapture: onCameraControlReady
+         1788889521.171  9064  9064 D CXCP    : setFlashAsync: flashMode = 2, requestControl = androidx.camera.camera2.impl.DeferredUseCaseCameraRequestControl@2286a97
+         1788889521.176  9064  9223 D CXCP    : populateSurfaceToStreamUseCaseMapping() - streamUseCaseMap = {}
+         1788889521.177  9064  9223 W CXCP    : Expected stream use case for androidx.camera.core.SurfaceRequest$2@5f0783e, null cannot be set!
+         1788889521.177  9064  9223 W CXCP    : Expected stream use case for androidx.camera.core.impl.ImmediateSurface@ffc969a, null cannot be set!
+         1788889521.177  9064  9223 W CXCP    : Expected stream use case for androidx.camera.core.impl.ImmediateSurface@c65bac1, null cannot be set!
+         1788889521.178  9064  9064 D TextureViewImpl: SurfaceTexture available. Size: 1280x960
+         1788889521.178  9064  9064 D TextureViewImpl: Surface set on Preview.
+         1788889521.183  9064  9223 I CXCP    : CameraGraph-5 (Camera 10)
+         1788889521.183  9064  9223 I CXCP    :   Facing:    Back (Physical, Limited)
+         1788889521.183  9064  9223 I CXCP    :   Mode:      Normal
+         1788889521.183  9064  9223 I CXCP    : Outputs:
+         1788889521.183  9064  9223 I CXCP    :   Stream-13   Output-13   1280x960    PRIVATE          [MirrorMode(value=1)] [DynamicRangeProfile(value=1)] [StreamUseHint(value=0)]
+         1788889521.183  9064  9223 I CXCP    :   Stream-14   Output-14   1280x960    JPEG             [DynamicRangeProfile(value=1)] [StreamUseHint(value=0)]
+         1788889521.183  9064  9223 I CXCP    :   Stream-15   Output-15   640x480     YUV_420_888      [DynamicRangeProfile(value=1)] [StreamUseHint(value=0)]
+         1788889521.183  9064  9223 I CXCP    : Session Template: TEMPLATE_PREVIEW
+         1788889521.183  9064  9223 I CXCP    : Session Parameters
+         1788889521.183  9064  9223 I CXCP    :   android.control.videoStabilizationMode             0
+         1788889521.183  9064  9223 I CXCP    : Default Template: TEMPLATE_PREVIEW
+         1788889521.183  9064  9223 I CXCP    : Default Parameters
+         1788889521.183  9064  9223 I CXCP    :   Metadata.Key(androidx.camera.camera2.pipe.captureRequestTag) android.hardware.camera2.CaptureRequest.setTag.CX
+         1788889521.183  9064  9223 I CXCP    :   android.control.videoStabilizationMode             0
+         1788889521.183  9064  9223 I CXCP    : Required Parameters: (None)
+         1788889521.183  9064  9223 D CXCP    : Camera graph updated from CameraGraph-4 to CameraGraph-5
+         1788889521.183  9064  9223 I CXCP    : Starting CameraGraph-5
+         1788889521.183  9064  9223 D CXCP    : GraphProcessor(cameraGraph: CameraGraph-5) onGraphStarting
+         1788889521.183  9064  9223 D CXCP    : CameraGraph-5 state updated to GRAPH_STARTING
+         1788889521.183  9064  9223 D CXCP    : Updated current camera internal state: OPENING to CombinedCameraState(state=OPENING, error=null)
+         1788889521.184  9064  9223 D CXCP    : Started Camera2CameraController(CameraGraph-5)
+         1788889521.185  9064  9064 I ActiveCameraSessionSingle: Camera #CameraId-10 State changed! Type: OPENING | Error: null
+         1788889521.185  9064  9223 D CXCP    : Setting up Surfaces with UseCaseSurfaceManager
+         1788889521.186  9064  9223 D DeferrableSurface: use count+1, useCount=2 androidx.camera.core.SurfaceRequest$2@5f0783e
+         1788889521.186  9064  9223 D DeferrableSurface: New surface in use[total_surfaces=4, used_surfaces=2](androidx.camera.core.impl.ImmediateSurface@ffc969a}
+         1788889521.186  9064  9223 D DeferrableSurface: use count+1, useCount=1 androidx.camera.core.impl.ImmediateSurface@ffc969a
+         1788889521.186  9064  9223 D DeferrableSurface: New surface in use[total_surfaces=4, used_surfaces=3](androidx.camera.core.impl.ImmediateSurface@c65bac1}
+         1788889521.186  9064  9223 D DeferrableSurface: use count+1, useCount=1 androidx.camera.core.impl.ImmediateSurface@c65bac1
+         1788889521.187  9064  9223 D CXCP    : Configured androidx.camera.camera2.impl.UseCaseCameraRequestControlImpl@e5f807f
+         1788889521.187  9064  9358 D CXCP    : PruningProcessingQueue: Pruning [RequestOpen(virtualCamera=VirtualCamera-5, sharedCameraIds=[], graphListener=GraphProcessor(cameraGraph: CameraGraph-5), isPrewarm=false, isForegroundObserver=androidx.camera.camera2.pipe.compat.Camera2CameraController$$ExternalSyntheticLambda1@90a984c)]
+         1788889521.188  9064  9358 D CXCP    : PruningProcessingQueue: Processing RequestOpen(virtualCamera=VirtualCamera-5, sharedCameraIds=[], graphListener=GraphProcessor(cameraGraph: CameraGraph-5), isPrewarm=false, isForegroundObserver=androidx.camera.camera2.pipe.compat.Camera2CameraController$$ExternalSyntheticLambda1@90a984c)
+         1788889521.188  9064  9358 D CXCP    : Camera2DeviceManagerImpl#processRequestOpen(CameraId-10)
+         1788889521.188  9064  9358 D CXCP    : Opening CameraId-10 with retries...
+         1788889521.191  9064  9358 I CXCP    : Opening CameraId-10
+         1788889521.191  9064  9223 D CXCP    : UseCaseCameraRequestControlImpl#setParametersAsync: [DEFAULT] values = {CaptureRequest.Key(android.control.zoomRatio)=1.0}, optionPriority = OPTIONAL
+         1788889521.192  9064  9223 D CXCP    : UseCaseCameraState#updateState: parameters = {CaptureRequest.Key(android.control.zoomRatio)=1.0}, internalParameters = {Metadata.Key(camerax.tag_bundle)=android.hardware.camera2.CaptureRequest.setTag.CX}, streams = null, template = RequestTemplate(value=1)
+         1788889521.192  9064  9223 D CXCP    : UseCaseCameraRequestControlImpl#setParametersAsync: [DEFAULT] values = {CaptureRequest.Key(android.control.aeExposureCompensation)=0}, optionPriority = OPTIONAL
+         1788889521.192  9064  9223 D CXCP    : UseCaseCameraState#updateState: parameters = {CaptureRequest.Key(android.control.aeExposureCompensation)=0, CaptureRequest.Key(android.control.zoomRatio)=1.0}, internalParameters = {Metadata.Key(camerax.tag_bundle)=android.hardware.camera2.CaptureRequest.setTag.CX}, streams = null, template = RequestTemplate(value=1)
+         1788889521.192  9064  9223 D CXCP    : UseCaseCameraRequestControlImpl#updateCamera2ConfigAsync
+         1788889521.192  9064  9223 D CXCP    : UseCaseCameraState#updateState: parameters = {CaptureRequest.Key(android.control.aeExposureCompensation)=0, CaptureRequest.Key(android.control.zoomRatio)=1.0}, internalParameters = {Metadata.Key(camerax.tag_bundle)=android.hardware.camera2.CaptureRequest.setTag.CX}, streams = null, template = RequestTemplate(value=1)
+         1788889521.192  9064  9223 D CXCP    : UseCaseCameraRequestControlImpl: Building SessionConfig...
+         1788889521.193  9064  9223 D CXCP    : UseCaseCameraRequestControlImpl: SessionConfig built. Updating state...
+         1788889521.193  9064  9223 D CXCP    : UseCaseCameraRequestControlImpl: State update processing.
+         1788889521.193  9064  9223 D CXCP    : UseCaseCameraState#updateState: parameters = {CaptureRequest.Key(android.control.aeExposureCompensation)=0, CaptureRequest.Key(android.control.zoomRatio)=1.0}, internalParameters = {Metadata.Key(camerax.tag_bundle)=android.hardware.camera2.CaptureRequest.setTag.CX}, streams = [Stream-15, Stream-13], template = RequestTemplate(value=1)
+         1788889521.193  9064  9223 D CXCP    : Update RepeatingRequest: Request(streams=[Stream-15, Stream-13], template=RequestTemplate(value=1))@ea45aa
+         1788889521.193  9064  9223 D CXCP    : State3AControl.getFinalPreferredAeMode: preferAeMode = 1
+         1788889521.194  9064  9223 D CXCP    : UseCaseCameraRequestControlImpl#setParametersAsync: [DEFAULT] values = {CaptureRequest.Key(android.control.aeMode)=1, CaptureRequest.Key(android.control.afMode)=1, CaptureRequest.Key(android.control.awbMode)=1}, optionPriority = OPTIONAL
+         1788889521.194  9064  9223 D CXCP    : UseCaseCameraState#updateState: parameters = {CaptureRequest.Key(android.control.aeExposureCompensation)=0, CaptureRequest.Key(android.control.aeMode)=1, CaptureRequest.Key(android.control.afMode)=1, CaptureRequest.Key(android.control.awbMode)=1, CaptureRequest.Key(android.control.zoomRatio)=1.0}, internalParameters = {Metadata.Key(camerax.tag_bundle)=android.hardware.camera2.CaptureRequest.setTag.CX}, streams = null, template = RequestTemplate(value=1)
+         1788889521.195  9064  9223 D CXCP    : Update RepeatingRequest: Request(streams=[Stream-15, Stream-13], template=RequestTemplate(value=1))@6ff0077
+         1788889521.195  9064  9223 D CXCP    : UseCaseCameraState: Updating 3A modes: AE(AeMode(value=1), changed=true), AF(AfMode(value=1), changed=true), AWB(AwbMode(value=1), changed=true)
+         1788889521.195  9064  9223 D CXCP    : Controller3A#update3A: cancelling previous request null
+         1788889521.196  9064  9223 D CXCP    : UseCaseCameraRequestControlImpl#updateCamera2ConfigAsync
+         1788889521.197  9064  9223 D CXCP    : UseCaseCameraState#updateState: parameters = {CaptureRequest.Key(android.control.aeExposureCompensation)=0, CaptureRequest.Key(android.control.aeMode)=1, CaptureRequest.Key(android.control.afMode)=1, CaptureRequest.Key(android.control.awbMode)=1, CaptureRequest.Key(android.control.zoomRatio)=1.0}, internalParameters = {Metadata.Key(camerax.tag_bundle)=android.hardware.camera2.CaptureRequest.setTag.CX}, streams = null, template = RequestTemplate(value=1)
+         1788889521.198  9064  9223 D CXCP    : Update RepeatingRequest: Request(streams=[Stream-15, Stream-13], template=RequestTemplate(value=1))@fc1a4e4
+         1788889521.200  9064  9373 D CXCP    : CameraId-10 has become available! Notifying listeners...
+         1788889521.200  9064  9223 D CXCP    : Configured Surface(name=android.graphics.SurfaceTexture@122f425 mNativeObject=127947647688032)/@0xb7a7bab for Stream-13
+         1788889521.200  9064  9223 I CXCP    : Configured Stream-13 with Surface(name=android.graphics.SurfaceTexture@122f425 mNativeObject=127947647688032)/@0xb7a7bab
+         1788889521.200  9064  9223 D CXCP    : SurfaceActive androidx.camera.core.SurfaceRequest$2@5f0783e in androidx.camera.camera2.impl.UseCaseSurfaceManager@8662b50
+         1788889521.200  9064  9223 D DeferrableSurface: use count+1, useCount=3 androidx.camera.core.SurfaceRequest$2@5f0783e
+         1788889521.201  9064  9223 D CXCP    : Configured Surface(name=null mNativeObject=127947648388432)/@0x7c1e002 for Stream-14
+         1788889521.201  9064  9223 I CXCP    : Configured Stream-14 with Surface(name=null mNativeObject=127947648388432)/@0x7c1e002
+         1788889521.201  9064  9223 D CXCP    : SurfaceActive androidx.camera.core.impl.ImmediateSurface@ffc969a in androidx.camera.camera2.impl.UseCaseSurfaceManager@8662b50
+         1788889521.201  9064  9223 D DeferrableSurface: use count+1, useCount=2 androidx.camera.core.impl.ImmediateSurface@ffc969a
+         1788889521.201  9064  9223 D CXCP    : Configured Surface(name=null mNativeObject=127947648487312)/@0x3592d13 for Stream-15
+         1788889521.201  9064  9223 I CXCP    : Configured Stream-15 with Surface(name=null mNativeObject=127947648487312)/@0x3592d13
+         1788889521.201  9064  9223 D CXCP    : SurfaceActive androidx.camera.core.impl.ImmediateSurface@c65bac1 in androidx.camera.camera2.impl.UseCaseSurfaceManager@8662b50
+         1788889521.201  9064  9223 D DeferrableSurface: use count+1, useCount=2 androidx.camera.core.impl.ImmediateSurface@c65bac1
+         1788889521.202  9064  9223 I CXCP    : Surface setup complete
+         1788889521.202  9064  9223 D DeferrableSurface: use count-1,  useCount=2 closed=false androidx.camera.core.SurfaceRequest$2@5f0783e
+         1788889521.202  9064  9223 D DeferrableSurface: use count-1,  useCount=1 closed=false androidx.camera.core.impl.ImmediateSurface@ffc969a
+         1788889521.202  9064  9223 D DeferrableSurface: use count-1,  useCount=1 closed=false androidx.camera.core.impl.ImmediateSurface@c65bac1
+         1788889521.205  9064  9363 I CXCP    : Unavailable camera 10 detected
+         1788889521.205  9064  9363 W CXCP    : Failed to query camera ID list: Invalid list returned: [CameraId-10].
+         1788889521.215  9064 11681 D CCodecBufferChannel: [c2.android.vorbis.decoder#20] MediaCodec discarded an unknown buffer
+         1788889521.217  9064  9223 I CXCP    : Opened CameraId-10 in 28.447 ms
+         1788889521.220  9064  9361 I CXCP    : Camera open completed: OpenCameraResult(cameraState=CameraState-4, errorCode=null)
+         1788889521.220  9064  9358 I CXCP    : PruningCameraDeviceManager: CameraId-10 opened successfully
+         1788889521.222  9064  9358 I CXCP    : Creating CameraCaptureSession from CameraId-10 using CaptureSessionState-5 with: 
+         1788889521.222  9064  9358 I CXCP    :  Stream-13 -> Surface(name=android.graphics.SurfaceTexture@122f425 mNativeObject=127947647688032)/@0xb7a7bab
+         1788889521.222  9064  9358 I CXCP    :  Stream-14 -> Surface(name=null mNativeObject=127947648388432)/@0x7c1e002
+         1788889521.222  9064  9358 I CXCP    :  Stream-15 -> Surface(name=null mNativeObject=127947648487312)/@0x3592d13
+         1788889521.222  9064 11691 I hw-BpHwBinder: onLastStrongRef automatically unlinking death recipients
+         1788889521.263  9064  9223 D CXCP    : CaptureSessionState-5 Configured
+         1788889521.263  9064  9223 D CXCP    : CaptureSessionState-5 Ready
+         1788889521.264  9064  9358 D CXCP    : CXCP#createCaptureSession-10 - 31.817 ms
+         1788889521.264  9064  9358 I CXCP    : Configured CaptureSessionState-5 in 42.305 ms
+         1788889521.264  9064  9358 D CXCP    : GraphProcessor(cameraGraph: CameraGraph-5) onGraphStarted
+         1788889521.264  9064  9360 D CXCP    : Building CaptureRequest for Request(streams=[Stream-15, Stream-13], template=RequestTemplate(value=1))@fc1a4e4
+         1788889521.264  9064  9358 D CXCP    : CameraGraph-5 state updated to GRAPH_STARTED
+         1788889521.264  9064  9358 D CXCP    : Updated current camera internal state: OPEN to CombinedCameraState(state=OPEN, error=null)
+         1788889521.265  9064  9064 I ActiveCameraSessionSingle: Camera #CameraId-10 State changed! Type: OPEN | Error: null
+         1788889521.265  9064  9360 D CXCP    : CXCP#createCaptureRequest-10 - 0.585 ms
+         1788889521.266  9064  9360 D CXCP    : GraphRequestProcessor-4 submitting Camera2CaptureSequence-20
+         1788889521.267  9064  9223 D CXCP    : CaptureSessionState-5 Active
+         1788889521.267  9064  9360 D CXCP    : CXCP#setRepeatingRequest-10 - 1.347 ms
+         1788889521.267  9064  9360 D CXCP    : GraphRequestProcessor-4 submitted Camera2CaptureSequence-20
+         1788889521.307  9064  9064 D StreamStateObserver: Update Preview stream state to STREAMING
+         1788889521.309  9064  9064 I HybridPreviewViewSpec: PreviewView started!
+         1788889523.454  9064  9068 I m.brailleme.app: Background concurrent mark compact GC freed 3250KB AllocSpace bytes, 20(5588KB) LOS objects, 43% free, 31MB/55MB, paused 7.480ms,5.236ms total 422.481ms
+         1788889525.724  9064  9068 I m.brailleme.app: Background concurrent mark compact GC freed 4210KB AllocSpace bytes, 45(17MB) LOS objects, 40% free, 34MB/58MB, paused 3.693ms,1.623ms total 135.140ms
+         1788889526.087  9064  9290 D BufferPoolAccessor2.0: evictor expired: 1, evicted: 0
+         1788889527.088  9064  9290 D BufferPoolAccessor2.0: bufferpool2 0x745dd2100f38 : 0(0 size) total buffers - 0(0 size) used buffers - 2/7 (recycle/alloc) - 5/74 (fetch/transfer)
+         1788889527.088  9064  9290 D BufferPoolAccessor2.0: evictor expired: 1, evicted: 1
+         1788889528.469  9064  9068 I m.brailleme.app: Background concurrent mark compact GC freed 2918KB AllocSpace bytes, 54(22MB) LOS objects, 42% free, 32MB/56MB, paused 1.047ms,8.247ms total 352.098ms
+         1788889528.670  9064  9383 I m.brailleme.app: Explicit concurrent mark compact GC freed 1132KB AllocSpace bytes, 14(11MB) LOS objects, 49% free, 23MB/46MB, paused 12.212ms,6.917ms total 198.113ms
+         1788889528.931  9064  9089 I HybridCameraPhotoOutputSpec: Capturing Photo in-memory...
+         1788889528.931  9064  9089 D ImageCapture: setFlashMode: flashMode = 2
+         1788889528.931  9064  9089 D CXCP    : setFlashAsync: flashMode = 2, requestControl = androidx.camera.camera2.impl.DeferredUseCaseCameraRequestControl@2286a97
+         1788889528.933  9064  9223 D CXCP    : State3AControl.getFinalPreferredAeMode: preferAeMode = 1
+         1788889528.936  9064  9223 D CXCP    : UseCaseCameraRequestControlImpl#setParametersAsync: [DEFAULT] values = {CaptureRequest.Key(android.control.aeMode)=1, CaptureRequest.Key(android.control.afMode)=1, CaptureRequest.Key(android.control.awbMode)=1}, optionPriority = OPTIONAL
+         1788889528.936  9064  9223 D CXCP    : UseCaseCameraState#updateState: parameters = {CaptureRequest.Key(android.control.aeExposureCompensation)=0, CaptureRequest.Key(android.control.aeMode)=1, CaptureRequest.Key(android.control.afMode)=1, CaptureRequest.Key(android.control.awbMode)=1, CaptureRequest.Key(android.control.zoomRatio)=1.0}, internalParameters = {Metadata.Key(camerax.tag_bundle)=android.hardware.camera2.CaptureRequest.setTag.CX}, streams = null, template = RequestTemplate(value=1)
+         1788889528.936  9064  9223 D CXCP    : Update RepeatingRequest: Request(streams=[Stream-15, Stream-13], template=RequestTemplate(value=1))@e20b452
+         1788889528.945  9064  9359 D CXCP    : Building CaptureRequest for Request(streams=[Stream-15, Stream-13], template=RequestTemplate(value=1))@e20b452
+         1788889528.946  9064  9359 D CXCP    : CXCP#createCaptureRequest-10 - 0.826 ms
+         1788889528.947  9064  9359 D CXCP    : GraphRequestProcessor-4 submitting Camera2CaptureSequence-21
+         1788889528.947  9064  9359 D CXCP    : CXCP#setRepeatingRequest-10 - 0.699 ms
+         1788889528.948  9064  9359 D CXCP    : GraphRequestProcessor-4 submitted Camera2CaptureSequence-21
+         1788889528.963  9064  9064 D ImageCapture: takePictureInternal
+         1788889528.963  9064  9064 D TakePictureManagerImpl: Issue the next TakePictureRequest.
+         1788889528.964  9064  9064 D ProcessingRequest: ProcessingRequest: mRequestId = 3, mTagBundleKey = 151009029
+         1788889528.964  9064  9223 D CXCP    : StillCaptureRequestControl: submitting CaptureRequest(captureConfigs=[androidx.camera.core.impl.CaptureConfig@a03ba68], captureMode=0, flashType=0, result=CompletableDeferredImpl{Active}@ad23e81) at androidx.camera.camera2.impl.DeferredUseCaseCameraRequestControl@2286a97
+         1788889528.964  9064  9223 D CXCP    : FlashControl: Waiting for any ongoing update to be completed
+         1788889529.075  9064  9223 D CXCP    : awaitFlashModeUpdate: initialFlashMode = 2
+         1788889529.075  9064  9223 D CXCP    : StillCaptureRequestControl: Issuing single capture
+         1788889529.076  9064  9223 D CXCP    : UseCaseCameraRequestControlImpl#issueSingleCaptureAsync
+         1788889529.076  9064  9223 D CXCP    : UseCaseCameraRequestControl: Submitting still captures to capture pipeline
+         1788889529.076  9064  9223 D CXCP    : CapturePipeline#invokeCaptureTasks: tasks = [PRE_CAPTURE, MAIN_CAPTURE, POST_CAPTURE], captureMode = 0, flashMode = 2, flashType = 0
+         1788889529.076  9064  9223 D CXCP    : CapturePipeline#defaultNoFlashCapture
+         1788889529.076  9064  9223 D CXCP    : CapturePipeline#List<PipelineTask>.invoke: tasks = [PRE_CAPTURE, MAIN_CAPTURE, POST_CAPTURE]
+         1788889529.076  9064  9223 D CXCP    : CapturePipeline#List<PipelineTask>.invoke: starting PRE_CAPTURE
+         1788889529.076  9064  9223 D CXCP    : CapturePipeline#defaultNoFlashCapture: Locking 3A
+         1788889529.078  9064  9223 D CXCP    : lock3A - waiting for af to converge before locking them. Custom converge condition isSet=true.
+         1788889529.079  9064  9223 D CXCP    : StillCaptureRequestControl: Waiting for deferred list from CaptureRequest(captureConfigs=[androidx.camera.core.impl.CaptureConfig@a03ba68], captureMode=0, flashType=0, result=CompletableDeferredImpl{Active}@ad23e81)
+         1788889529.079  9064  9361 D CXCP    : Building CaptureRequest for Request(streams=[Stream-15, Stream-13], template=RequestTemplate(value=1))@e20b452
+         1788889529.080  9064  9361 D CXCP    : CXCP#createCaptureRequest-10 - 1.209 ms
+         1788889529.081  9064  9361 D CXCP    : GraphRequestProcessor-4 submitting Camera2CaptureSequence-22
+         1788889529.083  9064  9361 D CXCP    : CXCP#setRepeatingRequest-10 - 1.205 ms
+         1788889529.083  9064  9361 D CXCP    : GraphRequestProcessor-4 submitted Camera2CaptureSequence-22
+         1788889529.268  9064  9363 D ConvergenceUtils: checkCaptureResult: AE =CONVERGED, AF =INACTIVE, AWB=CONVERGED, required3aModes = 7
+         1788889529.268  9064  9363 D ConvergenceUtils: checkCaptureResult: AE =CONVERGED, AF =INACTIVE, AWB=CONVERGED, required3aModes = 7
+         1788889529.300  9064  9363 D ConvergenceUtils: checkCaptureResult: AE =CONVERGED, AF =INACTIVE, AWB=CONVERGED, required3aModes = 7
+         1788889529.301  9064  9363 D ConvergenceUtils: checkCaptureResult: AE =CONVERGED, AF =INACTIVE, AWB=CONVERGED, required3aModes = 7
+         1788889529.335  9064  9363 D ConvergenceUtils: checkCaptureResult: AE =CONVERGED, AF =INACTIVE, AWB=CONVERGED, required3aModes = 7
+         1788889529.336  9064  9363 D ConvergenceUtils: checkCaptureResult: AE =CONVERGED, AF =INACTIVE, AWB=CONVERGED, required3aModes = 7
+         1788889529.368  9064  9363 D ConvergenceUtils: checkCaptureResult: AE =CONVERGED, AF =INACTIVE, AWB=CONVERGED, required3aModes = 7
+         1788889529.368  9064  9363 D ConvergenceUtils: checkCaptureResult: AE =CONVERGED, AF =INACTIVE, AWB=CONVERGED, required3aModes = 7
+         1788889529.403  9064  9363 D ConvergenceUtils: checkCaptureResult: AE =CONVERGED, AF =INACTIVE, AWB=CONVERGED, required3aModes = 7
+         1788889529.403  9064  9363 D ConvergenceUtils: checkCaptureResult: AE =CONVERGED, AF =INACTIVE, AWB=CONVERGED, required3aModes = 7
+         1788889529.433  9064  9363 D ConvergenceUtils: checkCaptureResult: AE =CONVERGED, AF =INACTIVE, AWB=CONVERGED, required3aModes = 7
+         1788889529.433  9064  9363 D ConvergenceUtils: checkCaptureResult: AE =CONVERGED, AF =INACTIVE, AWB=CONVERGED, required3aModes = 7
+         1788889529.469  9064  9363 D ConvergenceUtils: checkCaptureResult: AE =CONVERGED, AF =INACTIVE, AWB=CONVERGED, required3aModes = 7
+         1788889529.469  9064  9363 D ConvergenceUtils: checkCaptureResult: AE =CONVERGED, AF =INACTIVE, AWB=CONVERGED, required3aModes = 7
+         1788889529.503  9064  9363 D ConvergenceUtils: checkCaptureResult: AE =CONVERGED, AF =INACTIVE, AWB=CONVERGED, required3aModes = 7
+         1788889529.503  9064  9363 D ConvergenceUtils: checkCaptureResult: AE =CONVERGED, AF =INACTIVE, AWB=CONVERGED, required3aModes = 7
+         1788889529.541  9064  9363 D ConvergenceUtils: checkCaptureResult: AE =CONVERGED, AF =INACTIVE, AWB=CONVERGED, required3aModes = 7
+         1788889529.542  9064  9363 D ConvergenceUtils: checkCaptureResult: AE =CONVERGED, AF =INACTIVE, AWB=CONVERGED, required3aModes = 7
+         1788889529.568  9064  9363 D ConvergenceUtils: checkCaptureResult: AE =CONVERGED, AF =INACTIVE, AWB=CONVERGED, required3aModes = 7
+         1788889529.568  9064  9363 D ConvergenceUtils: checkCaptureResult: AE =CONVERGED, AF =INACTIVE, AWB=CONVERGED, required3aModes = 7
+         1788889529.610  9064  9363 D ConvergenceUtils: checkCaptureResult: AE =CONVERGED, AF =INACTIVE, AWB=CONVERGED, required3aModes = 7
+         1788889529.610  9064  9363 D ConvergenceUtils: checkCaptureResult: AE =CONVERGED, AF =INACTIVE, AWB=CONVERGED, required3aModes = 7
+         1788889529.644  9064  9363 D ConvergenceUtils: checkCaptureResult: AE =CONVERGED, AF =INACTIVE, AWB=CONVERGED, required3aModes = 7
+         1788889529.644  9064  9363 D ConvergenceUtils: checkCaptureResult: AE =CONVERGED, AF =INACTIVE, AWB=CONVERGED, required3aModes = 7
+         1788889529.685  9064  9363 D ConvergenceUtils: checkCaptureResult: AE =CONVERGED, AF =INACTIVE, AWB=CONVERGED, required3aModes = 7
+         1788889529.685  9064  9363 D ConvergenceUtils: checkCaptureResult: AE =CONVERGED, AF =INACTIVE, AWB=CONVERGED, required3aModes = 7
+         1788889529.710  9064  9363 D ConvergenceUtils: checkCaptureResult: AE =CONVERGED, AF =INACTIVE, AWB=CONVERGED, required3aModes = 7
+         1788889529.711  9064  9363 D ConvergenceUtils: checkCaptureResult: AE =CONVERGED, AF =INACTIVE, AWB=CONVERGED, required3aModes = 7
+         1788889529.747  9064  9363 D ConvergenceUtils: checkCaptureResult: AE =CONVERGED, AF =INACTIVE, AWB=CONVERGED, required3aModes = 7
+         1788889529.748  9064  9363 D ConvergenceUtils: checkCaptureResult: AE =CONVERGED, AF =INACTIVE, AWB=CONVERGED, required3aModes = 7
+         1788889529.777  9064  9363 D ConvergenceUtils: checkCaptureResult: AE =CONVERGED, AF =INACTIVE, AWB=CONVERGED, required3aModes = 7
+         1788889529.777  9064  9363 D ConvergenceUtils: checkCaptureResult: AE =CONVERGED, AF =INACTIVE, AWB=CONVERGED, required3aModes = 7
+         1788889529.813  9064  9363 D ConvergenceUtils: checkCaptureResult: AE =CONVERGED, AF =INACTIVE, AWB=CONVERGED, required3aModes = 7
+         1788889529.813  9064  9363 D ConvergenceUtils: checkCaptureResult: AE =CONVERGED, AF =INACTIVE, AWB=CONVERGED, required3aModes = 7
+         1788889529.838  9064  9363 D ConvergenceUtils: checkCaptureResult: AE =CONVERGED, AF =INACTIVE, AWB=CONVERGED, required3aModes = 7
+         1788889529.838  9064  9363 D ConvergenceUtils: checkCaptureResult: AE =CONVERGED, AF =INACTIVE, AWB=CONVERGED, required3aModes = 7
+         1788889529.871  9064  9363 D ConvergenceUtils: checkCaptureResult: AE =CONVERGED, AF =INACTIVE, AWB=CONVERGED, required3aModes = 7
+         1788889529.871  9064  9363 D ConvergenceUtils: checkCaptureResult: AE =CONVERGED, AF =INACTIVE, AWB=CONVERGED, required3aModes = 7
+         1788889529.912  9064  9363 D ConvergenceUtils: checkCaptureResult: AE =CONVERGED, AF =INACTIVE, AWB=CONVERGED, required3aModes = 7
+         1788889529.912  9064  9363 D ConvergenceUtils: checkCaptureResult: AE =CONVERGED, AF =INACTIVE, AWB=CONVERGED, required3aModes = 7
+         1788889529.940  9064  9363 D ConvergenceUtils: checkCaptureResult: AE =CONVERGED, AF =INACTIVE, AWB=CONVERGED, required3aModes = 7
+         1788889529.943  9064  9363 D ConvergenceUtils: checkCaptureResult: AE =CONVERGED, AF =INACTIVE, AWB=CONVERGED, required3aModes = 7
+         1788889529.988  9064  9363 D ConvergenceUtils: checkCaptureResult: AE =CONVERGED, AF =INACTIVE, AWB=CONVERGED, required3aModes = 7
+         1788889529.988  9064  9363 D ConvergenceUtils: checkCaptureResult: AE =CONVERGED, AF =INACTIVE, AWB=CONVERGED, required3aModes = 7
+         1788889530.015  9064  9363 D ConvergenceUtils: checkCaptureResult: AE =CONVERGED, AF =INACTIVE, AWB=CONVERGED, required3aModes = 7
+         1788889530.015  9064  9363 D ConvergenceUtils: checkCaptureResult: AE =CONVERGED, AF =INACTIVE, AWB=CONVERGED, required3aModes = 7
+         1788889530.043  9064  9363 D ConvergenceUtils: checkCaptureResult: AE =CONVERGED, AF =INACTIVE, AWB=CONVERGED, required3aModes = 7
+         1788889530.043  9064  9363 D ConvergenceUtils: checkCaptureResult: AE =CONVERGED, AF =INACTIVE, AWB=CONVERGED, required3aModes = 7
+         1788889530.077  9064  9363 D ConvergenceUtils: checkCaptureResult: AE =CONVERGED, AF =INACTIVE, AWB=CONVERGED, required3aModes = 7
+         1788889530.079  9064  9363 D ConvergenceUtils: checkCaptureResult: AE =CONVERGED, AF =INACTIVE, AWB=CONVERGED, required3aModes = 7
+         1788889530.147  9064  9363 D ConvergenceUtils: checkCaptureResult: AE =CONVERGED, AF =INACTIVE, AWB=CONVERGED, required3aModes = 7
+         1788889530.147  9064  9363 D ConvergenceUtils: checkCaptureResult: AE =CONVERGED, AF =INACTIVE, AWB=CONVERGED, required3aModes = 7
+         1788889530.158  9064  9363 D ConvergenceUtils: checkCaptureResult: AE =CONVERGED, AF =INACTIVE, AWB=CONVERGED, required3aModes = 7
+         1788889530.158  9064  9363 D ConvergenceUtils: checkCaptureResult: AE =CONVERGED, AF =INACTIVE, AWB=CONVERGED, required3aModes = 7
+         1788889530.194  9064  9363 D ConvergenceUtils: checkCaptureResult: AE =CONVERGED, AF =INACTIVE, AWB=CONVERGED, required3aModes = 7
+         1788889530.195  9064  9363 D ConvergenceUtils: checkCaptureResult: AE =CONVERGED, AF =INACTIVE, AWB=CONVERGED, required3aModes = 7
+         1788889530.222  9064  9363 D ConvergenceUtils: checkCaptureResult: AE =CONVERGED, AF =INACTIVE, AWB=CONVERGED, required3aModes = 7
+         1788889530.222  9064  9363 D ConvergenceUtils: checkCaptureResult: AE =CONVERGED, AF =INACTIVE, AWB=CONVERGED, required3aModes = 7
+         1788889530.260  9064  9363 D ConvergenceUtils: checkCaptureResult: AE =CONVERGED, AF =INACTIVE, AWB=CONVERGED, required3aModes = 7
+         1788889530.261  9064  9363 D ConvergenceUtils: checkCaptureResult: AE =CONVERGED, AF =INACTIVE, AWB=CONVERGED, required3aModes = 7
+         1788889530.283  9064  9223 D CXCP    : lock3A - converged at frame number=246, status=Status(value=2)
+         1788889530.283  9064  9223 D CXCP    : CapturePipeline#defaultNoFlashCapture: Locking 3A done
+         1788889530.283  9064  9223 D CXCP    : CapturePipeline#List<PipelineTask>.invoke: PRE_CAPTURE completed
+         1788889530.283  9064  9223 D CXCP    : CapturePipeline#List<PipelineTask>.invoke: starting MAIN_CAPTURE
+         1788889530.283  9064  9223 D CXCP    : CapturePipeline#submitRequestInternal; Submitting [androidx.camera.core.impl.CaptureConfig@a03ba68] with CameraPipe
+         1788889530.284  9064  9223 D CXCP    : CapturePipeline#List<PipelineTask>.invoke: MAIN_CAPTURE completed
+         1788889530.287  9064  9223 D CXCP    : CapturePipeline#submitRequestInternal: Acquiring session for submitting requests
+         1788889530.289  9064  9223 D CXCP    : CapturePipeline#submitRequestInternal: Submitting [Request(streams=[Stream-14], template=RequestTemplate(value=2))@4400c96]
+         1788889530.292  9064  9223 D CXCP    : CapturePipeline#List<PipelineTask>.invoke: Waiting for POST_CAPTURE signal
+         1788889530.297  9064  9358 D CXCP    : Building CaptureRequest for Request(streams=[Stream-14], template=RequestTemplate(value=2))@4400c96
+         1788889530.300  9064  9358 D CXCP    : CXCP#createCaptureRequest-10 - 2.494 ms
+         1788889530.300  9064  9358 D CXCP    : GraphRequestProcessor-4 submitting Camera2CaptureSequence-23
+         1788889530.302  9064  9358 D CXCP    : CXCP#capture-10 - 1.840 ms
+         1788889530.303  9064  9358 D CXCP    : GraphRequestProcessor-4 submitted Camera2CaptureSequence-23
+         1788889530.323  9064  9223 D CXCP    : CaptureSessionState-5 CaptureQueueEmpty
+         1788889530.485  9064  9064 D ProcessingRequest: onCaptureStarted: request ID = 3
+         1788889530.487  9064  9223 D CXCP    : StillCaptureRequestControl: Waiting for deferred list from CaptureRequest(captureConfigs=[androidx.camera.core.impl.CaptureConfig@a03ba68], captureMode=0, flashType=0, result=CompletableDeferredImpl{Active}@ad23e81) done
+         1788889530.488  9064  9223 D CXCP    : CapturePipeline#List<PipelineTask>.invoke: Waiting for POST_CAPTURE signal done
+         1788889530.488  9064  9223 D CXCP    : CapturePipeline#defaultNoFlashCapture: Unlocking 3A
+         1788889530.488  9064  9223 D CXCP    : unlock3A - sending a request to unlock af first.
+         1788889530.489  9064  9360 D CXCP    : Building CaptureRequest for Request(streams=[Stream-15, Stream-13], template=RequestTemplate(value=1))@e20b452
+         1788889530.496  9064  9360 D CXCP    : CXCP#createCaptureRequest-10 - 6.792 ms
+         1788889530.497  9064  9360 D CXCP    : GraphRequestProcessor-4 submitting Camera2CaptureSequence-24
+         1788889530.497  9064  9064 D CaptureNode: OnImageAvailableListener: mCurrentRequest ID = 3, image.isNull = false
+         1788889530.497  9064  9064 I ProcessingRequest: onImageCaptured: request ID = 3
+         1788889530.497  9064  9064 D TakePictureManagerImpl: Issue the next TakePictureRequest.
+         1788889530.497  9064  9064 D TakePictureManagerImpl: No new request.
+         1788889530.498  9064 11034 D ProcessingNode: processInMemoryCapture: request ID = 3
+         1788889530.498  9064  9360 D CXCP    : CXCP#capture-10 - 0.566 ms
+         1788889530.498  9064  9360 D CXCP    : GraphRequestProcessor-4 submitted Camera2CaptureSequence-24
+         1788889530.499  9064  9360 D CXCP    : Building CaptureRequest for Request(streams=[Stream-15, Stream-13], template=RequestTemplate(value=1))@e20b452
+         1788889530.500  9064  9360 D CXCP    : CXCP#createCaptureRequest-10 - 0.557 ms
+         1788889530.500  9064  9360 D CXCP    : GraphRequestProcessor-4 submitting Camera2CaptureSequence-25
+         1788889530.500  9064  9064 I ProcessingRequest: onFinalResult(ImageProxy): request ID = 3
+         1788889530.503  9064  9360 D CXCP    : CXCP#setRepeatingRequest-10 - 2.501 ms
+         1788889530.503  9064  9360 D CXCP    : GraphRequestProcessor-4 submitted Camera2CaptureSequence-25
+         1788889530.519  9064  9090 W HWUI    : Image decoding logging dropped!
+         1788889530.536  9064  9081 I ReactNativeJS: 'BRAILLE_WORD_CAPTURE_GEOMETRY', '{"schemaVersion":1,"captureId":1,"preview":{"widthDp":371.4285888671875,"heightDp":371.4285888671875,"resolution":{"width":1280,"height":960},"sensorPoints":[{"x":618.1605224609375,"y":110.63728332519531},{"x":618.1605224609375,"y":715.109375},{"x":531.0616455078125,"y":715.109375},{"x":531.0616455078125,"y":110.63728332519531}]},"photo":{"width":1280,"height":960,"sensorToBuffer":[1,0,0,0,1,0,0,0,1],"cropRect":[0,0,1280,960],"rotationDegrees":90,"isMirrored":false},"upright":{"width":960,"height":1280},"roi":{"x":0.25509440104166664,"y":0.4148919105529785,"width":0.6296584288279216,"height":0.0680459976196289}}'
+         1788889530.536  9064  9223 D CXCP    : CaptureSessionState-5 CaptureQueueEmpty
+         1788889530.543  9064  9081 I ReactNativeJS: 'BRAILLE_WORD_TRACKING_METRICS', '{"schemaVersion":1,"elapsedMs":9229,"received":110,"admitted":30,"busyDrops":0,"throttled":34,"disabledDrops":46,"runnerDrops":0,"completed":30,"errors":0,"meanMs":218,"maxMs":391,"latencyUpperBoundsMs":[50,100,200,400,800,1600,null],"latencyBuckets":[0,1,13,16,0,0,0]}'
+         1788889530.545  9064  9064 I CustomLifecycle: Switching lifecycle state from RESUMED to CREATED...
+         1788889530.548  9064  9064 D CXCP    : Detaching [Preview:androidx.camera.core.Preview-d09a0c6b-7a4f-49cf-a483-e2daa976156b, ImageCapture:androidx.camera.core.ImageCapture-c850c941-b40e-464c-92c4-27e74cf9efdd, ImageAnalysis:androidx.camera.core.ImageAnalysis-4f4c103b-3c9e-4467-affb-09f95bafed0e] from UseCaseManager<CameraGraphConfigProvider<CameraId-10>>
+         1788889530.548  9064  9064 W ScreenFlashWrapper: completePendingScreenFlashClear: none pending!
+         1788889530.548  9064  9064 D CXCP    : reset: videoUsage = 0
+         1788889530.548  9064  9064 D CXCP    : setFlashAsync: flashMode = 2, requestControl = null
+         1788889530.548  9064  9064 D CXCP    : setFlashAsync: flashMode = 2, requestControl = null
+         1788889530.549  9064  9064 D CXCP    : LowLightBoostControl#setLowLightBoostAsync: lowLightBoost = false
+         1788889530.549  9064  9223 D CXCP    : UseCaseCamera is closed before setActiveResumeMode, skipping setup.
+         1788889530.549  9064  9223 D CXCP    : UseCaseCameraRequestControl: closed
+         1788889530.551  9064  9223 D CXCP    : Closing UseCaseCamera-5
+         1788889530.553  9064  9223 I CXCP    : Closing CameraGraph-5
+         1788889530.554  9064  9359 D CXCP    : Closing GraphRequestProcessor-4
+         1788889530.554  9064  9223 D CXCP    : Closed Camera2CameraController(CameraGraph-5)
+         1788889530.554  9064  9361 D CXCP    : Closing GraphRequestProcessor-4
+         1788889530.555  9064  9360 D CXCP    : GraphProcessor(cameraGraph: CameraGraph-5) onGraphStopping
+         1788889530.560  9064  9223 D CXCP    : CapturePipeline#defaultNoFlashCapture: Unlocking 3A done
+         1788889530.580  9064  9360 D CXCP    : CameraGraph-5 state updated to GRAPH_STOPPING
+         1788889530.580  9064  9360 W CXCP    : Impermissible state transition: current camera internal state: CLOSED, received graph state: GRAPH_STOPPING
+         1788889530.580  9064  9360 D CXCP    : CaptureSessionState-5 Shutdown
+         1788889530.589  9064  9373 D CXCP    : Camera2CaptureSequenceProcessor-4#stopRepeating
+         1788889530.593  9064  9373 D CXCP    : CXCP#stopRepeating-10 - 0.906 ms
+         1788889530.594  9064  9373 D CXCP    : Camera2CaptureSequenceProcessor-4#abortCaptures
+         1788889530.596  9064  9064 I ActiveCameraSessionSingle: Camera #CameraId-10 State changed! Type: CLOSED | Error: null
+         1788889530.597  9064  9064 D StreamStateObserver: Update Preview stream state to IDLE
+         1788889530.599  9064  9064 I HybridPreviewViewSpec: PreviewView stopped!
+         1788889530.606  9064  9373 D CXCP    : CXCP#abortCaptures-10 - 10.930 ms
+         1788889530.612  9064  9223 D CXCP    : CaptureSessionState-5 Ready
+         1788889530.618  9064  9365 D CXCP    : Closing capture session for CaptureSessionState-5
+         1788889530.630  9064  9223 D CXCP    : CaptureSessionState-5 Closed
+         1788889530.630  9064  9223 D CXCP    : CaptureSessionState-5 session finalizing
+         1788889530.630  9064  9223 D CXCP    : Finalizing CaptureSessionState-5
+         1788889530.630  9064  9223 D CXCP    : SurfaceInactive androidx.camera.core.SurfaceRequest$2@5f0783e in androidx.camera.camera2.impl.UseCaseSurfaceManager@8662b50
+         1788889530.630  9064  9223 D DeferrableSurface: use count-1,  useCount=1 closed=false androidx.camera.core.SurfaceRequest$2@5f0783e
+         1788889530.631  9064  9223 D CXCP    : SurfaceInactive androidx.camera.core.impl.ImmediateSurface@ffc969a in androidx.camera.camera2.impl.UseCaseSurfaceManager@8662b50
+         1788889530.631  9064  9223 D DeferrableSurface: use count-1,  useCount=0 closed=false androidx.camera.core.impl.ImmediateSurface@ffc969a
+         1788889530.631  9064  9223 D DeferrableSurface: Surface no longer in use[total_surfaces=4, used_surfaces=2](androidx.camera.core.impl.ImmediateSurface@ffc969a}
+         1788889530.631  9064  9223 D CXCP    : SurfaceInactive androidx.camera.core.impl.ImmediateSurface@c65bac1 in androidx.camera.camera2.impl.UseCaseSurfaceManager@8662b50
+         1788889530.631  9064  9223 D DeferrableSurface: use count-1,  useCount=0 closed=false androidx.camera.core.impl.ImmediateSurface@c65bac1
+         1788889530.631  9064  9223 D DeferrableSurface: Surface no longer in use[total_surfaces=4, used_surfaces=1](androidx.camera.core.impl.ImmediateSurface@c65bac1}
+         1788889530.631  9064  9223 D CXCP    : androidx.camera.camera2.impl.UseCaseSurfaceManager@8662b50 remove surface listener
+         1788889530.635  9064  9360 D CXCP    : GraphProcessor(cameraGraph: CameraGraph-5) onGraphStopped
+         1788889530.635  9064  9360 D CXCP    : CameraGraph-5 state updated to GRAPH_STOPPED
+         1788889530.648  9064  9360 W CXCP    : Impermissible state transition: current camera internal state: CLOSED, received graph state: GRAPH_STOPPED
+         1788889530.648  9064  9360 D CXCP    : Disconnecting VirtualCamera-5
+         1788889530.649  9064  9360 D CXCP    : Camera2CameraController(CameraGraph-5) is closed
+         1788889530.649  9064  9360 D CXCP    : Camera2CameraController(CameraGraph-5) finalized
+         1788889530.686  9064  9081 I ReactNativeJS: 'BRAILLE_WORD_PHOTO_METRICS', '{"schemaVersion":1,"captureId":1,"elapsedMs":1761,"status":"rejected"}'
+         1788889531.650  9064  9358 D CXCP    : PruningProcessingQueue: Pruning [RequestClose(activeCamera=ActiveCamera(cameraId=CameraId-10)@51f876f)]
+         1788889531.651  9064  9358 D CXCP    : PruningProcessingQueue: Processing RequestClose(activeCamera=ActiveCamera(cameraId=CameraId-10)@51f876f)
+         1788889531.651  9064  9358 D CXCP    : Camera2DeviceManagerImpl#processRequestClose(CameraId-10)
+         1788889531.651  9064  9358 D CXCP    : handleQuirksBeforeClosing(android.hardware.camera2.impl.CameraDeviceImpl@7b2ccc4)
+         1788889531.651  9064  9358 D CXCP    : CaptureSessionState-5 session disconnecting
+         1788889531.652  9064  9375 I CXCP    : Closing Camera 10
+         1788889531.667  9064  9375 D CXCP    : CXCP#CameraDevice-10#close - 14.974 ms
+         1788889531.667  9064  9363 I CXCP    : New camera 10 detected
+         1788889531.667  9064  9363 W CXCP    : Failed to query camera ID list: Invalid list returned: [CameraId-10].
+         1788889531.669  9064  9223 D CXCP    : CameraId-10: onClosed
+         1788889531.669  9064  9223 D CXCP    : CameraState-4: onFinalized
+         1788889538.408  9064  9073 I m.brailleme.app: Explicit concurrent mark compact GC freed 3419KB AllocSpace bytes, 24(9872KB) LOS objects, 49% free, 19MB/39MB, paused 1.116ms,1.259ms total 35.198ms
+         1788889548.556  9064  9073 I m.brailleme.app: Explicit concurrent mark compact GC freed 440KB AllocSpace bytes, 2(1104KB) LOS objects, 50% free, 18MB/37MB, paused 964us,971us total 27.081ms
+         1788889551.036  9064 12058 D MediaCodecList: codecHandlesFormat: no format, so no extra checks
+         1788889551.039  9064 12061 D CCodec  : allocate(c2.android.vorbis.decoder)
+         1788889551.040  9064 12061 I CCodec  : setting up 'default' as default (vendor) store
+         1788889551.044  9064  9291 D BufferPoolAccessor2.0: bufferpool2 0x745dd2100f38 : 0(0 size) total buffers - 0(0 size) used buffers - 2/7 (recycle/alloc) - 5/74 (fetch/transfer)
+         1788889551.044  9064  9291 D BufferPoolAccessor2.0: Destruction - bufferpool2 0x745dd2100f38 cached: 0/0M, 0/0% in use; allocs: 7, 29% recycled; transfers: 74, 93% unfetched
+         1788889551.044  9064 12061 I CCodec  : Created component [c2.android.vorbis.decoder] for [c2.android.vorbis.decoder]
+         1788889551.044  9064 12061 D CCodecConfig: read media type: audio/vorbis
+         1788889551.046  9064 12061 D ReflectedParamUpdater: extent() != 1 for single value type: algo.buffers.max-count.values
+         1788889551.047  9064 12061 D ReflectedParamUpdater: extent() != 1 for single value type: output.subscribed-indices.values
+         1788889551.047  9064 12061 D ReflectedParamUpdater: extent() != 1 for single value type: input.buffers.allocator-ids.values
+         1788889551.048  9064 12061 D ReflectedParamUpdater: extent() != 1 for single value type: output.buffers.allocator-ids.values
+         1788889551.048  9064 12061 D ReflectedParamUpdater: extent() != 1 for single value type: algo.buffers.allocator-ids.values
+         1788889551.048  9064 12061 D ReflectedParamUpdater: extent() != 1 for single value type: output.buffers.pool-ids.values
+         1788889551.048  9064 12061 D ReflectedParamUpdater: extent() != 1 for single value type: algo.buffers.pool-ids.values
+         1788889551.049  9064 12061 I CCodecConfig: query failed after returning 8 values (BAD_INDEX)
+         1788889551.050  9064 12061 D CCodecConfig: c2 config diff is Dict {
+         1788889551.050  9064 12061 D CCodecConfig:   c2::u32 coded.bitrate.value = 64000
+         1788889551.050  9064 12061 D CCodecConfig:   c2::u32 input.buffers.max-size.value = 32768
+         1788889551.050  9064 12061 D CCodecConfig:   c2::u32 input.delay.value = 0
+         1788889551.050  9064 12061 D CCodecConfig:   string input.media-type.value = "audio/vorbis"
+         1788889551.050  9064 12061 D CCodecConfig:   c2::u32 output.large-frame.max-size = 0
+         1788889551.050  9064 12061 D CCodecConfig:   c2::u32 output.large-frame.threshold-size = 0
+         1788889551.050  9064 12061 D CCodecConfig:   string output.media-type.value = "audio/raw"
+         1788889551.050  9064 12061 D CCodecConfig:   c2::u32 raw.channel-count.value = 1
+         1788889551.050  9064 12061 D CCodecConfig:   c2::u32 raw.sample-rate.value = 48000
+         1788889551.050  9064 12061 D CCodecConfig: }
+         1788889551.053  9064 12058 E MediaCodec: Media Quality Service not found.
+         1788889551.053  9064  9081 W HWUI    : Image decoding logging dropped!
+         1788889551.053  9064  9081 W HWUI    : Image decoding logging dropped!
+         1788889551.054  9064 12061 D CCodec  : [c2.android.vorbis.decoder] buffers are bound to CCodec for this session
+         1788889551.054  9064 12061 D CCodecConfig: no c2 equivalents for durationUs
+         1788889551.054  9064 12061 D CCodecConfig: no c2 equivalents for track-id
+         1788889551.054  9064 12061 D CCodecConfig: no c2 equivalents for csd-1
+         1788889551.054  9064 12061 D CCodecConfig: no c2 equivalents for flags
+         1788889551.054  9064  9081 W HWUI    : Image decoding logging dropped!
+         1788889551.055  9064 12061 D CCodecConfig: c2 config diff is   c2::u32 coded.bitrate.value = 48000
+         1788889551.055  9064 12061 W Codec2Client: query -- param skipped: index = 1107298332.
+         1788889551.055  9064 12061 D CCodec  : encoding statistics level = 0
+         1788889551.055  9064 12061 D CCodec  : setup formats input: AMessage(what = 0x00000000) = {
+         1788889551.055  9064 12061 D CCodec  :   int32_t bitrate = 48000
+         1788889551.055  9064 12061 D CCodec  :   int32_t channel-count = 1
+         1788889551.055  9064 12061 D CCodec  :   int32_t max-input-size = 32768
+         1788889551.055  9064 12061 D CCodec  :   string mime = "audio/vorbis"
+         1788889551.055  9064 12061 D CCodec  :   int32_t sample-rate = 48000
+         1788889551.055  9064 12061 D CCodec  : }
+         1788889551.055  9064 12061 D CCodec  : setup formats output: AMessage(what = 0x00000000) = {
+         1788889551.055  9064 12061 D CCodec  :   int32_t buffer-batch-max-output-size = 0
+         1788889551.055  9064 12061 D CCodec  :   int32_t buffer-batch-threshold-output-size = 0
+         1788889551.055  9064 12061 D CCodec  :   int32_t channel-count = 1
+         1788889551.055  9064 12061 D CCodec  :   string mime = "audio/raw"
+         1788889551.055  9064 12061 D CCodec  :   int32_t sample-rate = 48000
+         1788889551.055  9064 12061 D CCodec  :   int32_t channel-mask = 1
+         1788889551.055  9064 12061 D CCodec  :   int32_t android._config-pcm-encoding = 2
+         1788889551.055  9064 12061 D CCodec  : }
+         1788889551.055  9064 12061 I CCodecConfig: query failed after returning 8 values (BAD_INDEX)
+         1788889551.055  9064 12061 E m.brailleme.app: Failed to query component interface for required system resources: 6
+         1788889551.059  9064 12061 W Codec2Client: query -- param skipped: index = 1342179345.
+         1788889551.059  9064 12061 W Codec2Client: query -- param skipped: index = 2415921170.
+         1788889551.060  9064 12061 D CCodecBufferChannel: [c2.android.vorbis.decoder#920] Created input block pool with allocatorID 16 => poolID 21 - OK (0)
+         1788889551.061  9064  9064 W Bitmap  : Called hasAlpha() on a recycle()'d bitmap! This is undefined behavior!
+         1788889551.064  9064 12061 I CCodecBufferChannel: [c2.android.vorbis.decoder#920] Created output block pool with allocatorID 16 => poolID 50 - OK
+         1788889551.064  9064 12061 D CCodecBufferChannel: [c2.android.vorbis.decoder#920] Configured output block pool ids 50 => OK
+         1788889551.077  9064  9064 I HybridCameraSessionSpec: Reconfiguring CameraSession with 0 connection(s)...
+         1788889551.077  9064  9064 W CXCP    : Detaching [] from UseCaseManager<CameraGraphConfigProvider<CameraId-10>> (Ignored)
+         1788889551.077  9064  9064 D DeferrableSurface: surface closed,  useCount=1 closed=true androidx.camera.core.SurfaceRequest$2@5f0783e
+         1788889551.077  9064  9064 D DeferrableSurface: surface closed,  useCount=0 closed=true androidx.camera.core.processing.SurfaceEdge$SettableSurface@ccf5ef2
+         1788889551.077  9064  9064 D DeferrableSurface: Surface terminated[total_surfaces=3, used_surfaces=1](androidx.camera.core.processing.SurfaceEdge$SettableSurface@ccf5ef2}
+         1788889551.078  9064  9064 D DeferrableSurface: use count-1,  useCount=0 closed=true androidx.camera.core.SurfaceRequest$2@5f0783e
+         1788889551.078  9064  9064 D DeferrableSurface: Surface no longer in use[total_surfaces=3, used_surfaces=0](androidx.camera.core.SurfaceRequest$2@5f0783e}
+         1788889551.078  9064  9064 D DeferrableSurface: Surface terminated[total_surfaces=2, used_surfaces=0](androidx.camera.core.SurfaceRequest$2@5f0783e}
+         1788889551.078  9064  9064 W ScreenFlashWrapper: completePendingScreenFlashClear: none pending!
+         1788889551.078  9064  9064 D ImageCapture: clearPipeline
+         1788889551.078  9064  9064 D DeferrableSurface: surface closed,  useCount=0 closed=true androidx.camera.core.impl.ImmediateSurface@ffc969a
+         1788889551.078  9064  9064 D DeferrableSurface: Surface terminated[total_surfaces=1, used_surfaces=0](androidx.camera.core.impl.ImmediateSurface@ffc969a}
+         1788889551.078  9064  9064 D DeferrableSurface: surface closed,  useCount=0 closed=true androidx.camera.core.impl.ImmediateSurface@c65bac1
+         1788889551.078  9064  9064 D DeferrableSurface: Surface terminated[total_surfaces=0, used_surfaces=0](androidx.camera.core.impl.ImmediateSurface@c65bac1}
+         1788889551.078  9064  9064 D CXCP    : Detaching [Preview:androidx.camera.core.Preview-d09a0c6b-7a4f-49cf-a483-e2daa976156b, ImageCapture:androidx.camera.core.ImageCapture-c850c941-b40e-464c-92c4-27e74cf9efdd, ImageAnalysis:androidx.camera.core.ImageAnalysis-4f4c103b-3c9e-4467-affb-09f95bafed0e] from UseCaseManager<CameraGraphConfigProvider<CameraId-10>>
+         1788889551.078  9064  9064 W CXCP    : Detaching [] from UseCaseManager<CameraGraphConfigProvider<CameraId-10>> (Ignored)
+         1788889551.078  9064  9064 W CXCP    : Detaching [] from UseCaseManager<CameraGraphConfigProvider<CameraId-10>> (Ignored)
+         1788889551.079  9064  9064 I CustomLifecycle: Switching lifecycle state from INITIALIZED to CREATED...
+         1788889551.091  9064  9064 I HybridCameraSessionSpec: Reconfiguring CameraSession with 1 connection(s)...
+         1788889551.091  9064  9064 W CXCP    : Detaching [] from UseCaseManager<CameraGraphConfigProvider<CameraId-10>> (Ignored)
+         1788889551.091  9064  9064 W CXCP    : Detaching [] from UseCaseManager<CameraGraphConfigProvider<CameraId-10>> (Ignored)
+         1788889551.091  9064  9064 W CXCP    : Detaching [] from UseCaseManager<CameraGraphConfigProvider<CameraId-10>> (Ignored)
+         1788889551.091  9064  9064 W CXCP    : Detaching [] from UseCaseManager<CameraGraphConfigProvider<CameraId-10>> (Ignored)
+         1788889551.093  9064  9064 D ResolvedFeatureGroup: resolveFeatureGroup: sessionConfig = SessionConfig@6df16fd {useCases=[Preview:androidx.camera.core.Preview-8acc08e6-61d1-4235-9bb1-24eef500ccfe, ImageCapture:androidx.camera.core.ImageCapture-1da299d6-5bde-4a90-ab46-8600327139be, ImageAnalysis:androidx.camera.core.ImageAnalysis-5bfe6175-fef8-4ea9-a029-15df613cdb22], frameRateRange=[0, 0], requiredFeatureGroup=[], preferredFeatureGroup=[], effects=[], viewPort=null}, lensFacing = 1
+         1788889551.093  9064  9064 D CameraUseCaseAdapter: simulateAddUseCases: appUseCasesToAdd = [Preview:androidx.camera.core.Preview-8acc08e6-61d1-4235-9bb1-24eef500ccfe, ImageCapture:androidx.camera.core.ImageCapture-1da299d6-5bde-4a90-ab46-8600327139be, ImageAnalysis:androidx.camera.core.ImageAnalysis-5bfe6175-fef8-4ea9-a029-15df613cdb22], featureGroup = null
+         1788889551.093  9064  9064 D CXCP    : Creating config for PREVIEW
+         1788889551.093  9064  9064 D CXCP    : Creating config for IMAGE_CAPTURE
+         1788889551.093  9064  9064 D CXCP    : Creating config for IMAGE_ANALYSIS
+         1788889551.093  9064  9064 D CXCP    : Creating config for PREVIEW
+         1788889551.093  9064  9064 D CXCP    : Creating config for IMAGE_CAPTURE
+         1788889551.093  9064  9064 D CXCP    : Creating config for IMAGE_ANALYSIS
+         1788889551.094  9064  9064 D UseCase : applyFeaturesToConfig: mFeatureGroup = null, this = Preview:androidx.camera.core.Preview-8acc08e6-61d1-4235-9bb1-24eef500ccfe
+         1788889551.094  9064  9064 D SupportedOutputSizesCollector: useCaseConfig = androidx.camera.core.impl.PreviewConfig@aac0ff2, candidateSizes = [1280x960, 1280x720, 640x480, 352x288, 320x240]
+         1788889551.094  9064  9064 D UseCase : applyFeaturesToConfig: mFeatureGroup = null, this = ImageCapture:androidx.camera.core.ImageCapture-1da299d6-5bde-4a90-ab46-8600327139be
+         1788889551.094  9064  9064 D SupportedOutputSizesCollector: useCaseConfig = androidx.camera.core.impl.ImageCaptureConfig@f4ab643, candidateSizes = [1280x960, 1280x720, 640x480, 352x288, 320x240]
+         1788889551.097  9064  9064 D UseCase : applyFeaturesToConfig: mFeatureGroup = null, this = ImageAnalysis:androidx.camera.core.ImageAnalysis-5bfe6175-fef8-4ea9-a029-15df613cdb22
+         1788889551.097  9064  9064 D SupportedOutputSizesCollector: useCaseConfig = androidx.camera.core.impl.ImageAnalysisConfig@12a34c0, candidateSizes = [1280x960, 1280x720, 640x480, 352x288, 320x240]
+         1788889551.097  9064  9064 D UseCase : applyFeaturesToConfig: mFeatureGroup = null, this = Preview:androidx.camera.core.Preview-8acc08e6-61d1-4235-9bb1-24eef500ccfe
+         1788889551.099  9064  9064 D UseCase : applyFeaturesToConfig: mFeatureGroup = null, this = ImageCapture:androidx.camera.core.ImageCapture-1da299d6-5bde-4a90-ab46-8600327139be
+         1788889551.099  9064  9064 D UseCase : applyFeaturesToConfig: mFeatureGroup = null, this = ImageAnalysis:androidx.camera.core.ImageAnalysis-5bfe6175-fef8-4ea9-a029-15df613cdb22
+         1788889551.099  9064  9064 D UseCase : applyFeaturesToConfig: mFeatureGroup = null, this = Preview:androidx.camera.core.Preview-8acc08e6-61d1-4235-9bb1-24eef500ccfe
+         1788889551.099  9064  9064 D UseCase : applyFeaturesToConfig: mFeatureGroup = null, this = ImageCapture:androidx.camera.core.ImageCapture-1da299d6-5bde-4a90-ab46-8600327139be
+         1788889551.099  9064  9064 D UseCase : applyFeaturesToConfig: mFeatureGroup = null, this = ImageAnalysis:androidx.camera.core.ImageAnalysis-5bfe6175-fef8-4ea9-a029-15df613cdb22
+         1788889551.099  9064  9064 D CXCP    : DynamicRangeResolver: Resolved dynamic range for use case androidx.camera.core.Preview-8acc08e6-61d1-4235-9bb1-24eef500ccfe to no compatible HDR dynamic ranges.
+         1788889551.099  9064  9064 D CXCP    : DynamicRange@d90c143{encoding=UNSPECIFIED, bitDepth=0}
+         1788889551.099  9064  9064 D CXCP    : ->
+         1788889551.099  9064  9064 D CXCP    : DynamicRange@b6766f2{encoding=SDR, bitDepth=8}
+         1788889551.099  9064  9064 D CXCP    : resolvedDynamicRanges = {androidx.camera.core.impl.ImageCaptureConfig@f4ab643=DynamicRange@b6766f2{encoding=SDR, bitDepth=8}, androidx.camera.core.impl.ImageAnalysisConfig@12a34c0=DynamicRange@b6766f2{encoding=SDR, bitDepth=8}, androidx.camera.core.impl.PreviewConfig@aac0ff2=DynamicRange@b6766f2{encoding=SDR, bitDepth=8}}
+         1788889551.099  9064  9064 D CXCP    : getSuggestedStreamSpecifications: isPreviewStabilizationSupported = false, isFeatureComboInvocation = false
+         1788889551.099  9064  9064 D CXCP    : resolveSpecsByCheckingMethod: checkingMethod = WITHOUT_FEATURE_COMBO
+         1788889551.099  9064  9064 D CXCP    : resolveSpecsBySettings: featureSettings = FeatureSettings(cameraMode=0, requiredMaxBitDepth=8, hasVideoCapture=false, videoStabilization=OFF, isUltraHdrOn=false, isHighSpeedOn=false, isFeatureComboInvocation=false, requiresFeatureComboQuery=false, targetFpsRange=[0, 0], isStrictFpsRequired=false)
+         1788889551.100  9064  9064 D CameraQuirks: camera2 CameraQuirks = CloseCaptureSessionOnVideoQuirk | FinalizeSessionOnCloseQuirk
+         1788889551.100  9064  9064 D CameraQuirks: camera2 CameraQuirks = CloseCaptureSessionOnVideoQuirk | FinalizeSessionOnCloseQuirk
+         1788889551.100  9064  9064 D CameraQuirks: camera2 CameraQuirks = CloseCaptureSessionOnVideoQuirk | FinalizeSessionOnCloseQuirk
+         1788889551.101  9064  9064 D CXCP    : resolveSpecsBySettings: bestSizesAndFps = BestSizesAndMaxFpsForConfigs(bestSizes=[1280x960, 1280x960, 640x480], bestSizesForStreamUseCase=null, maxFpsForBestSizes=30, maxFpsForStreamUseCase=2147483647, maxFpsForAllSizes=2147483647)
+         1788889551.101  9064  9064 I ConstraintResolver: Resolved constraints to: Config(fpsRange=null, previewStabilizationMode=OFF, videoStabilizationMode=null, videoDynamicRange=null, photoHDR=null)
+         1788889551.101  9064  9064 I HybridCameraSessionSpec: Binding use-cases: [Preview:androidx.camera.core.Preview-8acc08e6-61d1-4235-9bb1-24eef500ccfe, ImageCapture:androidx.camera.core.ImageCapture-1da299d6-5bde-4a90-ab46-8600327139be, ImageAnalysis:androidx.camera.core.ImageAnalysis-5bfe6175-fef8-4ea9-a029-15df613cdb22]
+         1788889551.101  9064  9064 W CXCP    : Detaching [] from UseCaseManager<CameraGraphConfigProvider<CameraId-10>> (Ignored)
+         1788889551.102  9064  9064 D ResolvedFeatureGroup: resolveFeatureGroup: sessionConfig = SessionConfig@6df16fd {useCases=[Preview:androidx.camera.core.Preview-8acc08e6-61d1-4235-9bb1-24eef500ccfe, ImageCapture:androidx.camera.core.ImageCapture-1da299d6-5bde-4a90-ab46-8600327139be, ImageAnalysis:androidx.camera.core.ImageAnalysis-5bfe6175-fef8-4ea9-a029-15df613cdb22], frameRateRange=[0, 0], requiredFeatureGroup=[], preferredFeatureGroup=[], effects=[], viewPort=null}, lensFacing = 1
+         1788889551.102  9064  9064 D CameraUseCaseAdapter: addUseCases: appUseCasesToAdd = [Preview:androidx.camera.core.Preview-8acc08e6-61d1-4235-9bb1-24eef500ccfe, ImageCapture:androidx.camera.core.ImageCapture-1da299d6-5bde-4a90-ab46-8600327139be, ImageAnalysis:androidx.camera.core.ImageAnalysis-5bfe6175-fef8-4ea9-a029-15df613cdb22], featureGroup = null
+         1788889551.102  9064  9064 D CXCP    : Creating config for PREVIEW
+         1788889551.103  9064  9064 D CXCP    : Creating config for IMAGE_CAPTURE
+         1788889551.103  9064  9064 D CXCP    : Creating config for IMAGE_ANALYSIS
+         1788889551.103  9064  9064 D CXCP    : Creating config for PREVIEW
+         1788889551.103  9064  9064 D CXCP    : Creating config for IMAGE_CAPTURE
+         1788889551.104  9064  9064 D CXCP    : Creating config for IMAGE_ANALYSIS
+         1788889551.105  9064  9064 D UseCase : applyFeaturesToConfig: mFeatureGroup = null, this = Preview:androidx.camera.core.Preview-8acc08e6-61d1-4235-9bb1-24eef500ccfe
+         1788889551.105  9064  9064 D SupportedOutputSizesCollector: useCaseConfig = androidx.camera.core.impl.PreviewConfig@f5aaabb, candidateSizes = [1280x960, 1280x720, 640x480, 352x288, 320x240]
+         1788889551.105  9064  9064 D UseCase : applyFeaturesToConfig: mFeatureGroup = null, this = ImageCapture:androidx.camera.core.ImageCapture-1da299d6-5bde-4a90-ab46-8600327139be
+         1788889551.105  9064  9064 D SupportedOutputSizesCollector: useCaseConfig = androidx.camera.core.impl.ImageCaptureConfig@141dbd8, candidateSizes = [1280x960, 1280x720, 640x480, 352x288, 320x240]
+         1788889551.106  9064  9064 D UseCase : applyFeaturesToConfig: mFeatureGroup = null, this = ImageAnalysis:androidx.camera.core.ImageAnalysis-5bfe6175-fef8-4ea9-a029-15df613cdb22
+         1788889551.106  9064  9064 D SupportedOutputSizesCollector: useCaseConfig = androidx.camera.core.impl.ImageAnalysisConfig@b169b31, candidateSizes = [1280x960, 1280x720, 640x480, 352x288, 320x240]
+         1788889551.106  9064  9064 D UseCase : applyFeaturesToConfig: mFeatureGroup = null, this = Preview:androidx.camera.core.Preview-8acc08e6-61d1-4235-9bb1-24eef500ccfe
+         1788889551.106  9064  9064 D UseCase : applyFeaturesToConfig: mFeatureGroup = null, this = ImageCapture:androidx.camera.core.ImageCapture-1da299d6-5bde-4a90-ab46-8600327139be
+         1788889551.106  9064  9064 D UseCase : applyFeaturesToConfig: mFeatureGroup = null, this = ImageAnalysis:androidx.camera.core.ImageAnalysis-5bfe6175-fef8-4ea9-a029-15df613cdb22
+         1788889551.106  9064  9064 D UseCase : applyFeaturesToConfig: mFeatureGroup = null, this = Preview:androidx.camera.core.Preview-8acc08e6-61d1-4235-9bb1-24eef500ccfe
+         1788889551.106  9064  9064 D UseCase : applyFeaturesToConfig: mFeatureGroup = null, this = ImageCapture:androidx.camera.core.ImageCapture-1da299d6-5bde-4a90-ab46-8600327139be
+         1788889551.106  9064  9064 D UseCase : applyFeaturesToConfig: mFeatureGroup = null, this = ImageAnalysis:androidx.camera.core.ImageAnalysis-5bfe6175-fef8-4ea9-a029-15df613cdb22
+         1788889551.106  9064  9064 D CXCP    : DynamicRangeResolver: Resolved dynamic range for use case androidx.camera.core.Preview-8acc08e6-61d1-4235-9bb1-24eef500ccfe to no compatible HDR dynamic ranges.
+         1788889551.106  9064  9064 D CXCP    : DynamicRange@d90c143{encoding=UNSPECIFIED, bitDepth=0}
+         1788889551.106  9064  9064 D CXCP    : ->
+         1788889551.106  9064  9064 D CXCP    : DynamicRange@b6766f2{encoding=SDR, bitDepth=8}
+         1788889551.106  9064  9064 D CXCP    : resolvedDynamicRanges = {androidx.camera.core.impl.ImageCaptureConfig@141dbd8=DynamicRange@b6766f2{encoding=SDR, bitDepth=8}, androidx.camera.core.impl.ImageAnalysisConfig@b169b31=DynamicRange@b6766f2{encoding=SDR, bitDepth=8}, androidx.camera.core.impl.PreviewConfig@f5aaabb=DynamicRange@b6766f2{encoding=SDR, bitDepth=8}}
+         1788889551.107  9064  9064 D CXCP    : getSuggestedStreamSpecifications: isPreviewStabilizationSupported = false, isFeatureComboInvocation = false
+         1788889551.107  9064  9064 D CXCP    : resolveSpecsByCheckingMethod: checkingMethod = WITHOUT_FEATURE_COMBO
+         1788889551.107  9064  9064 D CXCP    : resolveSpecsBySettings: featureSettings = FeatureSettings(cameraMode=0, requiredMaxBitDepth=8, hasVideoCapture=false, videoStabilization=OFF, isUltraHdrOn=false, isHighSpeedOn=false, isFeatureComboInvocation=false, requiresFeatureComboQuery=false, targetFpsRange=[0, 0], isStrictFpsRequired=false)
+         1788889551.108  9064  9064 D CameraQuirks: camera2 CameraQuirks = CloseCaptureSessionOnVideoQuirk | FinalizeSessionOnCloseQuirk
+         1788889551.108  9064  9064 D CameraQuirks: camera2 CameraQuirks = CloseCaptureSessionOnVideoQuirk | FinalizeSessionOnCloseQuirk
+         1788889551.109  9064  9064 D CameraQuirks: camera2 CameraQuirks = CloseCaptureSessionOnVideoQuirk | FinalizeSessionOnCloseQuirk
+         1788889551.110  9064  9064 D CXCP    : resolveSpecsBySettings: bestSizesAndFps = BestSizesAndMaxFpsForConfigs(bestSizes=[1280x960, 1280x960, 640x480], bestSizesForStreamUseCase=null, maxFpsForBestSizes=30, maxFpsForStreamUseCase=2147483647, maxFpsForAllSizes=2147483647)
+         1788889551.110  9064  9064 W CXCP    : Detaching [] from UseCaseManager<CameraGraphConfigProvider<CameraId-10>> (Ignored)
+         1788889551.110  9064  9064 D UseCase : applyFeaturesToConfig: mFeatureGroup = null, this = Preview:androidx.camera.core.Preview-8acc08e6-61d1-4235-9bb1-24eef500ccfe
+         1788889551.110  9064  9064 D Preview : onSuggestedStreamSpecUpdated: primaryStreamSpec = StreamSpec{resolution=1280x960, originalConfiguredResolution=1280x960, dynamicRange=DynamicRange@b6766f2{encoding=SDR, bitDepth=8}, sessionType=0, expectedFrameRateRange=[0, 0], implementationOptions=androidx.camera.camera2.impl.Camera2ImplConfig@7f3797, zslDisabled=false}, secondaryStreamSpec null
+         1788889551.111  9064  9064 D DeferrableSurface: Surface created[total_surfaces=1, used_surfaces=0](androidx.camera.core.processing.SurfaceEdge$SettableSurface@ee4dd84}
+         1788889551.111  9064  9064 D DeferrableSurface: Surface created[total_surfaces=2, used_surfaces=0](androidx.camera.core.SurfaceRequest$2@6944df0}
+         1788889551.111  9064  9064 D DeferrableSurface: New surface in use[total_surfaces=2, used_surfaces=1](androidx.camera.core.SurfaceRequest$2@6944df0}
+         1788889551.111  9064  9064 D DeferrableSurface: use count+1, useCount=1 androidx.camera.core.SurfaceRequest$2@6944df0
+         1788889551.111  9064  9064 D UseCase : applyFeaturesToConfig: mFeatureGroup = null, this = ImageCapture:androidx.camera.core.ImageCapture-1da299d6-5bde-4a90-ab46-8600327139be
+         1788889551.111  9064  9064 D ImageCapture: onSuggestedStreamSpecUpdated: primaryStreamSpec = StreamSpec{resolution=1280x960, originalConfiguredResolution=1280x960, dynamicRange=DynamicRange@b6766f2{encoding=SDR, bitDepth=8}, sessionType=0, expectedFrameRateRange=[0, 0], implementationOptions=androidx.camera.camera2.impl.Camera2ImplConfig@8dca925, zslDisabled=false}, secondaryStreamSpec null
+         1788889551.111  9064  9064 D ImageCapture: createPipeline(cameraId: 10, streamSpec: StreamSpec{resolution=1280x960, originalConfiguredResolution=1280x960, dynamicRange=DynamicRange@b6766f2{encoding=SDR, bitDepth=8}, sessionType=0, expectedFrameRateRange=[0, 0], implementationOptions=androidx.camera.camera2.impl.Camera2ImplConfig@8dca925, zslDisabled=false})
+         1788889551.112  9064  9064 D DeferrableSurface: Surface created[total_surfaces=3, used_surfaces=1](androidx.camera.core.impl.ImmediateSurface@91b7afa}
+         1788889551.112  9064  9064 D UseCase : applyFeaturesToConfig: mFeatureGroup = null, this = ImageAnalysis:androidx.camera.core.ImageAnalysis-5bfe6175-fef8-4ea9-a029-15df613cdb22
+         1788889551.112  9064  9064 D ImageAnalysis: onSuggestedStreamSpecUpdated: primaryStreamSpec = StreamSpec{resolution=640x480, originalConfiguredResolution=640x480, dynamicRange=DynamicRange@b6766f2{encoding=SDR, bitDepth=8}, sessionType=0, expectedFrameRateRange=[0, 0], implementationOptions=androidx.camera.camera2.impl.Camera2ImplConfig@e4feb08, zslDisabled=false}, secondaryStreamSpec null
+         1788889551.112  9064  9064 D DeferrableSurface: Surface created[total_surfaces=4, used_surfaces=1](androidx.camera.core.impl.ImmediateSurface@1d3b2a1}
+         1788889551.113  9064  9064 D DeferrableSurface: surface closed,  useCount=1 closed=true androidx.camera.core.SurfaceRequest$2@6944df0
+         1788889551.113  9064  9064 D DeferrableSurface: surface closed,  useCount=0 closed=true androidx.camera.core.processing.SurfaceEdge$SettableSurface@ee4dd84
+         1788889551.113  9064  9064 D DeferrableSurface: Surface terminated[total_surfaces=3, used_surfaces=1](androidx.camera.core.processing.SurfaceEdge$SettableSurface@ee4dd84}
+         1788889551.113  9064  9064 D DeferrableSurface: use count-1,  useCount=0 closed=true androidx.camera.core.SurfaceRequest$2@6944df0
+         1788889551.113  9064  9064 D DeferrableSurface: Surface no longer in use[total_surfaces=3, used_surfaces=0](androidx.camera.core.SurfaceRequest$2@6944df0}
+         1788889551.113  9064  9064 D DeferrableSurface: Surface terminated[total_surfaces=2, used_surfaces=0](androidx.camera.core.SurfaceRequest$2@6944df0}
+         1788889551.113  9064  9064 D DeferrableSurface: Surface created[total_surfaces=3, used_surfaces=0](androidx.camera.core.processing.SurfaceEdge$SettableSurface@99a6f52}
+         1788889551.114  9064  9064 D DeferrableSurface: Surface created[total_surfaces=4, used_surfaces=0](androidx.camera.core.SurfaceRequest$2@ecc2e9e}
+         1788889551.114  9064  9064 D DeferrableSurface: New surface in use[total_surfaces=4, used_surfaces=1](androidx.camera.core.SurfaceRequest$2@ecc2e9e}
+         1788889551.114  9064  9064 D DeferrableSurface: use count+1, useCount=1 androidx.camera.core.SurfaceRequest$2@ecc2e9e
+         1788889551.115  9064  9064 I ActiveCameraSessionSingle: Camera #CameraId-10 State changed! Type: CLOSED | Error: null
+         1788889551.117  9064  9064 D TextureViewImpl: Safe to release surface.
+         1788889551.118  9064  9064 D TextureViewImpl: SurfaceTexture about to manually be destroyed
+         1788889551.122  9064  9064 D PreviewView: Surface requested by Preview.
+         1788889551.123  9064  9064 I CustomLifecycle: Switching lifecycle state from CREATED to RESUMED...
+         1788889551.124  9064  9064 D CXCP    : Attaching [Preview:androidx.camera.core.Preview-8acc08e6-61d1-4235-9bb1-24eef500ccfe, ImageCapture:androidx.camera.core.ImageCapture-1da299d6-5bde-4a90-ab46-8600327139be, ImageAnalysis:androidx.camera.core.ImageAnalysis-5bfe6175-fef8-4ea9-a029-15df613cdb22] from UseCaseManager<CameraGraphConfigProvider<CameraId-10>>
+         1788889551.124  9064  9064 D CXCP    : Prepared UseCaseCameraContext (Deferred)
+         1788889551.124  9064  9064 D CXCP    : Configured UseCaseCamera-6
+         1788889551.125  9064  9064 D CXCP    : setFlashAsync: flashMode = 2, requestControl = androidx.camera.camera2.impl.DeferredUseCaseCameraRequestControl@2717376
+         1788889551.126  9064  9223 D CXCP    : populateSurfaceToStreamUseCaseMapping() - streamUseCaseMap = {}
+         1788889551.126  9064  9064 D CXCP    : Notifying [] camera control ready
+         1788889551.126  9064  9064 D ImageCapture: onCameraControlReady
+         1788889551.126  9064  9064 D CXCP    : setFlashAsync: flashMode = 2, requestControl = androidx.camera.camera2.impl.DeferredUseCaseCameraRequestControl@2717376
+         1788889551.126  9064  9223 W CXCP    : Expected stream use case for androidx.camera.core.SurfaceRequest$2@ecc2e9e, null cannot be set!
+         1788889551.126  9064  9223 W CXCP    : Expected stream use case for androidx.camera.core.impl.ImmediateSurface@91b7afa, null cannot be set!
+         1788889551.126  9064  9223 W CXCP    : Expected stream use case for androidx.camera.core.impl.ImmediateSurface@1d3b2a1, null cannot be set!
+         1788889551.126  9064  9064 D PreviewView: Preview transformation info updated. TransformationInfo{getCropRect=Rect(0, 0 - 1280, 960), getRotationDegrees=90, getTargetRotation=-1, hasCameraTransform=true, getSensorToBufferTransform=Matrix{[1.0, 0.0, 0.0][0.0, 1.0, 0.0][0.0, 0.0, 1.0]}, isMirroring=false}
+         1788889551.126  9064  9064 D PreviewTransform: Transformation info set: TransformationInfo{getCropRect=Rect(0, 0 - 1280, 960), getRotationDegrees=90, getTargetRotation=-1, hasCameraTransform=true, getSensorToBufferTransform=Matrix{[1.0, 0.0, 0.0][0.0, 1.0, 0.0][0.0, 0.0, 1.0]}, isMirroring=false} 1280x960 false
+         1788889551.129  9064  9064 D TextureViewImpl: SurfaceTexture available. Size: 1280x960
+         1788889551.129  9064  9064 D TextureViewImpl: Surface set on Preview.
+         1788889551.130  9064  9223 I CXCP    : CameraGraph-6 (Camera 10)
+         1788889551.130  9064  9223 I CXCP    :   Facing:    Back (Physical, Limited)
+         1788889551.130  9064  9223 I CXCP    :   Mode:      Normal
+         1788889551.130  9064  9223 I CXCP    : Outputs:
+         1788889551.130  9064  9223 I CXCP    :   Stream-16   Output-16   1280x960    PRIVATE          [MirrorMode(value=1)] [DynamicRangeProfile(value=1)] [StreamUseHint(value=0)]
+         1788889551.130  9064  9223 I CXCP    :   Stream-17   Output-17   1280x960    JPEG             [DynamicRangeProfile(value=1)] [StreamUseHint(value=0)]
+         1788889551.130  9064  9223 I CXCP    :   Stream-18   Output-18   640x480     YUV_420_888      [DynamicRangeProfile(value=1)] [StreamUseHint(value=0)]
+         1788889551.130  9064  9223 I CXCP    : Session Template: TEMPLATE_PREVIEW
+         1788889551.130  9064  9223 I CXCP    : Session Parameters
+         1788889551.130  9064  9223 I CXCP    :   android.control.videoStabilizationMode             0
+         1788889551.130  9064  9223 I CXCP    : Default Template: TEMPLATE_PREVIEW
+         1788889551.130  9064  9223 I CXCP    : Default Parameters
+         1788889551.130  9064  9223 I CXCP    :   Metadata.Key(androidx.camera.camera2.pipe.captureRequestTag) android.hardware.camera2.CaptureRequest.setTag.CX
+         1788889551.130  9064  9223 I CXCP    :   android.control.videoStabilizationMode             0
+         1788889551.130  9064  9223 I CXCP    : Required Parameters: (None)
+         1788889551.130  9064  9223 D CXCP    : Camera graph updated from CameraGraph-5 to CameraGraph-6
+         1788889551.131  9064  9223 I CXCP    : Starting CameraGraph-6
+         1788889551.131  9064  9223 D CXCP    : GraphProcessor(cameraGraph: CameraGraph-6) onGraphStarting
+         1788889551.131  9064  9223 D CXCP    : CameraGraph-6 state updated to GRAPH_STARTING
+         1788889551.131  9064  9223 D CXCP    : Updated current camera internal state: OPENING to CombinedCameraState(state=OPENING, error=null)
+         1788889551.131  9064  9223 D CXCP    : Started Camera2CameraController(CameraGraph-6)
+         1788889551.132  9064  9223 D CXCP    : Setting up Surfaces with UseCaseSurfaceManager
+         1788889551.132  9064  9223 D DeferrableSurface: use count+1, useCount=2 androidx.camera.core.SurfaceRequest$2@ecc2e9e
+         1788889551.132  9064  9223 D DeferrableSurface: New surface in use[total_surfaces=4, used_surfaces=2](androidx.camera.core.impl.ImmediateSurface@91b7afa}
+         1788889551.132  9064  9223 D DeferrableSurface: use count+1, useCount=1 androidx.camera.core.impl.ImmediateSurface@91b7afa
+         1788889551.132  9064  9223 D DeferrableSurface: New surface in use[total_surfaces=4, used_surfaces=3](androidx.camera.core.impl.ImmediateSurface@1d3b2a1}
+         1788889551.132  9064  9223 D DeferrableSurface: use count+1, useCount=1 androidx.camera.core.impl.ImmediateSurface@1d3b2a1
+         1788889551.132  9064  9223 D CXCP    : Configured androidx.camera.camera2.impl.UseCaseCameraRequestControlImpl@a02a180
+         1788889551.133  9064  9223 D CXCP    : UseCaseCameraRequestControlImpl#setParametersAsync: [DEFAULT] values = {CaptureRequest.Key(android.control.zoomRatio)=1.0}, optionPriority = OPTIONAL
+         1788889551.133  9064  9223 D CXCP    : UseCaseCameraState#updateState: parameters = {CaptureRequest.Key(android.control.zoomRatio)=1.0}, internalParameters = {Metadata.Key(camerax.tag_bundle)=android.hardware.camera2.CaptureRequest.setTag.CX}, streams = null, template = RequestTemplate(value=1)
+         1788889551.134  9064  9223 D CXCP    : UseCaseCameraRequestControlImpl#setParametersAsync: [DEFAULT] values = {CaptureRequest.Key(android.control.aeExposureCompensation)=0}, optionPriority = OPTIONAL
+         1788889551.135  9064  9064 I ActiveCameraSessionSingle: Camera #CameraId-10 State changed! Type: OPENING | Error: null
+         1788889551.136  9064  9223 D CXCP    : UseCaseCameraState#updateState: parameters = {CaptureRequest.Key(android.control.aeExposureCompensation)=0, CaptureRequest.Key(android.control.zoomRatio)=1.0}, internalParameters = {Metadata.Key(camerax.tag_bundle)=android.hardware.camera2.CaptureRequest.setTag.CX}, streams = null, template = RequestTemplate(value=1)
+         1788889551.136  9064  9359 D CXCP    : PruningProcessingQueue: Pruning [RequestOpen(virtualCamera=VirtualCamera-6, sharedCameraIds=[], graphListener=GraphProcessor(cameraGraph: CameraGraph-6), isPrewarm=false, isForegroundObserver=androidx.camera.camera2.pipe.compat.Camera2CameraController$$ExternalSyntheticLambda1@4fa575f)]
+         1788889551.137  9064  9223 D CXCP    : UseCaseCameraRequestControlImpl#updateCamera2ConfigAsync
+         1788889551.137  9064  9359 D CXCP    : PruningProcessingQueue: Processing RequestOpen(virtualCamera=VirtualCamera-6, sharedCameraIds=[], graphListener=GraphProcessor(cameraGraph: CameraGraph-6), isPrewarm=false, isForegroundObserver=androidx.camera.camera2.pipe.compat.Camera2CameraController$$ExternalSyntheticLambda1@4fa575f)
+         1788889551.137  9064  9359 D CXCP    : Camera2DeviceManagerImpl#processRequestOpen(CameraId-10)
+         1788889551.137  9064  9359 D CXCP    : Opening CameraId-10 with retries...
+         1788889551.137  9064  9223 D CXCP    : UseCaseCameraState#updateState: parameters = {CaptureRequest.Key(android.control.aeExposureCompensation)=0, CaptureRequest.Key(android.control.zoomRatio)=1.0}, internalParameters = {Metadata.Key(camerax.tag_bundle)=android.hardware.camera2.CaptureRequest.setTag.CX}, streams = null, template = RequestTemplate(value=1)
+         1788889551.137  9064  9359 I CXCP    : Opening CameraId-10
+         1788889551.138  9064  9223 D CXCP    : UseCaseCameraRequestControlImpl: Building SessionConfig...
+         1788889551.138  9064  9223 D CXCP    : UseCaseCameraRequestControlImpl: SessionConfig built. Updating state...
+         1788889551.138  9064  9223 D CXCP    : UseCaseCameraRequestControlImpl: State update processing.
+         1788889551.138  9064  9223 D CXCP    : UseCaseCameraState#updateState: parameters = {CaptureRequest.Key(android.control.aeExposureCompensation)=0, CaptureRequest.Key(android.control.zoomRatio)=1.0}, internalParameters = {Metadata.Key(camerax.tag_bundle)=android.hardware.camera2.CaptureRequest.setTag.CX}, streams = [Stream-16], template = RequestTemplate(value=1)
+         1788889551.139  9064  9223 D CXCP    : Update RepeatingRequest: Request(streams=[Stream-16], template=RequestTemplate(value=1))@d90b20a
+         1788889551.147  9064  9223 D CXCP    : State3AControl.getFinalPreferredAeMode: preferAeMode = 1
+         1788889551.147  9064  9223 D CXCP    : UseCaseCameraRequestControlImpl#setParametersAsync: [DEFAULT] values = {CaptureRequest.Key(android.control.aeMode)=1, CaptureRequest.Key(android.control.afMode)=1, CaptureRequest.Key(android.control.awbMode)=1}, optionPriority = OPTIONAL
+         1788889551.147  9064  9223 D CXCP    : UseCaseCameraState#updateState: parameters = {CaptureRequest.Key(android.control.aeExposureCompensation)=0, CaptureRequest.Key(android.control.aeMode)=1, CaptureRequest.Key(android.control.afMode)=1, CaptureRequest.Key(android.control.awbMode)=1, CaptureRequest.Key(android.control.zoomRatio)=1.0}, internalParameters = {Metadata.Key(camerax.tag_bundle)=android.hardware.camera2.CaptureRequest.setTag.CX}, streams = null, template = RequestTemplate(value=1)
+         1788889551.148  9064  9223 D CXCP    : Update RepeatingRequest: Request(streams=[Stream-16], template=RequestTemplate(value=1))@a970a7b
+         1788889551.148  9064  9223 D CXCP    : UseCaseCameraState: Updating 3A modes: AE(AeMode(value=1), changed=true), AF(AfMode(value=1), changed=true), AWB(AwbMode(value=1), changed=true)
+         1788889551.148  9064  9223 D CXCP    : Controller3A#update3A: cancelling previous request null
+         1788889551.148  9064  9223 D CXCP    : UseCaseCameraRequestControlImpl#updateCamera2ConfigAsync
+         1788889551.148  9064  9223 D CXCP    : UseCaseCameraState#updateState: parameters = {CaptureRequest.Key(android.control.aeExposureCompensation)=0, CaptureRequest.Key(android.control.aeMode)=1, CaptureRequest.Key(android.control.afMode)=1, CaptureRequest.Key(android.control.awbMode)=1, CaptureRequest.Key(android.control.zoomRatio)=1.0}, internalParameters = {Metadata.Key(camerax.tag_bundle)=android.hardware.camera2.CaptureRequest.setTag.CX}, streams = null, template = RequestTemplate(value=1)
+         1788889551.148  9064  9223 D CXCP    : Update RepeatingRequest: Request(streams=[Stream-16], template=RequestTemplate(value=1))@da32098
+         1788889551.149  9064  9365 D CXCP    : CameraId-10 has become available! Notifying listeners...
+         1788889551.149  9064  9223 D CXCP    : Configured Surface(name=android.graphics.SurfaceTexture@bfba626 mNativeObject=127947647663312)/@0x121814 for Stream-16
+         1788889551.149  9064  9223 I CXCP    : Configured Stream-16 with Surface(name=android.graphics.SurfaceTexture@bfba626 mNativeObject=127947647663312)/@0x121814
+         1788889551.149  9064  9223 D CXCP    : SurfaceActive androidx.camera.core.SurfaceRequest$2@ecc2e9e in androidx.camera.camera2.impl.UseCaseSurfaceManager@ef5ae44
+         1788889551.149  9064  9223 D DeferrableSurface: use count+1, useCount=3 androidx.camera.core.SurfaceRequest$2@ecc2e9e
+         1788889551.149  9064  9223 D CXCP    : Configured Surface(name=null mNativeObject=127947647821520)/@0xd8fe4d6 for Stream-17
+         1788889551.149  9064  9223 I CXCP    : Configured Stream-17 with Surface(name=null mNativeObject=127947647821520)/@0xd8fe4d6
+         1788889551.149  9064  9223 D CXCP    : SurfaceActive androidx.camera.core.impl.ImmediateSurface@91b7afa in androidx.camera.camera2.impl.UseCaseSurfaceManager@ef5ae44
+         1788889551.149  9064  9223 D DeferrableSurface: use count+1, useCount=2 androidx.camera.core.impl.ImmediateSurface@91b7afa
+         1788889551.149  9064  9223 D CXCP    : Configured Surface(name=null mNativeObject=127947648325808)/@0x181d357 for Stream-18
+         1788889551.149  9064  9223 I CXCP    : Configured Stream-18 with Surface(name=null mNativeObject=127947648325808)/@0x181d357
+         1788889551.149  9064  9223 D CXCP    : SurfaceActive androidx.camera.core.impl.ImmediateSurface@1d3b2a1 in androidx.camera.camera2.impl.UseCaseSurfaceManager@ef5ae44
+         1788889551.149  9064  9223 D DeferrableSurface: use count+1, useCount=2 androidx.camera.core.impl.ImmediateSurface@1d3b2a1
+         1788889551.149  9064  9223 I CXCP    : Surface setup complete
+         1788889551.149  9064  9223 D DeferrableSurface: use count-1,  useCount=2 closed=false androidx.camera.core.SurfaceRequest$2@ecc2e9e
+         1788889551.149  9064  9223 D DeferrableSurface: use count-1,  useCount=1 closed=false androidx.camera.core.impl.ImmediateSurface@91b7afa
+         1788889551.149  9064  9223 D DeferrableSurface: use count-1,  useCount=1 closed=false androidx.camera.core.impl.ImmediateSurface@1d3b2a1
+         1788889551.163  9064  9363 I CXCP    : Unavailable camera 10 detected
+         1788889551.164  9064  9363 W CXCP    : Failed to query camera ID list: Invalid list returned: [CameraId-10].
+         1788889551.183  9064  9223 I CXCP    : Opened CameraId-10 in 45.799 ms
+         1788889551.183  9064  9223 D CXCP    : UseCaseCameraRequestControlImpl: Building SessionConfig...
+         1788889551.183  9064  9223 D CXCP    : UseCaseCameraRequestControlImpl: SessionConfig built. Updating state...
+         1788889551.183  9064  9223 D CXCP    : UseCaseCameraRequestControlImpl: State update processing.
+         1788889551.184  9064  9223 D CXCP    : UseCaseCameraState#updateState: parameters = {CaptureRequest.Key(android.control.aeExposureCompensation)=0, CaptureRequest.Key(android.control.aeMode)=1, CaptureRequest.Key(android.control.afMode)=1, CaptureRequest.Key(android.control.awbMode)=1, CaptureRequest.Key(android.control.zoomRatio)=1.0}, internalParameters = {Metadata.Key(camerax.tag_bundle)=android.hardware.camera2.CaptureRequest.setTag.CX}, streams = [Stream-16, Stream-18], template = RequestTemplate(value=1)
+         1788889551.184  9064  9360 I CXCP    : Camera open completed: OpenCameraResult(cameraState=CameraState-5, errorCode=null)
+         1788889551.184  9064  9223 D CXCP    : Update RepeatingRequest: Request(streams=[Stream-16, Stream-18], template=RequestTemplate(value=1))@10dd64f
+         1788889551.186  9064  9361 I CXCP    : PruningCameraDeviceManager: CameraId-10 opened successfully
+         1788889551.187  9064  9361 I CXCP    : Creating CameraCaptureSession from CameraId-10 using CaptureSessionState-6 with: 
+         1788889551.187  9064  9361 I CXCP    :  Stream-16 -> Surface(name=android.graphics.SurfaceTexture@bfba626 mNativeObject=127947647663312)/@0x121814
+         1788889551.187  9064  9361 I CXCP    :  Stream-17 -> Surface(name=null mNativeObject=127947647821520)/@0xd8fe4d6
+         1788889551.187  9064  9361 I CXCP    :  Stream-18 -> Surface(name=null mNativeObject=127947648325808)/@0x181d357
+         1788889551.219  9064  9223 D CXCP    : CaptureSessionState-6 Configured
+         1788889551.220  9064  9361 D CXCP    : CXCP#createCaptureSession-10 - 32.028 ms
+         1788889551.220  9064  9361 I CXCP    : Configured CaptureSessionState-6 in 32.599 ms
+         1788889551.220  9064  9361 D CXCP    : GraphProcessor(cameraGraph: CameraGraph-6) onGraphStarted
+         1788889551.220  9064  9358 D CXCP    : Building CaptureRequest for Request(streams=[Stream-16, Stream-18], template=RequestTemplate(value=1))@10dd64f
+         1788889551.220  9064  9358 D CXCP    : CXCP#createCaptureRequest-10 - 0.391 ms
+         1788889551.221  9064  9358 D CXCP    : GraphRequestProcessor-5 submitting Camera2CaptureSequence-26
+         1788889551.221  9064  9361 D CXCP    : CameraGraph-6 state updated to GRAPH_STARTED
+         1788889551.225  9064  9358 D CXCP    : CXCP#setRepeatingRequest-10 - 3.114 ms
+         1788889551.225  9064  9358 D CXCP    : GraphRequestProcessor-5 submitted Camera2CaptureSequence-26
+         1788889551.226  9064  9361 D CXCP    : Updated current camera internal state: OPEN to CombinedCameraState(state=OPEN, error=null)
+         1788889551.228  9064  9223 D CXCP    : CaptureSessionState-6 Ready
+         1788889551.228  9064  9223 D CXCP    : CaptureSessionState-6 Active
+         1788889551.228  9064  9064 I ActiveCameraSessionSingle: Camera #CameraId-10 State changed! Type: OPEN | Error: null
+         1788889551.250  9064 12061 D CCodecBufferChannel: [c2.android.vorbis.decoder#920] MediaCodec discarded an unknown buffer
+         1788889551.250  9064 12061 D CCodecBufferChannel: [c2.android.vorbis.decoder#920] MediaCodec discarded an unknown buffer
+         1788889551.254  9064 12061 I hw-BpHwBinder: onLastStrongRef automatically unlinking death recipients
+         1788889551.257  9064  9064 D StreamStateObserver: Update Preview stream state to STREAMING
+         1788889551.259  9064  9064 I HybridPreviewViewSpec: PreviewView started!
+         1788889553.517  9064  9068 I m.brailleme.app: Background concurrent mark compact GC freed 3290KB AllocSpace bytes, 22(5768KB) LOS objects, 44% free, 29MB/53MB, paused 6.242ms,3.819ms total 364.028ms
+         1788889556.064  9064  9290 D BufferPoolAccessor2.0: bufferpool2 0x745dd2116c68 : 0(0 size) total buffers - 0(0 size) used buffers - 2/7 (recycle/alloc) - 5/74 (fetch/transfer)
+         1788889556.064  9064  9290 D BufferPoolAccessor2.0: evictor expired: 2, evicted: 1
+         1788889557.084  9064  9064 W m.brailleme.app: Weak pointer dereference blocked for 11 milliseconds.
+         1788889557.537  9064  9068 I m.brailleme.app: Background concurrent mark compact GC freed 3122KB AllocSpace bytes, 44(17MB) LOS objects, 40% free, 35MB/59MB, paused 1.339ms,21.058ms total 805.163ms
+         1788889558.880  9064  9383 W m.brailleme.app: Suspending all threads took: 25.346ms
+         1788889558.948  9064 11752 W m.brailleme.app: Weak pointer dereference blocked for 28 milliseconds.
+         1788889558.949  9064  9092 W m.brailleme.app: Weak pointer dereference blocked for 27 milliseconds.
+         1788889558.949  9064  9064 W m.brailleme.app: Weak pointer dereference blocked for 25 milliseconds.
+         1788889558.949  9064  9076 W m.brailleme.app: Weak pointer dereference blocked for 15 milliseconds.
+         1788889559.149  9064  9383 I m.brailleme.app: Explicit concurrent mark compact GC freed 2044KB AllocSpace bytes, 31(16MB) LOS objects, 48% free, 25MB/49MB, paused 65.488ms,19.457ms total 444.514ms
+         1788889561.277  9064  9081 I ReactNativeJS: 'BRAILLE_WORD_TRACKING_METRICS', '{"schemaVersion":1,"elapsedMs":10009,"received":31,"admitted":28,"busyDrops":0,"throttled":2,"disabledDrops":1,"runnerDrops":0,"completed":27,"errors":0,"meanMs":356,"maxMs":624,"latencyUpperBoundsMs":[50,100,200,400,800,1600,null],"latencyBuckets":[0,0,2,18,7,0,0]}'
+         1788889562.117  9064  9068 I m.brailleme.app: Background concurrent mark compact GC freed 2570KB AllocSpace bytes, 38(13MB) LOS objects, 41% free, 33MB/57MB, paused 17.870ms,8.181ms total 116.731ms
+         1788889564.606  9064  9068 I m.brailleme.app: Background concurrent mark compact GC freed 2510KB AllocSpace bytes, 52(22MB) LOS objects, 39% free, 37MB/61MB, paused 2.323ms,7.994ms total 234.006ms
+         1788889567.097  9064  9068 I m.brailleme.app: Background concurrent mark compact GC freed 3086KB AllocSpace bytes, 57(23MB) LOS objects, 41% free, 34MB/58MB, paused 1.021ms,2.783ms total 141.845ms
+         1788889569.096  9064  9383 I m.brailleme.app: Explicit concurrent mark compact GC freed 2953KB AllocSpace bytes, 50(21MB) LOS objects, 43% free, 31MB/55MB, paused 1.380ms,4.463ms total 162.510ms
+         1788889571.298  9064  9081 I ReactNativeJS: 'BRAILLE_WORD_TRACKING_METRICS', '{"schemaVersion":1,"elapsedMs":20029,"received":147,"admitted":72,"busyDrops":0,"throttled":74,"disabledDrops":1,"runnerDrops":0,"completed":71,"errors":0,"meanMs":244,"maxMs":624,"latencyUpperBoundsMs":[50,100,200,400,800,1600,null],"latencyBuckets":[0,0,36,28,7,0,0]}'
+         1788889571.748  9064  9068 I m.brailleme.app: Background concurrent mark compact GC freed 2786KB AllocSpace bytes, 52(20MB) LOS objects, 39% free, 36MB/60MB, paused 2.022ms,1.868ms total 251.358ms
+         1788889574.087  9064  9068 I m.brailleme.app: Background concurrent mark compact GC freed 3218KB AllocSpace bytes, 53(22MB) LOS objects, 41% free, 34MB/58MB, paused 4.806ms,4.979ms total 158.876ms
+         1788889576.521  9064  9068 I m.brailleme.app: Background concurrent mark compact GC freed 3298KB AllocSpace bytes, 53(22MB) LOS objects, 40% free, 34MB/58MB, paused 1.387ms,1.745ms total 189.271ms
+         1788889578.725  9064  9068 I m.brailleme.app: Background concurrent mark compact GC freed 2786KB AllocSpace bytes, 53(21MB) LOS objects, 41% free, 34MB/58MB, paused 1.908ms,4.625ms total 135.427ms
+         1788889579.182  9064  9073 I m.brailleme.app: Explicit concurrent mark compact GC freed 1352KB AllocSpace bytes, 28(16MB) LOS objects, 50% free, 21MB/43MB, paused 2.758ms,1.935ms total 75.678ms
+         1788889581.309  9064  9081 I ReactNativeJS: 'BRAILLE_WORD_TRACKING_METRICS', '{"schemaVersion":1,"elapsedMs":30041,"received":269,"admitted":116,"busyDrops":0,"throttled":152,"disabledDrops":1,"runnerDrops":0,"completed":115,"errors":0,"meanMs":217,"maxMs":624,"latencyUpperBoundsMs":[50,100,200,400,800,1600,null],"latencyBuckets":[0,0,67,41,7,0,0]}'
+         1788889581.870  9064  9068 I m.brailleme.app: Background concurrent mark compact GC freed 2030KB AllocSpace bytes, 34(10MB) LOS objects, 41% free, 33MB/57MB, paused 1.608ms,1.969ms total 317.522ms

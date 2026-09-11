@@ -22,8 +22,12 @@ jest.mock('@/ml/word-model-assets', () => ({
   WORD_MODEL_RELEASE_VERIFIED: false, WORD_MODEL_VERSION: 'test-word-v1',
   WORD_MODEL_MANIFEST: {
     decoderVersion: jest.requireActual('@/ml/word-model-contract').WORD_DECODER_VERSION,
+    runtimeContract: {
+      module: jest.requireActual('@/ml/word-model-contract').WORD_RUNTIME_MODULE,
+      selectedPolicy: jest.requireActual('@/ml/word-model-contract').WORD_RUNTIME_POLICY,
+    },
     thresholds: jest.requireActual('@/ml/word-model-contract').DEFAULT_WORD_MODEL_THRESHOLDS,
-    nativeSelfTest: { expectedText: 'MAMA', roi: { x: 0, y: 0, width: 1, height: 1 } },
+    nativeSelfTest: { expectedText: 'mama', roi: { x: 0, y: 0, width: 1, height: 1 } },
   },
 }));
 
@@ -44,9 +48,9 @@ function makeModel() {
 describe('word model load and photo lifetime', () => {
   beforeEach(() => {
     assetMock.mockResolvedValue([{ localUri: 'file:///cache/word-reader.tflite' }]);
-    modelMock.mockResolvedValue(makeModel());
+    modelMock.mockImplementation(async () => makeModel());
     imageMock.mockResolvedValue({ dispose: jest.fn() });
-    inferenceMock.mockReturnValue({ status: 'success', text: 'MAMA', boxes: [], cells: [], confidence: .99 });
+    inferenceMock.mockReturnValue({ status: 'success', text: 'mama', boxes: [], cells: [], confidence: .99 });
   });
 
   it('verifies the native photo fixture after tensor warmup', async () => {
@@ -95,6 +99,19 @@ describe('word model load and photo lifetime', () => {
     expect(model.dispose).toHaveBeenCalledTimes(1);
   });
 
+  it('rejects a model configured for a different reading policy before native loading', async () => {
+    const { WORD_MODEL_MANIFEST: manifest } = jest.requireMock('@/ml/word-model-assets') as {
+      WORD_MODEL_MANIFEST: { runtimeContract: { selectedPolicy: string } };
+    };
+    const original = manifest.runtimeContract.selectedPolicy;
+    manifest.runtimeContract.selectedPolicy = 'identity';
+    try {
+      await expect(loadAndValidateWordModel()).rejects.toThrow('Konfigurasi pembacaan');
+      expect(assetMock).not.toHaveBeenCalled();
+      expect(modelMock).not.toHaveBeenCalled();
+    } finally { manifest.runtimeContract.selectedPolicy = original; }
+  });
+
   it('rejects nonfinite warmup output', async () => {
     const model = makeModel();
     const values = new Float32Array(WORD_MODEL_OUTPUT_LENGTH); values[8] = NaN;
@@ -120,7 +137,7 @@ describe('word model load and photo lifetime', () => {
     const pending = loadAndValidateWordModel();
     await waitFor(() => expect(finish).toBeDefined());
     expect(fixture.dispose).not.toHaveBeenCalled();
-    finish!({ status: 'success', text: 'MAMA' });
+    finish!({ status: 'success', text: 'mama' });
     await pending;
     expect(fixture.dispose).toHaveBeenCalledTimes(1);
   });
@@ -146,7 +163,8 @@ describe('word model load and photo lifetime', () => {
   });
 
   it('defers unmount disposal until background inference has settled', async () => {
-    const model = makeModel(); modelMock.mockResolvedValue(model);
+    const model = makeModel(), trackingModel = makeModel();
+    modelMock.mockResolvedValueOnce(model).mockResolvedValueOnce(trackingModel);
     const hook = await renderHook(() => useWordModel());
     await waitFor(() => expect(hook.result.current.status).toBe('ready'));
     const state = hook.result.current;
@@ -154,7 +172,98 @@ describe('word model load and photo lifetime', () => {
     const release = state.acquireModel();
     await hook.unmount();
     expect(model.dispose).not.toHaveBeenCalled();
+    expect(trackingModel.dispose).toHaveBeenCalledTimes(1);
     release(); expect(model.dispose).toHaveBeenCalledTimes(1);
+  });
+
+  it('loads two separately validated interpreters and leases their operations independently', async () => {
+    const photo = makeModel(), tracking = makeModel();
+    modelMock.mockResolvedValueOnce(photo).mockResolvedValueOnce(tracking);
+    const hook = await renderHook(() => useWordModel());
+    await waitFor(() => expect(hook.result.current.status).toBe('ready'));
+    const state = hook.result.current;
+    if (state.status !== 'ready') throw new Error('Expected ready models');
+    expect(state.model).toBe(photo);
+    expect(state.trackingModel).toBe(tracking);
+    expect(state.model).not.toBe(state.trackingModel);
+    expect(inferenceMock).toHaveBeenCalledTimes(2);
+    expect(photo.run).toHaveBeenCalledTimes(1);
+    expect(tracking.run).toHaveBeenCalledTimes(1);
+    const finishPhoto = state.acquireModel(), finishTracking = state.acquireTrackingModel();
+    await hook.unmount();
+    expect(photo.dispose).not.toHaveBeenCalled();
+    expect(tracking.dispose).not.toHaveBeenCalled();
+    expect(() => state.acquireModel()).toThrow('ditutup');
+    expect(() => state.acquireTrackingModel()).toThrow('ditutup');
+    finishTracking(); finishTracking();
+    expect(tracking.dispose).toHaveBeenCalledTimes(1);
+    expect(photo.dispose).not.toHaveBeenCalled();
+    finishPhoto(); finishPhoto();
+    expect(photo.dispose).toHaveBeenCalledTimes(1);
+  });
+
+  it('disposes the photo interpreter if tracking initialization fails and retries both', async () => {
+    const photo = makeModel(), retriedPhoto = makeModel(), retriedTracking = makeModel();
+    modelMock.mockResolvedValueOnce(photo).mockRejectedValueOnce(new Error('tracking load failed'))
+      .mockResolvedValueOnce(retriedPhoto).mockResolvedValueOnce(retriedTracking);
+    const hook = await renderHook(() => useWordModel());
+    await waitFor(() => expect(hook.result.current.status).toBe('error'));
+    expect(photo.dispose).toHaveBeenCalledTimes(1);
+    await act(() => { if (hook.result.current.status === 'error') hook.result.current.retry(); });
+    await waitFor(() => expect(hook.result.current.status).toBe('ready'));
+    if (hook.result.current.status !== 'ready') throw new Error('Expected ready models');
+    expect(hook.result.current.model).toBe(retriedPhoto);
+    expect(hook.result.current.trackingModel).toBe(retriedTracking);
+    await hook.unmount();
+    expect(photo.dispose).toHaveBeenCalledTimes(1);
+    expect(retriedPhoto.dispose).toHaveBeenCalledTimes(1);
+    expect(retriedTracking.dispose).toHaveBeenCalledTimes(1);
+  });
+
+  it('releases a late tracking interpreter and its image after unmount during self-test', async () => {
+    const photo = makeModel(), tracking = makeModel();
+    const photoImage = { dispose: jest.fn() }, trackingImage = { dispose: jest.fn() };
+    modelMock.mockResolvedValueOnce(photo).mockResolvedValueOnce(tracking);
+    imageMock.mockResolvedValueOnce(photoImage).mockResolvedValueOnce(trackingImage);
+    let finishTracking: ((value: unknown) => void) | undefined;
+    (runOnRuntimeAsync as jest.Mock)
+      .mockImplementationOnce(async (_runtime: unknown, task: (...args: unknown[]) => unknown, ...args: unknown[]) => task(...args))
+      .mockImplementationOnce(() => new Promise((resolve) => { finishTracking = resolve; }));
+    const hook = await renderHook(() => useWordModel());
+    await waitFor(() => expect(finishTracking).toBeDefined());
+    expect(hook.result.current.status).toBe('loading');
+    expect(photoImage.dispose).toHaveBeenCalledTimes(1);
+    expect(trackingImage.dispose).not.toHaveBeenCalled();
+    await hook.unmount();
+    expect(photo.dispose).toHaveBeenCalledTimes(1);
+    expect(tracking.dispose).not.toHaveBeenCalled();
+    await act(async () => { finishTracking!({ status: 'success', text: 'mama' }); });
+    expect(trackingImage.dispose).toHaveBeenCalledTimes(1);
+    expect(tracking.dispose).toHaveBeenCalledTimes(1);
+    expect(photo.dispose).toHaveBeenCalledTimes(1);
+  });
+
+  it.each(['Abc', 'ABC', '001'])('validates native fixtures with case or integer text %s', async (text) => {
+    const { WORD_MODEL_MANIFEST: manifest } = jest.requireMock('@/ml/word-model-assets') as {
+      WORD_MODEL_MANIFEST: { nativeSelfTest: { expectedText: string } };
+    };
+    const original = manifest.nativeSelfTest.expectedText;
+    manifest.nativeSelfTest.expectedText = text;
+    inferenceMock.mockReturnValue({ status: 'success', text });
+    try { await expect(loadAndValidateWordModel()).resolves.toBeDefined(); }
+    finally { manifest.nativeSelfTest.expectedText = original; }
+  });
+
+  it('rejects a mixed letter-number startup fixture before native access', async () => {
+    const { WORD_MODEL_MANIFEST: manifest } = jest.requireMock('@/ml/word-model-assets') as {
+      WORD_MODEL_MANIFEST: { nativeSelfTest: { expectedText: string } };
+    };
+    const original = manifest.nativeSelfTest.expectedText;
+    manifest.nativeSelfTest.expectedText = 'A12';
+    try {
+      await expect(loadAndValidateWordModel()).rejects.toThrow('Pemeriksaan awal');
+      expect(assetMock).not.toHaveBeenCalled();
+    } finally { manifest.nativeSelfTest.expectedText = original; }
   });
 
   it('recovers from load failure with an explicit retry', async () => {

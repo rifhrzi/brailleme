@@ -17,10 +17,15 @@
 namespace margelo::nitro::braillewordgeometry { struct PhotoGeometry; }
 // Forward declaration of `HybridPhotoSpec` to properly resolve imports.
 namespace margelo::nitro::camera { class HybridPhotoSpec; }
+// Forward declaration of `WordPixelResult` to properly resolve imports.
+namespace margelo::nitro::braillewordgeometry { struct WordPixelResult; }
 
 #include "PhotoGeometry.hpp"
 #include <memory>
 #include <VisionCamera/HybridPhotoSpec.hpp>
+#include "WordPixelResult.hpp"
+#include <NitroModules/ArrayBuffer.hpp>
+#include <string>
 
 namespace margelo::nitro::braillewordgeometry {
 
@@ -54,6 +59,7 @@ namespace margelo::nitro::braillewordgeometry {
     public:
       // Methods
       virtual PhotoGeometry getGeometry(const std::shared_ptr<margelo::nitro::camera::HybridPhotoSpec>& photo) = 0;
+      virtual WordPixelResult resizePixels(const std::shared_ptr<ArrayBuffer>& buffer, double width, double height, const std::string& pixelFormat, bool androidBitmap) = 0;
 
     protected:
       // Hybrid Setup

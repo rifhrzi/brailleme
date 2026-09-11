@@ -1,0 +1,64 @@
+{
+  "status": "completed_actions_not_assessed",
+  "error": null,
+  "acceptanceResult": "not_assessed",
+  "action_counts": {
+    "background-home": 1,
+    "launch-existing-app": 1
+  },
+  "observations": [
+    {
+      "label": "before-background",
+      "utc": "2026-09-08T17:51:51.779972+00:00",
+      "pid": "9064",
+      "xml": "C:\\bm-symbols-apk-20260908\\evidence\\actions-background-v6\\20260908T175149414957Z-before-background-1aab9f.xml",
+      "screenshot": "C:\\bm-symbols-apk-20260908\\evidence\\actions-background-v6\\20260908T175150327074Z-before-background-4f86ef.png",
+      "logcat": "C:\\bm-symbols-apk-20260908\\evidence\\actions-background-v6\\20260908T175151778970Z-before-background-5c77b7.log",
+      "app_process_required": false,
+      "visible_states": [
+        "Mencari Braille"
+      ],
+      "result_texts": [],
+      "shutter_visible": true,
+      "shutter_enabled": false,
+      "rescan_visible": false,
+      "processing_visible": false
+    },
+    {
+      "label": "background-home",
+      "utc": "2026-09-08T17:51:54.455298+00:00",
+      "pid": "9064",
+      "xml": "C:\\bm-symbols-apk-20260908\\evidence\\actions-background-v6\\20260908T175152739409Z-background-home-a53b96.xml",
+      "screenshot": "C:\\bm-symbols-apk-20260908\\evidence\\actions-background-v6\\20260908T175153506356Z-background-home-93ce16.png",
+      "logcat": "C:\\bm-symbols-apk-20260908\\evidence\\actions-background-v6\\20260908T175154454295Z-background-home-f55577.log",
+      "app_process_required": true,
+      "visible_states": [],
+      "result_texts": [],
+      "shutter_visible": false,
+      "shutter_enabled": false,
+      "rescan_visible": false,
+      "processing_visible": false
+    },
+    {
+      "label": "prepare-00",
+      "utc": "2026-09-08T17:52:01.310780+00:00",
+      "pid": "9064",
+      "xml": "C:\\bm-symbols-apk-20260908\\evidence\\actions-background-v6\\20260908T175158520925Z-prepare-00-9a7906.xml",
+      "screenshot": "C:\\bm-symbols-apk-20260908\\evidence\\actions-background-v6\\20260908T175159943750Z-prepare-00-0d5ecb.png",
+      "logcat": "C:\\bm-symbols-apk-20260908\\evidence\\actions-background-v6\\20260908T175201308769Z-prepare-00-e01ab6.log",
+      "app_process_required": true,
+      "visible_states": [
+        "Mencari Braille"
+      ],
+      "result_texts": [],
+      "shutter_visible": true,
+      "shutter_enabled": true,
+      "rescan_visible": false,
+      "processing_visible": false
+    }
+  ],
+  "finished_utc": "2026-09-08T17:52:01.312779+00:00",
+  "command": "background",
+  "runtime_collector_coordination": "operator_managed",
+  "note": "Run cold-start/font separately; the existing runtime collector stops when the app PID changes."
+}

@@ -4,6 +4,109 @@ import { isNormalizedWordBox } from '@/types/word-scan';
 
 export interface SensorPoint { readonly x: number; readonly y: number }
 type PreviewGeometry = { convertViewPointToCameraPoint(point: SensorPoint): SensorPoint };
+export interface WordFrameGeometry {
+  readonly width: number;
+  readonly height: number;
+  readonly orientation: 'up' | 'right' | 'down' | 'left';
+  readonly isMirrored: boolean;
+  convertFramePointToCameraPoint(point: SensorPoint): SensorPoint;
+}
+
+/** Snapshot while Frame is alive: Nitro converter mirrors raw pixels, then rotates clockwise. */
+export function snapshotWordFrameBoxSensorPoints(frame: WordFrameGeometry, box: NormalizedBox): readonly SensorPoint[] {
+  'worklet';
+  if (!isNormalizedWordBox(box) || ![frame.width, frame.height].every((v) => Number.isFinite(v) && v > 0)) throw new Error('Geometri frame tidak valid.');
+  const quarterTurn = frame.orientation === 'right' || frame.orientation === 'left';
+  const uprightWidth = quarterTurn ? frame.height : frame.width;
+  const uprightHeight = quarterTurn ? frame.width : frame.height;
+  const left = box.x * uprightWidth;
+  const top = box.y * uprightHeight;
+  const right = (box.x + box.width) * uprightWidth;
+  const bottom = (box.y + box.height) * uprightHeight;
+  return [{ x: left, y: top }, { x: right, y: top }, { x: right, y: bottom }, { x: left, y: bottom }].map((point) => {
+    let raw: SensorPoint;
+    switch (frame.orientation) {
+      case 'up': raw = point; break;
+      case 'right': raw = { x: point.y, y: frame.height - point.x }; break;
+      case 'down': raw = { x: frame.width - point.x, y: frame.height - point.y }; break;
+      case 'left': raw = { x: frame.width - point.y, y: point.x }; break;
+      default: throw new Error('Orientasi frame tidak valid.');
+    }
+    if (frame.isMirrored) raw = { x: frame.width - raw.x, y: raw.y };
+    const sensor = frame.convertFramePointToCameraPoint(raw);
+    if (!sensor || !Number.isFinite(sensor.x) || !Number.isFinite(sensor.y)) throw new Error('Koordinat sensor frame tidak valid.');
+    return { x: sensor.x, y: sensor.y };
+  });
+}
+
+/** Maps copied preview sensor corners into the UPRIGHT Image returned by FrameConverter. */
+export function mapWordSensorBoxToFrame(
+  points: readonly SensorPoint[],
+  frame: WordFrameGeometry & { convertCameraPointToFramePoint(point: SensorPoint): SensorPoint },
+): NormalizedBox {
+  'worklet';
+  if (points.length !== 4 || ![frame.width, frame.height].every((v) => Number.isFinite(v) && v > 0)) throw new Error('Geometri frame tidak valid.');
+  const quarterTurn = frame.orientation === 'right' || frame.orientation === 'left';
+  const width = quarterTurn ? frame.height : frame.width;
+  const height = quarterTurn ? frame.width : frame.height;
+  const upright = points.map((point) => {
+    if (!Number.isFinite(point.x) || !Number.isFinite(point.y)) throw new Error('Koordinat sensor tidak valid.');
+    const raw = frame.convertCameraPointToFramePoint(point);
+    if (!raw || !Number.isFinite(raw.x) || !Number.isFinite(raw.y)) throw new Error('Koordinat frame tidak valid.');
+    const x = frame.isMirrored ? frame.width - raw.x : raw.x;
+    const y = raw.y;
+    switch (frame.orientation) {
+      case 'up': return { x, y };
+      case 'right': return { x: frame.height - y, y: x };
+      case 'down': return { x: frame.width - x, y: frame.height - y };
+      case 'left': return { x: y, y: frame.width - x };
+      default: throw new Error('Orientasi frame tidak valid.');
+    }
+  });
+  const left = Math.min(...upright.map((point) => point.x));
+  const top = Math.min(...upright.map((point) => point.y));
+  const right = Math.max(...upright.map((point) => point.x));
+  const bottom = Math.max(...upright.map((point) => point.y));
+  // Android Matrix.convertPoint converts through float32. A window placed
+  // exactly at a sensor edge can return a tiny negative/overshooting bound
+  // after the preview inverse and frame transform. Snap only subpixel noise;
+  // larger clipping still fails instead of silently removing unseen context.
+  const overshoot = Math.max(0, -left, -top, right - width, bottom - height);
+  if (overshoot > 0.001) {
+    if (overshoot <= 1) throw new Error('[word-frame:outside-subpixel]');
+    if (overshoot <= Math.max(width, height) * 0.05) throw new Error('[word-frame:outside-small]');
+    throw new Error('[word-frame:outside-large]');
+  }
+  const boundedLeft = Math.max(0, left);
+  const boundedTop = Math.max(0, top);
+  const boundedRight = Math.min(width, right);
+  const boundedBottom = Math.min(height, bottom);
+  const box = { x: boundedLeft / width, y: boundedTop / height, width: (boundedRight - boundedLeft) / width, height: (boundedBottom - boundedTop) / height };
+  if (!isNormalizedWordBox(box)) throw new Error('Area pratinjau tidak seluruhnya tersedia pada frame.');
+  return box;
+}
+
+/** Uses actual preview sensor transform; an off-screen rectangle is returned unclamped. */
+export function mapWordSensorBoxToPreview(
+  points: readonly SensorPoint[],
+  camera: { convertCameraPointToViewPoint(point: SensorPoint): SensorPoint },
+  previewWidth: number,
+  previewHeight: number,
+): NormalizedBox {
+  if (points.length !== 4 || ![previewWidth, previewHeight].every((v) => Number.isFinite(v) && v > 0)) invalid();
+  const view = points.map((point) => {
+    if (!Number.isFinite(point.x) || !Number.isFinite(point.y)) invalid();
+    const mapped = camera.convertCameraPointToViewPoint(point);
+    if (!mapped || !Number.isFinite(mapped.x) || !Number.isFinite(mapped.y)) invalid();
+    return { x: mapped.x, y: mapped.y };
+  });
+  const left = Math.min(...view.map((p) => p.x));
+  const top = Math.min(...view.map((p) => p.y));
+  const right = Math.max(...view.map((p) => p.x));
+  const bottom = Math.max(...view.map((p) => p.y));
+  if (right <= left || bottom <= top) invalid();
+  return { x: left / previewWidth, y: top / previewHeight, width: (right - left) / previewWidth, height: (bottom - top) / previewHeight };
+}
 
 function invalid(): never {
   throw new Error('Area panduan kamera belum sesuai dengan foto. Silakan pindai ulang.');

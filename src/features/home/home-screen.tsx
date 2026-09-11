@@ -76,15 +76,15 @@ export default function HomeScreen() {
 
   const scannerReady = scanReadiness?.available === true;
   const statusTitle = scannerReady
-    ? 'Siap memindai kata'
+    ? 'Siap memindai Braille'
     : scanReadiness === null
       ? 'Memeriksa pemindai'
       : 'Pemindai belum siap';
   const statusDescription = scannerReady
-    ? 'Tempatkan satu kata di dalam bingkai, lalu tekan Pindai kata.'
+    ? 'Arahkan satu kata atau angka ke tengah kamera, lalu tekan Pindai.'
     : scanReadiness === null
-      ? 'Sedang memeriksa komponen pemindai di perangkat ini.'
-      : scanReadiness.message;
+      ? 'Menyiapkan pemindai di perangkat ini.'
+      : 'Pemindai belum dapat digunakan. Coba buka kembali aplikasi atau periksa pembaruan aplikasi.';
 
   return (
     <Screen testID="home-screen">
@@ -116,11 +116,11 @@ export default function HomeScreen() {
 
       <View style={styles.hero}>
         <Text accessibilityRole="header" selectable style={styles.title}>
-          Pindai satu kata Braille
+          Pindai kata dan angka Braille
         </Text>
         <Text selectable style={styles.intro}>
-          Ambil foto satu kata. Aplikasi membaca huruf dari kiri ke kanan,
-          lalu menampilkan kata untuk diperiksa dan dibacakan. Semua pemrosesan tetap offline.
+          Bingkai mengikuti satu kata atau rangkaian angka. Tekan Pindai untuk
+          membaca huruf, angka, dan tanda baca. Periksa hasil sebelum dibacakan.
         </Text>
       </View>
 
@@ -174,7 +174,7 @@ export default function HomeScreen() {
           variant={scannerReady ? 'action' : 'secondary'}
         />
         <Text selectable style={styles.disclaimer}>
-          Satu baris, huruf A–Z, maksimal 12 huruf. Periksa hasil terhadap sumber Braille.
+          Satu baris, maksimal 12 karakter. Sertakan tanda kapital, angka, dan tanda baca.
         </Text>
       </View>
 
@@ -183,7 +183,7 @@ export default function HomeScreen() {
           <GuideRow number={1} text="Letakkan seluruh kata di dalam bingkai." />
           <GuideRow
             number={2}
-            text="Tahan kamera, lalu tekan Pindai kata."
+            text="Tunggu bingkai, tahan kamera, lalu tekan Pindai."
           />
           <GuideRow
             number={3}
@@ -195,7 +195,7 @@ export default function HomeScreen() {
       <SectionCard title="Bantuan dan privasi" variant="plain">
         <View style={styles.links}>
           <AccessibleButton
-            accessibilityHint="Membuka panduan dan batas penggunaan"
+            accessibilityHint="Membuka panduan pemindaian"
             label="Bantuan"
             onPress={() => router.push('/help')}
             variant="navigation"

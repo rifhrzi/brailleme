@@ -1,0 +1,105 @@
+{
+  "version": 1,
+  "createdUtc": "2026-09-11T02:46:36.857Z",
+  "parityPassed": true,
+  "scope": "VALIDATION",
+  "runtimeModule": "word_overall_v5_zoom",
+  "modelSha256": "6847c91fe186169ba5208a7444f9c8bedc753228bc42b78c691471a85453a6cb",
+  "methodSha256": "d7f900120359d1dcd32c8e3bd586663439a9bd31a776630571fbcef0c50ef9c4",
+  "selectedPolicy": "cascade_zoom_fallback",
+  "decoderVersion": "six-dot-id-v4-experimental",
+  "thresholds": {
+    "proposalScore": 0.25,
+    "acceptScore": 0.25,
+    "dotConfidence": 0.7,
+    "nmsIou": 0.25,
+    "minCellWidth": 0.008,
+    "minCellHeight": 0.06,
+    "edgeMargin": 0.008,
+    "maxRowDeviation": 0.55,
+    "maxGapRatio": 1.2,
+    "maxOverlapRatio": 0.5
+  },
+  "sampleCount": 540,
+  "rawViews": [
+    "identity",
+    "horizontal",
+    "vertical",
+    "half_turn",
+    "zoom125",
+    "zoom150"
+  ],
+  "views": [
+    "identity",
+    "horizontal",
+    "vertical",
+    "half_turn",
+    "zoom125",
+    "zoom150"
+  ],
+  "mismatches": {
+    "text": 0,
+    "reason": 0,
+    "masks": 0,
+    "roles": 0,
+    "outputs": 0,
+    "route": 0
+  },
+  "fixtureFile": "src/ml/__tests__/fixtures/word-v5-runtime-reference.json",
+  "fixtureSha256": "1af12dfc07691d0e6a0ab2173007596ec994c1104fdcaeb047b30f9502d610b4",
+  "oracleSha256": "5dfc63c750484d612497a5a5ac3476b36c644ba1ec598584a143433df847891c",
+  "oracleMetadataSha256": "10867b7656e83e8e2d92c698166d59352e0967c3ec46ecbcca9d731df1cfd3ea",
+  "validationSha256": "874c8ff878420cb511caba05e3c751a623a840def7a2c0014c802bd82790a701",
+  "sourceSha256": {
+    "src/ml/word-runtime-v5.ts": "e719ca230f2060b7246ff909b3748fdc23d25af456160f89db445e7eb5e0d429",
+    "src/ml/word-symbols.ts": "4a1d16682e6ac95ac0041bf0730d845334451577db6ab558f55c2c189cabb5c6",
+    "src/ml/word-decoder.ts": "526d6a1d55af4435c76c753245a4757f3a86ebb603bc4d02e07802700b4316e3",
+    "src/ml/word-image-processing.ts": "fc907c87c6aae5384169d0f77b8ca76fcd2e74cbf3d86bfafafc82d6b3862e86",
+    "src/ml/word-model-contract.ts": "7cca2a654b4add046887703a1fdecc8a047f49feb4370fc26d586b1fd07258cd",
+    "src/types/word-scan.ts": "953acca6767fde1c1a4ba8e79b5dadc20f3885a9014e55a4af726a9d24557d64"
+  },
+  "testFile": "src/ml/__tests__/word-runtime-v5.test.ts",
+  "testSha256": "4b72541f1f0f1cb000245b08ce4f802d9cda6405950bc186b62faddc1c0a551b",
+  "transformParity": {
+    "passed": true,
+    "fullPixelsPerView": 276480,
+    "views": [
+      "identity",
+      "horizontal",
+      "vertical",
+      "half_turn",
+      "zoom125",
+      "zoom150"
+    ],
+    "sha256": {
+      "identity": "11c577e905ba1a760f59b598417aa52e965c9013f44dd3480b1d8daf408cf9b5",
+      "horizontal": "45fbdff2f1d26307d26e6be18353b080cb0dc519835673ec697ef43ceb70338a",
+      "vertical": "eef5790b1212be108cd89c541a0e59fe7e9f19e747b4ab8d14c98af2102a4c48",
+      "half_turn": "37c828ea54244bfa89c98a1310572080a364ef89d00be57ec708cafbd8f7e31a",
+      "zoom125": "170a4f7c65909a02f3d3c9ca94d86fa0c389caa260a19d8ecfdf7b54aa595db2",
+      "zoom150": "b44473d039fa882e5e08cd929ada35553a286f6fd3f4843b8b5c864497224d25"
+    }
+  },
+  "originalGeometryPreserved": true,
+  "originalObjectnessPreserved": true,
+  "fixedLazyRoutingVerified": true,
+  "optimizations": [
+    "Skip fallback for immutable geometry/objectness rejections",
+    "Allocate matching pairs only at IoU >= 0.5",
+    "Skip inference on original quality failure"
+  ],
+  "qualityBoundary": "Eight original quality failures use canonical no_grid only in runtime parity; actual image processing preserves existing dark/glare/low_confidence user feedback and skips model execution.",
+  "validationExactCorrect": 407,
+  "validationPositiveTotal": 500,
+  "routingCounts": {
+    "identity": 463,
+    "matched_prob_horizontal": 3,
+    "matched_logit_four": 49,
+    "zoom_logit_mean": 18,
+    "matched_prob_half_turn": 3,
+    "matched_prob_vertical": 4
+  },
+  "physicalCameraValidated": false,
+  "nativeRuntimeValidated": false,
+  "limitation": "CPU TypeScript replay of all frozen old-validation Torch raw views, whose TFLite decisions were separately qualified; no phone camera accuracy or Android latency claim."
+}

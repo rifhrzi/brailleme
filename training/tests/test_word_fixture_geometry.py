@@ -75,7 +75,7 @@ class WordFixtureGeometryTests(unittest.TestCase):
                       "rgb_base64": base64.b64encode(rgb.tobytes()).decode("ascii"),
                       "output_float32_base64": base64.b64encode(output.tobytes()).decode("ascii")}
         actual = runtime_geometry([descriptor])["fixtures"][0]
-        self.assertEqual(actual["decoded_text"], "A")
+        self.assertEqual(actual["decoded_text"], "a")
         self.assertEqual(actual["rejection"], "")
         self.assertEqual(actual["cached_output_sha256"], hashlib.sha256(output.tobytes()).hexdigest())
 

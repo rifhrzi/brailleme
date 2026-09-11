@@ -1,4 +1,4 @@
-import { assertWordModelOutput, decodeWordOutput, wordBoxIou } from '@/ml/word-decoder';
+import { assertWordModelOutput, decodeWordOutput, detectWordProposals, wordBoxIou } from '@/ml/word-decoder';
 import { DEFAULT_WORD_MODEL_THRESHOLDS, isValidWordModelThresholds, WORD_LATIN_MASKS, WORD_MODEL_OUTPUT_LENGTH } from '@/ml/word-model-contract';
 
 import referenceFixtures from './fixtures/word-decoder-reference.json';
@@ -29,7 +29,7 @@ describe('six-dot word decoder', () => {
     const result = decodeWordOutput(wordOutput(word), thresholds);
     expect(result.status).toBe('success');
     if (result.status !== 'success') throw new Error(result.reason);
-    expect(result.text).toBe(word);
+    expect(result.text).toBe(word.toLowerCase());
     expect(result.cells).toHaveLength(word.length);
     expect(result.boxes).toEqual(result.cells.map(({ box }) => box));
     expect(result.confidence).toBeCloseTo(0.98);
@@ -37,16 +37,16 @@ describe('six-dot word decoder', () => {
 
   it('maps every A-Z mask with dot1 as the least significant bit', () => {
     for (const letter of 'ABCDEFGHIJKLMNOPQRSTUVWXYZ') {
-      expect(decodeWordOutput(wordOutput(letter), thresholds)).toMatchObject({ status: 'success', text: letter });
+      expect(decodeWordOutput(wordOutput(letter), thresholds)).toMatchObject({ status: 'success', text: letter.toLowerCase() });
     }
   });
 
-  it('rejects all 38 non-letter patterns instead of assigning a nearest letter', () => {
+  it('rejects unsupported patterns and standalone indicators instead of guessing', () => {
     for (let mask = 0; mask < 64; mask += 1) {
-      if ((WORD_LATIN_MASKS as readonly number[]).includes(mask)) continue;
+      if ((WORD_LATIN_MASKS as readonly number[]).includes(mask) || [50, 2, 22, 18, 6, 36].includes(mask)) continue;
       const output = new Float32Array(WORD_MODEL_OUTPUT_LENGTH);
       addCell(output, 0.5, mask);
-      expect(decodeWordOutput(output, thresholds)).toMatchObject({ status: 'rejected', reason: 'unsupported_pattern', cells: [] });
+      expect(decodeWordOutput(output, thresholds)).toMatchObject({ status: 'rejected', reason: mask === 32 || mask === 60 ? 'invalid_sequence' : mask === 38 || mask === 54 ? 'ambiguous_symbol' : 'unsupported_pattern', cells: [] });
     }
   });
 
@@ -66,11 +66,11 @@ describe('six-dot word decoder', () => {
     expect(decodeWordOutput(output, thresholds)).toMatchObject({ status: 'rejected', reason: 'low_confidence' });
   });
 
-  it('rejects no detection and more than twelve detections', () => {
+  it('rejects no detection and more than twelve emitted characters', () => {
     expect(decodeWordOutput(new Float32Array(WORD_MODEL_OUTPUT_LENGTH), thresholds)).toMatchObject({ reason: 'no_grid' });
     const output = new Float32Array(WORD_MODEL_OUTPUT_LENGTH);
     for (let index = 0; index < 13; index += 1) addCell(output, 0.06 + index * 0.07, 1, { width: 0.04, height: 0.2 });
-    expect(decodeWordOutput(output, thresholds)).toMatchObject({ status: 'rejected', reason: 'too_many_cells' });
+    expect(decodeWordOutput(output, thresholds)).toMatchObject({ status: 'rejected', reason: 'too_many_characters' });
   });
 
   it.each([
@@ -113,7 +113,7 @@ describe('six-dot word decoder', () => {
     addCell(output, 0.2, 0, { y: 0.88, height: 0.12, score: 0.3 });
     const selection = { x: 0, y: 0.34375, width: 1, height: 0.3125 };
     const result = decodeWordOutput(output, thresholds, selection);
-    expect(result).toMatchObject({ status: 'success', text: 'MAMA' });
+    expect(result).toMatchObject({ status: 'success', text: 'mama' });
     expect(result.boxes).toHaveLength(4);
   });
 
@@ -135,14 +135,14 @@ describe('six-dot word decoder', () => {
     addCell(output, 0.3, 1, { width: 0.08 });
     addCell(output, 0.32, 1, { width: 0.08, score: 0.7 });
     addCell(output, 0.4, 1, { width: 0.08 });
-    expect(decodeWordOutput(output, thresholds)).toMatchObject({ status: 'success', text: 'AA' });
+    expect(decodeWordOutput(output, thresholds)).toMatchObject({ status: 'success', text: 'aa' });
   });
 
   it('resolves tied overlapping boxes deterministically through positional NMS', () => {
     const output = new Float32Array(WORD_MODEL_OUTPUT_LENGTH);
     addCell(output, 0.5, 1);
     addCell(output, 0.5 + 1 / 120, 1);
-    expect(decodeWordOutput(output, thresholds)).toMatchObject({ status: 'success', text: 'A' });
+    expect(decodeWordOutput(output, thresholds)).toMatchObject({ status: 'success', text: 'a' });
   });
 
   it('rejects overlapping proposals that survive NMS instead of guessing their sequence', () => {
@@ -168,21 +168,60 @@ describe('six-dot word decoder', () => {
     expect(isValidWordModelThresholds(value)).toBe(false);
   });
 
-  it.each(referenceFixtures.cases)('matches the independent Python reference for $name', (fixture) => {
+  it.each(referenceFixtures.cases)('preserves historical geometric decisions for $name under the new symbol protocol', (fixture) => {
     const output = new Float32Array(WORD_MODEL_OUTPUT_LENGTH);
     for (const row of fixture.sparse) output.set(row.values, row.offset);
     const result = decodeWordOutput(output, fixture.thresholds, fixture.selection);
     expect(result.status).toBe(fixture.expected.status);
     if (result.status === 'success') {
-      expect(result.text).toBe(fixture.expected.text);
+      // Retained v2 oracle is historical evidence: unmarked text now prints lowercase.
+      expect(result.text).toBe(fixture.expected.text.toLowerCase());
       expect(result.cells.map(({ mask }) => mask)).toEqual(fixture.expected.masks);
       result.boxes.forEach((box, index) => {
         const reference = fixture.expected.boxes![index]!;
         for (const key of ['x', 'y', 'width', 'height'] as const) expect(box[key]).toBeCloseTo(reference[key], 6);
       });
     } else {
-      expect(result.reason).toBe(fixture.expected.reason);
+      expect(result.reason).toBe(fixture.expected.reason === 'too_many_cells' ? 'too_many_characters' : fixture.expected.reason);
       expect(result).not.toHaveProperty('text');
     }
+  });
+
+  it.each([
+    [[32, 1, 3], 'Ab'], [[32, 32, 1, 3], 'AB'], [[60, 26, 26, 1], '001'],
+  ] as const)('decodes indicator sequences %p without losing their boxes', (masks, text) => {
+    const output = new Float32Array(WORD_MODEL_OUTPUT_LENGTH);
+    masks.forEach((mask, index) => addCell(output, 0.2 + index * 0.075, mask));
+    const result = decodeWordOutput(output, thresholds);
+    expect(result).toMatchObject({ status: 'success', text });
+    expect(result.cells).toHaveLength(masks.length);
+    expect(result.boxes).toHaveLength(masks.length);
+    if (result.status === 'success') expect(result.cells.map(({ output }) => output).join('')).toBe(text);
+  });
+
+  it('includes weak indicator evidence in confidence/rejection while exposing proposals for tracking', () => {
+    const output = new Float32Array(WORD_MODEL_OUTPUT_LENGTH);
+    addCell(output, 0.2, 32, { score: 0.4 });
+    addCell(output, 0.275, 1);
+    addCell(output, 0.35, 63);
+    const proposals = detectWordProposals(output, thresholds);
+    expect(proposals.map(({ mask }) => mask)).toEqual([32, 1, 63]);
+    expect(proposals[0]?.confidence).toBeCloseTo(0.4);
+    expect(decodeWordOutput(output, thresholds)).toMatchObject({ status: 'rejected', reason: 'low_confidence' });
+    addCell(output, 0.2, 32, { score: 0.8 });
+    addCell(output, 0.35, 3);
+    expect(decodeWordOutput(output, thresholds)).toMatchObject({ status: 'success', text: 'Ab' });
+    const accepted = decodeWordOutput(output, thresholds);
+    if (accepted.status === 'success') expect(accepted.confidence).toBeCloseTo(0.8);
+  });
+
+  it('accepts twelve capital letters in 24 cells and rejects physical-cell overflow', () => {
+    const output = new Float32Array(WORD_MODEL_OUTPUT_LENGTH);
+    for (let index = 0; index < 24; index += 1) addCell(output, 0.045 + index * 0.037, index % 2 ? 1 : 32, { width: 0.022 });
+    const result = decodeWordOutput(output, thresholds);
+    expect(result).toMatchObject({ status: 'success', text: 'A'.repeat(12) });
+    expect(result.boxes).toHaveLength(24);
+    addCell(output, 0.045 + 24 * 0.037, 1, { width: 0.022 });
+    expect(decodeWordOutput(output, thresholds)).toMatchObject({ status: 'rejected', reason: 'too_many_cells' });
   });
 });

@@ -158,7 +158,7 @@ describe('word photo inference and resource ownership', () => {
   it('recognizes a complete word in one 480x192 ROI and maps boxes to the actual rounded photo crop', () => {
     const { source, cropped, model } = fixture();
     const result = recognizeWordImage(source as unknown as Image, model, DEFAULT_WORD_MODEL_THRESHOLDS, roi);
-    expect(result).toMatchObject({ status: 'success', text: 'MAMA' });
+    expect(result).toMatchObject({ status: 'success', text: 'mama' });
     expect(source.crop).toHaveBeenCalledWith(144, 576, 1296, 1037);
     expect(cropped.resize).not.toHaveBeenCalled();
     expect(model.runSync).toHaveBeenCalledTimes(1);
@@ -180,7 +180,7 @@ describe('word photo inference and resource ownership', () => {
   it('does not wrap or recycle a full-source crop that Android would alias', () => {
     const { model } = fixture();
     const source = { width: 480, height: 192, crop: jest.fn(), dispose: jest.fn(), toRawPixelData: jest.fn(() => rawPixels()) };
-    expect(recognizeWordImage(source as unknown as Image, model, DEFAULT_WORD_MODEL_THRESHOLDS, { x: 0, y: 0, width: 1, height: 1 })).toMatchObject({ status: 'success', text: 'MAMA' });
+    expect(recognizeWordImage(source as unknown as Image, model, DEFAULT_WORD_MODEL_THRESHOLDS, { x: 0, y: 0, width: 1, height: 1 })).toMatchObject({ status: 'success', text: 'mama' });
     expect(source.crop).not.toHaveBeenCalled();
     expect(source.dispose).not.toHaveBeenCalled();
   });
@@ -219,7 +219,7 @@ describe('word photo inference and resource ownership', () => {
     const { source, cropped, model } = fixture();
     const selection = mapPreviewBoxToImage(getWordGuideBox(360, 360, 8), 360, 360, source.width, source.height);
     const result = recognizeWordImage(source as unknown as Image, model, DEFAULT_WORD_MODEL_THRESHOLDS, selection);
-    expect(result).toMatchObject({ status: 'success', text: 'MAMA' });
+    expect(result).toMatchObject({ status: 'success', text: 'mama' });
     expect(cropped.resize).not.toHaveBeenCalled();
     expect(source.crop).toHaveBeenCalledWith(72, 700, 1368, 1220);
     for (const box of result.boxes) {
@@ -237,7 +237,7 @@ describe('word photo inference and resource ownership', () => {
     model.runSync.mockReturnValue([output.buffer]);
     const selection = mapPreviewBoxToImage(getWordGuideBox(360, 360, 1), 360, 360, source.width, source.height);
     const result = recognizeWordImage(source as unknown as Image, model, DEFAULT_WORD_MODEL_THRESHOLDS, selection);
-    expect(result).toMatchObject({ status: 'success', text: 'A' });
+    expect(result).toMatchObject({ status: 'success', text: 'a' });
     expect(result.boxes).toHaveLength(1);
     expect(source.crop).toHaveBeenCalledWith(517, 879, 923, 1041);
     expect(result.boxes[0]!.x).toBeGreaterThan(selection.x);

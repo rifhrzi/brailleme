@@ -4,51 +4,56 @@
 [![Expo SDK 57](https://img.shields.io/badge/Expo%20SDK-57-000020?logo=expo&logoColor=white)](https://docs.expo.dev/)
 [![Quality](https://github.com/rifhrzi/brailleme/actions/workflows/quality.yml/badge.svg)](https://github.com/rifhrzi/brailleme/actions/workflows/quality.yml)
 
-BrailleMe adalah aplikasi Android offline untuk memindai satu kata Braille dasar A–Z dalam satu foto. Sel huruf dideteksi, dibaca enam titiknya, lalu diurutkan dari kiri ke kanan. Satu hasil memuat 1–12 huruf, termasuk huruf berulang, dan dapat dibacakan menggunakan suara lokal Android.
+BrailleMe adalah aplikasi Android offline untuk memindai satu kata atau rangkaian angka Braille Indonesia dasar. Bingkai mengikuti sel terdekat tengah kamera; pengguna menekan **Pindai** untuk memperoleh hasil. Decoder mempertahankan huruf kecil, kapital, dan nol awal angka. Satu hasil memuat 1–12 karakter dari maksimal 24 sel fisik, termasuk indikator, dan dapat dibacakan menggunakan suara lokal Android.
 
 > [!IMPORTANT]
-> Jalur foto kata memakai kandidat eksperimen internal v26 di `assets/models/braille-word-reader-v1`, dengan bobot terbaik `run20/epoch09`. Hasil publik dengan decoder v2: **323/607 kata benar utuh (53,21%)**, dan **323/351 hasil diterima benar (92,02%)**. Target 75% kata utuh / 95% ketepatan hasil diterima belum lulus. Kandidat ini diaktifkan untuk uji lokal internal; produksi dan cloud build tetap ditutup. Pengujian publik/offline dan emulator tidak membuktikan akurasi kertas timbul pada kamera fisik.
+> Update 0.3.0 tetap eksperimen internal. Aturan simbol yang lulus tes tidak membuktikan model kamera mampu mengenali setiap indikator. Target setiap kelompok adalah 75% hasil utuh dan 95% ketepatan hasil diterima. Bukti dan checkpoint sebelum update tetap disimpan: decoder v2 mencapai **323/607 kata utuh (53,21%)**, **323/351 hasil diterima benar (92,02%)**. Evaluasi baru memakai decoder Indonesia dan memisahkan foto publik dari susunan sintetis. Produksi dan cloud build tetap ditutup; pengujian emulator tidak membuktikan akurasi kertas timbul fisik.
 
 Checkpoint untuk melanjutkan training, konfigurasi asli, hash, dan panduan data tersedia di [training/checkpoints](training/checkpoints/README.md). [Catatan pembersihan](docs/maintenance/2026-09-06-repository-cleanup.md) menjelaskan artefak yang dipertahankan dan status penghapusan file sementara.
 
 ## Kemampuan aplikasi
 
-- Memotret satu kata hingga 12 huruf setelah **Pindai kata** ditekan.
-- Menyesuaikan lebar bingkai untuk menempatkan seluruh kata dalam satu baris.
+- Tab **Penerjemah** mengubah ketikan menjadi gambar titik Braille dan susunan enam titik menjadi teks, langsung dan tanpa internet. Mendukung huruf kecil/kapital, angka bulat terpisah dari huruf, spasi, baris baru, serta `. , ? ! : ; - ( )`. Batas 200 karakter/400 sel; masukan yang belum lengkap tetap tersedia untuk diperbaiki.
+- Dalam **Braille ke Teks**, pilih sel lalu ubah tombol titik `1 4 / 2 5 / 3 6`. Tambahkan sel, spasi, atau baris baru setelah pilihan. Draf kedua mode tersimpan di memori selama aplikasi berjalan. Fitur ini menggunakan aturan terpisah dari model kamera.
+- Memotret satu kata atau rangkaian digit hingga 12 karakter setelah **Pindai** ditekan.
+- Mengikuti posisi dan ukuran satu kelompok Braille secara otomatis, dengan bingkai luar dan kotak setiap sel.
 - Menampilkan foto yang dibekukan, kotak sel, dan hasil kata; huruf berulang pada posisi berbeda tetap dipertahankan.
 - Mengganti hasil secara utuh melalui **Pindai ulang**.
 - Membacakan kata melalui voice Bahasa Indonesia yang tersedia secara lokal.
-- Menolak foto terlalu gelap, terlalu terang, kurang kontras, atau pembacaan yang meragukan; menolak pola di luar A–Z, sel terpotong, beberapa baris, dan celah mencurigakan.
+- Memahami huruf tanpa indikator sebagai huruf kecil, kapital tunggal untuk huruf berikutnya, kapital ganda di awal kata, dan tanda angka untuk digit 0–9. `001` disimpan sebagai teks.
+- Menolak foto terlalu gelap, terlalu terang, kurang kontras, atau sel meragukan; menolak indikator menggantung, susunan tidak didukung, batas terpotong, dan celah mencurigakan.
 - Menghentikan kamera dan suara serta melepas foto saat layar tidak aktif atau aplikasi masuk background.
-- Memproses semuanya di perangkat tanpa akun, analitik, telemetri, penyimpanan hasil, atau unggahan gambar.
+- Memproses semuanya di perangkat tanpa akun, analitik jaringan, penyimpanan hasil, atau unggahan gambar. APK preview mencatat metrik kinerja agregat lokal tanpa isi hasil atau piksel.
 - Menyediakan semantik TalkBack, pengumuman status, reduce motion, haptik opsional, dan target sentuh minimal 48 dp.
 
-Lingkup pemindaian adalah satu kata dalam satu baris. Kalimat, halaman, singkatan Braille, angka, dan tanda baca belum didukung. Pemeriksaan geometri membantu menemukan sel yang hilang di tengah; ia tidak dapat membuktikan bahwa model sama sekali tidak melewatkan sel di ujung kata. Tidak ada pelengkapan dengan kamus.
+Lingkup pemindaian adalah satu kata atau bilangan bulat tanpa tanda dalam satu baris. Kalimat, halaman, singkatan Braille, desimal, angka negatif, pemisah angka, tanda baca, dan campuran huruf–angka belum didukung. Kelompok tetangga dipakai untuk pemeriksaan batas, bukan digabung menjadi kalimat. Pemeriksaan geometri tidak membuktikan model sama sekali tidak melewatkan suatu sel. Tidak ada pelengkapan dengan kamus.
 
 ## Alur penggunaan
 
 1. Selesaikan pengenalan awal, lalu buka **Pindai**.
 2. Aktifkan kamera untuk kunjungan tersebut.
-3. Tempatkan satu kata di dalam bingkai. Atur **Lebar bingkai** agar kata tetangga tidak ikut masuk.
-4. Tahan kamera, lalu tekan **Pindai kata**. Pratinjau saja tidak menjalankan inferensi.
-5. Periksa foto, kotak huruf, dan hasil. Pilih **Bacakan** untuk hasil pengambilan terakhir yang berhasil.
+3. Arahkan seluruh kata atau angka ke tengah kamera, termasuk indikator dan ruang di kedua ujung.
+4. Tunggu bingkai otomatis dan petunjuk **Tahan kamera, lalu tekan Pindai**. Pelacakan berjalan pada preview; hasil tetap memerlukan tombol **Pindai**.
+5. Periksa foto, kotak sel, kapital, digit, dan hasil. Pilih **Bacakan** untuk hasil pengambilan terakhir yang berhasil.
 6. Jika hasil ditolak atau ingin mengambil kata baru, pilih **Pindai ulang**, perbaiki posisi/cahaya/fokus, lalu ambil foto lagi.
 
 ## Cara kerja
 
 ```text
-Pratinjau kamera -> tombol Pindai kata
+Pratinjau YUV -> deteksi geometris maksimal 5 Hz, satu pekerjaan tanpa antrean
+  -> kandidat tengah, dua pengamatan, bingkai EMA 0.35
+  -> tombol Pindai mengunci koordinat sensor / sesi / waktu
   -> foto dalam memori, target 1920 x 1440, prioritas kualitas
-  -> orientasi native -> petakan bingkai cover ke foto tegak
-  -> perluas konteks 2.5:1 tanpa mengubah area pilihan pengguna
-  -> crop/resize 480 x 192, RGB float32 /255, runtime latar
+  -> transformasi native frame -> sensor -> preview / foto tegak
+  -> deteksi ulang target dalam konteks 2.5:1, maksimal dua perluasan
+  -> crop/resize native 22-bit 480 x 192, RGB float32 /255, runtime latar
   -> MobileNetV2 alpha .5 + fitur beberapa skala, grid stride 4
   -> keberadaan sel + kotak + enam probabilitas titik
-  -> NMS posisi -> periksa semua sel di area pilihan -> urutkan kiri ke kanan
-  -> pola A–Z -> hasil utuh atau penolakan -> TTS lokal
+  -> NMS posisi -> periksa seluruh kelompok sel -> urutkan kiri ke kanan
+  -> aturan indikator Indonesia -> hasil utuh atau penolakan -> TTS lokal
 ```
 
-Event versi 3 membawa `sessionId`, `captureId`, status, teks, dan sel berurutan. Hasil lama diabaikan setelah pindai ulang atau pergantian sesi. Tombol pengambilan dikunci selama proses, dan foto/model baru dilepas setelah pekerjaan latar yang memakainya selesai. Stabilisasi antarframe dari classifier lama tidak digunakan oleh jalur kata.
+Event versi 4 membawa `sessionId`, `captureId`, status, teks, dan sel berurutan dengan pola, posisi, confidence, peran, serta karakter keluaran. Indikator mengeluarkan string kosong; validator merekonstruksi teks dari seluruh sel. Tracker memakai interpreter terpisah dengan bobot yang sama. Pengamatan lebih tua dari 500 ms menonaktifkan Pindai dan bingkai hilang setelah 800 ms. Hasil lama diabaikan setelah pindai ulang, pergantian sesi, orientasi/layout, atau background. Foto/model dilepas setelah pekerjaan yang memakainya selesai.
 
 ## Menjalankan proyek
 
@@ -100,7 +105,7 @@ Kontrak pengenal kata berada di [`assets/models/braille-word-reader-v1`](assets/
 | Normalisasi | `pixel / 255.0`, kemudian `Rescaling(2,-1)` di dalam model |
 | Output | `1 x 48 x 120 x 11`: objectness, offset x/y, ukuran kotak, titik 1–6 |
 | Arsitektur | MobileNetV2 alpha 0.5, bobot awal ImageNet, gabungan fitur stride 4/8/16 |
-| Target | Sel seluruh pola beranotasi Angelina; penerimaan aplikasi hanya A–Z |
+| Target | Enam titik sel; penerjemahan urutan memakai aturan Braille Indonesia dasar |
 | Gate APK internal | Kata utuh ≥75% termasuk penolakan sebagai gagal; ketepatan yang diterima ≥95%; nol hasil diterima pada 44 gambar negatif publik |
 | Pemilihan model | Checkpoint dan ambang dipilih pada validation yang terpisah menurut sumber gambar |
 | Bukti fisik | Dilaporkan terpisah; benchmark publik bukan holdout kamera fisik |

@@ -1,0 +1,223 @@
+C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\tensorflow\lite\python\interpreter.py:457: UserWarning:     Warning: tf.lite.Interpreter is deprecated and is scheduled for deletion in
+    TF 2.20. Please use the LiteRT interpreter from the ai_edge_litert package.
+    See the [migration guide](https://ai.google.dev/edge/litert/migration)
+    for details.
+    
+  warnings.warn(_INTERPRETER_DELETION_WARNING)
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+{
+  "scope": "held_validation_photo_rejection_diagnostics_and_generated_blanks",
+  "model_sha256": "406db0e55e8a5ba9e0d00fb22aadc24f19698219f375e4dcead9057cf3bf2230",
+  "fixture_manifest_sha256": "a93d209dbc4f64d2c20b1f357a662bb395df8c1942e2509f666ede59d8a2809d",
+  "thresholds": {
+    "proposalScore": 0.25,
+    "acceptScore": 0.25,
+    "dotConfidence": 0.7,
+    "nmsIou": 0.25,
+    "minCellWidth": 0.008,
+    "minCellHeight": 0.06,
+    "edgeMargin": 0.008,
+    "maxRowDeviation": 0.55,
+    "maxGapRatio": 1.2,
+    "maxOverlapRatio": 0.5
+  },
+  "total": 14,
+  "correct": 12,
+  "accepted": 2,
+  "used_for_external_checkpoint_or_threshold_selection": false,
+  "is_natural_whole_word_benchmark": false,
+  "rows": [
+    {
+      "image": "unsupported_pattern-01.png",
+      "image_sha256": "96167e874ff34e06e65a58ee4faeac23314a691238ec90fcd90a39127c333021",
+      "category": "unsupported_pattern",
+      "expected_reject": true,
+      "expected": "",
+      "predicted": "",
+      "rejection": "unsupported_pattern",
+      "detected_cell_count": 3,
+      "correct": true
+    },
+    {
+      "image": "unsupported_pattern-02.png",
+      "image_sha256": "e0b418c39462708d1cc2fc682d743d9982b277d31b1067a69ca02f4bbcdbd217",
+      "category": "unsupported_pattern",
+      "expected_reject": true,
+      "expected": "",
+      "predicted": "",
+      "rejection": "unsupported_pattern",
+      "detected_cell_count": 3,
+      "correct": true
+    },
+    {
+      "image": "unsupported_pattern-03.png",
+      "image_sha256": "3513a7d41997568640d00053e8270232970a44af84a7479387d2ea34a3436efb",
+      "category": "unsupported_pattern",
+      "expected_reject": true,
+      "expected": "",
+      "predicted": "",
+      "rejection": "unsupported_pattern",
+      "detected_cell_count": 3,
+      "correct": true
+    },
+    {
+      "image": "multiple_rows-01.png",
+      "image_sha256": "a9c3902c771f59017504786dd911dd7fc470d7ed4b722bc33d4b0a58e99e4072",
+      "category": "multiple_rows",
+      "expected_reject": true,
+      "expected": "",
+      "predicted": "",
+      "rejection": "multiple_rows",
+      "detected_cell_count": 7,
+      "correct": true
+    },
+    {
+      "image": "multiple_rows-02.png",
+      "image_sha256": "327ffb1018f6061a07ccf52c6f187e66352b704244cea688fa2ded13a3cf65de",
+      "category": "multiple_rows",
+      "expected_reject": true,
+      "expected": "",
+      "predicted": "",
+      "rejection": "multiple_rows",
+      "detected_cell_count": 7,
+      "correct": true
+    },
+    {
+      "image": "multiple_rows-03.png",
+      "image_sha256": "36c10481b4bf9c0449de1dd2af20de292c83eea1be179b0dd3953099ee1f9e96",
+      "category": "multiple_rows",
+      "expected_reject": true,
+      "expected": "",
+      "predicted": "",
+      "rejection": "multiple_rows",
+      "detected_cell_count": 7,
+      "correct": true
+    },
+    {
+      "image": "selection_cut-01.png",
+      "image_sha256": "9190ab6666e45d3ec851dd58121608a41d89be50798937b6b21c9f3a10a775fc",
+      "category": "selection_cut",
+      "expected_reject": true,
+      "expected": "",
+      "predicted": "kajdo",
+      "rejection": "",
+      "detected_cell_count": 5,
+      "correct": false
+    },
+    {
+      "image": "selection_cut-02.png",
+      "image_sha256": "c4d3ba863713a1c7786371990cf301efcd51430c5cfc4a0e5aee395ec0842cfc",
+      "category": "selection_cut",
+      "expected_reject": true,
+      "expected": "",
+      "predicted": "blycs",
+      "rejection": "",
+      "detected_cell_count": 5,
+      "correct": false
+    },
+    {
+      "image": "selection_cut-03.png",
+      "image_sha256": "fd405298a41e6c79a05150e3792a5dbc4d52b30328dbf9c0ce0e1afe8e55a777",
+      "category": "selection_cut",
+      "expected_reject": true,
+      "expected": "",
+      "predicted": "",
+      "rejection": "clipped",
+      "detected_cell_count": 7,
+      "correct": true
+    },
+    {
+      "image": "over_limit-01.png",
+      "image_sha256": "454bc5525f13aa0b66760526bfa177b949bec9242f25590a1496ee23ed058b12",
+      "category": "over_limit",
+      "expected_reject": true,
+      "expected": "",
+      "predicted": "",
+      "rejection": "clipped",
+      "detected_cell_count": 18,
+      "correct": true
+    },
+    {
+      "image": "over_limit-02.png",
+      "image_sha256": "92a9dd08b7925f14f50f04cba919a95636b5978c747c5dbec6bd26aa1159b2be",
+      "category": "over_limit",
+      "expected_reject": true,
+      "expected": "",
+      "predicted": "",
+      "rejection": "clipped",
+      "detected_cell_count": 16,
+      "correct": true
+    },
+    {
+      "image": "over_limit-03.png",
+      "image_sha256": "d80980039ef7cc745f8b55b488901a5a144985d4d2abe9ef57a122d83e9921fd",
+      "category": "over_limit",
+      "expected_reject": true,
+      "expected": "",
+      "predicted": "",
+      "rejection": "unsupported_pattern",
+      "detected_cell_count": 14,
+      "correct": true
+    },
+    {
+      "image": "blank-white.png",
+      "image_sha256": "bd7d1ee432aa0e505a0ab048b3f0d31b744d4ed3fe91fca102ff3ef7d00d033e",
+      "category": "blank",
+      "expected_reject": true,
+      "expected": "",
+      "predicted": "",
+      "rejection": "glare",
+      "detected_cell_count": 0,
+      "correct": true
+    },
+    {
+      "image": "blank-gray.png",
+      "image_sha256": "18e69fb42540c95b7a9efa9efb41d7a1e52fdb8680e61097e08426a8d9665303",
+      "category": "blank",
+      "expected_reject": true,
+      "expected": "",
+      "predicted": "",
+      "rejection": "low_confidence",
+      "detected_cell_count": 0,
+      "correct": true
+    }
+  ],
+  "by_category": {
+    "blank": {
+      "total": 2,
+      "correct": 2,
+      "accepted": 0
+    },
+    "multiple_rows": {
+      "total": 3,
+      "correct": 3,
+      "accepted": 0
+    },
+    "over_limit": {
+      "total": 3,
+      "correct": 3,
+      "accepted": 0
+    },
+    "selection_cut": {
+      "total": 3,
+      "correct": 1,
+      "accepted": 2
+    },
+    "unsupported_pattern": {
+      "total": 3,
+      "correct": 3,
+      "accepted": 0
+    }
+  },
+  "original_rgb_quality_checked_before_inference": true,
+  "decoder_version": "six-dot-id-v3",
+  "plain_latin_expected_lowercase": false,
+  "all_frozen_image_hashes_verified": true,
+  "source_sha256": {
+    "training/scripts/word_diagnostics.py": "dda4828a297c173ec769660882909ec01f1c7850b97b9aea73a5c420c456a82f",
+    "training/scripts/word_benchmark.py": "aca8bc904f58c6301c456a2b9017df01e17d3609fa00ae2e0ecb7f77ee1f554e",
+    "training/scripts/word_decode.py": "20fb305b3fbcad7595129b17ff9f4875fbb52445409a498f917fc239b7b3c606",
+    "training/scripts/word_symbols.py": "9e43dc9484f035ba3bbfcb49344050714dfd1c636d107b92cb2ce1faded29ba3",
+    "training/scripts/word_data.py": "d692b4b28620af7e4b40ebdedccda68769feb8d3f51bd1508e807487fd32b7d7"
+  }
+}

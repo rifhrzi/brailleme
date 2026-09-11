@@ -1,0 +1,215 @@
+{
+  "scope": "UI commands and actual observations only; no model accuracy, audio, physical-camera or release pass claim.",
+  "command": "prepare",
+  "script_sha256": "8c63fb4ba3b00e3cf7efa820759539dba09097ea94b506029bceca720bb801ab",
+  "helper_sha256": "4fd2fc17d0c506d6dd07cd0747a5dda5a8d6d1c2ff8897673c60fcd2a535555f",
+  "declared_feed": {
+    "manifest": "C:\\bm-symbols-apk-20260908\\evidence\\calibrated-feeds-v1\\manifest.json",
+    "manifest_sha256": "5616d7c7e6b88320a11f4c7903851dd75631dabf60474c606f0e65bd831ef9d7",
+    "entry": {
+      "output": "numbers-2026.png",
+      "source": "C:\\bm-symbols-20260908\\data\\validation\\000430.png",
+      "source_sha256": "6707d05ad655437817b8c1eb14580567342bc4fc4caea430b1ca24288986c3db",
+      "expected_text": "2026",
+      "classification": "synthetic_recomposed_label",
+      "background_rgb": [
+        128,
+        128,
+        128
+      ],
+      "symbols": [
+        {
+          "mask": 60,
+          "role": "number_indicator",
+          "output": ""
+        },
+        {
+          "mask": 3,
+          "role": "digit",
+          "output": "2"
+        },
+        {
+          "mask": 26,
+          "role": "digit",
+          "output": "0"
+        },
+        {
+          "mask": 3,
+          "role": "digit",
+          "output": "2"
+        },
+        {
+          "mask": 11,
+          "role": "digit",
+          "output": "6"
+        }
+      ],
+      "symbol_roles_origin": "Deterministic grammar on preserved annotated masks, not image inference",
+      "original_manifest_row": 3,
+      "original_annotation": {
+        "image": "C:\\bm-symbols-20260908\\data\\validation\\000430.png",
+        "source": "synthetic-id/validation/000430",
+        "source_family": "synthetic-id/numbers",
+        "boxes": [
+          [
+            73,
+            41,
+            127,
+            139
+          ],
+          [
+            143,
+            41,
+            197,
+            139
+          ],
+          [
+            213,
+            41,
+            267,
+            139
+          ],
+          [
+            283,
+            41,
+            337,
+            139
+          ],
+          [
+            353,
+            41,
+            407,
+            139
+          ]
+        ],
+        "masks": [
+          60,
+          3,
+          26,
+          3,
+          11
+        ],
+        "expected": "2026",
+        "symbol_group": "numbers",
+        "origin": "synthetic_recomposed_public_cell_photographs",
+        "source_cells": [
+          {
+            "source": "books/ola/IMG_5368.labeled.jpg",
+            "image": "validation/000223.png",
+            "box": [
+              153.75,
+              45.17647058823529,
+              228.75,
+              158.11764705882354
+            ],
+            "original_mask": 60,
+            "synthetic_transform": null
+          },
+          {
+            "source": "books/ola/IMG_5201.labeled.jpg",
+            "image": "validation/000049.png",
+            "box": [
+              89.32735426008969,
+              138.06741573033707,
+              114.08071748878923,
+              175.8202247191011
+            ],
+            "original_mask": 3,
+            "synthetic_transform": null
+          },
+          {
+            "source": "books/ola/IMG_5367.labeled.jpg",
+            "image": "validation/000197.png",
+            "box": [
+              321.9512195121951,
+              17.454545454545453,
+              392.1951219512195,
+              119.27272727272728
+            ],
+            "original_mask": 26,
+            "synthetic_transform": null
+          },
+          {
+            "source": "books/ola/IMG_5374.labeled.jpg",
+            "image": "validation/000448.png",
+            "box": [
+              378.6335403726708,
+              62.03076923076924,
+              447.20496894409933,
+              162.46153846153848
+            ],
+            "original_mask": 3,
+            "synthetic_transform": null
+          },
+          {
+            "source": "books/ola/IMG_5371.labeled.jpg",
+            "image": "validation/000332.png",
+            "box": [
+              255.48387096774195,
+              15.36,
+              348.38709677419354,
+              153.6
+            ],
+            "original_mask": 11,
+            "synthetic_transform": null
+          }
+        ]
+      },
+      "expected_runtime": null,
+      "source_size": [
+        480,
+        192
+      ],
+      "output_sha256": "3b2ffd48a3b9c5ff079859121b546e1816d0d818bb50d30336c9a7b569471d53",
+      "output_size": [
+        1024,
+        1024
+      ],
+      "scale": 1.0,
+      "realized_scale_xy": [
+        1.0,
+        1.0
+      ],
+      "scaled_size": [
+        480,
+        192
+      ],
+      "placement": [
+        47,
+        415,
+        527,
+        607
+      ],
+      "source_pixels_cropped": false,
+      "unscaled_source_pixels_exact": true,
+      "interpolation": "none",
+      "projected_screenshot_corners": [
+        [
+          132.66712279496755,
+          871.5987338345709
+        ],
+        [
+          945.4059565124453,
+          871.6108768680834
+        ],
+        [
+          945.4184780149001,
+          1196.7152248228065
+        ],
+        [
+          132.67964429742221,
+          1196.703081789294
+        ]
+      ],
+      "prediction_observed_for_selection": false
+    },
+    "binding": "Operator-declared feed; verify actual camera orientation/placement visually."
+  },
+  "started_utc": "2026-09-08T18:01:54.610613+00:00",
+  "ui_dump": {
+    "mode": "no-idle",
+    "remote_dex": "/data/local/tmp/brailleme-ui-dump-v3.dex",
+    "expected_sha256": "79e234d57492167293889ef7df22815d53caa2f376b8e1ccaf1da031f4dee30a",
+    "verification": "Each no-idle execution records its actual remote hash in actions.jsonl."
+  }
+}

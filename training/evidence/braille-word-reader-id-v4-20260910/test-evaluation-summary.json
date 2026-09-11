@@ -1,0 +1,235 @@
+{
+  "sourceFile": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\test-evaluation.json",
+  "sourceSha256": "742ae8db8d5ffd7303765be3e88f97efa6371a2c4917d723f1c5e3dcba03a21a",
+  "sourceSizeBytes": 136491,
+  "summaryScope": "Exact report metadata/metrics retained; row decisions remain in hash-bound original evidence",
+  "report": {
+    "checkpoint_sha256": "090260a2a29f802cdcd07140344feaaf04d98bc48cd2be7a5d75e0482d6ee38c",
+    "test_manifest_sha256": "3aace84bbcfd5337ec41fcaa8e3c5c98d2fb773fbefdea4702ff7400f8309310",
+    "groups": {
+      "capital_single": {
+        "total": 100,
+        "positive_total": 100,
+        "correct": 73,
+        "accepted": 83,
+        "exact_accuracy": 0.73,
+        "accepted_precision": 0.8795180722891566,
+        "rejection_total": 0,
+        "false_accepts": 0,
+        "multi_character": {
+          "total": 95,
+          "positive_total": 95,
+          "correct": 69,
+          "accepted": 79,
+          "exact_accuracy": 0.7263157894736842,
+          "accepted_precision": 0.8734177215189873,
+          "rejection_total": 0,
+          "false_accepts": 0
+        }
+      },
+      "capital_word": {
+        "total": 100,
+        "positive_total": 100,
+        "correct": 69,
+        "accepted": 82,
+        "exact_accuracy": 0.69,
+        "accepted_precision": 0.8414634146341463,
+        "rejection_total": 0,
+        "false_accepts": 0,
+        "multi_character": {
+          "total": 95,
+          "positive_total": 95,
+          "correct": 64,
+          "accepted": 77,
+          "exact_accuracy": 0.6736842105263158,
+          "accepted_precision": 0.8311688311688312,
+          "rejection_total": 0,
+          "false_accepts": 0
+        }
+      },
+      "lowercase": {
+        "total": 100,
+        "positive_total": 100,
+        "correct": 71,
+        "accepted": 79,
+        "exact_accuracy": 0.71,
+        "accepted_precision": 0.8987341772151899,
+        "rejection_total": 0,
+        "false_accepts": 0,
+        "multi_character": {
+          "total": 95,
+          "positive_total": 95,
+          "correct": 68,
+          "accepted": 75,
+          "exact_accuracy": 0.7157894736842105,
+          "accepted_precision": 0.9066666666666666,
+          "rejection_total": 0,
+          "false_accepts": 0
+        }
+      },
+      "numbers": {
+        "total": 100,
+        "positive_total": 100,
+        "correct": 78,
+        "accepted": 84,
+        "exact_accuracy": 0.78,
+        "accepted_precision": 0.9285714285714286,
+        "rejection_total": 0,
+        "false_accepts": 0,
+        "multi_character": {
+          "total": 95,
+          "positive_total": 95,
+          "correct": 73,
+          "accepted": 79,
+          "exact_accuracy": 0.7684210526315789,
+          "accepted_precision": 0.9240506329113924,
+          "rejection_total": 0,
+          "false_accepts": 0
+        }
+      },
+      "punctuation": {
+        "total": 100,
+        "positive_total": 100,
+        "correct": 59,
+        "accepted": 72,
+        "exact_accuracy": 0.59,
+        "accepted_precision": 0.8194444444444444,
+        "rejection_total": 0,
+        "false_accepts": 0,
+        "multi_character": {
+          "total": 100,
+          "positive_total": 100,
+          "correct": 59,
+          "accepted": 72,
+          "exact_accuracy": 0.59,
+          "accepted_precision": 0.8194444444444444,
+          "rejection_total": 0,
+          "false_accepts": 0
+        },
+        "by_punctuation": {
+          ".": {
+            "total": 12,
+            "positive_total": 12,
+            "correct": 4,
+            "accepted": 7,
+            "exact_accuracy": 0.3333333333333333,
+            "accepted_precision": 0.5714285714285714,
+            "rejection_total": 0,
+            "false_accepts": 0
+          },
+          ",": {
+            "total": 11,
+            "positive_total": 11,
+            "correct": 7,
+            "accepted": 8,
+            "exact_accuracy": 0.6363636363636364,
+            "accepted_precision": 0.875,
+            "rejection_total": 0,
+            "false_accepts": 0
+          },
+          "?": {
+            "total": 11,
+            "positive_total": 11,
+            "correct": 6,
+            "accepted": 9,
+            "exact_accuracy": 0.5454545454545454,
+            "accepted_precision": 0.6666666666666666,
+            "rejection_total": 0,
+            "false_accepts": 0
+          },
+          "!": {
+            "total": 11,
+            "positive_total": 11,
+            "correct": 6,
+            "accepted": 7,
+            "exact_accuracy": 0.5454545454545454,
+            "accepted_precision": 0.8571428571428571,
+            "rejection_total": 0,
+            "false_accepts": 0
+          },
+          ":": {
+            "total": 11,
+            "positive_total": 11,
+            "correct": 6,
+            "accepted": 7,
+            "exact_accuracy": 0.5454545454545454,
+            "accepted_precision": 0.8571428571428571,
+            "rejection_total": 0,
+            "false_accepts": 0
+          },
+          ";": {
+            "total": 11,
+            "positive_total": 11,
+            "correct": 8,
+            "accepted": 9,
+            "exact_accuracy": 0.7272727272727273,
+            "accepted_precision": 0.8888888888888888,
+            "rejection_total": 0,
+            "false_accepts": 0
+          },
+          "-": {
+            "total": 11,
+            "positive_total": 11,
+            "correct": 5,
+            "accepted": 6,
+            "exact_accuracy": 0.45454545454545453,
+            "accepted_precision": 0.8333333333333334,
+            "rejection_total": 0,
+            "false_accepts": 0
+          },
+          "(": {
+            "total": 22,
+            "positive_total": 22,
+            "correct": 17,
+            "accepted": 19,
+            "exact_accuracy": 0.7727272727272727,
+            "accepted_precision": 0.8947368421052632,
+            "rejection_total": 0,
+            "false_accepts": 0
+          },
+          ")": {
+            "total": 22,
+            "positive_total": 22,
+            "correct": 17,
+            "accepted": 19,
+            "exact_accuracy": 0.7727272727272727,
+            "accepted_precision": 0.8947368421052632,
+            "rejection_total": 0,
+            "false_accepts": 0
+          }
+        }
+      },
+      "rejection": {
+        "total": 40,
+        "positive_total": 0,
+        "correct": 0,
+        "accepted": 0,
+        "exact_accuracy": null,
+        "accepted_precision": 0.0,
+        "rejection_total": 40,
+        "false_accepts": 1
+      }
+    },
+    "target_met": false,
+    "thresholds": {
+      "proposalScore": 0.25,
+      "acceptScore": 0.25,
+      "dotConfidence": 0.7,
+      "nmsIou": 0.25,
+      "minCellWidth": 0.008,
+      "minCellHeight": 0.06,
+      "edgeMargin": 0.008,
+      "maxRowDeviation": 0.55,
+      "maxGapRatio": 1.2,
+      "maxOverlapRatio": 0.5
+    },
+    "scope": "source_disjoint_recomposed_public_photographs_not_physical_camera",
+    "physical_camera_validated": false,
+    "reservation": {
+      "created_utc": "2026-09-10T16:27:48.983172+00:00",
+      "run": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots",
+      "checkpoint_sha256": "090260a2a29f802cdcd07140344feaaf04d98bc48cd2be7a5d75e0482d6ee38c",
+      "selection_sha256": "4235598b3db21fc537c5741207514579fd6764644386d698688cc0ee141bc952"
+    }
+  }
+}

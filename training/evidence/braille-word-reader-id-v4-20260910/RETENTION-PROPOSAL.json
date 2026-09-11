@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "status": "draft_pending_final_artifact_hashes",
+  "purpose": "Proposed additive retention index content; not a completed integrity proof, cleanup plan or deletion authorization",
+  "proposedFinalIndex": "training/checkpoints/retained-models-20260910.json",
+  "preserveUnionWithHistoricalIndexes": [
+    "training/checkpoints/retained-models.json",
+    "training/checkpoints/retained-models-20260908.json",
+    "training/checkpoints/retained-runtime-20260909.json"
+  ],
+  "experimentRoot": "C:/bm-symbols-20260908/accuracy80-20260910",
+  "completedDetectorInventory": "training/evidence/braille-word-reader-id-v4-20260910/DETECTOR-RETENTION-INVENTORY.json",
+  "completedDetectorEpochs": 81,
+  "selectedDetector": {
+    "run": "run-dots",
+    "epoch": 45,
+    "checkpoint": "C:/bm-symbols-20260908/accuracy80-20260910/run-dots/best-word.keras",
+    "sha256": "090260a2a29f802cdcd07140344feaaf04d98bc48cd2be7a5d75e0482d6ee38c",
+    "selectionScope": "validation_only",
+    "finalPipelineSelectionPending": true
+  },
+  "finalArtifactsPending": {
+    "selectedRun": null,
+    "selectedEpoch": null,
+    "checkpoint": null,
+    "tflite": null,
+    "targetMet": null,
+    "deploymentDecision": null,
+    "physicalCameraValidated": false
+  },
+  "requiredPerFileFields": ["path", "pathScope", "sizeBytes", "sha256", "role"],
+  "requiredPreservedCategories": [
+    {
+      "role": "All complete stage checkpoints and training decisions",
+      "paths": ["run-heads", "run-finetune", "run-dots"],
+      "contents": ["epoch*.keras", "epoch*-validation.json", "best-word.keras", "selection.json", "training-config.json", "history.json", "sampling.json", "protected-before.json", "source/**"]
+    },
+    {
+      "role": "Bounded cell-refiner pilot and TRAIN-only feature cache; preserve when created",
+      "paths": ["run-cell-refiner-pilot", "cell-refiner-train-v1.npz", "cell-refiner-train-v1.json"],
+      "preserveEntireDirectory": true,
+      "pendingCompletion": true
+    },
+    {
+      "role": "Dataset composition and continuation inputs",
+      "paths": ["data", "*-symbols.json", "*-image-hashes.json", "source-image-hashes.json", "corpus-audit.json", "corpus-verification.json", "test-source-selection.json", "test-download-manifest.json", "train-hard-example-weights.json", "preparation-source"]
+    },
+    {
+      "role": "Final model conversion, TEST and regression evidence",
+      "paths": ["FINAL_EXPORT_DIRECTORY_PENDING", "test-evaluation-reservation.json", "final-test-evaluation.json", "SELECTED_RUN_PENDING/test-evaluation.json", "SELECTED_RUN_PENDING/test-artifact-comparison-started.json", "SELECTED_RUN_PENDING/test-artifact-comparison.json", "FINAL_REGRESSION_REPORT_PENDING", "evidence", "*-console.log", "PREPARATION-NOTES.md", "preparation-diagnostics.json"]
+    },
+    {
+      "role": "Existing external source data and Python environments",
+      "paths": ["C:/bm-datasets/AngelinaDataset", "C:/bm-datasets/DSBI-train-6937eb8", "C:/bm-datasets/DSBI-test-6937eb8", "C:/bm-envs/word-symbols-torch", "C:/bm-envs/word-symbols-tensorflow", ".braille-training-work/word-scan-v1-20260905"]
+    }
+  ],
+  "finalizationRules": [
+    "Expand file patterns into an explicit path/size/SHA-256 manifest after training and evaluation finish.",
+    "Bind selected checkpoint, final TFLite and every reported result to the same immutable model hash.",
+    "Retain unpromoted candidates and all completed epochs for future development.",
+    "Record optimizer-state limitation: stage checkpoints preserve weights, not exact mid-stage Adam state.",
+    "Verify archived bytes against source before any future relocation or cleanup; append relocation indexes without editing historical evidence.",
+    "Keep Android build-folder registry untouched; training evidence and protected data are not Android staging folders."
+  ]
+}

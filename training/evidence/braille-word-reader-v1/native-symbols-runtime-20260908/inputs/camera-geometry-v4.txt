@@ -1,0 +1,711 @@
+﻿
+== Service global info: ==
+
+Number of camera devices: 1
+Number of normal camera devices: 1
+Number of public camera devices visible to API1: 1
+    Device 0 maps to "10"
+Active Camera Clients:
+[
+(Camera ID: 10, Cost: 100, PID: 6683, Score: 0, State: 2User Id: 0, Client Package Name: com.brailleme.app, Conflicting Client Devices: {})
+]
+Allowed user IDs: 0
+
+== Camera service events log (most recent at top): ==
+  09-09 00:20:43 : CONNECT device 10 client for package com.brailleme.app (PID 6683)
+  09-09 00:12:54 : USER_SWITCH previous allowed user IDs: <None>, current allowed user IDs: 0
+  09-09 00:12:45 : ADD device 10, reason: (Device added)
+
+== Camera device 10 dynamic info: ==
+  09-09 00:24:14 : Device 10 is open. Client instance dump:
+    Client priority score: 0 state: 2
+    Client PID: 6683
+    Client package: com.brailleme.app
+  CameraDeviceClient[10] (0x74152d717a80) dump:
+    Current client UID 10218
+    State:
+      Request ID counter: 1
+      No input stream configured.
+      Current output stream/surface IDs:
+        Stream 0 Surface 0
+        Stream 2 Surface 0
+        Stream 1 Surface 0
+    Latest received frame:
+      Dumping camera metadata array: 63 / 63 entries, 240 / 240 bytes of extra data.
+        Version: 1, Flags: 00000000
+        android.colorCorrection.mode (00000): byte[1]
+          [FAST ]
+        android.colorCorrection.transform (00001): rational[9]
+          [(128 / 128) (0 / 128) ]
+          [(0 / 128) (0 / 128) ]
+          [(128 / 128) (0 / 128) ]
+          [(0 / 128) (0 / 128) ]
+          [(128 / 128) ]
+        android.colorCorrection.gains (00002): float[4]
+          [1.00000000 1.00000000 1.00000000 1.00000000 ]
+        android.colorCorrection.aberrationMode (00003): byte[1]
+          [OFF ]
+        android.control.aeAntibandingMode (10000): byte[1]
+          [AUTO ]
+        android.control.aeExposureCompensation (10001): int32[1]
+          [0 ]
+        android.control.aeLock (10002): byte[1]
+          [OFF ]
+        android.control.aeMode (10003): byte[1]
+          [ON ]
+        android.control.aeTargetFpsRange (10005): int32[2]
+          [30 30 ]
+        android.control.aePrecaptureTrigger (10006): byte[1]
+          [IDLE ]
+        android.control.afMode (10007): byte[1]
+          [AUTO ]
+        android.control.afTrigger (10009): byte[1]
+          [IDLE ]
+        android.control.awbLock (1000a): byte[1]
+          [OFF ]
+        android.control.awbMode (1000b): byte[1]
+          [AUTO ]
+        android.control.captureIntent (1000d): byte[1]
+          [PREVIEW ]
+        android.control.effectMode (1000e): byte[1]
+          [OFF ]
+        android.control.mode (1000f): byte[1]
+          [AUTO ]
+        android.control.sceneMode (10010): byte[1]
+          [DISABLED ]
+        android.control.videoStabilizationMode (10011): byte[1]
+          [OFF ]
+        android.control.aeState (1001f): byte[1]
+          [CONVERGED ]
+        android.control.afState (10020): byte[1]
+          [INACTIVE ]
+        android.control.awbState (10022): byte[1]
+          [CONVERGED ]
+        android.control.zoomRatio (1002f): float[1]
+          [1.00000000 ]
+        android.control.autoframing (10037): byte[1]
+          [OFF ]
+        android.edge.mode (30000): byte[1]
+          [OFF ]
+        android.flash.mode (40002): byte[1]
+          [OFF ]
+        android.flash.state (40005): byte[1]
+          [UNAVAILABLE ]
+        android.hotPixel.mode (60000): byte[1]
+          [OFF ]
+        android.jpeg.orientation (70003): int32[1]
+          [0 ]
+        android.jpeg.quality (70004): byte[1]
+          [85 ]
+        android.jpeg.thumbnailQuality (70005): byte[1]
+          [85 ]
+        android.jpeg.thumbnailSize (70006): int32[2]
+          [0 0 ]
+        android.lens.aperture (80000): float[1]
+          [4.00000000 ]
+        android.lens.focalLength (80002): float[1]
+          [1.00000000 ]
+        android.lens.focusDistance (80003): float[1]
+          [2.00000000 ]
+        android.lens.opticalStabilizationMode (80004): byte[1]
+          [OFF ]
+        android.lens.state (80009): byte[1]
+          [STATIONARY ]
+        android.noiseReduction.mode (a0000): byte[1]
+          [OFF ]
+        android.request.id (c0001): int32[1]
+          [0 ]
+        android.request.metadataMode (c0003): byte[1]
+          [FULL ]
+        android.request.pipelineDepth (c0009): byte[1]
+          [4 ]
+        android.scaler.cropRegion (d0000): int32[4]
+          [0 0 1279 959 ]
+        android.scaler.rotateAndCrop (d0011): byte[1]
+          [NONE ]
+        android.sensor.exposureTime (e0000): int64[1]
+          [10000000 ]
+        android.sensor.frameDuration (e0001): int64[1]
+          [33333333 ]
+        android.sensor.sensitivity (e0002): int32[1]
+          [200 ]
+        android.sensor.timestamp (e0010): int64[1]
+          [700362885910 ]
+        android.sensor.neutralColorPoint (e0012): rational[3]
+          [(1023 / 1) (1023 / 1) ]
+          [(1023 / 1) ]
+        android.sensor.noiseProfile (e0013): double[8]
+          [1.00000000 0.00000100 1.00000000 0.00000100 ]
+          [1.00000000 0.00000100 1.00000000 0.00000100 ]
+        android.sensor.testPatternMode (e0018): int32[1]
+          [OFF ]
+        android.sensor.rollingShutterSkew (e001a): int64[1]
+          [50000 ]
+        android.shading.mode (100000): byte[1]
+          [OFF ]
+        android.statistics.faceDetectMode (110000): byte[1]
+          [OFF ]
+        android.statistics.sharpnessMapMode (110002): byte[1]
+          [OFF ]
+        android.statistics.hotPixelMapMode (110003): byte[1]
+          [OFF ]
+        android.statistics.sceneFlicker (11000e): byte[1]
+          [NONE ]
+        android.statistics.lensShadingMapMode (110010): byte[1]
+          [OFF ]
+        android.blackLevel.lock (160000): byte[1]
+          [OFF ]
+        android.distortionCorrection.mode (1b0000): byte[1]
+          [OFF ]
+        android.control.zoomMethod (1003c): byte[1]
+          [AUTO ]
+        android.flash.strengthLevel (40006): int32[1]
+          [262150 ]
+        android.control.autoframingState (10039): byte[1]
+          [INACTIVE ]
+        android.request.frameCount (c0000): int32[1]
+          [6209 ]
+  Device dump:
+    Device status: ACTIVE
+    Stream configuration:
+    Operation mode: NORMAL (0) 
+      No input stream.
+    Stream[0]: Output
+      Consumer name: SurfaceTexture-0-6683-0
+      State: 4
+      Dims: 1280 x 960, format 0x1, dataspace 0x0
+      Max size: 0
+      Combined usage: 0x20130, max HAL buffers: 4
+      Dynamic Range Profile: 0x1
+      Color Space: -1
+      Stream use case: 0
+      Timestamp base: 0
+      Frames produced: 6210, last timestamp: 700362885910 ns
+      Total buffers: 7, currently dequeued: 4, currently cached: 0
+      Latency histogram for wait on max_buffers (9312) samples
+       33     66     99    132    165    198    231    264    297    inf (max ms)
+     85.47   14.47   0.06   0.00   0.00   0.00   0.00   0.00   0.00   0.00 (%)
+      DequeueBuffer latency histogram: (6214) samples
+        5     10     15     20     25     30     35     40     45    inf (max ms)
+     94.96   3.43   1.01   0.24   0.13   0.08   0.05   0.05   0.02   0.03 (%)
+    Stream[1]: Output
+      Consumer name: ImageReader-1280x960f21m4-6683-0
+      State: 4
+      Dims: 1280 x 960, format 0x21, dataspace 0x8c20000
+      Max size: 1228808
+      Combined usage: 0x20033, max HAL buffers: 4
+      Dynamic Range Profile: 0x1
+      Color Space: -1
+      Stream use case: 0
+      Timestamp base: 0
+      Frames produced: 0, last timestamp: 0 ns
+      Total buffers: 8, currently dequeued: 0, currently cached: 0
+    Stream[2]: Output
+      Consumer name: ImageReader-640x480f23m4-6683-1
+      State: 4
+      Dims: 640 x 480, format 0x23, dataspace 0x8c20000
+      Max size: 0
+      Combined usage: 0x20033, max HAL buffers: 4
+      Dynamic Range Profile: 0x1
+      Color Space: -1
+      Stream use case: 0
+      Timestamp base: 0
+      Frames produced: 6210, last timestamp: 700362885910 ns
+      Total buffers: 8, currently dequeued: 4, currently cached: 0
+      Latency histogram for wait on max_buffers (3379) samples
+       33     66     99    132    165    198    231    264    297    inf (max ms)
+     100.00   0.00   0.00   0.00   0.00   0.00   0.00   0.00   0.00   0.00 (%)
+      DequeueBuffer latency histogram: (6214) samples
+        5     10     15     20     25     30     35     40     45    inf (max ms)
+     96.38   2.48   0.58   0.29   0.14   0.05   0.06   0.00   0.00   0.02 (%)
+    Camera3 Buffer Manager:
+      Total stream sets: 0
+    In-flight requests:
+      Frame 6211 |  Timestamp: 0, metadata arrived: false, buffers left: 2
+      Frame 6212 |  Timestamp: 0, metadata arrived: false, buffers left: 2
+      Frame 6213 |  Timestamp: 0, metadata arrived: false, buffers left: 2
+    ProcessCaptureRequest latency histogram: (6214) samples
+       40     80    120    160    200    240    280    320    360    inf (max ms)
+     100.00   0.00   0.00   0.00   0.00   0.00   0.00   0.00   0.00   0.00 (%)
+    Last request sent:
+      Output Stream Ids:
+         0
+         2
+    Logical request settings:
+      Dumping camera metadata array: 46 / 46 entries, 48 / 48 bytes of extra data.
+        Version: 1, Flags: 00000001
+        android.colorCorrection.mode (00000): byte[1]
+          [FAST ]
+        android.colorCorrection.aberrationMode (00003): byte[1]
+          [OFF ]
+        android.control.aeAntibandingMode (10000): byte[1]
+          [AUTO ]
+        android.control.aeExposureCompensation (10001): int32[1]
+          [0 ]
+        android.control.aeLock (10002): byte[1]
+          [OFF ]
+        android.control.aeMode (10003): byte[1]
+          [ON ]
+        android.control.aeTargetFpsRange (10005): int32[2]
+          [30 30 ]
+        android.control.aePrecaptureTrigger (10006): byte[1]
+          [IDLE ]
+        android.control.afMode (10007): byte[1]
+          [AUTO ]
+        android.control.afTrigger (10009): byte[1]
+          [IDLE ]
+        android.control.awbLock (1000a): byte[1]
+          [OFF ]
+        android.control.awbMode (1000b): byte[1]
+          [AUTO ]
+        android.control.captureIntent (1000d): byte[1]
+          [PREVIEW ]
+        android.control.effectMode (1000e): byte[1]
+          [OFF ]
+        android.control.mode (1000f): byte[1]
+          [AUTO ]
+        android.control.sceneMode (10010): byte[1]
+          [DISABLED ]
+        android.control.videoStabilizationMode (10011): byte[1]
+          [OFF ]
+        android.control.zoomRatio (1002f): float[1]
+          [1.00000000 ]
+        android.control.autoframing (10037): byte[1]
+          [OFF ]
+        android.edge.mode (30000): byte[1]
+          [OFF ]
+        android.flash.mode (40002): byte[1]
+          [OFF ]
+        android.hotPixel.mode (60000): byte[1]
+          [OFF ]
+        android.jpeg.orientation (70003): int32[1]
+          [0 ]
+        android.jpeg.quality (70004): byte[1]
+          [85 ]
+        android.jpeg.thumbnailQuality (70005): byte[1]
+          [85 ]
+        android.jpeg.thumbnailSize (70006): int32[2]
+          [0 0 ]
+        android.lens.aperture (80000): float[1]
+          [4.00000000 ]
+        android.lens.focalLength (80002): float[1]
+          [1.00000000 ]
+        android.lens.focusDistance (80003): float[1]
+          [0.10000000 ]
+        android.lens.opticalStabilizationMode (80004): byte[1]
+          [OFF ]
+        android.noiseReduction.mode (a0000): byte[1]
+          [OFF ]
+        android.request.id (c0001): int32[1]
+          [0 ]
+        android.request.metadataMode (c0003): byte[1]
+          [FULL ]
+        android.scaler.cropRegion (d0000): int32[4]
+          [0 0 1279 959 ]
+        android.scaler.rotateAndCrop (d0011): byte[1]
+          [NONE ]
+        android.sensor.exposureTime (e0000): int64[1]
+          [10000000 ]
+        android.sensor.frameDuration (e0001): int64[1]
+          [33333333 ]
+        android.sensor.sensitivity (e0002): int32[1]
+          [200 ]
+        android.sensor.testPatternMode (e0018): int32[1]
+          [OFF ]
+        android.shading.mode (100000): byte[1]
+          [OFF ]
+        android.statistics.faceDetectMode (110000): byte[1]
+          [OFF ]
+        android.statistics.sharpnessMapMode (110002): byte[1]
+          [OFF ]
+        android.statistics.hotPixelMapMode (110003): byte[1]
+          [OFF ]
+        android.statistics.lensShadingMapMode (110010): byte[1]
+          [OFF ]
+        android.blackLevel.lock (160000): byte[1]
+          [OFF ]
+        android.distortionCorrection.mode (1b0000): byte[1]
+          [OFF ]
+     Tag monitoring disabled (enable with -m <name1,..,nameN>)
+     HAL device dump:
+== Camera Provider HAL android.hardware.camera.provider.ICameraProvider/internal/0-0 (v2.0, remote) static info: 0 devices: ==
+== Camera Provider HAL android.hardware.camera.provider.ICameraProvider/internal/1-1 (v2.0, remote) static info: 1 devices: ==
+== Camera HAL device device@1.1/internal/10 (v1.1) static information: ==
+  Resource cost: 100
+  Conflicting devices: None
+  API1 info:
+    Has a flash unit: false
+    Facing: Back
+    Orientation: 90
+  API2 camera characteristics:
+    Dumping camera metadata array: 79 / 79 entries, 3208 / 3208 bytes of extra data.
+      Version: 1, Flags: 00000000
+      android.colorCorrection.availableAberrationModes (00004): byte[1]
+        [0 ]
+      android.control.aeAvailableAntibandingModes (10012): byte[2]
+        [0 3 ]
+      android.control.aeAvailableModes (10013): byte[2]
+        [0 1 ]
+      android.control.aeAvailableTargetFpsRanges (10014): int32[8]
+        [2 15 15 15 ]
+        [2 30 30 30 ]
+      android.control.aeCompensationRange (10015): int32[2]
+        [-6 6 ]
+      android.control.aeCompensationStep (10016): rational[1]
+        [(1 / 2) ]
+      android.control.afAvailableModes (10017): byte[2]
+        [0 1 ]
+      android.control.availableEffects (10018): byte[1]
+        [0 ]
+      android.control.availableSceneModes (10019): byte[1]
+        [0 ]
+      android.control.availableVideoStabilizationModes (1001a): byte[1]
+        [0 ]
+      android.control.awbAvailableModes (1001b): byte[2]
+        [0 1 ]
+      android.control.maxRegions (1001c): int32[3]
+        [0 0 1 ]
+      android.control.aeLockAvailable (10024): byte[1]
+        [FALSE ]
+      android.control.awbLockAvailable (10025): byte[1]
+        [FALSE ]
+      android.control.availableModes (10026): byte[2]
+        [0 1 ]
+      android.control.zoomRatioRange (1002e): float[2]
+        [1.00000000 1.00000000 ]
+      android.edge.availableEdgeModes (30002): byte[1]
+        [0 ]
+      android.flash.info.available (50000): byte[1]
+        [FALSE ]
+      android.hotPixel.availableHotPixelModes (60001): byte[1]
+        [0 ]
+      android.jpeg.availableThumbnailSizes (70007): int32[18]
+        [0 0 86 48 ]
+        [78 64 86 64 ]
+        [170 96 150 112 ]
+        [156 128 320 240 ]
+        [370 208 ]
+      android.jpeg.maxSize (70008): int32[1]
+        [1228808 ]
+      android.lens.facing (80005): byte[1]
+        [BACK ]
+      android.lens.info.availableApertures (90000): float[8]
+        [1.39999998 2.00000000 2.79999995 4.00000000 5.59999990 8.00000000 11.00000000 16.00000000 ]
+      android.lens.info.availableFocalLengths (90002): float[1]
+        [1.00000000 ]
+      android.lens.info.availableOpticalStabilization (90003): byte[1]
+        [0 ]
+      android.lens.info.hyperfocalDistance (90004): float[1]
+        [0.10000000 ]
+      android.lens.info.minimumFocusDistance (90005): float[1]
+        [0.10000000 ]
+      android.lens.info.shadingMapSize (90006): int32[2]
+        [4 3 ]
+      android.lens.info.focusDistanceCalibration (90007): byte[1]
+        [APPROXIMATE ]
+      android.noiseReduction.availableNoiseReductionModes (a0002): byte[1]
+        [0 ]
+      android.request.maxNumOutputStreams (c0006): int32[3]
+        [1 2 1 ]
+      android.request.maxNumInputStreams (c0008): int32[1]
+        [0 ]
+      android.request.pipelineMaxDepth (c000a): byte[1]
+        [4 ]
+      android.request.partialResultCount (c000b): int32[1]
+        [1 ]
+      android.request.availableCapabilities (c000c): byte[3]
+        [BACKWARD_COMPATIBLE RAW READ_SENSOR_SETTINGS ]
+      android.request.availableRequestKeys (c000d): int32[45]
+        [0 (mode) 3 (aberrationMode) 65536 (aeAntibandingMode) 65537 (aeExposureCompensation) ]
+        [65538 (aeLock) 65539 (aeMode) 65541 (aeTargetFpsRange) 65542 (aePrecaptureTrigger) ]
+        [65543 (afMode) 65545 (afTrigger) 65546 (awbLock) 65547 (awbMode) ]
+        [65549 (captureIntent) 65550 (effectMode) 65551 (mode) 65552 (sceneMode) ]
+        [65553 (videoStabilizationMode) 65583 (zoomRatio) 196608 (mode) 262146 (mode) ]
+        [393216 (mode) 458755 (orientation) 458756 (quality) 458757 (thumbnailQuality) ]
+        [458758 (thumbnailSize) 524288 (aperture) 524290 (focalLength) 524291 (focusDistance) ]
+        [524292 (opticalStabilizationMode) 655360 (mode) 786433 (id) 786435 (metadataMode) ]
+        [851968 (cropRegion) 917504 (exposureTime) 917505 (frameDuration) 917506 (sensitivity) ]
+        [917528 (testPatternMode) 1048576 (mode) 1114112 (faceDetectMode) 1114114 (sharpnessMapMode) ]
+        [1114115 (hotPixelMapMode) 1114128 (lensShadingMapMode) 1441792 (lock) 1769472 (mode) ]
+        [65596 (zoomMethod) ]
+      android.request.availableResultKeys (c000e): int32[59]
+        [0 (mode) 1 (transform) 2 (gains) 3 (aberrationMode) ]
+        [65536 (aeAntibandingMode) 65537 (aeExposureCompensation) 65538 (aeLock) 65539 (aeMode) ]
+        [65541 (aeTargetFpsRange) 65542 (aePrecaptureTrigger) 65543 (afMode) 65545 (afTrigger) ]
+        [65546 (awbLock) 65547 (awbMode) 65549 (captureIntent) 65550 (effectMode) ]
+        [65551 (mode) 65552 (sceneMode) 65553 (videoStabilizationMode) 65567 (aeState) ]
+        [65568 (afState) 65570 (awbState) 65583 (zoomRatio) 196608 (mode) ]
+        [262146 (mode) 262149 (state) 393216 (mode) 458755 (orientation) ]
+        [458756 (quality) 458757 (thumbnailQuality) 458758 (thumbnailSize) 524288 (aperture) ]
+        [524290 (focalLength) 524291 (focusDistance) 524292 (opticalStabilizationMode) 524297 (state) ]
+        [655360 (mode) 786433 (id) 786435 (metadataMode) 786441 (pipelineDepth) ]
+        [851968 (cropRegion) 917504 (exposureTime) 917505 (frameDuration) 917506 (sensitivity) ]
+        [917520 (timestamp) 917522 (neutralColorPoint) 917523 (noiseProfile) 917528 (testPatternMode) ]
+        [917530 (rollingShutterSkew) 1048576 (mode) 1114112 (faceDetectMode) 1114114 (sharpnessMapMode) ]
+        [1114115 (hotPixelMapMode) 1114123 (lensShadingMap) 1114126 (sceneFlicker) 1114128 (lensShadingMapMode) ]
+        [1441792 (lock) 1769472 (mode) 65596 (zoomMethod) ]
+      android.request.availableCharacteristicsKeys (c000f): int32[68]
+        [4 (availableAberrationModes) 65554 (aeAvailableAntibandingModes) 65555 (aeAvailableModes) 65556 (aeAvailableTargetFpsRanges) ]
+        [65557 (aeCompensationRange) 65558 (aeCompensationStep) 65559 (afAvailableModes) 65560 (availableEffects) ]
+        [65561 (availableSceneModes) 65562 (availableVideoStabilizationModes) 65563 (awbAvailableModes) 65564 (maxRegions) ]
+        [65572 (aeLockAvailable) 65573 (awbLockAvailable) 65574 (availableModes) 65582 (zoomRatioRange) ]
+        [196610 (availableEdgeModes) 327680 (available) 393217 (availableHotPixelModes) 458759 (availableThumbnailSizes) ]
+        [458760 (maxSize) 524293 (facing) 589824 (availableApertures) 589826 (availableFocalLengths) ]
+        [589827 (availableOpticalStabilization) 589828 (hyperfocalDistance) 589829 (minimumFocusDistance) 589830 (shadingMapSize) ]
+        [589831 (focusDistanceCalibration) 655362 (availableNoiseReductionModes) 786438 (maxNumOutputStreams) 786440 (maxNumInputStreams) ]
+        [786442 (pipelineMaxDepth) 786443 (partialResultCount) 786444 (availableCapabilities) 851972 (availableMaxDigitalZoom) ]
+        [851978 (availableStreamConfigurations) 851979 (availableMinFrameDurations) 851980 (availableStallDurations) 851981 (croppingType) ]
+        [917507 (referenceIlluminant1) 917509 (calibrationTransform1) 917511 (colorTransform1) 917513 (forwardMatrix1) ]
+        [917516 (blackLevelPattern) 917517 (maxAnalogSensitivity) 917518 (orientation) 917529 (availableTestPatternModes) ]
+        [983040 (activeArraySize) 983041 (sensitivityRange) 983042 (colorFilterArrangement) 983043 (exposureTimeRange) ]
+        [983044 (maxFrameDuration) 983045 (physicalSize) 983046 (pixelArraySize) 983047 (whiteLevel) ]
+        [983048 (timestampSource) 983050 (preCorrectionActiveArraySize) 1048578 (availableModes) 1179648 (availableFaceDetectModes) ]
+        [1179650 (maxFaceCount) 1179654 (availableHotPixelMapModes) 1179655 (availableLensShadingMapModes) 1376256 (supportedHardwareLevel) ]
+        [1507329 (maxLatency) 1769473 (availableModes) 8 (availableModes) 65598 (aeAvailablePriorityModes) ]
+      android.scaler.availableMaxDigitalZoom (d0004): float[1]
+        [1.00000000 ]
+      android.scaler.availableStreamConfigurations (d000a): int32[100]
+        [34 320 240 OUTPUT ]
+        [35 320 240 OUTPUT ]
+        [1 320 240 OUTPUT ]
+        [32 320 240 OUTPUT ]
+        [33 320 240 OUTPUT ]
+        [34 352 288 OUTPUT ]
+        [35 352 288 OUTPUT ]
+        [1 352 288 OUTPUT ]
+        [32 352 288 OUTPUT ]
+        [33 352 288 OUTPUT ]
+        [34 640 480 OUTPUT ]
+        [35 640 480 OUTPUT ]
+        [1 640 480 OUTPUT ]
+        [32 640 480 OUTPUT ]
+        [33 640 480 OUTPUT ]
+        [34 1280 720 OUTPUT ]
+        [35 1280 720 OUTPUT ]
+        [1 1280 720 OUTPUT ]
+        [32 1280 720 OUTPUT ]
+        [33 1280 720 OUTPUT ]
+        [34 1280 960 OUTPUT ]
+        [35 1280 960 OUTPUT ]
+        [1 1280 960 OUTPUT ]
+        [32 1280 960 OUTPUT ]
+        [33 1280 960 OUTPUT ]
+      android.scaler.availableMinFrameDurations (d000b): int64[100]
+        [34 320 ]
+        [240 33333333 ]
+        [35 320 ]
+        [240 33333333 ]
+        [1 320 ]
+        [240 33333333 ]
+        [32 320 ]
+        [240 33333333 ]
+        [33 320 ]
+        [240 33333333 ]
+        [34 352 ]
+        [288 33333333 ]
+        [35 352 ]
+        [288 33333333 ]
+        [1 352 ]
+        [288 33333333 ]
+        [32 352 ]
+        [288 33333333 ]
+        [33 352 ]
+        [288 33333333 ]
+        [34 640 ]
+        [480 33333333 ]
+        [35 640 ]
+        [480 33333333 ]
+        [1 640 ]
+        [480 33333333 ]
+        [32 640 ]
+        [480 33333333 ]
+        [33 640 ]
+        [480 33333333 ]
+        [34 1280 ]
+        [720 33333333 ]
+        [35 1280 ]
+        [720 33333333 ]
+        [1 1280 ]
+        [720 33333333 ]
+        [32 1280 ]
+        [720 33333333 ]
+        [33 1280 ]
+        [720 33333333 ]
+        [34 1280 ]
+        [960 33333333 ]
+        [35 1280 ]
+        [960 33333333 ]
+        [1 1280 ]
+        [960 33333333 ]
+        [32 1280 ]
+        [960 33333333 ]
+        [33 1280 ]
+        [960 33333333 ]
+      android.scaler.availableStallDurations (d000c): int64[100]
+        [34 320 ]
+        [240 0 ]
+        [35 320 ]
+        [240 0 ]
+        [1 320 ]
+        [240 0 ]
+        [32 320 ]
+        [240 0 ]
+        [33 320 ]
+        [240 250000000 ]
+        [34 352 ]
+        [288 0 ]
+        [35 352 ]
+        [288 0 ]
+        [1 352 ]
+        [288 0 ]
+        [32 352 ]
+        [288 0 ]
+        [33 352 ]
+        [288 250000000 ]
+        [34 640 ]
+        [480 0 ]
+        [35 640 ]
+        [480 0 ]
+        [1 640 ]
+        [480 0 ]
+        [32 640 ]
+        [480 0 ]
+        [33 640 ]
+        [480 250000000 ]
+        [34 1280 ]
+        [720 0 ]
+        [35 1280 ]
+        [720 0 ]
+        [1 1280 ]
+        [720 0 ]
+        [32 1280 ]
+        [720 0 ]
+        [33 1280 ]
+        [720 250000000 ]
+        [34 1280 ]
+        [960 0 ]
+        [35 1280 ]
+        [960 0 ]
+        [1 1280 ]
+        [960 0 ]
+        [32 1280 ]
+        [960 0 ]
+        [33 1280 ]
+        [960 250000000 ]
+      android.scaler.croppingType (d000d): byte[1]
+        [CENTER_ONLY ]
+      android.sensor.referenceIlluminant1 (e0003): byte[1]
+        [D50 ]
+      android.sensor.calibrationTransform1 (e0005): rational[9]
+        [(128 / 128) (0 / 128) ]
+        [(0 / 128) (0 / 128) ]
+        [(128 / 128) (0 / 128) ]
+        [(0 / 128) (0 / 128) ]
+        [(128 / 128) ]
+      android.sensor.colorTransform1 (e0007): rational[9]
+        [(3209 / 1024) (-1655 / 1024) ]
+        [(-502 / 1024) (-1002 / 1024) ]
+        [(1962 / 1024) (34 / 1024) ]
+        [(73 / 1024) (-234 / 1024) ]
+        [(1438 / 1024) ]
+      android.sensor.forwardMatrix1 (e0009): rational[9]
+        [(446 / 1024) (394 / 1024) ]
+        [(146 / 1024) (227 / 1024) ]
+        [(734 / 1024) (62 / 1024) ]
+        [(14 / 1024) (99 / 1024) ]
+        [(731 / 1024) ]
+      android.sensor.blackLevelPattern (e000c): int32[4]
+        [64 64 64 64 ]
+      android.sensor.maxAnalogSensitivity (e000d): int32[1]
+        [800 ]
+      android.sensor.orientation (e000e): int32[1]
+        [90 ]
+      android.sensor.availableTestPatternModes (e0019): int32[1]
+        [0 ]
+      android.sensor.info.activeArraySize (f0000): int32[4]
+        [0 0 1280 960 ]
+      android.sensor.info.sensitivityRange (f0001): int32[2]
+        [25 1600 ]
+      android.sensor.info.colorFilterArrangement (f0002): byte[1]
+        [RGGB ]
+      android.sensor.info.exposureTimeRange (f0003): int64[2]
+        [50000 500000000 ]
+      android.sensor.info.maxFrameDuration (f0004): int64[1]
+        [500000000 ]
+      android.sensor.info.physicalSize (f0005): float[2]
+        [2.55999994 1.91999996 ]
+      android.sensor.info.pixelArraySize (f0006): int32[2]
+        [1280 960 ]
+      android.sensor.info.whiteLevel (f0007): int32[1]
+        [1023 ]
+      android.sensor.info.timestampSource (f0008): byte[1]
+        [UNKNOWN ]
+      android.sensor.info.preCorrectionActiveArraySize (f000a): int32[4]
+        [0 0 1280 960 ]
+      android.shading.availableModes (100002): byte[2]
+        [0 1 ]
+      android.statistics.info.availableFaceDetectModes (120000): byte[1]
+        [0 ]
+      android.statistics.info.maxFaceCount (120002): int32[1]
+        [0 ]
+      android.statistics.info.availableHotPixelMapModes (120006): byte[1]
+        [0 ]
+      android.statistics.info.availableLensShadingMapModes (120007): byte[1]
+        [0 ]
+      android.info.supportedHardwareLevel (150000): byte[1]
+        [LIMITED ]
+      android.sync.maxLatency (170001): int32[1]
+        [UNKNOWN ]
+      android.distortionCorrection.availableModes (1b0001): byte[1]
+        [0 ]
+      android.flash.singleStrengthMaxLevel (40007): int32[1]
+        [1 ]
+      android.flash.singleStrengthDefaultLevel (40008): int32[1]
+        [1 ]
+      android.flash.torchStrengthMaxLevel (40009): int32[1]
+        [1 ]
+      android.flash.torchStrengthDefaultLevel (4000a): int32[1]
+        [1 ]
+      android.scaler.availableRotateAndCropModes (d0010): byte[1]
+        [0 ]
+      android.control.autoframingAvailable (10038): byte[1]
+        [FALSE ]
+      android.sensor.readoutTimestamp (e0022): byte[1]
+        [HARDWARE ]
+      android.colorCorrection.availableModes (00008): byte[3]
+        [0 1 2 ]
+      android.control.aeAvailablePriorityModes (1003e): byte[1]
+        [0 ]
+      android.info.sessionConfigurationQueryVersion (150004): int32[1]
+        [UPSIDE_DOWN_CAKE ]
+== Camera HAL device device@1.1/internal/10 (v1.1) dumpState: ==
+
+== Vendor tags: ==
+
+  Dumping vendor tag descriptors for vendor with id 12551620819983530877 
+  Dumping configured vendor tag descriptors: None set
+  Dumping vendor tag descriptors for vendor with id 8932615658386372252 
+  Dumping configured vendor tag descriptors: 16 entries
+    0x84000000 (DefaultPhysicalCamId) with type 1 (int32) defined in section com.google.hal.logicalcamera
+    0x84000001 (3a.hybrid_ae_enable) with type 1 (int32) defined in section com.google.pixel.experimental2016
+    0x84000002 (request.disable_hdrplus) with type 0 (byte) defined in section com.google.pixel.experimental2017
+    0x84000003 (hdrplus.PayloadFrames) with type 1 (int32) defined in section com.google.internal
+    0x84000004 (ProcessingMode) with type 0 (byte) defined in section com.google.internal
+    0x84000005 (thermal_throttling) with type 0 (byte) defined in section com.google.internal
+    0x84000006 (OutputIntent) with type 0 (byte) defined in section com.google.internal
+    0x84000007 (AvailableNonWarpedYuvSizes) with type 1 (int32) defined in section com.google.internal
+    0x84000008 (NonWarpedYuvStreamId) with type 1 (int32) defined in section com.google.internal
+    0x84000009 (SensorModeFullFov) with type 0 (byte) defined in section com.google.pixel.experimental2019
+    0x8400000a (NonWarpedCropRegion) with type 1 (int32) defined in section com.google.internal
+    0x8400000b (hdr.UsageMode) with type 0 (byte) defined in section com.google.internal
+    0x8400000c (SwDenoiseEnabled) with type 0 (byte) defined in section com.google.internal
+    0x8400000d (VideoSwDenoiseEnabled) with type 0 (byte) defined in section com.google.internal
+    0x8400000e (Video60to30FPSThermalThrottle) with type 0 (byte) defined in section com.google.internal
+    0x8400000f (VideoFpsThrottle) with type 0 (byte) defined in section com.google.internal
+
+== Camera error traces (0): ==
+  No camera traces collected.
+
+**********Dumpsys from previous open session**********
+
+**********End of Dumpsys from previous open session**********

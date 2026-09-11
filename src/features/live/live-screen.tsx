@@ -227,7 +227,7 @@ function presentEvent(
       return getValidatedStableText(event)
         ? {
             title: 'Huruf terdeteksi',
-            guidance: 'Verifikasi huruf terhadap sumber Braille sebelum digunakan.',
+            guidance: 'Cocokkan huruf dengan sumber Braille sebelum digunakan.',
             tone: 'success',
           }
         : {
@@ -632,7 +632,7 @@ export function LiveScreenView({
       return {
         title: 'Pemindai satu sel belum tersedia',
         guidance:
-          'Komponen pemindai belum dapat digunakan. Tidak ada hasil yang dibuat.',
+          'Pemindai belum dapat digunakan. Coba buka kembali aplikasi.',
         tone: 'error' as const,
       };
     }

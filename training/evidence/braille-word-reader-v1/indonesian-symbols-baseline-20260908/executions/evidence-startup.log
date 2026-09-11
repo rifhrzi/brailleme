@@ -1,0 +1,83 @@
+C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\tensorflow\lite\python\interpreter.py:457: UserWarning:     Warning: tf.lite.Interpreter is deprecated and is scheduled for deletion in
+    TF 2.20. Please use the LiteRT interpreter from the ai_edge_litert package.
+    See the [migration guide](https://ai.google.dev/edge/litert/migration)
+    for details.
+    
+  warnings.warn(_INTERPRETER_DELETION_WARNING)
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+{
+  "expectedText": "rawenstwa",
+  "file": "native-word-fixture.png",
+  "sha256": "5115a112aad01432f4ebdfa22d8dcb686f1330075d5030bc5c039c154dc4d164",
+  "roi": {
+    "x": 0.14288889567057292,
+    "y": 0.40029182879377434,
+    "width": 0.7142222425672743,
+    "height": 0.19941634241245138
+  },
+  "source": "books/ola/IMG_5365.labeled.jpg",
+  "source_sha256": "07f8a7610c881ed21faccebdc55f68585c11fd927039397c616d42ad13761b87",
+  "source_crop": [
+    22,
+    1083,
+    472,
+    1340
+  ],
+  "source_model_context_crop": [
+    86,
+    1147,
+    408,
+    1276
+  ],
+  "width": 450,
+  "height": 257,
+  "guideAspect": 6.271219512195121,
+  "purpose": "Original RGB source crop with surrounding pixels; not an already resized 480x192 model input.",
+  "native_validated": false,
+  "runtime_input_reference": {
+    "crop": [
+      64,
+      64,
+      386,
+      193
+    ],
+    "selection": {
+      "x": 0.0009316864961422777,
+      "y": 0.30135658914728686,
+      "width": 0.9981366743952592,
+      "height": 0.3972868217054264
+    },
+    "quality_reason": "",
+    "input_float32_sha256": "88e89e4e9854e0c1cd62d21842b4c24642b22de76fb5cc22a8f8a869df68970b",
+    "cached_output_sha256": "34a54cf7d1ddc9d9ce4e10478d3b587394b37960966917270f7467cbc48673ef",
+    "decoded_text": "rawenstwa",
+    "rejection": "",
+    "input_rgb_sha256": "da834ef8e57904ccfbae2f15f5dcff9d4e6eff7ca56cb9893a7f0140d84c3c44",
+    "cached_validation_image": "validation-words/000049.png",
+    "exact_cached_pixels": true,
+    "model_sha256": "659a235c0ee32f6ee59b7388dc278abcbba4711b8c742380619f3b7a1682f715",
+    "thresholds": {
+      "proposalScore": 0.25,
+      "acceptScore": 0.25,
+      "dotConfidence": 0.7,
+      "nmsIou": 0.25,
+      "minCellWidth": 0.008,
+      "minCellHeight": 0.06,
+      "edgeMargin": 0.008,
+      "maxRowDeviation": 0.55,
+      "maxGapRatio": 1.2,
+      "maxOverlapRatio": 0.5
+    },
+    "source_sha256": {
+      "src/ml/word-image-processing.ts": "5caf889b9267f81532902e5c00bed72f093b90e13862e7bf40a6293b3da86995",
+      "src/ml/word-decoder.ts": "f4f07829eb0f207d075477107e36daf241ed9821763ce44fb580b7b73cce7ffa",
+      "src/ml/word-model-contract.ts": "e01dd5f2e496300bc7ff46181ba470c7d7931e52558f893b84dbbf6348466932",
+      "src/ml/word-symbols.ts": "bc4c62222f4b57b07ae19b37e2add60931747129e49589054255363b0da49860",
+      "src/types/word-scan.ts": "09a0b7ad15ecc0e3176ee8f27939931da7506334a02a1d84d7f260b664804a28",
+      "src/ml/word-tracking.ts": "1c71189a45b31817f468ba785e87a51dcd682e4e4fb45aae3b22d6bfcdb7765c",
+      "scripts/word-native-parity/geometry-reference.cjs": "822a7f7c9924696398505e22dca2465986d5f30ae3981b71b9177d4d02f29f37",
+      "scripts/word-native-parity/fixture-geometry.cjs": "f5ac9307f93515e7463484a767d6da9c8ab40f644d03b7653ba418411e71dbd8",
+      "training/scripts/word_fixture.py": "4dccbd23e2e4001742b1440b9c52c69981e6b67de13bb2c6c5a65cfad5457b85"
+    }
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "schema_version": 1,
+  "status": "completed_actions_not_assessed",
+  "error": null,
+  "acceptanceResult": "not_assessed",
+  "finished_utc": "2026-09-08T18:05:21.792061+00:00",
+  "original_settings": {
+    "accelerometer_rotation": "1",
+    "user_rotation": "0"
+  },
+  "restoration": {
+    "user_rotation": {
+      "expected": "0",
+      "observed": "0",
+      "restored": true
+    },
+    "accelerometer_rotation": {
+      "expected": "1",
+      "observed": "1",
+      "restored": true
+    }
+  },
+  "expected_pid": "4277",
+  "observations": [
+    {
+      "label": "orientation-before",
+      "utc": "2026-09-08T18:04:57.472775+00:00",
+      "pid": "4277",
+      "xml": "C:\\bm-symbols-apk-20260908\\evidence\\actions-orientation-v6\\20260908T180452651367Z-orientation-before-6e63f8.xml",
+      "screenshot": "C:\\bm-symbols-apk-20260908\\evidence\\actions-orientation-v6\\20260908T180455147412Z-orientation-before-dd6c8a.png",
+      "logcat": "C:\\bm-symbols-apk-20260908\\evidence\\actions-orientation-v6\\20260908T180457470774Z-orientation-before-8400d2.log",
+      "app_process_required": true,
+      "visible_states": [
+        "Mencari Braille"
+      ],
+      "result_texts": [],
+      "shutter_visible": true,
+      "shutter_enabled": false,
+      "rescan_visible": false,
+      "processing_visible": false
+    },
+    {
+      "label": "orientation-rotated-first",
+      "utc": "2026-09-08T18:05:07.153745+00:00",
+      "pid": "4277",
+      "xml": "C:\\bm-symbols-apk-20260908\\evidence\\actions-orientation-v6\\20260908T180501901878Z-orientation-rotated-first-e56c2f.xml",
+      "screenshot": "C:\\bm-symbols-apk-20260908\\evidence\\actions-orientation-v6\\20260908T180504427511Z-orientation-rotated-first-4ad02c.png",
+      "logcat": "C:\\bm-symbols-apk-20260908\\evidence\\actions-orientation-v6\\20260908T180507151750Z-orientation-rotated-first-aaa117.log",
+      "app_process_required": true,
+      "visible_states": [],
+      "result_texts": [],
+      "shutter_visible": false,
+      "shutter_enabled": false,
+      "rescan_visible": false,
+      "processing_visible": false
+    },
+    {
+      "label": "orientation-rotated-second",
+      "utc": "2026-09-08T18:05:14.031199+00:00",
+      "pid": "4277",
+      "xml": "C:\\bm-symbols-apk-20260908\\evidence\\actions-orientation-v6\\20260908T180510990400Z-orientation-rotated-second-0de559.xml",
+      "screenshot": "C:\\bm-symbols-apk-20260908\\evidence\\actions-orientation-v6\\20260908T180512413774Z-orientation-rotated-second-27bac3.png",
+      "logcat": "C:\\bm-symbols-apk-20260908\\evidence\\actions-orientation-v6\\20260908T180514029218Z-orientation-rotated-second-076ea0.log",
+      "app_process_required": true,
+      "visible_states": [],
+      "result_texts": [],
+      "shutter_visible": false,
+      "shutter_enabled": false,
+      "rescan_visible": false,
+      "processing_visible": false
+    },
+    {
+      "label": "orientation-restored",
+      "utc": "2026-09-08T18:05:21.528947+00:00",
+      "pid": "4277",
+      "xml": "C:\\bm-symbols-apk-20260908\\evidence\\actions-orientation-v6\\20260908T180517918142Z-orientation-restored-f4dcb7.xml",
+      "screenshot": "C:\\bm-symbols-apk-20260908\\evidence\\actions-orientation-v6\\20260908T180519728753Z-orientation-restored-42a3f6.png",
+      "logcat": "C:\\bm-symbols-apk-20260908\\evidence\\actions-orientation-v6\\20260908T180521526939Z-orientation-restored-b01e44.log",
+      "app_process_required": true,
+      "visible_states": [
+        "Mencari Braille"
+      ],
+      "result_texts": [],
+      "shutter_visible": true,
+      "shutter_enabled": false,
+      "rescan_visible": false,
+      "processing_visible": false
+    }
+  ],
+  "rotation_evidence": {
+    "before": {
+      "window": "C:\\bm-symbols-apk-20260908\\evidence\\actions-orientation-v6\\20260908T180457731385Z-orientation-before-window-665675.txt",
+      "display": "C:\\bm-symbols-apk-20260908\\evidence\\actions-orientation-v6\\20260908T180458028297Z-orientation-before-display-77118c.txt"
+    },
+    "rotated_first": {
+      "window": "C:\\bm-symbols-apk-20260908\\evidence\\actions-orientation-v6\\20260908T180507253103Z-orientation-rotated-first-window-61c1de.txt",
+      "display": "C:\\bm-symbols-apk-20260908\\evidence\\actions-orientation-v6\\20260908T180507514140Z-orientation-rotated-first-display-cdb95c.txt"
+    },
+    "rotated_second": {
+      "window": "C:\\bm-symbols-apk-20260908\\evidence\\actions-orientation-v6\\20260908T180514178828Z-orientation-rotated-second-window-93ccb1.txt",
+      "display": "C:\\bm-symbols-apk-20260908\\evidence\\actions-orientation-v6\\20260908T180514324742Z-orientation-rotated-second-display-5cbbf5.txt"
+    },
+    "restored": {
+      "window": "C:\\bm-symbols-apk-20260908\\evidence\\actions-orientation-v6\\20260908T180521669798Z-orientation-restored-window-771cd2.txt",
+      "display": "C:\\bm-symbols-apk-20260908\\evidence\\actions-orientation-v6\\20260908T180521791050Z-orientation-restored-display-4b0f43.txt"
+    }
+  },
+  "action_counts": {
+    "orientation-accel-off": 1,
+    "orientation-user-rotation-1": 1,
+    "restore-user_rotation": 1,
+    "restore-accelerometer_rotation": 1
+  },
+  "interpretation": "Requested settings, actual display dumps and UI observations retained; no rotation/camera acceptance automatically inferred."
+}

@@ -1,0 +1,371 @@
+{
+  "schemaVersion": 1,
+  "experimentVersion": "overall-exact-text-v5-20260911",
+  "decoderVersion": "six-dot-id-v4-experimental",
+  "artifact": {
+    "name": "braille-word-reader",
+    "version": "1.2.0-experimental.id-v5",
+    "status": "experimental_candidate",
+    "file": "word-reader.tflite",
+    "sha256": "6847c91fe186169ba5208a7444f9c8bedc753228bc42b78c691471a85453a6cb",
+    "sizeBytes": 3239392
+  },
+  "imageNormalization": {
+    "kind": "per_channel_standardize_grayscale",
+    "location": "inside_model_before_backbone_rescaling",
+    "variance": "population",
+    "stdFloor": 0.001,
+    "targetMean": 0.5,
+    "targetStd": 0.05,
+    "clip": [
+      0,
+      1
+    ],
+    "grayscale": "mean_of_standardized_channels",
+    "outputChannels": 3
+  },
+  "input": {
+    "shape": [
+      1,
+      192,
+      480,
+      3
+    ],
+    "dtype": "float32",
+    "layout": "NHWC",
+    "channelOrder": "RGB",
+    "normalization": "pixel / 255.0",
+    "resizeInterpolation": "pillow_bilinear_antialias_u8_22bit",
+    "androidRawPixelCorrection": "nitro-image-0.15.1-argb8888-is-rgba",
+    "backboneNormalization": "Rescaling(2, -1) inside model"
+  },
+  "output": {
+    "shape": [
+      1,
+      48,
+      120,
+      11
+    ],
+    "dtype": "float32",
+    "layout": [
+      "objectness",
+      "offset_x",
+      "offset_y",
+      "width",
+      "height",
+      "dot1",
+      "dot2",
+      "dot3",
+      "dot4",
+      "dot5",
+      "dot6"
+    ]
+  },
+  "thresholds": {
+    "proposalScore": 0.25,
+    "acceptScore": 0.25,
+    "dotConfidence": 0.7,
+    "nmsIou": 0.25,
+    "minCellWidth": 0.008,
+    "minCellHeight": 0.06,
+    "edgeMargin": 0.008,
+    "maxRowDeviation": 0.55,
+    "maxGapRatio": 1.2,
+    "maxOverlapRatio": 0.5
+  },
+  "latinMasks": [
+    1,
+    3,
+    9,
+    25,
+    17,
+    11,
+    27,
+    19,
+    10,
+    26,
+    5,
+    7,
+    13,
+    29,
+    21,
+    15,
+    31,
+    23,
+    14,
+    30,
+    37,
+    39,
+    58,
+    45,
+    61,
+    53
+  ],
+  "experimentalUse": {
+    "enabled": true,
+    "scope": "local_internal_only",
+    "authorizedBy": "user",
+    "reason": "User-authorized v5 capital, number, and punctuation APK; physical camera acceptance remains unverified."
+  },
+  "runtimeContract": {
+    "module": "word_overall_v5_zoom",
+    "selectedPolicy": "cascade_zoom_fallback",
+    "methodSha256": "d7f900120359d1dcd32c8e3bd586663439a9bd31a776630571fbcef0c50ef9c4",
+    "method": {
+      "version": "overall-v5-fixed-flip-zoom-fallback-1",
+      "runtime_module": "word_overall_v5_zoom",
+      "views": [
+        "identity",
+        "horizontal",
+        "vertical",
+        "half_turn",
+        "zoom125",
+        "zoom150"
+      ],
+      "policies": {
+        "identity": [
+          "identity"
+        ],
+        "simple_fallback": [
+          "identity",
+          "matched_logit_four"
+        ],
+        "cascade": [
+          "identity",
+          "matched_logit_four",
+          "matched_prob_four",
+          "matched_prob_vertical",
+          "matched_prob_half_turn",
+          "matched_prob_horizontal"
+        ],
+        "zoom_fallback": [
+          "identity",
+          "zoom_logit_mean",
+          "zoom_probability_mean"
+        ],
+        "cascade_zoom_fallback": [
+          "identity",
+          "matched_logit_four",
+          "matched_prob_four",
+          "matched_prob_vertical",
+          "matched_prob_half_turn",
+          "matched_prob_horizontal",
+          "zoom_logit_mean",
+          "zoom_probability_mean"
+        ]
+      },
+      "flip_transforms": {
+        "identity": [
+          false,
+          false,
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        ],
+        "horizontal": [
+          true,
+          false,
+          [
+            3,
+            4,
+            5,
+            0,
+            1,
+            2
+          ]
+        ],
+        "vertical": [
+          false,
+          true,
+          [
+            2,
+            1,
+            0,
+            5,
+            4,
+            3
+          ]
+        ],
+        "half_turn": [
+          true,
+          true,
+          [
+            5,
+            4,
+            3,
+            2,
+            1,
+            0
+          ]
+        ]
+      },
+      "scales": {
+        "zoom125": 1.25,
+        "zoom150": 1.5
+      },
+      "pixel_transform": "Bilinear inverse sampling at pixel centers; float64 coordinates and float32 interpolation; outside=source RGBmean",
+      "box_transform": "zoom=(original-.5)*scale+.5; inverse=(zoom-.5)/scale+.5",
+      "matching": "Actual NMS proposals only; both zoom proposal and projected original box complete within frozen edgeMargin; one-to-one greedy IoU>=.5",
+      "dot_combination": "Original and matched zoom dots: logit mean then probability mean; unmatched original dots stay unchanged",
+      "routing": "First accepted text in fixed order; original geometry, scores and quality check unchanged; no GT access",
+      "selection_rank": [
+        "overall_exact_accuracy",
+        "accepted_precision",
+        "negative_invalid_false_accepts"
+      ],
+      "tie_break": "earlier policy in declared order",
+      "threshold_changes": false,
+      "geometry_changes": false,
+      "quality_changes": false,
+      "actual_selected_zoom_execution": "Only if the selected policy still rejects after its identity/flip prefix"
+    }
+  },
+  "symbolContract": {
+    "locale": "id-basic",
+    "eventSchemaVersion": 4,
+    "capitalMask": 32,
+    "numberMask": 60,
+    "maxCharacters": 12,
+    "maxPhysicalCells": 24,
+    "preserveLeadingZeros": true,
+    "mixedAlphanumeric": false,
+    "protocol": "indonesian-punctuation-token-v1",
+    "punctuationMasks": {
+      ".": 50,
+      ",": 2,
+      "?": 38,
+      "!": 22,
+      ":": 18,
+      ";": 6,
+      "-": 36,
+      "(": 54,
+      ")": 54
+    },
+    "parentheses": "paired_non_nested",
+    "questionMark": "terminal_after_token",
+    "standaloneAmbiguousSymbolsRejected": true
+  },
+  "internalAcceptance": {
+    "passed": false,
+    "exactWordSuccessRate": 0.876,
+    "acceptedWordAccuracy": 0.9240506329113924,
+    "evaluatedWordCount": 500,
+    "acceptedWordCount": 474,
+    "negativeImageCount": 40,
+    "negativeFalseAccepts": 0
+  },
+  "benchmarkAcceptance": {
+    "scope": "fresh_source_disjoint_recomposed_public_flatbed_scans_not_physical_phone_camera",
+    "metric": "overall_exact_complete_text_including_rejected_positives",
+    "target": 0.8,
+    "passed": true,
+    "positiveCount": 500,
+    "exactCorrect": 438,
+    "exactAccuracy": 0.876,
+    "acceptedPositiveCount": 474,
+    "acceptedPrecision": 0.9240506329113924,
+    "precision95Passed": false,
+    "invalidCount": 40,
+    "invalidFalseAccepts": 0,
+    "selectedPolicy": "cascade_zoom_fallback"
+  },
+  "physicalCameraValidated": false,
+  "nativeSelfTest": {
+    "file": "native-word-fixture.png",
+    "sha256": "04ad0a30730af1f1c939b85b7ee57761f912cb24ed3dd2ac09c4cd0c39a3b1d8",
+    "expectedText": "Yys",
+    "width": 480,
+    "height": 192,
+    "roi": {
+      "x": 0,
+      "y": 0,
+      "width": 1,
+      "height": 1
+    },
+    "native_validated": false,
+    "sourceSplit": "previously_observed_validation",
+    "validationRowIndex": 101,
+    "referenceScript": {
+      "file": "training/evidence/braille-word-reader-id-v5-native-20260911/evaluate-startup.py",
+      "sha256": "148fe073f1b9d48559aa5f05a5a6b2c2c2103d1aa3a81755408019e05875c805"
+    },
+    "purpose": "Prepared validation-input startup smoke; not camera geometry evidence"
+  },
+  "provenance": {
+    "datasets": [
+      {
+        "name": "AngelinaDataset",
+        "revision": "e13038d483bb58e17046d640e078dc4768276e9b",
+        "redistributionRightsConfirmed": false
+      },
+      {
+        "name": "DSBI",
+        "revision": "6937eb8973efe5ff337e5c018485cb626303f5c2",
+        "redistributionRightsConfirmed": false
+      }
+    ],
+    "retainedModel": "training/checkpoints/braille-word-reader-id-v5/RETENTION-COPY.json"
+  },
+  "verification": {
+    "datasetRedistributionRightsConfirmed": false
+  },
+  "evidence": {
+    "finalMethod": {
+      "file": "training/evidence/braille-word-reader-id-v5-20260911/final-method-selection.json",
+      "sha256": "d7f900120359d1dcd32c8e3bd586663439a9bd31a776630571fbcef0c50ef9c4"
+    },
+    "finalTest": {
+      "file": "training/evidence/braille-word-reader-id-v5-20260911/final-test-evaluation.json",
+      "sha256": "1afa4f10b013c93e48927d4c23e6cb04f3015c12f2699253152fb5f9bd9685f3"
+    },
+    "confirmation": {
+      "file": "training/evidence/braille-word-reader-id-v5-20260911/final-test-torch-confirmation.json",
+      "sha256": "91be170361249bd55eb5b381f3adda04169da47122a968108355881b15b039da"
+    },
+    "protocol": {
+      "file": "training/evidence/braille-word-reader-id-v5-20260911/protocol.json",
+      "sha256": "4cd315a8d40af73bb7a00abcc90c8e021105e587c119f901f54165004dd318ab"
+    },
+    "sourceSeparation": {
+      "file": "training/evidence/braille-word-reader-id-v5-20260911/source-separation-audit.json",
+      "sha256": "4bbc6f15836a4f9da39e2baf2d8b140bf5ee07c8050f5ba14f708a11144b22e3"
+    },
+    "conversion": {
+      "file": "training/evidence/braille-word-reader-id-v5-20260911/export-parity.json",
+      "sha256": "ad9a90c06e47db459c9d4aa907d2940eeacc2ab45efe0f0f328a3615e20bd2e0"
+    },
+    "originalConversion": {
+      "file": "training/evidence/braille-word-reader-id-v5-20260911/export-parity-original-failed.json",
+      "sha256": "7dc789a5d3c56e27e892b98995937579cafb2195a5823d4cf6f154b0677fb617"
+    },
+    "validationSelection": {
+      "file": "training/evidence/braille-word-reader-id-v5-20260911/tta-validation.json",
+      "sha256": "6d41c93985926e1f31c8409b5e21a51624a7626b92f1b146176e78dd5bfbffa0"
+    },
+    "regression": {
+      "file": "training/evidence/braille-word-reader-id-v5-20260911/historical-regression.json",
+      "sha256": "b76ecb48410d028e937fbfcc799f8b4723dcefc0384d6bf68d282cafef4359a1"
+    },
+    "qualification": {
+      "file": "training/checkpoints/braille-word-reader-id-v5/qualification.json",
+      "sha256": "bc42d9467123863c1924a5f61b296bad20571cce4673c3923d4241cadc990e80"
+    },
+    "inferencePolicy": {
+      "file": "training/checkpoints/braille-word-reader-id-v5/inference-policy.json",
+      "sha256": "826fd90fa31fd5038457f8e48b9fd4f97ade6cea4ff67d98f0c63cec87f32466"
+    },
+    "runtimeParity": {
+      "file": "training/evidence/braille-word-reader-id-v5-native-20260911/runtime-parity.json",
+      "sha256": "5deeff2a7d7dc30f4673a3eaa766417ae24f32c2042c2ced7da04f1172893bbb"
+    },
+    "nativeSelfTest": {
+      "file": "training/evidence/braille-word-reader-id-v5-native-20260911/startup-fixture-tflite.json",
+      "sha256": "7f729ca7c6cc071cf54d5b74f2f642f74dd1fc01a27341a0c86233e5b17e2dbd"
+    }
+  }
+}

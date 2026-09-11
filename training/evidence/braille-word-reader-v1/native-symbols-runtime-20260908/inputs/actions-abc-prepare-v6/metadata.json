@@ -1,0 +1,167 @@
+{
+  "scope": "UI commands and actual observations only; no model accuracy, audio, physical-camera or release pass claim.",
+  "command": "prepare",
+  "script_sha256": "8c63fb4ba3b00e3cf7efa820759539dba09097ea94b506029bceca720bb801ab",
+  "helper_sha256": "4fd2fc17d0c506d6dd07cd0747a5dda5a8d6d1c2ff8897673c60fcd2a535555f",
+  "declared_feed": {
+    "manifest": "C:\\bm-symbols-apk-20260908\\evidence\\calibrated-feeds-v1\\manifest.json",
+    "manifest_sha256": "5616d7c7e6b88320a11f4c7903851dd75631dabf60474c606f0e65bd831ef9d7",
+    "entry": {
+      "output": "lowercase-abc.png",
+      "source": "C:\\bm-symbols-20260908\\data\\validation\\000000.png",
+      "source_sha256": "54cfad38e7cf6ec7acd45cf729411b5a81ec3694cc5768aaca80a3a57fe5af52",
+      "expected_text": "abc",
+      "classification": "synthetic_recomposed_label",
+      "background_rgb": [
+        128,
+        128,
+        128
+      ],
+      "symbols": [
+        {
+          "mask": 1,
+          "role": "letter",
+          "output": "a"
+        },
+        {
+          "mask": 3,
+          "role": "letter",
+          "output": "b"
+        },
+        {
+          "mask": 9,
+          "role": "letter",
+          "output": "c"
+        }
+      ],
+      "symbol_roles_origin": "Deterministic grammar on preserved annotated masks, not image inference",
+      "original_manifest_row": 0,
+      "original_annotation": {
+        "image": "C:\\bm-symbols-20260908\\data\\validation\\000000.png",
+        "source": "synthetic-id/validation/000000",
+        "source_family": "synthetic-id/lowercase",
+        "boxes": [
+          [
+            159,
+            63,
+            204,
+            145
+          ],
+          [
+            217,
+            63,
+            262,
+            145
+          ],
+          [
+            275,
+            63,
+            320,
+            145
+          ]
+        ],
+        "masks": [
+          1,
+          3,
+          9
+        ],
+        "expected": "abc",
+        "symbol_group": "lowercase",
+        "origin": "synthetic_recomposed_public_cell_photographs",
+        "source_cells": [
+          {
+            "source": "handwritten/ang_redmi/01.labeled.jpg",
+            "image": "validation/000515.png",
+            "box": [
+              62.3076923076923,
+              48.57831325301205,
+              124.6153846153846,
+              150.36144578313252
+            ],
+            "original_mask": 1,
+            "synthetic_transform": null
+          },
+          {
+            "source": "books/ola/IMG_5371.labeled.jpg",
+            "image": "validation/000330.png",
+            "box": [
+              342.85714285714283,
+              30.857142857142854,
+              418.2857142857143,
+              144.0
+            ],
+            "original_mask": 3,
+            "synthetic_transform": null
+          },
+          {
+            "source": "books/ola/IMG_5365.labeled.jpg",
+            "image": "validation/000101.png",
+            "box": [
+              69.93377483443709,
+              25.18032786885246,
+              136.68874172185429,
+              125.90163934426229
+            ],
+            "original_mask": 9,
+            "synthetic_transform": null
+          }
+        ]
+      },
+      "expected_runtime": null,
+      "source_size": [
+        480,
+        192
+      ],
+      "output_sha256": "46107ed7263a1dafe57aef2b60300267314e03975b6eb179eacec4af716042bf",
+      "output_size": [
+        1024,
+        1024
+      ],
+      "scale": 1.0,
+      "realized_scale_xy": [
+        1.0,
+        1.0
+      ],
+      "scaled_size": [
+        480,
+        192
+      ],
+      "placement": [
+        47,
+        415,
+        527,
+        607
+      ],
+      "source_pixels_cropped": false,
+      "unscaled_source_pixels_exact": true,
+      "interpolation": "none",
+      "projected_screenshot_corners": [
+        [
+          132.66712279496755,
+          871.5987338345709
+        ],
+        [
+          945.4059565124453,
+          871.6108768680834
+        ],
+        [
+          945.4184780149001,
+          1196.7152248228065
+        ],
+        [
+          132.67964429742221,
+          1196.703081789294
+        ]
+      ],
+      "prediction_observed_for_selection": false
+    },
+    "binding": "Operator-declared feed; verify actual camera orientation/placement visually."
+  },
+  "started_utc": "2026-09-08T17:58:29.833491+00:00",
+  "ui_dump": {
+    "mode": "no-idle",
+    "remote_dex": "/data/local/tmp/brailleme-ui-dump-v3.dex",
+    "expected_sha256": "79e234d57492167293889ef7df22815d53caa2f376b8e1ccaf1da031f4dee30a",
+    "verification": "Each no-idle execution records its actual remote hash in actions.jsonl."
+  }
+}

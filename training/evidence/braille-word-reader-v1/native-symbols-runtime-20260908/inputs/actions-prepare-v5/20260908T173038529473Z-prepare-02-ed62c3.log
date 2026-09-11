@@ -1,0 +1,1229 @@
+--------- beginning of main
+         1788888618.783  8008  8008 I m.brailleme.app: Using CollectorTypeCMC GC.
+         1788888618.785  8008  8008 W m.brailleme.app: Unexpected CPU variant for x86: x86_64.
+         1788888618.785  8008  8008 W m.brailleme.app: Known variants: atom, sandybridge, silvermont, goldmont, goldmont-plus, goldmont-without-sha-xsaves, tremont, kabylake, alderlake, default
+         1788888618.787  8008  8008 E m.brailleme.app: Not starting debugger since process cannot load the jdwp agent.
+         1788888618.794  8008  8008 D nativeloader: Load libframework-connectivity-tiramisu-jni.so using APEX ns com_android_tethering for caller /apex/com.android.tethering/javalib/framework-connectivity-t.jar: ok
+         1788888618.829  8008  8008 D ApplicationLoaders: Returning zygote-cached class loader: /system_ext/framework/androidx.window.extensions.jar
+         1788888618.829  8008  8008 D ApplicationLoaders: Returning zygote-cached class loader: /system_ext/framework/androidx.window.sidecar.jar
+         1788888618.834  8008  8008 D nativeloader: Configuring clns-9 for other apk /data/app/~~M5NfPB4B-8jLj3Q8Y7VTrw==/com.brailleme.app-hXgYt9aL0YVpbH-r7P6PtQ==/base.apk. target_sdk_version=36, uses_libraries=, library_path=/data/app/~~M5NfPB4B-8jLj3Q8Y7VTrw==/com.brailleme.app-hXgYt9aL0YVpbH-r7P6PtQ==/lib/x86_64:/data/app/~~M5NfPB4B-8jLj3Q8Y7VTrw==/com.brailleme.app-hXgYt9aL0YVpbH-r7P6PtQ==/base.apk!/lib/x86_64, permitted_path=/data:/mnt/expand:/data/user/0/com.brailleme.app
+         1788888618.860  8008  8008 I m.brailleme.app: AssetManager2(0x745d520910d8) locale list changing from [] to [en-US]
+         1788888618.887  8008  8008 V GraphicsEnvironment: Currently set values for:
+         1788888618.887  8008  8008 V GraphicsEnvironment:   angle_gl_driver_selection_pkgs=[]
+         1788888618.887  8008  8008 V GraphicsEnvironment:   angle_gl_driver_selection_values=[]
+         1788888618.887  8008  8008 V GraphicsEnvironment: com.brailleme.app is not listed in per-application setting
+         1788888618.887  8008  8008 V GraphicsEnvironment: ANGLE allowlist from config: com.dreamgames.royalmatch com.dts.freefiremax com.dxx.firenow com.gramgames.mergedragons com.ludo.king com.mojang.minecraftpe com.my.defense com.nintendo.zaka com.os.airforce com.playrix.fishdomdd.gplay io.teslatech.callbreak jp.konami.prospia net.peakgames.toonblast
+         1788888618.887  8008  8008 V GraphicsEnvironment: com.brailleme.app is not listed in ANGLE allowlist or settings, returning default
+         1788888618.887  8008  8008 V GraphicsEnvironment: Neither updatable production driver nor prerelease driver is supported.
+         1788888618.972  8008  8008 W SoLoader: Initializing SoLoader: 0
+         1788888618.974  8008  8008 W SoLoader: Recording new base apk path: /data/app/~~M5NfPB4B-8jLj3Q8Y7VTrw==/com.brailleme.app-hXgYt9aL0YVpbH-r7P6PtQ==/base.apk
+         1788888618.974  8008  8008 W SoLoader: Previously recorded 0 base apk paths.
+         1788888618.976  8008  8008 I SoLoader: Preparing SO source: DirectorySoSource[root = /vendor/lib64 flags = 2]
+         1788888618.976  8008  8008 I SoLoader: Preparing SO source: DirectorySoSource[root = /system/lib64 flags = 2]
+         1788888618.976  8008  8008 I SoLoader: Preparing SO source: DirectApkSoSource[root = [/data/app/~~M5NfPB4B-8jLj3Q8Y7VTrw==/com.brailleme.app-hXgYt9aL0YVpbH-r7P6PtQ==/base.apk!/lib/x86_64]]
+         1788888618.982  8008  8008 I SoLoader: Preparing SO source: ApplicationSoSource[DirectorySoSource[root = /data/app/~~M5NfPB4B-8jLj3Q8Y7VTrw==/com.brailleme.app-hXgYt9aL0YVpbH-r7P6PtQ==/lib/x86_64 flags = 0]]
+         1788888618.982  8008  8008 I SoLoader: init finish: 4 SO sources prepared
+         1788888618.982  8008  8008 W SoLoader: SoLoader initialized: 8
+         1788888619.001  8008  8008 D nativeloader: Load /data/app/~~M5NfPB4B-8jLj3Q8Y7VTrw==/com.brailleme.app-hXgYt9aL0YVpbH-r7P6PtQ==/base.apk!/lib/x86_64/libc++_shared.so using class loader ns clns-9 (caller=/data/app/~~M5NfPB4B-8jLj3Q8Y7VTrw==/com.brailleme.app-hXgYt9aL0YVpbH-r7P6PtQ==/base.apk!classes3.dex): ok
+         1788888619.135  8008  8008 D nativeloader: Load /data/app/~~M5NfPB4B-8jLj3Q8Y7VTrw==/com.brailleme.app-hXgYt9aL0YVpbH-r7P6PtQ==/base.apk!/lib/x86_64/libjsi.so using class loader ns clns-9 (caller=/data/app/~~M5NfPB4B-8jLj3Q8Y7VTrw==/com.brailleme.app-hXgYt9aL0YVpbH-r7P6PtQ==/base.apk!classes3.dex): ok
+         1788888619.137  8008  8008 D nativeloader: Load /data/app/~~M5NfPB4B-8jLj3Q8Y7VTrw==/com.brailleme.app-hXgYt9aL0YVpbH-r7P6PtQ==/base.apk!/lib/x86_64/libfbjni.so using class loader ns clns-9 (caller=/data/app/~~M5NfPB4B-8jLj3Q8Y7VTrw==/com.brailleme.app-hXgYt9aL0YVpbH-r7P6PtQ==/base.apk!classes3.dex): ok
+         1788888619.146  8008  8008 D nativeloader: Load /data/app/~~M5NfPB4B-8jLj3Q8Y7VTrw==/com.brailleme.app-hXgYt9aL0YVpbH-r7P6PtQ==/base.apk!/lib/x86_64/libreactnative.so using class loader ns clns-9 (caller=/data/app/~~M5NfPB4B-8jLj3Q8Y7VTrw==/com.brailleme.app-hXgYt9aL0YVpbH-r7P6PtQ==/base.apk!classes3.dex): ok
+         1788888619.146  8008  8008 D jni_lib_merge: Entering merged library JNI_OnLoad.
+         1788888619.146  8008  8008 D jni_lib_merge: Preparing 13 pre-merged libs (including stub)
+         1788888619.146  8008  8008 D jni_lib_merge: Preparing to register libfabricjni_so.  onload_func: 0x745c68bc4010
+         1788888619.146  8008  8008 D jni_lib_merge: Preparing to register libreact_devsupportjni_so.  onload_func: 0x745c68ca9b70
+         1788888619.146  8008  8008 D jni_lib_merge: Preparing to register libreact_featureflagsjni_so.  onload_func: 0x745c68cbc6a0
+         1788888619.146  8008  8008 D jni_lib_merge: Preparing to register libreact_newarchdefaults_so.  onload_func: 0x745c68cf8680
+         1788888619.146  8008  8008 D jni_lib_merge: Preparing to register libreact_tracingjni_so.  onload_func: 0x745c68e01170
+         1788888619.146  8008  8008 D jni_lib_merge: Preparing to register libreactnativeblob_so.  onload_func: 0x745c68e064d0
+         1788888619.146  8008  8008 D jni_lib_merge: Preparing to register libreactnativejni_so.  onload_func: 0x745c68e129d0
+         1788888619.146  8008  8008 D jni_lib_merge: Preparing to register libreactnativejni_common_so.  onload_func: 0x745c68e15840
+         1788888619.146  8008  8008 D jni_lib_merge: Preparing to register librninstance_so.  onload_func: 0x745c68e3d960
+         1788888619.146  8008  8008 D jni_lib_merge: Preparing to register libturbomodulejsijni_so.  onload_func: 0x745c68eec4c0
+         1788888619.146  8008  8008 D jni_lib_merge: Preparing to register libuimanagerjni_so.  onload_func: 0x745c68ef3420
+         1788888619.146  8008  8008 D jni_lib_merge: Preparing to register libyoga_so.  onload_func: 0x745c68efab20
+         1788888619.146  8008  8008 D jni_lib_merge: About to register 12 actual methods.
+         1788888619.155  8008  8008 D nativeloader: Load /data/app/~~M5NfPB4B-8jLj3Q8Y7VTrw==/com.brailleme.app-hXgYt9aL0YVpbH-r7P6PtQ==/base.apk!/lib/x86_64/libreact_codegen_rnscreens.so using class loader ns clns-9 (caller=/data/app/~~M5NfPB4B-8jLj3Q8Y7VTrw==/com.brailleme.app-hXgYt9aL0YVpbH-r7P6PtQ==/base.apk!classes3.dex): ok
+         1788888619.155  8008  8008 D jni_lib_merge: Entering merged library JNI_OnLoad.
+         1788888619.155  8008  8008 D jni_lib_merge: Preparing 13 pre-merged libs (including stub)
+         1788888619.155  8008  8008 D jni_lib_merge: Preparing to register libfabricjni_so.  onload_func: 0x745c68bc4010
+         1788888619.155  8008  8008 D jni_lib_merge: Preparing to register libreact_devsupportjni_so.  onload_func: 0x745c68ca9b70
+         1788888619.155  8008  8008 D jni_lib_merge: Preparing to register libreact_featureflagsjni_so.  onload_func: 0x745c68cbc6a0
+         1788888619.155  8008  8008 D jni_lib_merge: Preparing to register libreact_newarchdefaults_so.  onload_func: 0x745c68cf8680
+         1788888619.155  8008  8008 D jni_lib_merge: Preparing to register libreact_tracingjni_so.  onload_func: 0x745c68e01170
+         1788888619.155  8008  8008 D jni_lib_merge: Preparing to register libreactnativeblob_so.  onload_func: 0x745c68e064d0
+         1788888619.155  8008  8008 D jni_lib_merge: Preparing to register libreactnativejni_so.  onload_func: 0x745c68e129d0
+         1788888619.155  8008  8008 D jni_lib_merge: Preparing to register libreactnativejni_common_so.  onload_func: 0x745c68e15840
+         1788888619.155  8008  8008 D jni_lib_merge: Preparing to register librninstance_so.  onload_func: 0x745c68e3d960
+         1788888619.155  8008  8008 D jni_lib_merge: Preparing to register libturbomodulejsijni_so.  onload_func: 0x745c68eec4c0
+         1788888619.155  8008  8008 D jni_lib_merge: Preparing to register libuimanagerjni_so.  onload_func: 0x745c68ef3420
+         1788888619.155  8008  8008 D jni_lib_merge: Preparing to register libyoga_so.  onload_func: 0x745c68efab20
+         1788888619.155  8008  8008 D jni_lib_merge: About to register 12 actual methods.
+         1788888619.161  8008  8008 D nativeloader: Load /data/app/~~M5NfPB4B-8jLj3Q8Y7VTrw==/com.brailleme.app-hXgYt9aL0YVpbH-r7P6PtQ==/base.apk!/lib/x86_64/libreact_codegen_RNCSlider.so using class loader ns clns-9 (caller=/data/app/~~M5NfPB4B-8jLj3Q8Y7VTrw==/com.brailleme.app-hXgYt9aL0YVpbH-r7P6PtQ==/base.apk!classes3.dex): ok
+         1788888619.164  8008  8008 D nativeloader: Load /data/app/~~M5NfPB4B-8jLj3Q8Y7VTrw==/com.brailleme.app-hXgYt9aL0YVpbH-r7P6PtQ==/base.apk!/lib/x86_64/libreact_codegen_safeareacontext.so using class loader ns clns-9 (caller=/data/app/~~M5NfPB4B-8jLj3Q8Y7VTrw==/com.brailleme.app-hXgYt9aL0YVpbH-r7P6PtQ==/base.apk!classes3.dex): ok
+         1788888619.165  8008  8008 D nativeloader: Load /data/app/~~M5NfPB4B-8jLj3Q8Y7VTrw==/com.brailleme.app-hXgYt9aL0YVpbH-r7P6PtQ==/base.apk!/lib/x86_64/libappmodules.so using class loader ns clns-9 (caller=/data/app/~~M5NfPB4B-8jLj3Q8Y7VTrw==/com.brailleme.app-hXgYt9aL0YVpbH-r7P6PtQ==/base.apk!classes3.dex): ok
+--------- beginning of system
+         1788888619.226  8008  8022 I DisplayManager: Choreographer implicitly registered for the refresh rate.
+         1788888619.238  8008  8008 I m.brailleme.app: AssetManager2(0x745d520864f8) locale list changing from [] to [en-US]
+         1788888619.259  8008  8008 D AppCompatDelegate: Checking for metadata for AppLocalesMetadataHolderService : Service not found
+         1788888619.262  8008  8008 I m.brailleme.app: AssetManager2(0x745d52088438) locale list changing from [] to [en-US]
+         1788888619.272  8008  8008 E ashmem  : Pinning is deprecated since Android Q. Please use trim or other methods.
+         1788888619.280  8008  8022 I EGL_emulation: Opening libGLESv1_CM_emulation.so
+         1788888619.281  8008  8022 I EGL_emulation: Opening libGLESv2_emulation.so
+         1788888619.302  8008  8022 W HWUI    : Failed to initialize 101010-2 format, error = EGL_SUCCESS
+         1788888619.303  8008  8008 D CompatChangeReporter: Compat change id reported: 377864165; UID 10218; state: ENABLED
+         1788888619.304  8008  8008 D DesktopModeFlags: Toggle override initialized to: OVERRIDE_UNSET
+         1788888619.347  8008  8008 I NitroTfliteOnLoad: Loading NitroTflite C++ library...
+         1788888619.350  8008  8008 D nativeloader: Load /data/app/~~M5NfPB4B-8jLj3Q8Y7VTrw==/com.brailleme.app-hXgYt9aL0YVpbH-r7P6PtQ==/base.apk!/lib/x86_64/libNitroTflite.so using class loader ns clns-9 (caller=/data/app/~~M5NfPB4B-8jLj3Q8Y7VTrw==/com.brailleme.app-hXgYt9aL0YVpbH-r7P6PtQ==/base.apk!classes4.dex): ok
+         1788888619.350  8008  8008 I NitroTfliteOnLoad: Successfully loaded NitroTflite C++ library!
+         1788888619.350  8008  8008 I NitroImageOnLoad: Loading NitroImage C++ library...
+         1788888619.351  8008  8008 D nativeloader: Load /data/app/~~M5NfPB4B-8jLj3Q8Y7VTrw==/com.brailleme.app-hXgYt9aL0YVpbH-r7P6PtQ==/base.apk!/lib/x86_64/libNitroImage.so using class loader ns clns-9 (caller=/data/app/~~M5NfPB4B-8jLj3Q8Y7VTrw==/com.brailleme.app-hXgYt9aL0YVpbH-r7P6PtQ==/base.apk!classes4.dex): ok
+         1788888619.352  8008  8008 I NitroImageOnLoad: Successfully loaded NitroImage C++ library!
+         1788888619.352  8008  8008 I VisionCameraOnLoad: Loading VisionCamera C++ library...
+         1788888619.354  8008  8008 D nativeloader: Load /data/app/~~M5NfPB4B-8jLj3Q8Y7VTrw==/com.brailleme.app-hXgYt9aL0YVpbH-r7P6PtQ==/base.apk!/lib/x86_64/libVisionCamera.so using class loader ns clns-9 (caller=/data/app/~~M5NfPB4B-8jLj3Q8Y7VTrw==/com.brailleme.app-hXgYt9aL0YVpbH-r7P6PtQ==/base.apk!classes4.dex): ok
+         1788888619.358  8008  8008 I VisionCameraOnLoad: Successfully loaded VisionCamera C++ library!
+         1788888619.358  8008  8008 I VisionCameraWorkletsOnLoad: Loading VisionCameraWorklets C++ library...
+         1788888619.360  8008  8008 D nativeloader: Load /data/app/~~M5NfPB4B-8jLj3Q8Y7VTrw==/com.brailleme.app-hXgYt9aL0YVpbH-r7P6PtQ==/base.apk!/lib/x86_64/libVisionCameraWorklets.so using class loader ns clns-9 (caller=/data/app/~~M5NfPB4B-8jLj3Q8Y7VTrw==/com.brailleme.app-hXgYt9aL0YVpbH-r7P6PtQ==/base.apk!classes4.dex): ok
+         1788888619.360  8008  8008 I VisionCameraWorkletsOnLoad: Successfully loaded VisionCameraWorklets C++ library!
+         1788888619.373  8008  8008 W unknown:BridgelessReact: ReactHost{0}.startSurface(surfaceId = 0): Schedule
+         1788888619.373  8008  8008 W unknown:BridgelessReact: ReactHost{0}.attachSurface(surfaceId = 0)
+         1788888619.374  8008  8026 W unknown:BridgelessReact: ReactHost{0}.getOrCreateReactInstanceTask()
+         1788888619.375  8008  8026 W unknown:BridgelessReact: ReactHost{0}.getOrCreateReactInstanceTask(): Start
+         1788888619.375  8008  8026 W unknown:BridgelessReact: ReactHost{0}.getJSBundleLoader()
+         1788888619.376  8008  8026 W unknown:BridgelessReact: ReactHost{0}.getOrCreateReactInstanceTask(): Creating BridgelessReactContext
+         1788888619.377  8008  8026 W unknown:BridgelessReact: ReactHost{0}.getOrCreateReactInstanceTask(): Creating ReactInstance
+         1788888619.382  8008  8008 W unknown:BridgelessReact: ReactHost{0}.onHostResume(activity)
+         1788888619.383  8008  8008 W unknown:BridgelessReact: ReactHost{0}.ReactContext.onHostResume()
+         1788888619.389  8008  8026 D nativeloader: Load /data/app/~~M5NfPB4B-8jLj3Q8Y7VTrw==/com.brailleme.app-hXgYt9aL0YVpbH-r7P6PtQ==/base.apk!/lib/x86_64/libhermesvm.so using class loader ns clns-9 (caller=/data/app/~~M5NfPB4B-8jLj3Q8Y7VTrw==/com.brailleme.app-hXgYt9aL0YVpbH-r7P6PtQ==/base.apk!classes3.dex): ok
+         1788888619.392  8008  8026 D nativeloader: Load /data/app/~~M5NfPB4B-8jLj3Q8Y7VTrw==/com.brailleme.app-hXgYt9aL0YVpbH-r7P6PtQ==/base.apk!/lib/x86_64/libhermestooling.so using class loader ns clns-9 (caller=/data/app/~~M5NfPB4B-8jLj3Q8Y7VTrw==/com.brailleme.app-hXgYt9aL0YVpbH-r7P6PtQ==/base.apk!classes3.dex): ok
+         1788888619.392  8008  8026 D jni_lib_merge: Entering merged library JNI_OnLoad.
+         1788888619.392  8008  8026 D jni_lib_merge: Preparing 4 pre-merged libs (including stub)
+         1788888619.392  8008  8026 D jni_lib_merge: Preparing to register libhermes_executor_so.  onload_func: 0x745c66a661d0
+         1788888619.392  8008  8026 D jni_lib_merge: Preparing to register libhermesinstancejni_so.  onload_func: 0x745c66a6db10
+         1788888619.392  8008  8026 D jni_lib_merge: Preparing to register libjsijniprofiler_so.  onload_func: 0x745c66a6e350
+         1788888619.392  8008  8026 D jni_lib_merge: About to register 3 actual methods.
+         1788888619.402  8008  8008 W HWUI    : Unknown dataspace 0
+         1788888619.548  8008  8026 I ExpoModulesCore: ✅ AppContext was initialized
+         1788888619.567  8008  8026 W unknown:BridgelessReact: ReactHost{0}.getOrCreateReactInstanceTask(): Loading JS Bundle
+         1788888619.571  8008  8026 W unknown:BridgelessReact: ReactHost{0}.getOrCreateReactInstanceTask(): DevSupportManager.onNewReactContextCreated()
+         1788888619.571  8008  8026 W unknown:BridgelessReact: ReactHost{0}.startSurface(surfaceId = 0): Execute
+         1788888619.573  8008  8008 W unknown:BridgelessReact: ReactHost{0}.ReactContext.onHostResume()
+         1788888619.573  8008  8008 W unknown:BridgelessReact: ReactHost{0}.getOrCreateReactInstanceTask(): Executing ReactInstanceEventListeners
+         1788888619.582  8008  8027 D nativeloader: Load /data/app/~~M5NfPB4B-8jLj3Q8Y7VTrw==/com.brailleme.app-hXgYt9aL0YVpbH-r7P6PtQ==/base.apk!/lib/x86_64/libworklets.so using class loader ns clns-9 (caller=/data/app/~~M5NfPB4B-8jLj3Q8Y7VTrw==/com.brailleme.app-hXgYt9aL0YVpbH-r7P6PtQ==/base.apk!classes3.dex): ok
+         1788888619.585  8008  8027 D nativeloader: Load /data/app/~~M5NfPB4B-8jLj3Q8Y7VTrw==/com.brailleme.app-hXgYt9aL0YVpbH-r7P6PtQ==/base.apk!/lib/x86_64/libexpo-modules-core.so using class loader ns clns-9 (caller=/data/app/~~M5NfPB4B-8jLj3Q8Y7VTrw==/com.brailleme.app-hXgYt9aL0YVpbH-r7P6PtQ==/base.apk!classes3.dex): ok
+         1788888619.587  8008  8027 W BridgelessReactContext: [WARNING] Bridgeless doesn't support CatalystInstance. Accessing an API that's not part of the new architecture is not encouraged usage.
+         1788888619.599  8008  8027 I ExpoModulesCore: ✅ JSI interop was installed
+         1788888619.600  8008  8027 I ExpoModulesCore: ✅ Constants were exported
+         1788888619.653  8008  8027 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class expo.modules.kotlin.views.GroupViewManagerWrapper
+         1788888619.654  8008  8027 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.uimanager.LayoutShadowNode
+         1788888619.655  8008  8027 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.swmansion.rnscreens.ScreenContainerViewManager
+         1788888619.657  8008  8027 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.margelo.nitro.camera.views.HybridPreviewViewManager
+         1788888619.658  8008  8027 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.swmansion.rnscreens.gamma.tabs.host.TabsHostViewManager
+         1788888619.659  8008  8027 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.swmansion.rnscreens.ScreenStackHeaderConfigViewManager
+         1788888619.659  8008  8027 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.swmansion.rnscreens.ScreenStackHeaderSubviewManager
+         1788888619.660  8008  8027 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.swmansion.rnscreens.gamma.modals.formsheet.FormSheetHostViewManager
+         1788888619.662  8008  8027 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.swmansion.rnscreens.gamma.scrollviewmarker.ScrollViewMarkerViewManager
+         1788888619.663  8008  8027 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.swmansion.rnscreens.gamma.modals.formsheet.FormSheetContentWrapperViewManager
+         1788888619.663  8008  8027 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.swmansion.rnscreens.ScreenContentWrapperManager
+         1788888619.665  8008  8027 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.swmansion.rnscreens.gamma.stack.screen.StackScreenViewManager
+         1788888619.667  8008  8027 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.th3rdwave.safeareacontext.SafeAreaViewManager
+         1788888619.667  8008  8027 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.th3rdwave.safeareacontext.SafeAreaViewShadowNode
+         1788888619.668  8008  8027 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.swmansion.rnscreens.ScreenViewManager
+         1788888619.669  8008  8027 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.swmansion.rnscreens.gamma.stack.header.config.StackHeaderConfigViewManager
+         1788888619.672  8008  8027 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.th3rdwave.safeareacontext.SafeAreaProviderManager
+         1788888619.675  8008  8027 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.swmansion.rnscreens.SearchBarManager
+         1788888619.675  8008  8027 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.swmansion.rnscreens.gamma.stack.host.StackHostViewManager
+         1788888619.679  8008  8027 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.swmansion.rnscreens.ScreenFooterManager
+         1788888619.679  8008  8027 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.reactnativecommunity.slider.ReactSliderManager
+         1788888619.680  8008  8027 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.swmansion.rnscreens.ModalScreenViewManager
+         1788888619.680  8008  8027 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.margelo.nitro.camera.views.HybridFrameRendererViewManager
+         1788888619.681  8008  8027 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.margelo.nitro.image.views.HybridNitroImageViewManager
+         1788888619.681  8008  8027 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.swmansion.rnscreens.safearea.SafeAreaViewManager
+         1788888619.683  8008  8027 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.swmansion.rnscreens.ScreenStackViewManager
+         1788888619.684  8008  8027 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.swmansion.rnscreens.gamma.stack.header.subview.StackHeaderSubviewViewManager
+         1788888619.684  8008  8027 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class org.reactnative.maskedview.RNCMaskedViewManager
+         1788888619.687  8008  8027 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.swmansion.rnscreens.gamma.tabs.screen.TabsScreenViewManager
+         1788888619.733  8008  8027 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.safeareaview.ReactSafeAreaViewManager
+         1788888619.734  8008  8027 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.modal.ReactModalHostManager
+         1788888619.735  8008  8027 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.progressbar.ReactProgressBarViewManager
+         1788888619.736  8008  8027 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.scroll.ReactHorizontalScrollViewManager
+         1788888619.738  8008  8027 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.image.ReactImageManager
+         1788888619.740  8008  8027 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.text.ReactTextViewManager
+         1788888619.742  8008  8027 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.scroll.ReactHorizontalScrollContainerViewManager
+         1788888619.742  8008  8027 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.unimplementedview.ReactUnimplementedViewManager
+         1788888619.743  8008  8027 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.scroll.ReactScrollViewManager
+         1788888619.744  8008  8027 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.view.ReactViewManager
+         1788888619.745  8008  8027 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.drawer.ReactDrawerLayoutManager
+         1788888619.746  8008  8027 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.switchview.ReactSwitchManager
+         1788888619.747  8008  8027 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.swiperefresh.SwipeRefreshLayoutManager
+         1788888619.752  8008  8027 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.textinput.ReactTextInputManager
+         1788888619.753  8008  8027 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.text.SelectableTextViewManager
+         1788888619.754  8008  8027 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.virtual.view.ReactVirtualViewManager
+         1788888619.776  8008  8027 D nativeloader: Load /data/app/~~M5NfPB4B-8jLj3Q8Y7VTrw==/com.brailleme.app-hXgYt9aL0YVpbH-r7P6PtQ==/base.apk!/lib/x86_64/librnscreens.so using class loader ns clns-9 (caller=/data/app/~~M5NfPB4B-8jLj3Q8Y7VTrw==/com.brailleme.app-hXgYt9aL0YVpbH-r7P6PtQ==/base.apk!classes4.dex): ok
+         1788888619.780  8008  8027 I ReactNativeJS: Running "main"
+         1788888619.811  8008  8008 I ExpoModulesCore: ✅ JSI interop was installed
+         1788888619.910  8008  8027 D nativeloader: Load /data/app/~~M5NfPB4B-8jLj3Q8Y7VTrw==/com.brailleme.app-hXgYt9aL0YVpbH-r7P6PtQ==/base.apk!/lib/x86_64/libexpo-sqlite.so using class loader ns clns-9 (caller=/data/app/~~M5NfPB4B-8jLj3Q8Y7VTrw==/com.brailleme.app-hXgYt9aL0YVpbH-r7P6PtQ==/base.apk!classes4.dex): ok
+         1788888620.006  8008  8028 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+         1788888620.006  8008  8028 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is edge-to-edge.
+         1788888620.583  8008  8008 D InsetsController: hide(ime(), fromIme=false)
+         1788888620.583  8008  8008 I ImeTracker: com.brailleme.app:3aee6eee: onCancelled at PHASE_CLIENT_ALREADY_HIDDEN
+         1788888624.592  8008  8100 D ProfileInstaller: Installing profile for com.brailleme.app
+         1788888630.463  8008  8027 I NitroModules: Loading NitroModules C++ library...
+         1788888630.465  8008  8027 D nativeloader: Load /data/app/~~M5NfPB4B-8jLj3Q8Y7VTrw==/com.brailleme.app-hXgYt9aL0YVpbH-r7P6PtQ==/base.apk!/lib/x86_64/libNitroModules.so using class loader ns clns-9 (caller=/data/app/~~M5NfPB4B-8jLj3Q8Y7VTrw==/com.brailleme.app-hXgYt9aL0YVpbH-r7P6PtQ==/base.apk!classes4.dex): ok
+         1788888630.465  8008  8027 I NitroModules: Successfully loaded NitroModules C++ library!
+         1788888630.490  8008  8027 D QuirkSettingsLoader: QuirkSettings$MetadataHolderService is not found.
+         1788888630.490  8008  8027 D CameraX : QuirkSettings from app metadata: null
+         1788888630.491  8008  8027 D CameraX : QuirkSettings by default: QuirkSettings{enabledWhenDeviceHasQuirk=true, forceEnabledQuirks=[], forceDisabledQuirks=[]}
+         1788888630.502  8008  8179 D DeviceQuirks: camera2 DeviceQuirks = PixelJpegRSupportedQuirk
+         1788888630.502  8008  8179 D CXCP    : Created UseCaseConfigurationMap
+         1788888630.512  8008  8179 D CXCP    : Created CameraPipe in 3.727 ms
+         1788888630.515  8008  8179 D CXCP    : Camera2DeviceCache: Expected minimum camera count = 2
+         1788888630.529  8008  8027 I ReactNativeJNI: instanceHandle is null, event of type topLayout will be dropped
+         1788888630.530  8008  8179 D CXCP    : Created CameraFactoryAdapter in 0.333 ms
+         1788888630.531  8008  8179 I CameraManagerGlobal: Connecting to camera service
+         1788888630.536  8008  8179 W CXCP    : Failed to query camera ID list: Invalid list returned: [CameraId-10].
+         1788888630.544  8008  8179 D CXCP    : Loading metadata for CameraId-10
+         1788888630.565  8008  8179 I CXCP    : Loaded metadata for CameraId-10 in 20.706 ms
+         1788888630.565  8008  8179 D CXCP    : Updated available camera list: [] -> [10]
+         1788888630.566  8008  8179 D CXCP    : Creating new surface combinations for: [10]
+         1788888630.578  8008  8179 D CameraQuirks: camera2 CameraQuirks = CloseCaptureSessionOnVideoQuirk | FinalizeSessionOnCloseQuirk
+         1788888630.592  8008  8179 D CXCP    : Committed new surface combination map. Total cameras: 1
+         1788888630.593  8008  8179 D CameraRepository: Added camera: 10
+         1788888630.597  8008  8179 D CameraQuirks: camera2 CameraQuirks = CloseCaptureSessionOnVideoQuirk | FinalizeSessionOnCloseQuirk
+         1788888630.600  8008  8027 I tflite  : Initialized TensorFlow Lite runtime.
+         1788888630.634  8008  8179 I CXCP    : Device Level: INFO_SUPPORTED_HARDWARE_LEVEL_LIMITED
+         1788888630.636  8008  8179 D CXCP    : Created CameraInternalAdapter<CameraId-10(1)> for CameraId-10
+         1788888630.636  8008  8179 W CXCP    : Failed to query camera ID list: Invalid list returned: [CameraId-10].
+         1788888630.636  8008  8179 D CXCP    : Loaded ConcurrentCameraIdsSet {}
+         1788888630.637  8008  8179 I CameraPresencePrvdr: Starting CameraPresenceProvider monitoring.
+         1788888630.638  8008  8179 I CameraPresenceSrc: First observer added. Starting monitoring.
+         1788888630.638  8008  8179 I PipePresenceSrc: Starting to collect camera ID flow.
+         1788888630.638  8008  8179 D CameraValidator: Verifying camera lens facing on emu64xa
+         1788888630.644  8008  8179 W CameraValidator: Camera LENS_FACING_FRONT verification failed
+         1788888630.644  8008  8179 W CameraValidator: java.lang.IllegalArgumentException: No available camera can be found. Cams:1 Id:10  Lens:1 PhyId:null  Filters:1 Id:Identifier{value=java.lang.Object@d3b046c} LensFilter:0
+         1788888630.644  8008  8179 W CameraValidator: 	at androidx.camera.core.CameraSelector.select(CameraSelector.java:109)
+         1788888630.644  8008  8179 W CameraValidator: 	at androidx.camera.core.impl.CameraValidatorImpl.validateOnFirstInit(CameraValidator.kt:128)
+         1788888630.644  8008  8179 W CameraValidator: 	at androidx.camera.core.CameraX.lambda$initAndRetryRecursively$3$androidx-camera-core-CameraX(CameraX.java:487)
+         1788888630.644  8008  8179 W CameraValidator: 	at androidx.camera.core.CameraX$$ExternalSyntheticLambda2.run(D8$$SyntheticClass:0)
+         1788888630.644  8008  8179 W CameraValidator: 	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:524)
+         1788888630.644  8008  8179 W CameraValidator: 	at java.util.concurrent.FutureTask.run(FutureTask.java:317)
+         1788888630.644  8008  8179 W CameraValidator: 	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:348)
+         1788888630.644  8008  8179 W CameraValidator: 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1156)
+         1788888630.644  8008  8179 W CameraValidator: 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:651)
+         1788888630.644  8008  8179 W CameraValidator: 	at androidx.camera.core.CameraExecutor$1.lambda$newThread$0(CameraExecutor.java:76)
+         1788888630.644  8008  8179 W CameraValidator: 	at androidx.camera.core.CameraExecutor$1$$ExternalSyntheticLambda0.run(D8$$SyntheticClass:0)
+         1788888630.644  8008  8179 W CameraValidator: 	at java.lang.Thread.run(Thread.java:1119)
+         1788888630.646  8008  8179 W CameraX : Retry init. Start time 1076762 current time 1076916
+         1788888630.646  8008  8179 W CameraX : androidx.camera.core.impl.CameraValidator$CameraIdListIncorrectException: Expected camera missing from device.
+         1788888630.646  8008  8179 W CameraX : 	at androidx.camera.core.impl.CameraValidatorImpl.validateOnFirstInit(CameraValidator.kt:136)
+         1788888630.646  8008  8179 W CameraX : 	at androidx.camera.core.CameraX.lambda$initAndRetryRecursively$3$androidx-camera-core-CameraX(CameraX.java:487)
+         1788888630.646  8008  8179 W CameraX : 	at androidx.camera.core.CameraX$$ExternalSyntheticLambda2.run(D8$$SyntheticClass:0)
+         1788888630.646  8008  8179 W CameraX : 	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:524)
+         1788888630.646  8008  8179 W CameraX : 	at java.util.concurrent.FutureTask.run(FutureTask.java:317)
+         1788888630.646  8008  8179 W CameraX : 	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:348)
+         1788888630.646  8008  8179 W CameraX : 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1156)
+         1788888630.646  8008  8179 W CameraX : 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:651)
+         1788888630.646  8008  8179 W CameraX : 	at androidx.camera.core.CameraExecutor$1.lambda$newThread$0(CameraExecutor.java:76)
+         1788888630.646  8008  8179 W CameraX : 	at androidx.camera.core.CameraExecutor$1$$ExternalSyntheticLambda0.run(D8$$SyntheticClass:0)
+         1788888630.646  8008  8179 W CameraX : 	at java.lang.Thread.run(Thread.java:1119)
+         1788888630.646  8008  8179 W CameraX : Caused by: java.lang.IllegalArgumentException: No available camera can be found. Cams:1 Id:10  Lens:1 PhyId:null  Filters:1 Id:Identifier{value=java.lang.Object@d3b046c} LensFilter:0
+         1788888630.646  8008  8179 W CameraX : 	at androidx.camera.core.CameraSelector.select(CameraSelector.java:109)
+         1788888630.646  8008  8179 W CameraX : 	at androidx.camera.core.impl.CameraValidatorImpl.validateOnFirstInit(CameraValidator.kt:128)
+         1788888630.646  8008  8179 W CameraX : 	... 10 more
+         1788888630.647  8008  8179 I CameraPresencePrvdr: Shutting down CameraPresenceProvider monitoring.
+         1788888630.648  8008  8179 I CameraPresenceSrc: Last observer removed. Stopping monitoring.
+         1788888630.648  8008  8179 I PipePresenceSrc: Stopping camera ID flow collection.
+         1788888630.680  8008  8037 W HWUI    : Image decoding logging dropped!
+         1788888630.909  8008  8037 W HWUI    : Image decoding logging dropped!
+         1788888631.077  8008  8008 I m.brailleme.app: AssetManager2(0x745d520a84b8) locale list changing from [] to [en-US]
+         1788888631.079  8008  8036 I TextToSpeech: Sucessfully bound to com.google.android.tts
+         1788888631.079  8008  8008 I TextToSpeech: Sucessfully bound to com.google.android.tts
+         1788888631.151  8008  8179 D CXCP    : Created UseCaseConfigurationMap
+         1788888631.151  8008  8179 D CXCP    : Created CameraPipe in 0.196 ms
+         1788888631.151  8008  8179 D CXCP    : Camera2DeviceCache: Expected minimum camera count = 2
+         1788888631.154  8008  8179 D CXCP    : Created CameraFactoryAdapter in 0.020 ms
+         1788888631.154  8008  8179 W CXCP    : Failed to query camera ID list: Invalid list returned: [CameraId-10].
+         1788888631.155  8008  8179 D CXCP    : Loading metadata for CameraId-10
+         1788888631.163  8008  8179 I CXCP    : Loaded metadata for CameraId-10 in 8.409 ms
+         1788888631.163  8008  8179 D CXCP    : Updated available camera list: [] -> [10]
+         1788888631.163  8008  8179 D CXCP    : Creating new surface combinations for: [10]
+         1788888631.164  8008  8179 D CameraQuirks: camera2 CameraQuirks = CloseCaptureSessionOnVideoQuirk | FinalizeSessionOnCloseQuirk
+         1788888631.164  8008  8179 D CXCP    : Committed new surface combination map. Total cameras: 1
+         1788888631.164  8008  8179 D CameraRepository: Added camera: 10
+         1788888631.165  8008  8179 D CameraQuirks: camera2 CameraQuirks = CloseCaptureSessionOnVideoQuirk | FinalizeSessionOnCloseQuirk
+         1788888631.168  8008  8179 I CXCP    : Device Level: INFO_SUPPORTED_HARDWARE_LEVEL_LIMITED
+         1788888631.168  8008  8179 D CXCP    : Created CameraInternalAdapter<CameraId-10(2)> for CameraId-10
+         1788888631.170  8008  8179 W CXCP    : Failed to query camera ID list: Invalid list returned: [CameraId-10].
+         1788888631.170  8008  8179 D CXCP    : Loaded ConcurrentCameraIdsSet {}
+         1788888631.170  8008  8179 I CameraPresencePrvdr: Starting CameraPresenceProvider monitoring.
+         1788888631.170  8008  8179 I CameraPresenceSrc: First observer added. Starting monitoring.
+         1788888631.174  8008  8179 I PipePresenceSrc: Starting to collect camera ID flow.
+         1788888631.174  8008  8179 D CameraValidator: Verifying camera lens facing on emu64xa
+         1788888631.175  8008  8179 W CameraValidator: Camera LENS_FACING_FRONT verification failed
+         1788888631.175  8008  8179 W CameraValidator: java.lang.IllegalArgumentException: No available camera can be found. Cams:1 Id:10  Lens:1 PhyId:null  Filters:1 Id:Identifier{value=java.lang.Object@d3b046c} LensFilter:0
+         1788888631.175  8008  8179 W CameraValidator: 	at androidx.camera.core.CameraSelector.select(CameraSelector.java:109)
+         1788888631.175  8008  8179 W CameraValidator: 	at androidx.camera.core.impl.CameraValidatorImpl.validateOnFirstInit(CameraValidator.kt:128)
+         1788888631.175  8008  8179 W CameraValidator: 	at androidx.camera.core.CameraX.lambda$initAndRetryRecursively$3$androidx-camera-core-CameraX(CameraX.java:487)
+         1788888631.175  8008  8179 W CameraValidator: 	at androidx.camera.core.CameraX$$ExternalSyntheticLambda2.run(D8$$SyntheticClass:0)
+         1788888631.175  8008  8179 W CameraValidator: 	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:524)
+         1788888631.175  8008  8179 W CameraValidator: 	at java.util.concurrent.FutureTask.run(FutureTask.java:317)
+         1788888631.175  8008  8179 W CameraValidator: 	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:348)
+         1788888631.175  8008  8179 W CameraValidator: 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1156)
+         1788888631.175  8008  8179 W CameraValidator: 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:651)
+         1788888631.175  8008  8179 W CameraValidator: 	at androidx.camera.core.CameraExecutor$1.lambda$newThread$0(CameraExecutor.java:76)
+         1788888631.175  8008  8179 W CameraValidator: 	at androidx.camera.core.CameraExecutor$1$$ExternalSyntheticLambda0.run(D8$$SyntheticClass:0)
+         1788888631.175  8008  8179 W CameraValidator: 	at java.lang.Thread.run(Thread.java:1119)
+         1788888631.175  8008  8179 W CameraX : Retry init. Start time 1076762 current time 1077445
+         1788888631.175  8008  8179 W CameraX : androidx.camera.core.impl.CameraValidator$CameraIdListIncorrectException: Expected camera missing from device.
+         1788888631.175  8008  8179 W CameraX : 	at androidx.camera.core.impl.CameraValidatorImpl.validateOnFirstInit(CameraValidator.kt:136)
+         1788888631.175  8008  8179 W CameraX : 	at androidx.camera.core.CameraX.lambda$initAndRetryRecursively$3$androidx-camera-core-CameraX(CameraX.java:487)
+         1788888631.175  8008  8179 W CameraX : 	at androidx.camera.core.CameraX$$ExternalSyntheticLambda2.run(D8$$SyntheticClass:0)
+         1788888631.175  8008  8179 W CameraX : 	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:524)
+         1788888631.175  8008  8179 W CameraX : 	at java.util.concurrent.FutureTask.run(FutureTask.java:317)
+         1788888631.175  8008  8179 W CameraX : 	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:348)
+         1788888631.175  8008  8179 W CameraX : 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1156)
+         1788888631.175  8008  8179 W CameraX : 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:651)
+         1788888631.175  8008  8179 W CameraX : 	at androidx.camera.core.CameraExecutor$1.lambda$newThread$0(CameraExecutor.java:76)
+         1788888631.175  8008  8179 W CameraX : 	at androidx.camera.core.CameraExecutor$1$$ExternalSyntheticLambda0.run(D8$$SyntheticClass:0)
+         1788888631.175  8008  8179 W CameraX : 	at java.lang.Thread.run(Thread.java:1119)
+         1788888631.175  8008  8179 W CameraX : Caused by: java.lang.IllegalArgumentException: No available camera can be found. Cams:1 Id:10  Lens:1 PhyId:null  Filters:1 Id:Identifier{value=java.lang.Object@d3b046c} LensFilter:0
+         1788888631.175  8008  8179 W CameraX : 	at androidx.camera.core.CameraSelector.select(CameraSelector.java:109)
+         1788888631.175  8008  8179 W CameraX : 	at androidx.camera.core.impl.CameraValidatorImpl.validateOnFirstInit(CameraValidator.kt:128)
+         1788888631.175  8008  8179 W CameraX : 	... 10 more
+         1788888631.175  8008  8179 I CameraPresencePrvdr: Shutting down CameraPresenceProvider monitoring.
+         1788888631.175  8008  8179 I CameraPresenceSrc: Last observer removed. Stopping monitoring.
+         1788888631.175  8008  8179 I PipePresenceSrc: Stopping camera ID flow collection.
+         1788888631.677  8008  8179 D CXCP    : Created UseCaseConfigurationMap
+         1788888631.678  8008  8179 D CXCP    : Created CameraPipe in 0.193 ms
+         1788888631.678  8008  8179 D CXCP    : Camera2DeviceCache: Expected minimum camera count = 2
+         1788888631.679  8008  8179 D CXCP    : Created CameraFactoryAdapter in 0.017 ms
+         1788888631.679  8008  8179 W CXCP    : Failed to query camera ID list: Invalid list returned: [CameraId-10].
+         1788888631.679  8008  8179 D CXCP    : Loading metadata for CameraId-10
+         1788888631.683  8008  8179 I CXCP    : Loaded metadata for CameraId-10 in 3.939 ms
+         1788888631.684  8008  8179 D CXCP    : Updated available camera list: [] -> [10]
+         1788888631.684  8008  8179 D CXCP    : Creating new surface combinations for: [10]
+         1788888631.684  8008  8179 D CameraQuirks: camera2 CameraQuirks = CloseCaptureSessionOnVideoQuirk | FinalizeSessionOnCloseQuirk
+         1788888631.684  8008  8179 D CXCP    : Committed new surface combination map. Total cameras: 1
+         1788888631.685  8008  8179 D CameraRepository: Added camera: 10
+         1788888631.685  8008  8179 D CameraQuirks: camera2 CameraQuirks = CloseCaptureSessionOnVideoQuirk | FinalizeSessionOnCloseQuirk
+         1788888631.687  8008  8179 I CXCP    : Device Level: INFO_SUPPORTED_HARDWARE_LEVEL_LIMITED
+         1788888631.687  8008  8179 D CXCP    : Created CameraInternalAdapter<CameraId-10(3)> for CameraId-10
+         1788888631.687  8008  8179 W CXCP    : Failed to query camera ID list: Invalid list returned: [CameraId-10].
+         1788888631.687  8008  8179 D CXCP    : Loaded ConcurrentCameraIdsSet {}
+         1788888631.688  8008  8179 I CameraPresencePrvdr: Starting CameraPresenceProvider monitoring.
+         1788888631.688  8008  8179 I CameraPresenceSrc: First observer added. Starting monitoring.
+         1788888631.688  8008  8179 I PipePresenceSrc: Starting to collect camera ID flow.
+         1788888631.688  8008  8179 D CameraValidator: Verifying camera lens facing on emu64xa
+         1788888631.688  8008  8179 W CameraValidator: Camera LENS_FACING_FRONT verification failed
+         1788888631.688  8008  8179 W CameraValidator: java.lang.IllegalArgumentException: No available camera can be found. Cams:1 Id:10  Lens:1 PhyId:null  Filters:1 Id:Identifier{value=java.lang.Object@d3b046c} LensFilter:0
+         1788888631.688  8008  8179 W CameraValidator: 	at androidx.camera.core.CameraSelector.select(CameraSelector.java:109)
+         1788888631.688  8008  8179 W CameraValidator: 	at androidx.camera.core.impl.CameraValidatorImpl.validateOnFirstInit(CameraValidator.kt:128)
+         1788888631.688  8008  8179 W CameraValidator: 	at androidx.camera.core.CameraX.lambda$initAndRetryRecursively$3$androidx-camera-core-CameraX(CameraX.java:487)
+         1788888631.688  8008  8179 W CameraValidator: 	at androidx.camera.core.CameraX$$ExternalSyntheticLambda2.run(D8$$SyntheticClass:0)
+         1788888631.688  8008  8179 W CameraValidator: 	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:524)
+         1788888631.688  8008  8179 W CameraValidator: 	at java.util.concurrent.FutureTask.run(FutureTask.java:317)
+         1788888631.688  8008  8179 W CameraValidator: 	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:348)
+         1788888631.688  8008  8179 W CameraValidator: 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1156)
+         1788888631.688  8008  8179 W CameraValidator: 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:651)
+         1788888631.688  8008  8179 W CameraValidator: 	at androidx.camera.core.CameraExecutor$1.lambda$newThread$0(CameraExecutor.java:76)
+         1788888631.688  8008  8179 W CameraValidator: 	at androidx.camera.core.CameraExecutor$1$$ExternalSyntheticLambda0.run(D8$$SyntheticClass:0)
+         1788888631.688  8008  8179 W CameraValidator: 	at java.lang.Thread.run(Thread.java:1119)
+         1788888631.689  8008  8179 W CameraX : Retry init. Start time 1076762 current time 1077958
+         1788888631.689  8008  8179 W CameraX : androidx.camera.core.impl.CameraValidator$CameraIdListIncorrectException: Expected camera missing from device.
+         1788888631.689  8008  8179 W CameraX : 	at androidx.camera.core.impl.CameraValidatorImpl.validateOnFirstInit(CameraValidator.kt:136)
+         1788888631.689  8008  8179 W CameraX : 	at androidx.camera.core.CameraX.lambda$initAndRetryRecursively$3$androidx-camera-core-CameraX(CameraX.java:487)
+         1788888631.689  8008  8179 W CameraX : 	at androidx.camera.core.CameraX$$ExternalSyntheticLambda2.run(D8$$SyntheticClass:0)
+         1788888631.689  8008  8179 W CameraX : 	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:524)
+         1788888631.689  8008  8179 W CameraX : 	at java.util.concurrent.FutureTask.run(FutureTask.java:317)
+         1788888631.689  8008  8179 W CameraX : 	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:348)
+         1788888631.689  8008  8179 W CameraX : 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1156)
+         1788888631.689  8008  8179 W CameraX : 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:651)
+         1788888631.689  8008  8179 W CameraX : 	at androidx.camera.core.CameraExecutor$1.lambda$newThread$0(CameraExecutor.java:76)
+         1788888631.689  8008  8179 W CameraX : 	at androidx.camera.core.CameraExecutor$1$$ExternalSyntheticLambda0.run(D8$$SyntheticClass:0)
+         1788888631.689  8008  8179 W CameraX : 	at java.lang.Thread.run(Thread.java:1119)
+         1788888631.689  8008  8179 W CameraX : Caused by: java.lang.IllegalArgumentException: No available camera can be found. Cams:1 Id:10  Lens:1 PhyId:null  Filters:1 Id:Identifier{value=java.lang.Object@d3b046c} LensFilter:0
+         1788888631.689  8008  8179 W CameraX : 	at androidx.camera.core.CameraSelector.select(CameraSelector.java:109)
+         1788888631.689  8008  8179 W CameraX : 	at androidx.camera.core.impl.CameraValidatorImpl.validateOnFirstInit(CameraValidator.kt:128)
+         1788888631.689  8008  8179 W CameraX : 	... 10 more
+         1788888631.690  8008  8179 I CameraPresencePrvdr: Shutting down CameraPresenceProvider monitoring.
+         1788888631.690  8008  8179 I CameraPresenceSrc: Last observer removed. Stopping monitoring.
+         1788888631.690  8008  8179 I PipePresenceSrc: Stopping camera ID flow collection.
+         1788888632.194  8008  8179 D CXCP    : Created UseCaseConfigurationMap
+         1788888632.194  8008  8179 D CXCP    : Created CameraPipe in 0.260 ms
+         1788888632.194  8008  8179 D CXCP    : Camera2DeviceCache: Expected minimum camera count = 2
+         1788888632.195  8008  8179 D CXCP    : Created CameraFactoryAdapter in 0.014 ms
+         1788888632.196  8008  8179 W CXCP    : Failed to query camera ID list: Invalid list returned: [CameraId-10].
+         1788888632.196  8008  8179 D CXCP    : Loading metadata for CameraId-10
+         1788888632.200  8008  8179 I CXCP    : Loaded metadata for CameraId-10 in 4.528 ms
+         1788888632.200  8008  8179 D CXCP    : Updated available camera list: [] -> [10]
+         1788888632.201  8008  8179 D CXCP    : Creating new surface combinations for: [10]
+         1788888632.201  8008  8179 D CameraQuirks: camera2 CameraQuirks = CloseCaptureSessionOnVideoQuirk | FinalizeSessionOnCloseQuirk
+         1788888632.201  8008  8179 D CXCP    : Committed new surface combination map. Total cameras: 1
+         1788888632.201  8008  8179 D CameraRepository: Added camera: 10
+         1788888632.201  8008  8179 D CameraQuirks: camera2 CameraQuirks = CloseCaptureSessionOnVideoQuirk | FinalizeSessionOnCloseQuirk
+         1788888632.204  8008  8179 I CXCP    : Device Level: INFO_SUPPORTED_HARDWARE_LEVEL_LIMITED
+         1788888632.205  8008  8179 D CXCP    : Created CameraInternalAdapter<CameraId-10(4)> for CameraId-10
+         1788888632.205  8008  8179 W CXCP    : Failed to query camera ID list: Invalid list returned: [CameraId-10].
+         1788888632.205  8008  8179 D CXCP    : Loaded ConcurrentCameraIdsSet {}
+         1788888632.205  8008  8179 I CameraPresencePrvdr: Starting CameraPresenceProvider monitoring.
+         1788888632.205  8008  8179 I CameraPresenceSrc: First observer added. Starting monitoring.
+         1788888632.205  8008  8179 I PipePresenceSrc: Starting to collect camera ID flow.
+         1788888632.205  8008  8179 D CameraValidator: Verifying camera lens facing on emu64xa
+         1788888632.207  8008  8179 W CameraValidator: Camera LENS_FACING_FRONT verification failed
+         1788888632.207  8008  8179 W CameraValidator: java.lang.IllegalArgumentException: No available camera can be found. Cams:1 Id:10  Lens:1 PhyId:null  Filters:1 Id:Identifier{value=java.lang.Object@d3b046c} LensFilter:0
+         1788888632.207  8008  8179 W CameraValidator: 	at androidx.camera.core.CameraSelector.select(CameraSelector.java:109)
+         1788888632.207  8008  8179 W CameraValidator: 	at androidx.camera.core.impl.CameraValidatorImpl.validateOnFirstInit(CameraValidator.kt:128)
+         1788888632.207  8008  8179 W CameraValidator: 	at androidx.camera.core.CameraX.lambda$initAndRetryRecursively$3$androidx-camera-core-CameraX(CameraX.java:487)
+         1788888632.207  8008  8179 W CameraValidator: 	at androidx.camera.core.CameraX$$ExternalSyntheticLambda2.run(D8$$SyntheticClass:0)
+         1788888632.207  8008  8179 W CameraValidator: 	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:524)
+         1788888632.207  8008  8179 W CameraValidator: 	at java.util.concurrent.FutureTask.run(FutureTask.java:317)
+         1788888632.207  8008  8179 W CameraValidator: 	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:348)
+         1788888632.207  8008  8179 W CameraValidator: 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1156)
+         1788888632.207  8008  8179 W CameraValidator: 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:651)
+         1788888632.207  8008  8179 W CameraValidator: 	at androidx.camera.core.CameraExecutor$1.lambda$newThread$0(CameraExecutor.java:76)
+         1788888632.207  8008  8179 W CameraValidator: 	at androidx.camera.core.CameraExecutor$1$$ExternalSyntheticLambda0.run(D8$$SyntheticClass:0)
+         1788888632.207  8008  8179 W CameraValidator: 	at java.lang.Thread.run(Thread.java:1119)
+         1788888632.207  8008  8179 W CameraX : Retry init. Start time 1076762 current time 1078477
+         1788888632.207  8008  8179 W CameraX : androidx.camera.core.impl.CameraValidator$CameraIdListIncorrectException: Expected camera missing from device.
+         1788888632.207  8008  8179 W CameraX : 	at androidx.camera.core.impl.CameraValidatorImpl.validateOnFirstInit(CameraValidator.kt:136)
+         1788888632.207  8008  8179 W CameraX : 	at androidx.camera.core.CameraX.lambda$initAndRetryRecursively$3$androidx-camera-core-CameraX(CameraX.java:487)
+         1788888632.207  8008  8179 W CameraX : 	at androidx.camera.core.CameraX$$ExternalSyntheticLambda2.run(D8$$SyntheticClass:0)
+         1788888632.207  8008  8179 W CameraX : 	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:524)
+         1788888632.207  8008  8179 W CameraX : 	at java.util.concurrent.FutureTask.run(FutureTask.java:317)
+         1788888632.207  8008  8179 W CameraX : 	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:348)
+         1788888632.207  8008  8179 W CameraX : 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1156)
+         1788888632.207  8008  8179 W CameraX : 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:651)
+         1788888632.207  8008  8179 W CameraX : 	at androidx.camera.core.CameraExecutor$1.lambda$newThread$0(CameraExecutor.java:76)
+         1788888632.207  8008  8179 W CameraX : 	at androidx.camera.core.CameraExecutor$1$$ExternalSyntheticLambda0.run(D8$$SyntheticClass:0)
+         1788888632.207  8008  8179 W CameraX : 	at java.lang.Thread.run(Thread.java:1119)
+         1788888632.207  8008  8179 W CameraX : Caused by: java.lang.IllegalArgumentException: No available camera can be found. Cams:1 Id:10  Lens:1 PhyId:null  Filters:1 Id:Identifier{value=java.lang.Object@d3b046c} LensFilter:0
+         1788888632.207  8008  8179 W CameraX : 	at androidx.camera.core.CameraSelector.select(CameraSelector.java:109)
+         1788888632.207  8008  8179 W CameraX : 	at androidx.camera.core.impl.CameraValidatorImpl.validateOnFirstInit(CameraValidator.kt:128)
+         1788888632.207  8008  8179 W CameraX : 	... 10 more
+         1788888632.207  8008  8179 I CameraPresencePrvdr: Shutting down CameraPresenceProvider monitoring.
+         1788888632.207  8008  8179 I CameraPresenceSrc: Last observer removed. Stopping monitoring.
+         1788888632.207  8008  8179 I PipePresenceSrc: Stopping camera ID flow collection.
+         1788888632.236  8008  8017 I TextToSpeech: Connected to TTS engine
+         1788888632.237  8008  8034 I TextToSpeech: Connected to TTS engine
+         1788888632.437  8008  8236 I TextToSpeech: Setting up the connection to TTS engine...
+         1788888632.449  8008  8239 I TextToSpeech: Setting up the connection to TTS engine...
+         1788888632.719  8008  8179 D CXCP    : Created UseCaseConfigurationMap
+         1788888632.719  8008  8179 D CXCP    : Created CameraPipe in 0.159 ms
+         1788888632.719  8008  8179 D CXCP    : Camera2DeviceCache: Expected minimum camera count = 2
+         1788888632.720  8008  8179 D CXCP    : Created CameraFactoryAdapter in 0.015 ms
+         1788888632.720  8008  8179 W CXCP    : Failed to query camera ID list: Invalid list returned: [CameraId-10].
+         1788888632.720  8008  8179 D CXCP    : Loading metadata for CameraId-10
+         1788888632.727  8008  8179 I CXCP    : Loaded metadata for CameraId-10 in 5.873 ms
+         1788888632.727  8008  8179 D CXCP    : Updated available camera list: [] -> [10]
+         1788888632.728  8008  8179 D CXCP    : Creating new surface combinations for: [10]
+         1788888632.728  8008  8179 D CameraQuirks: camera2 CameraQuirks = CloseCaptureSessionOnVideoQuirk | FinalizeSessionOnCloseQuirk
+         1788888632.729  8008  8179 D CXCP    : Committed new surface combination map. Total cameras: 1
+         1788888632.729  8008  8179 D CameraRepository: Added camera: 10
+         1788888632.729  8008  8179 D CameraQuirks: camera2 CameraQuirks = CloseCaptureSessionOnVideoQuirk | FinalizeSessionOnCloseQuirk
+         1788888632.732  8008  8179 I CXCP    : Device Level: INFO_SUPPORTED_HARDWARE_LEVEL_LIMITED
+         1788888632.732  8008  8179 D CXCP    : Created CameraInternalAdapter<CameraId-10(5)> for CameraId-10
+         1788888632.733  8008  8179 W CXCP    : Failed to query camera ID list: Invalid list returned: [CameraId-10].
+         1788888632.733  8008  8179 D CXCP    : Loaded ConcurrentCameraIdsSet {}
+         1788888632.733  8008  8179 I CameraPresencePrvdr: Starting CameraPresenceProvider monitoring.
+         1788888632.733  8008  8179 I CameraPresenceSrc: First observer added. Starting monitoring.
+         1788888632.733  8008  8179 I PipePresenceSrc: Starting to collect camera ID flow.
+         1788888632.733  8008  8179 D CameraValidator: Verifying camera lens facing on emu64xa
+         1788888632.733  8008  8179 W CameraValidator: Camera LENS_FACING_FRONT verification failed
+         1788888632.733  8008  8179 W CameraValidator: java.lang.IllegalArgumentException: No available camera can be found. Cams:1 Id:10  Lens:1 PhyId:null  Filters:1 Id:Identifier{value=java.lang.Object@d3b046c} LensFilter:0
+         1788888632.733  8008  8179 W CameraValidator: 	at androidx.camera.core.CameraSelector.select(CameraSelector.java:109)
+         1788888632.733  8008  8179 W CameraValidator: 	at androidx.camera.core.impl.CameraValidatorImpl.validateOnFirstInit(CameraValidator.kt:128)
+         1788888632.733  8008  8179 W CameraValidator: 	at androidx.camera.core.CameraX.lambda$initAndRetryRecursively$3$androidx-camera-core-CameraX(CameraX.java:487)
+         1788888632.733  8008  8179 W CameraValidator: 	at androidx.camera.core.CameraX$$ExternalSyntheticLambda2.run(D8$$SyntheticClass:0)
+         1788888632.733  8008  8179 W CameraValidator: 	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:524)
+         1788888632.733  8008  8179 W CameraValidator: 	at java.util.concurrent.FutureTask.run(FutureTask.java:317)
+         1788888632.733  8008  8179 W CameraValidator: 	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:348)
+         1788888632.733  8008  8179 W CameraValidator: 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1156)
+         1788888632.733  8008  8179 W CameraValidator: 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:651)
+         1788888632.733  8008  8179 W CameraValidator: 	at androidx.camera.core.CameraExecutor$1.lambda$newThread$0(CameraExecutor.java:76)
+         1788888632.733  8008  8179 W CameraValidator: 	at androidx.camera.core.CameraExecutor$1$$ExternalSyntheticLambda0.run(D8$$SyntheticClass:0)
+         1788888632.733  8008  8179 W CameraValidator: 	at java.lang.Thread.run(Thread.java:1119)
+         1788888632.733  8008  8179 W CameraX : Retry init. Start time 1076762 current time 1079003
+         1788888632.733  8008  8179 W CameraX : androidx.camera.core.impl.CameraValidator$CameraIdListIncorrectException: Expected camera missing from device.
+         1788888632.733  8008  8179 W CameraX : 	at androidx.camera.core.impl.CameraValidatorImpl.validateOnFirstInit(CameraValidator.kt:136)
+         1788888632.733  8008  8179 W CameraX : 	at androidx.camera.core.CameraX.lambda$initAndRetryRecursively$3$androidx-camera-core-CameraX(CameraX.java:487)
+         1788888632.733  8008  8179 W CameraX : 	at androidx.camera.core.CameraX$$ExternalSyntheticLambda2.run(D8$$SyntheticClass:0)
+         1788888632.733  8008  8179 W CameraX : 	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:524)
+         1788888632.733  8008  8179 W CameraX : 	at java.util.concurrent.FutureTask.run(FutureTask.java:317)
+         1788888632.733  8008  8179 W CameraX : 	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:348)
+         1788888632.733  8008  8179 W CameraX : 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1156)
+         1788888632.733  8008  8179 W CameraX : 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:651)
+         1788888632.733  8008  8179 W CameraX : 	at androidx.camera.core.CameraExecutor$1.lambda$newThread$0(CameraExecutor.java:76)
+         1788888632.733  8008  8179 W CameraX : 	at androidx.camera.core.CameraExecutor$1$$ExternalSyntheticLambda0.run(D8$$SyntheticClass:0)
+         1788888632.733  8008  8179 W CameraX : 	at java.lang.Thread.run(Thread.java:1119)
+         1788888632.733  8008  8179 W CameraX : Caused by: java.lang.IllegalArgumentException: No available camera can be found. Cams:1 Id:10  Lens:1 PhyId:null  Filters:1 Id:Identifier{value=java.lang.Object@d3b046c} LensFilter:0
+         1788888632.733  8008  8179 W CameraX : 	at androidx.camera.core.CameraSelector.select(CameraSelector.java:109)
+         1788888632.733  8008  8179 W CameraX : 	at androidx.camera.core.impl.CameraValidatorImpl.validateOnFirstInit(CameraValidator.kt:128)
+         1788888632.733  8008  8179 W CameraX : 	... 10 more
+         1788888632.733  8008  8179 I CameraPresencePrvdr: Shutting down CameraPresenceProvider monitoring.
+         1788888632.733  8008  8179 I CameraPresenceSrc: Last observer removed. Stopping monitoring.
+         1788888632.733  8008  8179 I PipePresenceSrc: Stopping camera ID flow collection.
+         1788888632.750  8008  8027 D nativeloader: Load /data/app/~~M5NfPB4B-8jLj3Q8Y7VTrw==/com.brailleme.app-hXgYt9aL0YVpbH-r7P6PtQ==/base.apk!/lib/x86_64/libBrailleWordGeometry.so using class loader ns clns-9 (caller=/data/app/~~M5NfPB4B-8jLj3Q8Y7VTrw==/com.brailleme.app-hXgYt9aL0YVpbH-r7P6PtQ==/base.apk!classes4.dex): ok
+         1788888632.797  8008  8240 D MediaCodecList: codecHandlesFormat: no format, so no extra checks
+         1788888632.808  8008  8250 D CCodec  : allocate(c2.android.vorbis.decoder)
+         1788888632.817  8008  8027 W HWUI    : Image decoding logging dropped!
+         1788888632.817  8008  8027 W HWUI    : Image decoding logging dropped!
+         1788888632.818  8008  8250 I ApexCodecsLazy: Failed to load libcom.android.media.swcodec.apexcodecs.so: dlopen failed: library "libcom.android.media.swcodec.apexcodecs.so" not found
+         1788888632.818  8008  8250 I Codec2Client: Available Codec2 services: "default" "software"
+         1788888632.819  8008  8027 W HWUI    : Image decoding logging dropped!
+         1788888632.835  8008  8250 I CCodec  : setting up 'default' as default (vendor) store
+         1788888632.910  8008  8250 I CCodec  : Created component [c2.android.vorbis.decoder] for [c2.android.vorbis.decoder]
+         1788888632.912  8008  8250 D CCodecConfig: read media type: audio/vorbis
+         1788888632.916  8008  8250 D ReflectedParamUpdater: extent() != 1 for single value type: algo.buffers.max-count.values
+         1788888632.917  8008  8250 D ReflectedParamUpdater: extent() != 1 for single value type: output.subscribed-indices.values
+         1788888632.917  8008  8250 D ReflectedParamUpdater: extent() != 1 for single value type: input.buffers.allocator-ids.values
+         1788888632.917  8008  8250 D ReflectedParamUpdater: extent() != 1 for single value type: output.buffers.allocator-ids.values
+         1788888632.918  8008  8250 D ReflectedParamUpdater: extent() != 1 for single value type: algo.buffers.allocator-ids.values
+         1788888632.918  8008  8250 D ReflectedParamUpdater: extent() != 1 for single value type: output.buffers.pool-ids.values
+         1788888632.918  8008  8250 D ReflectedParamUpdater: extent() != 1 for single value type: algo.buffers.pool-ids.values
+         1788888632.931  8008  8250 I CCodecConfig: query failed after returning 8 values (BAD_INDEX)
+         1788888632.931  8008  8250 D CCodecConfig: c2 config diff is Dict {
+         1788888632.931  8008  8250 D CCodecConfig:   c2::u32 coded.bitrate.value = 64000
+         1788888632.931  8008  8250 D CCodecConfig:   c2::u32 input.buffers.max-size.value = 32768
+         1788888632.931  8008  8250 D CCodecConfig:   c2::u32 input.delay.value = 0
+         1788888632.931  8008  8250 D CCodecConfig:   string input.media-type.value = "audio/vorbis"
+         1788888632.931  8008  8250 D CCodecConfig:   c2::u32 output.large-frame.max-size = 0
+         1788888632.931  8008  8250 D CCodecConfig:   c2::u32 output.large-frame.threshold-size = 0
+         1788888632.931  8008  8250 D CCodecConfig:   string output.media-type.value = "audio/raw"
+         1788888632.931  8008  8250 D CCodecConfig:   c2::u32 raw.channel-count.value = 1
+         1788888632.931  8008  8250 D CCodecConfig:   c2::u32 raw.sample-rate.value = 48000
+         1788888632.931  8008  8250 D CCodecConfig: }
+         1788888632.940  8008  8240 E MediaCodec: Media Quality Service not found.
+         1788888632.940  8008  8250 D CCodec  : [c2.android.vorbis.decoder] buffers are bound to CCodec for this session
+         1788888632.940  8008  8250 D CCodecConfig: no c2 equivalents for durationUs
+         1788888632.940  8008  8250 D CCodecConfig: no c2 equivalents for track-id
+         1788888632.940  8008  8250 D CCodecConfig: no c2 equivalents for csd-1
+         1788888632.940  8008  8250 D CCodecConfig: no c2 equivalents for flags
+         1788888632.942  8008  8250 D CCodecConfig: c2 config diff is   c2::u32 coded.bitrate.value = 48000
+         1788888632.942  8008  8250 W Codec2Client: query -- param skipped: index = 1107298332.
+         1788888632.942  8008  8250 D CCodec  : encoding statistics level = 0
+         1788888632.942  8008  8250 D CCodec  : setup formats input: AMessage(what = 0x00000000) = {
+         1788888632.942  8008  8250 D CCodec  :   int32_t bitrate = 48000
+         1788888632.942  8008  8250 D CCodec  :   int32_t channel-count = 1
+         1788888632.942  8008  8250 D CCodec  :   int32_t max-input-size = 32768
+         1788888632.942  8008  8250 D CCodec  :   string mime = "audio/vorbis"
+         1788888632.942  8008  8250 D CCodec  :   int32_t sample-rate = 48000
+         1788888632.942  8008  8250 D CCodec  : }
+         1788888632.942  8008  8250 D CCodec  : setup formats output: AMessage(what = 0x00000000) = {
+         1788888632.942  8008  8250 D CCodec  :   int32_t buffer-batch-max-output-size = 0
+         1788888632.942  8008  8250 D CCodec  :   int32_t buffer-batch-threshold-output-size = 0
+         1788888632.942  8008  8250 D CCodec  :   int32_t channel-count = 1
+         1788888632.942  8008  8250 D CCodec  :   string mime = "audio/raw"
+         1788888632.942  8008  8250 D CCodec  :   int32_t sample-rate = 48000
+         1788888632.942  8008  8250 D CCodec  :   int32_t channel-mask = 1
+         1788888632.942  8008  8250 D CCodec  :   int32_t android._config-pcm-encoding = 2
+         1788888632.942  8008  8250 D CCodec  : }
+         1788888632.942  8008  8250 I CCodecConfig: query failed after returning 8 values (BAD_INDEX)
+         1788888632.942  8008  8250 E m.brailleme.app: Failed to query component interface for required system resources: 6
+         1788888632.946  8008  8250 W Codec2Client: query -- param skipped: index = 1342179345.
+         1788888632.947  8008  8250 W Codec2Client: query -- param skipped: index = 2415921170.
+         1788888632.947  8008  8250 D C2Store : Using DMABUF Heaps
+         1788888632.948  8008  8250 D CCodecBufferChannel: [c2.android.vorbis.decoder#103] Created input block pool with allocatorID 16 => poolID 17 - OK (0)
+         1788888632.951  8008  8250 I CCodecBufferChannel: [c2.android.vorbis.decoder#103] Created output block pool with allocatorID 16 => poolID 38 - OK
+         1788888632.951  8008  8250 D CCodecBufferChannel: [c2.android.vorbis.decoder#103] Configured output block pool ids 38 => OK
+         1788888632.958  8008  8250 I DMABUFHEAPS: Using DMA-BUF heap named: system
+         1788888633.017  8008  8250 D CCodecBufferChannel: [c2.android.vorbis.decoder#103] MediaCodec discarded an unknown buffer
+         1788888633.017  8008  8250 D CCodecBufferChannel: [c2.android.vorbis.decoder#103] MediaCodec discarded an unknown buffer
+         1788888633.019  8008  8250 I hw-BpHwBinder: onLastStrongRef automatically unlinking death recipients
+         1788888633.238  8008  8179 D CXCP    : Created UseCaseConfigurationMap
+         1788888633.239  8008  8179 D CXCP    : Created CameraPipe in 0.375 ms
+         1788888633.239  8008  8179 D CXCP    : Camera2DeviceCache: Expected minimum camera count = 2
+         1788888633.240  8008  8179 D CXCP    : Created CameraFactoryAdapter in 0.015 ms
+         1788888633.240  8008  8179 W CXCP    : Failed to query camera ID list: Invalid list returned: [CameraId-10].
+         1788888633.241  8008  8179 D CXCP    : Loading metadata for CameraId-10
+         1788888633.243  8008  8179 I CXCP    : Loaded metadata for CameraId-10 in 2.008 ms
+         1788888633.243  8008  8179 D CXCP    : Updated available camera list: [] -> [10]
+         1788888633.243  8008  8179 D CXCP    : Creating new surface combinations for: [10]
+         1788888633.243  8008  8179 D CameraQuirks: camera2 CameraQuirks = CloseCaptureSessionOnVideoQuirk | FinalizeSessionOnCloseQuirk
+         1788888633.243  8008  8179 D CXCP    : Committed new surface combination map. Total cameras: 1
+         1788888633.243  8008  8179 D CameraRepository: Added camera: 10
+         1788888633.243  8008  8179 D CameraQuirks: camera2 CameraQuirks = CloseCaptureSessionOnVideoQuirk | FinalizeSessionOnCloseQuirk
+         1788888633.244  8008  8179 I CXCP    : Device Level: INFO_SUPPORTED_HARDWARE_LEVEL_LIMITED
+         1788888633.245  8008  8179 D CXCP    : Created CameraInternalAdapter<CameraId-10(6)> for CameraId-10
+         1788888633.245  8008  8179 W CXCP    : Failed to query camera ID list: Invalid list returned: [CameraId-10].
+         1788888633.245  8008  8179 D CXCP    : Loaded ConcurrentCameraIdsSet {}
+         1788888633.245  8008  8179 I CameraPresencePrvdr: Starting CameraPresenceProvider monitoring.
+         1788888633.245  8008  8179 I CameraPresenceSrc: First observer added. Starting monitoring.
+         1788888633.245  8008  8179 I PipePresenceSrc: Starting to collect camera ID flow.
+         1788888633.245  8008  8179 D CameraValidator: Verifying camera lens facing on emu64xa
+         1788888633.245  8008  8179 W CameraValidator: Camera LENS_FACING_FRONT verification failed
+         1788888633.245  8008  8179 W CameraValidator: java.lang.IllegalArgumentException: No available camera can be found. Cams:1 Id:10  Lens:1 PhyId:null  Filters:1 Id:Identifier{value=java.lang.Object@d3b046c} LensFilter:0
+         1788888633.245  8008  8179 W CameraValidator: 	at androidx.camera.core.CameraSelector.select(CameraSelector.java:109)
+         1788888633.245  8008  8179 W CameraValidator: 	at androidx.camera.core.impl.CameraValidatorImpl.validateOnFirstInit(CameraValidator.kt:128)
+         1788888633.245  8008  8179 W CameraValidator: 	at androidx.camera.core.CameraX.lambda$initAndRetryRecursively$3$androidx-camera-core-CameraX(CameraX.java:487)
+         1788888633.245  8008  8179 W CameraValidator: 	at androidx.camera.core.CameraX$$ExternalSyntheticLambda2.run(D8$$SyntheticClass:0)
+         1788888633.245  8008  8179 W CameraValidator: 	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:524)
+         1788888633.245  8008  8179 W CameraValidator: 	at java.util.concurrent.FutureTask.run(FutureTask.java:317)
+         1788888633.245  8008  8179 W CameraValidator: 	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:348)
+         1788888633.245  8008  8179 W CameraValidator: 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1156)
+         1788888633.245  8008  8179 W CameraValidator: 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:651)
+         1788888633.245  8008  8179 W CameraValidator: 	at androidx.camera.core.CameraExecutor$1.lambda$newThread$0(CameraExecutor.java:76)
+         1788888633.245  8008  8179 W CameraValidator: 	at androidx.camera.core.CameraExecutor$1$$ExternalSyntheticLambda0.run(D8$$SyntheticClass:0)
+         1788888633.245  8008  8179 W CameraValidator: 	at java.lang.Thread.run(Thread.java:1119)
+         1788888633.245  8008  8179 W CameraX : Retry init. Start time 1076762 current time 1079515
+         1788888633.245  8008  8179 W CameraX : androidx.camera.core.impl.CameraValidator$CameraIdListIncorrectException: Expected camera missing from device.
+         1788888633.245  8008  8179 W CameraX : 	at androidx.camera.core.impl.CameraValidatorImpl.validateOnFirstInit(CameraValidator.kt:136)
+         1788888633.245  8008  8179 W CameraX : 	at androidx.camera.core.CameraX.lambda$initAndRetryRecursively$3$androidx-camera-core-CameraX(CameraX.java:487)
+         1788888633.245  8008  8179 W CameraX : 	at androidx.camera.core.CameraX$$ExternalSyntheticLambda2.run(D8$$SyntheticClass:0)
+         1788888633.245  8008  8179 W CameraX : 	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:524)
+         1788888633.245  8008  8179 W CameraX : 	at java.util.concurrent.FutureTask.run(FutureTask.java:317)
+         1788888633.245  8008  8179 W CameraX : 	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:348)
+         1788888633.245  8008  8179 W CameraX : 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1156)
+         1788888633.245  8008  8179 W CameraX : 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:651)
+         1788888633.245  8008  8179 W CameraX : 	at androidx.camera.core.CameraExecutor$1.lambda$newThread$0(CameraExecutor.java:76)
+         1788888633.245  8008  8179 W CameraX : 	at androidx.camera.core.CameraExecutor$1$$ExternalSyntheticLambda0.run(D8$$SyntheticClass:0)
+         1788888633.245  8008  8179 W CameraX : 	at java.lang.Thread.run(Thread.java:1119)
+         1788888633.245  8008  8179 W CameraX : Caused by: java.lang.IllegalArgumentException: No available camera can be found. Cams:1 Id:10  Lens:1 PhyId:null  Filters:1 Id:Identifier{value=java.lang.Object@d3b046c} LensFilter:0
+         1788888633.245  8008  8179 W CameraX : 	at androidx.camera.core.CameraSelector.select(CameraSelector.java:109)
+         1788888633.245  8008  8179 W CameraX : 	at androidx.camera.core.impl.CameraValidatorImpl.validateOnFirstInit(CameraValidator.kt:128)
+         1788888633.245  8008  8179 W CameraX : 	... 10 more
+         1788888633.245  8008  8179 I CameraPresencePrvdr: Shutting down CameraPresenceProvider monitoring.
+         1788888633.245  8008  8179 I CameraPresenceSrc: Last observer removed. Stopping monitoring.
+         1788888633.245  8008  8179 I PipePresenceSrc: Stopping camera ID flow collection.
+         1788888633.751  8008  8179 D CXCP    : Created UseCaseConfigurationMap
+         1788888633.751  8008  8179 D CXCP    : Created CameraPipe in 0.177 ms
+         1788888633.752  8008  8179 D CXCP    : Camera2DeviceCache: Expected minimum camera count = 2
+         1788888633.752  8008  8179 D CXCP    : Created CameraFactoryAdapter in 0.016 ms
+         1788888633.752  8008  8179 W CXCP    : Failed to query camera ID list: Invalid list returned: [CameraId-10].
+         1788888633.752  8008  8179 D CXCP    : Loading metadata for CameraId-10
+         1788888633.765  8008  8179 I CXCP    : Loaded metadata for CameraId-10 in 12.696 ms
+         1788888633.765  8008  8179 D CXCP    : Updated available camera list: [] -> [10]
+         1788888633.765  8008  8179 D CXCP    : Creating new surface combinations for: [10]
+         1788888633.766  8008  8179 D CameraQuirks: camera2 CameraQuirks = CloseCaptureSessionOnVideoQuirk | FinalizeSessionOnCloseQuirk
+         1788888633.766  8008  8179 D CXCP    : Committed new surface combination map. Total cameras: 1
+         1788888633.766  8008  8179 D CameraRepository: Added camera: 10
+         1788888633.766  8008  8179 D CameraQuirks: camera2 CameraQuirks = CloseCaptureSessionOnVideoQuirk | FinalizeSessionOnCloseQuirk
+         1788888633.768  8008  8179 I CXCP    : Device Level: INFO_SUPPORTED_HARDWARE_LEVEL_LIMITED
+         1788888633.768  8008  8179 D CXCP    : Created CameraInternalAdapter<CameraId-10(7)> for CameraId-10
+         1788888633.769  8008  8179 W CXCP    : Failed to query camera ID list: Invalid list returned: [CameraId-10].
+         1788888633.769  8008  8179 D CXCP    : Loaded ConcurrentCameraIdsSet {}
+         1788888633.769  8008  8179 I CameraPresencePrvdr: Starting CameraPresenceProvider monitoring.
+         1788888633.769  8008  8179 I CameraPresenceSrc: First observer added. Starting monitoring.
+         1788888633.769  8008  8179 I PipePresenceSrc: Starting to collect camera ID flow.
+         1788888633.769  8008  8179 D CameraValidator: Verifying camera lens facing on emu64xa
+         1788888633.770  8008  8179 W CameraValidator: Camera LENS_FACING_FRONT verification failed
+         1788888633.770  8008  8179 W CameraValidator: java.lang.IllegalArgumentException: No available camera can be found. Cams:1 Id:10  Lens:1 PhyId:null  Filters:1 Id:Identifier{value=java.lang.Object@d3b046c} LensFilter:0
+         1788888633.770  8008  8179 W CameraValidator: 	at androidx.camera.core.CameraSelector.select(CameraSelector.java:109)
+         1788888633.770  8008  8179 W CameraValidator: 	at androidx.camera.core.impl.CameraValidatorImpl.validateOnFirstInit(CameraValidator.kt:128)
+         1788888633.770  8008  8179 W CameraValidator: 	at androidx.camera.core.CameraX.lambda$initAndRetryRecursively$3$androidx-camera-core-CameraX(CameraX.java:487)
+         1788888633.770  8008  8179 W CameraValidator: 	at androidx.camera.core.CameraX$$ExternalSyntheticLambda2.run(D8$$SyntheticClass:0)
+         1788888633.770  8008  8179 W CameraValidator: 	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:524)
+         1788888633.770  8008  8179 W CameraValidator: 	at java.util.concurrent.FutureTask.run(FutureTask.java:317)
+         1788888633.770  8008  8179 W CameraValidator: 	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:348)
+         1788888633.770  8008  8179 W CameraValidator: 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1156)
+         1788888633.770  8008  8179 W CameraValidator: 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:651)
+         1788888633.770  8008  8179 W CameraValidator: 	at androidx.camera.core.CameraExecutor$1.lambda$newThread$0(CameraExecutor.java:76)
+         1788888633.770  8008  8179 W CameraValidator: 	at androidx.camera.core.CameraExecutor$1$$ExternalSyntheticLambda0.run(D8$$SyntheticClass:0)
+         1788888633.770  8008  8179 W CameraValidator: 	at java.lang.Thread.run(Thread.java:1119)
+         1788888633.770  8008  8179 W CameraX : Retry init. Start time 1076762 current time 1080040
+         1788888633.770  8008  8179 W CameraX : androidx.camera.core.impl.CameraValidator$CameraIdListIncorrectException: Expected camera missing from device.
+         1788888633.770  8008  8179 W CameraX : 	at androidx.camera.core.impl.CameraValidatorImpl.validateOnFirstInit(CameraValidator.kt:136)
+         1788888633.770  8008  8179 W CameraX : 	at androidx.camera.core.CameraX.lambda$initAndRetryRecursively$3$androidx-camera-core-CameraX(CameraX.java:487)
+         1788888633.770  8008  8179 W CameraX : 	at androidx.camera.core.CameraX$$ExternalSyntheticLambda2.run(D8$$SyntheticClass:0)
+         1788888633.770  8008  8179 W CameraX : 	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:524)
+         1788888633.770  8008  8179 W CameraX : 	at java.util.concurrent.FutureTask.run(FutureTask.java:317)
+         1788888633.770  8008  8179 W CameraX : 	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:348)
+         1788888633.770  8008  8179 W CameraX : 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1156)
+         1788888633.770  8008  8179 W CameraX : 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:651)
+         1788888633.770  8008  8179 W CameraX : 	at androidx.camera.core.CameraExecutor$1.lambda$newThread$0(CameraExecutor.java:76)
+         1788888633.770  8008  8179 W CameraX : 	at androidx.camera.core.CameraExecutor$1$$ExternalSyntheticLambda0.run(D8$$SyntheticClass:0)
+         1788888633.770  8008  8179 W CameraX : 	at java.lang.Thread.run(Thread.java:1119)
+         1788888633.770  8008  8179 W CameraX : Caused by: java.lang.IllegalArgumentException: No available camera can be found. Cams:1 Id:10  Lens:1 PhyId:null  Filters:1 Id:Identifier{value=java.lang.Object@d3b046c} LensFilter:0
+         1788888633.770  8008  8179 W CameraX : 	at androidx.camera.core.CameraSelector.select(CameraSelector.java:109)
+         1788888633.770  8008  8179 W CameraX : 	at androidx.camera.core.impl.CameraValidatorImpl.validateOnFirstInit(CameraValidator.kt:128)
+         1788888633.770  8008  8179 W CameraX : 	... 10 more
+         1788888633.770  8008  8179 I CameraPresencePrvdr: Shutting down CameraPresenceProvider monitoring.
+         1788888633.770  8008  8179 I CameraPresenceSrc: Last observer removed. Stopping monitoring.
+         1788888633.770  8008  8179 I PipePresenceSrc: Stopping camera ID flow collection.
+         1788888634.274  8008  8179 D CXCP    : Created UseCaseConfigurationMap
+         1788888634.275  8008  8179 D CXCP    : Created CameraPipe in 0.179 ms
+         1788888634.275  8008  8179 D CXCP    : Camera2DeviceCache: Expected minimum camera count = 2
+         1788888634.276  8008  8179 D CXCP    : Created CameraFactoryAdapter in 0.014 ms
+         1788888634.276  8008  8179 W CXCP    : Failed to query camera ID list: Invalid list returned: [CameraId-10].
+         1788888634.276  8008  8179 D CXCP    : Loading metadata for CameraId-10
+         1788888634.278  8008  8179 I CXCP    : Loaded metadata for CameraId-10 in 1.569 ms
+         1788888634.278  8008  8179 D CXCP    : Updated available camera list: [] -> [10]
+         1788888634.278  8008  8179 D CXCP    : Creating new surface combinations for: [10]
+         1788888634.278  8008  8179 D CameraQuirks: camera2 CameraQuirks = CloseCaptureSessionOnVideoQuirk | FinalizeSessionOnCloseQuirk
+         1788888634.278  8008  8179 D CXCP    : Committed new surface combination map. Total cameras: 1
+         1788888634.278  8008  8179 D CameraRepository: Added camera: 10
+         1788888634.278  8008  8179 D CameraQuirks: camera2 CameraQuirks = CloseCaptureSessionOnVideoQuirk | FinalizeSessionOnCloseQuirk
+         1788888634.280  8008  8179 I CXCP    : Device Level: INFO_SUPPORTED_HARDWARE_LEVEL_LIMITED
+         1788888634.280  8008  8179 D CXCP    : Created CameraInternalAdapter<CameraId-10(8)> for CameraId-10
+         1788888634.280  8008  8179 W CXCP    : Failed to query camera ID list: Invalid list returned: [CameraId-10].
+         1788888634.280  8008  8179 D CXCP    : Loaded ConcurrentCameraIdsSet {}
+         1788888634.280  8008  8179 I CameraPresencePrvdr: Starting CameraPresenceProvider monitoring.
+         1788888634.280  8008  8179 I CameraPresenceSrc: First observer added. Starting monitoring.
+         1788888634.280  8008  8179 I PipePresenceSrc: Starting to collect camera ID flow.
+         1788888634.280  8008  8179 D CameraValidator: Verifying camera lens facing on emu64xa
+         1788888634.281  8008  8179 W CameraValidator: Camera LENS_FACING_FRONT verification failed
+         1788888634.281  8008  8179 W CameraValidator: java.lang.IllegalArgumentException: No available camera can be found. Cams:1 Id:10  Lens:1 PhyId:null  Filters:1 Id:Identifier{value=java.lang.Object@d3b046c} LensFilter:0
+         1788888634.281  8008  8179 W CameraValidator: 	at androidx.camera.core.CameraSelector.select(CameraSelector.java:109)
+         1788888634.281  8008  8179 W CameraValidator: 	at androidx.camera.core.impl.CameraValidatorImpl.validateOnFirstInit(CameraValidator.kt:128)
+         1788888634.281  8008  8179 W CameraValidator: 	at androidx.camera.core.CameraX.lambda$initAndRetryRecursively$3$androidx-camera-core-CameraX(CameraX.java:487)
+         1788888634.281  8008  8179 W CameraValidator: 	at androidx.camera.core.CameraX$$ExternalSyntheticLambda2.run(D8$$SyntheticClass:0)
+         1788888634.281  8008  8179 W CameraValidator: 	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:524)
+         1788888634.281  8008  8179 W CameraValidator: 	at java.util.concurrent.FutureTask.run(FutureTask.java:317)
+         1788888634.281  8008  8179 W CameraValidator: 	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:348)
+         1788888634.281  8008  8179 W CameraValidator: 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1156)
+         1788888634.281  8008  8179 W CameraValidator: 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:651)
+         1788888634.281  8008  8179 W CameraValidator: 	at androidx.camera.core.CameraExecutor$1.lambda$newThread$0(CameraExecutor.java:76)
+         1788888634.281  8008  8179 W CameraValidator: 	at androidx.camera.core.CameraExecutor$1$$ExternalSyntheticLambda0.run(D8$$SyntheticClass:0)
+         1788888634.281  8008  8179 W CameraValidator: 	at java.lang.Thread.run(Thread.java:1119)
+         1788888634.281  8008  8179 W CameraX : Retry init. Start time 1076762 current time 1080550
+         1788888634.281  8008  8179 W CameraX : androidx.camera.core.impl.CameraValidator$CameraIdListIncorrectException: Expected camera missing from device.
+         1788888634.281  8008  8179 W CameraX : 	at androidx.camera.core.impl.CameraValidatorImpl.validateOnFirstInit(CameraValidator.kt:136)
+         1788888634.281  8008  8179 W CameraX : 	at androidx.camera.core.CameraX.lambda$initAndRetryRecursively$3$androidx-camera-core-CameraX(CameraX.java:487)
+         1788888634.281  8008  8179 W CameraX : 	at androidx.camera.core.CameraX$$ExternalSyntheticLambda2.run(D8$$SyntheticClass:0)
+         1788888634.281  8008  8179 W CameraX : 	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:524)
+         1788888634.281  8008  8179 W CameraX : 	at java.util.concurrent.FutureTask.run(FutureTask.java:317)
+         1788888634.281  8008  8179 W CameraX : 	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:348)
+         1788888634.281  8008  8179 W CameraX : 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1156)
+         1788888634.281  8008  8179 W CameraX : 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:651)
+         1788888634.281  8008  8179 W CameraX : 	at androidx.camera.core.CameraExecutor$1.lambda$newThread$0(CameraExecutor.java:76)
+         1788888634.281  8008  8179 W CameraX : 	at androidx.camera.core.CameraExecutor$1$$ExternalSyntheticLambda0.run(D8$$SyntheticClass:0)
+         1788888634.281  8008  8179 W CameraX : 	at java.lang.Thread.run(Thread.java:1119)
+         1788888634.281  8008  8179 W CameraX : Caused by: java.lang.IllegalArgumentException: No available camera can be found. Cams:1 Id:10  Lens:1 PhyId:null  Filters:1 Id:Identifier{value=java.lang.Object@d3b046c} LensFilter:0
+         1788888634.281  8008  8179 W CameraX : 	at androidx.camera.core.CameraSelector.select(CameraSelector.java:109)
+         1788888634.281  8008  8179 W CameraX : 	at androidx.camera.core.impl.CameraValidatorImpl.validateOnFirstInit(CameraValidator.kt:128)
+         1788888634.281  8008  8179 W CameraX : 	... 10 more
+         1788888634.281  8008  8179 I CameraPresencePrvdr: Shutting down CameraPresenceProvider monitoring.
+         1788888634.281  8008  8179 I CameraPresenceSrc: Last observer removed. Stopping monitoring.
+         1788888634.281  8008  8179 I PipePresenceSrc: Stopping camera ID flow collection.
+         1788888634.783  8008  8179 D CXCP    : Created UseCaseConfigurationMap
+         1788888634.783  8008  8179 D CXCP    : Created CameraPipe in 0.162 ms
+         1788888634.783  8008  8179 D CXCP    : Camera2DeviceCache: Expected minimum camera count = 2
+         1788888634.784  8008  8179 D CXCP    : Created CameraFactoryAdapter in 0.014 ms
+         1788888634.784  8008  8179 W CXCP    : Failed to query camera ID list: Invalid list returned: [CameraId-10].
+         1788888634.784  8008  8179 D CXCP    : Loading metadata for CameraId-10
+         1788888634.786  8008  8179 I CXCP    : Loaded metadata for CameraId-10 in 1.634 ms
+         1788888634.786  8008  8179 D CXCP    : Updated available camera list: [] -> [10]
+         1788888634.786  8008  8179 D CXCP    : Creating new surface combinations for: [10]
+         1788888634.786  8008  8179 D CameraQuirks: camera2 CameraQuirks = CloseCaptureSessionOnVideoQuirk | FinalizeSessionOnCloseQuirk
+         1788888634.786  8008  8179 D CXCP    : Committed new surface combination map. Total cameras: 1
+         1788888634.786  8008  8179 D CameraRepository: Added camera: 10
+         1788888634.786  8008  8179 D CameraQuirks: camera2 CameraQuirks = CloseCaptureSessionOnVideoQuirk | FinalizeSessionOnCloseQuirk
+         1788888634.787  8008  8179 I CXCP    : Device Level: INFO_SUPPORTED_HARDWARE_LEVEL_LIMITED
+         1788888634.787  8008  8179 D CXCP    : Created CameraInternalAdapter<CameraId-10(9)> for CameraId-10
+         1788888634.787  8008  8179 W CXCP    : Failed to query camera ID list: Invalid list returned: [CameraId-10].
+         1788888634.788  8008  8179 D CXCP    : Loaded ConcurrentCameraIdsSet {}
+         1788888634.788  8008  8179 I CameraPresencePrvdr: Starting CameraPresenceProvider monitoring.
+         1788888634.788  8008  8179 I CameraPresenceSrc: First observer added. Starting monitoring.
+         1788888634.788  8008  8179 I PipePresenceSrc: Starting to collect camera ID flow.
+         1788888634.788  8008  8179 D CameraValidator: Verifying camera lens facing on emu64xa
+         1788888634.788  8008  8179 W CameraValidator: Camera LENS_FACING_FRONT verification failed
+         1788888634.788  8008  8179 W CameraValidator: java.lang.IllegalArgumentException: No available camera can be found. Cams:1 Id:10  Lens:1 PhyId:null  Filters:1 Id:Identifier{value=java.lang.Object@d3b046c} LensFilter:0
+         1788888634.788  8008  8179 W CameraValidator: 	at androidx.camera.core.CameraSelector.select(CameraSelector.java:109)
+         1788888634.788  8008  8179 W CameraValidator: 	at androidx.camera.core.impl.CameraValidatorImpl.validateOnFirstInit(CameraValidator.kt:128)
+         1788888634.788  8008  8179 W CameraValidator: 	at androidx.camera.core.CameraX.lambda$initAndRetryRecursively$3$androidx-camera-core-CameraX(CameraX.java:487)
+         1788888634.788  8008  8179 W CameraValidator: 	at androidx.camera.core.CameraX$$ExternalSyntheticLambda2.run(D8$$SyntheticClass:0)
+         1788888634.788  8008  8179 W CameraValidator: 	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:524)
+         1788888634.788  8008  8179 W CameraValidator: 	at java.util.concurrent.FutureTask.run(FutureTask.java:317)
+         1788888634.788  8008  8179 W CameraValidator: 	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:348)
+         1788888634.788  8008  8179 W CameraValidator: 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1156)
+         1788888634.788  8008  8179 W CameraValidator: 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:651)
+         1788888634.788  8008  8179 W CameraValidator: 	at androidx.camera.core.CameraExecutor$1.lambda$newThread$0(CameraExecutor.java:76)
+         1788888634.788  8008  8179 W CameraValidator: 	at androidx.camera.core.CameraExecutor$1$$ExternalSyntheticLambda0.run(D8$$SyntheticClass:0)
+         1788888634.788  8008  8179 W CameraValidator: 	at java.lang.Thread.run(Thread.java:1119)
+         1788888634.788  8008  8179 W CameraX : Retry init. Start time 1076762 current time 1081058
+         1788888634.788  8008  8179 W CameraX : androidx.camera.core.impl.CameraValidator$CameraIdListIncorrectException: Expected camera missing from device.
+         1788888634.788  8008  8179 W CameraX : 	at androidx.camera.core.impl.CameraValidatorImpl.validateOnFirstInit(CameraValidator.kt:136)
+         1788888634.788  8008  8179 W CameraX : 	at androidx.camera.core.CameraX.lambda$initAndRetryRecursively$3$androidx-camera-core-CameraX(CameraX.java:487)
+         1788888634.788  8008  8179 W CameraX : 	at androidx.camera.core.CameraX$$ExternalSyntheticLambda2.run(D8$$SyntheticClass:0)
+         1788888634.788  8008  8179 W CameraX : 	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:524)
+         1788888634.788  8008  8179 W CameraX : 	at java.util.concurrent.FutureTask.run(FutureTask.java:317)
+         1788888634.788  8008  8179 W CameraX : 	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:348)
+         1788888634.788  8008  8179 W CameraX : 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1156)
+         1788888634.788  8008  8179 W CameraX : 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:651)
+         1788888634.788  8008  8179 W CameraX : 	at androidx.camera.core.CameraExecutor$1.lambda$newThread$0(CameraExecutor.java:76)
+         1788888634.788  8008  8179 W CameraX : 	at androidx.camera.core.CameraExecutor$1$$ExternalSyntheticLambda0.run(D8$$SyntheticClass:0)
+         1788888634.788  8008  8179 W CameraX : 	at java.lang.Thread.run(Thread.java:1119)
+         1788888634.788  8008  8179 W CameraX : Caused by: java.lang.IllegalArgumentException: No available camera can be found. Cams:1 Id:10  Lens:1 PhyId:null  Filters:1 Id:Identifier{value=java.lang.Object@d3b046c} LensFilter:0
+         1788888634.788  8008  8179 W CameraX : 	at androidx.camera.core.CameraSelector.select(CameraSelector.java:109)
+         1788888634.788  8008  8179 W CameraX : 	at androidx.camera.core.impl.CameraValidatorImpl.validateOnFirstInit(CameraValidator.kt:128)
+         1788888634.788  8008  8179 W CameraX : 	... 10 more
+         1788888634.788  8008  8179 I CameraPresencePrvdr: Shutting down CameraPresenceProvider monitoring.
+         1788888634.788  8008  8179 I CameraPresenceSrc: Last observer removed. Stopping monitoring.
+         1788888634.788  8008  8179 I PipePresenceSrc: Stopping camera ID flow collection.
+         1788888635.290  8008  8179 D CXCP    : Created UseCaseConfigurationMap
+         1788888635.290  8008  8179 D CXCP    : Created CameraPipe in 0.177 ms
+         1788888635.291  8008  8179 D CXCP    : Camera2DeviceCache: Expected minimum camera count = 2
+         1788888635.292  8008  8179 D CXCP    : Created CameraFactoryAdapter in 0.018 ms
+         1788888635.292  8008  8179 W CXCP    : Failed to query camera ID list: Invalid list returned: [CameraId-10].
+         1788888635.292  8008  8179 D CXCP    : Loading metadata for CameraId-10
+         1788888635.294  8008  8179 I CXCP    : Loaded metadata for CameraId-10 in 1.299 ms
+         1788888635.294  8008  8179 D CXCP    : Updated available camera list: [] -> [10]
+         1788888635.294  8008  8179 D CXCP    : Creating new surface combinations for: [10]
+         1788888635.294  8008  8179 D CameraQuirks: camera2 CameraQuirks = CloseCaptureSessionOnVideoQuirk | FinalizeSessionOnCloseQuirk
+         1788888635.294  8008  8179 D CXCP    : Committed new surface combination map. Total cameras: 1
+         1788888635.294  8008  8179 D CameraRepository: Added camera: 10
+         1788888635.294  8008  8179 D CameraQuirks: camera2 CameraQuirks = CloseCaptureSessionOnVideoQuirk | FinalizeSessionOnCloseQuirk
+         1788888635.295  8008  8179 I CXCP    : Device Level: INFO_SUPPORTED_HARDWARE_LEVEL_LIMITED
+         1788888635.295  8008  8179 D CXCP    : Created CameraInternalAdapter<CameraId-10(10)> for CameraId-10
+         1788888635.295  8008  8179 W CXCP    : Failed to query camera ID list: Invalid list returned: [CameraId-10].
+         1788888635.296  8008  8179 D CXCP    : Loaded ConcurrentCameraIdsSet {}
+         1788888635.296  8008  8179 I CameraPresencePrvdr: Starting CameraPresenceProvider monitoring.
+         1788888635.296  8008  8179 I CameraPresenceSrc: First observer added. Starting monitoring.
+         1788888635.296  8008  8179 I PipePresenceSrc: Starting to collect camera ID flow.
+         1788888635.296  8008  8179 D CameraValidator: Verifying camera lens facing on emu64xa
+         1788888635.296  8008  8179 W CameraValidator: Camera LENS_FACING_FRONT verification failed
+         1788888635.296  8008  8179 W CameraValidator: java.lang.IllegalArgumentException: No available camera can be found. Cams:1 Id:10  Lens:1 PhyId:null  Filters:1 Id:Identifier{value=java.lang.Object@d3b046c} LensFilter:0
+         1788888635.296  8008  8179 W CameraValidator: 	at androidx.camera.core.CameraSelector.select(CameraSelector.java:109)
+         1788888635.296  8008  8179 W CameraValidator: 	at androidx.camera.core.impl.CameraValidatorImpl.validateOnFirstInit(CameraValidator.kt:128)
+         1788888635.296  8008  8179 W CameraValidator: 	at androidx.camera.core.CameraX.lambda$initAndRetryRecursively$3$androidx-camera-core-CameraX(CameraX.java:487)
+         1788888635.296  8008  8179 W CameraValidator: 	at androidx.camera.core.CameraX$$ExternalSyntheticLambda2.run(D8$$SyntheticClass:0)
+         1788888635.296  8008  8179 W CameraValidator: 	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:524)
+         1788888635.296  8008  8179 W CameraValidator: 	at java.util.concurrent.FutureTask.run(FutureTask.java:317)
+         1788888635.296  8008  8179 W CameraValidator: 	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:348)
+         1788888635.296  8008  8179 W CameraValidator: 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1156)
+         1788888635.296  8008  8179 W CameraValidator: 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:651)
+         1788888635.296  8008  8179 W CameraValidator: 	at androidx.camera.core.CameraExecutor$1.lambda$newThread$0(CameraExecutor.java:76)
+         1788888635.296  8008  8179 W CameraValidator: 	at androidx.camera.core.CameraExecutor$1$$ExternalSyntheticLambda0.run(D8$$SyntheticClass:0)
+         1788888635.296  8008  8179 W CameraValidator: 	at java.lang.Thread.run(Thread.java:1119)
+         1788888635.296  8008  8179 W CameraX : Retry init. Start time 1076762 current time 1081566
+         1788888635.296  8008  8179 W CameraX : androidx.camera.core.impl.CameraValidator$CameraIdListIncorrectException: Expected camera missing from device.
+         1788888635.296  8008  8179 W CameraX : 	at androidx.camera.core.impl.CameraValidatorImpl.validateOnFirstInit(CameraValidator.kt:136)
+         1788888635.296  8008  8179 W CameraX : 	at androidx.camera.core.CameraX.lambda$initAndRetryRecursively$3$androidx-camera-core-CameraX(CameraX.java:487)
+         1788888635.296  8008  8179 W CameraX : 	at androidx.camera.core.CameraX$$ExternalSyntheticLambda2.run(D8$$SyntheticClass:0)
+         1788888635.296  8008  8179 W CameraX : 	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:524)
+         1788888635.296  8008  8179 W CameraX : 	at java.util.concurrent.FutureTask.run(FutureTask.java:317)
+         1788888635.296  8008  8179 W CameraX : 	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:348)
+         1788888635.296  8008  8179 W CameraX : 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1156)
+         1788888635.296  8008  8179 W CameraX : 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:651)
+         1788888635.296  8008  8179 W CameraX : 	at androidx.camera.core.CameraExecutor$1.lambda$newThread$0(CameraExecutor.java:76)
+         1788888635.296  8008  8179 W CameraX : 	at androidx.camera.core.CameraExecutor$1$$ExternalSyntheticLambda0.run(D8$$SyntheticClass:0)
+         1788888635.296  8008  8179 W CameraX : 	at java.lang.Thread.run(Thread.java:1119)
+         1788888635.296  8008  8179 W CameraX : Caused by: java.lang.IllegalArgumentException: No available camera can be found. Cams:1 Id:10  Lens:1 PhyId:null  Filters:1 Id:Identifier{value=java.lang.Object@d3b046c} LensFilter:0
+         1788888635.296  8008  8179 W CameraX : 	at androidx.camera.core.CameraSelector.select(CameraSelector.java:109)
+         1788888635.296  8008  8179 W CameraX : 	at androidx.camera.core.impl.CameraValidatorImpl.validateOnFirstInit(CameraValidator.kt:128)
+         1788888635.296  8008  8179 W CameraX : 	... 10 more
+         1788888635.296  8008  8179 I CameraPresencePrvdr: Shutting down CameraPresenceProvider monitoring.
+         1788888635.296  8008  8179 I CameraPresenceSrc: Last observer removed. Stopping monitoring.
+         1788888635.296  8008  8179 I PipePresenceSrc: Stopping camera ID flow collection.
+         1788888635.798  8008  8179 D CXCP    : Created UseCaseConfigurationMap
+         1788888635.799  8008  8179 D CXCP    : Created CameraPipe in 0.184 ms
+         1788888635.799  8008  8179 D CXCP    : Camera2DeviceCache: Expected minimum camera count = 2
+         1788888635.800  8008  8179 D CXCP    : Created CameraFactoryAdapter in 0.010 ms
+         1788888635.800  8008  8179 W CXCP    : Failed to query camera ID list: Invalid list returned: [CameraId-10].
+         1788888635.800  8008  8179 D CXCP    : Loading metadata for CameraId-10
+         1788888635.803  8008  8179 I CXCP    : Loaded metadata for CameraId-10 in 3.428 ms
+         1788888635.804  8008  8179 D CXCP    : Updated available camera list: [] -> [10]
+         1788888635.804  8008  8179 D CXCP    : Creating new surface combinations for: [10]
+         1788888635.804  8008  8179 D CameraQuirks: camera2 CameraQuirks = CloseCaptureSessionOnVideoQuirk | FinalizeSessionOnCloseQuirk
+         1788888635.804  8008  8179 D CXCP    : Committed new surface combination map. Total cameras: 1
+         1788888635.804  8008  8179 D CameraRepository: Added camera: 10
+         1788888635.804  8008  8179 D CameraQuirks: camera2 CameraQuirks = CloseCaptureSessionOnVideoQuirk | FinalizeSessionOnCloseQuirk
+         1788888635.807  8008  8179 I CXCP    : Device Level: INFO_SUPPORTED_HARDWARE_LEVEL_LIMITED
+         1788888635.807  8008  8179 D CXCP    : Created CameraInternalAdapter<CameraId-10(11)> for CameraId-10
+         1788888635.807  8008  8179 W CXCP    : Failed to query camera ID list: Invalid list returned: [CameraId-10].
+         1788888635.807  8008  8179 D CXCP    : Loaded ConcurrentCameraIdsSet {}
+         1788888635.807  8008  8179 I CameraPresencePrvdr: Starting CameraPresenceProvider monitoring.
+         1788888635.807  8008  8179 I CameraPresenceSrc: First observer added. Starting monitoring.
+         1788888635.807  8008  8179 I PipePresenceSrc: Starting to collect camera ID flow.
+         1788888635.808  8008  8179 D CameraValidator: Verifying camera lens facing on emu64xa
+         1788888635.808  8008  8179 W CameraValidator: Camera LENS_FACING_FRONT verification failed
+         1788888635.808  8008  8179 W CameraValidator: java.lang.IllegalArgumentException: No available camera can be found. Cams:1 Id:10  Lens:1 PhyId:null  Filters:1 Id:Identifier{value=java.lang.Object@d3b046c} LensFilter:0
+         1788888635.808  8008  8179 W CameraValidator: 	at androidx.camera.core.CameraSelector.select(CameraSelector.java:109)
+         1788888635.808  8008  8179 W CameraValidator: 	at androidx.camera.core.impl.CameraValidatorImpl.validateOnFirstInit(CameraValidator.kt:128)
+         1788888635.808  8008  8179 W CameraValidator: 	at androidx.camera.core.CameraX.lambda$initAndRetryRecursively$3$androidx-camera-core-CameraX(CameraX.java:487)
+         1788888635.808  8008  8179 W CameraValidator: 	at androidx.camera.core.CameraX$$ExternalSyntheticLambda2.run(D8$$SyntheticClass:0)
+         1788888635.808  8008  8179 W CameraValidator: 	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:524)
+         1788888635.808  8008  8179 W CameraValidator: 	at java.util.concurrent.FutureTask.run(FutureTask.java:317)
+         1788888635.808  8008  8179 W CameraValidator: 	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:348)
+         1788888635.808  8008  8179 W CameraValidator: 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1156)
+         1788888635.808  8008  8179 W CameraValidator: 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:651)
+         1788888635.808  8008  8179 W CameraValidator: 	at androidx.camera.core.CameraExecutor$1.lambda$newThread$0(CameraExecutor.java:76)
+         1788888635.808  8008  8179 W CameraValidator: 	at androidx.camera.core.CameraExecutor$1$$ExternalSyntheticLambda0.run(D8$$SyntheticClass:0)
+         1788888635.808  8008  8179 W CameraValidator: 	at java.lang.Thread.run(Thread.java:1119)
+         1788888635.808  8008  8179 W CameraX : Retry init. Start time 1076762 current time 1082078
+         1788888635.808  8008  8179 W CameraX : androidx.camera.core.impl.CameraValidator$CameraIdListIncorrectException: Expected camera missing from device.
+         1788888635.808  8008  8179 W CameraX : 	at androidx.camera.core.impl.CameraValidatorImpl.validateOnFirstInit(CameraValidator.kt:136)
+         1788888635.808  8008  8179 W CameraX : 	at androidx.camera.core.CameraX.lambda$initAndRetryRecursively$3$androidx-camera-core-CameraX(CameraX.java:487)
+         1788888635.808  8008  8179 W CameraX : 	at androidx.camera.core.CameraX$$ExternalSyntheticLambda2.run(D8$$SyntheticClass:0)
+         1788888635.808  8008  8179 W CameraX : 	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:524)
+         1788888635.808  8008  8179 W CameraX : 	at java.util.concurrent.FutureTask.run(FutureTask.java:317)
+         1788888635.808  8008  8179 W CameraX : 	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:348)
+         1788888635.808  8008  8179 W CameraX : 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1156)
+         1788888635.808  8008  8179 W CameraX : 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:651)
+         1788888635.808  8008  8179 W CameraX : 	at androidx.camera.core.CameraExecutor$1.lambda$newThread$0(CameraExecutor.java:76)
+         1788888635.808  8008  8179 W CameraX : 	at androidx.camera.core.CameraExecutor$1$$ExternalSyntheticLambda0.run(D8$$SyntheticClass:0)
+         1788888635.808  8008  8179 W CameraX : 	at java.lang.Thread.run(Thread.java:1119)
+         1788888635.808  8008  8179 W CameraX : Caused by: java.lang.IllegalArgumentException: No available camera can be found. Cams:1 Id:10  Lens:1 PhyId:null  Filters:1 Id:Identifier{value=java.lang.Object@d3b046c} LensFilter:0
+         1788888635.808  8008  8179 W CameraX : 	at androidx.camera.core.CameraSelector.select(CameraSelector.java:109)
+         1788888635.808  8008  8179 W CameraX : 	at androidx.camera.core.impl.CameraValidatorImpl.validateOnFirstInit(CameraValidator.kt:128)
+         1788888635.808  8008  8179 W CameraX : 	... 10 more
+         1788888635.808  8008  8179 I CameraPresencePrvdr: Shutting down CameraPresenceProvider monitoring.
+         1788888635.808  8008  8179 I CameraPresenceSrc: Last observer removed. Stopping monitoring.
+         1788888635.808  8008  8179 I PipePresenceSrc: Stopping camera ID flow collection.
+         1788888636.312  8008  8179 D CXCP    : Created UseCaseConfigurationMap
+         1788888636.312  8008  8179 D CXCP    : Created CameraPipe in 0.162 ms
+         1788888636.312  8008  8179 D CXCP    : Camera2DeviceCache: Expected minimum camera count = 2
+         1788888636.313  8008  8179 D CXCP    : Created CameraFactoryAdapter in 0.010 ms
+         1788888636.313  8008  8179 W CXCP    : Failed to query camera ID list: Invalid list returned: [CameraId-10].
+         1788888636.313  8008  8179 D CXCP    : Loading metadata for CameraId-10
+         1788888636.315  8008  8179 I CXCP    : Loaded metadata for CameraId-10 in 1.677 ms
+         1788888636.315  8008  8179 D CXCP    : Updated available camera list: [] -> [10]
+         1788888636.315  8008  8179 D CXCP    : Creating new surface combinations for: [10]
+         1788888636.315  8008  8179 D CameraQuirks: camera2 CameraQuirks = CloseCaptureSessionOnVideoQuirk | FinalizeSessionOnCloseQuirk
+         1788888636.315  8008  8179 D CXCP    : Committed new surface combination map. Total cameras: 1
+         1788888636.315  8008  8179 D CameraRepository: Added camera: 10
+         1788888636.316  8008  8179 D CameraQuirks: camera2 CameraQuirks = CloseCaptureSessionOnVideoQuirk | FinalizeSessionOnCloseQuirk
+         1788888636.316  8008  8179 I CXCP    : Device Level: INFO_SUPPORTED_HARDWARE_LEVEL_LIMITED
+         1788888636.316  8008  8179 D CXCP    : Created CameraInternalAdapter<CameraId-10(12)> for CameraId-10
+         1788888636.316  8008  8179 W CXCP    : Failed to query camera ID list: Invalid list returned: [CameraId-10].
+         1788888636.316  8008  8179 D CXCP    : Loaded ConcurrentCameraIdsSet {}
+         1788888636.316  8008  8179 I CameraPresencePrvdr: Starting CameraPresenceProvider monitoring.
+         1788888636.316  8008  8179 I CameraPresenceSrc: First observer added. Starting monitoring.
+         1788888636.317  8008  8179 I PipePresenceSrc: Starting to collect camera ID flow.
+         1788888636.317  8008  8179 D CameraValidator: Verifying camera lens facing on emu64xa
+         1788888636.317  8008  8179 W CameraValidator: Camera LENS_FACING_FRONT verification failed
+         1788888636.317  8008  8179 W CameraValidator: java.lang.IllegalArgumentException: No available camera can be found. Cams:1 Id:10  Lens:1 PhyId:null  Filters:1 Id:Identifier{value=java.lang.Object@d3b046c} LensFilter:0
+         1788888636.317  8008  8179 W CameraValidator: 	at androidx.camera.core.CameraSelector.select(CameraSelector.java:109)
+         1788888636.317  8008  8179 W CameraValidator: 	at androidx.camera.core.impl.CameraValidatorImpl.validateOnFirstInit(CameraValidator.kt:128)
+         1788888636.317  8008  8179 W CameraValidator: 	at androidx.camera.core.CameraX.lambda$initAndRetryRecursively$3$androidx-camera-core-CameraX(CameraX.java:487)
+         1788888636.317  8008  8179 W CameraValidator: 	at androidx.camera.core.CameraX$$ExternalSyntheticLambda2.run(D8$$SyntheticClass:0)
+         1788888636.317  8008  8179 W CameraValidator: 	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:524)
+         1788888636.317  8008  8179 W CameraValidator: 	at java.util.concurrent.FutureTask.run(FutureTask.java:317)
+         1788888636.317  8008  8179 W CameraValidator: 	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:348)
+         1788888636.317  8008  8179 W CameraValidator: 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1156)
+         1788888636.317  8008  8179 W CameraValidator: 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:651)
+         1788888636.317  8008  8179 W CameraValidator: 	at androidx.camera.core.CameraExecutor$1.lambda$newThread$0(CameraExecutor.java:76)
+         1788888636.317  8008  8179 W CameraValidator: 	at androidx.camera.core.CameraExecutor$1$$ExternalSyntheticLambda0.run(D8$$SyntheticClass:0)
+         1788888636.317  8008  8179 W CameraValidator: 	at java.lang.Thread.run(Thread.java:1119)
+         1788888636.317  8008  8179 E CameraX : The device might underreport the amount of the cameras. Finish the initialize task since we are already reaching the maximum number of retries.
+         1788888636.320  8008  8179 D CameraPresencePrvdr: Registered state observer for camera: 10
+         1788888636.326  8008  8319 W CXCP    : Failed to query camera ID list: Invalid list returned: [CameraId-10].
+         1788888636.326  8008  8321 I CXCP    : New camera 10 detected
+         1788888636.327  8008  8321 W CXCP    : Failed to query camera ID list: Invalid list returned: [CameraId-10].
+         1788888636.327  8008  8179 D PipePresenceSrc: Flow emitted new camera set: CameraIdentifier{cameraIds=10}
+         1788888636.327  8008  8179 I PipePresenceSrc: Handling first camera set, triggering fresh query.
+         1788888636.328  8008  8179 D PipePresenceSrc: [FetchData] Refreshed camera list from hardware: [CameraIdentifier{cameraIds=10}]
+         1788888636.330  8008  8008 I CustomLifecycle: Switching lifecycle state from INITIALIZED to CREATED...
+         1788888636.336  8008  8008 I HybridCameraSessionSpec: Reconfiguring CameraSession with 1 connection(s)...
+         1788888636.344  8008  8008 D DeviceQuirks: core DeviceQuirks = SurfaceOrderQuirk
+         1788888636.344  8008  8008 D ResolvedFeatureGroup: resolveFeatureGroup: sessionConfig = SessionConfig@85d75fb {useCases=[Preview:androidx.camera.core.Preview-a8980cc9-f766-4d63-8123-24b871fc39d4, ImageCapture:androidx.camera.core.ImageCapture-73d33a3a-bac9-4a48-a1e7-bdf795443e52, ImageAnalysis:androidx.camera.core.ImageAnalysis-006ab0fc-e39c-4963-bc4b-8adc718871d4], frameRateRange=[0, 0], requiredFeatureGroup=[], preferredFeatureGroup=[], effects=[], viewPort=null}, lensFacing = 1
+         1788888636.344  8008  8008 D CameraUseCaseAdapter: simulateAddUseCases: appUseCasesToAdd = [Preview:androidx.camera.core.Preview-a8980cc9-f766-4d63-8123-24b871fc39d4, ImageCapture:androidx.camera.core.ImageCapture-73d33a3a-bac9-4a48-a1e7-bdf795443e52, ImageAnalysis:androidx.camera.core.ImageAnalysis-006ab0fc-e39c-4963-bc4b-8adc718871d4], featureGroup = null
+         1788888636.344  8008  8008 D CXCP    : Creating config for PREVIEW
+         1788888636.345  8008  8008 D CXCP    : Creating config for IMAGE_CAPTURE
+         1788888636.345  8008  8008 D CXCP    : Creating config for IMAGE_ANALYSIS
+         1788888636.345  8008  8008 D CXCP    : Creating config for PREVIEW
+         1788888636.346  8008  8008 D CXCP    : Creating config for IMAGE_CAPTURE
+         1788888636.346  8008  8008 D CXCP    : Creating config for IMAGE_ANALYSIS
+         1788888636.346  8008  8008 D UseCase : applyFeaturesToConfig: mFeatureGroup = null, this = Preview:androidx.camera.core.Preview-a8980cc9-f766-4d63-8123-24b871fc39d4
+         1788888636.347  8008  8008 D SupportedOutputSizesCollector: useCaseConfig = androidx.camera.core.impl.PreviewConfig@4dfe618, candidateSizes = [1280x960, 1280x720, 640x480, 352x288, 320x240]
+         1788888636.348  8008  8008 D UseCase : applyFeaturesToConfig: mFeatureGroup = null, this = ImageCapture:androidx.camera.core.ImageCapture-73d33a3a-bac9-4a48-a1e7-bdf795443e52
+         1788888636.348  8008  8008 D SupportedOutputSizesCollector: useCaseConfig = androidx.camera.core.impl.ImageCaptureConfig@a007871, candidateSizes = [1280x960, 1280x720, 640x480, 352x288, 320x240]
+         1788888636.348  8008  8008 D UseCase : applyFeaturesToConfig: mFeatureGroup = null, this = ImageAnalysis:androidx.camera.core.ImageAnalysis-006ab0fc-e39c-4963-bc4b-8adc718871d4
+         1788888636.348  8008  8008 D SupportedOutputSizesCollector: useCaseConfig = androidx.camera.core.impl.ImageAnalysisConfig@f4be656, candidateSizes = [1280x960, 1280x720, 640x480, 352x288, 320x240]
+         1788888636.349  8008  8008 D UseCase : applyFeaturesToConfig: mFeatureGroup = null, this = Preview:androidx.camera.core.Preview-a8980cc9-f766-4d63-8123-24b871fc39d4
+         1788888636.349  8008  8008 D UseCase : applyFeaturesToConfig: mFeatureGroup = null, this = ImageCapture:androidx.camera.core.ImageCapture-73d33a3a-bac9-4a48-a1e7-bdf795443e52
+         1788888636.349  8008  8008 D UseCase : applyFeaturesToConfig: mFeatureGroup = null, this = ImageAnalysis:androidx.camera.core.ImageAnalysis-006ab0fc-e39c-4963-bc4b-8adc718871d4
+         1788888636.349  8008  8008 D UseCase : applyFeaturesToConfig: mFeatureGroup = null, this = Preview:androidx.camera.core.Preview-a8980cc9-f766-4d63-8123-24b871fc39d4
+         1788888636.349  8008  8008 D UseCase : applyFeaturesToConfig: mFeatureGroup = null, this = ImageCapture:androidx.camera.core.ImageCapture-73d33a3a-bac9-4a48-a1e7-bdf795443e52
+         1788888636.350  8008  8008 D UseCase : applyFeaturesToConfig: mFeatureGroup = null, this = ImageAnalysis:androidx.camera.core.ImageAnalysis-006ab0fc-e39c-4963-bc4b-8adc718871d4
+         1788888636.350  8008  8008 D CXCP    : DynamicRangeResolver: Resolved dynamic range for use case androidx.camera.core.Preview-a8980cc9-f766-4d63-8123-24b871fc39d4 to no compatible HDR dynamic ranges.
+         1788888636.350  8008  8008 D CXCP    : DynamicRange@f94bc4{encoding=UNSPECIFIED, bitDepth=0}
+         1788888636.350  8008  8008 D CXCP    : ->
+         1788888636.350  8008  8008 D CXCP    : DynamicRange@376d7{encoding=SDR, bitDepth=8}
+         1788888636.350  8008  8008 D CXCP    : resolvedDynamicRanges = {androidx.camera.core.impl.ImageCaptureConfig@a007871=DynamicRange@376d7{encoding=SDR, bitDepth=8}, androidx.camera.core.impl.ImageAnalysisConfig@f4be656=DynamicRange@376d7{encoding=SDR, bitDepth=8}, androidx.camera.core.impl.PreviewConfig@4dfe618=DynamicRange@376d7{encoding=SDR, bitDepth=8}}
+         1788888636.350  8008  8008 D CXCP    : getSuggestedStreamSpecifications: isPreviewStabilizationSupported = false, isFeatureComboInvocation = false
+         1788888636.350  8008  8008 D CXCP    : resolveSpecsByCheckingMethod: checkingMethod = WITHOUT_FEATURE_COMBO
+         1788888636.351  8008  8008 D CXCP    : resolveSpecsBySettings: featureSettings = FeatureSettings(cameraMode=0, requiredMaxBitDepth=8, hasVideoCapture=false, videoStabilization=OFF, isUltraHdrOn=false, isHighSpeedOn=false, isFeatureComboInvocation=false, requiresFeatureComboQuery=false, targetFpsRange=[0, 0], isStrictFpsRequired=false)
+         1788888636.351  8008  8008 D CameraQuirks: camera2 CameraQuirks = CloseCaptureSessionOnVideoQuirk | FinalizeSessionOnCloseQuirk
+         1788888636.352  8008  8008 D CameraQuirks: camera2 CameraQuirks = CloseCaptureSessionOnVideoQuirk | FinalizeSessionOnCloseQuirk
+         1788888636.352  8008  8008 D CameraQuirks: camera2 CameraQuirks = CloseCaptureSessionOnVideoQuirk | FinalizeSessionOnCloseQuirk
+         1788888636.353  8008  8008 D CXCP    : resolveSpecsBySettings: bestSizesAndFps = BestSizesAndMaxFpsForConfigs(bestSizes=[1280x960, 1280x960, 640x480], bestSizesForStreamUseCase=null, maxFpsForBestSizes=30, maxFpsForStreamUseCase=2147483647, maxFpsForAllSizes=2147483647)
+         1788888636.354  8008  8008 I ConstraintResolver: Resolved constraints to: Config(fpsRange=null, previewStabilizationMode=OFF, videoStabilizationMode=null, videoDynamicRange=null, photoHDR=null)
+         1788888636.354  8008  8008 I HybridCameraSessionSpec: Binding use-cases: [Preview:androidx.camera.core.Preview-a8980cc9-f766-4d63-8123-24b871fc39d4, ImageCapture:androidx.camera.core.ImageCapture-73d33a3a-bac9-4a48-a1e7-bdf795443e52, ImageAnalysis:androidx.camera.core.ImageAnalysis-006ab0fc-e39c-4963-bc4b-8adc718871d4]
+         1788888636.358  8008  8008 W CXCP    : Detaching [] from UseCaseManager<CameraGraphConfigProvider<CameraId-10>> (Ignored)
+         1788888636.360  8008  8008 D ResolvedFeatureGroup: resolveFeatureGroup: sessionConfig = SessionConfig@85d75fb {useCases=[Preview:androidx.camera.core.Preview-a8980cc9-f766-4d63-8123-24b871fc39d4, ImageCapture:androidx.camera.core.ImageCapture-73d33a3a-bac9-4a48-a1e7-bdf795443e52, ImageAnalysis:androidx.camera.core.ImageAnalysis-006ab0fc-e39c-4963-bc4b-8adc718871d4], frameRateRange=[0, 0], requiredFeatureGroup=[], preferredFeatureGroup=[], effects=[], viewPort=null}, lensFacing = 1
+         1788888636.360  8008  8008 D CameraUseCaseAdapter: addUseCases: appUseCasesToAdd = [Preview:androidx.camera.core.Preview-a8980cc9-f766-4d63-8123-24b871fc39d4, ImageCapture:androidx.camera.core.ImageCapture-73d33a3a-bac9-4a48-a1e7-bdf795443e52, ImageAnalysis:androidx.camera.core.ImageAnalysis-006ab0fc-e39c-4963-bc4b-8adc718871d4], featureGroup = null
+         1788888636.360  8008  8008 D CXCP    : Creating config for PREVIEW
+         1788888636.360  8008  8008 D CXCP    : Creating config for IMAGE_CAPTURE
+         1788888636.360  8008  8008 D CXCP    : Creating config for IMAGE_ANALYSIS
+         1788888636.361  8008  8008 D CXCP    : Creating config for PREVIEW
+         1788888636.361  8008  8008 D CXCP    : Creating config for IMAGE_CAPTURE
+         1788888636.361  8008  8008 D CXCP    : Creating config for IMAGE_ANALYSIS
+         1788888636.361  8008  8008 D UseCase : applyFeaturesToConfig: mFeatureGroup = null, this = Preview:androidx.camera.core.Preview-a8980cc9-f766-4d63-8123-24b871fc39d4
+         1788888636.361  8008  8008 D SupportedOutputSizesCollector: useCaseConfig = androidx.camera.core.impl.PreviewConfig@6eb4ed5, candidateSizes = [1280x960, 1280x720, 640x480, 352x288, 320x240]
+         1788888636.361  8008  8008 D UseCase : applyFeaturesToConfig: mFeatureGroup = null, this = ImageCapture:androidx.camera.core.ImageCapture-73d33a3a-bac9-4a48-a1e7-bdf795443e52
+         1788888636.361  8008  8008 D SupportedOutputSizesCollector: useCaseConfig = androidx.camera.core.impl.ImageCaptureConfig@1f3a6ea, candidateSizes = [1280x960, 1280x720, 640x480, 352x288, 320x240]
+         1788888636.362  8008  8008 D UseCase : applyFeaturesToConfig: mFeatureGroup = null, this = ImageAnalysis:androidx.camera.core.ImageAnalysis-006ab0fc-e39c-4963-bc4b-8adc718871d4
+         1788888636.362  8008  8008 D SupportedOutputSizesCollector: useCaseConfig = androidx.camera.core.impl.ImageAnalysisConfig@4958ddb, candidateSizes = [1280x960, 1280x720, 640x480, 352x288, 320x240]
+         1788888636.362  8008  8008 D UseCase : applyFeaturesToConfig: mFeatureGroup = null, this = Preview:androidx.camera.core.Preview-a8980cc9-f766-4d63-8123-24b871fc39d4
+         1788888636.362  8008  8008 D UseCase : applyFeaturesToConfig: mFeatureGroup = null, this = ImageCapture:androidx.camera.core.ImageCapture-73d33a3a-bac9-4a48-a1e7-bdf795443e52
+         1788888636.362  8008  8008 D UseCase : applyFeaturesToConfig: mFeatureGroup = null, this = ImageAnalysis:androidx.camera.core.ImageAnalysis-006ab0fc-e39c-4963-bc4b-8adc718871d4
+         1788888636.362  8008  8008 D UseCase : applyFeaturesToConfig: mFeatureGroup = null, this = Preview:androidx.camera.core.Preview-a8980cc9-f766-4d63-8123-24b871fc39d4
+         1788888636.362  8008  8008 D UseCase : applyFeaturesToConfig: mFeatureGroup = null, this = ImageCapture:androidx.camera.core.ImageCapture-73d33a3a-bac9-4a48-a1e7-bdf795443e52
+         1788888636.362  8008  8008 D UseCase : applyFeaturesToConfig: mFeatureGroup = null, this = ImageAnalysis:androidx.camera.core.ImageAnalysis-006ab0fc-e39c-4963-bc4b-8adc718871d4
+         1788888636.362  8008  8008 D CXCP    : DynamicRangeResolver: Resolved dynamic range for use case androidx.camera.core.Preview-a8980cc9-f766-4d63-8123-24b871fc39d4 to no compatible HDR dynamic ranges.
+         1788888636.362  8008  8008 D CXCP    : DynamicRange@f94bc4{encoding=UNSPECIFIED, bitDepth=0}
+         1788888636.362  8008  8008 D CXCP    : ->
+         1788888636.362  8008  8008 D CXCP    : DynamicRange@376d7{encoding=SDR, bitDepth=8}
+         1788888636.363  8008  8008 D CXCP    : resolvedDynamicRanges = {androidx.camera.core.impl.ImageCaptureConfig@1f3a6ea=DynamicRange@376d7{encoding=SDR, bitDepth=8}, androidx.camera.core.impl.ImageAnalysisConfig@4958ddb=DynamicRange@376d7{encoding=SDR, bitDepth=8}, androidx.camera.core.impl.PreviewConfig@6eb4ed5=DynamicRange@376d7{encoding=SDR, bitDepth=8}}
+         1788888636.363  8008  8008 D CXCP    : getSuggestedStreamSpecifications: isPreviewStabilizationSupported = false, isFeatureComboInvocation = false
+         1788888636.363  8008  8008 D CXCP    : resolveSpecsByCheckingMethod: checkingMethod = WITHOUT_FEATURE_COMBO
+         1788888636.363  8008  8008 D CXCP    : resolveSpecsBySettings: featureSettings = FeatureSettings(cameraMode=0, requiredMaxBitDepth=8, hasVideoCapture=false, videoStabilization=OFF, isUltraHdrOn=false, isHighSpeedOn=false, isFeatureComboInvocation=false, requiresFeatureComboQuery=false, targetFpsRange=[0, 0], isStrictFpsRequired=false)
+         1788888636.363  8008  8008 D CameraQuirks: camera2 CameraQuirks = CloseCaptureSessionOnVideoQuirk | FinalizeSessionOnCloseQuirk
+         1788888636.363  8008  8008 D CameraQuirks: camera2 CameraQuirks = CloseCaptureSessionOnVideoQuirk | FinalizeSessionOnCloseQuirk
+         1788888636.363  8008  8008 D CameraQuirks: camera2 CameraQuirks = CloseCaptureSessionOnVideoQuirk | FinalizeSessionOnCloseQuirk
+         1788888636.364  8008  8008 D CXCP    : resolveSpecsBySettings: bestSizesAndFps = BestSizesAndMaxFpsForConfigs(bestSizes=[1280x960, 1280x960, 640x480], bestSizesForStreamUseCase=null, maxFpsForBestSizes=30, maxFpsForStreamUseCase=2147483647, maxFpsForAllSizes=2147483647)
+         1788888636.364  8008  8008 W CXCP    : Detaching [] from UseCaseManager<CameraGraphConfigProvider<CameraId-10>> (Ignored)
+         1788888636.364  8008  8008 D UseCase : applyFeaturesToConfig: mFeatureGroup = null, this = Preview:androidx.camera.core.Preview-a8980cc9-f766-4d63-8123-24b871fc39d4
+         1788888636.364  8008  8008 D Preview : onSuggestedStreamSpecUpdated: primaryStreamSpec = StreamSpec{resolution=1280x960, originalConfiguredResolution=1280x960, dynamicRange=DynamicRange@376d7{encoding=SDR, bitDepth=8}, sessionType=0, expectedFrameRateRange=[0, 0], implementationOptions=androidx.camera.camera2.impl.Camera2ImplConfig@71f0351, zslDisabled=false}, secondaryStreamSpec null
+         1788888636.364  8008  8008 D DeferrableSurface: Surface created[total_surfaces=1, used_surfaces=0](androidx.camera.core.processing.SurfaceEdge$SettableSurface@cdd47b6}
+         1788888636.367  8008  8008 D DeferrableSurface: Surface created[total_surfaces=2, used_surfaces=0](androidx.camera.core.SurfaceRequest$2@9ee2942}
+         1788888636.367  8008  8008 D DeferrableSurface: New surface in use[total_surfaces=2, used_surfaces=1](androidx.camera.core.SurfaceRequest$2@9ee2942}
+         1788888636.367  8008  8008 D DeferrableSurface: use count+1, useCount=1 androidx.camera.core.SurfaceRequest$2@9ee2942
+         1788888636.367  8008  8008 D UseCase : applyFeaturesToConfig: mFeatureGroup = null, this = ImageCapture:androidx.camera.core.ImageCapture-73d33a3a-bac9-4a48-a1e7-bdf795443e52
+         1788888636.368  8008  8008 D ImageCapture: onSuggestedStreamSpecUpdated: primaryStreamSpec = StreamSpec{resolution=1280x960, originalConfiguredResolution=1280x960, dynamicRange=DynamicRange@376d7{encoding=SDR, bitDepth=8}, sessionType=0, expectedFrameRateRange=[0, 0], implementationOptions=androidx.camera.camera2.impl.Camera2ImplConfig@f86fbaf, zslDisabled=false}, secondaryStreamSpec null
+         1788888636.368  8008  8008 D ImageCapture: createPipeline(cameraId: 10, streamSpec: StreamSpec{resolution=1280x960, originalConfiguredResolution=1280x960, dynamicRange=DynamicRange@376d7{encoding=SDR, bitDepth=8}, sessionType=0, expectedFrameRateRange=[0, 0], implementationOptions=androidx.camera.camera2.impl.Camera2ImplConfig@f86fbaf, zslDisabled=false})
+         1788888636.369  8008  8008 D DeferrableSurface: Surface created[total_surfaces=3, used_surfaces=1](androidx.camera.core.impl.ImmediateSurface@582abbc}
+         1788888636.371  8008  8008 D UseCase : applyFeaturesToConfig: mFeatureGroup = null, this = ImageAnalysis:androidx.camera.core.ImageAnalysis-006ab0fc-e39c-4963-bc4b-8adc718871d4
+         1788888636.371  8008  8008 D ImageAnalysis: onSuggestedStreamSpecUpdated: primaryStreamSpec = StreamSpec{resolution=640x480, originalConfiguredResolution=640x480, dynamicRange=DynamicRange@376d7{encoding=SDR, bitDepth=8}, sessionType=0, expectedFrameRateRange=[0, 0], implementationOptions=androidx.camera.camera2.impl.Camera2ImplConfig@6bb9e9a, zslDisabled=false}, secondaryStreamSpec null
+         1788888636.372  8008  8008 D DeferrableSurface: Surface created[total_surfaces=4, used_surfaces=1](androidx.camera.core.impl.ImmediateSurface@d51a3cb}
+         1788888636.372  8008  8008 I ActiveCameraSessionSingle: Camera #CameraId-10 State changed! Type: CLOSED | Error: null
+         1788888636.377  8008  8008 D DeferrableSurface: surface closed,  useCount=1 closed=true androidx.camera.core.SurfaceRequest$2@9ee2942
+         1788888636.377  8008  8008 D DeferrableSurface: surface closed,  useCount=0 closed=true androidx.camera.core.processing.SurfaceEdge$SettableSurface@cdd47b6
+         1788888636.377  8008  8008 D DeferrableSurface: Surface terminated[total_surfaces=3, used_surfaces=1](androidx.camera.core.processing.SurfaceEdge$SettableSurface@cdd47b6}
+         1788888636.377  8008  8008 D DeferrableSurface: use count-1,  useCount=0 closed=true androidx.camera.core.SurfaceRequest$2@9ee2942
+         1788888636.377  8008  8008 D DeferrableSurface: Surface no longer in use[total_surfaces=3, used_surfaces=0](androidx.camera.core.SurfaceRequest$2@9ee2942}
+         1788888636.377  8008  8008 D DeferrableSurface: Surface terminated[total_surfaces=2, used_surfaces=0](androidx.camera.core.SurfaceRequest$2@9ee2942}
+         1788888636.377  8008  8008 D DeferrableSurface: Surface created[total_surfaces=3, used_surfaces=0](androidx.camera.core.processing.SurfaceEdge$SettableSurface@bdab654}
+         1788888636.379  8008  8008 D DeferrableSurface: Surface created[total_surfaces=4, used_surfaces=0](androidx.camera.core.SurfaceRequest$2@e56e3c0}
+         1788888636.379  8008  8008 D DeferrableSurface: New surface in use[total_surfaces=4, used_surfaces=1](androidx.camera.core.SurfaceRequest$2@e56e3c0}
+         1788888636.379  8008  8008 D DeferrableSurface: use count+1, useCount=1 androidx.camera.core.SurfaceRequest$2@e56e3c0
+         1788888636.380  8008  8008 D DeferrableSurface: surface closed,  useCount=1 closed=true androidx.camera.core.SurfaceRequest$2@e56e3c0
+         1788888636.380  8008  8008 D DeferrableSurface: surface closed,  useCount=0 closed=true androidx.camera.core.processing.SurfaceEdge$SettableSurface@bdab654
+         1788888636.380  8008  8008 D DeferrableSurface: Surface terminated[total_surfaces=3, used_surfaces=1](androidx.camera.core.processing.SurfaceEdge$SettableSurface@bdab654}
+         1788888636.380  8008  8008 D DeferrableSurface: use count-1,  useCount=0 closed=true androidx.camera.core.SurfaceRequest$2@e56e3c0
+         1788888636.380  8008  8008 D DeferrableSurface: Surface no longer in use[total_surfaces=3, used_surfaces=0](androidx.camera.core.SurfaceRequest$2@e56e3c0}
+         1788888636.380  8008  8008 D DeferrableSurface: Surface terminated[total_surfaces=2, used_surfaces=0](androidx.camera.core.SurfaceRequest$2@e56e3c0}
+         1788888636.380  8008  8008 D DeferrableSurface: Surface created[total_surfaces=3, used_surfaces=0](androidx.camera.core.processing.SurfaceEdge$SettableSurface@8f715bb}
+         1788888636.380  8008  8008 D DeferrableSurface: Surface created[total_surfaces=4, used_surfaces=0](androidx.camera.core.SurfaceRequest$2@ef75297}
+         1788888636.380  8008  8008 D DeferrableSurface: New surface in use[total_surfaces=4, used_surfaces=1](androidx.camera.core.SurfaceRequest$2@ef75297}
+         1788888636.380  8008  8008 D DeferrableSurface: use count+1, useCount=1 androidx.camera.core.SurfaceRequest$2@ef75297
+         1788888636.381  8008  8008 D DeferrableSurface: surface closed,  useCount=1 closed=true androidx.camera.core.SurfaceRequest$2@ef75297
+         1788888636.381  8008  8008 D DeferrableSurface: surface closed,  useCount=0 closed=true androidx.camera.core.processing.SurfaceEdge$SettableSurface@8f715bb
+         1788888636.381  8008  8008 D DeferrableSurface: Surface terminated[total_surfaces=3, used_surfaces=1](androidx.camera.core.processing.SurfaceEdge$SettableSurface@8f715bb}
+         1788888636.381  8008  8008 D DeferrableSurface: use count-1,  useCount=0 closed=true androidx.camera.core.SurfaceRequest$2@ef75297
+         1788888636.381  8008  8008 D DeferrableSurface: Surface no longer in use[total_surfaces=3, used_surfaces=0](androidx.camera.core.SurfaceRequest$2@ef75297}
+         1788888636.381  8008  8008 D DeferrableSurface: Surface terminated[total_surfaces=2, used_surfaces=0](androidx.camera.core.SurfaceRequest$2@ef75297}
+         1788888636.381  8008  8008 D DeferrableSurface: Surface created[total_surfaces=3, used_surfaces=0](androidx.camera.core.processing.SurfaceEdge$SettableSurface@f8bf4ee}
+         1788888636.382  8008  8008 D DeferrableSurface: Surface created[total_surfaces=4, used_surfaces=0](androidx.camera.core.SurfaceRequest$2@ec671fa}
+         1788888636.382  8008  8008 D DeferrableSurface: New surface in use[total_surfaces=4, used_surfaces=1](androidx.camera.core.SurfaceRequest$2@ec671fa}
+         1788888636.382  8008  8008 D DeferrableSurface: use count+1, useCount=1 androidx.camera.core.SurfaceRequest$2@ec671fa
+         1788888636.382  8008  8008 D DeferrableSurface: surface closed,  useCount=1 closed=true androidx.camera.core.SurfaceRequest$2@ec671fa
+         1788888636.382  8008  8008 D DeferrableSurface: surface closed,  useCount=0 closed=true androidx.camera.core.processing.SurfaceEdge$SettableSurface@f8bf4ee
+         1788888636.382  8008  8008 D DeferrableSurface: Surface terminated[total_surfaces=3, used_surfaces=1](androidx.camera.core.processing.SurfaceEdge$SettableSurface@f8bf4ee}
+         1788888636.382  8008  8008 D DeferrableSurface: use count-1,  useCount=0 closed=true androidx.camera.core.SurfaceRequest$2@ec671fa
+         1788888636.382  8008  8008 D DeferrableSurface: Surface no longer in use[total_surfaces=3, used_surfaces=0](androidx.camera.core.SurfaceRequest$2@ec671fa}
+         1788888636.382  8008  8008 D DeferrableSurface: Surface terminated[total_surfaces=2, used_surfaces=0](androidx.camera.core.SurfaceRequest$2@ec671fa}
+         1788888636.382  8008  8008 D DeferrableSurface: Surface created[total_surfaces=3, used_surfaces=0](androidx.camera.core.processing.SurfaceEdge$SettableSurface@643aadd}
+         1788888636.383  8008  8008 D DeferrableSurface: Surface created[total_surfaces=4, used_surfaces=0](androidx.camera.core.SurfaceRequest$2@9d517d9}
+         1788888636.383  8008  8008 D DeferrableSurface: New surface in use[total_surfaces=4, used_surfaces=1](androidx.camera.core.SurfaceRequest$2@9d517d9}
+         1788888636.383  8008  8008 D DeferrableSurface: use count+1, useCount=1 androidx.camera.core.SurfaceRequest$2@9d517d9
+         1788888636.384  8008  8008 I CustomLifecycle: Switching lifecycle state from CREATED to RESUMED...
+         1788888636.389  8008  8008 D CXCP    : Attaching [Preview:androidx.camera.core.Preview-a8980cc9-f766-4d63-8123-24b871fc39d4, ImageCapture:androidx.camera.core.ImageCapture-73d33a3a-bac9-4a48-a1e7-bdf795443e52, ImageAnalysis:androidx.camera.core.ImageAnalysis-006ab0fc-e39c-4963-bc4b-8adc718871d4] from UseCaseManager<CameraGraphConfigProvider<CameraId-10>>
+         1788888636.392  8008  8008 D CXCP    : Prepared UseCaseCameraContext (Deferred)
+         1788888636.392  8008  8008 D CXCP    : Configured UseCaseCamera-1
+         1788888636.393  8008  8179 D CXCP    : populateSurfaceToStreamUseCaseMapping() - streamUseCaseMap = {}
+         1788888636.393  8008  8008 D CXCP    : setFlashAsync: flashMode = 2, requestControl = androidx.camera.camera2.impl.DeferredUseCaseCameraRequestControl@97f3538
+         1788888636.394  8008  8179 W CXCP    : Expected stream use case for androidx.camera.core.SurfaceRequest$2@9d517d9, null cannot be set!
+         1788888636.394  8008  8008 D CXCP    : Notifying [] camera control ready
+         1788888636.394  8008  8008 D ImageCapture: onCameraControlReady
+         1788888636.394  8008  8008 D CXCP    : setFlashAsync: flashMode = 2, requestControl = androidx.camera.camera2.impl.DeferredUseCaseCameraRequestControl@97f3538
+         1788888636.394  8008  8008 D PreviewView: Surface requested by Preview.
+         1788888636.395  8008  8179 W CXCP    : Expected stream use case for androidx.camera.core.impl.ImmediateSurface@582abbc, null cannot be set!
+         1788888636.395  8008  8179 W CXCP    : Expected stream use case for androidx.camera.core.impl.ImmediateSurface@d51a3cb, null cannot be set!
+         1788888636.395  8008  8008 D DeviceQuirks: view DeviceQuirks = 
+         1788888636.396  8008  8008 D PreviewView: Surface requested by Preview.
+         1788888636.396  8008  8008 D PreviewView: Surface requested by Preview.
+         1788888636.397  8008  8008 D PreviewView: Surface requested by Preview.
+         1788888636.397  8008  8008 D DeferrableSurface: surface closed,  useCount=1 closed=true androidx.camera.core.SurfaceRequest$2@9d517d9
+         1788888636.397  8008  8008 D DeferrableSurface: surface closed,  useCount=0 closed=true androidx.camera.core.processing.SurfaceEdge$SettableSurface@643aadd
+         1788888636.397  8008  8008 D DeferrableSurface: Surface terminated[total_surfaces=3, used_surfaces=1](androidx.camera.core.processing.SurfaceEdge$SettableSurface@643aadd}
+         1788888636.397  8008  8008 D DeferrableSurface: use count-1,  useCount=0 closed=true androidx.camera.core.SurfaceRequest$2@9d517d9
+         1788888636.397  8008  8008 D DeferrableSurface: Surface no longer in use[total_surfaces=3, used_surfaces=0](androidx.camera.core.SurfaceRequest$2@9d517d9}
+         1788888636.397  8008  8008 D DeferrableSurface: Surface terminated[total_surfaces=2, used_surfaces=0](androidx.camera.core.SurfaceRequest$2@9d517d9}
+         1788888636.397  8008  8008 D DeferrableSurface: Surface created[total_surfaces=3, used_surfaces=0](androidx.camera.core.processing.SurfaceEdge$SettableSurface@e9e8d26}
+         1788888636.399  8008  8008 D DeferrableSurface: Surface created[total_surfaces=4, used_surfaces=0](androidx.camera.core.SurfaceRequest$2@5aff4ac}
+         1788888636.400  8008  8008 D DeferrableSurface: New surface in use[total_surfaces=4, used_surfaces=1](androidx.camera.core.SurfaceRequest$2@5aff4ac}
+         1788888636.400  8008  8008 D DeferrableSurface: use count+1, useCount=1 androidx.camera.core.SurfaceRequest$2@5aff4ac
+         1788888636.403  8008  8008 D CXCP    : Prepared UseCaseCameraContext (Deferred)
+         1788888636.403  8008  8008 D CXCP    : Configured UseCaseCamera-2
+         1788888636.404  8008  8008 D CXCP    : setFlashAsync: flashMode = 2, requestControl = androidx.camera.camera2.impl.DeferredUseCaseCameraRequestControl@e3a8bd6
+         1788888636.404  8008  8008 D CXCP    : Notifying [] camera control ready
+         1788888636.405  8008  8008 D TextureViewImpl: SurfaceTexture available. Size: 1280x960
+         1788888636.405  8008  8008 D TextureViewImpl: Surface set on Preview.
+         1788888636.413  8008  8008 D PreviewView: Preview transformation info updated. TransformationInfo{getCropRect=Rect(0, 0 - 1280, 960), getRotationDegrees=90, getTargetRotation=-1, hasCameraTransform=true, getSensorToBufferTransform=Matrix{[1.0, 0.0, 0.0][0.0, 1.0, 0.0][0.0, 0.0, 1.0]}, isMirroring=false}
+         1788888636.413  8008  8008 D PreviewTransform: Transformation info set: TransformationInfo{getCropRect=Rect(0, 0 - 1280, 960), getRotationDegrees=90, getTargetRotation=-1, hasCameraTransform=true, getSensorToBufferTransform=Matrix{[1.0, 0.0, 0.0][0.0, 1.0, 0.0][0.0, 0.0, 1.0]}, isMirroring=false} 1280x960 false
+         1788888636.414  8008  8008 D PreviewView: Preview transformation info updated. TransformationInfo{getCropRect=Rect(0, 0 - 1280, 960), getRotationDegrees=90, getTargetRotation=-1, hasCameraTransform=true, getSensorToBufferTransform=Matrix{[1.0, 0.0, 0.0][0.0, 1.0, 0.0][0.0, 0.0, 1.0]}, isMirroring=false}
+         1788888636.414  8008  8008 D PreviewTransform: Transformation info set: TransformationInfo{getCropRect=Rect(0, 0 - 1280, 960), getRotationDegrees=90, getTargetRotation=-1, hasCameraTransform=true, getSensorToBufferTransform=Matrix{[1.0, 0.0, 0.0][0.0, 1.0, 0.0][0.0, 0.0, 1.0]}, isMirroring=false} 1280x960 false
+         1788888636.414  8008  8008 D PreviewView: Preview transformation info updated. TransformationInfo{getCropRect=Rect(0, 0 - 1280, 960), getRotationDegrees=90, getTargetRotation=-1, hasCameraTransform=true, getSensorToBufferTransform=Matrix{[1.0, 0.0, 0.0][0.0, 1.0, 0.0][0.0, 0.0, 1.0]}, isMirroring=false}
+         1788888636.415  8008  8008 D PreviewTransform: Transformation info set: TransformationInfo{getCropRect=Rect(0, 0 - 1280, 960), getRotationDegrees=90, getTargetRotation=-1, hasCameraTransform=true, getSensorToBufferTransform=Matrix{[1.0, 0.0, 0.0][0.0, 1.0, 0.0][0.0, 0.0, 1.0]}, isMirroring=false} 1280x960 false
+         1788888636.416  8008  8008 D PreviewView: Preview transformation info updated. TransformationInfo{getCropRect=Rect(0, 0 - 1280, 960), getRotationDegrees=90, getTargetRotation=-1, hasCameraTransform=true, getSensorToBufferTransform=Matrix{[1.0, 0.0, 0.0][0.0, 1.0, 0.0][0.0, 0.0, 1.0]}, isMirroring=false}
+         1788888636.416  8008  8008 D PreviewTransform: Transformation info set: TransformationInfo{getCropRect=Rect(0, 0 - 1280, 960), getRotationDegrees=90, getTargetRotation=-1, hasCameraTransform=true, getSensorToBufferTransform=Matrix{[1.0, 0.0, 0.0][0.0, 1.0, 0.0][0.0, 0.0, 1.0]}, isMirroring=false} 1280x960 false
+         1788888636.417  8008  8008 D PreviewView: Surface requested by Preview.
+         1788888636.420  8008  8008 D TextureViewImpl: SurfaceTexture about to be destroyed
+         1788888636.427  8008  8008 D TextureViewImpl: SurfaceTexture available. Size: 1280x960
+         1788888636.427  8008  8008 D TextureViewImpl: Surface set on Preview.
+         1788888636.431  8008  8008 D TextureViewImpl: Safe to release surface.
+         1788888636.431  8008  8008 D PreviewView: Preview transformation info updated. TransformationInfo{getCropRect=Rect(0, 0 - 1280, 960), getRotationDegrees=90, getTargetRotation=-1, hasCameraTransform=true, getSensorToBufferTransform=Matrix{[1.0, 0.0, 0.0][0.0, 1.0, 0.0][0.0, 0.0, 1.0]}, isMirroring=false}
+         1788888636.432  8008  8008 D PreviewTransform: Transformation info set: TransformationInfo{getCropRect=Rect(0, 0 - 1280, 960), getRotationDegrees=90, getTargetRotation=-1, hasCameraTransform=true, getSensorToBufferTransform=Matrix{[1.0, 0.0, 0.0][0.0, 1.0, 0.0][0.0, 0.0, 1.0]}, isMirroring=false} 1280x960 false
+         1788888636.450  8008  8179 I CXCP    : CameraGraph-1 (Camera 10)
+         1788888636.450  8008  8179 I CXCP    :   Facing:    Back (Physical, Limited)
+         1788888636.450  8008  8179 I CXCP    :   Mode:      Normal
+         1788888636.450  8008  8179 I CXCP    : Outputs:
+         1788888636.450  8008  8179 I CXCP    :   Stream-1    Output-1    1280x960    PRIVATE          [MirrorMode(value=1)] [DynamicRangeProfile(value=1)] [StreamUseHint(value=0)]
+         1788888636.450  8008  8179 I CXCP    :   Stream-2    Output-2    1280x960    JPEG             [DynamicRangeProfile(value=1)] [StreamUseHint(value=0)]
+         1788888636.450  8008  8179 I CXCP    :   Stream-3    Output-3    640x480     YUV_420_888      [DynamicRangeProfile(value=1)] [StreamUseHint(value=0)]
+         1788888636.450  8008  8179 I CXCP    : Session Template: TEMPLATE_PREVIEW
+         1788888636.450  8008  8179 I CXCP    : Session Parameters
+         1788888636.450  8008  8179 I CXCP    :   android.control.videoStabilizationMode             0
+         1788888636.450  8008  8179 I CXCP    : Default Template: TEMPLATE_PREVIEW
+         1788888636.450  8008  8179 I CXCP    : Default Parameters
+         1788888636.450  8008  8179 I CXCP    :   Metadata.Key(androidx.camera.camera2.pipe.captureRequestTag) android.hardware.camera2.CaptureRequest.setTag.CX
+         1788888636.450  8008  8179 I CXCP    :   android.control.videoStabilizationMode             0
+         1788888636.450  8008  8179 I CXCP    : Required Parameters: (None)
+         1788888636.450  8008  8179 D CXCP    : Camera graph updated from null to CameraGraph-1
+         1788888636.450  8008  8179 I CXCP    : Starting CameraGraph-1
+         1788888636.450  8008  8179 D CXCP    : GraphProcessor(cameraGraph: CameraGraph-1) onGraphStarting
+         1788888636.450  8008  8179 D CXCP    : CameraGraph-1 state updated to GRAPH_STARTING
+         1788888636.450  8008  8179 D CXCP    : Updated current camera internal state: OPENING to CombinedCameraState(state=OPENING, error=null)
+         1788888636.451  8008  8317 D CXCP    : PruningProcessingQueue: Pruning [RequestOpen(virtualCamera=VirtualCamera-1, sharedCameraIds=[], graphListener=GraphProcessor(cameraGraph: CameraGraph-1), isPrewarm=false, isForegroundObserver=androidx.camera.camera2.pipe.compat.Camera2CameraController$$ExternalSyntheticLambda1@f2bb36b)]
+         1788888636.452  8008  8008 I ActiveCameraSessionSingle: Camera #CameraId-10 State changed! Type: OPENING | Error: null
+         1788888636.452  8008  8320 D CXCP    : PruningProcessingQueue: Processing RequestOpen(virtualCamera=VirtualCamera-1, sharedCameraIds=[], graphListener=GraphProcessor(cameraGraph: CameraGraph-1), isPrewarm=false, isForegroundObserver=androidx.camera.camera2.pipe.compat.Camera2CameraController$$ExternalSyntheticLambda1@f2bb36b)
+         1788888636.452  8008  8320 D CXCP    : Camera2DeviceManagerImpl#processRequestOpen(CameraId-10)
+         1788888636.452  8008  8320 D CXCP    : Opening CameraId-10 with retries...
+         1788888636.456  8008  8179 D CXCP    : Started Camera2CameraController(CameraGraph-1)
+         1788888636.456  8008  8179 D CXCP    : Setting up Surfaces with UseCaseSurfaceManager
+         1788888636.457  8008  8179 W CXCP    : Failed to increment DeferrableSurfaces: Surfaces closed
+         1788888636.458  8008  8320 I CXCP    : Opening CameraId-10
+         1788888636.464  8008  8179 D CXCP    : Configured androidx.camera.camera2.impl.UseCaseCameraRequestControlImpl@f940ee0
+         1788888636.464  8008  8179 D CXCP    : UseCaseCamera is closed before setActiveResumeMode, skipping setup.
+         1788888636.465  8008  8179 D CXCP    : UseCaseCamera is closed before setActiveResumeMode, skipping setup.
+         1788888636.465  8008  8179 D CXCP    : Closing UseCaseCamera-1
+         1788888636.465  8008  8179 I CXCP    : Closing CameraGraph-1
+         1788888636.467  8008  8179 D CXCP    : Closed Camera2CameraController(CameraGraph-1)
+         1788888636.469  8008  8319 D CXCP    : GraphProcessor(cameraGraph: CameraGraph-1) onGraphStopping
+         1788888636.469  8008  8319 D CXCP    : CameraGraph-1 state updated to GRAPH_STOPPING
+         1788888636.470  8008  8319 D CXCP    : Updated current camera internal state: CLOSING to CombinedCameraState(state=CLOSING, error=null)
+         1788888636.470  8008  8319 D CXCP    : GraphProcessor(cameraGraph: CameraGraph-1) onGraphStopped
+         1788888636.470  8008  8319 D CXCP    : CameraGraph-1 state updated to GRAPH_STOPPED
+         1788888636.470  8008  8319 D CXCP    : Updated current camera internal state: CLOSED to CombinedCameraState(state=CLOSED, error=null)
+         1788888636.470  8008  8008 I ActiveCameraSessionSingle: Camera #CameraId-10 State changed! Type: CLOSING | Error: null
+         1788888636.471  8008  8319 D CXCP    : Finalizing CaptureSessionState-1
+         1788888636.471  8008  8008 I ActiveCameraSessionSingle: Camera #CameraId-10 State changed! Type: CLOSED | Error: null
+         1788888636.471  8008  8319 D CXCP    : Disconnecting VirtualCamera-1
+         1788888636.471  8008  8179 D CXCP    : androidx.camera.camera2.impl.UseCaseSurfaceManager@2afb46a remove surface listener
+         1788888636.471  8008  8179 D CXCP    : populateSurfaceToStreamUseCaseMapping() - streamUseCaseMap = {}
+         1788888636.471  8008  8179 W CXCP    : Expected stream use case for androidx.camera.core.SurfaceRequest$2@5aff4ac, null cannot be set!
+         1788888636.472  8008  8179 W CXCP    : Expected stream use case for androidx.camera.core.impl.ImmediateSurface@582abbc, null cannot be set!
+         1788888636.472  8008  8179 W CXCP    : Expected stream use case for androidx.camera.core.impl.ImmediateSurface@d51a3cb, null cannot be set!
+         1788888636.472  8008  8319 D CXCP    : Camera2CameraController(CameraGraph-1) is closed
+         1788888636.472  8008  8319 D CXCP    : Camera2CameraController(CameraGraph-1) finalized
+         1788888636.488  8008  8179 I CXCP    : CameraGraph-2 (Camera 10)
+         1788888636.488  8008  8179 I CXCP    :   Facing:    Back (Physical, Limited)
+         1788888636.488  8008  8179 I CXCP    :   Mode:      Normal
+         1788888636.488  8008  8179 I CXCP    : Outputs:
+         1788888636.488  8008  8179 I CXCP    :   Stream-4    Output-4    1280x960    PRIVATE          [MirrorMode(value=1)] [DynamicRangeProfile(value=1)] [StreamUseHint(value=0)]
+         1788888636.488  8008  8179 I CXCP    :   Stream-5    Output-5    1280x960    JPEG             [DynamicRangeProfile(value=1)] [StreamUseHint(value=0)]
+         1788888636.488  8008  8179 I CXCP    :   Stream-6    Output-6    640x480     YUV_420_888      [DynamicRangeProfile(value=1)] [StreamUseHint(value=0)]
+         1788888636.488  8008  8179 I CXCP    : Session Template: TEMPLATE_PREVIEW
+         1788888636.488  8008  8179 I CXCP    : Session Parameters
+         1788888636.488  8008  8179 I CXCP    :   android.control.videoStabilizationMode             0
+         1788888636.488  8008  8179 I CXCP    : Default Template: TEMPLATE_PREVIEW
+         1788888636.488  8008  8179 I CXCP    : Default Parameters
+         1788888636.488  8008  8179 I CXCP    :   Metadata.Key(androidx.camera.camera2.pipe.captureRequestTag) android.hardware.camera2.CaptureRequest.setTag.CX
+         1788888636.488  8008  8179 I CXCP    :   android.control.videoStabilizationMode             0
+         1788888636.488  8008  8179 I CXCP    : Required Parameters: (None)
+         1788888636.488  8008  8179 D CXCP    : Camera graph updated from CameraGraph-1 to CameraGraph-2
+         1788888636.488  8008  8179 I CXCP    : Starting CameraGraph-2
+         1788888636.488  8008  8179 D CXCP    : GraphProcessor(cameraGraph: CameraGraph-2) onGraphStarting
+         1788888636.488  8008  8179 D CXCP    : CameraGraph-2 state updated to GRAPH_STARTING
+         1788888636.488  8008  8179 D CXCP    : Updated current camera internal state: OPENING to CombinedCameraState(state=OPENING, error=null)
+         1788888636.489  8008  8008 I ActiveCameraSessionSingle: Camera #CameraId-10 State changed! Type: OPENING | Error: null
+         1788888636.491  8008  8179 D CXCP    : Started Camera2CameraController(CameraGraph-2)
+         1788888636.491  8008  8179 D CXCP    : Setting up Surfaces with UseCaseSurfaceManager
+         1788888636.492  8008  8179 D DeferrableSurface: use count+1, useCount=2 androidx.camera.core.SurfaceRequest$2@5aff4ac
+         1788888636.492  8008  8179 D DeferrableSurface: New surface in use[total_surfaces=4, used_surfaces=2](androidx.camera.core.impl.ImmediateSurface@582abbc}
+         1788888636.492  8008  8179 D DeferrableSurface: use count+1, useCount=1 androidx.camera.core.impl.ImmediateSurface@582abbc
+         1788888636.492  8008  8179 D DeferrableSurface: New surface in use[total_surfaces=4, used_surfaces=3](androidx.camera.core.impl.ImmediateSurface@d51a3cb}
+         1788888636.492  8008  8179 D DeferrableSurface: use count+1, useCount=1 androidx.camera.core.impl.ImmediateSurface@d51a3cb
+         1788888636.492  8008  8318 D CXCP    : PruningProcessingQueue: Pruning [RequestOpen(virtualCamera=VirtualCamera-2, sharedCameraIds=[], graphListener=GraphProcessor(cameraGraph: CameraGraph-2), isPrewarm=false, isForegroundObserver=androidx.camera.camera2.pipe.compat.Camera2CameraController$$ExternalSyntheticLambda1@824fd3c)]
+         1788888636.501  8008  8179 D CXCP    : UseCaseCameraRequestControlImpl#setParametersAsync: [DEFAULT] values = {CaptureRequest.Key(android.control.aeExposureCompensation)=0}, optionPriority = OPTIONAL
+         1788888636.510  8008  8321 I CXCP    : Unavailable camera 10 detected
+         1788888636.512  8008  8321 W CXCP    : Failed to query camera ID list: Invalid list returned: [CameraId-10].
+         1788888636.513  8008  8179 D CXCP    : UseCaseCameraState#updateState: parameters = {CaptureRequest.Key(android.control.aeExposureCompensation)=0}, internalParameters = {Metadata.Key(camerax.tag_bundle)=android.hardware.camera2.CaptureRequest.setTag.CX}, streams = null, template = RequestTemplate(value=1)
+         1788888636.515  8008  8179 D CXCP    : UseCaseCameraRequestControlImpl#setParametersAsync: [DEFAULT] values = {CaptureRequest.Key(android.control.zoomRatio)=1.0}, optionPriority = OPTIONAL
+         1788888636.515  8008  8179 D CXCP    : UseCaseCameraState#updateState: parameters = {CaptureRequest.Key(android.control.aeExposureCompensation)=0, CaptureRequest.Key(android.control.zoomRatio)=1.0}, internalParameters = {Metadata.Key(camerax.tag_bundle)=android.hardware.camera2.CaptureRequest.setTag.CX}, streams = null, template = RequestTemplate(value=1)
+         1788888636.515  8008  8179 D CXCP    : State3AControl.getFinalPreferredAeMode: preferAeMode = 1
+         1788888636.515  8008  8179 D CXCP    : UseCaseCameraRequestControlImpl#setParametersAsync: [DEFAULT] values = {CaptureRequest.Key(android.control.aeMode)=1, CaptureRequest.Key(android.control.afMode)=1, CaptureRequest.Key(android.control.awbMode)=1}, optionPriority = OPTIONAL
+         1788888636.516  8008  8179 D CXCP    : UseCaseCameraState#updateState: parameters = {CaptureRequest.Key(android.control.aeExposureCompensation)=0, CaptureRequest.Key(android.control.aeMode)=1, CaptureRequest.Key(android.control.afMode)=1, CaptureRequest.Key(android.control.awbMode)=1, CaptureRequest.Key(android.control.zoomRatio)=1.0}, internalParameters = {Metadata.Key(camerax.tag_bundle)=android.hardware.camera2.CaptureRequest.setTag.CX}, streams = null, template = RequestTemplate(value=1)
+         1788888636.516  8008  8179 D CXCP    : UseCaseCameraRequestControlImpl#updateCamera2ConfigAsync
+         1788888636.516  8008  8179 D CXCP    : UseCaseCameraState#updateState: parameters = {CaptureRequest.Key(android.control.aeExposureCompensation)=0, CaptureRequest.Key(android.control.aeMode)=1, CaptureRequest.Key(android.control.afMode)=1, CaptureRequest.Key(android.control.awbMode)=1, CaptureRequest.Key(android.control.zoomRatio)=1.0}, internalParameters = {Metadata.Key(camerax.tag_bundle)=android.hardware.camera2.CaptureRequest.setTag.CX}, streams = null, template = RequestTemplate(value=1)
+         1788888636.516  8008  8179 D CXCP    : UseCaseCameraRequestControlImpl: Building SessionConfig...
+         1788888636.517  8008  8179 D CXCP    : UseCaseCameraRequestControlImpl: SessionConfig built. Updating state...
+         1788888636.517  8008  8179 D CXCP    : UseCaseCameraRequestControlImpl: State update processing.
+         1788888636.517  8008  8179 D CXCP    : UseCaseCameraState#updateState: parameters = {CaptureRequest.Key(android.control.aeExposureCompensation)=0, CaptureRequest.Key(android.control.aeMode)=1, CaptureRequest.Key(android.control.afMode)=1, CaptureRequest.Key(android.control.awbMode)=1, CaptureRequest.Key(android.control.zoomRatio)=1.0}, internalParameters = {Metadata.Key(camerax.tag_bundle)=android.hardware.camera2.CaptureRequest.setTag.CX}, streams = [Stream-6], template = RequestTemplate(value=1)
+         1788888636.517  8008  8179 D CXCP    : Update RepeatingRequest: Request(streams=[Stream-6], template=RequestTemplate(value=1))@94f0479
+         1788888636.519  8008  8179 D CXCP    : UseCaseCameraState: Updating 3A modes: AE(AeMode(value=1), changed=true), AF(AfMode(value=1), changed=true), AWB(AwbMode(value=1), changed=true)
+         1788888636.520  8008  8179 D CXCP    : Controller3A#update3A: cancelling previous request null
+         1788888636.520  8008  8179 D CXCP    : UseCaseCameraRequestControlImpl: Building SessionConfig...
+         1788888636.520  8008  8179 D CXCP    : UseCaseCameraRequestControlImpl: SessionConfig built. Updating state...
+         1788888636.520  8008  8179 D CXCP    : UseCaseCameraRequestControlImpl: State update processing.
+         1788888636.521  8008  8179 D CXCP    : UseCaseCameraState#updateState: parameters = {CaptureRequest.Key(android.control.aeExposureCompensation)=0, CaptureRequest.Key(android.control.aeMode)=1, CaptureRequest.Key(android.control.afMode)=1, CaptureRequest.Key(android.control.awbMode)=1, CaptureRequest.Key(android.control.zoomRatio)=1.0}, internalParameters = {Metadata.Key(camerax.tag_bundle)=android.hardware.camera2.CaptureRequest.setTag.CX}, streams = [Stream-4, Stream-6], template = RequestTemplate(value=1)
+         1788888636.521  8008  8179 D CXCP    : Update RepeatingRequest: Request(streams=[Stream-4, Stream-6], template=RequestTemplate(value=1))@487b61f
+         1788888636.522  8008  8179 W CXCP    : Failed to emit CameraAvailable(10)
+         1788888636.523  8008  8325 D CXCP    : CameraId-10 has become available! Notifying listeners...
+         1788888636.525  8008  8179 I CXCP    : Opened CameraId-10 in 72.397 ms
+         1788888636.525  8008  8179 D CXCP    : Unavailable androidx.camera.core.SurfaceRequest$2@9d517d9, notify SessionConfig invalid
+         1788888636.526  8008  8320 I CXCP    : Camera open completed: OpenCameraResult(cameraState=CameraState-1, errorCode=null)
+         1788888636.529  8008  8179 D CXCP    : Configured Surface(name=android.graphics.SurfaceTexture@f81514f mNativeObject=127947648312624)/@0xccdf5e5 for Stream-4
+         1788888636.530  8008  8179 I CXCP    : Configured Stream-4 with Surface(name=android.graphics.SurfaceTexture@f81514f mNativeObject=127947648312624)/@0xccdf5e5
+         1788888636.530  8008  8179 D CXCP    : SurfaceActive androidx.camera.core.SurfaceRequest$2@5aff4ac in androidx.camera.camera2.impl.UseCaseSurfaceManager@8a7c9b1
+         1788888636.530  8008  8179 D DeferrableSurface: use count+1, useCount=3 androidx.camera.core.SurfaceRequest$2@5aff4ac
+         1788888636.530  8008  8179 D CXCP    : Configured Surface(name=null mNativeObject=127947648273072)/@0xd7b953b for Stream-5
+         1788888636.530  8008  8179 I CXCP    : Configured Stream-5 with Surface(name=null mNativeObject=127947648273072)/@0xd7b953b
+         1788888636.530  8008  8179 D CXCP    : SurfaceActive androidx.camera.core.impl.ImmediateSurface@582abbc in androidx.camera.camera2.impl.UseCaseSurfaceManager@8a7c9b1
+         1788888636.530  8008  8179 D DeferrableSurface: use count+1, useCount=2 androidx.camera.core.impl.ImmediateSurface@582abbc
+         1788888636.530  8008  8179 D CXCP    : Configured Surface(name=null mNativeObject=127947648304384)/@0xbb8b458 for Stream-6
+         1788888636.531  8008  8179 I CXCP    : Configured Stream-6 with Surface(name=null mNativeObject=127947648304384)/@0xbb8b458
+         1788888636.531  8008  8179 D CXCP    : SurfaceActive androidx.camera.core.impl.ImmediateSurface@d51a3cb in androidx.camera.camera2.impl.UseCaseSurfaceManager@8a7c9b1
+         1788888636.531  8008  8179 D DeferrableSurface: use count+1, useCount=2 androidx.camera.core.impl.ImmediateSurface@d51a3cb
+         1788888636.531  8008  8012 I m.brailleme.app: Background concurrent mark compact GC freed 10MB AllocSpace bytes, 4(104KB) LOS objects, 50% free, 17MB/35MB, paused 4.696ms,1.701ms total 132.936ms
+         1788888636.531  8008  8320 I CXCP    : PruningCameraDeviceManager: CameraId-10 opened successfully
+         1788888636.532  8008  8179 I CXCP    : Surface setup complete
+         1788888636.532  8008  8179 D DeferrableSurface: use count-1,  useCount=2 closed=false androidx.camera.core.SurfaceRequest$2@5aff4ac
+         1788888636.532  8008  8179 D DeferrableSurface: use count-1,  useCount=1 closed=false androidx.camera.core.impl.ImmediateSurface@582abbc
+         1788888636.533  8008  8179 D DeferrableSurface: use count-1,  useCount=1 closed=false androidx.camera.core.impl.ImmediateSurface@d51a3cb
+         1788888636.533  8008  8320 D CXCP    : PruningProcessingQueue: Processing RequestOpen(virtualCamera=VirtualCamera-2, sharedCameraIds=[], graphListener=GraphProcessor(cameraGraph: CameraGraph-2), isPrewarm=false, isForegroundObserver=androidx.camera.camera2.pipe.compat.Camera2CameraController$$ExternalSyntheticLambda1@824fd3c)
+         1788888636.533  8008  8320 D CXCP    : Camera2DeviceManagerImpl#processRequestOpen(CameraId-10)
+         1788888636.535  8008  8320 I CXCP    : Creating CameraCaptureSession from CameraId-10 using CaptureSessionState-2 with: 
+         1788888636.535  8008  8320 I CXCP    :   Stream-4 -> Surface(name=android.graphics.SurfaceTexture@f81514f mNativeObject=127947648312624)/@0xccdf5e5
+         1788888636.535  8008  8320 I CXCP    :   Stream-5 -> Surface(name=null mNativeObject=127947648273072)/@0xd7b953b
+         1788888636.535  8008  8320 I CXCP    :   Stream-6 -> Surface(name=null mNativeObject=127947648304384)/@0xbb8b458
+         1788888636.584  8008  8320 D CXCP    : CXCP#createCaptureSession-10 - 48.975 ms
+         1788888636.585  8008  8179 D CXCP    : CaptureSessionState-2 Configured
+         1788888636.586  8008  8179 I CXCP    : Configured CaptureSessionState-2 in 51.823 ms
+         1788888636.586  8008  8179 D CXCP    : GraphProcessor(cameraGraph: CameraGraph-2) onGraphStarted
+         1788888636.589  8008  8318 D CXCP    : Building CaptureRequest for Request(streams=[Stream-4, Stream-6], template=RequestTemplate(value=1))@487b61f
+         1788888636.590  8008  8179 D CXCP    : CameraGraph-2 state updated to GRAPH_STARTED
+         1788888636.590  8008  8179 D CXCP    : Updated current camera internal state: OPEN to CombinedCameraState(state=OPEN, error=null)
+         1788888636.590  8008  8318 D CXCP    : CXCP#createCaptureRequest-10 - 0.215 ms
+         1788888636.590  8008  8179 D CXCP    : CaptureSessionState-2 Ready
+         1788888636.592  8008  8008 I ActiveCameraSessionSingle: Camera #CameraId-10 State changed! Type: OPEN | Error: null
+         1788888636.592  8008  8318 D CXCP    : GraphRequestProcessor-1 submitting Camera2CaptureSequence-1
+         1788888636.599  8008  8179 D CXCP    : CaptureSessionState-2 Active
+         1788888636.601  8008  8318 D CXCP    : CXCP#setRepeatingRequest-10 - 6.105 ms
+         1788888636.601  8008  8318 D CXCP    : GraphRequestProcessor-1 submitted Camera2CaptureSequence-1
+         1788888636.647  8008  8008 D StreamStateObserver: Update Preview stream state to STREAMING
+         1788888636.653  8008  8008 I HybridPreviewViewSpec: PreviewView started!
+         1788888636.659  8008  8252 D nativeloader: Load /data/app/~~M5NfPB4B-8jLj3Q8Y7VTrw==/com.brailleme.app-hXgYt9aL0YVpbH-r7P6PtQ==/base.apk!/lib/x86_64/libimage_processing_util_jni.so using class loader ns clns-9 (caller=/data/app/~~M5NfPB4B-8jLj3Q8Y7VTrw==/com.brailleme.app-hXgYt9aL0YVpbH-r7P6PtQ==/base.apk): ok
+         1788888636.831  8008  8027 I ReactNativeJS: 'BRAILLE_WORD_TRACKING_FAILURE', '{"stage":"frame-transform","code":"preview_outside_large","errorName":"Error","frameWidth":480,"frameHeight":640,"frameOrientation":"up"}'
+         1788888636.838  8008  8027 I ReactNativeJS: 'BRAILLE_WORD_TRACKING_METRICS', '{"schemaVersion":1,"elapsedMs":134,"received":4,"admitted":1,"busyDrops":0,"throttled":1,"disabledDrops":2,"runnerDrops":0,"completed":1,"errors":1,"meanMs":28,"maxMs":28,"latencyUpperBoundsMs":[50,100,200,400,800,1600,null],"latencyBuckets":[1,0,0,0,0,0,0]}'

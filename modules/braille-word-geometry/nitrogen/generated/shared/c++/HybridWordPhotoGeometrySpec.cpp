@@ -15,6 +15,7 @@ namespace margelo::nitro::braillewordgeometry {
     // load custom methods/properties
     registerHybrids(this, [](Prototype& prototype) {
       prototype.registerHybridMethod("getGeometry", &HybridWordPhotoGeometrySpec::getGeometry);
+      prototype.registerHybridMethod("resizePixels", &HybridWordPhotoGeometrySpec::resizePixels);
     });
   }
 

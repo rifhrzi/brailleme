@@ -1,0 +1,71 @@
+C:\bm-envs\word-symbols-tensorflow\Lib\site-packages\tensorflow\lite\python\interpreter.py:457: UserWarning:     Warning: tf.lite.Interpreter is deprecated and is scheduled for deletion in
+    TF 2.20. Please use the LiteRT interpreter from the ai_edge_litert package.
+    See the [migration guide](https://ai.google.dev/edge/litert/migration)
+    for details.
+    
+  warnings.warn(_INTERPRETER_DELETION_WARNING)
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+{
+  "scope": "Two previously observed public numeric photo crops reinterpreted with the new numeric grammar; not independent holdout or Indonesian physical camera evidence",
+  "model_sha256": "659a235c0ee32f6ee59b7388dc278abcbba4711b8c742380619f3b7a1682f715",
+  "fixture_manifest_sha256": "f025c127b88f6ef797e9cd236818d8177700b66e737a7472d53b517a7afb1f35",
+  "thresholds": {
+    "proposalScore": 0.25,
+    "acceptScore": 0.25,
+    "dotConfidence": 0.7,
+    "nmsIou": 0.25,
+    "minCellWidth": 0.008,
+    "minCellHeight": 0.06,
+    "edgeMargin": 0.008,
+    "maxRowDeviation": 0.55,
+    "maxGapRatio": 1.2,
+    "maxOverlapRatio": 0.5
+  },
+  "total": 2,
+  "correct": 2,
+  "accepted": 2,
+  "used_for_external_checkpoint_or_threshold_selection": false,
+  "is_natural_whole_word_benchmark": false,
+  "rows": [
+    {
+      "image": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\rejection-fixtures-v3\\unsupported_pattern-01.png",
+      "image_sha256": "c2671b221999c8bf1877f9eb881177ce66f6873351c9ffb54f2a13a39012dc7b",
+      "category": "natural_public_numbers",
+      "expected_reject": false,
+      "expected": "66",
+      "predicted": "66",
+      "rejection": "",
+      "detected_cell_count": 3,
+      "correct": true
+    },
+    {
+      "image": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\.braille-training-work\\word-scan-v1-20260905\\rejection-fixtures-v3\\unsupported_pattern-03.png",
+      "image_sha256": "52ec357d1852e3abbb67acf6b204c7b810a208ef035d3328fa05b479ff45924c",
+      "category": "natural_public_numbers",
+      "expected_reject": false,
+      "expected": "67",
+      "predicted": "67",
+      "rejection": "",
+      "detected_cell_count": 3,
+      "correct": true
+    }
+  ],
+  "by_category": {
+    "natural_public_numbers": {
+      "total": 2,
+      "correct": 2,
+      "accepted": 2
+    }
+  },
+  "original_rgb_quality_checked_before_inference": true,
+  "decoder_version": "six-dot-id-v3",
+  "plain_latin_expected_lowercase": false,
+  "all_frozen_image_hashes_verified": true,
+  "source_sha256": {
+    "training/scripts/word_diagnostics.py": "dda4828a297c173ec769660882909ec01f1c7850b97b9aea73a5c420c456a82f",
+    "training/scripts/word_benchmark.py": "aca8bc904f58c6301c456a2b9017df01e17d3609fa00ae2e0ecb7f77ee1f554e",
+    "training/scripts/word_decode.py": "20fb305b3fbcad7595129b17ff9f4875fbb52445409a498f917fc239b7b3c606",
+    "training/scripts/word_symbols.py": "9e43dc9484f035ba3bbfcb49344050714dfd1c636d107b92cb2ce1faded29ba3",
+    "training/scripts/word_data.py": "d692b4b28620af7e4b40ebdedccda68769feb8d3f51bd1508e807487fd32b7d7"
+  }
+}

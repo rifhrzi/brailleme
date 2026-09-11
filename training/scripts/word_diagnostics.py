@@ -8,7 +8,7 @@ os.environ.setdefault("TF_CPP_MIN_LOG_LEVEL", "2")
 import numpy as np
 from PIL import Image
 import tensorflow as tf
-from word_decode import decode
+from word_decode import decode, DECODER_VERSION
 from word_data import WIDTH, HEIGHT, save_json
 from word_benchmark import quality
 
@@ -18,11 +18,15 @@ def main():
     parser.add_argument("--run", type=Path, required=True)
     parser.add_argument("--fixtures", "--manifest", dest="fixtures", type=Path, required=True)
     parser.add_argument("--report-name", default="repetition-diagnostics.json")
+    parser.add_argument('--plain-latin-lowercase',action='store_true',help='Derive lowercase plain-letter expectations without modifying the frozen diagnostic manifest')
     args = parser.parse_args()
     report_path=args.run/args.report_name
     if report_path.exists():
         raise SystemExit('Use a new report name; frozen diagnostic results must not be overwritten')
     manifest = json.loads(args.fixtures.read_text())
+    if args.plain_latin_lowercase:
+        for record in manifest['records']:
+            record['expected']=record['expected'].lower()
     conversion = json.loads((args.run/"export-report.json").read_text())
     thresholds = conversion['thresholds']
     artifact = args.run/"word_reader.tflite"
@@ -59,9 +63,11 @@ def main():
                                    'accepted':sum(row['category']==category and bool(row['predicted']) for row in rows)}
                            for category in sorted({row['category'] for row in rows})}
     report['original_rgb_quality_checked_before_inference']=True
+    report['decoder_version']=DECODER_VERSION
+    report['plain_latin_expected_lowercase']=args.plain_latin_lowercase
     report['all_frozen_image_hashes_verified']=True
     report['source_sha256']={f'training/scripts/{name}':hashlib.sha256((Path(__file__).parent/name).read_bytes()).hexdigest()
-                            for name in ('word_diagnostics.py', 'word_benchmark.py', 'word_decode.py', 'word_data.py')}
+                            for name in ('word_diagnostics.py', 'word_benchmark.py', 'word_decode.py', 'word_symbols.py', 'word_data.py')}
     save_json(report_path, report)
     print(json.dumps(report, indent=2), flush=True)
 

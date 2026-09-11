@@ -1,0 +1,20 @@
+{
+  "command": [
+    "C:\\bm-envs\\word-symbols-tensorflow\\Scripts\\python.exe",
+    "training/scripts/word_benchmark.py",
+    "--run",
+    "C:\\bm-symbols-20260908\\deployment-baseline",
+    "--data",
+    ".braille-training-work/word-scan-v1-20260905/data",
+    "--dataset",
+    "C:\\bm-datasets\\AngelinaDataset",
+    "--legacy",
+    "training/evidence/braille-word-reader-v1/experimental-internal-best/public-benchmark.json",
+    "--plain-latin-lowercase"
+  ],
+  "started_at_utc": "2026-09-08T15:20:13.650991+00:00",
+  "finished_at_utc": "2026-09-08T15:20:57.823239+00:00",
+  "exit_code": 0,
+  "log": "C:\\bm-symbols-20260908\\evidence-deployment-benchmark.log",
+  "log_sha256": "209d4512542a0534b9380b48650a9573bed67afa2e7ee8f92ab29d6bf01ece50"
+}

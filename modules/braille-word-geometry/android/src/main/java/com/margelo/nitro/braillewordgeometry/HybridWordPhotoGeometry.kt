@@ -3,9 +3,15 @@ package com.margelo.nitro.braillewordgeometry
 import androidx.annotation.Keep
 import com.margelo.nitro.camera.HybridPhotoSpec
 import com.margelo.nitro.camera.hybrids.instances.HybridPhoto
+import com.margelo.nitro.core.ArrayBuffer
 
 @Keep
 class HybridWordPhotoGeometry : HybridWordPhotoGeometrySpec() {
+  override fun resizePixels(buffer: ArrayBuffer, width: Double, height: Double, pixelFormat: String, androidBitmap: Boolean): WordPixelResult {
+    val resized = WordPixelResize.resize(buffer.getBuffer(false), width, height, pixelFormat, androidBitmap)
+    return WordPixelResult(ArrayBuffer.wrap(resized.tensor), resized.meanLuminance, resized.contrast)
+  }
+
   override fun getGeometry(photo: HybridPhotoSpec): PhotoGeometry {
     val captured = photo as? HybridPhoto
       ?: throw IllegalArgumentException("Unsupported photo implementation")

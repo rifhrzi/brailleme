@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "declaredBeforeApkRuntime": true,
+  "environment": "BrailleMe_API_36 read-only emulator; no physical camera claims",
+  "collectionSeconds": 600,
+  "initialPreviewPhaseSeconds": 115,
+  "initialPreviewAnalysisWindowSeconds": [5, 110],
+  "laterActionDurationSeconds": 480,
+  "laterActionIntervalSeconds": 30,
+  "timingNote": "Record actual action start and end; intended phases are not evidence that they occurred. Keep every successful, rejected and failed capture.",
+  "surfaceNote": "SurfaceFlinger measures composition, which can include UI redraws. Report it as a preview proxy, not direct proof of camera throughput. The initial phase has no intended shutter actions; analyze camera-service stream counters separately if actual evidence permits.",
+  "memoryScope": "All 600 seconds, including later photo/rescan cycles.",
+  "photoScope": "All observed terminal photo metrics, including success, rejection and error; nearest-rank p95. No timing is inferred from a tap alone.",
+  "targets": { "previewFps": 24, "photoP95Ms": 2000 },
+  "releaseAcceptance": "not_assessed"
+}

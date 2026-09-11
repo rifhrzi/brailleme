@@ -1,0 +1,112 @@
+{
+  "createdAtUtc": "2026-09-10T16:31:06.866801+00:00",
+  "purpose": "Compact verified copies and report summaries; original experiment evidence is unchanged and retained",
+  "files": [
+    {
+      "source": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\test-artifact-comparison.json",
+      "sourceSha256": "ac9da16a8e910f5fb049bb6f79742ea2fdcd8f03fe7edfe1692194e51ec78c75",
+      "file": "test-artifact-comparison-summary.json",
+      "kind": "derived_metric_summary",
+      "sha256": "4be3eaa7a6c2f026e8464535303567715944d74a19598836640ae8149854044d",
+      "sizeBytes": 20869
+    },
+    {
+      "source": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\public-regression-v4.json",
+      "sourceSha256": "f35716eec4e5dbbaf2ccfe68e76ef096f9a0a8ac00faf5bbd1cb544b9fdc5fb3",
+      "file": "public-regression-summary.json",
+      "kind": "derived_metric_summary",
+      "sha256": "51d6d74bf396ae04cbab8e7fbeacf8885a73f07acebe9f3d79d16d1e58049d2f",
+      "sizeBytes": 11027
+    },
+    {
+      "source": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\test-evaluation.json",
+      "sourceSha256": "742ae8db8d5ffd7303765be3e88f97efa6371a2c4917d723f1c5e3dcba03a21a",
+      "file": "test-evaluation-summary.json",
+      "kind": "derived_metric_summary",
+      "sha256": "2a1ea9521a28a8be3c6cae152a99bfe9f046b259e4950ed56c9f184ccfd987a3",
+      "sizeBytes": 7542
+    },
+    {
+      "source": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\export\\export-parity.json",
+      "file": "export-parity.json",
+      "kind": "exact_copy",
+      "sha256": "2ef340a0ee114098dbaf5a404166e17778fd1a5fb02df110ba946094d67388f9",
+      "sizeBytes": 2187
+    },
+    {
+      "source": "C:\\bm-symbols-20260908\\accuracy80-20260910\\final-method-selection.json",
+      "file": "final-method-selection.json",
+      "kind": "exact_copy",
+      "sha256": "e75d6e8856516fc8fe4530a3ea599532b2fb6a6f0f51ef7a53cd0609ce92f39b",
+      "sizeBytes": 1637
+    },
+    {
+      "source": "C:\\bm-symbols-20260908\\accuracy80-20260910\\final-test-evaluation.json",
+      "file": "final-test-evaluation.json",
+      "kind": "exact_copy",
+      "sha256": "48132f5c10ea0e63b9496cd407d4b0a0535aca858273b74b10e6b29757d85633",
+      "sizeBytes": 277
+    },
+    {
+      "source": "C:\\bm-symbols-20260908\\accuracy80-20260910\\test-evaluation-reservation.json",
+      "file": "test-evaluation-reservation.json",
+      "kind": "exact_copy",
+      "sha256": "986282043396a0a0109e181d221cd42f798c45a0b1c9b5aa3d819836c2a3aa39",
+      "sizeBytes": 308
+    },
+    {
+      "source": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\selection.json",
+      "file": "detector-selection.json",
+      "kind": "exact_copy",
+      "sha256": "4235598b3db21fc537c5741207514579fd6764644386d698688cc0ee141bc952",
+      "sizeBytes": 488
+    },
+    {
+      "source": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-cell-refiner-pilot\\selection.json",
+      "file": "refiner-pilot-selection.json",
+      "kind": "exact_copy",
+      "sha256": "36c7167c49773f57cc15fe432c12bb61747ceb7374c6003cf25ce63fd4d0fd1c",
+      "sizeBytes": 7069
+    },
+    {
+      "source": "C:\\bm-symbols-20260908\\accuracy80-20260910\\evidence\\qualification-tests.json",
+      "file": "qualification-tests.json",
+      "kind": "exact_copy",
+      "sha256": "5448c78b91a8e3ca85afc85805624fae8c3195810275cdd2df166985ca38ceca",
+      "sizeBytes": 10139
+    },
+    {
+      "source": "C:\\bm-symbols-20260908\\accuracy80-20260910\\evidence\\qualification-tests.log",
+      "file": "qualification-tests.log",
+      "kind": "exact_copy",
+      "sha256": "a2e9ac7942ec931209fa2f3e34c890600af92c5c6617940d0ba453f173ff86b8",
+      "sizeBytes": 14620
+    },
+    {
+      "source": "C:\\bm-symbols-20260908\\accuracy80-20260910\\evidence\\final-deployed-model-verify.log",
+      "file": "final-deployed-model-verify.log",
+      "kind": "exact_copy",
+      "sha256": "ba6b4947f6bae88d4b166f7c44473ddd53ec512d04b6442422e8964ee1b29460",
+      "sizeBytes": 710
+    },
+    {
+      "source": "C:\\bm-symbols-20260908\\accuracy80-20260910\\evidence\\final-audit.json",
+      "file": "final-audit.json",
+      "kind": "exact_copy",
+      "sha256": "6c11f9913b49f56c68c69ff27b4d3e8da8a8c52de2f20e473322047bf5efd01e",
+      "sizeBytes": 8508
+    },
+    {
+      "source": "C:\\bm-symbols-20260908\\accuracy80-20260910\\evidence\\final-corpus-integrity.json",
+      "file": "final-corpus-integrity.json",
+      "kind": "exact_copy",
+      "sha256": "e58a3105e408866ea81064edd7a0ca8f864673c49d3152bc587144d8cec4457d",
+      "sizeBytes": 165
+    }
+  ],
+  "excludedLargeAssets": [
+    "NPZ oracles",
+    "dataset and composition images",
+    "model checkpoint/TFLite already retained separately"
+  ]
+}

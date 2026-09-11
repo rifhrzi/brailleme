@@ -37,7 +37,7 @@ function LoadingScanner() {
     <Screen testID="live-route-loading">
       <SectionCard title="Membuka pemindai">
         <Text accessibilityLiveRegion="polite" selectable style={typography.body}>
-          Menyiapkan komponen kamera.
+          Menyiapkan kamera.
         </Text>
       </SectionCard>
     </Screen>
@@ -57,7 +57,7 @@ export function ErrorBoundary({ retry }: ErrorBoundaryProps) {
     <Screen testID="live-route-error">
       <SectionCard title="Pemindai tidak dapat dibuka">
         <Text accessibilityRole="alert" selectable style={typography.body}>
-          Tidak ada gambar atau hasil yang dibuat. Coba buka kembali pemindai.
+          Coba buka kembali pemindai. Jika masih gagal, tutup lalu buka aplikasi.
         </Text>
         <AccessibleButton
           label="Coba lagi"
@@ -125,29 +125,28 @@ export function LiveRouteView({
       <Screen testID="live-activation-gate">
         <View style={styles.hero}>
           <Text accessibilityRole="header" selectable style={styles.title}>
-            Pindai satu kata
+            Pindai Braille
           </Text>
           <Text selectable style={styles.intro}>
-            Kamera hanya aktif setelah Anda menyetujuinya pada setiap kunjungan.
-            Satu foto digunakan untuk membaca seluruh kata dari kiri ke kanan.
+            Aktifkan kamera untuk membaca satu kata atau rangkaian angka Braille
+            beserta tanda bacanya.
           </Text>
         </View>
         <SectionCard title="Sebelum kamera aktif">
           <Text selectable style={styles.body}>
-            Kamera dan pemrosesan offline dimulai setelah Anda menekan tombol di
-            bawah. Tempatkan satu kata utuh dalam kotak lalu tekan Pindai kata.
-            Maksimal 12 huruf A sampai Z dalam satu baris. Foto dan hasil tidak
-            disimpan atau dikirim.
+            Letakkan seluruh kata atau angka di dalam bingkai, termasuk tanda
+            kapital dan tanda baca. Tahan kamera, lalu tekan Pindai. Gunakan satu
+            baris, maksimal 12 karakter. Foto dan hasil diproses di perangkat,
+            tanpa disimpan atau dikirim.
           </Text>
           <View style={styles.warning}>
             <Text selectable style={styles.warningText}>
-              Hasil deteksi untuk setiap huruf A sampai Z dapat salah. Sistem
-              pengenalan belum lulus validasi fisik independen; periksa setiap
-              huruf dan kata bersama sumber Braille sebelum digunakan.
+              Cocokkan hasil dengan sumber Braille sebelum digunakan. Jika ada
+              huruf, angka, atau tanda yang tidak sesuai, pilih Pindai ulang.
             </Text>
           </View>
           <AccessibleButton
-            accessibilityHint="Membuka pratinjau kamera untuk memindai satu foto kata"
+            accessibilityHint="Membuka pratinjau kamera untuk memindai satu kata atau rangkaian angka"
             label="Aktifkan kamera"
             onPress={() => setActivationConfirmed(true)}
             variant="action"

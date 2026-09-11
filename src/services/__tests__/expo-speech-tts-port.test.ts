@@ -108,6 +108,16 @@ describe('ExpoSpeechTtsPort', () => {
     expect(speech.getAvailableVoicesAsync).toHaveBeenCalledTimes(1);
   });
 
+  it.each(['abc', 'Abc', 'ABC', '2026', '001'])(
+    'passes %s unchanged to the native speech API', async (text) => {
+      const speech = createSpeechHarness();
+      const port = new ExpoSpeechTtsPort(async () => speech.api, createLocalProbe());
+      await expect(port.speak(text, { rate: 1, volume: 1 })).resolves.toEqual({ ok: true });
+      expect(speech.speak).toHaveBeenCalledWith(text, expect.objectContaining({ language: 'id', voice: 'id-local' }));
+      await port.stop();
+    },
+  );
+
   it.each([
     ['modul native tidak tersedia', null],
     [

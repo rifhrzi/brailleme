@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-09-08T17:41:04.831020+00:00",
+  "status": "compiled_host_guards_passed_android_execution_pending",
+  "steps": [
+    {
+      "command": [
+        "C:\\Users\\rifqi\\.jdks\\brailleme-temurin-17\\jdk-17.0.20+8\\bin\\javac.exe",
+        "-source",
+        "8",
+        "-target",
+        "8",
+        "-encoding",
+        "UTF-8",
+        "-classpath",
+        "C:\\Users\\rifqi\\AppData\\Local\\Android\\Sdk\\platforms\\android-36\\android.jar",
+        "-d",
+        "C:\\bm-symbols-apk-20260908\\evidence\\ui-dump-no-idle-build-v3\\classes",
+        "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\output\\update-symbols-tracking-20260908\\ui-dump-no-idle\\BrailleUiDump.java",
+        "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\output\\update-symbols-tracking-20260908\\ui-dump-no-idle\\BrailleUiDumpHostTest.java"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "C:\\Users\\rifqi\\.jdks\\brailleme-temurin-17\\jdk-17.0.20+8\\bin\\java.exe",
+        "-cp",
+        "C:\\bm-symbols-apk-20260908\\evidence\\ui-dump-no-idle-build-v3\\classes;C:\\Users\\rifqi\\AppData\\Local\\Android\\Sdk\\platforms\\android-36\\android.jar",
+        "BrailleUiDumpHostTest"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "C:\\Users\\rifqi\\AppData\\Local\\Android\\Sdk\\build-tools\\36.0.0\\d8.bat",
+        "--min-api",
+        "29",
+        "--lib",
+        "C:\\Users\\rifqi\\AppData\\Local\\Android\\Sdk\\platforms\\android-36\\android.jar",
+        "--output",
+        "C:\\bm-symbols-apk-20260908\\evidence\\ui-dump-no-idle-build-v3",
+        "C:\\bm-symbols-apk-20260908\\evidence\\ui-dump-no-idle-build-v3\\classes\\BrailleUiDump.class"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "inputs": [
+    {
+      "file": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\output\\update-symbols-tracking-20260908\\ui-dump-no-idle\\BrailleUiDump.java",
+      "bytes": 7413,
+      "sha256": "c59a9a22cf114af591ce88ac3622f573c46b8103704738bc7f6db0362e03e30e"
+    },
+    {
+      "file": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\output\\update-symbols-tracking-20260908\\ui-dump-no-idle\\BrailleUiDumpHostTest.java",
+      "bytes": 859,
+      "sha256": "3b65ffd7d300427179fe2536728be5a2bf849b029d2c717e759ba225e421dadb"
+    },
+    {
+      "file": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\output\\update-symbols-tracking-20260908\\ui-dump-no-idle\\build.py",
+      "bytes": 3042,
+      "sha256": "156e76a34c4cab764cdcebc0a8145ae95fd7ad3d814fca075fbe0393b820d708"
+    },
+    {
+      "file": "C:\\Users\\rifqi\\AppData\\Local\\Android\\Sdk\\platforms\\android-36\\android.jar",
+      "bytes": 27768026,
+      "sha256": "d9eb9da824d9e247a352f570f01e1169e725b2954bca9e283a71786c59b59f9a"
+    }
+  ],
+  "dex": {
+    "file": "C:\\bm-symbols-apk-20260908\\evidence\\ui-dump-no-idle-build-v3\\classes.dex",
+    "bytes": 8788,
+    "sha256": "79e234d57492167293889ef7df22815d53caa2f376b8e1ccaf1da031f4dee30a"
+  },
+  "limitation": "No ADB or Android execution. Reflection connection and live hierarchy still require emulator verification."
+}

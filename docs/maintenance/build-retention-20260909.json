@@ -1,0 +1,96 @@
+{
+  "schemaVersion": 1,
+  "verifiedUtc": "2026-09-08T22:46:59.354740+00:00",
+  "archiveManifest": "artifacts\\build-archives\\bm-symbols-apk-20260908\\20260908T224551912Z-2514e946\\manifest.json",
+  "archiveManifestSha256": "93f0a1ebac624f5de42d735dca0a21e2c462d1679717bce41e05074cce22d440",
+  "verifiedSourceFiles": 1236,
+  "verifiedUniqueBlobs": 981,
+  "logicalBytes": 1167530340,
+  "uniqueBlobBytes": 1004041391,
+  "apkFiles": [
+    {
+      "relativePath": "android/app/build/outputs/apk/release/app-release.apk",
+      "bytes": 133317765,
+      "sha256": "9afa6a1eb2983d0a92b4f1dcff3026f91d583bca02cda6d98cfaf91760a90259",
+      "blob": "blobs/9afa6a1eb2983d0a92b4f1dcff3026f91d583bca02cda6d98cfaf91760a90259"
+    },
+    {
+      "relativePath": "evidence/apk-integrity-v1/app-release-crunched.apk",
+      "bytes": 133297285,
+      "sha256": "872c22338cfd1151c4fc3c490abf98b456545f0b7d70238b28d40af9259ba915",
+      "blob": "blobs/872c22338cfd1151c4fc3c490abf98b456545f0b7d70238b28d40af9259ba915"
+    },
+    {
+      "relativePath": "evidence/apk-integrity-v3/verified.apk",
+      "bytes": 133314421,
+      "sha256": "173eb71b5b8455c365daaa525b7d49cfcc9b9ca3ad1a01320b3fcc1f098496ba",
+      "blob": "blobs/173eb71b5b8455c365daaa525b7d49cfcc9b9ca3ad1a01320b3fcc1f098496ba"
+    },
+    {
+      "relativePath": "evidence/apk-integrity-v4/verified.apk",
+      "bytes": 133312277,
+      "sha256": "f9996a478d2beed53a1485e230c01f1a989eed5e780fff87f11f999b2e072667",
+      "blob": "blobs/f9996a478d2beed53a1485e230c01f1a989eed5e780fff87f11f999b2e072667"
+    },
+    {
+      "relativePath": "evidence/apk-integrity-v5/verified.apk",
+      "bytes": 133313297,
+      "sha256": "a4d386424dc1c3da9029ceff6c397825817682f83e1217a0919d0c8ec90e46f9",
+      "blob": "blobs/a4d386424dc1c3da9029ceff6c397825817682f83e1217a0919d0c8ec90e46f9"
+    },
+    {
+      "relativePath": "evidence/apk-integrity-v6/verified.apk",
+      "bytes": 133317765,
+      "sha256": "9afa6a1eb2983d0a92b4f1dcff3026f91d583bca02cda6d98cfaf91760a90259",
+      "blob": "blobs/9afa6a1eb2983d0a92b4f1dcff3026f91d583bca02cda6d98cfaf91760a90259"
+    },
+    {
+      "relativePath": "evidence/replaced-delivery-v2/BrailleMe-0.3.0-symbols-auto-frame-2026-09-08.apk",
+      "bytes": 133311473,
+      "sha256": "48b46c43b4b3aa776b07691480efd6e8e321dff80493a63183b27162e67a3e46",
+      "blob": "blobs/48b46c43b4b3aa776b07691480efd6e8e321dff80493a63183b27162e67a3e46"
+    }
+  ],
+  "maxBuildFolders": 2,
+  "buildFoldersRemaining": [
+    "C:\\bm-symbols-apk-20260908"
+  ],
+  "productionBuildFoldersDeleted": [],
+  "protectedFilesVerified": {
+    "output/android/BrailleMe-0.3.0-symbols-auto-frame-2026-09-09.apk": "9afa6a1eb2983d0a92b4f1dcff3026f91d583bca02cda6d98cfaf91760a90259",
+    "training/evidence/braille-word-reader-v1/native-symbols-delivery-20260909.json": "74233f51e90ea4b193fc2278914903687d222b190d332c088c9f6c68102315a5",
+    "training/checkpoints/retained-runtime-20260909.json": "2388cbd7655a7bf42a000e576db5aa53221eb5df23c65747876dfdcca0b50fe5",
+    "training/checkpoints/retained-models-20260908.json": "29890d735d734184135c6e725a5065e46c67c827678bf66cb04534e9c53843ed",
+    "training/checkpoints/braille-word-reader-v1/best-word.keras": "cce2432c0ddb8952c885dd58697589c285209588dafa81aacdd891b1660068b7",
+    "training/checkpoints/braille-word-reader-id-v3/best-word.keras": "0ae8497660efa3378d81b959cf585f83c6af3c07514f45fb2b1fb1a90382a6c2",
+    "training/evidence/braille-word-reader-v1/native-symbols-runtime-20260908/index.json": "5dede540b1a9a78ac1b8584f3e33c200b06cd80a0a2640025b1666ebe27f10f6"
+  },
+  "protectedDirectoriesPresent": [
+    "C:/bm-datasets",
+    "C:/bm-envs",
+    "C:/bm-symbols-20260908"
+  ],
+  "tests": {
+    "result": "output\\build-folder-tests\\36fb9ee96e6c4296954d8953d90faec2\\result.json",
+    "passed": 10,
+    "cases": [
+      "third creation archives verified APK/evidence, excludes caches, deletes oldest first, keeps two and protects datasets",
+      "existing destination cannot be overwritten",
+      "path escape is rejected",
+      "unregistered stage blocks rotation",
+      "adoption requires project identity",
+      "corrupt archive prevents deletion and third creation",
+      "junction is rejected without touching its target",
+      "manager lock blocks concurrent creation even with a different archive root",
+      "active build locks prevent rotation",
+      "stable redirected log can be archived with a retained shared writer handle"
+    ]
+  },
+  "legacyHelperOriginals": "artifacts/build-helper-backup-20260909/manifest.json",
+  "notes": [
+    "One existing build retained for comparison; no new production build created.",
+    "Owned headless BrailleMe emulator stopped before final archival; stable shared log handles supported.",
+    "Local archive; blobs and manifests must be kept together. Regenerable caches excluded.",
+    "Old immutable evidence/retention indices were not rewritten."
+  ]
+}

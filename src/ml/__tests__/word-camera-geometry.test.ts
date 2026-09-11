@@ -1,5 +1,5 @@
 import type { PhotoGeometry } from '../../../modules/braille-word-geometry/src/WordPhotoGeometry.nitro';
-import { mapSensorGuideToWordPhoto, snapshotWordGuideSensorPoints } from '@/ml/word-camera-geometry';
+import { mapSensorGuideToWordPhoto, snapshotWordGuideSensorPoints, mapWordSensorBoxToFrame, mapWordSensorBoxToPreview, snapshotWordFrameBoxSensorPoints, type WordFrameGeometry } from '@/ml/word-camera-geometry';
 
 const identity = [1, 0, 0, 0, 1, 0, 0, 0, 1];
 const rect = (x: number, y: number, w: number, h: number) => [{ x, y }, { x: x + w, y }, { x: x + w, y: y + h }, { x, y: y + h }];
@@ -61,5 +61,79 @@ describe('preview sensor to captured photo mapping', () => {
     expect(() => mapSensorGuideToWordPhoto([], photo(), 1440, 1920)).toThrow('panduan');
     expect(() => snapshotWordGuideSensorPoints(null, { x: 0, y: 0, width: 1, height: 1 }, 320, 320)).toThrow('panduan');
     expect(() => snapshotWordGuideSensorPoints({ convertViewPointToCameraPoint: () => ({ x: Infinity, y: 0 }) }, { x: 0, y: 0, width: 1, height: 1 }, 320, 320)).toThrow('panduan');
+  });
+});
+
+describe('live frame sensor geometry', () => {
+  const frame = (orientation: WordFrameGeometry['orientation'], isMirrored: boolean) => ({
+    width: 100, height: 50, orientation, isMirrored,
+    convertFramePointToCameraPoint: ({ x, y }: { x: number; y: number }) => ({ x: x * 2 + 30, y: y * 3 - 20 }),
+    convertCameraPointToFramePoint: ({ x, y }: { x: number; y: number }) => ({ x: (x - 30) / 2, y: (y + 20) / 3 }),
+  });
+
+  it.each([
+    ['up', false, 100, 50, 20, 10], ['right', false, 50, 100, 25, 20],
+    ['down', false, 100, 50, 60, 25], ['left', false, 50, 100, 10, 60],
+    ['up', true, 100, 50, 60, 10], ['right', true, 50, 100, 25, 60],
+    ['down', true, 100, 50, 20, 25], ['left', true, 50, 100, 10, 20],
+  ] as const)('maps upright %s mirror=%s through actual sensor origin and scale', (orientation, mirrored, iw, ih, x, y) => {
+    const live = frame(orientation, mirrored);
+    const sensor = rect(70, 10, 40, 45);
+    const box = mapWordSensorBoxToFrame(sensor, live);
+    expect(box.x).toBeCloseTo(x / iw);
+    expect(box.y).toBeCloseTo(y / ih);
+    expect(box.width).toBeCloseTo((iw === 50 ? 15 : 20) / iw);
+    expect(box.height).toBeCloseTo((iw === 50 ? 20 : 15) / ih);
+    const roundtrip = snapshotWordFrameBoxSensorPoints(live, box);
+    expect(Math.min(...roundtrip.map((point) => point.x))).toBeCloseTo(70);
+    expect(Math.min(...roundtrip.map((point) => point.y))).toBeCloseTo(10);
+    expect(Math.max(...roundtrip.map((point) => point.x))).toBeCloseTo(110);
+    expect(Math.max(...roundtrip.map((point) => point.y))).toBeCloseTo(55);
+  });
+
+  it('maps to preview using its real crop and dp, preserving offscreen bounds', () => {
+    const camera = { convertCameraPointToViewPoint: ({ x, y }: { x: number; y: number }) => ({ x: (x - 100) / 2, y: (y - 300) / 2 }) };
+    expect(mapWordSensorBoxToPreview(rect(60, 500, 400, 100), camera, 320, 320)).toEqual({ x: -0.0625, y: 0.3125, width: 0.625, height: 0.15625 });
+  });
+
+  it('snaps float32 edge noise on a physically upright 480x640 frame', () => {
+    const live = {
+      width: 480, height: 640, orientation: 'up' as const, isMirrored: false,
+      convertCameraPointToFramePoint: ({ x, y }: { x: number; y: number }) => ({ x, y }),
+      convertFramePointToCameraPoint: ({ x, y }: { x: number; y: number }) => ({ x, y }),
+    };
+    const noise = 2 ** -14;
+    expect(mapWordSensorBoxToFrame(rect(-noise, 128, 480 + noise * 2, 192), live)).toEqual({ x: 0, y: 0.2, width: 1, height: 0.3 });
+    expect(mapWordSensorBoxToFrame(rect(48, -noise, 96, 640 + noise * 2), live)).toEqual({ x: 0.1, y: 0, width: 0.2, height: 1 });
+  });
+
+  it.each(['up', 'right', 'down', 'left'] as const)('keeps edge-noise correction in upright pixels for %s rotation and both mirror modes', (orientation) => {
+    for (const mirrored of [false, true]) {
+      const live = frame(orientation, mirrored);
+      const points = snapshotWordFrameBoxSensorPoints(live, { x: 0, y: 0, width: 1, height: 1 });
+      const convert = live.convertCameraPointToFramePoint;
+      live.convertCameraPointToFramePoint = (point) => {
+        const raw = convert(point);
+        return { x: raw.x + (raw.x === 0 ? -0.0001 : 0.0001), y: raw.y + (raw.y === 0 ? -0.0001 : 0.0001) };
+      };
+      expect(mapWordSensorBoxToFrame(points, live)).toEqual({ x: 0, y: 0, width: 1, height: 1 });
+    }
+  });
+
+  it.each([
+    [0.0011, 'outside-subpixel'], [0.5, 'outside-subpixel'],
+    [2, 'outside-small'], [10, 'outside-large'],
+  ] as const)('still rejects actual clipping of %spx without publishing absolute coordinates', (overshoot, code) => {
+    const live = frame('up', false);
+    // Native frame x=0 is sensor x=30; a twofold sensor scale preserves the
+    // overshoot in frame pixels for the tolerance boundary test.
+    expect(() => mapWordSensorBoxToFrame(rect(30 - overshoot * 2, 10, 40, 30), live)).toThrow(`[word-frame:${code}]`);
+  });
+
+  it('rejects missing geometry and preview windows cropped outside the live sensor buffer', () => {
+    expect(() => mapWordSensorBoxToFrame([], frame('up', false))).toThrow('Geometri');
+    expect(() => mapWordSensorBoxToFrame(rect(0, 0, 400, 100), frame('up', false))).toThrow('[word-frame:outside-large]');
+    expect(() => snapshotWordFrameBoxSensorPoints(frame('up', false), { x: -0.1, y: 0, width: 0.5, height: 0.5 })).toThrow('Geometri');
+    expect(() => mapWordSensorBoxToPreview(rect(0, 0, 1, 1), { convertCameraPointToViewPoint: () => ({ x: NaN, y: 0 }) }, 320, 320)).toThrow('panduan');
   });
 });

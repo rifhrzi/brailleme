@@ -5,7 +5,7 @@ const { Buffer } = require('node:buffer');
 const { createHash } = require('node:crypto');
 const fs = require('node:fs');
 const path = require('node:path');
-const { load, root } = require('./geometry-reference.cjs');
+const { load, root, loadedSourcePaths } = require('./geometry-reference.cjs');
 const image = load(path.join(root, 'src/ml/word-image-processing.ts'));
 const decoder = load(path.join(root, 'src/ml/word-decoder.ts'));
 const contract = load(path.join(root, 'src/ml/word-model-contract.ts'));
@@ -41,6 +41,11 @@ function inspectFixture(fixture) {
       },
     }, fixture.thresholds ?? contract.DEFAULT_WORD_MODEL_THRESHOLDS, fixture.roi);
     assert.notEqual(result.status, 'error', 'Actual runtime rejected fixture geometry');
+    if (fixture.expectedText !== undefined) {
+      assert.ok(output, 'Checking fixture text requires a real archived model output');
+      assert.equal(result.status, 'success', 'Startup fixture must be accepted by the current runtime');
+      assert.equal(result.text, fixture.expectedText, 'Startup fixture text differs from the current decoder');
+    }
     const qualityReason = selection === null ? result.reason : '';
     if (!fixture.rgb_base64) assert.equal(qualityReason, '', 'Synthetic geometry pixels must pass quality');
     return { crop, selection, quality_reason: qualityReason, input_float32_sha256: tensorSha256,
@@ -56,8 +61,7 @@ function inspectFixtures(fixtures) {
   return {
     scope: 'Actual TypeScript crop/selection/quality/optional cached-output decoding with mocked native pixels and no inference; no native success claim.',
     source_sha256: Object.fromEntries([
-      'src/ml/word-image-processing.ts', 'src/ml/word-model-contract.ts',
-      'src/ml/word-decoder.ts', 'src/types/word-scan.ts',
+      ...loadedSourcePaths().map((file) => path.relative(root, file).replaceAll('\\', '/')),
       'scripts/word-native-parity/geometry-reference.cjs', 'scripts/word-native-parity/fixture-geometry.cjs',
     ].map((file) => [file, sha(fs.readFileSync(path.join(root, file)))])),
     fixtures: fixtures.map(inspectFixture),

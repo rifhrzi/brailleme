@@ -18,7 +18,7 @@ class BNAffineParityTests(unittest.TestCase):
         images = np.ones((1, 192, 480, 3), dtype=np.float32)
         thresholds = dict(DEFAULT_THRESHOLDS, proposalScore=.25, acceptScore=.25, dotConfidence=.7)
         before, after = decision_rows(high, images, thresholds), decision_rows(low, images, thresholds)
-        self.assertEqual(before[0]['raw']['text'], 'A')
+        self.assertEqual(before[0]['raw']['text'], 'a')
         self.assertEqual(after[0]['raw']['reason'], 'no_grid')
         self.assertEqual(before[0]['effective'], after[0]['effective'])
         with self.assertRaisesRegex(ValueError, 'decoder decisions differ'):

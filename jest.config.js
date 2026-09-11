@@ -5,6 +5,7 @@ module.exports = {
   modulePathIgnorePatterns: [
     '<rootDir>/.braille-training-work/',
     '<rootDir>/training/evidence/',
+    '<rootDir>/output/',
   ],
   collectCoverageFrom: [
     'src/**/*.{ts,tsx}',
@@ -28,5 +29,5 @@ module.exports = {
     '\\.tflite$': '<rootDir>/scripts/jest-model-asset.cjs',
   },
   setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
-  testPathIgnorePatterns: ['/node_modules/', '/dist/', '/.braille-training-work/', '/training/evidence/'],
+  testPathIgnorePatterns: ['/node_modules/', '/dist/', '/.braille-training-work/', '/training/evidence/', '/output/'],
 };

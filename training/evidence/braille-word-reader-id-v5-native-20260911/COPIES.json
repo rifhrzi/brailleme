@@ -1,0 +1,22 @@
+{
+  "scope": "app_integration_CPU_validation_and_TFLite_startup_only",
+  "old_training_archives_changed": false,
+  "physical_camera_validated": false,
+  "copies": [
+    {
+      "source": "output/qa/word-v5-runtime-parity.json",
+      "destination": "training/evidence/braille-word-reader-id-v5-native-20260911/runtime-parity.json",
+      "sha256": "5deeff2a7d7dc30f4673a3eaa766417ae24f32c2042c2ced7da04f1172893bbb"
+    },
+    {
+      "source": "output/apk-id-v5-20260911/startup-fixture-tflite.json",
+      "destination": "training/evidence/braille-word-reader-id-v5-native-20260911/startup-fixture-tflite.json",
+      "sha256": "7f729ca7c6cc071cf54d5b74f2f642f74dd1fc01a27341a0c86233e5b17e2dbd"
+    },
+    {
+      "source": "output/apk-id-v5-20260911/evaluate-startup.py",
+      "destination": "training/evidence/braille-word-reader-id-v5-native-20260911/evaluate-startup.py",
+      "sha256": "148fe073f1b9d48559aa5f05a5a6b2c2c2103d1aa3a81755408019e05875c805"
+    }
+  ]
+}

@@ -1,0 +1,4125 @@
+{
+  "protocol": "indonesian-punctuation-token-v1",
+  "decoderVersion": "six-dot-id-v4-experimental",
+  "referenceSourceSha256": "0b85da03fa8d3b921fea444adf6a68ba95b56fda76db710b9edc5f6b8a9937b9",
+  "cases": [
+    {
+      "name": "unmarked letters",
+      "masks": [
+        1,
+        3,
+        9
+      ],
+      "result": {
+        "status": "success",
+        "text": "abc",
+        "symbols": [
+          {
+            "mask": 1,
+            "role": "letter",
+            "output": "a"
+          },
+          {
+            "mask": 3,
+            "role": "letter",
+            "output": "b"
+          },
+          {
+            "mask": 9,
+            "role": "letter",
+            "output": "c"
+          }
+        ]
+      }
+    },
+    {
+      "name": "initial capital",
+      "masks": [
+        32,
+        1,
+        3,
+        9
+      ],
+      "result": {
+        "status": "success",
+        "text": "Abc",
+        "symbols": [
+          {
+            "mask": 32,
+            "role": "capital_indicator",
+            "output": ""
+          },
+          {
+            "mask": 1,
+            "role": "letter",
+            "output": "A"
+          },
+          {
+            "mask": 3,
+            "role": "letter",
+            "output": "b"
+          },
+          {
+            "mask": 9,
+            "role": "letter",
+            "output": "c"
+          }
+        ]
+      }
+    },
+    {
+      "name": "capital word",
+      "masks": [
+        32,
+        32,
+        1,
+        3,
+        9
+      ],
+      "result": {
+        "status": "success",
+        "text": "ABC",
+        "symbols": [
+          {
+            "mask": 32,
+            "role": "capital_indicator",
+            "output": ""
+          },
+          {
+            "mask": 32,
+            "role": "capital_indicator",
+            "output": ""
+          },
+          {
+            "mask": 1,
+            "role": "letter",
+            "output": "A"
+          },
+          {
+            "mask": 3,
+            "role": "letter",
+            "output": "B"
+          },
+          {
+            "mask": 9,
+            "role": "letter",
+            "output": "C"
+          }
+        ]
+      }
+    },
+    {
+      "name": "capital within word",
+      "masks": [
+        10,
+        32,
+        15,
+        19,
+        21,
+        29,
+        17
+      ],
+      "result": {
+        "status": "success",
+        "text": "iPhone",
+        "symbols": [
+          {
+            "mask": 10,
+            "role": "letter",
+            "output": "i"
+          },
+          {
+            "mask": 32,
+            "role": "capital_indicator",
+            "output": ""
+          },
+          {
+            "mask": 15,
+            "role": "letter",
+            "output": "P"
+          },
+          {
+            "mask": 19,
+            "role": "letter",
+            "output": "h"
+          },
+          {
+            "mask": 21,
+            "role": "letter",
+            "output": "o"
+          },
+          {
+            "mask": 29,
+            "role": "letter",
+            "output": "n"
+          },
+          {
+            "mask": 17,
+            "role": "letter",
+            "output": "e"
+          }
+        ]
+      }
+    },
+    {
+      "name": "individual capitals",
+      "masks": [
+        32,
+        1,
+        32,
+        3
+      ],
+      "result": {
+        "status": "success",
+        "text": "AB",
+        "symbols": [
+          {
+            "mask": 32,
+            "role": "capital_indicator",
+            "output": ""
+          },
+          {
+            "mask": 1,
+            "role": "letter",
+            "output": "A"
+          },
+          {
+            "mask": 32,
+            "role": "capital_indicator",
+            "output": ""
+          },
+          {
+            "mask": 3,
+            "role": "letter",
+            "output": "B"
+          }
+        ]
+      }
+    },
+    {
+      "name": "zero",
+      "masks": [
+        60,
+        26
+      ],
+      "result": {
+        "status": "success",
+        "text": "0",
+        "symbols": [
+          {
+            "mask": 60,
+            "role": "number_indicator",
+            "output": ""
+          },
+          {
+            "mask": 26,
+            "role": "digit",
+            "output": "0"
+          }
+        ]
+      }
+    },
+    {
+      "name": "all digits",
+      "masks": [
+        60,
+        1,
+        3,
+        9,
+        25,
+        17,
+        11,
+        27,
+        19,
+        10,
+        26
+      ],
+      "result": {
+        "status": "success",
+        "text": "1234567890",
+        "symbols": [
+          {
+            "mask": 60,
+            "role": "number_indicator",
+            "output": ""
+          },
+          {
+            "mask": 1,
+            "role": "digit",
+            "output": "1"
+          },
+          {
+            "mask": 3,
+            "role": "digit",
+            "output": "2"
+          },
+          {
+            "mask": 9,
+            "role": "digit",
+            "output": "3"
+          },
+          {
+            "mask": 25,
+            "role": "digit",
+            "output": "4"
+          },
+          {
+            "mask": 17,
+            "role": "digit",
+            "output": "5"
+          },
+          {
+            "mask": 11,
+            "role": "digit",
+            "output": "6"
+          },
+          {
+            "mask": 27,
+            "role": "digit",
+            "output": "7"
+          },
+          {
+            "mask": 19,
+            "role": "digit",
+            "output": "8"
+          },
+          {
+            "mask": 10,
+            "role": "digit",
+            "output": "9"
+          },
+          {
+            "mask": 26,
+            "role": "digit",
+            "output": "0"
+          }
+        ]
+      }
+    },
+    {
+      "name": "leading zeros",
+      "masks": [
+        60,
+        26,
+        26,
+        1
+      ],
+      "result": {
+        "status": "success",
+        "text": "001",
+        "symbols": [
+          {
+            "mask": 60,
+            "role": "number_indicator",
+            "output": ""
+          },
+          {
+            "mask": 26,
+            "role": "digit",
+            "output": "0"
+          },
+          {
+            "mask": 26,
+            "role": "digit",
+            "output": "0"
+          },
+          {
+            "mask": 1,
+            "role": "digit",
+            "output": "1"
+          }
+        ]
+      }
+    },
+    {
+      "name": "no number guessing",
+      "masks": [
+        26,
+        26,
+        1
+      ],
+      "result": {
+        "status": "success",
+        "text": "jja",
+        "symbols": [
+          {
+            "mask": 26,
+            "role": "letter",
+            "output": "j"
+          },
+          {
+            "mask": 26,
+            "role": "letter",
+            "output": "j"
+          },
+          {
+            "mask": 1,
+            "role": "letter",
+            "output": "a"
+          }
+        ]
+      }
+    },
+    {
+      "name": "empty",
+      "masks": [],
+      "result": {
+        "status": "rejected",
+        "reason": "invalid_sequence"
+      }
+    },
+    {
+      "name": "capital only",
+      "masks": [
+        32
+      ],
+      "result": {
+        "status": "rejected",
+        "reason": "invalid_sequence"
+      }
+    },
+    {
+      "name": "capital word only",
+      "masks": [
+        32,
+        32
+      ],
+      "result": {
+        "status": "rejected",
+        "reason": "invalid_sequence"
+      }
+    },
+    {
+      "name": "number only",
+      "masks": [
+        60
+      ],
+      "result": {
+        "status": "rejected",
+        "reason": "invalid_sequence"
+      }
+    },
+    {
+      "name": "trailing capital",
+      "masks": [
+        1,
+        32
+      ],
+      "result": {
+        "status": "rejected",
+        "reason": "invalid_sequence"
+      }
+    },
+    {
+      "name": "passage capitals",
+      "masks": [
+        32,
+        32,
+        32,
+        1
+      ],
+      "result": {
+        "status": "rejected",
+        "reason": "invalid_sequence"
+      }
+    },
+    {
+      "name": "word capitals inside token",
+      "masks": [
+        1,
+        32,
+        32,
+        3
+      ],
+      "result": {
+        "status": "rejected",
+        "reason": "invalid_sequence"
+      }
+    },
+    {
+      "name": "capital after word capitals",
+      "masks": [
+        32,
+        32,
+        1,
+        32,
+        3
+      ],
+      "result": {
+        "status": "rejected",
+        "reason": "invalid_sequence"
+      }
+    },
+    {
+      "name": "number after letter",
+      "masks": [
+        1,
+        60,
+        3
+      ],
+      "result": {
+        "status": "rejected",
+        "reason": "invalid_sequence"
+      }
+    },
+    {
+      "name": "letter after number",
+      "masks": [
+        60,
+        1,
+        5
+      ],
+      "result": {
+        "status": "rejected",
+        "reason": "invalid_sequence"
+      }
+    },
+    {
+      "name": "capital after number",
+      "masks": [
+        60,
+        1,
+        32,
+        3
+      ],
+      "result": {
+        "status": "rejected",
+        "reason": "invalid_sequence"
+      }
+    },
+    {
+      "name": "number after capital",
+      "masks": [
+        32,
+        60,
+        1
+      ],
+      "result": {
+        "status": "rejected",
+        "reason": "invalid_sequence"
+      }
+    },
+    {
+      "name": "repeated number indicator",
+      "masks": [
+        60,
+        1,
+        60,
+        3
+      ],
+      "result": {
+        "status": "rejected",
+        "reason": "invalid_sequence"
+      }
+    },
+    {
+      "name": "decimal separator",
+      "masks": [
+        60,
+        1,
+        2,
+        3
+      ],
+      "result": {
+        "status": "rejected",
+        "reason": "unsupported_pattern"
+      }
+    },
+    {
+      "name": "negative sign",
+      "masks": [
+        36,
+        60,
+        1
+      ],
+      "result": {
+        "status": "rejected",
+        "reason": "invalid_sequence"
+      }
+    },
+    {
+      "name": "Russian capital is unsupported",
+      "masks": [
+        24,
+        1
+      ],
+      "result": {
+        "status": "rejected",
+        "reason": "unsupported_pattern"
+      }
+    },
+    {
+      "name": "empty cell is unsupported",
+      "masks": [
+        0
+      ],
+      "result": {
+        "status": "rejected",
+        "reason": "unsupported_pattern"
+      }
+    },
+    {
+      "name": "unsupported suffix rejects all",
+      "masks": [
+        1,
+        63
+      ],
+      "result": {
+        "status": "rejected",
+        "reason": "unsupported_pattern"
+      }
+    },
+    {
+      "name": "single-mask-0",
+      "masks": [
+        0
+      ],
+      "result": {
+        "status": "rejected",
+        "reason": "unsupported_pattern"
+      }
+    },
+    {
+      "name": "single-mask-1",
+      "masks": [
+        1
+      ],
+      "result": {
+        "status": "success",
+        "text": "a",
+        "symbols": [
+          {
+            "mask": 1,
+            "role": "letter",
+            "output": "a"
+          }
+        ]
+      }
+    },
+    {
+      "name": "single-mask-2",
+      "masks": [
+        2
+      ],
+      "result": {
+        "status": "success",
+        "text": ",",
+        "symbols": [
+          {
+            "mask": 2,
+            "role": "punctuation",
+            "output": ","
+          }
+        ]
+      }
+    },
+    {
+      "name": "single-mask-3",
+      "masks": [
+        3
+      ],
+      "result": {
+        "status": "success",
+        "text": "b",
+        "symbols": [
+          {
+            "mask": 3,
+            "role": "letter",
+            "output": "b"
+          }
+        ]
+      }
+    },
+    {
+      "name": "single-mask-4",
+      "masks": [
+        4
+      ],
+      "result": {
+        "status": "rejected",
+        "reason": "unsupported_pattern"
+      }
+    },
+    {
+      "name": "single-mask-5",
+      "masks": [
+        5
+      ],
+      "result": {
+        "status": "success",
+        "text": "k",
+        "symbols": [
+          {
+            "mask": 5,
+            "role": "letter",
+            "output": "k"
+          }
+        ]
+      }
+    },
+    {
+      "name": "single-mask-6",
+      "masks": [
+        6
+      ],
+      "result": {
+        "status": "success",
+        "text": ";",
+        "symbols": [
+          {
+            "mask": 6,
+            "role": "punctuation",
+            "output": ";"
+          }
+        ]
+      }
+    },
+    {
+      "name": "single-mask-7",
+      "masks": [
+        7
+      ],
+      "result": {
+        "status": "success",
+        "text": "l",
+        "symbols": [
+          {
+            "mask": 7,
+            "role": "letter",
+            "output": "l"
+          }
+        ]
+      }
+    },
+    {
+      "name": "single-mask-8",
+      "masks": [
+        8
+      ],
+      "result": {
+        "status": "rejected",
+        "reason": "unsupported_pattern"
+      }
+    },
+    {
+      "name": "single-mask-9",
+      "masks": [
+        9
+      ],
+      "result": {
+        "status": "success",
+        "text": "c",
+        "symbols": [
+          {
+            "mask": 9,
+            "role": "letter",
+            "output": "c"
+          }
+        ]
+      }
+    },
+    {
+      "name": "single-mask-10",
+      "masks": [
+        10
+      ],
+      "result": {
+        "status": "success",
+        "text": "i",
+        "symbols": [
+          {
+            "mask": 10,
+            "role": "letter",
+            "output": "i"
+          }
+        ]
+      }
+    },
+    {
+      "name": "single-mask-11",
+      "masks": [
+        11
+      ],
+      "result": {
+        "status": "success",
+        "text": "f",
+        "symbols": [
+          {
+            "mask": 11,
+            "role": "letter",
+            "output": "f"
+          }
+        ]
+      }
+    },
+    {
+      "name": "single-mask-12",
+      "masks": [
+        12
+      ],
+      "result": {
+        "status": "rejected",
+        "reason": "unsupported_pattern"
+      }
+    },
+    {
+      "name": "single-mask-13",
+      "masks": [
+        13
+      ],
+      "result": {
+        "status": "success",
+        "text": "m",
+        "symbols": [
+          {
+            "mask": 13,
+            "role": "letter",
+            "output": "m"
+          }
+        ]
+      }
+    },
+    {
+      "name": "single-mask-14",
+      "masks": [
+        14
+      ],
+      "result": {
+        "status": "success",
+        "text": "s",
+        "symbols": [
+          {
+            "mask": 14,
+            "role": "letter",
+            "output": "s"
+          }
+        ]
+      }
+    },
+    {
+      "name": "single-mask-15",
+      "masks": [
+        15
+      ],
+      "result": {
+        "status": "success",
+        "text": "p",
+        "symbols": [
+          {
+            "mask": 15,
+            "role": "letter",
+            "output": "p"
+          }
+        ]
+      }
+    },
+    {
+      "name": "single-mask-16",
+      "masks": [
+        16
+      ],
+      "result": {
+        "status": "rejected",
+        "reason": "unsupported_pattern"
+      }
+    },
+    {
+      "name": "single-mask-17",
+      "masks": [
+        17
+      ],
+      "result": {
+        "status": "success",
+        "text": "e",
+        "symbols": [
+          {
+            "mask": 17,
+            "role": "letter",
+            "output": "e"
+          }
+        ]
+      }
+    },
+    {
+      "name": "single-mask-18",
+      "masks": [
+        18
+      ],
+      "result": {
+        "status": "success",
+        "text": ":",
+        "symbols": [
+          {
+            "mask": 18,
+            "role": "punctuation",
+            "output": ":"
+          }
+        ]
+      }
+    },
+    {
+      "name": "single-mask-19",
+      "masks": [
+        19
+      ],
+      "result": {
+        "status": "success",
+        "text": "h",
+        "symbols": [
+          {
+            "mask": 19,
+            "role": "letter",
+            "output": "h"
+          }
+        ]
+      }
+    },
+    {
+      "name": "single-mask-20",
+      "masks": [
+        20
+      ],
+      "result": {
+        "status": "rejected",
+        "reason": "unsupported_pattern"
+      }
+    },
+    {
+      "name": "single-mask-21",
+      "masks": [
+        21
+      ],
+      "result": {
+        "status": "success",
+        "text": "o",
+        "symbols": [
+          {
+            "mask": 21,
+            "role": "letter",
+            "output": "o"
+          }
+        ]
+      }
+    },
+    {
+      "name": "single-mask-22",
+      "masks": [
+        22
+      ],
+      "result": {
+        "status": "success",
+        "text": "!",
+        "symbols": [
+          {
+            "mask": 22,
+            "role": "punctuation",
+            "output": "!"
+          }
+        ]
+      }
+    },
+    {
+      "name": "single-mask-23",
+      "masks": [
+        23
+      ],
+      "result": {
+        "status": "success",
+        "text": "r",
+        "symbols": [
+          {
+            "mask": 23,
+            "role": "letter",
+            "output": "r"
+          }
+        ]
+      }
+    },
+    {
+      "name": "single-mask-24",
+      "masks": [
+        24
+      ],
+      "result": {
+        "status": "rejected",
+        "reason": "unsupported_pattern"
+      }
+    },
+    {
+      "name": "single-mask-25",
+      "masks": [
+        25
+      ],
+      "result": {
+        "status": "success",
+        "text": "d",
+        "symbols": [
+          {
+            "mask": 25,
+            "role": "letter",
+            "output": "d"
+          }
+        ]
+      }
+    },
+    {
+      "name": "single-mask-26",
+      "masks": [
+        26
+      ],
+      "result": {
+        "status": "success",
+        "text": "j",
+        "symbols": [
+          {
+            "mask": 26,
+            "role": "letter",
+            "output": "j"
+          }
+        ]
+      }
+    },
+    {
+      "name": "single-mask-27",
+      "masks": [
+        27
+      ],
+      "result": {
+        "status": "success",
+        "text": "g",
+        "symbols": [
+          {
+            "mask": 27,
+            "role": "letter",
+            "output": "g"
+          }
+        ]
+      }
+    },
+    {
+      "name": "single-mask-28",
+      "masks": [
+        28
+      ],
+      "result": {
+        "status": "rejected",
+        "reason": "unsupported_pattern"
+      }
+    },
+    {
+      "name": "single-mask-29",
+      "masks": [
+        29
+      ],
+      "result": {
+        "status": "success",
+        "text": "n",
+        "symbols": [
+          {
+            "mask": 29,
+            "role": "letter",
+            "output": "n"
+          }
+        ]
+      }
+    },
+    {
+      "name": "single-mask-30",
+      "masks": [
+        30
+      ],
+      "result": {
+        "status": "success",
+        "text": "t",
+        "symbols": [
+          {
+            "mask": 30,
+            "role": "letter",
+            "output": "t"
+          }
+        ]
+      }
+    },
+    {
+      "name": "single-mask-31",
+      "masks": [
+        31
+      ],
+      "result": {
+        "status": "success",
+        "text": "q",
+        "symbols": [
+          {
+            "mask": 31,
+            "role": "letter",
+            "output": "q"
+          }
+        ]
+      }
+    },
+    {
+      "name": "single-mask-32",
+      "masks": [
+        32
+      ],
+      "result": {
+        "status": "rejected",
+        "reason": "invalid_sequence"
+      }
+    },
+    {
+      "name": "single-mask-33",
+      "masks": [
+        33
+      ],
+      "result": {
+        "status": "rejected",
+        "reason": "unsupported_pattern"
+      }
+    },
+    {
+      "name": "single-mask-34",
+      "masks": [
+        34
+      ],
+      "result": {
+        "status": "rejected",
+        "reason": "unsupported_pattern"
+      }
+    },
+    {
+      "name": "single-mask-35",
+      "masks": [
+        35
+      ],
+      "result": {
+        "status": "rejected",
+        "reason": "unsupported_pattern"
+      }
+    },
+    {
+      "name": "single-mask-36",
+      "masks": [
+        36
+      ],
+      "result": {
+        "status": "success",
+        "text": "-",
+        "symbols": [
+          {
+            "mask": 36,
+            "role": "punctuation",
+            "output": "-"
+          }
+        ]
+      }
+    },
+    {
+      "name": "single-mask-37",
+      "masks": [
+        37
+      ],
+      "result": {
+        "status": "success",
+        "text": "u",
+        "symbols": [
+          {
+            "mask": 37,
+            "role": "letter",
+            "output": "u"
+          }
+        ]
+      }
+    },
+    {
+      "name": "single-mask-38",
+      "masks": [
+        38
+      ],
+      "result": {
+        "status": "rejected",
+        "reason": "ambiguous_symbol"
+      }
+    },
+    {
+      "name": "single-mask-39",
+      "masks": [
+        39
+      ],
+      "result": {
+        "status": "success",
+        "text": "v",
+        "symbols": [
+          {
+            "mask": 39,
+            "role": "letter",
+            "output": "v"
+          }
+        ]
+      }
+    },
+    {
+      "name": "single-mask-40",
+      "masks": [
+        40
+      ],
+      "result": {
+        "status": "rejected",
+        "reason": "unsupported_pattern"
+      }
+    },
+    {
+      "name": "single-mask-41",
+      "masks": [
+        41
+      ],
+      "result": {
+        "status": "rejected",
+        "reason": "unsupported_pattern"
+      }
+    },
+    {
+      "name": "single-mask-42",
+      "masks": [
+        42
+      ],
+      "result": {
+        "status": "rejected",
+        "reason": "unsupported_pattern"
+      }
+    },
+    {
+      "name": "single-mask-43",
+      "masks": [
+        43
+      ],
+      "result": {
+        "status": "rejected",
+        "reason": "unsupported_pattern"
+      }
+    },
+    {
+      "name": "single-mask-44",
+      "masks": [
+        44
+      ],
+      "result": {
+        "status": "rejected",
+        "reason": "unsupported_pattern"
+      }
+    },
+    {
+      "name": "single-mask-45",
+      "masks": [
+        45
+      ],
+      "result": {
+        "status": "success",
+        "text": "x",
+        "symbols": [
+          {
+            "mask": 45,
+            "role": "letter",
+            "output": "x"
+          }
+        ]
+      }
+    },
+    {
+      "name": "single-mask-46",
+      "masks": [
+        46
+      ],
+      "result": {
+        "status": "rejected",
+        "reason": "unsupported_pattern"
+      }
+    },
+    {
+      "name": "single-mask-47",
+      "masks": [
+        47
+      ],
+      "result": {
+        "status": "rejected",
+        "reason": "unsupported_pattern"
+      }
+    },
+    {
+      "name": "single-mask-48",
+      "masks": [
+        48
+      ],
+      "result": {
+        "status": "rejected",
+        "reason": "unsupported_pattern"
+      }
+    },
+    {
+      "name": "single-mask-49",
+      "masks": [
+        49
+      ],
+      "result": {
+        "status": "rejected",
+        "reason": "unsupported_pattern"
+      }
+    },
+    {
+      "name": "single-mask-50",
+      "masks": [
+        50
+      ],
+      "result": {
+        "status": "success",
+        "text": ".",
+        "symbols": [
+          {
+            "mask": 50,
+            "role": "punctuation",
+            "output": "."
+          }
+        ]
+      }
+    },
+    {
+      "name": "single-mask-51",
+      "masks": [
+        51
+      ],
+      "result": {
+        "status": "rejected",
+        "reason": "unsupported_pattern"
+      }
+    },
+    {
+      "name": "single-mask-52",
+      "masks": [
+        52
+      ],
+      "result": {
+        "status": "rejected",
+        "reason": "unsupported_pattern"
+      }
+    },
+    {
+      "name": "single-mask-53",
+      "masks": [
+        53
+      ],
+      "result": {
+        "status": "success",
+        "text": "z",
+        "symbols": [
+          {
+            "mask": 53,
+            "role": "letter",
+            "output": "z"
+          }
+        ]
+      }
+    },
+    {
+      "name": "single-mask-54",
+      "masks": [
+        54
+      ],
+      "result": {
+        "status": "rejected",
+        "reason": "ambiguous_symbol"
+      }
+    },
+    {
+      "name": "single-mask-55",
+      "masks": [
+        55
+      ],
+      "result": {
+        "status": "rejected",
+        "reason": "unsupported_pattern"
+      }
+    },
+    {
+      "name": "single-mask-56",
+      "masks": [
+        56
+      ],
+      "result": {
+        "status": "rejected",
+        "reason": "unsupported_pattern"
+      }
+    },
+    {
+      "name": "single-mask-57",
+      "masks": [
+        57
+      ],
+      "result": {
+        "status": "rejected",
+        "reason": "unsupported_pattern"
+      }
+    },
+    {
+      "name": "single-mask-58",
+      "masks": [
+        58
+      ],
+      "result": {
+        "status": "success",
+        "text": "w",
+        "symbols": [
+          {
+            "mask": 58,
+            "role": "letter",
+            "output": "w"
+          }
+        ]
+      }
+    },
+    {
+      "name": "single-mask-59",
+      "masks": [
+        59
+      ],
+      "result": {
+        "status": "rejected",
+        "reason": "unsupported_pattern"
+      }
+    },
+    {
+      "name": "single-mask-60",
+      "masks": [
+        60
+      ],
+      "result": {
+        "status": "rejected",
+        "reason": "invalid_sequence"
+      }
+    },
+    {
+      "name": "single-mask-61",
+      "masks": [
+        61
+      ],
+      "result": {
+        "status": "success",
+        "text": "y",
+        "symbols": [
+          {
+            "mask": 61,
+            "role": "letter",
+            "output": "y"
+          }
+        ]
+      }
+    },
+    {
+      "name": "single-mask-62",
+      "masks": [
+        62
+      ],
+      "result": {
+        "status": "rejected",
+        "reason": "unsupported_pattern"
+      }
+    },
+    {
+      "name": "single-mask-63",
+      "masks": [
+        63
+      ],
+      "result": {
+        "status": "rejected",
+        "reason": "unsupported_pattern"
+      }
+    },
+    {
+      "name": "a",
+      "masks": [
+        1
+      ],
+      "result": {
+        "status": "success",
+        "text": "a",
+        "symbols": [
+          {
+            "mask": 1,
+            "role": "letter",
+            "output": "a"
+          }
+        ]
+      }
+    },
+    {
+      "name": "a.",
+      "masks": [
+        1,
+        50
+      ],
+      "result": {
+        "status": "success",
+        "text": "a.",
+        "symbols": [
+          {
+            "mask": 1,
+            "role": "letter",
+            "output": "a"
+          },
+          {
+            "mask": 50,
+            "role": "punctuation",
+            "output": "."
+          }
+        ]
+      }
+    },
+    {
+      "name": "a,",
+      "masks": [
+        1,
+        2
+      ],
+      "result": {
+        "status": "success",
+        "text": "a,",
+        "symbols": [
+          {
+            "mask": 1,
+            "role": "letter",
+            "output": "a"
+          },
+          {
+            "mask": 2,
+            "role": "punctuation",
+            "output": ","
+          }
+        ]
+      }
+    },
+    {
+      "name": "a?",
+      "masks": [
+        1,
+        38
+      ],
+      "result": {
+        "status": "success",
+        "text": "a?",
+        "symbols": [
+          {
+            "mask": 1,
+            "role": "letter",
+            "output": "a"
+          },
+          {
+            "mask": 38,
+            "role": "punctuation",
+            "output": "?"
+          }
+        ]
+      }
+    },
+    {
+      "name": "a!",
+      "masks": [
+        1,
+        22
+      ],
+      "result": {
+        "status": "success",
+        "text": "a!",
+        "symbols": [
+          {
+            "mask": 1,
+            "role": "letter",
+            "output": "a"
+          },
+          {
+            "mask": 22,
+            "role": "punctuation",
+            "output": "!"
+          }
+        ]
+      }
+    },
+    {
+      "name": "a:",
+      "masks": [
+        1,
+        18
+      ],
+      "result": {
+        "status": "success",
+        "text": "a:",
+        "symbols": [
+          {
+            "mask": 1,
+            "role": "letter",
+            "output": "a"
+          },
+          {
+            "mask": 18,
+            "role": "punctuation",
+            "output": ":"
+          }
+        ]
+      }
+    },
+    {
+      "name": "a;",
+      "masks": [
+        1,
+        6
+      ],
+      "result": {
+        "status": "success",
+        "text": "a;",
+        "symbols": [
+          {
+            "mask": 1,
+            "role": "letter",
+            "output": "a"
+          },
+          {
+            "mask": 6,
+            "role": "punctuation",
+            "output": ";"
+          }
+        ]
+      }
+    },
+    {
+      "name": "(a)",
+      "masks": [
+        54,
+        1,
+        54
+      ],
+      "result": {
+        "status": "success",
+        "text": "(a)",
+        "symbols": [
+          {
+            "mask": 54,
+            "role": "punctuation",
+            "output": "("
+          },
+          {
+            "mask": 1,
+            "role": "letter",
+            "output": "a"
+          },
+          {
+            "mask": 54,
+            "role": "punctuation",
+            "output": ")"
+          }
+        ]
+      }
+    },
+    {
+      "name": "(a).",
+      "masks": [
+        54,
+        1,
+        54,
+        50
+      ],
+      "result": {
+        "status": "success",
+        "text": "(a).",
+        "symbols": [
+          {
+            "mask": 54,
+            "role": "punctuation",
+            "output": "("
+          },
+          {
+            "mask": 1,
+            "role": "letter",
+            "output": "a"
+          },
+          {
+            "mask": 54,
+            "role": "punctuation",
+            "output": ")"
+          },
+          {
+            "mask": 50,
+            "role": "punctuation",
+            "output": "."
+          }
+        ]
+      }
+    },
+    {
+      "name": "(a?)",
+      "masks": [
+        54,
+        1,
+        38,
+        54
+      ],
+      "result": {
+        "status": "success",
+        "text": "(a?)",
+        "symbols": [
+          {
+            "mask": 54,
+            "role": "punctuation",
+            "output": "("
+          },
+          {
+            "mask": 1,
+            "role": "letter",
+            "output": "a"
+          },
+          {
+            "mask": 38,
+            "role": "punctuation",
+            "output": "?"
+          },
+          {
+            "mask": 54,
+            "role": "punctuation",
+            "output": ")"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Aku",
+      "masks": [
+        32,
+        1,
+        5,
+        37
+      ],
+      "result": {
+        "status": "success",
+        "text": "Aku",
+        "symbols": [
+          {
+            "mask": 32,
+            "role": "capital_indicator",
+            "output": ""
+          },
+          {
+            "mask": 1,
+            "role": "letter",
+            "output": "A"
+          },
+          {
+            "mask": 5,
+            "role": "letter",
+            "output": "k"
+          },
+          {
+            "mask": 37,
+            "role": "letter",
+            "output": "u"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Aku.",
+      "masks": [
+        32,
+        1,
+        5,
+        37,
+        50
+      ],
+      "result": {
+        "status": "success",
+        "text": "Aku.",
+        "symbols": [
+          {
+            "mask": 32,
+            "role": "capital_indicator",
+            "output": ""
+          },
+          {
+            "mask": 1,
+            "role": "letter",
+            "output": "A"
+          },
+          {
+            "mask": 5,
+            "role": "letter",
+            "output": "k"
+          },
+          {
+            "mask": 37,
+            "role": "letter",
+            "output": "u"
+          },
+          {
+            "mask": 50,
+            "role": "punctuation",
+            "output": "."
+          }
+        ]
+      }
+    },
+    {
+      "name": "Aku,",
+      "masks": [
+        32,
+        1,
+        5,
+        37,
+        2
+      ],
+      "result": {
+        "status": "success",
+        "text": "Aku,",
+        "symbols": [
+          {
+            "mask": 32,
+            "role": "capital_indicator",
+            "output": ""
+          },
+          {
+            "mask": 1,
+            "role": "letter",
+            "output": "A"
+          },
+          {
+            "mask": 5,
+            "role": "letter",
+            "output": "k"
+          },
+          {
+            "mask": 37,
+            "role": "letter",
+            "output": "u"
+          },
+          {
+            "mask": 2,
+            "role": "punctuation",
+            "output": ","
+          }
+        ]
+      }
+    },
+    {
+      "name": "Aku?",
+      "masks": [
+        32,
+        1,
+        5,
+        37,
+        38
+      ],
+      "result": {
+        "status": "success",
+        "text": "Aku?",
+        "symbols": [
+          {
+            "mask": 32,
+            "role": "capital_indicator",
+            "output": ""
+          },
+          {
+            "mask": 1,
+            "role": "letter",
+            "output": "A"
+          },
+          {
+            "mask": 5,
+            "role": "letter",
+            "output": "k"
+          },
+          {
+            "mask": 37,
+            "role": "letter",
+            "output": "u"
+          },
+          {
+            "mask": 38,
+            "role": "punctuation",
+            "output": "?"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Aku!",
+      "masks": [
+        32,
+        1,
+        5,
+        37,
+        22
+      ],
+      "result": {
+        "status": "success",
+        "text": "Aku!",
+        "symbols": [
+          {
+            "mask": 32,
+            "role": "capital_indicator",
+            "output": ""
+          },
+          {
+            "mask": 1,
+            "role": "letter",
+            "output": "A"
+          },
+          {
+            "mask": 5,
+            "role": "letter",
+            "output": "k"
+          },
+          {
+            "mask": 37,
+            "role": "letter",
+            "output": "u"
+          },
+          {
+            "mask": 22,
+            "role": "punctuation",
+            "output": "!"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Aku:",
+      "masks": [
+        32,
+        1,
+        5,
+        37,
+        18
+      ],
+      "result": {
+        "status": "success",
+        "text": "Aku:",
+        "symbols": [
+          {
+            "mask": 32,
+            "role": "capital_indicator",
+            "output": ""
+          },
+          {
+            "mask": 1,
+            "role": "letter",
+            "output": "A"
+          },
+          {
+            "mask": 5,
+            "role": "letter",
+            "output": "k"
+          },
+          {
+            "mask": 37,
+            "role": "letter",
+            "output": "u"
+          },
+          {
+            "mask": 18,
+            "role": "punctuation",
+            "output": ":"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Aku;",
+      "masks": [
+        32,
+        1,
+        5,
+        37,
+        6
+      ],
+      "result": {
+        "status": "success",
+        "text": "Aku;",
+        "symbols": [
+          {
+            "mask": 32,
+            "role": "capital_indicator",
+            "output": ""
+          },
+          {
+            "mask": 1,
+            "role": "letter",
+            "output": "A"
+          },
+          {
+            "mask": 5,
+            "role": "letter",
+            "output": "k"
+          },
+          {
+            "mask": 37,
+            "role": "letter",
+            "output": "u"
+          },
+          {
+            "mask": 6,
+            "role": "punctuation",
+            "output": ";"
+          }
+        ]
+      }
+    },
+    {
+      "name": "(Aku)",
+      "masks": [
+        54,
+        32,
+        1,
+        5,
+        37,
+        54
+      ],
+      "result": {
+        "status": "success",
+        "text": "(Aku)",
+        "symbols": [
+          {
+            "mask": 54,
+            "role": "punctuation",
+            "output": "("
+          },
+          {
+            "mask": 32,
+            "role": "capital_indicator",
+            "output": ""
+          },
+          {
+            "mask": 1,
+            "role": "letter",
+            "output": "A"
+          },
+          {
+            "mask": 5,
+            "role": "letter",
+            "output": "k"
+          },
+          {
+            "mask": 37,
+            "role": "letter",
+            "output": "u"
+          },
+          {
+            "mask": 54,
+            "role": "punctuation",
+            "output": ")"
+          }
+        ]
+      }
+    },
+    {
+      "name": "(Aku).",
+      "masks": [
+        54,
+        32,
+        1,
+        5,
+        37,
+        54,
+        50
+      ],
+      "result": {
+        "status": "success",
+        "text": "(Aku).",
+        "symbols": [
+          {
+            "mask": 54,
+            "role": "punctuation",
+            "output": "("
+          },
+          {
+            "mask": 32,
+            "role": "capital_indicator",
+            "output": ""
+          },
+          {
+            "mask": 1,
+            "role": "letter",
+            "output": "A"
+          },
+          {
+            "mask": 5,
+            "role": "letter",
+            "output": "k"
+          },
+          {
+            "mask": 37,
+            "role": "letter",
+            "output": "u"
+          },
+          {
+            "mask": 54,
+            "role": "punctuation",
+            "output": ")"
+          },
+          {
+            "mask": 50,
+            "role": "punctuation",
+            "output": "."
+          }
+        ]
+      }
+    },
+    {
+      "name": "(Aku?)",
+      "masks": [
+        54,
+        32,
+        1,
+        5,
+        37,
+        38,
+        54
+      ],
+      "result": {
+        "status": "success",
+        "text": "(Aku?)",
+        "symbols": [
+          {
+            "mask": 54,
+            "role": "punctuation",
+            "output": "("
+          },
+          {
+            "mask": 32,
+            "role": "capital_indicator",
+            "output": ""
+          },
+          {
+            "mask": 1,
+            "role": "letter",
+            "output": "A"
+          },
+          {
+            "mask": 5,
+            "role": "letter",
+            "output": "k"
+          },
+          {
+            "mask": 37,
+            "role": "letter",
+            "output": "u"
+          },
+          {
+            "mask": 38,
+            "role": "punctuation",
+            "output": "?"
+          },
+          {
+            "mask": 54,
+            "role": "punctuation",
+            "output": ")"
+          }
+        ]
+      }
+    },
+    {
+      "name": "AKU",
+      "masks": [
+        32,
+        32,
+        1,
+        5,
+        37
+      ],
+      "result": {
+        "status": "success",
+        "text": "AKU",
+        "symbols": [
+          {
+            "mask": 32,
+            "role": "capital_indicator",
+            "output": ""
+          },
+          {
+            "mask": 32,
+            "role": "capital_indicator",
+            "output": ""
+          },
+          {
+            "mask": 1,
+            "role": "letter",
+            "output": "A"
+          },
+          {
+            "mask": 5,
+            "role": "letter",
+            "output": "K"
+          },
+          {
+            "mask": 37,
+            "role": "letter",
+            "output": "U"
+          }
+        ]
+      }
+    },
+    {
+      "name": "AKU.",
+      "masks": [
+        32,
+        32,
+        1,
+        5,
+        37,
+        50
+      ],
+      "result": {
+        "status": "success",
+        "text": "AKU.",
+        "symbols": [
+          {
+            "mask": 32,
+            "role": "capital_indicator",
+            "output": ""
+          },
+          {
+            "mask": 32,
+            "role": "capital_indicator",
+            "output": ""
+          },
+          {
+            "mask": 1,
+            "role": "letter",
+            "output": "A"
+          },
+          {
+            "mask": 5,
+            "role": "letter",
+            "output": "K"
+          },
+          {
+            "mask": 37,
+            "role": "letter",
+            "output": "U"
+          },
+          {
+            "mask": 50,
+            "role": "punctuation",
+            "output": "."
+          }
+        ]
+      }
+    },
+    {
+      "name": "AKU,",
+      "masks": [
+        32,
+        32,
+        1,
+        5,
+        37,
+        2
+      ],
+      "result": {
+        "status": "success",
+        "text": "AKU,",
+        "symbols": [
+          {
+            "mask": 32,
+            "role": "capital_indicator",
+            "output": ""
+          },
+          {
+            "mask": 32,
+            "role": "capital_indicator",
+            "output": ""
+          },
+          {
+            "mask": 1,
+            "role": "letter",
+            "output": "A"
+          },
+          {
+            "mask": 5,
+            "role": "letter",
+            "output": "K"
+          },
+          {
+            "mask": 37,
+            "role": "letter",
+            "output": "U"
+          },
+          {
+            "mask": 2,
+            "role": "punctuation",
+            "output": ","
+          }
+        ]
+      }
+    },
+    {
+      "name": "AKU?",
+      "masks": [
+        32,
+        32,
+        1,
+        5,
+        37,
+        38
+      ],
+      "result": {
+        "status": "success",
+        "text": "AKU?",
+        "symbols": [
+          {
+            "mask": 32,
+            "role": "capital_indicator",
+            "output": ""
+          },
+          {
+            "mask": 32,
+            "role": "capital_indicator",
+            "output": ""
+          },
+          {
+            "mask": 1,
+            "role": "letter",
+            "output": "A"
+          },
+          {
+            "mask": 5,
+            "role": "letter",
+            "output": "K"
+          },
+          {
+            "mask": 37,
+            "role": "letter",
+            "output": "U"
+          },
+          {
+            "mask": 38,
+            "role": "punctuation",
+            "output": "?"
+          }
+        ]
+      }
+    },
+    {
+      "name": "AKU!",
+      "masks": [
+        32,
+        32,
+        1,
+        5,
+        37,
+        22
+      ],
+      "result": {
+        "status": "success",
+        "text": "AKU!",
+        "symbols": [
+          {
+            "mask": 32,
+            "role": "capital_indicator",
+            "output": ""
+          },
+          {
+            "mask": 32,
+            "role": "capital_indicator",
+            "output": ""
+          },
+          {
+            "mask": 1,
+            "role": "letter",
+            "output": "A"
+          },
+          {
+            "mask": 5,
+            "role": "letter",
+            "output": "K"
+          },
+          {
+            "mask": 37,
+            "role": "letter",
+            "output": "U"
+          },
+          {
+            "mask": 22,
+            "role": "punctuation",
+            "output": "!"
+          }
+        ]
+      }
+    },
+    {
+      "name": "AKU:",
+      "masks": [
+        32,
+        32,
+        1,
+        5,
+        37,
+        18
+      ],
+      "result": {
+        "status": "success",
+        "text": "AKU:",
+        "symbols": [
+          {
+            "mask": 32,
+            "role": "capital_indicator",
+            "output": ""
+          },
+          {
+            "mask": 32,
+            "role": "capital_indicator",
+            "output": ""
+          },
+          {
+            "mask": 1,
+            "role": "letter",
+            "output": "A"
+          },
+          {
+            "mask": 5,
+            "role": "letter",
+            "output": "K"
+          },
+          {
+            "mask": 37,
+            "role": "letter",
+            "output": "U"
+          },
+          {
+            "mask": 18,
+            "role": "punctuation",
+            "output": ":"
+          }
+        ]
+      }
+    },
+    {
+      "name": "AKU;",
+      "masks": [
+        32,
+        32,
+        1,
+        5,
+        37,
+        6
+      ],
+      "result": {
+        "status": "success",
+        "text": "AKU;",
+        "symbols": [
+          {
+            "mask": 32,
+            "role": "capital_indicator",
+            "output": ""
+          },
+          {
+            "mask": 32,
+            "role": "capital_indicator",
+            "output": ""
+          },
+          {
+            "mask": 1,
+            "role": "letter",
+            "output": "A"
+          },
+          {
+            "mask": 5,
+            "role": "letter",
+            "output": "K"
+          },
+          {
+            "mask": 37,
+            "role": "letter",
+            "output": "U"
+          },
+          {
+            "mask": 6,
+            "role": "punctuation",
+            "output": ";"
+          }
+        ]
+      }
+    },
+    {
+      "name": "(AKU)",
+      "masks": [
+        54,
+        32,
+        32,
+        1,
+        5,
+        37,
+        54
+      ],
+      "result": {
+        "status": "success",
+        "text": "(AKU)",
+        "symbols": [
+          {
+            "mask": 54,
+            "role": "punctuation",
+            "output": "("
+          },
+          {
+            "mask": 32,
+            "role": "capital_indicator",
+            "output": ""
+          },
+          {
+            "mask": 32,
+            "role": "capital_indicator",
+            "output": ""
+          },
+          {
+            "mask": 1,
+            "role": "letter",
+            "output": "A"
+          },
+          {
+            "mask": 5,
+            "role": "letter",
+            "output": "K"
+          },
+          {
+            "mask": 37,
+            "role": "letter",
+            "output": "U"
+          },
+          {
+            "mask": 54,
+            "role": "punctuation",
+            "output": ")"
+          }
+        ]
+      }
+    },
+    {
+      "name": "(AKU).",
+      "masks": [
+        54,
+        32,
+        32,
+        1,
+        5,
+        37,
+        54,
+        50
+      ],
+      "result": {
+        "status": "success",
+        "text": "(AKU).",
+        "symbols": [
+          {
+            "mask": 54,
+            "role": "punctuation",
+            "output": "("
+          },
+          {
+            "mask": 32,
+            "role": "capital_indicator",
+            "output": ""
+          },
+          {
+            "mask": 32,
+            "role": "capital_indicator",
+            "output": ""
+          },
+          {
+            "mask": 1,
+            "role": "letter",
+            "output": "A"
+          },
+          {
+            "mask": 5,
+            "role": "letter",
+            "output": "K"
+          },
+          {
+            "mask": 37,
+            "role": "letter",
+            "output": "U"
+          },
+          {
+            "mask": 54,
+            "role": "punctuation",
+            "output": ")"
+          },
+          {
+            "mask": 50,
+            "role": "punctuation",
+            "output": "."
+          }
+        ]
+      }
+    },
+    {
+      "name": "(AKU?)",
+      "masks": [
+        54,
+        32,
+        32,
+        1,
+        5,
+        37,
+        38,
+        54
+      ],
+      "result": {
+        "status": "success",
+        "text": "(AKU?)",
+        "symbols": [
+          {
+            "mask": 54,
+            "role": "punctuation",
+            "output": "("
+          },
+          {
+            "mask": 32,
+            "role": "capital_indicator",
+            "output": ""
+          },
+          {
+            "mask": 32,
+            "role": "capital_indicator",
+            "output": ""
+          },
+          {
+            "mask": 1,
+            "role": "letter",
+            "output": "A"
+          },
+          {
+            "mask": 5,
+            "role": "letter",
+            "output": "K"
+          },
+          {
+            "mask": 37,
+            "role": "letter",
+            "output": "U"
+          },
+          {
+            "mask": 38,
+            "role": "punctuation",
+            "output": "?"
+          },
+          {
+            "mask": 54,
+            "role": "punctuation",
+            "output": ")"
+          }
+        ]
+      }
+    },
+    {
+      "name": "123",
+      "masks": [
+        60,
+        1,
+        3,
+        9
+      ],
+      "result": {
+        "status": "success",
+        "text": "123",
+        "symbols": [
+          {
+            "mask": 60,
+            "role": "number_indicator",
+            "output": ""
+          },
+          {
+            "mask": 1,
+            "role": "digit",
+            "output": "1"
+          },
+          {
+            "mask": 3,
+            "role": "digit",
+            "output": "2"
+          },
+          {
+            "mask": 9,
+            "role": "digit",
+            "output": "3"
+          }
+        ]
+      }
+    },
+    {
+      "name": "123.",
+      "masks": [
+        60,
+        1,
+        3,
+        9,
+        50
+      ],
+      "result": {
+        "status": "success",
+        "text": "123.",
+        "symbols": [
+          {
+            "mask": 60,
+            "role": "number_indicator",
+            "output": ""
+          },
+          {
+            "mask": 1,
+            "role": "digit",
+            "output": "1"
+          },
+          {
+            "mask": 3,
+            "role": "digit",
+            "output": "2"
+          },
+          {
+            "mask": 9,
+            "role": "digit",
+            "output": "3"
+          },
+          {
+            "mask": 50,
+            "role": "punctuation",
+            "output": "."
+          }
+        ]
+      }
+    },
+    {
+      "name": "123,",
+      "masks": [
+        60,
+        1,
+        3,
+        9,
+        2
+      ],
+      "result": {
+        "status": "success",
+        "text": "123,",
+        "symbols": [
+          {
+            "mask": 60,
+            "role": "number_indicator",
+            "output": ""
+          },
+          {
+            "mask": 1,
+            "role": "digit",
+            "output": "1"
+          },
+          {
+            "mask": 3,
+            "role": "digit",
+            "output": "2"
+          },
+          {
+            "mask": 9,
+            "role": "digit",
+            "output": "3"
+          },
+          {
+            "mask": 2,
+            "role": "punctuation",
+            "output": ","
+          }
+        ]
+      }
+    },
+    {
+      "name": "123?",
+      "masks": [
+        60,
+        1,
+        3,
+        9,
+        38
+      ],
+      "result": {
+        "status": "success",
+        "text": "123?",
+        "symbols": [
+          {
+            "mask": 60,
+            "role": "number_indicator",
+            "output": ""
+          },
+          {
+            "mask": 1,
+            "role": "digit",
+            "output": "1"
+          },
+          {
+            "mask": 3,
+            "role": "digit",
+            "output": "2"
+          },
+          {
+            "mask": 9,
+            "role": "digit",
+            "output": "3"
+          },
+          {
+            "mask": 38,
+            "role": "punctuation",
+            "output": "?"
+          }
+        ]
+      }
+    },
+    {
+      "name": "123!",
+      "masks": [
+        60,
+        1,
+        3,
+        9,
+        22
+      ],
+      "result": {
+        "status": "success",
+        "text": "123!",
+        "symbols": [
+          {
+            "mask": 60,
+            "role": "number_indicator",
+            "output": ""
+          },
+          {
+            "mask": 1,
+            "role": "digit",
+            "output": "1"
+          },
+          {
+            "mask": 3,
+            "role": "digit",
+            "output": "2"
+          },
+          {
+            "mask": 9,
+            "role": "digit",
+            "output": "3"
+          },
+          {
+            "mask": 22,
+            "role": "punctuation",
+            "output": "!"
+          }
+        ]
+      }
+    },
+    {
+      "name": "123:",
+      "masks": [
+        60,
+        1,
+        3,
+        9,
+        18
+      ],
+      "result": {
+        "status": "success",
+        "text": "123:",
+        "symbols": [
+          {
+            "mask": 60,
+            "role": "number_indicator",
+            "output": ""
+          },
+          {
+            "mask": 1,
+            "role": "digit",
+            "output": "1"
+          },
+          {
+            "mask": 3,
+            "role": "digit",
+            "output": "2"
+          },
+          {
+            "mask": 9,
+            "role": "digit",
+            "output": "3"
+          },
+          {
+            "mask": 18,
+            "role": "punctuation",
+            "output": ":"
+          }
+        ]
+      }
+    },
+    {
+      "name": "123;",
+      "masks": [
+        60,
+        1,
+        3,
+        9,
+        6
+      ],
+      "result": {
+        "status": "success",
+        "text": "123;",
+        "symbols": [
+          {
+            "mask": 60,
+            "role": "number_indicator",
+            "output": ""
+          },
+          {
+            "mask": 1,
+            "role": "digit",
+            "output": "1"
+          },
+          {
+            "mask": 3,
+            "role": "digit",
+            "output": "2"
+          },
+          {
+            "mask": 9,
+            "role": "digit",
+            "output": "3"
+          },
+          {
+            "mask": 6,
+            "role": "punctuation",
+            "output": ";"
+          }
+        ]
+      }
+    },
+    {
+      "name": "(123)",
+      "masks": [
+        54,
+        60,
+        1,
+        3,
+        9,
+        54
+      ],
+      "result": {
+        "status": "success",
+        "text": "(123)",
+        "symbols": [
+          {
+            "mask": 54,
+            "role": "punctuation",
+            "output": "("
+          },
+          {
+            "mask": 60,
+            "role": "number_indicator",
+            "output": ""
+          },
+          {
+            "mask": 1,
+            "role": "digit",
+            "output": "1"
+          },
+          {
+            "mask": 3,
+            "role": "digit",
+            "output": "2"
+          },
+          {
+            "mask": 9,
+            "role": "digit",
+            "output": "3"
+          },
+          {
+            "mask": 54,
+            "role": "punctuation",
+            "output": ")"
+          }
+        ]
+      }
+    },
+    {
+      "name": "(123).",
+      "masks": [
+        54,
+        60,
+        1,
+        3,
+        9,
+        54,
+        50
+      ],
+      "result": {
+        "status": "success",
+        "text": "(123).",
+        "symbols": [
+          {
+            "mask": 54,
+            "role": "punctuation",
+            "output": "("
+          },
+          {
+            "mask": 60,
+            "role": "number_indicator",
+            "output": ""
+          },
+          {
+            "mask": 1,
+            "role": "digit",
+            "output": "1"
+          },
+          {
+            "mask": 3,
+            "role": "digit",
+            "output": "2"
+          },
+          {
+            "mask": 9,
+            "role": "digit",
+            "output": "3"
+          },
+          {
+            "mask": 54,
+            "role": "punctuation",
+            "output": ")"
+          },
+          {
+            "mask": 50,
+            "role": "punctuation",
+            "output": "."
+          }
+        ]
+      }
+    },
+    {
+      "name": "(123?)",
+      "masks": [
+        54,
+        60,
+        1,
+        3,
+        9,
+        38,
+        54
+      ],
+      "result": {
+        "status": "success",
+        "text": "(123?)",
+        "symbols": [
+          {
+            "mask": 54,
+            "role": "punctuation",
+            "output": "("
+          },
+          {
+            "mask": 60,
+            "role": "number_indicator",
+            "output": ""
+          },
+          {
+            "mask": 1,
+            "role": "digit",
+            "output": "1"
+          },
+          {
+            "mask": 3,
+            "role": "digit",
+            "output": "2"
+          },
+          {
+            "mask": 9,
+            "role": "digit",
+            "output": "3"
+          },
+          {
+            "mask": 38,
+            "role": "punctuation",
+            "output": "?"
+          },
+          {
+            "mask": 54,
+            "role": "punctuation",
+            "output": ")"
+          }
+        ]
+      }
+    },
+    {
+      "name": "a-b",
+      "masks": [
+        1,
+        36,
+        3
+      ],
+      "result": {
+        "status": "success",
+        "text": "a-b",
+        "symbols": [
+          {
+            "mask": 1,
+            "role": "letter",
+            "output": "a"
+          },
+          {
+            "mask": 36,
+            "role": "punctuation",
+            "output": "-"
+          },
+          {
+            "mask": 3,
+            "role": "letter",
+            "output": "b"
+          }
+        ]
+      }
+    },
+    {
+      "name": "a-b.",
+      "masks": [
+        1,
+        36,
+        3,
+        50
+      ],
+      "result": {
+        "status": "success",
+        "text": "a-b.",
+        "symbols": [
+          {
+            "mask": 1,
+            "role": "letter",
+            "output": "a"
+          },
+          {
+            "mask": 36,
+            "role": "punctuation",
+            "output": "-"
+          },
+          {
+            "mask": 3,
+            "role": "letter",
+            "output": "b"
+          },
+          {
+            "mask": 50,
+            "role": "punctuation",
+            "output": "."
+          }
+        ]
+      }
+    },
+    {
+      "name": "a-b,",
+      "masks": [
+        1,
+        36,
+        3,
+        2
+      ],
+      "result": {
+        "status": "success",
+        "text": "a-b,",
+        "symbols": [
+          {
+            "mask": 1,
+            "role": "letter",
+            "output": "a"
+          },
+          {
+            "mask": 36,
+            "role": "punctuation",
+            "output": "-"
+          },
+          {
+            "mask": 3,
+            "role": "letter",
+            "output": "b"
+          },
+          {
+            "mask": 2,
+            "role": "punctuation",
+            "output": ","
+          }
+        ]
+      }
+    },
+    {
+      "name": "a-b?",
+      "masks": [
+        1,
+        36,
+        3,
+        38
+      ],
+      "result": {
+        "status": "success",
+        "text": "a-b?",
+        "symbols": [
+          {
+            "mask": 1,
+            "role": "letter",
+            "output": "a"
+          },
+          {
+            "mask": 36,
+            "role": "punctuation",
+            "output": "-"
+          },
+          {
+            "mask": 3,
+            "role": "letter",
+            "output": "b"
+          },
+          {
+            "mask": 38,
+            "role": "punctuation",
+            "output": "?"
+          }
+        ]
+      }
+    },
+    {
+      "name": "a-b!",
+      "masks": [
+        1,
+        36,
+        3,
+        22
+      ],
+      "result": {
+        "status": "success",
+        "text": "a-b!",
+        "symbols": [
+          {
+            "mask": 1,
+            "role": "letter",
+            "output": "a"
+          },
+          {
+            "mask": 36,
+            "role": "punctuation",
+            "output": "-"
+          },
+          {
+            "mask": 3,
+            "role": "letter",
+            "output": "b"
+          },
+          {
+            "mask": 22,
+            "role": "punctuation",
+            "output": "!"
+          }
+        ]
+      }
+    },
+    {
+      "name": "a-b:",
+      "masks": [
+        1,
+        36,
+        3,
+        18
+      ],
+      "result": {
+        "status": "success",
+        "text": "a-b:",
+        "symbols": [
+          {
+            "mask": 1,
+            "role": "letter",
+            "output": "a"
+          },
+          {
+            "mask": 36,
+            "role": "punctuation",
+            "output": "-"
+          },
+          {
+            "mask": 3,
+            "role": "letter",
+            "output": "b"
+          },
+          {
+            "mask": 18,
+            "role": "punctuation",
+            "output": ":"
+          }
+        ]
+      }
+    },
+    {
+      "name": "a-b;",
+      "masks": [
+        1,
+        36,
+        3,
+        6
+      ],
+      "result": {
+        "status": "success",
+        "text": "a-b;",
+        "symbols": [
+          {
+            "mask": 1,
+            "role": "letter",
+            "output": "a"
+          },
+          {
+            "mask": 36,
+            "role": "punctuation",
+            "output": "-"
+          },
+          {
+            "mask": 3,
+            "role": "letter",
+            "output": "b"
+          },
+          {
+            "mask": 6,
+            "role": "punctuation",
+            "output": ";"
+          }
+        ]
+      }
+    },
+    {
+      "name": "(a-b)",
+      "masks": [
+        54,
+        1,
+        36,
+        3,
+        54
+      ],
+      "result": {
+        "status": "success",
+        "text": "(a-b)",
+        "symbols": [
+          {
+            "mask": 54,
+            "role": "punctuation",
+            "output": "("
+          },
+          {
+            "mask": 1,
+            "role": "letter",
+            "output": "a"
+          },
+          {
+            "mask": 36,
+            "role": "punctuation",
+            "output": "-"
+          },
+          {
+            "mask": 3,
+            "role": "letter",
+            "output": "b"
+          },
+          {
+            "mask": 54,
+            "role": "punctuation",
+            "output": ")"
+          }
+        ]
+      }
+    },
+    {
+      "name": "(a-b).",
+      "masks": [
+        54,
+        1,
+        36,
+        3,
+        54,
+        50
+      ],
+      "result": {
+        "status": "success",
+        "text": "(a-b).",
+        "symbols": [
+          {
+            "mask": 54,
+            "role": "punctuation",
+            "output": "("
+          },
+          {
+            "mask": 1,
+            "role": "letter",
+            "output": "a"
+          },
+          {
+            "mask": 36,
+            "role": "punctuation",
+            "output": "-"
+          },
+          {
+            "mask": 3,
+            "role": "letter",
+            "output": "b"
+          },
+          {
+            "mask": 54,
+            "role": "punctuation",
+            "output": ")"
+          },
+          {
+            "mask": 50,
+            "role": "punctuation",
+            "output": "."
+          }
+        ]
+      }
+    },
+    {
+      "name": "(a-b?)",
+      "masks": [
+        54,
+        1,
+        36,
+        3,
+        38,
+        54
+      ],
+      "result": {
+        "status": "success",
+        "text": "(a-b?)",
+        "symbols": [
+          {
+            "mask": 54,
+            "role": "punctuation",
+            "output": "("
+          },
+          {
+            "mask": 1,
+            "role": "letter",
+            "output": "a"
+          },
+          {
+            "mask": 36,
+            "role": "punctuation",
+            "output": "-"
+          },
+          {
+            "mask": 3,
+            "role": "letter",
+            "output": "b"
+          },
+          {
+            "mask": 38,
+            "role": "punctuation",
+            "output": "?"
+          },
+          {
+            "mask": 54,
+            "role": "punctuation",
+            "output": ")"
+          }
+        ]
+      }
+    },
+    {
+      "name": "A-B",
+      "masks": [
+        32,
+        1,
+        36,
+        32,
+        3
+      ],
+      "result": {
+        "status": "success",
+        "text": "A-B",
+        "symbols": [
+          {
+            "mask": 32,
+            "role": "capital_indicator",
+            "output": ""
+          },
+          {
+            "mask": 1,
+            "role": "letter",
+            "output": "A"
+          },
+          {
+            "mask": 36,
+            "role": "punctuation",
+            "output": "-"
+          },
+          {
+            "mask": 32,
+            "role": "capital_indicator",
+            "output": ""
+          },
+          {
+            "mask": 3,
+            "role": "letter",
+            "output": "B"
+          }
+        ]
+      }
+    },
+    {
+      "name": "A-B.",
+      "masks": [
+        32,
+        1,
+        36,
+        32,
+        3,
+        50
+      ],
+      "result": {
+        "status": "success",
+        "text": "A-B.",
+        "symbols": [
+          {
+            "mask": 32,
+            "role": "capital_indicator",
+            "output": ""
+          },
+          {
+            "mask": 1,
+            "role": "letter",
+            "output": "A"
+          },
+          {
+            "mask": 36,
+            "role": "punctuation",
+            "output": "-"
+          },
+          {
+            "mask": 32,
+            "role": "capital_indicator",
+            "output": ""
+          },
+          {
+            "mask": 3,
+            "role": "letter",
+            "output": "B"
+          },
+          {
+            "mask": 50,
+            "role": "punctuation",
+            "output": "."
+          }
+        ]
+      }
+    },
+    {
+      "name": "A-B,",
+      "masks": [
+        32,
+        1,
+        36,
+        32,
+        3,
+        2
+      ],
+      "result": {
+        "status": "success",
+        "text": "A-B,",
+        "symbols": [
+          {
+            "mask": 32,
+            "role": "capital_indicator",
+            "output": ""
+          },
+          {
+            "mask": 1,
+            "role": "letter",
+            "output": "A"
+          },
+          {
+            "mask": 36,
+            "role": "punctuation",
+            "output": "-"
+          },
+          {
+            "mask": 32,
+            "role": "capital_indicator",
+            "output": ""
+          },
+          {
+            "mask": 3,
+            "role": "letter",
+            "output": "B"
+          },
+          {
+            "mask": 2,
+            "role": "punctuation",
+            "output": ","
+          }
+        ]
+      }
+    },
+    {
+      "name": "A-B?",
+      "masks": [
+        32,
+        1,
+        36,
+        32,
+        3,
+        38
+      ],
+      "result": {
+        "status": "success",
+        "text": "A-B?",
+        "symbols": [
+          {
+            "mask": 32,
+            "role": "capital_indicator",
+            "output": ""
+          },
+          {
+            "mask": 1,
+            "role": "letter",
+            "output": "A"
+          },
+          {
+            "mask": 36,
+            "role": "punctuation",
+            "output": "-"
+          },
+          {
+            "mask": 32,
+            "role": "capital_indicator",
+            "output": ""
+          },
+          {
+            "mask": 3,
+            "role": "letter",
+            "output": "B"
+          },
+          {
+            "mask": 38,
+            "role": "punctuation",
+            "output": "?"
+          }
+        ]
+      }
+    },
+    {
+      "name": "A-B!",
+      "masks": [
+        32,
+        1,
+        36,
+        32,
+        3,
+        22
+      ],
+      "result": {
+        "status": "success",
+        "text": "A-B!",
+        "symbols": [
+          {
+            "mask": 32,
+            "role": "capital_indicator",
+            "output": ""
+          },
+          {
+            "mask": 1,
+            "role": "letter",
+            "output": "A"
+          },
+          {
+            "mask": 36,
+            "role": "punctuation",
+            "output": "-"
+          },
+          {
+            "mask": 32,
+            "role": "capital_indicator",
+            "output": ""
+          },
+          {
+            "mask": 3,
+            "role": "letter",
+            "output": "B"
+          },
+          {
+            "mask": 22,
+            "role": "punctuation",
+            "output": "!"
+          }
+        ]
+      }
+    },
+    {
+      "name": "A-B:",
+      "masks": [
+        32,
+        1,
+        36,
+        32,
+        3,
+        18
+      ],
+      "result": {
+        "status": "success",
+        "text": "A-B:",
+        "symbols": [
+          {
+            "mask": 32,
+            "role": "capital_indicator",
+            "output": ""
+          },
+          {
+            "mask": 1,
+            "role": "letter",
+            "output": "A"
+          },
+          {
+            "mask": 36,
+            "role": "punctuation",
+            "output": "-"
+          },
+          {
+            "mask": 32,
+            "role": "capital_indicator",
+            "output": ""
+          },
+          {
+            "mask": 3,
+            "role": "letter",
+            "output": "B"
+          },
+          {
+            "mask": 18,
+            "role": "punctuation",
+            "output": ":"
+          }
+        ]
+      }
+    },
+    {
+      "name": "A-B;",
+      "masks": [
+        32,
+        1,
+        36,
+        32,
+        3,
+        6
+      ],
+      "result": {
+        "status": "success",
+        "text": "A-B;",
+        "symbols": [
+          {
+            "mask": 32,
+            "role": "capital_indicator",
+            "output": ""
+          },
+          {
+            "mask": 1,
+            "role": "letter",
+            "output": "A"
+          },
+          {
+            "mask": 36,
+            "role": "punctuation",
+            "output": "-"
+          },
+          {
+            "mask": 32,
+            "role": "capital_indicator",
+            "output": ""
+          },
+          {
+            "mask": 3,
+            "role": "letter",
+            "output": "B"
+          },
+          {
+            "mask": 6,
+            "role": "punctuation",
+            "output": ";"
+          }
+        ]
+      }
+    },
+    {
+      "name": "(A-B)",
+      "masks": [
+        54,
+        32,
+        1,
+        36,
+        32,
+        3,
+        54
+      ],
+      "result": {
+        "status": "success",
+        "text": "(A-B)",
+        "symbols": [
+          {
+            "mask": 54,
+            "role": "punctuation",
+            "output": "("
+          },
+          {
+            "mask": 32,
+            "role": "capital_indicator",
+            "output": ""
+          },
+          {
+            "mask": 1,
+            "role": "letter",
+            "output": "A"
+          },
+          {
+            "mask": 36,
+            "role": "punctuation",
+            "output": "-"
+          },
+          {
+            "mask": 32,
+            "role": "capital_indicator",
+            "output": ""
+          },
+          {
+            "mask": 3,
+            "role": "letter",
+            "output": "B"
+          },
+          {
+            "mask": 54,
+            "role": "punctuation",
+            "output": ")"
+          }
+        ]
+      }
+    },
+    {
+      "name": "(A-B).",
+      "masks": [
+        54,
+        32,
+        1,
+        36,
+        32,
+        3,
+        54,
+        50
+      ],
+      "result": {
+        "status": "success",
+        "text": "(A-B).",
+        "symbols": [
+          {
+            "mask": 54,
+            "role": "punctuation",
+            "output": "("
+          },
+          {
+            "mask": 32,
+            "role": "capital_indicator",
+            "output": ""
+          },
+          {
+            "mask": 1,
+            "role": "letter",
+            "output": "A"
+          },
+          {
+            "mask": 36,
+            "role": "punctuation",
+            "output": "-"
+          },
+          {
+            "mask": 32,
+            "role": "capital_indicator",
+            "output": ""
+          },
+          {
+            "mask": 3,
+            "role": "letter",
+            "output": "B"
+          },
+          {
+            "mask": 54,
+            "role": "punctuation",
+            "output": ")"
+          },
+          {
+            "mask": 50,
+            "role": "punctuation",
+            "output": "."
+          }
+        ]
+      }
+    },
+    {
+      "name": "(A-B?)",
+      "masks": [
+        54,
+        32,
+        1,
+        36,
+        32,
+        3,
+        38,
+        54
+      ],
+      "result": {
+        "status": "success",
+        "text": "(A-B?)",
+        "symbols": [
+          {
+            "mask": 54,
+            "role": "punctuation",
+            "output": "("
+          },
+          {
+            "mask": 32,
+            "role": "capital_indicator",
+            "output": ""
+          },
+          {
+            "mask": 1,
+            "role": "letter",
+            "output": "A"
+          },
+          {
+            "mask": 36,
+            "role": "punctuation",
+            "output": "-"
+          },
+          {
+            "mask": 32,
+            "role": "capital_indicator",
+            "output": ""
+          },
+          {
+            "mask": 3,
+            "role": "letter",
+            "output": "B"
+          },
+          {
+            "mask": 38,
+            "role": "punctuation",
+            "output": "?"
+          },
+          {
+            "mask": 54,
+            "role": "punctuation",
+            "output": ")"
+          }
+        ]
+      }
+    },
+    {
+      "name": "[54, 54]",
+      "masks": [
+        54,
+        54
+      ],
+      "result": {
+        "status": "rejected",
+        "reason": "ambiguous_symbol"
+      }
+    },
+    {
+      "name": "[54, 1]",
+      "masks": [
+        54,
+        1
+      ],
+      "result": {
+        "status": "rejected",
+        "reason": "ambiguous_symbol"
+      }
+    },
+    {
+      "name": "[1, 54]",
+      "masks": [
+        1,
+        54
+      ],
+      "result": {
+        "status": "rejected",
+        "reason": "ambiguous_symbol"
+      }
+    },
+    {
+      "name": "[54, 54, 1, 54, 54]",
+      "masks": [
+        54,
+        54,
+        1,
+        54,
+        54
+      ],
+      "result": {
+        "status": "rejected",
+        "reason": "ambiguous_symbol"
+      }
+    },
+    {
+      "name": "[54, 1, 50, 54, 50]",
+      "masks": [
+        54,
+        1,
+        50,
+        54,
+        50
+      ],
+      "result": {
+        "status": "rejected",
+        "reason": "invalid_sequence"
+      }
+    },
+    {
+      "name": "[60, 1, 36, 60, 3]",
+      "masks": [
+        60,
+        1,
+        36,
+        60,
+        3
+      ],
+      "result": {
+        "status": "rejected",
+        "reason": "invalid_sequence"
+      }
+    },
+    {
+      "name": "[36, 1]",
+      "masks": [
+        36,
+        1
+      ],
+      "result": {
+        "status": "rejected",
+        "reason": "invalid_sequence"
+      }
+    },
+    {
+      "name": "[1, 36]",
+      "masks": [
+        1,
+        36
+      ],
+      "result": {
+        "status": "rejected",
+        "reason": "invalid_sequence"
+      }
+    },
+    {
+      "name": "[1, 36, 36, 3]",
+      "masks": [
+        1,
+        36,
+        36,
+        3
+      ],
+      "result": {
+        "status": "rejected",
+        "reason": "invalid_sequence"
+      }
+    },
+    {
+      "name": "[60, 1, 50, 3]",
+      "masks": [
+        60,
+        1,
+        50,
+        3
+      ],
+      "result": {
+        "status": "rejected",
+        "reason": "unsupported_pattern"
+      }
+    },
+    {
+      "name": "[32, 50]",
+      "masks": [
+        32,
+        50
+      ],
+      "result": {
+        "status": "rejected",
+        "reason": "invalid_sequence"
+      }
+    },
+    {
+      "name": "[32, 32, 50]",
+      "masks": [
+        32,
+        32,
+        50
+      ],
+      "result": {
+        "status": "rejected",
+        "reason": "invalid_sequence"
+      }
+    },
+    {
+      "name": "[54, 32, 1, 54]",
+      "masks": [
+        54,
+        32,
+        1,
+        54
+      ],
+      "result": {
+        "status": "success",
+        "text": "(A)",
+        "symbols": [
+          {
+            "mask": 54,
+            "role": "punctuation",
+            "output": "("
+          },
+          {
+            "mask": 32,
+            "role": "capital_indicator",
+            "output": ""
+          },
+          {
+            "mask": 1,
+            "role": "letter",
+            "output": "A"
+          },
+          {
+            "mask": 54,
+            "role": "punctuation",
+            "output": ")"
+          }
+        ]
+      }
+    },
+    {
+      "name": "[50, 1]",
+      "masks": [
+        50,
+        1
+      ],
+      "result": {
+        "status": "rejected",
+        "reason": "unsupported_pattern"
+      }
+    },
+    {
+      "name": "[1, 50, 50]",
+      "masks": [
+        1,
+        50,
+        50
+      ],
+      "result": {
+        "status": "rejected",
+        "reason": "unsupported_pattern"
+      }
+    }
+  ]
+}

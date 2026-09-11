@@ -1,0 +1,533 @@
+{
+  "sourceFile": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\test-artifact-comparison.json",
+  "sourceSha256": "ac9da16a8e910f5fb049bb6f79742ea2fdcd8f03fe7edfe1692194e51ec78c75",
+  "sourceSizeBytes": 1013041,
+  "summaryScope": "Exact report metadata/metrics retained; row decisions remain in hash-bound original evidence",
+  "report": {
+    "created_utc": "2026-09-10T16:28:25.550291+00:00",
+    "status": "passed",
+    "samples": 540,
+    "checkpoint_sha256": "090260a2a29f802cdcd07140344feaaf04d98bc48cd2be7a5d75e0482d6ee38c",
+    "thresholds": {
+      "proposalScore": 0.25,
+      "acceptScore": 0.25,
+      "dotConfidence": 0.7,
+      "nmsIou": 0.25,
+      "minCellWidth": 0.008,
+      "minCellHeight": 0.06,
+      "edgeMargin": 0.008,
+      "maxRowDeviation": 0.55,
+      "maxGapRatio": 1.2,
+      "maxOverlapRatio": 0.5
+    },
+    "threshold_policy": "Identical frozen run thresholds for both artifacts; no calibration",
+    "input_sha256": {
+      "C:\\bm-symbols-20260908\\accuracy80-20260910\\test-evaluation-reservation.json": "986282043396a0a0109e181d221cd42f798c45a0b1c9b5aa3d819836c2a3aa39",
+      "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\test-evaluation.json": "742ae8db8d5ffd7303765be3e88f97efa6371a2c4917d723f1c5e3dcba03a21a",
+      "C:\\bm-symbols-20260908\\accuracy80-20260910\\final-test-evaluation.json": "48132f5c10ea0e63b9496cd407d4b0a0535aca858273b74b10e6b29757d85633",
+      "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\selection.json": "4235598b3db21fc537c5741207514579fd6764644386d698688cc0ee141bc952",
+      "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\training-config.json": "f24d1789de9df2b1412e206111b6169a06bdc9cb3b6d05155b713682e8819a4c",
+      "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\best-word.keras": "090260a2a29f802cdcd07140344feaaf04d98bc48cd2be7a5d75e0482d6ee38c",
+      "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\export\\export-parity.json": "2ef340a0ee114098dbaf5a404166e17778fd1a5fb02df110ba946094d67388f9",
+      "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\export\\word-reader.tflite": "e82a540e7b2e1c8d5b3bd5c3004e1cc5409367293c27b24f13f2a7c05f015325",
+      "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\export\\torch-oracle.json": "31092ff690073ee5454a62efcdf070ea84614352fae67c0cc744449ee7f37b29",
+      "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\export\\torch-oracle.npz": "86f8031793fa4c89f17760d55b02a18299dd8bcf3c02c6909b3a770c22d7d1e2",
+      "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\protected-before.json": "97c64bd063943f29ffe32f8715cd870ab7d5f03ebb5494e2fc12b1ff681a10f2",
+      "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\assets\\models\\braille-word-reader-v1\\word-reader.tflite": "406db0e55e8a5ba9e0d00fb22aadc24f19698219f375e4dcead9057cf3bf2230",
+      "C:\\bm-symbols-20260908\\accuracy80-20260910\\test-symbols.json": "3aace84bbcfd5337ec41fcaa8e3c5c98d2fb773fbefdea4702ff7400f8309310",
+      "C:\\bm-symbols-20260908\\accuracy80-20260910\\test-image-hashes.json": "0e407a27526c8dabf502914fbdaa03f05d18e530335fec0a87d9aad6f115ede4",
+      "C:\\bm-symbols-20260908\\accuracy80-20260910\\validation-symbols.json": "874c8ff878420cb511caba05e3c751a623a840def7a2c0014c802bd82790a701"
+    },
+    "script_sha256": "d79abfbc0d527e71d403423eab1ee32289b56c6188ee36d8211419c329b60aa1",
+    "tensorflow": "2.20.0",
+    "source_sha256": {
+      "word_symbol_v4_export.py": "adb9fc6cea75bd11ca4046eb4cdc96e1d0e6072b57381cc6a2c6fa1cfa756360",
+      "word_decode_id_v4.py": "e7a52d92c4c1bd8266ef95575d939fb0a96f9eacefe237a23c66f36cfd7d7868",
+      "word_symbols_id_v4.py": "0b85da03fa8d3b921fea444adf6a68ba95b56fda76db710b9edc5f6b8a9937b9",
+      "word_symbols.py": "9e43dc9484f035ba3bbfcb49344050714dfd1c636d107b92cb2ce1faded29ba3",
+      "word_data.py": "d692b4b28620af7e4b40ebdedccda68769feb8d3f51bd1508e807487fd32b7d7"
+    },
+    "scope": "Source-disjoint recomposed public photograph TEST; same chosen checkpoint conversion confirmation plus deployed-weight baseline with experimental v4 parser",
+    "physical_camera_validated": false,
+    "native_runtime_validated": false,
+    "checkpoint_selection_performed": false,
+    "comparison_replaces_native_test": false,
+    "native_torch_test_parity": {
+      "status": "passed",
+      "samples": 540,
+      "compared_fields": [
+        "source",
+        "group",
+        "expected",
+        "predicted",
+        "reason",
+        "expected_cells",
+        "detected_cells"
+      ],
+      "mismatches": [],
+      "full_semantic_cell_sequence_compared_on_test": false,
+      "limitation": "Native TEST report stores summary fields only; full ordered mask/role/output parity was checked on export validation"
+    },
+    "elapsed_seconds": 10.979581699997652,
+    "artifacts": {
+      "candidate": {
+        "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\export\\word-reader.tflite",
+        "sha256": "e82a540e7b2e1c8d5b3bd5c3004e1cc5409367293c27b24f13f2a7c05f015325",
+        "bytes": 3239392,
+        "groups": {
+          "capital_single": {
+            "total": 100,
+            "positive_total": 100,
+            "correct": 73,
+            "accepted": 83,
+            "exact_accuracy": 0.73,
+            "accepted_precision": 0.8795180722891566,
+            "rejection_total": 0,
+            "false_accepts": 0,
+            "multi_character": {
+              "total": 95,
+              "positive_total": 95,
+              "correct": 69,
+              "accepted": 79,
+              "exact_accuracy": 0.7263157894736842,
+              "accepted_precision": 0.8734177215189873,
+              "rejection_total": 0,
+              "false_accepts": 0
+            }
+          },
+          "capital_word": {
+            "total": 100,
+            "positive_total": 100,
+            "correct": 69,
+            "accepted": 82,
+            "exact_accuracy": 0.69,
+            "accepted_precision": 0.8414634146341463,
+            "rejection_total": 0,
+            "false_accepts": 0,
+            "multi_character": {
+              "total": 95,
+              "positive_total": 95,
+              "correct": 64,
+              "accepted": 77,
+              "exact_accuracy": 0.6736842105263158,
+              "accepted_precision": 0.8311688311688312,
+              "rejection_total": 0,
+              "false_accepts": 0
+            }
+          },
+          "lowercase": {
+            "total": 100,
+            "positive_total": 100,
+            "correct": 71,
+            "accepted": 79,
+            "exact_accuracy": 0.71,
+            "accepted_precision": 0.8987341772151899,
+            "rejection_total": 0,
+            "false_accepts": 0,
+            "multi_character": {
+              "total": 95,
+              "positive_total": 95,
+              "correct": 68,
+              "accepted": 75,
+              "exact_accuracy": 0.7157894736842105,
+              "accepted_precision": 0.9066666666666666,
+              "rejection_total": 0,
+              "false_accepts": 0
+            }
+          },
+          "numbers": {
+            "total": 100,
+            "positive_total": 100,
+            "correct": 78,
+            "accepted": 84,
+            "exact_accuracy": 0.78,
+            "accepted_precision": 0.9285714285714286,
+            "rejection_total": 0,
+            "false_accepts": 0,
+            "multi_character": {
+              "total": 95,
+              "positive_total": 95,
+              "correct": 73,
+              "accepted": 79,
+              "exact_accuracy": 0.7684210526315789,
+              "accepted_precision": 0.9240506329113924,
+              "rejection_total": 0,
+              "false_accepts": 0
+            }
+          },
+          "punctuation": {
+            "total": 100,
+            "positive_total": 100,
+            "correct": 59,
+            "accepted": 72,
+            "exact_accuracy": 0.59,
+            "accepted_precision": 0.8194444444444444,
+            "rejection_total": 0,
+            "false_accepts": 0,
+            "multi_character": {
+              "total": 100,
+              "positive_total": 100,
+              "correct": 59,
+              "accepted": 72,
+              "exact_accuracy": 0.59,
+              "accepted_precision": 0.8194444444444444,
+              "rejection_total": 0,
+              "false_accepts": 0
+            },
+            "by_punctuation": {
+              ".": {
+                "total": 12,
+                "positive_total": 12,
+                "correct": 4,
+                "accepted": 7,
+                "exact_accuracy": 0.3333333333333333,
+                "accepted_precision": 0.5714285714285714,
+                "rejection_total": 0,
+                "false_accepts": 0
+              },
+              ",": {
+                "total": 11,
+                "positive_total": 11,
+                "correct": 7,
+                "accepted": 8,
+                "exact_accuracy": 0.6363636363636364,
+                "accepted_precision": 0.875,
+                "rejection_total": 0,
+                "false_accepts": 0
+              },
+              "?": {
+                "total": 11,
+                "positive_total": 11,
+                "correct": 6,
+                "accepted": 9,
+                "exact_accuracy": 0.5454545454545454,
+                "accepted_precision": 0.6666666666666666,
+                "rejection_total": 0,
+                "false_accepts": 0
+              },
+              "!": {
+                "total": 11,
+                "positive_total": 11,
+                "correct": 6,
+                "accepted": 7,
+                "exact_accuracy": 0.5454545454545454,
+                "accepted_precision": 0.8571428571428571,
+                "rejection_total": 0,
+                "false_accepts": 0
+              },
+              ":": {
+                "total": 11,
+                "positive_total": 11,
+                "correct": 6,
+                "accepted": 7,
+                "exact_accuracy": 0.5454545454545454,
+                "accepted_precision": 0.8571428571428571,
+                "rejection_total": 0,
+                "false_accepts": 0
+              },
+              ";": {
+                "total": 11,
+                "positive_total": 11,
+                "correct": 8,
+                "accepted": 9,
+                "exact_accuracy": 0.7272727272727273,
+                "accepted_precision": 0.8888888888888888,
+                "rejection_total": 0,
+                "false_accepts": 0
+              },
+              "-": {
+                "total": 11,
+                "positive_total": 11,
+                "correct": 5,
+                "accepted": 6,
+                "exact_accuracy": 0.45454545454545453,
+                "accepted_precision": 0.8333333333333334,
+                "rejection_total": 0,
+                "false_accepts": 0
+              },
+              "(": {
+                "total": 22,
+                "positive_total": 22,
+                "correct": 17,
+                "accepted": 19,
+                "exact_accuracy": 0.7727272727272727,
+                "accepted_precision": 0.8947368421052632,
+                "rejection_total": 0,
+                "false_accepts": 0
+              },
+              ")": {
+                "total": 22,
+                "positive_total": 22,
+                "correct": 17,
+                "accepted": 19,
+                "exact_accuracy": 0.7727272727272727,
+                "accepted_precision": 0.8947368421052632,
+                "rejection_total": 0,
+                "false_accepts": 0
+              }
+            }
+          },
+          "rejection": {
+            "total": 40,
+            "positive_total": 0,
+            "correct": 0,
+            "accepted": 0,
+            "exact_accuracy": null,
+            "accepted_precision": 0.0,
+            "rejection_total": 40,
+            "false_accepts": 1
+          }
+        },
+        "gates": {
+          "coverage_complete": true,
+          "exact80_each_positive_group_and_multichar": false,
+          "accepted_precision95_each_positive_group_and_multichar": false,
+          "mandatory_invalid_sequences_all_rejected": false,
+          "combined_acceptance_passed": false,
+          "evaluated_slices": [
+            "lowercase",
+            "lowercase/multi_character",
+            "capital_single",
+            "capital_single/multi_character",
+            "capital_word",
+            "capital_word/multi_character",
+            "numbers",
+            "numbers/multi_character",
+            "punctuation",
+            "punctuation/multi_character"
+          ],
+          "per_punctuation_metrics": "Reported separately; not pooled into another denominator"
+        }
+      },
+      "baseline": {
+        "path": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\assets\\models\\braille-word-reader-v1\\word-reader.tflite",
+        "sha256": "406db0e55e8a5ba9e0d00fb22aadc24f19698219f375e4dcead9057cf3bf2230",
+        "bytes": 3259716,
+        "groups": {
+          "capital_single": {
+            "total": 100,
+            "positive_total": 100,
+            "correct": 1,
+            "accepted": 24,
+            "exact_accuracy": 0.01,
+            "accepted_precision": 0.041666666666666664,
+            "rejection_total": 0,
+            "false_accepts": 0,
+            "multi_character": {
+              "total": 95,
+              "positive_total": 95,
+              "correct": 1,
+              "accepted": 20,
+              "exact_accuracy": 0.010526315789473684,
+              "accepted_precision": 0.05,
+              "rejection_total": 0,
+              "false_accepts": 0
+            }
+          },
+          "capital_word": {
+            "total": 100,
+            "positive_total": 100,
+            "correct": 1,
+            "accepted": 14,
+            "exact_accuracy": 0.01,
+            "accepted_precision": 0.07142857142857142,
+            "rejection_total": 0,
+            "false_accepts": 0,
+            "multi_character": {
+              "total": 95,
+              "positive_total": 95,
+              "correct": 0,
+              "accepted": 12,
+              "exact_accuracy": 0.0,
+              "accepted_precision": 0.0,
+              "rejection_total": 0,
+              "false_accepts": 0
+            }
+          },
+          "lowercase": {
+            "total": 100,
+            "positive_total": 100,
+            "correct": 9,
+            "accepted": 35,
+            "exact_accuracy": 0.09,
+            "accepted_precision": 0.2571428571428571,
+            "rejection_total": 0,
+            "false_accepts": 0,
+            "multi_character": {
+              "total": 95,
+              "positive_total": 95,
+              "correct": 7,
+              "accepted": 32,
+              "exact_accuracy": 0.07368421052631578,
+              "accepted_precision": 0.21875,
+              "rejection_total": 0,
+              "false_accepts": 0
+            }
+          },
+          "numbers": {
+            "total": 100,
+            "positive_total": 100,
+            "correct": 2,
+            "accepted": 18,
+            "exact_accuracy": 0.02,
+            "accepted_precision": 0.1111111111111111,
+            "rejection_total": 0,
+            "false_accepts": 0,
+            "multi_character": {
+              "total": 95,
+              "positive_total": 95,
+              "correct": 1,
+              "accepted": 15,
+              "exact_accuracy": 0.010526315789473684,
+              "accepted_precision": 0.06666666666666667,
+              "rejection_total": 0,
+              "false_accepts": 0
+            }
+          },
+          "punctuation": {
+            "total": 100,
+            "positive_total": 100,
+            "correct": 6,
+            "accepted": 28,
+            "exact_accuracy": 0.06,
+            "accepted_precision": 0.21428571428571427,
+            "rejection_total": 0,
+            "false_accepts": 0,
+            "multi_character": {
+              "total": 100,
+              "positive_total": 100,
+              "correct": 6,
+              "accepted": 28,
+              "exact_accuracy": 0.06,
+              "accepted_precision": 0.21428571428571427,
+              "rejection_total": 0,
+              "false_accepts": 0
+            },
+            "by_punctuation": {
+              ".": {
+                "total": 12,
+                "positive_total": 12,
+                "correct": 1,
+                "accepted": 6,
+                "exact_accuracy": 0.08333333333333333,
+                "accepted_precision": 0.16666666666666666,
+                "rejection_total": 0,
+                "false_accepts": 0
+              },
+              ",": {
+                "total": 11,
+                "positive_total": 11,
+                "correct": 0,
+                "accepted": 4,
+                "exact_accuracy": 0.0,
+                "accepted_precision": 0.0,
+                "rejection_total": 0,
+                "false_accepts": 0
+              },
+              "?": {
+                "total": 11,
+                "positive_total": 11,
+                "correct": 0,
+                "accepted": 0,
+                "exact_accuracy": 0.0,
+                "accepted_precision": 0.0,
+                "rejection_total": 0,
+                "false_accepts": 0
+              },
+              "!": {
+                "total": 11,
+                "positive_total": 11,
+                "correct": 0,
+                "accepted": 4,
+                "exact_accuracy": 0.0,
+                "accepted_precision": 0.0,
+                "rejection_total": 0,
+                "false_accepts": 0
+              },
+              ":": {
+                "total": 11,
+                "positive_total": 11,
+                "correct": 0,
+                "accepted": 3,
+                "exact_accuracy": 0.0,
+                "accepted_precision": 0.0,
+                "rejection_total": 0,
+                "false_accepts": 0
+              },
+              ";": {
+                "total": 11,
+                "positive_total": 11,
+                "correct": 1,
+                "accepted": 4,
+                "exact_accuracy": 0.09090909090909091,
+                "accepted_precision": 0.25,
+                "rejection_total": 0,
+                "false_accepts": 0
+              },
+              "-": {
+                "total": 11,
+                "positive_total": 11,
+                "correct": 1,
+                "accepted": 3,
+                "exact_accuracy": 0.09090909090909091,
+                "accepted_precision": 0.3333333333333333,
+                "rejection_total": 0,
+                "false_accepts": 0
+              },
+              "(": {
+                "total": 22,
+                "positive_total": 22,
+                "correct": 3,
+                "accepted": 4,
+                "exact_accuracy": 0.13636363636363635,
+                "accepted_precision": 0.75,
+                "rejection_total": 0,
+                "false_accepts": 0
+              },
+              ")": {
+                "total": 22,
+                "positive_total": 22,
+                "correct": 3,
+                "accepted": 4,
+                "exact_accuracy": 0.13636363636363635,
+                "accepted_precision": 0.75,
+                "rejection_total": 0,
+                "false_accepts": 0
+              }
+            }
+          },
+          "rejection": {
+            "total": 40,
+            "positive_total": 0,
+            "correct": 0,
+            "accepted": 0,
+            "exact_accuracy": null,
+            "accepted_precision": 0.0,
+            "rejection_total": 40,
+            "false_accepts": 9
+          }
+        },
+        "gates": {
+          "coverage_complete": true,
+          "exact80_each_positive_group_and_multichar": false,
+          "accepted_precision95_each_positive_group_and_multichar": false,
+          "mandatory_invalid_sequences_all_rejected": false,
+          "combined_acceptance_passed": false,
+          "evaluated_slices": [
+            "lowercase",
+            "lowercase/multi_character",
+            "capital_single",
+            "capital_single/multi_character",
+            "capital_word",
+            "capital_word/multi_character",
+            "numbers",
+            "numbers/multi_character",
+            "punctuation",
+            "punctuation/multi_character"
+          ],
+          "per_punctuation_metrics": "Reported separately; not pooled into another denominator"
+        }
+      }
+    }
+  }
+}

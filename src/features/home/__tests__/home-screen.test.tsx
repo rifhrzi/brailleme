@@ -47,15 +47,16 @@ describe('Beranda readiness pemindai', () => {
     await render(<HomeScreen />);
 
     expect(await screen.findByText('Pemindai belum siap')).toBeOnTheScreen();
-    expect(screen.getByText(message)).toBeOnTheScreen();
+    expect(screen.getByText(/Coba buka kembali aplikasi atau periksa pembaruan aplikasi/)).toBeOnTheScreen();
+    expect(screen.queryByText(message)).toBeNull();
     expect(
       screen.getByRole('button', { name: 'Lihat status pemindai' }),
     ).toBeOnTheScreen();
-    expect(screen.queryByText('Siap memindai kata')).toBeNull();
+    expect(screen.queryByText('Siap memindai Braille')).toBeNull();
     expect(
       screen.queryByRole('button', { name: 'Buka pemindai kata' }),
     ).toBeNull();
-    expect(screen.queryByText(/classifier|verifikasi|runtime/i)).toBeNull();
+    expect(screen.queryByText(/classifier|verifikasi|runtime|build/i)).toBeNull();
   });
 
   it('menampilkan status dan CTA siap ketika seluruh gate pemindai lulus', async () => {
@@ -63,7 +64,7 @@ describe('Beranda readiness pemindai', () => {
 
     await render(<HomeScreen />);
 
-    expect(await screen.findByText('Siap memindai kata')).toBeOnTheScreen();
+    expect(await screen.findByText('Siap memindai Braille')).toBeOnTheScreen();
     expect(
       screen.getByRole('button', { name: 'Buka pemindai kata' }),
     ).toBeOnTheScreen();

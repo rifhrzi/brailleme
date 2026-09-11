@@ -38,9 +38,11 @@ export default function LiveRuntimeScreen({
           {...props}
           key={props.sessionId}
           model={modelState.model}
+          trackingModel={modelState.trackingModel}
           thresholds={modelState.thresholds}
           modelVersion={modelState.modelVersion}
           acquireModel={modelState.acquireModel}
+          acquireTrackingModel={modelState.acquireTrackingModel}
         />
       ) : null,
     [modelState],

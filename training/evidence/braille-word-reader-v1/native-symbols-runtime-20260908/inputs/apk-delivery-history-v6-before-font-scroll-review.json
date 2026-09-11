@@ -1,0 +1,119 @@
+{
+  "physicalCameraValidated": false,
+  "promotionScriptSha256": "e1c62e532f7c88963f7d8679be8f85dfba81b8ce6eacbc8eb3a5159468cf1667",
+  "createdUtc": "2026-09-08T17:48:12.0233212Z",
+  "previousDeliveryArchiveSha256": "5f84deef061ae25fd276bc85bb9a2028d926cb7455b3d8a5002d4df81a99d89d",
+  "sha256": "9afa6a1eb2983d0a92b4f1dcff3026f91d583bca02cda6d98cfaf91760a90259",
+  "installedApkProofSha256": "6db736203c1094503353c2e23ca678e49f715c02328bf46fb091178db5a7ed28",
+  "bytes": 133317765,
+  "integrityReport": "C:\\bm-symbols-apk-20260908\\evidence\\apk-integrity-v6\\report.json",
+  "integrityReportSha256": "e87e13534911ab88375b769573b9b7634a8a8e0688d9da8312b7294171295da2",
+  "limitations": [
+    "Internal Android Debug signature; not a production release.",
+    "Capital recognition and whole-word localization remain experimental; no successful recognition among nine terminal photos in this 600-second run.",
+    "All-status photo p95 is 2098 ms, exceeding the <=2000ms target. One of 10 Pindai attempts has no observed terminal result.",
+    "Tracking logs report no errors and observations retain one PID; this is not an exhaustive no-crash/no-ANR claim.",
+    "Whole-run 21.12 Hz surface composition includes paused result screens; initial preview rates are reported separately.",
+    "PSS grew 3682 KiB; sampled memory does not establish or exclude a leak.",
+    "Bounded UI scenarios and curated runtime archive remain pending; no physical-camera validation."
+  ],
+  "installedApkProof": "C:\\bm-symbols-apk-20260908\\evidence\\apk-integrity-v6\\install.json",
+  "sourceApk": "C:\\bm-symbols-apk-20260908\\evidence\\apk-integrity-v6\\verified.apk",
+  "apk": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\output\\android\\BrailleMe-0.3.0-symbols-auto-frame-2026-09-09.apk",
+  "schemaVersion": 2,
+  "sha256File": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\output\\android\\BrailleMe-0.3.0-symbols-auto-frame-2026-09-09.apk.sha256",
+  "installedHashMatches": true,
+  "runtimeMeasurementsComplete": true,
+  "status": "experimental_validation_complete_targets_not_met",
+  "previousDeliveryArchive": "C:\\bm-symbols-apk-20260908\\evidence\\replaced-delivery-v2\\archive-index.json",
+  "updatedUtc": "2026-09-08T17:54:31.089306+00:00",
+  "runtimeMeasurementScope": "Initial-preview and 600-second emulator collection complete; remaining bounded UI/physical cases are separately pending.",
+  "previousMetadata": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\output\\update-symbols-tracking-20260908\\apk-delivery-history-v6-before-runtime-complete.json",
+  "previousMetadataSha256": "981788983b84cfdffcb4518f5aa693fe812ec9169aba193857cca3a6a29c3c3f",
+  "runtimeEvidence": {
+    "runtimeAnalysis": {
+      "path": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\output\\update-symbols-tracking-20260908\\runtime-600-analysis-v6.json",
+      "sha256": "44aab8efa6823340f990665c89a71e8bd2eafa71f051410ae5f40e557239be46"
+    },
+    "independentRuntimeReview": {
+      "path": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\output\\update-symbols-tracking-20260908\\runtime-600-independent-review-v6.json",
+      "sha256": "40a58e2cfa503a603ad52d86ad6ac9065faf1c8629650d71d0377ab839e25386"
+    },
+    "initialPreviewAnalysis": {
+      "path": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\output\\initial-preview-analysis-v6.json",
+      "sha256": "c93bdd8bef2f2f7d30374464aa674be3af1daecf6ca026e64ac72d07553d39a5"
+    },
+    "backgroundActions": {
+      "path": "C:\\bm-symbols-apk-20260908\\evidence\\actions-background-v6\\summary.json",
+      "sha256": "8278a64f5196d1f0809ab566005aae3065d05aeb12a5619d2d88201781dc3fa5"
+    },
+    "coldStartActions": {
+      "path": "C:\\bm-symbols-apk-20260908\\evidence\\actions-cold-complete-v6\\summary.json",
+      "sha256": "ae0a7ba2feb262c7464a4868b84a7b97219b49874d9b04eebe363a9861a1054c"
+    },
+    "font200Actions": {
+      "path": "C:\\bm-symbols-apk-20260908\\evidence\\actions-font200-v6\\summary.json",
+      "sha256": "561714f10cfcf3388c79a0bd6ede264d1fac3eacffc90543360c9e4e6937a4af"
+    },
+    "runtimeHarnessTests": {
+      "path": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\output\\update-symbols-tracking-20260908\\runtime-actions-tests-v4\\report.json",
+      "sha256": "7a94a806a416e32aa3f2a7848c863fcd30fe30257b0ea2d9865fc5176ef0f2f2"
+    }
+  },
+  "runtime600": {
+    "elapsedSeconds": 600,
+    "pid": 9064,
+    "observationsSamePid": 59,
+    "trackingReports": 41,
+    "trackingCompletedDeltaLowerBound": 1247,
+    "reportedTrackingErrors": 0,
+    "trackingObservedDeltaP95Ms": {
+      "greaterThan": 200,
+      "lessThanOrEqual": 400
+    },
+    "photoTerminalRecords": 9,
+    "photoStatuses": {
+      "success": 0,
+      "rejected": 9,
+      "error": 0
+    },
+    "photoNearestRankP95Ms": 2098,
+    "photoP95TargetMs": 2000,
+    "photoP95TargetMet": false,
+    "pindaiActionsSent": 10,
+    "pindaiUlangActionsSent": 9,
+    "missingTerminalOutcomeAttempts": 1,
+    "surfaceCompositionProxyHz": 21.12,
+    "surfaceHistoryGapsReported": 0,
+    "pssFirstKiB": 297263,
+    "pssLastKiB": 300945,
+    "pssPeakKiB": 328811,
+    "pssGrowthKiB": 3682
+  },
+  "initialPreview": {
+    "nativeOutputBuffersPerSecond": 29.752950738131673,
+    "nativeBufferDelta": 3267,
+    "nativeDeviceTimestampSpanSeconds": 109.804235175,
+    "surfaceCompositionProxyHz": 33.8055962678775,
+    "surfaceEnvelopeSeconds": [
+      5.469,
+      109.86
+    ],
+    "metricCaveat": "Emulator native output-buffer production and app surface presentations are separate metrics; neither establishes physical sensor FPS."
+  },
+  "boundedUiCases": {
+    "backgroundResume": "actions_completed_same_pid9064_scanner_visible",
+    "coldStart": "actions_completed_pid9064_stopped_new_pid16978_scanner_visible",
+    "font200": "actions_completed_font_restored_result_rescan_control_below_fold_not_scrolled_or_tapped",
+    "remaining": [
+      "font200_result_scroll_and_rescan",
+      "torch",
+      "rotation",
+      "offline_TTS_audio",
+      "TalkBack",
+      "physical_camera_and_embossed_paper"
+    ]
+  },
+  "runtimeEvidenceCuration": "pending_root_finalization",
+  "allAcceptanceTargetsMet": false
+}

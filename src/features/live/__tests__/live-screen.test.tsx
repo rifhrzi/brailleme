@@ -282,7 +282,7 @@ describe('Pindai Live', () => {
     {
       status: 'stable',
       overrides: { text: 'A', confidence: 0.91 },
-      accessibleName: /Huruf terdeteksi.*Verifikasi huruf/i,
+      accessibleName: /Huruf terdeteksi.*Cocokkan huruf/i,
     },
     {
       status: 'unsupported',

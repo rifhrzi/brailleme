@@ -1,16 +1,15 @@
-import { WORD_LATIN_MASKS, WORD_MAX_LETTERS } from '@/ml/word-model-contract';
+import { WORD_DECODER_VERSION, WORD_MAX_CELLS } from '@/ml/word-model-contract';
+import { parseWordMasks, type WordSymbol } from '@/ml/word-symbols';
 import type { NormalizedBox } from '@/types/live-scan';
 
 export type WordRejectionReason =
   | 'dark' | 'glare' | 'blur' | 'too_far' | 'no_grid' | 'low_confidence'
   | 'clipped' | 'multiple_rows' | 'gap' | 'overlapping_cells' | 'too_many_cells'
-  | 'unsupported_pattern';
-export type WordScanReason = WordRejectionReason | 'processing_error' | 'capture_error';
+  | 'unsupported_pattern' | 'invalid_sequence' | 'ambiguous_symbol' | 'too_many_characters';
+export type WordScanReason = WordRejectionReason | 'processing_error' | 'capture_error' | 'tracking_error';
 export type WordScanStatus = 'ready' | 'capturing' | 'processing' | 'success' | 'rejected' | 'error';
 
-export interface WordCell {
-  readonly letter: string;
-  readonly mask: number;
+export interface WordCell extends WordSymbol {
   /** Minimum of objectness and six selected dot probabilities, not a word probability. */
   readonly confidence: number;
   readonly box: NormalizedBox;
@@ -18,7 +17,7 @@ export interface WordCell {
 
 /** Contains no photo, pixels, URI, bitmap, or tensor. */
 export interface WordScanEvent {
-  readonly schemaVersion: 3;
+  readonly schemaVersion: 4;
   readonly sessionId: string;
   readonly captureId: number;
   readonly timestampMs: number;
@@ -50,29 +49,29 @@ export function isNormalizedWordBox(value: unknown): value is NormalizedBox {
 const reasons: readonly WordScanReason[] = [
   'dark', 'glare', 'blur', 'too_far', 'no_grid', 'low_confidence', 'clipped',
   'multiple_rows', 'gap', 'overlapping_cells', 'too_many_cells', 'unsupported_pattern',
-  'processing_error', 'capture_error',
+  'invalid_sequence', 'ambiguous_symbol', 'too_many_characters', 'processing_error', 'capture_error', 'tracking_error',
 ];
 
 export function isValidWordScanEvent(value: unknown): value is WordScanEvent {
   if (typeof value !== 'object' || value === null || Array.isArray(value)) return false;
   const event = value as WordScanEvent;
-  if (event.schemaVersion !== 3 || typeof event.sessionId !== 'string' || !event.sessionId.trim() ||
+  if (event.schemaVersion !== 4 || typeof event.sessionId !== 'string' || !event.sessionId.trim() ||
       !Number.isSafeInteger(event.captureId) || event.captureId < 0 ||
       !Number.isFinite(event.timestampMs) || event.timestampMs < 0 ||
       !['ready', 'capturing', 'processing', 'success', 'rejected', 'error'].includes(event.status) ||
-      typeof event.decoderVersion !== 'string' || !event.decoderVersion.trim() ||
+      event.decoderVersion !== WORD_DECODER_VERSION ||
       (event.modelVersion !== undefined && (typeof event.modelVersion !== 'string' || !event.modelVersion.trim())) ||
       !Array.isArray(event.cells) || !Array.isArray(event.boxes) || !event.boxes.every(isNormalizedWordBox) ||
       (event.reason !== undefined && !reasons.includes(event.reason))) return false;
 
   if (event.status !== 'success') {
     return event.text === undefined && event.confidence === undefined && event.cells.length === 0 &&
-      (event.status === 'rejected' ? event.reason !== undefined && event.reason !== 'processing_error' && event.reason !== 'capture_error' :
-        event.status === 'error' ? event.reason === 'processing_error' || event.reason === 'capture_error' : event.reason === undefined && event.boxes.length === 0);
+      (event.status === 'rejected' ? event.reason !== undefined && !['processing_error', 'capture_error', 'tracking_error'].includes(event.reason) :
+        event.status === 'error' ? event.reason !== undefined && ['processing_error', 'capture_error', 'tracking_error'].includes(event.reason) : event.reason === undefined && event.boxes.length === 0);
   }
 
-  if (event.reason !== undefined || typeof event.text !== 'string' || !/^[A-Z]{1,12}$/.test(event.text) ||
-      event.cells.length !== event.text.length || event.cells.length > WORD_MAX_LETTERS ||
+  if (event.reason !== undefined || typeof event.text !== 'string' ||
+      event.cells.length === 0 || event.cells.length > WORD_MAX_CELLS ||
       event.boxes.length !== event.cells.length || !Number.isFinite(event.confidence) ||
       event.confidence === undefined || event.confidence < 0 || event.confidence > 1) return false;
   let previousCenter = -1;
@@ -81,7 +80,7 @@ export function isValidWordScanEvent(value: unknown): value is WordScanEvent {
     const cell = event.cells[index];
     const box = event.boxes[index];
     if (!cell || typeof cell !== 'object' || !box || !isNormalizedWordBox(cell.box) ||
-        cell.letter !== event.text[index] || cell.mask !== WORD_LATIN_MASKS[cell.letter.charCodeAt(0) - 65] ||
+        !Number.isInteger(cell.mask) || cell.mask < 0 || cell.mask > 63 ||
         !Number.isFinite(cell.confidence) || cell.confidence < 0 || cell.confidence > 1 ||
         box.x !== cell.box.x || box.y !== cell.box.y || box.width !== cell.box.width || box.height !== cell.box.height) return false;
     const center = box.x + box.width / 2;
@@ -89,5 +88,10 @@ export function isValidWordScanEvent(value: unknown): value is WordScanEvent {
     previousCenter = center;
     minimumConfidence = Math.min(minimumConfidence, cell.confidence);
   }
-  return Math.abs(minimumConfidence - event.confidence) <= 0.000001;
+  const parsed = parseWordMasks(event.cells.map(({ mask }) => mask));
+  return parsed.status === 'success' && parsed.text === event.text &&
+    parsed.symbols.every((symbol, index) => {
+      const cell = event.cells[index]!;
+      return cell.role === symbol.role && cell.output === symbol.output;
+    }) && Math.abs(minimumConfidence - event.confidence) <= 0.000001;
 }

@@ -11,6 +11,6 @@ describe('PrivacyScreen', () => {
     expect(
       screen.getByText(/Kembalikan pengaturan awal di halaman Pengaturan/i),
     ).toBeOnTheScreen();
-    expect(screen.getByText(/tidak meminta izin internet/i)).toBeOnTheScreen();
+    expect(screen.getByText(/Pemindaian dapat digunakan tanpa internet/i)).toBeOnTheScreen();
   });
 });

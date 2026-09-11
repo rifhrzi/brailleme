@@ -1,0 +1,3678 @@
+{
+  "schema_version": 2,
+  "created_at_utc": "2026-09-08T17:34:54.529532+00:00",
+  "scope": "Internal APK archive, signature and declared metadata only; no installation, runtime, physical camera or release-readiness evidence.",
+  "apk": {
+    "file": "C:\\bm-symbols-apk-20260908\\android\\app\\build\\outputs\\apk\\release\\app-release.apk",
+    "bytes": 133317765,
+    "sha256": "9afa6a1eb2983d0a92b4f1dcff3026f91d583bca02cda6d98cfaf91760a90259"
+  },
+  "workspace": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme",
+  "java_home": "C:\\Users\\rifqi\\.jdks\\brailleme-temurin-17\\jdk-17.0.20+8",
+  "build_tools": "C:\\Users\\rifqi\\AppData\\Local\\Android\\Sdk\\build-tools\\36.0.0",
+  "source_sha256": {
+    "assets/models/braille-word-reader-v1/manifest.json": "419f459f01970a56e745cbdaecd00b505daf5a46c534822febff7e91155e50da",
+    "assets/models/braille-word-reader-v1/word-reader.tflite": "406db0e55e8a5ba9e0d00fb22aadc24f19698219f375e4dcead9057cf3bf2230",
+    "assets/models/braille-word-reader-v1/native-word-fixture.png": "5115a112aad01432f4ebdfa22d8dcb686f1330075d5030bc5c039c154dc4d164"
+  },
+  "verifier_sha256": "1374195c4f27173d90638b1bcb5dfae6c148c50e514677a5bd068d701ca13262",
+  "tool_sha256": {
+    "C:\\Users\\rifqi\\.jdks\\brailleme-temurin-17\\jdk-17.0.20+8\\bin\\java.exe": "5b463cad4fcd8e4c655cc1c6f45a3b2ebb002adac94ebad2fdaa4f43e2aee211",
+    "C:\\Users\\rifqi\\AppData\\Local\\Android\\Sdk\\build-tools\\36.0.0\\lib\\apksigner.jar": "3716d9311e55d2b0918a2fd9d54ba9e406c5f6abeea700b287f11259bc163dec",
+    "C:\\Users\\rifqi\\AppData\\Local\\Android\\Sdk\\build-tools\\36.0.0\\zipalign.exe": "c503c7da88bd4f6cddbcc8d3febd41e1e5022a525147f05f8caf4602353409c0",
+    "C:\\Users\\rifqi\\AppData\\Local\\Android\\Sdk\\build-tools\\36.0.0\\aapt.exe": "c528418af0c5152650d9532485f371e8eed98e1436d1ab1a197580b97917b561"
+  },
+  "expected": {
+    "package": "com.brailleme.app",
+    "version_name": "0.3.0",
+    "version_code": "3",
+    "min_sdk": 29,
+    "abis": [
+      "arm64-v8a",
+      "x86_64"
+    ],
+    "word_model_sha256": "406db0e55e8a5ba9e0d00fb22aadc24f19698219f375e4dcead9057cf3bf2230",
+    "native_fixture_sha256": "5115a112aad01432f4ebdfa22d8dcb686f1330075d5030bc5c039c154dc4d164"
+  },
+  "native_fixture_source": {
+    "file": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\assets\\models\\braille-word-reader-v1\\native-word-fixture.png",
+    "sha256": "5115a112aad01432f4ebdfa22d8dcb686f1330075d5030bc5c039c154dc4d164",
+    "bytes": 99122,
+    "width": 450,
+    "height": 257
+  },
+  "deployment_limitations": [],
+  "elf_16kb_segment_alignment_passed": true,
+  "tools": {
+    "java-version": {
+      "command": [
+        "C:\\Users\\rifqi\\.jdks\\brailleme-temurin-17\\jdk-17.0.20+8\\bin\\java.exe",
+        "-version"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.093,
+      "error": null,
+      "stdout_file": "java-version.stdout.txt",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_file": "java-version.stderr.txt",
+      "stderr_sha256": "d95bbc62b53a2588c860183176c982e4908a2522cc9a97e95d8be852bd5028e6"
+    },
+    "apksigner": {
+      "command": [
+        "C:\\Users\\rifqi\\.jdks\\brailleme-temurin-17\\jdk-17.0.20+8\\bin\\java.exe",
+        "-jar",
+        "C:\\Users\\rifqi\\AppData\\Local\\Android\\Sdk\\build-tools\\36.0.0\\lib\\apksigner.jar",
+        "verify",
+        "--verbose",
+        "--print-certs",
+        "C:\\bm-symbols-apk-20260908\\android\\app\\build\\outputs\\apk\\release\\app-release.apk"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.344,
+      "error": null,
+      "stdout_file": "apksigner.stdout.txt",
+      "stdout_sha256": "8a333bbbc68d6087974497380c0bc256b60ddb220c217dbb3055a5069856141e",
+      "stderr_file": "apksigner.stderr.txt",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "zipalign": {
+      "command": [
+        "C:\\Users\\rifqi\\AppData\\Local\\Android\\Sdk\\build-tools\\36.0.0\\zipalign.exe",
+        "-c",
+        "-P",
+        "16",
+        "-v",
+        "4",
+        "C:\\bm-symbols-apk-20260908\\android\\app\\build\\outputs\\apk\\release\\app-release.apk"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.047,
+      "error": null,
+      "stdout_file": "zipalign.stdout.txt",
+      "stdout_sha256": "b90073900a1ee348210fc2ed939e6a393d031ed837310c29519fb9634342a91b",
+      "stderr_file": "zipalign.stderr.txt",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "aapt-badging": {
+      "command": [
+        "C:\\Users\\rifqi\\AppData\\Local\\Android\\Sdk\\build-tools\\36.0.0\\aapt.exe",
+        "dump",
+        "badging",
+        "C:\\bm-symbols-apk-20260908\\android\\app\\build\\outputs\\apk\\release\\app-release.apk"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.031,
+      "error": null,
+      "stdout_file": "aapt-badging.stdout.txt",
+      "stdout_sha256": "ba69b5842d353548567d5c5c555aaaeaf7d9cd49438760d7c723aeea030296a9",
+      "stderr_file": "aapt-badging.stderr.txt",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "aapt-permissions": {
+      "command": [
+        "C:\\Users\\rifqi\\AppData\\Local\\Android\\Sdk\\build-tools\\36.0.0\\aapt.exe",
+        "dump",
+        "permissions",
+        "C:\\bm-symbols-apk-20260908\\android\\app\\build\\outputs\\apk\\release\\app-release.apk"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.032,
+      "error": null,
+      "stdout_file": "aapt-permissions.stdout.txt",
+      "stdout_sha256": "11c03533914ac88587c85addf4afc8c1e5c1c7fdf5a212fa8416428399c3d235",
+      "stderr_file": "aapt-permissions.stderr.txt",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "checks": {
+    "workspace_model_matches_manifest": true,
+    "workspace_model_size_matches_manifest": true,
+    "workspace_native_fixture_matches_manifest": true,
+    "workspace_native_fixture_dimensions_match_manifest": true,
+    "zip_crc_valid": true,
+    "zip_entries_unique": true,
+    "archive_abis_match": true,
+    "embedded_word_model_matches_manifest": true,
+    "embedded_native_fixture_matches_manifest": true,
+    "native_elf64_little_endian_abis_match": true,
+    "java-version_exit_zero": true,
+    "java_major_17": true,
+    "apksigner_exit_zero": true,
+    "zipalign_exit_zero": true,
+    "aapt-badging_exit_zero": true,
+    "aapt-permissions_exit_zero": true,
+    "package_matches": true,
+    "version_name_matches": true,
+    "version_code_matches": true,
+    "min_sdk_matches": true,
+    "badging_abis_match": true,
+    "internet_and_storage_permissions_absent": true,
+    "camera_permission_present": true,
+    "single_android_debug_certificate_dn": true,
+    "signer_certificate_hash_reported": true,
+    "apk_unchanged_during_verification": true,
+    "workspace_inputs_unchanged": true
+  },
+  "errors": [],
+  "runtime_assessed": false,
+  "physical_camera_validated": false,
+  "release_readiness": "not_assessed",
+  "archive": {
+    "entries": 1266,
+    "duplicate_entries": [],
+    "abis": [
+      "arm64-v8a",
+      "x86_64"
+    ],
+    "models": [
+      {
+        "entry": "res/LX.tflite",
+        "bytes": 3259716,
+        "sha256": "406db0e55e8a5ba9e0d00fb22aadc24f19698219f375e4dcead9057cf3bf2230"
+      }
+    ],
+    "matching_word_model_entries": [
+      "res/LX.tflite"
+    ],
+    "pngs": [
+      {
+        "entry": "res/-B.png",
+        "bytes": 281,
+        "sha256": "43ccf1f0a5e9e9ed9a6df33e1b3d378d49dbc8dc60d83b1cdb985e5e48f52497"
+      },
+      {
+        "entry": "res/-N.png",
+        "bytes": 318,
+        "sha256": "6b45aef8bf43767c2c1c83dee2bd9ceb9017994fbef6613891e6bc215e2a5ee3"
+      },
+      {
+        "entry": "res/0c.9.png",
+        "bytes": 267,
+        "sha256": "f94e2129180c0ba6924430374402456035dcd6b6fff7d05f6de7e24196a3af35"
+      },
+      {
+        "entry": "res/0x.9.png",
+        "bytes": 209,
+        "sha256": "636d7f24be686e9515f7d6830ce936baa0a5416468220e94e8e257547967e22c"
+      },
+      {
+        "entry": "res/1I.9.png",
+        "bytes": 2305,
+        "sha256": "e1a2b864d0114a8471662f8e30ffcbb2eb9ffd414d36239612def8c7792a450a"
+      },
+      {
+        "entry": "res/1J.9.png",
+        "bytes": 1731,
+        "sha256": "4d2fe45a8169f368052c921230a268ba9f53ea5fedbcb09ff35107473551e50c"
+      },
+      {
+        "entry": "res/1R.png",
+        "bytes": 99122,
+        "sha256": "5115a112aad01432f4ebdfa22d8dcb686f1330075d5030bc5c039c154dc4d164"
+      },
+      {
+        "entry": "res/1e.9.png",
+        "bytes": 171,
+        "sha256": "49903073ab23abfc11a55e1333eb2905c743e1b382006c27c15434fd76e0207c"
+      },
+      {
+        "entry": "res/1j.png",
+        "bytes": 134,
+        "sha256": "906666dd689346ada232ce3689adef907b4257fa1b593f03638d2b9497f64884"
+      },
+      {
+        "entry": "res/2K.9.png",
+        "bytes": 225,
+        "sha256": "42aee0b03883e94df5e543348a397d1302c1b8221895871a83b81899f5a9647b"
+      },
+      {
+        "entry": "res/2P.png",
+        "bytes": 262,
+        "sha256": "646021cc77e7f4bd68ab59fb32d306f81a2042125e6cdaa16184a062a8183f79"
+      },
+      {
+        "entry": "res/2d.png",
+        "bytes": 145,
+        "sha256": "9f856dd00a4f281d1198e6679ac8611fc67d301f28c07aea97504244ba16cb44"
+      },
+      {
+        "entry": "res/2m.png",
+        "bytes": 201,
+        "sha256": "cbdf9213e55f65c48d076acd8423b7c9aee4f1b81101ff6c95a38c4cd8a86461"
+      },
+      {
+        "entry": "res/33.9.png",
+        "bytes": 541,
+        "sha256": "c7954e2bfbd01e5bbc9d774dd4d743d3f8a26613129fac8071b741bab3018ab0"
+      },
+      {
+        "entry": "res/3u.9.png",
+        "bytes": 258,
+        "sha256": "4f186547c3fe5796ef49da96d60a4a9a4b347357eaff3794f38e5f2aade3e400"
+      },
+      {
+        "entry": "res/42.9.png",
+        "bytes": 214,
+        "sha256": "727d78fec3f903a271c0476a50e8c064d28b32f7829b016ae0a07da53b83b281"
+      },
+      {
+        "entry": "res/49.png",
+        "bytes": 595,
+        "sha256": "4f2f8c2a7b042e55aa8f43f4ce8134b3217ee9cda432c5ff8d4c33d09d86df68"
+      },
+      {
+        "entry": "res/4k.png",
+        "bytes": 201,
+        "sha256": "0e631dbfe2575dd16d3fd6c59641dfa4abb5e162d60f59049e4459f0af29fbf6"
+      },
+      {
+        "entry": "res/5D.9.png",
+        "bytes": 272,
+        "sha256": "991f73be600ad8821a6743db54af513f9b047058e95066e22fcdd1d72032bc58"
+      },
+      {
+        "entry": "res/5U.png",
+        "bytes": 396,
+        "sha256": "a475594ae7c771092a3a2718981e2710c737844f44a4401f72d3953753649a7a"
+      },
+      {
+        "entry": "res/5c.png",
+        "bytes": 138,
+        "sha256": "b44eeda34d7a529c2fe55719eb098fa29707caa91d18de06a7a775d6e6bcf973"
+      },
+      {
+        "entry": "res/62.9.png",
+        "bytes": 210,
+        "sha256": "7656f2f19a84cefc2bf9fafc00760216775d333fc0b08eb85ff1e0006b46fc20"
+      },
+      {
+        "entry": "res/65.9.png",
+        "bytes": 235,
+        "sha256": "cc162d4b8c12ee329e37c8d651442f0ef0a9d1c6f88ef352e54da8dfd9a50dfe"
+      },
+      {
+        "entry": "res/6t.png",
+        "bytes": 227,
+        "sha256": "5eca0280bd38a6887b6e41765cf5da573133874625001eb90156eaeb35fbe088"
+      },
+      {
+        "entry": "res/7C.9.png",
+        "bytes": 430,
+        "sha256": "2552cd1bcdd9882d6c258833fb70bc081a31a2a093ef9c256f92431370a6e5de"
+      },
+      {
+        "entry": "res/7I.9.png",
+        "bytes": 345,
+        "sha256": "b0b2dc2cae7811c124ae528d714318bb1043b59d82a640f22c47ace64c283fec"
+      },
+      {
+        "entry": "res/7_.9.png",
+        "bytes": 813,
+        "sha256": "100cc6ae3870dd769a252e44608a81956522e867674f854619ba7c68d314cad7"
+      },
+      {
+        "entry": "res/7i.png",
+        "bytes": 464,
+        "sha256": "5080b07eb486ba05ede737b567eb2bb89d7b79a3edb5c2ca8141c6eba012b75d"
+      },
+      {
+        "entry": "res/7o.9.png",
+        "bytes": 525,
+        "sha256": "007dbf5fa2dc466a4940b0a6a73dab48cb721f64d358f71ff35aaadb9630b5ec"
+      },
+      {
+        "entry": "res/8h.9.png",
+        "bytes": 207,
+        "sha256": "e98f192f013a9226010482ab8e14c7f215fb16bda3ccb0ddaec3ed0b27119e7c"
+      },
+      {
+        "entry": "res/8h.png",
+        "bytes": 946,
+        "sha256": "53340b0b0f529b26db6af632a0112708233bf312448c5b89a1357b2cd70b3f42"
+      },
+      {
+        "entry": "res/9N.9.png",
+        "bytes": 187,
+        "sha256": "0caaea0060b3772ba433c0e9e3a5452f26f3421ba5023c855157270bc675b309"
+      },
+      {
+        "entry": "res/9X.9.png",
+        "bytes": 192,
+        "sha256": "94fe9824714ad94c002fe6219e723c0d80c7cbe3a6130d7aa493730b67e294d1"
+      },
+      {
+        "entry": "res/9n.9.png",
+        "bytes": 178,
+        "sha256": "1411ae65d8160573c166d2a572106fd1103c12f242f67feec5feaa550197e5f5"
+      },
+      {
+        "entry": "res/9z.png",
+        "bytes": 593,
+        "sha256": "71a2ba63a5d4e91f7c14324fa1c3eb9290b73cb7b3c7828018d05adb1cfaab45"
+      },
+      {
+        "entry": "res/A1.png",
+        "bytes": 332,
+        "sha256": "2325c53a73e54c438cbbc60dffdd8b513d471ba42e2f56713ef404b95e0ca1fc"
+      },
+      {
+        "entry": "res/AE.png",
+        "bytes": 645,
+        "sha256": "c86bb485eee687e06c500fc4234f51a6784b4530c2ae11d0c76481110bce3105"
+      },
+      {
+        "entry": "res/B9.png",
+        "bytes": 653,
+        "sha256": "9adb8c5efca932e2b732b293da813bd2e31952263056bce9e2517fec0f0b6a76"
+      },
+      {
+        "entry": "res/BG.9.png",
+        "bytes": 190,
+        "sha256": "aa61229cd70239278109c5ebe725e72484d0252efa4902a17192366942749289"
+      },
+      {
+        "entry": "res/BL.9.png",
+        "bytes": 229,
+        "sha256": "f65a87efa2f53d6fe2d848cfca1f6c90aea5e9fc67ff47f5949a6dd2a76ebe1b"
+      },
+      {
+        "entry": "res/BM.png",
+        "bytes": 159,
+        "sha256": "5a6ca1d0d2fea53813da5b3c9037408087f9f753f58dd2e128a4a48f7689769f"
+      },
+      {
+        "entry": "res/CK.9.png",
+        "bytes": 244,
+        "sha256": "671d27e5a4b42111174b888d57118e05075a556d703bd54f9335202d2a416791"
+      },
+      {
+        "entry": "res/C_.9.png",
+        "bytes": 215,
+        "sha256": "a8676a1793ac8310ffb12986232df66df092d29c242aeedc2b73556c010d38dc"
+      },
+      {
+        "entry": "res/Cz.png",
+        "bytes": 258,
+        "sha256": "ba722fb24bff0a4c52e656cdf205deac5c5df85e5bae2bf6d30713bd50c6d5f7"
+      },
+      {
+        "entry": "res/D1.png",
+        "bytes": 483,
+        "sha256": "5300f50be3659d17d8cee868ec4e6c0d3f4e89944fd5899d3c20f6a767a045f5"
+      },
+      {
+        "entry": "res/DL.9.png",
+        "bytes": 178,
+        "sha256": "25f25112cc46b285767de7b5b058cfc0a9efd5f21cfe724af031505d66a9eceb"
+      },
+      {
+        "entry": "res/D_.9.png",
+        "bytes": 178,
+        "sha256": "9fd37c82f87df00464554344ddddea55e480d09c33b505ac13252036d4d6276e"
+      },
+      {
+        "entry": "res/Dc.png",
+        "bytes": 4752,
+        "sha256": "efc79da3c4c97dfb1571bff6202958ab0529c5aa31e8392600578b3e359d1447"
+      },
+      {
+        "entry": "res/EA.9.png",
+        "bytes": 200,
+        "sha256": "a0d63ec76ec21d40fe96a4b6fb4f4aac5b61a6b63a63472dab055e0d9e9890b1"
+      },
+      {
+        "entry": "res/EP.png",
+        "bytes": 310,
+        "sha256": "5358737cb680ea1cdd6ba400d33316fabf872fd44f6a0e127bfc8bdd1632b374"
+      },
+      {
+        "entry": "res/Ep.png",
+        "bytes": 465,
+        "sha256": "acf691957a3bcce7d195856dce98a5cf14dce10bea28aa5c10b3550c078e23b5"
+      },
+      {
+        "entry": "res/FW.png",
+        "bytes": 307,
+        "sha256": "18620c151330289bba196c1cc1e2699f98061a35be3551876296a8c4d592ba17"
+      },
+      {
+        "entry": "res/Fb.png",
+        "bytes": 469,
+        "sha256": "c15ec72a74d13957211808313d5c35deb7f7606c6d22dbddceb0000d4e0547ad"
+      },
+      {
+        "entry": "res/G2.9.png",
+        "bytes": 1243,
+        "sha256": "ab94afcb2bb325544c0c1103bf5109b827bf070f441faef909f856ae295a1cf0"
+      },
+      {
+        "entry": "res/Gf.png",
+        "bytes": 984,
+        "sha256": "0eed99d0a5e36a468b557605e6ccea495c029f3569844a45f4b5d8dadd77d4a7"
+      },
+      {
+        "entry": "res/Gt.9.png",
+        "bytes": 202,
+        "sha256": "e7e36c3cbcedc97bc28aff91ed72c4310b16c331713a1698a692c66d46f63227"
+      },
+      {
+        "entry": "res/H-.png",
+        "bytes": 203,
+        "sha256": "0fd2f53946eb93b3154f44bdafc8896ea93195a64ce5fc64049e8b7293cd6801"
+      },
+      {
+        "entry": "res/IX.9.png",
+        "bytes": 1544,
+        "sha256": "1f7dd8b3521353af473f41850887e9385cf61c390c6e34e4e2bd991921ccfdf8"
+      },
+      {
+        "entry": "res/JJ.9.png",
+        "bytes": 280,
+        "sha256": "a04708369abe0920ded20d87d58aebf6992ebb67efefa248a8421895efc5353f"
+      },
+      {
+        "entry": "res/KH.9.png",
+        "bytes": 618,
+        "sha256": "468607601140955b21c6091897bfc65f609d386fa68d56c199201895e03b3fbc"
+      },
+      {
+        "entry": "res/KM.png",
+        "bytes": 415,
+        "sha256": "1e3b02e24fa431b1abe0a97ad6723fad43df79fda8176c1060b6fbd31178619f"
+      },
+      {
+        "entry": "res/K_.9.png",
+        "bytes": 216,
+        "sha256": "fb71e11c090133a97fe84fa3b76a263b429c9032ec467854b0e32a3157a5eba5"
+      },
+      {
+        "entry": "res/Li.9.png",
+        "bytes": 1779,
+        "sha256": "a8252f52638c80df119db031626198a4a8d4b32ee618e96c3a36b9b946e26894"
+      },
+      {
+        "entry": "res/ME.png",
+        "bytes": 141,
+        "sha256": "b1bc1810ca23e2c38cd76971c43591d726161061240d8b792b05757196ddb528"
+      },
+      {
+        "entry": "res/MF.9.png",
+        "bytes": 2816,
+        "sha256": "b4af73e52266be570c2c163d987e64348066db311b41e7a382000529c0136c6b"
+      },
+      {
+        "entry": "res/MQ.png",
+        "bytes": 513,
+        "sha256": "d83543f0c82b62cf499f2618ad99431f9ef50da60b415980ec8e0e50b90e3893"
+      },
+      {
+        "entry": "res/Ma.9.png",
+        "bytes": 247,
+        "sha256": "d27af435101ca4cbec0c840bd30687918cd39eb83aab1487420855623a45998b"
+      },
+      {
+        "entry": "res/My.png",
+        "bytes": 364,
+        "sha256": "27f4d229d440925bf7212d5dfffa45d596b2c7b3bb2905c96b839b2081a1dbeb"
+      },
+      {
+        "entry": "res/NA.9.png",
+        "bytes": 2505,
+        "sha256": "c367b73a33a933429e1d57d33fcfbf243f0274e7cdba221a0b983ee15b5baca9"
+      },
+      {
+        "entry": "res/NG.png",
+        "bytes": 322,
+        "sha256": "136d08fab0fe416fc7e0eca9c498e63c68357b2caa4241f444bbc3f26f9a74c9"
+      },
+      {
+        "entry": "res/NZ.9.png",
+        "bytes": 182,
+        "sha256": "779a2606a931a399a2c9d3bd01f3c510c412f2916478aa687e430e6003b0a5f3"
+      },
+      {
+        "entry": "res/Nk.9.png",
+        "bytes": 776,
+        "sha256": "5c7c682ffb64f4b531de0f9549c0da11c337576e426618522bfd1d35a451a414"
+      },
+      {
+        "entry": "res/No.9.png",
+        "bytes": 199,
+        "sha256": "682c466d3e4f39e31f114abc1632d85e734557bd39814e3ba7d7c61eae2d069b"
+      },
+      {
+        "entry": "res/Pa.9.png",
+        "bytes": 738,
+        "sha256": "8fcf5b9da03c68dff65adfa8713db9ce3b5e423a9f5046f1785ab640c2a647fb"
+      },
+      {
+        "entry": "res/Pb.png",
+        "bytes": 631,
+        "sha256": "683691d79ef11e863fe4ec84ddc631696e5984b5584fc4549d6586dbaca220c7"
+      },
+      {
+        "entry": "res/Pg.9.png",
+        "bytes": 207,
+        "sha256": "5d4161bf9482b5d2a2346cd3fa2739ec3203d995bebac02e89a732943368bbfc"
+      },
+      {
+        "entry": "res/QJ.9.png",
+        "bytes": 189,
+        "sha256": "23439b8899f4b63d68ae9385eaa49286a4b95b95f79b8b8d37de3b0e4fdbc747"
+      },
+      {
+        "entry": "res/RV.png",
+        "bytes": 563,
+        "sha256": "7442cda653acbacdf9aef256aa191e5ebb6071a1747312aec45e1db8252a3cfb"
+      },
+      {
+        "entry": "res/SV.9.png",
+        "bytes": 211,
+        "sha256": "dbc0af61f440bb3f5382b8ea3fa578659f76c7a6aef620a68afc43a909f2e0e5"
+      },
+      {
+        "entry": "res/Su.9.png",
+        "bytes": 178,
+        "sha256": "4bc8f4d13d2acccc1338f73ff90cd97695d9210e04de5da924215243c8950bf3"
+      },
+      {
+        "entry": "res/Th.png",
+        "bytes": 785,
+        "sha256": "02ad0ea6ff5a560e947452c7d64f679afa2056b44f86ea3b707a1cb175c2ceb0"
+      },
+      {
+        "entry": "res/Tj.9.png",
+        "bytes": 327,
+        "sha256": "0fa17d8754d6d163cc433f087cad6c083173ac87ad7097e76950a25eec5f3e90"
+      },
+      {
+        "entry": "res/U-.9.png",
+        "bytes": 223,
+        "sha256": "e17761ed280edd93d7141bd504b70f9e9e15a8652288d9e6333bf4ce964ef844"
+      },
+      {
+        "entry": "res/UE.9.png",
+        "bytes": 222,
+        "sha256": "8436624220fba246ae816a3aab379dfd7ff2a484284ab24c3af4989778705bb3"
+      },
+      {
+        "entry": "res/UR.png",
+        "bytes": 422,
+        "sha256": "3cfd0554844896b500c33513b1e89ed62028d0c80df73d3c5935479f49704a3c"
+      },
+      {
+        "entry": "res/VW.png",
+        "bytes": 266,
+        "sha256": "d05c9d30d79f45a78e5585a2e7ec67c6a06a883dd9137e1d5059e8c87b33ce76"
+      },
+      {
+        "entry": "res/W4.9.png",
+        "bytes": 217,
+        "sha256": "7c45e46e405f5b4a3d0c62a22e67010c3327022dd1c1f4bbccea1279a4d1ad74"
+      },
+      {
+        "entry": "res/Wh.png",
+        "bytes": 171,
+        "sha256": "239d602c9c65f156fe024613207955ac8fbdd395ae6ec3efa51be98e3a4473f4"
+      },
+      {
+        "entry": "res/Wr.png",
+        "bytes": 335,
+        "sha256": "83a46279e2f65d852c9452c86e38326ef9f3def6f5bec2ef1416c72815a5fbfa"
+      },
+      {
+        "entry": "res/Wz.png",
+        "bytes": 196,
+        "sha256": "c131ab0e2eb9879bd063e736ab81313c5a4f47eaa2f4a0ec9eca93a1a150ed79"
+      },
+      {
+        "entry": "res/X3.9.png",
+        "bytes": 221,
+        "sha256": "44c29766b2d88b78a71393b3e3a771ca7eef5f552630c6074f33d6291241d0b9"
+      },
+      {
+        "entry": "res/X4.9.png",
+        "bytes": 187,
+        "sha256": "c8d13e5687a34d5b85018ff7a9f0f22870a297b261ff140b3ed041ce7e7f4b81"
+      },
+      {
+        "entry": "res/Xd.png",
+        "bytes": 728,
+        "sha256": "6c8f11bfd1c7e22769dc135c16ecd0e053bb55554da88b9611d9cf71d12136f1"
+      },
+      {
+        "entry": "res/Y7.9.png",
+        "bytes": 212,
+        "sha256": "a77aaa207fd579f64383323b93f048ee9434e345ca8bb641743a77901b4383c2"
+      },
+      {
+        "entry": "res/YD.png",
+        "bytes": 188,
+        "sha256": "708a79cf561b8a2a4850ce0254584d3a5231046be08fb7fadf4b6edfdb31178b"
+      },
+      {
+        "entry": "res/YG.9.png",
+        "bytes": 203,
+        "sha256": "5e3f13ee854fa41354ca7378358b99f8e41f3b1c9968c313b630b02de8704e6e"
+      },
+      {
+        "entry": "res/Yt.9.png",
+        "bytes": 209,
+        "sha256": "07bf5ce5ff8937257afd146062c9bf5ca1f4115a1643529d81845d0202c7ddef"
+      },
+      {
+        "entry": "res/Yw.9.png",
+        "bytes": 186,
+        "sha256": "a933aaebbeae489dea84e78e7fbc4079fdfda576fbdeb339401fda6cdc03e764"
+      },
+      {
+        "entry": "res/Z8.png",
+        "bytes": 420,
+        "sha256": "afbcaede66a97ddc9b54c4d9891c09415cb6944d79c4c1ae8440cda553963957"
+      },
+      {
+        "entry": "res/ZN.9.png",
+        "bytes": 229,
+        "sha256": "475f03b3ccff04fce91a7a912142d150a000b1d011da003745dc2c0e3f5fb092"
+      },
+      {
+        "entry": "res/_q.png",
+        "bytes": 173,
+        "sha256": "52549a8d0b6c35faf2795efdf6b4c5fe2cb34b7e8b1039cca7aa2769b6cab3d0"
+      },
+      {
+        "entry": "res/aU.9.png",
+        "bytes": 448,
+        "sha256": "c63a94e7136ceeef43b0ade8b49e8e1ef4d1060d584f6cb9ab58b7d6eaa16312"
+      },
+      {
+        "entry": "res/ar.png",
+        "bytes": 391,
+        "sha256": "29953bd8019dd96b7701329b9a203cff63460519549b9cca9a5eb74f9b1b0930"
+      },
+      {
+        "entry": "res/b2.png",
+        "bytes": 422,
+        "sha256": "afa79e5665050f16d1dbb29d4b80c6500a58b7c8e9b6f96662d0d6d409b4fbdd"
+      },
+      {
+        "entry": "res/bX.9.png",
+        "bytes": 244,
+        "sha256": "a2f1a37af8e699320a2fadbe54eeaa6112d5a3522d57d682edf04fe97be3b47e"
+      },
+      {
+        "entry": "res/cq.png",
+        "bytes": 502,
+        "sha256": "c4e54e6a0a7de636aa153378fbc62ea4a41695bfedf807f90df7b18ffd733f67"
+      },
+      {
+        "entry": "res/d3.png",
+        "bytes": 432,
+        "sha256": "2fa524cda78d7ebd66164a896a042277b7a56b8658fb318fc700a114cb04f7b2"
+      },
+      {
+        "entry": "res/d5.9.png",
+        "bytes": 851,
+        "sha256": "bb4b092ae69c429e9d4f7ff97c60ba10c2e443a2b0ca19a9f6c77854bf32e293"
+      },
+      {
+        "entry": "res/dW.png",
+        "bytes": 267,
+        "sha256": "4133830f43f9baa0b0ed3cc80d798b20071da9f51fe12ef6b0bd09abc8d5d33a"
+      },
+      {
+        "entry": "res/dY.png",
+        "bytes": 404,
+        "sha256": "5ced2ab774853050255d7309e10b76217813d56f3f8ab8fb73ac3f635d90c676"
+      },
+      {
+        "entry": "res/e2.png",
+        "bytes": 566,
+        "sha256": "869fb30341e00b3d5ff3b9fe03e0d52e3eaa0e0668554671429f42032d8b0b8e"
+      },
+      {
+        "entry": "res/eR.png",
+        "bytes": 356,
+        "sha256": "c8825cd637e59a02500d8b7518562f0c91bef2edd971ba3e5ad0f416794d618e"
+      },
+      {
+        "entry": "res/eT.9.png",
+        "bytes": 318,
+        "sha256": "80502979302dee7353f475f558c497ae6697f77181a51f7cc80b40d72c2e0c4c"
+      },
+      {
+        "entry": "res/ej.9.png",
+        "bytes": 167,
+        "sha256": "378694706fb7256dd2248e2af854efd71ec7e8885f61da2e16a2bd32fcf3d0a9"
+      },
+      {
+        "entry": "res/ev.9.png",
+        "bytes": 228,
+        "sha256": "89c28e887b0d60c01b35dcd2be654f416bffb66e8565716dc983e3b0204967e8"
+      },
+      {
+        "entry": "res/ew.png",
+        "bytes": 584,
+        "sha256": "c6c651f9782a4b8f24416b28412f433a6c2d285f51146a359aa9b2d7af402a8a"
+      },
+      {
+        "entry": "res/fM.9.png",
+        "bytes": 825,
+        "sha256": "b52228a35520e2d786e962e85013fe7f7c97ffb42677f3bdabc032fbb709952a"
+      },
+      {
+        "entry": "res/fu.png",
+        "bytes": 928,
+        "sha256": "5d075e0c287c4f4441b5b5c8fc7ea5cd27c11bb617ecea09755955bcb1889083"
+      },
+      {
+        "entry": "res/g-.png",
+        "bytes": 585,
+        "sha256": "3dbbad926d540586d6bd1230f3293108774c95e73f6604f0bbf88c3a11530223"
+      },
+      {
+        "entry": "res/g3.png",
+        "bytes": 334,
+        "sha256": "ab5613d2ce70fa67c5926e831353664945199fc195fa6fe76c5fe3cec452e31a"
+      },
+      {
+        "entry": "res/g31.png",
+        "bytes": 220,
+        "sha256": "d03a5cd7a66ef10c5147916f9d5878b2d0a0a5ad46f405a31cd9967efaa55afd"
+      },
+      {
+        "entry": "res/gK.9.png",
+        "bytes": 215,
+        "sha256": "2f7fbda0ba6e53e9a47e2fc0e24e32c447c613a5808c2d6285dc651e83a07ad7"
+      },
+      {
+        "entry": "res/gZ.9.png",
+        "bytes": 524,
+        "sha256": "bd893783c8d2bebb167ac05a27cdaea5dfd651fe8d64bcb30c14e7b925380c79"
+      },
+      {
+        "entry": "res/gj.9.png",
+        "bytes": 237,
+        "sha256": "d68d03967fb222f7e35772a2e0637f73b4dd0d6cbb9ee3f2b4432d2f90c257db"
+      },
+      {
+        "entry": "res/gt.9.png",
+        "bytes": 205,
+        "sha256": "9a1a48038a8d1dc041035b49cc732db23e008d126c8b2e680749dd29616a37b3"
+      },
+      {
+        "entry": "res/h7.9.png",
+        "bytes": 1096,
+        "sha256": "9f849bcd788adceb32f4c1a5aa892749bd1e244a3787bfbfbd30d3b6f5d8e9db"
+      },
+      {
+        "entry": "res/hZ.9.png",
+        "bytes": 167,
+        "sha256": "378694706fb7256dd2248e2af854efd71ec7e8885f61da2e16a2bd32fcf3d0a9"
+      },
+      {
+        "entry": "res/hh.9.png",
+        "bytes": 212,
+        "sha256": "d5c644b00ee79bd4f1fcb789ebbf89e79c0c6fea878dfbc4a8c64c3be34b5b03"
+      },
+      {
+        "entry": "res/hn.png",
+        "bytes": 251,
+        "sha256": "28ac0848f8d3ffb62fb12d5070c9cd6895f8e341cc2ab4b968bab2e4ab32eb2f"
+      },
+      {
+        "entry": "res/i6.9.png",
+        "bytes": 186,
+        "sha256": "f62d7aa1f9297302a43332a59834755edbd3a38670b8c523614ae1366b5f947f"
+      },
+      {
+        "entry": "res/iO.png",
+        "bytes": 228,
+        "sha256": "b84a277807f8f3bb5378e6353d99d1344aee10bd9a05f47c30afe3832d9ca7f0"
+      },
+      {
+        "entry": "res/iR.9.png",
+        "bytes": 484,
+        "sha256": "2e3d70230977af37c6d7739899a73e63937eebdfe6d802f1a957c43c2f2ab131"
+      },
+      {
+        "entry": "res/ii.png",
+        "bytes": 100,
+        "sha256": "8b61a4c7ef70dc92753f0494976482f66fd4150ec23dfc772ab65e10373afa55"
+      },
+      {
+        "entry": "res/io.9.png",
+        "bytes": 1526,
+        "sha256": "1417574134c5e9321c0b18fea711a08448ccf49957f55e10cedafb13237510f7"
+      },
+      {
+        "entry": "res/j4.png",
+        "bytes": 785,
+        "sha256": "6002eb56783b956b5f91e6ddffaf36cc867402a01a225e627b4c25c8d21a4e23"
+      },
+      {
+        "entry": "res/jS.9.png",
+        "bytes": 236,
+        "sha256": "fd719e497aaf091c3166cb51bf4404ca4bc3b6545dfbefbfaa0cf31f0790b7d1"
+      },
+      {
+        "entry": "res/jS1.9.png",
+        "bytes": 167,
+        "sha256": "378694706fb7256dd2248e2af854efd71ec7e8885f61da2e16a2bd32fcf3d0a9"
+      },
+      {
+        "entry": "res/jW.png",
+        "bytes": 753,
+        "sha256": "24f5db226f1cd56e5e775f82c37f65f3d1eec9091b26b74861629caf0019c3bd"
+      },
+      {
+        "entry": "res/je.9.png",
+        "bytes": 212,
+        "sha256": "21f0b55280be10b187ceff8edef4a5a7047683e6e9fcf47de410aa3839f41094"
+      },
+      {
+        "entry": "res/kJ.9.png",
+        "bytes": 208,
+        "sha256": "c0f930a722a16df986923bf419081d1090f9476a7287c8b655ab36ffc08064cb"
+      },
+      {
+        "entry": "res/kc.png",
+        "bytes": 167,
+        "sha256": "ffa7ee45b76405ba73921495008f7d68c9de6395f4b6941db063465f6e382320"
+      },
+      {
+        "entry": "res/kp.png",
+        "bytes": 224,
+        "sha256": "f5f349c1e949f0e66374f83b667fc0d0f477379614f36912ade22a299f2194d5"
+      },
+      {
+        "entry": "res/lP.9.png",
+        "bytes": 194,
+        "sha256": "b8b26708d71b4c7a5cf5311abcdfa741fee39c9f5e1383d49ca0c677fcdb03cd"
+      },
+      {
+        "entry": "res/ly.png",
+        "bytes": 272,
+        "sha256": "dc08af9d14e6b673bf9f31c248236f0457b322464036647473e3a32a23773f0e"
+      },
+      {
+        "entry": "res/m0.png",
+        "bytes": 267,
+        "sha256": "777a1cf53820aa467267d1f64e5f923656f93047038ea6375bcce257b517930e"
+      },
+      {
+        "entry": "res/mm.9.png",
+        "bytes": 345,
+        "sha256": "d4d2b0dbb039f1c6395183abe945b39470ad9a8a7b680a40fa790df6c645bb43"
+      },
+      {
+        "entry": "res/mp.png",
+        "bytes": 138,
+        "sha256": "a69a2edb5b6c60b8433d5b6d23c69f520ccd8a602f3f60e7996e489718bc175c"
+      },
+      {
+        "entry": "res/nI.9.png",
+        "bytes": 207,
+        "sha256": "c56ab9375b149ba1c5ee268f22b3cf6507bb47986f628391500fba38147dab28"
+      },
+      {
+        "entry": "res/nf.png",
+        "bytes": 1208,
+        "sha256": "5e0799a0d0b5d43ed5ae3a378aaa0847a810ceeff58db9a0f7836ebf4ef17146"
+      },
+      {
+        "entry": "res/o9.9.png",
+        "bytes": 260,
+        "sha256": "94ae2273a335672c1c67988e7af595d42e80526edb7f5654ee130dce06fd40d7"
+      },
+      {
+        "entry": "res/o_.9.png",
+        "bytes": 252,
+        "sha256": "20343222f9f79dd565c3a2248494d452e70820ac1c437173c38badd45f962afd"
+      },
+      {
+        "entry": "res/o_.png",
+        "bytes": 651,
+        "sha256": "d19092254aa4133fba8b7795fb5db560ad5dcd16c6f79201bec31b0f1e9b608b"
+      },
+      {
+        "entry": "res/op.9.png",
+        "bytes": 286,
+        "sha256": "f81412c5131046a83f5d9de1d10e2b4b31f6e2657c4c08743825cd40f605fdd3"
+      },
+      {
+        "entry": "res/pV.png",
+        "bytes": 207,
+        "sha256": "84cf5eb3b20250f69e0e4733beb4da5f417f0682892a5ad1b5e62570753c21b1"
+      },
+      {
+        "entry": "res/pY.png",
+        "bytes": 107,
+        "sha256": "8430ec003e003f3f2ba2f78d48fd150e25407667e530e82e87a7d4841c0fd676"
+      },
+      {
+        "entry": "res/pk.png",
+        "bytes": 275,
+        "sha256": "b0aa010e7a885e4b7a669c16c7ba10fcd862a12dff3f142c7354778442a63fde"
+      },
+      {
+        "entry": "res/ps.9.png",
+        "bytes": 178,
+        "sha256": "b800fac7d2f0a75b17fad7009707ea49134919e48984e89815a9d24c0fa704d8"
+      },
+      {
+        "entry": "res/pu.png",
+        "bytes": 909,
+        "sha256": "aa00088d0d9fd97bd92ed9ffd29b54bb69a48a984aa73448ce553fb9d812be41"
+      },
+      {
+        "entry": "res/py.9.png",
+        "bytes": 217,
+        "sha256": "a15171ead4b1cd9b80c58b93c0efb453b0cf889b714cc859ee2c9b937f4b37d0"
+      },
+      {
+        "entry": "res/qD.9.png",
+        "bytes": 2834,
+        "sha256": "1f9538745cfd3209cc09ed451c198302aac3a1c5da41e87394377814b1bcc5ee"
+      },
+      {
+        "entry": "res/qp.png",
+        "bytes": 197,
+        "sha256": "6151450ece3ab9667213c3987b6d8fffa25baf9ff43d53bcd9c94fd8ea7616d0"
+      },
+      {
+        "entry": "res/rj.9.png",
+        "bytes": 1098,
+        "sha256": "00a1ac74d8164cb5c4749a0b2e77e2c6da4a90abe873d8604f29841c19357c66"
+      },
+      {
+        "entry": "res/s0.png",
+        "bytes": 403,
+        "sha256": "63fad0a19cb9e416586049d40b62161b0cc4c2513d83931d3852e2f5a72e6d13"
+      },
+      {
+        "entry": "res/s3.9.png",
+        "bytes": 245,
+        "sha256": "8c6846f4105ef1c02107e842142e9ce60b08819296e9510b2d0c12cf4560c5e1"
+      },
+      {
+        "entry": "res/s4.png",
+        "bytes": 98,
+        "sha256": "0d773e62c756422313262846c787e58f67e0ee87e45e1ae9942002e816c4cb9e"
+      },
+      {
+        "entry": "res/sA.9.png",
+        "bytes": 212,
+        "sha256": "0c6328c7b2420570a7ec38b3beb3bac9a29d895ac1ab7239315aba7266418593"
+      },
+      {
+        "entry": "res/sg.9.png",
+        "bytes": 226,
+        "sha256": "67e701476927078d89ab0bbb39fff12d69702592a7a428237a21168a21ec1038"
+      },
+      {
+        "entry": "res/tG.png",
+        "bytes": 476,
+        "sha256": "52a0358e54439373ca39f99cd83cf3a7be73c257f07fae83edd83c9b4891895d"
+      },
+      {
+        "entry": "res/tS.png",
+        "bytes": 321,
+        "sha256": "caf1e473df6702c2a6a95d738f1d6f2b73196766b504e5ff333b3c8e747e047b"
+      },
+      {
+        "entry": "res/tU.9.png",
+        "bytes": 208,
+        "sha256": "91b8358e22ac1b8554c71a528414acf30088d9ad562bdac3814844771c14c8a9"
+      },
+      {
+        "entry": "res/tZ.9.png",
+        "bytes": 198,
+        "sha256": "6b2372b414abc1cfcfd71c98f51901a84c46c5b712046aae019b6110de265175"
+      },
+      {
+        "entry": "res/ta.png",
+        "bytes": 9456,
+        "sha256": "6deca32b56b97fa1fa87facd6996b46cc45190a553400e7febdf1d2093099b57"
+      },
+      {
+        "entry": "res/te.png",
+        "bytes": 278,
+        "sha256": "498b0cbd09b6b4feed8aca9ed77d235f5bb272c53d21b332649a00e942d989da"
+      },
+      {
+        "entry": "res/u3.png",
+        "bytes": 513,
+        "sha256": "55bc27772f6d35be9334fb80c371b327db25faa9a6098c3c14049e92654ac1bf"
+      },
+      {
+        "entry": "res/uL.9.png",
+        "bytes": 966,
+        "sha256": "006f2dc25bacc39e736bc720e26a6545df7427b6c103b2dd77c1eb872c3f3306"
+      },
+      {
+        "entry": "res/uj.9.png",
+        "bytes": 196,
+        "sha256": "c86d934a5809f32599e42143e306ed6e066b224fe1fa3f32ade1603074e5b136"
+      },
+      {
+        "entry": "res/ut.9.png",
+        "bytes": 754,
+        "sha256": "562cba1ad1b9abd502da9c03f4c10bb2bd728022c546f18059319f2ad293280e"
+      },
+      {
+        "entry": "res/uu.9.png",
+        "bytes": 204,
+        "sha256": "3633ec99d66aae4332f9a6b2dbd3480513433001a8eec0e796d2bcb69d75b73f"
+      },
+      {
+        "entry": "res/v4.9.png",
+        "bytes": 208,
+        "sha256": "a7523ccf037f7c31cf87a186feecb9139ef92d87e0702cabb08a31914b2b503e"
+      },
+      {
+        "entry": "res/vL.9.png",
+        "bytes": 223,
+        "sha256": "99c14d6855b8be296d58017d3751b8dc849c47b6d1d80ab614ff9075080e461b"
+      },
+      {
+        "entry": "res/vz.9.png",
+        "bytes": 181,
+        "sha256": "fa50162bdb3501c6b50cfa36c14dab9c94e48d57f558607ec9858124d70412f9"
+      },
+      {
+        "entry": "res/wL.9.png",
+        "bytes": 437,
+        "sha256": "8c3de5389a4fedf23b1efdf1c7737ca7eb44f381c22369153dfa972613a4c448"
+      },
+      {
+        "entry": "res/wN.9.png",
+        "bytes": 225,
+        "sha256": "18b328d8017e677d5aad3dbd66bae356b5cac978c6f0670938ea648e51d0eb66"
+      },
+      {
+        "entry": "res/w_.png",
+        "bytes": 214,
+        "sha256": "055d5f87b1bbb6677096bc7eb7eace57e40216cb97f2b2b926d26c1263f9abce"
+      },
+      {
+        "entry": "res/x3.9.png",
+        "bytes": 212,
+        "sha256": "93b7657184473d5881669b80e3d43fd64e442d1ed71be4ced3518380b6cec69d"
+      },
+      {
+        "entry": "res/xH.png",
+        "bytes": 186,
+        "sha256": "7c8472b72441cc28a1ac53a08b4f0c14f310af338175ba6c46fd6342ac8ce2ff"
+      },
+      {
+        "entry": "res/xR.9.png",
+        "bytes": 194,
+        "sha256": "9a9c940ea133f7e0ac8db6f06e13e852508633c21f8c71f297483165a06d92eb"
+      },
+      {
+        "entry": "res/xR.png",
+        "bytes": 337,
+        "sha256": "91bd18c30aef02aebe2668e40a7b8061bc5ccd8adda4efaaf9d57d656f0d7edb"
+      },
+      {
+        "entry": "res/xa.9.png",
+        "bytes": 221,
+        "sha256": "3e09afa21c45372c035598c017c8fb405a6d678e6cb84dc857581cb3b40e482d"
+      },
+      {
+        "entry": "res/yH.9.png",
+        "bytes": 184,
+        "sha256": "5ae9594240ada5e53500e2524215b3e2b3c91e6dd95b05e0acdd27d9d8c57e72"
+      },
+      {
+        "entry": "res/yY.9.png",
+        "bytes": 186,
+        "sha256": "f232714ccbecca97adc63b0811d62629057c77dcbd0b062c82e26754cb744831"
+      },
+      {
+        "entry": "res/yg.9.png",
+        "bytes": 395,
+        "sha256": "62477adc74d4e6836e3c0e4b5337c37d748cb3f94033f42c629938ef18d38b41"
+      },
+      {
+        "entry": "res/z-.9.png",
+        "bytes": 221,
+        "sha256": "559bf783d765c02338e97952bdc9c6689c7ff99090b8c9813369118da8b080f0"
+      },
+      {
+        "entry": "res/z9.9.png",
+        "bytes": 417,
+        "sha256": "77f0ebab2416404eb1d562342e431541d885686dd1e49d6dc93be1a86c2273c4"
+      },
+      {
+        "entry": "res/zE.png",
+        "bytes": 324,
+        "sha256": "a547431febf108ccfa9588ab89b1078e387bb351eb54d772394332187f770b74"
+      },
+      {
+        "entry": "res/zV.9.png",
+        "bytes": 2463,
+        "sha256": "0f8db605d63bf1d6d35fd647d592ac4e70c9a712ff5d1c2114c8d58a88b8228a"
+      }
+    ],
+    "matching_native_fixture_entries": [
+      {
+        "entry": "res/1R.png",
+        "bytes": 99122,
+        "sha256": "5115a112aad01432f4ebdfa22d8dcb686f1330075d5030bc5c039c154dc4d164"
+      }
+    ],
+    "native_libraries": [
+      {
+        "entry": "lib/arm64-v8a/libBrailleWordGeometry.so",
+        "abi": "arm64-v8a",
+        "bytes": 178984,
+        "elf_class": 64,
+        "byte_order": "little",
+        "e_machine": 183,
+        "expected_e_machine": 183,
+        "abi_matches": true,
+        "load_segments": [
+          {
+            "offset": 0,
+            "virtual_address": 0,
+            "file_bytes": 170000,
+            "memory_bytes": 170000,
+            "flags": 5,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          },
+          {
+            "offset": 170000,
+            "virtual_address": 186384,
+            "file_bytes": 6576,
+            "memory_bytes": 10224,
+            "flags": 6,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          },
+          {
+            "offset": 176576,
+            "virtual_address": 209344,
+            "file_bytes": 40,
+            "memory_bytes": 2808,
+            "flags": 6,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          }
+        ],
+        "all_load_alignments_at_least_16kb": true
+      },
+      {
+        "entry": "lib/arm64-v8a/libNitroImage.so",
+        "abi": "arm64-v8a",
+        "bytes": 1444632,
+        "elf_class": 64,
+        "byte_order": "little",
+        "e_machine": 183,
+        "expected_e_machine": 183,
+        "abi_matches": true,
+        "load_segments": [
+          {
+            "offset": 0,
+            "virtual_address": 0,
+            "file_bytes": 1394864,
+            "memory_bytes": 1394864,
+            "flags": 5,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          },
+          {
+            "offset": 1394864,
+            "virtual_address": 1411248,
+            "file_bytes": 47312,
+            "memory_bytes": 51024,
+            "flags": 6,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          },
+          {
+            "offset": 1442176,
+            "virtual_address": 1474944,
+            "file_bytes": 88,
+            "memory_bytes": 5768,
+            "flags": 6,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          }
+        ],
+        "all_load_alignments_at_least_16kb": true
+      },
+      {
+        "entry": "lib/arm64-v8a/libNitroModules.so",
+        "abi": "arm64-v8a",
+        "bytes": 990704,
+        "elf_class": 64,
+        "byte_order": "little",
+        "e_machine": 183,
+        "expected_e_machine": 183,
+        "abi_matches": true,
+        "load_segments": [
+          {
+            "offset": 0,
+            "virtual_address": 0,
+            "file_bytes": 964304,
+            "memory_bytes": 964304,
+            "flags": 5,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          },
+          {
+            "offset": 964304,
+            "virtual_address": 980688,
+            "file_bytes": 23984,
+            "memory_bytes": 26928,
+            "flags": 6,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          },
+          {
+            "offset": 988288,
+            "virtual_address": 1021056,
+            "file_bytes": 48,
+            "memory_bytes": 4720,
+            "flags": 6,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          }
+        ],
+        "all_load_alignments_at_least_16kb": true
+      },
+      {
+        "entry": "lib/arm64-v8a/libNitroTflite.so",
+        "abi": "arm64-v8a",
+        "bytes": 393288,
+        "elf_class": 64,
+        "byte_order": "little",
+        "e_machine": 183,
+        "expected_e_machine": 183,
+        "abi_matches": true,
+        "load_segments": [
+          {
+            "offset": 0,
+            "virtual_address": 0,
+            "file_bytes": 376960,
+            "memory_bytes": 376960,
+            "flags": 5,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          },
+          {
+            "offset": 376960,
+            "virtual_address": 393344,
+            "file_bytes": 13904,
+            "memory_bytes": 16256,
+            "flags": 6,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          },
+          {
+            "offset": 390864,
+            "virtual_address": 423632,
+            "file_bytes": 56,
+            "memory_bytes": 2632,
+            "flags": 6,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          }
+        ],
+        "all_load_alignments_at_least_16kb": true
+      },
+      {
+        "entry": "lib/arm64-v8a/libVisionCamera.so",
+        "abi": "arm64-v8a",
+        "bytes": 5909312,
+        "elf_class": 64,
+        "byte_order": "little",
+        "e_machine": 183,
+        "expected_e_machine": 183,
+        "abi_matches": true,
+        "load_segments": [
+          {
+            "offset": 0,
+            "virtual_address": 0,
+            "file_bytes": 5693840,
+            "memory_bytes": 5693840,
+            "flags": 5,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          },
+          {
+            "offset": 5693840,
+            "virtual_address": 5710224,
+            "file_bytes": 212792,
+            "memory_bytes": 216688,
+            "flags": 6,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          },
+          {
+            "offset": 5906632,
+            "virtual_address": 5939400,
+            "file_bytes": 312,
+            "memory_bytes": 22944,
+            "flags": 6,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          }
+        ],
+        "all_load_alignments_at_least_16kb": true
+      },
+      {
+        "entry": "lib/arm64-v8a/libVisionCameraWorklets.so",
+        "abi": "arm64-v8a",
+        "bytes": 120920,
+        "elf_class": 64,
+        "byte_order": "little",
+        "e_machine": 183,
+        "expected_e_machine": 183,
+        "abi_matches": true,
+        "load_segments": [
+          {
+            "offset": 0,
+            "virtual_address": 0,
+            "file_bytes": 114000,
+            "memory_bytes": 114000,
+            "flags": 5,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          },
+          {
+            "offset": 114000,
+            "virtual_address": 130384,
+            "file_bytes": 4432,
+            "memory_bytes": 4784,
+            "flags": 6,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          },
+          {
+            "offset": 118432,
+            "virtual_address": 151200,
+            "file_bytes": 48,
+            "memory_bytes": 2320,
+            "flags": 6,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          }
+        ],
+        "all_load_alignments_at_least_16kb": true
+      },
+      {
+        "entry": "lib/arm64-v8a/libandroidx.graphics.path.so",
+        "abi": "arm64-v8a",
+        "bytes": 10096,
+        "elf_class": 64,
+        "byte_order": "little",
+        "e_machine": 183,
+        "expected_e_machine": 183,
+        "abi_matches": true,
+        "load_segments": [
+          {
+            "offset": 0,
+            "virtual_address": 0,
+            "file_bytes": 7232,
+            "memory_bytes": 7232,
+            "flags": 5,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          },
+          {
+            "offset": 7232,
+            "virtual_address": 23616,
+            "file_bytes": 912,
+            "memory_bytes": 912,
+            "flags": 6,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          },
+          {
+            "offset": 8144,
+            "virtual_address": 40912,
+            "file_bytes": 0,
+            "memory_bytes": 16,
+            "flags": 6,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          }
+        ],
+        "all_load_alignments_at_least_16kb": true
+      },
+      {
+        "entry": "lib/arm64-v8a/libappmodules.so",
+        "abi": "arm64-v8a",
+        "bytes": 829232,
+        "elf_class": 64,
+        "byte_order": "little",
+        "e_machine": 183,
+        "expected_e_machine": 183,
+        "abi_matches": true,
+        "load_segments": [
+          {
+            "offset": 0,
+            "virtual_address": 0,
+            "file_bytes": 794672,
+            "memory_bytes": 794672,
+            "flags": 5,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          },
+          {
+            "offset": 794672,
+            "virtual_address": 811056,
+            "file_bytes": 32160,
+            "memory_bytes": 32720,
+            "flags": 6,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          },
+          {
+            "offset": 826832,
+            "virtual_address": 859600,
+            "file_bytes": 32,
+            "memory_bytes": 2672,
+            "flags": 6,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          }
+        ],
+        "all_load_alignments_at_least_16kb": true
+      },
+      {
+        "entry": "lib/arm64-v8a/libc++_shared.so",
+        "abi": "arm64-v8a",
+        "bytes": 1292904,
+        "elf_class": 64,
+        "byte_order": "little",
+        "e_machine": 183,
+        "expected_e_machine": 183,
+        "abi_matches": true,
+        "load_segments": [
+          {
+            "offset": 0,
+            "virtual_address": 0,
+            "file_bytes": 634024,
+            "memory_bytes": 634024,
+            "flags": 4,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          },
+          {
+            "offset": 634032,
+            "virtual_address": 650416,
+            "file_bytes": 616000,
+            "memory_bytes": 616000,
+            "flags": 5,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          },
+          {
+            "offset": 1250032,
+            "virtual_address": 1282800,
+            "file_bytes": 39760,
+            "memory_bytes": 40208,
+            "flags": 6,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          },
+          {
+            "offset": 1289792,
+            "virtual_address": 1338944,
+            "file_bytes": 568,
+            "memory_bytes": 32016,
+            "flags": 6,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          }
+        ],
+        "all_load_alignments_at_least_16kb": true
+      },
+      {
+        "entry": "lib/arm64-v8a/libexpo-modules-core.so",
+        "abi": "arm64-v8a",
+        "bytes": 1486640,
+        "elf_class": 64,
+        "byte_order": "little",
+        "e_machine": 183,
+        "expected_e_machine": 183,
+        "abi_matches": true,
+        "load_segments": [
+          {
+            "offset": 0,
+            "virtual_address": 0,
+            "file_bytes": 1443920,
+            "memory_bytes": 1443920,
+            "flags": 5,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          },
+          {
+            "offset": 1443920,
+            "virtual_address": 1460304,
+            "file_bytes": 40272,
+            "memory_bytes": 42928,
+            "flags": 6,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          },
+          {
+            "offset": 1484192,
+            "virtual_address": 1516960,
+            "file_bytes": 80,
+            "memory_bytes": 5632,
+            "flags": 6,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          }
+        ],
+        "all_load_alignments_at_least_16kb": true
+      },
+      {
+        "entry": "lib/arm64-v8a/libexpo-sqlite.so",
+        "abi": "arm64-v8a",
+        "bytes": 1830224,
+        "elf_class": 64,
+        "byte_order": "little",
+        "e_machine": 183,
+        "expected_e_machine": 183,
+        "abi_matches": true,
+        "load_segments": [
+          {
+            "offset": 0,
+            "virtual_address": 0,
+            "file_bytes": 1795952,
+            "memory_bytes": 1795952,
+            "flags": 5,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          },
+          {
+            "offset": 1795952,
+            "virtual_address": 1812336,
+            "file_bytes": 16960,
+            "memory_bytes": 18576,
+            "flags": 6,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          },
+          {
+            "offset": 1812912,
+            "virtual_address": 1845680,
+            "file_bytes": 14992,
+            "memory_bytes": 19264,
+            "flags": 6,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          }
+        ],
+        "all_load_alignments_at_least_16kb": true
+      },
+      {
+        "entry": "lib/arm64-v8a/libfbjni.so",
+        "abi": "arm64-v8a",
+        "bytes": 177000,
+        "elf_class": 64,
+        "byte_order": "little",
+        "e_machine": 183,
+        "expected_e_machine": 183,
+        "abi_matches": true,
+        "load_segments": [
+          {
+            "offset": 0,
+            "virtual_address": 0,
+            "file_bytes": 171152,
+            "memory_bytes": 171152,
+            "flags": 5,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          },
+          {
+            "offset": 171152,
+            "virtual_address": 187536,
+            "file_bytes": 3504,
+            "memory_bytes": 4976,
+            "flags": 6,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          },
+          {
+            "offset": 174656,
+            "virtual_address": 207424,
+            "file_bytes": 144,
+            "memory_bytes": 3528,
+            "flags": 6,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          }
+        ],
+        "all_load_alignments_at_least_16kb": true
+      },
+      {
+        "entry": "lib/arm64-v8a/libgifimage.so",
+        "abi": "arm64-v8a",
+        "bytes": 318992,
+        "elf_class": 64,
+        "byte_order": "little",
+        "e_machine": 183,
+        "expected_e_machine": 183,
+        "abi_matches": true,
+        "load_segments": [
+          {
+            "offset": 0,
+            "virtual_address": 0,
+            "file_bytes": 298608,
+            "memory_bytes": 298608,
+            "flags": 5,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          },
+          {
+            "offset": 298608,
+            "virtual_address": 314992,
+            "file_bytes": 17408,
+            "memory_bytes": 20880,
+            "flags": 6,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          },
+          {
+            "offset": 316016,
+            "virtual_address": 348784,
+            "file_bytes": 704,
+            "memory_bytes": 3632,
+            "flags": 6,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          }
+        ],
+        "all_load_alignments_at_least_16kb": true
+      },
+      {
+        "entry": "lib/arm64-v8a/libhermestooling.so",
+        "abi": "arm64-v8a",
+        "bytes": 141432,
+        "elf_class": 64,
+        "byte_order": "little",
+        "e_machine": 183,
+        "expected_e_machine": 183,
+        "abi_matches": true,
+        "load_segments": [
+          {
+            "offset": 0,
+            "virtual_address": 0,
+            "file_bytes": 132944,
+            "memory_bytes": 132944,
+            "flags": 5,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          },
+          {
+            "offset": 132944,
+            "virtual_address": 149328,
+            "file_bytes": 6096,
+            "memory_bytes": 6320,
+            "flags": 6,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          },
+          {
+            "offset": 139040,
+            "virtual_address": 171808,
+            "file_bytes": 96,
+            "memory_bytes": 2258,
+            "flags": 6,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          }
+        ],
+        "all_load_alignments_at_least_16kb": true
+      },
+      {
+        "entry": "lib/arm64-v8a/libhermesvm.so",
+        "abi": "arm64-v8a",
+        "bytes": 2477320,
+        "elf_class": 64,
+        "byte_order": "little",
+        "e_machine": 183,
+        "expected_e_machine": 183,
+        "abi_matches": true,
+        "load_segments": [
+          {
+            "offset": 0,
+            "virtual_address": 0,
+            "file_bytes": 2437104,
+            "memory_bytes": 2437104,
+            "flags": 5,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          },
+          {
+            "offset": 2437104,
+            "virtual_address": 2453488,
+            "file_bytes": 37400,
+            "memory_bytes": 40976,
+            "flags": 6,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          },
+          {
+            "offset": 2474504,
+            "virtual_address": 2507272,
+            "file_bytes": 608,
+            "memory_bytes": 17328,
+            "flags": 6,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          }
+        ],
+        "all_load_alignments_at_least_16kb": true
+      },
+      {
+        "entry": "lib/arm64-v8a/libimage_processing_util_jni.so",
+        "abi": "arm64-v8a",
+        "bytes": 32528,
+        "elf_class": 64,
+        "byte_order": "little",
+        "e_machine": 183,
+        "expected_e_machine": 183,
+        "abi_matches": true,
+        "load_segments": [
+          {
+            "offset": 0,
+            "virtual_address": 0,
+            "file_bytes": 29472,
+            "memory_bytes": 29472,
+            "flags": 5,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          },
+          {
+            "offset": 29472,
+            "virtual_address": 45856,
+            "file_bytes": 992,
+            "memory_bytes": 3296,
+            "flags": 6,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          },
+          {
+            "offset": 30464,
+            "virtual_address": 63232,
+            "file_bytes": 0,
+            "memory_bytes": 4,
+            "flags": 6,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          }
+        ],
+        "all_load_alignments_at_least_16kb": true
+      },
+      {
+        "entry": "lib/arm64-v8a/libimagepipeline.so",
+        "abi": "arm64-v8a",
+        "bytes": 8760,
+        "elf_class": 64,
+        "byte_order": "little",
+        "e_machine": 183,
+        "expected_e_machine": 183,
+        "abi_matches": true,
+        "load_segments": [
+          {
+            "offset": 0,
+            "virtual_address": 0,
+            "file_bytes": 5952,
+            "memory_bytes": 5952,
+            "flags": 5,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          },
+          {
+            "offset": 5952,
+            "virtual_address": 22336,
+            "file_bytes": 568,
+            "memory_bytes": 2240,
+            "flags": 6,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          },
+          {
+            "offset": 6520,
+            "virtual_address": 39288,
+            "file_bytes": 192,
+            "memory_bytes": 216,
+            "flags": 6,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          }
+        ],
+        "all_load_alignments_at_least_16kb": true
+      },
+      {
+        "entry": "lib/arm64-v8a/libjsi.so",
+        "abi": "arm64-v8a",
+        "bytes": 412696,
+        "elf_class": 64,
+        "byte_order": "little",
+        "e_machine": 183,
+        "expected_e_machine": 183,
+        "abi_matches": true,
+        "load_segments": [
+          {
+            "offset": 0,
+            "virtual_address": 0,
+            "file_bytes": 400880,
+            "memory_bytes": 400880,
+            "flags": 5,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          },
+          {
+            "offset": 400880,
+            "virtual_address": 417264,
+            "file_bytes": 9504,
+            "memory_bytes": 12816,
+            "flags": 6,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          },
+          {
+            "offset": 410384,
+            "virtual_address": 443152,
+            "file_bytes": 100,
+            "memory_bytes": 67960,
+            "flags": 6,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          }
+        ],
+        "all_load_alignments_at_least_16kb": true
+      },
+      {
+        "entry": "lib/arm64-v8a/libnative-filters.so",
+        "abi": "arm64-v8a",
+        "bytes": 23712,
+        "elf_class": 64,
+        "byte_order": "little",
+        "e_machine": 183,
+        "expected_e_machine": 183,
+        "abi_matches": true,
+        "load_segments": [
+          {
+            "offset": 0,
+            "virtual_address": 0,
+            "file_bytes": 20960,
+            "memory_bytes": 20960,
+            "flags": 5,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          },
+          {
+            "offset": 20960,
+            "virtual_address": 37344,
+            "file_bytes": 584,
+            "memory_bytes": 3616,
+            "flags": 6,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          },
+          {
+            "offset": 21544,
+            "virtual_address": 54312,
+            "file_bytes": 120,
+            "memory_bytes": 144,
+            "flags": 6,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          }
+        ],
+        "all_load_alignments_at_least_16kb": true
+      },
+      {
+        "entry": "lib/arm64-v8a/libnative-imagetranscoder.so",
+        "abi": "arm64-v8a",
+        "bytes": 585376,
+        "elf_class": 64,
+        "byte_order": "little",
+        "e_machine": 183,
+        "expected_e_machine": 183,
+        "abi_matches": true,
+        "load_segments": [
+          {
+            "offset": 0,
+            "virtual_address": 0,
+            "file_bytes": 565168,
+            "memory_bytes": 565168,
+            "flags": 5,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          },
+          {
+            "offset": 565168,
+            "virtual_address": 581552,
+            "file_bytes": 17704,
+            "memory_bytes": 20560,
+            "flags": 6,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          },
+          {
+            "offset": 582872,
+            "virtual_address": 615640,
+            "file_bytes": 232,
+            "memory_bytes": 3032,
+            "flags": 6,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          }
+        ],
+        "all_load_alignments_at_least_16kb": true
+      },
+      {
+        "entry": "lib/arm64-v8a/libreact_codegen_RNCSlider.so",
+        "abi": "arm64-v8a",
+        "bytes": 237048,
+        "elf_class": 64,
+        "byte_order": "little",
+        "e_machine": 183,
+        "expected_e_machine": 183,
+        "abi_matches": true,
+        "load_segments": [
+          {
+            "offset": 0,
+            "virtual_address": 0,
+            "file_bytes": 229328,
+            "memory_bytes": 229328,
+            "flags": 5,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          },
+          {
+            "offset": 229328,
+            "virtual_address": 245712,
+            "file_bytes": 5304,
+            "memory_bytes": 8240,
+            "flags": 6,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          },
+          {
+            "offset": 234632,
+            "virtual_address": 267400,
+            "file_bytes": 48,
+            "memory_bytes": 4968,
+            "flags": 6,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          }
+        ],
+        "all_load_alignments_at_least_16kb": true
+      },
+      {
+        "entry": "lib/arm64-v8a/libreact_codegen_rnscreens.so",
+        "abi": "arm64-v8a",
+        "bytes": 1200552,
+        "elf_class": 64,
+        "byte_order": "little",
+        "e_machine": 183,
+        "expected_e_machine": 183,
+        "abi_matches": true,
+        "load_segments": [
+          {
+            "offset": 0,
+            "virtual_address": 0,
+            "file_bytes": 1155072,
+            "memory_bytes": 1155072,
+            "flags": 5,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          },
+          {
+            "offset": 1155072,
+            "virtual_address": 1171456,
+            "file_bytes": 43064,
+            "memory_bytes": 45056,
+            "flags": 6,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          },
+          {
+            "offset": 1198136,
+            "virtual_address": 1230904,
+            "file_bytes": 48,
+            "memory_bytes": 58888,
+            "flags": 6,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          }
+        ],
+        "all_load_alignments_at_least_16kb": true
+      },
+      {
+        "entry": "lib/arm64-v8a/libreact_codegen_safeareacontext.so",
+        "abi": "arm64-v8a",
+        "bytes": 159384,
+        "elf_class": 64,
+        "byte_order": "little",
+        "e_machine": 183,
+        "expected_e_machine": 183,
+        "abi_matches": true,
+        "load_segments": [
+          {
+            "offset": 0,
+            "virtual_address": 0,
+            "file_bytes": 151584,
+            "memory_bytes": 151584,
+            "flags": 5,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          },
+          {
+            "offset": 151584,
+            "virtual_address": 167968,
+            "file_bytes": 5392,
+            "memory_bytes": 8160,
+            "flags": 6,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          },
+          {
+            "offset": 156976,
+            "virtual_address": 189744,
+            "file_bytes": 40,
+            "memory_bytes": 5840,
+            "flags": 6,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          }
+        ],
+        "all_load_alignments_at_least_16kb": true
+      },
+      {
+        "entry": "lib/arm64-v8a/libreactnative.so",
+        "abi": "arm64-v8a",
+        "bytes": 6985168,
+        "elf_class": 64,
+        "byte_order": "little",
+        "e_machine": 183,
+        "expected_e_machine": 183,
+        "abi_matches": true,
+        "load_segments": [
+          {
+            "offset": 0,
+            "virtual_address": 0,
+            "file_bytes": 6815632,
+            "memory_bytes": 6815632,
+            "flags": 5,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          },
+          {
+            "offset": 6815632,
+            "virtual_address": 6832016,
+            "file_bytes": 162192,
+            "memory_bytes": 163952,
+            "flags": 6,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          },
+          {
+            "offset": 6977824,
+            "virtual_address": 7010592,
+            "file_bytes": 5048,
+            "memory_bytes": 143832,
+            "flags": 6,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          }
+        ],
+        "all_load_alignments_at_least_16kb": true
+      },
+      {
+        "entry": "lib/arm64-v8a/librnscreens.so",
+        "abi": "arm64-v8a",
+        "bytes": 101064,
+        "elf_class": 64,
+        "byte_order": "little",
+        "e_machine": 183,
+        "expected_e_machine": 183,
+        "abi_matches": true,
+        "load_segments": [
+          {
+            "offset": 0,
+            "virtual_address": 0,
+            "file_bytes": 94912,
+            "memory_bytes": 94912,
+            "flags": 5,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          },
+          {
+            "offset": 94912,
+            "virtual_address": 111296,
+            "file_bytes": 3752,
+            "memory_bytes": 7488,
+            "flags": 6,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          },
+          {
+            "offset": 98664,
+            "virtual_address": 131432,
+            "file_bytes": 32,
+            "memory_bytes": 2464,
+            "flags": 6,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          }
+        ],
+        "all_load_alignments_at_least_16kb": true
+      },
+      {
+        "entry": "lib/arm64-v8a/libstatic-webp.so",
+        "abi": "arm64-v8a",
+        "bytes": 501856,
+        "elf_class": 64,
+        "byte_order": "little",
+        "e_machine": 183,
+        "expected_e_machine": 183,
+        "abi_matches": true,
+        "load_segments": [
+          {
+            "offset": 0,
+            "virtual_address": 0,
+            "file_bytes": 482096,
+            "memory_bytes": 482096,
+            "flags": 5,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          },
+          {
+            "offset": 482096,
+            "virtual_address": 498480,
+            "file_bytes": 16664,
+            "memory_bytes": 17616,
+            "flags": 6,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          },
+          {
+            "offset": 498760,
+            "virtual_address": 531528,
+            "file_bytes": 824,
+            "memory_bytes": 5544,
+            "flags": 6,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          }
+        ],
+        "all_load_alignments_at_least_16kb": true
+      },
+      {
+        "entry": "lib/arm64-v8a/libsurface_util_jni.so",
+        "abi": "arm64-v8a",
+        "bytes": 4896,
+        "elf_class": 64,
+        "byte_order": "little",
+        "e_machine": 183,
+        "expected_e_machine": 183,
+        "abi_matches": true,
+        "load_segments": [
+          {
+            "offset": 0,
+            "virtual_address": 0,
+            "file_bytes": 2480,
+            "memory_bytes": 2480,
+            "flags": 5,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          },
+          {
+            "offset": 2480,
+            "virtual_address": 18864,
+            "file_bytes": 568,
+            "memory_bytes": 1616,
+            "flags": 6,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          }
+        ],
+        "all_load_alignments_at_least_16kb": true
+      },
+      {
+        "entry": "lib/arm64-v8a/libtensorflowlite_gpu_jni.so",
+        "abi": "arm64-v8a",
+        "bytes": 2501208,
+        "elf_class": 64,
+        "byte_order": "little",
+        "e_machine": 183,
+        "expected_e_machine": 183,
+        "abi_matches": true,
+        "load_segments": [
+          {
+            "offset": 0,
+            "virtual_address": 0,
+            "file_bytes": 2430544,
+            "memory_bytes": 2430544,
+            "flags": 5,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          },
+          {
+            "offset": 2441216,
+            "virtual_address": 2441216,
+            "file_bytes": 57432,
+            "memory_bytes": 57432,
+            "flags": 6,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          },
+          {
+            "offset": 2498648,
+            "virtual_address": 2515032,
+            "file_bytes": 304,
+            "memory_bytes": 20088,
+            "flags": 6,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          }
+        ],
+        "all_load_alignments_at_least_16kb": true
+      },
+      {
+        "entry": "lib/arm64-v8a/libtensorflowlite_jni.so",
+        "abi": "arm64-v8a",
+        "bytes": 4320472,
+        "elf_class": 64,
+        "byte_order": "little",
+        "e_machine": 183,
+        "expected_e_machine": 183,
+        "abi_matches": true,
+        "load_segments": [
+          {
+            "offset": 0,
+            "virtual_address": 0,
+            "file_bytes": 4249488,
+            "memory_bytes": 4249488,
+            "flags": 5,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          },
+          {
+            "offset": 4259840,
+            "virtual_address": 4259840,
+            "file_bytes": 37272,
+            "memory_bytes": 37272,
+            "flags": 6,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          },
+          {
+            "offset": 4297112,
+            "virtual_address": 4313496,
+            "file_bytes": 21176,
+            "memory_bytes": 177992,
+            "flags": 6,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          }
+        ],
+        "all_load_alignments_at_least_16kb": true
+      },
+      {
+        "entry": "lib/arm64-v8a/libworklets.so",
+        "abi": "arm64-v8a",
+        "bytes": 1101312,
+        "elf_class": 64,
+        "byte_order": "little",
+        "e_machine": 183,
+        "expected_e_machine": 183,
+        "abi_matches": true,
+        "load_segments": [
+          {
+            "offset": 0,
+            "virtual_address": 0,
+            "file_bytes": 1064976,
+            "memory_bytes": 1064976,
+            "flags": 5,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          },
+          {
+            "offset": 1064976,
+            "virtual_address": 1081360,
+            "file_bytes": 33840,
+            "memory_bytes": 36848,
+            "flags": 6,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          },
+          {
+            "offset": 1098816,
+            "virtual_address": 1131584,
+            "file_bytes": 56,
+            "memory_bytes": 2912,
+            "flags": 6,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          }
+        ],
+        "all_load_alignments_at_least_16kb": true
+      },
+      {
+        "entry": "lib/arm64-v8a/libzstd-kmp.so",
+        "abi": "arm64-v8a",
+        "bytes": 731872,
+        "elf_class": 64,
+        "byte_order": "little",
+        "e_machine": 183,
+        "expected_e_machine": 183,
+        "abi_matches": true,
+        "load_segments": [
+          {
+            "offset": 0,
+            "virtual_address": 0,
+            "file_bytes": 712640,
+            "memory_bytes": 712640,
+            "flags": 5,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          },
+          {
+            "offset": 712640,
+            "virtual_address": 729024,
+            "file_bytes": 16688,
+            "memory_bytes": 20544,
+            "flags": 6,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          },
+          {
+            "offset": 729328,
+            "virtual_address": 762096,
+            "file_bytes": 88,
+            "memory_bytes": 2864,
+            "flags": 6,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          }
+        ],
+        "all_load_alignments_at_least_16kb": true
+      },
+      {
+        "entry": "lib/x86_64/libBrailleWordGeometry.so",
+        "abi": "x86_64",
+        "bytes": 175968,
+        "elf_class": 64,
+        "byte_order": "little",
+        "e_machine": 62,
+        "expected_e_machine": 62,
+        "abi_matches": true,
+        "load_segments": [
+          {
+            "offset": 0,
+            "virtual_address": 0,
+            "file_bytes": 167040,
+            "memory_bytes": 167040,
+            "flags": 5,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          },
+          {
+            "offset": 167040,
+            "virtual_address": 183424,
+            "file_bytes": 6520,
+            "memory_bytes": 9088,
+            "flags": 6,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          },
+          {
+            "offset": 173560,
+            "virtual_address": 206328,
+            "file_bytes": 40,
+            "memory_bytes": 2792,
+            "flags": 6,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          }
+        ],
+        "all_load_alignments_at_least_16kb": true
+      },
+      {
+        "entry": "lib/x86_64/libNitroImage.so",
+        "abi": "x86_64",
+        "bytes": 1416856,
+        "elf_class": 64,
+        "byte_order": "little",
+        "e_machine": 62,
+        "expected_e_machine": 62,
+        "abi_matches": true,
+        "load_segments": [
+          {
+            "offset": 0,
+            "virtual_address": 0,
+            "file_bytes": 1367136,
+            "memory_bytes": 1367136,
+            "flags": 5,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          },
+          {
+            "offset": 1367136,
+            "virtual_address": 1383520,
+            "file_bytes": 47264,
+            "memory_bytes": 50080,
+            "flags": 6,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          },
+          {
+            "offset": 1414400,
+            "virtual_address": 1447168,
+            "file_bytes": 88,
+            "memory_bytes": 5760,
+            "flags": 6,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          }
+        ],
+        "all_load_alignments_at_least_16kb": true
+      },
+      {
+        "entry": "lib/x86_64/libNitroModules.so",
+        "abi": "x86_64",
+        "bytes": 977664,
+        "elf_class": 64,
+        "byte_order": "little",
+        "e_machine": 62,
+        "expected_e_machine": 62,
+        "abi_matches": true,
+        "load_segments": [
+          {
+            "offset": 0,
+            "virtual_address": 0,
+            "file_bytes": 951296,
+            "memory_bytes": 951296,
+            "flags": 5,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          },
+          {
+            "offset": 951296,
+            "virtual_address": 967680,
+            "file_bytes": 23952,
+            "memory_bytes": 27648,
+            "flags": 6,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          },
+          {
+            "offset": 975248,
+            "virtual_address": 1008016,
+            "file_bytes": 48,
+            "memory_bytes": 4704,
+            "flags": 6,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          }
+        ],
+        "all_load_alignments_at_least_16kb": true
+      },
+      {
+        "entry": "lib/x86_64/libNitroTflite.so",
+        "abi": "x86_64",
+        "bytes": 382784,
+        "elf_class": 64,
+        "byte_order": "little",
+        "e_machine": 62,
+        "expected_e_machine": 62,
+        "abi_matches": true,
+        "load_segments": [
+          {
+            "offset": 0,
+            "virtual_address": 0,
+            "file_bytes": 366512,
+            "memory_bytes": 366512,
+            "flags": 5,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          },
+          {
+            "offset": 366512,
+            "virtual_address": 382896,
+            "file_bytes": 13848,
+            "memory_bytes": 14416,
+            "flags": 6,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          },
+          {
+            "offset": 380360,
+            "virtual_address": 413128,
+            "file_bytes": 56,
+            "memory_bytes": 2616,
+            "flags": 6,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          }
+        ],
+        "all_load_alignments_at_least_16kb": true
+      },
+      {
+        "entry": "lib/x86_64/libVisionCamera.so",
+        "abi": "x86_64",
+        "bytes": 5818072,
+        "elf_class": 64,
+        "byte_order": "little",
+        "e_machine": 62,
+        "expected_e_machine": 62,
+        "abi_matches": true,
+        "load_segments": [
+          {
+            "offset": 0,
+            "virtual_address": 0,
+            "file_bytes": 5602672,
+            "memory_bytes": 5602672,
+            "flags": 5,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          },
+          {
+            "offset": 5602672,
+            "virtual_address": 5619056,
+            "file_bytes": 212720,
+            "memory_bytes": 213648,
+            "flags": 6,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          },
+          {
+            "offset": 5815392,
+            "virtual_address": 5848160,
+            "file_bytes": 312,
+            "memory_bytes": 22944,
+            "flags": 6,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          }
+        ],
+        "all_load_alignments_at_least_16kb": true
+      },
+      {
+        "entry": "lib/x86_64/libVisionCameraWorklets.so",
+        "abi": "x86_64",
+        "bytes": 117000,
+        "elf_class": 64,
+        "byte_order": "little",
+        "e_machine": 62,
+        "expected_e_machine": 62,
+        "abi_matches": true,
+        "load_segments": [
+          {
+            "offset": 0,
+            "virtual_address": 0,
+            "file_bytes": 110128,
+            "memory_bytes": 110128,
+            "flags": 5,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          },
+          {
+            "offset": 110128,
+            "virtual_address": 126512,
+            "file_bytes": 4384,
+            "memory_bytes": 4560,
+            "flags": 6,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          },
+          {
+            "offset": 114512,
+            "virtual_address": 147280,
+            "file_bytes": 48,
+            "memory_bytes": 2304,
+            "flags": 6,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          }
+        ],
+        "all_load_alignments_at_least_16kb": true
+      },
+      {
+        "entry": "lib/x86_64/libandroidx.graphics.path.so",
+        "abi": "x86_64",
+        "bytes": 10760,
+        "elf_class": 64,
+        "byte_order": "little",
+        "e_machine": 62,
+        "expected_e_machine": 62,
+        "abi_matches": true,
+        "load_segments": [
+          {
+            "offset": 0,
+            "virtual_address": 0,
+            "file_bytes": 7872,
+            "memory_bytes": 7872,
+            "flags": 5,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          },
+          {
+            "offset": 7872,
+            "virtual_address": 24256,
+            "file_bytes": 936,
+            "memory_bytes": 936,
+            "flags": 6,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          },
+          {
+            "offset": 8808,
+            "virtual_address": 41576,
+            "file_bytes": 0,
+            "memory_bytes": 16,
+            "flags": 6,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          }
+        ],
+        "all_load_alignments_at_least_16kb": true
+      },
+      {
+        "entry": "lib/x86_64/libappmodules.so",
+        "abi": "x86_64",
+        "bytes": 842840,
+        "elf_class": 64,
+        "byte_order": "little",
+        "e_machine": 62,
+        "expected_e_machine": 62,
+        "abi_matches": true,
+        "load_segments": [
+          {
+            "offset": 0,
+            "virtual_address": 0,
+            "file_bytes": 808416,
+            "memory_bytes": 808416,
+            "flags": 5,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          },
+          {
+            "offset": 808416,
+            "virtual_address": 824800,
+            "file_bytes": 32096,
+            "memory_bytes": 35360,
+            "flags": 6,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          },
+          {
+            "offset": 840512,
+            "virtual_address": 873280,
+            "file_bytes": 32,
+            "memory_bytes": 2656,
+            "flags": 6,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          }
+        ],
+        "all_load_alignments_at_least_16kb": true
+      },
+      {
+        "entry": "lib/x86_64/libc++_shared.so",
+        "abi": "x86_64",
+        "bytes": 1252080,
+        "elf_class": 64,
+        "byte_order": "little",
+        "e_machine": 62,
+        "expected_e_machine": 62,
+        "abi_matches": true,
+        "load_segments": [
+          {
+            "offset": 0,
+            "virtual_address": 0,
+            "file_bytes": 624944,
+            "memory_bytes": 624944,
+            "flags": 4,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          },
+          {
+            "offset": 624944,
+            "virtual_address": 641328,
+            "file_bytes": 584480,
+            "memory_bytes": 584480,
+            "flags": 5,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          },
+          {
+            "offset": 1209424,
+            "virtual_address": 1242192,
+            "file_bytes": 39624,
+            "memory_bytes": 39856,
+            "flags": 6,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          },
+          {
+            "offset": 1249056,
+            "virtual_address": 1298208,
+            "file_bytes": 568,
+            "memory_bytes": 32080,
+            "flags": 6,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          }
+        ],
+        "all_load_alignments_at_least_16kb": true
+      },
+      {
+        "entry": "lib/x86_64/libexpo-modules-core.so",
+        "abi": "x86_64",
+        "bytes": 1448200,
+        "elf_class": 64,
+        "byte_order": "little",
+        "e_machine": 62,
+        "expected_e_machine": 62,
+        "abi_matches": true,
+        "load_segments": [
+          {
+            "offset": 0,
+            "virtual_address": 0,
+            "file_bytes": 1405360,
+            "memory_bytes": 1405360,
+            "flags": 5,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          },
+          {
+            "offset": 1405360,
+            "virtual_address": 1421744,
+            "file_bytes": 40392,
+            "memory_bytes": 40528,
+            "flags": 6,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          },
+          {
+            "offset": 1445752,
+            "virtual_address": 1478520,
+            "file_bytes": 80,
+            "memory_bytes": 5624,
+            "flags": 6,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          }
+        ],
+        "all_load_alignments_at_least_16kb": true
+      },
+      {
+        "entry": "lib/x86_64/libexpo-sqlite.so",
+        "abi": "x86_64",
+        "bytes": 1880848,
+        "elf_class": 64,
+        "byte_order": "little",
+        "e_machine": 62,
+        "expected_e_machine": 62,
+        "abi_matches": true,
+        "load_segments": [
+          {
+            "offset": 0,
+            "virtual_address": 0,
+            "file_bytes": 1846320,
+            "memory_bytes": 1846320,
+            "flags": 5,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          },
+          {
+            "offset": 1846320,
+            "virtual_address": 1862704,
+            "file_bytes": 17160,
+            "memory_bytes": 17360,
+            "flags": 6,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          },
+          {
+            "offset": 1863488,
+            "virtual_address": 1896256,
+            "file_bytes": 15040,
+            "memory_bytes": 19328,
+            "flags": 6,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          }
+        ],
+        "all_load_alignments_at_least_16kb": true
+      },
+      {
+        "entry": "lib/x86_64/libfbjni.so",
+        "abi": "x86_64",
+        "bytes": 172952,
+        "elf_class": 64,
+        "byte_order": "little",
+        "e_machine": 62,
+        "expected_e_machine": 62,
+        "abi_matches": true,
+        "load_segments": [
+          {
+            "offset": 0,
+            "virtual_address": 0,
+            "file_bytes": 167120,
+            "memory_bytes": 167120,
+            "flags": 5,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          },
+          {
+            "offset": 167120,
+            "virtual_address": 183504,
+            "file_bytes": 3488,
+            "memory_bytes": 4912,
+            "flags": 6,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          },
+          {
+            "offset": 170608,
+            "virtual_address": 203376,
+            "file_bytes": 144,
+            "memory_bytes": 3536,
+            "flags": 6,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          }
+        ],
+        "all_load_alignments_at_least_16kb": true
+      },
+      {
+        "entry": "lib/x86_64/libgifimage.so",
+        "abi": "x86_64",
+        "bytes": 302952,
+        "elf_class": 64,
+        "byte_order": "little",
+        "e_machine": 62,
+        "expected_e_machine": 62,
+        "abi_matches": true,
+        "load_segments": [
+          {
+            "offset": 0,
+            "virtual_address": 0,
+            "file_bytes": 282816,
+            "memory_bytes": 282816,
+            "flags": 5,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          },
+          {
+            "offset": 282816,
+            "virtual_address": 299200,
+            "file_bytes": 17232,
+            "memory_bytes": 20288,
+            "flags": 6,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          },
+          {
+            "offset": 300048,
+            "virtual_address": 332816,
+            "file_bytes": 704,
+            "memory_bytes": 3616,
+            "flags": 6,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          }
+        ],
+        "all_load_alignments_at_least_16kb": true
+      },
+      {
+        "entry": "lib/x86_64/libhermestooling.so",
+        "abi": "x86_64",
+        "bytes": 138128,
+        "elf_class": 64,
+        "byte_order": "little",
+        "e_machine": 62,
+        "expected_e_machine": 62,
+        "abi_matches": true,
+        "load_segments": [
+          {
+            "offset": 0,
+            "virtual_address": 0,
+            "file_bytes": 129808,
+            "memory_bytes": 129808,
+            "flags": 5,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          },
+          {
+            "offset": 129808,
+            "virtual_address": 146192,
+            "file_bytes": 6000,
+            "memory_bytes": 9456,
+            "flags": 6,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          },
+          {
+            "offset": 135808,
+            "virtual_address": 168576,
+            "file_bytes": 96,
+            "memory_bytes": 2242,
+            "flags": 6,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          }
+        ],
+        "all_load_alignments_at_least_16kb": true
+      },
+      {
+        "entry": "lib/x86_64/libhermesvm.so",
+        "abi": "x86_64",
+        "bytes": 2591976,
+        "elf_class": 64,
+        "byte_order": "little",
+        "e_machine": 62,
+        "expected_e_machine": 62,
+        "abi_matches": true,
+        "load_segments": [
+          {
+            "offset": 0,
+            "virtual_address": 0,
+            "file_bytes": 2551920,
+            "memory_bytes": 2551920,
+            "flags": 5,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          },
+          {
+            "offset": 2551920,
+            "virtual_address": 2568304,
+            "file_bytes": 37224,
+            "memory_bytes": 40848,
+            "flags": 6,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          },
+          {
+            "offset": 2589152,
+            "virtual_address": 2621920,
+            "file_bytes": 616,
+            "memory_bytes": 17336,
+            "flags": 6,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          }
+        ],
+        "all_load_alignments_at_least_16kb": true
+      },
+      {
+        "entry": "lib/x86_64/libimage_processing_util_jni.so",
+        "abi": "x86_64",
+        "bytes": 49416,
+        "elf_class": 64,
+        "byte_order": "little",
+        "e_machine": 62,
+        "expected_e_machine": 62,
+        "abi_matches": true,
+        "load_segments": [
+          {
+            "offset": 0,
+            "virtual_address": 0,
+            "file_bytes": 46672,
+            "memory_bytes": 46672,
+            "flags": 5,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          },
+          {
+            "offset": 46672,
+            "virtual_address": 63056,
+            "file_bytes": 680,
+            "memory_bytes": 2480,
+            "flags": 6,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          },
+          {
+            "offset": 47352,
+            "virtual_address": 80120,
+            "file_bytes": 0,
+            "memory_bytes": 4,
+            "flags": 6,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          }
+        ],
+        "all_load_alignments_at_least_16kb": true
+      },
+      {
+        "entry": "lib/x86_64/libimagepipeline.so",
+        "abi": "x86_64",
+        "bytes": 8464,
+        "elf_class": 64,
+        "byte_order": "little",
+        "e_machine": 62,
+        "expected_e_machine": 62,
+        "abi_matches": true,
+        "load_segments": [
+          {
+            "offset": 0,
+            "virtual_address": 0,
+            "file_bytes": 5632,
+            "memory_bytes": 5632,
+            "flags": 5,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          },
+          {
+            "offset": 5632,
+            "virtual_address": 22016,
+            "file_bytes": 568,
+            "memory_bytes": 2560,
+            "flags": 6,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          },
+          {
+            "offset": 6208,
+            "virtual_address": 38976,
+            "file_bytes": 208,
+            "memory_bytes": 232,
+            "flags": 6,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          }
+        ],
+        "all_load_alignments_at_least_16kb": true
+      },
+      {
+        "entry": "lib/x86_64/libjsi.so",
+        "abi": "x86_64",
+        "bytes": 418872,
+        "elf_class": 64,
+        "byte_order": "little",
+        "e_machine": 62,
+        "expected_e_machine": 62,
+        "abi_matches": true,
+        "load_segments": [
+          {
+            "offset": 0,
+            "virtual_address": 0,
+            "file_bytes": 407104,
+            "memory_bytes": 407104,
+            "flags": 5,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          },
+          {
+            "offset": 407104,
+            "virtual_address": 423488,
+            "file_bytes": 9456,
+            "memory_bytes": 10688,
+            "flags": 6,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          },
+          {
+            "offset": 416560,
+            "virtual_address": 449328,
+            "file_bytes": 100,
+            "memory_bytes": 67984,
+            "flags": 6,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          }
+        ],
+        "all_load_alignments_at_least_16kb": true
+      },
+      {
+        "entry": "lib/x86_64/libnative-filters.so",
+        "abi": "x86_64",
+        "bytes": 30528,
+        "elf_class": 64,
+        "byte_order": "little",
+        "e_machine": 62,
+        "expected_e_machine": 62,
+        "abi_matches": true,
+        "load_segments": [
+          {
+            "offset": 0,
+            "virtual_address": 0,
+            "file_bytes": 27760,
+            "memory_bytes": 27760,
+            "flags": 5,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          },
+          {
+            "offset": 27760,
+            "virtual_address": 44144,
+            "file_bytes": 584,
+            "memory_bytes": 912,
+            "flags": 6,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          },
+          {
+            "offset": 28352,
+            "virtual_address": 61120,
+            "file_bytes": 128,
+            "memory_bytes": 152,
+            "flags": 6,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          }
+        ],
+        "all_load_alignments_at_least_16kb": true
+      },
+      {
+        "entry": "lib/x86_64/libnative-imagetranscoder.so",
+        "abi": "x86_64",
+        "bytes": 720432,
+        "elf_class": 64,
+        "byte_order": "little",
+        "e_machine": 62,
+        "expected_e_machine": 62,
+        "abi_matches": true,
+        "load_segments": [
+          {
+            "offset": 0,
+            "virtual_address": 0,
+            "file_bytes": 701456,
+            "memory_bytes": 701456,
+            "flags": 5,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          },
+          {
+            "offset": 701456,
+            "virtual_address": 717840,
+            "file_bytes": 16640,
+            "memory_bytes": 19440,
+            "flags": 6,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          },
+          {
+            "offset": 718096,
+            "virtual_address": 750864,
+            "file_bytes": 136,
+            "memory_bytes": 2928,
+            "flags": 6,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          }
+        ],
+        "all_load_alignments_at_least_16kb": true
+      },
+      {
+        "entry": "lib/x86_64/libreact_codegen_RNCSlider.so",
+        "abi": "x86_64",
+        "bytes": 242392,
+        "elf_class": 64,
+        "byte_order": "little",
+        "e_machine": 62,
+        "expected_e_machine": 62,
+        "abi_matches": true,
+        "load_segments": [
+          {
+            "offset": 0,
+            "virtual_address": 0,
+            "file_bytes": 234832,
+            "memory_bytes": 234832,
+            "flags": 5,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          },
+          {
+            "offset": 234832,
+            "virtual_address": 251216,
+            "file_bytes": 5216,
+            "memory_bytes": 6832,
+            "flags": 6,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          },
+          {
+            "offset": 240048,
+            "virtual_address": 272816,
+            "file_bytes": 48,
+            "memory_bytes": 4944,
+            "flags": 6,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          }
+        ],
+        "all_load_alignments_at_least_16kb": true
+      },
+      {
+        "entry": "lib/x86_64/libreact_codegen_rnscreens.so",
+        "abi": "x86_64",
+        "bytes": 1225888,
+        "elf_class": 64,
+        "byte_order": "little",
+        "e_machine": 62,
+        "expected_e_machine": 62,
+        "abi_matches": true,
+        "load_segments": [
+          {
+            "offset": 0,
+            "virtual_address": 0,
+            "file_bytes": 1180560,
+            "memory_bytes": 1180560,
+            "flags": 5,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          },
+          {
+            "offset": 1180560,
+            "virtual_address": 1196944,
+            "file_bytes": 42984,
+            "memory_bytes": 44144,
+            "flags": 6,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          },
+          {
+            "offset": 1223544,
+            "virtual_address": 1256312,
+            "file_bytes": 48,
+            "memory_bytes": 58872,
+            "flags": 6,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          }
+        ],
+        "all_load_alignments_at_least_16kb": true
+      },
+      {
+        "entry": "lib/x86_64/libreact_codegen_safeareacontext.so",
+        "abi": "x86_64",
+        "bytes": 159904,
+        "elf_class": 64,
+        "byte_order": "little",
+        "e_machine": 62,
+        "expected_e_machine": 62,
+        "abi_matches": true,
+        "load_segments": [
+          {
+            "offset": 0,
+            "virtual_address": 0,
+            "file_bytes": 152256,
+            "memory_bytes": 152256,
+            "flags": 5,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          },
+          {
+            "offset": 152256,
+            "virtual_address": 168640,
+            "file_bytes": 5312,
+            "memory_bytes": 7488,
+            "flags": 6,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          },
+          {
+            "offset": 157568,
+            "virtual_address": 190336,
+            "file_bytes": 40,
+            "memory_bytes": 5840,
+            "flags": 6,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          }
+        ],
+        "all_load_alignments_at_least_16kb": true
+      },
+      {
+        "entry": "lib/x86_64/libreactnative.so",
+        "abi": "x86_64",
+        "bytes": 7098048,
+        "elf_class": 64,
+        "byte_order": "little",
+        "e_machine": 62,
+        "expected_e_machine": 62,
+        "abi_matches": true,
+        "load_segments": [
+          {
+            "offset": 0,
+            "virtual_address": 0,
+            "file_bytes": 6928784,
+            "memory_bytes": 6928784,
+            "flags": 5,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          },
+          {
+            "offset": 6928784,
+            "virtual_address": 6945168,
+            "file_bytes": 161920,
+            "memory_bytes": 165488,
+            "flags": 6,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          },
+          {
+            "offset": 7090704,
+            "virtual_address": 7123472,
+            "file_bytes": 5048,
+            "memory_bytes": 143872,
+            "flags": 6,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          }
+        ],
+        "all_load_alignments_at_least_16kb": true
+      },
+      {
+        "entry": "lib/x86_64/librnscreens.so",
+        "abi": "x86_64",
+        "bytes": 97856,
+        "elf_class": 64,
+        "byte_order": "little",
+        "e_machine": 62,
+        "expected_e_machine": 62,
+        "abi_matches": true,
+        "load_segments": [
+          {
+            "offset": 0,
+            "virtual_address": 0,
+            "file_bytes": 91760,
+            "memory_bytes": 91760,
+            "flags": 5,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          },
+          {
+            "offset": 91760,
+            "virtual_address": 108144,
+            "file_bytes": 3696,
+            "memory_bytes": 6544,
+            "flags": 6,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          },
+          {
+            "offset": 95456,
+            "virtual_address": 128224,
+            "file_bytes": 32,
+            "memory_bytes": 2448,
+            "flags": 6,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          }
+        ],
+        "all_load_alignments_at_least_16kb": true
+      },
+      {
+        "entry": "lib/x86_64/libstatic-webp.so",
+        "abi": "x86_64",
+        "bytes": 560968,
+        "elf_class": 64,
+        "byte_order": "little",
+        "e_machine": 62,
+        "expected_e_machine": 62,
+        "abi_matches": true,
+        "load_segments": [
+          {
+            "offset": 0,
+            "virtual_address": 0,
+            "file_bytes": 541808,
+            "memory_bytes": 541808,
+            "flags": 5,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          },
+          {
+            "offset": 541808,
+            "virtual_address": 558192,
+            "file_bytes": 16120,
+            "memory_bytes": 19344,
+            "flags": 6,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          },
+          {
+            "offset": 557936,
+            "virtual_address": 590704,
+            "file_bytes": 832,
+            "memory_bytes": 5568,
+            "flags": 6,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          }
+        ],
+        "all_load_alignments_at_least_16kb": true
+      },
+      {
+        "entry": "lib/x86_64/libsurface_util_jni.so",
+        "abi": "x86_64",
+        "bytes": 4912,
+        "elf_class": 64,
+        "byte_order": "little",
+        "e_machine": 62,
+        "expected_e_machine": 62,
+        "abi_matches": true,
+        "load_segments": [
+          {
+            "offset": 0,
+            "virtual_address": 0,
+            "file_bytes": 2496,
+            "memory_bytes": 2496,
+            "flags": 5,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          },
+          {
+            "offset": 2496,
+            "virtual_address": 18880,
+            "file_bytes": 568,
+            "memory_bytes": 1600,
+            "flags": 6,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          }
+        ],
+        "all_load_alignments_at_least_16kb": true
+      },
+      {
+        "entry": "lib/x86_64/libtensorflowlite_gpu_jni.so",
+        "abi": "x86_64",
+        "bytes": 2644808,
+        "elf_class": 64,
+        "byte_order": "little",
+        "e_machine": 62,
+        "expected_e_machine": 62,
+        "abi_matches": true,
+        "load_segments": [
+          {
+            "offset": 0,
+            "virtual_address": 0,
+            "file_bytes": 2573712,
+            "memory_bytes": 2573712,
+            "flags": 5,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          },
+          {
+            "offset": 2588672,
+            "virtual_address": 2588672,
+            "file_bytes": 53552,
+            "memory_bytes": 53552,
+            "flags": 6,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          },
+          {
+            "offset": 2642224,
+            "virtual_address": 2658608,
+            "file_bytes": 328,
+            "memory_bytes": 20112,
+            "flags": 6,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          }
+        ],
+        "all_load_alignments_at_least_16kb": true
+      },
+      {
+        "entry": "lib/x86_64/libtensorflowlite_jni.so",
+        "abi": "x86_64",
+        "bytes": 6053520,
+        "elf_class": 64,
+        "byte_order": "little",
+        "e_machine": 62,
+        "expected_e_machine": 62,
+        "abi_matches": true,
+        "load_segments": [
+          {
+            "offset": 0,
+            "virtual_address": 0,
+            "file_bytes": 5983504,
+            "memory_bytes": 5983504,
+            "flags": 5,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          },
+          {
+            "offset": 5996544,
+            "virtual_address": 5996544,
+            "file_bytes": 33624,
+            "memory_bytes": 33624,
+            "flags": 6,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          },
+          {
+            "offset": 6030168,
+            "virtual_address": 6046552,
+            "file_bytes": 21168,
+            "memory_bytes": 62776,
+            "flags": 6,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          }
+        ],
+        "all_load_alignments_at_least_16kb": true
+      },
+      {
+        "entry": "lib/x86_64/libworklets.so",
+        "abi": "x86_64",
+        "bytes": 1055784,
+        "elf_class": 64,
+        "byte_order": "little",
+        "e_machine": 62,
+        "expected_e_machine": 62,
+        "abi_matches": true,
+        "load_segments": [
+          {
+            "offset": 0,
+            "virtual_address": 0,
+            "file_bytes": 1019504,
+            "memory_bytes": 1019504,
+            "flags": 5,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          },
+          {
+            "offset": 1019504,
+            "virtual_address": 1035888,
+            "file_bytes": 33784,
+            "memory_bytes": 37264,
+            "flags": 6,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          },
+          {
+            "offset": 1053288,
+            "virtual_address": 1086056,
+            "file_bytes": 56,
+            "memory_bytes": 2904,
+            "flags": 6,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          }
+        ],
+        "all_load_alignments_at_least_16kb": true
+      },
+      {
+        "entry": "lib/x86_64/libzstd-kmp.so",
+        "abi": "x86_64",
+        "bytes": 816568,
+        "elf_class": 64,
+        "byte_order": "little",
+        "e_machine": 62,
+        "expected_e_machine": 62,
+        "abi_matches": true,
+        "load_segments": [
+          {
+            "offset": 0,
+            "virtual_address": 0,
+            "file_bytes": 797600,
+            "memory_bytes": 797600,
+            "flags": 5,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          },
+          {
+            "offset": 797600,
+            "virtual_address": 813984,
+            "file_bytes": 16496,
+            "memory_bytes": 17504,
+            "flags": 6,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          },
+          {
+            "offset": 814096,
+            "virtual_address": 846864,
+            "file_bytes": 88,
+            "memory_bytes": 2848,
+            "flags": 6,
+            "alignment": 16384,
+            "alignment_at_least_16kb": true
+          }
+        ],
+        "all_load_alignments_at_least_16kb": true
+      }
+    ],
+    "elf_abi_mismatches": [],
+    "elf_16kb_alignment_limitations": [],
+    "crc_error_entry": null
+  },
+  "java_version_output": "openjdk version \"17.0.20\" 2026-07-21\nOpenJDK Runtime Environment Temurin-17.0.20+8 (build 17.0.20+8)\nOpenJDK 64-Bit Server VM Temurin-17.0.20+8 (build 17.0.20+8, mixed mode, sharing)\n",
+  "badging": {
+    "package": "com.brailleme.app",
+    "version_name": "0.3.0",
+    "version_code": "3",
+    "min_sdk": 29,
+    "native_code": [
+      "arm64-v8a",
+      "x86_64"
+    ]
+  },
+  "permissions": [
+    "android.permission.CAMERA",
+    "android.permission.VIBRATE",
+    "com.brailleme.app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+  ],
+  "forbidden_permissions_found": [],
+  "signer_certificate_dns": [
+    "CN=Android Debug, OU=Android, O=Unknown, L=Unknown, ST=Unknown, C=US"
+  ],
+  "signer_certificate_sha256": [
+    "fac61745dc0903786fb9ede62a962b399f7348f0bb6f899b8332667591033b9c"
+  ],
+  "failed_checks": [],
+  "integrity_passed": true,
+  "status": "passed_internal_apk_integrity"
+}

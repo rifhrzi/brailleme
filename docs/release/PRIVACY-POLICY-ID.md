@@ -1,10 +1,12 @@
 # Kebijakan Privasi BrailleMe
 
-Berlaku mulai 27 Agustus 2026.
+Berlaku mulai 11 September 2026.
 
 BrailleMe memproses foto satu kata Braille, posisi sel, dan hasil kata langsung di perangkat. Foto dan hasil hanya digunakan sementara selama pemindaian. Aplikasi tidak menyimpan atau mengunggah gambar kamera maupun teks hasil pemindaian.
 
 Hanya preferensi aplikasi, seperti status pengenalan, kecepatan dan volume suara, status bisu, serta getaran, yang disimpan secara lokal. Preferensi dapat dihapus melalui Kembalikan pengaturan awal di halaman Pengaturan atau dengan menghapus aplikasi.
+
+Penerjemah teks dan titik Braille bekerja sepenuhnya di perangkat tanpa izin kamera. Masukan kedua mode disimpan sementara dalam memori selama aplikasi berjalan, termasuk ketika pengguna berpindah tab. Masukan tidak disimpan sebagai riwayat atau dikirim ke layanan lain. Hapus semua mengosongkan masukan pada mode yang sedang dibuka.
 
 Izin kamera digunakan hanya ketika pemindai dibuka. Getaran dipakai sebagai umpan balik. Suara dibacakan melalui mesin pembaca teks Android yang terpasang; BrailleMe hanya memilih suara Bahasa Indonesia yang tersedia secara lokal.
 

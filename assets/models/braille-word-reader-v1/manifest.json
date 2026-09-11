@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
-  "decoderVersion": "six-dot-word-v2",
+  "decoderVersion": "six-dot-id-v3",
   "artifact": {
     "name": "braille-word-reader",
-    "version": "1.0.0-experimental.v26",
+    "version": "1.1.0-experimental.id1",
     "status": "experimental_candidate",
     "file": "word-reader.tflite",
     "sha256": "406db0e55e8a5ba9e0d00fb22aadc24f19698219f375e4dcead9057cf3bf2230",
@@ -111,7 +111,7 @@
   },
   "physicalCameraValidated": false,
   "nativeSelfTest": {
-    "expectedText": "RAWENSTWA",
+    "expectedText": "rawenstwa",
     "file": "native-word-fixture.png",
     "sha256": "5115a112aad01432f4ebdfa22d8dcb686f1330075d5030bc5c039c154dc4d164",
     "roi": {
@@ -155,7 +155,7 @@
       "quality_reason": "",
       "input_float32_sha256": "88e89e4e9854e0c1cd62d21842b4c24642b22de76fb5cc22a8f8a869df68970b",
       "cached_output_sha256": "fecec0daeff85c1bd90f93d9c4b5b98a86cd0c63ac0618a06b48375723042c39",
-      "decoded_text": "RAWENSTWA",
+      "decoded_text": "rawenstwa",
       "rejection": "",
       "input_rgb_sha256": "da834ef8e57904ccfbae2f15f5dcff9d4e6eff7ca56cb9893a7f0140d84c3c44",
       "cached_validation_image": "validation-words/000049.png",
@@ -174,13 +174,15 @@
         "maxOverlapRatio": 0.5
       },
       "source_sha256": {
-        "src/ml/word-image-processing.ts": "e97bf56d549c20f9d849c11fb5ac26c0abacf48030e847def46dbeb3e8e8248f",
-        "src/ml/word-model-contract.ts": "e985d76a5d372cf4f31a325a39ca88268422dd5c0685e50c48ee1fb69dffc99f",
-        "src/ml/word-decoder.ts": "f8bb0ef65a03c850c8aedccf287e00501a5bf1b4c4bba60440141567752b6c15",
-        "src/types/word-scan.ts": "f6b8ac0cf1072b3ec99f23ac8407e5d8e38c7e801a7c90f4cc2a3503761a1964",
-        "scripts/word-native-parity/geometry-reference.cjs": "a4dbeee051f06aa7d2459070e3e213ee4d28ea63d69c639cb7247d69fc751cca",
-        "scripts/word-native-parity/fixture-geometry.cjs": "b6c82d2e38d980ae1fafa579df2a6dbc070cd177c86988e9db9cadde6c1aa16b",
-        "training/scripts/word_fixture.py": "377bcee2679f46a9c5195e36ab64a8c8acf20322058bd9dfe15258833d83c0d3"
+        "src/ml/word-image-processing.ts": "5caf889b9267f81532902e5c00bed72f093b90e13862e7bf40a6293b3da86995",
+        "src/ml/word-decoder.ts": "f4f07829eb0f207d075477107e36daf241ed9821763ce44fb580b7b73cce7ffa",
+        "src/ml/word-model-contract.ts": "e01dd5f2e496300bc7ff46181ba470c7d7931e52558f893b84dbbf6348466932",
+        "src/ml/word-symbols.ts": "bc4c62222f4b57b07ae19b37e2add60931747129e49589054255363b0da49860",
+        "src/types/word-scan.ts": "09a0b7ad15ecc0e3176ee8f27939931da7506334a02a1d84d7f260b664804a28",
+        "src/ml/word-tracking.ts": "1c71189a45b31817f468ba785e87a51dcd682e4e4fb45aae3b22d6bfcdb7765c",
+        "scripts/word-native-parity/geometry-reference.cjs": "822a7f7c9924696398505e22dca2465986d5f30ae3981b71b9177d4d02f29f37",
+        "scripts/word-native-parity/fixture-geometry.cjs": "f5ac9307f93515e7463484a767d6da9c8ab40f644d03b7653ba418411e71dbd8",
+        "training/scripts/word_fixture.py": "4dccbd23e2e4001742b1440b9c52c69981e6b67de13bb2c6c5a65cfad5457b85"
       }
     }
   },
@@ -188,45 +190,93 @@
     "enabled": true,
     "scope": "local_internal_only",
     "authorizedBy": "user",
-    "reason": "Use highest measured existing whole-word model; original accuracy gates remain failed."
+    "reason": "User-authorized Indonesian symbols and automatic tracking experiment; physical acceptance remains unverified."
   },
   "evidence": {
     "publicBenchmark": {
-      "file": "training/evidence/braille-word-reader-v1/experimental-internal-best/public-benchmark.json",
-      "sha256": "53b97677aea261af1174a5f70edc81affbf272ca32f7611ae3df688638209944"
+      "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-baseline-20260908/public-benchmark.json",
+      "sha256": "9480330be9c4f69a0c1b02254fd6a6e3c79af22fce04b8122db37724a1561a92"
     },
     "wholeWordFixtures": {
-      "file": "training/evidence/braille-word-reader-v1/experimental-internal-best/external-words.json",
-      "sha256": "e69d7c0d9582aef7d51a2c15706f6bf62bc3cdfe35d22ad28ad007301d56b41b"
+      "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-baseline-20260908/external-words.json",
+      "sha256": "52db73db66f63e35e03ceda218bcb53958a644137cc50aae3f796acf9afc6603"
     },
     "conversion": {
-      "file": "training/evidence/braille-word-reader-v1/experimental-internal-best/export-report.json",
-      "sha256": "e3e61fc55c8eeb1a948d18d09357f295e72252d52fc3c51c53bb68ae1c884c8e"
+      "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-baseline-20260908/export-report.json",
+      "sha256": "20279ca1d4258f9a060c8782de43942fd899379200de1ea14c924442e91ef5ab"
     },
     "validationSelection": {
-      "file": "training/evidence/braille-word-reader-v1/experimental-internal-best/selected-validation-fullprecision.json",
-      "sha256": "fe6848be28bf6933e9d49e3b28e653acd2a9748922186bfd3e0bc51671b071e9"
+      "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-baseline-20260908/selected-validation-fullprecision.json",
+      "sha256": "944153b5f79e8c58ba39f053e7c75f154d9ba0d1a1c7c2b19c4b23c3ce029fc9"
     },
     "repetitionDiagnostics": {
-      "file": "training/evidence/braille-word-reader-v1/experimental-internal-best/repetition-diagnostics.json",
-      "sha256": "b1a81f7301720bc5607086722146ed1e639fdd7097ea656939aa4289c9c8cbdc"
+      "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-baseline-20260908/repetition-diagnostics.json",
+      "sha256": "bdd3f353ea999a966eada021951881a993e28755fdb1e1d63b2a2e0fb126c8eb"
     },
     "rejectionDiagnostics": {
-      "file": "training/evidence/braille-word-reader-v1/experimental-internal-best/rejection-diagnostics.json",
-      "sha256": "7a15241e0c03de9627c8c5a3788a13f4cb9aee55dc715f0384c24faaa3aaa9d8"
+      "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-baseline-20260908/rejection-diagnostics.json",
+      "sha256": "4125a41823fb29143eb6128f457a7a4f2dc2d7cc671e3a890a04aab2d4aece81"
     },
     "decoderParity": {
-      "file": "training/evidence/braille-word-reader-v1/experimental-internal-best/decoder-parity-v2.json",
-      "sha256": "d40ed2edbdbac65b7df0fe603d180f5fcf0ea2ef04a6fb53cf05f14605a5b0c7"
+      "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-baseline-20260908/decoder-parity-id-v3.json",
+      "sha256": "f708bc9fe5e551ec23e766ea2300fde6bd0d624e8b581fbf8641c7f0bd9c3fe6"
     },
     "nativeFixtureGeometry": {
-      "file": "training/evidence/braille-word-reader-v1/experimental-internal-best/native-fixture-geometry.json",
-      "sha256": "98a602234b6da4b0d8a188e807437c1199a78a806137eecd437bbc2b189a6b80"
+      "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-baseline-20260908/native-fixture-geometry.json",
+      "sha256": "97d6bb2b15847450c8eb9a30b191a0954e0d80d2e004adde2aa947056db29ddd"
+    },
+    "symbolReadiness": {
+      "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-baseline-20260908/symbol-readiness.json",
+      "sha256": "1b3ff083d4ff1bce0171546c56fea8fbdd542e141fd0c0d9e80d0a2a33f589b2"
+    },
+    "checkpointSelection": {
+      "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-20260908/checkpoint-selection.json",
+      "sha256": "8346eab5df475a18a3ecba93ca8f4dbc365c19a0b847764414b5d34ee196ddd9"
+    },
+    "deploymentSelection": {
+      "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-baseline-20260908/deployment-selection.json",
+      "sha256": "cb5b2070d5c6db08d07beababb9e70b1c47e46f0c5eaf91120f9a5150f43718a"
+    },
+    "baselineBenchmark": {
+      "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-baseline-20260908/public-benchmark.json",
+      "sha256": "9480330be9c4f69a0c1b02254fd6a6e3c79af22fce04b8122db37724a1561a92"
+    },
+    "candidateBenchmark": {
+      "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-20260908/public-benchmark.json",
+      "sha256": "7f03eb6484d1a29cc2d078e904805f9506a42a885c5ff34ac82129541f84d3b9"
+    },
+    "typescriptParity": {
+      "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-baseline-20260908/typescript-parity-405.json",
+      "sha256": "ae5d611e94fd5913b3c84285c5a9ca002f9a035a903db4c3fe34e089615f0200"
+    },
+    "symbolDecoderParity": {
+      "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-baseline-20260908/symbol-decoder-parity-516.json",
+      "sha256": "01030abea51cdd02a6913b8761cc4d6585194a4e876086e5c86e32bd7c63dbf7"
+    },
+    "symbolCorpusAudit": {
+      "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-baseline-20260908/corpus-audit.json",
+      "sha256": "92d6af2b61b7b34bfdd5eaaba8c83c972959f66e2a82ec7134af93fd41c7cf66"
+    },
+    "symbolTransformAudit": {
+      "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-baseline-20260908/synthetic-transform-audit.json",
+      "sha256": "2aa28396767ef4eed88b87649fee7aac11b956d830ebc3b938c7ffd3c9f5daa9"
+    },
+    "symbolFixtures": {
+      "file": "training/evidence/braille-word-reader-v1/indonesian-symbols-baseline-20260908/validation-symbols.json",
+      "sha256": "e2a0298da266932b4f648458f718bead2b8e0a524eb20f810157d1b3b4f9a53f"
+    },
+    "symbolSemantics": {
+      "file": "training/evidence/braille-word-reader-v1/indonesian-basic-20260908/typescript-symbol-semantics-v2.json",
+      "sha256": "2bf82d930f2618a2e2f6ef8cfa847565a5cdac96c7238c12964473466d350228"
+    },
+    "nativePixelParity": {
+      "file": "training/evidence/braille-word-reader-v1/indonesian-basic-20260908/native-pixel-resize-host-v1.json",
+      "sha256": "f1a68d4931fdb6954dceba07a998d00bd184e3685a82c5e251b8735626e5f90f"
     }
   },
   "provenance": {
     "checkpointSha256": "cce2432c0ddb8952c885dd58697589c285209588dafa81aacdd891b1660068b7",
-    "selection": "Best existing whole-word weight from recorded public development comparisons, per user instruction; current v2 decoder retained. Not independent holdout selection.",
+    "selection": "One bounded 10-epoch experiment retained as history. The training winner regressed on the same-decoder external basic-letter benchmark; original baseline weights are deployed under a separate promotion veto. Synthetic Indonesian symbols remain separate from natural public photographs and physical camera accuracy.",
     "datasets": [
       {
         "name": "AngelinaDataset",
@@ -238,6 +288,18 @@
         "revision": "6937eb8973efe5ff337e5c018485cb626303f5c2",
         "redistributionRightsConfirmed": false
       }
-    ]
+    ],
+    "checkpointFile": "training/checkpoints/braille-word-reader-v1/best-word.keras",
+    "parentCheckpointSha256": "cce2432c0ddb8952c885dd58697589c285209588dafa81aacdd891b1660068b7"
+  },
+  "symbolContract": {
+    "locale": "id-basic",
+    "eventSchemaVersion": 4,
+    "capitalMask": 32,
+    "numberMask": 60,
+    "maxCharacters": 12,
+    "maxPhysicalCells": 24,
+    "preserveLeadingZeros": true,
+    "mixedAlphanumeric": false
   }
 }

@@ -1,0 +1,64 @@
+{
+  "status": "passed",
+  "audit_scope": "Actual development donor pages, primary/native image hashes, literal masks, native adjacency and source snapshot",
+  "source_evidence": {
+    "train": {
+      "manifest": "C:\\bm-symbols-20260908\\accuracy80-20260910\\train-symbols.json",
+      "sha256": "7030f2525206baa943854f5c0bbc48dd82820ec7c0ea275e5f1c3a2c21c30dcf",
+      "source_page_count": 251,
+      "actual_dsbi_pages": [
+        "dsbi/Massage/M+1+recto.jpg",
+        "dsbi/Massage/M+10+recto.jpg",
+        "dsbi/Massage/M+3+recto.jpg",
+        "dsbi/Massage/M+4+recto.jpg",
+        "dsbi/Massage/M+5+recto.jpg",
+        "dsbi/Massage/M+6+recto.jpg",
+        "dsbi/Massage/M+7+recto.jpg",
+        "dsbi/Massage/M+8+recto.jpg",
+        "dsbi/Massage/M+9+recto.jpg",
+        "dsbi/Math/math+1+recto.jpg",
+        "dsbi/Math/math+10+recto.jpg",
+        "dsbi/Math/math+2+recto.jpg",
+        "dsbi/Math/math+3+recto.jpg",
+        "dsbi/Math/math+4+recto.jpg",
+        "dsbi/Math/math+5+recto.jpg",
+        "dsbi/Math/math+6+recto.jpg",
+        "dsbi/Math/math+7+recto.jpg",
+        "dsbi/Math/math+8+recto.jpg",
+        "dsbi/Math/math+9+recto.jpg",
+        "dsbi/Ordinary Printed Document/OPD+1+recto.jpg",
+        "dsbi/Ordinary Printed Document/OPD+2+recto.jpg",
+        "dsbi/Ordinary Printed Document/OPD+3+recto.jpg",
+        "dsbi/Shaver Yang Fengting/SYF+3+recto.jpg",
+        "dsbi/Shaver Yang Fengting/SYF+4+recto.jpg",
+        "dsbi/Shaver Yang Fengting/SYF+5+recto.jpg"
+      ],
+      "reserved_page_overlap": []
+    },
+    "validation": {
+      "manifest": "C:\\bm-symbols-20260908\\accuracy80-20260910\\validation-symbols.json",
+      "sha256": "874c8ff878420cb511caba05e3c751a623a840def7a2c0014c802bd82790a701",
+      "source_page_count": 14,
+      "actual_dsbi_pages": [],
+      "reserved_page_overlap": []
+    }
+  },
+  "primary_examples": 540,
+  "native_examples": 200,
+  "native_unique_source_cells": 476,
+  "native_unlabeled_neighbor_dots": [],
+  "source_snapshot_sha256": {
+    "C:\\bm-symbols-20260908\\overall80-20260911\\preparation-source\\word_decode_id_v4.py": "e7a52d92c4c1bd8266ef95575d939fb0a96f9eacefe237a23c66f36cfd7d7868",
+    "C:\\bm-symbols-20260908\\overall80-20260911\\preparation-source\\word_dsbi.py": "feecf16dba6d376415e15707c02c8f05fcf6650055da09ad9f4712099e6325ff",
+    "C:\\bm-symbols-20260908\\overall80-20260911\\preparation-source\\word_overall_v5_prepare.py": "345ea0c723c9a785cca7b76bf23d31b9f220eb0c2f188d75a15bab3e6e92c8cd",
+    "C:\\bm-symbols-20260908\\overall80-20260911\\preparation-source\\word_overall_v5_protocol.py": "b33b2ffe18381e587cc8ab92c64a059517dc5dd7faf775422279ad995ce9f3b8",
+    "C:\\bm-symbols-20260908\\overall80-20260911\\preparation-source\\word_symbols_id_v4.py": "0b85da03fa8d3b921fea444adf6a68ba95b56fda76db710b9edc5f6b8a9937b9",
+    "C:\\bm-symbols-20260908\\overall80-20260911\\preparation-source\\word_symbol_v4_prepare.py": "95bca856142261b09b8390e7507ff250234e49d553ab3ae560f86949c367c83b"
+  },
+  "source_reservation_sha256": "eea95fd613b1e2f9390439027a65842efa36f36cbbff8ed6d344b905b2e325eb",
+  "corpus_audit_sha256": "5c9eae2557d63c8bf88e434753a6231f01561a95e0552bfb0cc03680b085d4c9",
+  "script_sha256": "0c1e134694e6e669d07b6366656831c11693f39bada6c5de6259b72683834695",
+  "model_inference_performed": false,
+  "training_images_copied": 0,
+  "previous_evidence_modified": false
+}

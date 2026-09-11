@@ -9,15 +9,22 @@
 
 // Forward declaration of `PhotoGeometry` to properly resolve imports.
 namespace margelo::nitro::braillewordgeometry { struct PhotoGeometry; }
+// Forward declaration of `WordPixelResult` to properly resolve imports.
+namespace margelo::nitro::braillewordgeometry { struct WordPixelResult; }
 // Forward declaration of `HybridPhotoSpec` to properly resolve imports.
 namespace margelo::nitro::camera { class HybridPhotoSpec; }
 
 #include "PhotoGeometry.hpp"
 #include "JPhotoGeometry.hpp"
 #include <vector>
+#include "WordPixelResult.hpp"
+#include "JWordPixelResult.hpp"
+#include <NitroModules/ArrayBuffer.hpp>
+#include <NitroModules/JArrayBuffer.hpp>
 #include <memory>
 #include <VisionCamera/HybridPhotoSpec.hpp>
 #include <VisionCamera/JHybridPhotoSpec.hpp>
+#include <string>
 
 namespace margelo::nitro::braillewordgeometry {
 
@@ -55,6 +62,11 @@ namespace margelo::nitro::braillewordgeometry {
   PhotoGeometry JHybridWordPhotoGeometrySpec::getGeometry(const std::shared_ptr<margelo::nitro::camera::HybridPhotoSpec>& photo) {
     static const auto method = _javaPart->javaClassStatic()->getMethod<jni::local_ref<JPhotoGeometry>(jni::alias_ref<margelo::nitro::camera::JHybridPhotoSpec::JavaPart> /* photo */)>("getGeometry");
     auto __result = method(_javaPart, std::dynamic_pointer_cast<margelo::nitro::camera::JHybridPhotoSpec>(photo)->getJavaPart());
+    return __result->toCpp();
+  }
+  WordPixelResult JHybridWordPhotoGeometrySpec::resizePixels(const std::shared_ptr<ArrayBuffer>& buffer, double width, double height, const std::string& pixelFormat, bool androidBitmap) {
+    static const auto method = _javaPart->javaClassStatic()->getMethod<jni::local_ref<JWordPixelResult>(jni::alias_ref<JArrayBuffer::javaobject> /* buffer */, double /* width */, double /* height */, jni::alias_ref<jni::JString> /* pixelFormat */, jboolean /* androidBitmap */)>("resizePixels");
+    auto __result = method(_javaPart, JArrayBuffer::wrap(buffer), width, height, jni::make_jstring(pixelFormat), androidBitmap);
     return __result->toCpp();
   }
 

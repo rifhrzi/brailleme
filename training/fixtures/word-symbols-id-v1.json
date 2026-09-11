@@ -1,0 +1,41 @@
+{
+  "protocol": "indonesian-basic-v1",
+  "decoderVersion": "six-dot-id-v3",
+  "scope": "Authored semantic unit fixtures, not image/model/camera accuracy evidence.",
+  "alphabet": [
+    ["a", 1], ["b", 3], ["c", 9], ["d", 25], ["e", 17], ["f", 11],
+    ["g", 27], ["h", 19], ["i", 10], ["j", 26], ["k", 5], ["l", 7],
+    ["m", 13], ["n", 29], ["o", 21], ["p", 15], ["q", 31], ["r", 23],
+    ["s", 14], ["t", 30], ["u", 37], ["v", 39], ["w", 58], ["x", 45],
+    ["y", 61], ["z", 53]
+  ],
+  "cases": [
+    { "name": "unmarked letters", "masks": [1, 3, 9], "text": "abc", "outputs": ["a", "b", "c"], "roles": ["letter", "letter", "letter"] },
+    { "name": "initial capital", "masks": [32, 1, 3, 9], "text": "Abc", "outputs": ["", "A", "b", "c"], "roles": ["capital_indicator", "letter", "letter", "letter"] },
+    { "name": "capital word", "masks": [32, 32, 1, 3, 9], "text": "ABC", "outputs": ["", "", "A", "B", "C"], "roles": ["capital_indicator", "capital_indicator", "letter", "letter", "letter"] },
+    { "name": "capital within word", "masks": [10, 32, 15, 19, 21, 29, 17], "text": "iPhone", "outputs": ["i", "", "P", "h", "o", "n", "e"], "roles": ["letter", "capital_indicator", "letter", "letter", "letter", "letter", "letter"] },
+    { "name": "individual capitals", "masks": [32, 1, 32, 3], "text": "AB", "outputs": ["", "A", "", "B"], "roles": ["capital_indicator", "letter", "capital_indicator", "letter"] },
+    { "name": "zero", "masks": [60, 26], "text": "0", "outputs": ["", "0"], "roles": ["number_indicator", "digit"] },
+    { "name": "all digits", "masks": [60, 1, 3, 9, 25, 17, 11, 27, 19, 10, 26], "text": "1234567890", "outputs": ["", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0"], "roles": ["number_indicator", "digit", "digit", "digit", "digit", "digit", "digit", "digit", "digit", "digit", "digit"] },
+    { "name": "leading zeros", "masks": [60, 26, 26, 1], "text": "001", "outputs": ["", "0", "0", "1"], "roles": ["number_indicator", "digit", "digit", "digit"] },
+    { "name": "no number guessing", "masks": [26, 26, 1], "text": "jja", "outputs": ["j", "j", "a"], "roles": ["letter", "letter", "letter"] },
+    { "name": "empty", "masks": [], "reason": "invalid_sequence" },
+    { "name": "capital only", "masks": [32], "reason": "invalid_sequence" },
+    { "name": "capital word only", "masks": [32, 32], "reason": "invalid_sequence" },
+    { "name": "number only", "masks": [60], "reason": "invalid_sequence" },
+    { "name": "trailing capital", "masks": [1, 32], "reason": "invalid_sequence" },
+    { "name": "passage capitals", "masks": [32, 32, 32, 1], "reason": "invalid_sequence" },
+    { "name": "word capitals inside token", "masks": [1, 32, 32, 3], "reason": "invalid_sequence" },
+    { "name": "capital after word capitals", "masks": [32, 32, 1, 32, 3], "reason": "invalid_sequence" },
+    { "name": "number after letter", "masks": [1, 60, 3], "reason": "invalid_sequence" },
+    { "name": "letter after number", "masks": [60, 1, 5], "reason": "invalid_sequence" },
+    { "name": "capital after number", "masks": [60, 1, 32, 3], "reason": "invalid_sequence" },
+    { "name": "number after capital", "masks": [32, 60, 1], "reason": "invalid_sequence" },
+    { "name": "repeated number indicator", "masks": [60, 1, 60, 3], "reason": "invalid_sequence" },
+    { "name": "decimal separator", "masks": [60, 1, 2, 3], "reason": "unsupported_pattern" },
+    { "name": "negative sign", "masks": [36, 60, 1], "reason": "unsupported_pattern" },
+    { "name": "Russian capital is unsupported", "masks": [24, 1], "reason": "unsupported_pattern" },
+    { "name": "empty cell is unsupported", "masks": [0], "reason": "unsupported_pattern" },
+    { "name": "unsupported suffix rejects all", "masks": [1, 63], "reason": "unsupported_pattern" }
+  ]
+}

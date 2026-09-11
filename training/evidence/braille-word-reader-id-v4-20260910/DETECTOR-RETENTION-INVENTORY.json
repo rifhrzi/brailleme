@@ -1,0 +1,1617 @@
+{
+  "schemaVersion": 1,
+  "createdAtUtc": "2026-09-10T16:22:55.257298+00:00",
+  "status": "verified_completed_detector_inventory_pending_pilot_and_final_outputs",
+  "purpose": "Protected retention planning only; no move, copy, deletion, deployment or TEST inference performed",
+  "experimentRoot": "C:\\bm-symbols-20260908\\accuracy80-20260910",
+  "completeDetectorEpochs": 81,
+  "completeDetectorCheckpointBytes": 333727938,
+  "stages": [
+    {
+      "name": "run-heads",
+      "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-heads",
+      "preserveEntireDirectory": true,
+      "completeEpochCount": 10,
+      "selectedEpoch": 10,
+      "selectedCheckpoint": {
+        "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-heads\\best-word.keras",
+        "pathScope": "absolute",
+        "sizeBytes": 4120098,
+        "sha256": "ed09099a860b0cd54c6e4a5fc34d0c29f52fa54f8167f4334193cd386fa92f1e",
+        "role": "selected_stage_checkpoint"
+      },
+      "epochs": [
+        {
+          "epoch": 1,
+          "checkpoint": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-heads\\epoch01.keras",
+            "pathScope": "absolute",
+            "sizeBytes": 4120098,
+            "sha256": "6a8dbc2dd9a4ba5bcbcb41099c55da98d13b5358a428a8ac225d4a5c09522339",
+            "role": "completed_detector_epoch"
+          },
+          "validationReport": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-heads\\epoch01-validation.json",
+            "pathScope": "absolute",
+            "sizeBytes": 140285,
+            "sha256": "42de4b83829de8e7ac4b1b89198fb63f780d66eab2a61ca5e548becfcb2fc20a",
+            "role": "validation_only_epoch_evaluation"
+          }
+        },
+        {
+          "epoch": 2,
+          "checkpoint": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-heads\\epoch02.keras",
+            "pathScope": "absolute",
+            "sizeBytes": 4120098,
+            "sha256": "7c338422b330b21bfca2acdd8d326be150605906e7ec646170967dd3fc187267",
+            "role": "completed_detector_epoch"
+          },
+          "validationReport": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-heads\\epoch02-validation.json",
+            "pathScope": "absolute",
+            "sizeBytes": 140575,
+            "sha256": "5ff284204cf8e75f91a2f670b4dd52813e0a3cb7c46fd57d54320cc702a6dd5d",
+            "role": "validation_only_epoch_evaluation"
+          }
+        },
+        {
+          "epoch": 3,
+          "checkpoint": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-heads\\epoch03.keras",
+            "pathScope": "absolute",
+            "sizeBytes": 4120098,
+            "sha256": "9c0449fc5cffa828c7c244aeed0745c5a9558e8934c64ee005c85eacc66e836a",
+            "role": "completed_detector_epoch"
+          },
+          "validationReport": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-heads\\epoch03-validation.json",
+            "pathScope": "absolute",
+            "sizeBytes": 140761,
+            "sha256": "9020575953f1d7ac71f172dd9b05ee19f9a70d91148818e491037a81f00bc6fe",
+            "role": "validation_only_epoch_evaluation"
+          }
+        },
+        {
+          "epoch": 4,
+          "checkpoint": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-heads\\epoch04.keras",
+            "pathScope": "absolute",
+            "sizeBytes": 4120098,
+            "sha256": "627a558c20d151b5f42edc8adc0b79420e0655dc644fdd8a860d999066ecf399",
+            "role": "completed_detector_epoch"
+          },
+          "validationReport": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-heads\\epoch04-validation.json",
+            "pathScope": "absolute",
+            "sizeBytes": 141115,
+            "sha256": "a1325aef934bdfe8fd039ea9484e38c486235c98f1e56b7d27db4d9d12f23608",
+            "role": "validation_only_epoch_evaluation"
+          }
+        },
+        {
+          "epoch": 5,
+          "checkpoint": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-heads\\epoch05.keras",
+            "pathScope": "absolute",
+            "sizeBytes": 4120098,
+            "sha256": "dfeb8af2eba64fd4271dcc4a4299bf430d7b9cbc6d8c2024350c6a7b17b70ddf",
+            "role": "completed_detector_epoch"
+          },
+          "validationReport": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-heads\\epoch05-validation.json",
+            "pathScope": "absolute",
+            "sizeBytes": 141006,
+            "sha256": "4a0321ff7cf7a9bd895657618014ef92f94f1e88488cca331ae41daec91e80c7",
+            "role": "validation_only_epoch_evaluation"
+          }
+        },
+        {
+          "epoch": 6,
+          "checkpoint": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-heads\\epoch06.keras",
+            "pathScope": "absolute",
+            "sizeBytes": 4120098,
+            "sha256": "c67279731cd1aa943a653e7d9653888f01112230d9c357b81c80d0d7b24bfce8",
+            "role": "completed_detector_epoch"
+          },
+          "validationReport": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-heads\\epoch06-validation.json",
+            "pathScope": "absolute",
+            "sizeBytes": 141084,
+            "sha256": "cfd0acffd19a03c2f3de3fcc93b7986abd6944bef93e65c3af488ca82c8dcbc5",
+            "role": "validation_only_epoch_evaluation"
+          }
+        },
+        {
+          "epoch": 7,
+          "checkpoint": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-heads\\epoch07.keras",
+            "pathScope": "absolute",
+            "sizeBytes": 4120098,
+            "sha256": "be0b0b42b11281457ef9539581e7563c5a72ce37770b53674d35db4d30584f5c",
+            "role": "completed_detector_epoch"
+          },
+          "validationReport": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-heads\\epoch07-validation.json",
+            "pathScope": "absolute",
+            "sizeBytes": 141250,
+            "sha256": "874f3f1ba8d6eaefb000392ce37a13b0ceafdab5de65db3def34d2e8899961f8",
+            "role": "validation_only_epoch_evaluation"
+          }
+        },
+        {
+          "epoch": 8,
+          "checkpoint": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-heads\\epoch08.keras",
+            "pathScope": "absolute",
+            "sizeBytes": 4120098,
+            "sha256": "71ff6c2dc6a8035d429ae3bf5d9b74d8d3927f2c686f2d0e686565705a0a1bf0",
+            "role": "completed_detector_epoch"
+          },
+          "validationReport": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-heads\\epoch08-validation.json",
+            "pathScope": "absolute",
+            "sizeBytes": 141305,
+            "sha256": "e9b4d7be96a7177a8a166e6b76e0d640d0172a8c7cfc04b7f3f666bc75d572f9",
+            "role": "validation_only_epoch_evaluation"
+          }
+        },
+        {
+          "epoch": 9,
+          "checkpoint": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-heads\\epoch09.keras",
+            "pathScope": "absolute",
+            "sizeBytes": 4120098,
+            "sha256": "fade02d1c31b6397c57ecb73ea867e073a87b08193e32f97ae1f61a7c587156b",
+            "role": "completed_detector_epoch"
+          },
+          "validationReport": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-heads\\epoch09-validation.json",
+            "pathScope": "absolute",
+            "sizeBytes": 141285,
+            "sha256": "0909d8d6d1c64accf347893093b9b3ff4dd45ef6f83d181a1dd42327bac41db6",
+            "role": "validation_only_epoch_evaluation"
+          }
+        },
+        {
+          "epoch": 10,
+          "checkpoint": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-heads\\epoch10.keras",
+            "pathScope": "absolute",
+            "sizeBytes": 4120098,
+            "sha256": "ed09099a860b0cd54c6e4a5fc34d0c29f52fa54f8167f4334193cd386fa92f1e",
+            "role": "completed_detector_epoch"
+          },
+          "validationReport": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-heads\\epoch10-validation.json",
+            "pathScope": "absolute",
+            "sizeBytes": 141277,
+            "sha256": "9ece598ba665f41653254286ac23d3c94abdd01d1fcd55febe3b8d9c17801429",
+            "role": "validation_only_epoch_evaluation"
+          }
+        }
+      ],
+      "metadata": [
+        {
+          "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-heads\\training-config.json",
+          "pathScope": "absolute",
+          "sizeBytes": 9464,
+          "sha256": "2505b1bf6f4f2494668f438eec1b795ee66b43fc117c1794075f91e1dd4f9cb7",
+          "role": "stage_provenance"
+        },
+        {
+          "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-heads\\history.json",
+          "pathScope": "absolute",
+          "sizeBytes": 61558,
+          "sha256": "f64ccc4ef1c40c05c1c36c23bc8853cc8a5345409260ef665378cfbade413fed",
+          "role": "stage_provenance"
+        },
+        {
+          "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-heads\\selection.json",
+          "pathScope": "absolute",
+          "sizeBytes": 550,
+          "sha256": "b6b2c9c13f671a915031ccf43fcec9e40f425787067bb4583eb9fea0fc290e39",
+          "role": "stage_provenance"
+        },
+        {
+          "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-heads\\sampling.json",
+          "pathScope": "absolute",
+          "sizeBytes": 3396,
+          "sha256": "97fb2a8b574814c9a077f3aae83e0cd0d38d327dbb946dcabadd1e6c07e45913",
+          "role": "stage_provenance"
+        },
+        {
+          "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-heads\\protected-before.json",
+          "pathScope": "absolute",
+          "sizeBytes": 1518,
+          "sha256": "97c64bd063943f29ffe32f8715cd870ab7d5f03ebb5494e2fc12b1ff681a10f2",
+          "role": "stage_provenance"
+        }
+      ],
+      "sourceSnapshot": {
+        "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-heads\\source",
+        "preserveEntireDirectory": true,
+        "hashIndex": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-heads\\training-config.json",
+        "hashField": "source_sha256"
+      }
+    },
+    {
+      "name": "run-finetune",
+      "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-finetune",
+      "preserveEntireDirectory": true,
+      "completeEpochCount": 23,
+      "selectedEpoch": 19,
+      "selectedCheckpoint": {
+        "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-finetune\\best-word.keras",
+        "pathScope": "absolute",
+        "sizeBytes": 4120098,
+        "sha256": "dde898a3678fdefb58e915bf1962095b038a3d40ce6ce96fa713f738583f8c0f",
+        "role": "selected_stage_checkpoint"
+      },
+      "epochs": [
+        {
+          "epoch": 1,
+          "checkpoint": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-finetune\\epoch01.keras",
+            "pathScope": "absolute",
+            "sizeBytes": 4120098,
+            "sha256": "5a88b5470f508fd7dabcbc776112c3a5299df348de1b47eb7eace62c5e1227c3",
+            "role": "completed_detector_epoch"
+          },
+          "validationReport": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-finetune\\epoch01-validation.json",
+            "pathScope": "absolute",
+            "sizeBytes": 141278,
+            "sha256": "8a5371ab1c2d074641f8a883cf22bff52e18e1bb49b6467f4944e2147c4bc951",
+            "role": "validation_only_epoch_evaluation"
+          }
+        },
+        {
+          "epoch": 2,
+          "checkpoint": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-finetune\\epoch02.keras",
+            "pathScope": "absolute",
+            "sizeBytes": 4120098,
+            "sha256": "a074383ca4d7f8a0c1a196c4e111517d77aa3e17ab46eb0c91aa11b01af4f51b",
+            "role": "completed_detector_epoch"
+          },
+          "validationReport": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-finetune\\epoch02-validation.json",
+            "pathScope": "absolute",
+            "sizeBytes": 141075,
+            "sha256": "9074d0f38f390ad56847a53f6f1f4f27a75bb6361e4f9989fcc9ec4331dafa0e",
+            "role": "validation_only_epoch_evaluation"
+          }
+        },
+        {
+          "epoch": 3,
+          "checkpoint": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-finetune\\epoch03.keras",
+            "pathScope": "absolute",
+            "sizeBytes": 4120098,
+            "sha256": "e78736921015be028dcc4fa9b11c2f08d2fec4b1c89a0065e2b3600e581034aa",
+            "role": "completed_detector_epoch"
+          },
+          "validationReport": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-finetune\\epoch03-validation.json",
+            "pathScope": "absolute",
+            "sizeBytes": 141039,
+            "sha256": "c0a5cf6b83ca7344e8f2afea65149f32ebd67edbd11d996c3cb9b90666f5202a",
+            "role": "validation_only_epoch_evaluation"
+          }
+        },
+        {
+          "epoch": 4,
+          "checkpoint": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-finetune\\epoch04.keras",
+            "pathScope": "absolute",
+            "sizeBytes": 4120098,
+            "sha256": "e359c2cecde91e09cd04325fd83db83a20ccdf1f3bb64f03603c92b6e69c6075",
+            "role": "completed_detector_epoch"
+          },
+          "validationReport": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-finetune\\epoch04-validation.json",
+            "pathScope": "absolute",
+            "sizeBytes": 140863,
+            "sha256": "512b9762661e96d2f7e4b4d10e3341bee46ccd2a3c5758946a86a76ea935a3db",
+            "role": "validation_only_epoch_evaluation"
+          }
+        },
+        {
+          "epoch": 5,
+          "checkpoint": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-finetune\\epoch05.keras",
+            "pathScope": "absolute",
+            "sizeBytes": 4120098,
+            "sha256": "3953d9a2228509d50fe679edfdafaa3e9c15aacec7c6627bf40f72ec2dbe038f",
+            "role": "completed_detector_epoch"
+          },
+          "validationReport": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-finetune\\epoch05-validation.json",
+            "pathScope": "absolute",
+            "sizeBytes": 140892,
+            "sha256": "2e6fbbbdc15554150f65abad2d5ed6f30dbba2eda00bf2f0f8afa67d7691e4c4",
+            "role": "validation_only_epoch_evaluation"
+          }
+        },
+        {
+          "epoch": 6,
+          "checkpoint": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-finetune\\epoch06.keras",
+            "pathScope": "absolute",
+            "sizeBytes": 4120098,
+            "sha256": "77a1b888826e92f6ae8499936e839d53a79a5e5393972b0074cca44fea6989c8",
+            "role": "completed_detector_epoch"
+          },
+          "validationReport": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-finetune\\epoch06-validation.json",
+            "pathScope": "absolute",
+            "sizeBytes": 140822,
+            "sha256": "e6fb701ed57f208d0a5026fdd00174deec88351371f9c34845e88ee24edbfd1f",
+            "role": "validation_only_epoch_evaluation"
+          }
+        },
+        {
+          "epoch": 7,
+          "checkpoint": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-finetune\\epoch07.keras",
+            "pathScope": "absolute",
+            "sizeBytes": 4120098,
+            "sha256": "bf8804553f64edcd9cc0a084f40d890d51a9d84f68c461cebaa5b8728b50aa7e",
+            "role": "completed_detector_epoch"
+          },
+          "validationReport": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-finetune\\epoch07-validation.json",
+            "pathScope": "absolute",
+            "sizeBytes": 140879,
+            "sha256": "166280a218ff4b80995741767a2aa5a7cf64d535be953fd75bf794b56e581084",
+            "role": "validation_only_epoch_evaluation"
+          }
+        },
+        {
+          "epoch": 8,
+          "checkpoint": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-finetune\\epoch08.keras",
+            "pathScope": "absolute",
+            "sizeBytes": 4120098,
+            "sha256": "c7821b9409c77f8692f309439098a1a22d0eeaf668efb0a9b8c7fde41e08965f",
+            "role": "completed_detector_epoch"
+          },
+          "validationReport": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-finetune\\epoch08-validation.json",
+            "pathScope": "absolute",
+            "sizeBytes": 140564,
+            "sha256": "1354c5bcd218d70ac181742acf12f59ff914c65f9d679c0cc5a4c1468963a671",
+            "role": "validation_only_epoch_evaluation"
+          }
+        },
+        {
+          "epoch": 9,
+          "checkpoint": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-finetune\\epoch09.keras",
+            "pathScope": "absolute",
+            "sizeBytes": 4120098,
+            "sha256": "7016a083a2a8cece01bc190596ee3de9a5c57dca0412acf1a3fc02d2c5880358",
+            "role": "completed_detector_epoch"
+          },
+          "validationReport": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-finetune\\epoch09-validation.json",
+            "pathScope": "absolute",
+            "sizeBytes": 140915,
+            "sha256": "b4f00e1689302345ebd932cebc276558144d81a6817cccc54c01fa43662ac094",
+            "role": "validation_only_epoch_evaluation"
+          }
+        },
+        {
+          "epoch": 10,
+          "checkpoint": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-finetune\\epoch10.keras",
+            "pathScope": "absolute",
+            "sizeBytes": 4120098,
+            "sha256": "ea0ee25a597f6e10c6a02f6ba67b459b4ff4e1112356b455eba08bec26f35146",
+            "role": "completed_detector_epoch"
+          },
+          "validationReport": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-finetune\\epoch10-validation.json",
+            "pathScope": "absolute",
+            "sizeBytes": 140693,
+            "sha256": "f56f0ff6dd7dccba365572c8cd63adddf76e18283b91c3b06fd8c50636d7a2c7",
+            "role": "validation_only_epoch_evaluation"
+          }
+        },
+        {
+          "epoch": 11,
+          "checkpoint": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-finetune\\epoch11.keras",
+            "pathScope": "absolute",
+            "sizeBytes": 4120098,
+            "sha256": "8c6b32b01bd6c779c7447767af77f970a47e6ed2d99b10b943989898f402b084",
+            "role": "completed_detector_epoch"
+          },
+          "validationReport": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-finetune\\epoch11-validation.json",
+            "pathScope": "absolute",
+            "sizeBytes": 140476,
+            "sha256": "c149cecedfdcaf9b7f9e98cf41ffa63ce2b5902c3f91efe815750b959949b731",
+            "role": "validation_only_epoch_evaluation"
+          }
+        },
+        {
+          "epoch": 12,
+          "checkpoint": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-finetune\\epoch12.keras",
+            "pathScope": "absolute",
+            "sizeBytes": 4120098,
+            "sha256": "27da4ec1634431db5d387d17d819d940e25289507a52af2d7c115427f0758b2d",
+            "role": "completed_detector_epoch"
+          },
+          "validationReport": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-finetune\\epoch12-validation.json",
+            "pathScope": "absolute",
+            "sizeBytes": 140580,
+            "sha256": "d6961184131d64a46973fbaa442c70855ac15ac5e401743f541f8b985db1d89b",
+            "role": "validation_only_epoch_evaluation"
+          }
+        },
+        {
+          "epoch": 13,
+          "checkpoint": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-finetune\\epoch13.keras",
+            "pathScope": "absolute",
+            "sizeBytes": 4120098,
+            "sha256": "4b76ffd3eaf8ae4a79eda39377d7b087c4f6fe0f42c643f033f5d576d47e9248",
+            "role": "completed_detector_epoch"
+          },
+          "validationReport": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-finetune\\epoch13-validation.json",
+            "pathScope": "absolute",
+            "sizeBytes": 140414,
+            "sha256": "21e1dfe871342b52f0001cead646811960aaca3111e26f0bf779bb76fd3cb1e8",
+            "role": "validation_only_epoch_evaluation"
+          }
+        },
+        {
+          "epoch": 14,
+          "checkpoint": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-finetune\\epoch14.keras",
+            "pathScope": "absolute",
+            "sizeBytes": 4120098,
+            "sha256": "eae1408d0732f00d3cce2016ecf721213145d6bc1fbc20c0c5e0f3b099f8a23a",
+            "role": "completed_detector_epoch"
+          },
+          "validationReport": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-finetune\\epoch14-validation.json",
+            "pathScope": "absolute",
+            "sizeBytes": 140353,
+            "sha256": "cb8d478b16a4b762af84417031c3501f2986ff5ff24ca6bc514c73a9173fecea",
+            "role": "validation_only_epoch_evaluation"
+          }
+        },
+        {
+          "epoch": 15,
+          "checkpoint": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-finetune\\epoch15.keras",
+            "pathScope": "absolute",
+            "sizeBytes": 4120098,
+            "sha256": "c8e7ccdbc61f3892e327f302b30825d4bcb6b5aa704d5033d5edc0daa5dd7922",
+            "role": "completed_detector_epoch"
+          },
+          "validationReport": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-finetune\\epoch15-validation.json",
+            "pathScope": "absolute",
+            "sizeBytes": 140326,
+            "sha256": "2a25c27333b76f90cf096806371e9e169d8a718d5f4acd279df821d936f4f6a4",
+            "role": "validation_only_epoch_evaluation"
+          }
+        },
+        {
+          "epoch": 16,
+          "checkpoint": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-finetune\\epoch16.keras",
+            "pathScope": "absolute",
+            "sizeBytes": 4120098,
+            "sha256": "2624a27ce6f4eeac812ba072cd5178bbf9ed3802c66253b66e215de923f29e97",
+            "role": "completed_detector_epoch"
+          },
+          "validationReport": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-finetune\\epoch16-validation.json",
+            "pathScope": "absolute",
+            "sizeBytes": 140419,
+            "sha256": "e7a6696c96a2a3449faeff6b2f6bcd77e84f6ba4047d0b69fdc2792c25f8efec",
+            "role": "validation_only_epoch_evaluation"
+          }
+        },
+        {
+          "epoch": 17,
+          "checkpoint": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-finetune\\epoch17.keras",
+            "pathScope": "absolute",
+            "sizeBytes": 4120098,
+            "sha256": "05d2b942136413e0032304986162612f18f9a105d5cea4f3a205ece2926dde25",
+            "role": "completed_detector_epoch"
+          },
+          "validationReport": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-finetune\\epoch17-validation.json",
+            "pathScope": "absolute",
+            "sizeBytes": 140242,
+            "sha256": "6826dafdf56514e0e5e6e971ce4294d9c3b5d5bb52bff88a2d64f23cb669c9c1",
+            "role": "validation_only_epoch_evaluation"
+          }
+        },
+        {
+          "epoch": 18,
+          "checkpoint": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-finetune\\epoch18.keras",
+            "pathScope": "absolute",
+            "sizeBytes": 4120098,
+            "sha256": "ff7f78f78ebb48aa9c54180dfd8427fda5e10c8c7253539630cbe696be84575a",
+            "role": "completed_detector_epoch"
+          },
+          "validationReport": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-finetune\\epoch18-validation.json",
+            "pathScope": "absolute",
+            "sizeBytes": 140250,
+            "sha256": "2aa4c590a5bff25e8993579e605d589b1ed7a36afdc5f87d0832f634de8a2f4f",
+            "role": "validation_only_epoch_evaluation"
+          }
+        },
+        {
+          "epoch": 19,
+          "checkpoint": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-finetune\\epoch19.keras",
+            "pathScope": "absolute",
+            "sizeBytes": 4120098,
+            "sha256": "dde898a3678fdefb58e915bf1962095b038a3d40ce6ce96fa713f738583f8c0f",
+            "role": "completed_detector_epoch"
+          },
+          "validationReport": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-finetune\\epoch19-validation.json",
+            "pathScope": "absolute",
+            "sizeBytes": 140159,
+            "sha256": "9dfc40d9d60fcc5ce2224a7f56714f50aa29b10c95b18e2570d334dd847a4d0a",
+            "role": "validation_only_epoch_evaluation"
+          }
+        },
+        {
+          "epoch": 20,
+          "checkpoint": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-finetune\\epoch20.keras",
+            "pathScope": "absolute",
+            "sizeBytes": 4120098,
+            "sha256": "fe985a6bde0e984d4513ccbd642dc820045f34c20bcf7237d999c7bc95d5dd25",
+            "role": "completed_detector_epoch"
+          },
+          "validationReport": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-finetune\\epoch20-validation.json",
+            "pathScope": "absolute",
+            "sizeBytes": 140328,
+            "sha256": "870bf781fb6b1c4dfd9222360f96f8c071ea4d847b78dfeb8f383953f3bc99b9",
+            "role": "validation_only_epoch_evaluation"
+          }
+        },
+        {
+          "epoch": 21,
+          "checkpoint": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-finetune\\epoch21.keras",
+            "pathScope": "absolute",
+            "sizeBytes": 4120098,
+            "sha256": "237fc7fedf9699118b453bd9589352df64d1b15db2cc34bd9ab40e8207f05fe7",
+            "role": "completed_detector_epoch"
+          },
+          "validationReport": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-finetune\\epoch21-validation.json",
+            "pathScope": "absolute",
+            "sizeBytes": 140375,
+            "sha256": "a9e7fb550bf38cacad1cf831862403050f89989cd13019bfbf66bb0f9b792ee8",
+            "role": "validation_only_epoch_evaluation"
+          }
+        },
+        {
+          "epoch": 22,
+          "checkpoint": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-finetune\\epoch22.keras",
+            "pathScope": "absolute",
+            "sizeBytes": 4120098,
+            "sha256": "79984f3f74acb43f40083f32d7e2e1b0f89af6cb8f1ddd88d76a77a8a14f27f3",
+            "role": "completed_detector_epoch"
+          },
+          "validationReport": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-finetune\\epoch22-validation.json",
+            "pathScope": "absolute",
+            "sizeBytes": 139923,
+            "sha256": "37d92c488c2c7b084523af85ac993051d1651fb70cfb16fa67ea17d8f490e551",
+            "role": "validation_only_epoch_evaluation"
+          }
+        },
+        {
+          "epoch": 23,
+          "checkpoint": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-finetune\\epoch23.keras",
+            "pathScope": "absolute",
+            "sizeBytes": 4120098,
+            "sha256": "9cc1dcaa8bd8dd517aff18bd18514438cde3b8a1d2b7cf423fb664b37f0e3ea1",
+            "role": "completed_detector_epoch"
+          },
+          "validationReport": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-finetune\\epoch23-validation.json",
+            "pathScope": "absolute",
+            "sizeBytes": 140133,
+            "sha256": "9de9fcb864059e25f3649f1af831321f2c431080cd04c87222f2f5423eb7f5b1",
+            "role": "validation_only_epoch_evaluation"
+          }
+        }
+      ],
+      "metadata": [
+        {
+          "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-finetune\\training-config.json",
+          "pathScope": "absolute",
+          "sizeBytes": 10413,
+          "sha256": "e0d8f51d9f0f8019b4a5109e528fbb7f7154d665d3817f0ba5210e85e635c4bb",
+          "role": "stage_provenance"
+        },
+        {
+          "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-finetune\\history.json",
+          "pathScope": "absolute",
+          "sizeBytes": 147468,
+          "sha256": "a7fbb462a4a7db2be9d466f53ddcea193578da6265b667455a82f4fd5432c5f4",
+          "role": "stage_provenance"
+        },
+        {
+          "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-finetune\\selection.json",
+          "pathScope": "absolute",
+          "sizeBytes": 529,
+          "sha256": "eb5b0e8c4bbf61c3df23b3b53f15332bba80f4fb44ca0a79995b5d31b5c5889a",
+          "role": "stage_provenance"
+        },
+        {
+          "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-finetune\\sampling.json",
+          "pathScope": "absolute",
+          "sizeBytes": 7816,
+          "sha256": "421f02c0ae6e36520cc6d908f0606e59a7548e389581ca0e7800c0755e95dd36",
+          "role": "stage_provenance"
+        },
+        {
+          "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-finetune\\protected-before.json",
+          "pathScope": "absolute",
+          "sizeBytes": 1518,
+          "sha256": "97c64bd063943f29ffe32f8715cd870ab7d5f03ebb5494e2fc12b1ff681a10f2",
+          "role": "stage_provenance"
+        }
+      ],
+      "sourceSnapshot": {
+        "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-finetune\\source",
+        "preserveEntireDirectory": true,
+        "hashIndex": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-finetune\\training-config.json",
+        "hashField": "source_sha256"
+      }
+    },
+    {
+      "name": "run-dots",
+      "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots",
+      "preserveEntireDirectory": true,
+      "completeEpochCount": 48,
+      "selectedEpoch": 45,
+      "selectedCheckpoint": {
+        "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\best-word.keras",
+        "pathScope": "absolute",
+        "sizeBytes": 4120098,
+        "sha256": "090260a2a29f802cdcd07140344feaaf04d98bc48cd2be7a5d75e0482d6ee38c",
+        "role": "selected_stage_checkpoint"
+      },
+      "epochs": [
+        {
+          "epoch": 1,
+          "checkpoint": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\epoch01.keras",
+            "pathScope": "absolute",
+            "sizeBytes": 4120098,
+            "sha256": "6f24d98338001b215fa21458410c034fa3e3a2b97a1df18176a94c6c32e2fa11",
+            "role": "completed_detector_epoch"
+          },
+          "validationReport": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\epoch01-validation.json",
+            "pathScope": "absolute",
+            "sizeBytes": 140089,
+            "sha256": "f27ec48ae2eb2ab1b5eca10e36d6682f897ecd4a23fac92d248fe4a569a164d4",
+            "role": "validation_only_epoch_evaluation"
+          }
+        },
+        {
+          "epoch": 2,
+          "checkpoint": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\epoch02.keras",
+            "pathScope": "absolute",
+            "sizeBytes": 4120098,
+            "sha256": "295964d37dea18de75de0a5a122d266aa0a0a1141dd59354759a5c605c639a3b",
+            "role": "completed_detector_epoch"
+          },
+          "validationReport": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\epoch02-validation.json",
+            "pathScope": "absolute",
+            "sizeBytes": 140042,
+            "sha256": "b11249c0cc05fd5add0111d8f7714e660ed280a23097077803c9ef2cae213809",
+            "role": "validation_only_epoch_evaluation"
+          }
+        },
+        {
+          "epoch": 3,
+          "checkpoint": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\epoch03.keras",
+            "pathScope": "absolute",
+            "sizeBytes": 4120098,
+            "sha256": "1310f31cfef3e6b90d77ed56bc1e11aa40a373c99e4a3f0f0106a32d95cfb496",
+            "role": "completed_detector_epoch"
+          },
+          "validationReport": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\epoch03-validation.json",
+            "pathScope": "absolute",
+            "sizeBytes": 139775,
+            "sha256": "9e0c83fd428fdc3c94e0ef2886281a4a1dc0770a3f4c74b32cdcc450e0f2e7fe",
+            "role": "validation_only_epoch_evaluation"
+          }
+        },
+        {
+          "epoch": 4,
+          "checkpoint": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\epoch04.keras",
+            "pathScope": "absolute",
+            "sizeBytes": 4120098,
+            "sha256": "8c2f6b3f96f0aa8b198f3c07a8f710f57db7266ce7c9d21bc9f1f08c35105f41",
+            "role": "completed_detector_epoch"
+          },
+          "validationReport": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\epoch04-validation.json",
+            "pathScope": "absolute",
+            "sizeBytes": 139824,
+            "sha256": "b7817a7235b4b6cfa42816c42c28e5ee14337fa40c2a465673f9491290972fbe",
+            "role": "validation_only_epoch_evaluation"
+          }
+        },
+        {
+          "epoch": 5,
+          "checkpoint": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\epoch05.keras",
+            "pathScope": "absolute",
+            "sizeBytes": 4120098,
+            "sha256": "bf68bcef7aea7a06f27b794a282b4df782b5728fc0026cbf25346e49a656a193",
+            "role": "completed_detector_epoch"
+          },
+          "validationReport": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\epoch05-validation.json",
+            "pathScope": "absolute",
+            "sizeBytes": 139958,
+            "sha256": "a112f687f71dedbb1d12b9903d64ad0158a5813c7d2769bb3f63aadadd1302e6",
+            "role": "validation_only_epoch_evaluation"
+          }
+        },
+        {
+          "epoch": 6,
+          "checkpoint": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\epoch06.keras",
+            "pathScope": "absolute",
+            "sizeBytes": 4120098,
+            "sha256": "17d88707bb8002194a04dcba0841f742e3686ff4a8b171719ecb6d80014adb58",
+            "role": "completed_detector_epoch"
+          },
+          "validationReport": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\epoch06-validation.json",
+            "pathScope": "absolute",
+            "sizeBytes": 139545,
+            "sha256": "3153b9a666454f3f56048b87ac0767731494ada90f2a8c3dadf3cebb20f02c31",
+            "role": "validation_only_epoch_evaluation"
+          }
+        },
+        {
+          "epoch": 7,
+          "checkpoint": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\epoch07.keras",
+            "pathScope": "absolute",
+            "sizeBytes": 4120098,
+            "sha256": "3d5dcea34e27baf5aafdf55d5c3c6d3383e23ddce0db3ef2702089bd1f5197fa",
+            "role": "completed_detector_epoch"
+          },
+          "validationReport": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\epoch07-validation.json",
+            "pathScope": "absolute",
+            "sizeBytes": 139723,
+            "sha256": "16c9b645aff3f252bc1c8815d3c7d653b98205394398e97f26bea50c162036e2",
+            "role": "validation_only_epoch_evaluation"
+          }
+        },
+        {
+          "epoch": 8,
+          "checkpoint": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\epoch08.keras",
+            "pathScope": "absolute",
+            "sizeBytes": 4120098,
+            "sha256": "8f79311ca01aef6e41e6eb10cf49ebe6fe5a25fcfd54f4c9f61674a2e75941a0",
+            "role": "completed_detector_epoch"
+          },
+          "validationReport": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\epoch08-validation.json",
+            "pathScope": "absolute",
+            "sizeBytes": 139647,
+            "sha256": "13937379b83b40dbdb2ddaaf5a6100ff6af286543cdf3b67c5c09a3ec5c12034",
+            "role": "validation_only_epoch_evaluation"
+          }
+        },
+        {
+          "epoch": 9,
+          "checkpoint": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\epoch09.keras",
+            "pathScope": "absolute",
+            "sizeBytes": 4120098,
+            "sha256": "4469962290685849aa906c96d6d8723a60c6122add9a04e92d4218847c1ab5e6",
+            "role": "completed_detector_epoch"
+          },
+          "validationReport": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\epoch09-validation.json",
+            "pathScope": "absolute",
+            "sizeBytes": 139602,
+            "sha256": "6407225f941a3ad32f894234a11935c3cde554fd8d093fb3364c11938a32e077",
+            "role": "validation_only_epoch_evaluation"
+          }
+        },
+        {
+          "epoch": 10,
+          "checkpoint": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\epoch10.keras",
+            "pathScope": "absolute",
+            "sizeBytes": 4120098,
+            "sha256": "79b3105a6efd7b12e5d1ca45c871cf11f6119aac7e0fdcd033a067beeecfd0dc",
+            "role": "completed_detector_epoch"
+          },
+          "validationReport": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\epoch10-validation.json",
+            "pathScope": "absolute",
+            "sizeBytes": 139749,
+            "sha256": "9a12f80b2b7235e431717d4c10e41d467cc9221a29108ad3325b8dc248914bd5",
+            "role": "validation_only_epoch_evaluation"
+          }
+        },
+        {
+          "epoch": 11,
+          "checkpoint": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\epoch11.keras",
+            "pathScope": "absolute",
+            "sizeBytes": 4120098,
+            "sha256": "ba8c11201a51b549356585be400606cabdb9d3d7d1a26baf432e857810e91ed5",
+            "role": "completed_detector_epoch"
+          },
+          "validationReport": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\epoch11-validation.json",
+            "pathScope": "absolute",
+            "sizeBytes": 139703,
+            "sha256": "409d16ef7c4ba6a200d9c74be07b625e12d345739ff13d6b4d625e8fad3a440d",
+            "role": "validation_only_epoch_evaluation"
+          }
+        },
+        {
+          "epoch": 12,
+          "checkpoint": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\epoch12.keras",
+            "pathScope": "absolute",
+            "sizeBytes": 4120098,
+            "sha256": "8b996eddcc6e97acafdb63bc194795a9147e66357081924b3f875ea82cf4b20e",
+            "role": "completed_detector_epoch"
+          },
+          "validationReport": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\epoch12-validation.json",
+            "pathScope": "absolute",
+            "sizeBytes": 139513,
+            "sha256": "a3e284aceb586aeeee60e2323b7e098e6913412d99ba10501069364ae9a7e133",
+            "role": "validation_only_epoch_evaluation"
+          }
+        },
+        {
+          "epoch": 13,
+          "checkpoint": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\epoch13.keras",
+            "pathScope": "absolute",
+            "sizeBytes": 4120098,
+            "sha256": "ab5e056367c2e6d4b7cc293c6ba3e1c92be2ac5eca969cfabbe88ec645834632",
+            "role": "completed_detector_epoch"
+          },
+          "validationReport": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\epoch13-validation.json",
+            "pathScope": "absolute",
+            "sizeBytes": 139611,
+            "sha256": "68e6b349f72ad58b33fc6bcd355c64618a9e1520d126a2f71d8f5a2fd55ec3e8",
+            "role": "validation_only_epoch_evaluation"
+          }
+        },
+        {
+          "epoch": 14,
+          "checkpoint": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\epoch14.keras",
+            "pathScope": "absolute",
+            "sizeBytes": 4120098,
+            "sha256": "cc582eb405d4720c7eff5b7e060f2329c74b76501b80eb3a43fadd6f27e41268",
+            "role": "completed_detector_epoch"
+          },
+          "validationReport": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\epoch14-validation.json",
+            "pathScope": "absolute",
+            "sizeBytes": 139440,
+            "sha256": "065fca4178f10364330afd168be460ccde190cde21e6f9e96d855541e0424570",
+            "role": "validation_only_epoch_evaluation"
+          }
+        },
+        {
+          "epoch": 15,
+          "checkpoint": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\epoch15.keras",
+            "pathScope": "absolute",
+            "sizeBytes": 4120098,
+            "sha256": "53e4ee4842ddddd87d8c7f6a30499e5da5911410b336ca01c0fcb087703ca90b",
+            "role": "completed_detector_epoch"
+          },
+          "validationReport": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\epoch15-validation.json",
+            "pathScope": "absolute",
+            "sizeBytes": 139690,
+            "sha256": "a24fd36d1ae22f4ae726bd01b9a46a234094084d84d958940c5435d64414181c",
+            "role": "validation_only_epoch_evaluation"
+          }
+        },
+        {
+          "epoch": 16,
+          "checkpoint": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\epoch16.keras",
+            "pathScope": "absolute",
+            "sizeBytes": 4120098,
+            "sha256": "9b1b56999952af5b5b6f53496ac5753f9a1328e70da37180e26a9cefb2df7d08",
+            "role": "completed_detector_epoch"
+          },
+          "validationReport": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\epoch16-validation.json",
+            "pathScope": "absolute",
+            "sizeBytes": 139649,
+            "sha256": "e6a5bac457de03ba7361796ba37ad2b822515177514e246016c6c730a1db5709",
+            "role": "validation_only_epoch_evaluation"
+          }
+        },
+        {
+          "epoch": 17,
+          "checkpoint": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\epoch17.keras",
+            "pathScope": "absolute",
+            "sizeBytes": 4120098,
+            "sha256": "3799a4a404d92aac3724c3c52a0073bb9ffd962923198d725866d451ff98a0ca",
+            "role": "completed_detector_epoch"
+          },
+          "validationReport": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\epoch17-validation.json",
+            "pathScope": "absolute",
+            "sizeBytes": 139519,
+            "sha256": "e02c677c91d60ee09393cc1e1bd5f6aac1bde2f3ca974c5d827668748010efc8",
+            "role": "validation_only_epoch_evaluation"
+          }
+        },
+        {
+          "epoch": 18,
+          "checkpoint": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\epoch18.keras",
+            "pathScope": "absolute",
+            "sizeBytes": 4120098,
+            "sha256": "ffb390302e4fbcea34a41f8f3146fdaa9dbdbd68ce5d98072aea82abd258eb27",
+            "role": "completed_detector_epoch"
+          },
+          "validationReport": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\epoch18-validation.json",
+            "pathScope": "absolute",
+            "sizeBytes": 139584,
+            "sha256": "ca55675f8b2356ab234ff9fa224638e984dc91fa71c36cc2e3998f23b86eaa8d",
+            "role": "validation_only_epoch_evaluation"
+          }
+        },
+        {
+          "epoch": 19,
+          "checkpoint": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\epoch19.keras",
+            "pathScope": "absolute",
+            "sizeBytes": 4120098,
+            "sha256": "e6caf9fdc8fc0fc7ce38d18d4ca539c2a5ab860b1c5ea1450354ad07ac5bd95b",
+            "role": "completed_detector_epoch"
+          },
+          "validationReport": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\epoch19-validation.json",
+            "pathScope": "absolute",
+            "sizeBytes": 139614,
+            "sha256": "a38bd13849142c51c76f0c2bc27e6405de9b44df51c85d82c228995875dacf6b",
+            "role": "validation_only_epoch_evaluation"
+          }
+        },
+        {
+          "epoch": 20,
+          "checkpoint": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\epoch20.keras",
+            "pathScope": "absolute",
+            "sizeBytes": 4120098,
+            "sha256": "a477dff73fa552122d9ec5c9be7d03a6c91d7d2f83904c8e9352d2204c569599",
+            "role": "completed_detector_epoch"
+          },
+          "validationReport": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\epoch20-validation.json",
+            "pathScope": "absolute",
+            "sizeBytes": 139535,
+            "sha256": "644311a232ad0cdb9a932dad054284097e81c6abf7c82e72cd924120cef4dc1a",
+            "role": "validation_only_epoch_evaluation"
+          }
+        },
+        {
+          "epoch": 21,
+          "checkpoint": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\epoch21.keras",
+            "pathScope": "absolute",
+            "sizeBytes": 4120098,
+            "sha256": "29961ff8147bbb3bb38829b6eb6a381eb883574dca9de19e3581737647ab5683",
+            "role": "completed_detector_epoch"
+          },
+          "validationReport": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\epoch21-validation.json",
+            "pathScope": "absolute",
+            "sizeBytes": 139404,
+            "sha256": "a83823752a090a8854319582c5b91ae6f3056438f8c1aaef90d13459aa7bdc37",
+            "role": "validation_only_epoch_evaluation"
+          }
+        },
+        {
+          "epoch": 22,
+          "checkpoint": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\epoch22.keras",
+            "pathScope": "absolute",
+            "sizeBytes": 4120098,
+            "sha256": "6a516a6a84f3cb2f0a8499ec9faf24cb6866db3a8deaff7b2524264109bd0c9a",
+            "role": "completed_detector_epoch"
+          },
+          "validationReport": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\epoch22-validation.json",
+            "pathScope": "absolute",
+            "sizeBytes": 139515,
+            "sha256": "34100413e399171270ca0bed250e699b8d06d6b1f430a3fee583872d1207a72c",
+            "role": "validation_only_epoch_evaluation"
+          }
+        },
+        {
+          "epoch": 23,
+          "checkpoint": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\epoch23.keras",
+            "pathScope": "absolute",
+            "sizeBytes": 4120098,
+            "sha256": "fdb19314b1d26381169b18aee35374d92bc0e8d2e21c254a938fe9fa51b3893b",
+            "role": "completed_detector_epoch"
+          },
+          "validationReport": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\epoch23-validation.json",
+            "pathScope": "absolute",
+            "sizeBytes": 139695,
+            "sha256": "a0a26bff459b663a0818cadbcd724953f27bcd7b33dc63f94f1847793357614d",
+            "role": "validation_only_epoch_evaluation"
+          }
+        },
+        {
+          "epoch": 24,
+          "checkpoint": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\epoch24.keras",
+            "pathScope": "absolute",
+            "sizeBytes": 4120098,
+            "sha256": "065b89fe2942a6881b5c56901c6d89ea9fb8e2ebd7df214ea15417d99ef311f0",
+            "role": "completed_detector_epoch"
+          },
+          "validationReport": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\epoch24-validation.json",
+            "pathScope": "absolute",
+            "sizeBytes": 139430,
+            "sha256": "1ef54dd58cef07aac1bd4a93390d74406d93bf07dfe4382700176dcaffe6d208",
+            "role": "validation_only_epoch_evaluation"
+          }
+        },
+        {
+          "epoch": 25,
+          "checkpoint": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\epoch25.keras",
+            "pathScope": "absolute",
+            "sizeBytes": 4120098,
+            "sha256": "9ef2820853d40495e8c400bb268a0704f0107ca170598ae903e00e15db1d2b84",
+            "role": "completed_detector_epoch"
+          },
+          "validationReport": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\epoch25-validation.json",
+            "pathScope": "absolute",
+            "sizeBytes": 139478,
+            "sha256": "06d072083e81964db91511becb8380ae1a08bcecd6a551f7cf5c69ee9a1719a4",
+            "role": "validation_only_epoch_evaluation"
+          }
+        },
+        {
+          "epoch": 26,
+          "checkpoint": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\epoch26.keras",
+            "pathScope": "absolute",
+            "sizeBytes": 4120098,
+            "sha256": "2319506ef2fe3fac66265dd546cd76c21280487f45e087a60a998378d06cf4f5",
+            "role": "completed_detector_epoch"
+          },
+          "validationReport": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\epoch26-validation.json",
+            "pathScope": "absolute",
+            "sizeBytes": 139413,
+            "sha256": "fbedc020d5efbbbd45f611e966b4eba7748df2859f9c4a172daa705668374725",
+            "role": "validation_only_epoch_evaluation"
+          }
+        },
+        {
+          "epoch": 27,
+          "checkpoint": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\epoch27.keras",
+            "pathScope": "absolute",
+            "sizeBytes": 4120098,
+            "sha256": "b9dbb8ba453705f21c362fb40eaf27b161435cdfa6fc64332401abcc4ad8025e",
+            "role": "completed_detector_epoch"
+          },
+          "validationReport": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\epoch27-validation.json",
+            "pathScope": "absolute",
+            "sizeBytes": 139424,
+            "sha256": "ee6aa81e5647702e43ba3db6cff9dc338e5f9bef22031a676e18cc0ca5af861d",
+            "role": "validation_only_epoch_evaluation"
+          }
+        },
+        {
+          "epoch": 28,
+          "checkpoint": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\epoch28.keras",
+            "pathScope": "absolute",
+            "sizeBytes": 4120098,
+            "sha256": "7db691e11dca993f08324a5fc9f03146701b9dc14f1651ffef0b8d941aeb93cc",
+            "role": "completed_detector_epoch"
+          },
+          "validationReport": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\epoch28-validation.json",
+            "pathScope": "absolute",
+            "sizeBytes": 139468,
+            "sha256": "db89f5a2f6c3c73910c9d24489b8982a42e518384522018c6156798f68db1436",
+            "role": "validation_only_epoch_evaluation"
+          }
+        },
+        {
+          "epoch": 29,
+          "checkpoint": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\epoch29.keras",
+            "pathScope": "absolute",
+            "sizeBytes": 4120098,
+            "sha256": "a87f55b8b15c3602ff9c0ade9c519643f351fa4a7e0534772aa41d5bde15a632",
+            "role": "completed_detector_epoch"
+          },
+          "validationReport": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\epoch29-validation.json",
+            "pathScope": "absolute",
+            "sizeBytes": 139348,
+            "sha256": "7f2835286d5352ee84dadea482d032a007174ce7eb5d1600723f7ef07a6eb6f2",
+            "role": "validation_only_epoch_evaluation"
+          }
+        },
+        {
+          "epoch": 30,
+          "checkpoint": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\epoch30.keras",
+            "pathScope": "absolute",
+            "sizeBytes": 4120098,
+            "sha256": "9980b496c62f37c14f233dd4f65fd9c43924ab40f86e3fee1b155f37a3b5c98a",
+            "role": "completed_detector_epoch"
+          },
+          "validationReport": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\epoch30-validation.json",
+            "pathScope": "absolute",
+            "sizeBytes": 139392,
+            "sha256": "da4b3c6b8d858ea0d602cfe9f71c838d4b1e0029fffdd0fe9363fea6595e24fb",
+            "role": "validation_only_epoch_evaluation"
+          }
+        },
+        {
+          "epoch": 31,
+          "checkpoint": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\epoch31.keras",
+            "pathScope": "absolute",
+            "sizeBytes": 4120098,
+            "sha256": "d0520c4f9dc453ef57e51ba67f65a38ceb9186acb7aa70ff8b2d5f27b8a387e7",
+            "role": "completed_detector_epoch"
+          },
+          "validationReport": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\epoch31-validation.json",
+            "pathScope": "absolute",
+            "sizeBytes": 139330,
+            "sha256": "cbfb257e011b4fba8437d93b3a61b309d7866e2cea86089559315a522456507e",
+            "role": "validation_only_epoch_evaluation"
+          }
+        },
+        {
+          "epoch": 32,
+          "checkpoint": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\epoch32.keras",
+            "pathScope": "absolute",
+            "sizeBytes": 4120098,
+            "sha256": "b16793154482953490521a591a6ac89311b4375afa4cfdea3bad88dcb6f5a9b2",
+            "role": "completed_detector_epoch"
+          },
+          "validationReport": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\epoch32-validation.json",
+            "pathScope": "absolute",
+            "sizeBytes": 139493,
+            "sha256": "817b58a2876cd76f8ce35ff550773a7cab4d866b40ee84e3a6d748fa268ffbd3",
+            "role": "validation_only_epoch_evaluation"
+          }
+        },
+        {
+          "epoch": 33,
+          "checkpoint": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\epoch33.keras",
+            "pathScope": "absolute",
+            "sizeBytes": 4120098,
+            "sha256": "b31c7b912ba850786591d5b59fac38724fadc4692b985ef91111504c66afb8a4",
+            "role": "completed_detector_epoch"
+          },
+          "validationReport": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\epoch33-validation.json",
+            "pathScope": "absolute",
+            "sizeBytes": 139418,
+            "sha256": "48df6e17031287f25bb2ef60ccddb7751b3c30ef1f7044dd42b67ea1892e6bbb",
+            "role": "validation_only_epoch_evaluation"
+          }
+        },
+        {
+          "epoch": 34,
+          "checkpoint": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\epoch34.keras",
+            "pathScope": "absolute",
+            "sizeBytes": 4120098,
+            "sha256": "570f3b53d0aeeea8b9715b711f27feca5da217a7f187186b8593e5ae7520ba05",
+            "role": "completed_detector_epoch"
+          },
+          "validationReport": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\epoch34-validation.json",
+            "pathScope": "absolute",
+            "sizeBytes": 139513,
+            "sha256": "0cb6ee31509025f3ab6ea70d7abec196e4ef1b4b7fcc23f60b001595c4e0c4d2",
+            "role": "validation_only_epoch_evaluation"
+          }
+        },
+        {
+          "epoch": 35,
+          "checkpoint": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\epoch35.keras",
+            "pathScope": "absolute",
+            "sizeBytes": 4120098,
+            "sha256": "2db581605622e16aa4695d3016e6802922452b4f2de79c76f68975fbf21a6be3",
+            "role": "completed_detector_epoch"
+          },
+          "validationReport": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\epoch35-validation.json",
+            "pathScope": "absolute",
+            "sizeBytes": 139280,
+            "sha256": "1d3f66a2dfdf5b84139b372b79e58864a31d9376a0210b6f353aaebaa440defc",
+            "role": "validation_only_epoch_evaluation"
+          }
+        },
+        {
+          "epoch": 36,
+          "checkpoint": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\epoch36.keras",
+            "pathScope": "absolute",
+            "sizeBytes": 4120098,
+            "sha256": "a34f7a18284d048cd4e71fe51dc497fe40bb65083ae4c7536642fc4a643847d1",
+            "role": "completed_detector_epoch"
+          },
+          "validationReport": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\epoch36-validation.json",
+            "pathScope": "absolute",
+            "sizeBytes": 139470,
+            "sha256": "004ab4cce7bca115f40ce25c0ca746fd2a6588dc103b37e1561b3401d7a780c6",
+            "role": "validation_only_epoch_evaluation"
+          }
+        },
+        {
+          "epoch": 37,
+          "checkpoint": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\epoch37.keras",
+            "pathScope": "absolute",
+            "sizeBytes": 4120098,
+            "sha256": "ff3f327c9400731e55adcb513d24a47d494c53de4d52c7eb8c14ccfe6f61dd85",
+            "role": "completed_detector_epoch"
+          },
+          "validationReport": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\epoch37-validation.json",
+            "pathScope": "absolute",
+            "sizeBytes": 139327,
+            "sha256": "ce9b7020053c711a3ffb892530f292368c711635fe7ce028f173a4dcc699a83f",
+            "role": "validation_only_epoch_evaluation"
+          }
+        },
+        {
+          "epoch": 38,
+          "checkpoint": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\epoch38.keras",
+            "pathScope": "absolute",
+            "sizeBytes": 4120098,
+            "sha256": "fc50dd4670de2bb5409f9fe6c732409873094fb824618a11264bc692d1de667e",
+            "role": "completed_detector_epoch"
+          },
+          "validationReport": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\epoch38-validation.json",
+            "pathScope": "absolute",
+            "sizeBytes": 139203,
+            "sha256": "4ec3c2f99965546af37cc9f86c7f84b617f21b3996dda9f353c3ad2886d5c184",
+            "role": "validation_only_epoch_evaluation"
+          }
+        },
+        {
+          "epoch": 39,
+          "checkpoint": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\epoch39.keras",
+            "pathScope": "absolute",
+            "sizeBytes": 4120098,
+            "sha256": "3759c5e681ac4ed46759f4748de9858d881b89c9556cba749946daff07fd2a04",
+            "role": "completed_detector_epoch"
+          },
+          "validationReport": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\epoch39-validation.json",
+            "pathScope": "absolute",
+            "sizeBytes": 139568,
+            "sha256": "7e316a253bb917f89bca0df88f0a5f3350ca95c0631572c56d404209f2c9c55d",
+            "role": "validation_only_epoch_evaluation"
+          }
+        },
+        {
+          "epoch": 40,
+          "checkpoint": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\epoch40.keras",
+            "pathScope": "absolute",
+            "sizeBytes": 4120098,
+            "sha256": "a40996d11b76287c9b05872e4c4839160f18b9a78d9176de1ee848c6dd791341",
+            "role": "completed_detector_epoch"
+          },
+          "validationReport": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\epoch40-validation.json",
+            "pathScope": "absolute",
+            "sizeBytes": 139618,
+            "sha256": "24ebc0006151ed44fae2f0f891ec697d1c9261b353ba1f1ff201bbc90e226977",
+            "role": "validation_only_epoch_evaluation"
+          }
+        },
+        {
+          "epoch": 41,
+          "checkpoint": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\epoch41.keras",
+            "pathScope": "absolute",
+            "sizeBytes": 4120098,
+            "sha256": "6b278e40fd44b17ab0d2ebf3c11f0c180ddc0a1b0cd304793a37b61844062143",
+            "role": "completed_detector_epoch"
+          },
+          "validationReport": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\epoch41-validation.json",
+            "pathScope": "absolute",
+            "sizeBytes": 139476,
+            "sha256": "dd0da4ca4097ffe3c1298c1bfbcc71e97fc67b74076dd9c672fc53f833742ea1",
+            "role": "validation_only_epoch_evaluation"
+          }
+        },
+        {
+          "epoch": 42,
+          "checkpoint": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\epoch42.keras",
+            "pathScope": "absolute",
+            "sizeBytes": 4120098,
+            "sha256": "d87b1a47fd82f86d653be96c6adf6bafd9761e78da700b37cfd2369eb43faf00",
+            "role": "completed_detector_epoch"
+          },
+          "validationReport": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\epoch42-validation.json",
+            "pathScope": "absolute",
+            "sizeBytes": 139335,
+            "sha256": "f41ab1c50eb98c047b22e3ceb73e4b62fc0fda7264f053743de342c274b617a5",
+            "role": "validation_only_epoch_evaluation"
+          }
+        },
+        {
+          "epoch": 43,
+          "checkpoint": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\epoch43.keras",
+            "pathScope": "absolute",
+            "sizeBytes": 4120098,
+            "sha256": "344b35e6041e72095269001aeac3b88ee6750707b36b3df09386d4525545a3ad",
+            "role": "completed_detector_epoch"
+          },
+          "validationReport": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\epoch43-validation.json",
+            "pathScope": "absolute",
+            "sizeBytes": 139430,
+            "sha256": "4c8847339c1dc5aff007e436f63ec36fe35095cdbb77384d8dd6d68984ea4a93",
+            "role": "validation_only_epoch_evaluation"
+          }
+        },
+        {
+          "epoch": 44,
+          "checkpoint": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\epoch44.keras",
+            "pathScope": "absolute",
+            "sizeBytes": 4120098,
+            "sha256": "17811aebd4d6a2439c24362aec238f3d511a0b3a2389579b2ea4b30dd01fb5fc",
+            "role": "completed_detector_epoch"
+          },
+          "validationReport": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\epoch44-validation.json",
+            "pathScope": "absolute",
+            "sizeBytes": 139284,
+            "sha256": "6af2c7138f23db2ac3ccf443c64b5bb5641536c2e148476810184468faaf9b9d",
+            "role": "validation_only_epoch_evaluation"
+          }
+        },
+        {
+          "epoch": 45,
+          "checkpoint": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\epoch45.keras",
+            "pathScope": "absolute",
+            "sizeBytes": 4120098,
+            "sha256": "090260a2a29f802cdcd07140344feaaf04d98bc48cd2be7a5d75e0482d6ee38c",
+            "role": "completed_detector_epoch"
+          },
+          "validationReport": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\epoch45-validation.json",
+            "pathScope": "absolute",
+            "sizeBytes": 139287,
+            "sha256": "36ad85ef85663677277b6277b3ebbc9fb555c650378cb0741abe8ee908a5235d",
+            "role": "validation_only_epoch_evaluation"
+          }
+        },
+        {
+          "epoch": 46,
+          "checkpoint": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\epoch46.keras",
+            "pathScope": "absolute",
+            "sizeBytes": 4120098,
+            "sha256": "f68c961c6115aeb251aa732192638ac5d511c2955eeae5c74ec4ba4583fcf475",
+            "role": "completed_detector_epoch"
+          },
+          "validationReport": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\epoch46-validation.json",
+            "pathScope": "absolute",
+            "sizeBytes": 139270,
+            "sha256": "7f90fcbe30822174142f1ec028659ec6206194a508f7a63078dea5994d902961",
+            "role": "validation_only_epoch_evaluation"
+          }
+        },
+        {
+          "epoch": 47,
+          "checkpoint": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\epoch47.keras",
+            "pathScope": "absolute",
+            "sizeBytes": 4120098,
+            "sha256": "1d77b5d8f3489f78c6f61e61131ba90b47f0a70e5d47340919d1441847cabf29",
+            "role": "completed_detector_epoch"
+          },
+          "validationReport": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\epoch47-validation.json",
+            "pathScope": "absolute",
+            "sizeBytes": 139369,
+            "sha256": "deafa3aea88428d09cf0882127bf3535940a4dc46bf7a84e037ff4530a0f82bf",
+            "role": "validation_only_epoch_evaluation"
+          }
+        },
+        {
+          "epoch": 48,
+          "checkpoint": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\epoch48.keras",
+            "pathScope": "absolute",
+            "sizeBytes": 4120098,
+            "sha256": "1f9a7d384a7e34a3e86c43813709185d05d90f10fcc9fefbc7fb413a992793a1",
+            "role": "completed_detector_epoch"
+          },
+          "validationReport": {
+            "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\epoch48-validation.json",
+            "pathScope": "absolute",
+            "sizeBytes": 139249,
+            "sha256": "d289c0f7673c88b1dbdbc2453e370109f13e9dee35ec9c3ef66acbb8301684aa",
+            "role": "validation_only_epoch_evaluation"
+          }
+        }
+      ],
+      "metadata": [
+        {
+          "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\training-config.json",
+          "pathScope": "absolute",
+          "sizeBytes": 11434,
+          "sha256": "f24d1789de9df2b1412e206111b6169a06bdc9cb3b6d05155b713682e8819a4c",
+          "role": "stage_provenance"
+        },
+        {
+          "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\history.json",
+          "pathScope": "absolute",
+          "sizeBytes": 308244,
+          "sha256": "c319e7442581754e50d71dc9723d0975cfb01d205de57cd00fdeaa4db6e6ec99",
+          "role": "stage_provenance"
+        },
+        {
+          "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\selection.json",
+          "pathScope": "absolute",
+          "sizeBytes": 488,
+          "sha256": "4235598b3db21fc537c5741207514579fd6764644386d698688cc0ee141bc952",
+          "role": "stage_provenance"
+        },
+        {
+          "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\sampling.json",
+          "pathScope": "absolute",
+          "sizeBytes": 16316,
+          "sha256": "e2a29dd41796fc9e8e2648e49aafc88a3317f4095aa8f402cbd942bbe3fc1a73",
+          "role": "stage_provenance"
+        },
+        {
+          "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\protected-before.json",
+          "pathScope": "absolute",
+          "sizeBytes": 1518,
+          "sha256": "97c64bd063943f29ffe32f8715cd870ab7d5f03ebb5494e2fc12b1ff681a10f2",
+          "role": "stage_provenance"
+        }
+      ],
+      "sourceSnapshot": {
+        "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\source",
+        "preserveEntireDirectory": true,
+        "hashIndex": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\training-config.json",
+        "hashField": "source_sha256"
+      }
+    }
+  ],
+  "historicalIndexes": [
+    {
+      "path": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\training\\checkpoints\\retained-models-20260908.json",
+      "pathScope": "absolute",
+      "sizeBytes": 62142,
+      "sha256": "29890d735d734184135c6e725a5065e46c67c827678bf66cb04534e9c53843ed",
+      "role": "historical_protected_index_preserve_union"
+    },
+    {
+      "path": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\training\\checkpoints\\retained-models.json",
+      "pathScope": "absolute",
+      "sizeBytes": 8018,
+      "sha256": "39e248ad1f697fde2f856467f5f26b6a22cb2781927c0a00a9c722c738120411",
+      "role": "historical_protected_index_preserve_union"
+    },
+    {
+      "path": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\training\\checkpoints\\retained-runtime-20260909.json",
+      "pathScope": "absolute",
+      "sizeBytes": 3201,
+      "sha256": "2388cbd7655a7bf42a000e576db5aa53221eb5df23c65747876dfdcca0b50fe5",
+      "role": "historical_protected_index_preserve_union"
+    }
+  ],
+  "pendingProtectedPaths": [
+    {
+      "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-cell-refiner-pilot",
+      "existsAtInventoryTime": false,
+      "preserveFutureContents": true,
+      "hashAfterCompletion": true
+    },
+    {
+      "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\cell-refiner-train-v1.npz",
+      "existsAtInventoryTime": false,
+      "preserveFutureContents": true,
+      "hashAfterCompletion": true
+    },
+    {
+      "path": "C:\\bm-symbols-20260908\\accuracy80-20260910\\cell-refiner-train-v1.json",
+      "existsAtInventoryTime": false,
+      "preserveFutureContents": true,
+      "hashAfterCompletion": true
+    }
+  ],
+  "otherRequiredCategories": [
+    "Frozen generated corpus and all provenance/hash indexes",
+    "Final export directories and conversion validation oracle",
+    "Native TEST reservation/report/final completion index",
+    "Final TFLite TEST artifact comparison and original letter regression",
+    "Console logs and diagnostics",
+    "Existing retained-model index union: original checkpoint/data/env/APK/evidence protection"
+  ],
+  "finalization": "Root must append final pilot/export/pipeline-selection/model hashes and completed evaluation reports; this file is not the completed final retention index."
+}

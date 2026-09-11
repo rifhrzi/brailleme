@@ -28,10 +28,10 @@ class WordDecoderPositionTests(unittest.TestCase):
         np.testing.assert_array_equal(prediction[..., 1:], target[..., 1:])
         self.assertTrue(np.any((target[..., 0] > 0) & (target[..., 0] < .999)))
         self.assertEqual(np.count_nonzero(prediction[..., 0]), 1)
-        self.assertEqual(decode(prediction, THRESHOLDS)['text'], 'A')
+        self.assertEqual(decode(prediction, THRESHOLDS)['text'], 'a')
 
     def test_disjoint_adjacent_letters_and_repeats_with_equal_or_unequal_scores(self):
-        for masks,text in [([1,3],'AB'),([1,1],'AA')]:
+        for masks,text in [([1,3],'ab'),([1,1],'aa')]:
             for scores in [(1,1),(.99,.98),(.98,.99)]:
                 with self.subTest(text=text,scores=scores):
                     output=tensor([(100,4,masks[0],scores[0]),(104.5,4,masks[1],scores[1])])
@@ -39,9 +39,9 @@ class WordDecoderPositionTests(unittest.TestCase):
 
     def test_overlapping_duplicate_is_removed_but_nms_chain_retains_disjoint_ends(self):
         duplicate=tensor([(100,12,1,.99),(104,12,1,.99)])
-        self.assertEqual(decode(duplicate,THRESHOLDS)['text'],'A')
+        self.assertEqual(decode(duplicate,THRESHOLDS)['text'],'a')
         chain=tensor([(100,7,1,.99),(104,7,3,.98),(108,7,9,.97)])
-        self.assertEqual(decode(chain,THRESHOLDS)['text'],'AC')
+        self.assertEqual(decode(chain,THRESHOLDS)['text'],'ac')
 
     def test_weak_uncertain_or_unsupported_adjacent_cell_rejects_whole_word(self):
         output=tensor([(100,4,1,.99),(104.5,4,3,.3)])
@@ -53,7 +53,7 @@ class WordDecoderPositionTests(unittest.TestCase):
 
     def test_outside_guide_neighbor_cannot_hide_valid_cell_but_intersection_rejects(self):
         output=tensor([(100,4,1,.9),(104.5,4,3,.99)])
-        self.assertEqual(decode(output,THRESHOLDS,[.20,.45,.213,.55])['text'],'A')
+        self.assertEqual(decode(output,THRESHOLDS,[.20,.45,.213,.55])['text'],'a')
         self.assertEqual(decode(output,THRESHOLDS,[.20,.45,.22,.55])['reason'],'clipped')
 
     def test_calibration_cache_retains_nonmaxima_and_matches_raw_threshold_trials(self):

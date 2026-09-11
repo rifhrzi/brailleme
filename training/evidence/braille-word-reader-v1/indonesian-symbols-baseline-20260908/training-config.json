@@ -1,0 +1,39 @@
+{
+  "created_at_utc": "2026-09-08T14:10:01.470191+00:00",
+  "epochs_limit": 10,
+  "batch_size": 24,
+  "learning_rate": 2e-05,
+  "baseline_checkpoint_sha256": "cce2432c0ddb8952c885dd58697589c285209588dafa81aacdd891b1660068b7",
+  "training_triggered": true,
+  "decoder_version": "six-dot-id-v3",
+  "source_sha256": {
+    "word_symbol_train.py": "918d3673c46a37ddb2b30cad62262e9c7ff9a5e7e35166a84e14edb9b12fda6b",
+    "word_symbol_prepare.py": "2deb5a9993f1d1de1c54588c28db650a3101e37840b6103c472ddfcdba63e538",
+    "word_symbols.py": "9e43dc9484f035ba3bbfcb49344050714dfd1c636d107b92cb2ce1faded29ba3",
+    "word_decode.py": "20fb305b3fbcad7595129b17ff9f4875fbb52445409a498f917fc239b7b3c606",
+    "word_model.py": "c446732a2905a612cd6f1dd64d2d3d01303b1c71933c34552d26f3b5052fd551",
+    "word_data.py": "d692b4b28620af7e4b40ebdedccda68769feb8d3f51bd1508e807487fd32b7d7",
+    "word_geometry_head.py": "f46c8f90e7f4fc9404eed2dc27fbde6e5c823d25d4f88e4127c7e56ed6e8764e",
+    "word_bn_affine.py": "fa117f65beda3f6d159f707a5cd45d3a367b8f5b436b8c43c0d7621071297dff",
+    "word_anchor_zoom.py": "d6f5337d08368b8da55948f314bd06af7b03fa1602e40240778a9b4edea26377",
+    "word_train.py": "60ca41ffebcea96567bad08859627664de1c98bce3c41a486e7280c842861e74",
+    "word_point_metadata.py": "de1cad0157e744f2f646010eac5355b88d1d11f52662d4b9353166661f59049f",
+    "word_sources.py": "affb3488d8c25e3d0131eb4340cae29fcece563ac75373e071f97fef68f09acd"
+  },
+  "fixture_sha256": "4ed781c18a4aa74749457a545829a77809b7d80986add05f4974dbd8f6acf07b",
+  "thresholds": {
+    "proposalScore": 0.25,
+    "acceptScore": 0.25,
+    "dotConfidence": 0.7,
+    "nmsIou": 0.25,
+    "minCellWidth": 0.008,
+    "minCellHeight": 0.06,
+    "edgeMargin": 0.008,
+    "maxRowDeviation": 0.55,
+    "maxGapRatio": 1.2,
+    "maxOverlapRatio": 0.5
+  },
+  "threshold_policy": "Frozen pre-update thresholds, identical for baseline and every epoch; no external tuning",
+  "selection_rule": "Disallow decline of natural or stress legacy exact/accepted accuracy; prefer all-group95% precision and zero mandatory false accepts then mean exactness; else weakest-group precision then mean exactness",
+  "physical_camera_validated": false
+}

@@ -1,0 +1,730 @@
+{
+  "schemaVersion": 1,
+  "retainedAt": "2026-09-11",
+  "createdAtUtc": "2026-09-11T01:52:41.473553+00:00",
+  "purpose": "Additive retention of the overall80 ID-v5 experiment; no app promotion, cleanup or deletion authorization",
+  "relationship": "Preserve union with every historical retention index and every referenced asset; historical evidence is unchanged",
+  "historicalIndexes": [
+    {
+      "file": "training/checkpoints/retained-models-20260908.json",
+      "pathScope": "repository_relative",
+      "sizeBytes": 62142,
+      "sha256": "29890d735d734184135c6e725a5065e46c67c827678bf66cb04534e9c53843ed"
+    },
+    {
+      "file": "training/checkpoints/retained-models-20260910.json",
+      "pathScope": "repository_relative",
+      "sizeBytes": 15954,
+      "sha256": "d5a047af1bf2775522b50bfc32b65b8a3ff7dfaa828f94801274590b1dd47731"
+    },
+    {
+      "file": "training/checkpoints/retained-models.json",
+      "pathScope": "repository_relative",
+      "sizeBytes": 8018,
+      "sha256": "39e248ad1f697fde2f856467f5f26b6a22cb2781927c0a00a9c722c738120411"
+    },
+    {
+      "file": "training/checkpoints/retained-runtime-20260909.json",
+      "pathScope": "repository_relative",
+      "sizeBytes": 3201,
+      "sha256": "2388cbd7655a7bf42a000e576db5aa53221eb5df23c65747876dfdcca0b50fe5"
+    }
+  ],
+  "candidate": {
+    "status": "experimental_retained_not_promoted",
+    "targetOverallExactAccuracy": 0.8,
+    "targetMet": true,
+    "actualOverallExactAccuracy": 0.876,
+    "physicalCameraValidated": false,
+    "precision95Met": false,
+    "invalidRejectionMet": true,
+    "artifacts": [
+      {
+        "file": "training/checkpoints/braille-word-reader-id-v5/best-word.keras",
+        "pathScope": "repository_relative",
+        "sizeBytes": 4120098,
+        "sha256": "ac9e30cd27cb22ca4f97db42637d3a9e2a27ed47d13a962a661c3bb01c0e66bb"
+      },
+      {
+        "file": "training/checkpoints/braille-word-reader-id-v5/inference-policy.json",
+        "pathScope": "repository_relative",
+        "sizeBytes": 3563,
+        "sha256": "826fd90fa31fd5038457f8e48b9fd4f97ade6cea4ff67d98f0c63cec87f32466"
+      },
+      {
+        "file": "training/checkpoints/braille-word-reader-id-v5/qualification.json",
+        "pathScope": "repository_relative",
+        "sizeBytes": 17031,
+        "sha256": "bc42d9467123863c1924a5f61b296bad20571cce4673c3923d4241cadc990e80"
+      },
+      {
+        "file": "training/checkpoints/braille-word-reader-id-v5/RETENTION-COPY.json",
+        "pathScope": "repository_relative",
+        "sizeBytes": 1251,
+        "sha256": "113267d5a458a5a409575b653f7eebae13b05434b699897c4ba96069a9ecd659"
+      },
+      {
+        "file": "training/checkpoints/braille-word-reader-id-v5/word-reader.tflite",
+        "pathScope": "repository_relative",
+        "sizeBytes": 3239392,
+        "sha256": "6847c91fe186169ba5208a7444f9c8bedc753228bc42b78c691471a85453a6cb"
+      }
+    ]
+  },
+  "evidence": {
+    "directory": "training/evidence/braille-word-reader-id-v5-20260911",
+    "pathScope": "repository_relative",
+    "preserveEntireDirectory": true,
+    "files": [
+      {
+        "file": "training/evidence/braille-word-reader-id-v5-20260911/checkpoint-selection.json",
+        "pathScope": "repository_relative",
+        "sizeBytes": 892,
+        "sha256": "3e8719b9fdfa48f91ee098524ae62498924c0b6b72872e51d9293d9ad8d33489"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v5-20260911/confirm-torch-started.json",
+        "pathScope": "repository_relative",
+        "sizeBytes": 448,
+        "sha256": "5f452ea1889b19762c0fd765e55881e96852a7a9f8513a1c2646ab9c74ac05dd"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v5-20260911/corpus-audit.json",
+        "pathScope": "repository_relative",
+        "sizeBytes": 20185,
+        "sha256": "5c9eae2557d63c8bf88e434753a6231f01561a95e0552bfb0cc03680b085d4c9"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v5-20260911/EVIDENCE-COPIES.json",
+        "pathScope": "repository_relative",
+        "sizeBytes": 428670,
+        "sha256": "a12e989e4a6c00ffae88eb671ad446d31d15099a1efb05e4aa74e0632df478cd"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v5-20260911/EXPERIMENT-INVENTORY.json",
+        "pathScope": "repository_relative",
+        "sizeBytes": 321295,
+        "sha256": "a4056bf066337515f26d0ba928fc608d4092316ebf91f3713b7106404674fcb9"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v5-20260911/export-parity-original-failed.json",
+        "pathScope": "repository_relative",
+        "sizeBytes": 91083,
+        "sha256": "7dc789a5d3c56e27e892b98995937579cafb2195a5823d4cf6f154b0677fb617"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v5-20260911/export-parity.json",
+        "pathScope": "repository_relative",
+        "sizeBytes": 94468,
+        "sha256": "ad9a90c06e47db459c9d4aa907d2940eeacc2ab45efe0f0f328a3615e20bd2e0"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v5-20260911/final-method-selection.json",
+        "pathScope": "repository_relative",
+        "sizeBytes": 371759,
+        "sha256": "d7f900120359d1dcd32c8e3bd586663439a9bd31a776630571fbcef0c50ef9c4"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v5-20260911/final-test-evaluation.json",
+        "pathScope": "repository_relative",
+        "sizeBytes": 843422,
+        "sha256": "1afa4f10b013c93e48927d4c23e6cb04f3015c12f2699253152fb5f9bd9685f3"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v5-20260911/final-test-torch-confirmation.json",
+        "pathScope": "repository_relative",
+        "sizeBytes": 843754,
+        "sha256": "91be170361249bd55eb5b381f3adda04169da47122a968108355881b15b039da"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v5-20260911/historical-regression.json",
+        "pathScope": "repository_relative",
+        "sizeBytes": 1022934,
+        "sha256": "b76ecb48410d028e937fbfcc799f8b4723dcefc0384d6bf68d282cafef4359a1"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v5-20260911/package_final_v5.py",
+        "pathScope": "repository_relative",
+        "sizeBytes": 28451,
+        "sha256": "8a9b32eb68631367732cc491e82507fc9199175034b7626855d4379095195e66"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v5-20260911/primary-tflite-started.json",
+        "pathScope": "repository_relative",
+        "sizeBytes": 449,
+        "sha256": "f1cdb3a0c41b27e2532b8efaee652e281cc1a302931627d5301da16058569d13"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v5-20260911/protocol.json",
+        "pathScope": "repository_relative",
+        "sizeBytes": 5593,
+        "sha256": "4cd315a8d40af73bb7a00abcc90c8e021105e587c119f901f54165004dd318ab"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v5-20260911/regression-tflite-started.json",
+        "pathScope": "repository_relative",
+        "sizeBytes": 452,
+        "sha256": "d05c6893da2ad02994a5b2196b51479a1aff139c3dec8182f0dc872834dced33"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v5-20260911/REPORT.md",
+        "pathScope": "repository_relative",
+        "sizeBytes": 2725,
+        "sha256": "8318b7641484062d3accabd9f725a8b87b08babc110debdfc8f3b7b4c22460f1"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v5-20260911/review_export_float32.py",
+        "pathScope": "repository_relative",
+        "sizeBytes": 7644,
+        "sha256": "5ee3b63b17bb69cfa5d2340b25604c31091e7e6e0a3a8e52eb9733ff52f65c0d"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v5-20260911/source/benchmark_angelina.py",
+        "pathScope": "repository_relative",
+        "sizeBytes": 26141,
+        "sha256": "88f850d670225cbeba8f1228ab62fcbe0184c68d48cbffb71a0233deff0ad064"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v5-20260911/source/train_angelina_candidate.py",
+        "pathScope": "repository_relative",
+        "sizeBytes": 13454,
+        "sha256": "2721f858694e4d91303ee433a802be163312dad6828abd4820b8bef6311e9886"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v5-20260911/source/verify_keras_tflite_parity.py",
+        "pathScope": "repository_relative",
+        "sizeBytes": 5336,
+        "sha256": "b1f3cbcab7fa391609e0f12b4b2b1993b062ace461ab61accaf770dbf5b1648b"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v5-20260911/source/word_anchor_zoom.py",
+        "pathScope": "repository_relative",
+        "sizeBytes": 2830,
+        "sha256": "d6f5337d08368b8da55948f314bd06af7b03fa1602e40240778a9b4edea26377"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v5-20260911/source/word_batchnorm.py",
+        "pathScope": "repository_relative",
+        "sizeBytes": 6417,
+        "sha256": "724e63e719f088828ce943d37c7bc3d4ddeb455ca89a1afafc7216f7228d5139"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v5-20260911/source/word_benchmark.py",
+        "pathScope": "repository_relative",
+        "sizeBytes": 8539,
+        "sha256": "aca8bc904f58c6301c456a2b9017df01e17d3609fa00ae2e0ecb7f77ee1f554e"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v5-20260911/source/word_bn_affine.py",
+        "pathScope": "repository_relative",
+        "sizeBytes": 5135,
+        "sha256": "fa117f65beda3f6d159f707a5cd45d3a367b8f5b436b8c43c0d7621071297dff"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v5-20260911/source/word_bn_affine_init.py",
+        "pathScope": "repository_relative",
+        "sizeBytes": 9683,
+        "sha256": "ea76999d35a6e9ba94cffce06c359adb1201cb396b54345668b7ed13afe99ce1"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v5-20260911/source/word_bn_affine_parity.py",
+        "pathScope": "repository_relative",
+        "sizeBytes": 14737,
+        "sha256": "d4baba52b0993240e0b5092500ae32ee5d1b01e636d2546261a0a24996bd4a21"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v5-20260911/source/word_cell_refiner_v4.py",
+        "pathScope": "repository_relative",
+        "sizeBytes": 23638,
+        "sha256": "bb150f9d97f9ac3760b72dc495bc8d6fe5ba3f22ab97bb86f3a5f2b06d58df34"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v5-20260911/source/word_cell_refiner_v4_export.py",
+        "pathScope": "repository_relative",
+        "sizeBytes": 9478,
+        "sha256": "0ff54d45edecc5247c93756740d7dfaea926a3c12f503f8a6bf07ba569d7cace"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v5-20260911/source/word_clip_analysis.py",
+        "pathScope": "repository_relative",
+        "sizeBytes": 6381,
+        "sha256": "5f1ccc23e3a5aa0683c61b98ebda826b02e46a4593233af85132b930f55c11c9"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v5-20260911/source/word_cover_training.py",
+        "pathScope": "repository_relative",
+        "sizeBytes": 8048,
+        "sha256": "ea2ac0a4dcdc193a6edc0a4f4b0ddd51a7fd33106a505d16f13c79e1f6c55a27"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v5-20260911/source/word_data.py",
+        "pathScope": "repository_relative",
+        "sizeBytes": 27515,
+        "sha256": "d692b4b28620af7e4b40ebdedccda68769feb8d3f51bd1508e807487fd32b7d7"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v5-20260911/source/word_decode.py",
+        "pathScope": "repository_relative",
+        "sizeBytes": 7553,
+        "sha256": "20fb305b3fbcad7595129b17ff9f4875fbb52445409a498f917fc239b7b3c606"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v5-20260911/source/word_decode_id_v4.py",
+        "pathScope": "repository_relative",
+        "sizeBytes": 6179,
+        "sha256": "e7a52d92c4c1bd8266ef95575d939fb0a96f9eacefe237a23c66f36cfd7d7868"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v5-20260911/source/word_diagnostics.py",
+        "pathScope": "repository_relative",
+        "sizeBytes": 4721,
+        "sha256": "dda4828a297c173ec769660882909ec01f1c7850b97b9aea73a5c420c456a82f"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v5-20260911/source/word_dot_aux.py",
+        "pathScope": "repository_relative",
+        "sizeBytes": 2876,
+        "sha256": "c858dc8bb90bfacab8d50d80edd7d9e4ac497990097815e090759ef8eace513e"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v5-20260911/source/word_dot_aux_targets.py",
+        "pathScope": "repository_relative",
+        "sizeBytes": 2644,
+        "sha256": "48bd3db197dffd1c3004f4c14ce2c6137ce95cc72386cf2199ac791e04fd9a92"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v5-20260911/source/word_dsbi.py",
+        "pathScope": "repository_relative",
+        "sizeBytes": 7331,
+        "sha256": "feecf16dba6d376415e15707c02c8f05fcf6650055da09ad9f4712099e6325ff"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v5-20260911/source/word_dsbi_prepare.py",
+        "pathScope": "repository_relative",
+        "sizeBytes": 15835,
+        "sha256": "54fe00edff055c2f826e9c8230599309eeb6c48d20358e947c0156886d55c4fa"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v5-20260911/source/word_export.py",
+        "pathScope": "repository_relative",
+        "sizeBytes": 8539,
+        "sha256": "fdaea2e145d73503eb23a64ed9b8c1c45ac227f144abebe3da9dc6cce2588357"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v5-20260911/source/word_failure_analysis.py",
+        "pathScope": "repository_relative",
+        "sizeBytes": 6660,
+        "sha256": "8d79ae5e24c2df018b13b9577534e01851960b63c638cc9becd5520ebcf458aa"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v5-20260911/source/word_fine_branch.py",
+        "pathScope": "repository_relative",
+        "sizeBytes": 5665,
+        "sha256": "53bff984c33a20556721328e6253fadd060019573b068deee2a671d08a530750"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v5-20260911/source/word_fine_init.py",
+        "pathScope": "repository_relative",
+        "sizeBytes": 8595,
+        "sha256": "3baa5f15b2b4b74ea120dd8150ad3b8a11f59139ad3eb833d3b2089e188d1310"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v5-20260911/source/word_fine_parity.py",
+        "pathScope": "repository_relative",
+        "sizeBytes": 9651,
+        "sha256": "de30cf4b3df1d8ec4bf820f6e1d98c8e40a39eb674a9ce470a3067569f3a8cbe"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v5-20260911/source/word_fine_validation.py",
+        "pathScope": "repository_relative",
+        "sizeBytes": 10070,
+        "sha256": "b075760aee90afa17a84c0e8ec3a421132e0644130929f8f7a85b54b11058124"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v5-20260911/source/word_fixture.py",
+        "pathScope": "repository_relative",
+        "sizeBytes": 9310,
+        "sha256": "4dccbd23e2e4001742b1440b9c52c69981e6b67de13bb2c6c5a65cfad5457b85"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v5-20260911/source/word_geometry_head.py",
+        "pathScope": "repository_relative",
+        "sizeBytes": 5857,
+        "sha256": "f46c8f90e7f4fc9404eed2dc27fbde6e5c823d25d4f88e4127c7e56ed6e8764e"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v5-20260911/source/word_geometry_init.py",
+        "pathScope": "repository_relative",
+        "sizeBytes": 7916,
+        "sha256": "072379a1ef409d901c2478135174561c14781560cdd56a0b91b0229b8032e15e"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v5-20260911/source/word_geometry_parity.py",
+        "pathScope": "repository_relative",
+        "sizeBytes": 6018,
+        "sha256": "700d9175dc627fb7bf12c0ac20f640191cf5a045e29067c310f5dad5f3bd6f0b"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v5-20260911/source/word_held_errors.py",
+        "pathScope": "repository_relative",
+        "sizeBytes": 5904,
+        "sha256": "956218d8b13214f3724b9d8445e36ae8a8c9c082fbd72b5013264b2e7b9e0afa"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v5-20260911/source/word_horizontal_aspect.py",
+        "pathScope": "repository_relative",
+        "sizeBytes": 940,
+        "sha256": "3ea4fa7d625c91d15c28e157d1bfc675eb72f980571f95631060a82b81494d5a"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v5-20260911/source/word_model.py",
+        "pathScope": "repository_relative",
+        "sizeBytes": 5890,
+        "sha256": "c446732a2905a612cd6f1dd64d2d3d01303b1c71933c34552d26f3b5052fd551"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v5-20260911/source/word_normalization_transition.py",
+        "pathScope": "repository_relative",
+        "sizeBytes": 7601,
+        "sha256": "7f825809cf7b97043015d4a63c06b3be16aa6d236cf0afdbf8e0cf8d8330c5f6"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v5-20260911/source/word_overall_v5_average.py",
+        "pathScope": "repository_relative",
+        "sizeBytes": 12569,
+        "sha256": "179896cb154025b9546b7d71779374febd8833ce3e58e4be40bfae0028ae1eba"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v5-20260911/source/word_overall_v5_evaluate.py",
+        "pathScope": "repository_relative",
+        "sizeBytes": 29675,
+        "sha256": "a686fe40e0c8a3119ca22b1c6ea0498a85d7a505cde00442e3119def8a721238"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v5-20260911/source/word_overall_v5_export.py",
+        "pathScope": "repository_relative",
+        "sizeBytes": 13952,
+        "sha256": "4818570f5a3c99132b9f8dc43ce28c74666704286322f72e73ee753192a3da01"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v5-20260911/source/word_overall_v5_prepare.py",
+        "pathScope": "repository_relative",
+        "sizeBytes": 18523,
+        "sha256": "345ea0c723c9a785cca7b76bf23d31b9f220eb0c2f188d75a15bab3e6e92c8cd"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v5-20260911/source/word_overall_v5_protocol.py",
+        "pathScope": "repository_relative",
+        "sizeBytes": 13745,
+        "sha256": "b33b2ffe18381e587cc8ab92c64a059517dc5dd7faf775422279ad995ce9f3b8"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v5-20260911/source/word_overall_v5_runtime.py",
+        "pathScope": "repository_relative",
+        "sizeBytes": 705,
+        "sha256": "14975648e05fa638c2755e92250b6912cc24b67785b5c5bb71988667c743c31b"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v5-20260911/source/word_overall_v5_train.py",
+        "pathScope": "repository_relative",
+        "sizeBytes": 21101,
+        "sha256": "3844024fb165703ec2bf089904aac18b9547526ec78578c584ba86e937a06cdf"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v5-20260911/source/word_overall_v5_tta.py",
+        "pathScope": "repository_relative",
+        "sizeBytes": 21093,
+        "sha256": "cac081991e66b6e984dd197eda236d87c22c4ca009f0ff8492e52d2610f06eb2"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v5-20260911/source/word_overall_v5_zoom.py",
+        "pathScope": "repository_relative",
+        "sizeBytes": 18859,
+        "sha256": "3ac2608f3e1a29943301148120d99d76e829b0c65e571bde61cbae428835afa4"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v5-20260911/source/word_point_geometry.py",
+        "pathScope": "repository_relative",
+        "sizeBytes": 8361,
+        "sha256": "2b932b320d191277b86ae13daecb82b5abbf0a46e9464d7360ee1e941aca760b"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v5-20260911/source/word_point_metadata.py",
+        "pathScope": "repository_relative",
+        "sizeBytes": 5280,
+        "sha256": "de1cad0157e744f2f646010eac5355b88d1d11f52662d4b9353166661f59049f"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v5-20260911/source/word_predict.py",
+        "pathScope": "repository_relative",
+        "sizeBytes": 2256,
+        "sha256": "6795f65d1875e86e8ae94a32c74a7596a65fe35f1a21c49e1b36fb8d103eb67b"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v5-20260911/source/word_rejection_audit.py",
+        "pathScope": "repository_relative",
+        "sizeBytes": 8156,
+        "sha256": "72a414084d2154a245432080ea2a29b44339291debb3efaee43da06244ea09d3"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v5-20260911/source/word_rejection_fixtures.py",
+        "pathScope": "repository_relative",
+        "sizeBytes": 15066,
+        "sha256": "f933501b93e2a65c7f71aa889016e48930bfe87bc26551d55cd416d34749b205"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v5-20260911/source/word_repetition_fixtures.py",
+        "pathScope": "repository_relative",
+        "sizeBytes": 11687,
+        "sha256": "45bfdc818cf542e0667b4a171918421095638be0bdd1c07c16118f737d49ad4e"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v5-20260911/source/word_report.py",
+        "pathScope": "repository_relative",
+        "sizeBytes": 25722,
+        "sha256": "071db54a223840f212146bc553df86f63a425c59e16e30c1ac403d365fb1b8c2"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v5-20260911/source/word_review.py",
+        "pathScope": "repository_relative",
+        "sizeBytes": 2477,
+        "sha256": "bb51483fdfda0d3f2ca78bfe5075006b04db2d98b3f1082c0274ff98226c10ec"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v5-20260911/source/word_sampling.py",
+        "pathScope": "repository_relative",
+        "sizeBytes": 4164,
+        "sha256": "c234523277dba683e68a2863e14736bc68432da3b6ca65bb5d8a64bc7d9dc0fe"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v5-20260911/source/word_sampling_audit.py",
+        "pathScope": "repository_relative",
+        "sizeBytes": 13455,
+        "sha256": "f9045e770865279f89942e8ccf2c97f9e35b68a4e91797e12a4e48b25de61537"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v5-20260911/source/word_select.py",
+        "pathScope": "repository_relative",
+        "sizeBytes": 9065,
+        "sha256": "d3b3664d9300adb201293d1109a39f96fdc829d9f3adbd6c46b1d6874a835a4d"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v5-20260911/source/word_sources.py",
+        "pathScope": "repository_relative",
+        "sizeBytes": 8105,
+        "sha256": "affb3488d8c25e3d0131eb4340cae29fcece563ac75373e071f97fef68f09acd"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v5-20260911/source/word_stress_validation.py",
+        "pathScope": "repository_relative",
+        "sizeBytes": 4679,
+        "sha256": "fb3c8cf45232a7b5224f3debf6cbbd2136ead129675553ab7c328c89ec452c82"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v5-20260911/source/word_symbol_deployment_baseline.py",
+        "pathScope": "repository_relative",
+        "sizeBytes": 5036,
+        "sha256": "4b24ce738d93d345d6afdc8af320ae7ac7418435b4da282647d5cd4cdbd94501"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v5-20260911/source/word_symbol_deployment_evidence.py",
+        "pathScope": "repository_relative",
+        "sizeBytes": 12317,
+        "sha256": "5b12e8cf0117cabf084bff0e2f796c7108d5c8284d307ba02e847a3e857af098"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v5-20260911/source/word_symbol_evidence.py",
+        "pathScope": "repository_relative",
+        "sizeBytes": 5003,
+        "sha256": "2212533af9a76e9432f4f7abe62bb58225478450e48839a35135d14e9f245774"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v5-20260911/source/word_symbol_prepare.py",
+        "pathScope": "repository_relative",
+        "sizeBytes": 10926,
+        "sha256": "2deb5a9993f1d1de1c54588c28db650a3101e37840b6103c472ddfcdba63e538"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v5-20260911/source/word_symbol_replay.py",
+        "pathScope": "repository_relative",
+        "sizeBytes": 5335,
+        "sha256": "7bba7fae06021ff8a0bd0275075e6428798ef9fad1930a1a0f998df59560bdf3"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v5-20260911/source/word_symbol_train.py",
+        "pathScope": "repository_relative",
+        "sizeBytes": 13935,
+        "sha256": "918d3673c46a37ddb2b30cad62262e9c7ff9a5e7e35166a84e14edb9b12fda6b"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v5-20260911/source/word_symbol_v4_export.py",
+        "pathScope": "repository_relative",
+        "sizeBytes": 16292,
+        "sha256": "adb9fc6cea75bd11ca4046eb4cdc96e1d0e6072b57381cc6a2c6fa1cfa756360"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v5-20260911/source/word_symbol_v4_loss.py",
+        "pathScope": "repository_relative",
+        "sizeBytes": 3362,
+        "sha256": "e0d9b3bd540dcdc3dfbfb911094671530f2678f751db566896db8c4eb896cee1"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v5-20260911/source/word_symbol_v4_mine.py",
+        "pathScope": "repository_relative",
+        "sizeBytes": 9460,
+        "sha256": "9ccd54e88745d896bb771c42cd33da587d000c22641fda1a8f1615b6e6ea9649"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v5-20260911/source/word_symbol_v4_prepare.py",
+        "pathScope": "repository_relative",
+        "sizeBytes": 19746,
+        "sha256": "95bca856142261b09b8390e7507ff250234e49d553ab3ae560f86949c367c83b"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v5-20260911/source/word_symbol_v4_regression.py",
+        "pathScope": "repository_relative",
+        "sizeBytes": 14003,
+        "sha256": "6a4ceb1024738aee7dbe2e740566fcac2de50df6c88b2c0f54fa5929374324bc"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v5-20260911/source/word_symbol_v4_test_artifacts.py",
+        "pathScope": "repository_relative",
+        "sizeBytes": 16188,
+        "sha256": "d79abfbc0d527e71d403423eab1ee32289b56c6188ee36d8211419c329b60aa1"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v5-20260911/source/word_symbol_v4_train.py",
+        "pathScope": "repository_relative",
+        "sizeBytes": 29534,
+        "sha256": "d655112cf33c4fe39294773ae660c66d6a06c797fa4ca6657ad3d7fd08866384"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v5-20260911/source/word_symbols.py",
+        "pathScope": "repository_relative",
+        "sizeBytes": 2446,
+        "sha256": "9e43dc9484f035ba3bbfcb49344050714dfd1c636d107b92cb2ce1faded29ba3"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v5-20260911/source/word_symbols_id_v4.py",
+        "pathScope": "repository_relative",
+        "sizeBytes": 6063,
+        "sha256": "0b85da03fa8d3b921fea444adf6a68ba95b56fda76db710b9edc5f6b8a9937b9"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v5-20260911/source/word_tail.py",
+        "pathScope": "repository_relative",
+        "sizeBytes": 8506,
+        "sha256": "bdd4b5d12d56e25c1100a282483e7a31176b5a65beb353a0623ceea40a49dc0e"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v5-20260911/source/word_torch_port.py",
+        "pathScope": "repository_relative",
+        "sizeBytes": 17137,
+        "sha256": "6bb8812dbdfbf517bbb3367fac3f5357f69f03b7a190e7575c2ce12b21f0f329"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v5-20260911/source/word_train.py",
+        "pathScope": "repository_relative",
+        "sizeBytes": 54049,
+        "sha256": "60ca41ffebcea96567bad08859627664de1c98bce3c41a486e7280c842861e74"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v5-20260911/source/word_training_context_audit.py",
+        "pathScope": "repository_relative",
+        "sizeBytes": 7619,
+        "sha256": "8634e8548386ba5e7135999cda8492f968cf9ab93799c513e45466b03d01fc5e"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v5-20260911/source/word_unique_cell_coverage.py",
+        "pathScope": "repository_relative",
+        "sizeBytes": 12542,
+        "sha256": "ff075223095cb0394a452749432f753a1558534a7dc052d97913a8b325d8fe80"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v5-20260911/source/word_vertical_stretch.py",
+        "pathScope": "repository_relative",
+        "sizeBytes": 1108,
+        "sha256": "336168fbfe4441bfa91e0855f473997a403a542a2b64789ca7cbd1b11b188ed5"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v5-20260911/source/word_visibility_audit.py",
+        "pathScope": "repository_relative",
+        "sizeBytes": 6053,
+        "sha256": "723924cb3fddbf3fc3b01bdf833ee74603dd07249c1fdb851b99d6aac59866b2"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v5-20260911/source/word_wrap_normalization.py",
+        "pathScope": "repository_relative",
+        "sizeBytes": 2550,
+        "sha256": "3280f969f17b783d194690c657b314cd7a0c4022087000ef6e2a60edeef040c6"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v5-20260911/source-separation-audit.json",
+        "pathScope": "repository_relative",
+        "sizeBytes": 3425,
+        "sha256": "4bbc6f15836a4f9da39e2baf2d8b140bf5ee07c8050f5ba14f708a11144b22e3"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v5-20260911/test-evaluation-reservation.json",
+        "pathScope": "repository_relative",
+        "sizeBytes": 498,
+        "sha256": "290f9fefba7d756e36aa4129032f1108485f649b584fb67eed256d88c541e5e4"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v5-20260911/test-source-reservation.json",
+        "pathScope": "repository_relative",
+        "sizeBytes": 14836,
+        "sha256": "eea95fd613b1e2f9390439027a65842efa36f36cbbff8ed6d344b905b2e325eb"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v5-20260911/training-config.json",
+        "pathScope": "repository_relative",
+        "sizeBytes": 119155,
+        "sha256": "4b46492f3bea5f13fe3baa30184691049388c0d7bef259c18f99038c140402d5"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v5-20260911/tta-validation.json",
+        "pathScope": "repository_relative",
+        "sizeBytes": 748741,
+        "sha256": "6d41c93985926e1f31c8409b5e21a51624a7626b92f1b146176e78dd5bfbffa0"
+      },
+      {
+        "file": "training/evidence/braille-word-reader-id-v5-20260911/tta-validation.plan.json",
+        "pathScope": "repository_relative",
+        "sizeBytes": 7477,
+        "sha256": "38a9e678fe4f71047086697a4e12e28184a89c1bc433870086abc9f18c194043"
+      }
+    ]
+  },
+  "experiment": {
+    "directory": "C:\\bm-symbols-20260908\\overall80-20260911",
+    "pathScope": "absolute",
+    "preserveEntireDirectory": true,
+    "inventory": {
+      "file": "training/evidence/braille-word-reader-id-v5-20260911/EXPERIMENT-INVENTORY.json",
+      "pathScope": "repository_relative",
+      "sizeBytes": 321295,
+      "sha256": "a4056bf066337515f26d0ba928fc608d4092316ebf91f3713b7106404674fcb9"
+    }
+  },
+  "protectedBefore": {
+    "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\training\\checkpoints\\retained-models-20260908.json": "29890d735d734184135c6e725a5065e46c67c827678bf66cb04534e9c53843ed",
+    "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\training\\checkpoints\\retained-models-20260910.json": "d5a047af1bf2775522b50bfc32b65b8a3ff7dfaa828f94801274590b1dd47731",
+    "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\training\\checkpoints\\retained-models.json": "39e248ad1f697fde2f856467f5f26b6a22cb2781927c0a00a9c722c738120411",
+    "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\training\\checkpoints\\retained-runtime-20260909.json": "2388cbd7655a7bf42a000e576db5aa53221eb5df23c65747876dfdcca0b50fe5",
+    "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\assets\\models\\braille-cell-classifier-v1\\braille_model.tflite": "9e07b5c56e2e4107a116370c6f0a2203ec83afe4b2e42d099b1780e75e72d7dc",
+    "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\assets\\models\\braille-cell-classifier-v1\\label.json": "d5cc50edf38a77014015627e64ddac8dece4ccfc1e4b3c54af64d4828552a25f",
+    "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\assets\\models\\braille-cell-classifier-v1\\manifest.json": "c457ce6c61c28f70b29f037b6388c3104784007a07e209fa8f7d07d040fce970",
+    "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\assets\\models\\braille-cell-classifier-v2\\braille_model.tflite": "7a41942cf330c9558884385221deb69f282adfd8d39be00a257c75ec9572c318",
+    "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\assets\\models\\braille-cell-classifier-v2\\label.json": "d5cc50edf38a77014015627e64ddac8dece4ccfc1e4b3c54af64d4828552a25f",
+    "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\assets\\models\\braille-cell-classifier-v2\\manifest.json": "237481a32c3cd709b6038ef2007d882a1536240c22de80c2994abcef1de86d4b",
+    "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\assets\\models\\braille-cell-classifier-v2\\native-self-test-v.png": "08e20f52ef72517734e5595e9fd8b2222467a3248bf6c9f477ce564817b76901",
+    "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\assets\\models\\braille-word-reader-v1\\manifest.json": "419f459f01970a56e745cbdaecd00b505daf5a46c534822febff7e91155e50da",
+    "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\assets\\models\\braille-word-reader-v1\\native-word-fixture.png": "5115a112aad01432f4ebdfa22d8dcb686f1330075d5030bc5c039c154dc4d164",
+    "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\assets\\models\\braille-word-reader-v1\\word-reader.tflite": "406db0e55e8a5ba9e0d00fb22aadc24f19698219f375e4dcead9057cf3bf2230"
+  },
+  "trainingImagesCopied": 0,
+  "cacheFilesCopied": 0,
+  "buildFoldersCreated": 0,
+  "deployedAssetsChanged": false
+}

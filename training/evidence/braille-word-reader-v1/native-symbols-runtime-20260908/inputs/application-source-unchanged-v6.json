@@ -1,0 +1,152 @@
+{
+  "schema_version": 1,
+  "observed_utc": "2026-09-08T17:43:08.125573+00:00",
+  "v6_binding": {
+    "file": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\output\\stage-source-binding-v6.json",
+    "sha256": "fcd80da212e74209334e55c791df6d4de3b6d7dd199a4957bc958334ce65a357",
+    "bytes": 48146
+  },
+  "scope": "Companion audit for host-only collector changes after APK v6. No ADB, app/source mutation or APK rebuild was performed; only this output report was written.",
+  "baseline_selected_count": 227,
+  "current_selected_count": 227,
+  "added_selected_paths": [],
+  "removed_selected_paths": [],
+  "unchanged_selected_count": 224,
+  "changed_paths": [
+    {
+      "path": "scripts/word-android-smoke/collect_runtime.py",
+      "v6_build_sha256": "8bf61a4ce53da8249f6b62dd0fd6d497285f41f855d79176bdcc07e3d293715b",
+      "current_sha256": "b752b24c02523596a54d95bb5b684d5bbdd93dddf29e4fb96f779bb4567d0a3c",
+      "kind": "host_measurement_script",
+      "included_in_metro_source_map": false,
+      "matches_gradle_bundle_source_extensions": false,
+      "included_in_apk_archive_by_path": false
+    },
+    {
+      "path": "scripts/word-android-smoke/test_collect_runtime.py",
+      "v6_build_sha256": "de5ab1ec856fb2725add10e4be53a3aa00ed6309711df005f8500a88da768712",
+      "current_sha256": "5e26d375c67f5b5e83feaa02349b2cbb794b0b65c83b80bb41989947510ffd6a",
+      "kind": "host_measurement_test",
+      "included_in_metro_source_map": false,
+      "matches_gradle_bundle_source_extensions": false,
+      "included_in_apk_archive_by_path": false
+    },
+    {
+      "path": "scripts/word-android-smoke/README.md",
+      "v6_build_sha256": "938552016e7c8bb3321182fba5c478cbd5b901aad14c1afe6dcfc78bcd7de068",
+      "current_sha256": "ac25b20e1d7ed845a5796b1e162329ed5ed3d7dd26cc81122892c26589220917",
+      "kind": "host_helper_readme",
+      "included_in_metro_source_map": false,
+      "matches_gradle_bundle_source_extensions": false,
+      "included_in_apk_archive_by_path": false
+    }
+  ],
+  "stage_changes_since_v6": [],
+  "metro": {
+    "source_map": {
+      "file": "C:\\bm-symbols-apk-20260908\\android\\app\\build\\generated\\sourcemaps\\react\\release\\index.android.bundle.map",
+      "sha256": "65f2c12e2e057ad5df402b469caeb0901b54f782a07fc25347ead351fa7178dd",
+      "bytes": 7703538
+    },
+    "source_count": 1431,
+    "runtime_tracker_present": true,
+    "host_helper_paths_present": [],
+    "stage_hermes_bundle": {
+      "file": "C:\\bm-symbols-apk-20260908\\android\\app\\build\\generated\\assets\\react\\release\\index.android.bundle",
+      "sha256": "c3c53b84e0b5f75d7e5978ee3bcc284b19b55a6ff1edf1e88c52a8db614686b0",
+      "bytes": 2628356
+    },
+    "stage_bundle_matches_v6_binding": true,
+    "stage_bundle_matches_apk_member": true
+  },
+  "gradle_bundle_inputs": {
+    "installed_task_source": {
+      "file": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\node_modules\\@react-native\\gradle-plugin\\react-native-gradle-plugin\\src\\main\\kotlin\\com\\facebook\\react\\tasks\\BundleHermesCTask.kt",
+      "sha256": "96d3095eb67ff73b709c8a0af672a0312ef727d78c9df0f871a2a2d5ce0436ff",
+      "bytes": 6988
+    },
+    "source_include_excerpts": [
+      {
+        "line": 38,
+        "text": "fileTree.include(\"**/*.js\")"
+      },
+      {
+        "line": 39,
+        "text": "fileTree.include(\"**/*.jsx\")"
+      },
+      {
+        "line": 40,
+        "text": "fileTree.include(\"**/*.ts\")"
+      },
+      {
+        "line": 41,
+        "text": "fileTree.include(\"**/*.tsx\")"
+      }
+    ],
+    "build_configuration_reference_scan": [
+      {
+        "file": "C:\\bm-symbols-apk-20260908\\android\\app\\build.gradle",
+        "sha256": "f87c5c30b571f4a8732d06d5b12a326138f40a9b4bb3afd2a2ca796064da7611",
+        "bytes": 8196,
+        "host_helper_references": []
+      },
+      {
+        "file": "C:\\bm-symbols-apk-20260908\\android\\build.gradle",
+        "sha256": "bdb916d3fe7085c9e9f3bb45bd5eacb97f5d2c5a2b2af965642f7d904739ca68",
+        "bytes": 556,
+        "host_helper_references": []
+      },
+      {
+        "file": "C:\\bm-symbols-apk-20260908\\android\\settings.gradle",
+        "sha256": "7d7f0279261df414e6b1cfe864413ccdac540bd436583125d1c1f27469965c86",
+        "bytes": 1262,
+        "host_helper_references": []
+      },
+      {
+        "file": "C:\\bm-symbols-apk-20260908\\metro.config.js",
+        "sha256": "61b7ab1d3e01e1bebd9784e22d5172bb31997b7ebb76cd79ef75cde30237d618",
+        "bytes": 230,
+        "host_helper_references": []
+      },
+      {
+        "file": "C:\\bm-symbols-apk-20260908\\app.config.ts",
+        "sha256": "43a0c4acdfab113fbf20f66e7ad75152737013765bc116f83d8d6708f32e363f",
+        "bytes": 1147,
+        "host_helper_references": []
+      },
+      {
+        "file": "C:\\bm-symbols-apk-20260908\\package.json",
+        "sha256": "369008dd6f3ad8fd0d2e4e47e31952732c6d0bb6a0cb90a59c72b04d5188a631",
+        "bytes": 3795,
+        "host_helper_references": []
+      }
+    ]
+  },
+  "apk": {
+    "file": "C:\\bm-symbols-apk-20260908\\android\\app\\build\\outputs\\apk\\release\\app-release.apk",
+    "sha256": "9afa6a1eb2983d0a92b4f1dcff3026f91d583bca02cda6d98cfaf91760a90259",
+    "bytes": 133317765,
+    "matches_v6_binding": true,
+    "recorded_installed_identity": {
+      "file": "C:\\bm-symbols-apk-20260908\\evidence\\apk-integrity-v6\\install.json",
+      "sha256": "6db736203c1094503353c2e23ca678e49f715c02328bf46fb091178db5a7ed28",
+      "fresh_adb_check_performed": false
+    }
+  },
+  "original_source_checks": {
+    "file": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\output\\update-symbols-tracking-20260908\\checks-1788888766290\\checks.json",
+    "sha256": "5ae38504db0539b6ed127e324ea44313137139bd176041fef5924394461e8405",
+    "bytes": 870,
+    "unchanged_from_v6": true,
+    "jest_suites": 38,
+    "jest_tests": 671,
+    "rerun_for_host_only_changes": false
+  },
+  "notes": [
+    "The three changed files are Python host tooling and its README, absent from all 1,431 Metro sources and from Gradle JS/TS bundle source patterns.",
+    "All other 224 selected files, including app/native source, models, package manifests and configuration, retain their v6 hashes.",
+    "The generated Hermes bundle is byte-identical to the bundle inside the current v6 APK. This audit establishes no new model accuracy, physical-camera or runtime-performance claim.",
+    "The complete v6 source binding remains an immutable historical snapshot; this companion enumerates the exact later host-tool differences rather than silently rebinding the APK to changed files."
+  ],
+  "application_source_unchanged": true
+}

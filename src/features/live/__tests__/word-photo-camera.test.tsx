@@ -11,6 +11,7 @@ const mockCapture = jest.fn();
 const mockRecognize = jest.fn();
 const mockGeometry = jest.fn();
 const mockSensorPoint = jest.fn();
+const mockSetTorch = jest.fn();
 let mockCameraProps: Record<string, unknown>;
 let mockOutputOptions: Record<string, unknown>;
 let mockImage: unknown;
@@ -19,6 +20,29 @@ let mockScheduledRuntimes: unknown[] = [];
 let mockAppEnvironment = 'production';
 let mockHasTorch = true;
 const mockOutput = { capturePhoto: mockCapture };
+let mockTrackedBox = { x: 0.275, y: 0.44375, width: 0.45, height: 0.1125 };
+const mockTrackingOutput = {};
+const mockPixelProcessor = { resizePixels: jest.fn() };
+const mockTrackingSnapshot = jest.fn();
+let mockTrackingCurrent = true;
+
+jest.mock('@/features/live/use-word-camera-tracking', () => ({
+  useWordCameraTracking: (options: { active: boolean; onStatus: (status: string) => void }) => {
+    const React = jest.requireActual('react');
+    const callbacks = React.useRef(options);
+    callbacks.current = options;
+    React.useEffect(() => {
+      callbacks.current.onStatus(options.active ? 'ready' : 'searching');
+    }, [options.active]);
+    return {
+      output: mockTrackingOutput,
+      display: { box: mockTrackedBox, boxes: [mockTrackedBox], score: 0.99, complete: true },
+      status: options.active ? 'ready' : 'searching',
+      snapshot: mockTrackingSnapshot,
+      isCurrent: () => mockTrackingCurrent,
+    };
+  },
+}));
 
 jest.mock('@/config/app-environment', () => ({
   get APP_ENVIRONMENT() { return mockAppEnvironment; },
@@ -27,6 +51,7 @@ jest.mock('react-native-vision-camera', () => ({
   Camera: (props: Record<string, unknown>) => {
     mockCameraProps = props;
     (props.ref as { current: unknown }).current = {
+      controller: { setTorchMode: mockSetTorch },
       convertViewPointToCameraPoint: mockSensorPoint,
       preview: { previewOutput: { currentResolution: { width: 1920, height: 1440 } } },
     };
@@ -40,6 +65,7 @@ jest.mock('react-native-vision-camera', () => ({
 }));
 jest.mock('../../../../modules/braille-word-geometry/src', () => ({
   getWordPhotoGeometry: (...args: unknown[]) => mockGeometry(...args),
+  createWordPixelProcessor: () => mockPixelProcessor,
 }));
 jest.mock('react-native-nitro-image', () => ({
   NitroImage: ({ image }: { image: unknown }) => {
@@ -60,7 +86,7 @@ jest.mock('react-native-worklets', () => ({
 }));
 jest.mock('@/ml/word-image-processing', () => ({
   ...jest.requireActual('@/ml/word-image-processing'),
-  recognizeWordImage: (...args: unknown[]) => mockRecognize(...args),
+  recognizeTrackedWordImage: (...args: unknown[]) => mockRecognize(...args),
 }));
 
 function deferred<T>() {
@@ -77,7 +103,7 @@ const rejection = {
   boxes: [],
 };
 
-async function setup(guideAspectRatio = 4) {
+async function setup(_legacyAspectRatio = 4, startPreview = true, torchEnabled = true) {
   const handle = createRef<WordPhotoCameraHandle>();
   const events = jest.fn();
   const release = jest.fn();
@@ -91,12 +117,14 @@ async function setup(guideAspectRatio = 4) {
   const props = {
     active: true,
     sessionId: 'photo-session',
-    torchEnabled: true,
-    guideAspectRatio,
+    torchEnabled,
     cameraRef: handle,
     onEvent: events,
     onAvailability: jest.fn(),
+    onTracking: jest.fn(),
     model: {} as TensorflowModel,
+    trackingModel: {} as TensorflowModel,
+    acquireTrackingModel: () => () => {},
     thresholds: DEFAULT_WORD_MODEL_THRESHOLDS,
     modelVersion: 'word-test',
     acquireModel: acquire,
@@ -106,13 +134,15 @@ async function setup(guideAspectRatio = 4) {
     nativeEvent: { layout: { width: 320, height: 320 } },
   });
   await act(() => (mockCameraProps.onStarted as () => void)());
-  await act(() => (mockCameraProps.onPreviewStarted as () => void)());
+  if (startPreview) await act(() => (mockCameraProps.onPreviewStarted as () => void)());
   return { handle, events, acquire, release, image, photo, view, props };
 }
 
 describe('WordPhotoCamera', () => {
   beforeEach(() => {
+    mockTrackingCurrent = true;
     mockCapture.mockReset();
+    mockSetTorch.mockReset().mockResolvedValue(undefined);
     mockRecognize.mockReset().mockReturnValue(rejection);
     mockSensorPoint.mockReset().mockImplementation((point: { x: number; y: number }) => ({ x: point.x * 4.5, y: point.y * 4.5 + 240 }));
     mockGeometry.mockReset().mockReturnValue({ width: 1440, height: 1920, sensorToBuffer: [1, 0, 0, 0, 1, 0, 0, 0, 1], rotationDegrees: 0, isMirrored: false, cropRect: [0, 0, 1440, 1920] });
@@ -121,8 +151,98 @@ describe('WordPhotoCamera', () => {
     mockScheduledRuntimes = [];
     mockAppEnvironment = 'production';
     mockHasTorch = true;
+    mockTrackedBox = { x: 0.275, y: 0.44375, width: 0.45, height: 0.1125 };
+    mockTrackingSnapshot.mockReset().mockImplementation(() => {
+      const { x, y, width, height } = mockTrackedBox;
+      return { generation: 1, timestampMs: performance.now(), points: [
+        { x, y }, { x: x + width, y },
+        { x: x + width, y: y + height }, { x, y: y + height },
+      ].map((point) => mockSensorPoint({ x: point.x * 320, y: point.y * 320 })) };
+    });
   });
-  afterEach(() => jest.restoreAllMocks());
+  afterEach(() => {
+    jest.restoreAllMocks();
+    jest.useRealTimers();
+  });
+
+  it('does not send torch controls while opening the camera or when the torch starts off', async () => {
+    const test = await setup(4, false, false);
+    expect(mockCameraProps).not.toHaveProperty('torchMode');
+    expect(mockSetTorch).not.toHaveBeenCalled();
+    await act(() => (mockCameraProps.onPreviewStarted as () => void)());
+    expect(mockSetTorch).not.toHaveBeenCalled();
+    expect(test.props.onAvailability).toHaveBeenLastCalledWith(true, true);
+    await test.view.rerender(<WordPhotoCamera {...test.props} torchEnabled />);
+    expect(mockSetTorch).toHaveBeenLastCalledWith('on');
+    await test.view.rerender(<WordPhotoCamera {...test.props} torchEnabled={false} />);
+    expect(mockSetTorch).toHaveBeenLastCalledWith('off');
+  });
+
+  it('keeps preview and capture usable when a phone advertises a torch but rejects the control', async () => {
+    jest.spyOn(console, 'warn').mockImplementation(() => {});
+    mockSetTorch.mockRejectedValue(new Error('Camera is not active'));
+    const test = await setup();
+    expect(test.props.onAvailability).toHaveBeenLastCalledWith(true, false);
+    expect(test.events).not.toHaveBeenCalled();
+    expect(screen.queryByText('Kamera belum dapat digunakan.')).toBeNull();
+    await act(async () => test.handle.current?.capture(1));
+    expect(mockCapture).toHaveBeenCalledTimes(1);
+    expect(mockRecognize).toHaveBeenCalledTimes(1);
+  });
+
+  it('times out a detected camera that never streams and makes retry available', async () => {
+    jest.useFakeTimers();
+    jest.spyOn(console, 'warn').mockImplementation(() => {});
+    const test = await setup(4, false, false);
+    await act(async () => jest.advanceTimersByTime(15_000));
+    expect(test.events).toHaveBeenLastCalledWith(expect.objectContaining({ status: 'error', captureId: 0 }));
+    expect(test.props.onAvailability).toHaveBeenLastCalledWith(false, false);
+    expect(screen.getByText('Kamera belum dapat digunakan.')).toBeOnTheScreen();
+    expect(screen.queryByTestId('word-guide', { includeHiddenElements: true })).toBeNull();
+  });
+
+  it('cancels the startup timeout once preview is streaming', async () => {
+    jest.useFakeTimers();
+    const test = await setup();
+    await act(async () => jest.advanceTimersByTime(20_000));
+    expect(test.events).not.toHaveBeenCalled();
+    expect(test.props.onAvailability).toHaveBeenLastCalledWith(true, true);
+  });
+
+  it('reports a real session failure and a fresh session can open and capture', async () => {
+    const log = jest.spyOn(console, 'warn').mockImplementation(() => {});
+    const first = await setup();
+    await act(() => (mockCameraProps.onError as (error: Error) => void)(new Error('Camera device unavailable')));
+    expect(first.events).toHaveBeenLastCalledWith(expect.objectContaining({ status: 'error', captureId: 0 }));
+    expect(log).toHaveBeenCalledWith('BRAILLE_WORD_CAMERA_ERROR', expect.stringContaining('Camera device unavailable'));
+    await first.view.unmount();
+    const second = await setup();
+    await act(async () => second.handle.current?.capture(1));
+    expect(mockRecognize).toHaveBeenCalledTimes(1);
+  });
+
+  it('ignores a late camera shutdown error after a photo is captured', async () => {
+    const test = await setup();
+    await act(async () => test.handle.current?.capture(1));
+    const count = test.events.mock.calls.length;
+    await act(() => (mockCameraProps.onError as (error: Error) => void)(new Error('Camera is closed')));
+    expect(test.events).toHaveBeenCalledTimes(count);
+    expect(mockImage).toBe(test.image);
+  });
+
+  it('attributes a camera failure during the shutter to the active capture so the screen can retry', async () => {
+    jest.spyOn(console, 'warn').mockImplementation(() => {});
+    const test = await setup();
+    const pending = deferred<typeof test.photo>();
+    mockCapture.mockReturnValue(pending.promise);
+    await act(() => test.handle.current?.capture(7));
+    await act(() => (mockCameraProps.onError as (error: Error) => void)(new Error('Camera disconnected')));
+    expect(test.events).toHaveBeenLastCalledWith(expect.objectContaining({ status: 'error', captureId: 7 }));
+    await test.view.unmount();
+    await act(async () => pending.resolve(test.photo));
+    expect(test.photo.dispose).toHaveBeenCalledTimes(1);
+    expect(mockRecognize).not.toHaveBeenCalled();
+  });
 
   it('keeps a camera without a flash usable without sending unsupported torch commands', async () => {
     mockHasTorch = false;
@@ -139,7 +259,7 @@ describe('WordPhotoCamera', () => {
     mockAppEnvironment = 'preview';
     const test = await setup();
     await act(async () => test.handle.current?.capture(7));
-    expect(log).toHaveBeenCalledTimes(1);
+    expect(log).toHaveBeenCalledTimes(2);
     expect(log.mock.calls[0]?.[0]).toBe('BRAILLE_WORD_CAPTURE_GEOMETRY');
     expect(JSON.parse(log.mock.calls[0]?.[1] as string)).toEqual({
       schemaVersion: 1,
@@ -147,7 +267,6 @@ describe('WordPhotoCamera', () => {
       preview: {
         widthDp: 320, heightDp: 320,
         resolution: { width: 1920, height: 1440 },
-        guide: { x: 0.275, y: 0.44375, width: 0.45, height: 0.1125 },
         sensorPoints: [
           { x: 396, y: 879 }, { x: expect.closeTo(1044), y: 879 },
           { x: expect.closeTo(1044), y: 1041 }, { x: 396, y: 1041 },
@@ -203,8 +322,9 @@ describe('WordPhotoCamera', () => {
         width: expect.closeTo(0.45),
         height: expect.closeTo(0.084375),
       }),
+      mockPixelProcessor,
     );
-    expect(screen.getByTestId('word-guide', { includeHiddenElements: true }).props.style[1]).toMatchObject({ width: expect.closeTo(144), height: 36 });
+    expect(screen.queryByTestId('word-guide', { includeHiddenElements: true })).toBeNull();
     expect(test.events.mock.calls.map(([event]) => event.status)).toEqual([
       'capturing',
       'processing',
@@ -238,14 +358,69 @@ describe('WordPhotoCamera', () => {
     ]);
   });
 
+  it('hides the live rectangle while the still image is being re-localized', async () => {
+    const pending = deferred<unknown>();
+    mockRun = () => pending.promise;
+    const test = await setup();
+    await act(async () => test.handle.current?.capture(1));
+    expect(test.events).toHaveBeenLastCalledWith(expect.objectContaining({ status: 'processing' }));
+    expect(screen.queryByTestId('word-guide', { includeHiddenElements: true })).toBeNull();
+    await act(async () => pending.resolve(rejection));
+    expect(screen.queryByTestId('word-guide', { includeHiddenElements: true })).toBeNull();
+  });
+
+  it('rejects a shutter whose viewport identity changed before the photo arrived', async () => {
+    const test = await setup();
+    const pending = deferred<typeof test.photo>();
+    mockCapture.mockReturnValue(pending.promise);
+    await act(() => test.handle.current?.capture(1));
+    mockTrackingCurrent = false;
+    await act(async () => pending.resolve(test.photo));
+    expect(test.photo.dispose).toHaveBeenCalledTimes(1);
+    expect(test.photo.toImageAsync).not.toHaveBeenCalled();
+    expect(mockRecognize).not.toHaveBeenCalled();
+    expect(test.events).toHaveBeenLastCalledWith(expect.objectContaining({ status: 'error', reason: 'capture_error' }));
+  });
+
+  it('discards inference results when orientation changes during processing', async () => {
+    const pending = deferred<unknown>();
+    mockRun = () => pending.promise;
+    const test = await setup();
+    await act(async () => test.handle.current?.capture(1));
+    mockTrackingCurrent = false;
+    await act(async () => pending.resolve({ ...rejection, text: 'stale' }));
+    expect(test.events).toHaveBeenLastCalledWith(expect.objectContaining({ status: 'error', reason: 'processing_error' }));
+    expect(test.events.mock.calls.some(([event]) => event.text === 'stale')).toBe(false);
+    expect(test.release).toHaveBeenCalledTimes(1);
+  });
+
+  it.each(['capture', 'processing'])('includes %s failures in preview timing without recording scan contents', async (failure) => {
+    mockAppEnvironment = 'preview';
+    const log = jest.spyOn(console, 'info').mockImplementation(() => {});
+    try {
+      const test = await setup();
+      if (failure === 'capture') mockCapture.mockRejectedValue(new Error('private camera detail'));
+      else mockRecognize.mockImplementation(() => { throw new Error('private image detail'); });
+      await act(async () => test.handle.current?.capture(7));
+      const metrics = log.mock.calls.filter(([tag]) => tag === 'BRAILLE_WORD_PHOTO_METRICS');
+      expect(metrics).toHaveLength(1);
+      expect(JSON.parse(metrics[0]![1])).toEqual({
+        schemaVersion: 1, captureId: 7, elapsedMs: expect.any(Number), status: 'error',
+      });
+    } finally {
+      log.mockRestore();
+    }
+  });
+
   it('maps a narrower preview sensor crop and draws the captured guide at that actual photo ROI', async () => {
     const test = await setup();
+    mockRecognize.mockImplementation((_source, _model, _thresholds, roi) => ({ ...rejection, reason: 'low_confidence', boxes: [roi] }));
     mockSensorPoint.mockImplementation((point: { x: number; y: number }) => ({ x: 180 + point.x * 3.375, y: 420 + point.y * 3.375 }));
     await act(async () => test.handle.current?.capture(1));
     expect(mockRecognize.mock.calls[0]?.[3]).toEqual(expect.objectContaining({
       x: expect.closeTo(0.33125), y: expect.closeTo(0.468359375), width: expect.closeTo(0.3375), height: expect.closeTo(0.06328125),
     }));
-    expect(screen.getByTestId('word-guide', { includeHiddenElements: true })).toHaveStyle({ width: 108, height: 27 });
+    expect(screen.getByTestId('word-guide', { includeHiddenElements: true }).props.style[1]).toMatchObject({ width: 108, height: expect.closeTo(27) });
     expect(mockGeometry).toHaveBeenCalledWith(test.photo);
     expect(mockGeometry.mock.invocationCallOrder[0]).toBeLessThan(test.photo.dispose.mock.invocationCallOrder[0]!);
   });
@@ -338,23 +513,22 @@ describe('WordPhotoCamera', () => {
     );
   });
 
-  it('changes guide width before capture and snapshots the selected width while the photo is pending', async () => {
-    const test = await setup(1);
+  it('follows tracked geometry and freezes sensor coordinates while the photo is pending', async () => {
+    mockTrackedBox = { x: 0.44375, y: 0.44375, width: 0.1125, height: 0.1125 };
+    const test = await setup();
     expect(
       screen.getByTestId('word-guide', { includeHiddenElements: true }),
     ).toHaveStyle({ width: 36, height: 36 });
-    await test.view.rerender(
-      <WordPhotoCamera {...test.props} guideAspectRatio={4} />,
-    );
+    mockTrackedBox = { x: 0.275, y: 0.44375, width: 0.45, height: 0.1125 };
+    await test.view.rerender(<WordPhotoCamera {...test.props} onTracking={jest.fn()} />);
     expect(screen.getByTestId('word-guide', { includeHiddenElements: true }).props.style[1]).toMatchObject({ width: expect.closeTo(144), height: 36 });
     const pending = deferred<typeof test.photo>();
     mockCapture.mockReturnValue(pending.promise);
     await act(() => test.handle.current?.capture(1));
-    await test.view.rerender(
-      <WordPhotoCamera {...test.props} guideAspectRatio={8} />,
-    );
+    mockTrackedBox = { x: 0.1, y: 0.2, width: 0.8, height: 0.2 };
+    await test.view.rerender(<WordPhotoCamera {...test.props} onTracking={jest.fn()} />);
     await act(async () => pending.resolve(test.photo));
-    expect(screen.getByTestId('word-guide', { includeHiddenElements: true }).props.style[1]).toMatchObject({ width: expect.closeTo(144), height: 36 });
+    expect(screen.queryByTestId('word-guide', { includeHiddenElements: true })).toBeNull();
     expect(mockRecognize).toHaveBeenCalledWith(
       test.image,
       {},
@@ -364,6 +538,7 @@ describe('WordPhotoCamera', () => {
         width: expect.closeTo(0.45),
         height: expect.closeTo(0.084375),
       }),
+      mockPixelProcessor,
     );
   });
 
@@ -375,9 +550,9 @@ describe('WordPhotoCamera', () => {
     ];
     mockRecognize.mockReturnValue({
       status: 'success',
-      text: 'AA',
+      text: 'aa',
       confidence: 0.98,
-      cells: boxes.map((box) => ({ letter: 'A', mask: 1, confidence: 0.98, box })),
+      cells: boxes.map((box) => ({ role: 'letter', output: 'a', mask: 1, confidence: 0.98, box })),
       boxes,
     });
     await act(async () => test.handle.current?.capture(1));

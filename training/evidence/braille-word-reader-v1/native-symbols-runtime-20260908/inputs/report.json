@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-09-08T18:05:54.999694+00:00",
+  "scope": "Fixed approximate2026 global-center versus pending-context experiment; no actual frame pixels, no tuning.",
+  "inferences": 2,
+  "maximum_inferences": 2,
+  "expected_text_for_identity_only": "2026",
+  "feed_manifest": "C:\\bm-symbols-apk-20260908\\evidence\\calibrated-feeds-v1\\manifest.json",
+  "feed_manifest_sha256": "5616d7c7e6b88320a11f4c7903851dd75631dabf60474c606f0e65bd831ef9d7",
+  "feed_sha256": "3b2ffd48a3b9c5ff079859121b546e1816d0d818bb50d30336c9a7b569471d53",
+  "mapping_sha256": "82954b50b3b5dac9a68b8db2d8b956deefaf3aa61e50d9a5e5df39b3185be432",
+  "model_sha256": "406db0e55e8a5ba9e0d00fb22aadc24f19698219f375e4dcead9057cf3bf2230",
+  "model_manifest_sha256": "419f459f01970a56e745cbdaecd00b505daf5a46c534822febff7e91155e50da",
+  "thresholds": {
+    "proposalScore": 0.25,
+    "acceptScore": 0.25,
+    "dotConfidence": 0.7,
+    "nmsIou": 0.25,
+    "minCellWidth": 0.008,
+    "minCellHeight": 0.06,
+    "edgeMargin": 0.008,
+    "maxRowDeviation": 0.55,
+    "maxGapRatio": 1.2,
+    "maxOverlapRatio": 0.5
+  },
+  "approximation": "Frozen source affine mapped into assumed upright480x640/frame640x480right using square previewcrop80px; fixed bilinear samples and uint8 rounding; no fitted photometric adjustment for numberfeed.",
+  "algorithm": "First actual TS group nearest center becomes pending; getWordTrackingContext(pending) computes next context; exactly one focused inference; same-global cached output is the control without additional inference.",
+  "first_group_count": 1,
+  "first_pending_cells": 5,
+  "second_group_count": 1,
+  "same_global_control_ready": true,
+  "pending_context_ready": true,
+  "identity_comparisons": [
+    {
+      "iou": 0.9533676393000887,
+      "row_distance": 0.0037571708322502173,
+      "row_distance_limit": 0.0899846374988556,
+      "passes_identity": true,
+      "cell_count": 5
+    }
+  ],
+  "input_scale_first": 1,
+  "input_scale_pending": 1,
+  "script_sha256": "32e9a8bafb437cf352c79a95884b2222769b43a1fb92cb41f4e6ceeb525b051a",
+  "bridge_sha256": "d8d568e295372e244654800ebc5afdd605e813f3035cb29c79e98d240ebba9d9",
+  "comparison_sha256": "284c282e2be549b6e6ff91617c3a4884b4f9ff4cb93192180206961c4fc98fe5",
+  "limits": [
+    "Native ImageAnalysis pixels and actual adaptive observation sequence are unavailable.",
+    "Reusing one global output only tests determinism for identical pixels, not temporal camera stability.",
+    "Failure/success in this fixed approximation does not prove or exclude the live2026 cause.",
+    "No model/decoder thresholds, checkpoint, runtime app, or deployment assets changed."
+  ]
+}

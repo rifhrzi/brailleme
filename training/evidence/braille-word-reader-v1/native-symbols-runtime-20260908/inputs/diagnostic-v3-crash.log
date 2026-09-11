@@ -1,0 +1,75 @@
+﻿--------- beginning of crash
+09-08 23:57:00.240  5098  5098 E AndroidRuntime: FATAL EXCEPTION: main
+09-08 23:57:00.240  5098  5098 E AndroidRuntime: PID: 5098
+09-08 23:57:00.240  5098  5098 E AndroidRuntime: java.lang.IllegalStateException: UiAutomationService android.accessibilityservice.IAccessibilityServiceClient$Stub$Proxy@dc73a97already registered!
+09-08 23:57:00.240  5098  5098 E AndroidRuntime: 	at android.os.Parcel.createExceptionOrNull(Parcel.java:3348)
+09-08 23:57:00.240  5098  5098 E AndroidRuntime: 	at android.os.Parcel.createException(Parcel.java:3324)
+09-08 23:57:00.240  5098  5098 E AndroidRuntime: 	at android.os.Parcel.readException(Parcel.java:3307)
+09-08 23:57:00.240  5098  5098 E AndroidRuntime: 	at android.os.Parcel.readException(Parcel.java:3249)
+09-08 23:57:00.240  5098  5098 E AndroidRuntime: 	at android.view.accessibility.IAccessibilityManager$Stub$Proxy.registerUiTestAutomationService(IAccessibilityManager.java:1154)
+09-08 23:57:00.240  5098  5098 E AndroidRuntime: 	at android.app.UiAutomationConnection.registerUiTestAutomationServiceLocked(UiAutomationConnection.java:688)
+09-08 23:57:00.240  5098  5098 E AndroidRuntime: 	at android.app.UiAutomationConnection.connect(UiAutomationConnection.java:117)
+09-08 23:57:00.240  5098  5098 E AndroidRuntime: 	at android.app.UiAutomation.connectWithTimeout(UiAutomation.java:386)
+09-08 23:57:00.240  5098  5098 E AndroidRuntime: 	at android.app.UiAutomation.connect(UiAutomation.java:331)
+09-08 23:57:00.240  5098  5098 E AndroidRuntime: 	at com.android.uiautomator.core.UiAutomationShellWrapper.connect(UiAutomationShellWrapper.java:36)
+09-08 23:57:00.240  5098  5098 E AndroidRuntime: 	at com.android.commands.uiautomator.DumpCommand.run(DumpCommand.java:78)
+09-08 23:57:00.240  5098  5098 E AndroidRuntime: 	at com.android.commands.uiautomator.Launcher.main(Launcher.java:83)
+09-08 23:57:00.240  5098  5098 E AndroidRuntime: 	at com.android.internal.os.RuntimeInit.nativeFinishInit(Native Method)
+09-08 23:57:00.240  5098  5098 E AndroidRuntime: 	at com.android.internal.os.RuntimeInit.main(RuntimeInit.java:371)
+09-08 23:57:00.240  5098  5098 E AndroidRuntime: Caused by: android.os.RemoteException: Remote stack trace:
+09-08 23:57:00.240  5098  5098 E AndroidRuntime: 	at com.android.server.accessibility.UiAutomationManager.registerUiTestAutomationServiceLocked(UiAutomationManager.java:109)
+09-08 23:57:00.240  5098  5098 E AndroidRuntime: 	at com.android.server.accessibility.AccessibilityManagerService.registerUiTestAutomationService(AccessibilityManagerService.java:1643)
+09-08 23:57:00.240  5098  5098 E AndroidRuntime: 	at android.view.accessibility.IAccessibilityManager$Stub.onTransact(IAccessibilityManager.java:571)
+09-08 23:57:00.240  5098  5098 E AndroidRuntime: 	at android.os.Binder.execTransactInternal(Binder.java:1421)
+09-08 23:57:00.240  5098  5098 E AndroidRuntime: 	at android.os.Binder.execTransact(Binder.java:1365)
+09-08 23:57:00.240  5098  5098 E AndroidRuntime: 
+09-08 23:57:00.243  5098  5098 E AndroidRuntime: Couldn't report crash. Here's the crash:
+09-08 23:57:00.243  5098  5098 E AndroidRuntime: java.lang.IllegalStateException: UiAutomationService android.accessibilityservice.IAccessibilityServiceClient$Stub$Proxy@dc73a97already registered!
+09-08 23:57:00.243  5098  5098 E AndroidRuntime: 	at android.os.Parcel.createExceptionOrNull(Parcel.java:3348)
+09-08 23:57:00.243  5098  5098 E AndroidRuntime: 	at android.os.Parcel.createException(Parcel.java:3324)
+09-08 23:57:00.243  5098  5098 E AndroidRuntime: 	at android.os.Parcel.readException(Parcel.java:3307)
+09-08 23:57:00.243  5098  5098 E AndroidRuntime: 	at android.os.Parcel.readException(Parcel.java:3249)
+09-08 23:57:00.243  5098  5098 E AndroidRuntime: 	at android.view.accessibility.IAccessibilityManager$Stub$Proxy.registerUiTestAutomationService(IAccessibilityManager.java:1154)
+09-08 23:57:00.243  5098  5098 E AndroidRuntime: 	at android.app.UiAutomationConnection.registerUiTestAutomationServiceLocked(UiAutomationConnection.java:688)
+09-08 23:57:00.243  5098  5098 E AndroidRuntime: 	at android.app.UiAutomationConnection.connect(UiAutomationConnection.java:117)
+09-08 23:57:00.243  5098  5098 E AndroidRuntime: 	at android.app.UiAutomation.connectWithTimeout(UiAutomation.java:386)
+09-08 23:57:00.243  5098  5098 E AndroidRuntime: 	at android.app.UiAutomation.connect(UiAutomation.java:331)
+09-08 23:57:00.243  5098  5098 E AndroidRuntime: 	at com.android.uiautomator.core.UiAutomationShellWrapper.connect(UiAutomationShellWrapper.java:36)
+09-08 23:57:00.243  5098  5098 E AndroidRuntime: 	at com.android.commands.uiautomator.DumpCommand.run(DumpCommand.java:78)
+09-08 23:57:00.243  5098  5098 E AndroidRuntime: 	at com.android.commands.uiautomator.Launcher.main(Launcher.java:83)
+09-08 23:57:00.243  5098  5098 E AndroidRuntime: 	at com.android.internal.os.RuntimeInit.nativeFinishInit(Native Method)
+09-08 23:57:00.243  5098  5098 E AndroidRuntime: 	at com.android.internal.os.RuntimeInit.main(RuntimeInit.java:371)
+09-08 23:57:00.243  5098  5098 E AndroidRuntime: Caused by: android.os.RemoteException: Remote stack trace:
+09-08 23:57:00.243  5098  5098 E AndroidRuntime: 	at com.android.server.accessibility.UiAutomationManager.registerUiTestAutomationServiceLocked(UiAutomationManager.java:109)
+09-08 23:57:00.243  5098  5098 E AndroidRuntime: 	at com.android.server.accessibility.AccessibilityManagerService.registerUiTestAutomationService(AccessibilityManagerService.java:1643)
+09-08 23:57:00.243  5098  5098 E AndroidRuntime: 	at android.view.accessibility.IAccessibilityManager$Stub.onTransact(IAccessibilityManager.java:571)
+09-08 23:57:00.243  5098  5098 E AndroidRuntime: 	at android.os.Binder.execTransactInternal(Binder.java:1421)
+09-08 23:57:00.243  5098  5098 E AndroidRuntime: 	at android.os.Binder.execTransact(Binder.java:1365)
+09-08 23:57:00.243  5098  5098 E AndroidRuntime: 
+09-08 23:57:00.243  5098  5098 E AndroidRuntime: Error reporting crash. Here's the error:
+09-08 23:57:00.243  5098  5098 E AndroidRuntime: java.lang.RuntimeException: Bad file descriptor
+09-08 23:57:00.243  5098  5098 E AndroidRuntime: 	at android.os.BinderProxy.transactNative(Native Method)
+09-08 23:57:00.243  5098  5098 E AndroidRuntime: 	at android.os.BinderProxy.transact(BinderProxy.java:592)
+09-08 23:57:00.243  5098  5098 E AndroidRuntime: 	at android.app.IActivityManager$Stub$Proxy.handleApplicationCrash(IActivityManager.java:6016)
+09-08 23:57:00.243  5098  5098 E AndroidRuntime: 	at com.android.internal.os.RuntimeInit$KillApplicationHandler.uncaughtException(RuntimeInit.java:170)
+09-08 23:57:00.243  5098  5098 E AndroidRuntime: 	at java.lang.ThreadGroup.uncaughtException(ThreadGroup.java:1071)
+09-08 23:57:00.243  5098  5098 E AndroidRuntime: 	at java.lang.ThreadGroup.uncaughtException(ThreadGroup.java:1066)
+09-08 23:57:00.243  5098  5098 E AndroidRuntime: 	at java.lang.Thread.dispatchUncaughtException(Thread.java:2442)
+09-09 00:09:04.783  8532  8867 E AndroidRuntime: FATAL EXCEPTION: async-runner-1
+09-09 00:09:04.783  8532  8867 E AndroidRuntime: Process: com.brailleme.app, PID: 8532
+09-09 00:09:04.783  8532  8867 E AndroidRuntime: com.facebook.jni.CppException: Object is not a function
+09-09 00:09:04.783  8532  8867 E AndroidRuntime: 
+09-09 00:09:04.783  8532  8867 E AndroidRuntime: TypeError: Object is not a function
+09-09 00:09:04.783  8532  8867 E AndroidRuntime:     at useWordCameraTrackingTs2 (:1:1403)
+09-09 00:09:04.783  8532  8867 E AndroidRuntime:     at reactNativeVisionCameraWorklets_createAsyncRunnerTs1 (:1:104)
+09-09 00:09:04.783  8532  8867 E AndroidRuntime:     at apply (native)
+09-09 00:09:04.783  8532  8867 E AndroidRuntime:     at reactNativeWorklets_runtimesNativeTs3 (:1:119)
+09-09 00:09:04.783  8532  8867 E AndroidRuntime: 	at com.margelo.nitro.camera.Func_void_cxx.invoke_cxx(Native Method)
+09-09 00:09:04.783  8532  8867 E AndroidRuntime: 	at com.margelo.nitro.camera.Func_void_cxx.invoke(Func_void.kt:59)
+09-09 00:09:04.783  8532  8867 E AndroidRuntime: 	at com.margelo.nitro.camera.Func_void_cxx.invoke(Func_void.kt:38)
+09-09 00:09:04.783  8532  8867 E AndroidRuntime: 	at com.margelo.nitro.camera.hybrids.HybridNativeThread.runOnThread$lambda$0(HybridNativeThread.kt:13)
+09-09 00:09:04.783  8532  8867 E AndroidRuntime: 	at com.margelo.nitro.camera.hybrids.HybridNativeThread.$r8$lambda$lqvZQOGZvMM4IgckxwlX_Bx_y6Y(Unknown Source:0)
+09-09 00:09:04.783  8532  8867 E AndroidRuntime: 	at com.margelo.nitro.camera.hybrids.HybridNativeThread$$ExternalSyntheticLambda0.run(D8$$SyntheticClass:0)
+09-09 00:09:04.783  8532  8867 E AndroidRuntime: 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1156)
+09-09 00:09:04.783  8532  8867 E AndroidRuntime: 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:651)
+09-09 00:09:04.783  8532  8867 E AndroidRuntime: 	at java.lang.Thread.run(Thread.java:1119)

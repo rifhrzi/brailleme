@@ -124,7 +124,7 @@ describe('alur onboarding', () => {
     await render(<HelpScreen />);
 
     expect(
-      screen.getByRole('header', { name: 'Pindai satu blok kata' }),
+      screen.getByRole('header', { name: 'Bingkai mengikuti Braille' }),
     ).toBeOnTheScreen();
     expect(screen.queryByText(/proofreader/i)).toBeNull();
     for (const implementationTerm of [
@@ -141,13 +141,13 @@ describe('alur onboarding', () => {
     updateAppPreferences({ onboardingCompleted: true });
     await render(<HomeScreen />);
 
-    expect(screen.getByText(/Pindai satu kata Braille/i)).toBeOnTheScreen();
+    expect(screen.getByText(/Pindai kata dan angka Braille/i)).toBeOnTheScreen();
     expect(
       await screen.findByRole('button', { name: 'Buka pemindai kata' }),
     ).toBeOnTheScreen();
-    expect(screen.getByText('Siap memindai kata')).toBeOnTheScreen();
+    expect(screen.getByText('Siap memindai Braille')).toBeOnTheScreen();
     expect(
-      screen.getByText(/Tempatkan satu kata di dalam bingkai/i),
+      screen.getByText(/Arahkan satu kata atau angka ke tengah kamera/i),
     ).toBeOnTheScreen();
     expect(screen.getByRole('button', { name: 'Bantuan' })).toBeOnTheScreen();
     expect(screen.getByRole('button', { name: 'Privasi' })).toBeOnTheScreen();

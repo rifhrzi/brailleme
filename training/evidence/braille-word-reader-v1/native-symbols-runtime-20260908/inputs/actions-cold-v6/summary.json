@@ -1,0 +1,111 @@
+{
+  "status": "action_or_observation_incomplete",
+  "error": "Command '['C:\\\\Users\\\\rifqi\\\\AppData\\\\Local\\\\Android\\\\Sdk\\\\platform-tools\\\\adb.exe', '-s', 'emulator-5554', 'shell', 'uiautomator', 'dump', '--compressed', '/sdcard/brailleme-smoke-1f8a9dc1c8ad4486b1e75e4e06f5cf5a.xml']' timed out after 8.0 seconds",
+  "acceptanceResult": "not_assessed",
+  "action_counts": {
+    "force-stop": 1,
+    "launch-existing-app": 1,
+    "Buka pemindai kata": 1,
+    "Aktifkan kamera": 1
+  },
+  "observations": [
+    {
+      "label": "before-cold-start",
+      "utc": "2026-09-08T17:37:35.734589+00:00",
+      "pid": "8515",
+      "xml": "C:\\bm-symbols-apk-20260908\\evidence\\actions-cold-v6\\20260908T173732890866Z-before-cold-start-151616.xml",
+      "screenshot": "C:\\bm-symbols-apk-20260908\\evidence\\actions-cold-v6\\20260908T173735114004Z-before-cold-start-5d9ea3.png",
+      "logcat": "C:\\bm-symbols-apk-20260908\\evidence\\actions-cold-v6\\20260908T173735732589Z-before-cold-start-d966a2.log",
+      "app_process_required": false,
+      "visible_states": [
+        "Pindai ulang"
+      ],
+      "result_texts": [],
+      "shutter_visible": false,
+      "shutter_enabled": false,
+      "rescan_visible": true,
+      "processing_visible": false
+    },
+    {
+      "label": "after-force-stop",
+      "utc": "2026-09-08T17:37:39.451882+00:00",
+      "pid": null,
+      "xml": "C:\\bm-symbols-apk-20260908\\evidence\\actions-cold-v6\\20260908T173736163288Z-after-force-stop-8d90fe.xml",
+      "screenshot": "C:\\bm-symbols-apk-20260908\\evidence\\actions-cold-v6\\20260908T173738622916Z-after-force-stop-2b54a7.png",
+      "logcat": null,
+      "app_process_required": false,
+      "visible_states": [],
+      "result_texts": [],
+      "shutter_visible": false,
+      "shutter_enabled": false,
+      "rescan_visible": false,
+      "processing_visible": false
+    },
+    {
+      "label": "prepare-00",
+      "utc": "2026-09-08T17:37:43.890280+00:00",
+      "pid": "9064",
+      "xml": "C:\\bm-symbols-apk-20260908\\evidence\\actions-cold-v6\\20260908T173740955892Z-prepare-00-87e037.xml",
+      "screenshot": "C:\\bm-symbols-apk-20260908\\evidence\\actions-cold-v6\\20260908T173743375967Z-prepare-00-dfa0c6.png",
+      "logcat": "C:\\bm-symbols-apk-20260908\\evidence\\actions-cold-v6\\20260908T173743889279Z-prepare-00-746316.log",
+      "app_process_required": true,
+      "visible_states": [],
+      "result_texts": [],
+      "shutter_visible": false,
+      "shutter_enabled": false,
+      "rescan_visible": false,
+      "processing_visible": false
+    },
+    {
+      "label": "after-Buka pemindai kata",
+      "utc": "2026-09-08T17:37:47.507318+00:00",
+      "pid": "9064",
+      "xml": "C:\\bm-symbols-apk-20260908\\evidence\\actions-cold-v6\\20260908T173744705430Z-after-Buka-pemindai-kata-aa3ff1.xml",
+      "screenshot": "C:\\bm-symbols-apk-20260908\\evidence\\actions-cold-v6\\20260908T173746978360Z-after-Buka-pemindai-kata-1a901c.png",
+      "logcat": "C:\\bm-symbols-apk-20260908\\evidence\\actions-cold-v6\\20260908T173747506322Z-after-Buka-pemindai-kata-e842b7.log",
+      "app_process_required": true,
+      "visible_states": [],
+      "result_texts": [],
+      "shutter_visible": false,
+      "shutter_enabled": false,
+      "rescan_visible": false,
+      "processing_visible": false
+    },
+    {
+      "label": "prepare-01",
+      "utc": "2026-09-08T17:37:50.366297+00:00",
+      "pid": "9064",
+      "xml": "C:\\bm-symbols-apk-20260908\\evidence\\actions-cold-v6\\20260908T173747638064Z-prepare-01-bbc7ad.xml",
+      "screenshot": "C:\\bm-symbols-apk-20260908\\evidence\\actions-cold-v6\\20260908T173749838795Z-prepare-01-5479a5.png",
+      "logcat": "C:\\bm-symbols-apk-20260908\\evidence\\actions-cold-v6\\20260908T173750365294Z-prepare-01-fee14f.log",
+      "app_process_required": true,
+      "visible_states": [],
+      "result_texts": [],
+      "shutter_visible": false,
+      "shutter_enabled": false,
+      "rescan_visible": false,
+      "processing_visible": false
+    },
+    {
+      "label": "after-Aktifkan kamera",
+      "utc": "2026-09-08T17:37:55.074769+00:00",
+      "pid": "9064",
+      "xml": "C:\\bm-symbols-apk-20260908\\evidence\\actions-cold-v6\\20260908T173751202749Z-after-Aktifkan-kamera-bcd9fe.xml",
+      "screenshot": "C:\\bm-symbols-apk-20260908\\evidence\\actions-cold-v6\\20260908T173754532622Z-after-Aktifkan-kamera-b0c481.png",
+      "logcat": "C:\\bm-symbols-apk-20260908\\evidence\\actions-cold-v6\\20260908T173755073263Z-after-Aktifkan-kamera-ef66b2.log",
+      "app_process_required": true,
+      "visible_states": [
+        "Mencari Braille"
+      ],
+      "result_texts": [],
+      "shutter_visible": true,
+      "shutter_enabled": false,
+      "rescan_visible": false,
+      "processing_visible": false
+    }
+  ],
+  "finished_utc": "2026-09-08T17:38:03.223602+00:00",
+  "command": "cold-start",
+  "runtime_collector_coordination": "operator_managed",
+  "note": "Run cold-start/font separately; the existing runtime collector stops when the app PID changes."
+}

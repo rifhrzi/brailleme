@@ -1,0 +1,1332 @@
+{
+  "schema_version": 1,
+  "created_at_utc": "2026-09-08T17:09:55.150165+00:00",
+  "scope": "New static emulator geometry calibration; no runtime/model acceptance claim",
+  "mapping_report": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\output\\update-symbols-tracking-20260908\\feed-mapping-v1.json",
+  "mapping_report_sha256": "82954b50b3b5dac9a68b8db2d8b956deefaf3aa61e50d9a5e5df39b3185be432",
+  "original_label_manifest": "C:\\bm-symbols-apk-20260908\\evidence\\labelled-feeds-v1\\manifest.json",
+  "original_label_manifest_sha256": "1214f6cf13f52f1866a78e78fa61a8ff25c555f69bc0afe99c4770b8e954a311",
+  "native_asset_manifest_sha256": "419f459f01970a56e745cbdaecd00b505daf5a46c534822febff7e91155e50da",
+  "generator_sha256": "e9f23ec92960078b62650c79962c54036e467c26f6ad69a9e645c5b217a75917",
+  "semantic_parser_sha256": "9e43dc9484f035ba3bbfcb49344050714dfd1c636d107b92cb2ce1faded29ba3",
+  "decoder_version": "six-dot-id-v3",
+  "source_selection": "Exactly all seven preselected label records, existing blank, and the complete existing startup source; no model predictions consulted",
+  "frozen_rule": {
+    "canvas": [
+      1024,
+      1024
+    ],
+    "feed_visible_rectangle": [
+      0.0,
+      223.88988785953583,
+      575.764863677316,
+      799.6964076819924
+    ],
+    "feed_visible_center": [
+      287.8605851573847,
+      511.79314777076405
+    ],
+    "feed_pixel_margin_each_side": 32,
+    "maximum_source_composition_size": [
+      511.76486367731604,
+      511.8065198224565
+    ],
+    "scale": "min(1, available_width/source_width, available_height/source_height)",
+    "scaled_dimensions": "floor(original dimensions times scale)",
+    "placement": "floor(inverse-mapped preview center minus half scaled dimensions)",
+    "backgrounds": {
+      "labels_and_blank": [
+        128,
+        128,
+        128
+      ],
+      "startup": [
+        83,
+        83,
+        83
+      ]
+    }
+  },
+  "actual_preview_verified": false,
+  "emulator_modified": false,
+  "launcher_modified": false,
+  "original_files_verified_unchanged": 19,
+  "rows": [
+    {
+      "output": "lowercase-abc.png",
+      "source": "C:\\bm-symbols-20260908\\data\\validation\\000000.png",
+      "source_sha256": "54cfad38e7cf6ec7acd45cf729411b5a81ec3694cc5768aaca80a3a57fe5af52",
+      "expected_text": "abc",
+      "classification": "synthetic_recomposed_label",
+      "background_rgb": [
+        128,
+        128,
+        128
+      ],
+      "symbols": [
+        {
+          "mask": 1,
+          "role": "letter",
+          "output": "a"
+        },
+        {
+          "mask": 3,
+          "role": "letter",
+          "output": "b"
+        },
+        {
+          "mask": 9,
+          "role": "letter",
+          "output": "c"
+        }
+      ],
+      "symbol_roles_origin": "Deterministic grammar on preserved annotated masks, not image inference",
+      "original_manifest_row": 0,
+      "original_annotation": {
+        "image": "C:\\bm-symbols-20260908\\data\\validation\\000000.png",
+        "source": "synthetic-id/validation/000000",
+        "source_family": "synthetic-id/lowercase",
+        "boxes": [
+          [
+            159,
+            63,
+            204,
+            145
+          ],
+          [
+            217,
+            63,
+            262,
+            145
+          ],
+          [
+            275,
+            63,
+            320,
+            145
+          ]
+        ],
+        "masks": [
+          1,
+          3,
+          9
+        ],
+        "expected": "abc",
+        "symbol_group": "lowercase",
+        "origin": "synthetic_recomposed_public_cell_photographs",
+        "source_cells": [
+          {
+            "source": "handwritten/ang_redmi/01.labeled.jpg",
+            "image": "validation/000515.png",
+            "box": [
+              62.3076923076923,
+              48.57831325301205,
+              124.6153846153846,
+              150.36144578313252
+            ],
+            "original_mask": 1,
+            "synthetic_transform": null
+          },
+          {
+            "source": "books/ola/IMG_5371.labeled.jpg",
+            "image": "validation/000330.png",
+            "box": [
+              342.85714285714283,
+              30.857142857142854,
+              418.2857142857143,
+              144.0
+            ],
+            "original_mask": 3,
+            "synthetic_transform": null
+          },
+          {
+            "source": "books/ola/IMG_5365.labeled.jpg",
+            "image": "validation/000101.png",
+            "box": [
+              69.93377483443709,
+              25.18032786885246,
+              136.68874172185429,
+              125.90163934426229
+            ],
+            "original_mask": 9,
+            "synthetic_transform": null
+          }
+        ]
+      },
+      "expected_runtime": null,
+      "source_size": [
+        480,
+        192
+      ],
+      "output_sha256": "46107ed7263a1dafe57aef2b60300267314e03975b6eb179eacec4af716042bf",
+      "output_size": [
+        1024,
+        1024
+      ],
+      "scale": 1.0,
+      "realized_scale_xy": [
+        1.0,
+        1.0
+      ],
+      "scaled_size": [
+        480,
+        192
+      ],
+      "placement": [
+        47,
+        415,
+        527,
+        607
+      ],
+      "source_pixels_cropped": false,
+      "unscaled_source_pixels_exact": true,
+      "interpolation": "none",
+      "projected_screenshot_corners": [
+        [
+          132.66712279496755,
+          871.5987338345709
+        ],
+        [
+          945.4059565124453,
+          871.6108768680834
+        ],
+        [
+          945.4184780149001,
+          1196.7152248228065
+        ],
+        [
+          132.67964429742221,
+          1196.703081789294
+        ]
+      ],
+      "prediction_observed_for_selection": false
+    },
+    {
+      "output": "capital_single-Abc.png",
+      "source": "C:\\bm-symbols-20260908\\data\\validation\\000140.png",
+      "source_sha256": "5c13a3fbaad23bbe82c41095337a7bbcac7c5993bbc348930709a5b21f062b4c",
+      "expected_text": "Abc",
+      "classification": "synthetic_recomposed_label",
+      "background_rgb": [
+        128,
+        128,
+        128
+      ],
+      "symbols": [
+        {
+          "mask": 32,
+          "role": "capital_indicator",
+          "output": ""
+        },
+        {
+          "mask": 1,
+          "role": "letter",
+          "output": "A"
+        },
+        {
+          "mask": 3,
+          "role": "letter",
+          "output": "b"
+        },
+        {
+          "mask": 9,
+          "role": "letter",
+          "output": "c"
+        }
+      ],
+      "symbol_roles_origin": "Deterministic grammar on preserved annotated masks, not image inference",
+      "original_manifest_row": 1,
+      "original_annotation": {
+        "image": "C:\\bm-symbols-20260908\\data\\validation\\000140.png",
+        "source": "synthetic-id/validation/000140",
+        "source_family": "synthetic-id/capital_single",
+        "boxes": [
+          [
+            123,
+            47,
+            171,
+            134
+          ],
+          [
+            185,
+            47,
+            233,
+            134
+          ],
+          [
+            247,
+            47,
+            295,
+            134
+          ],
+          [
+            309,
+            47,
+            357,
+            134
+          ]
+        ],
+        "masks": [
+          32,
+          1,
+          3,
+          9
+        ],
+        "expected": "Abc",
+        "symbol_group": "capital_single",
+        "origin": "synthetic_recomposed_public_cell_photographs",
+        "source_cells": [
+          {
+            "source": "handwritten/ang_redmi/02.labeled.jpg",
+            "image": "validation/000551.png",
+            "box": [
+              96.60377358490567,
+              33.0,
+              172.07547169811323,
+              156.0
+            ],
+            "original_mask": 1,
+            "synthetic_transform": "half_turn"
+          },
+          {
+            "source": "books/ola/IMG_5373.labeled.jpg",
+            "image": "validation/000407.png",
+            "box": [
+              308.2306163021869,
+              75.46268656716418,
+              330.1789264413519,
+              109.85074626865672
+            ],
+            "original_mask": 1,
+            "synthetic_transform": null
+          },
+          {
+            "source": "handwritten/ang_redmi/01.labeled.jpg",
+            "image": "validation/000482.png",
+            "box": [
+              240.4848484848485,
+              5.818181818181818,
+              268.6060606060606,
+              47.515151515151516
+            ],
+            "original_mask": 3,
+            "synthetic_transform": null
+          },
+          {
+            "source": "books/ola/IMG_5367.labeled.jpg",
+            "image": "validation/000185.png",
+            "box": [
+              382.22222222222223,
+              66.97674418604652,
+              414.8148148148148,
+              116.09302325581395
+            ],
+            "original_mask": 9,
+            "synthetic_transform": null
+          }
+        ]
+      },
+      "expected_runtime": null,
+      "source_size": [
+        480,
+        192
+      ],
+      "output_sha256": "4c56e9846648838b0a4130cfa66ba5c41194a30b1962da74dc78965569af291b",
+      "output_size": [
+        1024,
+        1024
+      ],
+      "scale": 1.0,
+      "realized_scale_xy": [
+        1.0,
+        1.0
+      ],
+      "scaled_size": [
+        480,
+        192
+      ],
+      "placement": [
+        47,
+        415,
+        527,
+        607
+      ],
+      "source_pixels_cropped": false,
+      "unscaled_source_pixels_exact": true,
+      "interpolation": "none",
+      "projected_screenshot_corners": [
+        [
+          132.66712279496755,
+          871.5987338345709
+        ],
+        [
+          945.4059565124453,
+          871.6108768680834
+        ],
+        [
+          945.4184780149001,
+          1196.7152248228065
+        ],
+        [
+          132.67964429742221,
+          1196.703081789294
+        ]
+      ],
+      "prediction_observed_for_selection": false
+    },
+    {
+      "output": "capital_word-ABC.png",
+      "source": "C:\\bm-symbols-20260908\\data\\validation\\000280.png",
+      "source_sha256": "36c207cd159bbf2f08973498e876c5022c39b3333e0e9c7acd9f6cebce467957",
+      "expected_text": "ABC",
+      "classification": "synthetic_recomposed_label",
+      "background_rgb": [
+        128,
+        128,
+        128
+      ],
+      "symbols": [
+        {
+          "mask": 32,
+          "role": "capital_indicator",
+          "output": ""
+        },
+        {
+          "mask": 32,
+          "role": "capital_indicator",
+          "output": ""
+        },
+        {
+          "mask": 1,
+          "role": "letter",
+          "output": "A"
+        },
+        {
+          "mask": 3,
+          "role": "letter",
+          "output": "B"
+        },
+        {
+          "mask": 9,
+          "role": "letter",
+          "output": "C"
+        }
+      ],
+      "symbol_roles_origin": "Deterministic grammar on preserved annotated masks, not image inference",
+      "original_manifest_row": 2,
+      "original_annotation": {
+        "image": "C:\\bm-symbols-20260908\\data\\validation\\000280.png",
+        "source": "synthetic-id/validation/000280",
+        "source_family": "synthetic-id/capital_word",
+        "boxes": [
+          [
+            68,
+            41,
+            124,
+            142
+          ],
+          [
+            140,
+            41,
+            196,
+            142
+          ],
+          [
+            212,
+            41,
+            268,
+            142
+          ],
+          [
+            284,
+            41,
+            340,
+            142
+          ],
+          [
+            356,
+            41,
+            412,
+            142
+          ]
+        ],
+        "masks": [
+          32,
+          32,
+          1,
+          3,
+          9
+        ],
+        "expected": "ABC",
+        "symbol_group": "capital_word",
+        "origin": "synthetic_recomposed_public_cell_photographs",
+        "source_cells": [
+          {
+            "source": "books/ola/IMG_5369.labeled.jpg",
+            "image": "validation/000269.png",
+            "box": [
+              322.6890756302521,
+              85.51260504201682,
+              342.05042016806726,
+              113.74789915966387
+            ],
+            "original_mask": 1,
+            "synthetic_transform": "half_turn"
+          },
+          {
+            "source": "books/ola/IMG_5365.labeled.jpg",
+            "image": "validation/000110.png",
+            "box": [
+              258.2857142857143,
+              57.14285714285714,
+              310.85714285714283,
+              137.14285714285714
+            ],
+            "original_mask": 1,
+            "synthetic_transform": "half_turn"
+          },
+          {
+            "source": "books/ola/IMG_5372.labeled.jpg",
+            "image": "validation/000378.png",
+            "box": [
+              94.88372093023256,
+              72.0,
+              137.67441860465115,
+              131.0769230769231
+            ],
+            "original_mask": 1,
+            "synthetic_transform": null
+          },
+          {
+            "source": "handwritten/ang_redmi/01.labeled.jpg",
+            "image": "validation/000503.png",
+            "box": [
+              355.55555555555554,
+              38.4,
+              426.66666666666663,
+              145.92000000000002
+            ],
+            "original_mask": 3,
+            "synthetic_transform": null
+          },
+          {
+            "source": "books/ola/IMG_5371.labeled.jpg",
+            "image": "validation/000337.png",
+            "box": [
+              370.8056872037915,
+              61.71428571428571,
+              423.12796208530807,
+              139.42857142857142
+            ],
+            "original_mask": 9,
+            "synthetic_transform": null
+          }
+        ]
+      },
+      "expected_runtime": null,
+      "source_size": [
+        480,
+        192
+      ],
+      "output_sha256": "6edbfb09e517fc64c687ff57c1b3289a405a49c1c749e65ccd1ad3586ab97117",
+      "output_size": [
+        1024,
+        1024
+      ],
+      "scale": 1.0,
+      "realized_scale_xy": [
+        1.0,
+        1.0
+      ],
+      "scaled_size": [
+        480,
+        192
+      ],
+      "placement": [
+        47,
+        415,
+        527,
+        607
+      ],
+      "source_pixels_cropped": false,
+      "unscaled_source_pixels_exact": true,
+      "interpolation": "none",
+      "projected_screenshot_corners": [
+        [
+          132.66712279496755,
+          871.5987338345709
+        ],
+        [
+          945.4059565124453,
+          871.6108768680834
+        ],
+        [
+          945.4184780149001,
+          1196.7152248228065
+        ],
+        [
+          132.67964429742221,
+          1196.703081789294
+        ]
+      ],
+      "prediction_observed_for_selection": false
+    },
+    {
+      "output": "numbers-2026.png",
+      "source": "C:\\bm-symbols-20260908\\data\\validation\\000430.png",
+      "source_sha256": "6707d05ad655437817b8c1eb14580567342bc4fc4caea430b1ca24288986c3db",
+      "expected_text": "2026",
+      "classification": "synthetic_recomposed_label",
+      "background_rgb": [
+        128,
+        128,
+        128
+      ],
+      "symbols": [
+        {
+          "mask": 60,
+          "role": "number_indicator",
+          "output": ""
+        },
+        {
+          "mask": 3,
+          "role": "digit",
+          "output": "2"
+        },
+        {
+          "mask": 26,
+          "role": "digit",
+          "output": "0"
+        },
+        {
+          "mask": 3,
+          "role": "digit",
+          "output": "2"
+        },
+        {
+          "mask": 11,
+          "role": "digit",
+          "output": "6"
+        }
+      ],
+      "symbol_roles_origin": "Deterministic grammar on preserved annotated masks, not image inference",
+      "original_manifest_row": 3,
+      "original_annotation": {
+        "image": "C:\\bm-symbols-20260908\\data\\validation\\000430.png",
+        "source": "synthetic-id/validation/000430",
+        "source_family": "synthetic-id/numbers",
+        "boxes": [
+          [
+            73,
+            41,
+            127,
+            139
+          ],
+          [
+            143,
+            41,
+            197,
+            139
+          ],
+          [
+            213,
+            41,
+            267,
+            139
+          ],
+          [
+            283,
+            41,
+            337,
+            139
+          ],
+          [
+            353,
+            41,
+            407,
+            139
+          ]
+        ],
+        "masks": [
+          60,
+          3,
+          26,
+          3,
+          11
+        ],
+        "expected": "2026",
+        "symbol_group": "numbers",
+        "origin": "synthetic_recomposed_public_cell_photographs",
+        "source_cells": [
+          {
+            "source": "books/ola/IMG_5368.labeled.jpg",
+            "image": "validation/000223.png",
+            "box": [
+              153.75,
+              45.17647058823529,
+              228.75,
+              158.11764705882354
+            ],
+            "original_mask": 60,
+            "synthetic_transform": null
+          },
+          {
+            "source": "books/ola/IMG_5201.labeled.jpg",
+            "image": "validation/000049.png",
+            "box": [
+              89.32735426008969,
+              138.06741573033707,
+              114.08071748878923,
+              175.8202247191011
+            ],
+            "original_mask": 3,
+            "synthetic_transform": null
+          },
+          {
+            "source": "books/ola/IMG_5367.labeled.jpg",
+            "image": "validation/000197.png",
+            "box": [
+              321.9512195121951,
+              17.454545454545453,
+              392.1951219512195,
+              119.27272727272728
+            ],
+            "original_mask": 26,
+            "synthetic_transform": null
+          },
+          {
+            "source": "books/ola/IMG_5374.labeled.jpg",
+            "image": "validation/000448.png",
+            "box": [
+              378.6335403726708,
+              62.03076923076924,
+              447.20496894409933,
+              162.46153846153848
+            ],
+            "original_mask": 3,
+            "synthetic_transform": null
+          },
+          {
+            "source": "books/ola/IMG_5371.labeled.jpg",
+            "image": "validation/000332.png",
+            "box": [
+              255.48387096774195,
+              15.36,
+              348.38709677419354,
+              153.6
+            ],
+            "original_mask": 11,
+            "synthetic_transform": null
+          }
+        ]
+      },
+      "expected_runtime": null,
+      "source_size": [
+        480,
+        192
+      ],
+      "output_sha256": "3b2ffd48a3b9c5ff079859121b546e1816d0d818bb50d30336c9a7b569471d53",
+      "output_size": [
+        1024,
+        1024
+      ],
+      "scale": 1.0,
+      "realized_scale_xy": [
+        1.0,
+        1.0
+      ],
+      "scaled_size": [
+        480,
+        192
+      ],
+      "placement": [
+        47,
+        415,
+        527,
+        607
+      ],
+      "source_pixels_cropped": false,
+      "unscaled_source_pixels_exact": true,
+      "interpolation": "none",
+      "projected_screenshot_corners": [
+        [
+          132.66712279496755,
+          871.5987338345709
+        ],
+        [
+          945.4059565124453,
+          871.6108768680834
+        ],
+        [
+          945.4184780149001,
+          1196.7152248228065
+        ],
+        [
+          132.67964429742221,
+          1196.703081789294
+        ]
+      ],
+      "prediction_observed_for_selection": false
+    },
+    {
+      "output": "numbers-001.png",
+      "source": "C:\\bm-symbols-20260908\\data\\validation\\000431.png",
+      "source_sha256": "007c5efd55b1d66aeba92386ddd0d59a20b3848c38b9cc1c9cb5dfb6132bd223",
+      "expected_text": "001",
+      "classification": "synthetic_recomposed_label",
+      "background_rgb": [
+        128,
+        128,
+        128
+      ],
+      "symbols": [
+        {
+          "mask": 60,
+          "role": "number_indicator",
+          "output": ""
+        },
+        {
+          "mask": 26,
+          "role": "digit",
+          "output": "0"
+        },
+        {
+          "mask": 26,
+          "role": "digit",
+          "output": "0"
+        },
+        {
+          "mask": 1,
+          "role": "digit",
+          "output": "1"
+        }
+      ],
+      "symbol_roles_origin": "Deterministic grammar on preserved annotated masks, not image inference",
+      "original_manifest_row": 4,
+      "original_annotation": {
+        "image": "C:\\bm-symbols-20260908\\data\\validation\\000431.png",
+        "source": "synthetic-id/validation/000431",
+        "source_family": "synthetic-id/numbers",
+        "boxes": [
+          [
+            113,
+            51,
+            165,
+            145
+          ],
+          [
+            180,
+            51,
+            232,
+            145
+          ],
+          [
+            247,
+            51,
+            299,
+            145
+          ],
+          [
+            314,
+            51,
+            366,
+            145
+          ]
+        ],
+        "masks": [
+          60,
+          26,
+          26,
+          1
+        ],
+        "expected": "001",
+        "symbol_group": "numbers",
+        "origin": "synthetic_recomposed_public_cell_photographs",
+        "source_cells": [
+          {
+            "source": "books/ola/IMG_5372.labeled.jpg",
+            "image": "validation/000365.png",
+            "box": [
+              80.67226890756302,
+              28.595744680851062,
+              173.4453781512605,
+              167.48936170212764
+            ],
+            "original_mask": 60,
+            "synthetic_transform": null
+          },
+          {
+            "source": "books/ola/IMG_5372.labeled.jpg",
+            "image": "validation/000372.png",
+            "box": [
+              233.04347826086956,
+              52.36363636363636,
+              313.04347826086956,
+              167.56363636363636
+            ],
+            "original_mask": 26,
+            "synthetic_transform": null
+          },
+          {
+            "source": "books/ola/IMG_5371.labeled.jpg",
+            "image": "validation/000324.png",
+            "box": [
+              293.9325842696629,
+              58.666666666666664,
+              353.2584269662921,
+              149.33333333333331
+            ],
+            "original_mask": 26,
+            "synthetic_transform": null
+          },
+          {
+            "source": "books/ola/IMG_5366.labeled.jpg",
+            "image": "validation/000121.png",
+            "box": [
+              240.91954022988506,
+              66.46153846153847,
+              281.37931034482756,
+              123.6923076923077
+            ],
+            "original_mask": 1,
+            "synthetic_transform": null
+          }
+        ]
+      },
+      "expected_runtime": null,
+      "source_size": [
+        480,
+        192
+      ],
+      "output_sha256": "e358645065d90379dd8a4c5dc221fa1efbcc2cebcf7669e16fd6f3ed4781ebe8",
+      "output_size": [
+        1024,
+        1024
+      ],
+      "scale": 1.0,
+      "realized_scale_xy": [
+        1.0,
+        1.0
+      ],
+      "scaled_size": [
+        480,
+        192
+      ],
+      "placement": [
+        47,
+        415,
+        527,
+        607
+      ],
+      "source_pixels_cropped": false,
+      "unscaled_source_pixels_exact": true,
+      "interpolation": "none",
+      "projected_screenshot_corners": [
+        [
+          132.66712279496755,
+          871.5987338345709
+        ],
+        [
+          945.4059565124453,
+          871.6108768680834
+        ],
+        [
+          945.4184780149001,
+          1196.7152248228065
+        ],
+        [
+          132.67964429742221,
+          1196.703081789294
+        ]
+      ],
+      "prediction_observed_for_selection": false
+    },
+    {
+      "output": "lowercase-a.png",
+      "source": "C:\\bm-symbols-20260908\\data\\validation\\000009.png",
+      "source_sha256": "5b3519c1c358de12addd8db46dee178c56277f44c85ca67db9e99433e8eb83a0",
+      "expected_text": "a",
+      "classification": "synthetic_recomposed_label",
+      "background_rgb": [
+        128,
+        128,
+        128
+      ],
+      "symbols": [
+        {
+          "mask": 1,
+          "role": "letter",
+          "output": "a"
+        }
+      ],
+      "symbol_roles_origin": "Deterministic grammar on preserved annotated masks, not image inference",
+      "original_manifest_row": 5,
+      "original_annotation": {
+        "image": "C:\\bm-symbols-20260908\\data\\validation\\000009.png",
+        "source": "synthetic-id/validation/000009",
+        "source_family": "synthetic-id/lowercase",
+        "boxes": [
+          [
+            214,
+            57,
+            266,
+            151
+          ]
+        ],
+        "masks": [
+          1
+        ],
+        "expected": "a",
+        "symbol_group": "lowercase",
+        "origin": "synthetic_recomposed_public_cell_photographs",
+        "source_cells": [
+          {
+            "source": "books/ola/IMG_5201.labeled.jpg",
+            "image": "validation/000064.png",
+            "box": [
+              66.3157894736842,
+              50.36065573770492,
+              135.78947368421052,
+              160.52459016393442
+            ],
+            "original_mask": 1,
+            "synthetic_transform": null
+          }
+        ]
+      },
+      "expected_runtime": null,
+      "source_size": [
+        480,
+        192
+      ],
+      "output_sha256": "1375ace98d48d3cd96fe5cf33ef10ff75fbebb46cffa34b9ddb393842f9dbb61",
+      "output_size": [
+        1024,
+        1024
+      ],
+      "scale": 1.0,
+      "realized_scale_xy": [
+        1.0,
+        1.0
+      ],
+      "scaled_size": [
+        480,
+        192
+      ],
+      "placement": [
+        47,
+        415,
+        527,
+        607
+      ],
+      "source_pixels_cropped": false,
+      "unscaled_source_pixels_exact": true,
+      "interpolation": "none",
+      "projected_screenshot_corners": [
+        [
+          132.66712279496755,
+          871.5987338345709
+        ],
+        [
+          945.4059565124453,
+          871.6108768680834
+        ],
+        [
+          945.4184780149001,
+          1196.7152248228065
+        ],
+        [
+          132.67964429742221,
+          1196.703081789294
+        ]
+      ],
+      "prediction_observed_for_selection": false
+    },
+    {
+      "output": "lowercase-aab.png",
+      "source": "C:\\bm-symbols-20260908\\data\\validation\\000006.png",
+      "source_sha256": "6db5bf908512acf4c1de00a2852d620fa2842320315afbcb25ae97e61b6a4328",
+      "expected_text": "aab",
+      "classification": "synthetic_recomposed_label",
+      "background_rgb": [
+        128,
+        128,
+        128
+      ],
+      "symbols": [
+        {
+          "mask": 1,
+          "role": "letter",
+          "output": "a"
+        },
+        {
+          "mask": 1,
+          "role": "letter",
+          "output": "a"
+        },
+        {
+          "mask": 3,
+          "role": "letter",
+          "output": "b"
+        }
+      ],
+      "symbol_roles_origin": "Deterministic grammar on preserved annotated masks, not image inference",
+      "original_manifest_row": 6,
+      "original_annotation": {
+        "image": "C:\\bm-symbols-20260908\\data\\validation\\000006.png",
+        "source": "synthetic-id/validation/000006",
+        "source_family": "synthetic-id/lowercase",
+        "boxes": [
+          [
+            154,
+            56,
+            202,
+            142
+          ],
+          [
+            216,
+            56,
+            264,
+            142
+          ],
+          [
+            278,
+            56,
+            326,
+            142
+          ]
+        ],
+        "masks": [
+          1,
+          1,
+          3
+        ],
+        "expected": "aab",
+        "symbol_group": "lowercase",
+        "origin": "synthetic_recomposed_public_cell_photographs",
+        "source_cells": [
+          {
+            "source": "handwritten/ang_redmi/01.labeled.jpg",
+            "image": "validation/000482.png",
+            "box": [
+              204.60606060606062,
+              68.84848484848484,
+              232.72727272727275,
+              112.48484848484848
+            ],
+            "original_mask": 1,
+            "synthetic_transform": null
+          },
+          {
+            "source": "books/ola/IMG_5372.labeled.jpg",
+            "image": "validation/000368.png",
+            "box": [
+              81.70212765957447,
+              85.76,
+              111.06382978723404,
+              128.0
+            ],
+            "original_mask": 1,
+            "synthetic_transform": null
+          },
+          {
+            "source": "books/ola/IMG_5366.labeled.jpg",
+            "image": "validation/000119.png",
+            "box": [
+              14.826254826254827,
+              79.76811594202898,
+              37.99227799227799,
+              113.15942028985508
+            ],
+            "original_mask": 3,
+            "synthetic_transform": null
+          }
+        ]
+      },
+      "expected_runtime": null,
+      "source_size": [
+        480,
+        192
+      ],
+      "output_sha256": "273f18bfa6c1ee2e4c660036dbf3a6bfdc109ed273abb084aa2dee7da2b9bcbb",
+      "output_size": [
+        1024,
+        1024
+      ],
+      "scale": 1.0,
+      "realized_scale_xy": [
+        1.0,
+        1.0
+      ],
+      "scaled_size": [
+        480,
+        192
+      ],
+      "placement": [
+        47,
+        415,
+        527,
+        607
+      ],
+      "source_pixels_cropped": false,
+      "unscaled_source_pixels_exact": true,
+      "interpolation": "none",
+      "projected_screenshot_corners": [
+        [
+          132.66712279496755,
+          871.5987338345709
+        ],
+        [
+          945.4059565124453,
+          871.6108768680834
+        ],
+        [
+          945.4184780149001,
+          1196.7152248228065
+        ],
+        [
+          132.67964429742221,
+          1196.703081789294
+        ]
+      ],
+      "prediction_observed_for_selection": false
+    },
+    {
+      "output": "blank.png",
+      "source": "C:\\bm-symbols-apk-20260908\\evidence\\labelled-feeds-v1\\blank.png",
+      "source_sha256": "53f46d3dd50da408bfcf65e764fa9ca14630d568d96b1731a5bc0ad16ea4f68b",
+      "expected_text": null,
+      "classification": "uniform_blank",
+      "background_rgb": [
+        128,
+        128,
+        128
+      ],
+      "symbols": [],
+      "symbol_roles_origin": "No annotated cells",
+      "original_manifest_row": 7,
+      "original_annotation": null,
+      "expected_runtime": "searching with shutter disabled when no target exists",
+      "source_size": [
+        1024,
+        1024
+      ],
+      "output_sha256": "53f46d3dd50da408bfcf65e764fa9ca14630d568d96b1731a5bc0ad16ea4f68b",
+      "output_size": [
+        1024,
+        1024
+      ],
+      "scale": 0.49977037468487895,
+      "realized_scale_xy": [
+        0.4990234375,
+        0.4990234375
+      ],
+      "scaled_size": [
+        511,
+        511
+      ],
+      "placement": [
+        32,
+        256,
+        543,
+        767
+      ],
+      "source_pixels_cropped": false,
+      "unscaled_source_pixels_exact": false,
+      "interpolation": "pillow_bilinear",
+      "projected_screenshot_corners": [
+        [
+          107.2586648720761,
+          602.3713162147687
+        ],
+        [
+          972.4868816004741,
+          602.3842434858622
+        ],
+        [
+          972.5202070575281,
+          1467.6359195528594
+        ],
+        [
+          107.29199032912993,
+          1467.6229922817658
+        ]
+      ],
+      "prediction_observed_for_selection": false
+    },
+    {
+      "output": "startup-multirow-context.png",
+      "source": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\assets\\models\\braille-word-reader-v1\\native-word-fixture.png",
+      "source_sha256": "5115a112aad01432f4ebdfa22d8dcb686f1330075d5030bc5c039c154dc4d164",
+      "expected_text": null,
+      "classification": "multirow_startup_context",
+      "background_rgb": [
+        83,
+        83,
+        83
+      ],
+      "symbols": null,
+      "symbol_roles_origin": "No whole-scene cell annotation asserted",
+      "roi_expected_text": "rawenstwa",
+      "roi_source_normalized": {
+        "x": 0.14288889567057292,
+        "y": 0.40029182879377434,
+        "width": 0.7142222425672743,
+        "height": 0.19941634241245138
+      },
+      "roi_annotation_origin": "Existing nativeSelfTest ROI, not a label for the whole 450x257 image",
+      "is_natural_whole_word_benchmark": false,
+      "source_size": [
+        450,
+        257
+      ],
+      "output_sha256": "2b8f6bbb873b4adb3e46621fcc7ad2be97bdc4210d81dbfc87405a4c2955270c",
+      "output_size": [
+        1024,
+        1024
+      ],
+      "scale": 1.0,
+      "realized_scale_xy": [
+        1.0,
+        1.0
+      ],
+      "scaled_size": [
+        450,
+        257
+      ],
+      "placement": [
+        62,
+        383,
+        512,
+        640
+      ],
+      "source_pixels_cropped": false,
+      "unscaled_source_pixels_exact": true,
+      "interpolation": "none",
+      "projected_screenshot_corners": [
+        [
+          158.06312443156295,
+          817.4150553119143
+        ],
+        [
+          920.0057810416984,
+          817.4264394058323
+        ],
+        [
+          920.0225415944633,
+          1252.5921551577273
+        ],
+        [
+          158.0798849843278,
+          1252.5807710638094
+        ]
+      ],
+      "prediction_observed_for_selection": false
+    }
+  ],
+  "limitations": [
+    "The mapping is fitted from one previous screenshot and must be visually rechecked after relaunch/layout changes.",
+    "Full startup image contains multiple rows; rawenstwa applies only to its recorded ROI.",
+    "Only geometry and label provenance are asserted; no predictions, camera pass, or physical accuracy are asserted."
+  ]
+}

@@ -1,0 +1,422 @@
+{
+  "schemaVersion": 1,
+  "generatedUtc": "2026-09-08T17:53:13.019837+00:00",
+  "kind": "independent_offline_600_second_review",
+  "apk": {
+    "path": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\output\\android\\BrailleMe-0.3.0-symbols-auto-frame-2026-09-09.apk",
+    "bytes": 133317765,
+    "sha256": "9afa6a1eb2983d0a92b4f1dcff3026f91d583bca02cda6d98cfaf91760a90259",
+    "installed_apk_verified_by_this_analyzer": false
+  },
+  "inputs": [
+    {
+      "path": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\output\\update-symbols-tracking-20260908\\runtime-600-analysis-v6.json",
+      "sha256": "44aab8efa6823340f990665c89a71e8bd2eafa71f051410ae5f40e557239be46",
+      "bytes": 64261
+    },
+    {
+      "path": "C:\\bm-symbols-apk-20260908\\evidence\\actions-600-v6\\summary.json",
+      "sha256": "f1e85f38fb5acbe5f11077e013e984af32a0f4222c691170c62d7e64ea569f2f",
+      "bytes": 45468
+    },
+    {
+      "path": "C:\\bm-symbols-apk-20260908\\evidence\\actions-600-v6\\actions.jsonl",
+      "sha256": "b4ffc83a75498e4d9cf9e71e3cba38429e719c86e575a9157cea396752c6ae54",
+      "bytes": 556412
+    },
+    {
+      "path": "C:\\bm-symbols-apk-20260908\\evidence\\runtime-600-v6-complete\\metadata.json",
+      "sha256": "f1d49f8023189b9b7b77ff9b9de930e8d31c83b138798a8c09c7fc2e7da2a423",
+      "bytes": 655
+    },
+    {
+      "path": "C:\\bm-symbols-apk-20260908\\evidence\\runtime-600-v6-complete\\summary.json",
+      "sha256": "a81d47b35ae7dcae430a995160e393bf61b9e66dacfaf695d2560b0a1a1c8c3e",
+      "bytes": 1459
+    },
+    {
+      "path": "C:\\bm-symbols-apk-20260908\\evidence\\runtime-600-v6-complete\\samples.jsonl",
+      "sha256": "26430b8c5b42911604aee1580d1694ca7d02642ae6ac5bd03b87b44927b4f031",
+      "bytes": 93686
+    },
+    {
+      "path": "C:\\bm-symbols-apk-20260908\\evidence\\runtime-600-v6-complete\\media-camera-start.txt",
+      "sha256": "8e8e87e114dfd95f8052e8973694390ee922fe2a30802651b5d0b8138860f906",
+      "bytes": 30583
+    },
+    {
+      "path": "C:\\bm-symbols-apk-20260908\\evidence\\runtime-600-v6-complete\\media-camera-end.txt",
+      "sha256": "226ba4cb78bcbaefdd46c4350364a1e4cbe1600fe222d1e7679bfb7c8b5df6b4",
+      "bytes": 32161
+    },
+    {
+      "path": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\output\\initial-preview-analysis-v6.json",
+      "sha256": "c93bdd8bef2f2f7d30374464aa674be3af1daecf6ca026e64ac72d07553d39a5",
+      "bytes": 6635
+    },
+    {
+      "path": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\output\\stage-source-binding-v6.json",
+      "sha256": "fcd80da212e74209334e55c791df6d4de3b6d7dd199a4957bc958334ce65a357",
+      "bytes": 48146
+    },
+    {
+      "path": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\output\\application-source-unchanged-v6.json",
+      "sha256": "d28b57873f212e70410a23025e166f6a1f5373d4cbdc29089217a226bada953a",
+      "bytes": 6784
+    },
+    {
+      "path": "C:\\bm-symbols-apk-20260908\\evidence\\apk-integrity-v6\\install.json",
+      "sha256": "6db736203c1094503353c2e23ca678e49f715c02328bf46fb091178db5a7ed28",
+      "bytes": 773
+    },
+    {
+      "path": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\docs\\testing\\WORD-APK-NATIVE-SMOKE-ID.md",
+      "sha256": "cbd7e3cd06a5bd7a69286941c97d8fc86d012bf33e5b9ef07017a255c5b71631",
+      "bytes": 11316
+    }
+  ],
+  "collection": {
+    "status": "duration_completed",
+    "elapsedSeconds": 600,
+    "inputAnalysisIssues": 0,
+    "observations": 59,
+    "observedPids": [
+      "9064"
+    ],
+    "samePidInStartEndCameraDumps": true,
+    "processInterpretation": "One app PID throughout 59 observations and both camera dumps; no app restart observed. This alone does not prove absence of every transient stall/ANR.",
+    "startConsumer": "SurfaceTexture-0-9064-1",
+    "endConsumer": "SurfaceTexture-0-9064-11",
+    "consumerInterpretation": "Preview consumers changed across scanner remounts; do not subtract whole-run native stream counters across different consumers."
+  },
+  "actions": {
+    "scriptStatus": "completed_actions_not_assessed",
+    "sent": {
+      "Pindai": 10,
+      "Pindai ulang": 9
+    },
+    "terminalResultControlObservations": 9,
+    "terminalResultCycles": [
+      0,
+      2,
+      3,
+      4,
+      6,
+      9,
+      10,
+      11,
+      12
+    ],
+    "terminalPhotoRecords": 9,
+    "terminalStatuses": {
+      "success": 0,
+      "rejected": 9,
+      "error": 0
+    },
+    "notSentBecauseShutterDisabledCycles": [
+      1,
+      5,
+      7,
+      8,
+      13,
+      15
+    ],
+    "captureObservationTimeoutCycles": [
+      14
+    ],
+    "timeoutCycle14States": [
+      {
+        "utc": "2026-09-08T17:50:29.761230+00:00",
+        "states": [
+          "Tahan kamera, lalu tekan Pindai"
+        ],
+        "shutterEnabled": true,
+        "rescanVisible": false
+      },
+      {
+        "utc": "2026-09-08T17:50:33.486726+00:00",
+        "states": [
+          "Mencari Braille"
+        ],
+        "shutterEnabled": false,
+        "rescanVisible": false
+      },
+      {
+        "utc": "2026-09-08T17:50:37.095432+00:00",
+        "states": [
+          "Braille terdeteksi"
+        ],
+        "shutterEnabled": false,
+        "rescanVisible": false
+      },
+      {
+        "utc": "2026-09-08T17:50:40.532825+00:00",
+        "states": [
+          "Tahan kamera, lalu tekan Pindai"
+        ],
+        "shutterEnabled": true,
+        "rescanVisible": false
+      },
+      {
+        "utc": "2026-09-08T17:50:44.083922+00:00",
+        "states": [
+          "Tahan kamera, lalu tekan Pindai"
+        ],
+        "shutterEnabled": true,
+        "rescanVisible": false
+      },
+      {
+        "utc": "2026-09-08T17:50:47.760916+00:00",
+        "states": [
+          "Tahan kamera, lalu tekan Pindai"
+        ],
+        "shutterEnabled": true,
+        "rescanVisible": false
+      }
+    ],
+    "nonzeroActionCommandExits": 0,
+    "interpretation": "10 Pindai actions were sent; nine observed terminal photo records were rejected and nine cycles showed Pindai ulang. The final attempt has no terminal outcome in retained evidence. A tap must not be reported as a successful capture/recognition.",
+    "correspondenceLimitation": "Counts and chronological observations agree, but captureId resets to1 on remount; a globally unique action-to-capture correlation is unavailable. Missing terminal outcomes are excluded from numeric latency rather than assigned an invented duration."
+  },
+  "photoLatency": {
+    "allObservedTerminalStatusesIncluded": true,
+    "sampleCount": 9,
+    "timesMs": [
+      1877,
+      1754,
+      1831,
+      1761,
+      2098,
+      1854,
+      1892,
+      1878,
+      1848
+    ],
+    "sortedTimesMs": [
+      1754,
+      1761,
+      1831,
+      1848,
+      1854,
+      1877,
+      1878,
+      1892,
+      2098
+    ],
+    "meanMs": 1865.888888888889,
+    "medianMs": 1854,
+    "p95Method": "nearest rank ceil(0.95*n), one-based",
+    "p95Rank": 9,
+    "p95Ms": 2098,
+    "maxMs": 2098,
+    "target": {
+      "comparison": "less_than_or_equal",
+      "milliseconds": 2000,
+      "met": false,
+      "excessMs": 98,
+      "authority": "docs/testing/WORD-APK-NATIVE-SMOKE-ID.md:65"
+    },
+    "terminalSamplesUnderTarget": 8,
+    "interpretation": "Observed nine-terminal-sample p95 fails the <=2s target. Rejections are valid terminal timing samples but provide no successful-recognition latency evidence. Small emulator-only sample, not a physical-device percentile guarantee.",
+    "instrumentationBoundary": "performance.now at accepted capture handler (word-photo-camera.tsx:268) through terminal event publication/log (line288). Includes photo capture and decoding; does not measure automation tap dispatch or the final display presentation."
+  },
+  "tracking": {
+    "reports": 41,
+    "inferredCounterSegments": 10,
+    "inferredResets": 9,
+    "allRetainedCumulativeErrorCountersZero": true,
+    "observedDeltaCountsLowerBound": {
+      "received": 4069,
+      "admitted": 1244,
+      "busyDrops": 0,
+      "throttled": 2633,
+      "disabledDrops": 192,
+      "runnerDrops": 0,
+      "completed": 1247,
+      "errors": 0
+    },
+    "observedDeltaP95BoundsMs": {
+      "rank": 1185,
+      "sample_count": 1247,
+      "lower_ms": 200,
+      "lower_inclusive": false,
+      "upper_ms": 400,
+      "upper_inclusive": true
+    },
+    "segments": [
+      {
+        "index": 0,
+        "reports": 13,
+        "deviceSpanSeconds": 118.23900008201599,
+        "completedDeltaLowerBound": 521,
+        "admittedDeltaLowerBound": 520,
+        "reportedErrorDelta": 0,
+        "p95BoundsMs": {
+          "rank": 495,
+          "sample_count": 521,
+          "lower_ms": 200,
+          "lower_inclusive": false,
+          "upper_ms": 400,
+          "upper_inclusive": true
+        },
+        "method": "Last minus first cumulative histogram; one-report segments have no retained delta latency events."
+      },
+      {
+        "index": 1,
+        "reports": 4,
+        "deviceSpanSeconds": 22.674000024795532,
+        "completedDeltaLowerBound": 93,
+        "admittedDeltaLowerBound": 93,
+        "reportedErrorDelta": 0,
+        "p95BoundsMs": {
+          "rank": 89,
+          "sample_count": 93,
+          "lower_ms": 200,
+          "lower_inclusive": false,
+          "upper_ms": 400,
+          "upper_inclusive": true
+        },
+        "method": "Last minus first cumulative histogram; one-report segments have no retained delta latency events."
+      },
+      {
+        "index": 2,
+        "reports": 1,
+        "deviceSpanSeconds": 0.0,
+        "completedDeltaLowerBound": 0,
+        "admittedDeltaLowerBound": 0,
+        "reportedErrorDelta": 0,
+        "p95BoundsMs": null,
+        "method": "Last minus first cumulative histogram; one-report segments have no retained delta latency events."
+      },
+      {
+        "index": 3,
+        "reports": 1,
+        "deviceSpanSeconds": 0.0,
+        "completedDeltaLowerBound": 0,
+        "admittedDeltaLowerBound": 0,
+        "reportedErrorDelta": 0,
+        "p95BoundsMs": null,
+        "method": "Last minus first cumulative histogram; one-report segments have no retained delta latency events."
+      },
+      {
+        "index": 4,
+        "reports": 4,
+        "deviceSpanSeconds": 23.207000017166138,
+        "completedDeltaLowerBound": 93,
+        "admittedDeltaLowerBound": 92,
+        "reportedErrorDelta": 0,
+        "p95BoundsMs": {
+          "rank": 89,
+          "sample_count": 93,
+          "lower_ms": 200,
+          "lower_inclusive": false,
+          "upper_ms": 400,
+          "upper_inclusive": true
+        },
+        "method": "Last minus first cumulative histogram; one-report segments have no retained delta latency events."
+      },
+      {
+        "index": 5,
+        "reports": 7,
+        "deviceSpanSeconds": 52.78399991989136,
+        "completedDeltaLowerBound": 231,
+        "admittedDeltaLowerBound": 231,
+        "reportedErrorDelta": 0,
+        "p95BoundsMs": {
+          "rank": 220,
+          "sample_count": 231,
+          "lower_ms": 200,
+          "lower_inclusive": false,
+          "upper_ms": 400,
+          "upper_inclusive": true
+        },
+        "method": "Last minus first cumulative histogram; one-report segments have no retained delta latency events."
+      },
+      {
+        "index": 6,
+        "reports": 1,
+        "deviceSpanSeconds": 0.0,
+        "completedDeltaLowerBound": 0,
+        "admittedDeltaLowerBound": 0,
+        "reportedErrorDelta": 0,
+        "p95BoundsMs": null,
+        "method": "Last minus first cumulative histogram; one-report segments have no retained delta latency events."
+      },
+      {
+        "index": 7,
+        "reports": 1,
+        "deviceSpanSeconds": 0.0,
+        "completedDeltaLowerBound": 0,
+        "admittedDeltaLowerBound": 0,
+        "reportedErrorDelta": 0,
+        "p95BoundsMs": null,
+        "method": "Last minus first cumulative histogram; one-report segments have no retained delta latency events."
+      },
+      {
+        "index": 8,
+        "reports": 1,
+        "deviceSpanSeconds": 0.0,
+        "completedDeltaLowerBound": 0,
+        "admittedDeltaLowerBound": 0,
+        "reportedErrorDelta": 0,
+        "p95BoundsMs": null,
+        "method": "Last minus first cumulative histogram; one-report segments have no retained delta latency events."
+      },
+      {
+        "index": 9,
+        "reports": 8,
+        "deviceSpanSeconds": 70.13000011444092,
+        "completedDeltaLowerBound": 309,
+        "admittedDeltaLowerBound": 308,
+        "reportedErrorDelta": 0,
+        "p95BoundsMs": {
+          "rank": 294,
+          "sample_count": 309,
+          "lower_ms": 200,
+          "lower_inclusive": false,
+          "upper_ms": 400,
+          "upper_inclusive": true
+        },
+        "method": "Last minus first cumulative histogram; one-report segments have no retained delta latency events."
+      }
+    ],
+    "interpretation": "1247 retained completion deltas, no reported tracking errors; histogram p95 is >200ms and <=400ms. First prefixes and unreported tails are omitted. A completion can belong to an admission before the first snapshot, explaining1247 completions versus1244 admissions. Zero runnerDrops is a compatibility field after one-hop processing, not proof of zero CameraX drops."
+  },
+  "memory": {
+    "valid_pss_samples": 60,
+    "first_pss_kib": 297263,
+    "last_pss_kib": 300945,
+    "max_pss_kib": 328811,
+    "growth_pss_kib": 3682,
+    "scope": "Sampled process PSS; first/last change alone cannot establish or exclude a memory leak.",
+    "firstPssMiB": 290.2958984375,
+    "lastPssMiB": 293.8916015625,
+    "maxPssMiB": 321.1044921875,
+    "growthPssMiB": 3.595703125,
+    "growthPercent": 1.2386338023904757
+  },
+  "previewMetrics": {
+    "wholeRunSurfaceCompositionProxyHz": 21.12,
+    "wholeRunSurfaceSamples": 538,
+    "wholeRunObservedPresentedFrames": 12672,
+    "wholeRunHistoryGapsReported": 0,
+    "wholeRunScope": "Includes live preview, shutter processing and paused camera on result screens; not active-camera FPS.",
+    "initialNativeOutputBuffersPerSecond": 29.752950738131673,
+    "initialSurfaceCompositionProxyHz": 33.8055962678775,
+    "initialScope": "Separate initial preview envelopes and source hashes in output/initial-preview-analysis-v6.json; emulator camera-service output buffers and app surface presentations are different metrics."
+  },
+  "assessment": {
+    "collectionCompleted": true,
+    "sourceAndApkBindingAvailable": true,
+    "photoLatencyTargetMet": false,
+    "successfulRecognitionDemonstratedInThisRun": false,
+    "physicalCameraValidated": false,
+    "releaseReadiness": "not_assessed"
+  },
+  "limitations": [
+    "Offline reads only; no ADB, source, model, or application mutations.",
+    "This run uses a synthetic emulator feed; capital/number accuracy is not established.",
+    "Memory samples do not establish or rule out leaks.",
+    "Keep failed p95 and missing terminal outcome visible; do not replace all-status timing with a successful-only percentile."
+  ]
+}

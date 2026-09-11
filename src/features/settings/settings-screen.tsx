@@ -323,7 +323,7 @@ export default function SettingsScreen() {
 
       <SectionCard title="Aksesibilitas" variant="plain">
         <View
-          accessibilityLabel="Navigasi dengan TalkBack. Gunakan tiga tab di bagian bawah dengan urutan Beranda, Pindai, lalu Pengaturan."
+          accessibilityLabel="Navigasi dengan TalkBack. Gunakan empat tab di bagian bawah dengan urutan Beranda, Pindai, Penerjemah, lalu Setelan."
           accessible
           style={styles.accessibilityNote}
         >
@@ -331,8 +331,8 @@ export default function SettingsScreen() {
             Navigasi dengan TalkBack
           </Text>
           <Text accessible={false} style={styles.accessibilityCopy}>
-            Gunakan tiga tab di bagian bawah untuk berpindah halaman. Urutan
-            fokusnya adalah Beranda, Pindai, lalu Pengaturan.
+            Gunakan empat tab di bagian bawah untuk berpindah halaman. Urutan
+            fokusnya adalah Beranda, Pindai, Penerjemah, lalu Setelan.
           </Text>
         </View>
       </SectionCard>

@@ -67,7 +67,7 @@ def main():
     source_folder=args.output/'source'
     source_folder.mkdir(exist_ok=True)
     source_hashes={}
-    for filename in ('word_select.py','word_model.py','word_decode.py','word_data.py','word_geometry_head.py','word_bn_affine.py','word_anchor_zoom.py'):
+    for filename in ('word_select.py','word_model.py','word_decode.py','word_symbols.py','word_data.py','word_geometry_head.py','word_bn_affine.py','word_anchor_zoom.py'):
         contents=(Path(__file__).parent/filename).read_bytes()
         (source_folder/filename).write_bytes(contents)
         source_hashes[filename]=hashlib.sha256(contents).hexdigest()

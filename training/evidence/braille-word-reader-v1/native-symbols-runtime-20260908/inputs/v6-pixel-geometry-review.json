@@ -1,0 +1,387 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-09-08T17:39:44.257102+00:00",
+  "scope": "Actual v6 emulator screenshot pixels and recorded capture metadata; no ADB, inference, source changes or acceptance claim.",
+  "inputs": {
+    "tracking_review": {
+      "path": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\output\\update-symbols-tracking-20260908\\overlay-review-v6-tracking-masked-v2.json",
+      "sha256": "1abc7a9005e24c059ee54d2cd1e64340b81fae5f6e238b65b6ac52777bf0a9df"
+    },
+    "photo_review": {
+      "path": "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\output\\update-symbols-tracking-20260908\\overlay-review-v6-first-photo-v1.json",
+      "sha256": "bac35491827a96212d2c3e01063a1a648d70b1990d8c98ef6dc7ba7f862b4d5d"
+    },
+    "tracking_screenshot": {
+      "path": "C:\\bm-symbols-apk-20260908\\evidence\\v6-tracker-live.png",
+      "sha256": "eab3606aee0844324a923bfcec8e3a6046599d333d2483e211ff3d35a2ce8554"
+    },
+    "photo_screenshot": {
+      "path": "C:\\bm-symbols-apk-20260908\\evidence\\v6-first-photo.png",
+      "sha256": "15eeddfa49c51385d1aa86f16212340c2e421c3a39fbbf5402b01738e2fa0c68"
+    },
+    "photo_log": {
+      "path": "C:\\bm-symbols-apk-20260908\\evidence\\v6-first-photo.log",
+      "sha256": "f98837e477395e2056487b91bf6cd3f94799913c036d21fbd5ced4901c10bcb1"
+    }
+  },
+  "script_sha256": "c24af6259807764ae24468d7e7f656e0a6def43d88c71efdeba85e07c7843659",
+  "preview_xywh": [
+    53,
+    548,
+    975,
+    975
+  ],
+  "pixel_alignment": {
+    "tracking_correlation": 0.9989270578275812,
+    "tracking_rmse_8bit": 0.7131298486819839,
+    "photo_correlation": 0.9987151450608882,
+    "photo_rmse_8bit": 0.6614034497047422,
+    "photo_minus_tracking_corners_px": [
+      [
+        0.010287313543869914,
+        0.4989845943025557
+      ],
+      [
+        0.015592571154002144,
+        0.48862335137368973
+      ],
+      [
+        0.008896131458413947,
+        0.4772154959030104
+      ],
+      [
+        0.003590873848366982,
+        0.48757673883187636
+      ]
+    ],
+    "maximum_corner_distance_px": 0.49909062721236913,
+    "uncertainty": "Approximately one screenshot pixel including edge interpretation; left/right fit variations retained in input reports, not a confidence interval."
+  },
+  "known_fixture_roi": {
+    "expected_text": "rawenstwa",
+    "source_xyxy": [
+      64.2965746555297,
+      102.86609579211694,
+      385.7034406032593,
+      154.1339042078829
+    ],
+    "screen_xyxy": [
+      266.9907675402856,
+      991.618161379073,
+      811.1682312547158,
+      1078.4045058648985
+    ],
+    "whole_scene_label": false,
+    "individual_cells_annotated": false
+  },
+  "detected_overlay": {
+    "green_rectangle_count": 11,
+    "green_screen_xyxy": [
+      [
+        301,
+        925,
+        343,
+        990
+      ],
+      [
+        355,
+        926,
+        396,
+        992
+      ],
+      [
+        416,
+        947,
+        455,
+        1007
+      ],
+      [
+        473,
+        951,
+        512,
+        1011
+      ],
+      [
+        532,
+        953,
+        570,
+        1012
+      ],
+      [
+        587,
+        940,
+        627,
+        1000
+      ],
+      [
+        646,
+        955,
+        686,
+        1010
+      ],
+      [
+        703,
+        927,
+        745,
+        992
+      ],
+      [
+        758,
+        928,
+        799,
+        992
+      ],
+      [
+        818,
+        929,
+        859,
+        990
+      ],
+      [
+        871,
+        925,
+        916,
+        992
+      ]
+    ],
+    "green_source_xyxy": [
+      [
+        84.3866838419357,
+        63.52685242680201,
+        109.19539531896021,
+        101.91870353766052
+      ],
+      [
+        116.28021819575892,
+        64.11661849458801,
+        140.49834670699212,
+        103.0990865331832
+      ],
+      [
+        152.30759628691771,
+        76.51895219478632,
+        175.34424283563075,
+        111.95758776543062
+      ],
+      [
+        185.9729190419819,
+        78.88055268309097,
+        209.00956559069493,
+        114.31918825373526
+      ],
+      [
+        220.81960524796466,
+        80.06087022784823,
+        243.26558982315203,
+        114.90885614537314
+      ],
+      [
+        253.30431512558727,
+        72.3817047788765,
+        276.9315841439588,
+        107.82035671221217
+      ],
+      [
+        288.15064579676516,
+        81.24023873650668,
+        311.77771729580064,
+        113.72572421770224
+      ],
+      [
+        321.81683763690796,
+        64.70154120573193,
+        346.62554911393244,
+        103.09339231659038
+      ],
+      [
+        354.30107346812406,
+        65.29129091082655,
+        378.51912297162283,
+        103.09249236856567
+      ],
+      [
+        389.73850065536686,
+        65.8809424397731,
+        413.9564316472641,
+        101.9102440262281
+      ],
+      [
+        421.0414125395317,
+        63.51747660465355,
+        447.62207043326595,
+        103.09064338444216
+      ]
+    ],
+    "green_union_screen_xyxy": [
+      301.0,
+      925.0,
+      916.0,
+      1012.0
+    ],
+    "green_union_source_xyxy": [
+      84.38581475685712,
+      63.51747660465355,
+      447.62207043326595,
+      114.91263592707696
+    ],
+    "white_outer_screen_xyxy": [
+      306,
+      925,
+      911,
+      1013
+    ],
+    "white_outer_source_xyxy": [
+      87.3388876012823,
+      63.517558418110355,
+      444.6689580849736,
+      115.50318740404822
+    ]
+  },
+  "capture_metadata": {
+    "schemaVersion": 1,
+    "captureId": 1,
+    "preview": {
+      "widthDp": 371.4285888671875,
+      "heightDp": 371.4285888671875,
+      "resolution": {
+        "width": 1280,
+        "height": 960
+      },
+      "sensorPoints": [
+        {
+          "x": 621.3661499023438,
+          "y": 109.966796875
+        },
+        {
+          "x": 621.3661499023438,
+          "y": 717.692626953125
+        },
+        {
+          "x": 529.1320190429688,
+          "y": 717.692626953125
+        },
+        {
+          "x": 529.1320190429688,
+          "y": 109.966796875
+        }
+      ]
+    },
+    "photo": {
+      "width": 1280,
+      "height": 960,
+      "sensorToBuffer": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "cropRect": [
+        0,
+        0,
+        1280,
+        960
+      ],
+      "rotationDegrees": 90,
+      "isMirrored": false
+    },
+    "upright": {
+      "width": 960,
+      "height": 1280
+    },
+    "roi": {
+      "x": 0.2524035135904948,
+      "y": 0.41338438987731935,
+      "width": 0.6330477396647135,
+      "height": 0.07205791473388672
+    }
+  },
+  "capture_projection": {
+    "upright_photo_roi_xyxy": [
+      242.307373046875,
+      529.1320190429688,
+      850.033203125,
+      621.3661499023438
+    ],
+    "screen_xyxy": [
+      299.0934257507324,
+      922.8997068405151,
+      916.3149719238281,
+      1016.5749959945679
+    ],
+    "source_xyxy": [
+      83.25956843513319,
+      62.27696839121518,
+      447.8081828984925,
+      117.6148120617296
+    ],
+    "screen_minus_white_outer_edge_px": [
+      -6.906574249267578,
+      -2.1002931594848633,
+      5.314971923828125,
+      3.574995994567871
+    ],
+    "known_roi_area_covered_fraction": 0.2706019748089912,
+    "known_roi_height_covered_fraction": 0.2875663765233368,
+    "projection_basis": "Recorded upright photo 960x1280 and square preview975px with cover display; independent screenshot fit confirms global content alignment. Metadata projection is not a saved raw-photo pixel crop."
+  },
+  "runtime_observed": {
+    "photo_timing": {
+      "schemaVersion": 1,
+      "captureId": 1,
+      "elapsedMs": 1907,
+      "status": "rejected"
+    },
+    "tracking_metrics": {
+      "schemaVersion": 1,
+      "elapsedMs": 100115,
+      "received": 1729,
+      "admitted": 442,
+      "busyDrops": 0,
+      "throttled": 1239,
+      "disabledDrops": 48,
+      "runnerDrops": 0,
+      "completed": 442,
+      "errors": 0,
+      "meanMs": 137,
+      "maxMs": 431,
+      "latencyUpperBoundsMs": [
+        50,
+        100,
+        200,
+        400,
+        800,
+        1600,
+        null
+      ],
+      "latencyBuckets": [
+        0,
+        49,
+        358,
+        34,
+        1,
+        0,
+        0
+      ]
+    },
+    "admitted_per_second_over_metric_elapsed": 4.414922838735454
+  },
+  "findings": [
+    "Live-preview and displayed-photo source pixels globally align to within approximately one screenshot pixel, after brightness correction.",
+    "The 11 green boxes and frozen capture ROI cover the upper region of the middle source row, substantially above the known rawenstwa ROI; they do not describe that complete annotated word.",
+    "Captured metadata projected through the observed square cover display is close to the visible outer target (differences retained per edge); this supports consistency of displayed target and frozen photo target.",
+    "This does not isolate model localization from frame-crop-to-preview coordinate handling. Both can yield a misplaced target while global preview/photo alignment remains correct. Raw frame input plus proposal coordinates would be needed to isolate that path.",
+    "The first actual photo is rejected after1907ms. One rejected capture is not a latency percentile or scan-accuracy success."
+  ],
+  "limits": [
+    "No individual full-scene cell labels are asserted; a cell-count accuracy or model-confusion claim cannot be calculated.",
+    "Screenshot and shutter were not simultaneous; EMA/target motion, border thickness and snapshot timing affect small edge differences.",
+    "Known ROI is a prior native startup fixture annotation, not a label of every word/row in the full source.",
+    "No crop tightness or detection threshold was adjusted based on these results; original calibrated inputs remain frozen.",
+    "All results are emulator-only; no physical-paper or production-readiness claim."
+  ]
+}

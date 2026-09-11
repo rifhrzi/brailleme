@@ -1,0 +1,691 @@
+﻿--------- beginning of events
+         1788890410.161   211   211 I auditd  : SELinux: Loaded service context from:
+         1788890410.161   211   211 I auditd  : 		/system/etc/selinux/plat_service_contexts
+         1788890410.161   211   211 I auditd  : 		/system_ext/etc/selinux/system_ext_service_contexts
+         1788890410.162   211   211 I auditd  : 		/product/etc/selinux/product_service_contexts
+         1788890410.162   211   211 I auditd  : 		/vendor/etc/selinux/vendor_service_contexts
+         1788890410.162   211   211 I auditd  : 		/odm/etc/selinux/odm_service_contexts
+         1788890405.296   206   206 I auditd  : type=2000 audit(0.0:1): state=initialized audit_enabled=0 res=1
+         1788890409.452   206   206 I auditd  : type=1403 audit(0.0:2): auid=4294967295 ses=4294967295 lsm=selinux res=1
+         1788890409.452   206   206 I auditd  : type=1404 audit(0.0:3): enforcing=1 old_enforcing=0 auid=4294967295 ses=4294967295 enabled=1 old-enabled=1 lsm=selinux res=1
+         1788890410.619   236   248 I auditd  : SELinux: Loaded keystore2 context from:
+         1788890410.619   236   248 I auditd  : 		/system/etc/selinux/plat_keystore2_key_contexts
+         1788890410.619   236   248 I auditd  : 		/system_ext/etc/selinux/system_ext_keystore2_key_contexts
+         1788890410.619   236   248 I auditd  : 		/product/etc/selinux/product_keystore2_key_contexts
+         1788890410.619   236   248 I auditd  : 		/vendor/etc/selinux/vendor_keystore2_key_contexts
+         1788890412.522   275   275 I auditd  : SELinux: Loaded file context from:
+         1788890412.522   275   275 I auditd  : 		/system/etc/selinux/plat_file_contexts
+         1788890412.523   275   275 I auditd  : 		/system_ext/etc/selinux/system_ext_file_contexts
+         1788890412.523   275   275 I auditd  : 		/product/etc/selinux/product_file_contexts
+         1788890412.523   275   275 I auditd  : 		/vendor/etc/selinux/vendor_file_contexts
+         1788890412.524   275   275 I auditd  : 		/odm/etc/selinux/odm_file_contexts
+         1788890415.192     1     1 I auditd  : type=1400 audit(0.0:4): avc:  denied  { write } for  comm="init" name="error_report_end" dev="tracefs" ino=7112 scontext=u:r:init:s0 tcontext=u:object_r:debugfs_bootreceiver_tracing:s0 tclass=dir permissive=0
+         1788890415.387   439   439 I boot_progress_start: 9643
+         1788890416.032     1     1 I auditd  : type=1400 audit(0.0:5): avc:  denied  { getattr } for  comm="init" path="/system/bin/logcat" dev="dm-5" ino=8058117 scontext=u:r:init:s0 tcontext=u:object_r:logcat_exec:s0 tclass=file permissive=0
+         1788890417.324   439   439 I snet_event_log: [200284993,-1,]
+         1788890417.619   439   439 I boot_progress_preload_start: 11875
+         1788890418.872   439   439 I boot_progress_preload_end: 13128
+         1788890419.628   635   635 I system_server_start: [1,13880,13880]
+         1788890419.630   635   635 I boot_progress_system_run: 13886
+         1788890420.093   635   635 I commit_sys_config_file: [batterystats,5]
+         1788890420.100   635   635 I commit_sys_config_file: [batterystats,3]
+         1788890420.117   635   669 I commit_sys_config_file: [batterystats-daily,12]
+         1788890420.258   635   635 I boot_progress_pms_start: 14514
+         1788890420.438   635   635 I boot_progress_pms_system_scan_start: 14694
+         1788890421.159   635   635 I boot_progress_pms_data_scan_start: 15414
+         1788890421.551   635   635 I boot_progress_pms_scan_end: 15807
+         1788890421.693   635   635 I commit_sys_config_file: [package,64]
+         1788890421.693   635   635 I boot_progress_pms_ready: 15949
+         1788890421.928   635   693 I commit_sys_config_file: [package-user-0,236]
+         1788890421.975   635   635 I am_uid_running: 1000
+         1788890421.999   635   635 I am_uid_active: 1000
+         1788890422.049   635   635 I service_manager_slow: [17,idmap]
+         1788890422.305   635   635 I commit_sys_config_file: [overlays,4]
+         1788890422.339   635   655 I battery_status: [2,2,1,1,Li-ion]
+         1788890422.343   635   655 I battery_level: [100,5000,250]
+         1788890422.357   635   635 I service_manager_stats: [100,30,16613]
+         1788890422.462   635   635 I liblog  : 12
+         1788890422.663   635   635 I wm_task_created: 1
+         1788890422.673   635   664 I sysui_multi_action: [757,1594,758,4,759,1,806,NULL]
+         1788890422.791   635   635 I configuration_changed: 536894968
+         1788890422.794   635   635 I sysui_multi_action: [757,1659,758,4,759,1,1660,0]
+         1788890422.992   635   635 I device_idle: [0,boot]
+         1788890423.005   635   635 I device_idle_light: [0,boot]
+         1788890423.157   635   731 I snet_event_log: [35028827,-1,account:Account {name=@@ContextManagerNullAccount@@, type=com.google} provider:com.google.android.location.reporting user:0]
+         1788890423.158   635   731 I snet_event_log: [26513719,-1,Malformed authority]
+         1788890423.176   635   731 I commit_sys_config_file: [settings-0-0,5]
+         1788890423.176   635   670 I am_wtf  : [0,635,system_server,-1,SystemServiceRegistry,No service published for: jobscheduler]
+         1788890423.177   635   670 I am_wtf  : [0,635,system_server,-1,SystemServiceRegistry,Manager wrapper not available: jobscheduler]
+         1788890423.822   635   796 I storage_state: [41217664-9172-527a-b3d5-edabb50a7d69,0,0,4426518528,10411143168]
+         1788890423.920   635   670 I am_wtf  : [0,635,system_server,-1,PowerManagerService,Tried to acquire wake lock for invalid display: 0]
+         1788890424.033   635   802 I stream_devices_changed: [4,0,2]
+         1788890424.035   635   802 I stream_devices_changed: [0,0,2]
+         1788890424.037   635   802 I stream_devices_changed: [3,0,2]
+         1788890424.038   635   802 I stream_devices_changed: [5,0,2]
+         1788890424.039   635   802 I stream_devices_changed: [2,0,2]
+         1788890424.049   635   663 I commit_sys_config_file: [notification-policy,13]
+         1788890424.570   635   670 I am_wtf  : [0,635,system_server,-1,SystemServiceRegistry,No service published for: face]
+         1788890424.571   635   670 I am_wtf  : [0,635,system_server,-1,SystemServiceRegistry,Manager wrapper not available: face]
+         1788890424.801   635   670 I am_wtf  : [0,635,system_server,-1,EnergyConsumerSnapshot,Unexpected battery voltage (0 mV) when taking energy consumer snapshot]
+         1788890424.810   635   670 I am_wtf  : [0,635,system_server,-1,EnergyConsumerSnapshot,Unexpected battery voltage (0 mV) when taking energy consumer snapshot]
+         1788890424.886   635   670 I am_wtf  : [0,635,system_server,-1,EnergyConsumerSnapshot,Unexpected battery voltage (0 mV) when taking energy consumer snapshot]
+         1788890424.915   635   669 I commit_sys_config_file: [batterystats,18]
+         1788890424.926   635   669 I commit_sys_config_file: [batterystats,5]
+         1788890424.932   635   839 I service_manager_slow: [18,tethering]
+         1788890425.017   635   635 I configuration_changed: 512
+         1788890425.124   461   461 I auditd  : type=1400 audit(0.0:6): avc:  denied  { read } for  comm="binder:461_1" name="u:object_r:persist_vendor_debug_wifi_prop:s0" dev="tmpfs" ino=286 scontext=u:r:hal_wifi_default:s0 tcontext=u:object_r:persist_vendor_debug_wifi_prop:s0 tclass=file permissive=0
+         1788890425.318   635   670 I am_wtf  : [0,635,system_server,-1,SystemServiceRegistry,No service published for: face]
+         1788890425.318   635   670 I am_wtf  : [0,635,system_server,-1,SystemServiceRegistry,Manager wrapper not available: face]
+         1788890425.345   635   635 I commit_sys_config_file: [package-session,5]
+         1788890425.360   635   635 I rescue_note: [0,1,19615]
+         1788890425.563   635   635 I boot_progress_ams_ready: 19819
+         1788890425.565   635   635 I configuration_changed: 268468480
+         1788890425.571   635   635 I thermal_changed: [skin,3,30.100000,0,0]
+         1788890425.571   635   635 I thermal_changed: [battery,2,30.200001,0,0]
+         1788890425.632   635   729 I commit_sys_config_file: [log-files,7]
+         1788890425.642   635   729 I commit_sys_config_file: [log-files,6]
+         1788890425.696   635   729 I commit_sys_config_file: [log-files,14]
+         1788890425.729   635   729 I commit_sys_config_file: [log-files,32]
+         1788890425.743   635   741 I configuration_changed: 256
+         1788890425.853   635   635 I am_uid_running: 10187
+         1788890425.886   635   729 I commit_sys_config_file: [log-files,7]
+         1788890425.904   635   729 I commit_sys_config_file: [log-files,17]
+         1788890425.936   635   671 I am_proc_start: [0,875,10187,com.android.systemui,service,{com.android.systemui/com.android.systemui.wallpapers.ImageWallpaper}]
+         1788890425.957   635   714 I am_proc_bound: [0,875,com.android.systemui]
+         1788890425.973   635   714 I am_uid_active: 10187
+         1788890426.038   635   778 I commit_sys_config_file: [net-policy,16]
+         1788890426.190   635   777 I netstats_mobile_sample: [0,0,0,0,0,0,0,0,1788890426190]
+         1788890426.190   635   777 I netstats_wifi_sample: [0,0,0,0,0,0,0,0,1788890426190]
+         1788890426.217   635   777 I netstats_mobile_sample: [0,0,0,0,0,0,0,0,1788890426217]
+         1788890426.221   635   777 I netstats_wifi_sample: [0,0,0,0,0,0,0,0,1788890426217]
+         1788890426.619   635   703 I am_uid_running: 1037
+         1788890426.646   635   671 I am_proc_start: [0,910,1037,WebViewLoader-x86_64,,]
+         1788890426.681   635   714 I am_proc_bound: [0,910,WebViewLoader-x86_64]
+         1788890426.683   635   714 I am_uid_active: 1037
+         1788890426.780   635   655 I wm_task_created: 2
+         1788890426.791   635   654 I wm_task_created: 3
+         1788890426.801   635   937 I wm_task_created: 4
+         1788890426.868   635   731 I commit_sys_config_file: [settings-0-0,36]
+         1788890426.931   635   654 I am_proc_died: [0,910,WebViewLoader-x86_64,-700,0]
+         1788890426.931   635   654 I am_uid_stopped: 1037
+         1788890426.935   635   655 I wm_task_removed: [3,3,0,reParentTask:sanitizeAndApplyHierarchyOp]
+         1788890426.935   635   655 I wm_task_moved: [3,2,0,1,2147483647]
+         1788890426.935   635   655 I wm_task_removed: [4,4,0,reParentTask:sanitizeAndApplyHierarchyOp]
+         1788890426.935   635   655 I wm_task_moved: [4,2,0,1,2147483647]
+         1788890426.946   875   900 I viewroot_draw_event: [VRI[ShellDropTarget],Not drawing due to not visible. Reason=View.INVISIBLE]
+         1788890426.948   635   654 I am_low_memory: 2
+         1788890427.111   635   635 I am_uid_running: 1073
+         1788890427.131   635   669 I netstats_mobile_sample: [0,0,0,0,0,0,0,0,1788890427131]
+         1788890427.132   635   635 I ssm_user_starting: 0
+         1788890427.137   635   671 I am_proc_start: [0,988,1073,com.android.networkstack.process,service,{com.google.android.networkstack/com.android.server.NetworkStackService}]
+         1788890427.170   635   669 I netstats_wifi_sample: [0,0,0,0,0,0,0,0,1788890427131]
+         1788890427.170   635   744 I am_uid_running: 1002
+         1788890427.183   988   988 I service_manager_slow: [12,activity]
+         1788890427.183   635   715 I am_proc_bound: [0,988,com.android.networkstack.process]
+         1788890427.186   635   715 I am_uid_active: 1073
+         1788890427.191   635   671 I am_proc_start: [0,1002,1002,com.google.android.bluetooth,service,{com.google.android.bluetooth/com.android.bluetooth.btservice.AdapterService}]
+         1788890427.219   635   635 I um_user_visibility_changed: [0,1]
+         1788890427.219   635   635 I am_uid_running: 1068
+         1788890427.238   635   635 I am_uid_running: 1001
+         1788890427.265   635   635 I wm_task_created: 5
+         1788890427.266   635   635 I wm_task_moved: [5,1,0,1,2147483647]
+         1788890427.269   635   635 I wm_task_moved: [1,1,0,1,1]
+         1788890427.269   635   635 I wm_task_to_front: [0,5,0]
+         1788890427.269   635   635 I wm_create_task: [0,5,1,0]
+         1788890427.269   635   635 I wm_create_activity: [0,254876500,5,com.google.android.apps.nexuslauncher/.NexusLauncherActivity,android.intent.action.MAIN,NULL,NULL,268435712]
+         1788890427.269   635   635 I wm_task_moved: [1,1,0,1,1]
+         1788890427.269   635   635 I wm_task_moved: [5,1,0,1,2147483647]
+         1788890427.275   635   635 I uc_send_user_broadcast: [0,android.intent.action.USER_STARTED]
+         1788890427.276   635   635 I uc_send_user_broadcast: [0,android.intent.action.USER_STARTING]
+         1788890427.282   635   635 I uc_send_user_broadcast: [0,android.intent.action.USER_FOREGROUND]
+         1788890427.282   635   635 I uc_send_user_broadcast: [0,android.intent.action.USER_SWITCHED]
+         1788890427.285   635   654 I am_proc_bound: [0,1002,com.google.android.bluetooth]
+         1788890427.288   635   664 I am_uid_running: 10182
+         1788890427.291   635   767 I am_proc_start: [0,1013,1068,com.android.se,added application,com.android.se]
+         1788890427.291   635   767 I am_proc_bound: [0,1013,com.android.se]
+         1788890427.296   635   767 I am_uid_active: 1068
+         1788890427.327   635   671 I am_proc_start: [0,1030,1001,com.android.phone,added application,com.android.phone]
+         1788890427.354   635   671 I am_proc_start: [0,1040,10182,com.google.android.apps.nexuslauncher,top-activity,{com.google.android.apps.nexuslauncher/com.google.android.apps.nexuslauncher.NexusLauncherActivity}]
+         1788890427.362   635   839 I service_manager_stats: [321,214,5005]
+         1788890427.360   635   715 I am_proc_bound: [0,1030,com.android.phone]
+         1788890427.370   635   715 I am_uid_active: 1001
+         1788890427.379   635   635 I notification_cancel_all: [1000,635,android,0,0,0,20,NULL]
+         1788890427.380   635   635 I notification_cancel_all: [1000,635,android,0,0,0,20,NULL]
+         1788890427.380   635   635 I notification_cancel_all: [1000,635,android,0,0,0,20,NULL]
+         1788890427.380   635   635 I notification_cancel_all: [1000,635,android,0,0,0,20,NULL]
+         1788890427.405   635   635 I am_uid_running: 10194
+         1788890427.414   635   655 I am_proc_bound: [0,1040,com.google.android.apps.nexuslauncher]
+         1788890427.436   635   655 I am_uid_active: 10182
+         1788890427.443   635   671 I am_proc_start: [0,1054,10194,com.google.android.ext.services,service,{com.google.android.ext.services/android.ext.services.autofill.InlineSuggestionRenderServiceImpl}]
+         1788890427.494   635   767 I wm_restart_activity: [0,254876500,5,com.google.android.apps.nexuslauncher/.NexusLauncherActivity]
+         1788890427.498   635   767 I wm_set_resumed_activity: [0,com.google.android.apps.nexuslauncher/.NexusLauncherActivity,realStartActivityLocked - onActivityStateChanged]
+         1788890427.508  1040  1063 I jank_cuj_events_cancel_request: [-1,1788890427485823000,21741750000,21741757300]
+         1788890427.521   635   715 I am_proc_bound: [0,1054,com.google.android.ext.services]
+         1788890427.570  1040  1040 I wm_on_create_called: [254876500,com.google.android.apps.nexuslauncher.NexusLauncherActivity,performCreate,2]
+         1788890427.593  1040  1040 I wm_on_start_called: [254876500,com.google.android.apps.nexuslauncher.NexusLauncherActivity,handleStartActivity,0]
+         1788890427.600  1040  1040 I wm_on_resume_called: [254876500,com.google.android.apps.nexuslauncher.NexusLauncherActivity,RESUME_ACTIVITY,4]
+         1788890427.637   635  1065 I am_uid_active: 1002
+         1788890427.668   988   988 I service_manager_slow: [24,netd]
+         1788890427.679   635  1065 I am_uid_active: 10194
+         1788890427.688  1040  1040 I wm_on_top_resumed_gained_called: [254876500,com.google.android.apps.nexuslauncher.NexusLauncherActivity,topStateChangedWhenResumed]
+         1788890427.726   635   665 I input_focus: [Focus request b668ca9 com.google.android.apps.nexuslauncher/com.google.android.apps.nexuslauncher.NexusLauncherActivity,reason=UpdateInputWindows]
+         1788890427.737   635   726 I am_uid_running: 10207
+         1788890427.748   635   665 I input_focus: [Focus request 1e1afa8 com.google.android.apps.nexuslauncher/com.google.android.apps.nexuslauncher.NexusLauncherActivity,reason=UpdateInputWindows]
+         1788890427.816   635   671 I am_proc_start: [0,1093,10207,com.google.android.permissioncontroller,service,{com.google.android.permissioncontroller/com.android.permissioncontroller.hibernation.HibernationJobService}]
+         1788890427.866  1040  1040 I viewroot_draw_event: [VRI[NexusLauncherActivity],reportDrawFinished seqId=0]
+         1788890427.881   635   664 I boot_progress_enable_screen: 22137
+         1788890427.882   635   715 I am_proc_bound: [0,1093,com.google.android.permissioncontroller]
+         1788890427.882   635   664 I screen_toggled: 1
+         1788890427.901  1040  1087 I viewroot_draw_event: [VRI[NexusLauncherActivity],reportDrawFinished seqId=0]
+         1788890427.933   635   661 I sysui_multi_action: [319,672,322,661,325,21,757,761,758,7,759,2,806,com.google.android.apps.nexuslauncher,871,com.google.android.apps.nexuslauncher.NexusLauncherActivity,905,0,945,172,1320,4,1321,23]
+         1788890427.938   635   661 I wm_activity_launch_time: [0,254876500,com.google.android.apps.nexuslauncher/.NexusLauncherActivity,661]
+         1788890428.155  1002  1084 I service_manager_slow: [31,legacy_permission]
+         1788890428.984   635   670 I am_uid_active: 10207
+         1788890429.016   635   655 I am_wtf  : [0,988,com.android.networkstack.process,680050253,SystemServiceRegistry,No service published for: ethernet]
+         1788890429.027   635   671 I am_proc_start: [0,1155,1000,com.android.settings,broadcast,{com.android.settings/com.android.settings.safetycenter.SafetySourceBroadcastReceiver}]
+         1788890429.185   635   655 I am_proc_bound: [0,1155,com.android.settings]
+         1788890429.269   635   635 I cc_connect_state_changed: [0,0,0]
+         1788890429.302   635   663 I commit_sys_config_file: [notification-policy,67]
+         1788890429.324   635   635 I cc_connect_state_changed: [0,0,0]
+         1788890429.375   635   665 I wm_wallpaper_surface: [0,1,Window{1e1afa8 u0 com.google.android.apps.nexuslauncher/com.google.android.apps.nexuslauncher.NexusLauncherActivity}]
+         1788890429.570   635   777 I netstats_mobile_sample: [0,0,0,0,0,0,0,0,1788890429569]
+         1788890429.570   635   777 I netstats_wifi_sample: [0,0,0,0,0,0,0,0,1788890429569]
+         1788890429.907  1030  1030 I service_manager_slow: [18,trust]
+         1788890430.449   875  1130 I viewroot_draw_event: [VRI[ScreenDecorOverlay],reportDrawFinished seqId=0]
+         1788890430.568   635   695 I commit_sys_config_file: [package,140]
+         1788890430.641   635   654 I service_manager_slow: [11,isub]
+         1788890430.703   875  1130 I viewroot_draw_event: [VRI[ScreenDecorOverlayBottom],reportDrawFinished seqId=0]
+         1788890430.734   635   693 I commit_sys_config_file: [package-user-0,165]
+         1788890431.410   635   663 I commit_sys_config_file: [jobs,39]
+         1788890431.568  1030  1030 I service_manager_slow: [41,deviceidle]
+         1788890432.386  1155  1155 I service_manager_slow: [16,slice]
+         1788890432.398  1002  1002 I service_manager_slow: [33,audio]
+         1788890432.608   635   670 I am_uid_running: 10148
+         1788890432.663   635   671 I am_proc_start: [0,1231,10148,com.google.android.gms.persistent,broadcast,{com.google.android.gms/com.google.android.gms.chimera.GmsIntentOperationService$PersistentTrustedReceiver}]
+         1788890432.769   635  1116 I am_proc_bound: [0,1231,com.google.android.gms.persistent]
+         1788890432.905   513   540 I sf_stop_bootanim: 27161
+         1788890432.905   635   664 I wm_boot_animation_done: 27161
+         1788890432.973   635   740 I input_focus: [Focus entering b668ca9 com.google.android.apps.nexuslauncher/com.google.android.apps.nexuslauncher.NexusLauncherActivity,reason=setFocusedWindow]
+         1788890432.973   635   740 I input_focus: [Focus leaving b668ca9 com.google.android.apps.nexuslauncher/com.google.android.apps.nexuslauncher.NexusLauncherActivity,reason=setFocusedWindow]
+         1788890432.973   635   740 I input_focus: [Focus entering 1e1afa8 com.google.android.apps.nexuslauncher/com.google.android.apps.nexuslauncher.NexusLauncherActivity,reason=setFocusedWindow]
+         1788890433.089   635   635 I notification_enqueue: [1000,635,android,2345,ChFBbmRyb2lkTG9ja1NjcmVlbhIRTm9TY3JlZW5Mb2NrSXNzdWUYAA==,0,Notification(channel=safety_center_recommendation shortcut=null contentView=null vibrate=null sound=null defaults=0 flags=CAN_COLORIZE color=0xff1a73e8 vis=PRIVATE),0,1]
+         1788890433.104   635   635 I sysui_multi_action: [757,1501,758,1,793,25,794,0,795,25,796,2345,797,ChFBbmRyb2lkTG9ja1NjcmVlbhIRTm9TY3JlZW5Mb2NrSXNzdWUYAA==,806,android,857,safety_center_recommendation,858,3,947,0,1500,0]
+         1788890433.104   635   635 I sysui_multi_action: [757,804,799,note_interruptive,801,0,802,1]
+         1788890433.112   635   748 I am_uid_running: 10159
+         1788890433.206   635   635 I sysui_multi_action: [757,199,758,1,759,32784,793,127,794,0,795,127,796,2345,797,ChFBbmRyb2lkTG9ja1NjcmVlbhIRTm9TY3JlZW5Mb2NrSXNzdWUYAA==,806,android,857,safety_center_recommendation,858,3,947,0,1500,102,1688,1]
+         1788890433.207   635   635 I notification_alert: [0|android|2345|ChFBbmRyb2lkTG9ja1NjcmVlbhIRTm9TY3JlZW5Mb2NrSXNzdWUYAA==|1000,0,0,0,2,32768]
+         1788890433.226   635   671 I am_proc_start: [0,1252,10159,com.google.android.inputmethod.latin,service,{com.google.android.inputmethod.latin/com.android.inputmethod.latin.LatinIME}]
+         1788890433.400   635   937 I am_proc_bound: [0,1252,com.google.android.inputmethod.latin]
+         1788890433.500  1155  1155 I service_manager_slow: [23,trust]
+         1788890433.561  1030  1030 I service_manager_slow: [59,iphonesubinfo]
+         1788890433.620   635   663 I commit_sys_config_file: [notification-policy,286]
+         1788890433.672   635   663 I commit_sys_config_file: [jobs,51]
+         1788890433.789   635   670 I am_wtf  : [0,635,system_server,-1,JobScheduler.Quota,<0>com.google.android.inputmethod.latin has 0 EJ quota without running anything]
+         1788890433.840   635   670 I am_wtf  : [0,635,system_server,-1,JobScheduler.Quota,<0>com.google.android.inputmethod.latin has 0 EJ quota without running anything]
+         1788890433.857   635   670 I am_wtf  : [0,635,system_server,-1,JobScheduler.Quota,<0>com.google.android.inputmethod.latin has 0 EJ quota without running anything]
+         1788890433.928   635   664 I service_manager_stats: [100,131,6566]
+         1788890433.960   635   664 I uc_finish_user_boot: 0
+         1788890433.973   635   664 I am_user_state_changed: [0,1]
+         1788890433.974   635   664 I uc_send_user_broadcast: [0,android.intent.action.LOCKED_BOOT_COMPLETED]
+         1788890434.060   635   664 I uc_finish_user_unlocking: 0
+         1788890434.789   635   661 I am_user_state_changed: [0,2]
+         1788890434.794   635   670 I ssm_user_unlocking: 0
+         1788890434.800   875  1270 I sysui_multi_action: [757,213,758,4,759,-1]
+         1788890434.972   635  1116 I am_wtf  : [0,875,com.android.systemui,550026765,DSRotLockSettingsMngr,No matching device state for posture: 0]
+         1788890435.005   635  1116 I am_wtf  : [0,875,com.android.systemui,550026765,DSRotLockSettingsMngr,No matching device state for posture: 2]
+         1788890435.031   635  1134 I am_wtf  : [0,875,com.android.systemui,550026765,DSRotLockSettingsMngr,No matching device state for posture: 1]
+         1788890435.096   635   753 I am_uid_running: 10190
+         1788890435.180   635   635 I auditd  : type=1400 audit(0.0:7): avc:  denied  { getopt } for  comm="binder:635_A" scontext=u:r:system_server:s0 tcontext=u:r:shell:s0 tclass=unix_stream_socket permissive=0
+         1788890435.180   635   635 I auditd  : type=1400 audit(0.0:8): avc:  denied  { getopt } for  comm="binder:635_A" scontext=u:r:system_server:s0 tcontext=u:r:shell:s0 tclass=unix_stream_socket permissive=0
+         1788890435.180   635   635 I auditd  : type=1400 audit(0.0:9): avc:  denied  { getopt } for  comm="binder:635_A" scontext=u:r:system_server:s0 tcontext=u:r:shell:s0 tclass=unix_stream_socket permissive=0
+         1788890435.288   635   663 I commit_sys_config_file: [package-session,12]
+         1788890435.315   635   671 I am_proc_start: [0,1342,10190,com.google.android.providers.media.module,service,{com.google.android.providers.media.module/com.android.providers.media.fuse.ExternalStorageServiceImpl}]
+         1788890435.609   635   635 I am_uid_running: 10141
+         1788890435.660   635   671 I am_proc_start: [0,1348,10141,com.google.android.as,service,{com.google.android.as/com.google.android.apps.miphone.aiai.app.AiAiContentCaptureService}]
+         1788890435.923   635   663 I commit_sys_config_file: [jobs,55]
+         1788890436.023   635   663 I commit_sys_config_file: [jobs,100]
+         1788890436.058  1348  1348 I service_manager_slow: [121,activity]
+         1788890436.060   635  1134 I am_proc_bound: [0,1348,com.google.android.as]
+         1788890436.083  1342  1342 I service_manager_slow: [131,activity]
+         1788890436.084   635  1116 I am_proc_bound: [0,1342,com.google.android.providers.media.module]
+         1788890436.199   635   670 I am_uid_running: 10149
+         1788890436.552   635   671 I am_proc_start: [0,1378,10149,com.google.android.googlequicksearchbox:interactor,service,{com.google.android.googlequicksearchbox/com.google.android.voiceinteraction.GsaVoiceInteractionService}]
+         1788890436.669   635   670 I am_uid_running: 10144
+         1788890436.710   635   671 I am_proc_start: [0,1386,10144,com.google.android.apps.messaging:rcs,service,{com.google.android.apps.messaging/com.google.android.ims.binding.SystemBindingService}]
+         1788890436.857   635   654 I am_proc_bound: [0,1386,com.google.android.apps.messaging:rcs]
+         1788890436.883  1002  1230 I service_manager_slow: [82,phone]
+         1788890436.896   635   670 I uc_finish_user_unlocked: 0
+         1788890436.901   635   670 I am_user_state_changed: [0,3]
+         1788890437.008   635   661 I wm_task_created: 31
+         1788890437.011   635   661 I wm_task_created: 85
+         1788890437.074  1378  1378 I service_manager_slow: [298,activity]
+         1788890437.084   635   671 I am_proc_start: [0,1411,1000,com.android.emulator.multidisplay,added application,com.android.emulator.multidisplay]
+         1788890437.333   635   670 I uc_send_user_broadcast: [0,android.intent.action.USER_UNLOCKED]
+         1788890437.336   635  1134 I am_proc_bound: [0,1378,com.google.android.googlequicksearchbox:interactor]
+         1788890437.339   635   731 I commit_sys_config_file: [settings-2-0,5]
+         1788890437.377   635   670 I uc_finish_user_unlocked_completed: 0
+         1788890437.397   635   670 I am_wtf  : [0,635,system_server,-1,NetworkPolicy,Missing subscriberId for subId 1]
+         1788890437.454  1411  1411 I service_manager_slow: [86,activity]
+         1788890437.471   635  1116 I am_proc_bound: [0,1411,com.android.emulator.multidisplay]
+         1788890437.482   635   731 I commit_sys_config_file: [settings-1-0,143]
+         1788890437.514   635   670 I ssm_user_unlocked: 0
+         1788890437.957   635   661 I uc_send_user_broadcast: [0,android.intent.action.BOOT_COMPLETED]
+         1788890438.115   635   671 I am_proc_start: [0,1454,10149,com.google.android.googlequicksearchbox:search,service,{com.google.android.googlequicksearchbox/com.google.android.libraries.assistant.auto.tng.media.mediabrowser.NewsMediaBrowserService}]
+         1788890438.129   635  1065 I am_uid_running: 10095
+         1788890438.214   635  1116 I am_proc_bound: [0,1454,com.google.android.googlequicksearchbox:search]
+         1788890438.233   635   671 I am_proc_start: [0,1468,10095,android.process.acore,content provider,{com.android.providers.contacts/com.android.providers.contacts.ContactsProvider2}]
+         1788890438.431   635   669 I am_uid_running: 10129
+         1788890438.522   635   671 I am_proc_start: [0,1481,10129,com.android.printspooler,service,{com.android.printspooler/com.android.printspooler.model.PrintSpoolerService}]
+         1788890438.742   635   714 I am_proc_bound: [0,1468,android.process.acore]
+         1788890438.953   635  1116 I service_manager_slow: [15,face]
+         1788890439.209   635  1116 I service_manager_slow: [31,idmap]
+         1788890439.267  1252  1442 I service_manager_slow: [289,crossprofileapps]
+         1788890439.286   635   654 I am_proc_bound: [0,1481,com.android.printspooler]
+         1788890439.335   635  1116 I commit_sys_config_file: [overlays,26]
+         1788890439.709   635   661 I configuration_changed: -2147483648
+         1788890440.076   635   654 I sysui_multi_action: [757,127,758,2]
+         1788890440.100   635   654 I notification_panel_hidden: 
+         1788890440.175   635   661 I wm_relaunch_resume_activity: [0,254876500,5,com.google.android.apps.nexuslauncher/.NexusLauncherActivity,80000000]
+         1788890440.285   635   654 I am_uid_active: 10129
+         1788890440.839   635   670 I am_wtf  : [0,635,system_server,-1,SystemServiceRegistry,No service published for: face]
+         1788890440.858   635   670 I am_wtf  : [0,635,system_server,-1,SystemServiceRegistry,Manager wrapper not available: face]
+         1788890440.867  1040  1040 I wm_on_top_resumed_lost_called: [254876500,com.google.android.apps.nexuslauncher.NexusLauncherActivity,pausing]
+         1788890440.896  1040  1040 I wm_on_paused_called: [254876500,com.google.android.apps.nexuslauncher.NexusLauncherActivity,performPause,0]
+         1788890440.931  1040  1040 I wm_on_stop_called: [254876500,com.google.android.apps.nexuslauncher.NexusLauncherActivity,handleRelaunchActivity,0]
+         1788890440.932  1040  1040 I wm_on_destroy_called: [254876500,com.google.android.apps.nexuslauncher.NexusLauncherActivity,performDestroy,1]
+         1788890440.993   635   786 I netstats_mobile_sample: [0,0,0,0,0,0,0,0,1788890440972]
+         1788890440.993   635   786 I netstats_wifi_sample: [0,0,0,0,0,0,0,0,1788890440972]
+         1788890441.000  1468  1468 I service_manager_slow: [72,country_detector]
+         1788890441.099   635   831 I sysui_multi_action: [757,1717,758,1,759,0]
+         1788890441.099   635   831 I sysui_multi_action: [757,1717,758,2,759,4]
+         1788890441.099   635   831 I sysui_multi_action: [757,1717,758,3,759,0]
+         1788890441.178   875   875 I service_manager_slow: [136,statsmanager]
+         1788890441.294   635   726 I am_uid_running: 10196
+         1788890441.452   635   726 I am_uid_running: 10145
+         1788890441.613   635   671 I am_proc_start: [0,1619,10196,com.google.android.adservices.api,service,{com.google.android.adservices.api/com.android.adservices.service.topics.EpochJobService}]
+         1788890441.728   635   671 I am_proc_start: [0,1633,10145,com.google.android.settings.intelligence,service,{com.google.android.settings.intelligence/com.google.android.settings.intelligence.modules.routines.impl.ComputeNewInferencesJobService}]
+         1788890441.732   635  1576 I am_uid_active: 10095
+         1788890442.122   635  1535 I am_uid_active: 10190
+         1788890442.130  1619  1619 I service_manager_slow: [299,activity]
+         1788890442.317  1633  1633 I service_manager_slow: [69,activity]
+         1788890442.588   635   740 I input_focus: [Focus leaving 1e1afa8 com.google.android.apps.nexuslauncher/com.google.android.apps.nexuslauncher.NexusLauncherActivity,reason=NO_WINDOW]
+         1788890442.588   635   740 I input_focus: [Focus entering 1e1afa8 com.google.android.apps.nexuslauncher/com.google.android.apps.nexuslauncher.NexusLauncherActivity,reason=Window became focusable. Previous reason: NO_WINDOW]
+         1788890442.705   635   670 I ssm_user_completed_event: [0,2]
+         1788890442.801   635  1152 I am_proc_bound: [0,1619,com.google.android.adservices.api]
+         1788890442.906  1040  1040 I wm_on_create_called: [254876500,com.google.android.apps.nexuslauncher.NexusLauncherActivity,performCreate,1905]
+         1788890442.923  1040  1040 I wm_on_start_called: [254876500,com.google.android.apps.nexuslauncher.NexusLauncherActivity,handleStartActivity,0]
+         1788890442.926  1040  1040 I wm_on_resume_called: [254876500,com.google.android.apps.nexuslauncher.NexusLauncherActivity,RESUME_ACTIVITY,0]
+         1788890442.926  1040  1040 I wm_on_top_resumed_gained_called: [254876500,com.google.android.apps.nexuslauncher.NexusLauncherActivity,topWhenResuming]
+         1788890443.051   635  1663 I wm_tf_created: [135211768,5]
+         1788890443.067   635  1116 I wm_set_requested_orientation: [5,com.google.android.apps.nexuslauncher/.NexusLauncherActivity]
+         1788890443.192   635   786 I netstats_mobile_sample: [0,0,0,0,0,0,0,0,1788890443192]
+         1788890443.192   635   786 I netstats_wifi_sample: [0,0,0,0,0,0,0,0,1788890443192]
+         1788890443.248   635   767 I am_proc_bound: [0,1633,com.google.android.settings.intelligence]
+         1788890443.424   635   748 I imf_force_reconnect_ime: [com.google.android.inputmethod.latin/com.android.inputmethod.latin.LatinIME,10293,0]
+         1788890443.721   635  1690 I am_uid_active: 10159
+         1788890444.040  1040  1040 I viewroot_draw_event: [VRI[Taskbar],reportDrawFinished seqId=0]
+         1788890444.118   988  1163 I service_manager_slow: [86,connmetrics]
+         1788890444.127   635   767 I am_uid_active: 10148
+         1788890444.352  1040  1040 I viewroot_draw_event: [VRI[NexusLauncherActivity],Canceling draw. cancelDueToPreDrawListener=true cancelDueToSync=false]
+         1788890444.774  1348  1348 I service_manager_slow: [109,location]
+         1788890444.909  1040  1040 I viewroot_draw_event: [VRI[Taskbar],reportDrawFinished seqId=0]
+         1788890445.570   635   671 I am_proc_start: [0,1776,1000,com.android.keychain,service,{com.android.keychain/com.android.keychain.KeyChainService}]
+         1788890445.757   635   767 I am_uid_active: 10149
+         1788890445.768   635  1782 I dropbox_file_copy: [/sys/fs/pstore/console-ramoops-0,-65536,SYSTEM_LAST_KMSG]
+         1788890445.863   635  1782 I dropbox_file_copy: [/dev/fscklogs/log,-65536,SYSTEM_FSCK]
+         1788890445.900   635  1782 I commit_sys_config_file: [log-files,37]
+         1788890445.929   635  1782 I am_uid_running: 10101
+         1788890445.986   635   671 I am_proc_start: [0,1804,10101,android.process.media,content provider,{com.android.providers.downloads/com.android.providers.downloads.DownloadProvider}]
+         1788890446.277  1040  1040 I viewroot_draw_event: [VRI[NexusLauncherActivity],Draw frame after cancel]
+         1788890446.324  1776  1776 I service_manager_slow: [88,activity]
+         1788890446.325   635  1567 I am_proc_bound: [0,1776,com.android.keychain]
+         1788890446.351   635   767 I am_uid_running: 10186
+         1788890446.432  1040  1040 I viewroot_draw_event: [VRI[NexusLauncherActivity],reportDrawFinished seqId=0]
+         1788890446.469   635   930 I am_uid_running: 10147
+         1788890446.497   635   786 I netstats_mobile_sample: [0,0,0,0,0,0,0,0,1788890446497]
+         1788890446.497   635   786 I netstats_wifi_sample: [4970,6917,19,32,2910,1312,11,8,1788890446497]
+         1788890446.513   635   671 I am_proc_start: [0,1841,10186,com.google.android.apps.wallpaper,content provider,{com.google.android.apps.wallpaper/com.google.android.apps.wallpaper.provider.RecentWallpapersProvider}]
+         1788890446.515  1804  1804 I service_manager_slow: [90,activity]
+         1788890446.573   635  1451 I am_proc_bound: [0,1804,android.process.media]
+         1788890446.589  1252  1252 I viewroot_draw_event: [VRI[InputMethod],Not drawing due to not visible. Reason=View.INVISIBLE]
+         1788890446.659  1841  1841 I service_manager_slow: [71,activity]
+         1788890446.791   635  1663 I am_proc_start: [0,1856,10147,com.google.android.apps.wellbeing,content provider,{com.google.android.apps.wellbeing/com.google.android.apps.wellbeing.api.impl.WellbeingSettingsProvider}]
+         1788890446.796   635  1663 I am_proc_bound: [0,1856,com.google.android.apps.wellbeing]
+         1788890446.886   635   715 I am_proc_bound: [0,1841,com.google.android.apps.wallpaper]
+         1788890447.225   635   670 I am_uid_active: 10145
+         1788890447.392   635   715 I am_wtf  : [0,988,com.android.networkstack.process,680050253,SystemServiceRegistry,No service published for: ethernet]
+         1788890447.420   635   930 I am_uid_running: 10171
+         1788890447.490   635   818 I ntp_success: [time.android.com/216.239.35.0,492,691]
+         1788890447.543   635   671 I am_proc_start: [0,1905,10171,com.google.android.apps.photos,service,{com.google.android.apps.photos/com.google.android.apps.photos.dbprocessor.impl.DatabaseProcessorJobService}]
+         1788890447.644   635  1567 I am_proc_bound: [0,1905,com.google.android.apps.photos]
+         1788890447.717   635   670 I am_wtf  : [0,635,system_server,-1,JobScheduler.JobStatus,App com.google.android.inputmethod.latin became active but still in NEVER bucket]
+         1788890447.789  1040  1063 I jank_cuj_events_end_request: [63,1788890447789341000,42045268300,42045279200]
+         1788890447.814   635  1535 I am_uid_active: 10141
+         1788890447.855  1252  1410 I service_manager_slow: [208,backup]
+         1788890447.863   635   670 I am_wtf  : [0,635,system_server,-1,JobScheduler.Quota,<0>com.google.android.apps.photos has 0 EJ quota without running anything]
+         1788890447.997   635   670 I am_wtf  : [0,635,system_server,-1,JobScheduler.Quota,<0>com.google.android.apps.photos has 0 EJ quota without running anything]
+         1788890448.020   635   635 I auditd  : type=1400 audit(0.0:10): avc:  denied  { read } for  comm="AnrMainProcessD" name="transactions" dev="binder" ino=1048587 scontext=u:r:system_server:s0 tcontext=u:object_r:binderfs_logs_transactions:s0 tclass=file permissive=0
+         1788890448.076   635   665 I input_focus: [Focus request ddf860e com.google.android.apps.nexuslauncher/com.google.android.apps.nexuslauncher.NexusLauncherActivity,reason=UpdateInputWindows]
+         1788890448.084   635   670 I am_wtf  : [0,635,system_server,-1,JobScheduler.Quota,<0>com.google.android.apps.photos has 0 EJ quota without running anything]
+         1788890448.100   635  1929 I am_anr  : [0,875,com.android.systemui,550026765,executing service com.android.systemui/.keyguard.KeyguardService, waited 20055ms]
+         1788890448.131   635   740 I input_focus: [Focus entering ddf860e com.google.android.apps.nexuslauncher/com.google.android.apps.nexuslauncher.NexusLauncherActivity,reason=setFocusedWindow]
+         1788890448.195   635   871 I commit_sys_config_file: [input-subtypes,134]
+         1788890448.319   635   937 I am_uid_active: 10186
+         1788890448.421   635   670 I am_wtf  : [0,635,system_server,-1,JobScheduler.JobStatus,App com.google.android.inputmethod.latin became active but still in NEVER bucket]
+         1788890448.455   635  1065 I am_uid_active: 10144
+         1788890448.545   635   670 I am_wtf  : [0,635,system_server,-1,JobScheduler.JobStatus,App com.google.android.inputmethod.latin became active but still in NEVER bucket]
+         1788890448.569  1386  1386 I service_manager_slow: [71,content_capture]
+         1788890448.591   635   635 I cc_connect_state_changed: [0,1,0]
+         1788890448.783   635  1372 I backup_transport_lifecycle: [com.android.localtransport/.LocalTransportService,1]
+         1788890448.809   635   635 I notification_cancel_all: [1000,635,com.android.systemui,0,0,0,20,NULL]
+         1788890448.814   635   671 I am_proc_start: [0,1962,1000,com.android.localtransport,service,{com.android.localtransport/com.android.localtransport.LocalTransportService}]
+         1788890448.894  1348  1923 I service_manager_slow: [134,persistent_data_block]
+         1788890449.129   635   670 I am_wtf  : [0,635,system_server,-1,JobScheduler.JobStatus,App com.google.android.inputmethod.latin became active but still in NEVER bucket]
+         1788890449.222   635   671 I am_proc_start: [0,1977,10148,com.google.android.gms,service,{com.google.android.gms/com.google.android.gms.chimera.GmsBoundBrokerService}]
+         1788890449.296   635  1451 I am_proc_bound: [0,1962,com.android.localtransport]
+         1788890449.472  1977  1977 I service_manager_slow: [122,activity]
+         1788890449.487   635   715 I am_proc_bound: [0,1977,com.google.android.gms]
+         1788890449.549   635   670 I am_wtf  : [0,635,system_server,-1,JobScheduler.JobStatus,App com.google.android.inputmethod.latin became active but still in NEVER bucket]
+         1788890449.716   635  1535 I am_uid_running: 10143
+         1788890449.763   635   671 I am_proc_start: [0,2017,10143,com.google.android.apps.safetyhub,service,{com.google.android.apps.safetyhub/com.google.android.libraries.notifications.entrypoints.scheduled.ScheduledTaskService}]
+         1788890449.829   635   715 I am_proc_bound: [0,2017,com.google.android.apps.safetyhub]
+         1788890449.843   635   670 I am_wtf  : [0,635,system_server,-1,JobScheduler.JobStatus,App com.google.android.inputmethod.latin became active but still in NEVER bucket]
+         1788890449.915   635   930 I am_uid_active: 10101
+         1788890449.942  1962  1962 I service_manager_slow: [21,netstats]
+         1788890449.951  1231  1231 I service_manager_slow: [54,thermalservice]
+         1788890449.963  1856  2032 I service_manager_slow: [108,thermalservice]
+         1788890450.024   635   635 I auditd  : type=1400 audit(0.0:11): avc:  denied  { getopt } for  comm="binder:635_E" scontext=u:r:system_server:s0 tcontext=u:r:shell:s0 tclass=unix_stream_socket permissive=0
+         1788890450.062   875   906 I jank_cuj_events_end_request: [88,1788890450062498000,44318432700,44318443700]
+         1788890450.071   635   670 I am_wtf  : [0,635,system_server,-1,JobScheduler.JobStatus,App com.google.android.inputmethod.latin became active but still in NEVER bucket]
+         1788890450.079   635   670 I am_wtf  : [0,635,system_server,-1,JobScheduler.JobStatus,App com.google.android.inputmethod.latin became active but still in NEVER bucket]
+         1788890450.110   635  1265 I service_manager_slow: [15,persistent_data_block]
+         1788890450.114   635   663 I commit_sys_config_file: [jobs,215]
+         1788890450.118   875   875 I viewroot_draw_event: [VRI[EdgeBackGestureHandler0],Not drawing due to not visible. Reason=View.GONE]
+         1788890450.155   635   670 I am_wtf  : [0,1334,system_server,-1,SystemServiceRegistry,No service published for: persistent_data_block]
+         1788890450.157   635   670 I am_wtf  : [0,1334,system_server,-1,SystemServiceRegistry,Manager wrapper not available: persistent_data_block]
+         1788890450.174   635   670 I am_uid_running: 10211
+         1788890450.201   635   707 I commit_sys_config_file: [package-session,71]
+         1788890450.215   635   663 I commit_sys_config_file: [jobs,101]
+         1788890450.269   635   663 I commit_sys_config_file: [jobs,54]
+         1788890450.271   635   670 I am_wtf  : [0,635,system_server,-1,JobScheduler.JobStatus,App com.google.android.inputmethod.latin became active but still in NEVER bucket]
+         1788890450.276   635   670 I am_uid_active: 10147
+         1788890450.286   635   671 I am_proc_start: [0,2048,10211,com.google.android.cellbroadcastreceiver,broadcast,{com.google.android.cellbroadcastreceiver/com.android.cellbroadcastreceiver.CellBroadcastReceiver}]
+         1788890450.303   635   670 I am_wtf  : [0,635,system_server,-1,JobScheduler.JobStatus,App com.google.android.inputmethod.latin became active but still in NEVER bucket]
+         1788890450.303   635   670 I am_wtf  : [0,635,system_server,-1,JobScheduler.JobStatus,App com.google.android.inputmethod.latin became active but still in NEVER bucket]
+         1788890450.359   635   670 I am_wtf  : [0,635,system_server,-1,JobScheduler.JobStatus,App com.google.android.inputmethod.latin became active but still in NEVER bucket]
+         1788890450.401   635   671 I am_proc_start: [0,2063,10149,com.google.android.googlequicksearchbox:googleapp,service,{com.google.android.googlequicksearchbox/com.google.android.apps.search.googleapp.search.suggest.plugins.onesearch.server.OneSearchSuggestService}]
+         1788890450.402   635   670 I am_wtf  : [0,635,system_server,-1,JobScheduler.JobStatus,App com.google.android.inputmethod.latin became active but still in NEVER bucket]
+         1788890450.430   635   670 I am_wtf  : [0,635,system_server,-1,JobScheduler.JobStatus,App com.google.android.inputmethod.latin became active but still in NEVER bucket]
+         1788890450.453   635   665 I input_focus: [Focus request 8b7580c Application Not Responding: com.android.systemui,reason=UpdateInputWindows]
+         1788890450.520   635   740 I input_focus: [Focus leaving ddf860e com.google.android.apps.nexuslauncher/com.google.android.apps.nexuslauncher.NexusLauncherActivity,reason=Waiting for window because NOT_VISIBLE]
+         1788890450.533   635   670 I am_wtf  : [0,635,system_server,-1,JobScheduler.JobStatus,App com.google.android.inputmethod.latin became active but still in NEVER bucket]
+         1788890450.587   635   670 I am_wtf  : [0,635,system_server,-1,JobScheduler.JobStatus,App com.google.android.inputmethod.latin became active but still in NEVER bucket]
+         1788890450.639  1348  1648 I service_manager_slow: [140,app_search]
+         1788890450.694   635   635 I backup_transport_connection: [com.android.localtransport/.LocalTransportService,1]
+         1788890450.709   635   670 I am_wtf  : [0,635,system_server,-1,JobScheduler.JobStatus,App com.google.android.inputmethod.latin became active but still in NEVER bucket]
+         1788890450.751   635   767 I am_uid_running: 10133
+         1788890450.787   635   670 I am_wtf  : [0,635,system_server,-1,JobScheduler.JobStatus,App com.google.android.inputmethod.latin became active but still in NEVER bucket]
+         1788890450.821   635   671 I am_proc_start: [0,2096,10133,com.google.android.as.oss,service,{com.google.android.as.oss/com.google.android.apps.miphone.astrea.grpc.AstreaGrpcService}]
+         1788890450.851   635   670 I am_wtf  : [0,635,system_server,-1,JobScheduler.JobStatus,App com.google.android.inputmethod.latin became active but still in NEVER bucket]
+         1788890450.865   635  1094 I am_proc_bound: [0,2063,com.google.android.googlequicksearchbox:googleapp]
+         1788890450.946   635   662 I viewroot_draw_event: [VRI[systemui],reportDrawFinished seqId=0]
+         1788890450.953  2048  2048 I service_manager_slow: [63,activity]
+         1788890450.960   635  1152 I am_proc_bound: [0,2048,com.google.android.cellbroadcastreceiver]
+         1788890451.028   635   665 I wm_dim_created: [Display 0 name="Built-in Screen",117]
+         1788890451.029   635   665 I wm_dim_cancel_anim: [117,new target values]
+         1788890451.029   635   665 I wm_dim_animate: [117,0.600000,0.000000]
+         1788890451.047  2096  2096 I service_manager_slow: [89,activity]
+         1788890451.047   635  1576 I am_proc_bound: [0,2096,com.google.android.as.oss]
+         1788890451.073   635   670 I am_wtf  : [0,635,system_server,-1,JobScheduler.JobStatus,App com.google.android.inputmethod.latin became active but still in NEVER bucket]
+         1788890451.119   635   740 I input_focus: [Focus entering 8b7580c Application Not Responding: com.android.systemui,reason=Window became focusable. Previous reason: NOT_VISIBLE]
+         1788890451.174   635   665 I wm_dim_finish_anim: 117
+         1788890451.184   635   670 I am_wtf  : [0,635,system_server,-1,JobScheduler.JobStatus,App com.google.android.inputmethod.latin became active but still in NEVER bucket]
+         1788890451.203   211   211 I auditd  : avc:  denied  { find } for pid=1155 uid=1000 name=vendor.google.wireless_charger.IWirelessCharger/default scontext=u:r:system_app:s0 tcontext=u:object_r:default_android_service:s0 tclass=service_manager permissive=0
+         1788890451.337   635   670 I am_wtf  : [0,635,system_server,-1,JobScheduler.JobStatus,App com.google.android.inputmethod.latin became active but still in NEVER bucket]
+         1788890451.441  1030  1030 I gsm_service_state_change: [1,1,3,1]
+         1788890451.500   635   670 I am_wtf  : [0,635,system_server,-1,JobScheduler.JobStatus,App com.google.android.inputmethod.latin became active but still in NEVER bucket]
+         1788890451.582   635  1372 I backup_transport_lifecycle: [com.android.localtransport/.LocalTransportService,0]
+         1788890451.582   635  1372 I backup_transport_connection: [com.android.localtransport/.LocalTransportService,0]
+         1788890451.616   635   670 I am_wtf  : [0,635,system_server,-1,JobScheduler.JobStatus,App com.google.android.inputmethod.latin became active but still in NEVER bucket]
+         1788890451.635   635  1372 I am_uid_running: 10138
+         1788890451.655   635   670 I am_wtf  : [0,635,system_server,-1,JobScheduler.JobStatus,App com.google.android.inputmethod.latin became active but still in NEVER bucket]
+         1788890451.683   635   671 I am_proc_start: [0,2137,10138,com.google.android.apps.restore,service,{com.google.android.apps.restore/com.google.android.apps.restore.transport.BackupTransportService}]
+         1788890451.685   635   663 I commit_sys_config_file: [jobs,71]
+         1788890451.701  1155  2009 I sysui_multi_action: [757,1964,758,4]
+         1788890451.789   635   663 I commit_sys_config_file: [jobs,104]
+         1788890451.807   635   670 I am_wtf  : [0,635,system_server,-1,JobScheduler.JobStatus,App com.google.android.inputmethod.latin became active but still in NEVER bucket]
+         1788890451.849   635   670 I am_wtf  : [0,635,system_server,-1,JobScheduler.JobStatus,App com.google.android.inputmethod.latin became active but still in NEVER bucket]
+         1788890451.868   635  1372 I backup_transport_lifecycle: [com.google.android.apps.restore/.transport.BackupTransportService,1]
+         1788890451.883   635  1065 I am_proc_bound: [0,2137,com.google.android.apps.restore]
+         1788890451.957   635  1152 I commit_sys_config_file: [overlays,90]
+         1788890451.992   635   670 I am_wtf  : [0,635,system_server,-1,JobScheduler.JobStatus,App com.google.android.inputmethod.latin became active but still in NEVER bucket]
+         1788890452.036   635   661 I configuration_changed: -2147483648
+         1788890452.123   635   661 I wm_relaunch_resume_activity: [0,254876500,5,com.google.android.apps.nexuslauncher/.NexusLauncherActivity,80000000]
+         1788890452.247  1040  1040 I wm_on_top_resumed_lost_called: [254876500,com.google.android.apps.nexuslauncher.NexusLauncherActivity,pausing]
+         1788890452.250  1040  1040 I wm_on_paused_called: [254876500,com.google.android.apps.nexuslauncher.NexusLauncherActivity,performPause,2]
+         1788890452.253  1040  1040 I wm_on_stop_called: [254876500,com.google.android.apps.nexuslauncher.NexusLauncherActivity,handleRelaunchActivity,3]
+         1788890452.297   635   662 I viewroot_draw_event: [VRI[systemui],reportDrawFinished seqId=0]
+         1788890452.341   635  1663 I am_uid_active: 10211
+         1788890452.368   635   670 I am_wtf  : [0,635,system_server,-1,JobScheduler.JobStatus,App com.google.android.inputmethod.latin became active but still in NEVER bucket]
+         1788890452.368   635   670 I am_wtf  : [0,635,system_server,-1,JobScheduler.JobStatus,App com.google.android.inputmethod.latin became active but still in NEVER bucket]
+         1788890452.368   635   670 I am_wtf  : [0,635,system_server,-1,JobScheduler.JobStatus,App com.google.android.inputmethod.latin became active but still in NEVER bucket]
+         1788890452.368   635   670 I am_wtf  : [0,635,system_server,-1,JobScheduler.JobStatus,App com.google.android.inputmethod.latin became active but still in NEVER bucket]
+         1788890452.370  1040  1040 I wm_on_destroy_called: [254876500,com.google.android.apps.nexuslauncher.NexusLauncherActivity,performDestroy,113]
+         1788890452.515   875   875 I viewroot_draw_event: [VRI[NotificationShade],Not drawing due to not visible. Reason=View.INVISIBLE]
+         1788890452.626  1040  1040 I wm_on_create_called: [254876500,com.google.android.apps.nexuslauncher.NexusLauncherActivity,performCreate,232]
+         1788890452.627  1040  1040 I wm_on_start_called: [254876500,com.google.android.apps.nexuslauncher.NexusLauncherActivity,handleStartActivity,0]
+         1788890452.630  1040  1040 I wm_on_resume_called: [254876500,com.google.android.apps.nexuslauncher.NexusLauncherActivity,RESUME_ACTIVITY,0]
+         1788890452.630  1040  1040 I wm_on_top_resumed_gained_called: [254876500,com.google.android.apps.nexuslauncher.NexusLauncherActivity,topWhenResuming]
+         1788890452.652  1040  1040 I viewroot_draw_event: [VRI[Taskbar],reportDrawFinished seqId=0]
+         1788890452.653   635   670 I am_wtf  : [0,635,system_server,-1,JobScheduler.JobStatus,App com.google.android.inputmethod.latin became active but still in NEVER bucket]
+         1788890452.664   875   875 I viewroot_draw_event: [VRI[StatusBar],reportDrawFinished seqId=0]
+         1788890452.683   635  1690 I wm_set_requested_orientation: [5,com.google.android.apps.nexuslauncher/.NexusLauncherActivity]
+         1788890452.685   635   670 I am_wtf  : [0,635,system_server,-1,JobScheduler.JobStatus,App com.google.android.inputmethod.latin became active but still in NEVER bucket]
+         1788890452.771  1040  1040 I viewroot_draw_event: [VRI[NexusLauncherActivity],reportDrawFinished seqId=0]
+         1788890452.784   635   670 I am_wtf  : [0,635,system_server,-1,JobScheduler.JobStatus,App com.google.android.inputmethod.latin became active but still in NEVER bucket]
+         1788890452.854   635   670 I am_uid_running: 10160
+         1788890452.886  1040  1040 I viewroot_draw_event: [VRI[Taskbar],reportDrawFinished seqId=0]
+         1788890452.895  2017  2200 I service_manager_slow: [71,thermalservice]
+         1788890452.905   988  1131 I service_manager_slow: [22,ethernet]
+         1788890452.916   635   715 I am_wtf  : [0,988,com.android.networkstack.process,680050253,SystemServiceRegistry,No service published for: ethernet]
+         1788890452.933   635   670 I am_wtf  : [0,635,system_server,-1,JobScheduler.JobStatus,App com.google.android.inputmethod.latin became active but still in NEVER bucket]
+         1788890452.955   875   875 I viewroot_draw_event: [VRI[Wired Charging Animation],reportDrawFinished seqId=0]
+         1788890453.053   635   670 I am_wtf  : [0,635,system_server,-1,JobScheduler.JobStatus,App com.google.android.inputmethod.latin became active but still in NEVER bucket]
+         1788890453.053   635   670 I am_wtf  : [0,635,system_server,-1,JobScheduler.JobStatus,App com.google.android.inputmethod.latin became active but still in NEVER bucket]
+         1788890453.095   635   671 I am_proc_start: [0,2217,10160,com.google.android.deskclock,broadcast,{com.google.android.deskclock/com.android.deskclock.AlarmInitReceiver}]
+         1788890453.141   635   670 I am_wtf  : [0,635,system_server,-1,JobScheduler.JobStatus,App com.google.android.inputmethod.latin became active but still in NEVER bucket]
+         1788890453.233   635   654 I am_proc_bound: [0,2217,com.google.android.deskclock]
+         1788890453.414   635   654 I am_uid_active: 10138
+         1788890453.418   635  1663 I am_wtf  : [0,1155,com.android.settings,952876613,DSRotLockSettingsMngr,No matching device state for posture: 0]
+         1788890453.464   635  1152 I am_wtf  : [0,1155,com.android.settings,952876613,DSRotLockSettingsMngr,No matching device state for posture: 2]
+         1788890453.496   635   715 I am_wtf  : [0,1155,com.android.settings,952876613,DSRotLockSettingsMngr,No matching device state for posture: 1]
+         1788890453.651   635   670 I am_wtf  : [0,635,system_server,-1,JobScheduler.JobStatus,App com.google.android.inputmethod.latin became active but still in NEVER bucket]
+         1788890453.655   875  1130 I viewroot_draw_event: [VRI[ScreenDecorOverlay],reportDrawFinished seqId=0]
+         1788890453.708   635   786 I netstats_mobile_sample: [0,0,0,0,0,0,0,0,1788890454388]
+         1788890453.709   635   786 I netstats_wifi_sample: [14706,16520,46,76,17185,8934,50,48,1788890454388]
+         1788890453.742  1386  1892 I service_manager_slow: [190,isub]
+         1788890453.752   875  1130 I viewroot_draw_event: [VRI[ScreenDecorOverlayBottom],reportDrawFinished seqId=0]
+         1788890453.828  1231  2277 I service_manager_slow: [83,location]
+         1788890453.915  1231  2277 I service_manager_slow: [85,bluetooth_manager]
+         1788890453.932   635   670 I am_wtf  : [0,635,system_server,-1,JobScheduler.JobStatus,App com.google.android.inputmethod.latin became active but still in NEVER bucket]
+         1788890453.935   635   670 I am_wtf  : [0,635,system_server,-1,JobScheduler.JobStatus,App com.google.android.inputmethod.latin became active but still in NEVER bucket]
+         1788890453.997   635   635 I backup_transport_connection: [com.google.android.apps.restore/.transport.BackupTransportService,1]
+         1788890454.079   635   663 I commit_sys_config_file: [jobs,103]
+         1788890454.100   635   663 I commit_sys_config_file: [jobs,21]
+         1788890454.117   635   664 I wm_tf_removed: [135211768,5]
+         1788890454.127   635   664 I wm_tf_created: [200524693,5]
+         1788890454.406   635   670 I am_wtf  : [0,635,system_server,-1,JobScheduler.JobStatus,App com.google.android.inputmethod.latin became active but still in NEVER bucket]
+         1788890454.424   635   670 I am_wtf  : [0,635,system_server,-1,JobScheduler.JobStatus,App com.google.android.inputmethod.latin became active but still in NEVER bucket]
+         1788890454.472   635   670 I am_wtf  : [0,635,system_server,-1,ActivityManager,Sending non-protected broadcast android.intent.action.UPDATE_CT_LOGS from system uid 1000 pkg android]
+         1788890454.677   635  1673 I service_manager_slow: [20,network_management]
+         1788890454.726   635   670 I am_wtf  : [0,635,system_server,-1,JobScheduler.JobStatus,App com.google.android.inputmethod.latin became active but still in NEVER bucket]
+         1788890454.881   635   777 I netstats_mobile_sample: [0,0,0,0,0,0,0,0,1788890455561]
+         1788890454.881   635   777 I netstats_wifi_sample: [16602,20516,51,89,20832,11560,61,58,1788890455561]
+         1788890454.940   635   714 I am_uid_active: 10160
+         1788890454.954   635   670 I am_wtf  : [0,635,system_server,-1,JobScheduler.JobStatus,App com.google.android.inputmethod.latin became active but still in NEVER bucket]
+         1788890455.133   635   663 I commit_sys_config_file: [package-session,15]
+         1788890455.360   635   671 I am_proc_start: [0,2353,10148,com.google.android.gms.unstable,service,{com.google.android.gms/com.google.android.gms.droidguard.DroidGuardService}]
+         1788890455.514   635  1372 I backup_transport_lifecycle: [com.google.android.apps.restore/.transport.BackupTransportService,0]
+         1788890455.539   635  1372 I backup_transport_connection: [com.google.android.apps.restore/.transport.BackupTransportService,0]
+         1788890455.566   635  2334 I am_proc_bound: [0,2353,com.google.android.gms.unstable]
+         1788890455.576   635   695 I installer_clear_app_data_caller: [635,1000,com.brailleme.app,39]
+         1788890455.591   635   670 I am_uid_running: 10131
+         1788890455.594   635   695 I installer_clear_app_data_call_stack: [clearAppData,com.android.server.pm.Installer,Installer.java,427]
+         1788890455.598   635   695 I installer_clear_app_data_call_stack: [clearAppDataLeafLIF,com.android.server.pm.AppDataHelper,AppDataHelper.java,572]
+         1788890455.599   635   695 I installer_clear_app_data_call_stack: [clearAppDataLIF,com.android.server.pm.AppDataHelper,AppDataHelper.java,556]
+         1788890455.599   635   695 I installer_clear_app_data_call_stack: [prepPerformDexoptIfNeeded,com.android.server.pm.InstallPackageHelper,InstallPackageHelper.java,1211]
+         1788890455.600   635   695 I installer_clear_app_data_call_stack: [installPackagesTraced,com.android.server.pm.InstallPackageHelper,InstallPackageHelper.java,1049]
+         1788890455.600   635   695 I installer_clear_app_data_call_stack: [installPackagesTraced,com.android.server.pm.PackageManagerService,PackageManagerService.java,8223]
+         1788890455.606   635   695 I installer_clear_app_data_call_stack: [processApkInstallRequests,com.android.server.pm.InstallingSession,InstallingSession.java,557]
+         1788890455.606   635   695 I installer_clear_app_data_call_stack: [processInstallRequests,com.android.server.pm.InstallingSession,InstallingSession.java,543]
+         1788890455.606   635   695 I installer_clear_app_data_call_stack: [lambda$processPendingInstall$0,com.android.server.pm.InstallingSession,InstallingSession.java,304]
+         1788890455.606   635   695 I installer_clear_app_data_call_stack: [$r8$lambda$3YxEVU-qWs8li-YcaWhP_DprQyQ,com.android.server.pm.InstallingSession,InstallingSession.java,0]
+         1788890455.606   635   695 I installer_clear_app_data_call_stack: [run,com.android.server.pm.InstallingSession$$ExternalSyntheticLambda1,R8$$SyntheticClass,0]
+         1788890455.606   635   695 I installer_clear_app_data_call_stack: [handleCallback,android.os.Handler,Handler.java,995]
+         1788890455.606   635   695 I installer_clear_app_data_call_stack: [dispatchMessage,android.os.Handler,Handler.java,103]
+         1788890455.606   635   695 I installer_clear_app_data_call_stack: [loopOnce,android.os.Looper,Looper.java,248]
+         1788890455.606   635   695 I installer_clear_app_data_call_stack: [loop,android.os.Looper,Looper.java,338]
+         1788890455.606   635   695 I installer_clear_app_data_call_stack: [run,android.os.HandlerThread,HandlerThread.java,85]
+         1788890455.606   635   695 I installer_clear_app_data_call_stack: [run,com.android.server.ServiceThread,ServiceThread.java,49]
+         1788890455.716   635  1372 I backup_transport_lifecycle: [com.google.android.gms/.backup.component.D2dTransportService,1]
+         1788890455.774   635  1094 I am_wtf  : [0,988,com.android.networkstack.process,680050253,SystemServiceRegistry,No service published for: ethernet]
+         1788890455.817  2377  2377 I service_manager_slow: [86,activity]
+         1788890455.846   635   671 I am_proc_start: [0,2377,10131,com.android.traceur,broadcast,{com.android.traceur/com.android.traceur.Receiver}]
+         1788890455.858   635  2159 I am_proc_bound: [0,2377,com.android.traceur]
+         1788890455.869   635   663 I commit_sys_config_file: [jobs,7]
+         1788890455.989   635   802 I volume_changed: [3,5,2,15,AS.AudioService]
+         1788890455.989   635   802 I volume_changed: [3,5,2,15,AS.AudioService]
+         1788890455.990   635   802 I volume_changed: [3,5,3,15,AS.AudioService]
+         1788890455.990   635   802 I volume_changed: [3,5,2,15,AS.AudioService]
+         1788890455.990   635   802 I volume_changed: [3,5,2,15,AS.AudioService]
+         1788890456.323  1977  2135 I service_manager_slow: [216,uimode]
+         1788890456.417   635   670 I am_uid_active: 10143
+         1788890456.422  1856  1997 I service_manager_slow: [109,backup]
+         1788890456.452   635  1116 I am_uid_active: 10131
+         1788890456.570   635   670 I am_uid_running: 10135
+         1788890456.650   635   671 I am_proc_start: [0,2421,10135,com.google.android.onetimeinitializer,broadcast,{com.google.android.onetimeinitializer/com.google.android.onetimeinitializer.OneTimeInitializerReceiver}]
+         1788890456.862   635   670 I am_uid_active: 10133
+         1788890457.092   635   732 I am_freeze: [1481,com.android.printspooler]
+         1788890457.126  2421  2421 I service_manager_slow: [95,activity]
+         1788890457.137   635   731 I commit_sys_config_file: [settings-0-0,203]
+         1788890457.238   635  1065 I am_proc_bound: [0,2421,com.google.android.onetimeinitializer]
+         1788890457.305   635   714 I sysui_multi_action: [757,1721,758,4,908,com.google.android.as/com.google.android.apps.miphone.aiai.app.AiAiAugmentedAutofillService,1722,3]
+         1788890457.334   635   714 I cc_current_allowlist: [0,0]
+         1788890457.334   635   714 I cc_set_allowlist: [0,16,0]
+         1788890457.334   635   714 I cc_current_allowlist: [0,16]
+         1788890457.334   635   714 I cc_update_options: [0,16]
+         1788890457.359  1454  1454 I service_manager_slow: [58,media_session]
+         1788890457.432   635   635 I backup_transport_connection: [com.google.android.gms/.backup.component.D2dTransportService,1]
+         1788890457.582   635   654 I am_uid_running: 10150
+         1788890457.602   635   671 I am_proc_start: [0,2453,10150,com.android.chrome,service,{com.android.chrome/org.chromium.chrome.browser.usage_stats.UsageStatsBrowserServiceProvider}]
+         1788890457.605   635   731 I commit_sys_config_file: [settings-1-0,10]
+         1788890457.773  2453  2453 I service_manager_slow: [69,activity]
+         1788890457.850   635   714 I am_proc_bound: [0,2453,com.android.chrome]
+         1788890457.953   635   732 I am_compact: [1481,com.android.printspooler,ANON,107176,52352,54184,896,-2432,0,-2432,2432,695,SOME,0,935,19,23012,-2324]
+         1788890458.117  1231  2254 I service_manager_slow: [174,isub]
+         1788890458.133  1030  1030 I gsm_service_state_change: [3,1,0,0]
+         1788890458.133  1030  1030 I gsm_rat_switched_new: [100500,0,20]
+         1788890458.240   635  1576 I am_uid_active: 10135
+         1788890458.376  1030  1300 I service_manager_stats: [100,424,52632]
+         1788890458.524   635   663 I commit_sys_config_file: [jobs,98]
+         1788890458.552   635   663 I commit_sys_config_file: [jobs,19]
+         1788890458.564   635   663 I commit_sys_config_file: [jobs,12]
+         1788890458.567   635  1372 I backup_transport_lifecycle: [com.google.android.gms/.backup.component.D2dTransportService,0]
+         1788890458.567   635  1372 I backup_transport_connection: [com.google.android.gms/.backup.component.D2dTransportService,0]
+         1788890458.578   635   663 I commit_sys_config_file: [jobs,14]
+         1788890458.621   875   875 I service_manager_slow: [118,autofill]
+         1788890458.752  2063  2250 I service_manager_slow: [69,blob_store]
+         1788890458.824   635  1372 I backup_transport_lifecycle: [com.google.android.gms/.backup.BackupTransportService,1]
+         1788890459.654   635   786 I netstats_mobile_sample: [0,0,0,0,0,0,0,0,1788890460334]
+         1788890459.654   635   786 I netstats_wifi_sample: [16602,20556,51,90,20832,11560,61,58,1788890460334]
+         1788890459.900   635  1568 I am_uid_active: 10150
+         1788890460.322   635  1568 I configuration_changed: 3
+         1788890460.542   635   635 I am_uid_running: 10152
+         1788890460.745   635   740 I input_focus: [Focus leaving 8b7580c Application Not Responding: com.android.systemui,reason=NO_WINDOW]
+         1788890460.805   635   671 I am_proc_start: [0,2549,10152,com.google.android.tts,service,{com.google.android.tts/com.google.android.apps.speech.tts.googletts.service.GoogleTtsService}]
+         1788890460.817   635   663 I commit_sys_config_file: [jobs,63]
+         1788890460.821   635   740 I input_focus: [Focus entering 8b7580c Application Not Responding: com.android.systemui,reason=Window became focusable. Previous reason: NO_WINDOW]
+         1788890461.013   635  1568 I am_proc_bound: [0,2549,com.google.android.tts]
+         1788890461.586   635   635 I backup_transport_connection: [com.google.android.gms/.backup.BackupTransportService,1]
+         1788890461.719   635   670 I am_uid_running: 10142
+         1788890461.756   635   671 I am_proc_start: [0,2592,10142,com.google.android.dialer,broadcast,{com.google.android.dialer/com.android.dialer.bootreceiver.DialerBootReceiver}]
+         1788890461.892   635   655 I am_wtf  : [0,988,com.android.networkstack.process,680050253,SystemServiceRegistry,No service published for: ethernet]
+         1788890461.921   635  1134 I am_uid_running: 10208
+         1788890461.960   635   671 I am_proc_start: [0,2599,10208,com.google.android.rkpdapp,service,{com.google.android.rkpdapp/com.android.rkpdapp.service.RemoteProvisioningService}]
+         1788890462.072   635   786 I netstats_mobile_sample: [0,0,0,0,0,0,0,0,1788890462752]
+         1788890462.072   635   786 I netstats_wifi_sample: [20624,26622,73,133,23703,13804,78,79,1788890462752]
+         1788890462.160   635  1567 I am_proc_bound: [0,2599,com.google.android.rkpdapp]
+         1788890462.545   635   731 I commit_sys_config_file: [settings-0-0,515]
+         1788890462.668   635  1372 I backup_transport_lifecycle: [com.google.android.gms/.backup.BackupTransportService,0]
+         1788890462.668   635  1372 I backup_transport_connection: [com.google.android.gms/.backup.BackupTransportService,0]
+         1788890462.721   875  1130 I viewroot_draw_event: [VRI[ScreenDecorOverlay],reportDrawFinished seqId=0]
+         1788890462.773   635  1690 I am_proc_bound: [0,2592,com.google.android.dialer]
+         1788890462.806   875  1130 I viewroot_draw_event: [VRI[ScreenDecorOverlayBottom],reportDrawFinished seqId=0]
+         1788890462.890   635   671 I am_proc_start: [0,2639,10144,com.google.android.apps.messaging,content provider,{com.google.android.apps.messaging/com.google.android.apps.messaging.shared.datamodel.provider.sharedstorage.SharedStorageProvider}]
+         1788890463.224   635  1540 I am_proc_bound: [0,2639,com.google.android.apps.messaging]
+         1788890463.270   635   663 I commit_sys_config_file: [jobs,22]
+         1788890463.275   635   663 I commit_sys_config_file: [jobs,4]
+         1788890463.337   635  1540 I am_uid_running: 10146
+         1788890463.384   635   671 I am_proc_start: [0,2662,10146,com.android.vending,service,{com.android.vending/com.google.android.finsky.setup.dse.impl.DseService}]
+         1788890463.387   635   670 I am_wtf  : [0,635,system_server,-1,JobScheduler.Quota,<0>com.google.android.dialer has 0 EJ quota without running anything]
+         1788890463.455   635   670 I am_wtf  : [0,635,system_server,-1,JobScheduler.Quota,<0>com.google.android.dialer has 0 EJ quota without running anything]
+         1788890463.475   635   714 I am_uid_active: 10152
+         1788890463.503   635  1094 I am_uid_active: 10208
+         1788890463.520   635  1565 I am_proc_bound: [0,2662,com.android.vending]
+         1788890463.582   635   670 I am_wtf  : [0,635,system_server,-1,JobScheduler.Quota,<0>com.google.android.dialer has 0 EJ quota without running anything]
+         1788890463.997   635   732 I am_freeze: [1905,com.google.android.apps.photos]
+         1788890464.493  2662  2662 I service_manager_slow: [73,netstats]
+         1788890464.702   635   669 I netstats_mobile_sample: [0,0,0,0,0,0,0,0,1788890465382]
+         1788890464.702   635   669 I netstats_wifi_sample: [24997,32454,95,162,29222,17666,105,102,1788890465382]
+         1788890466.717   635   732 I am_compact: [1905,com.google.android.apps.photos,ANON,160620,108612,51368,21760,-53504,-32384,-21120,21120,2652,SOME,0,905,19,54104,-24280]
+         1788890467.901   635   777 I netstats_mobile_sample: [0,0,0,0,0,0,0,0,1788890468581]
+         1788890467.902   635   777 I netstats_wifi_sample: [96718,54908,206,273,102734,41260,219,218,1788890468581]
+         1788890469.327   635  1151 I am_uid_active: 10196
+         1788890469.328   635  1151 I am_uid_active: 10146
+         1788890469.704   635   663 I commit_sys_config_file: [jobs,24]
+         1788890469.755   635   663 I commit_sys_config_file: [jobs,51]
+         1788890470.721   875   875 I viewroot_draw_event: [VRI[StatusBar],reportDrawFinished seqId=0]
+         1788890471.220   635  1451 I am_uid_active: 10142
+         1788890471.750  2592  2592 I service_manager_slow: [51,device_policy]
+         1788890472.505  1231  2257 I c2dm    : [19,com.android.chrome:262932038,0,0]
+         1788890472.514  1231  1721 I c2dm    : [19,com.android.chrome:262932038,0,0]
+         1788890472.555  1231  2704 I c2dm    : [19,com.google.android.apps.safetyhub:262932038,0,0]
+         1788890473.031   635   670 I am_wtf  : [0,635,system_server,-1,JobScheduler.Quota,<0>com.google.android.dialer has 0 EJ quota without running anything]
+         1788890473.185   635   670 I am_uid_running: 10151
+         1788890473.257   635   671 I am_proc_start: [0,2922,10151,com.android.camera2,broadcast,{com.android.camera2/com.android.camera.SetActivitiesCameraReceiver}]
+         1788890473.649   635  1690 I am_foreground_service_start: [0,com.android.vending/com.google.android.finsky.foregroundcoordinator.impl.ForegroundCoordinatorService,1,BACKGROUND_ACTIVITY_PERMISSION,37,37,0,0,0,1,UNKNOWN,1024]
+         1788890473.974  2662  2800 I service_manager_slow: [556,advanced_protection]
+         1788890474.648  1231  2929 I c2dm    : [-19,ERR_OTHER,0,0]
+         1788890474.657   635   695 I commit_sys_config_file: [package,308]
+         1788890474.736   635   663 I commit_sys_config_file: [jobs,13]
+         1788890474.740   635  2178 I am_proc_bound: [0,2922,com.android.camera2]
+         1788890474.780   635   695 I unknown_sources_enabled: 1
+         1788890474.782   635   695 I service_manager_stats: [100,121,40854]
+         1788890475.099  1231  2728 I c2dm    : [-2,,1,1]
+         1788890475.134   635   670 I am_wtf  : [0,635,system_server,-1,JobScheduler.JobStatus,App com.google.android.dialer became active but still in NEVER bucket]
+         1788890475.146   635   670 I am_wtf  : [0,635,system_server,-1,JobScheduler.JobStatus,App com.google.android.dialer became active but still in NEVER bucket]
+         1788890475.230   635   670 I am_wtf  : [0,635,system_server,-1,JobScheduler.JobStatus,App com.google.android.dialer became active but still in NEVER bucket]
+         1788890475.231   635   670 I am_wtf  : [0,635,system_server,-1,JobScheduler.JobStatus,App com.google.android.dialer became active but still in NEVER bucket]
+         1788890475.232   635   670 I am_wtf  : [0,635,system_server,-1,JobScheduler.JobStatus,App com.google.android.dialer became active but still in NEVER bucket]
+         1788890475.254   635   670 I am_wtf  : [0,635,system_server,-1,JobScheduler.JobStatus,App com.google.android.dialer became active but still in NEVER bucket]
+         1788890475.264   635   670 I am_wtf  : [0,635,system_server,-1,JobScheduler.JobStatus,App com.google.android.dialer became active but still in NEVER bucket]
+         1788890475.353   635   635 I notification_cancel_all: [10151,2922,com.android.camera2,0,0,98368,9,NULL]
+         1788890475.392   635   635 I auditd  : type=1400 audit(0.0:12): avc:  denied  { getopt } for  comm="binder:635_E" scontext=u:r:system_server:s0 tcontext=u:r:shell:s0 tclass=unix_stream_socket permissive=0
+         1788890475.396   635   635 I auditd  : type=1400 audit(0.0:13): avc:  denied  { getopt } for  comm="binder:635_E" scontext=u:r:system_server:s0 tcontext=u:r:shell:s0 tclass=unix_stream_socket permissive=0
+         1788890475.396   635   635 I auditd  : type=1400 audit(0.0:14): avc:  denied  { getopt } for  comm="binder:635_E" scontext=u:r:system_server:s0 tcontext=u:r:shell:s0 tclass=unix_stream_socket permissive=0
+         1788890475.440   635   670 I am_wtf  : [0,635,system_server,-1,JobScheduler.JobStatus,App com.google.android.dialer became active but still in NEVER bucket]
+         1788890475.457   635   707 I commit_sys_config_file: [package-session,44]
+         1788890475.524   635   663 I commit_sys_config_file: [package-session,41]
+         1788890475.594   635  1535 I am_uid_active: 10151
+         1788890475.601   635   693 I commit_sys_config_file: [package-user-0,944]
+         1788890475.875   635   670 I am_uid_running: 10103
+         1788890475.884  1231  2728 I gtalk_heartbeat_reset: [66136,74.125.130.188:5228]
+         1788890475.936   635   670 I am_wtf  : [0,635,system_server,-1,JobScheduler.JobStatus,App com.google.android.dialer became active but still in NEVER bucket]
+         1788890476.136   635   671 I am_proc_start: [0,2984,10103,com.android.devicediagnostics,broadcast,{com.android.devicediagnostics/com.android.devicediagnostics.BootCompleteReceiver}]
+         1788890476.171   635   670 I am_wtf  : [0,635,system_server,-1,JobScheduler.JobStatus,App com.google.android.dialer became active but still in NEVER bucket]
+         1788890476.198  1231  2728 I gtalk_connection: 0
+         1788890476.287   635  2341 I am_proc_bound: [0,2984,com.android.devicediagnostics]
+         1788890476.381   635   670 I am_wtf  : [0,635,system_server,-1,JobScheduler.JobStatus,App com.google.android.dialer became active but still in NEVER bucket]
+         1788890476.493   635   635 I notification_cancel_all: [1000,635,com.brailleme.app,0,0,0,5,NULL]
+         1788890476.497   635   635 I notification_cancel_all: [1000,635,com.brailleme.app,0,0,0,5,NULL]
+         1788890476.565  1231  2736 I c2dm    : [-19,SUCCESSFUL,0,0]

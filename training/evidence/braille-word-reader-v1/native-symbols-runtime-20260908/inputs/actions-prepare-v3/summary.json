@@ -1,0 +1,102 @@
+{
+  "status": "completed_actions_not_assessed",
+  "error": null,
+  "acceptanceResult": "not_assessed",
+  "action_counts": {
+    "launch-existing-app": 1,
+    "Buka pemindai kata": 1,
+    "Aktifkan kamera": 1
+  },
+  "observations": [
+    {
+      "label": "before-prepare",
+      "utc": "2026-09-08T17:08:47.054747+00:00",
+      "pid": null,
+      "xml": "C:\\bm-symbols-apk-20260908\\evidence\\actions-prepare-v3\\20260908T170843352943Z-before-prepare-6e7818.xml",
+      "screenshot": "C:\\bm-symbols-apk-20260908\\evidence\\actions-prepare-v3\\20260908T170846069236Z-before-prepare-37ff6c.png",
+      "logcat": null,
+      "visible_states": [],
+      "result_texts": [],
+      "shutter_visible": false,
+      "shutter_enabled": false,
+      "rescan_visible": false,
+      "processing_visible": false
+    },
+    {
+      "label": "prepare-00",
+      "utc": "2026-09-08T17:08:52.126533+00:00",
+      "pid": "8532",
+      "xml": "C:\\bm-symbols-apk-20260908\\evidence\\actions-prepare-v3\\20260908T170848949082Z-prepare-00-78839f.xml",
+      "screenshot": "C:\\bm-symbols-apk-20260908\\evidence\\actions-prepare-v3\\20260908T170851578455Z-prepare-00-d0bec0.png",
+      "logcat": "C:\\bm-symbols-apk-20260908\\evidence\\actions-prepare-v3\\20260908T170852125535Z-prepare-00-54e4ca.log",
+      "visible_states": [],
+      "result_texts": [],
+      "shutter_visible": false,
+      "shutter_enabled": false,
+      "rescan_visible": false,
+      "processing_visible": false
+    },
+    {
+      "label": "after-Buka pemindai kata",
+      "utc": "2026-09-08T17:08:55.729176+00:00",
+      "pid": "8532",
+      "xml": "C:\\bm-symbols-apk-20260908\\evidence\\actions-prepare-v3\\20260908T170852956167Z-after-Buka-pemindai-kata-22f18b.xml",
+      "screenshot": "C:\\bm-symbols-apk-20260908\\evidence\\actions-prepare-v3\\20260908T170855199188Z-after-Buka-pemindai-kata-4abbef.png",
+      "logcat": "C:\\bm-symbols-apk-20260908\\evidence\\actions-prepare-v3\\20260908T170855729176Z-after-Buka-pemindai-kata-4f0f89.log",
+      "visible_states": [],
+      "result_texts": [],
+      "shutter_visible": false,
+      "shutter_enabled": false,
+      "rescan_visible": false,
+      "processing_visible": false
+    },
+    {
+      "label": "prepare-01",
+      "utc": "2026-09-08T17:08:58.642561+00:00",
+      "pid": "8532",
+      "xml": "C:\\bm-symbols-apk-20260908\\evidence\\actions-prepare-v3\\20260908T170855879762Z-prepare-01-3e8c0e.xml",
+      "screenshot": "C:\\bm-symbols-apk-20260908\\evidence\\actions-prepare-v3\\20260908T170858098996Z-prepare-01-b39775.png",
+      "logcat": "C:\\bm-symbols-apk-20260908\\evidence\\actions-prepare-v3\\20260908T170858641559Z-prepare-01-4a290d.log",
+      "visible_states": [],
+      "result_texts": [],
+      "shutter_visible": false,
+      "shutter_enabled": false,
+      "rescan_visible": false,
+      "processing_visible": false
+    },
+    {
+      "label": "after-Aktifkan kamera",
+      "utc": "2026-09-08T17:09:02.330804+00:00",
+      "pid": "8532",
+      "xml": "C:\\bm-symbols-apk-20260908\\evidence\\actions-prepare-v3\\20260908T170859507321Z-after-Aktifkan-kamera-82164b.xml",
+      "screenshot": "C:\\bm-symbols-apk-20260908\\evidence\\actions-prepare-v3\\20260908T170901804761Z-after-Aktifkan-kamera-53c476.png",
+      "logcat": "C:\\bm-symbols-apk-20260908\\evidence\\actions-prepare-v3\\20260908T170902329803Z-after-Aktifkan-kamera-f9b1ef.log",
+      "visible_states": [],
+      "result_texts": [],
+      "shutter_visible": false,
+      "shutter_enabled": false,
+      "rescan_visible": false,
+      "processing_visible": false
+    },
+    {
+      "label": "prepare-02",
+      "utc": "2026-09-08T17:09:06.084590+00:00",
+      "pid": null,
+      "xml": "C:\\bm-symbols-apk-20260908\\evidence\\actions-prepare-v3\\20260908T170902459270Z-prepare-02-024136.xml",
+      "screenshot": "C:\\bm-symbols-apk-20260908\\evidence\\actions-prepare-v3\\20260908T170904780856Z-prepare-02-d607e3.png",
+      "logcat": null,
+      "visible_states": [
+        "Mencari Braille"
+      ],
+      "result_texts": [],
+      "shutter_visible": true,
+      "shutter_enabled": false,
+      "rescan_visible": false,
+      "processing_visible": false
+    }
+  ],
+  "finished_utc": "2026-09-08T17:09:06.085758+00:00",
+  "command": "prepare",
+  "runtime_collector_coordination": "operator_managed",
+  "note": "Run cold-start/font separately; the existing runtime collector stops when the app PID changes."
+}

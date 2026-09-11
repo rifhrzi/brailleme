@@ -1,0 +1,133 @@
+{
+  "selected_policy": "cascade_zoom_fallback",
+  "tta_method": {
+    "version": "overall-v5-fixed-flip-zoom-fallback-1",
+    "runtime_module": "word_overall_v5_zoom",
+    "views": [
+      "identity",
+      "horizontal",
+      "vertical",
+      "half_turn",
+      "zoom125",
+      "zoom150"
+    ],
+    "policies": {
+      "identity": [
+        "identity"
+      ],
+      "simple_fallback": [
+        "identity",
+        "matched_logit_four"
+      ],
+      "cascade": [
+        "identity",
+        "matched_logit_four",
+        "matched_prob_four",
+        "matched_prob_vertical",
+        "matched_prob_half_turn",
+        "matched_prob_horizontal"
+      ],
+      "zoom_fallback": [
+        "identity",
+        "zoom_logit_mean",
+        "zoom_probability_mean"
+      ],
+      "cascade_zoom_fallback": [
+        "identity",
+        "matched_logit_four",
+        "matched_prob_four",
+        "matched_prob_vertical",
+        "matched_prob_half_turn",
+        "matched_prob_horizontal",
+        "zoom_logit_mean",
+        "zoom_probability_mean"
+      ]
+    },
+    "flip_transforms": {
+      "identity": [
+        false,
+        false,
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      ],
+      "horizontal": [
+        true,
+        false,
+        [
+          3,
+          4,
+          5,
+          0,
+          1,
+          2
+        ]
+      ],
+      "vertical": [
+        false,
+        true,
+        [
+          2,
+          1,
+          0,
+          5,
+          4,
+          3
+        ]
+      ],
+      "half_turn": [
+        true,
+        true,
+        [
+          5,
+          4,
+          3,
+          2,
+          1,
+          0
+        ]
+      ]
+    },
+    "scales": {
+      "zoom125": 1.25,
+      "zoom150": 1.5
+    },
+    "pixel_transform": "Bilinear inverse sampling at pixel centers; float64 coordinates and float32 interpolation; outside=source RGBmean",
+    "box_transform": "zoom=(original-.5)*scale+.5; inverse=(zoom-.5)/scale+.5",
+    "matching": "Actual NMS proposals only; both zoom proposal and projected original box complete within frozen edgeMargin; one-to-one greedy IoU>=.5",
+    "dot_combination": "Original and matched zoom dots: logit mean then probability mean; unmatched original dots stay unchanged",
+    "routing": "First accepted text in fixed order; original geometry, scores and quality check unchanged; no GT access",
+    "selection_rank": [
+      "overall_exact_accuracy",
+      "accepted_precision",
+      "negative_invalid_false_accepts"
+    ],
+    "tie_break": "earlier policy in declared order",
+    "threshold_changes": false,
+    "geometry_changes": false,
+    "quality_changes": false,
+    "actual_selected_zoom_execution": "Only if the selected policy still rejects after its identity/flip prefix"
+  },
+  "runtime_module": "word_overall_v5_zoom",
+  "thresholds": {
+    "proposalScore": 0.25,
+    "acceptScore": 0.25,
+    "dotConfidence": 0.7,
+    "nmsIou": 0.25,
+    "minCellWidth": 0.008,
+    "minCellHeight": 0.06,
+    "edgeMargin": 0.008,
+    "maxRowDeviation": 0.55,
+    "maxGapRatio": 1.2,
+    "maxOverlapRatio": 0.5
+  },
+  "checkpoint_sha256": "ac9e30cd27cb22ca4f97db42637d3a9e2a27ed47d13a962a661c3bb01c0e66bb",
+  "tflite_sha256": "6847c91fe186169ba5208a7444f9c8bedc753228bc42b78c691471a85453a6cb",
+  "final_method_sha256": "d7f900120359d1dcd32c8e3bd586663439a9bd31a776630571fbcef0c50ef9c4",
+  "native_runtime_validated": false
+}

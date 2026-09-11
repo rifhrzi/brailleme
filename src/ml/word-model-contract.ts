@@ -10,8 +10,16 @@ export const WORD_MODEL_OUTPUT_LENGTH = 120 * 48 * 11;
 export const WORD_MODEL_INPUT_SHAPE = [1, 192, 480, 3] as const;
 export const WORD_MODEL_OUTPUT_SHAPE = [1, 48, 120, 11] as const;
 export const WORD_MODEL_INPUT_SCALE = 'zero_to_one' as const;
-export const WORD_DECODER_VERSION = 'six-dot-word-v2';
-export const WORD_MAX_LETTERS = 12;
+export const WORD_DECODER_VERSION = 'six-dot-id-v4-experimental';
+/** Frozen v5 detector with the bounded Indonesian punctuation token grammar. */
+export const WORD_SYMBOL_PROTOCOL = 'indonesian-punctuation-token-v1';
+export const WORD_RUNTIME_MODULE = 'word_overall_v5_zoom';
+export const WORD_RUNTIME_POLICY = 'cascade_zoom_fallback';
+export const WORD_MAX_CHARACTERS = 12;
+/** Twelve letters may each have a separate capital indicator. */
+export const WORD_MAX_CELLS = 24;
+/** Legacy single-cell/draft limit; physical-cell limits use WORD_MAX_CELLS. */
+export const WORD_MAX_LETTERS = WORD_MAX_CHARACTERS;
 export const WORD_GUIDE_WIDTH_FRACTION = 0.9;
 /** Adjustable visible word frame; the model receives context around it. */
 export const WORD_GUIDE_ASPECT_RATIO = 4;

@@ -1,60 +1,68 @@
-# Uji APK pemindai satu kata
+# Uji APK pemindai Braille Indonesia dasar
 
-Gunakan APK internal beserta SHA-256 yang tercantum dalam laporan penyerahan. Catat model ponsel, versi Android, nama APK, tanggal, kondisi cahaya, dan jenis kertas. Hasil pengujian publik/offline serta emulator dilaporkan terpisah dari pengujian kertas timbul berikut.
+Protokol untuk update 0.3.0 eksperimen internal. Catat nama APK, SHA-256, ponsel, Android, tanggal, kondisi cahaya, dan jenis sumber. Pengujian gambar publik, contoh sintetis, emulator, dan kertas timbul harus dilaporkan terpisah.
 
 ## Cara memindai
 
-1. Pasang APK, selesaikan pengenalan awal, lalu buka Pindai dan izinkan kamera.
-2. Letakkan kertas Braille dasar A–Z pada permukaan rata. Arah baca titik harus normal dari kiri ke kanan. Arahkan cahaya miring dari ujung atas kertas, yaitu tepi yang paling jauh dari Anda, agar bagian terang dan bayangan titik terlihat. Posisikan kamera tepat di atas kata.
-3. Masukkan **seluruh satu kata** dalam satu baris ke bingkai. Atur **Lebar bingkai** agar kata atau baris tetangga tidak ikut masuk. Sisakan sedikit ruang di sekitar titik terluar.
-4. Tahan ponsel. Bila perlu coba senter dan periksa apakah bayangan titik tetap terlihat, lalu tekan **Pindai kata** satu kali.
-5. Periksa foto, kotak sel, dan kata yang muncul. Pilih **Bacakan** atau **Pindai ulang**.
-6. Bila ditolak, catat penolakan dahulu sebelum mencoba lagi. Percobaan ulang tetap merupakan pengambilan baru dalam laporan akurasi.
+1. Pasang APK, selesaikan pengenalan, buka Pindai, dan izinkan kamera.
+2. Letakkan sumber pada permukaan rata dengan titik tegak dan arah baca kiri ke kanan. Kamera tepat di atas sumber. Arahkan cahaya miring dari ujung atas kertas agar bayangan titik terlihat.
+3. Arahkan satu kata atau rangkaian angka ke tengah kamera. Sertakan indikator dan ruang di kedua ujung. Bingkai luar mengikuti kelompok sel; kotak kecil mewakili setiap sel fisik. Tidak ada slider lebar.
+4. Tunggu status **Mencari Braille**, **Braille terdeteksi**, kemudian **Tahan kamera, lalu tekan Pindai**. Bingkai menunjukkan deteksi posisi, bukan jaminan terjemahan benar.
+5. Tekan **Pindai** satu kali. Periksa foto, kotak indikator, urutan sel, kapital, digit, dan nol awal. Pilih **Bacakan** atau **Pindai ulang**.
+6. Catat setiap pengambilan, termasuk hasil salah dan penolakan, sebelum mencoba lagi. Rangkaian yang terpotong tetapi diterima adalah hasil salah, bukan keberhasilan parsial.
 
-Petunjuk arah cahaya mengikuti [panduan pembuat AngelinaDataset](https://angelina-reader.com/help/). Pengujian mandiri tetap perlu mencatat kondisi sebenarnya; kesesuaian petunjuk tidak menjamin akurasi pada ponsel atau kertas Anda.
+## Aturan hasil
 
-## Daftar percobaan
+Aturan mengikuti [panduan Braille dasar Indonesia](https://bakorplbbanyumas.files.wordpress.com/2013/11/membaca-menulis-braille-lengkap-ok.pdf). Tanda kapital adalah titik 6; tanda angka adalah titik 3-4-5-6.
 
-| Kasus | Hasil yang diperiksa |
+| Kasus sumber | Hasil yang diperiksa |
 | --- | --- |
-| Huruf tunggal A–Z, masing-masing beberapa pengambilan | Huruf sesuai sumber; tidak selalu C, H, atau J |
-| MAMA dan KAKAK | Huruf berulang tetap ada dan berurutan |
-| Kata sepanjang 1 sampai 12 huruf | Jumlah kotak sel sama dengan panjang hasil |
-| Kata baru setelah hasil berhasil | Hasil baru mengganti seluruh hasil sebelumnya |
-| Dua tekanan cepat Pindai kata | Hanya satu foto/proses; tidak ada hasil ganda |
-| Pindai ulang saat hasil muncul | Hasil dan foto lama hilang; Bacakan belum aktif |
-| Huruf di tepi atau sebagian titik keluar bingkai | Ditolak; bingkai perlu diperbaiki |
-| Dua baris atau dua kata dalam bingkai | Ditolak bila terdeteksi sebagai susunan di luar satu kata |
-| Celah satu sel di tengah kata | Ditolak bila celah terdeteksi; tidak dilengkapi kamus |
-| Lebih dari 12 sel, pola angka/tanda baca, Braille singkatan | Ditolak; jangan dianggap sebagai terjemahan yang didukung |
-| Kertas kosong, meja, tulisan biasa, pola tekstur | Tidak menghasilkan kata yang diterima |
-| Cahaya redup, pantulan, blur, miring, jarak berubah | Catat keberhasilan/penolakan; perbaiki kondisi sesuai petunjuk |
-| Keluar layar, Home, lock, kembali saat pemrosesan | Tidak crash dan tidak menampilkan/membacakan hasil lama |
-| Izin kamera ditolak atau dicabut melalui Settings | Petunjuk pemulihan muncul; aplikasi tetap dapat digunakan |
+| A–Z tanpa indikator, masing-masing satu sel | Huruf kecil a–z |
+| Tanda kapital tunggal sebelum setiap A–Z | Huruf kapital A–Z; indikator tidak menghasilkan karakter |
+| `⠁⠃⠉`, `⠠⠁⠃⠉`, `⠠⠠⠁⠃⠉` | `abc`, `Abc`, `ABC` |
+| Tanda kapital tunggal di tengah kata | Hanya huruf berikutnya menjadi kapital |
+| Tanda kapital ganda di tengah kata, tiga indikator, indikator tanpa isi | Seluruh hasil ditolak |
+| Tanda angka diikuti setiap pola a–j | Digit 1–9 dan 0 |
+| `⠼⠃⠚⠃⠋`, `⠼⠚⠚⠁` | `2026`, `001`; nol awal tetap ada di hasil/draft/TTS |
+| Tanda angka saja, campuran huruf–angka, tanda negatif/desimal/pemisah | Seluruh hasil ditolak |
+| 12 karakter, termasuk 12 huruf dengan masing-masing tanda kapital (24 sel) | Dapat diterima jika ukuran dan keyakinan memadai |
+| Lebih dari 12 karakter atau 24 sel; rangkaian tidak muat/terlalu kecil | Ditolak |
+| Satu indikator atau sel lain berkeyakinan rendah | Seluruh hasil ditolak; tidak membuang simbol lalu menerima sisa |
 
-Pemeriksaan celah tidak menjamin bahwa semua sel yang sama sekali gagal dideteksi, khususnya sel di ujung kata, akan diketahui. Catat hasil pendek yang keliru sebagai **diterima tetapi salah**, bukan sebagai keberhasilan parsial.
+Jumlah sel fisik dapat lebih besar dari panjang hasil. Indikator ditampilkan sebagai kotak sel dengan keluaran kosong. Jangan mengharuskan jumlah kotak sama dengan panjang teks.
 
-## Offline dan aksesibilitas
+## Pelacakan dan kamera fisik berikutnya
 
-- Pastikan suara Bahasa Indonesia lokal telah tersedia melalui pengaturan suara Android. Aktifkan mode pesawat, tutup aplikasi sepenuhnya, buka lagi, lalu ulangi pemindaian dan Bacakan tanpa Metro.
-- Dengan TalkBack, periksa urutan fokus, pengaturan lebar bingkai, status pemrosesan, hasil, penolakan, Bacakan, dan Pindai ulang. Tidak boleh ada pengumuman berulang yang menghalangi navigasi.
-- Atur ukuran font 200%. Pastikan seluruh petunjuk serta tombol dapat dicapai dengan menggulir.
-- Saat suara sedang dibacakan, pindai ulang, keluar layar, atau ubah pengaturan suara. Pembacaan lama harus berhenti.
-- Gunakan pemindai selama 10 menit; catat panas berlebih, keterlambatan, kamera macet, crash, atau suara yang keluar tanpa diminta.
+| Percobaan | Yang harus diamati |
+| --- | --- |
+| Satu sel, kata berulang `mama`/`kakak`, indikator di depan | Kotak mengikuti seluruh kelompok termasuk indikator |
+| Dua kata atau beberapa baris | Memilih satu kelompok terdekat tengah; tidak menggabungkan semua baris |
+| Geser kamera pelan/cepat, pindahkan sasaran melewati batas area pencarian | Kotak mengikuti posisi/ukuran tanpa lompatan target berulang |
+| Kandidat baru lebih dekat tengah | Pergantian setelah dua pengamatan konsisten |
+| Target hilang atau tertutup | Pindai nonaktif setelah 500 ms; bingkai hilang setelah 800 ms |
+| Ujung kata/indikator keluar bidang kamera | Ditolak; tidak menerima potongan kata |
+| Tekan Pindai ketika tracking berjalan; tekan dua kali cepat | Satu foto dan satu hasil, tanpa crash atau model berebut akses |
+| Pindai ulang | Hasil, foto, dan target lama hilang; pencarian baru dimulai |
+| Rotasi portrait/landscape, perubahan layout, kembali dari Home/lock | Tidak memakai koordinat atau hasil sesi lama |
+| Fokus sentuh; senter hidup/mati; kamera tanpa senter | Preview tetap berjalan dan kontrol yang tersedia dapat digunakan |
+| Pembukaan pertama setelah force-stop; izin ditolak/dicabut | Startup stabil atau pesan pemulihan yang dapat ditindaklanjuti |
+| Kertas kosong, meja, huruf cetak biasa, tekstur, blur/pantulan | Tidak menghasilkan hasil yang diterima secara keliru |
 
-## Format hasil
+Bandingkan posisi kotak pada preview dan foto memakai penanda independen; catatan matriks saja tidak membuktikan kotak sel benar. Mirror/rotasi dan kamera dari beberapa produsen perlu bukti perangkat tersendiri.
 
-Salin tabel ini untuk setiap pengambilan. Jangan hanya mencatat pengambilan yang berhasil.
+## Suara, aksesibilitas, dan kinerja
 
-Tersedia juga [template CSV](WORD-SCAN-RESULTS-TEMPLATE.csv) dengan contoh kata sepanjang 1–12 huruf. Ganti contoh sesuai kertas yang tersedia. Setiap pengambilan, termasuk pengulangan kata yang sama, mendapat baris baru. Isi status `diterima` atau `ditolak`; biarkan hasil aplikasi kosong untuk penolakan dan tulis petunjuk yang muncul pada kolom alasan.
+- Gunakan suara Bahasa Indonesia yang tersedia lokal. Uji mode pesawat tanpa Metro. Cocokkan teks yang dikirim ke TTS dan dengarkan pengucapan digit; penerimaan event bukan bukti audio terdengar.
+- Dengan TalkBack, pastikan status hanya diumumkan saat berubah. Bingkai bergerak tidak menerima fokus. Tombol Pindai, Bacakan, Pindai ulang, senter, dan Bantuan dapat dicapai.
+- Atur font 200%; seluruh petunjuk dan tombol tetap dapat dicapai dengan menggulir. Target sentuh minimal 48 dp.
+- Pindai ulang/keluar saat TTS berbicara harus menghentikan pembacaan lama.
+- Uji 10 menit: catat FPS preview, latensi tracking, waktu tombol hingga hasil, memori, suhu, crash/ANR. Target preview minimal 24 FPS dan p95 pengambilan hingga hasil maksimal 2 detik. Pisahkan angka emulator dari ponsel fisik.
 
-| Nomor | Kata sebenarnya | Panjang | Hasil aplikasi atau alasan ditolak | Benar seluruhnya? | Kondisi |
-| --- | --- | --- | --- | --- | --- |
-| 1 | MAMA | 4 | | | |
-| 2 | KAKAK | 5 | | | |
+## Catatan setiap pengambilan
 
-**Keberhasilan kata utuh** = jumlah hasil tepat seluruhnya ÷ semua pengambilan. Penolakan masuk penyebut sebagai gagal.
+| Nomor | Sumber/split | Teks sebenarnya | Sel fisik | Hasil/alasan penolakan | Tepat seluruhnya? | Kondisi |
+| --- | --- | --- | --- | --- | --- | --- |
+| 1 | kertas fisik | Abc | 4 | | | |
+| 2 | kertas fisik | 001 | 4 | | | |
 
-**Ketepatan hasil diterima** = jumlah hasil tepat seluruhnya ÷ semua pengambilan yang menghasilkan kata. Hasil salah dengan satu huruf berbeda tetap salah.
-
-Laporkan kedua angka menurut panjang kata. Pisahkan kertas timbul, gambar cetak/layar, negatif, serta variasi cahaya. APK internal dan pengujian mandiri ini belum menggantikan seluruh persyaratan produksi pada [GO checklist](../release/GO-CHECKLIST.md).
+**Keberhasilan hasil utuh** = tepat seluruhnya / semua pengambilan. **Ketepatan hasil diterima** = tepat seluruhnya / pengambilan yang menghasilkan teks. Laporkan terpisah untuk huruf kecil, kapital tunggal, seluruh kata kapital, angka, dan negatif. Sampel sintetis atau susunan ulang foto publik tidak membuktikan akurasi kertas Indonesia fisik. APK ini tetap eksperimen; persyaratan produksi ada pada [GO checklist](../release/GO-CHECKLIST.md).

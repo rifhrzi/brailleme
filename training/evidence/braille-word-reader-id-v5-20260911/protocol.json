@@ -1,0 +1,72 @@
+{
+  "version": "overall-exact-text-v5-20260911",
+  "created_utc": "2026-09-11T00:41:17.307048+00:00",
+  "user_target": "At least 80 percent overall exact text, not 80 percent in every group",
+  "primary": {
+    "positive_total": 500,
+    "per_group": 100,
+    "groups": [
+      "lowercase",
+      "capital_single",
+      "capital_word",
+      "numbers",
+      "punctuation"
+    ],
+    "multicharacter_total": 480,
+    "invalid_total": 40,
+    "metric": "all characters and symbols exactly equal; rejected positives count wrong",
+    "target80": "exact_correct / 500 >= 0.80",
+    "composition": "original v4 stress composer and text-length schedule unchanged",
+    "selection_rank": "overall exact accuracy, then accepted precision, then fewer invalid false accepts"
+  },
+  "separate_quality_flags": {
+    "accepted_precision_target": 0.95,
+    "invalid_false_accepts_target": 0,
+    "old_public_regression": "607 previous public lowercase cases, 405 legacy cases and 44 invalid cases reported separately"
+  },
+  "supplemental_native_context": {
+    "role": "separate diagnostic; never mixed into primary 500 denominator",
+    "planned_maximum": 200,
+    "source": "contiguous annotated cells from the same reserved source pages",
+    "image_policy": "identity transform, single native image rectangle, uniform resize and letterbox; no individual cell pasting",
+    "label_policy": "original six-bit sequence; v4 literal token transcription only where grammar-valid, not translation of Chinese source text",
+    "coverage_policy": "report available native groups and exclusions; never synthesize missing capital/number groups"
+  },
+  "data_scope": "source-disjoint recomposed public flatbed scans; not physical-phone-camera validation",
+  "known_limitations": [
+    "Primary recompositions have artificial borders and page/shadow discontinuities",
+    "Random token strings differ from real vocabulary frequencies",
+    "18 old TEST pages are development-observed and cannot be final holdout again",
+    "Punctuation grammar remains bounded; decimals, signed numbers, spaces and quotes are outside scope"
+  ],
+  "final_holdout_policy": "Reserve source pages before labels/inference; freeze method/checkpoint using development validation only; one final evaluation",
+  "development_files": {
+    "train-symbols.json": "C:\\bm-symbols-20260908\\accuracy80-20260910\\train-symbols.json",
+    "train-image-hashes.json": "C:\\bm-symbols-20260908\\accuracy80-20260910\\train-image-hashes.json",
+    "validation-symbols.json": "C:\\bm-symbols-20260908\\accuracy80-20260910\\validation-symbols.json",
+    "validation-image-hashes.json": "C:\\bm-symbols-20260908\\accuracy80-20260910\\validation-image-hashes.json"
+  },
+  "development_policy": "Reuse existing TRAIN and validation by absolute path and SHA256, without copying images/manifests; old observed TEST remains historical only and is not added to gradients",
+  "input_sha256": {
+    "C:\\bm-symbols-20260908\\accuracy80-20260910\\test-source-selection.json": "22c194395e01075a638ae9bcb65b6cbeb4263faf3c422e26b46d0f6e68efa306",
+    "C:\\bm-symbols-20260908\\accuracy80-20260910\\test-download-manifest.json": "9fb88e6b2f28aff4c726a532bc159ec88e983b632d85f40daf044be308f8ad2c",
+    "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\training\\evidence\\braille-word-reader-v1\\dsbi-training-preparation\\download-manifest.json": "b8de8f3e3291025608bb35a66f29ea12f0fffb2c5300eca63053d63325bb673b",
+    "C:\\bm-datasets\\DSBI-train-6937eb8\\train.txt": "3a679245733600ee78640254f00b850d7ea7de3f413e7274d0e34ccaf9d3da9c",
+    "C:\\bm-datasets\\DSBI-train-6937eb8\\test.txt": "347836183ea3cd9a285f80eb0902cc894173e184ed6ac2b7e425581e702a02e3",
+    "C:\\bm-symbols-20260908\\deployment-baseline\\external-words.json": "52db73db66f63e35e03ceda218bcb53958a644137cc50aae3f796acf9afc6603",
+    "C:\\bm-symbols-20260908\\legacy-selection-fixtures.json": "05b51db63457743993e0702204b7abb8771e5bf4a12427b07a1d2b3f642eb2bf",
+    "C:\\bm-symbols-20260908\\accuracy80-20260910\\train-symbols.json": "7030f2525206baa943854f5c0bbc48dd82820ec7c0ea275e5f1c3a2c21c30dcf",
+    "C:\\bm-symbols-20260908\\accuracy80-20260910\\train-image-hashes.json": "51396aaa6d10e7f8a3fe20c9ceb4a534cb50e956970b1d76e50aaec762baa4ce",
+    "C:\\bm-symbols-20260908\\accuracy80-20260910\\validation-symbols.json": "874c8ff878420cb511caba05e3c751a623a840def7a2c0014c802bd82790a701",
+    "C:\\bm-symbols-20260908\\accuracy80-20260910\\validation-image-hashes.json": "88a7d4779fc1fd6a56481167b835d7c01a17d70379a22d86364ed8cee8bc9088"
+  },
+  "source_sha256": {
+    "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\training\\scripts\\word_overall_v5_protocol.py": "b33b2ffe18381e587cc8ab92c64a059517dc5dd7faf775422279ad995ce9f3b8",
+    "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\training\\scripts\\word_symbol_v4_prepare.py": "95bca856142261b09b8390e7507ff250234e49d553ab3ae560f86949c367c83b",
+    "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\training\\scripts\\word_symbols_id_v4.py": "0b85da03fa8d3b921fea444adf6a68ba95b56fda76db710b9edc5f6b8a9937b9",
+    "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\training\\scripts\\word_decode_id_v4.py": "e7a52d92c4c1bd8266ef95575d939fb0a96f9eacefe237a23c66f36cfd7d7868",
+    "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\training\\scripts\\word_dsbi.py": "feecf16dba6d376415e15707c02c8f05fcf6650055da09ad9f4712099e6325ff"
+  },
+  "native_runtime_validated": false,
+  "physical_camera_validated": false
+}

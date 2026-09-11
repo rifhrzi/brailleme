@@ -1,0 +1,106 @@
+{
+  "created_at_utc": "2026-09-08T15:23:13.058402+00:00",
+  "status": "labels_and_composition_verified",
+  "scope": "Offline source label, fixed first-match selection and pixel composition only; no prediction outputs were read.",
+  "manifest_sha256": "1214f6cf13f52f1866a78e78fa61a8ff25c555f69bc0afe99c4770b8e954a311",
+  "fixture_sha256": "e2a0298da266932b4f648458f718bead2b8e0a524eb20f810157d1b3b4f9a53f",
+  "reviewer_sha256": "eee78fdd278046cb8f4f9a9f956f9dd47ff0163f2c0f863d54c5cd7be5a5e604",
+  "parser_sha256": "9e43dc9484f035ba3bbfcb49344050714dfd1c636d107b92cb2ce1faded29ba3",
+  "rows": [
+    {
+      "output": "lowercase-abc.png",
+      "expected": "abc",
+      "masks": [
+        1,
+        3,
+        9
+      ],
+      "source_image": "C:\\bm-symbols-20260908\\data\\validation\\000000.png",
+      "first_matching_fixture_verified": true,
+      "full_source_scaled_pixels_verified": true
+    },
+    {
+      "output": "capital_single-Abc.png",
+      "expected": "Abc",
+      "masks": [
+        32,
+        1,
+        3,
+        9
+      ],
+      "source_image": "C:\\bm-symbols-20260908\\data\\validation\\000140.png",
+      "first_matching_fixture_verified": true,
+      "full_source_scaled_pixels_verified": true
+    },
+    {
+      "output": "capital_word-ABC.png",
+      "expected": "ABC",
+      "masks": [
+        32,
+        32,
+        1,
+        3,
+        9
+      ],
+      "source_image": "C:\\bm-symbols-20260908\\data\\validation\\000280.png",
+      "first_matching_fixture_verified": true,
+      "full_source_scaled_pixels_verified": true
+    },
+    {
+      "output": "numbers-2026.png",
+      "expected": "2026",
+      "masks": [
+        60,
+        3,
+        26,
+        3,
+        11
+      ],
+      "source_image": "C:\\bm-symbols-20260908\\data\\validation\\000430.png",
+      "first_matching_fixture_verified": true,
+      "full_source_scaled_pixels_verified": true
+    },
+    {
+      "output": "numbers-001.png",
+      "expected": "001",
+      "masks": [
+        60,
+        26,
+        26,
+        1
+      ],
+      "source_image": "C:\\bm-symbols-20260908\\data\\validation\\000431.png",
+      "first_matching_fixture_verified": true,
+      "full_source_scaled_pixels_verified": true
+    },
+    {
+      "output": "lowercase-a.png",
+      "expected": "a",
+      "masks": [
+        1
+      ],
+      "source_image": "C:\\bm-symbols-20260908\\data\\validation\\000009.png",
+      "first_matching_fixture_verified": true,
+      "full_source_scaled_pixels_verified": true
+    },
+    {
+      "output": "lowercase-aab.png",
+      "expected": "aab",
+      "masks": [
+        1,
+        1,
+        3
+      ],
+      "source_image": "C:\\bm-symbols-20260908\\data\\validation\\000006.png",
+      "first_matching_fixture_verified": true,
+      "full_source_scaled_pixels_verified": true
+    },
+    {
+      "output": "blank.png",
+      "expected": null,
+      "blank_pixels_verified": true
+    }
+  ],
+  "physical_camera_validated": false,
+  "runtime_orientation_validated": false
+}

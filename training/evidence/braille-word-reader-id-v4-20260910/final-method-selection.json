@@ -1,0 +1,21 @@
+{
+  "created_utc": "2026-09-10T16:27:47.184777+00:00",
+  "selection_scope": "validation_only_before_any_final_TEST_or_regression",
+  "selected_pipeline": "single_detector_with_experimental_id_v4_parser",
+  "selected_run": "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots",
+  "selected_epoch": 45,
+  "checkpoint_sha256": "090260a2a29f802cdcd07140344feaaf04d98bc48cd2be7a5d75e0482d6ee38c",
+  "tflite_sha256": "e82a540e7b2e1c8d5b3bd5c3004e1cc5409367293c27b24f13f2a7c05f015325",
+  "refiner_used": false,
+  "refiner_reason": "Predeclared material-gain criterion failed on all540 validation; do not add a second inference model",
+  "refiner_selection_sha256": "36c7167c49773f57cc15fe432c12bb61747ceb7374c6003cf25ce63fd4d0fd1c",
+  "selection_sha256": "4235598b3db21fc537c5741207514579fd6764644386d698688cc0ee141bc952",
+  "validation_target_met": false,
+  "final_test_policy": "One chosen detector only; no further training/tuning after TEST reservation",
+  "input_sha256": {
+    "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\selection.json": "4235598b3db21fc537c5741207514579fd6764644386d698688cc0ee141bc952",
+    "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-dots\\training-config.json": "f24d1789de9df2b1412e206111b6169a06bdc9cb3b6d05155b713682e8819a4c",
+    "C:\\bm-symbols-20260908\\accuracy80-20260910\\run-cell-refiner-pilot\\selection.json": "36c7167c49773f57cc15fe432c12bb61747ceb7374c6003cf25ce63fd4d0fd1c",
+    "C:\\bm-symbols-20260908\\accuracy80-20260910\\evidence\\refiner-box-gap-epoch14-fixed100-validation.json": "5af16358d109017fb2d9a1eb3b5816564f468f596788c5371806127072058da7"
+  }
+}

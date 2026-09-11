@@ -1,0 +1,159 @@
+{
+  "created_utc": "2026-09-11T01:32:10.180321+00:00",
+  "runtime_module": "word_overall_v5_zoom",
+  "scope": "previously_observed_development_validation_only",
+  "method": {
+    "version": "overall-v5-fixed-flip-zoom-fallback-1",
+    "runtime_module": "word_overall_v5_zoom",
+    "views": [
+      "identity",
+      "horizontal",
+      "vertical",
+      "half_turn",
+      "zoom125",
+      "zoom150"
+    ],
+    "policies": {
+      "identity": [
+        "identity"
+      ],
+      "simple_fallback": [
+        "identity",
+        "matched_logit_four"
+      ],
+      "cascade": [
+        "identity",
+        "matched_logit_four",
+        "matched_prob_four",
+        "matched_prob_vertical",
+        "matched_prob_half_turn",
+        "matched_prob_horizontal"
+      ],
+      "zoom_fallback": [
+        "identity",
+        "zoom_logit_mean",
+        "zoom_probability_mean"
+      ],
+      "cascade_zoom_fallback": [
+        "identity",
+        "matched_logit_four",
+        "matched_prob_four",
+        "matched_prob_vertical",
+        "matched_prob_half_turn",
+        "matched_prob_horizontal",
+        "zoom_logit_mean",
+        "zoom_probability_mean"
+      ]
+    },
+    "flip_transforms": {
+      "identity": [
+        false,
+        false,
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      ],
+      "horizontal": [
+        true,
+        false,
+        [
+          3,
+          4,
+          5,
+          0,
+          1,
+          2
+        ]
+      ],
+      "vertical": [
+        false,
+        true,
+        [
+          2,
+          1,
+          0,
+          5,
+          4,
+          3
+        ]
+      ],
+      "half_turn": [
+        true,
+        true,
+        [
+          5,
+          4,
+          3,
+          2,
+          1,
+          0
+        ]
+      ]
+    },
+    "scales": {
+      "zoom125": 1.25,
+      "zoom150": 1.5
+    },
+    "pixel_transform": "Bilinear inverse sampling at pixel centers; float64 coordinates and float32 interpolation; outside=source RGBmean",
+    "box_transform": "zoom=(original-.5)*scale+.5; inverse=(zoom-.5)/scale+.5",
+    "matching": "Actual NMS proposals only; both zoom proposal and projected original box complete within frozen edgeMargin; one-to-one greedy IoU>=.5",
+    "dot_combination": "Original and matched zoom dots: logit mean then probability mean; unmatched original dots stay unchanged",
+    "routing": "First accepted text in fixed order; original geometry, scores and quality check unchanged; no GT access",
+    "selection_rank": [
+      "overall_exact_accuracy",
+      "accepted_precision",
+      "negative_invalid_false_accepts"
+    ],
+    "tie_break": "earlier policy in declared order",
+    "threshold_changes": false,
+    "geometry_changes": false,
+    "quality_changes": false,
+    "actual_selected_zoom_execution": "Only if the selected policy still rejects after its identity/flip prefix"
+  },
+  "thresholds": {
+    "proposalScore": 0.25,
+    "acceptScore": 0.25,
+    "dotConfidence": 0.7,
+    "nmsIou": 0.25,
+    "minCellWidth": 0.008,
+    "minCellHeight": 0.06,
+    "edgeMargin": 0.008,
+    "maxRowDeviation": 0.55,
+    "maxGapRatio": 1.2,
+    "maxOverlapRatio": 0.5
+  },
+  "input_sha256": {
+    "C:\\bm-symbols-20260908\\overall80-20260911\\protocol.json": "4cd315a8d40af73bb7a00abcc90c8e021105e587c119f901f54165004dd318ab",
+    "C:\\bm-symbols-20260908\\overall80-20260911\\run-pipeline-selection\\training-config.json": "4b46492f3bea5f13fe3baa30184691049388c0d7bef259c18f99038c140402d5",
+    "C:\\bm-symbols-20260908\\overall80-20260911\\run-pipeline-selection\\selection.json": "3e8719b9fdfa48f91ee098524ae62498924c0b6b72872e51d9293d9ad8d33489",
+    "C:\\bm-symbols-20260908\\accuracy80-20260910\\validation-symbols.json": "874c8ff878420cb511caba05e3c751a623a840def7a2c0014c802bd82790a701",
+    "C:\\bm-symbols-20260908\\accuracy80-20260910\\validation-image-hashes.json": "88a7d4779fc1fd6a56481167b835d7c01a17d70379a22d86364ed8cee8bc9088",
+    "C:\\bm-symbols-20260908\\overall80-20260911\\run-pipeline-selection\\best-word.keras": "ac9e30cd27cb22ca4f97db42637d3a9e2a27ed47d13a962a661c3bb01c0e66bb",
+    "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\training\\scripts\\word_overall_v5_zoom.py": "3ac2608f3e1a29943301148120d99d76e829b0c65e571bde61cbae428835afa4",
+    "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\training\\scripts\\word_overall_v5_tta.py": "cac081991e66b6e984dd197eda236d87c22c4ca009f0ff8492e52d2610f06eb2",
+    "C:\\bm-symbols-20260908\\overall80-20260911\\run-pipeline-selection\\source\\word_torch_port.py": "6bb8812dbdfbf517bbb3367fac3f5357f69f03b7a190e7575c2ce12b21f0f329",
+    "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\training\\scripts\\word_torch_port.py": "6bb8812dbdfbf517bbb3367fac3f5357f69f03b7a190e7575c2ce12b21f0f329",
+    "C:\\bm-symbols-20260908\\overall80-20260911\\run-pipeline-selection\\source\\word_decode_id_v4.py": "e7a52d92c4c1bd8266ef95575d939fb0a96f9eacefe237a23c66f36cfd7d7868",
+    "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\training\\scripts\\word_decode_id_v4.py": "e7a52d92c4c1bd8266ef95575d939fb0a96f9eacefe237a23c66f36cfd7d7868",
+    "C:\\bm-symbols-20260908\\overall80-20260911\\run-pipeline-selection\\source\\word_symbols_id_v4.py": "0b85da03fa8d3b921fea444adf6a68ba95b56fda76db710b9edc5f6b8a9937b9",
+    "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\training\\scripts\\word_symbols_id_v4.py": "0b85da03fa8d3b921fea444adf6a68ba95b56fda76db710b9edc5f6b8a9937b9",
+    "C:\\bm-symbols-20260908\\overall80-20260911\\run-pipeline-selection\\source\\word_symbols.py": "9e43dc9484f035ba3bbfcb49344050714dfd1c636d107b92cb2ce1faded29ba3",
+    "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\training\\scripts\\word_symbols.py": "9e43dc9484f035ba3bbfcb49344050714dfd1c636d107b92cb2ce1faded29ba3",
+    "C:\\bm-symbols-20260908\\overall80-20260911\\run-pipeline-selection\\source\\word_data.py": "d692b4b28620af7e4b40ebdedccda68769feb8d3f51bd1508e807487fd32b7d7",
+    "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\training\\scripts\\word_data.py": "d692b4b28620af7e4b40ebdedccda68769feb8d3f51bd1508e807487fd32b7d7",
+    "C:\\bm-symbols-20260908\\overall80-20260911\\run-pipeline-selection\\source\\word_anchor_zoom.py": "d6f5337d08368b8da55948f314bd06af7b03fa1602e40240778a9b4edea26377",
+    "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\training\\scripts\\word_anchor_zoom.py": "d6f5337d08368b8da55948f314bd06af7b03fa1602e40240778a9b4edea26377",
+    "C:\\bm-symbols-20260908\\overall80-20260911\\run-pipeline-selection\\source\\benchmark_angelina.py": "88f850d670225cbeba8f1228ab62fcbe0184c68d48cbffb71a0233deff0ad064",
+    "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\training\\scripts\\benchmark_angelina.py": "88f850d670225cbeba8f1228ab62fcbe0184c68d48cbffb71a0233deff0ad064",
+    "C:\\bm-symbols-20260908\\overall80-20260911\\run-pipeline-selection\\source\\word_overall_v5_protocol.py": "b33b2ffe18381e587cc8ab92c64a059517dc5dd7faf775422279ad995ce9f3b8",
+    "C:\\Users\\rifqi\\OneDrive\\Documents\\Github\\brailleme\\training\\scripts\\word_overall_v5_protocol.py": "b33b2ffe18381e587cc8ab92c64a059517dc5dd7faf775422279ad995ce9f3b8"
+  },
+  "old_or_fresh_test_used": false,
+  "app_changed": false,
+  "build_folders_created": 0
+}

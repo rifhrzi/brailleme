@@ -3,10 +3,8 @@ from __future__ import annotations
 
 from collections import Counter
 import numpy as np
-from benchmark_angelina import LETTER_BY_MASK
 from word_data import WIDTH, HEIGHT, GRID_W, GRID_H, STRIDE
-
-DECODER_VERSION = 'six-dot-word-v2'
+from word_symbols import DECODER_VERSION, MAX_CELLS, parse_word_masks
 
 DEFAULT_THRESHOLDS = dict(proposalScore=.25, acceptScore=.65, dotConfidence=.9, nmsIou=.25, minCellWidth=.008, minCellHeight=.06, edgeMargin=.008, maxRowDeviation=.55, maxGapRatio=1.2, maxOverlapRatio=.5)
 
@@ -50,7 +48,7 @@ def decode(output, thresholds=None, selection=None):
     if not selected:
         result["reason"] = "no_grid"
         return result
-    if len(selected)>12:
+    if len(selected)>MAX_CELLS:
         result["reason"] = "too_many_cells"
         return result
     heights = [sizes[id(cell)][1] for cell in selected]
@@ -75,7 +73,7 @@ def decode(output, thresholds=None, selection=None):
         if gap <= 0 or overlap > t["maxOverlapRatio"]*min(sizes[id(left)][0], sizes[id(right)][0]):
             result["reason"] = "overlapping_cells"
             return result
-    letters = []
+    masks = []
     for cell in selected:
         dot_confidence = min(max(dot, 1-dot) for dot in cell["dots"])
         if dot_confidence<t["dotConfidence"]:
@@ -84,12 +82,14 @@ def decode(output, thresholds=None, selection=None):
         mask = sum((int(dot>=.5) << bit) for bit, dot in enumerate(cell["dots"]))
         cell["mask"] = mask
         cell["dot_confidence"] = dot_confidence
-        if mask not in LETTER_BY_MASK:
-            result["reason"] = "unsupported_pattern"
-            return result
-        letters.append(LETTER_BY_MASK.get(mask, "?").upper())
-    if not result["reason"]:
-        result["text"] = "".join(letters)
+        masks.append(mask)
+    parsed = parse_word_masks(masks)
+    if parsed['status'] == 'rejected':
+        result['reason'] = parsed['reason']
+        return result
+    result['text'] = parsed['text']
+    for cell, symbol in zip(selected, parsed['symbols']):
+        cell.update(role=symbol['role'], output=symbol['output'])
     return result
 
 

@@ -6,10 +6,15 @@ import type { WordPhotoGeometry } from './WordPhotoGeometry.nitro';
 
 let geometry: WordPhotoGeometry | undefined;
 
-export function getWordPhotoGeometry(photo: Photo) {
+/** Initialize on the JS runtime, then pass the stateless HybridObject to worklets. */
+export function createWordPixelProcessor(): WordPhotoGeometry {
   if (!geometry) {
     requireNativeModule<{ initialize(): void }>('BrailleWordGeometry').initialize();
     geometry = NitroModules.createHybridObject<WordPhotoGeometry>('WordPhotoGeometry');
   }
-  return geometry.getGeometry(photo);
+  return geometry;
+}
+
+export function getWordPhotoGeometry(photo: Photo) {
+  return createWordPixelProcessor().getGeometry(photo);
 }

@@ -1,0 +1,6 @@
+
+> brailleme@0.3.0 model:verify
+> node scripts/verify-model-assets.mjs && node scripts/verify-word-model-assets.mjs
+
+Model assets valid: 1x28x28x3 -> 26 kelas, SHA-256 7a41942cf330...
+Experimental local word model integrity passed: 323/607 exact words; 323/351 accepted correct. Original accuracy gates FAILED; production and cloud builds blocked.
